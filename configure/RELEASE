@@ -1,0 +1,23 @@
+#RELEASE Location of external products
+# Run "gnumake clean uninstall install" in the application
+# top directory each time this file is changed.
+
+TEMPLATE_TOP=$(EPICS_BASE)/templates/makeBaseApp/top
+
+# If you don't want to install into $(TOP) then
+# define INSTALL_LOCATION_APP here
+#INSTALL_LOCATION_APP=<fullpathname>
+
+SUPPORT=/corvette/home/epics/devel
+-include $(TOP)/../configure/SUPPORT.$(EPICS_HOST_ARCH)
+
+# ASYN is needed for base classes 
+ASYN=$(SUPPORT)/asyn-4-22
+
+# ADCORE is ourself
+ADCORE=$(SUPPORT)/areaDetector-2-0/ADCore
+
+# EPICS_BASE usually appears last so other apps can override stuff:
+EPICS_BASE=/corvette/usr/local/epics/base-3.14.12.3
+-include $(TOP)/../configure/EPICS_BASE.$(EPICS_HOST_ARCH)
+
