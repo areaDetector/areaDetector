@@ -11,6 +11,6 @@ stand-alone repositories:
 
 See the following documentation about the git submodule feature and how it can 
 be used: 
-* (http://git-scm.com/docs/git-submodule "The Git Book")
-* (https://git.wiki.kernel.org/index.php/GitSubmoduleTutorial "Kernel Git tutorial")
+* [The Git Book](http://git-scm.com/docs/git-submodule)
+* [Kernel.org Git tutorial on submodules](https://git.wiki.kernel.org/index.php/GitSubmoduleTutorial)
 
