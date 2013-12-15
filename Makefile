@@ -13,6 +13,9 @@ ADProsilica_DEPEND_DIRS += ADCore
 DIRS := $(DIRS) ADPilatus
 ADPilatus_DEPEND_DIRS += ADCore
 
+DIRS := $(DIRS) ADmarCCD
+ADmarCCD_DEPEND_DIRS += ADCore
+
 include $(TOP)/configure/RULES_TOP
 
 uninstallTargets = $(foreach dir, $(DIRS), $(dir)$(DIVIDER)uninstall)
