@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+  <title>Area Detector: Installation Guide</title>
+  <link rel="stylesheet" type="text/css"
+  href="http://epics-pvdata.sourceforge.net/base.css" />
+  <link rel="stylesheet" type="text/css"
+  href="http://epics-pvdata.sourceforge.net/epicsv4.css" />
+  <style type="text/css">
+  /*<![CDATA[*/
+     .about { margin-left: 3em; margin-right: 3em; font-size: .83em}
+     table { margin-left: auto; margin-right: auto }
+     .diagram { text-align: center; margin: 2.5em 0 }
+     span.opt { color: grey }
+     span.nterm { font-style:italic }
+     span.term { font-family:courier }
+     span.user { font-family:courier }
+     span.user:before { content:"<" }
+     span.user:after { content:">" }
+     .nonnorm { font-style:italic }
+     p.ed { color: #AA0000 }
+     span.ed { color: #AA0000 }
+     p.ed.priv { display: inline; }
+     span.ed.priv { display: inline; }
+  /*]]>*/</style>
+  <!-- Script that generates the Table of Contents -->
+  <script type="text/javascript"
+  src="http://epics-pvdata.sourceforge.net/script/tocgen.js">
+  </script>
+</head>
+<body>
+
+<div class="head">
+<h1>Area Detector: Installation Guide</h1>
+<!-- Maturity: Working Draft or Request for Comments, or Recommendation, and date.  -->
+
+<h2 class="nocount">Area Detector Working Group, Working Draft, 18-Dec-2013</h2>
+
+  <dl>
+    <dt>Latest version:</dt>
+    <dd>
+     <a href="installGuide.html">installGuide.html</a>
+    </dd>
+    <dt>This version:</dt>
+    <dd>none</dd>
+    <dt>Previous version:</dt>
+    <dd>None</dd>
+    <dt>Editors:</dt>
+    <dd>Marty Kraimer, BNL<dd />
+    <dd>Mark Rivers, University of Chicago<dd />
+  </dl>
+
+  <p class="copyright">This product is made available subject to acceptance of the
+<a href="http://epics-pvdata.sourceforge.net/LICENSE.html">
+EPICS open source license.
+</a>
+</p>
+<hr />
+</div>
+
+
+<div id="toc">
+<h2 class="nocount" style="page-break-before: always">Table of Contents</h2>
+</div>
+<div id="contents" class="contents">
+
+<h2>Introduction</h2>
+<p>This is a guide for installing and building the areaDetector.
+This guide is only valid for releases 2.0 and later of areaDetector.
+Installation can consist of obtaining a release or of cloning from the guthub repository.
+This guide is intended for both areaDetector users and developers.
+</p>
+<p>The build process attempts to make the build process easy for typical cases but
+allow site specific overrides.
+After obtaining a release of areaDetector
+most users only need to do the following in the top level directory:
+<dl>
+   <dt>RELEASE_PATHS.local</dt>
+     <dd>Edit this file.
+     The definitions for SUPPORT, AREA_DETECTOR, and EPICS_BASE must
+     all be changed. All definitions must include the full path name.
+     </dd>
+   <dt>make</dt>
+    <dd>Just type:
+    <pre>
+make
+    </pre>
+</dl>
+<h2>Downloading a release of areaDetector</h2>
+<h3>From github</h3>
+<p>This requires that you have signed on to github and have generated an ssh key
+and put it in git hub.
+To sign on to github go to:
+<a href="https://github.com/join">
+Join github
+</a>
+This site also gives instructions for installing git.
+The instructions for generating an ssh key are:
+<a href="https://help.github.com/articles/generating-ssh-keys">
+ssh-key
+</a>
+</p>
+<p>To download areaDetector via git just execute:</p>
+<pre>
+git clone --recursive git@github.com:areaDetector/areaDetector.git
+</pre>
+</p>
+
+<h3>Release Site</h3>
+<p>See
+<a href="http://cars.uchicago.edu/software/epics/areaDetector.html">
+areaDetector
+</a>
+</p>
+<h2>EPICS Products Required for Building areaDetector</h2>
+<p>areaDetector is based on
+<a href="http://www.aps.anl.gov/epics/modules/soft/asyn/">
+asyn
+</a>
+which is based on
+<a href="http://www.aps.anl.gov/epics/base/index.php">
+EPICS base
+</a>
+and also uses several
+components from
+<a href="http://www.aps.anl.gov/bcda/synApps">
+synApps.
+</a>
+<p>The normal way of installing the EPICS components is to install and build ASYN
+all synApp components under a single directory located by <b>SUPPORT</b>
+in file <b>RELEASE_PATHS.local</b>.
+All definitions in this file must have full path names.
+</p>
+<p>The expected version of ASYN appears in file
+<b>RELEASE_LIBS.local</b>
+If You want a different version then this file must be edited.
+</p>
+<p>The required synApps components appear is file
+<b>RELEASE_PRODS.local</b>.
+This file also shows which version of each component is expected.
+If You want a different version then this file must be edited.
+</p>
+<h2>External Products Required for Building areaDetector</h2>
+<h3>HDF5</h3>
+<h3>GRAPHICSMAGICK</h3>
+<h2>Configuration Products</h2>
+<h3>MEDM</h3>
+<h3>EDM</h3>
+<h3>CSS</h3>
+<h3>pyQt</h3>
+<h2>Image Viewer Products</h2>
+<h3>ImageJ</h3>
+<h3>IDL</h3>
+
+<h2>Installation Details</h2>
+<h3>RELEASE_PATHS.local</h3>
+<h3>RELEASE_LIBS.local</h3>
+<h3>RELEASE_PRODS.local</h3>
+<h3>iocBoot/ioc*</h3>
+
+
+</div>
+</body>
+</html>
