@@ -14,7 +14,7 @@ DIRS := $(DIRS) ADPilatus
 ADPilatus_DEPEND_DIRS += ADCore
 
 DIRS := $(DIRS) ADPixirad
-ADPilatus_DEPEND_DIRS += ADCore
+ADPixirad_DEPEND_DIRS += ADCore
 
 DIRS := $(DIRS) ADProsilica
 ADProsilica_DEPEND_DIRS += ADCore
