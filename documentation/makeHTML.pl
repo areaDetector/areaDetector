@@ -27,7 +27,14 @@ use File::Path;
 rmtree("./html");
 mkdir("html");
 
-@subdirs=("./ADCore/documentation","./ADPilatus/documentation");
+@subdirs=("./ADCore/documentation",
+          "./ADmarCCD/documentation",
+          "./ADPerkinElmer/documentation",
+          "./ADPilatus/documentation",
+          "./ADPixirad/documentation",
+          "./ADProsilica/documentation",
+          "./ADPvCam/documentation",
+          );
 
 foreach $dir (@subdirs) {
     $files = "../" . $dir . "/*.html";
