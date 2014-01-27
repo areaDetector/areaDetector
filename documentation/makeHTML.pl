@@ -24,9 +24,6 @@ use File::Path;
 use File::Copy;
 use File::Path;
 
-rmtree("./html");
-mkdir("html");
-
 @subdirs=("./ADCore/documentation",
           "./ADPerkinElmer/documentation",
           "./ADPilatus/documentation",
