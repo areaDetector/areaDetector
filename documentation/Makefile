@@ -1,17 +1,18 @@
-HTMLFLAGS = --book --duplex --no-numbered --format pdf14 --title --size letter
-
-%.pdf: %.html
-	-htmldoc $(HTMLFLAGS) --outfile $@ $<
-
-all: areaDetectorDoc.pdf doxygen iocBootDocs install
+all: areaDetectorDoc.pdf doxygen iocBootDocs copyFromSource copyToWebServer
 
 doxygen:
 	doxygen
 
+areaDetectorDoc.pdf:
+	-htmldoc --book --duplex --no-numbered --format pdf14 --title --size letter --outfile html/areaDetectorDoc.pdf ../ADCore/documentation/areaDetectorDoc.html
+
 iocBootDocs:
 	./makeIOCBootDocs
 
-install:
+copyFromSource:
+	./makeHTML.pl
+
+copyToWebServer:
 	cp -rfp html/* /home/epics/web_software/epics
 
 clean:
