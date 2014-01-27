@@ -28,12 +28,12 @@ rmtree("./html");
 mkdir("html");
 
 @subdirs=("./ADCore/documentation",
-          "./ADmarCCD/documentation",
           "./ADPerkinElmer/documentation",
           "./ADPilatus/documentation",
           "./ADPixirad/documentation",
           "./ADProsilica/documentation",
           "./ADPvCam/documentation",
+          "./ADmarCCD/documentation",
           );
 
 foreach $dir (@subdirs) {
