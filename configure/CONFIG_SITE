@@ -43,12 +43,3 @@ BUILD_IOCS=YES
 #     - On Fedora the 32-bit and 64-bit versions of GraphicsMagick conflict, 
 #     - so we define it to NO here and to YES in CONFIG_SITE.Linux.linux-x86_64
 USE_GRAPHICSMAGICK=NO
-
-# We don't set STATIC_BUILD for WIN32 or Cygwin, use base to configure
-# We build statically on Linux because want to install on detector systems without many .so files
-# and so things like hdf5 don't need to be installed on the target system
-ifeq (Linux, $(OS_CLASS))
-  STATIC_BUILD=YES
-  SHARED_LIBRARIES=NO
-endif
-
