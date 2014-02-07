@@ -7,6 +7,9 @@ DIRS := $(DIRS) ADBinaries
 DIRS := $(DIRS) ADCore
 ADCore_DEPEND_DIRS += ADBinaries
 
+DIRS := $(DIRS) ADFireWireWin
+ADFireWireWin_DEPEND_DIRS += ADCore
+
 DIRS := $(DIRS) ADPerkinElmer
 ADPerkinElmer_DEPEND_DIRS += ADCore
 
@@ -15,6 +18,9 @@ ADPilatus_DEPEND_DIRS += ADCore
 
 DIRS := $(DIRS) ADPixirad
 ADPixirad_DEPEND_DIRS += ADCore
+
+DIRS := $(DIRS) ADPointGrey
+ADPointGrey_DEPEND_DIRS += ADCore
 
 DIRS := $(DIRS) ADProsilica
 ADProsilica_DEPEND_DIRS += ADCore
