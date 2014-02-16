@@ -25,9 +25,11 @@ use File::Copy;
 use File::Path;
 
 @subdirs=("./ADCore/documentation",
+          "./ADFireWireWin/documentation",
           "./ADPerkinElmer/documentation",
           "./ADPilatus/documentation",
           "./ADPixirad/documentation",
+          "./ADPointGrey/documentation",
           "./ADProsilica/documentation",
           "./ADPvCam/documentation",
           "./ADmarCCD/documentation",
