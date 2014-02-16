@@ -28,6 +28,9 @@ ADProsilica_DEPEND_DIRS += ADCore
 DIRS := $(DIRS) ADPvCam
 ADPvCam_DEPEND_DIRS += ADCore
 
+DIRS := $(DIRS) ADRoper
+ADRoper_DEPEND_DIRS += ADCore
+
 DIRS := $(DIRS) ADmarCCD
 ADmarCCD_DEPEND_DIRS += ADCore
 
