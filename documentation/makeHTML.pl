@@ -34,6 +34,7 @@ use File::Path;
           "./ADProsilica/documentation",
           "./ADPvCam/documentation",
           "./ADRoper/documentation",
+          "./ADmar345/documentation",
           "./ADmarCCD/documentation",
           );
 
