@@ -34,6 +34,9 @@ ADPvCam_DEPEND_DIRS += ADCore
 DIRS := $(DIRS) ADRoper
 ADRoper_DEPEND_DIRS += ADCore
 
+DIRS := $(DIRS) ADmar345
+ADmar345_DEPEND_DIRS += ADCore
+
 DIRS := $(DIRS) ADmarCCD
 ADmarCCD_DEPEND_DIRS += ADCore
 
