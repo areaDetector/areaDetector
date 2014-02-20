@@ -13,6 +13,9 @@ ADAndor_DEPEND_DIRS += ADCore
 DIRS := $(DIRS) ADAndor3
 ADAndor3_DEPEND_DIRS += ADCore
 
+DIRS := $(DIRS) ADBruker
+ADBruker_DEPEND_DIRS += ADCore
+
 DIRS := $(DIRS) ADFireWireWin
 ADFireWireWin_DEPEND_DIRS += ADCore
 
