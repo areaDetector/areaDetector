@@ -27,6 +27,7 @@ use File::Path;
 @subdirs=("./ADCore/documentation",
           "./ADAndor/documentation",
           "./ADAndor3/documentation",
+          "./ADBruker/documentation",
           "./ADFireWireWin/documentation",
           "./ADLightField/documentation",
           "./ADPerkinElmer/documentation",
