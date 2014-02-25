@@ -22,6 +22,9 @@ ADFireWireWin_DEPEND_DIRS += ADCore
 DIRS := $(DIRS) ADLightField
 ADLightField_DEPEND_DIRS += ADCore
 
+DIRS := $(DIRS) ADPSL
+ADPSL_DEPEND_DIRS += ADCore
+
 DIRS := $(DIRS) ADPerkinElmer
 ADPerkinElmer_DEPEND_DIRS += ADCore
 
