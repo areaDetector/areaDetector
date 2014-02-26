@@ -7,6 +7,9 @@ DIRS := $(DIRS) ADBinaries
 DIRS := $(DIRS) ADCore
 ADCore_DEPEND_DIRS += ADBinaries
 
+DIRS := $(DIRS) ADADSC
+ADADSC_DEPEND_DIRS += ADCore
+
 DIRS := $(DIRS) ADAndor
 ADAndor_DEPEND_DIRS += ADCore
 
