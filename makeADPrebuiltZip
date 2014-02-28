@@ -6,8 +6,8 @@ find . -name 'auto_settings.sav_*' -exec rm -fv {} \;
 find . -name 'core.*' -exec rm -fv {} \;
 find . -name '*.exe.*' -exec rm -fv {} \;
 cd ..
-rm -f /home/epics/public_html/pub/areaDetectorPrebuilt_$1_$2.zip
-zip -r /home/epics/public_html/pub/areaDetectorPrebuilt_$1_$2.zip   \
+rm -f /home/epics/public_html/pub/$1/$1_Prebuilt_$2.zip
+zip -r /home/epics/public_html/pub/$1/$1_Prebuilt_$2.zip   \
 areaDetector-2-0/ADCore/bin \
 areaDetector-2-0/ADCore/dbd \
 areaDetector-2-0/ADCore/db \
