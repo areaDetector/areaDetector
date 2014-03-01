@@ -46,8 +46,9 @@ ADProsilica_DEPEND_DIRS += ADCore
 DIRS := $(DIRS) ADPvCam
 ADPvCam_DEPEND_DIRS += ADCore
 
-DIRS := $(DIRS) ADRoper
-ADRoper_DEPEND_DIRS += ADCore
+# ADRoper cannot be built on systems without WinView installed, so it is disabled by default
+#DIRS := $(DIRS) ADRoper
+#ADRoper_DEPEND_DIRS += ADCore
 
 DIRS := $(DIRS) ADURL
 ADURL_DEPEND_DIRS += ADCore
