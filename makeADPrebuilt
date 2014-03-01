@@ -4,6 +4,8 @@
 #
 find . -name 'auto_settings.sav_*' -exec rm -fv {} \;
 find . -name 'core.*' -exec rm -fv {} \;
+find . -name '*.exe.*' -exec rm -fv {} \;
+
 cd ..
 tar cvzf /home/epics/public_html/pub/$1/$1_Prebuilt_$2.tgz --exclude '.svn*'  \
 areaDetector-2-0/ADCore/bin \
@@ -33,3 +35,33 @@ calc-3-2/calcApp/Db \
 calc-3-2/calcApp/op \
 sscan-2-9/sscanApp/Db \
 sscan-2-9/sscanApp/op
+
+rm -f /home/epics/public_html/pub/$1/$1_Prebuilt_$2.zip
+zip -r /home/epics/public_html/pub/$1/$1_Prebuilt_$2.zip   \
+areaDetector-2-0/ADCore/bin \
+areaDetector-2-0/ADCore/dbd \
+areaDetector-2-0/ADCore/db \
+areaDetector-2-0/ADCore/documentation \
+areaDetector-2-0/ADCore/ADApp/Db \
+areaDetector-2-0/ADCore/ADApp/op \
+areaDetector-2-0/ADCore/iocBoot \
+areaDetector-2-0/ADCore/Viewers \
+areaDetector-2-0/ADCore/iocs/simDetectorIOC/bin \
+areaDetector-2-0/ADCore/iocs/simDetectorIOC/dbd \
+areaDetector-2-0/ADCore/iocs/simDetectorIOC/iocBoot \
+areaDetector-2-0/$1/db \
+areaDetector-2-0/$1/*/Db \
+areaDetector-2-0/$1/*/op \
+areaDetector-2-0/$1/documentation \
+areaDetector-2-0/$1/iocs/*IOC/bin \
+areaDetector-2-0/$1/iocs/*IOC/dbd \
+areaDetector-2-0/$1/iocs/*IOC/db \
+areaDetector-2-0/$1/iocs/*IOC/iocBoot \
+asyn-4-22/opi \
+asyn-4-22/db \
+autosave-5-1/asApp/Db \
+autosave-5-1/asApp/op \
+calc-3-2/calcApp/Db \
+calc-3-2/calcApp/op  \
+sscan-2-9/sscanApp/Db \
+sscan-2-9/sscanApp/op --exclude '*.svn*' 
