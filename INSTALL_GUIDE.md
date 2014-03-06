@@ -1,8 +1,10 @@
-# Area Detector: Installation Guide
-## Area Detector Working Group
-##Editors:
-##Marty Kraimer, BNL
-##Mark Rivers, University of Chicago
+Area Detector: Installation Guide
+=================================
+
+Marty Kraimer, BNL
+------------------
+Mark Rivers, University of Chicago
+-----------------------------------
 
 This product is made available subject to acceptance of the 
 [EPICS open source license](http://epics-pvdata.sourceforge.net/LICENSE.html)
@@ -20,7 +22,8 @@ MEDM, EDM, CSS, and pvPy.
 
 So far no instructions are available for building for windows, vxWorks, or RTEMS.
 
-## Introduction
+Introduction
+------------
 This is a guide for installing and building the areaDetector. This guide is only
 valid for releases 2.0 and later of areaDetector. This guide is intended for both
 areaDetector users and developers. areaDetector can be obtained as a release or
@@ -34,20 +37,23 @@ allow site specific overrides. areaDetector uses many other products:
 ### External Products
 * TIFF, ZLIB, JPEG, SZIP, and HDF5 are all required. GRAPHICSMAGIC is optional. These
   are described in a later section.
-* iocCore
-  Any relatively recent 3.14 release of iocCore should work.
+* EPICS Base
+  Any relatively recent 3.14 release of EPICS Base should work.
 * EPICS modules
-    - asynDriver is required. Some synApps components are required, in particular CALC,
-      BUSY, SSCAN, and AUTOSAVE. These are discussed in a later section.
-      
-    - Configuration Products
-      A configuration tool is required for configuration of areaDetector plugins. ADCORE
-      has support for the following tools: MEDM, EDM, CSS, and pyQt. These are discussed
-      in a later section.
-      
-    - Image Viewer Products
-      One or more of the following GUI tool are desirable for viewing image files: ImageJ,
-      HDFView, and IDL.
+    - Each detector builds both a library and an EPICS IOC application.  To build the library
+      only EPICS base and asynDriver are required.  To build the IOC application the  
+      synApps components CALC, BUSY, SSCAN, and AUTOSAVE are required. 
+      These are discussed in a later section.
+    - Display Managers
+      A display manager is needed to view the areaDetector control screens. Control screens
+      are provided for the following display managers: MEDM, EDM, CSS, and caQtDM. The native 
+      screens are for MEDM, these are manually created.  The other screens are converted
+      from the MEDM screens using conversion utilities.
+      These are discussed in a later section.   
+* Image Viewers
+areaDetector comes with tools to display images over EPICS Channel Access using ImageJ and IDL.
+HDFView can be used to view files saved with the HDF5 file writing plugins.
+ImageJ can be used to view files saved with the TIFF, JPEG, and netCDF plugins.
 
 After all the required products have been installed and a release of areaDetector
 has been downloaded then do the following in the top level directory:
@@ -66,14 +72,42 @@ The definitions for SUPPORT, AREA_DETECTOR, and EPICS_BASE must all be changed.
 All definitions must include the full path name. The definitions for HDF5 and SZ
 may need to be changed. If GRAPHICS_MAGIC is installed then the definitions for
 it may also need to be changed.
+
+### Optionally create RELEASE_PATHS.local.EPICS_Target_ARCH
+Some installations chose to build for multiple target architectures using different
+development machines in the same directory tree on a file server.   In this case the
+path to SUPPORT, AREA_DETECTOR and BASE may be different for each architecture. For
+example BASE on Linux might be /usr/local/epics/base-3.14.12.4, while on a Windows
+machine using the same copy of BASE the path might be H:/epics/base-3.14.12.4.  In
+this case RELEASE_PATHS.local could specify the path for Linux while
+RELEASE_PATHS.win32-x86 could specify the path for the win32-x86 build host. 
+RELEASE_PATHS.local is read first, and then any definitions there will be replaced by
+RELEASE_PATHS.EPICS_Target_ARCH if it exists.
       
 ### Edit RELEASE_LIBS.local
-The location of ASYN must be specified with a full path name. If You have built
-the version that appears no changes are necessary.
+The location of ASYN must be specified.  It is normally placed in the SUPPORT
+directory defined in RELEASE_PATHS.local. If you have built the version that appears
+no changes are necessary.  As described above RELEASE_LIBS.local.EPICS_Target_ARCH 
+can be used if the ASYN version or path is different for a specific target
+architecture.  This is usually not necessary even for building Linux and Windows in
+the same tree, because only the definition of SUPPORT in
+RELEASE_PATHS.local.EPICS_Target_ARCH needs to be changed.
 
 ### Edit RELEASE_PRODS.local
-The definitions for CALC, BUSY, SSCAN, and AUTOSAVE must have a full path name.
-If You have built the versions that appear no changes are necessary.
+The definitions for CALC, BUSY, SSCAN, and AUTOSAVE must be specified. If you have
+built the versions that appear no changes are necessary. As described above
+RELEASE_LIBS.local.EPICS_Target_ARCH  can be used if the ASYN version or path is
+different for a specific target architecture.  This is usually not necessary even for
+building Linux and Windows in the same tree, because only the definition of SUPPORT in
+RELEASE_PATHS.local.EPICS_Target_ARCH needs to be changed.
+
+### Optionally edit areaDetector/Makefile 
+You can edit this file to change which detectors will be built. Some detectors
+are commented out in the distribution because they cannot be built on all systems.
+For example the Roper driver can only be built on Windows systems with the Princeton
+Instruments WinView or WinSpec programs installed, and the Point Grey driver can
+currently only be built on Linux systems if the version of libc.so is 2.14 or greater.
+You may also want to comment out detectors that you don't need.
       
 ### make
 Just type:
@@ -88,13 +122,14 @@ go to the next step.
       
 ```
 cd ADCore/iocs/simDetectorIOC/iocBoot/iocSimDetector
+### Edit Makefile to set ARCH to your EPICS target architecture
 make
 cp envPaths envPaths.linux
  ../../bin/linux-x86_64/simDetectorApp st.cmd.linux
 ```
 If this works successfully then go to next step.
       
-Congradulations!!!
+Congratulations!!!
       
 You can ignore the rest of this document.
     
