@@ -2,9 +2,9 @@
 # Run "gnumake clean uninstall install" in the application
 # top directory each time this file is changed.
 
-include $(TOP)/RELEASE_PATHS.local
--include $(TOP)/RELEASE_PATHS.local.$(EPICS_HOST_ARCH)
-include $(TOP)/RELEASE_LIBS.local
+include $(TOP)/configure/RELEASE_PATHS.local
+-include $(TOP)/configure/RELEASE_PATHS.local.$(EPICS_HOST_ARCH)
+include $(TOP)/configure/RELEASE_LIBS.local
 -include $(TOP)/configure/RELEASE.local
 
 TEMPLATE_TOP=$(EPICS_BASE)/templates/makeBaseApp/top
