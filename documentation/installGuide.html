@@ -1,204 +1,165 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
-  <title>Area Detector: Installation Guide</title>
-  <link rel="stylesheet" type="text/css"
-  href="http://epics-pvdata.sourceforge.net/base.css" />
-  <link rel="stylesheet" type="text/css"
-  href="http://epics-pvdata.sourceforge.net/epicsv4.css" />
-  <style type="text/css">
-  /*<![CDATA[*/
-     .about { margin-left: 3em; margin-right: 3em; font-size: .83em}
-     table { margin-left: auto; margin-right: auto }
-     .diagram { text-align: center; margin: 2.5em 0 }
-     span.opt { color: grey }
-     span.nterm { font-style:italic }
-     span.term { font-family:courier }
-     span.user { font-family:courier }
-     span.user:before { content:"<" }
-     span.user:after { content:">" }
-     .nonnorm { font-style:italic }
-     p.ed { color: #AA0000 }
-     span.ed { color: #AA0000 }
-     p.ed.priv { display: inline; }
-     span.ed.priv { display: inline; }
-  /*]]>*/</style>
-  <!-- Script that generates the Table of Contents -->
-  <script type="text/javascript"
-  src="http://epics-pvdata.sourceforge.net/script/tocgen.js">
-  </script>
+  <title>areaDetector Installation Guide</title>
+  <meta content="text/html; charset=ISO-8859-1" http-equiv="Content-Type" />
 </head>
 <body>
-
-<div class="head">
-<h1>Area Detector: Installation Guide</h1>
-<!-- Maturity: Working Draft or Request for Comments, or Recommendation, and date.  -->
-
-<h2 class="nocount">Area Detector Working Group, Working Draft, 14-Jan-2014</h2>
-
-  <dl>
-    <dt>Latest version:</dt>
-    <dd>
-     <a href="installGuide.html">installGuide.html</a>
-    </dd>
-    <dt>This version:</dt>
-    <dd>
-     <a href="installGuide_20140114.html">installGuide_20140114.html</a>
-    </dd>
-    <dt>Previous version:</dt>
-    <dd>None</dd>
-    <dt>Editors:</dt>
-    <dd>Marty Kraimer, BNL<dd />
-    <dd>Mark Rivers, University of Chicago<dd />
-  </dl>
-
-  <p class="copyright">This product is made available subject to acceptance of the
-<a href="http://epics-pvdata.sourceforge.net/LICENSE.html">
-EPICS open source license.
-</a>
-</p>
-<hr />
-</div>
-
-<h2 class="nocount">Status of this Document</h2>
-
-<p>This is the 14-Jan-2014 version of the install instructions for
-areaDetector.</p>
-<p>
-This version has a complete description of installing everything
-required to build areaDetector on Linux.
-However section 7 (Installition Details) is not written.
-</p>
-<p>
-The instructions should also work for Darwin, i. e. macOS.
-</p>
-<p>
-What remains is to describe how to build the GUI plugin configuration
-tools, i,e. MEDM, EDM, CSS, and pvPy.
-</p>
-<p>So far no instructions are available for building
-for windows, vxWorks, or RTEMS.</p>
-
-
-<div id="toc">
-<h2 class="nocount" style="page-break-before: always">Table of Contents</h2>
-</div>
-<div id="contents" class="contents">
-
-<h2>Introduction</h2>
-<p>This is a guide for installing and building the areaDetector.
-This guide is only valid for releases 2.0 and later of areaDetector.
-This guide is intended for both areaDetector users and developers.
-areaDetector can be obtained as a release or by cloning from the github
-repository.
-This guide provides instructions for installing and building on
-linux. The guidelines should also work for darwin, i. e. macOS.
-At this time there are no guidelines for windows, vxWorks, or RTEMS.
-</p>
-<p>The build process attempts to make the build process easy for typical cases but
-allow site specific overrides.
-areaDetector uses many other products:</p>
-<dl>
-   <dt>External Products</dt>
-     <dd>TIFF, ZLIB, JPEG, SZIP, and HDF5 are all required.
-        GRAPHICSMAGIC is optional.
-        These are described in a later section.</dd>
-   <dt>iocCore</dt>
-     <dd>Any relatively recent 3.14 release of iocCore should work.</dd>
-   <dt>EPICS modules</dt>
-      <dd>asynDriver is required.
-       Some synApps components are required, in particular CALC,
-        BUSY, SSCAN, and AUTOSAVE.
-        These are discussed in a later section.
-       </dd>
-    <dt>Configuration Products</dt>
-      <dd>A configuration tool is required for configuration of areaDetector
-       plugins. ADCORE has support for the following tools:
-       MEDM, EDM, CSS, and pyQt.
-        These are discussed in a later section.
-       </dd>
-    <dt>Image Viewer Products</dt>
-       <dd>One or more of the following GUI tool are desirable for
-        viewing image files: ImageJ, HDFView, and IDL.
-</dl>
-<p>
-After all the required products have been installed
-and a release of areaDetector has been downloaded
-then do the following in the top level directory:
-</p>
-<dl>
-   <dt>Copy files:</dt>
+  <div>
+    <h1>
+      Area Detector: Installation Guide</h1>
+    <h2>
+      Area Detector Working Group</h2>
+    <dl>
+      <dt>Editors:</dt>
+      <dd>
+        Marty Kraimer, BNL</dd>
+      <dd>
+        Mark Rivers, University of Chicago</dd>
+    </dl>
+    <p>
+      This product is made available subject to acceptance of the <a href="http://epics-pvdata.sourceforge.net/LICENSE.html">
+        EPICS open source license.</a>
+    </p>
+    <hr />
+  </div>
+  <h2>
+    Status of this Document</h2>
+  <p>
+    This is the 14-Jan-2014 version of the install instructions for areaDetector.</p>
+  <p>
+    This version has a complete description of installing everything required to build
+    areaDetector on Linux. However section 7 (Installition Details) is not written.
+  </p>
+  <p>
+    The instructions should also work for Darwin, i. e. macOS.
+  </p>
+  <p>
+    What remains is to describe how to build the GUI plugin configuration tools, i,e.
+    MEDM, EDM, CSS, and pvPy.
+  </p>
+  <p>
+    So far no instructions are available for building for windows, vxWorks, or RTEMS.</p>
+  <div id="toc">
+    <h2>
+      Table of Contents</h2>
+  </div>
+  <div>
+    <h2>
+      Introduction</h2>
+    <p>
+      This is a guide for installing and building the areaDetector. This guide is only
+      valid for releases 2.0 and later of areaDetector. This guide is intended for both
+      areaDetector users and developers. areaDetector can be obtained as a release or
+      by cloning from the github repository. This guide provides instructions for installing
+      and building on linux. The guidelines should also work for darwin, i. e. macOS.
+      At this time there are no guidelines for windows, vxWorks, or RTEMS.
+    </p>
+    <p>
+      The build process attempts to make the build process easy for typical cases but
+      allow site specific overrides. areaDetector uses many other products:</p>
+    <dl>
+      <dt>External Products</dt>
+      <dd>
+        TIFF, ZLIB, JPEG, SZIP, and HDF5 are all required. GRAPHICSMAGIC is optional. These
+        are described in a later section.</dd>
+      <dt>iocCore</dt>
+      <dd>
+        Any relatively recent 3.14 release of iocCore should work.</dd>
+      <dt>EPICS modules</dt>
+      <dd>
+        asynDriver is required. Some synApps components are required, in particular CALC,
+        BUSY, SSCAN, and AUTOSAVE. These are discussed in a later section.
+      </dd>
+      <dt>Configuration Products</dt>
+      <dd>
+        A configuration tool is required for configuration of areaDetector plugins. ADCORE
+        has support for the following tools: MEDM, EDM, CSS, and pyQt. These are discussed
+        in a later section.
+      </dd>
+      <dt>Image Viewer Products</dt>
+      <dd>
+        One or more of the following GUI tool are desirable for viewing image files: ImageJ,
+        HDFView, and IDL.</dd>
+    </dl>
+    <p>
+      After all the required products have been installed and a release of areaDetector
+      has been downloaded then do the following in the top level directory:
+    </p>
+    <dl>
+      <dt>Copy files:</dt>
       <dd>
         <pre>
 cp EXAMPLE_RELEASE_PATHS.local RELEASE_PATHS.local
 cp EXAMPLE_RELEASE_LIBS.local RELEASE_LIBS.local
 cp EXAMPLE_RELEASE_PRODS.local RELEASE_PRODS.local
         </pre>
-   <dt>Edit RELEASE_PATHS.local</dt>
-     <dd>
-     The definitions for SUPPORT, AREA_DETECTOR, and EPICS_BASE must
-     all be changed. All definitions must include the full path name.
-     The definitions for HDF5 and SZ may need to be changed.
-      If GRAPHICS_MAGIC is installed then the definitions for it
-     may also need to be changed.
-     </dd>
-   <dt>Edit RELEASE_LIBS.local</dt>
-     <dd>The location of ASYN must be specified with a full path name.
-       If You have built the version that appears no changes are necessary.
-     </dd>
-   <dt>Edit RELEASE_PRODS.local</dt>
-      <dd>The definitions for CALC, BUSY, SSCAN, and AUTOSAVE must
-      have a full path name. If You have built the versions that appear
-      no changes are necessary.</dd>
-   <dt>make</dt>
-    <dd>Just type:
-      <pre>
+      </dd>
+      <dt>Edit RELEASE_PATHS.local</dt>
+      <dd>
+        The definitions for SUPPORT, AREA_DETECTOR, and EPICS_BASE must all be changed.
+        All definitions must include the full path name. The definitions for HDF5 and SZ
+        may need to be changed. If GRAPHICS_MAGIC is installed then the definitions for
+        it may also need to be changed.
+      </dd>
+      <dt>Edit RELEASE_LIBS.local</dt>
+      <dd>
+        The location of ASYN must be specified with a full path name. If You have built
+        the version that appears no changes are necessary.
+      </dd>
+      <dt>Edit RELEASE_PRODS.local</dt>
+      <dd>
+        The definitions for CALC, BUSY, SSCAN, and AUTOSAVE must have a full path name.
+        If You have built the versions that appear no changes are necessary.</dd>
+      <dt>make</dt>
+      <dd>
+        Just type:
+        <pre>
 make
       </pre>
-       If this fails then some required products has probably not been
-       installed. Read more of this manual and install what is missing.
-       When areaDetector builds successfully go to the next step.
-     </dd>
-    <dt>Run SimDetector</dt>
-     <dd>
+        If this fails then some required products has probably not been installed. Read
+        more of this manual and install what is missing. When areaDetector builds successfully
+        go to the next step.
+      </dd>
+      <dt>Run SimDetector</dt>
+      <dd>
         <pre>
 cd ADCore/iocs/simDetectorIOC/iocBoot/iocSimDetector
 make
 cp envPaths envPaths.linux
  ../../bin/linux-x86_64/simDetectorApp st.cmd.linux
        </pre>
-       If this works successfully then go to next step.
-     </dd>
-    <dt>Congradulations!!!</dt>
-       <dd>You can ignore the rest of this document.</dd>
-</dl>
-<p><b>NOTE MARK</b>
-I suggest the following changes for EXAMPLE_RELEASE_PATHS.local:
-<dl>
-   <dt>XXX_DIR</dt>
-      <dd>Change this to <b>XXX_LIB</b>.
-        This requires a change in ADApp/commonDriverMakefile.
-       </dd>
-   <dt>XX_INCLUDES= -I</dt>
-      <dd>Change this to <b>XX_INCLUDE=</b>.
-         This requires a change in ADApp/pluginSrc/Makefile.
+        If this works successfully then go to next step.
       </dd>
-   <dt>Change statement order</dt>
-     <dd>
-       Put related things together.
-     </dd>
-    <dt>ZLIB, TIFF, and JPEG</dt>
-      <dd>What about these? Should they also appear in RELEASE_PATHS.local
-         OR maybe they should not appear and SZLIB should also not appear.
-         Note that HDF5 and GRAPHICS_MAGICK MUST appear since they do
-         not follow normal rules for /usr/local.
-       </dd>
-</dl>
-Thus the EXAMPLE_RELEASE_PATHS.local becomes:
-<pre>
+      <dt>Congradulations!!!</dt>
+      <dd>
+        You can ignore the rest of this document.</dd>
+    </dl>
+    <p>
+      <b>NOTE MARK</b> I suggest the following changes for EXAMPLE_RELEASE_PATHS.local:</p>
+    <dl>
+      <dt>XXX_DIR</dt>
+      <dd>
+        Change this to <b>XXX_LIB</b>. This requires a change in ADApp/commonDriverMakefile.
+      </dd>
+      <dt>XX_INCLUDES= -I</dt>
+      <dd>
+        Change this to <b>XX_INCLUDE=</b>. This requires a change in ADApp/pluginSrc/Makefile.
+      </dd>
+      <dt>Change statement order</dt>
+      <dd>
+        Put related things together.
+      </dd>
+      <dt>ZLIB, TIFF, and JPEG</dt>
+      <dd>
+        What about these? Should they also appear in RELEASE_PATHS.local OR maybe they should
+        not appear and SZLIB should also not appear. Note that HDF5 and GRAPHICS_MAGICK
+        MUST appear since they do not follow normal rules for /usr/local.
+      </dd>
+    </dl>
+    Thus the EXAMPLE_RELEASE_PATHS.local becomes:
+    <pre>
 # The following 3 definitions must be changed for each site
 SUPPORT=/home/install/epics/support
 AREA_DETECTOR=/home/git/areaDetector
@@ -222,68 +183,67 @@ SZ_INCLUDE=${SZLIB}/include
 
 #Define TIFF, JPEG, and ZLIB ???
 </pre>
-</p>
-<h2>Downloading a release of areaDetector</h2>
-<h3>From github</h3>
-<p>This requires that you have signed on to github and have generated an ssh key
-and put it in git hub.
-To sign on to github go to:
-<a href="https://github.com/join">
-Join github
-</a>
-This site also gives instructions for installing git.
-The instructions for generating an ssh key are:
-<a href="https://help.github.com/articles/generating-ssh-keys">
-ssh-key
-</a>
-</p>
-<p>To download areaDetector via git just execute:</p>
-<pre>
+    <h2>
+      Downloading a release of areaDetector</h2>
+    <h3>
+      From github</h3>
+    <p>
+      This requires that you have signed on to github and have generated an ssh key and
+      put it in git hub. To sign on to github go to: <a href="https://github.com/join">Join
+        github </a>This site also gives instructions for installing git. The instructions
+      for generating an ssh key are: <a href="https://help.github.com/articles/generating-ssh-keys">
+        ssh-key </a>
+    </p>
+    <p>
+      To download areaDetector via git just execute:</p>
+    <pre>
 git clone --recursive git@github.com:areaDetector/areaDetector.git
 </pre>
-</p>
-
-<h3>Release Site</h3>
-<p>See
-<a href="http://cars.uchicago.edu/software/epics/areaDetector.html">
-areaDetector
-</a>
-</p>
-<p><b>NOTE:</b> no 2.0 release of areaDetector is currently available.
-Thus the only want to get it is through github.
-</p>
-<h2>External Products Required for Building areaDetector</h2>
-<p>The product descrbes in this section are not part of epics (base, modules, or extensions)
-but are used by areaDetector plugins.
-Some may already be installed or your system so before reading this section just try to
-build areaDetector, especially ADCore. If it builds this section can be ignored.
-If it does not then this section can be used to locate and install any missing components.</p>
-<p>
-The instructions in this section were the result of installing all the components
-on a new laptop on which I installed fedora 20.
-Before installing I had already built iocCore, asynDriver, and the required synApps components.
-</p>
-<p>For each product the source was downloaded from a product download site and then
-built. It may be easier to download pre-built modules, but downloading the sources and
-building should work on more varieties of linux and darwin.</p>
-<p>Each site provides some combination of .zip, .tar, .tar.gz, etc.
-If the file is a zip file then just execute:
-<pre>
+    <h3>
+      Release Site</h3>
+    <p>
+      See <a href="http://cars.uchicago.edu/software/epics/areaDetector.html">areaDetector
+      </a>
+    </p>
+    <p>
+      <b>NOTE:</b> no 2.0 release of areaDetector is currently available. Thus the only
+      want to get it is through github.
+    </p>
+    <h2>
+      External Products Required for Building areaDetector</h2>
+    <p>
+      The product descrbes in this section are not part of epics (base, modules, or extensions)
+      but are used by areaDetector plugins. Some may already be installed or your system
+      so before reading this section just try to build areaDetector, especially ADCore.
+      If it builds this section can be ignored. If it does not then this section can be
+      used to locate and install any missing components.</p>
+    <p>
+      The instructions in this section were the result of installing all the components
+      on a new laptop on which I installed fedora 20. Before installing I had already
+      built iocCore, asynDriver, and the required synApps components.
+    </p>
+    <p>
+      For each product the source was downloaded from a product download site and then
+      built. It may be easier to download pre-built modules, but downloading the sources
+      and building should work on more varieties of linux and darwin.</p>
+    <p>
+      Each site provides some combination of .zip, .tar, .tar.gz, etc. If the file is
+      a zip file then just execute:</p>
+    <pre>
 unzip file.zip
 </pre>
-If the file is any flavor of tar just execute:
-<pre>
+    If the file is any flavor of tar just execute:
+    <pre>
 tar xf file
 </pre>
-</p>
-<p>All of the following products put the result of unzip or tar into a sub-directory.
-cd to that directory and follow the instructions for the appropriate sub-section.
-</p>
-<p>
-If the instructions in the following subsections are used then RELEASE_PATHS.local,
-except for the first three definitions,
-should be:
-<pre>
+    <p>
+      All of the following products put the result of unzip or tar into a sub-directory.
+      cd to that directory and follow the instructions for the appropriate sub-section.
+    </p>
+    <p>
+      If the instructions in the following subsections are used then RELEASE_PATHS.local,
+      except for the first three definitions, should be:</p>
+    <pre>
 # The following 3 definitions must be changed for each site
 
 SUPPORT=/home/install/epics/support
@@ -305,44 +265,48 @@ GRAPHICS_MAGICK=/usr/local
 GRAPHICS_MAGICK_DIR=${GRAPHICS_MAGICK}/lib
 GRAPHICS_MAGICK_INCLUDES= -I${GRAPHICS_MAGICK}/include/GraphicsMagick
 </pre>
-</p>
-<h3>TIFF</h3>
-  <p>This can be download from
-<a href="http://www.remotesensing.org/libtiff">
-libTIFF
-</a></p>
-<p>Then click on the Master Download Site and download the latest stable release.</p>
-<p>After the latest release is unziped cd to the release and execute the commands:</p>
-<pre>
+    <h3>
+      TIFF</h3>
+    <p>
+      This can be download from <a href="http://www.remotesensing.org/libtiff">libTIFF
+      </a>
+    </p>
+    <p>
+      Then click on the Master Download Site and download the latest stable release.</p>
+    <p>
+      After the latest release is unziped cd to the release and execute the commands:</p>
+    <pre>
 ./configure
 make
 sudo make install
 </pre>
-<p>The include and library files are installed by default into <b>/usr/local</b>
-<h3>ZLIB</h3>
-  <p>This can be download from
-<a href="http://www.zlib.net"</a>
-zlib
-</a></p>
-<p>Then look for latest release download.</p>
-<p>After untaring the release</p>
-<pre>
+    <p>
+      The include and library files are installed by default into <b>/usr/local</b></p>
+    <h3>
+      ZLIB</h3>
+    <p>
+      This can be download from <a href="http://www.zlib.net">zlib</a></p>
+    <p>
+      Then look for latest release download.</p>
+    <p>
+      After untaring the release</p>
+    <pre>
 ./configure
 make
 sudo make install
 </pre>
-<p>The include and library files are installed by default into <b>/usr/local</b>
-<h3>JPEG</h3>
-  <p>This can be download from
-<a href="http://www.linuxfromscratch.org/blfs/view/svn/general/libjpeg.html">
-libjpeg
-</a></p>
-<p>
-Read the instructions from the web site about installing.
-I suggest that it be installed into <b>/usr/local</b> instead of
-<b>/usr</b>.
-Thus to install:</p>
-<pre>
+    <p>
+      The include and library files are installed by default into <b>/usr/local</b></p>
+    <h3>
+      JPEG</h3>
+    <p>
+      This can be download from <a href="http://www.linuxfromscratch.org/blfs/view/svn/general/libjpeg.html">
+        libjpeg </a>
+    </p>
+    <p>
+      Read the instructions from the web site about installing. I suggest that it be installed
+      into <b>/usr/local</b> instead of <b>/usr</b>. Thus to install:</p>
+    <pre>
 ./configure --prefix=/usr/local  \
      --mandir=/usr/share/man \
      --with-jpeg8  \
@@ -354,47 +318,54 @@ make
 make test
 sodo make install
 </pre>
-<h3>SZIP</h3>
-  <p>This can be download from
-<a href="http://www.hdfgroup.org/doc_resource/SZIP">
-SZIP
-</a></p>
-<p>Then click on <b>SZIP Source</b> and download the release that appears.</p>
-<p>After the latest release is untared, cd to the release and execute the commands:</p>
-<pre>
+    <h3>
+      SZIP</h3>
+    <p>
+      This can be download from <a href="http://www.hdfgroup.org/doc_resource/SZIP">SZIP
+      </a>
+    </p>
+    <p>
+      Then click on <b>SZIP Source</b> and download the release that appears.</p>
+    <p>
+      After the latest release is untared, cd to the release and execute the commands:</p>
+    <pre>
 ./configure --prefix=/usr/local
 make
 make check
 sudo make install
 </pre>
-<h3>HDF5</h3>
-<p>Start at:
-<a href="http://www.hdfgroup.org/HDF5/">
-HDF Group
-</a></p>
-<p>The click on Downloads, then Current Release, then HDF5 Software,
-then Source Code, then latest release.</p>
-<p>After the latest release is untared, cd to the release and
-execute that command:</p>
-<pre>
+    <h3>
+      HDF5</h3>
+    <p>
+      Start at: <a href="http://www.hdfgroup.org/HDF5/">HDF Group </a>
+    </p>
+    <p>
+      The click on Downloads, then Current Release, then HDF5 Software, then Source Code,
+      then latest release.</p>
+    <p>
+      After the latest release is untared, cd to the release and execute that command:</p>
+    <pre>
 ./configure --prefix=/usr/local/hdf5 
 make
 make check   
 sudo make install
 make check-install
 </pre>
-<h3>GRAPHICSMAGICK</h3>
-<p>To build this from mercurial repository:</p>
-<pre>
+    <h3>
+      GRAPHICSMAGICK</h3>
+    <p>
+      To build this from mercurial repository:</p>
+    <pre>
 hg clone http://hg.code.sf.net/p/graphicsmagick/code graphicsmagick-code
 cd graphicsmagick-code/
 ./configure
 make
 sudo make install
 </pre>
-<p>However when I tried to build areaDetector with GrahicsMagick
-enabled the build failed with:</p>
-<pre>
+    <p>
+      However when I tried to build areaDetector with GrahicsMagick enabled the build
+      failed with:</p>
+    <pre>
 ...
 /usr/bin/ld: /usr/local/lib/libGraphicsMagick++.a(Image.o):
 relocation R_X86_64_32S against `_ZTVN6Magick5ImageE'
@@ -402,57 +373,60 @@ can not be used when making a shared object; recompile with -fPIC
 /usr/local/lib/libGraphicsMagick++.a: could not read symbols: Bad value
 collect2: error: ld returned 1 exit status
 </pre>
-<h2>EPICS Products Required for Building areaDetector</h2>
-<p>areaDetector is based on
-<a href="http://www.aps.anl.gov/epics/modules/soft/asyn/">
-asyn
-</a>
-which is based on
-<a href="http://www.aps.anl.gov/epics/base/index.php">
-EPICS base
-</a>
-and also uses several
-components from
-<a href="http://www.aps.anl.gov/bcda/synApps">
-synApps.
-</a>
-<p>The normal way of installing the EPICS components is to install
-and build ASYN and all synApp components
-under a single directory located by <b>SUPPORT</b>
-in file <b>RELEASE_PATHS.local</b>.
-All definitions in this file must have full path names.
-</p>
-<p>The expected version of ASYN appears in file
-<b>RELEASE_LIBS.local</b>
-If You want a different version then this file must be edited.
-</p>
-<p>The required synApps components appear is file
-<b>RELEASE_PRODS.local</b>.
-This file also shows which version of each component is expected.
-If You want a different version then this file must be edited.
-</p>
-<h2>Configuration Products</h2>
-<p>In order to configure the plugins You must install one or more of
-the following: MEDM, EDM, CSS, pyQT.</p>
-<h3>MEDM</h3>
-<p>At present X11 is not avaliable for fedora 20.
-Thus I can not build MEDM.</p>
-<h3>EDM</h3>
-<p>At present X11 is not avaliable for fedora 20.
-Thus I can not build EDM.</p>
-<h3>CSS</h3>
-<h3>pyQt</h3>
-<h2>Image Viewer Products</h2>
-<h3>ImageJ</h3>
-<h3>IDL</h3>
-
-<h2>Installation Details</h2>
-<h3>RELEASE_PATHS.local</h3>
-<h3>RELEASE_LIBS.local</h3>
-<h3>RELEASE_PRODS.local</h3>
-<h3>iocBoot/ioc*</h3>
-
-
-</div>
+    <h2>
+      EPICS Products Required for Building areaDetector</h2>
+    <p>
+      areaDetector is based on <a href="http://www.aps.anl.gov/epics/modules/soft/asyn/">
+        asyn</a> which is based on <a href="http://www.aps.anl.gov/epics/base/index.php">EPICS
+          base</a> and also uses several components from <a href="http://www.aps.anl.gov/bcda/synApps">
+            synApps</a>.</p>
+    <p>
+      The normal way of installing the EPICS components is to install and build ASYN and
+      all synApp components under a single directory located by <b>SUPPORT</b> in file
+      <b>RELEASE_PATHS.local</b>. All definitions in this file must have full path names.
+    </p>
+    <p>
+      The expected version of ASYN appears in file <b>RELEASE_LIBS.local</b> If You want
+      a different version then this file must be edited.
+    </p>
+    <p>
+      The required synApps components appear is file <b>RELEASE_PRODS.local</b>. This
+      file also shows which version of each component is expected. If You want a different
+      version then this file must be edited.
+    </p>
+    <h2>
+      Configuration Products</h2>
+    <p>
+      In order to configure the plugins You must install one or more of the following:
+      MEDM, EDM, CSS, pyQT.</p>
+    <h3>
+      MEDM</h3>
+    <p>
+      At present X11 is not avaliable for fedora 20. Thus I can not build MEDM.</p>
+    <h3>
+      EDM</h3>
+    <p>
+      At present X11 is not avaliable for fedora 20. Thus I can not build EDM.</p>
+    <h3>
+      CSS</h3>
+    <h3>
+      pyQt</h3>
+    <h2>
+      Image Viewer Products</h2>
+    <h3>
+      ImageJ</h3>
+    <h3>
+      IDL</h3>
+    <h2>
+      Installation Details</h2>
+    <h3>
+      RELEASE_PATHS.local</h3>
+    <h3>
+      RELEASE_LIBS.local</h3>
+    <h3>
+      RELEASE_PRODS.local</h3>
+    <h3>
+      iocBoot/ioc*</h3>
+  </div>
 </body>
 </html>

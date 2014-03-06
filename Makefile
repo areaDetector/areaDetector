@@ -37,8 +37,9 @@ ADPilatus_DEPEND_DIRS += ADCore
 DIRS := $(DIRS) ADPixirad
 ADPixirad_DEPEND_DIRS += ADCore
 
-DIRS := $(DIRS) ADPointGrey
-ADPointGrey_DEPEND_DIRS += ADCore
+# ADPointGrey cannot be built on systems without libc 2.14
+#DIRS := $(DIRS) ADPointGrey
+#ADPointGrey_DEPEND_DIRS += ADCore
 
 DIRS := $(DIRS) ADProsilica
 ADProsilica_DEPEND_DIRS += ADCore
