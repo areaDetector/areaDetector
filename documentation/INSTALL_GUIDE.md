@@ -148,63 +148,50 @@ SZ_INCLUDE=${SZLIB}/include
 
 ## Downloading a release of areaDetector
 ### From github
-This requires that you have signed on to github and have generated an ssh key and
-put it in git hub. To sign on to github go to: 
-<a href="https://github.com/join">Join
-  github </a>This site also gives instructions for installing git. The instructions
-for generating an ssh key are: <a href="https://help.github.com/articles/generating-ssh-keys">
-  ssh-key </a>
+To download areaDetector via git just execute:
+```
+git clone --recursive https://github.com:areaDetector/areaDetector.git
+```
+
+###Release Site
+See [areaDetector](http://cars.uchicago.edu/software/epics/areaDetector.html
+
+**NOTE:** no 2.0 release of areaDetector is currently available. Thus the only
+way to get it is through github.
     
+##External Products Required for Building areaDetector
     
-      To download areaDetector via git just execute:
-    <pre>
-git clone --recursive git@github.com:areaDetector/areaDetector.git
-</pre>
-    <h3>
-      Release Site</h3>
-    
-      See <a href="http://cars.uchicago.edu/software/epics/areaDetector.html">areaDetector
-      </a>
-    
-    
-      <b>NOTE:</b> no 2.0 release of areaDetector is currently available. Thus the only
-      want to get it is through github.
-    
-    <h2>
-      External Products Required for Building areaDetector</h2>
-    
-      The product descrbes in this section are not part of epics (base, modules, or extensions)
-      but are used by areaDetector plugins. Some may already be installed or your system
-      so before reading this section just try to build areaDetector, especially ADCore.
-      If it builds this section can be ignored. If it does not then this section can be
-      used to locate and install any missing components.
-    
-      The instructions in this section were the result of installing all the components
-      on a new laptop on which I installed fedora 20. Before installing I had already
-      built iocCore, asynDriver, and the required synApps components.
-    
-    
-      For each product the source was downloaded from a product download site and then
-      built. It may be easier to download pre-built modules, but downloading the sources
-      and building should work on more varieties of linux and darwin.
-    
-      Each site provides some combination of .zip, .tar, .tar.gz, etc. If the file is
-      a zip file then just execute:
-    <pre>
+The product descrbes in this section are not part of epics (base, modules, or extensions)
+but are used by areaDetector plugins. Some may already be installed or your system
+so before reading this section just try to build areaDetector, especially ADCore.
+If it builds this section can be ignored. If it does not then this section can be
+used to locate and install any missing components.
+
+The instructions in this section were the result of installing all the components
+on a new laptop on which I installed fedora 20. Before installing I had already
+built iocCore, asynDriver, and the required synApps components.
+
+For each product the source was downloaded from a product download site and then
+built. It may be easier to download pre-built modules, but downloading the sources
+and building should work on more varieties of linux and darwin.
+
+Each site provides some combination of .zip, .tar, .tar.gz, etc. If the file is
+a zip file then just execute:
+```
 unzip file.zip
-</pre>
-    If the file is any flavor of tar just execute:
-    <pre>
+```
+If the file is any flavor of tar just execute:
+```
 tar xf file
-</pre>
-    
-      All of the following products put the result of unzip or tar into a sub-directory.
-      cd to that directory and follow the instructions for the appropriate sub-section.
-    
-    
-      If the instructions in the following subsections are used then RELEASE_PATHS.local,
-      except for the first three definitions, should be:
-    <pre>
+``
+
+All of the following products put the result of unzip or tar into a sub-directory.
+cd to that directory and follow the instructions for the appropriate sub-section.
+
+
+If the instructions in the following subsections are used then RELEASE_PATHS.local,
+except for the first three definitions, should be:
+```
 # The following 3 definitions must be changed for each site
 
 SUPPORT=/home/install/epics/support
@@ -225,64 +212,54 @@ SZ_INCLUDES= -I${SZLIB}/include
 GRAPHICS_MAGICK=/usr/local
 GRAPHICS_MAGICK_DIR=${GRAPHICS_MAGICK}/lib
 GRAPHICS_MAGICK_INCLUDES= -I${GRAPHICS_MAGICK}/include/GraphicsMagick
-</pre>
-    <h3>
-      TIFF</h3>
-    
-      This can be download from <a href="http://www.remotesensing.org/libtiff">libTIFF
-      </a>
-    
-    
-      Then click on the Master Download Site and download the latest stable release.
-    
-      After the latest release is unziped cd to the release and execute the commands:
-    <pre>
+```
+###TIFF
+This can be download from [libTIFF](http://www.remotesensing.org/libtiff)
+Then click on the Master Download Site and download the latest stable release.
+After the latest release is unziped cd to the release and execute the commands:
+```
 ./configure
 make
 sudo make install
-</pre>
+```
+The include and library files are installed by default into **/usr/local**
+
+###ZLIB
     
-      The include and library files are installed by default into <b>/usr/local</b>
-    <h3>
-      ZLIB</h3>
-    
-      This can be download from <a href="http://www.zlib.net">zlib</a>
-    
-      Then look for latest release download.
-    
-      After untaring the release
-    <pre>
+This can be download from [zlib](http://www.zlib.net).
+
+Then look for latest release download.
+
+After untaring the release
+```
 ./configure
 make
 sudo make install
-</pre>
+```
     
-      The include and library files are installed by default into <b>/usr/local</b>
-    <h3>
-      JPEG</h3>
+The include and library files are installed by default into <b>/usr/local</b>
+
+###JPEG
     
-      This can be download from <a href="http://www.linuxfromscratch.org/blfs/view/svn/general/libjpeg.html">
-        libjpeg </a>
-    
-    
-      Read the instructions from the web site about installing. I suggest that it be installed
-      into <b>/usr/local</b> instead of <b>/usr</b>. Thus to install:
-    <pre>
+This can be download from [libjpeg](http://www.linuxfromscratch.org/blfs/view/svn/general/libjpeg.html).
+        
+Read the instructions from the web site about installing. I suggest that it be installed
+into **/usr/local** instead of**/usr**. Thus to install:
+```
 ./configure --prefix=/usr/local  \
      --mandir=/usr/share/man \
      --with-jpeg8  \
      --disable-static \
-     &amp;&amp; \
-    sed -i -e '/^docdir/ s/$/\/libjpeg-turbo-1.3.0/'   \
+     &&; \
+sed -i -e '/^docdir/ s/$/\/libjpeg-turbo-1.3.0/'   \
      -e '/^exampledir/ s/$/\/libjpeg-turbo-1.3.0/' Makefile &amp;&amp;
 make
 make test
 sodo make install
-</pre>
-    <h3>
-      SZIP</h3>
+```
+###SZIP
     
-      This can be download from <a href="http://www.hdfgroup.org/doc_resource/SZIP">SZIP
+This can be download from <a href="http://www.hdfgroup.org/doc_resource/SZIP">SZIP
       </a>
     
     
