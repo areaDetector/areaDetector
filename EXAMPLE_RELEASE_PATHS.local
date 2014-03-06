@@ -1,15 +1,18 @@
-# The following 3 definitions must be changed for each site
+# The following definitions must be changed for each site
 
-SUPPORT=/corvette/home/epics/devel
-AREA_DETECTOR=/corvette/home/epics/devel/areaDetector-2-0
-EPICS_BASE=/corvette/usr/local/epics/base-3.14.12.3
+SUPPORT      = /corvette/home/epics/devel-AD2.0
+AREA_DETECTOR= /corvette/home/epics/devel-AD2.0/areaDetector-2-0
+EPICS_BASE   = /corvette/usr/local/epics/base-3.14.12.3
 
 # Define the location of the hdf5, sz, and GraphicsMagick libraries
-HDF5_DIR=/usr/local64/lib
-SZ_DIR=/usr/local64/lib
-GRAPHICS_MAGICK_DIR=/usr/local64/lib
+HDF5         = /usr/local64
+HDF5_LIB     = $(HDF5)/lib
+HDF5_INCLUDE = -I$(HDF5)/include
 
-# Add locations of include files
-HDF5_INCLUDES= -I/usr/local64/include
-SZ_INCLUDES= -I/usr/local64/include
-GRAPHICS_MAGICK_INCLUDES= -I/usr/local64/include/GraphicsMagick
+SZIP           = /usr/local64
+SZIP_LIB       = $(SZIP)/lib
+SZIP_INCLUDE   = -I$(SZIP)/include
+
+GRAPHICS_MAGICK         = /usr/local64
+GRAPHICS_MAGICK_LIB     = $(GRAPHICS_MAGICK)/lib
+GRAPHICS_MAGICK_INCLUDE = -I$(GRAPHICS_MAGICK)/include/GraphicsMagick
