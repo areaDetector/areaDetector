@@ -24,8 +24,8 @@ files respectively, in the appropriate release of the
 Release Notes
 =============
 
-Each submodule contains detailed release notes for each release of that submodule.  These release notes
-provide a short summary of the most significant items from the submodules.
+Each submodule contains detailed release notes for each release of that submodule.  The release notes below
+only provide a short summary of the most significant items from the submodules.
 
 R2-0
 ----
@@ -41,13 +41,11 @@ R2-0
 TO DO BEFORE R2-0 RELEASE
 =========================
 * Release notes and new screen shot for marCCD
-* Update README.md for all modules that have not been updated
-* Add RELEASE.md for all modules that don't have it yet
-* Update areaDetector.doc to point to github, notes about locations for releases of each module
+* Get PointGrey driver working on GigE
+* Finish PointGrey documentation
+* Update areaDetector.html to point to github, notes about locations for releases of each module
 * Read areaDetectorDoc.html and update anything that needs to be changed
 * Convert Marty's installation guide to .md file, complete it
-* See if GraphicsMagick can be made to work on Linux: 32, 64 bit, static and dynamic
-* See if GraphicsMagick can be made to work on Windows: 32, 64 bit, static and dynamic
 
 R1-9-1 and earlier
 ------------------
