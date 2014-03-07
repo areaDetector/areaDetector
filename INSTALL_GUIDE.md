@@ -9,105 +9,110 @@ Mark Rivers, University of Chicago
 This product is made available subject to acceptance of the 
 [EPICS open source license](http://epics-pvdata.sourceforge.net/LICENSE.html)
 
-----
-This is the 14-Jan-2014 version of the install instructions for areaDetector.
-
-This version has a complete description of installing everything required to build
-areaDetector on Linux. However section 7 (Installition Details) is not written.
-
-The instructions should also work for Darwin, i. e. macOS.
-
-What remains is to describe how to build the GUI plugin configuration tools, i,e.
-MEDM, EDM, CSS, and pvPy.
-
-So far no instructions are available for building for windows, vxWorks, or RTEMS.
-
 Introduction
 ------------
-This is a guide for installing and building the areaDetector. This guide is only
-valid for releases 2.0 and later of areaDetector. This guide is intended for both
-areaDetector users and developers. areaDetector can be obtained as a release or
-by cloning from the github repository. This guide provides instructions for installing
-and building on linux. The guidelines should also work for darwin, i. e. macOS.
-At this time there are no guidelines for windows, vxWorks, or RTEMS.
+This is a guide for installing and building R2-0 and later of the EPICS
+areaDetector module.  This guide is intended for both areaDetector users and
+developers.  areaDetector can be obtained as a release or by cloning from the
+github repository. 
+
+This guide provides instructions for:
+
+* Installing, building, and running from source code. These instructions should
+  work on any supported EPICS  host architecture, e.g. Linux, Windows, Mac OSX. 
+  This document assumes that the reader has already installed an EPICS
+  development environment, and has build EPICS base, the EPICS asyn module, and
+  the required EPICS synApps modules.
+  
+* Installing and running  a pre-built binary distribution.
 
 The build process attempts to make the build process easy for typical cases but
 allow site specific overrides. areaDetector uses many other products:
 
 ### External Products
-* TIFF, ZLIB, JPEG, SZIP, and HDF5 are all required. GRAPHICSMAGIC is optional. These
-  are described in a later section.
+* The TIFF, ZLIB, JPEG, SZIP, and HDF5 packages are all required. GRAPHICSMAGIC
+  is optional. These must be installed on the development machine for Linux and
+  Darwin.  For Windows pre-built libraries for these are included with
+  areaDetector. These do not need to be installed on machines that will run the
+  pre-built binaries on Linux or Darwin, because the binaries are statically
+  linked and include these packages in the executable.
 * EPICS Base
   Any relatively recent 3.14 release of EPICS Base should work.
 * EPICS modules
-    - Each detector builds both a library and an EPICS IOC application.  To build the library
-      only EPICS base and asynDriver are required.  To build the IOC application the  
-      synApps components CALC, BUSY, SSCAN, and AUTOSAVE are required. 
-      These are discussed in a later section.
-    - Display Managers
-      A display manager is needed to view the areaDetector control screens. Control screens
-      are provided for the following display managers: MEDM, EDM, CSS, and caQtDM. The native 
-      screens are for MEDM, these are manually created.  The other screens are converted
-      from the MEDM screens using conversion utilities.
-      These are discussed in a later section.   
-* Image Viewers
-areaDetector comes with tools to display images over EPICS Channel Access using ImageJ and IDL.
-HDFView can be used to view files saved with the HDF5 file writing plugins.
-ImageJ can be used to view files saved with the TIFF, JPEG, and netCDF plugins.
+    - Each areaDetector detector module builds both a library and an EPICS IOC
+      application.  To build the library only EPICS base and asynDriver are
+      required.  To build the IOC application the   synApps components CALC,
+      BUSY, SSCAN, and AUTOSAVE are required.  These are discussed in a later
+      section.
+    - Display Managers A display manager is needed to view the areaDetector
+      control screens. Control screens are provided for the following display
+      managers: MEDM, EDM, CSS, and caQtDM. The native  screens are created
+      manually using MEDM.  The EDM, CSS and caQtDM screens are converted from
+      the MEDM screens using conversion utilities. These are discussed in a
+      later section.   
+* Image Viewers areaDetector comes with tools to display images over EPICS
+  Channel Access using ImageJ and IDL. HDFView can be used to view files saved
+  with the HDF5 file writing plugins. ImageJ can also be used to view files
+  saved with the TIFF, JPEG, and netCDF plugins.
 
-After all the required products have been installed and a release of areaDetector
-has been downloaded then do the following in the top level directory:
+After all the required products have been installed and a release of
+areaDetector has been downloaded then do the following in the
+areaDetector/configure directory:
     
     
 ### Copy files:
       
 ```
 cp EXAMPLE_RELEASE_PATHS.local RELEASE_PATHS.local
-cp EXAMPLE_RELEASE_LIBS.local RELEASE_LIBS.local
+cp EXAMPLE_RELEASE_LIBS.local  RELEASE_LIBS.local
 cp EXAMPLE_RELEASE_PRODS.local RELEASE_PRODS.local
+cp EXAMPLE_CONFIG_SITE.local   CONFIG_SITE.local
 ```
       
-### Edit RELEASE_PATHS.local
-The definitions for SUPPORT, AREA_DETECTOR, and EPICS_BASE must all be changed.
-All definitions must include the full path name. The definitions for HDF5 and SZ
+### Edit RELEASE_PATHS.local The definitions for SUPPORT, AREA_DETECTOR, and
+EPICS_BASE must all be changed. All definitions must include the full path
+name. 
+
+### Optionally create RELEASE_PATHS.local.EPICS_Target_ARCH Some installations
+chose to build for multiple target architectures using different development
+machines in the same directory tree on a file server.   In this case the path to
+SUPPORT, AREA_DETECTOR and BASE may be different for each architecture. For
+example BASE on Linux might be /usr/local/epics/base-3.14.12.4, while on a
+Windows machine using the same copy of BASE the path might be
+H:/epics/base-3.14.12.4.  In this case RELEASE_PATHS.local could specify the
+path for Linux while RELEASE_PATHS.win32-x86 could specify the path for the
+win32-x86 build host.  RELEASE_PATHS.local is read first, and then any
+definitions there will be replaced by RELEASE_PATHS.EPICS_Target_ARCH if it
+exists.
+      
+### Edit RELEASE_LIBS.local The location of ASYN must be specified.  It is
+normally placed in the SUPPORT directory defined in RELEASE_PATHS.local. If your
+version has the same path as the one that appears then no changes are
+necessary.  As described above RELEASE_LIBS.local.EPICS_Target_ARCH can be used
+if the ASYN version or path is different for a specific target architecture. 
+This is usually not necessary even for building Linux and Windows in the same
+tree, because only the definition of SUPPORT in
+RELEASE_PATHS.local.EPICS_Target_ARCH needs to be changed.
+
+### Edit RELEASE_PRODS.local The definitions for CALC, BUSY, SSCAN, and AUTOSAVE
+must be specified. If your versions have the same paths that appear no changes
+are necessary. As described above RELEASE_LIBS.local.EPICS_Target_ARCH can be
+used if the ASYN version or path is different for a specific target
+architecture.  This is usually not necessary even for building Linux and Windows
+in the same tree, because only the definition of SUPPORT in
+RELEASE_PATHS.local.EPICS_Target_ARCH needs to be changed.
+
+### Edit CONFIG_SITE.local The definitions for HDF5, SZIP, and GRAPHICS_MAGICK
 may need to be changed. If GRAPHICS_MAGIC is installed then the definitions for
 it may also need to be changed.
 
-### Optionally create RELEASE_PATHS.local.EPICS_Target_ARCH
-Some installations chose to build for multiple target architectures using different
-development machines in the same directory tree on a file server.   In this case the
-path to SUPPORT, AREA_DETECTOR and BASE may be different for each architecture. For
-example BASE on Linux might be /usr/local/epics/base-3.14.12.4, while on a Windows
-machine using the same copy of BASE the path might be H:/epics/base-3.14.12.4.  In
-this case RELEASE_PATHS.local could specify the path for Linux while
-RELEASE_PATHS.win32-x86 could specify the path for the win32-x86 build host. 
-RELEASE_PATHS.local is read first, and then any definitions there will be replaced by
-RELEASE_PATHS.EPICS_Target_ARCH if it exists.
-      
-### Edit RELEASE_LIBS.local
-The location of ASYN must be specified.  It is normally placed in the SUPPORT
-directory defined in RELEASE_PATHS.local. If you have built the version that appears
-no changes are necessary.  As described above RELEASE_LIBS.local.EPICS_Target_ARCH 
-can be used if the ASYN version or path is different for a specific target
-architecture.  This is usually not necessary even for building Linux and Windows in
-the same tree, because only the definition of SUPPORT in
-RELEASE_PATHS.local.EPICS_Target_ARCH needs to be changed.
-
-### Edit RELEASE_PRODS.local
-The definitions for CALC, BUSY, SSCAN, and AUTOSAVE must be specified. If you have
-built the versions that appear no changes are necessary. As described above
-RELEASE_LIBS.local.EPICS_Target_ARCH  can be used if the ASYN version or path is
-different for a specific target architecture.  This is usually not necessary even for
-building Linux and Windows in the same tree, because only the definition of SUPPORT in
-RELEASE_PATHS.local.EPICS_Target_ARCH needs to be changed.
-
-### Optionally edit areaDetector/Makefile 
-You can edit this file to change which detectors will be built. Some detectors
-are commented out in the distribution because they cannot be built on all systems.
-For example the Roper driver can only be built on Windows systems with the Princeton
-Instruments WinView or WinSpec programs installed, and the Point Grey driver can
-currently only be built on Linux systems if the version of libc.so is 2.14 or greater.
-You may also want to comment out detectors that you don't need.
+### Optionally edit areaDetector/Makefile  You can edit this file to change
+which detectors will be built. Some detectors are commented out in the
+distribution because they cannot be built on all systems. For example the Roper
+driver can only be built on Windows systems with the Princeton Instruments
+WinView or WinSpec programs installed, and the Point Grey driver can currently
+only be built on Linux systems if the version of libc.so is 2.14 or greater. You
+may also want to comment out detectors that you don't need.
       
 ### make
 Just type:
@@ -115,8 +120,8 @@ Just type:
 make
 ```
 If this fails then some required products has probably not been installed. Read
-more of this manual and install what is missing. When areaDetector builds successfully
-go to the next step.
+more of this manual and install what is missing. When areaDetector builds
+successfully go to the next step.
 
 ### Run SimDetector
       
@@ -127,60 +132,6 @@ make
 cp envPaths envPaths.linux
  ../../bin/linux-x86_64/simDetectorApp st.cmd.linux
 ```
-If this works successfully then go to next step.
-      
-Congratulations!!!
-      
-You can ignore the rest of this document.
-    
-    
-<b>NOTE MARK</b> I suggest the following changes for EXAMPLE_RELEASE_PATHS.local:
-    
-XXX_DIR
-      
-Change this to <b>XXX_LIB</b>. This requires a change in ADApp/commonDriverMakefile.
-      
-XX_INCLUDES= -I
-      
-Change this to <b>XX_INCLUDE=</b>. This requires a change in ADApp/pluginSrc/Makefile.
-      
-Change statement order
-      
-Put related things together.
-      
-ZLIB, TIFF, and JPEG
-      
-What about these? Should they also appear in RELEASE_PATHS.local OR maybe they should
-not appear and SZLIB should also not appear. Note that HDF5 and GRAPHICS_MAGICK
-MUST appear since they do not follow normal rules for /usr/local.
-      
-    
-Thus the EXAMPLE_RELEASE_PATHS.local becomes:
-```
-# The following 3 definitions must be changed for each site
-SUPPORT=/home/install/epics/support
-AREA_DETECTOR=/home/git/areaDetector
-EPICS_BASE=${SUPPORT}/base-3.14.12.3
-
-# Define the location of HDF5
-HDF5=/usr/local/hdf5
-HDF5_LIB=${HDF5}/lib
-HDF5_INCLUDE=${HDF5}/include
-
-# Define the location of Graphics Magic
-GRAPHICS_MAGICK=/usr/local
-GRAPHICS_MAGICK_LIB=${GRAPHICS_MAGICK}/lib
-GRAPHICS_MAGICK_INCLUDE=${GRAPHICS_MAGICK}/include/GraphicsMagick
-
-#MARK either remove SZLIB or also have defs for TIFF, JPEG, and ZLIB
-# Define the location of SZLIB
-SZLIB=/usr/local
-SZ_LIB=${SZLIB}/lib
-SZ_INCLUDE=${SZLIB}/include
-
-#Define TIFF, JPEG, and ZLIB ???
-```
-
 ## Downloading a release of areaDetector
 ### From github
 To download areaDetector via git just execute:
