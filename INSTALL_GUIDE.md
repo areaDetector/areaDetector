@@ -61,16 +61,20 @@ External Products Required for Building areaDetector
 areaDetector always uses the TIFF, ZLIB, JPEG, SZIP, and HDF5 libraries, (except
 on vxWorks where none of these are available). GRAPHICSMAGIC is optional. 
 
-For Windows pre-built libraries for the packages are included with areaDetector
-and nothing additional needs to be installed, and you can skip the rest of this
-section. 
+For Windows areaDetector includes pre-built libraries for these packages and
+nothing additional needs to be installed. Windows users can skip the rest of this
+section.
+
+In areaDetector release prior to R2-0 prebuilt versions of these libraries were
+also included for Linux and Darwin.  This became too hard to maintain because
+of compiler version dependencies, so they are no longer provided.
 
 On Linux and Darwin the TIFF, JPEG and ZLIB libraries always need to be
 installed, whether building from source code or using the pre-built binaries.
 The HDF5 and SZIP packages need to be installed when building from source code. 
 HDF5 and SZIP do not need to be installed on machines that will only run the
 pre-built binaries on Linux or Darwin, because the binaries are statically
-linked and include these packages in the executable.
+linked and include these libraries in the executable.
 
 ### TIFF, JPEG, and Z
 On Linux and Darwin the libtiff, libjpeg, and libz libraries often come already
