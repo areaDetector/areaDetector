@@ -315,60 +315,66 @@ GRAPHICS_MAGICK_LIB     = $(GRAPHICS_MAGICK0/lib
 GRAPHICS_MAGICK_INCLUDE = -I$(GRAPHICS_MAGICK)/include/GraphicsMagick
 ```
 
-    <h2>
-      EPICS Products Required for Building areaDetector</h2>
+EPICS Products Required for Building areaDetector
+-------------------------------------------------    
+areaDetector is based on
+[asyn](http://www.aps.anl.gov/epics/modules/soft/asyn/) 
+which is based on 
+[EPICS base](http://www.aps.anl.gov/epics/base/index.php)
+and also uses several components from 
+[synApps](http://www.aps.anl.gov/bcda/synApps).
     
-      areaDetector is based on <a href="http://www.aps.anl.gov/epics/modules/soft/asyn/">
-        asyn</a> which is based on <a href="http://www.aps.anl.gov/epics/base/index.php">EPICS
-          base</a> and also uses several components from <a href="http://www.aps.anl.gov/bcda/synApps">
-            synApps</a>.
+The normal way of installing the EPICS components is to install and build ASYN
+and all synApp components under a single directory located by **SUPPORT** in
+file **RELEASE_PATHS.local**. All definitions in this file must have full
+path names.
+
+The expected version of ASYN appears in file **RELEASE_LIBS.local**. If you
+want a different version then this file must be edited.
+
+The required synApps components appear is file **RELEASE_PRODS.local**. This
+file also shows which version of each component is expected. If you want a
+different version then this file must be edited.
     
-      The normal way of installing the EPICS components is to install and build ASYN and
-      all synApp components under a single directory located by <b>SUPPORT</b> in file
-      <b>RELEASE_PATHS.local</b>. All definitions in this file must have full path names.
-    
-    
-      The expected version of ASYN appears in file <b>RELEASE_LIBS.local</b> If You want
-      a different version then this file must be edited.
-    
-    
-      The required synApps components appear is file <b>RELEASE_PRODS.local</b>. This
-      file also shows which version of each component is expected. If You want a different
-      version then this file must be edited.
-    
-    <h2>
-      Configuration Products</h2>
-    
-      In order to configure the plugins You must install one or more of the following:
-      MEDM, EDM, CSS, pyQT.
-    <h3>
-      MEDM</h3>
-    
-      At present X11 is not avaliable for fedora 20. Thus I can not build MEDM.
-    <h3>
-      EDM</h3>
-    
-      At present X11 is not avaliable for fedora 20. Thus I can not build EDM.
-    <h3>
-      CSS</h3>
-    <h3>
-      pyQt</h3>
-    <h2>
-      Image Viewer Products</h2>
-    <h3>
-      ImageJ</h3>
-    <h3>
-      IDL</h3>
-    <h2>
-      Installation Details</h2>
-    <h3>
-      RELEASE_PATHS.local</h3>
-    <h3>
-      RELEASE_LIBS.local</h3>
-    <h3>
-      RELEASE_PRODS.local</h3>
-    <h3>
-      iocBoot/ioc*</h3>
-  </div>
-</body>
-</html>
+Display Managers
+----------------    
+
+In order to control the detectors and the plugins you must install one or 
+more of the following:
+MEDM, EDM, CSS, caQtDM.
+
+### MEDM
+
+[medm](http://www.aps.anl.gov/epics/extensions/medm/index.php)
+
+This requires openMotif.  It can be built from source on Linux if the 
+openMotif library is available (which it is not for some new releases, such as
+Fedora 20). 
+
+It is available for Windows as via an
+[EPICS Windows Tools MSI installer
+package](http://www.aps.anl.gov/epics/distributions/win32/index.php).
+
+### EDM
+This can be downloaded through links on the 
+[EDM home page](http://ics-web.sns.ornl.gov/edm).
+
+### CSS
+This can be downloaded through links on the 
+[CSS home page](http://controlsystemstudio.org).
+
+### caQtDM
+This can be downloaded through links on the 
+[caQtDM home page](http://epics.web.psi.ch/software/caqtdm).
+
+
+Image Viewer Products
+---------------------
+
+### ImageJ
+
+### IDL
+
+
+Installing and Running Pre-Built Binaries
+=========================================
