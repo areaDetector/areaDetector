@@ -432,7 +432,7 @@ Before running an areaDetector application it is usually necessary to configure
   uses. I suggest setting these in the .cshrc (or .bashrc) file for the account that
   will be used to run the detector.
 
-    - EPICS_CA_AUTO_ADDR_LIST and EPICS_CA_ADDR_LIST
+    - EPICS_CA_AUTO_ADDR_LIST and EPICS_CA_ADDR_LIST.
       These variables control the IP addresses that EPICS clients use when searching for
       EPICS PVs. The default is EPICS_CA_AUTO_ADDR_LIST=YES and EPICS_CA_ADDR_LIST to be the
       broadcast address of all networks connected to the host. Some detectors, for example
@@ -450,7 +450,7 @@ Before running an areaDetector application it is usually necessary to configure
       where XX.YY.ZZ.255 should be replaced with the broadcast address for the public
       network on this computer.
 
-    - EPICS_CA_MAX_ARRAY_BYTES
+    - EPICS_CA_MAX_ARRAY_BYTES.
       This variable controls the maximum array size that EPICS can transmit with Channel
       Access. The default is only 16kB, which is much too small for most detector data. This
       value must be set to a large enough value on both the EPICS server computer (e.g. the
@@ -504,7 +504,7 @@ batch file (start_epics.bat) or both depending on the architectures that the det
 runs on. These scripts provide simple examples of how to start medm and the EPICS
 IOC. For example, for the mar345 iocBoot/iocMAR345/start_epics contains the following:
 
-    medm -x -macro "P=13MAR345_1:, R=cam1:, I=image1:, ROI=ROI1:, NETCDF=netCDF1:, TIFF=TIFF1:, JPEG=JPEG1:, NEXUS=Nexus1:" mar345.adl &amp;
+    medm -x -macro "P=13MAR345_1:, R=cam1:" mar345.adl &
     ../../bin/linux-x86/mar345App st.cmd
 
 This script starts medm in execute mode with the appropriate medm display file and
