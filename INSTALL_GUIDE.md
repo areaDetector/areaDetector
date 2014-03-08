@@ -104,7 +104,7 @@ appropriate sub-section.
 
 #### TIFF
 This can be downloaded from 
-[libTIFF](http://www.remotesensing.org/libtiff)
+[libTIFF](http://www.remotesensing.org/libtiff).
 Then click on the Master Download Site and download the latest stable release.
 After the latest release is unziped cd to the release and execute the commands:
 
@@ -159,7 +159,7 @@ to install them from source.
 #### SZIP
     
 This can be downloaded from 
-[SZIP](http://www.hdfgroup.org/doc_resource/SZIP)
+[SZIP](http://www.hdfgroup.org/doc_resource/SZIP).
 
 Click on **SZIP Source** and download the release that appears.
     
@@ -173,7 +173,7 @@ After the latest release is untared, cd to the release and execute the commands:
 #### HDF5
     
 This can be downloaded from 
-[HDF Group](http://www.hdfgroup.org/HDF5/)
+[HDF Group](http://www.hdfgroup.org/HDF5/).
     
 Click on Downloads, then Current Release, then HDF5 Software, then Source Code,
 then latest release.
@@ -205,7 +205,7 @@ Downloading and Installing areaDetector Source Code
 ---------------------------------------------------
 
 The areaDetector source code is kept on
-[gitub.com/areaDetector](https://github.com/areaDetetor).
+[gitub.com/areaDetector](https://github.com/areaDetector).
      
 It can be downloaded 2 ways:
 
