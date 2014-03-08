@@ -458,8 +458,9 @@ Before running an areaDetector application it is usually necessary to configure
       ImageJ, IDL, etc.). This should be set to a value that is larger than the largest
       waveform record that will be used for the detector.  For example if using a detector
       with 1024x1024 pixels and 4-bytes per pixel (waveform record FTVL=LONG) then
-      EPICS_CA_MAX_ARRAY_BYTES would need to be at least 4153344.  In practice it should
-      be set at least 100 bytes larger than this because there is some overhead, e.g.
+      EPICS_CA_MAX_ARRAY_BYTES would need to be at least 1024 * 1024 * 4 = 4153344.  
+      In practice it should be set at least 100 bytes larger than this because there 
+      is some overhead.  For example:
 
       <code>setenv EPICS_CA_MAX_ARRAY_BYTES 4154000</code>
 
@@ -468,10 +469,6 @@ Before running an areaDetector application it is usually necessary to configure
       the required buffer size exceeds 16 kB, and one does not want unnecessarily large
       buffers to be allocated.
       
-      Note that EPICS_CA_MAX_ARRAY_BYTES must be set to a large enough value on both the
-      IOC process and on all processes running Channel Access clients that will be accessing
-      the arrays (e.g. ImageJ, IDL, etc.).
-
     - EPICS_DISPLAY_PATH. This variable controls where medm looks for .adl display files.
       If the recommendation below is followed to copy all adl files to a single directory,
       then this environment variable should be defined to point to that directory. For
