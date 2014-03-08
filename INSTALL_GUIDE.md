@@ -27,7 +27,7 @@ This guide provides instructions for:
   the required 
   [EPICS synApps modules](http://www.aps.anl.gov/bcda/synApps).
   
-* Installing and running  a pre-built binary distribution.
+* Installing and running a pre-built binary distribution.
 
 
 Installing and Building from Source Code
@@ -51,7 +51,7 @@ Each areaDetector detector module builds both a library and an EPICS IOC
 application.  To build the library only EPICS base and asynDriver are
 required.  To build the IOC application the 
 [synApps](http://www.aps.anl.gov/bcda/synApps)  
-modules  AUTOSAVE, BUSY, CALC, and SSCAN are required.
+modules AUTOSAVE, BUSY, CALC, and SSCAN are required.
 
 The most recent release of the synApps modules is recommended.
 
@@ -62,7 +62,7 @@ areaDetector.
 External Products Required for Building areaDetector
 ----------------------------------------------------
 areaDetector always uses the TIFF, ZLIB, JPEG, SZIP, and HDF5 libraries, (except
-on vxWorks where none of these are available). GRAPHICSMAGIC is optional.  
+on vxWorks where none of these are available). GRAPHICSMAGIC is optional. 
 
 For Windows pre-built libraries for the packages are included with areaDetector
 and nothing additional needs to be installed, and you can skip the rest of this
@@ -77,7 +77,7 @@ linked and include these packages in the executable.
 
 ### TIFF, JPEG, and Z
 On Linux and Darwin the libtiff, libjpeg, and libz libraries often come already
-installed.   If they are not already installed then they are normally available
+installed.  If they are not already installed then they are normally available
 for installation via the standard package installation tools, e.g. "yum install"
 on Redhat systems, "apt get" for Debian systems, etc.
 
@@ -114,7 +114,7 @@ After the latest release is unziped cd to the release and execute the commands:
 The include and library files are installed by default into **/usr/local**
 
 ####ZLIB
-    
+  
 This can be downloaded from 
 [zlib](http://www.zlib.net).
 
@@ -126,14 +126,14 @@ After untaring the release
     make
     sudo make install
 
-    
+  
 The include and library files are installed by default into **/usr/local**
 
 ####JPEG
-    
+  
 This can be downloaded from 
 [libjpeg](http://www.linuxfromscratch.org/blfs/view/svn/general/libjpeg.html).
-        
+    
 Read the instructions from the web site about installing. I suggest that it be
 installed into **/usr/local** instead of **/usr**. Thus to install:
 
@@ -195,7 +195,6 @@ This can be downloaded from the mercurial repository with these commands:
     make
     sudo make install
 
-    
 However recent attempts to build or link with GraphicsMagick have led to a
 variety of errors. Thus, the NDFileGraphicsMagick plugin and ADURL driver have
 been disabled in areaDetector R2-0 by setting USE_GRAPHICS_MAGICK=NO in
@@ -250,7 +249,7 @@ this file.
 
 ### Optionally create RELEASE_PATHS.local.$(EPICS_HOST_ARCH) 
 Some installations chose to build for multiple target architectures using
-different development machines in the same directory tree on a file server.   In
+different development machines in the same directory tree on a file server.  In
 this case the path to SUPPORT, AREA_DETECTOR and BASE may be different for each
 architecture. For example BASE on Linux might be
 /usr/local/epics/base-3.14.12.4, while on a Windows machine using the same copy
@@ -487,7 +486,7 @@ Before running an areaDetector application it is usually necessary to configure
   copying the adl files to that location use the following one-line script, which can 
   placed in /home/det/bin/sync_adls.
 
-    find /home/det/epics/support -name '*.adl' -exec cp -fv {} /home/det/epics/adls \;
+  <code>find /home/det/epics/support -name '*.adl' -exec cp -fv {} /home/det/epics/adls \;</code>
 
   This script finds all adl files in the epics/support tree and copies them to /home/det/epics/adls.
   That directory must be created before running this script. Similar scripts can be
