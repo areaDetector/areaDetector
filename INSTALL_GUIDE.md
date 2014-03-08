@@ -1,8 +1,8 @@
-Area Detector: Installation Guide
+areaDetector: Installation Guide
 =================================
 
-Marty Kraimer, BNL
-------------------
+Marty Kraimer, Brookhaven National Laboratory
+---------------------------------------------
 Mark Rivers, University of Chicago
 -----------------------------------
 
@@ -21,8 +21,11 @@ This guide provides instructions for:
 * Installing, building, and running from source code. These instructions should
   work on any supported EPICS  host architecture, e.g. Linux, Windows, Mac OSX. 
   This document assumes that the reader has already installed an EPICS
-  development environment, and has build EPICS base, the EPICS asyn module, and
-  the required EPICS synApps modules.
+  development environment, and has built 
+  [EPICS base](http://www.aps.anl.gov/epics/base/R3-14), the 
+  [EPICS asyn module](http://www.aps.anl.gov/epics/module/soft/asyn), and
+  the required 
+  [EPICS synApps modules](http://www.aps.anl.gov/bcda/synApps).
   
 * Installing and running  a pre-built binary distribution.
 
@@ -41,8 +44,8 @@ allow site specific overrides. areaDetector uses many other products:
 * EPICS modules
     - Each areaDetector detector module builds both a library and an EPICS IOC
       application.  To build the library only EPICS base and asynDriver are
-      required.  To build the IOC application the   synApps components CALC,
-      BUSY, SSCAN, and AUTOSAVE are required.  These are discussed in a later
+      required.  To build the IOC application the  synApps components AUTOSAVE,
+      BUSY, CALC, and SSCAN are required.  These are discussed in a later
       section.
     - Display Managers A display manager is needed to view the areaDetector
       control screens. Control screens are provided for the following display
@@ -69,50 +72,55 @@ cp EXAMPLE_RELEASE_PRODS.local RELEASE_PRODS.local
 cp EXAMPLE_CONFIG_SITE.local   CONFIG_SITE.local
 ```
       
-### Edit RELEASE_PATHS.local The definitions for SUPPORT, AREA_DETECTOR, and
+### Edit RELEASE_PATHS.local 
+The definitions for SUPPORT, AREA_DETECTOR, and
 EPICS_BASE must all be changed. All definitions must include the full path
 name. 
 
-### Optionally create RELEASE_PATHS.local.EPICS_Target_ARCH Some installations
-chose to build for multiple target architectures using different development
-machines in the same directory tree on a file server.   In this case the path to
-SUPPORT, AREA_DETECTOR and BASE may be different for each architecture. For
-example BASE on Linux might be /usr/local/epics/base-3.14.12.4, while on a
-Windows machine using the same copy of BASE the path might be
-H:/epics/base-3.14.12.4.  In this case RELEASE_PATHS.local could specify the
-path for Linux while RELEASE_PATHS.win32-x86 could specify the path for the
-win32-x86 build host.  RELEASE_PATHS.local is read first, and then any
-definitions there will be replaced by RELEASE_PATHS.EPICS_Target_ARCH if it
-exists.
+### Optionally create RELEASE_PATHS.local.EPICS_Target_ARCH 
+Some installations chose to build for multiple target architectures using
+different development machines in the same directory tree on a file server.   In
+this case the path to SUPPORT, AREA_DETECTOR and BASE may be different for each
+architecture. For example BASE on Linux might be
+/usr/local/epics/base-3.14.12.4, while on a Windows machine using the same copy
+of BASE the path might be H:/epics/base-3.14.12.4.  In this case
+RELEASE_PATHS.local could specify the path for Linux while
+RELEASE_PATHS.win32-x86 could specify the path for the win32-x86 build host. 
+RELEASE_PATHS.local is read first, and then any definitions there will be
+replaced by RELEASE_PATHS.EPICS_Target_ARCH if it exists.
       
-### Edit RELEASE_LIBS.local The location of ASYN must be specified.  It is
-normally placed in the SUPPORT directory defined in RELEASE_PATHS.local. If your
-version has the same path as the one that appears then no changes are
-necessary.  As described above RELEASE_LIBS.local.EPICS_Target_ARCH can be used
-if the ASYN version or path is different for a specific target architecture. 
-This is usually not necessary even for building Linux and Windows in the same
-tree, because only the definition of SUPPORT in
-RELEASE_PATHS.local.EPICS_Target_ARCH needs to be changed.
+### Edit RELEASE_LIBS.local 
+The location of ASYN must be specified.  It is normally placed in the SUPPORT
+directory defined in RELEASE_PATHS.local. If your version has the same path as
+the one that appears then no changes are necessary.  As described above
+RELEASE_LIBS.local.EPICS_Target_ARCH can be used if the ASYN version or path is
+different for a specific target architecture.  This is usually not necessary
+even for building Linux and Windows in the same tree, because only the
+definition of SUPPORT in RELEASE_PATHS.local.EPICS_Target_ARCH needs to be
+changed.
 
-### Edit RELEASE_PRODS.local The definitions for CALC, BUSY, SSCAN, and AUTOSAVE
-must be specified. If your versions have the same paths that appear no changes
-are necessary. As described above RELEASE_LIBS.local.EPICS_Target_ARCH can be
-used if the ASYN version or path is different for a specific target
-architecture.  This is usually not necessary even for building Linux and Windows
-in the same tree, because only the definition of SUPPORT in
-RELEASE_PATHS.local.EPICS_Target_ARCH needs to be changed.
+### Edit RELEASE_PRODS.local 
+The definitions for CALC, BUSY, SSCAN, and AUTOSAVE must be specified. If your
+versions have the same paths that appear no changes are necessary. As described
+above RELEASE_LIBS.local.EPICS_Target_ARCH can be used if the ASYN version or
+path is different for a specific target architecture.  This is usually not
+necessary even for building Linux and Windows in the same tree, because only the
+definition of SUPPORT in RELEASE_PATHS.local.EPICS_Target_ARCH needs to be
+changed.
 
-### Edit CONFIG_SITE.local The definitions for HDF5, SZIP, and GRAPHICS_MAGICK
-may need to be changed. If GRAPHICS_MAGIC is installed then the definitions for
-it may also need to be changed.
+### Edit CONFIG_SITE.local 
+The definitions for HDF5, SZIP, and GRAPHICS_MAGICK may need to be changed. If
+GRAPHICS_MAGIC is installed then the definitions for it may also need to be
+changed.
 
-### Optionally edit areaDetector/Makefile  You can edit this file to change
-which detectors will be built. Some detectors are commented out in the
-distribution because they cannot be built on all systems. For example the Roper
-driver can only be built on Windows systems with the Princeton Instruments
-WinView or WinSpec programs installed, and the Point Grey driver can currently
-only be built on Linux systems if the version of libc.so is 2.14 or greater. You
-may also want to comment out detectors that you don't need.
+### Optionally edit areaDetector/Makefile  
+You can edit this file to change which detectors will be built. Some detectors
+are commented out in the distribution because they cannot be built on all
+systems. For example the Roper driver can only be built on Windows systems with
+the Princeton Instruments WinView or WinSpec programs installed, and the Point
+Grey driver can currently only be built on Linux systems if the version of
+libc.so is 2.14 or greater. You may also want to comment out detectors that you
+don't need.
       
 ### make
 Just type:
@@ -132,34 +140,34 @@ make
 cp envPaths envPaths.linux
  ../../bin/linux-x86_64/simDetectorApp st.cmd.linux
 ```
-## Downloading a release of areaDetector
-### From github
+## Downloading a release of areaDetector from github
 To download areaDetector via git just execute:
 ```
 git clone --recursive https://github.com:areaDetector/areaDetector.git
 ```
 
-###Release Site
-See [areaDetector](http://cars.uchicago.edu/software/epics/areaDetector.html
+## External Products Required for Building areaDetector
+The products descirbed in this section are not part of EPICS (base, modules, or
+extensions) but are used by areaDetector plugins. Some may already be installed
+or your system so before reading this section just try to build areaDetector,
+especially ADCore. If it builds this section can be ignored. If it does not then
+this section can be used to locate and install any missing components.
 
-**NOTE:** no 2.0 release of areaDetector is currently available. Thus the only
-way to get it is through github.
-    
-##External Products Required for Building areaDetector
-    
-The product descrbes in this section are not part of epics (base, modules, or extensions)
-but are used by areaDetector plugins. Some may already be installed or your system
-so before reading this section just try to build areaDetector, especially ADCore.
-If it builds this section can be ignored. If it does not then this section can be
-used to locate and install any missing components.
+### TIFF, JPEG, and Z
+On Windows these libraries are provided with areaDetector in the ADBinaries
+module, and you can skip the rest of this section.
 
-The instructions in this section were the result of installing all the components
-on a new laptop on which I installed fedora 20. Before installing I had already
-built iocCore, asynDriver, and the required synApps components.
+On Linux and Darwin the libtiff, libjpeg, and libz libraries often come already
+installed.   If they are not already installed then they are normally available
+for installation via the standard package installation tools, e.g. "yum install"
+on Redhat systems, "apt get" for Debian systems, etc.
 
-For each product the source was downloaded from a product download site and then
-built. It may be easier to download pre-built modules, but downloading the sources
-and building should work on more varieties of linux and darwin.
+If for some reason you cannot install these libraries using the standard
+package installation tools, they can be installed from source code distributions
+as follows.
+
+For each product download the source code from a product download site and then
+build. 
 
 Each site provides some combination of .zip, .tar, .tar.gz, etc. If the file is
 a zip file then just execute:
@@ -171,36 +179,13 @@ If the file is any flavor of tar just execute:
 tar xf file
 ``
 
-All of the following products put the result of unzip or tar into a sub-directory.
-cd to that directory and follow the instructions for the appropriate sub-section.
+All of the following products put the result of unzip or tar into a
+sub-directory. cd to that directory and follow the instructions for the
+appropriate sub-section.
 
-
-If the instructions in the following subsections are used then RELEASE_PATHS.local,
-except for the first three definitions, should be:
-```
-# The following 3 definitions must be changed for each site
-
-SUPPORT=/home/install/epics/support
-AREA_DETECTOR=/home/git/areaDetector
-EPICS_BASE=${SUPPORT}/base-3.14.12.3
-
-# Define the location of HDF5
-HDF5=/usr/local/hdf5
-HDF5_DIR=${HDF5}/lib
-HDF5_INCLUDES= -I${HDF5}/include
-
-# Define the location of SZLIB
-SZLIB=/usr/local
-SZ_DIR=${SZLIB}/lib
-SZ_INCLUDES= -I${SZLIB}/include
-
-# Define the location of Graphics Magic
-GRAPHICS_MAGICK=/usr/local
-GRAPHICS_MAGICK_DIR=${GRAPHICS_MAGICK}/lib
-GRAPHICS_MAGICK_INCLUDES= -I${GRAPHICS_MAGICK}/include/GraphicsMagick
-```
-###TIFF
-This can be download from [libTIFF](http://www.remotesensing.org/libtiff)
+####TIFF
+This can be downloaded from 
+[libTIFF](http://www.remotesensing.org/libtiff)
 Then click on the Master Download Site and download the latest stable release.
 After the latest release is unziped cd to the release and execute the commands:
 ```
@@ -210,9 +195,10 @@ sudo make install
 ```
 The include and library files are installed by default into **/usr/local**
 
-###ZLIB
+####ZLIB
     
-This can be download from [zlib](http://www.zlib.net).
+This can be downloaded from 
+[zlib](http://www.zlib.net).
 
 Then look for latest release download.
 
@@ -223,14 +209,15 @@ make
 sudo make install
 ```
     
-The include and library files are installed by default into <b>/usr/local</b>
+The include and library files are installed by default into **/usr/local**
 
-###JPEG
+####JPEG
     
-This can be download from [libjpeg](http://www.linuxfromscratch.org/blfs/view/svn/general/libjpeg.html).
+This can be downloaded from 
+[libjpeg](http://www.linuxfromscratch.org/blfs/view/svn/general/libjpeg.html).
         
-Read the instructions from the web site about installing. I suggest that it be installed
-into **/usr/local** instead of**/usr**. Thus to install:
+Read the instructions from the web site about installing. I suggest that it be
+installed into **/usr/local** instead of **/usr**. Thus to install:
 ```
 ./configure --prefix=/usr/local  \
      --mandir=/usr/share/man \
@@ -243,60 +230,91 @@ make
 make test
 sodo make install
 ```
-###SZIP
+
+### HDF5, SZIP, and GRAPHICS_MAGICK
+On Windows these libraries are provided with areaDetector in the ADBinaries
+module, and you can skip the rest of this section.
+
+On Linux and Darwin these libraries may not be installed, and may not be
+available via the standard package installation tools.  Follow these steps
+to install them from source.
+
+#### SZIP
     
-This can be download from <a href="http://www.hdfgroup.org/doc_resource/SZIP">SZIP
-      </a>
+This can be downloaded from 
+[SZIP](http://www.hdfgroup.org/doc_resource/SZIP)
+
+Click on **SZIP Source** and download the release that appears.
     
-    
-      Then click on <b>SZIP Source</b> and download the release that appears.
-    
-      After the latest release is untared, cd to the release and execute the commands:
-    <pre>
+After the latest release is untared, cd to the release and execute the commands:
+```
 ./configure --prefix=/usr/local
 make
 make check
 sudo make install
-</pre>
-    <h3>
-      HDF5</h3>
+```
+#### HDF5
     
-      Start at: <a href="http://www.hdfgroup.org/HDF5/">HDF Group </a>
+This can be downloaded from 
+[HDF Group](http://www.hdfgroup.org/HDF5/)
     
+Click on Downloads, then Current Release, then HDF5 Software, then Source Code,
+then latest release.
     
-      The click on Downloads, then Current Release, then HDF5 Software, then Source Code,
-      then latest release.
-    
-      After the latest release is untared, cd to the release and execute that command:
-    <pre>
+After the latest release is untared, cd to the release and execute the commands:
+```
 ./configure --prefix=/usr/local/hdf5 
 make
 make check   
 sudo make install
 make check-install
-</pre>
-    <h3>
-      GRAPHICSMAGICK</h3>
+```
+
+#### GRAPHICSMAGICK
     
-      To build this from mercurial repository:
-    <pre>
+This can be downloaded from the mercurial repository with these commands:
+```
 hg clone http://hg.code.sf.net/p/graphicsmagick/code graphicsmagick-code
 cd graphicsmagick-code/
 ./configure
 make
 sudo make install
-</pre>
+```
     
-      However when I tried to build areaDetector with GrahicsMagick enabled the build
-      failed with:
-    <pre>
+However when I tried to build areaDetector with GrahicsMagick enabled the build
+failed with:
+```
 ...
 /usr/bin/ld: /usr/local/lib/libGraphicsMagick++.a(Image.o):
 relocation R_X86_64_32S against `_ZTVN6Magick5ImageE'
 can not be used when making a shared object; recompile with -fPIC
 /usr/local/lib/libGraphicsMagick++.a: could not read symbols: Bad value
 collect2: error: ld returned 1 exit status
-</pre>
+```
+
+The NDFileGraphicsMagick plugin and ADURL driver have been disabled in
+areaDetector R2-0 by setting USE_GRAPHICS_MAGICK=NO in
+areaDetector/configure/CONFIG_SITE.local until these problems are fixed.
+
+If the instructions in the preceeding sections are used then
+CONFIG_SITE.local should be:
+```
+# Define the location of HDF5
+HDF5         = /usr/local/hdf5
+HDF5_LIB     = $(HDF5)/lib
+HDF5_INCLUDE = -I$(HDF5)/include
+
+# Define the location of SZLIB
+SZIP         = /usr/local
+SZIP_LIB     = $(SZIP)/lib
+SZIP_INCLUDE = -I$(SZIP)/include
+
+# Define the location of Graphics Magic
+GRAPHICS_MAGICK         = /usr/local
+GRAPHICS_MAGICK_LIB     = $(GRAPHICS_MAGICK0/lib
+GRAPHICS_MAGICK_INCLUDE = -I$(GRAPHICS_MAGICK)/include/GraphicsMagick
+```
+
     <h2>
       EPICS Products Required for Building areaDetector</h2>
     
