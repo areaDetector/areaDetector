@@ -458,9 +458,9 @@ Before running an areaDetector application it is usually necessary to configure
       with 1024x1024 pixels and 4-bytes per pixel (waveform record FTVL=LONG) then
       EPICS_CA_MAX_ARRAY_BYTES would need to be at least 4153344.  In practice it should
       be set at least 100 bytes larger than this because there is some overhead, e.g.
-```
-setenv EPICS_CA_MAX_ARRAY_BYTES 4154000
-```
+
+      setenv EPICS_CA_MAX_ARRAY_BYTES 4154000
+
       Do not simply set EPICS_CA_MAX_ARRAY_BYTES to a very large number like 100MB or 1GB.
       EPICS Channel Access allocates buffers of exactly EPICS_CA_MAX_ARRAY bytes whenever
       the required buffer size exceeds 16 kB, and one does not want unnecessarily large
@@ -475,9 +475,8 @@ setenv EPICS_CA_MAX_ARRAY_BYTES 4154000
       then this environment variable should be defined to point to that directory. For
       example:
 
-```
-setenv EPICS_DISPLAY_PATH /home/det/epics/adls
-```
+      setenv EPICS_DISPLAY_PATH /home/det/epics/adls
+
 
 * medm display files. 
   It is convenient to copy all medm .adl files to a single directory and then point the
@@ -487,9 +486,9 @@ setenv EPICS_DISPLAY_PATH /home/det/epics/adls
   directory called /home/det/epics/adls, and put all of the adl files there. To simplify
   copying the adl files to that location use the following one-line script, which can 
   placed in /home/det/bin/sync_adls.
-```  
-find /home/det/epics/support -name '*.adl' -exec cp -fv {} /home/det/epics/adls \;
-```
+ 
+    find /home/det/epics/support -name '*.adl' -exec cp -fv {} /home/det/epics/adls \;
+
   This script finds all adl files in the epics/support tree and copies them to /home/det/epics/adls.
   That directory must be created before running this script. Similar scripts can be
   used for other Linux detectors (marCCD, mar345, etc.) and can be used on Windows
