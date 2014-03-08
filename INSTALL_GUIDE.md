@@ -458,9 +458,9 @@ Before running an areaDetector application it is usually necessary to configure
       with 1024x1024 pixels and 4-bytes per pixel (waveform record FTVL=LONG) then
       EPICS_CA_MAX_ARRAY_BYTES would need to be at least 4153344.  In practice it should
       be set at least 100 bytes larger than this because there is some overhead, e.g.
-
-    setenv EPICS_CA_MAX_ARRAY_BYTES 4154000
-    
+```
+setenv EPICS_CA_MAX_ARRAY_BYTES 4154000
+```
       Do not simply set EPICS_CA_MAX_ARRAY_BYTES to a very large number like 100MB or 1GB.
       EPICS Channel Access allocates buffers of exactly EPICS_CA_MAX_ARRAY bytes whenever
       the required buffer size exceeds 16 kB, and one does not want unnecessarily large
