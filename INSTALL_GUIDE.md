@@ -65,12 +65,10 @@ areaDetector/configure directory:
     
 ### Copy files:
       
-```
-cp EXAMPLE_RELEASE_PATHS.local RELEASE_PATHS.local
-cp EXAMPLE_RELEASE_LIBS.local  RELEASE_LIBS.local
-cp EXAMPLE_RELEASE_PRODS.local RELEASE_PRODS.local
-cp EXAMPLE_CONFIG_SITE.local   CONFIG_SITE.local
-```
+    cp EXAMPLE_RELEASE_PATHS.local RELEASE_PATHS.local
+    cp EXAMPLE_RELEASE_LIBS.local  RELEASE_LIBS.local
+    cp EXAMPLE_RELEASE_PRODS.local RELEASE_PRODS.local
+    cp EXAMPLE_CONFIG_SITE.local   CONFIG_SITE.local
       
 ### Edit RELEASE_PATHS.local 
 The definitions for SUPPORT, AREA_DETECTOR, and
@@ -124,22 +122,21 @@ don't need.
       
 ### make
 Just type:
-```
-make
-```
+
+    make
+
 If this fails then some required products has probably not been installed. Read
 more of this manual and install what is missing. When areaDetector builds
 successfully go to the next step.
 
-### Run SimDetector
-      
-```
-cd ADCore/iocs/simDetectorIOC/iocBoot/iocSimDetector
-### Edit Makefile to set ARCH to your EPICS target architecture
-make
-cp envPaths envPaths.linux
- ../../bin/linux-x86_64/simDetectorApp st.cmd.linux
-```
+### Run SimDetector      
+
+    cd ADCore/iocs/simDetectorIOC/iocBoot/iocSimDetector
+    ### Edit Makefile to set ARCH to your EPICS target architecture
+    make
+    cp envPaths envPaths.linux
+    ../../bin/linux-x86_64/simDetectorApp st.cmd.linux
+
 ## Downloading a release of areaDetector from github
 To download areaDetector via git just execute:
 
@@ -170,13 +167,13 @@ build.
 
 Each site provides some combination of .zip, .tar, .tar.gz, etc. If the file is
 a zip file then just execute:
-```
-unzip file.zip
-```
+
+    unzip file.zip
+
 If the file is any flavor of tar just execute:
-```
-tar xf file
-```
+
+    tar xf file
+
 
 All of the following products put the result of unzip or tar into a
 sub-directory. cd to that directory and follow the instructions for the
@@ -187,11 +184,11 @@ This can be downloaded from
 [libTIFF](http://www.remotesensing.org/libtiff)
 Then click on the Master Download Site and download the latest stable release.
 After the latest release is unziped cd to the release and execute the commands:
-```
-./configure
-make
-sudo make install
-```
+
+    ./configure
+    make
+    sudo make install
+
 The include and library files are installed by default into **/usr/local**
 
 ####ZLIB
@@ -202,11 +199,11 @@ This can be downloaded from
 Then look for latest release download.
 
 After untaring the release
-```
-./configure
-make
-sudo make install
-```
+
+    ./configure
+    make
+    sudo make install
+
     
 The include and library files are installed by default into **/usr/local**
 
@@ -217,18 +214,18 @@ This can be downloaded from
         
 Read the instructions from the web site about installing. I suggest that it be
 installed into **/usr/local** instead of **/usr**. Thus to install:
-```
-./configure --prefix=/usr/local  \
-     --mandir=/usr/share/man \
-     --with-jpeg8  \
-     --disable-static \
-     &&; \
-sed -i -e '/^docdir/ s/$/\/libjpeg-turbo-1.3.0/'   \
-     -e '/^exampledir/ s/$/\/libjpeg-turbo-1.3.0/' Makefile &amp;&amp;
-make
-make test
-sodo make install
-```
+
+    ./configure --prefix=/usr/local  \
+         --mandir=/usr/share/man \
+         --with-jpeg8  \
+         --disable-static \
+         &&; \
+    sed -i -e '/^docdir/ s/$/\/libjpeg-turbo-1.3.0/'   \
+         -e '/^exampledir/ s/$/\/libjpeg-turbo-1.3.0/' Makefile &amp;&amp;
+    make
+    make test
+    sudo make install
+
 
 ### HDF5, SZIP, and GRAPHICS_MAGICK
 On Windows these libraries are provided with areaDetector in the ADBinaries
@@ -246,12 +243,12 @@ This can be downloaded from
 Click on **SZIP Source** and download the release that appears.
     
 After the latest release is untared, cd to the release and execute the commands:
-```
-./configure --prefix=/usr/local
-make
-make check
-sudo make install
-```
+
+    ./configure --prefix=/usr/local
+    make
+    make check
+    sudo make install
+
 #### HDF5
     
 This can be downloaded from 
@@ -261,58 +258,47 @@ Click on Downloads, then Current Release, then HDF5 Software, then Source Code,
 then latest release.
     
 After the latest release is untared, cd to the release and execute the commands:
-```
-./configure --prefix=/usr/local/hdf5 
-make
-make check   
-sudo make install
-make check-install
-```
+
+    ./configure --prefix=/usr/local/hdf5 
+    make
+    make check   
+    sudo make install
+    make check-install
 
 #### GRAPHICSMAGICK
     
 This can be downloaded from the mercurial repository with these commands:
-```
-hg clone http://hg.code.sf.net/p/graphicsmagick/code graphicsmagick-code
-cd graphicsmagick-code/
-./configure
-make
-sudo make install
-```
-    
-However when I tried to build areaDetector with GrahicsMagick enabled the build
-failed with:
-```
-...
-/usr/bin/ld: /usr/local/lib/libGraphicsMagick++.a(Image.o):
-relocation R_X86_64_32S against `_ZTVN6Magick5ImageE'
-can not be used when making a shared object; recompile with -fPIC
-/usr/local/lib/libGraphicsMagick++.a: could not read symbols: Bad value
-collect2: error: ld returned 1 exit status
-```
 
-The NDFileGraphicsMagick plugin and ADURL driver have been disabled in
+    hg clone http://hg.code.sf.net/p/graphicsmagick/code graphicsmagick-code
+    cd graphicsmagick-code/
+    ./configure
+    make
+    sudo make install
+
+    
+However recent attempts to build or link with GraphicsMagick have led to a
+variety of errors. Thus, the NDFileGraphicsMagick plugin and ADURL driver have been disabled in
 areaDetector R2-0 by setting USE_GRAPHICS_MAGICK=NO in
 areaDetector/configure/CONFIG_SITE.local until these problems are fixed.
 
 If the instructions in the preceeding sections are used then
 CONFIG_SITE.local should be:
-```
-# Define the location of HDF5
-HDF5         = /usr/local/hdf5
-HDF5_LIB     = $(HDF5)/lib
-HDF5_INCLUDE = -I$(HDF5)/include
 
-# Define the location of SZLIB
-SZIP         = /usr/local
-SZIP_LIB     = $(SZIP)/lib
-SZIP_INCLUDE = -I$(SZIP)/include
+    # Define the location of HDF5
+    HDF5         = /usr/local/hdf5
+    HDF5_LIB     = $(HDF5)/lib
+    HDF5_INCLUDE = -I$(HDF5)/include
 
-# Define the location of Graphics Magic
-GRAPHICS_MAGICK         = /usr/local
-GRAPHICS_MAGICK_LIB     = $(GRAPHICS_MAGICK0/lib
-GRAPHICS_MAGICK_INCLUDE = -I$(GRAPHICS_MAGICK)/include/GraphicsMagick
-```
+    # Define the location of SZLIB
+    SZIP         = /usr/local
+    SZIP_LIB     = $(SZIP)/lib
+    SZIP_INCLUDE = -I$(SZIP)/include
+
+    # Define the location of Graphics Magic
+    GRAPHICS_MAGICK         = /usr/local
+    GRAPHICS_MAGICK_LIB     = $(GRAPHICS_MAGICK0/lib
+    GRAPHICS_MAGICK_INCLUDE = -I$(GRAPHICS_MAGICK)/include/GraphicsMagick
+
 
 EPICS Products Required for Building areaDetector
 -------------------------------------------------    
