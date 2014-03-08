@@ -351,7 +351,7 @@ architectures:
 - windows-x64 (64-bit Windows, VS2010 compiler, statically linked)
 - windows-x64-dynamic (64-bit Windows, VX2010 compiler, dyanamically linked)
 
-Note that the linux-x86 and linux-x86_64 builds are done a relatively new Linux systems
+Note that the linux-x86 and linux-x86_64 builds are done a relatively new Linux system
 and will not run on RHEL 6, for example.  The linux-x86-gcc43 and linux-x86_64-gcc42 
 architectures are built on much older versions of Linux, and should run on most Linux 
 systems.
@@ -364,7 +364,8 @@ Follow these steps to use the prebuilt version.
   a marCCD detector, mar345 on a mar345 detector, det on a Pilatus detector, etc.
 
 * Place the distribution file in this directory. Then issue the commands (Unix style)
-    tar xvzf ADPilatus_RX-Y.tgz
+
+    <code>tar xvzf ADPilatus_RX-Y.tgz</code>
     
   On Windows it is more convenient to download the zip file and extract it using
   Windows Explorer.
@@ -443,6 +444,7 @@ Before running an areaDetector application it is usually necessary to configure
       variables as follows:
 
       <code>setenv EPICS_CA_AUTO_ADDR_LIST NO</code>
+      
       <code>setenv EPICS_CA_ADDR_LIST localhost:XX.YY.ZZ.255</code>
 
       where XX.YY.ZZ.255 should be replaced with the broadcast address for the public
