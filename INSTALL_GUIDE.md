@@ -1,10 +1,10 @@
-areaDetector: Installation Guide
-=================================
+                           areaDetector: Installation Guide
+                           =================================
 
-Marty Kraimer, Brookhaven National Laboratory
----------------------------------------------
-Mark Rivers, University of Chicago
------------------------------------
+                       Marty Kraimer, Brookhaven National Laboratory
+                       ---------------------------------------------
+                           Mark Rivers, University of Chicago
+                           -----------------------------------
 
 This product is made available subject to acceptance of the 
 [EPICS open source license](http://epics-pvdata.sourceforge.net/LICENSE.html)
@@ -210,12 +210,12 @@ It can be downloaded 2 ways:
 
 1. Via the "git clone" command:
 
-    git clone --recursive https://github.com:areaDetector/areaDetector.git
+    <code>git clone --recursive https://github.com:areaDetector/areaDetector.git</code>
 
 2. By downloading tar.gz or zip files for a specific release of each module
    through a Web browser or by the wget command:
 
-    wget https://github.com/areaDetector/areaDetector/archive/R2-0.tar.gz
+    <code>wget https://github.com/areaDetector/areaDetector/archive/R2-0.tar.gz</code>
     
 If downloading tar files then each repository must be downloaded separately. To
 build the "core" of areaDetector the following repositories must be downloaded:
