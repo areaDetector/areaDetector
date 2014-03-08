@@ -48,8 +48,8 @@ The most recent release of asyn is recommended.
 Each areaDetector detector module builds both a library and an EPICS IOC
 application.  To build the library only EPICS base and asynDriver are
 required.  To build the IOC application the 
-[synApps](http://www.aps.anl.gov/bcda/synApps)  
-modules AUTOSAVE, BUSY, CALC, and SSCAN are required.
+[synApps](http://www.aps.anl.gov/bcda/synApps) modules 
+AUTOSAVE, BUSY, CALC, and SSCAN are required.
 The most recent release of the synApps modules is recommended.
 
 EPICS base, asyn and the synApps modules must be built before building
