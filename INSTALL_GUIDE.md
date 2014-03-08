@@ -1,10 +1,10 @@
-                           areaDetector: Installation Guide
-                           =================================
+areaDetector: Installation Guide
+=================================
 
-                       Marty Kraimer, Brookhaven National Laboratory
-                       ---------------------------------------------
-                           Mark Rivers, University of Chicago
-                           -----------------------------------
+Marty Kraimer, Brookhaven National Laboratory
+---------------------------------------------
+Mark Rivers, University of Chicago
+-----------------------------------
 
 This product is made available subject to acceptance of the 
 [EPICS open source license](http://epics-pvdata.sourceforge.net/LICENSE.html)
