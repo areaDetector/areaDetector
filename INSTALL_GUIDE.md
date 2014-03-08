@@ -385,32 +385,7 @@ Follow these steps to use the prebuilt version.
   when using the prebuilt version this must be manually edited. Do not worry about the path
   to EPICS_BASE, it is not required.
 
-  </ul>
-  <h3>
-    Running the IOC</h3>
-  <p>
-    Each example IOC directory comes with a Linux script (start_epics) or a Windows
-    batch file (start_epics.bat) or both depending on the architectures that the detector
-    runs on. These scripts provide simple examples of how to start medm and the EPICS
-    IOC. For example, for the mar345 iocBoot/iocMAR345/start_epics contains the following:</p>
-  <pre>    medm -x -macro "P=13MAR345_1:, R=cam1:, I=image1:, ROI=ROI1:, NETCDF=netCDF1:, TIFF=TIFF1:, JPEG=JPEG1:, NEXUS=Nexus1:" mar345.adl &amp;
-    ../../bin/linux-x86/mar345App st.cmd
-    </pre>
-  <p>
-    This script starts medm in execute mode with the appropriate medm display file and
-    macro parameters, running it in the background. It then runs the IOC application.
-    This script assumes that iocBoot/iocMAR345 is the default directory when it is run,
-    which could be added to the command or set in the configuration if this script is
-    set as the target of a desktop shortcut, etc. The script assumes that EPICS_DISPLAY_PATH
-    has been defined to be a location where the mar345.adl and related displays that
-    it loads can be found. You will need to edit the script in your copy of the iocXXX
-    directory to change the prefix (P) from 13MAR345_1: to whatever prefix you chose
-    for your IOC. The start_epics script could also be copied to a location in your
-    PATH (e.g. /home/mar345/bin/start_epics). Add a command like <code>cd /home/mar345/epics/support/areaDetector/1-5/iocBoot/iocMAR345</code>
-    at the beginning of the script and then type <code>start_epics</code> from any directory
-    to start the EPICS IOC.</p>
 
-    
 Display Managers
 ================    
 A display manager is needed to view the areaDetector control screens. Control screens are
@@ -467,9 +442,10 @@ Before running an areaDetector application it is usually necessary to configure
       EPICS PV will appear to be coming from both networks. The solution is to set these
       variables as follows:
 
-    setenv EPICS_CA_AUTO_ADDR_LIST NO
-    setenv EPICS_CA_ADDR_LIST localhost:XX.YY.ZZ.255
-
+```
+setenv EPICS_CA_AUTO_ADDR_LIST NO
+setenv EPICS_CA_ADDR_LIST localhost:XX.YY.ZZ.255
+```
       where XX.YY.ZZ.255 should be replaced with the broadcast address for the public
       network on this computer.
 
@@ -490,14 +466,19 @@ Before running an areaDetector application it is usually necessary to configure
       EPICS Channel Access allocates buffers of exactly EPICS_CA_MAX_ARRAY bytes whenever
       the required buffer size exceeds 16 kB, and one does not want unnecessarily large
       buffers to be allocated.
+      
+      Note that EPICS_CA_MAX_ARRAY_BYTES must be set to a large enough value on both the
+      IOC process and on all processes running Channel Access clients that will be accessing
+      the arrays (e.g. ImageJ, IDL, etc.).
 
     - EPICS_DISPLAY_PATH. This variable controls where medm looks for .adl display files.
       If the recommendation below is followed to copy all adl files to a single directory,
       then this environment variable should be defined to point to that directory. For
       example:
 
-    setenv EPICS_DISPLAY_PATH /home/det/epics/adls
-
+```
+setenv EPICS_DISPLAY_PATH /home/det/epics/adls
+```
 
 * medm display files. 
   It is convenient to copy all medm .adl files to a single directory and then point the
@@ -507,9 +488,9 @@ Before running an areaDetector application it is usually necessary to configure
   directory called /home/det/epics/adls, and put all of the adl files there. To simplify
   copying the adl files to that location use the following one-line script, which can 
   placed in /home/det/bin/sync_adls.
-  
-    find /home/det/epics/support -name '*.adl' -exec cp -fv {} /home/det/epics/adls \;
-
+```  
+find /home/det/epics/support -name '*.adl' -exec cp -fv {} /home/det/epics/adls \;
+```
   This script finds all adl files in the epics/support tree and copies them to /home/det/epics/adls.
   That directory must be created before running this script. Similar scripts can be
   used for other Linux detectors (marCCD, mar345, etc.) and can be used on Windows
@@ -518,12 +499,43 @@ Before running an areaDetector application it is usually necessary to configure
   and then run this script to install the latest medm files.
 
 
+Running the IOC Application
+===========================
+
+Each example IOC directory comes with a Linux script (start_epics) or a Windows
+batch file (start_epics.bat) or both depending on the architectures that the detector
+runs on. These scripts provide simple examples of how to start medm and the EPICS
+IOC. For example, for the mar345 iocBoot/iocMAR345/start_epics contains the following:
+
+    medm -x -macro "P=13MAR345_1:, R=cam1:, I=image1:, ROI=ROI1:, NETCDF=netCDF1:, TIFF=TIFF1:, JPEG=JPEG1:, NEXUS=Nexus1:" mar345.adl &amp;
+    ../../bin/linux-x86/mar345App st.cmd
+
+This script starts medm in execute mode with the appropriate medm display file and
+macro parameters, running it in the background. It then runs the IOC application.
+This script assumes that iocBoot/iocMAR345 is the default directory when it is run,
+which could be added to the command or set in the configuration if this script is
+set as the target of a desktop shortcut, etc. The script assumes that EPICS_DISPLAY_PATH
+has been defined to be a location where the mar345.adl and related displays that
+it loads can be found. You will need to edit the script in your copy of the iocXXX
+directory to change the prefix (P) from 13MAR345_1: to whatever prefix you chose
+for your IOC. The start_epics script could also be copied to a location in your
+PATH (e.g. /home/mar345/bin/start_epics). Add a command like 
+
+   cd /home/mar345/epics/support/areaDetector/1-5/iocBoot/iocMAR345
+   
+at the beginning of the script and then type
+
+    start_epics
+    
+from any directory to start the EPICS IOC.
+
+
 Image Viewers
 =============
 
 areaDetector comes with tools to display images over EPICS Channel Access using ImageJ and
 IDL. These viewers are described in
-[areaDetectorDoc.html](http://cars.uchicago.edu/software/epics/areaDetectorDoc.html).
+[areaDetectorViewers.html](http://cars.uchicago.edu/software/epics/areaDetectorViewers.html).
 
 HDFView can be used to view files saved with the HDF5 file writing plugins. ImageJ can
 also be used to view files saved with the TIFF, JPEG, and netCDF plugins.
