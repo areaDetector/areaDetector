@@ -446,6 +446,7 @@ Before running an areaDetector application it is usually necessary to configure
 setenv EPICS_CA_AUTO_ADDR_LIST NO
 setenv EPICS_CA_ADDR_LIST localhost:XX.YY.ZZ.255
 ```
+```
       where XX.YY.ZZ.255 should be replaced with the broadcast address for the public
       network on this computer.
 
