@@ -142,9 +142,8 @@ cp envPaths envPaths.linux
 ```
 ## Downloading a release of areaDetector from github
 To download areaDetector via git just execute:
-```
-git clone --recursive https://github.com:areaDetector/areaDetector.git
-```
+
+    git clone --recursive https://github.com:areaDetector/areaDetector.git
 
 ## External Products Required for Building areaDetector
 The products descirbed in this section are not part of EPICS (base, modules, or
@@ -177,7 +176,7 @@ unzip file.zip
 If the file is any flavor of tar just execute:
 ```
 tar xf file
-``
+```
 
 All of the following products put the result of unzip or tar into a
 sub-directory. cd to that directory and follow the instructions for the
