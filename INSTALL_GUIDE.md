@@ -518,7 +518,7 @@ directory to change the prefix (P) from 13MAR345_1: to whatever prefix you chose
 for your IOC. The start_epics script could also be copied to a location in your
 PATH (e.g. /home/mar345/bin/start_epics). Add a command like 
 
-    cd /home/mar345/epics/support/areaDetector/1-5/iocBoot/iocMAR345
+    cd /home/mar345/epics/support/areaDetector-2-0/ADmar345/iocs/mar345IOC/iocBoot/iocMAR345
    
 at the beginning of the script and then type
 
