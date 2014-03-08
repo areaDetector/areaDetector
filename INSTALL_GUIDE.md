@@ -65,7 +65,7 @@ For Windows areaDetector includes pre-built libraries for these packages and
 nothing additional needs to be installed. Windows users can skip the rest of this
 section.
 
-In areaDetector release prior to R2-0 prebuilt versions of these libraries were
+In areaDetector releases prior to R2-0 prebuilt versions of these libraries were
 also included for Linux and Darwin.  This became too hard to maintain because
 of compiler version dependencies, so they are no longer provided.
 
