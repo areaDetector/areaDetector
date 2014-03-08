@@ -19,7 +19,7 @@ github repository.
 This guide provides instructions for:
 
 * Installing, building, and running from source code. These instructions should
-  work on any supported EPICS  host architecture, e.g. Linux, Windows, Mac OSX. 
+  work on any supported EPICS host architecture, e.g. Linux, Windows, Mac OSX. 
   This document assumes that the reader has already installed an EPICS
   development environment, and has built 
   [EPICS base](http://www.aps.anl.gov/epics/base/R3-14), the 
@@ -442,8 +442,8 @@ Before running an areaDetector application it is usually necessary to configure
       EPICS PV will appear to be coming from both networks. The solution is to set these
       variables as follows:
 
-      setenv EPICS_CA_AUTO_ADDR_LIST NO
-      setenv EPICS_CA_ADDR_LIST localhost:XX.YY.ZZ.255
+      <code>setenv EPICS_CA_AUTO_ADDR_LIST NO</code>
+      <code>setenv EPICS_CA_ADDR_LIST localhost:XX.YY.ZZ.255</code>
 
       where XX.YY.ZZ.255 should be replaced with the broadcast address for the public
       network on this computer.
@@ -475,7 +475,7 @@ Before running an areaDetector application it is usually necessary to configure
       then this environment variable should be defined to point to that directory. For
       example:
 
-      setenv EPICS_DISPLAY_PATH /home/det/epics/adls
+      <code>setenv EPICS_DISPLAY_PATH /home/det/epics/adls</code>
 
 
 * medm display files. 
@@ -486,9 +486,9 @@ Before running an areaDetector application it is usually necessary to configure
   directory called /home/det/epics/adls, and put all of the adl files there. To simplify
   copying the adl files to that location use the following one-line script, which can 
   placed in /home/det/bin/sync_adls.
-``` 
-find /home/det/epics/support -name '*.adl' -exec cp -fv {} /home/det/epics/adls \;
-```
+
+    find /home/det/epics/support -name '*.adl' -exec cp -fv {} /home/det/epics/adls \;
+
   This script finds all adl files in the epics/support tree and copies them to /home/det/epics/adls.
   That directory must be created before running this script. Similar scripts can be
   used for other Linux detectors (marCCD, mar345, etc.) and can be used on Windows
@@ -519,7 +519,7 @@ directory to change the prefix (P) from 13MAR345_1: to whatever prefix you chose
 for your IOC. The start_epics script could also be copied to a location in your
 PATH (e.g. /home/mar345/bin/start_epics). Add a command like 
 
-   cd /home/mar345/epics/support/areaDetector/1-5/iocBoot/iocMAR345
+    cd /home/mar345/epics/support/areaDetector/1-5/iocBoot/iocMAR345
    
 at the beginning of the script and then type
 
