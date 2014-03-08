@@ -442,10 +442,8 @@ Before running an areaDetector application it is usually necessary to configure
       EPICS PV will appear to be coming from both networks. The solution is to set these
       variables as follows:
 
-```
-setenv EPICS_CA_AUTO_ADDR_LIST NO
-setenv EPICS_CA_ADDR_LIST localhost:XX.YY.ZZ.255
-```
+      setenv EPICS_CA_AUTO_ADDR_LIST NO
+      setenv EPICS_CA_ADDR_LIST localhost:XX.YY.ZZ.255
 
       where XX.YY.ZZ.255 should be replaced with the broadcast address for the public
       network on this computer.
