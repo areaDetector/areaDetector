@@ -45,7 +45,6 @@ TO DO BEFORE R2-0 RELEASE
 * Finish PointGrey documentation
 * Update areaDetector.html to point to github, notes about locations for releases of each module
 * Read areaDetectorDoc.html and update anything that needs to be changed
-* Convert Marty's installation guide to .md file, complete it
 
 R1-9-1 and earlier
 ------------------
