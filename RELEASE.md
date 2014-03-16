@@ -35,15 +35,18 @@ R2-0
     - ADLightField:  Driver for newer Princeton Instruments detectors using their LightField program
     - ADPixirad: Driver for CdTe pixel array detectors from Pixirad
     - ADPointGrey: Driver for Firewire, USB, and GigE cameras from Point Grey
-* ADmarCCD driver: Added support for triggered and timed acquisition modes on the new high-speed (-HE) series
+* ADmarCCD driver: Added support for triggered and timed acquisition modes on the new high-speed (-HS) series
   of detectors.
+* ADProsilica driver: Added support for conversion from raw Bayer to RGB1, RGB2, and RGB3 in the driver. 
+  In areaDetector releases prior to R2-0 this could be done in the NDPluginColorConvert plugin.  
+  That capability has been removed from the plugin to make the plugin independent of the AVT PvApi library.
 
 TO DO BEFORE R2-0 RELEASE
 =========================
 * New screen shot for marCCD
 * Get PointGrey driver working on GigE
 * Finish PointGrey documentation
-* Add color convert to Prosilica driver, same way as PointGrey driver.
+* Test BayerConvert in Prosilica driver.
 
 R1-9-1 and earlier
 ------------------
