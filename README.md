@@ -1,15 +1,25 @@
 areaDetector
-============
+==========
+The top-level repository for the
+[EPICS](http://www.aps.anl.gov/epics/) 
+[areaDetector](http://cars.uchicago.edu/software/epics/areaDetector.html) 
+software.  This repository contains mostly documentation, configuration files,
+and a top-level Makefile to build the entire areaDetector package.
 
-Top-level repository for the areaDetector project.
+The areaDetector code is contained in submodules under this module.  Two
+of these are "core" submodules:
+1. [ADBinaries](https://github.com/areaDetector/ADBinaries). 
+  This contains prebuilt support libraries (HDF5, XML2, etc.) for Windows.
+2. [ADCore](https://github.com/areaDetector/ADCore).
+  This contains the base classes, plugins, documentation and an example simulation detector.
+  
+All of the other submodules (ADProsilica, ADPilatus, etc.) contain drivers and EPICS IOC applications
+for specific detectors.
 
-The following repositories have been added as submodules (git submodules are
-stand-alone repositories:
-* areaDetector/ADCore
-* areaDetector/ADBinaries
-* areaDetector/ADProsilica
-* areaDetector/ADPilatus
-* areaDetector/ADmarCCD
+Additional information:
+* [Overview documentation](http://cars.uchicago.edu/software/epics/areaDetector.html).
+* [Detailed documentation](http://cars.uchicago.edu/software/epics/areaDetectorDoc.html).
+* [Release notes and links to source and binary releases](RELEASE.md).
 
 See the following documentation about the git submodule feature and how it can 
 be used: 
