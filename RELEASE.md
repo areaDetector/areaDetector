@@ -40,11 +40,10 @@ R2-0
 
 TO DO BEFORE R2-0 RELEASE
 =========================
-* Release notes and new screen shot for marCCD
+* New screen shot for marCCD
 * Get PointGrey driver working on GigE
 * Finish PointGrey documentation
-* Update areaDetector.html to point to github, notes about locations for releases of each module
-* Read areaDetectorDoc.html and update anything that needs to be changed
+* Add color convert to Prosilica driver, same way as PointGrey driver.
 
 R1-9-1 and earlier
 ------------------
