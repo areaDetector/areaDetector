@@ -43,10 +43,8 @@ R2-0
 
 TO DO BEFORE R2-0 RELEASE
 =========================
-* New screen shot for marCCD
 * Get PointGrey driver working on GigE
 * Finish PointGrey documentation
-* Test BayerConvert in Prosilica driver.
 
 R1-9-1 and earlier
 ------------------
