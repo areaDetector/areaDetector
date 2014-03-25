@@ -1,67 +1,66 @@
-#  This script takes 2 parameters.  
+#!/bin/bash
+#  This script takes 3 parameters.  
 # 1 - The name of the detector (ADProsilica, etc.)
 # 2 - The version number (R2-0, etc.)
-#
+# 3 - The EPICS architecture (linux-x86_64, etc.)
+
 find . -name 'auto_settings.sav_*' -exec rm -fv {} \;
 find . -name 'core.*' -exec rm -fv {} \;
 find . -name '*.exe.*' -exec rm -fv {} \;
 
-cd ..
-tar cvzf /home/epics/public_html/pub/$1/$1_Prebuilt_$2.tgz --exclude '.svn*'  \
-areaDetector-2-0/ADCore/bin \
-areaDetector-2-0/ADCore/dbd \
-areaDetector-2-0/ADCore/db \
-areaDetector-2-0/ADCore/documentation \
-areaDetector-2-0/ADCore/ADApp/Db \
-areaDetector-2-0/ADCore/ADApp/op \
-areaDetector-2-0/ADCore/iocBoot \
-areaDetector-2-0/ADCore/Viewers \
-areaDetector-2-0/ADCore/iocs/simDetectorIOC/bin \
-areaDetector-2-0/ADCore/iocs/simDetectorIOC/dbd \
-areaDetector-2-0/ADCore/iocs/simDetectorIOC/iocBoot \
-areaDetector-2-0/$1/db \
-areaDetector-2-0/$1/*/Db \
-areaDetector-2-0/$1/*/op \
-areaDetector-2-0/$1/documentation \
-areaDetector-2-0/$1/iocs/*IOC/bin \
-areaDetector-2-0/$1/iocs/*IOC/dbd \
-areaDetector-2-0/$1/iocs/*IOC/db \
-areaDetector-2-0/$1/iocs/*IOC/iocBoot \
-asyn-4-22/opi \
-asyn-4-22/db \
-autosave-5-1/asApp/Db \
-autosave-5-1/asApp/op \
-calc-3-2/calcApp/Db \
-calc-3-2/calcApp/op \
-sscan-2-9/sscanApp/Db \
-sscan-2-9/sscanApp/op
+AREA_DETECTOR=areaDetector-2-0
+ASYN=asyn-4-22
+AUTOSAVE=autosave-5-1
+CALC=calc-3-2
+SSCAN=sscan-2-9
 
-rm -f /home/epics/public_html/pub/$1/$1_Prebuilt_$2.zip
-zip -r /home/epics/public_html/pub/$1/$1_Prebuilt_$2.zip   \
-areaDetector-2-0/ADCore/bin \
-areaDetector-2-0/ADCore/dbd \
-areaDetector-2-0/ADCore/db \
-areaDetector-2-0/ADCore/documentation \
-areaDetector-2-0/ADCore/ADApp/Db \
-areaDetector-2-0/ADCore/ADApp/op \
-areaDetector-2-0/ADCore/iocBoot \
-areaDetector-2-0/ADCore/Viewers \
-areaDetector-2-0/ADCore/iocs/simDetectorIOC/bin \
-areaDetector-2-0/ADCore/iocs/simDetectorIOC/dbd \
-areaDetector-2-0/ADCore/iocs/simDetectorIOC/iocBoot \
-areaDetector-2-0/$1/db \
-areaDetector-2-0/$1/*/Db \
-areaDetector-2-0/$1/*/op \
-areaDetector-2-0/$1/documentation \
-areaDetector-2-0/$1/iocs/*IOC/bin \
-areaDetector-2-0/$1/iocs/*IOC/dbd \
-areaDetector-2-0/$1/iocs/*IOC/db \
-areaDetector-2-0/$1/iocs/*IOC/iocBoot \
-asyn-4-22/opi \
-asyn-4-22/db \
-autosave-5-1/asApp/Db \
-autosave-5-1/asApp/op \
-calc-3-2/calcApp/Db \
-calc-3-2/calcApp/op  \
-sscan-2-9/sscanApp/Db \
-sscan-2-9/sscanApp/op --exclude '*.svn*' 
+cd ..
+tar cvzf /home/epics/public_html/pub/$1/$1_Prebuilt_$2_$3.tgz \
+--exclude '.svn*' \
+--exclude 'O.*'  \
+$AREA_DETECTOR/ADCore/db \
+$AREA_DETECTOR/ADCore/documentation \
+$AREA_DETECTOR/ADCore/ADApp/Db \
+$AREA_DETECTOR/ADCore/ADApp/op \
+$AREA_DETECTOR/ADCore/iocBoot \
+$AREA_DETECTOR/ADCore/Viewers/ImageJ \
+$AREA_DETECTOR/$1/db \
+$AREA_DETECTOR/$1/*/Db \
+$AREA_DETECTOR/$1/*/op \
+$AREA_DETECTOR/$1/documentation \
+$AREA_DETECTOR/$1/iocs/*IOC/bin/$3 \
+$AREA_DETECTOR/$1/iocs/*IOC/dbd \
+$AREA_DETECTOR/$1/iocs/*IOC/iocBoot \
+$ASYN/opi \
+$ASYN/db \
+$AUTOSAVE/asApp/Db \
+$AUTOSAVE/asApp/op \
+$CALC/calcApp/Db \
+$CALC/calcApp/op \
+$SSCAN/sscanApp/Db \
+$SSCAN/sscanApp/op
+
+rm -f /home/epics/public_html/pub/$1/$1_Prebuilt_$2_$3.zip
+zip -r /home/epics/public_html/pub/$1/$1_Prebuilt_$2_$3.zip   \
+$AREA_DETECTOR/ADCore/db \
+$AREA_DETECTOR/ADCore/documentation \
+$AREA_DETECTOR/ADCore/ADApp/Db \
+$AREA_DETECTOR/ADCore/ADApp/op \
+$AREA_DETECTOR/ADCore/iocBoot \
+$AREA_DETECTOR/ADCore/Viewers/ImageJ \
+$AREA_DETECTOR/$1/db \
+$AREA_DETECTOR/$1/*/Db \
+$AREA_DETECTOR/$1/*/op \
+$AREA_DETECTOR/$1/documentation \
+$AREA_DETECTOR/$1/iocs/*IOC/bin/$3 \
+$AREA_DETECTOR/$1/iocs/*IOC/dbd \
+$AREA_DETECTOR/$1/iocs/*IOC/iocBoot \
+$ASYN/opi \
+$ASYN/db \
+$AUTOSAVE/asApp/Db \
+$AUTOSAVE/asApp/op \
+$CALC/calcApp/Db \
+$CALC/calcApp/op  \
+$SSCAN/sscanApp/Db \
+$SSCAN/sscanApp/op \
+--exclude '*.svn*' --exclude '*/O.*' 
