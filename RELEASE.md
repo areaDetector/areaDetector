@@ -45,6 +45,7 @@ R2-0
   the medm files are found in the autoconvert directories (e.g. pilatusApp/op/opi/autoconvert).
   If there are manually tweaked files they are found in the level above the autoconvert directory 
   (e.g. pilatusApp/op/opi).  Thanks to Tim Mooney for doing all of these conversions.
+* Added new NDPluginAttribute plugin from Matt Pearson.
 
 TO DO BEFORE R2-0 RELEASE
 =========================
