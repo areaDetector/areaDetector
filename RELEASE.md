@@ -40,11 +40,18 @@ R2-0
 * ADProsilica driver: Added support for conversion from raw Bayer to RGB1, RGB2, and RGB3 in the driver. 
   In areaDetector releases prior to R2-0 this could be done in the NDPluginColorConvert plugin.  
   That capability has been removed from the plugin to make the plugin independent of the AVT PvApi library.
+* All submodules now have display files for medm (adl), edm (edl), CSS Boy (opi), and caQtDM (ui).  
+  The original files are the medm adl files.  The edm, CSS Boy, and caQtDm files that were created by converting 
+  the medm files are found in the autoconvert directories (e.g. pilatusApp/op/opi/autoconvert).
+  If there are manually tweaked files they are found in the level above the autoconvert directory 
+  (e.g. pilatusApp/op/opi).  Thanks to Tim Mooney for doing all of these conversions.
 
 TO DO BEFORE R2-0 RELEASE
 =========================
 * Get PointGrey driver working on GigE
 * Finish PointGrey documentation
+* Fix makeADPrebuilt to only store required bin directories
+* Remove remaining edl, opi, and ui files above autoconvert directories.
 
 R1-9-1 and earlier
 ------------------
