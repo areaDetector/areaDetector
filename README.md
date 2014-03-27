@@ -8,6 +8,7 @@ and a top-level Makefile to build the entire areaDetector package.
 
 The areaDetector code is contained in submodules under this module.  Two
 of these are "core" submodules:
+
 1. [ADBinaries](https://github.com/areaDetector/ADBinaries). 
   This contains prebuilt support libraries (HDF5, XML2, etc.) for Windows.
 2. [ADCore](https://github.com/areaDetector/ADCore).
