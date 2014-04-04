@@ -47,13 +47,6 @@ R2-0
   (e.g. pilatusApp/op/opi).  Thanks to Tim Mooney for doing all of these conversions.
 * Added new NDPluginAttribute plugin from Matt Pearson.
 
-TO DO BEFORE R2-0 RELEASE
-=========================
-* Get PointGrey driver working on GigE
-* Finish PointGrey documentation
-* Fix makeADPrebuilt to only store required bin directories
-* Remove remaining edl, opi, and ui files above autoconvert directories.
-
 R1-9-1 and earlier
 ------------------
 Release notes are part of the
