@@ -211,7 +211,7 @@ It can be downloaded 2 ways:
 
 1. Via the "git clone" command:
 
-    <code>git clone --recursive https://github.com:areaDetector/areaDetector.git</code>
+    <code>git clone --recursive https://github.com/areaDetector/areaDetector.git</code>
 
 2. By downloading tar.gz or zip files for a specific release of each module
    through a Web browser or by the wget command:
