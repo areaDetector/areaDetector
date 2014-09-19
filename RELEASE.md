@@ -27,7 +27,21 @@ Release Notes
 Each submodule contains detailed release notes for each release of that submodule.  The release notes below
 only provide a short summary of the most significant items from the submodules.
 
-R2-0
+R2-1 (September XXX, 2014)
+* Changed to use HTTPS (https://github.com/areaDetector) for submodules, rather 
+  than SSH (git@github.com:areaDetector).  This allows a recursive checkout without a Github account.
+* This release includes the following releases of the submodules:
+    Module        | Release
+    --------------|--------
+    ADCore        | R2-1
+    ADBinaries    | R2-1
+    ADADSC        | R2-0
+    ADAndor       | R2-1-1
+    ADAndor3      | R2-0
+    ADBruker      | R2-0
+    ADFireWireWin | R2-0
+
+R2-0 (April 4, 2014)
 ----
 * Moved the repository to [Github](https://github.com/areaDetector/areaDetector).
 * Re-organized the directory structure to separate the driver libraries from the example IOC applications.
