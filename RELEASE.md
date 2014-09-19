@@ -31,6 +31,7 @@ R2-1 (September XXX, 2014)
 * Changed to use HTTPS (https://github.com/areaDetector) for submodules, rather 
   than SSH (git@github.com:areaDetector).  This allows a recursive checkout without a Github account.
 * This release includes the following releases of the submodules:
+
     Module        | Release
     --------------|--------
     ADCore        | R2-1
