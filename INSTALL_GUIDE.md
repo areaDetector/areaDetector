@@ -281,6 +281,11 @@ changed.
 
 ### Edit CONFIG_SITE.local 
 The definitions for HDF5, SZIP, and GRAPHICS_MAGICK may need to be changed.
+This only needs to be done on architectures where these libraries are installed
+externally to the areaDetector package.  On WIN32 these libraries
+are provided in the ADBinaries module, and so will be automatically found by the
+EPICS build system.  Thus, on WIN32 the locations should not be defined 
+in CONFIG_SITE.local.
 
 If the instructions in the preceeding sections are used then
 CONFIG_SITE.local should be:
