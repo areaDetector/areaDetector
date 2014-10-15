@@ -28,7 +28,9 @@ Each submodule contains detailed release notes for each release of that submodul
 only provide a short summary of the most significant items from the submodules.
 
 R2-1 (September XXX, 2014)
-* Added new modules ffmegViewer, ffmpegServer, aravisGigE, firewireDCAM.  These are all from Diam
+* Added new modules ffmegViewer, ffmpegServer, aravisGigE, firewireDCAM.  These are all from Tom Cobb
+  and Ulrik Pedersen from Diamond Light Source.
+* Added new ADQImaging module.  This is from Arthur Glowacki at the APS.
 * Changed to use HTTPS (https://github.com/areaDetector) for submodules, rather 
   than SSH (git@github.com:areaDetector).  This allows a recursive checkout without a Github account.
 * This release includes the following releases of the submodules:
@@ -54,7 +56,11 @@ R2-1 (September XXX, 2014)
     ADURL         | R2-0
     ADmar345      | R2-0
     ADmarCCD      | R2-1
-    
+    aravisGigE    | R2-2?
+    ffmpegServer  | R2-0?
+    ffmpegViewer  | R2-0?
+    firewireDCAM  | R2-0?
+
 
 R2-0 (April 4, 2014)
 ----
