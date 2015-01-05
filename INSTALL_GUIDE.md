@@ -180,7 +180,7 @@ then latest release.
     
 After the latest release is untared, cd to the release and execute the commands:
 
-    ./configure --prefix=/usr/local/hdf5 
+    ./configure --prefix=/usr/local/hdf5 --with-szlib=/usr/local
     make
     make check   
     sudo make install
