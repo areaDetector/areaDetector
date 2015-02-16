@@ -18,6 +18,14 @@ HDF5         = /usr/local64
 HDF5_LIB     = $(HDF5)/lib
 HDF5_INCLUDE = -I$(HDF5)/include
 
+ifeq ($(OS_CLASS), WIN32)
+  ifeq ($(STATIC_BUILD), NO)
+    HDF5_STATIC_BUILD=NO
+  else
+    HDF5_STATIC_BUILD=YES
+  endif
+endif
+
 SZIP           = /usr/local64
 SZIP_LIB       = $(SZIP)/lib
 SZIP_INCLUDE   = -I$(SZIP)/include
