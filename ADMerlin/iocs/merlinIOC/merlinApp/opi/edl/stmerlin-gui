@@ -1,0 +1,36 @@
+#!/bin/sh
+# Make sure edm is on our path
+if [[ $(cat /etc/redhat-release) =~ 'release 5' ]]; then
+    # Legacy RHEL5 machines use old EDM
+    export DLS_EPICS_RELEASE=R3.14.11
+else    
+    export DLS_EPICS_RELEASE=R3.14.11
+fi
+source /dls_sw/etc/profile
+TOP="$(cd $(dirname "$0")/../..; pwd)"
+
+# first load the paths. These have been generated from the configure/RELEASE
+# tree. If we have a -d arg then load the opi/edl paths first
+unset EDMDATAFILES
+if [ "$1" = "-d" ]; then
+    if ls ${TOP}/*App/opi/edl > /dev/null 2>&1; then
+        for d in ${TOP}/*App/opi/edl; do
+            export EDMDATAFILES="${EDMDATAFILES}${d}:"
+        done
+    fi
+    export EDMDATAFILES="${EDMDATAFILES}${TOP}/data:"
+    export EDMDATAFILES="${EDMDATAFILES}/home/hgv27681/tmp/medipix/medipixApp/opi/edl:"
+
+    OPTS="-x -eolc"
+else
+    OPTS="-x -eolc -noedit"
+fi
+export EDMDATAFILES="${EDMDATAFILES}${TOP}/data"
+export EDMDATAFILES="${EDMDATAFILES}:/dls_sw/prod/R3.14.12.3/support/areaDetector/1-9dls12/data"
+export EDMDATAFILES="${EDMDATAFILES}:/dls_sw/prod/R3.14.12.3/support/asyn/4-21/data"
+export EDMDATAFILES="${EDMDATAFILES}:/home/hgv27681/tmp/medipix/data"
+
+
+# Set the path to include any scripts in data dirs
+export PATH=${EDMDATAFILES}:${PATH}
+edm ${OPTS}  Merlin.edl

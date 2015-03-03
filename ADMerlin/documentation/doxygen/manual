@@ -1,0 +1,30 @@
+/**
+\mainpage medipix EPICS Support Module
+\section intro_sec Introduction
+
+This module provides an API to control the single chip medipix module developed by Diamond detector group. There is a library called medipix_low that communicates over TCP/IP to the Labview based controller (which runs on a seperate Windows XP PXI cPCI crate). This library is meant to be used as a low level interface for an EPICS areaDetector driver.
+
+This library is composed of medipix_low.c and medipix_low.h. A shared library is built. The higher level EPICS software just needs to include medipix_low.h and link to medipix_low.so.
+
+There is also a simulation in medipix_sim.c. This is compiled into a medipix_sim executable, that can be run on Linux to test the API. 
+
+Finally, a test program is provided which demonstates how to use this API. This is in medipix_test.c, and is compiled into the medipix_test executable.
+
+\section bugs_sec Known Bugs
+- The API is currently based on a preliminary protocol to the Labview system, so is not yet complete.
+- The data frame format is currently unknown, so there is some work to do on unpacking the data and possibly providing access to the parameters contained in the data frame header.
+
+\section user_sec User Manual
+The \subpage user_manual page will demonstate how to use the API.
+
+\section build_sec Build Instructions 
+- \subpage build_instructions_example
+
+**/
+
+/* Build instructions page will be generated from the xml file given to dls-xml-iocbuilder.py --doc */
+
+/**
+\page user_manual User Manual
+This needs to be hand generated. You can link directly to this page from the edm screen if you want
+**/
