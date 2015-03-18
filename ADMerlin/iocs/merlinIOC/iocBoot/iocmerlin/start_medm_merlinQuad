@@ -1,0 +1,7 @@
+#!/bin/bash
+export EPICS_CA_MAX_ARRAY_BYTES=30000000
+export EPICS_DISPLAY_PATH=/local/DPbin/epics/epics_2015-03-31/synApps_5_8/support/adls/
+
+medm -attach -x -macro "P="$1":, R=cam1:" ADMerlinQuad.adl &
+
+
