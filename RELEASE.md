@@ -27,39 +27,48 @@ Release Notes
 Each submodule contains detailed release notes for each release of that submodule.  The release notes below
 only provide a short summary of the most significant items from the submodules.
 
-R2-1 (September XXX, 2014)
+R2-2 (March 23, 2015)
 * Added new modules ffmegViewer, ffmpegServer, aravisGigE, firewireDCAM.  These are all from Tom Cobb
   and Ulrik Pedersen from Diamond Light Source.
 * Added new ADQImaging module.  This is from Arthur Glowacki at the APS.
+* Added new ADDexela module.  This is from Mark Rivers at the University of Chicago.
+* Added new ADFastCCD module.  This is from Stuart Wilkins at the NSLS-II.
+* Added new ADPICam module.  This is from John Hammonds at the APS.
+* Added new ADMerlin module.  This is from Giles Knap at Diamond Light Source.
 * Changed to use HTTPS (https://github.com/areaDetector) for submodules, rather 
   than SSH (git@github.com:areaDetector).  This allows a recursive checkout without a Github account.
 * This release includes the following releases of the submodules:
 
     Module        | Release
     --------------|--------
-    ADCore        | R2-1
-    ADBinaries    | R2-1
+    ADCore        | R2-2
+    ADBinaries    | R2-2
     ADADSC        | R2-0
-    ADAndor       | R2-1-1
+    ADAndor       | R2-2
     ADAndor3      | R2-0
     ADBruker      | R2-0
+    ADDexela      | R2-0-beta1
+    ADFastCCD     | none
     ADFireWireWin | R2-0
     ADLightField  | R2-1
+    ADMerlin      | 3-1-1
+    ADPICam       | none
     ADPSL         | R2-1
     ADPerkinElmer | R2-0
     ADPilatus     | R2-0
     ADPixirad     | R2-0
-    ADPointGrey   | R2-1
+    ADPointGrey   | R2-0
     ADProsilica   | R2-1
     ADPvCam       | R2-0
+    ADQImaging    | none
     ADRoper       | R2-0
     ADURL         | R2-0
     ADmar345      | R2-0
-    ADmarCCD      | R2-1
-    aravisGigE    | R2-2?
-    ffmpegServer  | R2-0?
-    ffmpegViewer  | R2-0?
-    firewireDCAM  | R2-0?
+    ADmarCCD      | R2-0
+    aravisGigE    | dls-r105549
+    ffmpegServer  | none
+    ffmpegViewer  | none
+    firewireDCAM  | none
 
 
 R2-0 (April 4, 2014)
