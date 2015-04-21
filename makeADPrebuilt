@@ -4,6 +4,10 @@
 # 2 - The version number (R2-0, etc.)
 # 3 - The EPICS architecture (linux-x86_64, etc.)
 
+echo "Parameter 1 = " $1
+echo "Parameter 2 = " $2
+echo "Parameter 3 = " $3
+
 find . -name 'auto_settings.sav_*' -exec rm -fv {} \;
 find . -name 'auto_settings.savB*' -exec rm -fv {} \;
 find . -name 'core.*' -exec rm -fv {} \;
@@ -35,7 +39,9 @@ $AREA_DETECTOR/ADCore/ADApp/op \
 $AREA_DETECTOR/ADCore/iocBoot \
 $AREA_DETECTOR/ADCore/Viewers/ImageJ \
 $AREA_DETECTOR/ADCore/bin/$3 \
+$AREA_DETECTOR/ADBinaries/bin/$3 \
 $AREA_DETECTOR/$1/db \
+$AREA_DETECTOR/$1/bin/$3 \
 $AREA_DETECTOR/$1/*/Db \
 $AREA_DETECTOR/$1/*/op \
 $AREA_DETECTOR/$1/documentation \
@@ -71,7 +77,9 @@ $AREA_DETECTOR/ADCore/ADApp/op \
 $AREA_DETECTOR/ADCore/iocBoot \
 $AREA_DETECTOR/ADCore/Viewers/ImageJ \
 $AREA_DETECTOR/ADCore/bin/$3 \
+$AREA_DETECTOR/ADBinaries/bin/$3 \
 $AREA_DETECTOR/$1/db \
+$AREA_DETECTOR/$1/bin/$3 \
 $AREA_DETECTOR/$1/*/Db \
 $AREA_DETECTOR/$1/*/op \
 $AREA_DETECTOR/$1/documentation \
