@@ -32,3 +32,7 @@ GRAPHICS_MAGICK_INCLUDE = -I$(GRAPHICS_MAGICK)/include/GraphicsMagick
 
 # Define the location of the libxml2 include files
 XML2_INCLUDE = -I/usr/include/libxml2
+
+# This must be defined or fstat will not work on linux-x86 programs using CIFS mounts
+USR_CFLAGS_Linux   += -D_FILE_OFFSET_BITS=64
+USR_CXXFLAGS_Linux += -D_FILE_OFFSET_BITS=64
