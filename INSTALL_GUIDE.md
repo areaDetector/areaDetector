@@ -50,6 +50,7 @@ application.  To build the library only EPICS base and asynDriver are
 required.  To build the IOC application the 
 [synApps](http://www.aps.anl.gov/bcda/synApps) modules 
 AUTOSAVE, BUSY, CALC, DEVIOCSTATS, and SSCAN are required.
+If the CALC module is built with SNCSEQ support then SNCSEQ is also required.
 The most recent release of the synApps modules is recommended.
 
 EPICS base, asyn and the synApps modules must be built before building
@@ -58,7 +59,7 @@ areaDetector.
 
 External Products Required for Building areaDetector
 ----------------------------------------------------
-areaDetector always uses the TIFF, ZLIB, JPEG, SZIP, and HDF5 libraries, (except
+areaDetector always uses the TIFF, ZLIB, JPEG, SZIP, XML2, and HDF5 libraries, (except
 on vxWorks where none of these are available). GRAPHICSMAGIC is optional. 
 
 For Windows areaDetector includes pre-built libraries for these packages and
@@ -69,15 +70,15 @@ In areaDetector releases prior to R2-0 prebuilt versions of these libraries were
 also included for Linux and Darwin.  This became too hard to maintain because
 of compiler version dependencies, so they are no longer provided.
 
-On Linux and Darwin the TIFF, JPEG and ZLIB libraries always need to be
+On Linux and Darwin the TIFF, JPEG, XML2, and ZLIB libraries always need to be
 installed, whether building from source code or using the pre-built binaries.
 The HDF5 and SZIP packages need to be installed when building from source code. 
 HDF5 and SZIP do not need to be installed on machines that will only run the
 pre-built binaries on Linux or Darwin, because the binaries are statically
 linked and include these libraries in the executable.
 
-### TIFF, JPEG, and Z
-On Linux and Darwin the libtiff, libjpeg, and libz libraries often come already
+### TIFF, JPEG, XML2, and Z
+On Linux and Darwin the libtiff, libjpeg, libxml2, and libz libraries often come already
 installed.  If they are not already installed then they are normally available
 for installation via the standard package installation tools, e.g. "yum install"
 on Redhat systems, "apt get" for Debian systems, etc.
@@ -147,6 +148,18 @@ installed into **/usr/local** instead of **/usr**. Thus to install:
          -e '/^exampledir/ s/$/\/libjpeg-turbo-1.3.0/' Makefile &amp;&amp;
     make
     make test
+    sudo make install
+
+####XML2
+This can be downloaded from
+[libxml2](http://www.xmlsoft.org.downloads.html).
+
+Then look for latest release download.
+
+After untaring the release
+
+    ./configure
+    make
     sudo make install
 
 
@@ -272,6 +285,7 @@ changed.
 
 ### Edit RELEASE_PRODS.local 
 The definitions for AUTOSAVE, BUSY, CALC, DEVIOCSTATS, and SSCAN, and  must be specified. 
+If the CALC module is built with SNCSEQ support then SNCSEQ must also be specified.
 If your versions have the same paths that appear no changes are necessary. As described
 above RELEASE_LIBS.local.$(EPICS_HOST_ARCH) can be used if the ASYN version or
 path is different for a specific target architecture.  This is usually not
@@ -288,7 +302,7 @@ EPICS build system.  Thus, on WIN32 the locations should not be defined
 in CONFIG_SITE.local.
 
 If the instructions in the preceeding sections are used then
-CONFIG_SITE.local should be:
+CONFIG_SITE.local should contain:
 
     # Define the location of HDF5
     HDF5         = /usr/local/hdf5
@@ -304,6 +318,9 @@ CONFIG_SITE.local should be:
     GRAPHICS_MAGICK         = /usr/local
     GRAPHICS_MAGICK_LIB     = $(GRAPHICS_MAGICK)/lib
     GRAPHICS_MAGICK_INCLUDE = -I$(GRAPHICS_MAGICK)/include/GraphicsMagick
+
+    # Define the location of the libxml2 include files
+    XML2_INCLUDE = -I/usr/include/libxml2
 
 ### Optionally edit areaDetector/Makefile  
 You can edit this file to change which detectors will be built. Some detectors
