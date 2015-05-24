@@ -49,7 +49,7 @@ Each areaDetector detector module builds both a library and an EPICS IOC
 application.  To build the library only EPICS base and asynDriver are
 required.  To build the IOC application the 
 [synApps](http://www.aps.anl.gov/bcda/synApps) modules 
-AUTOSAVE, BUSY, CALC, and SSCAN are required.
+AUTOSAVE, BUSY, CALC, DEVIOCSTATS, and SSCAN are required.
 The most recent release of the synApps modules is recommended.
 
 EPICS base, asyn and the synApps modules must be built before building
@@ -271,8 +271,8 @@ definition of SUPPORT in RELEASE_PATHS.local.$(EPICS_HOST_ARCH) needs to be
 changed.
 
 ### Edit RELEASE_PRODS.local 
-The definitions for CALC, BUSY, SSCAN, and AUTOSAVE must be specified. If your
-versions have the same paths that appear no changes are necessary. As described
+The definitions for AUTOSAVE, BUSY, CALC, DEVIOCSTATS, and SSCAN, and  must be specified. 
+If your versions have the same paths that appear no changes are necessary. As described
 above RELEASE_LIBS.local.$(EPICS_HOST_ARCH) can be used if the ASYN version or
 path is different for a specific target architecture.  This is usually not
 necessary even for building Linux and Windows in the same tree, because only the
