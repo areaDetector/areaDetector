@@ -2,66 +2,151 @@
 TOP = .
 include $(TOP)/configure/CONFIG
 
-DIRS := $(DIRS) ADBinaries
+ifeq ($(OS),Windows_NT)
+DIRS := $(DIRS) $(ADBINARIES)
+endif
 
-DIRS := $(DIRS) ADCore
-ADCore_DEPEND_DIRS += ADBinaries
+DIRS := $(DIRS) $(ADCORE)
+ifeq ($(OS),Windows_NT)
+$(ADCORE)_DEPEND_DIRS += $(ADBINARIES)
+endif
 
-DIRS := $(DIRS) ADADSC
-ADADSC_DEPEND_DIRS += ADCore
+ifdef ADADSC
+DIRS := $(DIRS) $(ADADSC)
+$(ADADSC)_DEPEND_DIRS += $(ADCORE)
+endif
 
-DIRS := $(DIRS) ADAndor
-ADAndor_DEPEND_DIRS += ADCore
+ifdef ADANDOR
+DIRS := $(DIRS) $(ADANDOR)
+$(ADANDOR)_DEPEND_DIRS += $(ADCORE)
+endif
 
-DIRS := $(DIRS) ADAndor3
-ADAndor3_DEPEND_DIRS += ADCore
+ifdef ADANOR3
+DIRS := $(DIRS) $(ADANOR3)
+$(ADANOR3)_DEPEND_DIRS += $(ADCORE)
+endif
 
-DIRS := $(DIRS) ADBruker
-ADBruker_DEPEND_DIRS += ADCore
+ifdef ADBRUKER
+DIRS := $(DIRS) $(ADBRUKER)
+$(ADBRUKER)_DEPEND_DIRS += $(ADCORE)
+endif
 
-DIRS := $(DIRS) ADFireWireWin
-ADFireWireWin_DEPEND_DIRS += ADCore
+ifdef ADDEXELA
+DIRS := $(DIRS) $(ADDEXELA)
+$(ADDEXELA)_DEPEND_DIRS += $(ADCORE)
+endif
 
-DIRS := $(DIRS) ADLightField
-ADLightField_DEPEND_DIRS += ADCore
+ifdef ADFASTCCD
+DIRS := $(DIRS) $(ADFASTCCD)
+$(ADFASTCCD)_DEPEND_DIRS += $(ADCORE)
+endif
 
-DIRS := $(DIRS) ADPSL
-ADPSL_DEPEND_DIRS += ADCore
+ifdef ADFIREWIREWIN
+DIRS := $(DIRS) $(ADFIREWIREWIN)
+$(ADFIREWIREWIN)_DEPEND_DIRS += $(ADCORE)
+endif
 
-DIRS := $(DIRS) ADPerkinElmer
-ADPerkinElmer_DEPEND_DIRS += ADCore
+ifdef ADLIGHTFIELD
+DIRS := $(DIRS) $(ADLIGHTFIELD)
+$(ADLIGHTFIELD)_DEPEND_DIRS += $(ADCORE)
+endif
 
-DIRS := $(DIRS) ADPilatus
-ADPilatus_DEPEND_DIRS += ADCore
+ifdef ADMERLIN
+DIRS := $(DIRS) $(ADMERLIN)
+$(ADMERLIN)_DEPEND_DIRS += $(ADCORE)
+endif
 
-DIRS := $(DIRS) ADPixirad
-ADPixirad_DEPEND_DIRS += ADCore
+ifdef ADPICAM
+DIRS := $(DIRS) $(ADPICAM)
+$(ADPICAM)_DEPEND_DIRS += $(ADCORE)
+endif
 
+ifdef ADPSL
+DIRS := $(DIRS) $(ADPSL)
+$(ADPSL)_DEPEND_DIRS += $(ADCORE)
+endif
+
+ifdef ADPERKINELMER
+DIRS := $(DIRS) $(ADPERKINELMER)
+$(ADPERKINELMER)_DEPEND_DIRS += $(ADCORE)
+endif
+
+ifdef ADPILATUS
+DIRS := $(DIRS) $(ADPILATUS)
+$(ADPILATUS)_DEPEND_DIRS += $(ADCORE)
+endif
+
+ifdef ADPIXIRAD
+DIRS := $(DIRS) $(ADPIXIRAD)
+$(ADPIXIRAD)_DEPEND_DIRS += $(ADCORE)
+endif
+
+ifdef ADPOINTGREY
 # ADPointGrey cannot be built on systems without libc 2.14
-#DIRS := $(DIRS) ADPointGrey
-#ADPointGrey_DEPEND_DIRS += ADCore
+DIRS := $(DIRS) $(ADPOINTGREY)
+$(ADPOINTGREY)_DEPEND_DIRS += $(ADCORE)
+endif
 
-DIRS := $(DIRS) ADProsilica
-ADProsilica_DEPEND_DIRS += ADCore
+ifdef ADPROSILICA
+DIRS := $(DIRS) $(ADPROSILICA)
+$(ADPROSILICA)_DEPEND_DIRS += $(ADCORE)
+endif
 
-DIRS := $(DIRS) ADPvCam
-ADPvCam_DEPEND_DIRS += ADCore
+ifdef ADPVCAM
+DIRS := $(DIRS) $(ADPVCAM)
+$(ADPVCAM)_DEPEND_DIRS += $(ADCORE)
+endif
 
+ifdef ADQIMAGING
+DIRS := $(DIRS) $(ADQIMAGING)
+$(ADQIMAGING)_DEPEND_DIRS += $(ADCORE)
+endif
+
+ifdef ADROPER
 # ADRoper cannot be built on systems without WinView installed, so it is disabled by default
-#DIRS := $(DIRS) ADRoper
-#ADRoper_DEPEND_DIRS += ADCore
+DIRS := $(DIRS) $(ADROPER)
+$(ADROPER)_DEPEND_DIRS += $(ADCORE)
+endif
 
-DIRS := $(DIRS) ADURL
-ADURL_DEPEND_DIRS += ADCore
+ifdef ADURL
+DIRS := $(DIRS) $(ADURL)
+$(ADURL)_DEPEND_DIRS += $(ADCORE)
+endif
 
-DIRS := $(DIRS) ADmar345
-ADmar345_DEPEND_DIRS += ADCore
+ifdef ADMAR345
+DIRS := $(DIRS) $(ADMAR345)
+$(ADMAR345)_DEPEND_DIRS += $(ADCORE)
+endif
 
-DIRS := $(DIRS) ADmarCCD
-ADmarCCD_DEPEND_DIRS += ADCore
+ifdef ADMARCCD
+DIRS := $(DIRS) $(ADMARCCD)
+$(ADMARCCD)_DEPEND_DIRS += $(ADCORE)
+endif
 
-#DIRS := $(DIRS) ADnED
-#ADnED_DEPEND_DIRS += ADCore
+ifdef ADNED
+DIRS := $(DIRS) $(ADNED)
+$(ADNED)_DEPEND_DIRS += $(ADCORE)
+endif
+
+ifdef ARAVISGIGE
+DIRS := $(DIRS) $(ARAVISGIGE)
+$(ARAVISGIGE)_DEPEND_DIRS += $(ADCORE)
+endif
+
+ifdef FFMPEGSERVER
+DIRS := $(DIRS) $(FFMPEGSERVER)
+$(FFMPEGSERVER)_DEPEND_DIRS += $(ADCORE)
+endif
+
+ifdef FFMPEGVIEWER
+DIRS := $(DIRS) $(FFMPEGVIEWER)
+$(FFMPEGVIEWER)_DEPEND_DIRS += $(ADCORE)
+endif
+
+ifdef FIREWIREDCAM
+DIRS := $(DIRS) $(FIREWIREDCAM)
+$(FIREWIREDCAM)_DEPEND_DIRS += $(ADCORE)
+endif
 
 include $(TOP)/configure/RULES_TOP
 
