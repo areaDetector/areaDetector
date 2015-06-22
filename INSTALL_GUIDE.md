@@ -322,14 +322,13 @@ CONFIG_SITE.local should contain:
     # Define the location of the libxml2 include files
     XML2_INCLUDE = -I/usr/include/libxml2
 
-### Optionally edit areaDetector/Makefile  
-You can edit this file to change which detectors will be built. Some detectors
-are commented out in the distribution because they cannot be built on all
-systems. For example the Roper driver can only be built on Windows systems with
-the Princeton Instruments WinView or WinSpec programs installed, and the Point
-Grey driver can currently only be built on Linux systems if the version of
-libc.so is 2.14 or greater. You may also want to comment out detectors that you
-don't need.
+### Edit RELEASE.local  
+Uncomment the lines for the drivers that should be built. None of the detector
+drivers are included by default. Some detectors cannot be built on all systems.
+For example the Roper driver can only be built on Windows systems with the 
+Princeton Instruments WinView or WinSpec programs installed, and the Point Grey
+driver can currently only be built on Linux systems if the version of libc.so 
+is 2.14 or greater.
       
 ### make
 Just type:
