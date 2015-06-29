@@ -1,6 +1,6 @@
 include $(AREA_DETECTOR)/configure/RELEASE_LIBS.local
 
-#AUTOSAVE is needed for save_restore
+# AUTOSAVE is needed for save_restore
 AUTOSAVE=$(SUPPORT)/autosave-5-6-2
 
 # BUSY is needed for busy record
@@ -9,14 +9,19 @@ BUSY=$(SUPPORT)/busy-1-6-1
 # CALC is needed for scalcout record that SSCAN uses
 CALC=$(SUPPORT)/calc-3-4-2-1
 
-#DEVIOCSTATS is used to monitor IOC resources
-DEVIOCSTATS=$(SUPPORT)/devIocStats-3-1-14
-
-#SNCSEQ is needed if CALC was built with SNCSEQ support (see CALC/configure/RELEASE)
+# SNCSEQ is needed if CALC was built with SNCSEQ support (see CALC/configure/RELEASE)
 SNCSEQ=$(SUPPORT)/seq-2-2-snapshot-2015-05-21
 
 # SSCAN is needed for scanning threshold on Pilatus and general scanning
 SSCAN=$(SUPPORT)/sscan-2-10-1
+
+### Optional modules
+
+# DEVIOCSTATS is used to monitor IOC resources
+#DEVIOCSTATS=$(SUPPORT)/devIocStats-3-1-14
+
+# ALIVE is used to send IOC status info to a central server
+#ALIVE=$(SUPPORT)/alive-1-0
 
 -include $(AREA_DETECTOR)/configure/RELEASE_PRODS.local.$(EPICS_HOST_ARCH)
 

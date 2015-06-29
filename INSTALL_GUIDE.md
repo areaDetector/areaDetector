@@ -49,13 +49,14 @@ Each areaDetector detector module builds both a library and an EPICS IOC
 application.  To build the library only EPICS base and asynDriver are
 required.  To build the IOC application the 
 [synApps](http://www.aps.anl.gov/bcda/synApps) modules 
-AUTOSAVE, BUSY, CALC, DEVIOCSTATS, and SSCAN are required.
+AUTOSAVE, BUSY, CALC, and SSCAN are required.
 If the CALC module is built with SNCSEQ support then SNCSEQ is also required.
 The most recent release of the synApps modules is recommended.
 
 EPICS base, asyn and the synApps modules must be built before building
 areaDetector.
 
+DEVIOCSTATS and ALIVE are optional.
 
 External Products Required for Building areaDetector
 ----------------------------------------------------
@@ -284,14 +285,15 @@ definition of SUPPORT in RELEASE_PATHS.local.$(EPICS_HOST_ARCH) needs to be
 changed.
 
 ### Edit RELEASE_PRODS.local 
-The definitions for AUTOSAVE, BUSY, CALC, DEVIOCSTATS, and SSCAN, and  must be specified. 
+The definitions for AUTOSAVE, BUSY, CALC, and SSCAN, and  must be specified. 
 If the CALC module is built with SNCSEQ support then SNCSEQ must also be specified.
 If your versions have the same paths that appear no changes are necessary. As described
 above RELEASE_LIBS.local.$(EPICS_HOST_ARCH) can be used if the ASYN version or
 path is different for a specific target architecture.  This is usually not
 necessary even for building Linux and Windows in the same tree, because only the
 definition of SUPPORT in RELEASE_PATHS.local.$(EPICS_HOST_ARCH) needs to be
-changed.
+changed.  DEVIOCSTATS and ALIVE are optional and will be included if defined in 
+RELEASE_PRODS.local.
 
 ### Edit CONFIG_SITE.local 
 The definitions for HDF5, SZIP, and GRAPHICS_MAGICK may need to be changed.
@@ -336,6 +338,10 @@ Just type:
     make
 
 If this fails then some required products have probably not been installed. 
+
+### Optionally edit extra.cmd
+If optional modules were included in RELEASE_PRODS.local, uncomment the corresponding 
+lines in ADCore/iocBoot/extra.cmd.
 
 ### Run SimDetector      
 
