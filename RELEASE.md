@@ -27,7 +27,17 @@ Release Notes
 Each submodule contains detailed release notes for each release of that submodule.  The release notes below
 only provide a short summary of the most significant items from the submodules.
 
+R2-3 (July 24, 2015)
+----
+* Changed top-level Makefile so that a detector sub-module is only built if the appropriate
+  variable is set in configure/RELEASE.local.  EXAMPLE_RELEASE.local contains all detector
+  submodules commented out.  This file should be copied to RELEASE.local and the lines for
+  the desired detectors uncommented.
+* Added new ADnED driver for neutron event data.  This is from Matt Pearson at ORNL.
+
+
 R2-2 (March 23, 2015)
+----
 * Added new modules ffmegViewer, ffmpegServer, aravisGigE, firewireDCAM.  These are all from Tom Cobb
   and Ulrik Pedersen from Diamond Light Source.
 * Added new ADQImaging module.  This is from Arthur Glowacki at the APS.
