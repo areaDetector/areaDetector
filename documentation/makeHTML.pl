@@ -30,6 +30,7 @@ use File::Path;
           "./ADAndor3/documentation",
           "./ADBruker/documentation",
           "./ADDexela/documentation",
+          "./ADXpad/documentation",
           "./ADFireWireWin/documentation",
           "./ADLightField/documentation",
           "./ADPSL/documentation",
