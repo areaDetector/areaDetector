@@ -11,6 +11,11 @@ ifeq ($(OS),Windows_NT)
 $(ADCORE)_DEPEND_DIRS += $(ADBINARIES)
 endif
 
+ifdef ADEXAMPLE
+DIRS := $(DIRS) $(ADEXAMPLE)
+$(ADEXAMPLE)_DEPEND_DIRS += $(ADCORE)
+endif
+
 ifdef ADADSC
 DIRS := $(DIRS) $(ADADSC)
 $(ADADSC)_DEPEND_DIRS += $(ADCORE)
