@@ -55,5 +55,8 @@ foreach $dir (@subdirs) {
     copy($files,"./html");
     $command = "cp " . $files . " " . "./html";
     system($command);
-    $files = $dir . "/*.png";
+    $files = "../" . $dir . "/*.pdf";
+    copy($files,"./html");
+    $command = "cp " . $files . " " . "./html";
+    system($command);
 }
