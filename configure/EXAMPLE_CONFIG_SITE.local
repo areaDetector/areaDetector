@@ -36,3 +36,15 @@ XML2_INCLUDE = -I/usr/include/libxml2
 # This must be defined or fstat will not work on linux-x86 programs using CIFS mounts
 USR_CFLAGS_Linux   += -D_FILE_OFFSET_BITS=64
 USR_CXXFLAGS_Linux += -D_FILE_OFFSET_BITS=64
+
+# Optionally define the location of the boost libraries.  
+# These are only needed for the ADCore/pluginTests unit tests
+#BOOST         = /usr
+#BOOST_LIB     = $(BOOST)/lib64
+#BOOST_INCLUDE = -I$(BOOST)/include
+
+# Optionally define the location of the opencv library
+# This is only needed to build the ADPluginEdge plugin
+#OPENCV          = /usr
+#OPENCV_LIB      = $(OPENCV)/lib64
+#OPENCV_INCLUDE  = -I$(OPENCV)/include
