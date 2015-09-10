@@ -13,3 +13,10 @@ GRAPHICS_MAGICK_INCLUDE = -I$(GRAPHICS_MAGICK)/include/GraphicsMagick
 
 STATIC_BUILD=YES
 
+# Optionally define the location of the boost libraries.  
+# These are only needed for the ADCore/pluginTests unit tests
+# BOOST must be defined if it is to be used
+# BOOST_LIB and BOOST_LIB variables should not be defined if using the boost system library in a default location
+BOOST         = /usr
+#BOOST_LIB     = $(BOOST)/lib
+#BOOST_INCLUDE = -I$(BOOST)/include
