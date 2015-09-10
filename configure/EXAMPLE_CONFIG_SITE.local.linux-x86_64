@@ -3,3 +3,19 @@ STATIC_BUILD=YES
 GLIB_INC1=/usr/include/glib-2.0
 GLIB_INC2=/usr/lib64/glib-2.0/include
 glib-2.0_DIR = /usr/lib64
+
+# Optionally define the location of the boost libraries.  
+# These are only needed for the ADCore/pluginTests unit tests
+# BOOST must be defined if it is to be used
+# BOOST_LIB and BOOST_INCLUDE variables should not be defined if using the boost system library in a default location
+BOOST         = /usr
+#BOOST_LIB     = $(BOOST)/lib64
+#BOOST_INCLUDE = -I$(BOOST)/include
+
+# Optionally define the location of the opencv library
+# This is only needed to build the ADPluginEdge plugin
+# OPENCV must be defined if it is to be used
+# OPENCV_LIB and OPENCV_INCLUDE variables should not be defined if using the opencv system library in a default location
+OPENCV          = /usr
+#OPENCV_LIB      = $(OPENCV)/lib64
+#OPENCV_INCLUDE  = -I$(OPENCV)/include
