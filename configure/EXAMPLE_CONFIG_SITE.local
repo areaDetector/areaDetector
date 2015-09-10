@@ -14,6 +14,8 @@ BUILD_IOCS=YES
 USE_GRAPHICSMAGICK=NO
 
 # Define the location of the hdf5, sz, and GraphicsMagick libraries
+
+# These HDF5 variables should not be defined if using the hdf5 system library in a default location
 HDF5         = /usr/local64
 HDF5_LIB     = $(HDF5)/lib
 HDF5_INCLUDE = -I$(HDF5)/include
@@ -22,10 +24,14 @@ ifeq ($(OS_CLASS), WIN32)
     HDF5_STATIC_BUILD=$(STATIC_BUILD)
 endif
 
+# SZIP must be defined if it is to be used.
+# SZIP_LIB and SZIP_INCLUDE variables should not be defined if using the sz system library in a default location
 SZIP           = /usr/local64
 SZIP_LIB       = $(SZIP)/lib
 SZIP_INCLUDE   = -I$(SZIP)/include
 
+# GRAPHICS_MAGICK must be defined if it is to be used.
+# GRAPHICS_MAGICK_LIB and GRAPHICS_MAGICK_INCLUDE variables should not be defined if using the GraphicsMagick system library in a default location
 GRAPHICS_MAGICK         = /usr/local64
 GRAPHICS_MAGICK_LIB     = $(GRAPHICS_MAGICK)/lib
 GRAPHICS_MAGICK_INCLUDE = -I$(GRAPHICS_MAGICK)/include/GraphicsMagick
@@ -39,12 +45,16 @@ USR_CXXFLAGS_Linux += -D_FILE_OFFSET_BITS=64
 
 # Optionally define the location of the boost libraries.  
 # These are only needed for the ADCore/pluginTests unit tests
+# BOOST must be defined if it is to be used
+# BOOST_LIB and BOOST_INCLUDE variables should not be defined if using the boost system library in a default location
 #BOOST         = /usr
 #BOOST_LIB     = $(BOOST)/lib64
 #BOOST_INCLUDE = -I$(BOOST)/include
 
 # Optionally define the location of the opencv library
 # This is only needed to build the ADPluginEdge plugin
+# OPENCV must be defined if it is to be used
+# OPENCV_LIB and OPENCV_INCLUDE variables should not be defined if using the opencv system library in a default location
 #OPENCV          = /usr
 #OPENCV_LIB      = $(OPENCV)/lib64
 #OPENCV_INCLUDE  = -I$(OPENCV)/include
