@@ -27,6 +27,11 @@ Release Notes
 Each submodule contains detailed release notes for each release of that submodule.  The release notes below
 only provide a short summary of the most significant items from the submodules.
 
+R2-4 (September XXX, 2015)
+----
+* R2-4 of ADCore.  This requires some changes to CONFIG_SITE.local.
+
+
 R2-3 (July 24, 2015)
 ----
 * Changed top-level Makefile so that a detector sub-module is only built if the appropriate
