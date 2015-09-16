@@ -240,6 +240,10 @@ build the "core" of areaDetector the following repositories must be downloaded:
 * areaDetector/ADBinaries
 * areaDetector/ADCore
 
+To build the simulation detector, which is very useful for learning areaDetector and for testing,
+also download
+* areaDetector/ADExample
+
 To also build a specific detector, for example the ADProsilica, also download
 * areaDetector/ADProsilica
 
@@ -341,13 +345,17 @@ Just type:
 
 If this fails then some required products have probably not been installed. 
 
-### Edit ADCore/iocBoot/commonPlugins.cmd
+### Example files in ADCore/iocBoot
+Copy EXAMPLE_commonPlugins.cmd to commonPlugins.cmd and EXAMPLE_commonPlugins_settings.req to
+commonPlugin_settings.req.
+
+Edit commonPlugins.cmd and commonPlugin_settings.req
 Change whether or not the lines for optional modules (e.g. DEVIOCSTATS, ALIVE) are 
 commented out depending on whether these modules were defined in RELEASE_PRODS.local.
 
 ### Run SimDetector      
 
-    cd ADCore/iocs/simDetectorIOC/iocBoot/iocSimDetector
+    cd ADExample/iocs/simDetectorIOC/iocBoot/iocSimDetector
     ### Edit Makefile to set ARCH to your $(EPICS_HOST_ARCH) architecture
     make
     cp envPaths envPaths.linux
