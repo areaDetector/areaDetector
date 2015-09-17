@@ -1,4 +1,10 @@
-### Uncomment the lines for the drivers that should be built
+### Uncomment the lines for the detectors that should be built on all architectures.
+### Note that the detector Makefiles prevent building on completely unsupported architectures
+### such a ADPerkinElmer on Linux, etc. so those detectors can be uncommented in this file.
+### However, a local installation may want to further restrict what architectures a detector
+### is built for.  In that case comment out the driver in this file and add it to
+### RELEASE.local.$(EPICS_HOST_ARCH).
+###
 
 #ADADSC=$(AREA_DETECTOR)/ADADSC
 #ADANDOR=$(AREA_DETECTOR)/ADAndor
@@ -32,3 +38,4 @@
 #FFMPEGSERVER=$(AREA_DETECTOR)/ffmpegServer
 #FFMPEGVIEWER=$(AREA_DETECTOR)/ffmpegViewer
 #FIREWIREDCAM=$(AREA_DETECTOR)/firewireDCAM
+-include $(TOP)/configure/RELEASE.local.$(EPICS_HOST_ARCH)
