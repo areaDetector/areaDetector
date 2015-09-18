@@ -31,11 +31,12 @@ R2-4 (September 18, 2015)
 ----
 * Requires R2-4 of ADCore.  This requires some changes to CONFIG_SITE.local.
 * Moved the simDetector from ADCore into a new repository ADExample.
-* Added new detector ADMythen for the Dectris Mythen detectors.  Written by Matthew Moore at the APS.
-* New module ADPluginEdge that provides an edge detection plugin using the opencv library.  Written by
+* New ADMythen module for Dectris Mythen detectors.  Written by Matthew Moore at the APS.
+* New ADPluginEdge module that provides an edge detection plugin using the opencv library.  Written by
   Keith Brister from Northwestern University.
 * configure/RELEASE.local now optionally includes configure/RELEASE.local.$(EPICS_HOST_ARCH).
-  This allows restricting building of a detector module to a subset of supported architectures.
+  This allows restricting building of a detector module to a subset of supported architectures when 
+  building from the top-level Makefile.
 
 
 R2-3 (July 24, 2015)
