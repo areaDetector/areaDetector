@@ -30,12 +30,18 @@ use File::Path;
           "./ADAndor3/documentation",
           "./ADBruker/documentation",
           "./ADDexela/documentation",
+          "./ADExample/documentation",
+          "./ADFastCCD/documentation",
           "./ADFireWireWin/documentation",
           "./ADLightField/documentation",
+#          "./ADMerlin/documentation",
+          "./ADMythen/documentation",
+          "./ADPICam/documentation",
           "./ADPSL/documentation",
           "./ADPerkinElmer/documentation",
           "./ADPilatus/documentation",
           "./ADPixirad/documentation",
+          "./ADPluginEdge/documentation",
           "./ADPointGrey/documentation",
           "./ADProsilica/documentation",
           "./ADPvCam/documentation",
@@ -44,6 +50,7 @@ use File::Path;
           "./ADURL/documentation",
           "./ADmar345/documentation",
           "./ADmarCCD/documentation",
+          "./ADnED/documentation",
           );
 
 foreach $dir (@subdirs) {
