@@ -21,11 +21,6 @@ DIRS := $(DIRS) $(ADPLUGINEDGE)
 $(ADPLUGINEDGE)_DEPEND_DIRS += $(ADCORE)
 endif
 
-ifdef ADEXAMPLE
-DIRS := $(DIRS) $(ADEXAMPLE)
-$(ADEXAMPLE)_DEPEND_DIRS += $(ADCORE)
-endif
-
 ifdef ADADSC
 DIRS := $(DIRS) $(ADADSC)
 $(ADADSC)_DEPEND_DIRS += $(ADCORE)
@@ -49,6 +44,11 @@ endif
 ifdef ADDEXELA
 DIRS := $(DIRS) $(ADDEXELA)
 $(ADDEXELA)_DEPEND_DIRS += $(ADCORE)
+endif
+
+ifdef ADEXAMPLE
+DIRS := $(DIRS) $(ADEXAMPLE)
+$(ADEXAMPLE)_DEPEND_DIRS += $(ADCORE)
 endif
 
 ifdef ADFASTCCD
@@ -102,7 +102,6 @@ $(ADPIXIRAD)_DEPEND_DIRS += $(ADCORE)
 endif
 
 ifdef ADPOINTGREY
-# ADPointGrey cannot be built on systems without libc 2.14
 DIRS := $(DIRS) $(ADPOINTGREY)
 $(ADPOINTGREY)_DEPEND_DIRS += $(ADCORE)
 endif
@@ -123,7 +122,6 @@ $(ADQIMAGING)_DEPEND_DIRS += $(ADCORE)
 endif
 
 ifdef ADROPER
-# ADRoper cannot be built on systems without WinView installed, so it is disabled by default
 DIRS := $(DIRS) $(ADROPER)
 $(ADROPER)_DEPEND_DIRS += $(ADCORE)
 endif
