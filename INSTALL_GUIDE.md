@@ -254,6 +254,7 @@ After all the required products have been installed and a release of
 areaDetector has been downloaded then do the following in the
 areaDetector/configure directory:
        
+    cp EXAMPLE_RELEASE.local       RELEASE.local
     cp EXAMPLE_RELEASE_PATHS.local RELEASE_PATHS.local
     cp EXAMPLE_RELEASE_LIBS.local  RELEASE_LIBS.local
     cp EXAMPLE_RELEASE_PRODS.local RELEASE_PRODS.local
