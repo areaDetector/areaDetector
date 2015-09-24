@@ -1,0 +1,41 @@
+### Uncomment the lines for the detectors that should be built on all architectures.
+### Note that the detector Makefiles prevent building on completely unsupported architectures
+### such a ADPerkinElmer on Linux, etc. so those detectors can be uncommented in this file.
+### However, a local installation may want to further restrict what architectures a detector
+### is built for.  In that case comment out the driver in this file and add it to
+### RELEASE.local.$(EPICS_HOST_ARCH).
+###
+
+ADADSC=$(AREA_DETECTOR)/ADADSC
+ADANDOR=$(AREA_DETECTOR)/ADAndor
+ADANDOR3=$(AREA_DETECTOR)/ADAndor3
+ADBRUKER=$(AREA_DETECTOR)/ADBruker
+ADDEXELA=$(AREA_DETECTOR)/ADDexela
+ADEXAMPLE=$(AREA_DETECTOR)/ADExample
+#ADFASTCCD=$(AREA_DETECTOR)/ADFastCCD
+ADFIREWIREWIN=$(AREA_DETECTOR)/ADFireWireWin
+ADLIGHTFIELD=$(AREA_DETECTOR)/ADLightField
+#ADMERLIN=$(AREA_DETECTOR)/ADMerlin
+ADMYTHEN=$(AREA_DETECTOR)/ADMythen
+#ADPICAM=$(AREA_DETECTOR)/ADPICam
+ADPSL=$(AREA_DETECTOR)/ADPSL
+ADPERKINELMER=$(AREA_DETECTOR)/ADPerkinElmer
+ADPILATUS=$(AREA_DETECTOR)/ADPilatus
+ADPIXIRAD=$(AREA_DETECTOR)/ADPixirad
+#ADPLUGINEDGE=$(AREA_DETECTOR)/ADPluginEdge
+### ADPointGrey cannot be built on systems without libc 2.14
+#ADPOINTGREY=$(AREA_DETECTOR)/ADPointGrey
+ADPROSILICA=$(AREA_DETECTOR)/ADProsilica
+ADPVCAM=$(AREA_DETECTOR)/ADPvCam
+#ADQIMAGING=$(AREA_DETECTOR)/ADQImaging
+### ADRoper cannot be built on systems without WinView installed
+#ADROPER=$(AREA_DETECTOR)/ADRoper
+ADURL=$(AREA_DETECTOR)/ADURL
+ADMAR345=$(AREA_DETECTOR)/ADmar345
+ADMARCCD=$(AREA_DETECTOR)/ADmarCCD
+#ADNED=$(AREA_DETECTOR)/ADnED
+#ARAVISGIGE=$(AREA_DETECTOR)/aravisGigE
+#FFMPEGSERVER=$(AREA_DETECTOR)/ffmpegServer
+#FFMPEGVIEWER=$(AREA_DETECTOR)/ffmpegViewer
+#FIREWIREDCAM=$(AREA_DETECTOR)/firewireDCAM
+-include $(TOP)/configure/RELEASE.local.$(EPICS_HOST_ARCH)
