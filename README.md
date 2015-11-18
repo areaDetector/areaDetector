@@ -17,6 +17,9 @@ of these are "core" submodules:
 All of the other submodules (ADProsilica, ADPilatus, etc.) contain drivers and EPICS IOC applications
 for specific detectors.
 
+The [Installation Guide](INSTALL_GUILDE.md) provides build and install
+instructions.
+
 Additional information:
 * [Overview documentation](http://cars.uchicago.edu/software/epics/areaDetector.html).
 * [Detailed documentation](http://cars.uchicago.edu/software/epics/areaDetectorDoc.html).
