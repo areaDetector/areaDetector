@@ -17,7 +17,7 @@ of these are "core" submodules:
 All of the other submodules (ADProsilica, ADPilatus, etc.) contain drivers and EPICS IOC applications
 for specific detectors.
 
-The [Installation Guide](INSTALL_GUILDE.md) provides build and install
+The [Installation Guide](INSTALL_GUIDE.md) provides build and install
 instructions.
 
 Additional information:
