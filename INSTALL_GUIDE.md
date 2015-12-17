@@ -154,7 +154,7 @@ installed into **/usr/local** instead of **/usr**. Thus to install:
 
 ####XML2
 This can be downloaded from
-[libxml2](http://www.xmlsoft.org.downloads.html).
+[libxml2](http://www.xmlsoft.org/downloads.html).
 
 Then look for latest release download.
 
