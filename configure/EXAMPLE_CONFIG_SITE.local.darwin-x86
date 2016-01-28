@@ -1,0 +1,31 @@
+#
+# Declarations for OS X with hdf5, szip and GraphicsMagick MacPorts.
+#
+
+#     - To build the IOC applications set BUILD_IOCS to YES
+#       Otherwise set it to NO
+BUILD_IOCS=YES
+
+#     - To include GraphicsMagick support set the following to YES
+#     - To not use it comment out the line or set it to NO
+#     - GraphicsMagick is required for NDFileMagick and the URL driver.
+#     - On Fedora the 32-bit and 64-bit versions of GraphicsMagick conflict, 
+#     - so we define it to NO here and to YES in CONFIG_SITE.Linux.linux-x86_64
+USE_GRAPHICSMAGICK=YES
+
+# Define the location of the hdf5, sz, and GraphicsMagick libraries
+
+HDF5         = /opt/local
+HDF5_LIB     = $(HDF5)/lib
+HDF5_INCLUDE = -I$(HDF5)/include
+
+SZIP           = /opt/local
+SZIP_LIB       = $(SZIP)/lib
+SZIP_INCLUDE   = -I$(SZIP)/include
+
+GRAPHICS_MAGICK         = /opt/local
+GRAPHICS_MAGICK_LIB     = $(GRAPHICS_MAGICK)/lib
+GRAPHICS_MAGICK_INCLUDE = -I$(GRAPHICS_MAGICK)/include/GraphicsMagick
+
+XML2_INCLUDE = -I/usr/include/libxml2
+
