@@ -154,7 +154,7 @@ installed into **/usr/local** instead of **/usr**. Thus to install:
 
 ####XML2
 This can be downloaded from
-[libxml2](http://www.xmlsoft.org.downloads.html).
+[libxml2](http://www.xmlsoft.org/downloads.html).
 
 Then look for latest release download.
 
@@ -440,7 +440,7 @@ MEDM, EDM, CSS, caQtDM.
 The source code for medm can be downloaded from:
 [medm](http://www.aps.anl.gov/epics/extensions/medm/index.php)
 
-This requires openMotif.  medm can be built from source on Linux if the openMotif library is
+This requires [Motif](http://motif.ics.com/).  medm can be built from source on Linux if the Motif library is
 available (which it is not for some new releases, such as Fedora 20). 
 
 It is available for Windows as via an
