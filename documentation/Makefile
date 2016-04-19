@@ -13,6 +13,7 @@ copyFromSource:
 	./makeHTML.pl
 
 copyToWebServer:
+	rm -f html/index.html
 	cp -rfp html/* /home/epics/web_software/epics
 
 clean:
