@@ -18,15 +18,18 @@ TEMPLATE_TOP=$(EPICS_BASE)/templates/makeBaseApp/top
 # ASYN is needed for base classes 
 ASYN=$(SUPPORT)/asyn-4-30
 
+# ADSupport is needed by ADCore plugins
+ADSUPPORT = $(AREA_DETECTOR)/ADSupport
+
 # ADCORE for base classes and plugins
 ADCORE=$(AREA_DETECTOR)/ADCore
 
 # V4 modules.
-PVCOMMON=$(EV4_BASE)/pvCommon
-PVACCESS=$(EV4_BASE)/pvAccess
-PVDATA=$(EV4_BASE)/pvData
-PVDATABASE=$(EV4_BASE)/pvDatabase
-NORMATIVETYPES=$(EV4_BASE)/normativeTypes
+PVCOMMON=$(EV4_BASE)/pvCommonCPP
+PVACCESS=$(EV4_BASE)/pvAccessCPP
+PVDATA=$(EV4_BASE)/pvDataCPP
+PVDATABASE=$(EV4_BASE)/pvDatabaseCPP
+NORMATIVETYPES=$(EV4_BASE)/normativeTypesCPP
 
 -include $(AREA_DETECTOR)/configure/RELEASE_LIBS.local.$(EPICS_HOST_ARCH)
 
