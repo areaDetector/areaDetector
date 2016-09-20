@@ -2,14 +2,10 @@
 TOP = .
 include $(TOP)/configure/CONFIG
 
-ifeq ($(OS),Windows_NT)
-DIRS := $(DIRS) $(ADBINARIES)
-endif
+DIRS := $(DIRS) $(ADSUPPORT)
 
 DIRS := $(DIRS) $(ADCORE)
-ifeq ($(OS),Windows_NT)
-$(ADCORE)_DEPEND_DIRS += $(ADBINARIES)
-endif
+$(ADCORE)_DEPEND_DIRS += $(ADSUPPORT)
 
 ifdef FFMPEGSERVER
 DIRS := $(DIRS) $(FFMPEGSERVER)
