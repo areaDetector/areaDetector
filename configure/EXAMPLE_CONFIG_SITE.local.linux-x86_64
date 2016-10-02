@@ -1,21 +1,32 @@
-STATIC_BUILD=YES
+# HDF5_LIB and HDF5_INCLUDE variables should not be defined if using the hdf5 system library in a default location
+HDF5         = /usr/local64
+HDF5_LIB     = $(HDF5)/lib
+HDF5_INCLUDE = -I$(HDF5)/include
+
+# SZIP_LIB and SZIP_INCLUDE variables should not be defined if using the szip system library in a default location
+SZIP           = /usr/local64
+SZIP_LIB       = $(SZIP)/lib
+SZIP_INCLUDE   = -I$(SZIP)/include
+
+# GRAPHICS_MAGICK_LIB and GRAPHICS_MAGICK_INCLUDE variables should not be defined if using the GraphicsMagick system library in a default location
+GRAPHICS_MAGICK         = /usr/local64
+GRAPHICS_MAGICK_LIB     = $(GRAPHICS_MAGICK)/lib
+GRAPHICS_MAGICK_INCLUDE = -I$(GRAPHICS_MAGICK)/include/GraphicsMagick
+
+# Location of GLIB include files and libraries.  This is needed by the aravis-GigE driver.
 # Our system has include files for glib-2.0 in 2 different places
 GLIB_INC1=/usr/include/glib-2.0
 GLIB_INC2=/usr/lib64/glib-2.0/include
 glib-2.0_DIR = /usr/lib64
 
-# Optionally define the location of the boost libraries.  
-# These are only needed for the ADCore/pluginTests unit tests
-# BOOST must be defined if it is to be used
 # BOOST_LIB and BOOST_INCLUDE variables should not be defined if using the boost system library in a default location
-BOOST         = /usr
+WITH_BOOST     = YES
+BOOST          = /usr
 #BOOST_LIB     = $(BOOST)/lib64
 #BOOST_INCLUDE = -I$(BOOST)/include
 
-# Optionally define the location of the opencv library
-# This is only needed to build the ADPluginEdge plugin
-# OPENCV must be defined if it is to be used
 # OPENCV_LIB and OPENCV_INCLUDE variables should not be defined if using the opencv system library in a default location
+WITH_OPENCV     = YES 
 OPENCV          = /usr
-#OPENCV_LIB      = $(OPENCV)/lib64
-#OPENCV_INCLUDE  = -I$(OPENCV)/include
+#OPENCV_LIB     = $(OPENCV)/lib64
+#OPENCV_INCLUDE = -I$(OPENCV)/include
