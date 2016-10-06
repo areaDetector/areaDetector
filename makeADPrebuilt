@@ -13,8 +13,8 @@ find . -name 'auto_settings.savB*' -exec rm -fv {} \;
 find . -name 'core.*' -exec rm -fv {} \;
 find . -name '*.exe.*' -exec rm -fv {} \;
 
-AREA_DETECTOR=areaDetector-2-4
-ASYN=asyn-4-26
+AREA_DETECTOR=areaDetector-2-5
+ASYN=asyn-4-30
 AUTOSAVE=autosave-5-7-1
 BUSY=busy-1-6-1
 CALC=calc-3-6-1
@@ -32,6 +32,7 @@ tar cvzf $DESTINATION.tgz \
 --exclude 'O.*'  \
 --directory $BASE_TOP \
 $BASE/bin/$3 \
+$BASE/lib/$3 \
 --directory $SUPPORT \
 $AREA_DETECTOR/ADCore/db \
 $AREA_DETECTOR/ADCore/documentation \
@@ -40,6 +41,7 @@ $AREA_DETECTOR/ADCore/ADApp/op \
 $AREA_DETECTOR/ADCore/iocBoot \
 $AREA_DETECTOR/ADCore/Viewers/ImageJ \
 $AREA_DETECTOR/ADCore/bin/$3 \
+$AREA_DETECTOR/ADCore/lib/$3 \
 $AREA_DETECTOR/ADBinaries/bin/$3 \
 $AREA_DETECTOR/$1/db \
 $AREA_DETECTOR/$1/bin/$3 \
@@ -48,26 +50,33 @@ $AREA_DETECTOR/$1/*/Db \
 $AREA_DETECTOR/$1/*/op \
 $AREA_DETECTOR/$1/documentation \
 $AREA_DETECTOR/$1/iocs/*IOC/bin/$3 \
+$AREA_DETECTOR/$1/iocs/*IOC/lib/$3 \
 $AREA_DETECTOR/$1/iocs/*IOC/dbd \
 $AREA_DETECTOR/$1/iocs/*IOC/iocBoot \
 $ASYN/opi \
 $ASYN/db \
 $ASYN/bin/$3 \
+$ASYN/lib/$3 \
 $AUTOSAVE/asApp/Db \
 $AUTOSAVE/asApp/op \
 $AUTOSAVE/bin/$3 \
+$AUTOSAVE/lib/$3 \
 $BUSY/busyApp/Db \
 $BUSY/busyApp/op \
 $BUSY/bin/$3 \
+$BUSY/lib/$3 \
 $CALC/calcApp/Db \
 $CALC/calcApp/op \
 $CALC/bin/$3 \
+$CALC/lib/$3 \
 $DEVIOCSTATS/db \
 $DEVIOCSTATS/op/adl \
 $DEVIOCSTATS/bin/$3 \
+$DEVIOCSTATS/lib/$3 \
 $SSCAN/sscanApp/Db \
 $SSCAN/sscanApp/op \
-$SSCAN/bin/$3
+$SSCAN/bin/$3 \
+$SSCAN/lib/$3
 
 rm -f $DESTINATION.zip
 cd $BASE_TOP
@@ -82,31 +91,40 @@ $AREA_DETECTOR/ADCore/ADApp/op \
 $AREA_DETECTOR/ADCore/iocBoot \
 $AREA_DETECTOR/ADCore/Viewers/ImageJ \
 $AREA_DETECTOR/ADCore/bin/$3 \
+$AREA_DETECTOR/ADCore/lib/$3 \
 $AREA_DETECTOR/ADBinaries/bin/$3 \
 $AREA_DETECTOR/$1/db \
 $AREA_DETECTOR/$1/bin/$3 \
+$AREA_DETECTOR/$1/lib/$3 \
 $AREA_DETECTOR/$1/*/Db \
 $AREA_DETECTOR/$1/*/op \
 $AREA_DETECTOR/$1/documentation \
 $AREA_DETECTOR/$1/iocs/*IOC/bin/$3 \
+$AREA_DETECTOR/$1/iocs/*IOC/lib/$3 \
 $AREA_DETECTOR/$1/iocs/*IOC/dbd \
 $AREA_DETECTOR/$1/iocs/*IOC/iocBoot \
 $ASYN/opi \
 $ASYN/db \
 $ASYN/bin/$3 \
+$ASYN/lib/$3 \
 $AUTOSAVE/asApp/Db \
 $AUTOSAVE/asApp/op \
 $AUTOSAVE/bin/$3 \
+$AUTOSAVE/lib/$3 \
 $BUSY/busyApp/Db \
 $BUSY/busyApp/op \
 $BUSY/bin/$3 \
+$BUSY/lib/$3 \
 $CALC/calcApp/Db \
-$CALC/calcApp/op  \
+$CALC/calcApp/op \
 $CALC/bin/$3 \
+$CALC/lib/$3 \
 $DEVIOCSTATS/db \
 $DEVIOCSTATS/op/adl \
 $DEVIOCSTATS/bin/$3 \
+$DEVIOCSTATS/lib/$3 \
 $SSCAN/sscanApp/Db \
 $SSCAN/sscanApp/op \
 $SSCAN/bin/$3 \
+$SSCAN/lib/$3 \
 --exclude '*.svn*' --exclude '*/O.*' 
