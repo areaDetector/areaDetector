@@ -1,0 +1,24 @@
+# This file is used for all Linux builds
+
+# To build applications statically so they can be moved to other systems without copying lots of library files
+STATIC_BUILD=YES
+
+# The default on all Linux systems is to use the system versions of JPEG, TIFF, XML2, and ZLIB.
+# Because these are system files we don't define XXX_INCLUDE or XXX_LIB
+# To use non-system versions of these libraries change the definitions here or in
+#    CONFIG_SITE.local.$(EPICS_HOST_ARCH) 
+#    CONFIG_SITE.local.$(EPICS_HOST_ARCH).$(T_A)
+
+# To build these libraries in ADSupport uncomment these lines
+#HDF5_EXTERNAL = NO
+
+#JPEG_EXTERNAL = NO
+
+#SZIP_EXTERNAL = NO
+
+#TIFF_EXTERNAL = NO
+
+#XML2_EXTERNAL = NO
+XML2_INCLUDE = -I/usr/include/libxml2
+
+#ZLIB_EXTERNAL = NO
