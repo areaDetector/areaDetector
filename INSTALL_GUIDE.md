@@ -7,7 +7,7 @@ Mark Rivers, University of Chicago
 -----------------------------------
 
 This product is made available subject to acceptance of the 
-[areaDetector license](https://github.com/areaDetector/LICENSE)
+[areaDetector license](https://github.com/areaDetector/blob/master/LICENSE)
 
 Introduction
 ------------
@@ -23,7 +23,7 @@ This guide provides instructions for:
   This document assumes that the reader has already installed an EPICS
   development environment, and has built 
   [EPICS base](http://www.aps.anl.gov/epics/base), the 
-  [EPICS asyn module](http://www.aps.anl.gov/epics/module/soft/asyn), and
+  [EPICS asyn module](http://www.aps.anl.gov/epics/modules/soft/asyn), and
   the required 
   [EPICS synApps modules](http://www.aps.anl.gov/bcda/synApps).
   
@@ -62,10 +62,10 @@ areaDetector.
 External Products Required for Building areaDetector
 ----------------------------------------------------
 areaDetector optionally uses the NETCDF, TIFF, ZLIB, JPEG, SZIP, XML2, HDF5, 
-NEXUS, GRAPHICSMAGIC, and EPICSV4 libraries. These are used for plugins and are not
+NEXUS, GRAPHICSMAGIC, OPENCV, and EPICSV4 libraries. These are used for plugins and are not
 required.
 
-Prior to areaDetector R2-5 the TIFF, ZLIB, JPEG, SZIP, XML2, HDF5 needed
+Prior to areaDetector R2-5 the TIFF, ZLIB, JPEG, SZIP, XML2, HDF5 libraries needed
 to be installed on Linux.  On Windows they were provided as pre-built 
 libraries in the ADBinaries module in areaDetector.  NETCDF and NEXUS
 were built from source in ADCore.
@@ -79,7 +79,7 @@ On Linux each library can either be built in ADSupport or installed in a locatio
 external to areaDetector.
 
 For each library XXX (XXX=TIFF, NETCDF, etc.) there are 4 Makefile variables
-that can be defined.
+that can be defined in CONFIG_SITE.local.
 - WITH_XXX      
   - If WITH_XXX=YES then build the plugins and drivers that require this library.
   - If XXX_EXTERNAL=NO then also build the source code for this library in ADSupport.
