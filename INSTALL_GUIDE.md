@@ -7,7 +7,7 @@ Mark Rivers, University of Chicago
 -----------------------------------
 
 This product is made available subject to acceptance of the 
-[areaDetector license](https://github.com/areaDetector/blob/master/LICENSE)
+[areaDetector license](https://github.com/areaDetector/areaDetector/blob/master/LICENSE)
 
 Introduction
 ------------
