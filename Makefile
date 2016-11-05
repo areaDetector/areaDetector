@@ -173,6 +173,11 @@ DIRS := $(DIRS) $(FIREWIREDCAM)
 $(FIREWIREDCAM)_DEPEND_DIRS += $(ADCORE)
 endif
 
+ifdef NDDRIVERSTDARRAYS
+DIRS := $(DIRS) $(NDDRIVERSTDARRAYS)
+$(NDDRIVERSTDARRAYS)_DEPEND_DIRS += $(ADCORE)
+endif
+
 include $(TOP)/configure/RULES_TOP
 
 uninstallTargets = $(foreach dir, $(DIRS), $(dir)$(DIVIDER)uninstall)

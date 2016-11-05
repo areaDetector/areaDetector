@@ -54,6 +54,7 @@ use File::Path;
           "./ADmar345/documentation",
           "./ADmarCCD/documentation",
           "./ADnED/documentation",
+          "./NDDriverStdArrays/documentation",
           );
 
 foreach $dir (@subdirs) {
