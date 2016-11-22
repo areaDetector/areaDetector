@@ -36,9 +36,11 @@ DIRS := $(DIRS) $(NDDRIVERSTDARRAYS)
 $(NDDRIVERSTDARRAYS)_DEPEND_DIRS += $(ADCORE)
 endif
 
-ifdef PVADRIVER
-DIRS := $(DIRS) $(PVADRIVER)
-$(PVADRIVER)_DEPEND_DIRS += $(ADCORE)
+ifeq ($(WITH_EPICS_V4), YES)
+  ifdef PVADRIVER
+  DIRS := $(DIRS) $(PVADRIVER)
+  $(PVADRIVER)_DEPEND_DIRS += $(ADCORE)
+  endif
 endif
 
 # Finally build hardware drivers
