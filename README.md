@@ -6,13 +6,17 @@ The top-level repository for the
 software.  This repository contains mostly documentation, configuration files,
 and a top-level Makefile to build the entire areaDetector package.
 
-The areaDetector code is contained in submodules under this module.  Two
+The areaDetector code is contained in submodules under this module.  Three
 of these are "core" submodules:
 
-1. [ADBinaries](https://github.com/areaDetector/ADBinaries). 
-  This contains prebuilt support libraries (HDF5, XML2, etc.) for Windows.
+1. [ADSupport](https://github.com/areaDetector/ADSupport). 
+  This contains the source code for support libraries (TIFF, JPEG, HDF5, XML2, etc.).
+  This is required for Windows and vxWorks, and can optionally be used on Linux and Darwin.
 2. [ADCore](https://github.com/areaDetector/ADCore).
-  This contains the base classes, plugins, documentation and an example simulation detector.
+  This contains the base classes, plugins, and documentation.
+3. [ADExample](https://github.com/areaDetector/ADExample).
+  This contains an example 2-D simulation detector driver and IOC, 
+  an example ADC simulation driver and IOC, and an example IOC for the EPICS V4 pvaDriver.
   
 All of the other submodules (ADProsilica, ADPilatus, etc.) contain drivers and EPICS IOC applications
 for specific detectors.

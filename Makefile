@@ -2,15 +2,13 @@
 TOP = .
 include $(TOP)/configure/CONFIG
 
-ifeq ($(OS),Windows_NT)
-DIRS := $(DIRS) $(ADBINARIES)
-endif
+# Always build ADSupport and ADCore
+DIRS := $(DIRS) $(ADSUPPORT)
 
 DIRS := $(DIRS) $(ADCORE)
-ifeq ($(OS),Windows_NT)
-$(ADCORE)_DEPEND_DIRS += $(ADBINARIES)
-endif
+$(ADCORE)_DEPEND_DIRS += $(ADSUPPORT)
 
+# Build optional plugins next
 ifdef FFMPEGSERVER
 DIRS := $(DIRS) $(FFMPEGSERVER)
 $(FFMPEGSERVER)_DEPEND_DIRS += $(ADCORE)
@@ -21,6 +19,31 @@ DIRS := $(DIRS) $(ADPLUGINEDGE)
 $(ADPLUGINEDGE)_DEPEND_DIRS += $(ADCORE)
 endif
 
+# Build simulation drivers next
+ifdef ADSIMDETECTOR
+DIRS := $(DIRS) $(ADSIMDETECTOR)
+$(ADSIMDETECTOR)_DEPEND_DIRS += $(ADCORE)
+endif
+
+ifdef ADCSIMDETECTOR
+DIRS := $(DIRS) $(ADCSIMDETECTOR)
+$(ADCSIMDETECTOR)_DEPEND_DIRS += $(ADCORE)
+endif
+
+# Build software drivers next (no associated hardware)
+ifdef NDDRIVERSTDARRAYS
+DIRS := $(DIRS) $(NDDRIVERSTDARRAYS)
+$(NDDRIVERSTDARRAYS)_DEPEND_DIRS += $(ADCORE)
+endif
+
+ifeq ($(WITH_EPICS_V4), YES)
+  ifdef PVADRIVER
+  DIRS := $(DIRS) $(PVADRIVER)
+  $(PVADRIVER)_DEPEND_DIRS += $(ADCORE)
+  endif
+endif
+
+# Finally build hardware drivers
 ifdef ADADSC
 DIRS := $(DIRS) $(ADADSC)
 $(ADADSC)_DEPEND_DIRS += $(ADCORE)
@@ -41,14 +64,14 @@ DIRS := $(DIRS) $(ADBRUKER)
 $(ADBRUKER)_DEPEND_DIRS += $(ADCORE)
 endif
 
+ifdef ADCAMERALINK
+DIRS := $(DIRS) $(ADCAMERALINK)
+$(ADCAMERALINK)_DEPEND_DIRS += $(ADCORE)
+endif
+
 ifdef ADDEXELA
 DIRS := $(DIRS) $(ADDEXELA)
 $(ADDEXELA)_DEPEND_DIRS += $(ADCORE)
-endif
-
-ifdef ADEXAMPLE
-DIRS := $(DIRS) $(ADEXAMPLE)
-$(ADEXAMPLE)_DEPEND_DIRS += $(ADCORE)
 endif
 
 ifdef ADFASTCCD
@@ -59,6 +82,11 @@ endif
 ifdef ADFIREWIREWIN
 DIRS := $(DIRS) $(ADFIREWIREWIN)
 $(ADFIREWIREWIN)_DEPEND_DIRS += $(ADCORE)
+endif
+
+ifdef ADLAMBDA
+DIRS := $(DIRS) $(ADLAMBDA)
+$(ADLAMBDA)_DEPEND_DIRS += $(ADCORE)
 endif
 
 ifdef ADLIGHTFIELD
@@ -74,6 +102,12 @@ endif
 ifdef ADMYTHEN
 DIRS := $(DIRS) $(ADMYTHEN)
 $(ADMYTHEN)_DEPEND_DIRS += $(ADCORE)
+endif
+
+ifdef ADPCO
+DIRS := $(DIRS) $(ADPCO)
+$(ADPCO)_DEPEND_DIRS += $(ADCORE)
+$(ADPCO)_DEPEND_DIRS += $(ADCAMERALINK)
 endif
 
 ifdef ADPICAM
@@ -160,6 +194,7 @@ ifdef FIREWIREDCAM
 DIRS := $(DIRS) $(FIREWIREDCAM)
 $(FIREWIREDCAM)_DEPEND_DIRS += $(ADCORE)
 endif
+
 
 include $(TOP)/configure/RULES_TOP
 

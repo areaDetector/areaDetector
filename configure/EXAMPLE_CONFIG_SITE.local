@@ -2,74 +2,97 @@
 # Otherwise set it to NO
 BUILD_IOCS=YES
 
-# To build areaDetector with the V4 plugin and driver set the following flag
-EPICS_V4=NO
-
 # To build areaDetector so that it only depends on libCom and asyn set the following flag
 #EPICS_LIBCOM_ONLY=YES
 
-# To include GraphicsMagick support set the following to YES
-# To not use it comment out the line or set it to NO
+# Configure which 3rd party libraries to use and where to find them.
+# For each library XXX the following definitions are used:
+# WITH_XXX      Build the plugins and drivers that require this library.
+#               Build the source code for this library in ADSupport if XXX_EXTERNAL=NO.
+# XXX_EXTERNAL  If NO then build the source code for this library in ADSupport.
+# XXX_INCLUDE   If XXX_EXTERNAL=YES then this is the path to the include files for XXX.
+#               However, if XXX is a system library whose include files are in a 
+#               standard include search path then do not define XXX_INCLUDE.
+# XXX_LIB       If XXX_EXTERNAL=YES then this is the path to the library files for XXX.
+#               However, if XXX is a system library whose library files in a 
+#               standard library search path then do not define XXX_LIB.
+
+# The default defined here is appropriate for most Linux systems.
+
+# BOOST is required for the ADCore/pluginTests unit tests
+WITH_BOOST     = NO
+#BOOST_LIB     =
+#BOOST_INCLUDE =
+
+# EPICS_V4 is required for NDPluginPva and pvaDriver
+WITH_EPICS_V4  = YES
+
 # GraphicsMagick is required for NDFileMagick and the URL driver.
-# On Fedora the 32-bit and 64-bit versions of GraphicsMagick conflict, 
-# so we define it to NO here and to YES in CONFIG_SITE.Linux.linux-x86_64
-USE_GRAPHICSMAGICK=NO
+WITH_GRAPHICSMAGICK     = NO
+GRAPHICSMAGICK_EXTERNAL = YES
+#GRAPHICSMAGICK_INCLUDE =
+#GRAPHICSMAGICK_LIB     =
 
-# Define the location of the hdf5, sz, and GraphicsMagick libraries
+# HDF5 is required for the NDFileHDF5 and NDFileNexus plugins
+WITH_HDF5     = YES
+HDF5_EXTERNAL = YES
+#HDF5_INCLUDE =
+#HDF5_LIB     =
 
-# These HDF5 variables should not be defined if using the hdf5 system library in a default location
-# Assume that HDF5 is not available on vxWorks.
-# These lines are ignored on Windows because HDF5 is provided in ADBinaries.
-# 
-ifneq ($(OS_CLASS), vxWorks)
-    HDF5         = /usr/local64
-    HDF5_LIB     = $(HDF5)/lib
-    HDF5_INCLUDE = -I$(HDF5)/include
-endif
+# JPEG is required for the NDFileJPEG and NDFileTIFF plugins
+WITH_JPEG     = YES
+JPEG_EXTERNAL = YES
+#JPEG_INCLUDE =
+#JPEG_LIB     =
 
-ifeq ($(OS_CLASS), WIN32)
-    HDF5_STATIC_BUILD=$(STATIC_BUILD)
-endif
+# JPEG is required for the NDFileNetCDF plugin
+WITH_NETCDF     = YES
+NETCDF_EXTERNAL = NO
+#NETCDF_INCLUDE =
+#NETCDF_LIB     =
 
-# SZIP must be defined if it is to be used.
-# SZIP_LIB and SZIP_INCLUDE variables should not be defined if using the sz system library in a default location
-# Assume that SZIP is not available on vxWorks.
-# These lines are ignored on Windows because SZIP is provided in ADBinaries.
-ifneq ($(OS_CLASS), vxWorks)
-    SZIP           = /usr/local64
-    SZIP_LIB       = $(SZIP)/lib
-    SZIP_INCLUDE   = -I$(SZIP)/include
-endif
+# NEXUS is required for the NDFileNexus plugin
+WITH_NEXUS     = YES
+NEXUS_EXTERNAL = NO
+#NEXUS_INCLUDE =
+#NEXUS_LIB     =
 
-# GRAPHICS_MAGICK must be defined if it is to be used.
-# GRAPHICS_MAGICK_LIB and GRAPHICS_MAGICK_INCLUDE variables should not be defined if using the GraphicsMagick system library in a default location
-GRAPHICS_MAGICK         = /usr/local64
-GRAPHICS_MAGICK_LIB     = $(GRAPHICS_MAGICK)/lib
-GRAPHICS_MAGICK_INCLUDE = -I$(GRAPHICS_MAGICK)/include/GraphicsMagick
+# OPENCV is required for the ADPluginEdge plugin
+WITH_OPENCV     = NO
+OPENCV_EXTERNAL = YES
+#OPENCV_INCLUDE =
+#OPENCV_LIB     =
 
-# Define the location of the libxml2 include files
-# Assume that XML2 is not available on vxWorks.
-# These lines are ignored on Windows because XML2 is provided in ADBinaries.
-ifneq ($(OS_CLASS), vxWorks)
-    XML2_INCLUDE = -I/usr/include/libxml2
-endif
+# SZIP is required for the NDFileHDF5 and NDFileNexus plugins.  
+# This may be optional in the future.
+WITH_SZIP     = YES
+SZIP_EXTERNAL = YES
+#SZIP_INCLUDE =
+#SZIP_LIB     =
 
-# This must be defined or fstat will not work on linux-x86 programs using CIFS mounts
-USR_CFLAGS_Linux   += -D_FILE_OFFSET_BITS=64
-USR_CXXFLAGS_Linux += -D_FILE_OFFSET_BITS=64
+# TIFF is required for the NDFileTIFF plugin.
+WITH_TIFF     = YES
+TIFF_EXTERNAL = YES
+#TIFF_INCLUDE =
+#TIFF_LIB     =
 
-# Optionally define the location of the boost libraries.  
-# These are only needed for the ADCore/pluginTests unit tests
-# BOOST must be defined if it is to be used
-# BOOST_LIB and BOOST_INCLUDE variables should not be defined if using the boost system library in a default location
-#BOOST         = /usr
-#BOOST_LIB     = $(BOOST)/lib64
-#BOOST_INCLUDE = -I$(BOOST)/include
+# XML2 is required for the NDFileHDF5 and NDFileNexus plugins.  
+WITH_XML2     = YES
+XML2_EXTERNAL = YES
+#XML2_INCLUDE =
+#XML2_LIB     =
 
-# Optionally define the location of the opencv library
-# This is only needed to build the ADPluginEdge plugin
-# OPENCV must be defined if it is to be used
-# OPENCV_LIB and OPENCV_INCLUDE variables should not be defined if using the opencv system library in a default location
-#OPENCV          = /usr
-#OPENCV_LIB      = $(OPENCV)/lib64
-#OPENCV_INCLUDE  = -I$(OPENCV)/include
+# ZLIB is required for the NDFileHDF5 and NDFileNexus plugins.  
+# This may be optional in the future.
+WITH_ZLIB     = YES
+ZLIB_EXTERNAL = YES
+#ZLIB_INCLUDE =
+#ZLIB_LIB     =
+
+# The definitions above can be overridden in the following files.
+# The files are searched in this order, with the last definition being used.
+#    CONFIG_SITE.local.$(OS_CLASS)
+#    CONFIG_SITE.local.$(EPICS_HOST_ARCH) 
+#    CONFIG_SITE.local.$(EPICS_HOST_ARCH).$(T_A)
+
+

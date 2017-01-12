@@ -27,6 +27,20 @@ Release Notes
 Each submodule contains detailed release notes for each release of that submodule.  The release notes below
 only provide a short summary of the most significant items from the submodules.
 
+R2-5 (October 28, 2016)
+----
+* Requires R2-5 of ADCore.  This requires some changes to CONFIG_SITE.local.
+  ADCore R2-5 has many new features, including support for HDF5 SWMR mode, support for EPICS V4
+  NTNDArrays, and new TimeSeries and FFT plugins.
+* Added ADSupport repository.  This replaces ADBinaries and some of the source
+  directories that were previously in ADCore.  It builds support for TIFF, JPEG, NETCDF
+  ZLIB, SZIP, HDF5, XML2, and NEXUS.  All of these support libraries are now optional.
+  The configure directory and INSTALL_GUIDE.md have many changes to support this.
+* New ADLambda repository that supports the detectors from Lambda.  Thanks to John Hammonds for this.
+* New ADCameraLink repository that supports Silicon Software and Dalsa/Coreco.  Thanks to Tim Madden for this.
+* New ADPCO repository that supports PCO CameraLink cameras.  Thanks to Tim Madden for this.
+* Added LICENSE files to all repositories. 
+
 R2-4 (September 18, 2015)
 ----
 * Requires R2-4 of ADCore.  This requires some changes to CONFIG_SITE.local.

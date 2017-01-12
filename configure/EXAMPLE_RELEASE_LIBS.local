@@ -9,21 +9,20 @@
 # $(SUPPORT), $(AREA_DETECTOR), and $(EPICS_BASE) must be defined in RELEASE_PATHS.local or
 # RELEASE_PATHS.local.$(EPICS_HOST_ARCH).
 
-TEMPLATE_TOP=$(EPICS_BASE)/templates/makeBaseApp/top
-
 # If you don't want to install into $(TOP) then
 # define INSTALL_LOCATION_APP here
 #INSTALL_LOCATION_APP=<fullpathname>
 
 # ASYN is needed for base classes 
-ASYN=$(SUPPORT)/asyn-4-28
+ASYN=$(SUPPORT)/asyn-4-30
 
-# Binaries and include files for Windows
-ADBINARIES=$(AREA_DETECTOR)/ADBinaries
+# ADSupport is needed by ADCore plugins
+ADSUPPORT = $(AREA_DETECTOR)/ADSupport
 
 # ADCORE for base classes and plugins
 ADCORE=$(AREA_DETECTOR)/ADCore
 
+# V4 modules.
 PVCOMMON=$(EV4_BASE)/pvCommonCPP
 PVACCESS=$(EV4_BASE)/pvAccessCPP
 PVDATA=$(EV4_BASE)/pvDataCPP
