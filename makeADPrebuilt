@@ -13,20 +13,20 @@ find . -name 'auto_settings.savB*' -exec rm -fv {} \;
 find . -name 'core.*' -exec rm -fv {} \;
 find . -name '*.exe.*' -exec rm -fv {} \;
 
-AREA_DETECTOR=areaDetector-2-5
-ASYN=asyn-4-30
+AREA_DETECTOR=areaDetector-2-6
+ASYN=asyn-4-31
 AUTOSAVE=autosave-5-7-1
 BUSY=busy-1-6-1
 CALC=calc-3-6-1
 DEVIOCSTATS=devIocStats-3-1-14
 SSCAN=sscan-2-10-2
-BASE_TOP=/usr/local/epics
-BASE=base-3.14.12.5
+BASE_TOP=/usr/local/epics-devel
+BASE=base-3.15.5
 SUPPORT=/home/epics/devel
 DESTINATION=/home/epics/public_html/pub/$1/$1_Prebuilt_$AREA_DETECTOR_$2_$3
 # NOTE: This cd is needed so that wildcards work, even though the tar command has --directory
 cd ..
-tar cvzf $DESTINATION.tgz \
+tar czf $DESTINATION.tgz \
 --ignore-failed-read \
 --exclude '.svn*' \
 --exclude 'O.*'  \
@@ -42,7 +42,8 @@ $AREA_DETECTOR/ADCore/iocBoot \
 $AREA_DETECTOR/ADCore/Viewers/ImageJ \
 $AREA_DETECTOR/ADCore/bin/$3 \
 $AREA_DETECTOR/ADCore/lib/$3 \
-$AREA_DETECTOR/ADBinaries/bin/$3 \
+$AREA_DETECTOR/ADSupport/bin/$3 \
+$AREA_DETECTOR/ADSupport/lib/$3 \
 $AREA_DETECTOR/$1/db \
 $AREA_DETECTOR/$1/bin/$3 \
 $AREA_DETECTOR/$1/lib/$3 \
@@ -80,10 +81,10 @@ $SSCAN/lib/$3
 
 rm -f $DESTINATION.zip
 cd $BASE_TOP
-zip -r $DESTINATION.zip   \
+zip -r -q $DESTINATION.zip   \
 $BASE/bin/$3
 cd $SUPPORT
-zip -r --grow $DESTINATION.zip   \
+zip -r -q --grow $DESTINATION.zip   \
 $AREA_DETECTOR/ADCore/db \
 $AREA_DETECTOR/ADCore/documentation \
 $AREA_DETECTOR/ADCore/ADApp/Db \
@@ -92,7 +93,8 @@ $AREA_DETECTOR/ADCore/iocBoot \
 $AREA_DETECTOR/ADCore/Viewers/ImageJ \
 $AREA_DETECTOR/ADCore/bin/$3 \
 $AREA_DETECTOR/ADCore/lib/$3 \
-$AREA_DETECTOR/ADBinaries/bin/$3 \
+$AREA_DETECTOR/ADSupport/bin/$3 \
+$AREA_DETECTOR/ADSupport/lib/$3 \
 $AREA_DETECTOR/$1/db \
 $AREA_DETECTOR/$1/bin/$3 \
 $AREA_DETECTOR/$1/lib/$3 \
