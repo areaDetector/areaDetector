@@ -11,7 +11,7 @@ This product is made available subject to acceptance of the
 
 Introduction
 ------------
-This is a guide for installing and building R2-5 and later of the EPICS
+This is a guide for installing and building R2-6 and later of the EPICS
 areaDetector module.  This guide is intended for both areaDetector users and
 developers.  areaDetector can be obtained as a release or by cloning from the
 github repository. 
@@ -62,8 +62,8 @@ areaDetector.
 External Products Required for Building areaDetector
 ----------------------------------------------------
 areaDetector optionally uses the NETCDF, TIFF, ZLIB, JPEG, SZIP, XML2, HDF5, 
-NEXUS, GRAPHICSMAGIC, OPENCV, and EPICSV4 libraries. These are used for plugins and are not
-required.
+NEXUS, GRAPHICSMAGIC, OPENCV, and EPICSV4 libraries. These are used for plugins and 
+drivers and are not required.
 
 Prior to areaDetector R2-5 the TIFF, ZLIB, JPEG, SZIP, XML2, HDF5 libraries needed
 to be installed on Linux.  On Windows they were provided as pre-built 
@@ -107,7 +107,7 @@ ADSupport can be used to build the libraries for the following operating systems
   - On vxWorks 6.x all libraries are supported.  
   - On vxWorks 5.x only TIFF, ZLIB, JPEG, and NETCDF are supported.  
     WITH_SZIP, WITH_HDF5, and WITH_NEXUS must be set to NO
-- Darwin.  This is not supported in R2-5, but will be added in a future release.
+- Darwin.  This is not supported in R2-6, but will be added in a future release.
 
 The following instructions can be used for installing these libraries externally
 to areaDetector if that is desired.
@@ -264,7 +264,7 @@ It can be downloaded 2 ways:
 2. By downloading tar.gz or zip files for a specific release of each module
    through a Web browser or by the wget command:
 
-    <code>wget https://github.com/areaDetector/areaDetector/archive/R2-5.tar.gz</code>
+    <code>wget https://github.com/areaDetector/areaDetector/archive/R2-6.tar.gz</code>
     
 If downloading tar files then each repository must be downloaded separately. To
 build the "core" of areaDetector the following repositories must be downloaded:
@@ -275,7 +275,7 @@ build the "core" of areaDetector the following repositories must be downloaded:
 
 To build the simulation detector, which is very useful for learning areaDetector and for testing,
 also download
-* areaDetector/ADExample
+* areaDetector/ADSimDetector
 
 To also build a specific detector, for example the ADProsilica, also download
 * areaDetector/ADProsilica
@@ -288,7 +288,9 @@ areaDetector/configure directory needs to be edited for site-specific configurat
 areaDetector
   ADSupport
   ADCore
-  ADExample
+  ADSimDetector
+  ADCSmDetector
+  pvaDriver
   ADPilatus, etc.
 ```
 
@@ -373,7 +375,7 @@ locations then BOOST_INCLUDE and BOOST_LIB should not be defined.
 
     WITH_EPICS_V4 = YES or NO
     
-EPICS V4 libraries are needed for the NDPluginPVA and pvaDriver in ADCore. To build
+EPICS V4 libraries are needed for the NDPluginPVA in ADCore and the pvaDriver repository. To build
 these components set WITH_EPICS_V4=YES and define the location of the EPICS V4 libraries
 in RELEASE_PATHS.local and RELEASE_LIBS.local.
 
@@ -452,7 +454,7 @@ commented out depending on whether these modules were defined in RELEASE_PRODS.l
 
 ### Run SimDetector      
 
-    cd ADExample/iocs/simDetectorIOC/iocBoot/iocSimDetector
+    cd ADSimDetector/iocs/simDetectorIOC/iocBoot/iocSimDetector
     ### Edit Makefile to set ARCH to your $(EPICS_HOST_ARCH) architecture
     make
     cp envPaths envPaths.linux
@@ -477,9 +479,9 @@ Rivers and I can create one for you.
 
 The pre-built binaries contain executables for one or more of the following
 architectures:
-- linux-x86 (32-bit Linux built on Fedora Core 15, gcc 4.6.3, libc 2.14.1)
-- linux-x86_64 (64-bit Linux built on Fedora Core 15, gcc 4.6.3, libc 2.14.1)
-- linux-x86_gcc43 (32-bit Linux build on Fedora Core 9, gcc 4.3.0, libc 2.8)
+- linux-x86 (32-bit Linux built on Centos7, gcc 4.8.5, libc 2.17)
+- linux-x86_64 (64-bit Linux built on Centos7, gcc 4.8.5, libc 2.17)
+- linux-x86_rhel6 (32-bit Linux build on RHEL6, gcc 4.4.7, libc 2.12)
 - linux-x86_64-gcc42 (64-bit Linux built on SUSE, gcc 4.2.1, libc 2.6.1)
 - darwin-x86 (64-bit Mac OSX built on Darwin 11.4.2,  ??, clang 4.2)
 - win32-x86-static (32-bit Windows, VS2010 compiler, statically linked)
@@ -488,8 +490,8 @@ architectures:
 - windows-x64 (64-bit Windows, VX2010 compiler, dyanamically linked)
 
 Note that the linux-x86 and linux-x86_64 builds are done a relatively new Linux system
-and will not run on RHEL 6, for example.  The linux-x86-gcc43 and linux-x86_64-gcc42 
-architectures are built on much older versions of Linux, and should run on most Linux 
+and will not run on RHEL 6, for example.  The linux-x86-rhel6 build will run on RHEL 6. 
+The linux-x86_64-gcc42 build uses a very old version of libc and should run on most Linux 
 systems.
 
 Follow these steps to use the prebuilt version.  
