@@ -27,16 +27,18 @@ Release Notes
 Each submodule contains detailed release notes for each release of that submodule.  The release notes below
 only provide a short summary of the most significant items from the submodules.
 
-R2-6 (February XXX, 2016)
+R2-6 (February 22, 2016)
 ----
 * Requires ADCore R2-6
 * Requires asyn R4-31
 * ADExample has been replaced by 3 new repositories
   * ADSimDetector  The simulation detector
   * ADCSimDetector The ADC simulation detector
-  * pvaDriver      The EPICS V4 PVA driver
+  * pvaDriver      The EPICS V4 PVAccess driver
 * New NDDriverStdArrays that supports sending NDArrays to an areaDetector IOC from Channel Access clients
   via waveform records and other PVs.
+* New releases of many drivers with minor changes to source code and medm screens for the enhancements 
+  in ADCore R2-6.
 
 
 R2-5 (October 28, 2016)
