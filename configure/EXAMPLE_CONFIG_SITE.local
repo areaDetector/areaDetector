@@ -17,6 +17,10 @@ BUILD_IOCS=YES
 #               However, if XXX is a system library whose library files in a 
 #               standard library search path then do not define XXX_LIB.
 
+# The exception to the above is XML2. 
+# As of ADCORE R3-0 libxml2 is required for ADCore so WITH_XML2 is not supported
+# but the other XML2 flags are supported.
+
 # The default defined here is appropriate for most Linux systems.
 
 # BOOST is required for the ADCore/pluginTests unit tests
@@ -76,8 +80,7 @@ TIFF_EXTERNAL = YES
 #TIFF_INCLUDE =
 #TIFF_LIB     =
 
-# XML2 is required for the NDFileHDF5 and NDFileNexus plugins.  
-WITH_XML2     = YES
+# XML2 is required for ADCore so there is no WITH_XML2.  
 XML2_EXTERNAL = YES
 #XML2_INCLUDE =
 #XML2_LIB     =
