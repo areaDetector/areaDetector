@@ -27,6 +27,12 @@ Release Notes
 Each submodule contains detailed release notes for each release of that submodule.  The release notes below
 only provide a short summary of the most significant items from the submodules.
 
+R3-0 (May 5, 2017)
+----
+* Requires ADCore R3-0
+* Requires asyn R4-31 or higher
+* Requires EPICS base 3.14.12.4 or higher
+
 R2-6 (February 22, 2016)
 ----
 * Requires ADCore R2-6
