@@ -33,6 +33,23 @@ R3-0 (May 5, 2017)
 * Requires asyn R4-31 or higher
 * Requires EPICS base 3.14.12.4 or higher
 
+* Prior to releasing R3-0 the following were applied to modules that needed to change for R3-0.  
+These changed because they contain plugins that call NDPluginDriver base class constructor which 
+now takes different arguments. Thus these tags are compatible with R2-6.  Everything after this requires R3-0 of ADCore.
+
+Repository   | Tag
+----------   | ---
+ADFastCCD    | R1-0 (initial tag)
+ADPCO        | R1-0
+ADPluginEdge | R1-1
+ADnED        | rel1.8_20170502
+ffmpegServer | R1-0 (initial tag)
+
+* ADAndor is the only driver that required changes for R3-0 because it was using TinyXml and has been
+changed to use libxml2. ADAndor R2-5 is the last release that works with ADCore R2-6, everything later 
+will require ADCore R3-0
+
+
 R2-6 (February 22, 2016)
 ----
 * Requires ADCore R2-6
