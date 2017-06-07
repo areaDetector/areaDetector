@@ -8,10 +8,17 @@
 #SZIP_LIB       = $(SZIP)/lib
 #SZIP_INCLUDE   = -I$(SZIP)/include
 
-# GRAPHICSMAGICK_LIB and GRAPHICSMAGICK_INCLUDE variables should not be defined if using the GraphicsMagick system library in a default location
+# GRAPHICSMAGICK_LIB should not be defined if using the GraphicsMagick system library in a default location
 #GRAPHICSMAGICK         = /usr/local64
-#GRAPHICSMAGICK_LIB     = $(GRAPHICSMAGICK)/lib
-#GRAPHICSMAGICK_INCLUDE = -I$(GRAPHICSMAGICK)/include/GraphicsMagick
+#GRAPHICSMAGICK_EXTERNAL=YES
+# If GRAPHICSMAGICK_EXTERNAL=YES then typically GRAPHICSMAGICK_INCLUDE must be defined or Magick++ include files won't be found
+#GRAPHICSMAGICK_INCLUDE = -I/usr/include/GraphicsMagick
+# If GRAPHICSMAGICK_EXTERNAL=YES then typically GRAPHICSMAGICK_PREFIX_SYMBOLS must be NO 
+#GRAPHICSMAGICK_PREFIX_SYMBOLS = NO
+# The package version of GraphicsMagick on Centos 7 requires JPEG 6.2, but ADSupport has JPEG 9b
+# Must use system version of JPEG and TIFF
+#JPEG_EXTERNAL=YES
+#TIFF_EXTERNAL=YES
 
 # Location of GLIB include files and libraries.  This is needed by the aravis-GigE driver.
 # Our system has include files for glib-2.0 in 2 different places
