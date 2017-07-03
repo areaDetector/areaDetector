@@ -3,24 +3,34 @@
 # To build applications statically so they can be moved to other systems without copying lots of library files
 STATIC_BUILD=YES
 
-# The default on all Linux systems is to use the system versions of JPEG, TIFF, XML2, and ZLIB.
+# The default in EXAMPLE_CONFIG_SITE.local is to build everything in ADSupport, 
+# e.g.  GraphicsMagick, HDF5, JPEG, NETCDF, NEXUS, SZIP, TIFF, XML2, and ZLIB.
 # Because these are system files we don't define XXX_INCLUDE or XXX_LIB
 # To use non-system versions of these libraries change the definitions here or in
 #    CONFIG_SITE.local.$(EPICS_HOST_ARCH) 
 #    CONFIG_SITE.local.$(EPICS_HOST_ARCH).$(T_A)
 
-# To build these libraries in ADSupport uncomment these lines
+# To use external versions (e.g. not in ADSupport) of one or more these libraries uncomment these lines
+# If using a system file don't define XXX_INCLUDE or XXX_LIB
+# To use external but non-system files then XXX_INCLUDE and XXX_LIB will need to be defined.
+# Definitions can be changed here or in
+#    CONFIG_SITE.local.$(EPICS_HOST_ARCH) 
+#    CONFIG_SITE.local.$(EPICS_HOST_ARCH).$(T_A)
 
-#GRAPHICSMAGICK_EXTERNAL = NO
+#GRAPHICSMAGICK_EXTERNAL = YES
 
-#HDF5_EXTERNAL = NO
+#HDF5_EXTERNAL = YES
 
-#JPEG_EXTERNAL = NO
+#JPEG_EXTERNAL = YES
 
-#SZIP_EXTERNAL = NO
+#NEXUS_EXTERNAL = YES
 
-#TIFF_EXTERNAL = NO
+#NETCDF_EXTERNAL = YES
 
-#XML2_EXTERNAL = NO
+#SZIP_EXTERNAL = YES
 
-#ZLIB_EXTERNAL = NO
+#TIFF_EXTERNAL = YES
+
+#XML2_EXTERNAL = YES
+
+#ZLIB_EXTERNAL = YES
