@@ -42,6 +42,7 @@ use File::Path;
           "./ADPCO/documentation",
           "./ADPSL/documentation",
           "./ADPerkinElmer/documentation",
+          "./ADPhotonII/documentation",
           "./ADPilatus/documentation",
           "./ADPixirad/documentation",
           "./ADPluginEdge/documentation",
