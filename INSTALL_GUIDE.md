@@ -71,9 +71,9 @@ libraries in the ADBinaries module in areaDetector.  NETCDF and NEXUS
 were built from source in ADCore.
 
 Beginning with R2-5 the ADSupport module was added to areaDetector.  This
-module builds the NETCDF, TIFF, ZLIB, JPEG, SZIP, XML2, HDF5, and NEXUS
-libraries from source code.  GRAPHICSMAGICK will be added in a future release, 
-as will support for building ADSupport on Darwin.
+module builds the GRAPHICSMAGICK, NETCDF, TIFF, ZLIB, JPEG, SZIP, XML2, HDF5, and NEXUS
+libraries from source code. 
+ADSupport on Darwin may be added in a future release.
 ADSupport will almost always be used to build the libraries on Windows and vxWorks.  
 On Linux each library can either be built in ADSupport or installed in a location 
 external to areaDetector.
@@ -239,18 +239,14 @@ After the latest release is untared, cd to the release and execute the commands:
 
 #### GRAPHICSMAGICK
     
-This can be downloaded from the mercurial repository with these commands:
+This can be downloaded from 
+[Sourceforge](https://sourceforge.net/projects/graphicsmagick)
 
-    hg clone http://hg.code.sf.net/p/graphicsmagick/code graphicsmagick-code
-    cd graphicsmagick-code/
+After the latest release is untared, cd to the release and execute the commands:
     ./configure
     make
     sudo make install
 
-However recent attempts to build or link with GraphicsMagick have led to a
-variety of errors. Thus, the NDFileGraphicsMagick plugin and ADURL driver are
-currently disabled by setting USE_GRAPHICS_MAGICK=NO in
-areaDetector/configure/CONFIG_SITE.local until these problems are fixed.
 
 Downloading and Installing areaDetector Source Code
 ---------------------------------------------------
@@ -384,10 +380,10 @@ in RELEASE_PATHS.local and RELEASE_LIBS.local.
 
 - NETCDF JPEG, TIFF, ZLIB, SZIP, XML2, HDF5, NEXUS, GRAPHICSMAGICK, OPENCV
   - NETCDF is required for the NDFileNetCDF plugin
-  - JPEG is required for the NDFileJPEG plugin
-  - TIFF is required for the NDFileTIFF plugin
+  - JPEG is required for the NDFileJPEG and GraphicsMagick
+  - TIFF is required for the NDFileTIFF and GraphicsMagick
   - ZLIB is required for the NDFileTIFF and NDFileHDF5 plugins
-  - XML2 is required for the ADCore
+  - XML2 is required for ADCore
   - HDF5 is required for the NDFileHDF5 and NDFileNexus plugins
   - NEXUS is required for the NDFileNexus plugin
   - GRAPHICSMAGICK is required for the NDFileMagick plugin and the ADURL driver
@@ -460,8 +456,15 @@ commented out depending on whether these modules were defined in RELEASE_PRODS.l
     cd ADSimDetector/iocs/simDetectorIOC/iocBoot/iocSimDetector
     ### Edit Makefile to set ARCH to your $(EPICS_HOST_ARCH) architecture
     make
-    cp envPaths envPaths.linux
-    ../../bin/linux-x86_64/simDetectorApp st.cmd.linux
+    ../../bin/linux-x86_64/simDetectorApp st.cmd
+
+    ### If you want to be able to easily run Linux and Windows in the same tree do the following:
+    ###   Set ARCH in Makefile for Linux, run make on the Linux machine, and copy envPaths to envPaths.linux
+    ###   Set ARCH in Makefile for Windows, run make on the Windows machine, and copy envPaths to envPaths.windows
+    ### Start the IOC for Linux:
+    ../../bin/linux-x86_64/simDetectorApp st.linux
+    ### Start the IOC for Windows:
+    ../../bin/windows-x64/simDetectorApp st.windows
 
 
 Installing Pre-Built Binary Versions of areaDetector
