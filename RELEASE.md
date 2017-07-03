@@ -27,11 +27,26 @@ Release Notes
 Each submodule contains detailed release notes for each release of that submodule.  The release notes below
 only provide a short summary of the most significant items from the submodules.
 
+R3-1 (July 3, 2017)
+----
+* Requirements:
+  - ADCore R3-1
+  - ADSupport R1-3 or higher
+  - asyn R4-31 or higher
+  - EPICS base 3.14.12.4 or higher
+* Added GraphicsMagick to ADSupport.
+* Changed ADCore to allow building with GraphicsMagick either from ADSupport or using a system library.
+* Added support for 32-bit images in NDFileMagick in ADCore.
+* Changed configure/EXAMPLE_CONFIG_SITE.local to use XXX_EXTERNAL=NO for all libraries in ADSupport.
+
+
 R3-0 (May 5, 2017)
 ----
-* Requires ADCore R3-0
-* Requires asyn R4-31 or higher
-* Requires EPICS base 3.14.12.4 or higher
+* Requirements
+  - ADCore R3-0
+  - ADSupport R1-2 or higher
+  - asyn R4-31 or higher
+  - EPICS base 3.14.12.4 or higher
 * Prior to releasing R3-0 the following tags were applied to modules that needed to change for R3-0.  
   These changes were required because these modules contain plugins and the NDPluginDriver base class 
   has different constructor arguments and methods.
@@ -52,8 +67,10 @@ ffmpegServer | R1-0 (initial tag)
 
 R2-6 (February 22, 2016)
 ----
-* Requires ADCore R2-6
-* Requires asyn R4-31
+* Requirements
+  - ADCore R2-6
+  - ADSupport R1-0 or higher
+  - Requires asyn R4-31
 * ADExample has been replaced by 3 new repositories
   * ADSimDetector  The simulation detector
   * ADCSimDetector The ADC simulation detector
