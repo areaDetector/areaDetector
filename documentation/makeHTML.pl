@@ -7,7 +7,7 @@
 # EPICS BASE Versions 3.13.7
 # and higher are distributed subject to a Software License Agreement found
 # in file LICENSE that is included with this distribution. 
-#*************************************************************************
+#**********************************`:***************************************
 #
 #	makeHTML.pl
 #
@@ -71,6 +71,10 @@ foreach $dir (@subdirs) {
     $command = "cp " . $files . " " . "./html";
     system($command);
     $files = "../" . $dir . "/*.pdf";
+    copy($files,"./html");
+    $command = "cp " . $files . " " . "./html";
+    system($command);
+    $files = "../" . $dir . "/*.jpg";
     copy($files,"./html");
     $command = "cp " . $files . " " . "./html";
     system($command);
