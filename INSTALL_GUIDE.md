@@ -243,6 +243,7 @@ This can be downloaded from
 [Sourceforge](https://sourceforge.net/projects/graphicsmagick)
 
 After the latest release is untared, cd to the release and execute the commands:
+
     ./configure
     make
     sudo make install
