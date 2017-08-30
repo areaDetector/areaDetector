@@ -17,6 +17,10 @@ BUILD_IOCS=YES
 #               However, if XXX is a system library whose library files in a 
 #               standard library search path then do not define XXX_LIB.
 
+# The exception to the above is XML2. 
+# As of ADCORE R3-0 libxml2 is required for ADCore so WITH_XML2 is not supported
+# but the other XML2 flags are supported.
+
 # The default defined here is appropriate for most Linux systems.
 
 # BOOST is required for the ADCore/pluginTests unit tests
@@ -24,24 +28,33 @@ WITH_BOOST     = NO
 #BOOST_LIB     =
 #BOOST_INCLUDE =
 
+# Uncomment this line if you want to use STATIC Linking when building
+# ADCore/pluginTests unit tests.
+#BOOST_USE_STATIC_LINK=YES
+
 # EPICS_V4 is required for NDPluginPva and pvaDriver
 WITH_EPICS_V4  = YES
 
 # GraphicsMagick is required for NDFileMagick and the URL driver.
-WITH_GRAPHICSMAGICK     = NO
-GRAPHICSMAGICK_EXTERNAL = YES
+WITH_GRAPHICSMAGICK     = YES
+GRAPHICSMAGICK_EXTERNAL = NO
+# GraphicsMagick defines many global symbols, and one of these (SetImage) conflicts with a symbol
+# in the Andor vendor library.  GraphickMagick provides a solution by allowing all external library
+# symbols to be prefixed with "Gm".  Enable using this by default.  However, if a system library
+# is used it may not be built with this option so this line should be commented out.
+GRAPHICSMAGICK_PREFIX_SYMBOLS = YES
 #GRAPHICSMAGICK_INCLUDE =
 #GRAPHICSMAGICK_LIB     =
 
 # HDF5 is required for the NDFileHDF5 and NDFileNexus plugins
 WITH_HDF5     = YES
-HDF5_EXTERNAL = YES
+HDF5_EXTERNAL = NO
 #HDF5_INCLUDE =
 #HDF5_LIB     =
 
 # JPEG is required for the NDFileJPEG and NDFileTIFF plugins
 WITH_JPEG     = YES
-JPEG_EXTERNAL = YES
+JPEG_EXTERNAL = NO
 #JPEG_INCLUDE =
 #JPEG_LIB     =
 
@@ -66,26 +79,25 @@ OPENCV_EXTERNAL = YES
 # SZIP is required for the NDFileHDF5 and NDFileNexus plugins.  
 # This may be optional in the future.
 WITH_SZIP     = YES
-SZIP_EXTERNAL = YES
+SZIP_EXTERNAL = NO
 #SZIP_INCLUDE =
 #SZIP_LIB     =
 
 # TIFF is required for the NDFileTIFF plugin.
 WITH_TIFF     = YES
-TIFF_EXTERNAL = YES
+TIFF_EXTERNAL = NO
 #TIFF_INCLUDE =
 #TIFF_LIB     =
 
-# XML2 is required for the NDFileHDF5 and NDFileNexus plugins.  
-WITH_XML2     = YES
-XML2_EXTERNAL = YES
+# XML2 is required for ADCore so there is no WITH_XML2.  
+XML2_EXTERNAL = NO
 #XML2_INCLUDE =
 #XML2_LIB     =
 
 # ZLIB is required for the NDFileHDF5 and NDFileNexus plugins.  
 # This may be optional in the future.
 WITH_ZLIB     = YES
-ZLIB_EXTERNAL = YES
+ZLIB_EXTERNAL = NO
 #ZLIB_INCLUDE =
 #ZLIB_LIB     =
 

@@ -3,19 +3,12 @@ USR_CFLAGS_Linux   += -D_FILE_OFFSET_BITS=64
 USR_CXXFLAGS_Linux += -D_FILE_OFFSET_BITS=64
 
 # HDF5_LIB and HDF5_INCLUDE variables should not be defined if using the hdf5 system library in a default location
-HDF5         = /usr/local32
-HDF5_LIB     = $(HDF5)/lib
-HDF5_INCLUDE = -I$(HDF5)/include
+#HDF5         = /usr/local32
+#HDF5_LIB     = $(HDF5)/lib
+#HDF5_INCLUDE = -I$(HDF5)/include
 
 # SZIP_LIB and SZIP_INCLUDE variables should not be defined if using the szip system library in a default location
-SZIP           = /usr/local32
-SZIP_LIB       = $(SZIP)/lib
-SZIP_INCLUDE   = -I$(SZIP)/include
-
-# On Fedora the 32-bit and 64-bit versions of GraphicsMagick conflict, 
-# so we define WITH_GRAPHICS_MAGICK to NO here and to YES in CONFIG_SITE.local.linux-x86_64
-WITH_GRAPHICS_MAGICK = NO
-#GRAPHICS_MAGICK         = /usr/local32
-#GRAPHICS_MAGICK_LIB     = $(GRAPHICS_MAGICK)/lib
-#GRAPHICS_MAGICK_INCLUDE = -I$(GRAPHICS_MAGICK)/include/GraphicsMagick
+#SZIP           = /usr/local32
+#SZIP_LIB       = $(SZIP)/lib
+#SZIP_INCLUDE   = -I$(SZIP)/include
 

@@ -1,17 +1,24 @@
 # HDF5_LIB and HDF5_INCLUDE variables should not be defined if using the hdf5 system library in a default location
-HDF5         = /usr/local64
-HDF5_LIB     = $(HDF5)/lib
-HDF5_INCLUDE = -I$(HDF5)/include
+#HDF5         = /usr/local64
+#HDF5_LIB     = $(HDF5)/lib
+#HDF5_INCLUDE = -I$(HDF5)/include
 
 # SZIP_LIB and SZIP_INCLUDE variables should not be defined if using the szip system library in a default location
-SZIP           = /usr/local64
-SZIP_LIB       = $(SZIP)/lib
-SZIP_INCLUDE   = -I$(SZIP)/include
+#SZIP           = /usr/local64
+#SZIP_LIB       = $(SZIP)/lib
+#SZIP_INCLUDE   = -I$(SZIP)/include
 
-# GRAPHICS_MAGICK_LIB and GRAPHICS_MAGICK_INCLUDE variables should not be defined if using the GraphicsMagick system library in a default location
-GRAPHICS_MAGICK         = /usr/local64
-GRAPHICS_MAGICK_LIB     = $(GRAPHICS_MAGICK)/lib
-GRAPHICS_MAGICK_INCLUDE = -I$(GRAPHICS_MAGICK)/include/GraphicsMagick
+# GRAPHICSMAGICK_LIB should not be defined if using the GraphicsMagick system library in a default location
+#GRAPHICSMAGICK         = /usr/local64
+#GRAPHICSMAGICK_EXTERNAL=YES
+# If GRAPHICSMAGICK_EXTERNAL=YES then typically GRAPHICSMAGICK_INCLUDE must be defined or Magick++ include files won't be found
+#GRAPHICSMAGICK_INCLUDE = -I/usr/include/GraphicsMagick
+# If GRAPHICSMAGICK_EXTERNAL=YES then typically GRAPHICSMAGICK_PREFIX_SYMBOLS must be NO 
+#GRAPHICSMAGICK_PREFIX_SYMBOLS = NO
+# The package version of GraphicsMagick on Centos 7 requires JPEG 6.2, but ADSupport has JPEG 9b
+# Must use system version of JPEG and TIFF
+#JPEG_EXTERNAL=YES
+#TIFF_EXTERNAL=YES
 
 # Location of GLIB include files and libraries.  This is needed by the aravis-GigE driver.
 # Our system has include files for glib-2.0 in 2 different places

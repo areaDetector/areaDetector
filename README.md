@@ -6,7 +6,7 @@ The top-level repository for the
 software.  This repository contains mostly documentation, configuration files,
 and a top-level Makefile to build the entire areaDetector package.
 
-The areaDetector code is contained in submodules under this module.  Three
+The areaDetector code is contained in submodules under this module.  Four
 of these are "core" submodules:
 
 1. [ADSupport](https://github.com/areaDetector/ADSupport). 
@@ -14,9 +14,10 @@ of these are "core" submodules:
   This is required for Windows and vxWorks, and can optionally be used on Linux and Darwin.
 2. [ADCore](https://github.com/areaDetector/ADCore).
   This contains the base classes, plugins, and documentation.
-3. [ADExample](https://github.com/areaDetector/ADExample).
-  This contains an example 2-D simulation detector driver and IOC, 
-  an example ADC simulation driver and IOC, and an example IOC for the EPICS V4 pvaDriver.
+3. [ADSimDetector](https://github.com/areaDetector/ADSimDetector).
+  This contains an example 2-D simulation detector driver and IOC.
+4. [ADViewers](https://github.com/areaDetector/ADViewers).
+  This contains viewers for displaying areaDetector images in ImageJ and IDL.
   
 All of the other submodules (ADProsilica, ADPilatus, etc.) contain drivers and EPICS IOC applications
 for specific detectors.
