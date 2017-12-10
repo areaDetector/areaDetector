@@ -14,20 +14,27 @@
 #INSTALL_LOCATION_APP=<fullpathname>
 
 # ASYN is needed for base classes 
-ASYN=$(SUPPORT)/asyn-4-32
+ASYN=$(SUPPORT)/asyn-4-33
 
 # ADSupport is needed by ADCore plugins
-ADSUPPORT = $(AREA_DETECTOR)/ADSupport
+ADSUPPORT=$(AREA_DETECTOR)/ADSupport
 
 # ADCORE for base classes and plugins
 ADCORE=$(AREA_DETECTOR)/ADCore
 
-# V4 modules.
-PVCOMMON=$(EV4_BASE)/pvCommonCPP
-PVACCESS=$(EV4_BASE)/pvAccessCPP
-PVDATA=$(EV4_BASE)/pvDataCPP
-PVDATABASE=$(EV4_BASE)/pvDatabaseCPP
-NORMATIVETYPES=$(EV4_BASE)/normativeTypesCPP
+# PVA modules
+# For versions prior to EPICS base 7.0 use this
+#PVCOMMON=$(PVA)/pvCommonCPP
+#PVACCESS=$(PVA)/pvAccessCPP
+#PVDATA=$(PVA)/pvDataCPP
+#PVDATABASE=$(PVA)/pvDatabaseCPP
+#NORMATIVETYPES=$(PVA)/normativeTypesCPP
+
+# For versions of EPICS base 7.0 and later use this
+PVACCESS=$(PVA)/pvAccess
+PVDATA=$(PVA)/pvData
+PVDATABASE=$(PVA)/pvDatabase
+NORMATIVETYPES=$(PVA)/normativeTypes
 
 -include $(AREA_DETECTOR)/configure/RELEASE_LIBS.local.$(EPICS_HOST_ARCH)
 
