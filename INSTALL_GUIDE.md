@@ -62,7 +62,7 @@ areaDetector.
 External Products Required for Building areaDetector
 ----------------------------------------------------
 areaDetector optionally uses the NETCDF, TIFF, ZLIB, JPEG, SZIP, HDF5, 
-NEXUS, GRAPHICSMAGIC, OPENCV, and EPICSV4 libraries. These are used for plugins and 
+NEXUS, GRAPHICSMAGIC, OPENCV, and EPICS PVA (formerly V4) libraries. These are used for plugins and 
 drivers and are not required.  The XML2 library is required.
 
 Prior to areaDetector R2-5 the TIFF, ZLIB, JPEG, SZIP, XML2, HDF5 libraries needed
@@ -313,8 +313,8 @@ for example:
       
 ### Edit RELEASE_PATHS.local 
 The definitions for SUPPORT, AREA_DETECTOR, and EPICS_BASE must all be changed.
-All definitions must include the full path name. If the EPICS V4 libraries
-are to be used then the EV4_BASE path must also be defined.
+All definitions must include the full path name. If the EPICS PVA (formerly v4) libraries
+are to be used then the PVA path must also be defined.
 
 The normal way of installing the EPICS components is to install and build ASYN
 and all synApp components under a single directory located by SUPPORT in
@@ -346,9 +346,9 @@ The location of ADSUPPORT and ADCORE must be defined.  They will normally be
 in the AREADETECTOR directory defined in RELEASE_PATHS.local, and will not
 need to be changed.
 
-The location of the EPICS V4 libraries must be defined if WITH_EPICS_V4=YES
-in CONFIG_SITE.local.  These will normally be in the directory defined
-with EV4_BASE in RELEASE_PATHS.local, and will not need to be changed.
+The location of the EPICS PVA (formerly EPICS V4) libraries must be defined if WITH_PVA=YES
+in CONFIG_SITE.local. The location will be different depending on whether EPICS_BASE
+is prior to 7.0 or after.
 
 ### Edit RELEASE_PRODS.local 
 The definitions for AUTOSAVE, BUSY, CALC, and SSCAN, and  must be specified. 
@@ -373,10 +373,10 @@ WITH_BOOST=YES then BOOST_INCLUDE and BOOST_LIB can be defined to point to the l
 of the boost library.  If the boost include and library file are located in default system
 locations then BOOST_INCLUDE and BOOST_LIB should not be defined.
 
-    WITH_EPICS_V4 = YES or NO
+    WITH_PVA = YES or NO
     
-EPICS V4 libraries are needed for the NDPluginPVA in ADCore and the pvaDriver repository. To build
-these components set WITH_EPICS_V4=YES and define the location of the EPICS V4 libraries
+EPICS PVA (formerly V4) libraries are needed for the NDPluginPVA in ADCore and the pvaDriver repository. To build
+these components set WITH_PVA=YES and define the location of the PVA libraries
 in RELEASE_PATHS.local and RELEASE_LIBS.local.
 
 - NETCDF JPEG, TIFF, ZLIB, SZIP, XML2, HDF5, NEXUS, GRAPHICSMAGICK, OPENCV
