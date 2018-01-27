@@ -32,7 +32,7 @@ R3-1 (July 3, 2017)
 * Requirements:
   - ADCore R3-1
   - ADSupport R1-3 or higher
-  - asyn R4-31 or higher
+  - asyn R4-32 or higher
   - EPICS base 3.14.12.4 or higher
 * Added GraphicsMagick to ADSupport.
 * Changed ADCore to allow building with GraphicsMagick either from ADSupport or using a system library.
