@@ -65,7 +65,7 @@ ffmpegServer | R1-0 (initial tag)
   will require ADCore R3-0
 
 
-R2-6 (February 22, 2016)
+R2-6 (February 22, 2017)
 ----
 * Requirements
   - ADCore R2-6
