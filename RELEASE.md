@@ -53,7 +53,10 @@ R3-2-1 (February XXX, 2018)
       If they are defined they can interfere with finding modules in SUPPORT.
   - RELEASE_BASE.$(EPICS_HOST_ARCH) can be used to define an alternative location of EPICS_BASE for a specific
     architecture.  It is typically only needed when building Windows and Linux in the same tree.
-
+* The RELEASE files in many detector modules have been updated so that they only load RELEASE_LIBS_INCLUDE or 
+  RELEASE_PRODS_INCLUDE from areaDetector/configure.  This change was previously optional and had already been done for
+  some detector modules in previous releases.  This change is now required and so all detector modules have been updated 
+  to use it.
 
 R3-2 (January 28, 2018)
 ----
