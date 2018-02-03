@@ -352,7 +352,7 @@ in CONFIG_SITE.local. PVA only needs to be defined for versions of EPICS base pr
 Beginning with EPICS base 7.0 the PVA files are in EPICS base.
 
 If using Debian packages then the following must be done:
-  - SUPPORT should be defined to be the root location of any modules which should **not** come from the Debian package.
+  - SUPPORT should be defined to be the root location of any modules which should not come from the Debian package.
   - Any modules which should come from the Debian package should be commented out, except for EPICS_BASE.
   - For example to use a newer version of asyn and areaDetector then define ASYN, AREA_DETECTOR, ADCORE,
     and ADSUPPORT here.  To use the Debian version of asyn then comment out ASYN here.
@@ -366,7 +366,7 @@ If DEVIOCSTATS or ALIVE are defined in RELEASE_PRODS.local then IOC applications
 will be built with these modules as well.
 
 If using Debian packages then the following must be done:
-  - SUPPORT should be defined to be the root location of any modules which should **not** come from the Debian package.
+  - SUPPORT should be defined to be the root location of any modules which should not come from the Debian package.
   - Any modules which should come from the Debian package should be commented out, except for EPICS_BASE.
   - For example to use a newer version of asyn and areaDetector then define ASYN, AREA_DETECTOR, ADCORE,
     and ADSUPPORT here, but comment out AUTOSAVE, BUSY, etc. because they come from the Debian package. 
