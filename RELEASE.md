@@ -35,7 +35,7 @@ R3-2-1 (February XXX, 2018)
 * The INSTALL_GUIDE.md has been updated to describe the new system.
 * This is a brief description of what has changed and what users need to do.
   - In the areaDetector/configure directory type
-    ```./copyFromExample```
+    ```./copyFromExample```.
     This will copy the EXAMPLE_* files to CONFIG* and RELEASE*.
   - Edit CONFIG_SITE.local and CONFIG_SITE.local.$(EPICS_HOST_ARCH) as required.
   - Edit RELEASE.local and RELEASE.local.$(EPICS_HOST_ARCH) as required.
