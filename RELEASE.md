@@ -48,7 +48,7 @@ R3-2-1 (February XXX, 2018)
     - Define the location of EPICS_BASE.  
       - If using the Debian package then define EPICS_BASE to be the location of the Debian distribution.
   - Edit RELEASE_PRODS.local.  Do the same as for RELEASE_LIBS.local above.  
-    - If using the Debian package then comment out all of the definitions for modules that you **do* want to use from the 
+    - If using the Debian package then comment out all of the definitions for modules that you **do** want to use from the 
       Debian package (e.g. CALC, BUSY, etc.).  They are not needed because they are in the same location as EPICS_BASE. 
       If they are defined they can interfere with finding modules in SUPPORT.
   - RELEASE_BASE.$(EPICS_HOST_ARCH) can be used to define an alternative location of EPICS_BASE for a specific
