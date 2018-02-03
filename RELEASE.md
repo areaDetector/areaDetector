@@ -28,9 +28,10 @@ Each submodule contains detailed release notes for each release of that submodul
 only provide a short summary of the most significant items from the submodules.
 
 R3-2-1 (February XXX, 2018)
+----
 * Changes in the configure/RELEASE* files to ensure that EPICS_BASE is defined last.
 * Changes to allow building when some modules come from a Debian distribution and some do not.
-* If a Debian distribution is being used for any module then it must also be used for EPICS_BASE.
+  - If a Debian distribution is being used for any module then it must also be used for EPICS_BASE.
 * The INSTALL_GUIDE.md has been updated to describe the new system.
 * This is a brief description of what has changed and what users need to do.
   - In the areaDetector/configure directory type
@@ -39,16 +40,16 @@ R3-2-1 (February XXX, 2018)
   - Edit CONFIG_SITE.local and CONFIG_SITE.local.$(EPICS_HOST_ARCH) as required.
   - Edit RELEASE.local and RELEASE.local.$(EPICS_HOST_ARCH) as required.
   - Edit RELEASE_SUPPORT.local.  This file replaces RELEASE_PATHS.local from earlier releases. 
-    Define SUPPORT to be the top location of the modules that you do **not** want to get from the Debian package.
-  - RELEASE_SUPPORT.$(EPICS_HOST_ARCH) can be used to define an alternative location of SUPPORT for a specific
-    architecture.  It is typically only needed when building Windows and Linux in the same tree.
-  - Edit RELEASE_LIBS.local.  Define the locations of the modules that you do **not** want to get from the Debian package.  
+    Define SUPPORT to be the top location of the modules that you **do not** want to get from the Debian package.
+    - RELEASE_SUPPORT.$(EPICS_HOST_ARCH) can be used to define an alternative location of SUPPORT for a specific
+      architecture.  It is typically only needed when building Windows and Linux in the same tree.
+  - Edit RELEASE_LIBS.local.  Define the locations of the modules that you **do not** want to get from the Debian package.  
     - These would normally be defined using the SUPPORT definition done above.  
     - Define the location of EPICS_BASE.  
       - If using the Debian package then define EPICS_BASE to be the location of the Debian distribution.
   - Edit RELEASE_PRODS.local.  Do the same as for RELEASE_LIBS.local above.  
-    - If using the Debian package comment out all of the definitions for modules that you want to use from the 
-      Debian package (e.g. CALC, BUSY, etc.).  They are not needed because they are in the same location ads EPICS_BASE.  
+    - If using the Debian package then comment out all of the definitions for modules that you **do* want to use from the 
+      Debian package (e.g. CALC, BUSY, etc.).  They are not needed because they are in the same location as EPICS_BASE. 
       If they are defined they can interfere with finding modules in SUPPORT.
   - RELEASE_BASE.$(EPICS_HOST_ARCH) can be used to define an alternative location of EPICS_BASE for a specific
     architecture.  It is typically only needed when building Windows and Linux in the same tree.
