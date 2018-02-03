@@ -30,8 +30,8 @@ only provide a short summary of the most significant items from the submodules.
 R3-2-1 (February XXX, 2018)
 ----
 * Changes in the configure/RELEASE* files to ensure that EPICS_BASE is defined last.
-* Changes to allow building when some modules come from a Debian distribution and some do not.
-  - If a Debian distribution is being used for any module then it must also be used for EPICS_BASE.
+* Changes to allow building when some modules come from a Debian package and some do not.
+  - If a Debian package is being used for any module then it must also be used for EPICS_BASE.
 * The INSTALL_GUIDE.md has been updated to describe the new system.
 * This is a brief description of what has changed and what users need to do.
   - In the areaDetector/configure directory type
