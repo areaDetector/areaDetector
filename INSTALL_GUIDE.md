@@ -492,8 +492,11 @@ Just type:
 If this fails then some required products have probably not been installed. 
 
 ### Example files in ADCore/iocBoot
-Copy EXAMPLE_commonPlugins.cmd to commonPlugins.cmd and EXAMPLE_commonPlugins_settings.req to
+Copy EXAMPLE_commonPlugins.cmd to commonPlugins.cmd and EXAMPLE_commonPlugin_settings.req to
 commonPlugin_settings.req.
+
+    cp EXAMPLE_commonPlugins.cmd           commonPlugins.cmd
+    cp EXAMPLE_commonPlugin_settings.req   commonPlugin_settings.req
 
 Edit commonPlugins.cmd and commonPlugin_settings.req.
 Change whether or not the lines for optional modules (e.g. DEVIOCSTATS, ALIVE) are 
