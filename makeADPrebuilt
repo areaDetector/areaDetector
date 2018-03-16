@@ -19,10 +19,11 @@ AUTOSAVE=autosave-5-9
 BUSY=busy-1-7
 CALC=calc-3-7
 DEVIOCSTATS=devIocStats-3-1-15
+SEQ=seq-2-2-5
 SSCAN=sscan-2-11-1
-BASE_TOP=/usr/local/epics
+BASE_TOP=/usr/local/epics-devel
 BASE=base-7.0.1
-SUPPORT=/home/epics/support
+SUPPORT=/home/epics/devel
 DESTINATION=/home/epics/public_html/pub/$1/$1_Prebuilt_$AREA_DETECTOR_$2_$3
 # NOTE: This cd is needed so that wildcards work, even though the tar command has --directory
 cd ..
@@ -74,6 +75,8 @@ $DEVIOCSTATS/db \
 $DEVIOCSTATS/op/adl \
 $DEVIOCSTATS/bin/$3 \
 $DEVIOCSTATS/lib/$3 \
+$SEQ/bin/$3 \
+$SEQ/lib/$3 \
 $SSCAN/sscanApp/Db \
 $SSCAN/sscanApp/op \
 $SSCAN/bin/$3 \
@@ -125,6 +128,8 @@ $DEVIOCSTATS/db \
 $DEVIOCSTATS/op/adl \
 $DEVIOCSTATS/bin/$3 \
 $DEVIOCSTATS/lib/$3 \
+$SEQ/bin/$3 \
+$SEQ/lib/$3 \
 $SSCAN/sscanApp/Db \
 $SSCAN/sscanApp/op \
 $SSCAN/bin/$3 \
