@@ -678,7 +678,7 @@ Before running an areaDetector application it is usually necessary to configure
   EPICS_DISPLAY_PATH to a long list of directories where the adl files are located in the
   distributions, which is harder to maintain. On the Pilatus, for example, create a
   directory called /home/det/epics/adls, and put all of the adl files there. To simplify
-  copying the adl files to that location use the following one-line script, which can 
+  copying the adl files to that location use the following one-line script, which can be
   placed in /home/det/bin/sync_adls.
 
   <code>find /home/det/epics/support -name '*.adl' -exec cp -fv {} /home/det/epics/adls \;</code>
