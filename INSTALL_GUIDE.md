@@ -513,9 +513,9 @@ commented out depending on whether these modules were defined in RELEASE_PRODS.l
     ###   Set ARCH in Makefile for Linux, run make on the Linux machine, and copy envPaths to envPaths.linux
     ###   Set ARCH in Makefile for Windows, run make on the Windows machine, and copy envPaths to envPaths.windows
     ### Start the IOC for Linux:
-    ../../bin/linux-x86_64/simDetectorApp st.linux
+    ../../bin/linux-x86_64/simDetectorApp st.cmd.linux
     ### Start the IOC for Windows:
-    ../../bin/windows-x64/simDetectorApp st.windows
+    ../../bin/windows-x64/simDetectorApp st.cmd.windows
 
 
 Installing Pre-Built Binary Versions of areaDetector
