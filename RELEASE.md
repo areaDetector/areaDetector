@@ -56,6 +56,8 @@ R3-3 (June 27, 2018)
   RELEASE_PRODS_INCLUDE from areaDetector/configure.  This change was previously optional and had already been done for
   some detector modules in previous releases.  This change is now required and so all detector modules have been updated 
   to use it.
+* Added new ADSpinnaker submodule.  This is for detectors from Point Grey/FLIR using their new Spinnaker SDK.
+* Added ADEiger submodule.  This is for Eiger detectors from Dectris.  Thanks to Bruno Martins for this.
 
 R3-2 (January 28, 2018)
 ----
