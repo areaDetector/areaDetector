@@ -27,7 +27,7 @@ Release Notes
 Each submodule contains detailed release notes for each release of that submodule.  The release notes below
 only provide a short summary of the most significant items from the submodules.
 
-R3-3 (April XXX, 2018)
+R3-3 (June 27, 2018)
 ----
 * Changes in the configure/RELEASE* files to ensure that EPICS_BASE is defined last.
 * Changes to allow building when some modules come from a Debian package and some do not.
