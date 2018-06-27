@@ -19,7 +19,7 @@ github repository.
 This guide provides instructions for:
 
 * Installing, building, and running from source code. These instructions should
-  work on any supported EPICS host architecture, e.g. Linux, Windows, Mac OSX, vxWorks. 
+  work on any supported EPICS host architecture, e.g. Linux, Windows, macOS, vxWorks. 
   This document assumes that the reader has already installed an EPICS
   development environment, and has built 
   [EPICS base](http://www.aps.anl.gov/epics/base), the 
@@ -513,9 +513,9 @@ commented out depending on whether these modules were defined in RELEASE_PRODS.l
     ###   Set ARCH in Makefile for Linux, run make on the Linux machine, and copy envPaths to envPaths.linux
     ###   Set ARCH in Makefile for Windows, run make on the Windows machine, and copy envPaths to envPaths.windows
     ### Start the IOC for Linux:
-    ../../bin/linux-x86_64/simDetectorApp st.linux
+    ../../bin/linux-x86_64/simDetectorApp st.cmd.linux
     ### Start the IOC for Windows:
-    ../../bin/windows-x64/simDetectorApp st.windows
+    ../../bin/windows-x64/simDetectorApp st.cmd.windows
 
 
 Installing Pre-Built Binary Versions of areaDetector
@@ -540,7 +540,7 @@ architectures:
 - linux-x86_64 (64-bit Linux built on Centos7, gcc 4.8.5, libc 2.17)
 - linux-x86_rhel6 (32-bit Linux build on RHEL6, gcc 4.4.7, libc 2.12)
 - linux-x86_64-gcc42 (64-bit Linux built on SUSE, gcc 4.2.1, libc 2.6.1)
-- darwin-x86 (64-bit Mac OSX built on Darwin 11.4.2,  ??, clang 4.2)
+- darwin-x86 (64-bit Mac OS X built on Darwin 11.4.2,  ??, clang 4.2)
 - win32-x86-static (32-bit Windows, VS2010 compiler, statically linked)
 - win32-x86 (32-bit Windows, VX2010 compiler, dyanamically linked)
 - windows-x64-static (64-bit Windows, VS2010 compiler, statically linked)
