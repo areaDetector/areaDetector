@@ -87,7 +87,10 @@ that can be defined in CONFIG_SITE.local.
   - If NO then build the source code for this library in ADSupport.
   - If YES then this library is installed external to areaDetector
 - XXX_INCLUDE   
-  - If XXX_EXTERNAL=YES then this is the path to the include files for XXX.
+  - If XXX_EXTERNAL=YES then this is the path to the directory containing the include files for XXX.
+    This can be a space-delimited list of paths if more than one directory is required.
+    XXX_INCLUDE should only contain the paths, without a preceeding -I.  
+    The -I will be added in the Makefiles.
     However, if XXX is a system library whose include files are in a 
     standard include search path then do not define XXX_INCLUDE.
 - XXX_LIB
