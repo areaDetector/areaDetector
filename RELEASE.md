@@ -28,7 +28,9 @@ Each submodule contains detailed release notes for each release of that submodul
 only provide a short summary of the most significant items from the submodules.
 
 R3-3-1 (June 30, 2018)
+----
 * configure/EXAMPLE_CONFIG_SITE.local*
+  
   Prior to areaDetector R3-3-1 these files had commented out lines like the following for defining include library paths:
   ```
   #HDF5_INCLUDE = -I$(HDF5)/include
