@@ -30,20 +30,19 @@ only provide a short summary of the most significant items from the submodules.
 R3-3-1 (June 30, 2018)
 ----
 * configure/EXAMPLE_CONFIG_SITE.local*
-  
-  Prior to areaDetector R3-3-1 these files had commented out lines like the following for defining include library paths:
+ * Prior to areaDetector R3-3-1 these files had commented out lines like the following for defining include library paths:
   ```
   #HDF5_INCLUDE = -I$(HDF5)/include
   ```
   These examples were incorrect, because the Makefiles in ADCore and driver repositories were adding the -I before
-  these variables.  It has been decided that the Makefiles are the correct place to add the -I flags, so the -I'
+  these variables.  It has been decided that the Makefiles are the correct place to add the -I flags, so the -I
   has been removed from configure/EXAMPLE_CONFIG_SITE.local* files.
   
   The Makefiles in ADCore and all detector driver repositories now all use $(addprefix -I, $(XXX_INCLUDE)) to add the
   -I prefix (where XXX is HDF5, XML2, etc.)  This means that it will work even if these variables contain multiple paths.
  
 * configure/EXAMPLE_CONFIG_SITE.local
-  Changed the definition of the GLIB include files from this
+ * Changed the definition of the GLIB include files from this
   ```
   GLIB_INC1=/usr/include/glib-2.0
   GLIB_INC2=/usr/lib64/glib-2.0/include
@@ -56,7 +55,6 @@ R3-3-1 (June 30, 2018)
 
 * INSTALL_GUIDE.md
   * Documented that user-defined include directories should not include the -I flag.
-
 
 R3-3 (June 27, 2018)
 ----
