@@ -27,7 +27,7 @@ Release Notes
 Each submodule contains detailed release notes for each release of that submodule.  The release notes below
 only provide a short summary of the most significant items from the submodules.
 
-R3-3-1 (June 30, 2018)
+R3-3-1 (July XXX, 2018)
 ----
 * configure/EXAMPLE_CONFIG_SITE.local*
 
