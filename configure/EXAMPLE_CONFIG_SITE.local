@@ -32,8 +32,14 @@ WITH_BOOST     = NO
 # ADCore/pluginTests unit tests.
 #BOOST_USE_STATIC_LINK=YES
 
-# EPICS PVA is required for NDPluginPva and pvaDriver
+# EPICS PVA is required for NDPluginPva, pvaDriver, and qsrv
 WITH_PVA  = YES
+
+# WITH_QSRV controls whether IOCs are built with support for qsrv.
+# This is separate from WITH_PVA to allow PVA to be enabled but QSRV to be disabled.
+# This is needed on 3.14.12 where PVA is supported but QSRV is not.
+# Note that if WITH_QSRV=YES then WITH_PVA must also be YES
+WITH_QSRV = YES
 
 # BLOSC is required to use the blosc compressors in the HDF5 plugin
 WITH_BLOSC     = YES
