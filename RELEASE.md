@@ -27,6 +27,13 @@ Release Notes
 Each submodule contains detailed release notes for each release of that submodule.  The release notes below
 only provide a short summary of the most significant items from the submodules.
 
+R3-3-2 (July 9, 2018)
+---
+* configure/EXAMPLE_CONFIG_SITE.local
+
+  Added new WITH_QSRV variable.  3.14.12 supports pvAccess but does not support qsrv.
+  By setting WITH_PVA=YES and WITH_QSRV=NO IOCs can be built with pvAccess support but without qsrv support.
+
 R3-3-1 (July 1, 2018)
 ----
 * configure/EXAMPLE_CONFIG_SITE.local*
