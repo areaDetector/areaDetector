@@ -19,7 +19,7 @@ github repository.
 This guide provides instructions for:
 
 * Installing, building, and running from source code. These instructions should
-  work on any supported EPICS host architecture, e.g. Linux, Windows, Mac OSX, vxWorks. 
+  work on any supported EPICS host architecture, e.g. Linux, Windows, macOS, vxWorks. 
   This document assumes that the reader has already installed an EPICS
   development environment, and has built 
   [EPICS base](http://www.aps.anl.gov/epics/base), the 
@@ -71,7 +71,7 @@ libraries in the ADBinaries module in areaDetector.  NETCDF and NEXUS
 were built from source in ADCore.
 
 Beginning with R2-5 the ADSupport module was added to areaDetector.  This
-module builds the GRAPHICSMAGICK, NETCDF, TIFF, ZLIB, JPEG, SZIP, XML2, HDF5, and NEXUS
+module builds the GRAPHICSMAGICK, NETCDF, TIFF, ZLIB, JPEG, SZIP, XML2, HDF5, BLOSC, and NEXUS
 libraries from source code. 
 ADSupport on Darwin may be added in a future release.
 ADSupport will almost always be used to build the libraries on Windows and vxWorks.  
@@ -87,7 +87,10 @@ that can be defined in CONFIG_SITE.local.
   - If NO then build the source code for this library in ADSupport.
   - If YES then this library is installed external to areaDetector
 - XXX_INCLUDE   
-  - If XXX_EXTERNAL=YES then this is the path to the include files for XXX.
+  - If XXX_EXTERNAL=YES then this is the path to the directory containing the include files for XXX.
+    This can be a space-delimited list of paths if more than one directory is required.
+    XXX_INCLUDE should only contain the paths, without a preceeding -I.  
+    The -I will be added in the Makefiles.
     However, if XXX is a system library whose include files are in a 
     standard include search path then do not define XXX_INCLUDE.
 - XXX_LIB
@@ -261,6 +264,12 @@ It can be downloaded 2 ways:
 
     <code>git clone --recursive https://github.com/areaDetector/areaDetector.git</code>
 
+After downloading with git clone --recursive each submodule will be in a "detached HEAD" state.  This means
+that its state will be that of the last time that module was committed to the top-level areaDetector repository.
+This is normally not the desired state for each submodule.  Rather, one should cd to each submodule and type either
+<code>git checkout master</code> to work on the master branch, or <code>git checkout RX-Y</code> to use release
+RX-Y of that submodule.
+
 2. By downloading tar.gz or zip files for a specific release of each module
    through a Web browser or by the wget command:
 
@@ -293,16 +302,34 @@ areaDetector
   pvaDriver
   ADPilatus, etc.
 ```
-
+### RELEASE* and CONFIG* files
+areaDetector RELEASE* and CONFIG* files are a little more complex than those in a typical EPICS modules.
+This is because they are designed to meet the following requirements:
+- If using the top-level areaDetector repository then it is only necessary to edit the CONFIG* and RELEASE* 
+  files in the areaDetector/configure directory, and not in each of the submodules, of which there are now
+  about 40.
+- Allows building multiple architectures in the same tree, including Linux and Windows.  This means
+  that SUPPORT and EPICS_BASE may be defined differently for different architectures, since the
+  path syntax is different for Linux and Windows.
+- Allows using the top-level [synApps/support](https://github.com/epics-synApps/support) and 
+  [synApps/support/configure](https://github.com/epics-synApps/support/configure) directories. 
+  If these are used then one can edit synApps/support/configure/RELEASE to set the locations of 
+  EPICS_BASE and the versions of asyn, calc, etc.  Typing <code>make release</code> in the top-level
+  synApps/support directory will update the RELEASE* files in all modules defined in that RELEASE file, 
+  including those in areaDetector/configure.
+- Allows using the Debian EPICS package for EPICS_BASE and the support modules (asyn, calc, etc.).  It is also
+  possible to use the Debian package for some of the modules, but use more recent versions of some modules
+  (e.g. asyn) that are built from source.
+  
 After all the required products have been installed and a release of
 areaDetector has been downloaded then do the following in the
 areaDetector/configure directory:
        
-    cp EXAMPLE_RELEASE.local       RELEASE.local
-    cp EXAMPLE_RELEASE_PATHS.local RELEASE_PATHS.local
-    cp EXAMPLE_RELEASE_LIBS.local  RELEASE_LIBS.local
-    cp EXAMPLE_RELEASE_PRODS.local RELEASE_PRODS.local
-    cp EXAMPLE_CONFIG_SITE.local   CONFIG_SITE.local
+    cp EXAMPLE_RELEASE.local         RELEASE.local
+    cp EXAMPLE_RELEASE_SUPPORT.local RELEASE_SUPPORT.local
+    cp EXAMPLE_RELEASE_LIBS.local    RELEASE_LIBS.local
+    cp EXAMPLE_RELEASE_PRODS.local   RELEASE_PRODS.local
+    cp EXAMPLE_CONFIG_SITE.local     CONFIG_SITE.local
     
 You may also want to copy the architecture dependent example files
 if you are building for multiple architectures in a single build tree,
@@ -310,59 +337,81 @@ for example:
  
     cp EXAMPLE_CONFIG_SITE.local.WIN32                   CONFIG_SITE.local.WIN32
     cp EXAMPLE_CONFIG_SITE.local.linux-x86.vxWorks-ppc32 CONFIG_SITE.local.linux-x86.vxWorks-ppc32
+
+You can copy all of the EXAMPLE_* files to the files actually used with the copyFromExample script
+in the areaDetector/configure directory.  If you do this then be sure to edit the CONFIG_SITE.local.$(EPICS_HOST_ARCH)
+for your EPICS_HOST_ARCH as well.  For example CONFIG_SITE.local.linux-x86_64 defines WITH_BOOST=YES and this
+may need to be changed if you do not have the boost-devel package installed. 
+You can see your local modifications with the diffFromExample script.
       
-### Edit RELEASE_PATHS.local 
-The definitions for SUPPORT, AREA_DETECTOR, and EPICS_BASE must all be changed.
-All definitions must include the full path name. If the EPICS PVA (formerly v4) libraries
-are to be used then the PVA path must also be defined.
+### Edit RELEASE_SUPPORT.local 
+The definition for SUPPORT normally points to the directory where the areaDetector, asyn, and the synApps
+modules (autosave, busy, calc, etc.) are located.  
 
-The normal way of installing the EPICS components is to install and build ASYN
-and all synApp components under a single directory located by SUPPORT in
-this file.
+If using the EPICS Debian package:
+- SUPPORT should be defined to be the root location of any modules which should **not** come from the Debian package.  
+  Do not define SUPPORT to be the location of the Debian packages.
+- In the SUPPORT tree for those modules not from the Debian distribution (e.g. asyn) their configure/RELEASE files should
+  also not define anything except EPICS_BASE to point to the location of the Debian package.  For example if building
+  asyn from source in the SUPPORT tree and IPAC and SNCSEQ from the Debian package then comment out the lines 
+  for IPAC and SNCSEQ in asyn/configure/RELEASE.
 
-### Optionally create RELEASE_PATHS.local.$(EPICS_HOST_ARCH) 
+### Optionally create RELEASE_SUPPORT.local.$(EPICS_HOST_ARCH) 
 Some installations chose to build for multiple target architectures using
 different development machines in the same directory tree on a file server.  In
-this case the path to SUPPORT, AREA_DETECTOR and BASE may be different for each
-architecture. For example BASE on Linux might be
-/usr/local/epics/base-3.14.12.5, while on a Windows machine using the same copy
-of BASE the path might be H:/epics/base-3.14.12.5.  In this case
-RELEASE_PATHS.local could specify the path for Linux while
-RELEASE_PATHS.win32-x86 could specify the path for the win32-x86 build host. 
-RELEASE_PATHS.local is read first, and then any definitions there will be
-replaced by RELEASE_PATHS.$(EPICS_HOST_ARCH) if it exists.
-      
-### Edit RELEASE_LIBS.local 
-The location of ASYN must be specified.  It is normally placed in the SUPPORT
-directory defined in RELEASE_PATHS.local. If your version has the same path as
-the one that appears then no changes are necessary.  As described above
-RELEASE_LIBS.local.$(EPICS_HOST_ARCH) can be used if the ASYN version or path is
-different for a specific target architecture.  This is usually not necessary
-even for building Linux and Windows in the same tree, because only the
-definition of SUPPORT in RELEASE_PATHS.local.$(EPICS_HOST_ARCH) needs to be
-changed.
+this case the path to SUPPORT may be different for each architecture. 
+For example SUPPORT on Linux might be
+<code>/home/epics/epics/support</code>, while on a Windows machine using the same copy
+of support the path might be <code>J:/epics/support</code>.  In this case
+RELEASE_SUPPORT.local could specify the path for Linux while
+RELEASE_SUPPORT.local.win32-x86 could specify the path for the win32-x86 build host. 
+RELEASE_SUPPORT.local is read first, and then any definitions there will be replaced by 
+RELEASE_SUPPORT.local.$(EPICS_HOST_ARCH) if it exists.
 
-The location of ADSUPPORT and ADCORE must be defined.  They will normally be
-in the AREADETECTOR directory defined in RELEASE_PATHS.local, and will not
+### Optionally create RELEASE_BASE.local.$(EPICS_HOST_ARCH) 
+If the path to EPICS_BASE is different for a specific EPICS_HOST_ARCH from the one
+defined in RELEASE_LIBS.local and RELEASE_PRODS.local then it can be defined in this
+file.  This is typically used only if building Windows and Linux in the same directory tree.
+
+### Edit RELEASE_LIBS.local 
+The location of ASYN, AREA_DETECTOR and EPICS_BASE must be specified.  
+asyn and areaDetector are normally placed in the SUPPORT directory defined in RELEASE_SUPPORT.local. 
+
+As described above RELEASE_LIBS.local.$(EPICS_HOST_ARCH) can be used if the ASYN version or path is
+different for a specific target architecture.
+This is usually not necessary even for building Linux and Windows in the same tree, because only the
+definitions of SUPPORT in RELEASE_SUPPORT.local.$(EPICS_HOST_ARCH) and EPICS_BASE in RELEASE_BASE.local.$(EPICS_HOST_ARCH)
 need to be changed.
 
-The location of the EPICS PVA (formerly EPICS V4) libraries must be defined if WITH_PVA=YES
-in CONFIG_SITE.local. The location will be different depending on whether EPICS_BASE
-is prior to 7.0 or after.
+If WITH_PVA=YES is defined in CONFIG_SITE.local and EPICS_BASE version is prior to 7.0 then PVA must 
+define the location of the EPICS PVA (formerly EPICS V4) libraries.
+Beginning with EPICS base 7.0 the PVA files are in EPICS base and PVA should not be defined.
 
-### Edit RELEASE_PRODS.local 
-The definitions for AUTOSAVE, BUSY, CALC, and SSCAN, and  must be specified. 
+If using Debian packages then the following must be done:
+  - SUPPORT should be defined to be the root location of any modules which should **not** come from the Debian package.
+  - Any modules which should come from the Debian package should be commented out, except for EPICS_BASE.
+  - For example to use a newer version of asyn and areaDetector then define ASYN, AREA_DETECTOR, ADCORE,
+    and ADSUPPORT here.  To use the Debian version of asyn then comment out ASYN here.
+
+### Edit RELEASE_PRODS.local
+See the notes for RELEASE_LIBS.local above.
+ 
+The definitions for AUTOSAVE, BUSY, CALC, and SSCAN must be specified. 
 If the CALC module is built with SNCSEQ support then SNCSEQ must also be specified.
 If DEVIOCSTATS or ALIVE are defined in RELEASE_PRODS.local then IOC applications
 will be built with these modules as well.
-If your versions have the same paths that appear no changes are necessary. As described
-above RELEASE_LIBS.local.$(EPICS_HOST_ARCH) can be used if a module version or
-path is different for a specific target architecture.  This is usually not
-necessary even for building Linux and Windows in the same tree, because only the
-definition of SUPPORT in RELEASE_PATHS.local.$(EPICS_HOST_ARCH) needs to be
-changed.
 
-### Edit CONFIG_SITE.local
+If WITH_PVA=YES is defined in CONFIG_SITE.local and EPICS_BASE version is prior to 7.0 then PVA must 
+define the location of the EPICS PVA (formerly EPICS V4) libraries.
+Beginning with EPICS base 7.0 the PVA files are in EPICS base and PVA should not be defined.
+
+If using Debian packages then the following must be done:
+  - SUPPORT should be defined to be the root location of any modules which should **not** come from the Debian package.
+  - Any modules which should come from the Debian package should be commented out, except for EPICS_BASE.
+  - For example to use a newer version of asyn and areaDetector then define ASYN, AREA_DETECTOR, ADCORE,
+    and ADSUPPORT here, but comment out AUTOSAVE, BUSY, etc. because they come from the Debian package. 
+
+### Edit CONFIG_SITE.local and optionally CONFIG_SITE.local.$(EPICS_HOST_ARCH)
 This file is used to define which support libraries are to be used, and if a library
 is to be used then where it should be found.  The following definitions are needed.
 
@@ -375,9 +424,10 @@ locations then BOOST_INCLUDE and BOOST_LIB should not be defined.
 
     WITH_PVA = YES or NO
     
-EPICS PVA (formerly V4) libraries are needed for the NDPluginPVA in ADCore and the pvaDriver repository. To build
-these components set WITH_PVA=YES and define the location of the PVA libraries
-in RELEASE_PATHS.local and RELEASE_LIBS.local.
+EPICS PVA (formerly V4) libraries are needed for the NDPluginPVA in ADCore and the pvaDriver repository. 
+To build these components set WITH_PVA=YES. If using a version of EPICS_BASE prior to 7.0 then define 
+the location of the PVA libraries in RELEASE_LIBS.local and RELEASE_PRODS.local.  If using EPICS_BASE
+7.0 or later it is not necessary to define PVA in these files because the PVA files are located in EPICS_BASE. 
 
 - NETCDF JPEG, TIFF, ZLIB, SZIP, XML2, HDF5, NEXUS, GRAPHICSMAGICK, OPENCV
   - NETCDF is required for the NDFileNetCDF plugin
@@ -445,10 +495,13 @@ Just type:
 If this fails then some required products have probably not been installed. 
 
 ### Example files in ADCore/iocBoot
-Copy EXAMPLE_commonPlugins.cmd to commonPlugins.cmd and EXAMPLE_commonPlugins_settings.req to
+Copy EXAMPLE_commonPlugins.cmd to commonPlugins.cmd and EXAMPLE_commonPlugin_settings.req to
 commonPlugin_settings.req.
 
-Edit commonPlugins.cmd and commonPlugin_settings.req
+    cp EXAMPLE_commonPlugins.cmd           commonPlugins.cmd
+    cp EXAMPLE_commonPlugin_settings.req   commonPlugin_settings.req
+
+Edit commonPlugins.cmd and commonPlugin_settings.req.
 Change whether or not the lines for optional modules (e.g. DEVIOCSTATS, ALIVE) are 
 commented out depending on whether these modules were defined in RELEASE_PRODS.local.
 
@@ -463,9 +516,9 @@ commented out depending on whether these modules were defined in RELEASE_PRODS.l
     ###   Set ARCH in Makefile for Linux, run make on the Linux machine, and copy envPaths to envPaths.linux
     ###   Set ARCH in Makefile for Windows, run make on the Windows machine, and copy envPaths to envPaths.windows
     ### Start the IOC for Linux:
-    ../../bin/linux-x86_64/simDetectorApp st.linux
+    ../../bin/linux-x86_64/simDetectorApp st.cmd.linux
     ### Start the IOC for Windows:
-    ../../bin/windows-x64/simDetectorApp st.windows
+    ../../bin/windows-x64/simDetectorApp st.cmd.windows
 
 
 Installing Pre-Built Binary Versions of areaDetector
@@ -490,7 +543,7 @@ architectures:
 - linux-x86_64 (64-bit Linux built on Centos7, gcc 4.8.5, libc 2.17)
 - linux-x86_rhel6 (32-bit Linux build on RHEL6, gcc 4.4.7, libc 2.12)
 - linux-x86_64-gcc42 (64-bit Linux built on SUSE, gcc 4.2.1, libc 2.6.1)
-- darwin-x86 (64-bit Mac OSX built on Darwin 11.4.2,  ??, clang 4.2)
+- darwin-x86 (64-bit Mac OS X built on Darwin 11.4.2,  ??, clang 4.2)
 - win32-x86-static (32-bit Windows, VS2010 compiler, statically linked)
 - win32-x86 (32-bit Windows, VX2010 compiler, dyanamically linked)
 - windows-x64-static (64-bit Windows, VS2010 compiler, statically linked)
@@ -628,7 +681,7 @@ Before running an areaDetector application it is usually necessary to configure
   EPICS_DISPLAY_PATH to a long list of directories where the adl files are located in the
   distributions, which is harder to maintain. On the Pilatus, for example, create a
   directory called /home/det/epics/adls, and put all of the adl files there. To simplify
-  copying the adl files to that location use the following one-line script, which can 
+  copying the adl files to that location use the following one-line script, which can be
   placed in /home/det/bin/sync_adls.
 
   <code>find /home/det/epics/support -name '*.adl' -exec cp -fv {} /home/det/epics/adls \;</code>

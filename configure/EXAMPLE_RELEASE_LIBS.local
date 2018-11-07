@@ -2,12 +2,11 @@
 # Run "gnumake clean uninstall install" in the application
 # top directory each time this file is changed.
 
-# Note:
-# asyn and synApps are assumed to be installed in a directory tree $(SUPPORT)
-# areaDetector is assumed to be installed in a directory tree $(AREA_DETECTOR)
-# EPICS base is assumed to be installed in a directory tree $(EPICS_BASE)
-# $(SUPPORT), $(AREA_DETECTOR), and $(EPICS_BASE) must be defined in RELEASE_PATHS.local or
-# RELEASE_PATHS.local.$(EPICS_HOST_ARCH).
+# If using Debian packages then the following must be done:
+#  SUPPORT should be defined to be the root location of any modules which should NOT come from the Debian package.
+#  Any modules which should come from the Debian package should be commented out, except for EPICS_BASE.
+#  For example to use a newer version of asyn and areaDetector then define ASYN, AREA_DETECTOR, ADCORE,
+#  and ADSUPPORT here.  To use the Debian version of asyn then comment out ASYN here.
 
 # If you don't want to install into $(TOP) then
 # define INSTALL_LOCATION_APP here
@@ -16,11 +15,22 @@
 # ASYN is needed for base classes 
 ASYN=$(SUPPORT)/asyn-4-33
 
+AREA_DETECTOR=$(SUPPORT)/areaDetector-3-3-2
+
 # ADSupport is needed by ADCore plugins
 ADSUPPORT=$(AREA_DETECTOR)/ADSupport
 
 # ADCORE for base classes and plugins
 ADCORE=$(AREA_DETECTOR)/ADCore
+
+EPICS_BASE=/corvette/usr/local/epics-devel/base-7.0.1
+
+# If CONFIG_SITE.local defines WITH_PVA=YES and EPICS_BASE is prior to 7.0 then define the path here
+# If using EPICS_BASE 7.0 or later the PVA files are in base itself and no additional definitions are needed.
+#PVA=/corvette/usr/local/epics-devel/epicsV4/EPICS-CPP-4.6.0
+
+# This file can optionally override the definitions of EPICS_BASE and PVA for a specific EPICS_HOST_ARCH
+-include $(AREA_DETECTOR)/configure/RELEASE_BASE.local.$(EPICS_HOST_ARCH)
 
 # PVA modules
 # For versions prior to EPICS base 7.0 use this
@@ -29,12 +39,6 @@ ADCORE=$(AREA_DETECTOR)/ADCore
 #PVDATA=$(PVA)/pvDataCPP
 #PVDATABASE=$(PVA)/pvDatabaseCPP
 #NORMATIVETYPES=$(PVA)/normativeTypesCPP
-
-# For versions of EPICS base 7.0 and later use this
-PVACCESS=$(PVA)/pvAccess
-PVDATA=$(PVA)/pvData
-PVDATABASE=$(PVA)/pvDatabase
-NORMATIVETYPES=$(PVA)/normativeTypes
 
 -include $(AREA_DETECTOR)/configure/RELEASE_LIBS.local.$(EPICS_HOST_ARCH)
 

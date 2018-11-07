@@ -27,12 +27,96 @@ Release Notes
 Each submodule contains detailed release notes for each release of that submodule.  The release notes below
 only provide a short summary of the most significant items from the submodules.
 
+R3-3-2 (July 9, 2018)
+---
+* configure/EXAMPLE_CONFIG_SITE.local
+
+  Added new WITH_QSRV variable.  3.14.12 supports pvAccess but does not support qsrv.
+  By setting WITH_PVA=YES and WITH_QSRV=NO IOCs can be built with pvAccess support but without qsrv support.
+
+R3-3-1 (July 1, 2018)
+----
+* configure/EXAMPLE_CONFIG_SITE.local*
+
+  Prior to areaDetector R3-3-1 these files had commented out lines like the following for defining include library paths:
+  ```
+  #HDF5_INCLUDE = -I$(HDF5)/include
+  ```
+  These examples were incorrect, because the Makefiles in ADCore and driver repositories were adding the -I before
+  these variables.  It has been decided that the Makefiles are the correct place to add the -I flags, so the -I
+  has been removed from configure/EXAMPLE_CONFIG_SITE.local* files.
+  
+  The Makefiles in ADCore and all detector driver repositories now all use $(addprefix -I, $(XXX_INCLUDE)) to add the
+  -I prefix (where XXX is HDF5, XML2, etc.)  This means that it will work even if these variables contain multiple paths.
+ 
+* configure/EXAMPLE_CONFIG_SITE.local
+  
+  Changed the definition of the GLIB include files from this
+  ```
+  GLIB_INC1=/usr/include/glib-2.0
+  GLIB_INC2=/usr/lib64/glib-2.0/include
+  ```
+  to this:
+  ```
+  GLIB_INCLUDE = /usr/include/glib-2.0 /usr/lib64/glib-2.0/include
+  ```
+  This is cleaner and is now possible because the Makefile (in ararisGigE) uses addprefix to add the -I to multiple paths.
+
+* INSTALL_GUIDE.md
+
+  Documented that user-defined include directories should not include the -I flag.
+
+R3-3 (June 27, 2018)
+----
+* Changes in the configure/RELEASE* files to ensure that EPICS_BASE is defined last.
+* Changes to allow building when some modules come from a Debian package and some do not.
+  - If a Debian package is being used for any module then it must also be used for EPICS_BASE.
+* The INSTALL_GUIDE.md has been updated to describe the new system.
+* This is a brief description of what has changed and what users need to do.
+  - In the areaDetector/configure directory type
+    ```./copyFromExample```.
+    This will copy the EXAMPLE_* files to CONFIG* and RELEASE*.
+  - Edit CONFIG_SITE.local and CONFIG_SITE.local.$(EPICS_HOST_ARCH) as required.
+  - Edit RELEASE.local and RELEASE.local.$(EPICS_HOST_ARCH) as required.
+  - Edit RELEASE_SUPPORT.local.  This file replaces RELEASE_PATHS.local from earlier releases. 
+    Define SUPPORT to be the top location of the modules that you **do not** want to get from the Debian package.
+    - RELEASE_SUPPORT.$(EPICS_HOST_ARCH) can be used to define an alternative location of SUPPORT for a specific
+      architecture.  It is typically only needed when building Windows and Linux in the same tree.
+  - Edit RELEASE_LIBS.local.  Define the locations of the modules. Modules from the Debian package must be defined last.  
+    - These would normally be defined using the SUPPORT definition done above.  
+    - Define the location of EPICS_BASE.  
+      - If using the Debian package then define EPICS_BASE to be the location of the Debian distribution.
+  - Edit RELEASE_PRODS.local.  Do the same as for RELEASE_LIBS.local above.  
+    - If using the Debian package then the definitions for modules that you want to use from the 
+      Debian package (e.g. CALC, BUSY, etc.) must come last.
+  - RELEASE_BASE.$(EPICS_HOST_ARCH) can be used to define an alternative location of EPICS_BASE for a specific
+    architecture.  It is typically only needed when building Windows and Linux in the same tree.
+* The RELEASE files in many detector modules have been updated so that they only load RELEASE_LIBS_INCLUDE or 
+  RELEASE_PRODS_INCLUDE from areaDetector/configure.  This change was previously optional and had already been done for
+  some detector modules in previous releases.  This change is now required and so all detector modules have been updated 
+  to use it.
+* Added new ADSpinnaker submodule.  This is for detectors from Point Grey/FLIR using their new Spinnaker SDK.
+* Added ADEiger submodule.  This is for Eiger detectors from Dectris.  Thanks to Bruno Martins for this.
+
+R3-2 (January 28, 2018)
+----
+* Requirements:
+  - ADCore R3-2
+  - ADSupport R1-4 or higher
+  - asyn R4-32 or higher
+  - EPICS base 3.14.12.4 or higher
+* Added the blosc compression library to ADSupport and to the NDFileHDF5 writer in ADCore.
+* Added capability to automatically convert medm adl files to edm edl, caQtDM ui, and CSS-BOY opi files.
+  This is done by running make in the yyyAPP/op/ directory.  The files are placed in the edl/autoconvert
+  ui/autoconvert, and opi/autoconvert directories.  This will keep these files up to date with the medm files.
+
+
 R3-1 (July 3, 2017)
 ----
 * Requirements:
   - ADCore R3-1
   - ADSupport R1-3 or higher
-  - asyn R4-31 or higher
+  - asyn R4-32 or higher
   - EPICS base 3.14.12.4 or higher
 * Added GraphicsMagick to ADSupport.
 * Changed ADCore to allow building with GraphicsMagick either from ADSupport or using a system library.
@@ -65,7 +149,7 @@ ffmpegServer | R1-0 (initial tag)
   will require ADCore R3-0
 
 
-R2-6 (February 22, 2016)
+R2-6 (February 22, 2017)
 ----
 * Requirements
   - ADCore R2-6
