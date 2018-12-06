@@ -27,6 +27,11 @@ Release Notes
 Each submodule contains detailed release notes for each release of that submodule.  The release notes below
 only provide a short summary of the most significant items from the submodules.
 
+R3-4 (January XXX, 2018)
+---
+* configure/EXAMPLE_CONFIG_SITE.local
+  Added WITH_BITSHUFFLE and BITSHUFFLE_EXTERNAL for bitshuffle in ADSupport R1-7.
+
 R3-4 (December 3, 2018)
 ---
 * No significant changes in this top-level repository.
