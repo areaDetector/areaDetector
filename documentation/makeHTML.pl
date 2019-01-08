@@ -32,6 +32,7 @@ use File::Path;
           "./ADCameraLink/documentation",
           "./ADCSimDetector/documentation",
           "./ADDexela/documentation",
+          "./ADEiger/documentation",
           "./ADFastCCD/documentation",
           "./ADFireWireWin/documentation",
           "./ADLambda/documentation",
