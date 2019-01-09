@@ -1,4 +1,4 @@
-language: c
+language: cpp
 compiler: gcc
 
 env:
@@ -8,5 +8,6 @@ env:
 script:
   - set -e
   - pip install doctr
+  - cd ADDocs
   - make html
   - doctr deploy . --built-docs _build/html
