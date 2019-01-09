@@ -1,19 +1,19 @@
 matrix:
     include:
         -language: cpp
-        compiler: gcc
+         compiler: gcc
 
-language: python
-python:
-  - "3.6"
+        - language: python
+          python:
+            - "3.6"
 
-env:
-      global:
-        - secure: "aXl7DWSXI6zKSDTQat7Du8rZ5p/llHsLRIPJfEg8jFpscG/226zyDHEiL/fQrZaGdYJnn8TyABXNDBrC5MfG135llx6MgogNAd/rxGkCPk/c9kAE141I6sCx+/HWxtRVIhtPsBcWTC5DldUU4DDERN8jW2utRo2eBes93bWxQQY5GMyEf3dZq4lfiSfF7GUiSRBNj8C85jq8QUPffO5EwgvJs5ZqM1WBQKv8TXf52B5jRES/M84OCTncd4blNX0b7Dwt1J8539oCydym+ZoDgGbw3Z7B7ay1fRXLNb5FzxKfp81jUg6Ot6AnP1HCjdbQP4GMDkgwY6V6POuFOt+R7ltIll5P044TokMsWxhn23TQJFmF0tvEU4mnaxDqmQOHNzHvtOFCXIPYREWXMKY0p9UBW9Y6bD2wR5xsU3wcT+Mk9mwGAQo2jqj+pIVsFNifTwbDFEnu1sYD7y7g1b/Mbvf7pPx3fXI51odqS0GG6iCZzHlQ08t74cBMSgtYnVfBXOA/XCAUPBZdqV5nL9ogsIs8mm4u+C4bfYRWyqZaGiHvaEVC9M8aJO+ZDDTbqyEzBfJ1Wx74DUho7LovNJWRr+IJsLIbfCdONlushnf6y9h2cq40PNsPDhuY6omRFzJshm6MM/YBAUADxLVeYH1EcTck5w2Ft5X829w7T9W0s3c="
+          env:
+              global:
+                  - secure: "aXl7DWSXI6zKSDTQat7Du8rZ5p/llHsLRIPJfEg8jFpscG/226zyDHEiL/fQrZaGdYJnn8TyABXNDBrC5MfG135llx6MgogNAd/rxGkCPk/c9kAE141I6sCx+/HWxtRVIhtPsBcWTC5DldUU4DDERN8jW2utRo2eBes93bWxQQY5GMyEf3dZq4lfiSfF7GUiSRBNj8C85jq8QUPffO5EwgvJs5ZqM1WBQKv8TXf52B5jRES/M84OCTncd4blNX0b7Dwt1J8539oCydym+ZoDgGbw3Z7B7ay1fRXLNb5FzxKfp81jUg6Ot6AnP1HCjdbQP4GMDkgwY6V6POuFOt+R7ltIll5P044TokMsWxhn23TQJFmF0tvEU4mnaxDqmQOHNzHvtOFCXIPYREWXMKY0p9UBW9Y6bD2wR5xsU3wcT+Mk9mwGAQo2jqj+pIVsFNifTwbDFEnu1sYD7y7g1b/Mbvf7pPx3fXI51odqS0GG6iCZzHlQ08t74cBMSgtYnVfBXOA/XCAUPBZdqV5nL9ogsIs8mm4u+C4bfYRWyqZaGiHvaEVC9M8aJO+ZDDTbqyEzBfJ1Wx74DUho7LovNJWRr+IJsLIbfCdONlushnf6y9h2cq40PNsPDhuY6omRFzJshm6MM/YBAUADxLVeYH1EcTck5w2Ft5X829w7T9W0s3c="
 
-script:
-  - set -e
-  - pip install -r requirements.txt
-  - cd ADDocs
-  - make html
-  - doctr deploy . --built-docs _build/html
+          script:
+              - set -e
+              - pip install -r requirements.txt
+              - cd ADDocs
+              - make html
+              - doctr deploy . --built-docs _build/html
