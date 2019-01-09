@@ -1,5 +1,7 @@
-language: cpp
-compiler: gcc
+matrix:
+    include:
+        -language: cpp
+        compiler: gcc
 
 language: python
 python:
@@ -12,6 +14,8 @@ env:
 script:
   - set -e
   - pip install doctr
+  - pip install sphinx
+  - pip install sphinx-bootstrap-theme
   - cd ADDocs
   - make html
   - doctr deploy . --built-docs _build/html
