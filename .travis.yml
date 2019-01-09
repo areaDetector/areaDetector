@@ -13,9 +13,7 @@ env:
 
 script:
   - set -e
-  - pip install doctr
-  - pip install sphinx
-  - pip install sphinx-bootstrap-theme
+  - pip install -r requirements.txt
   - cd ADDocs
   - make html
   - doctr deploy . --built-docs _build/html
