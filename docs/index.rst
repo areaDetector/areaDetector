@@ -6,6 +6,7 @@ Welcome to areaDetector's documentation!
    :caption: Contents:
 
    Release Notes <release>
+   Readme <readme>
 
 
 
