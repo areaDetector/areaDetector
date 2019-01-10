@@ -5,4 +5,4 @@ SPHINX_MULTIBUILD=sphinx-multibuild
 
 .PHONY: all
 all:
-	$(SPHINX_MULTIBUILD) $(DOCS_PATHS) -i source -s _docs  -o ./_build -b html
+	$(SPHINX_MULTIBUILD) $(DOCS_PATHS) -i source -s _docs  -o ./_build/html -b html
