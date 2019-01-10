@@ -1,19 +1,8 @@
-# Minimal makefile for Sphinx documentation
-#
+SPHINX_MULTIBUILD=sphinx-multibuild
 
-# You can set these variables from the command line.
-SPHINXOPTS    =
-SPHINXBUILD   = sphinx-build
-SOURCEDIR     = .
-BUILDDIR      = _build
+#DOCS_PATHS += -i ../ADCore/docs
+#DOCS_PATHS += -i ../ADFastCCD/docs
 
-# Put it first so that "make" without argument is like "make help".
-help:
-	@$(SPHINXBUILD) -M help "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
-
-.PHONY: help Makefile
-
-# Catch-all target: route all unknown targets to Sphinx using the new
-# "make mode" option.  $(O) is meant as a shortcut for $(SPHINXOPTS).
-%: Makefile
-	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
+.PHONY: all
+all:
+	$(SPHINX_MULTIBUILD) $(DOCS_PATHS) -i source -s _docs  -o ./_build -b html

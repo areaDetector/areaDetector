@@ -7,6 +7,8 @@ Welcome to areaDetector's documentation!
 
    Release Notes <release>
    Readme <readme>
+   ADCore/areaDetector
+   ADCore/areaDetectorDoc
 
 
 
