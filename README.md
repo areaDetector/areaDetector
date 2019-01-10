@@ -1,5 +1,8 @@
 areaDetector
 ==========
+
+[![Build Status](https://travis-ci.com/areaDetector/areaDetector.svg?branch=master)](https://travis-ci.com/areaDetector/areaDetector)
+
 The top-level repository for the
 [EPICS](http://www.aps.anl.gov/epics/) 
 [areaDetector](http://cars.uchicago.edu/software/epics/areaDetector.html) 
