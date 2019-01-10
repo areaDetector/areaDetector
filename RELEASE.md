@@ -22,7 +22,7 @@ files respectively, in the appropriate release of the
 
 
 Release Notes
-=============
+-------------
 
 Each submodule contains detailed release notes for each release of that submodule.  The release notes below
 only provide a short summary of the most significant items from the submodules.
@@ -223,36 +223,36 @@ R2-2 (March 23, 2015)
   than SSH (git@github.com:areaDetector).  This allows a recursive checkout without a Github account.
 * This release includes the following releases of the submodules:
 
-    Module        | Release
-    --------------|--------
-    ADCore        | R2-2
-    ADBinaries    | R2-2
-    ADADSC        | R2-0
-    ADAndor       | R2-2
-    ADAndor3      | R2-0
-    ADBruker      | R2-0
-    ADDexela      | R2-0-beta1
-    ADFastCCD     | none
-    ADFireWireWin | R2-0
-    ADLightField  | R2-1
-    ADMerlin      | 3-1-1
-    ADPICam       | none
-    ADPSL         | R2-1
-    ADPerkinElmer | R2-0
-    ADPilatus     | R2-0
-    ADPixirad     | R2-0
-    ADPointGrey   | R2-0
-    ADProsilica   | R2-1
-    ADPvCam       | R2-0
-    ADQImaging    | none
-    ADRoper       | R2-0
-    ADURL         | R2-0
-    ADmar345      | R2-0
-    ADmarCCD      | R2-0
-    aravisGigE    | dls-r105549
-    ffmpegServer  | none
-    ffmpegViewer  | none
-    firewireDCAM  | none
+| Module        | Release     |
+| --------------|--------------
+| ADCore        | R2-2        |
+| ADBinaries    | R2-2        |
+| ADADSC        | R2-0        |
+| ADAndor       | R2-2        |
+| ADAndor3      | R2-0        |
+| ADBruker      | R2-0        |
+| ADDexela      | R2-0-beta1  |
+| ADFastCCD     | none        |
+| ADFireWireWin | R2-0        | 
+| ADLightField  | R2-1        |
+| ADMerlin      | 3-1-1       |
+| ADPICam       | none        | 
+| ADPSL         | R2-1        |
+| ADPerkinElmer | R2-0        |
+| ADPilatus     | R2-0        |
+| ADPixirad     | R2-0        | 
+| ADPointGrey   | R2-0        |
+| ADProsilica   | R2-1        |
+| ADPvCam       | R2-0        |
+| ADQImaging    | none        |
+| ADRoper       | R2-0        |
+| ADURL         | R2-0        |
+| ADmar345      | R2-0        |
+| ADmarCCD      | R2-0        |
+| aravisGigE    | dls-r105549 |
+| ffmpegServer  | none        |
+| ffmpegViewer  | none        |
+| firewireDCAM  | none        |
 
 
 R2-0 (April 4, 2014)
