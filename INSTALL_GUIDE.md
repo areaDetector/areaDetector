@@ -1,16 +1,14 @@
 areaDetector: Installation Guide
 =================================
 
-Marty Kraimer, Brookhaven National Laboratory
----------------------------------------------
-Mark Rivers, University of Chicago
------------------------------------
+*Marty Kraimer, Brookhaven National Laboratory*
+*Mark Rivers, University of Chicago*
 
 This product is made available subject to acceptance of the 
 [areaDetector license](https://github.com/areaDetector/areaDetector/blob/master/LICENSE)
 
-Introduction
-------------
+## Introduction
+
 This is a guide for installing and building R3-0 and later of the EPICS
 areaDetector module.  This guide is intended for both areaDetector users and
 developers.  areaDetector can be obtained as a release or by cloning from the
@@ -30,13 +28,13 @@ This guide provides instructions for:
 * Installing and running a pre-built binary distribution.
 
 
-Installing and Building from Source Code
-========================================
+## Installing and Building from Source Code
+
 The build process attempts to make the build process easy for typical cases but
 allow site specific overrides. areaDetector uses many other products.
 
-EPICS Products Required for Building areaDetector
--------------------------------------------------    
+### EPICS Products Required for Building areaDetector
+
 areaDetector requires
 [EPICS base](http://www.aps.anl.gov/epics/base/index.php).
 R3.14.12.4 or higher, any 3.15 release should work.
@@ -59,8 +57,8 @@ EPICS base, asyn and the synApps modules must be built before building
 areaDetector.
 
 
-External Products Required for Building areaDetector
-----------------------------------------------------
+### External Products Required for Building areaDetector
+
 areaDetector optionally uses the NETCDF, TIFF, ZLIB, JPEG, SZIP, HDF5, 
 NEXUS, GRAPHICSMAGIC, OPENCV, and EPICS PVA (formerly V4) libraries. These are used for plugins and 
 drivers and are not required.  The XML2 library is required.
@@ -134,11 +132,11 @@ build.
 Each site provides some combination of .zip, .tar, .tar.gz, etc. If the file is
 a zip file then just execute:
 
-    unzip file.zip
+`unzip file.zip`
 
 If the file is any flavor of tar just execute:
 
-    tar xf file
+`tar xf file`
 
 All of the following products put the result of unzip or tar into a
 sub-directory. cd to that directory and follow the instructions for the
@@ -252,28 +250,29 @@ After the latest release is untared, cd to the release and execute the commands:
     sudo make install
 
 
-Downloading and Installing areaDetector Source Code
----------------------------------------------------
+## Downloading and Installing areaDetector Source Code
+
 
 The areaDetector source code is kept on
 [gitub.com/areaDetector](https://github.com/areaDetector).
      
 It can be downloaded 2 ways:
 
-1. Via the "git clone" command:
+*Via the "git clone" command*
 
-    <code>git clone --recursive https://github.com/areaDetector/areaDetector.git</code>
+	git clone --recursive https://github.com/areaDetector/areaDetector.git
 
 After downloading with git clone --recursive each submodule will be in a "detached HEAD" state.  This means
 that its state will be that of the last time that module was committed to the top-level areaDetector repository.
 This is normally not the desired state for each submodule.  Rather, one should cd to each submodule and type either
-<code>git checkout master</code> to work on the master branch, or <code>git checkout RX-Y</code> to use release
+`git checkout master` to work on the master branch, or `git checkout RX-Y` to use release
 RX-Y of that submodule.
 
-2. By downloading tar.gz or zip files for a specific release of each module
-   through a Web browser or by the wget command:
+*By downloading tar.gz or zip file*
 
-    <code>wget https://github.com/areaDetector/areaDetector/archive/R2-6.tar.gz</code>
+A specific release of each module can be downloaded through a Web browser or by the wget command:
+
+	wget https://github.com/areaDetector/areaDetector/archive/R2-6.tar.gz
     
 If downloading tar files then each repository must be downloaded separately. To
 build the "core" of areaDetector the following repositories must be downloaded:
@@ -302,6 +301,7 @@ areaDetector
   pvaDriver
   ADPilatus, etc.
 ```
+
 ### RELEASE* and CONFIG* files
 areaDetector RELEASE* and CONFIG* files are a little more complex than those in a typical EPICS modules.
 This is because they are designed to meet the following requirements:
@@ -314,7 +314,7 @@ This is because they are designed to meet the following requirements:
 - Allows using the top-level [synApps/support](https://github.com/epics-synApps/support) and 
   [synApps/support/configure](https://github.com/epics-synApps/support/configure) directories. 
   If these are used then one can edit synApps/support/configure/RELEASE to set the locations of 
-  EPICS_BASE and the versions of asyn, calc, etc.  Typing <code>make release</code> in the top-level
+  EPICS_BASE and the versions of asyn, calc, etc.  Typing `make release` in the top-level
   synApps/support directory will update the RELEASE* files in all modules defined in that RELEASE file, 
   including those in areaDetector/configure.
 - Allows using the Debian EPICS package for EPICS_BASE and the support modules (asyn, calc, etc.).  It is also
@@ -361,14 +361,14 @@ Some installations chose to build for multiple target architectures using
 different development machines in the same directory tree on a file server.  In
 this case the path to SUPPORT may be different for each architecture. 
 For example SUPPORT on Linux might be
-<code>/home/epics/epics/support</code>, while on a Windows machine using the same copy
-of support the path might be <code>J:/epics/support</code>.  In this case
-RELEASE_SUPPORT.local could specify the path for Linux while
-RELEASE_SUPPORT.local.win32-x86 could specify the path for the win32-x86 build host. 
-RELEASE_SUPPORT.local is read first, and then any definitions there will be replaced by 
-RELEASE_SUPPORT.local.$(EPICS_HOST_ARCH) if it exists.
+`/home/epics/epics/support`, while on a Windows machine using the same copy
+of support the path might be `J:/epics/support`.  In this case
+`RELEASE_SUPPORT.local` could specify the path for Linux while
+`RELEASE_SUPPORT.local.win32-x86` could specify the path for the win32-x86 build host. 
+`RELEASE_SUPPORT.local` is read first, and then any definitions there will be replaced by 
+`RELEASE_SUPPORT.local.$(EPICS_HOST_ARCH)` if it exists.
 
-### Optionally create RELEASE_BASE.local.$(EPICS_HOST_ARCH) 
+### Optionally create `RELEASE_BASE.local.$(EPICS_HOST_ARCH)` 
 If the path to EPICS_BASE is different for a specific EPICS_HOST_ARCH from the one
 defined in RELEASE_LIBS.local and RELEASE_PRODS.local then it can be defined in this
 file.  This is typically used only if building Windows and Linux in the same directory tree.
@@ -563,7 +563,7 @@ Follow these steps to use the prebuilt version.
 
 * Place the distribution file in this directory. Then issue the commands (Unix style)
 
-    <code>tar xvzf ADPilatus_RX-Y.tgz</code>
+  `tar xvzf ADPilatus_RX-Y.tgz`
     
   On Windows it is more convenient to download the zip file and extract it using
   Windows Explorer.
@@ -585,8 +585,8 @@ Follow these steps to use the prebuilt version.
   to EPICS_BASE, it is not required.
 
 
-Display Managers
-================    
+## Display Managers
+
 A display manager is needed to view the areaDetector control screens. Control screens are
 provided for the following display managers: MEDM, EDM, CSS, and caQtDM. The native screens
 are created manually using MEDM.  The EDM, CSS and caQtDM screens are converted from the MEDM
@@ -621,8 +621,8 @@ This can be downloaded through links on the
 [caQtDM home page](http://epics.web.psi.ch/software/caqtdm).
 
 
-Configuration
-=============
+## Configuration
+
 Before running an areaDetector application it is usually necessary to configure
     a number of items.
 
@@ -641,9 +641,9 @@ Before running an areaDetector application it is usually necessary to configure
       EPICS PV will appear to be coming from both networks. The solution is to set these
       variables as follows:
 
-      <code>setenv EPICS_CA_AUTO_ADDR_LIST NO</code>
+      `setenv EPICS_CA_AUTO_ADDR_LIST NO`
       
-      <code>setenv EPICS_CA_ADDR_LIST localhost:XX.YY.ZZ.255</code>
+      `setenv EPICS_CA_ADDR_LIST localhost:XX.YY.ZZ.255`
 
       where XX.YY.ZZ.255 should be replaced with the broadcast address for the public
       network on this computer.
@@ -660,7 +660,7 @@ Before running an areaDetector application it is usually necessary to configure
       In practice it should be set at least 100 bytes larger than this because there 
       is some overhead.  For example:
 
-      <code>setenv EPICS_CA_MAX_ARRAY_BYTES 4154000</code>
+      `setenv EPICS_CA_MAX_ARRAY_BYTES 4154000`
 
       Do not simply set EPICS_CA_MAX_ARRAY_BYTES to a very large number like 100MB or 1GB.
       EPICS Channel Access allocates buffers of exactly EPICS_CA_MAX_ARRAY bytes whenever
@@ -672,7 +672,7 @@ Before running an areaDetector application it is usually necessary to configure
       then this environment variable should be defined to point to that directory. For
       example:
 
-      <code>setenv EPICS_DISPLAY_PATH /home/det/epics/adls</code>
+      `setenv EPICS_DISPLAY_PATH /home/det/epics/adls`
 
 
 * medm display files. 
@@ -684,7 +684,7 @@ Before running an areaDetector application it is usually necessary to configure
   copying the adl files to that location use the following one-line script, which can be
   placed in /home/det/bin/sync_adls.
 
-  <code>find /home/det/epics/support -name '*.adl' -exec cp -fv {} /home/det/epics/adls \;</code>
+  `find /home/det/epics/support -name '*.adl' -exec cp -fv {} /home/det/epics/adls \;`
 
   This script finds all adl files in the epics/support tree and copies them to /home/det/epics/adls.
   That directory must be created before running this script. Similar scripts can be
@@ -694,8 +694,7 @@ Before running an areaDetector application it is usually necessary to configure
   and then run this script to install the latest medm files.
 
 
-Running the IOC Application
-===========================
+## Running the IOC Application
 
 Each example IOC directory comes with a Linux script (start_epics) or a Windows
 batch file (start_epics.bat) or both depending on the architectures that the detector
@@ -725,8 +724,7 @@ at the beginning of the script and then type
 from any directory to start the EPICS IOC.
 
 
-Image Viewers
-=============
+## Image Viewers
 
 The [areaDetector/ADViewers repository](https://github.com/areaDetector/ADViewers) 
 comes with tools to display images over EPICS Channel Access using ImageJ and
