@@ -502,23 +502,26 @@ Edit RELEASE_PRODS.local
 
 See the notes for ``RELEASE_LIBS.local`` above.
 
-The definitions for ``AUTOSAVE``, ``BUSY``, ``CALC``, and ``SSCAN`` must be specified.
-If the CALC module is built with SNCSEQ support then SNCSEQ must also be
-specified. If DEVIOCSTATS or ALIVE are defined in RELEASE_PRODS.local
+The definitions for ``AUTOSAVE``, ``BUSY``, ``CALC``, and ``SSCAN`` must be
+specified.  If the CALC module is built with SNCSEQ support then SNCSEQ must
+also be
+specified. If DEVIOCSTATS or ALIVE are defined in ``RELEASE_PRODS.local``
 then IOC applications will be built with these modules as well.
 
-If WITH_PVA=YES is defined in CONFIG_SITE.local and EPICS_BASE version
+If ``WITH_PVA=YES`` is defined in ``CONFIG_SITE.local`` and ``EPICS_BASE`` version
 is prior to 7.0 then PVA must define the location of the EPICS PVA
 (formerly EPICS V4) libraries. Beginning with EPICS base 7.0 the PVA
 files are in EPICS base and PVA should not be defined.
 
-If using Debian packages then the following must be done: - SUPPORT
-should be defined to be the root location of any modules which should
-**not** come from the Debian package. - Any modules which should come
-from the Debian package should be commented out, except for EPICS_BASE.
-- For example to use a newer version of asyn and areaDetector then
-define ASYN, AREA_DETECTOR, ADCORE, and ADSUPPORT here, but comment out
-AUTOSAVE, BUSY, etc. because they come from the Debian package.
+If using Debian packages then the following must be done: 
+
+- SUPPORT should be defined to be the root location of any modules which should
+  **not** come from the Debian package.  - Any modules which should come from
+  the Debian package should be commented out, except for ``EPICS_BASE``.  
+  
+- For example to use a newer version of asyn and areaDetector then define
+  ``ASYN``, ``AREA_DETECTOR``, ``ADCORE``, and ``ADSUPPORT`` here, but comment
+  out ``AUTOSAVE``, ``BUSY``, etc. because they come from the Debian package.
 
 Edit CONFIG_SITE.local and optionally CONFIG_SITE.local.$(EPICS_HOST_ARCH)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -532,10 +535,10 @@ definitions are needed.
    WITH_BOOST=YES or NO
 
 boost is needed only to built the test programs in
-ADCore/ADApp/pluginTests. If WITH_BOOST=YES then BOOST_INCLUDE and
-BOOST_LIB can be defined to point to the locations of the boost library.
+``ADCore/ADApp/pluginTests``. If ``WITH_BOOST=YES`` then ``BOOST_INCLUDE`` and
+``BOOST_LIB`` can be defined to point to the locations of the boost library.
 If the boost include and library file are located in default system
-locations then BOOST_INCLUDE and BOOST_LIB should not be defined.
+locations then ``BOOST_INCLUDE`` and ``BOOST_LIB`` should not be defined.
 
 ::
 
@@ -543,9 +546,9 @@ locations then BOOST_INCLUDE and BOOST_LIB should not be defined.
 
 EPICS PVA (formerly V4) libraries are needed for the NDPluginPVA in
 ADCore and the pvaDriver repository. To build these components set
-WITH_PVA=YES. If using a version of EPICS_BASE prior to 7.0 then define
-the location of the PVA libraries in RELEASE_LIBS.local and
-RELEASE_PRODS.local. If using EPICS_BASE 7.0 or later it is not
+``WITH_PVA=YES``. If using a version of ``EPICS_BASE`` prior to 7.0 then define
+the location of the PVA libraries in ``RELEASE_LIBS.local`` and
+``RELEASE_PRODS.local``. If using EPICS_BASE 7.0 or later it is not
 necessary to define PVA in these files because the PVA files are located
 in EPICS_BASE.
 
@@ -563,30 +566,36 @@ in EPICS_BASE.
       ADURL driver
    -  OPENCV is required for the ADPluginEdge plugin
 
-| For each library XXX (XXX=TIFF, NETCDF, etc.) there are 4 Makefile
-  variables that can be defined in CONFIG_SITE.local. - WITH_XXX
-| - If WITH_XXX=YES then build the plugins and drivers that require this
-  library. - If XXX_EXTERNAL=NO then also build the source code for this
-  library in ADSupport. - XXX_EXTERNAL
-| - If NO then build the source code for this library in ADSupport. - If
-  YES then this library is installed external to areaDetector -
-  XXX_INCLUDE
-| - If XXX_EXTERNAL=YES then this is the path to the include files for
-  XXX. However, if XXX is a system library whose include files are in a
-  standard include search path then do not define XXX_INCLUDE. - XXX_LIB
-  - If XXX_EXTERNAL=YES then this is the path to the library files for
-  XXX. However, if XXX is a system library whose library files in a
-  standard library search path then do not define XXX_LIB.
+For each library XXX (XXX=TIFF, NETCDF, etc.) there are 4 Makefile
+variables that can be defined in ``CONFIG_SITE.local``.
+
+- WITH_XXX
+    - If ``WITH_XXX=YES`` then build the plugins and drivers that require this
+      library. 
+    - If ``XXX_EXTERNAL=NO`` then also build the source code for this
+      library in ADSupport. 
+- XXX_EXTERNAL
+    - If NO then build the source code for this library in ADSupport. 
+    - If YES then this library is installed external to areaDetector 
+- XXX_INCLUDE
+    - If ``XXX_EXTERNAL=YES`` then this is the path to the include files for
+      XXX. However, if XXX is a system library whose include files are in a
+      standard include search path then do not define ``XXX_INCLUDE``. 
+- XXX_LIB
+    - If ``XXX_EXTERNAL=YES`` then this is the path to the library files for
+      XXX. However, if XXX is a system library whose library files in a
+      standard library search path then do not define ``XXX_LIB``.
 
 XML2 is an exception. It is required, so WITH_XML2 is not supported, but
-XML2_EXTERNAL, XML2_INCLUDE, and XML2_LIB are supported.
+``XML2_EXTERNAL``, ``XML2_INCLUDE``, and ``XML2_LIB`` are supported.
 
-Note that there are some library interdependencies. - If WITH_TIFF=YES
-then WITH_ZLIB must also be YES. - If WITH_HDF5=YES then WITH_ZLIB and
-WITH_SZIP must also be YES. - If WITH_NEXUS=YES then WITH_HDF5 must also
-be YES.
+Note that there are some library interdependencies. 
 
-CONFIG_SITE.local contains the following lines at the end:
+- If ``WITH_TIFF=YES`` then ``WITH_ZLIB`` must also be ``YES``. 
+- If ``WITH_HDF5=YES`` then ``WITH_ZLIB`` and ``WITH_SZIP`` must also be ``YES``. 
+- If ``WITH_NEXUS=YES`` then ``WITH_HDF5`` must also be ``YES``.
+
+``CONFIG_SITE.local`` contains the following lines at the end:
 
 ::
 
@@ -597,8 +606,8 @@ CONFIG_SITE.local contains the following lines at the end:
    #    CONFIG_SITE.local.$(EPICS_HOST_ARCH).$(T_A)
 
 Thus if multiple architectures are being built in the same tree the
-settings can be different for each OS_CLASS, EPICS_HOST_ARCH, or
-EPICS_HOST_ARCH.T_A.
+settings can be different for each ``OS_CLASS``, ``EPICS_HOST_ARCH``, or
+``EPICS_HOST_ARCH.T_A``.
 
 Edit RELEASE.local
 ~~~~~~~~~~~~~~~~~~
@@ -610,8 +619,8 @@ Windows systems with the Princeton Instruments WinView or WinSpec
 programs installed, and the Point Grey driver can currently only be
 built on Linux systems if the version of libc.so is 2.14 or greater.
 
-RELEASE.local.$(EPICS_HOST_ARCH) can be used to build different drivers
-on different EPICS_HOST_ARCH builds in the same tree.
+``RELEASE.local.$(EPICS_HOST_ARCH)`` can be used to build different drivers
+on different ``EPICS_HOST_ARCH`` builds in the same tree.
 
 make
 ~~~~
@@ -628,18 +637,18 @@ installed.
 Example files in ADCore/iocBoot
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Copy EXAMPLE_commonPlugins.cmd to commonPlugins.cmd and
-EXAMPLE_commonPlugin_settings.req to commonPlugin_settings.req.
+Copy ``EXAMPLE_commonPlugins.cmd`` to ``commonPlugins.cmd`` and
+``EXAMPLE_commonPlugin_settings.req`` to ``commonPlugin_settings.req``.
 
 ::
 
    cp EXAMPLE_commonPlugins.cmd           commonPlugins.cmd
    cp EXAMPLE_commonPlugin_settings.req   commonPlugin_settings.req
 
-Edit commonPlugins.cmd and commonPlugin_settings.req. Change whether or
+Edit ``commonPlugins.cmd`` and ``commonPlugin_settings.req``. Change whether or
 not the lines for optional modules (e.g. DEVIOCSTATS, ALIVE) are
 commented out depending on whether these modules were defined in
-RELEASE_PRODS.local.
+``RELEASE_PRODS.local``.
 
 Run SimDetector
 ~~~~~~~~~~~~~~~
@@ -666,9 +675,8 @@ Pre-built binary versions of areaDetector can be provided for each
 detector. This is provided as a convenience so that it is not necessary
 to set up a build system to run areaDetector on a specific detector.
 
-| The instructions here use the Pilatus (ADPilatus) module as an
-  example.
-| Substitute Pilatus with the name of the detector you are working with.
+The instructions here use the Pilatus (ADPilatus) module as an example.
+Substitute Pilatus with the name of the detector you are working with.
 
 The pre-built binaries can be found on the `CARS Web
 site <http://cars.uchicago.edu/software/pub/>`__. There is a
@@ -678,16 +686,17 @@ detector you are looking for send an e-mail to Mark Rivers and I can
 create one for you.
 
 The pre-built binaries contain executables for one or more of the
-following architectures: - linux-x86 (32-bit Linux built on Centos7, gcc
-4.8.5, libc 2.17) - linux-x86_64 (64-bit Linux built on Centos7, gcc
-4.8.5, libc 2.17) - linux-x86_rhel6 (32-bit Linux build on RHEL6, gcc
-4.4.7, libc 2.12) - linux-x86_64-gcc42 (64-bit Linux built on SUSE, gcc
-4.2.1, libc 2.6.1) - darwin-x86 (64-bit Mac OS X built on Darwin 11.4.2,
-??, clang 4.2) - win32-x86-static (32-bit Windows, VS2010 compiler,
-statically linked) - win32-x86 (32-bit Windows, VX2010 compiler,
-dyanamically linked) - windows-x64-static (64-bit Windows, VS2010
-compiler, statically linked) - windows-x64 (64-bit Windows, VX2010
-compiler, dyanamically linked)
+following architectures: 
+
+- linux-x86 (32-bit Linux built on Centos7, gcc 4.8.5, libc 2.17) 
+- linux-x86_64 (64-bit Linux built on Centos7, gcc 4.8.5, libc 2.17) 
+- linux-x86_rhel6 (32-bit Linux build on RHEL6, gcc 4.4.7, libc 2.12) 
+- linux-x86_64-gcc42 (64-bit Linux built on SUSE, gcc 4.2.1, libc 2.6.1) 
+- darwin-x86 (64-bit Mac OS X built on Darwin 11.4.2, ??, clang 4.2) 
+- win32-x86-static (32-bit Windows, VS2010 compiler, statically linked) 
+- win32-x86 (32-bit Windows, VX2010 compiler, dyanamically linked) 
+- windows-x64-static (64-bit Windows, VS2010 compiler, statically linked) 
+- windows-x64 (64-bit Windows, VX2010 compiler, dyanamically linked)
 
 Note that the linux-x86 and linux-x86_64 builds are done a relatively
 new Linux system and will not run on RHEL 6, for example. The
@@ -697,11 +706,11 @@ uses a very old version of libc and should run on most Linux systems.
 Follow these steps to use the prebuilt version.
 
 -  Create an installation directory for the module. On Windows I
-   typically use `C:\EPICS\support`. On Linux I
-   typically use /home/ACCOUNT/epics/support, where ACCOUNT is the name
-   of the account that is normally used to run the detector software,
-   e.g. marccd on a marCCD detector, mar345 on a mar345 detector, det on
-   a Pilatus detector, etc.
+   typically use ``C:\EPICS\support``. On Linux I
+   typically use ``/home/ACCOUNT/epics/support``, where ``ACCOUNT`` 
+   is the name of the account that is normally used to run the detector 
+   software, e.g. marccd on a marCCD detector, mar345 on a mar345 
+   detector, det on a Pilatus detector, etc.
 
 -  Place the distribution file in this directory. Then issue the
    commands (Unix style)
@@ -711,23 +720,23 @@ Follow these steps to use the prebuilt version.
    On Windows it is more convenient to download the zip file and extract
    it using Windows Explorer.
 
--  In the ADPilatus/iocs/pilatusIOC/iocBoot/ directory make a *copy* of
-   the example iocPilatus directory and give it a new local name,
+-  In the ``ADPilatus/iocs/pilatusIOC/iocBoot/`` directory make a *copy* of
+   the example ``iocPilatus`` directory and give it a new local name,
    e.g. ioc13Pilatus1. By doing this you will be able to update to later
    versions of areaDetector without overwriting modifications you make
-   in the ioc13Pilatus1 directory.
+   in the ``ioc13Pilatus1`` directory.
 
--  In the new io13Pilatus1 directory you just created edit st.cmd to
-   change the PV prefix $(PREFIX) to one that is unique to your site. PV
+-  In the new ``io13Pilatus1`` directory you just created edit st.cmd to
+   change the PV prefix ``$(PREFIX)`` to one that is unique to your site. PV
    prefixes must be unique on the subnet, and if you use the default
    prefix there could be a conflict with other detectors of the same
    type.
 
--  In the same ioc13Pilatus1 directory edit the file envPaths to point
+-  In the same ``ioc13Pilatus1`` directory edit the file envPaths to point
    to the locations of all of the support modules on your system.
    Normally this is handled by the EPICS build system, but when using
    the prebuilt version this must be manually edited. Do not worry about
-   the path to EPICS_BASE, it is not required.
+   the path to ``EPICS_BASE``, it is not required.
 
 Display Managers
 ----------------
@@ -783,10 +792,10 @@ configure a number of items.
    that EPICS uses. I suggest setting these in the .cshrc (or .bashrc)
    file for the account that will be used to run the detector.
 
-   -  EPICS_CA_AUTO_ADDR_LIST and EPICS_CA_ADDR_LIST. These variables
+   -  ``EPICS_CA_AUTO_ADDR_LIST`` and ``EPICS_CA_ADDR_LIST``. These variables
       control the IP addresses that EPICS clients use when searching for
-      EPICS PVs. The default is EPICS_CA_AUTO_ADDR_LIST=YES and
-      EPICS_CA_ADDR_LIST to be the broadcast address of all networks
+      EPICS PVs. The default is ``EPICS_CA_AUTO_ADDR_LIST=YES`` and
+      ``EPICS_CA_ADDR_LIST`` to be the broadcast address of all networks
       connected to the host. Some detectors, for example the marCCD and
       mar345, come with 2 network cards, which are on 2 different
       subnets, typically a private one connected to the detector and a
@@ -803,7 +812,7 @@ configure a number of items.
       where XX.YY.ZZ.255 should be replaced with the broadcast address
       for the public network on this computer.
 
-   -  | EPICS_CA_MAX_ARRAY_BYTES. This variable controls the maximum
+   -    ``EPICS_CA_MAX_ARRAY_BYTES``. This variable controls the maximum
         array size that EPICS can transmit with Channel Access. The
         default is only 16kB, which is much too small for most detector
         data. This value must be set to a large enough value on both the
@@ -813,20 +822,20 @@ configure a number of items.
         the largest waveform record that will be used for the detector.
         For example if using a detector with 1024x1024 pixels and
         4-bytes per pixel (waveform record FTVL=LONG) then
-        EPICS_CA_MAX_ARRAY_BYTES would need to be at least 1024 \* 1024
+        ``EPICS_CA_MAX_ARRAY_BYTES`` would need to be at least 1024 \* 1024
         \* 4 = 4153344.
-      | In practice it should be set at least 100 bytes larger than this
+        In practice it should be set at least 100 bytes larger than this
         because there is some overhead. For example:
 
-      ``setenv EPICS_CA_MAX_ARRAY_BYTES 4154000``
+        ``setenv EPICS_CA_MAX_ARRAY_BYTES 4154000``
 
-      Do not simply set EPICS_CA_MAX_ARRAY_BYTES to a very large number
-      like 100MB or 1GB. EPICS Channel Access allocates buffers of
-      exactly EPICS_CA_MAX_ARRAY bytes whenever the required buffer size
-      exceeds 16 kB, and one does not want unnecessarily large buffers
-      to be allocated.
+        Do not simply set ``EPICS_CA_MAX_ARRAY_BYTE``S to a very large number
+        like 100MB or 1GB. EPICS Channel Access allocates buffers of
+        exactly ``EPICS_CA_MAX_ARRAY`` bytes whenever the required buffer size
+        exceeds 16 kB, and one does not want unnecessarily large buffers
+        to be allocated.
 
-   -  EPICS_DISPLAY_PATH. This variable controls where medm looks for
+   -  ``EPICS_DISPLAY_PATH``. This variable controls where medm looks for
       .adl display files. If the recommendation below is followed to
       copy all adl files to a single directory, then this environment
       variable should be defined to point to that directory. For
@@ -836,18 +845,18 @@ configure a number of items.
 
 -  medm display files. It is convenient to copy all medm .adl files to a
    single directory and then point the environment variable
-   EPICS_DISPLAY_PATH to this directory. The alternative is to point
-   EPICS_DISPLAY_PATH to a long list of directories where the adl files
+   ``EPICS_DISPLAY_PATH`` to this directory. The alternative is to point
+   ``EPICS_DISPLAY_PATH`` to a long list of directories where the adl files
    are located in the distributions, which is harder to maintain. On the
-   Pilatus, for example, create a directory called /home/det/epics/adls,
+   Pilatus, for example, create a directory called ``/home/det/epics/adls``,
    and put all of the adl files there. To simplify copying the adl files
    to that location use the following one-line script, which can be
-   placed in /home/det/bin/sync_adls.
+   placed in ``/home/det/bin/sync_adls``.
 
    ``find /home/det/epics/support -name '*.adl' -exec cp -fv {} /home/det/epics/adls \;``
 
-   This script finds all adl files in the epics/support tree and copies
-   them to /home/det/epics/adls. That directory must be created before
+   This script finds all adl files in the ``epics/support`` tree and copies
+   them to ``/home/det/epics/adls``. That directory must be created before
    running this script. Similar scripts can be used for other Linux
    detectors (marCCD, mar345, etc.) and can be used on Windows as well
    if Cygwin is installed. Each time a new release of areaDetector is
@@ -862,7 +871,7 @@ Each example IOC directory comes with a Linux script (start_epics) or a
 Windows batch file (start_epics.bat) or both depending on the
 architectures that the detector runs on. These scripts provide simple
 examples of how to start medm and the EPICS IOC. For example, for the
-mar345 iocBoot/iocMAR345/start_epics contains the following:
+mar345 ``iocBoot/iocMAR345/start_epics`` contains the following:
 
 ::
 
@@ -871,16 +880,16 @@ mar345 iocBoot/iocMAR345/start_epics contains the following:
 
 This script starts medm in execute mode with the appropriate medm
 display file and macro parameters, running it in the background. It then
-runs the IOC application. This script assumes that iocBoot/iocMAR345 is
+runs the IOC application. This script assumes that ``iocBoot/iocMAR345`` is
 the default directory when it is run, which could be added to the
 command or set in the configuration if this script is set as the target
-of a desktop shortcut, etc. The script assumes that EPICS_DISPLAY_PATH
-has been defined to be a location where the mar345.adl and related
+of a desktop shortcut, etc. The script assumes that ``EPICS_DISPLAY_PATH``
+has been defined to be a location where the ``mar345.adl`` and related
 displays that it loads can be found. You will need to edit the script in
 your copy of the iocXXX directory to change the prefix (P) from
-13MAR345_1: to whatever prefix you chose for your IOC. The start_epics
+``13MAR345_1:`` to whatever prefix you chose for your IOC. The start_epics
 script could also be copied to a location in your PATH (e.g.
-/home/mar345/bin/start_epics). Add a command like
+``/home/mar345/bin/start_epics``). Add a command like
 
 ::
 
