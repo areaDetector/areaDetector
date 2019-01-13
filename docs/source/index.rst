@@ -1,22 +1,24 @@
-Welcome to areaDetector's documentation!
-========================================
+areaDetector
+============
+
+EPICS Support for Multidimensional Detectors
+--------------------------------------------
+
+This page is the home of areaDetector, an application for controlling area
+(2-D) detectors, including CCDs, pixel array detectors, and online imaging
+plates.
+
+Contents
+--------
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
 
    Release Notes <release>
    Readme <readme>
+   License <license>
    Install Guide <install_guide>
-   license
-   ADCore/areaDetector
-   ADCore/index
+   Supported Detectors <detectors>
+   Legacy Versions <legacy_versions>
+   User Guide <user_guide>
 
-
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
