@@ -10,12 +10,20 @@ env:
 script:
   - set -e
   - pip install -r requirements.txt
+  - pip install git+git://github.com/drdoctr/doctr.git
+  - cd docs
+  - make
+  - cd ..
+  - doctr deploy --key-path github_deploy_key_areadetector_areadetector_github_io.enc \ 
+    --built-docs docs/_build/html --deploy-repo areaDetector/areaDetector.github.io \
+    release
   - git submodule foreach git pull origin master
   - cd docs
   - make
   - cd ..
-  - pip install git+git://github.com/drdoctr/doctr.git
-  - doctr deploy --key-path github_deploy_key_areadetector_areadetector_github_io.enc --built-docs docs/_build/html --deploy-repo areaDetector/areaDetector.github.io .
+  - doctr deploy --key-path github_deploy_key_areadetector_areadetector_github_io.enc \ 
+    --built-docs docs/_build/html --deploy-repo areaDetector/areaDetector.github.io \
+    master
 
 notifications:
   slack: epicsareadetector:iA2hBZvqiHGpBzS7T0IktsmJ
