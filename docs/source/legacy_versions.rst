@@ -15,7 +15,7 @@ linux-x86_64, win32-x86, windows-x64, and cygwin-x86.
 
 .. raw:: html
 
-  <table border="1" summary="Where to find the software">
+  <table class="table table-bordered" border="1" summary="Where to find the software">
     <tbody>
       <tr align="center">
         <th>
@@ -354,7 +354,7 @@ Required Modules
 
 .. raw:: html
 
-  <table border="1" summary="Required Modules for Source Code Version">
+  <table class="table table-bordered" border="1" summary="Required Modules for Source Code Version">
     <tbody>
       <tr align="center">
         <th>
