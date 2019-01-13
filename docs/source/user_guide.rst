@@ -1,9 +1,6 @@
 areaDetetor Users Guide
 =======================
 
-Contents
---------
-
 .. toctree::
     :maxdepth: 2
 
@@ -12,4 +9,5 @@ Contents
     ADCore/asynPortDriver
     ADCore/NDArray
     detector_drivers
+    ADCore/plugins
     ADCore/medm
