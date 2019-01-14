@@ -11,3 +11,4 @@ areaDetetor Users Guide
     detector_drivers
     ADCore/plugins
     ADCore/medm
+    ADViewers/ad_viewers
