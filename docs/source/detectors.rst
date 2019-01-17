@@ -18,7 +18,7 @@ documentation, and pre-built binaries.
 
 .. raw:: html
 
-  <table border="1" summary="Where to find the software">
+  <table class="table table-bordered" border="1" summary="Where to find the software">
     <tbody>
       <tr align="center">
         <th>
