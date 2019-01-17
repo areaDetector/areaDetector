@@ -4,7 +4,7 @@ DOCS_PATHS += -i ../ADCore/docs/
 DOCS_PATHS += -i ../ADFastCCD/docs
 
 .PHONY: all
-all: doxygen sphinx
+all: sphinx
 
 
 .PHONY: all
