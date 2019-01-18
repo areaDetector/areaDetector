@@ -2,6 +2,7 @@ all: areaDetectorDoc.pdf doxygen iocBootDocs copyFromSource copyToWebServer
 
 doxygen:
 	doxygen
+	find xml -name "*.xml" -exec ./correct_encoding.sh {} \;
 
 areaDetectorDoc.pdf:
 	-htmldoc --book --duplex --no-numbered --format pdf14 --title --size letter --outfile html/areaDetectorDoc.pdf ../ADCore/documentation/areaDetectorDoc.html
