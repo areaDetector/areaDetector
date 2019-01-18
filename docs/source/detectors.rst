@@ -16,703 +16,87 @@ and a set of submodules, e.g.
 The following table provides links to the github repository, the
 documentation, and pre-built binaries.
 
-.. raw:: html
+.. cssclass:: table-bordered
 
-  <table class="table table-bordered" border="1" summary="Where to find the software">
-    <tbody>
-      <tr align="center">
-        <th>
-          Github repository
-        </th>
-        <th>
-          Description
-        </th>
-        <th>
-          Documentation
-        </th>
-        <th>
-          Release Notes
-        </th>
-        <th>
-          Pre-built binaries
-        </th>
-      </tr>
-      <tr>
-        <td>
-          <a href="https://github.com/areaDetector/areaDetector">areaDetector</a>
-        </td>
-        <td>
-          Top-level module; ADCore, ADSupport, ADProsilica, etc. go under this
-        </td>
-        <td>
-          <a href="areaDetectorDoc.html">areaDetectorDoc</a>
-        </td>
-        <td>
-          <a href="https://github.com/areaDetector/areaDetector/blob/master/RELEASE.md">Release
-            Notes</a>
-        </td>
-        <td>
-          N.A.
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <a href="https://github.com/areaDetector/ADCore">ADCore</a>
-        </td>
-        <td>
-          Base classes, plugins, simulation detector
-        </td>
-        <td>
-          <a href="areaDetectorDoc.html">areaDetectorDoc</a>
-        </td>
-        <td>
-          <a href="https://github.com/areaDetector/ADCore/blob/master/RELEASE.md">Release Notes</a>
-        </td>
-        <td>
-          <a href="http://cars.uchicago.edu/software/pub/ADCore">Pre-built binaries</a>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <a href="https://github.com/areaDetector/ADSupport">ADSupport</a>
-        </td>
-        <td>
-          Source code for support libraries (TIFF, JPEG, NETCDF, HDF5, etc.)
-        </td>
-        <td>
-          N.A.
-        </td>
-        <td>
-          <a href="https://github.com/areaDetector/ADSupport/blob/master/RELEASE.md">Release
-            Notes</a>
-        </td>
-        <td>
-          N.A.
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <a href="https://github.com/areaDetector/ADADSC">ADADSC</a>
-        </td>
-        <td>
-          Driver for ADSC detectors
-        </td>
-        <td>
-          <a href="ADSCDoc.html">adscDoc</a>
-        </td>
-        <td>
-          <a href="https://github.com/areaDetector/ADADSC/blob/master/RELEASE.md">Release Notes</a>
-        </td>
-        <td>
-          <a href="http://cars.uchicago.edu/software/pub/ADADSC">Pre-built binaries</a>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <a href="https://github.com/areaDetector/ADAndor">ADAndor</a>
-        </td>
-        <td>
-          Driver for Andor CCD detectors
-        </td>
-        <td>
-          <a href="andorDoc.html">andorDoc</a>
-        </td>
-        <td>
-          <a href="https://github.com/areaDetector/ADAndor/blob/master/RELEASE.md">Release Notes</a>
-        </td>
-        <td>
-          <a href="http://cars.uchicago.edu/software/pub/ADAndor">Pre-built binaries</a>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <a href="https://github.com/areaDetector/ADAndor3">ADAndor3</a>
-        </td>
-        <td>
-          Driver for Andor sCMOS detectors
-        </td>
-        <td>
-          <a href="andor3Doc.html">andor3Doc</a>
-        </td>
-        <td>
-          <a href="https://github.com/areaDetector/ADAndor3/blob/master/RELEASE.md">Release
-            Notes</a>
-        </td>
-        <td>
-          <a href="http://cars.uchicago.edu/software/pub/ADAndor3">Pre-built binaries</a>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <a href="https://github.com/areaDetector/ADBruker">ADBruker</a>
-        </td>
-        <td>
-          Driver for Bruker detectors using the Bruker Instrument Server (BIS)
-        </td>
-        <td>
-          <a href="BrukerDoc.html">BrukerDoc</a>
-        </td>
-        <td>
-          <a href="https://github.com/areaDetector/ADBruker/blob/master/RELEASE.md">Release
-            Notes</a>
-        </td>
-        <td>
-          <a href="http://cars.uchicago.edu/software/pub/ADBruker">Pre-built binaries</a>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <a href="https://github.com/areaDetector/ADCameraLink">ADCameraLink</a>
-        </td>
-        <td>
-          Drivers for Silicon Software and Dalsa/Coreco frame grabbers
-        </td>
-        <td>
-          <a href="ADCameraLinkDriver.html">ADCameraLinkDriver</a>
-        </td>
-        <td>
-          <a href="https://github.com/areaDetector/ADCameraLink/blob/master/RELEASE.md">Release
-            Notes</a>
-        </td>
-        <td>
-          N.A.
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <a href="https://github.com/areaDetector/ADCSimDetector">ADCSimDetector</a>
-        </td>
-        <td>
-          Driver for ADC simulation
-        </td>
-        <td>
-          <a href="ADCSimDetectorDoc.html">ADCSimDetectorDoc</a>
-        </td>
-        <td>
-          <a href="https://github.com/areaDetector/ADCSimDetector/blob/master/RELEASE.md">Release
-            Notes</a>
-        </td>
-        <td>
-          <a href="http://cars.uchicago.edu/software/pub/ADCSimDetector">Pre-built binaries</a>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <a href="https://github.com/areaDetector/ADDexela">ADDexela</a>
-        </td>
-        <td>
-          Driver for Perkin Elmer Dexela detectors
-        </td>
-        <td>
-          <a href="DexelaDoc.html">DexelaDoc</a>
-        </td>
-        <td>
-          <a href="https://github.com/areaDetector/ADDexela/blob/master/RELEASE.md">Release
-            Notes</a>
-        </td>
-        <td>
-          <a href="http://cars.uchicago.edu/software/pub/ADDexela">Pre-built binaries</a>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <a href="https://github.com/areaDetector/ADFastCCD">ADFastCCD</a>
-        </td>
-        <td>
-          Driver for APS/LBL Fast CCD detector
-        </td>
-        <td>
-          N.A.
-        </td>
-        <td>
-          <a href="https://github.com/areaDetector/ADFastCCD/blob/master/RELEASE.md">Release
-            Notes</a>
-        </td>
-        <td>
-          N.A.
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <a href="https://github.com/areaDetector/ADFireWireWin">ADFireWireWin</a>
-        </td>
-        <td>
-          Driver for Firewire DCAM detectors on Windows using the Carnegie Mellon Firewire
-          driver
-        </td>
-        <td>
-          <a href="FirewireWinDoc.html">FirewireWinDoc</a>
-        </td>
-        <td>
-          <a href="https://github.com/areaDetector/ADFireWireWin/blob/master/RELEASE.md">Release
-            Notes</a>
-        </td>
-        <td>
-          <a href="http://cars.uchicago.edu/software/pub/ADFireWireWin">Pre-built binaries</a>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <a href="https://github.com/areaDetector/ADLambda">ADLambda</a>
-        </td>
-        <td>
-          Driver for Lambda detectors
-        </td>
-        <td>
-          N.A.
-        </td>
-        <td>
-          <a href="https://github.com/areaDetector/ADLambda/blob/master/RELEASE.md">Release
-            Notes</a>
-        </td>
-        <td>
-          N.A.
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <a href="https://github.com/areaDetector/ADLightField">ADLightField</a>
-        </td>
-        <td>
-          Driver for Princeton Instruments detectors using their LightField application
-        </td>
-        <td>
-          <a href="LightFieldDoc.html">LightFieldDoc</a>
-        </td>
-        <td>
-          <a href="https://github.com/areaDetector/ADLightField/blob/master/RELEASE.md">Release
-            Notes</a>
-        </td>
-        <td>
-          N.A.
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <a href="https://github.com/areaDetector/ADmar345">ADmar345</a>
-        </td>
-        <td>
-          Driver for the mar345 image plate detector
-        </td>
-        <td>
-          <a href="Mar345Doc.html">Mar345Doc</a>
-        </td>
-        <td>
-          <a href="https://github.com/areaDetector/ADmar345/blob/master/RELEASE.md">Release
-            Notes</a>
-        </td>
-        <td>
-          <a href="http://cars.uchicago.edu/software/pub/ADmar345">Pre-built binaries</a>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <a href="https://github.com/areaDetector/ADmarCCD">ADmarCCD</a>
-        </td>
-        <td>
-          Driver for CCD detectors from Rayonix (formerly Mar-USA)
-        </td>
-        <td>
-          <a href="MarCCDDoc.html">MarCCDDoc</a>
-        </td>
-        <td>
-          <a href="https://github.com/areaDetector/ADmarCCD/blob/master/RELEASE.md">Release
-            Notes</a>
-        </td>
-        <td>
-          <a href="http://cars.uchicago.edu/software/pub/ADmarCCD">Pre-built binaries</a>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <a href="https://github.com/areaDetector/ADMerlin">ADMerlin</a>
-        </td>
-        <td>
-          Driver for Merlin detectors from Quantum Detectors
-        </td>
-        <td>
-          N.A.
-        </td>
-        <td>
-          <a href="https://github.com/areaDetector/ADMerlin/blob/master/RELEASE.md">Release
-            Notes</a>
-        </td>
-        <td>
-          N.A.
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <a href="https://github.com/areaDetector/ADMythen">ADMythen</a>
-        </td>
-        <td>
-          Driver for Mythen detectors from Dectris
-        </td>
-        <td>
-          N.A.
-        </td>
-        <td>
-          <a href="https://github.com/areaDetector/ADMythen/blob/master/RELEASE.md">Release
-            Notes</a>
-        </td>
-        <td>
-          N.A.
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <a href="https://github.com/areaDetector/ADnED">ADnED</a>
-        </td>
-        <td>
-          Driver for neutron event data
-        </td>
-        <td>
-          N.A.
-        </td>
-        <td>
-          <a href="https://github.com/areaDetector/ADnED/blob/master/RELEASE.md">Release Notes</a>
-        </td>
-        <td>
-          N.A.
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <a href="https://github.com/areaDetector/ADPCO">ADPCO</a>
-        </td>
-        <td>
-          Driver for PCO detectors
-        </td>
-        <td>
-          <a href="PCODriver.html">PCODriver</a>
-        </td>
-        <td>
-          <a href="https://github.com/areaDetector/ADPCO/blob/master/RELEASE.md">Release Notes</a>
-        </td>
-        <td>
-          N.A.
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <a href="https://github.com/areaDetector/ADPerkinElmer">ADPerkinElmer</a>
-        </td>
-        <td>
-          Driver for Perkin Elmer flat-panel detectors
-        </td>
-        <td>
-          <a href="PerkinElmerDoc.html">PerkinElmerDoc</a>
-        </td>
-        <td>
-          <a href="https://github.com/areaDetector/ADPerkinElmer/blob/master/RELEASE.md">Release
-            Notes</a>
-        </td>
-        <td>
-          <a href="http://cars.uchicago.edu/software/pub/ADPerkinElmer">Pre-built binaries</a>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <a href="https://github.com/areaDetector/ADPICam">ADPICam</a>
-        </td>
-        <td>
-          Driver for Princeton Instruments detectors using the PICam library
-        </td>
-        <td>
-          <a href="PICamDoc.html">PICamDoc</a>
-        </td>
-        <td>
-          <a href="https://github.com/areaDetector/ADPICam/blob/master/RELEASE.md">Release Notes</a>
-        </td>
-        <td>
-          N.A.
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <a href="https://github.com/areaDetector/ADPilatus">ADPilatus</a>
-        </td>
-        <td>
-          Driver for Pilatus pixel-array detectors
-        </td>
-        <td>
-          <a href="PilatusDoc.html">PilatusDoc</a>
-        </td>
-        <td>
-          <a href="https://github.com/areaDetector/ADPilatus/blob/master/RELEASE.md">Release
-            Notes</a>
-        </td>
-        <td>
-          <a href="http://cars.uchicago.edu/software/pub/ADPilatus">Pre-built binaries</a>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <a href="https://github.com/areaDetector/ADPixirad">ADPixirad</a>
-        </td>
-        <td>
-          Driver for Pixirad pixel-array detectors
-        </td>
-        <td>
-          <a href="PixiradDoc.html">PixiradDoc</a>
-        </td>
-        <td>
-          <a href="https://github.com/areaDetector/ADPixirad/blob/master/RELEASE.md">Release
-            Notes</a>
-        </td>
-        <td>
-          <a href="http://cars.uchicago.edu/software/pub/ADPixirad">Pre-built binaries</a>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <a href="https://github.com/areaDetector/ADPointGrey">ADPointGrey</a>
-        </td>
-        <td>
-          Driver for Point Grey Research cameras
-        </td>
-        <td>
-          <a href="PointGreyDoc.html">PointGreyDoc</a>
-        </td>
-        <td>
-          <a href="https://github.com/areaDetector/ADPointGrey/blob/master/RELEASE.md">Release
-            Notes</a>
-        </td>
-        <td>
-          <a href="http://cars.uchicago.edu/software/pub/ADPointGrey">Pre-built binaries</a>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <a href="https://github.com/areaDetector/ADProsilica">ADProsilica</a>
-        </td>
-        <td>
-          Driver for Allied Vision Technologies (formerly Prosilica) cameras
-        </td>
-        <td>
-          <a href="prosilicaDoc.html">prosilicaDoc</a>
-        </td>
-        <td>
-          <a href="https://github.com/areaDetector/ADProsilica/blob/master/RELEASE.md">Release
-            Notes</a>
-        </td>
-        <td>
-          <a href="http://cars.uchicago.edu/software/pub/ADProsilica">Pre-built binaries</a>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <a href="https://github.com/areaDetector/ADPSL">ADPSL</a>
-        </td>
-        <td>
-          Driver for Photonic Science detectors
-        </td>
-        <td>
-          <a href="PSLDoc.html">PSLDoc</a>
-        </td>
-        <td>
-          <a href="https://github.com/areaDetector/ADPSL/blob/master/RELEASE.md">Release Notes</a>
-        </td>
-        <td>
-          <a href="http://cars.uchicago.edu/software/pub/ADPSL">Pre-built binaries</a>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <a href="https://github.com/areaDetector/ADPvCam">ADPvCam</a>
-        </td>
-        <td>
-          Driver for Photometics and Princeton Instruments detectors using the PvCam library
-        </td>
-        <td>
-          <a href="pvcamDoc.html">pvcamDoc</a>
-        </td>
-        <td>
-          <a href="https://github.com/areaDetector/ADPvCam/blob/master/RELEASE.md">Release Notes</a>
-        </td>
-        <td>
-          <a href="http://cars.uchicago.edu/software/pub/ADPvCam">Pre-built binaries</a>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <a href="https://github.com/areaDetector/ADQImaging">ADQImaging</a>
-        </td>
-        <td>
-          Driver for QImaging detectors
-        </td>
-        <td>
-          <a href="QImagingDoc.html">QImagingDoc</a>
-        </td>
-        <td>
-          <a href="https://github.com/areaDetector/ADQImaging/blob/master/RELEASE.md">Release
-            Notes</a>
-        </td>
-        <td>
-          <a href="http://cars.uchicago.edu/software/pub/ADQImaging">Pre-built binaries</a>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <a href="https://github.com/areaDetector/ADRoper">ADRoper</a>
-        </td>
-        <td>
-          Driver for Princeton Instruments and Photometics detectors using the WinView/WinSpec
-          programs
-        </td>
-        <td>
-          <a href="RoperDoc.html">RoperDoc</a>
-        </td>
-        <td>
-          <a href="https://github.com/areaDetector/ADRoper/blob/master/RELEASE.md">Release Notes</a>
-        </td>
-        <td>
-          <a href="http://cars.uchicago.edu/software/pub/ADRoper">Pre-built binaries</a>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <a href="https://github.com/areaDetector/ADSimDetector">ADSimDetector</a>
-        </td>
-        <td>
-          Driver for simulation detector
-        </td>
-        <td>
-          <a href="simDetectorDoc.html">simDetectorDoc</a>
-        </td>
-        <td>
-          <a href="https://github.com/areaDetector/ADSimDetector/blob/master/RELEASE.md">Release
-            Notes</a>
-        </td>
-        <td>
-          <a href="http://cars.uchicago.edu/software/pub/ADSimDetector">Pre-built binaries</a>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <a href="https://github.com/areaDetector/ADURL">ADURL</a>
-        </td>
-        <td>
-          Driver for reading images from any URL using the GraphicsMagick library
-        </td>
-        <td>
-          <a href="URLDriverDoc.html">URLDriverDoc</a>
-        </td>
-        <td>
-          <a href="https://github.com/areaDetector/ADURL/blob/master/RELEASE.md">Release Notes</a>
-        </td>
-        <td>
-          <a href="http://cars.uchicago.edu/software/pub/ADURL">Pre-built binaries</a>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <a href="https://github.com/areaDetector/aravisGigE">aravisGigE</a>
-        </td>
-        <td>
-          Driver using the GNOME Aravis library for Genicam GigE cameras
-        </td>
-        <td>
-          <a href="https://github.com/areaDetector/aravisGigE/blob/master/README.md">README</a>
-        </td>
-        <td>
-          <a href="http://controls.diamond.ac.uk/downloads/support/aravisGigE/">Release Notes</a>
-        </td>
-        <td>
-          N.A.
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <a href="https://github.com/areaDetector/ffmpegViewer">ffmpegViewer</a>
-        </td>
-        <td>
-          A stand-alone Qt4 application to display a stream of ffmpeg compressed images
-        </td>
-        <td>
-          <a href="https://github.com/areaDetector/ffmpegViewer/blob/master/README.md">README</a>
-        </td>
-        <td>
-          N.A
-        </td>
-        <td>
-          N.A.
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <a href="https://github.com/areaDetector/ffmpegServer">ffmpegServer</a>
-        </td>
-        <td>
-          Plugin that use the ffmpeg libraries to compress a stream of images to files or
-          via an html service
-        </td>
-        <td>
-          <a href="http://controls.diamond.ac.uk/downloads/support/ffmpegServer/">ffmpegServer</a>
-        </td>
-        <td>
-          <a href="http://controls.diamond.ac.uk/downloads/support/ffmpegServer/">Release Notes</a>
-        </td>
-        <td>
-          N.A.
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <a href="https://github.com/areaDetector/firewireDCAM">firewireDCAM</a>
-        </td>
-        <td>
-          Driver for Firewire DCAM detectors on Linux
-        </td>
-        <td>
-          <a href="https://github.com/areaDetector/firewireDCAM/blob/master/README.md">README</a>
-        </td>
-        <td>
-          <a href="https://github.com/areaDetector/firewireDCAM/blob/master/RELEASE_NOTES.md">
-            Release Notes</a>
-        </td>
-        <td>
-          N.A.
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <a href="https://github.com/areaDetector/NDDriverStdArrays">NDDriverStdArrays</a>
-        </td>
-        <td>
-          Driver that allows EPICS Channel Access clients to create NDArrays in an IOC
-        </td>
-        <td>
-          <a href="NDDriverStdArraysDoc.html">NDDriverStdArraysDoc</a>
-        </td>
-        <td>
-          <a href="https://github.com/areaDetector/NDDriverStdArrays/blob/master/RELEASE.md">
-            Release Notes</a>
-        </td>
-        <td>
-          <a href="http://cars.uchicago.edu/software/pub/NDDriverStdArrays">Pre-built binaries</a>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <a href="https://github.com/areaDetector/pvaDriver">pvaDriver</a>
-        </td>
-        <td>
-          Driver that receives EPICS V4 NTNDArrays and converts them to NDArrays in an IOC
-        </td>
-        <td>
-          <a href="pvaDriverDoc.html">pvaDriverDoc</a>
-        </td>
-        <td>
-          <a href="https://github.com/areaDetector/pvaDriver/blob/master/RELEASE.md">Release
-            Notes</a>
-        </td>
-        <td>
-          <a href="http://cars.uchicago.edu/software/pub/pvaDriver">Pre-built binaries</a>
-        </td>
-      </tr>
-    </tbody>
-  </table>
++---------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
+| Github repository                                                         | Description                                                                                         | Documentation                                                                    | Release Notes                                                                                 | Pre-built binaries                                                               |
++===========================================================================+=====================================================================================================+==================================================================================+===============================================================================================+==================================================================================+
+| `areaDetector <https://github.com/areaDetector/areaDetector>`__           | Top-level module; ADCore, ADSupport, ADProsilica, etc. go under this                                | :doc:`index`                                                                     | `Release Notes <https://github.com/areaDetector/areaDetector/blob/master/RELEASE.md>`__       | N.A.                                                                             |
++---------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
+| `ADCore <https://github.com/areaDetector/ADCore>`__                       | Base classes, plugins, simulation detector                                                          | :doc:`user_guide`                                                                | `Release Notes <https://github.com/areaDetector/ADCore/blob/master/RELEASE.md>`__             | `Pre-built binaries <http://cars.uchicago.edu/software/pub/ADCore>`__            |
++---------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
+| `ADSupport <https://github.com/areaDetector/ADSupport>`__                 | Source code for support libraries (TIFF, JPEG, NETCDF, HDF5, etc.)                                  | N.A.                                                                             | `Release Notes <https://github.com/areaDetector/ADSupport/blob/master/RELEASE.md>`__          | N.A.                                                                             |
++---------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
+| `ADADSC <https://github.com/areaDetector/ADADSC>`__                       | Driver for ADSC detectors                                                                           | `adscDoc <ADSCDoc.html>`__                                                       | `Release Notes <https://github.com/areaDetector/ADADSC/blob/master/RELEASE.md>`__             | `Pre-built binaries <http://cars.uchicago.edu/software/pub/ADADSC>`__            |
++---------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
+| `ADAndor <https://github.com/areaDetector/ADAndor>`__                     | Driver for Andor CCD detectors                                                                      | `andorDoc <andorDoc.html>`__                                                     | `Release Notes <https://github.com/areaDetector/ADAndor/blob/master/RELEASE.md>`__            | `Pre-built binaries <http://cars.uchicago.edu/software/pub/ADAndor>`__           |
++---------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
+| `ADAndor3 <https://github.com/areaDetector/ADAndor3>`__                   | Driver for Andor sCMOS detectors                                                                    | `andor3Doc <andor3Doc.html>`__                                                   | `Release Notes <https://github.com/areaDetector/ADAndor3/blob/master/RELEASE.md>`__           | `Pre-built binaries <http://cars.uchicago.edu/software/pub/ADAndor3>`__          |
++---------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
+| `ADBruker <https://github.com/areaDetector/ADBruker>`__                   | Driver for Bruker detectors using the Bruker Instrument Server (BIS)                                | `BrukerDoc <BrukerDoc.html>`__                                                   | `Release Notes <https://github.com/areaDetector/ADBruker/blob/master/RELEASE.md>`__           | `Pre-built binaries <http://cars.uchicago.edu/software/pub/ADBruker>`__          |
++---------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
+| `ADCameraLink <https://github.com/areaDetector/ADCameraLink>`__           | Drivers for Silicon Software and Dalsa/Coreco frame grabbers                                        | `ADCameraLinkDriver <ADCameraLinkDriver.html>`__                                 | `Release Notes <https://github.com/areaDetector/ADCameraLink/blob/master/RELEASE.md>`__       | N.A.                                                                             |
++---------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
+| `ADCSimDetector <https://github.com/areaDetector/ADCSimDetector>`__       | Driver for ADC simulation                                                                           | `ADCSimDetectorDoc <ADCSimDetectorDoc.html>`__                                   | `Release Notes <https://github.com/areaDetector/ADCSimDetector/blob/master/RELEASE.md>`__     | `Pre-built binaries <http://cars.uchicago.edu/software/pub/ADCSimDetector>`__    |
++---------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
+| `ADDexela <https://github.com/areaDetector/ADDexela>`__                   | Driver for Perkin Elmer Dexela detectors                                                            | `DexelaDoc <DexelaDoc.html>`__                                                   | `Release Notes <https://github.com/areaDetector/ADDexela/blob/master/RELEASE.md>`__           | `Pre-built binaries <http://cars.uchicago.edu/software/pub/ADDexela>`__          |
++---------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
+| `ADFastCCD <https://github.com/areaDetector/ADFastCCD>`__                 | Driver for APS/LBL Fast CCD detector                                                                | :doc:`ADFastCCD/index`                                                           | `Release Notes <https://github.com/areaDetector/ADFastCCD/blob/master/RELEASE.md>`__          | N.A.                                                                             |
++---------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
+| `ADFireWireWin <https://github.com/areaDetector/ADFireWireWin>`__         | Driver for Firewire DCAM detectors on Windows using the Carnegie Mellon Firewire driver             | `FirewireWinDoc <FirewireWinDoc.html>`__                                         | `Release Notes <https://github.com/areaDetector/ADFireWireWin/blob/master/RELEASE.md>`__      | `Pre-built binaries <http://cars.uchicago.edu/software/pub/ADFireWireWin>`__     |
++---------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
+| `ADLambda <https://github.com/areaDetector/ADLambda>`__                   | Driver for Lambda detectors                                                                         | N.A.                                                                             | `Release Notes <https://github.com/areaDetector/ADLambda/blob/master/RELEASE.md>`__           | N.A.                                                                             |
++---------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
+| `ADLightField <https://github.com/areaDetector/ADLightField>`__           | Driver for Princeton Instruments detectors using their LightField application                       | `LightFieldDoc <LightFieldDoc.html>`__                                           | `Release Notes <https://github.com/areaDetector/ADLightField/blob/master/RELEASE.md>`__       | N.A.                                                                             |
++---------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
+| `ADmar345 <https://github.com/areaDetector/ADmar345>`__                   | Driver for the mar345 image plate detector                                                          | `Mar345Doc <Mar345Doc.html>`__                                                   | `Release Notes <https://github.com/areaDetector/ADmar345/blob/master/RELEASE.md>`__           | `Pre-built binaries <http://cars.uchicago.edu/software/pub/ADmar345>`__          |
++---------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
+| `ADmarCCD <https://github.com/areaDetector/ADmarCCD>`__                   | Driver for CCD detectors from Rayonix (formerly Mar-USA)                                            | `MarCCDDoc <MarCCDDoc.html>`__                                                   | `Release Notes <https://github.com/areaDetector/ADmarCCD/blob/master/RELEASE.md>`__           | `Pre-built binaries <http://cars.uchicago.edu/software/pub/ADmarCCD>`__          |
++---------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
+| `ADMerlin <https://github.com/areaDetector/ADMerlin>`__                   | Driver for Merlin detectors from Quantum Detectors                                                  | N.A.                                                                             | `Release Notes <https://github.com/areaDetector/ADMerlin/blob/master/RELEASE.md>`__           | N.A.                                                                             |
++---------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
+| `ADMythen <https://github.com/areaDetector/ADMythen>`__                   | Driver for Mythen detectors from Dectris                                                            | N.A.                                                                             | `Release Notes <https://github.com/areaDetector/ADMythen/blob/master/RELEASE.md>`__           | N.A.                                                                             |
++---------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
+| `ADnED <https://github.com/areaDetector/ADnED>`__                         | Driver for neutron event data                                                                       | N.A.                                                                             | `Release Notes <https://github.com/areaDetector/ADnED/blob/master/RELEASE.md>`__              | N.A.                                                                             |
++---------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
+| `ADPCO <https://github.com/areaDetector/ADPCO>`__                         | Driver for PCO detectors                                                                            | `PCODriver <PCODriver.html>`__                                                   | `Release Notes <https://github.com/areaDetector/ADPCO/blob/master/RELEASE.md>`__              | N.A.                                                                             |
++---------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
+| `ADPerkinElmer <https://github.com/areaDetector/ADPerkinElmer>`__         | Driver for Perkin Elmer flat-panel detectors                                                        | `PerkinElmerDoc <PerkinElmerDoc.html>`__                                         | `Release Notes <https://github.com/areaDetector/ADPerkinElmer/blob/master/RELEASE.md>`__      | `Pre-built binaries <http://cars.uchicago.edu/software/pub/ADPerkinElmer>`__     |
++---------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
+| `ADPICam <https://github.com/areaDetector/ADPICam>`__                     | Driver for Princeton Instruments detectors using the PICam library                                  | `PICamDoc <PICamDoc.html>`__                                                     | `Release Notes <https://github.com/areaDetector/ADPICam/blob/master/RELEASE.md>`__            | N.A.                                                                             |
++---------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
+| `ADPilatus <https://github.com/areaDetector/ADPilatus>`__                 | Driver for Pilatus pixel-array detectors                                                            | `PilatusDoc <PilatusDoc.html>`__                                                 | `Release Notes <https://github.com/areaDetector/ADPilatus/blob/master/RELEASE.md>`__          | `Pre-built binaries <http://cars.uchicago.edu/software/pub/ADPilatus>`__         |
++---------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
+| `ADPixirad <https://github.com/areaDetector/ADPixirad>`__                 | Driver for Pixirad pixel-array detectors                                                            | `PixiradDoc <PixiradDoc.html>`__                                                 | `Release Notes <https://github.com/areaDetector/ADPixirad/blob/master/RELEASE.md>`__          | `Pre-built binaries <http://cars.uchicago.edu/software/pub/ADPixirad>`__         |
++---------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
+| `ADPointGrey <https://github.com/areaDetector/ADPointGrey>`__             | Driver for Point Grey Research cameras                                                              | `PointGreyDoc <PointGreyDoc.html>`__                                             | `Release Notes <https://github.com/areaDetector/ADPointGrey/blob/master/RELEASE.md>`__        | `Pre-built binaries <http://cars.uchicago.edu/software/pub/ADPointGrey>`__       |
++---------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
+| `ADProsilica <https://github.com/areaDetector/ADProsilica>`__             | Driver for Allied Vision Technologies (formerly Prosilica) cameras                                  | :doc:`ADProsilica/ADProsilica`                                                   | `Release Notes <https://github.com/areaDetector/ADProsilica/blob/master/RELEASE.md>`__        | `Pre-built binaries <http://cars.uchicago.edu/software/pub/ADProsilica>`__       |
++---------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
+| `ADPSL <https://github.com/areaDetector/ADPSL>`__                         | Driver for Photonic Science detectors                                                               | `PSLDoc <PSLDoc.html>`__                                                         | `Release Notes <https://github.com/areaDetector/ADPSL/blob/master/RELEASE.md>`__              | `Pre-built binaries <http://cars.uchicago.edu/software/pub/ADPSL>`__             |
++---------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
+| `ADPvCam <https://github.com/areaDetector/ADPvCam>`__                     | Driver for Photometics and Princeton Instruments detectors using the PvCam library                  | `pvcamDoc <pvcamDoc.html>`__                                                     | `Release Notes <https://github.com/areaDetector/ADPvCam/blob/master/RELEASE.md>`__            | `Pre-built binaries <http://cars.uchicago.edu/software/pub/ADPvCam>`__           |
++---------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
+| `ADQImaging <https://github.com/areaDetector/ADQImaging>`__               | Driver for QImaging detectors                                                                       | `QImagingDoc <QImagingDoc.html>`__                                               | `Release Notes <https://github.com/areaDetector/ADQImaging/blob/master/RELEASE.md>`__         | `Pre-built binaries <http://cars.uchicago.edu/software/pub/ADQImaging>`__        |
++---------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
+| `ADRoper <https://github.com/areaDetector/ADRoper>`__                     | Driver for Princeton Instruments and Photometics detectors using the WinView/WinSpec programs       | `RoperDoc <RoperDoc.html>`__                                                     | `Release Notes <https://github.com/areaDetector/ADRoper/blob/master/RELEASE.md>`__            | `Pre-built binaries <http://cars.uchicago.edu/software/pub/ADRoper>`__           |
++---------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
+| `ADSimDetector <https://github.com/areaDetector/ADSimDetector>`__         | Driver for simulation detector                                                                      | `simDetectorDoc <simDetectorDoc.html>`__                                         | `Release Notes <https://github.com/areaDetector/ADSimDetector/blob/master/RELEASE.md>`__      | `Pre-built binaries <http://cars.uchicago.edu/software/pub/ADSimDetector>`__     |
++---------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
+| `ADURL <https://github.com/areaDetector/ADURL>`__                         | Driver for reading images from any URL using the GraphicsMagick library                             | `URLDriverDoc <URLDriverDoc.html>`__                                             | `Release Notes <https://github.com/areaDetector/ADURL/blob/master/RELEASE.md>`__              | `Pre-built binaries <http://cars.uchicago.edu/software/pub/ADURL>`__             |
++---------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
+| `aravisGigE <https://github.com/areaDetector/aravisGigE>`__               | Driver using the GNOME Aravis library for Genicam GigE cameras                                      | `README <https://github.com/areaDetector/aravisGigE/blob/master/README.md>`__    | `Release Notes <http://controls.diamond.ac.uk/downloads/support/aravisGigE/>`__               | N.A.                                                                             |
++---------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
+| `ffmpegViewer <https://github.com/areaDetector/ffmpegViewer>`__           | A stand-alone Qt4 application to display a stream of ffmpeg compressed images                       | `README <https://github.com/areaDetector/ffmpegViewer/blob/master/README.md>`__  | N.A                                                                                           | N.A.                                                                             |
++---------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
+| `ffmpegServer <https://github.com/areaDetector/ffmpegServer>`__           | Plugin that use the ffmpeg libraries to compress a stream of images to files or via an html service | `ffmpegServer <http://controls.diamond.ac.uk/downloads/support/ffmpegServer/>`__ | `Release Notes <http://controls.diamond.ac.uk/downloads/support/ffmpegServer/>`__             | N.A.                                                                             |
++---------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
+| `firewireDCAM <https://github.com/areaDetector/firewireDCAM>`__           | Driver for Firewire DCAM detectors on Linux                                                         | `README <https://github.com/areaDetector/firewireDCAM/blob/master/README.md>`__  | `Release Notes <https://github.com/areaDetector/firewireDCAM/blob/master/RELEASE_NOTES.md>`__ | N.A.                                                                             |
++---------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
+| `NDDriverStdArrays <https://github.com/areaDetector/NDDriverStdArrays>`__ | Driver that allows EPICS Channel Access clients to create NDArrays in an IOC                        | `NDDriverStdArraysDoc <NDDriverStdArraysDoc.html>`__                             | `Release Notes <https://github.com/areaDetector/NDDriverStdArrays/blob/master/RELEASE.md>`__  | `Pre-built binaries <http://cars.uchicago.edu/software/pub/NDDriverStdArrays>`__ |
++---------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
+| `pvaDriver <https://github.com/areaDetector/pvaDriver>`__                 | Driver that receives EPICS V4 NTNDArrays and converts them to NDArrays in an IOC                    | `pvaDriverDoc <pvaDriverDoc.html>`__                                             | `Release Notes <https://github.com/areaDetector/pvaDriver/blob/master/RELEASE.md>`__          | `Pre-built binaries <http://cars.uchicago.edu/software/pub/pvaDriver>`__         |
++---------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
 
 areaDetector camera drivers supplied by 3rd parties
 ---------------------------------------------------
