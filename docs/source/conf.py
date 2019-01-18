@@ -82,7 +82,7 @@ breathe_projects = { "areaDetector":
 breathe_default_project = "areaDetector"
 breathe_default_members = ('members', 'undoc-members', 'private-members')
 
-
+source_encoding = 'utf-8-sig'
 
 # -- Options for HTML output -------------------------------------------------
 
