@@ -21,4 +21,5 @@ Contents
    Supported Detectors <detectors>
    Legacy Versions <legacy_versions>
    User Guide <user_guide>
+   Source Code Documentation <doxygen>
 

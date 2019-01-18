@@ -12,8 +12,8 @@
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
-# import os
-# import sys
+import os
+import sys
 # sys.path.insert(0, os.path.abspath('.'))
 
 
@@ -23,10 +23,10 @@ project = 'areaDetector'
 copyright = '2019, Mark Rivers'
 author = 'Mark Rivers'
 
-# The short X.Y version
-version = ''
 # The full version, including alpha/beta/rc tags
-release = ''
+release = os.popen('git describe --tags').read().strip()
+# The short X.Y version
+version = release
 
 
 # -- General configuration ---------------------------------------------------
@@ -41,7 +41,8 @@ release = ''
 extensions = [
     'sphinx.ext.todo',
     'sphinx.ext.githubpages',
-    'm2r'
+    'm2r',
+    'breathe'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -73,6 +74,14 @@ pygments_style = None
 
 
 highlight_language = 'none'
+
+# Breathe configuration
+breathe_projects = { "areaDetector":
+                        os.path.abspath('../../documentation/xml') }
+
+breathe_default_project = "areaDetector"
+breathe_default_members = ('members', 'undoc-members', 'private-members')
+
 
 
 # -- Options for HTML output -------------------------------------------------
