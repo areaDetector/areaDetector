@@ -181,7 +181,7 @@ html_extra_path = ['_extra']
 #
 # html_sidebars = {}
 
-html_favicon = 'favicon.ico'
+html_favicon = 'favicon_t.ico'
 
 
 # -- Options for HTMLHelp output ---------------------------------------------
