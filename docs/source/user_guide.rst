@@ -12,3 +12,4 @@ areaDetetor Users Guide
     ADCore/plugins
     ADCore/medm
     ADViewers/ad_viewers
+    acknowledgements

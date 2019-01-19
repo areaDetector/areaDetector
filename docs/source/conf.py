@@ -12,8 +12,8 @@
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
-# import os
-# import sys
+#import os
+#import sys
 # sys.path.insert(0, os.path.abspath('.'))
 
 
@@ -23,10 +23,11 @@ project = 'areaDetector'
 copyright = '2019, Mark Rivers'
 author = 'Mark Rivers'
 
-# The short X.Y version
-version = ''
-# The full version, including alpha/beta/rc tags
-release = ''
+from subprocess import Popen, PIPE
+pipe = Popen('git describe --tags --always', stdout=PIPE, shell=True)
+git = pipe.stdout.read().decode("utf-8").rstrip()
+release = git.lstrip('R')
+version = '-'.join(release.split('-')[0:2])
 
 
 # -- General configuration ---------------------------------------------------
@@ -41,7 +42,8 @@ release = ''
 extensions = [
     'sphinx.ext.todo',
     'sphinx.ext.githubpages',
-    'm2r'
+    'm2r',
+    'breathe'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -74,6 +76,15 @@ pygments_style = None
 
 highlight_language = 'none'
 
+# Breathe configuration
+import os
+breathe_projects = { "areaDetector":
+                        os.path.abspath('../doxy_output/xml') }
+
+breathe_default_project = "areaDetector"
+breathe_default_members = ('members', 'undoc-members')
+
+source_encoding = 'utf-8-sig'
 
 # -- Options for HTML output -------------------------------------------------
 
@@ -168,6 +179,8 @@ html_extra_path = ['_extra']
 # 'searchbox.html']``.
 #
 # html_sidebars = {}
+
+html_favicon = 'favicon_t.ico'
 
 
 # -- Options for HTMLHelp output ---------------------------------------------

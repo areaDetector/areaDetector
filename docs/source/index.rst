@@ -8,6 +8,8 @@ This page is the home of areaDetector, an application for controlling area
 (2-D) detectors, including CCDs, pixel array detectors, and online imaging
 plates.
 
+Documentation created from release |release|
+
 Contents
 --------
 
@@ -21,4 +23,5 @@ Contents
    Supported Detectors <detectors>
    Legacy Versions <legacy_versions>
    User Guide <user_guide>
+   Source Code Documentation <doxygen>
 
