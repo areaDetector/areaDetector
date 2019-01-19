@@ -12,8 +12,8 @@
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
-import os
-import sys
+#import os
+#import sys
 # sys.path.insert(0, os.path.abspath('.'))
 
 
@@ -23,10 +23,11 @@ project = 'areaDetector'
 copyright = '2019, Mark Rivers'
 author = 'Mark Rivers'
 
-# The full version, including alpha/beta/rc tags
-release = os.popen('git describe --tags').read().strip()
-# The short X.Y version
-version = release
+from subprocess import Popen, PIPE
+pipe = Popen('git describe --tags --always', stdout=PIPE, shell=True)
+git = pipe.stdout.read().decode("utf-8")
+release = git.lstrip('R').rstrip()
+version = '-'.join(release.split('-')[:-1])
 
 
 # -- General configuration ---------------------------------------------------
@@ -76,6 +77,7 @@ pygments_style = None
 highlight_language = 'none'
 
 # Breathe configuration
+import os
 breathe_projects = { "areaDetector":
                         os.path.abspath('../../documentation/xml') }
 
