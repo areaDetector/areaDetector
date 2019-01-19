@@ -17,6 +17,7 @@ script:
 - set -e
 - pip install -r requirements.txt
 - pip install git+git://github.com/drdoctr/doctr.git
+- git describe --tags --always --dirty --debug
 - git submodule foreach git pull origin master
 - cd docs
 - make doxygen
