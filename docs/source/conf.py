@@ -181,7 +181,7 @@ html_extra_path = ['_extra']
 #
 # html_sidebars = {}
 
-html_favicon = 'lbco_32.ico'
+html_favicon = 'favicon.ico'
 
 
 # -- Options for HTMLHelp output ---------------------------------------------
