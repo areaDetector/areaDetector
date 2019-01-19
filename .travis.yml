@@ -20,6 +20,7 @@ script:
     # Build doxygen from source
     - ./ci/build_doxygen.sh
     - export PATH=$TMPDIR/doxygen/bin:$PATH
+    - env | grep PATH
       # Fetch all history to get tags if they are burried ...
     - git fetch --unshallow
       # Do fetch of latest master of all submodules
