@@ -18,7 +18,7 @@ script:
 - pip install -r requirements.txt
 - pip install git+git://github.com/drdoctr/doctr.git@1.7.4
 - git fetch --unshallow
-  #- git submodule foreach git pull origin master
+- git submodule foreach git pull origin master
 - cd docs
 - make doxygen
 - make sphinx
