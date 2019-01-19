@@ -17,12 +17,14 @@ script:
 - set -e
 - pip install -r requirements.txt
 - pip install git+git://github.com/drdoctr/doctr.git@1.7.4
+- pip install git+git://github.com/michaeljones/breathe.git@v4.11.1
 - git fetch --unshallow
 - git submodule foreach git pull origin master
 - cd docs
 - doxygen --version
 - make doxygen
 - ../documentation/corr_enc.sh ../documentation/xml
+- cat ../documentation/xml/_a_d_driver_8cpp.xml 
 - make sphinx
 - cd ..
 - doctr deploy --key-path github_deploy_key_areadetector_areadetector_github_io.enc
