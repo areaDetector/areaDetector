@@ -17,7 +17,9 @@ script:
     - pip install -r requirements.txt
     - pip install git+git://github.com/drdoctr/doctr.git@1.7.4
     - pip install git+git://github.com/michaeljones/breathe.git@v4.11.1
+    # Build doxygen from source
     - ./ci/build_doxygen.sh
+    - export PATH=$TMPDIR/doxygen/bin:$PATH
       # Fetch all history to get tags if they are burried ...
     - git fetch --unshallow
       # Do fetch of latest master of all submodules
