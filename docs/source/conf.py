@@ -79,7 +79,7 @@ highlight_language = 'none'
 # Breathe configuration
 import os
 breathe_projects = { "areaDetector":
-                        os.path.abspath('../xml') }
+                        os.path.abspath('../doxy_output/xml') }
 
 breathe_default_project = "areaDetector"
 breathe_default_members = ('members', 'undoc-members')

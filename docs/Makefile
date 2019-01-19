@@ -19,7 +19,8 @@ sphinx:
 .PHONY: doxygen
 doxygen:
 	doxygen
-	cp -r ./html/areaDetectorDoxygenHTML source/_extra
+	cp -r doxy_output/html source/_extra/areaDetectorDoxygenHTML
+
 
 .PHONY: clean
 clean:
