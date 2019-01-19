@@ -20,6 +20,7 @@ script:
 - git fetch --unshallow
 - git submodule foreach git pull origin master
 - cd docs
+- doxygen --version
 - make doxygen
 - ../documentation/corr_enc.sh ../documentation/xml
 - make sphinx
