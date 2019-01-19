@@ -19,9 +19,9 @@ script:
 - pip install git+git://github.com/drdoctr/doctr.git@1.7.4
 - git fetch --unshallow
 - git submodule foreach git pull origin master
-- ./ci/corr_enc.sh .
 - cd docs
 - make doxygen
+- ../documentation/corr_enc.sh ../documentation/xml
 - make sphinx
 - cd ..
 - doctr deploy --key-path github_deploy_key_areadetector_areadetector_github_io.enc
