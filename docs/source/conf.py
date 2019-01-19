@@ -25,9 +25,10 @@ author = 'Mark Rivers'
 
 from subprocess import Popen, PIPE
 pipe = Popen('git describe --tags --always', stdout=PIPE, shell=True)
-git = pipe.stdout.read().decode("utf-8")
-release = git.lstrip('R').rstrip()
-version = '-'.join(release.split('-')[:-1])
+git = pipe.stdout.read().decode("utf-8").rstrip()
+print("git describe reports {}".format(git))
+release = git.lstrip('R')
+version = '-'.join(release.split('-')[0:2])
 
 
 # -- General configuration ---------------------------------------------------
@@ -82,7 +83,8 @@ breathe_projects = { "areaDetector":
                         os.path.abspath('../../documentation/xml') }
 
 breathe_default_project = "areaDetector"
-breathe_default_members = ('members', 'undoc-members', 'private-members')
+breathe_default_members = ('members', 'undoc-members',
+                           'private-members', 'protected-members')
 
 source_encoding = 'utf-8-sig'
 

@@ -1,4 +1,4 @@
 Source Code Documentation
 =========================
 
-.. doxygenindex::
+.. doxygenstruct:: NDDimension
