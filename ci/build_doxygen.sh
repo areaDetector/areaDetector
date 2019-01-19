@@ -21,5 +21,3 @@ cmake -G "Unix Makefiles" \
 
 make
 make install
-
-find ${INSTALL_DIR}
