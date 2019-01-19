@@ -8,6 +8,8 @@ This page is the home of areaDetector, an application for controlling area
 (2-D) detectors, including CCDs, pixel array detectors, and online imaging
 plates.
 
+Documentation created from release |release|
+
 Contents
 --------
 
