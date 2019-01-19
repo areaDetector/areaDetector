@@ -3,6 +3,7 @@ python:
     - '3.6'
 env:
   global:
+    - TMPDIR=/tmp
     - secure: cl0jFGnjztC2lCAvIxU8+rxYd6rsPZhUwU8MGBvIabIl4cmLallCzD82V3/LTkGPY40LsnxYDRJeToRnI6BVKLK2CIDqn/LfwCvS4/Ge5kfhaOg+gdQ7f8+ODDSkd9FLgZgFyy4isYcL9R4QQA1XwuKjbVqUDB7JyBPkUxq0EC13mP7rN4B/IIEmGXHXiurPCdBK+dAkGR/6PH1xE2f7LYBc9qHwAiiy68dN1EBi1hkNJtV/WYThCccOYzbYGcj5y9oCMO+bqqMJ9IU9GyFpvWXfmf0ctMTvLma4gT1qJez+95MUbrv6BCaH/Uw36CUxizb1DGGMkPExc9MVLFjbpnSaWHRfQeeQ8MZswqYgqbdEvJ8VgkNISH5REByzVzKvyugiWu3bUOdeXyeZ5CN6rKZdxnQgCWytCkamwrW5K/XIcZS+LMl6V363jHtPNKm3/ip4hLD9iXKNeuRrCd+Md624Z5yrcTKvaGD9agKz+nxaEmovyNRGdmlMgv2igQG0AJi8v3EaRUy5NcEc/xNFtWecniMZIL/R0tiQTPlamCtGCCxVo/mOuOP7FirG0Rsu9VY71G2OrZpwCi82ntGOTytwyT+Rn/KnE0BnwdBHsJAB1hk/ieNsN5tXjLPzbP/AF9gsqdmFvLePpgYmiK2pYnUYzbrPLPtOoMXMMWPWNzU=
 
 before_install:
@@ -28,8 +29,8 @@ script:
       # - git submodule foreach git pull origin master
     - cd docs
     - doxygen --version
-      #- make doxygen
-      #- ../documentation/corr_enc.sh ../documentation/xml
+    - make doxygen
+    - ../ci/corr_enc.sh ../documentation/xml
       #- make sphinx
       #- cd ..
       #- doctr deploy --key-path github_deploy_key_areadetector_areadetector_github_io.enc
