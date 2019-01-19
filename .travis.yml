@@ -30,8 +30,9 @@ script:
     - make doxygen
     - ../ci/corr_enc.sh doxy_output/xml
     - make sphinx
-    - doctr deploy --key-path ../github_deploy_key_areadetector_areadetector_github_io.enc
-      --built-docs _build/html --deploy-repo areaDetector/areaDetector.github.io
+    - cd ..
+    - doctr deploy --key-path github_deploy_key_areadetector_areadetector_github_io.enc
+      --built-docs docs/_build/html --deploy-repo areaDetector/areaDetector.github.io
       master
 
 notifications:
