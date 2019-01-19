@@ -24,7 +24,7 @@ copyright = '2019, Mark Rivers'
 author = 'Mark Rivers'
 
 from subprocess import Popen, PIPE
-pipe = Popen('git describe --tags --always --dirty', stdout=PIPE, shell=True)
+pipe = Popen('git describe --tags --always', stdout=PIPE, shell=True)
 git = pipe.stdout.read().decode("utf-8").rstrip()
 release = git.lstrip('R')
 version = '-'.join(release.split('-')[0:2])
