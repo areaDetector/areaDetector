@@ -82,8 +82,7 @@ breathe_projects = { "areaDetector":
                         os.path.abspath('../../documentation/xml') }
 
 breathe_default_project = "areaDetector"
-breathe_default_members = ('members', 'undoc-members',
-                           'private-members', 'protected-members')
+breathe_default_members = ('members', 'undoc-members')
 
 source_encoding = 'utf-8-sig'
 
