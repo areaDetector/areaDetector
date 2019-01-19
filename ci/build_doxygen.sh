@@ -12,6 +12,6 @@ wget -O - "${DOXYGEN_URL}" | tar xvzf - -C ${TMP_DIR}
 
 cd ${TMP_DIR}/doxygen-${DOXYGEN_VER}
 mkdir build && cd build
-make
 
 cmake -G "Unix Makefiles" ..
+make
