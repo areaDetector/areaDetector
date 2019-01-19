@@ -1,34 +1,35 @@
 language: python
 python:
-- '3.6'
+    - '3.6'
 env:
   global:
-  - secure: cl0jFGnjztC2lCAvIxU8+rxYd6rsPZhUwU8MGBvIabIl4cmLallCzD82V3/LTkGPY40LsnxYDRJeToRnI6BVKLK2CIDqn/LfwCvS4/Ge5kfhaOg+gdQ7f8+ODDSkd9FLgZgFyy4isYcL9R4QQA1XwuKjbVqUDB7JyBPkUxq0EC13mP7rN4B/IIEmGXHXiurPCdBK+dAkGR/6PH1xE2f7LYBc9qHwAiiy68dN1EBi1hkNJtV/WYThCccOYzbYGcj5y9oCMO+bqqMJ9IU9GyFpvWXfmf0ctMTvLma4gT1qJez+95MUbrv6BCaH/Uw36CUxizb1DGGMkPExc9MVLFjbpnSaWHRfQeeQ8MZswqYgqbdEvJ8VgkNISH5REByzVzKvyugiWu3bUOdeXyeZ5CN6rKZdxnQgCWytCkamwrW5K/XIcZS+LMl6V363jHtPNKm3/ip4hLD9iXKNeuRrCd+Md624Z5yrcTKvaGD9agKz+nxaEmovyNRGdmlMgv2igQG0AJi8v3EaRUy5NcEc/xNFtWecniMZIL/R0tiQTPlamCtGCCxVo/mOuOP7FirG0Rsu9VY71G2OrZpwCi82ntGOTytwyT+Rn/KnE0BnwdBHsJAB1hk/ieNsN5tXjLPzbP/AF9gsqdmFvLePpgYmiK2pYnUYzbrPLPtOoMXMMWPWNzU=
-addons:
-  apt:
-    packages:
-    - doxygen
-    - doxygen-doc
-    - doxygen-latex
-    - doxygen-gui
-    - unicode
-    - graphviz
+    - secure: cl0jFGnjztC2lCAvIxU8+rxYd6rsPZhUwU8MGBvIabIl4cmLallCzD82V3/LTkGPY40LsnxYDRJeToRnI6BVKLK2CIDqn/LfwCvS4/Ge5kfhaOg+gdQ7f8+ODDSkd9FLgZgFyy4isYcL9R4QQA1XwuKjbVqUDB7JyBPkUxq0EC13mP7rN4B/IIEmGXHXiurPCdBK+dAkGR/6PH1xE2f7LYBc9qHwAiiy68dN1EBi1hkNJtV/WYThCccOYzbYGcj5y9oCMO+bqqMJ9IU9GyFpvWXfmf0ctMTvLma4gT1qJez+95MUbrv6BCaH/Uw36CUxizb1DGGMkPExc9MVLFjbpnSaWHRfQeeQ8MZswqYgqbdEvJ8VgkNISH5REByzVzKvyugiWu3bUOdeXyeZ5CN6rKZdxnQgCWytCkamwrW5K/XIcZS+LMl6V363jHtPNKm3/ip4hLD9iXKNeuRrCd+Md624Z5yrcTKvaGD9agKz+nxaEmovyNRGdmlMgv2igQG0AJi8v3EaRUy5NcEc/xNFtWecniMZIL/R0tiQTPlamCtGCCxVo/mOuOP7FirG0Rsu9VY71G2OrZpwCi82ntGOTytwyT+Rn/KnE0BnwdBHsJAB1hk/ieNsN5tXjLPzbP/AF9gsqdmFvLePpgYmiK2pYnUYzbrPLPtOoMXMMWPWNzU=
+
+before_install:
+    - sudo apt-get update -qq
+    - sudo apt-get install libtiff-dev
+    - sudo apt-get install libconfig-dev
+    - sudo apt-get install libbsd-dev
+    - sudo apt-get install texlive-latex-base texlive-latex-extra texlive-fonts-recommended
+
 script:
-- set -e
-- pip install -r requirements.txt
-- pip install git+git://github.com/drdoctr/doctr.git@1.7.4
-- pip install git+git://github.com/michaeljones/breathe.git@v4.11.1
-- git fetch --unshallow
-- git submodule foreach git pull origin master
-- cd docs
-- doxygen --version
-- make doxygen
-- ../documentation/corr_enc.sh ../documentation/xml
-- cat ../documentation/xml/_a_d_driver_8cpp.xml 
-- make sphinx
-- cd ..
-- doctr deploy --key-path github_deploy_key_areadetector_areadetector_github_io.enc
-  --built-docs docs/_build/html --deploy-repo areaDetector/areaDetector.github.io
-  master
+    - set -e
+    - pip install -r requirements.txt
+    - pip install git+git://github.com/drdoctr/doctr.git@1.7.4
+    - pip install git+git://github.com/michaeljones/breathe.git@v4.11.1
+    - ./ci/build_doxygen.sh
+    - git fetch --unshallow
+    - git submodule foreach git pull origin master
+    - cd docs
+    - doxygen --version
+    - make doxygen
+    - ../documentation/corr_enc.sh ../documentation/xml
+    - make sphinx
+    - cd ..
+    - doctr deploy --key-path github_deploy_key_areadetector_areadetector_github_io.enc
+      --built-docs docs/_build/html --deploy-repo areaDetector/areaDetector.github.io
+      master
+
 notifications:
-  slack: epicsareadetector:xf0ac8PfwqcSqi2gE0tUcUkP#bob-the-builder
+  slack: 
+    epicsareadetector:xf0ac8PfwqcSqi2gE0tUcUkP#bob-the-builder
