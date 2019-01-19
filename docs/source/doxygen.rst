@@ -1,4 +1,8 @@
 Source Code Documentation
 =========================
 
-.. doxygenindex::
+.. doxygenstruct:: NDDimension 
+
+.. doxygenclass:: NDArray
+
+.. doxygenclass:: NDArrayPool
