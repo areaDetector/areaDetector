@@ -17,18 +17,21 @@ script:
     - pip install -r requirements.txt
     - pip install git+git://github.com/drdoctr/doctr.git@1.7.4
     - pip install git+git://github.com/michaeljones/breathe.git@v4.11.1
-      #    - ./ci/build_doxygen.sh
+    - ./ci/build_doxygen.sh
+      # Fetch all hostory to get tags if they are burried ...
     - git fetch --unshallow
-    - git submodule foreach git pull origin master
+      # Do fetch of latest master of all submodules
+    - git submodule update --recursive --remote
+      # - git submodule foreach git pull origin master
     - cd docs
     - doxygen --version
-    - make doxygen
-    - ../documentation/corr_enc.sh ../documentation/xml
-    - make sphinx
-    - cd ..
-    - doctr deploy --key-path github_deploy_key_areadetector_areadetector_github_io.enc
-      --built-docs docs/_build/html --deploy-repo areaDetector/areaDetector.github.io
-      master
+      #- make doxygen
+      #- ../documentation/corr_enc.sh ../documentation/xml
+      #- make sphinx
+      #- cd ..
+      #- doctr deploy --key-path github_deploy_key_areadetector_areadetector_github_io.enc
+      #--built-docs docs/_build/html --deploy-repo areaDetector/areaDetector.github.io
+      #master
 
 notifications:
   slack: 
