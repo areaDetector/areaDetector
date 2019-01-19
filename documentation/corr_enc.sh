@@ -23,12 +23,12 @@ echo $FILES_ISO
 
 for filename in $FILES_UTF8; do
 	echo "Converting $filename from utf-8 to ASCII"
-	(iconv -f utf-8 -t ASCII//TRANSLIT $filename > $filename.conv) && (mv $filename.conv $filename)
+	(iconv -f utf-8 -t ASCII//IGNORE $filename > $filename.conv) && (mv $filename.conv $filename)
 done
 
 for filename in $FILES_ISO; do
 	echo "Converting $filename from utf-8 to ASCII"
-	(iconv -f iso-8859-1 -t ASCII//TRANSLIT $filename > $filename.conv) && (mv $filename.conv $filename)
+	(iconv -f iso-8859-1 -t ASCII//IGNORE $filename > $filename.conv) && (mv $filename.conv $filename)
 done
 
 # Sanity check
