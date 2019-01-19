@@ -18,8 +18,8 @@ sphinx:
 
 .PHONY: doxygen
 doxygen:
-	$(MAKE) -C ../documentation doxygen
-	cp -r ../documentation/html/areaDetectorDoxygenHTML source/_extra
+	doxygen
+	cp -r ./html/areaDetectorDoxygenHTML source/_extra
 
 .PHONY: clean
 clean:

@@ -18,10 +18,9 @@ script:
     - pip install -r requirements.txt
     - pip install git+git://github.com/drdoctr/doctr.git@1.7.4
     - pip install git+git://github.com/michaeljones/breathe.git@v4.11.1
-    # Build doxygen from source
+      # Build doxygen from source and set path
     - ./ci/build_doxygen.sh
     - export PATH=$TMPDIR/doxygen/bin:$PATH
-    - env | grep PATH
       # Fetch all history to get tags if they are burried ...
     - git fetch --unshallow
       # Do fetch of latest master of all submodules
@@ -29,10 +28,10 @@ script:
       # - git submodule foreach git pull origin master
     - cd docs
     - make doxygen
-    - ../ci/corr_enc.sh ../documentation/xml
+    - ../ci/corr_enc.sh xml
     - make sphinx
     - doctr deploy --key-path ../github_deploy_key_areadetector_areadetector_github_io.enc
-    - built-docs _build/html --deploy-repo areaDetector/areaDetector.github.io
+      --built-docs _build/html --deploy-repo areaDetector/areaDetector.github.io
       master
 
 notifications:
