@@ -17,7 +17,7 @@ script:
 - set -e
 - pip install -r requirements.txt
 - pip install git+git://github.com/drdoctr/doctr.git
-- sudo apt-get install git
+- git fetch --unshallow
 - git --version
 - git describe --tags --always --dirty --debug
 - git tag -l
@@ -30,4 +30,4 @@ script:
   --built-docs docs/_build/html --deploy-repo areaDetector/areaDetector.github.io
   master
 notifications:
-  slack: epicsareadetector:xf0ac8PfwqcSqi2gE0tUcUkP
+  slack: epicsareadetector:xf0ac8PfwqcSqi2gE0tUcUkP#bob-the-builder
