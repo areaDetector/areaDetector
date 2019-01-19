@@ -19,6 +19,7 @@ copyToWebServer:
 
 clean:
 	rm -rf html
+	rm -rf xml
 
 
 realclean: clean
