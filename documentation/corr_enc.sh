@@ -35,3 +35,5 @@ done
 
 echo "Searching for non ascii files...."
 find $BASEDIR $FIND_OPTS -exec file $FILE_OPTS {} \; | grep -v charset=us-ascii
+
+exit 0
