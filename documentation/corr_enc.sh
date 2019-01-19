@@ -8,7 +8,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 	FILE_OPTS=-I
 	CUT=gcut
 else
-	FILE_OPTS=-l
+	FILE_OPTS=-i
 	CUT=cut
 fi
 
