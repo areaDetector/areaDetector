@@ -5,8 +5,8 @@ BASEDIR=$1
 FIND_OPTS="-iname "*.cpp" -o -iname "*.h" -type f"
 FILE_OPTS=-i
 
-FILES_UTF8=$(find $BASEDIR $FIND_OPTS -exec file $FILE_OPTS {} \; | grep charset=utf-8 | gcut -d":" -f1)
-FILES_ISO=$(find $BASEDIR $FIND_OPTS -exec file $FILE_OPTS {} \; | grep charset=iso-8859-1 | gcut -d":" -f1)
+FILES_UTF8=$(find $BASEDIR $FIND_OPTS -exec file $FILE_OPTS {} \; | grep charset=utf-8 | cut -d":" -f1)
+FILES_ISO=$(find $BASEDIR $FIND_OPTS -exec file $FILE_OPTS {} \; | grep charset=iso-8859-1 | cut -d":" -f1)
 
 echo "FILES UTF8"
 echo $FILES_UTF8
