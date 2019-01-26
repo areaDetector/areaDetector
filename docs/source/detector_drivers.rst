@@ -7,3 +7,4 @@ Detector Drivers
     ADCore/ADDriver
     ADCore/guidelines
     ADFastCCD/index
+    ADProsilica/ADProsilica
