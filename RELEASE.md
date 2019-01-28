@@ -30,7 +30,19 @@ Versions
 Each submodule contains detailed release notes for each release of that submodule.  The release notes below
 only provide a short summary of the most significant items from the submodules.
 
-### R3-4 (January XXX, 2018)
+### R3-5 (February XXX, 2018)
+
+* Documentation
+  * Began conversion of all areaDetector documentation from raw HTML documentation to .rst files using Sphinx.
+  * Added a new docs/ directory which replaces the old documentation directory.
+  * The old .html files were converted to .rst using (pandoc)[https://pandoc.org).
+    Most documentation includes tables that describe the driver or plugin parameters and
+    record names.  These tables do not convert well to .rst so they have been left as native
+    html in the files.
+  * The new documentation is hosted at [areaDetector.github.io](https://areaDetector.github.io).
+  * At this point the top-level documentation in this areaDetector respository has been converted,
+    as well as ADCore, ADViewers, ADProsilica, and ADFastCDD.
+  * Many thanks to Stuart Wilkins for this major effort.
 
 * configure/EXAMPLE_CONFIG_SITE.local
   Added WITH_BITSHUFFLE and BITSHUFFLE_EXTERNAL for bitshuffle in ADSupport R1-7.
