@@ -35,7 +35,7 @@ only provide a short summary of the most significant items from the submodules.
 * Documentation
   * Began conversion of all areaDetector documentation from raw HTML documentation to .rst files using Sphinx.
   * Added a new docs/ directory which replaces the old documentation directory.
-  * The old .html files were converted to .rst using (pandoc)[https://pandoc.org).
+  * The old .html files were converted to .rst using [pandoc](https://pandoc.org).
     Most documentation includes tables that describe the driver or plugin parameters and
     record names.  These tables do not convert well to .rst so they have been left as native
     html in the files.
