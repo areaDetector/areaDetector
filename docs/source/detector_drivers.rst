@@ -8,3 +8,4 @@ Detector Drivers
     ADCore/guidelines
     ADFastCCD/index
     ADProsilica/ADProsilica
+    ADPointGrey/PointGreyDoc

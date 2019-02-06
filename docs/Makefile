@@ -4,6 +4,7 @@ DOCS_PATHS += -i ../ADCore/docs/
 DOCS_PATHS += -i ../ADFastCCD/docs
 DOCS_PATHS += -i ../ADViewers/docs
 DOCS_PATHS += -i ../ADProsilica/docs
+DOCS_PATHS += -i ../ADPointGrey/docs
 
 BUILD = _build
 DOCS = _docs
