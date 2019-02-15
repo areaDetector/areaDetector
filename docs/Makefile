@@ -5,6 +5,7 @@ DOCS_PATHS += -i ../ADFastCCD/docs
 DOCS_PATHS += -i ../ADViewers/docs
 DOCS_PATHS += -i ../ADProsilica/docs
 DOCS_PATHS += -i ../ADPointGrey/docs
+DOCS_PATHS += -i ../specsAnalyser/docs
 
 BUILD = _build
 DOCS = _docs
