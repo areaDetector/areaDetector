@@ -45,7 +45,8 @@ only provide a short summary of the most significant items from the submodules.
   * Many thanks to Stuart Wilkins for this major effort.
 
 * configure/EXAMPLE_CONFIG_SITE.local
-  Added WITH_BITSHUFFLE and BITSHUFFLE_EXTERNAL for bitshuffle in ADSupport R1-7.
+  Added WITH_BITSHUFFLE and BITSHUFFLE_EXTERNAL for bitshuffle which is supported in new
+  versions of ADSupport, ADCore, and ADEiger.
 
 ### R3-4 (December 3, 2018)
 
