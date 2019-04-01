@@ -532,7 +532,7 @@ The instructions here use the Pilatus (ADPilatus) module as an example.
 Substitute Pilatus with the name of the detector you are working with.
 
 The pre-built binaries can be found on the
-[CARS Web site](http://cars.uchicago.edu/software/pub/). There is a subdirectory there
+[CARS Web site](https://cars.uchicago.edu/software/pub/). There is a subdirectory there
 for each detector (e.g. ADPilatus) that contains releases for that detector.  If you don't
 see a pre-built package for the detector you are looking for send an e-mail to Mark
 Rivers and I can create one for you.
@@ -729,7 +729,7 @@ from any directory to start the EPICS IOC.
 The [areaDetector/ADViewers repository](https://github.com/areaDetector/ADViewers) 
 comes with tools to display images over EPICS Channel Access using ImageJ and
 IDL. These viewers are described in
-[areaDetectorViewers.html](http://cars.uchicago.edu/software/epics/areaDetectorViewers.html).
+[areaDetectorViewers.html](https://cars.uchicago.edu/software/epics/areaDetectorViewers.html).
 
 HDFView can be used to view files saved with the HDF5 file writing plugins. ImageJ can
 also be used to view files saved with the TIFF, JPEG, and netCDF plugins.
