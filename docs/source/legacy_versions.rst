@@ -48,24 +48,24 @@ linux-x86_64, win32-x86, windows-x64, and cygwin-x86.
           11-March-2013
         </td>
         <td>
-          <a href="http://cars.uchicago.edu/software/pub/areaDetectorR1-9-1.tgz">areaDetectorR1-9-1.tgz</a>
+          <a href="https://cars.uchicago.edu/software/pub/areaDetectorR1-9-1.tgz">areaDetectorR1-9-1.tgz</a>
         </td>
         <td>
-          <a href="http://cars.uchicago.edu/software/pub/areaDetectorPrebuilt_R1-9-1_linux-x86.tgz">
+          <a href="https://cars.uchicago.edu/software/pub/areaDetectorPrebuilt_R1-9-1_linux-x86.tgz">
             areaDetectorPrebuilt_R1-9-1_linux-x86.tgz</a><br />
-          <a href="http://cars.uchicago.edu/software/pub/areaDetectorPrebuilt_R1-9-1_linux-x86-gcc43.tgz">
+          <a href="https://cars.uchicago.edu/software/pub/areaDetectorPrebuilt_R1-9-1_linux-x86-gcc43.tgz">
             areaDetectorPrebuilt_R1-9-1_linux-x86-gcc43.tgz</a><br />
-          <a href="http://cars.uchicago.edu/software/pub/areaDetectorPrebuilt_R1-9-1_linux-x86_64.tgz">
+          <a href="https://cars.uchicago.edu/software/pub/areaDetectorPrebuilt_R1-9-1_linux-x86_64.tgz">
             areaDetectorPrebuilt_R1-9-1_linux-x86_64.tgz</a><br />
-          <a href="http://cars.uchicago.edu/software/pub/areaDetectorPrebuilt_R1-9-1_linux-x86_64-gcc42.tgz">
+          <a href="https://cars.uchicago.edu/software/pub/areaDetectorPrebuilt_R1-9-1_linux-x86_64-gcc42.tgz">
             areaDetectorPrebuilt_R1-9-1_linux-x86_64-gcc42.tgz</a><br />
-          <a href="http://cars.uchicago.edu/software/pub/areaDetectorPrebuilt_R1-9-1_win32-x86.tgz">
+          <a href="https://cars.uchicago.edu/software/pub/areaDetectorPrebuilt_R1-9-1_win32-x86.tgz">
             areaDetectorPrebuilt_R1-9-1_win32-x86.tgz</a><br />
-          <a href="http://cars.uchicago.edu/software/pub/areaDetectorPrebuilt_R1-9-1_windows_x64.tgz">
+          <a href="https://cars.uchicago.edu/software/pub/areaDetectorPrebuilt_R1-9-1_windows_x64.tgz">
             areaDetectorPrebuilt_R1-9-1_windows_x64.tgz</a><br />
-          <a href="http://cars.uchicago.edu/software/pub/areaDetectorPrebuilt_R1-9-1_cygwin-x86.tgz">
+          <a href="https://cars.uchicago.edu/software/pub/areaDetectorPrebuilt_R1-9-1_cygwin-x86.tgz">
             areaDetectorPrebuilt_R1-9-1_cygwin-x86.tgz</a><br />
-          <a href="http://cars.uchicago.edu/software/pub/areaDetectorPrebuilt_R1-9-1_darwin-x86.tgz">
+          <a href="https://cars.uchicago.edu/software/pub/areaDetectorPrebuilt_R1-9-1_darwin-x86.tgz">
             areaDetectorPrebuilt_R1-9-1_darwin-x86.tgz</a>
         </td>
         <td>
@@ -86,24 +86,24 @@ linux-x86_64, win32-x86, windows-x64, and cygwin-x86.
           27-February-2013
         </td>
         <td>
-          <a href="http://cars.uchicago.edu/software/pub/areaDetectorR1-9.tgz">areaDetectorR1-9.tgz</a>
+          <a href="https://cars.uchicago.edu/software/pub/areaDetectorR1-9.tgz">areaDetectorR1-9.tgz</a>
         </td>
         <td>
-          <a href="http://cars.uchicago.edu/software/pub/areaDetectorPrebuilt_R1-9_linux-x86.tgz">
+          <a href="https://cars.uchicago.edu/software/pub/areaDetectorPrebuilt_R1-9_linux-x86.tgz">
             areaDetectorPrebuilt_R1-9_linux-x86.tgz</a><br />
-          <a href="http://cars.uchicago.edu/software/pub/areaDetectorPrebuilt_R1-9_linux-x86-gcc43.tgz">
+          <a href="https://cars.uchicago.edu/software/pub/areaDetectorPrebuilt_R1-9_linux-x86-gcc43.tgz">
             areaDetectorPrebuilt_R1-9_linux-x86-gcc43.tgz</a><br />
-          <a href="http://cars.uchicago.edu/software/pub/areaDetectorPrebuilt_R1-9_linux-x86_64.tgz">
+          <a href="https://cars.uchicago.edu/software/pub/areaDetectorPrebuilt_R1-9_linux-x86_64.tgz">
             areaDetectorPrebuilt_R1-9_linux-x86_64.tgz</a><br />
-          <a href="http://cars.uchicago.edu/software/pub/areaDetectorPrebuilt_R1-9_linux-x86_64-gcc42.tgz">
+          <a href="https://cars.uchicago.edu/software/pub/areaDetectorPrebuilt_R1-9_linux-x86_64-gcc42.tgz">
             areaDetectorPrebuilt_R1-9_linux-x86_64-gcc42.tgz</a><br />
-          <a href="http://cars.uchicago.edu/software/pub/areaDetectorPrebuilt_R1-9_win32-x86.tgz">
+          <a href="https://cars.uchicago.edu/software/pub/areaDetectorPrebuilt_R1-9_win32-x86.tgz">
             areaDetectorPrebuilt_R1-9_win32-x86.tgz</a><br />
-          <a href="http://cars.uchicago.edu/software/pub/areaDetectorPrebuilt_R1-9_windows_x64.tgz">
+          <a href="https://cars.uchicago.edu/software/pub/areaDetectorPrebuilt_R1-9_windows_x64.tgz">
             areaDetectorPrebuilt_R1-9_windows_x64.tgz</a><br />
-          <a href="http://cars.uchicago.edu/software/pub/areaDetectorPrebuilt_R1-9_cygwin-x86.tgz">
+          <a href="https://cars.uchicago.edu/software/pub/areaDetectorPrebuilt_R1-9_cygwin-x86.tgz">
             areaDetectorPrebuilt_R1-9_cygwin-x86.tgz</a><br />
-          <a href="http://cars.uchicago.edu/software/pub/areaDetectorPrebuilt_R1-9_darwin-x86.tgz">
+          <a href="https://cars.uchicago.edu/software/pub/areaDetectorPrebuilt_R1-9_darwin-x86.tgz">
             areaDetectorPrebuilt_R1-9_darwin-x86.tgz</a>
         </td>
         <td>
@@ -124,22 +124,22 @@ linux-x86_64, win32-x86, windows-x64, and cygwin-x86.
           6-October-2012
         </td>
         <td>
-          <a href="http://cars.uchicago.edu/software/pub/areaDetectorR1-8.tgz">areaDetectorR1-8.tgz</a>
+          <a href="https://cars.uchicago.edu/software/pub/areaDetectorR1-8.tgz">areaDetectorR1-8.tgz</a>
         </td>
         <td>
-          <a href="http://cars.uchicago.edu/software/pub/areaDetectorPrebuilt_R1-8_linux-x86.tgz">
+          <a href="https://cars.uchicago.edu/software/pub/areaDetectorPrebuilt_R1-8_linux-x86.tgz">
             areaDetectorPrebuilt_R1-8_linux-x86.tgz</a><br />
-          <a href="http://cars.uchicago.edu/software/pub/areaDetectorPrebuilt_R1-8_linux-x86-gcc43.tgz">
+          <a href="https://cars.uchicago.edu/software/pub/areaDetectorPrebuilt_R1-8_linux-x86-gcc43.tgz">
             areaDetectorPrebuilt_R1-8_linux-x86-gcc43.tgz</a><br />
-          <a href="http://cars.uchicago.edu/software/pub/areaDetectorPrebuilt_R1-8_linux-x86_64.tgz">
+          <a href="https://cars.uchicago.edu/software/pub/areaDetectorPrebuilt_R1-8_linux-x86_64.tgz">
             areaDetectorPrebuilt_R1-8_linux-x86_64.tgz</a><br />
-          <a href="http://cars.uchicago.edu/software/pub/areaDetectorPrebuilt_R1-8_linux-x86_64-gcc42.tgz">
+          <a href="https://cars.uchicago.edu/software/pub/areaDetectorPrebuilt_R1-8_linux-x86_64-gcc42.tgz">
             areaDetectorPrebuilt_R1-8_linux-x86_64-gcc42.tgz</a><br />
-          <a href="http://cars.uchicago.edu/software/pub/areaDetectorPrebuilt_R1-8_win32-x86.tgz">
+          <a href="https://cars.uchicago.edu/software/pub/areaDetectorPrebuilt_R1-8_win32-x86.tgz">
             areaDetectorPrebuilt_R1-8_win32-x86.tgz</a><br />
-          <a href="http://cars.uchicago.edu/software/pub/areaDetectorPrebuilt_R1-8_windows_x64.tgz">
+          <a href="https://cars.uchicago.edu/software/pub/areaDetectorPrebuilt_R1-8_windows_x64.tgz">
             areaDetectorPrebuilt_R1-8_windows_x64.tgz</a><br />
-          <a href="http://cars.uchicago.edu/software/pub/areaDetectorPrebuilt_R1-8_cygwin-x86.tgz">
+          <a href="https://cars.uchicago.edu/software/pub/areaDetectorPrebuilt_R1-8_cygwin-x86.tgz">
             areaDetectorPrebuilt_R1-8_cygwin-x86.tgz</a>
         </td>
         <td>
@@ -160,18 +160,18 @@ linux-x86_64, win32-x86, windows-x64, and cygwin-x86.
           9-Aug-2011
         </td>
         <td>
-          <a href="http://cars.uchicago.edu/software/pub/areaDetectorR1-7.tgz">areaDetectorR1-7.tgz</a>
+          <a href="https://cars.uchicago.edu/software/pub/areaDetectorR1-7.tgz">areaDetectorR1-7.tgz</a>
         </td>
         <td>
-          <a href="http://cars.uchicago.edu/software/pub/areaDetectorPrebuilt_R1-7_linux-x86.tgz">
+          <a href="https://cars.uchicago.edu/software/pub/areaDetectorPrebuilt_R1-7_linux-x86.tgz">
             areaDetectorPrebuilt_R1-7_linux-x86.tgz</a><br />
-          <a href="http://cars.uchicago.edu/software/pub/areaDetectorPrebuilt_R1-7_linux-x86_64.tgz">
+          <a href="https://cars.uchicago.edu/software/pub/areaDetectorPrebuilt_R1-7_linux-x86_64.tgz">
             areaDetectorPrebuilt_R1-7_linux-x86_64.tgz</a><br />
-          <a href="http://cars.uchicago.edu/software/pub/areaDetectorPrebuilt_R1-7_win32-x86.tgz">
+          <a href="https://cars.uchicago.edu/software/pub/areaDetectorPrebuilt_R1-7_win32-x86.tgz">
             areaDetectorPrebuilt_R1-7_win32-x86.tgz</a><br />
-          <a href="http://cars.uchicago.edu/software/pub/areaDetectorPrebuilt_R1-7_windows_x64.tgz">
+          <a href="https://cars.uchicago.edu/software/pub/areaDetectorPrebuilt_R1-7_windows_x64.tgz">
             areaDetectorPrebuilt_R1-7_windows_x64.tgz</a><br />
-          <a href="http://cars.uchicago.edu/software/pub/areaDetectorPrebuilt_R1-7_cygwin-x86.tgz">
+          <a href="https://cars.uchicago.edu/software/pub/areaDetectorPrebuilt_R1-7_cygwin-x86.tgz">
             areaDetectorPrebuilt_R1-7_cygwin-x86.tgz</a>
         </td>
         <td>
@@ -192,10 +192,10 @@ linux-x86_64, win32-x86, windows-x64, and cygwin-x86.
           20-May-2010
         </td>
         <td>
-          <a href="http://cars.uchicago.edu/software/pub/areaDetectorR1-6.tgz">areaDetectorR1-6.tgz</a>
+          <a href="https://cars.uchicago.edu/software/pub/areaDetectorR1-6.tgz">areaDetectorR1-6.tgz</a>
         </td>
         <td>
-          <a href="http://cars.uchicago.edu/software/pub/areaDetectorPrebuilt_R1-6.tgz">areaDetectorPrebuilt_R1-6.tgz</a>
+          <a href="https://cars.uchicago.edu/software/pub/areaDetectorPrebuilt_R1-6.tgz">areaDetectorPrebuilt_R1-6.tgz</a>
         </td>
         <td>
           <a href="areaDetectorDoc.html">areaDetectorDoc</a>
@@ -215,10 +215,10 @@ linux-x86_64, win32-x86, windows-x64, and cygwin-x86.
           23-August-2009
         </td>
         <td>
-          <a href="http://cars.uchicago.edu/software/pub/areaDetectorR1-5.tgz">areaDetectorR1-5.tgz</a>
+          <a href="https://cars.uchicago.edu/software/pub/areaDetectorR1-5.tgz">areaDetectorR1-5.tgz</a>
         </td>
         <td>
-          <a href="http://cars.uchicago.edu/software/pub/areaDetectorPrebuilt_R1-5.tgz">areaDetectorPrebuilt_R1-5.tgz</a>
+          <a href="https://cars.uchicago.edu/software/pub/areaDetectorPrebuilt_R1-5.tgz">areaDetectorPrebuilt_R1-5.tgz</a>
         </td>
         <td>
           <a href="areaDetectorDoc.html">areaDetectorDoc</a>
@@ -238,10 +238,10 @@ linux-x86_64, win32-x86, windows-x64, and cygwin-x86.
           30-Jan-2009
         </td>
         <td>
-          <a href="http://cars.uchicago.edu/software/pub/areaDetectorR1-4.tgz">areaDetectorR1-4.tgz</a>
+          <a href="https://cars.uchicago.edu/software/pub/areaDetectorR1-4.tgz">areaDetectorR1-4.tgz</a>
         </td>
         <td>
-          <a href="http://cars.uchicago.edu/software/pub/areaDetectorPrebuilt_R1-4.tgz">areaDetectorPrebuilt_R1-4.tgz</a>
+          <a href="https://cars.uchicago.edu/software/pub/areaDetectorPrebuilt_R1-4.tgz">areaDetectorPrebuilt_R1-4.tgz</a>
         </td>
         <td>
           <a href="areaDetectorDoc.html">areaDetectorDoc</a>
@@ -261,10 +261,10 @@ linux-x86_64, win32-x86, windows-x64, and cygwin-x86.
           24-Nov-2008
         </td>
         <td>
-          <a href="http://cars.uchicago.edu/software/pub/areaDetectorR1-3.tgz">areaDetectorR1-3.tgz</a>
+          <a href="https://cars.uchicago.edu/software/pub/areaDetectorR1-3.tgz">areaDetectorR1-3.tgz</a>
         </td>
         <td>
-          <a href="http://cars.uchicago.edu/software/pub/areaDetectorPrebuilt_R1-3.tgz">areaDetectorPrebuilt_R1-3.tgz</a>
+          <a href="https://cars.uchicago.edu/software/pub/areaDetectorPrebuilt_R1-3.tgz">areaDetectorPrebuilt_R1-3.tgz</a>
         </td>
         <td>
           <a href="areaDetectorDoc.html">areaDetectorDoc</a>
@@ -284,7 +284,7 @@ linux-x86_64, win32-x86, windows-x64, and cygwin-x86.
           24-Oct-2008
         </td>
         <td>
-          <a href="http://cars.uchicago.edu/software/pub/areaDetectorR1-2.tgz">areaDetectorR1-2.tgz</a>
+          <a href="https://cars.uchicago.edu/software/pub/areaDetectorR1-2.tgz">areaDetectorR1-2.tgz</a>
         </td>
         <td>
           N.A.
@@ -307,7 +307,7 @@ linux-x86_64, win32-x86, windows-x64, and cygwin-x86.
           10-May-2008
         </td>
         <td>
-          <a href="http://cars.uchicago.edu/software/pub/areaDetectorR1-1.tgz">areaDetectorR1-1.tgz</a>
+          <a href="https://cars.uchicago.edu/software/pub/areaDetectorR1-1.tgz">areaDetectorR1-1.tgz</a>
         </td>
         <td>
           N.A.
@@ -330,7 +330,7 @@ linux-x86_64, win32-x86, windows-x64, and cygwin-x86.
           11-Apr-2008
         </td>
         <td>
-          <a href="http://cars.uchicago.edu/software/pub/areaDetectorR1-0.tgz">areaDetectorR1-0.tgz</a>
+          <a href="https://cars.uchicago.edu/software/pub/areaDetectorR1-0.tgz">areaDetectorR1-0.tgz</a>
         </td>
         <td>
           N.A.
