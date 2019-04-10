@@ -101,7 +101,7 @@ only provide a short summary of the most significant items from the submodules.
 * This is a brief description of what has changed and what users need to do.
   - In the areaDetector/configure directory type
     ```./copyFromExample```.
-    This will copy the EXAMPLE_* files to CONFIG* and RELEASE*.
+    This will copy the `EXAMPLE_*` files to CONFIG* and RELEASE*.
   - Edit CONFIG_SITE.local and CONFIG_SITE.local.$(EPICS_HOST_ARCH) as required.
   - Edit RELEASE.local and RELEASE.local.$(EPICS_HOST_ARCH) as required.
   - Edit RELEASE_SUPPORT.local.  This file replaces RELEASE_PATHS.local from earlier releases. 
