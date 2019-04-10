@@ -9,6 +9,8 @@ DOCS_PATHS += -i ../ADPointGrey/docs
 BUILD = _build
 DOCS = _docs
 SOURCE = source
+#OPTS = -v -v -v
+OPTS =
 
 .PHONY: all
 all: sphinx
@@ -16,7 +18,7 @@ all: sphinx
 
 .PHONY: all
 sphinx:
-	$(SPHINX_MULTIBUILD) $(DOCS_PATHS) -i $(SOURCE) -s $(DOCS) -o $(BUILD)/html -b html
+	$(SPHINX_MULTIBUILD) $(DOCS_PATHS) -i $(SOURCE) -s $(DOCS) -o $(BUILD)/html $(OPTS) -b html
 
 .PHONY: doxygen
 doxygen:
