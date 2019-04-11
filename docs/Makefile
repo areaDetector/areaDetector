@@ -10,7 +10,7 @@ BUILD = _build
 DOCS = _docs
 SOURCE = source
 OPTS = -v -v -v
-OPTS =
+#OPTS =
 
 .PHONY: all
 all: sphinx
