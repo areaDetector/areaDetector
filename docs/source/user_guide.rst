@@ -1,5 +1,5 @@
-areaDetetor Users Guide
-=======================
+areaDetector Users Guide
+========================
 
 .. toctree::
     :maxdepth: 2
