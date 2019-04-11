@@ -9,8 +9,8 @@ DOCS_PATHS += -i ../ADPointGrey/docs
 BUILD = _build
 DOCS = _docs
 SOURCE = source
-OPTS = -v -v -v
-#OPTS =
+#OPTS = -v -v -v
+OPTS =
 
 .PHONY: all
 all: sphinx
