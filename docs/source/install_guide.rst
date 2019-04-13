@@ -30,7 +30,7 @@ This guide provides instructions for:
 
 -  Installing and running a pre-built binary distribution.
 
-Licsense
+License
 --------
 
 This product is made available subject to acceptance of the
@@ -910,7 +910,7 @@ The `areaDetector/ADViewers
 repository <https://github.com/areaDetector/ADViewers>`__ comes with
 tools to display images over EPICS Channel Access using ImageJ and IDL.
 These viewers are described in
-`areaDetectorViewers.html <https://cars.uchicago.edu/software/epics/areaDetectorViewers.html>`__.
+:doc:`ADViewers/ad_viewers`
 
 HDFView can be used to view files saved with the HDF5 file writing
 plugins. ImageJ can also be used to view files saved with the TIFF,
