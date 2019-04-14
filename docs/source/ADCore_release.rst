@@ -1,0 +1,1 @@
+.. mdinclude:: ../../ADCore/RELEASE.md
