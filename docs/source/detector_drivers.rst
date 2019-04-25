@@ -9,3 +9,4 @@ Detector Drivers
     ADFastCCD/index
     ADProsilica/ADProsilica
     ADPointGrey/PointGreyDoc
+    specsAnalyser/specsAnalyser
