@@ -1,0 +1,1 @@
+.. mdinclude:: ../../ADSupport/RELEASE.md
