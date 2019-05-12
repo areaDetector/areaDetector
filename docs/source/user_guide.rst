@@ -10,6 +10,7 @@ areaDetector Users Guide
     ADCore/NDArray
     detector_drivers
     ADCore/plugins
+    additional_plugins
     ADCore/medm
     ADViewers/ad_viewers
     acknowledgements
