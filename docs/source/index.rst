@@ -18,6 +18,7 @@ Contents
 
    Top-level Release Notes <release>
    ADCore Release Notes <ADCore_release>
+   ADSupport Release Notes <ADSupport_release>
    Readme <readme>
    License <license>
    Install Guide <install_guide>
