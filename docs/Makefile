@@ -4,10 +4,15 @@ DOCS_PATHS += -i ../ADCore/docs/
 DOCS_PATHS += -i ../ADFastCCD/docs
 DOCS_PATHS += -i ../ADViewers/docs
 DOCS_PATHS += -i ../ADProsilica/docs
+DOCS_PATHS += -i ../ADPointGrey/docs
+DOCS_PATHS += -i ../specsAnalyser/docs
+DOCS_PATHS += -i ../ADCompVision/docs
 
 BUILD = _build
 DOCS = _docs
 SOURCE = source
+#OPTS = -v -v -v
+OPTS =
 
 .PHONY: all
 all: sphinx
@@ -15,7 +20,7 @@ all: sphinx
 
 .PHONY: all
 sphinx:
-	$(SPHINX_MULTIBUILD) $(DOCS_PATHS) -i $(SOURCE) -s $(DOCS) -o $(BUILD)/html -b html
+	$(SPHINX_MULTIBUILD) $(DOCS_PATHS) -i $(SOURCE) -s $(DOCS) -o $(BUILD)/html $(OPTS) -b html
 
 .PHONY: doxygen
 doxygen:

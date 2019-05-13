@@ -22,15 +22,15 @@ This guide provides instructions for:
    instructions should work on any supported EPICS host architecture,
    e.g. Linux, Windows, macOS, vxWorks. This document assumes that the
    reader has already installed an EPICS development environment, and
-   has built `EPICS base <http://www.aps.anl.gov/epics/base>`__, the
+   has built `EPICS base <https://www.aps.anl.gov/epics/base>`__, the
    `EPICS asyn
-   module <http://www.aps.anl.gov/epics/modules/soft/asyn>`__, and the
+   module <https://www.aps.anl.gov/epics/modules/soft/asyn>`__, and the
    required `EPICS synApps
-   modules <http://www.aps.anl.gov/bcda/synApps>`__.
+   modules <https://www.aps.anl.gov/bcda/synApps>`__.
 
 -  Installing and running a pre-built binary distribution.
 
-Licsense
+License
 --------
 
 This product is made available subject to acceptance of the
@@ -48,17 +48,17 @@ EPICS Products Required for Building areaDetector
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 areaDetector requires `EPICS
-base <http://www.aps.anl.gov/epics/base/index.php>`__. R3.14.12.4 or
+base <https://www.aps.anl.gov/epics/base/index.php>`__. R3.14.12.4 or
 higher, any 3.15 release should work.
 
 areaDetector also requires
-`asyn <http://www.aps.anl.gov/epics/modules/soft/asyn/>`__. The most
+`asyn <https://www.aps.anl.gov/epics/modules/soft/asyn/>`__. The most
 recent release of asyn is recommended.
 
 Each areaDetector detector module builds both a library and an EPICS IOC
 application. To build the library only EPICS base and asynDriver are
 required. To build the IOC application the
-`synApps <http://www.aps.anl.gov/bcda/synApps>`__ modules AUTOSAVE,
+`synApps <https://www.aps.anl.gov/bcda/synApps>`__ modules AUTOSAVE,
 BUSY, CALC, and SSCAN are required. If the CALC module is built with
 SNCSEQ support then SNCSEQ is also required. The most recent release of
 the synApps modules is recommended.
@@ -679,7 +679,7 @@ The instructions here use the Pilatus (ADPilatus) module as an example.
 Substitute Pilatus with the name of the detector you are working with.
 
 The pre-built binaries can be found on the `CARS Web
-site <http://cars.uchicago.edu/software/pub/>`__. There is a
+site <https://cars.uchicago.edu/software/pub/>`__. There is a
 subdirectory there for each detector (e.g. ADPilatus) that contains
 releases for that detector. If you don’t see a pre-built package for the
 detector you are looking for send an e-mail to Mark Rivers and I can
@@ -755,14 +755,14 @@ MEDM
 ~~~~
 
 The source code for medm can be downloaded from:
-`medm <http://www.aps.anl.gov/epics/extensions/medm/index.php>`__
+`medm <https://www.aps.anl.gov/epics/extensions/medm/index.php>`__
 
 This requires `Motif <http://motif.ics.com/>`__. medm can be built from
 source on Linux if the Motif library is available (which it is not for
 some new releases, such as Fedora 20).
 
 It is available for Windows as via an `EPICS Windows Tools MSI installer
-package <http://www.aps.anl.gov/epics/distributions/win32/index.php>`__.
+package <https://www.aps.anl.gov/epics/distributions/win32/index.php>`__.
 
 EDM
 ~~~
@@ -910,7 +910,7 @@ The `areaDetector/ADViewers
 repository <https://github.com/areaDetector/ADViewers>`__ comes with
 tools to display images over EPICS Channel Access using ImageJ and IDL.
 These viewers are described in
-`areaDetectorViewers.html <http://cars.uchicago.edu/software/epics/areaDetectorViewers.html>`__.
+:doc:`ADViewers/ad_viewers`
 
 HDFView can be used to view files saved with the HDF5 file writing
 plugins. ImageJ can also be used to view files saved with the TIFF,

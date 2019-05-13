@@ -4,17 +4,19 @@
 
 # Define the location of the hdf5, sz, and GraphicsMagick libraries
 
-HDF5         = /opt/local
-HDF5_LIB     = $(HDF5)/lib
-HDF5_INCLUDE = $(HDF5)/include
+#HDF5         = /opt/local
+#HDF5_LIB     = $(HDF5)/lib
+#HDF5_INCLUDE = $(HDF5)/include
 
-SZIP           = /opt/local
-SZIP_LIB       = $(SZIP)/lib
-SZIP_INCLUDE   = $(SZIP)/include
+#SZIP           = /opt/local
+#SZIP_LIB       = $(SZIP)/lib
+#SZIP_INCLUDE   = $(SZIP)/include
 
-GRAPHICSMAGICK         = /opt/local
-GRAPHICSMAGICK_LIB     = $(GRAPHICSMAGICK)/lib
-GRAPHICSMAGICK_INCLUDE = $(GRAPHICSMAGICK)/include/GraphicsMagick
+#GRAPHICSMAGICK         = /opt/local
+#GRAPHICSMAGICK_LIB     = $(GRAPHICSMAGICK)/lib
+#GRAPHICSMAGICK_INCLUDE = $(GRAPHICSMAGICK)/include/GraphicsMagick
 
-XML2_INCLUDE = /usr/include/libxml2
+#XML2_INCLUDE = /usr/include/libxml2
 
+# This is needed to find X11 include files when building GraphicsMagick in ADSupport.
+USR_INCLUDES += -I/opt/X11/include

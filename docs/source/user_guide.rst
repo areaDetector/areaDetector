@@ -1,5 +1,5 @@
-areaDetetor Users Guide
-=======================
+areaDetector Users Guide
+========================
 
 .. toctree::
     :maxdepth: 2
@@ -10,6 +10,7 @@ areaDetetor Users Guide
     ADCore/NDArray
     detector_drivers
     ADCore/plugins
+    additional_plugins
     ADCore/medm
     ADViewers/ad_viewers
     acknowledgements

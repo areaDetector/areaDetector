@@ -9,14 +9,14 @@ https://github.com/areaDetector/areaDetector.
 
 Tagged source code and pre-built binary releases prior to R2-0 are included
 in the areaDetector releases available via links at
-http://cars.uchicago.edu/software/epics/areaDetector.html.
+https://cars.uchicago.edu/software/epics/areaDetector.html.
 
 Tagged source code releases from R2-0 onward can be obtained at 
 https://github.com/areaDetector/areaDetector/releases.
 
 Tagged prebuilt binaries from R2-0 onward can be obtained in the detector-specific directories in:
-http://cars.uchicago.edu/software/pub/.  For example the Pilatus binaries are in 
-http://cars.uchicago.edu/software/pub/ADPilatus.
+https://cars.uchicago.edu/software/pub/.  For example the Pilatus binaries are in 
+https://cars.uchicago.edu/software/pub/ADPilatus.
 
 The versions of EPICS base, asyn, and other synApps modules used for each release can be obtained from 
 the EXAMPLE_RELEASE_PATHS.local, EXAMPLE_RELEASE_LIBS.local, and EXAMPLE_RELEASE_PRODS.local
@@ -30,7 +30,7 @@ Versions
 Each submodule contains detailed release notes for each release of that submodule.  The release notes below
 only provide a short summary of the most significant items from the submodules.
 
-### R3-5 (February XXX, 2018)
+### R3-5 (April 12, 2019)
 
 * Documentation
   * Began conversion of all areaDetector documentation from raw HTML documentation to .rst files using Sphinx.
@@ -45,7 +45,8 @@ only provide a short summary of the most significant items from the submodules.
   * Many thanks to Stuart Wilkins for this major effort.
 
 * configure/EXAMPLE_CONFIG_SITE.local
-  Added WITH_BITSHUFFLE and BITSHUFFLE_EXTERNAL for bitshuffle in ADSupport R1-7.
+  Added WITH_BITSHUFFLE and BITSHUFFLE_EXTERNAL for bitshuffle which is supported in new
+  versions of ADSupport, ADCore, and ADEiger.
 
 ### R3-4 (December 3, 2018)
 
@@ -100,7 +101,7 @@ only provide a short summary of the most significant items from the submodules.
 * This is a brief description of what has changed and what users need to do.
   - In the areaDetector/configure directory type
     ```./copyFromExample```.
-    This will copy the EXAMPLE_* files to CONFIG* and RELEASE*.
+    This will copy the `EXAMPLE_*` files to CONFIG* and RELEASE*.
   - Edit CONFIG_SITE.local and CONFIG_SITE.local.$(EPICS_HOST_ARCH) as required.
   - Edit RELEASE.local and RELEASE.local.$(EPICS_HOST_ARCH) as required.
   - Edit RELEASE_SUPPORT.local.  This file replaces RELEASE_PATHS.local from earlier releases. 
@@ -293,5 +294,5 @@ ffmpegServer | R1-0 (initial tag)
 ### R1-9-1 and earlier
 
 Release notes are part of the
-[areaDetector Release Notes](http://cars.uchicago.edu/software/epics/areaDetectorReleaseNotes.html).
+[areaDetector Release Notes](https://cars.uchicago.edu/software/epics/areaDetectorReleaseNotes.html).
 
