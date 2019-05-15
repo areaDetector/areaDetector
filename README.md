@@ -1,8 +1,11 @@
 areaDetector
 ==========
+
+[![Build Status](https://travis-ci.com/areaDetector/areaDetector.svg?branch=master)](https://travis-ci.com/areaDetector/areaDetector)
+
 The top-level repository for the
 [EPICS](http://www.aps.anl.gov/epics/) 
-[areaDetector](http://cars.uchicago.edu/software/epics/areaDetector.html) 
+[areaDetector](https://cars.uchicago.edu/software/epics/areaDetector.html) 
 software.  This repository contains mostly documentation, configuration files,
 and a top-level Makefile to build the entire areaDetector package.
 
@@ -26,8 +29,8 @@ The [Installation Guide](INSTALL_GUIDE.md) provides build and install
 instructions.
 
 Additional information:
-* [Overview documentation](http://cars.uchicago.edu/software/epics/areaDetector.html).
-* [Detailed documentation](http://cars.uchicago.edu/software/epics/areaDetectorDoc.html).
+* [Overview documentation](https://cars.uchicago.edu/software/epics/areaDetector.html).
+* [Detailed documentation](https://cars.uchicago.edu/software/epics/areaDetectorDoc.html).
 * [Release notes and links to source and binary releases](RELEASE.md).
 
 See the following documentation about the git submodule feature and how it can 

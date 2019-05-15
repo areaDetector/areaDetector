@@ -1,19 +1,22 @@
 areaDetector Releases
-====================
+=====================
+
+Introduction
+------------
 
 The latest untagged master branch can be obtained at
 https://github.com/areaDetector/areaDetector.
 
 Tagged source code and pre-built binary releases prior to R2-0 are included
 in the areaDetector releases available via links at
-http://cars.uchicago.edu/software/epics/areaDetector.html.
+https://cars.uchicago.edu/software/epics/areaDetector.html.
 
 Tagged source code releases from R2-0 onward can be obtained at 
 https://github.com/areaDetector/areaDetector/releases.
 
 Tagged prebuilt binaries from R2-0 onward can be obtained in the detector-specific directories in:
-http://cars.uchicago.edu/software/pub/.  For example the Pilatus binaries are in 
-http://cars.uchicago.edu/software/pub/ADPilatus.
+https://cars.uchicago.edu/software/pub/.  For example the Pilatus binaries are in 
+https://cars.uchicago.edu/software/pub/ADPilatus.
 
 The versions of EPICS base, asyn, and other synApps modules used for each release can be obtained from 
 the EXAMPLE_RELEASE_PATHS.local, EXAMPLE_RELEASE_LIBS.local, and EXAMPLE_RELEASE_PRODS.local
@@ -21,31 +24,44 @@ files respectively, in the appropriate release of the
 [top-level areaDetector](https://github.com/areaDetector/areaDetector) repository.
 
 
-Release Notes
-=============
+Versions
+--------
 
 Each submodule contains detailed release notes for each release of that submodule.  The release notes below
 only provide a short summary of the most significant items from the submodules.
 
-R3-4 (January XXX, 2018)
----
-* configure/EXAMPLE_CONFIG_SITE.local
-  Added WITH_BITSHUFFLE and BITSHUFFLE_EXTERNAL for bitshuffle in ADSupport R1-7.
+### R3-5 (April 12, 2019)
 
-R3-4 (December 3, 2018)
----
+* Documentation
+  * Began conversion of all areaDetector documentation from raw HTML documentation to .rst files using Sphinx.
+  * Added a new docs/ directory which replaces the old documentation directory.
+  * The old .html files were converted to .rst using [pandoc](https://pandoc.org).
+    Most documentation includes tables that describe the driver or plugin parameters and
+    record names.  These tables do not convert well to .rst so they have been left as native
+    html in the files.
+  * The new documentation is hosted at [areaDetector.github.io](https://areaDetector.github.io).
+  * At this point the top-level documentation in this areaDetector respository has been converted,
+    as well as ADCore, ADViewers, ADProsilica, and ADFastCDD.
+  * Many thanks to Stuart Wilkins for this major effort.
+
+* configure/EXAMPLE_CONFIG_SITE.local
+  Added WITH_BITSHUFFLE and BITSHUFFLE_EXTERNAL for bitshuffle which is supported in new
+  versions of ADSupport, ADCore, and ADEiger.
+
+### R3-4 (December 3, 2018)
+
 * No significant changes in this top-level repository.
 * Committed ADCore R3-4, ADSupport R1-6, ADViewers R1-3.
 
-R3-3-2 (July 9, 2018)
----
+### R3-3-2 (July 9, 2018)
+
 * configure/EXAMPLE_CONFIG_SITE.local
 
   Added new WITH_QSRV variable.  3.14.12 supports pvAccess but does not support qsrv.
   By setting WITH_PVA=YES and WITH_QSRV=NO IOCs can be built with pvAccess support but without qsrv support.
 
-R3-3-1 (July 1, 2018)
-----
+### R3-3-1 (July 1, 2018)
+
 * configure/EXAMPLE_CONFIG_SITE.local*
 
   Prior to areaDetector R3-3-1 these files had commented out lines like the following for defining include library paths:
@@ -76,8 +92,8 @@ R3-3-1 (July 1, 2018)
 
   Documented that user-defined include directories should not include the -I flag.
 
-R3-3 (June 27, 2018)
-----
+### R3-3 (June 27, 2018)
+
 * Changes in the configure/RELEASE* files to ensure that EPICS_BASE is defined last.
 * Changes to allow building when some modules come from a Debian package and some do not.
   - If a Debian package is being used for any module then it must also be used for EPICS_BASE.
@@ -85,7 +101,7 @@ R3-3 (June 27, 2018)
 * This is a brief description of what has changed and what users need to do.
   - In the areaDetector/configure directory type
     ```./copyFromExample```.
-    This will copy the EXAMPLE_* files to CONFIG* and RELEASE*.
+    This will copy the `EXAMPLE_*` files to CONFIG* and RELEASE*.
   - Edit CONFIG_SITE.local and CONFIG_SITE.local.$(EPICS_HOST_ARCH) as required.
   - Edit RELEASE.local and RELEASE.local.$(EPICS_HOST_ARCH) as required.
   - Edit RELEASE_SUPPORT.local.  This file replaces RELEASE_PATHS.local from earlier releases. 
@@ -108,8 +124,8 @@ R3-3 (June 27, 2018)
 * Added new ADSpinnaker submodule.  This is for detectors from Point Grey/FLIR using their new Spinnaker SDK.
 * Added ADEiger submodule.  This is for Eiger detectors from Dectris.  Thanks to Bruno Martins for this.
 
-R3-2 (January 28, 2018)
-----
+### R3-2 (January 28, 2018)
+
 * Requirements:
   - ADCore R3-2
   - ADSupport R1-4 or higher
@@ -121,8 +137,8 @@ R3-2 (January 28, 2018)
   ui/autoconvert, and opi/autoconvert directories.  This will keep these files up to date with the medm files.
 
 
-R3-1 (July 3, 2017)
-----
+### R3-1 (July 3, 2017)
+
 * Requirements:
   - ADCore R3-1
   - ADSupport R1-3 or higher
@@ -134,8 +150,8 @@ R3-1 (July 3, 2017)
 * Changed configure/EXAMPLE_CONFIG_SITE.local to use XXX_EXTERNAL=NO for all libraries in ADSupport.
 
 
-R3-0 (May 5, 2017)
-----
+### R3-0 (May 5, 2017)
+
 * Requirements
   - ADCore R3-0
   - ADSupport R1-2 or higher
@@ -159,8 +175,8 @@ ffmpegServer | R1-0 (initial tag)
   will require ADCore R3-0
 
 
-R2-6 (February 22, 2017)
-----
+### R2-6 (February 22, 2017)
+
 * Requirements
   - ADCore R2-6
   - ADSupport R1-0 or higher
@@ -175,8 +191,8 @@ R2-6 (February 22, 2017)
   in ADCore R2-6.
 
 
-R2-5 (October 28, 2016)
-----
+### R2-5 (October 28, 2016)
+
 * Requires R2-5 of ADCore.  This requires some changes to CONFIG_SITE.local.
   ADCore R2-5 has many new features, including support for HDF5 SWMR mode, support for EPICS V4
   NTNDArrays, and new TimeSeries and FFT plugins.
@@ -189,8 +205,8 @@ R2-5 (October 28, 2016)
 * New ADPCO repository that supports PCO CameraLink cameras.  Thanks to Tim Madden for this.
 * Added LICENSE files to all repositories. 
 
-R2-4 (September 18, 2015)
-----
+### R2-4 (September 18, 2015)
+
 * Requires R2-4 of ADCore.  This requires some changes to CONFIG_SITE.local.
 * Moved the simDetector from ADCore into a new repository ADExample.
 * New ADMythen module for Dectris Mythen detectors.  Written by Matthew Moore at the APS.
@@ -201,8 +217,8 @@ R2-4 (September 18, 2015)
   building from the top-level Makefile.
 
 
-R2-3 (July 24, 2015)
-----
+### R2-3 (July 24, 2015)
+
 * Changed top-level Makefile so that a detector sub-module is only built if the appropriate
   variable is set in configure/RELEASE.local.  EXAMPLE_RELEASE.local contains all detector
   submodules commented out.  This file should be copied to RELEASE.local and the lines for
@@ -210,8 +226,8 @@ R2-3 (July 24, 2015)
 * Added new ADnED driver for neutron event data.  This is from Matt Pearson at ORNL.
 
 
-R2-2 (March 23, 2015)
-----
+### R2-2 (March 23, 2015)
+
 * Added new modules ffmegViewer, ffmpegServer, aravisGigE, firewireDCAM.  These are all from Tom Cobb
   and Ulrik Pedersen from Diamond Light Source.
 * Added new ADQImaging module.  This is from Arthur Glowacki at the APS.
@@ -223,40 +239,40 @@ R2-2 (March 23, 2015)
   than SSH (git@github.com:areaDetector).  This allows a recursive checkout without a Github account.
 * This release includes the following releases of the submodules:
 
-    Module        | Release
-    --------------|--------
-    ADCore        | R2-2
-    ADBinaries    | R2-2
-    ADADSC        | R2-0
-    ADAndor       | R2-2
-    ADAndor3      | R2-0
-    ADBruker      | R2-0
-    ADDexela      | R2-0-beta1
-    ADFastCCD     | none
-    ADFireWireWin | R2-0
-    ADLightField  | R2-1
-    ADMerlin      | 3-1-1
-    ADPICam       | none
-    ADPSL         | R2-1
-    ADPerkinElmer | R2-0
-    ADPilatus     | R2-0
-    ADPixirad     | R2-0
-    ADPointGrey   | R2-0
-    ADProsilica   | R2-1
-    ADPvCam       | R2-0
-    ADQImaging    | none
-    ADRoper       | R2-0
-    ADURL         | R2-0
-    ADmar345      | R2-0
-    ADmarCCD      | R2-0
-    aravisGigE    | dls-r105549
-    ffmpegServer  | none
-    ffmpegViewer  | none
-    firewireDCAM  | none
+| Module        | Release     |
+| --------------|--------------
+| ADCore        | R2-2        |
+| ADBinaries    | R2-2        |
+| ADADSC        | R2-0        |
+| ADAndor       | R2-2        |
+| ADAndor3      | R2-0        |
+| ADBruker      | R2-0        |
+| ADDexela      | R2-0-beta1  |
+| ADFastCCD     | none        |
+| ADFireWireWin | R2-0        | 
+| ADLightField  | R2-1        |
+| ADMerlin      | 3-1-1       |
+| ADPICam       | none        | 
+| ADPSL         | R2-1        |
+| ADPerkinElmer | R2-0        |
+| ADPilatus     | R2-0        |
+| ADPixirad     | R2-0        | 
+| ADPointGrey   | R2-0        |
+| ADProsilica   | R2-1        |
+| ADPvCam       | R2-0        |
+| ADQImaging    | none        |
+| ADRoper       | R2-0        |
+| ADURL         | R2-0        |
+| ADmar345      | R2-0        |
+| ADmarCCD      | R2-0        |
+| aravisGigE    | dls-r105549 |
+| ffmpegServer  | none        |
+| ffmpegViewer  | none        |
+| firewireDCAM  | none        |
 
 
-R2-0 (April 4, 2014)
-----
+### R2-0 (April 4, 2014)
+
 * Moved the repository to [Github](https://github.com/areaDetector/areaDetector).
 * Re-organized the directory structure to separate the driver libraries from the example IOC applications.
 * Added new detector drivers:
@@ -275,8 +291,8 @@ R2-0 (April 4, 2014)
   (e.g. pilatusApp/op/opi).  Thanks to Tim Mooney for doing all of these conversions.
 * Added new NDPluginAttribute plugin from Matt Pearson.
 
-R1-9-1 and earlier
-------------------
+### R1-9-1 and earlier
+
 Release notes are part of the
-[areaDetector Release Notes](http://cars.uchicago.edu/software/epics/areaDetectorReleaseNotes.html).
+[areaDetector Release Notes](https://cars.uchicago.edu/software/epics/areaDetectorReleaseNotes.html).
 
