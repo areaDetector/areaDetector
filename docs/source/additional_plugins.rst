@@ -5,3 +5,4 @@ Additional plugins
     :maxdepth: 2
 
     ADCompVision/ADCompVision
+    ADPluginBar/ADPluginBar
