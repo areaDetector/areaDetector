@@ -30,6 +30,42 @@ Versions
 Each submodule contains detailed release notes for each release of that submodule.  The release notes below
 only provide a short summary of the most significant items from the submodules.
 
+### R3-6 (May 29, 2019)
+
+* New submodule repositories
+  * specsAnalyser
+    * Driver for SPECS Phoibos electron spectrometers, with DLD (Delay Line Detector)
+    * From Pete Leicester, Stuart Wilkins and others.
+  * ADCompVision
+    * Plugin to perform imaging processing using opencv library
+    * From Jakub Wlodek and Kaz Gofron.
+  * ADPluginBar
+    * Plugin to process bar codes
+    * From Jakub Wlodek and Kaz Gofron.
+  * ADPcoWin
+    * Driver for PCO cameras, using their SDK which is Windows only.
+    * From Jonathan Thompson and others.
+  * ADMMPAD
+    * Driver for the MMPAD detectors from Sol Gruner's group at Cornell.
+    * From Mark Rivers.
+  * ADGenICam
+    * New base class for GenICam cameras.  Used by ADAravis, ADSpinnaker, and ADVimba.
+    * Not yet ready for production use.
+    * From Mark Rivers.
+  * ADAravis
+    * Designed to replace aravisGigE.  It is simpler because it uses ADGeniICam.
+    * Not yet ready for production use.
+    * From Mark Rivers, based on aravisGigE which is by Tom Cobb and others.
+  * ADVimba
+    * Driver for AVT/Prosilica cameras using their new Vimba SDK.  Uses ADGenICam.
+    * Not yet ready for production use.
+    * From Mark Rivers.
+  * ADSpinnaker
+    * Driver for FLIR/Point Grey cameras using their new Spinnaker SDK.
+    * This is not a new repository, but it now contains a new GenICam branch that uses ADGenICam.
+    * GenICam branch is not yet ready for production use
+    * From Mark Rivers.
+
 ### R3-5 (April 12, 2019)
 
 * Documentation
