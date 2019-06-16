@@ -9,6 +9,7 @@ DOCS_PATHS += -i ../specsAnalyser/docs
 DOCS_PATHS += -i ../ADCompVision/docs
 DOCS_PATHS += -i ../ADPluginBar/docs
 DOCS_PATHS += -i ../ADGenICam/docs
+DOCS_PATHS += -i ../ADAravis/docs
 
 BUILD = _build
 DOCS = _docs
