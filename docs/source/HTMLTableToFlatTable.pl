@@ -20,7 +20,7 @@ foreach( @files ) {
     $text =~ s[^\s*\<tr\>\n\s*\<th\>\n\s*][  * - ]gm;
     $text =~ s[^\s*\<th\>\n\s*][    - ]gm;
     $text =~ s[^\s*\<tr\>\n\s*\<td\>\n\s*][  * - ]gm;
-    $text =~ s[^\s*\<tr\>\n\s*\<td .\n\s*][  * - ]gm;
+    $text =~ s[^\s*\<tr\>\n\s*\<td.+\n\s*][  * -\n    -\n    - ]gm;
     $text =~ s[^\s*\<td\>\n\s*][    - ]gm;
     $text =~ s[^\s*\</tr\>\n][]gm;
     $text =~ s[^\s*\</th\>\n][]gm;
