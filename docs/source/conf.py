@@ -43,7 +43,8 @@ extensions = [
     'sphinx.ext.todo',
     'sphinx.ext.githubpages',
     'm2r',
-    'breathe'
+    'breathe',
+    'linuxdoc.rstFlatTable'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
