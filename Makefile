@@ -249,6 +249,11 @@ DIRS := $(DIRS) $(SPECSANALYSER)
 $(SPECSANALYSER)_DEPEND_DIRS += $(ADCORE)
 endif
 
+ifdef ADRIXSCAM
+DIRS := $(DIRS) $(ADRIXSCAM)
+$(ADRIXSCAM)_DEPEND_DIRS += $(ADCORE)
+endif
+
 include $(TOP)/configure/RULES_TOP
 
 uninstallTargets = $(foreach dir, $(DIRS), $(dir)$(DIVIDER)uninstall)
