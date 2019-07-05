@@ -12,3 +12,4 @@ Detector Drivers
     ADProsilica/ADProsilica
     ADPointGrey/PointGreyDoc
     specsAnalyser/index
+    ADRIXSCam/ADRIXSCam
