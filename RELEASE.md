@@ -30,6 +30,18 @@ Versions
 Each submodule contains detailed release notes for each release of that submodule.  The release notes below
 only provide a short summary of the most significant items from the submodules.
 
+### R3-7 (August 9, 2019)
+
+* New submodule repositories
+  * ADRIXSCam
+    * Driver for the RIXSCAM developed by [XCAM UK](http://www.xcam.co.uk/)
+* ADCore R3-7.
+  * Bug fixes.  Requires asyn R4-36.
+* ADSupport R1-9.
+  * Fixes for HDF5 compression plugins.
+* ADSpinnaker
+  * The master branch now uses ADGenICam, and is ready for testing.
+
 ### R3-6 (May 29, 2019)
 
 * New submodule repositories
