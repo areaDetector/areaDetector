@@ -7,6 +7,10 @@ Detector Drivers
     ADCore/ADDriver
     ADCore/guidelines
     ADFastCCD/index
+    ADGenICam/ADGenICam
+    ADAravis/ADAravis
+    ADSpinnaker/ADSpinnaker
     ADProsilica/ADProsilica
     ADPointGrey/PointGreyDoc
     specsAnalyser/index
+    ADRIXSCam/ADRIXSCam

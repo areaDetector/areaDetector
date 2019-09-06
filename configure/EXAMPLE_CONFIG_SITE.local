@@ -25,7 +25,7 @@ BUILD_IOCS=YES
 
 # BOOST is required for the ADCore/pluginTests unit tests
 WITH_BOOST     = NO
-BOOST_EXTERNAL = NO
+BOOST_EXTERNAL = YES
 #BOOST_LIB     =
 #BOOST_INCLUDE =
 
@@ -118,6 +118,15 @@ WITH_ZLIB     = YES
 ZLIB_EXTERNAL = NO
 #ZLIB_INCLUDE =
 #ZLIB_LIB     =
+
+# ARAVIS is required for aravisGigE and ADAravis
+# Only available on Linux
+#ARAVIS_LIB      = /usr/local/lib
+ARAVIS_INCLUDE  = /usr/local/include/aravis-0.6
+# Location of GLIB include files and libraries.  This is needed for aravis.
+# Our system has include files for glib-2.0 in 2 different places
+GLIB_INCLUDE = /usr/include/glib-2.0 /usr/lib64/glib-2.0/include
+glib-2.0_DIR = /usr/lib64
 
 # The definitions above can be overridden in the following files.
 # The files are searched in this order, with the last definition being used.
