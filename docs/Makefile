@@ -11,6 +11,7 @@ DOCS_PATHS += -i ../ADPluginBar/docs
 DOCS_PATHS += -i ../ADGenICam/docs
 DOCS_PATHS += -i ../ADAravis/docs
 DOCS_PATHS += -i ../ADSpinnaker/docs
+DOCS_PATHS += -i ../ADVimba/docs
 DOCS_PATHS += -i ../ADRIXSCam/docs
 
 BUILD = _build
