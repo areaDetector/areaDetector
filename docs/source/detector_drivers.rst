@@ -10,6 +10,7 @@ Detector Drivers
     ADGenICam/ADGenICam
     ADAravis/ADAravis
     ADSpinnaker/ADSpinnaker
+    ADVimba/ADVimba
     ADProsilica/ADProsilica
     ADPointGrey/PointGreyDoc
     specsAnalyser/index
