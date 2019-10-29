@@ -378,7 +378,8 @@ meet the following requirements:
 - If using the top-level areaDetector
   repository then it is only necessary to edit the CONFIG\* and RELEASE\*
   files in the ``areaDetector/configure directory``, and not in each of the
-  submodules, of which there are now about 40. - Allows building multiple
+  submodules, of which there are now about 40. 
+- Allows building multiple
   architectures in the same tree, including Linux and Windows. This means
   that ``SUPPORT`` and ``EPICS_BASE`` may be defined differently for different
   architectures, since the path syntax is different for Linux and Windows.
@@ -403,7 +404,6 @@ areaDetector/configure directory:
 ::
 
    cp EXAMPLE_RELEASE.local         RELEASE.local
-   cp EXAMPLE_RELEASE_SUPPORT.local RELEASE_SUPPORT.local
    cp EXAMPLE_RELEASE_LIBS.local    RELEASE_LIBS.local
    cp EXAMPLE_RELEASE_PRODS.local   RELEASE_PRODS.local
    cp EXAMPLE_CONFIG_SITE.local     CONFIG_SITE.local
@@ -426,61 +426,23 @@ this may need to be changed if you do not have the boost-devel package
 installed. You can see your local modifications with the ``diffFromExample``
 script.
 
-Edit RELEASE_SUPPORT.local
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+Edit RELEASE_LIBS.local
+~~~~~~~~~~~~~~~~~~~~~~~
 
 The definition for ``SUPPORT`` normally points to the directory where the
 areaDetector, asyn, and the synApps modules (autosave, busy, calc, etc.)
 are located.
 
-- If using the EPICS Debian package: - ``SUPPORT`` should be defined to be
-  the root location of any modules which should **not** come from the
-  Debian package.
-
-- Do not define SUPPORT to be the location of the Debian packages. - In
-  the ``SUPPORT`` tree for those modules not from the Debian distribution
-  (e.g. asyn) their ``configure/RELEASE`` files should also not define
-  anything except ``EPICS_BASE`` to point to the location of the Debian
-  package. For example if building asyn from source in the ``SUPPORT`` tree
-  and IPAC and SNCSEQ from the Debian package then comment out the lines
-  for IPAC and SNCSEQ in ``asyn/configure/RELEASE``.
-
-Optionally create RELEASE_SUPPORT.local.$(EPICS_HOST_ARCH)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Some installations chose to build for multiple target architectures using
-different development machines in the same directory tree on a file server. In
-this case the path to SUPPORT may be different for each architecture. For
-example SUPPORT on Linux might be ``/home/epics/epics/support``, while on a
-Windows machine using the same copy of support the path might be
-``J:/epics/support``. In this case ``RELEASE_SUPPORT.local`` could specify the path
-for Linux while ``RELEASE_SUPPORT.local.win32-x86`` could specify the path for
-the win32-x86 build host. ``RELEASE_SUPPORT.local`` is read first, and then any
-definitions there will be replaced by
-``RELEASE_SUPPORT.local.$(EPICS_HOST_ARCH)`` if it exists.
-
-Optionally create RELEASE_BASE.local.$(EPICS_HOST_ARCH)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-If the path to ``EPICS_BASE`` is different for a specific ``EPICS_HOST_ARCH``
-from the one defined in ``RELEASE_LIBS.local`` and ``RELEASE_PRODS.local`` then
-it can be defined in this file. This is typically used only if building
-Windows and Linux in the same directory tree.
-
-Edit RELEASE_LIBS.local
-~~~~~~~~~~~~~~~~~~~~~~~
-
 The location of ASYN, AREA_DETECTOR and EPICS_BASE must be specified.
 asyn and areaDetector are normally placed in the SUPPORT directory
-defined in RELEASE_SUPPORT.local.
+defined in this file.
 
 As described above ``RELEASE_LIBS.local.$(EPICS_HOST_ARCH)`` can be used if the
 ASYN version or path is different for a specific target architecture. This is
 usually not necessary even for building Linux and Windows in the same tree,
-because only the definitions of ``SUPPORT`` in
-``RELEASE_SUPPORT.local.$(EPICS_HOST_ARCH)`` ``EPICS_BASE`` in
-``RELEASE_BASE.local.$(EPICS_HOST_ARCH)`` need
-to be changed.
+because, as described below, only the definitions of ``SUPPORT`` and ``EPICS_BASE`` in the
+top-level ``$(AREA_DETECTOR)/../RELEASE.$(EPICS_HOST_ARCH).local``
+need to be changed for Windows.
 
 If WITH_PVA=YES is defined in CONFIG_SITE.local and EPICS_BASE version
 is prior to 7.0 then PVA must define the location of the EPICS PVA
@@ -496,32 +458,38 @@ If using Debian packages then the following must be done:
 - For example to use a newer version of asyn and areaDetector then
   define ``ASYN``, ``AREA_DETECTOR``, ``ADCORE``, and ``ADSUPPORT`` here. To use the
   Debian version of asyn then comment out ``ASYN`` here.
+- In the ``SUPPORT`` tree for those modules not from the Debian distribution
+  (e.g. asyn) their ``configure/RELEASE`` files should also not define
+  anything except ``EPICS_BASE`` to point to the location of the Debian
+  package. For example if building asyn from source in the ``SUPPORT`` tree
+  and IPAC and SNCSEQ from the Debian package then comment out the lines
+  for IPAC and SNCSEQ in ``asyn/configure/RELEASE``.
+
 
 Edit RELEASE_PRODS.local
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 See the notes for ``RELEASE_LIBS.local`` above.
 
-The definitions for ``AUTOSAVE``, ``BUSY``, ``CALC``, and ``SSCAN`` must be
-specified.  If the CALC module is built with SNCSEQ support then SNCSEQ must
-also be
-specified. If DEVIOCSTATS or ALIVE are defined in ``RELEASE_PRODS.local``
+The definitions for ``AUTOSAVE``, ``BUSY``, ``CALC``, and ``SSCAN`` must be specified.  
+If the CALC module is built with SNCSEQ support then SNCSEQ must also be specified. 
+If DEVIOCSTATS or ALIVE are defined in ``RELEASE_PRODS.local``
 then IOC applications will be built with these modules as well.
 
-If ``WITH_PVA=YES`` is defined in ``CONFIG_SITE.local`` and ``EPICS_BASE`` version
-is prior to 7.0 then PVA must define the location of the EPICS PVA
-(formerly EPICS V4) libraries. Beginning with EPICS base 7.0 the PVA
-files are in EPICS base and PVA should not be defined.
+Optionally create or edit $(AREA_DETECTOR)/../RELEASE.$(EPICS_HOST_ARCH).local
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If using Debian packages then the following must be done: 
-
-- SUPPORT should be defined to be the root location of any modules which should
-  **not** come from the Debian package.  - Any modules which should come from
-  the Debian package should be commented out, except for ``EPICS_BASE``.  
-  
-- For example to use a newer version of asyn and areaDetector then define
-  ``ASYN``, ``AREA_DETECTOR``, ``ADCORE``, and ``ADSUPPORT`` here, but comment
-  out ``AUTOSAVE``, ``BUSY``, etc. because they come from the Debian package.
+Some installations chose to build for multiple target architectures using
+different development machines in the same directory tree on a file server. In
+this case the path to SUPPORT may be different for each architecture. For
+example SUPPORT on Linux might be ``/home/epics/epics/support``, while on a
+Windows machine using the same copy of support the path might be
+``J:/epics/support``. In this case ``RELEASE_LIBS.local`` and ``RELEASE_PRODS.local``
+could specify the path for Linux while ``$(AREA_DETECTOR)/../RELEASE.windows-x64.local``
+could specify the path for the windows-x64 build host. RELEASE_LIBS.local or
+RELEASE_PRODS.local will be read first, and then 
+``$(AREA_DETECTOR)/../RELEASE.$(EPICS_HOST_ARCH).local`` if it exists.
+Note that ``$(AREA_DETECTOR)/../`` is typically the same as ``synApps/support``.
 
 Edit CONFIG_SITE.local and optionally CONFIG_SITE.local.$(EPICS_HOST_ARCH)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
