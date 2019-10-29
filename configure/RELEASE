@@ -2,14 +2,11 @@
 # Run "gnumake clean uninstall install" in the application
 # top directory each time this file is changed.
 
-include $(TOP)/configure/RELEASE_SUPPORT.local
--include $(TOP)/configure/RELEASE_SUPPORT.local.$(EPICS_HOST_ARCH)
 include $(TOP)/configure/RELEASE_LIBS.local
+
 -include $(TOP)/configure/RELEASE.local
 
-#TEMPLATE_TOP=$(EPICS_BASE)/templates/makeBaseApp/top
-# If you don't want to install into $(TOP) then
-# define INSTALL_LOCATION_APP here
-#INSTALL_LOCATION_APP=<fullpathname>
-
-
+# This includes files in the top-level support.
+# These can re-define EPICS_BASE and SUPPORT for other ARCHs, etc.
+-include $(TOP)/../RELEASE.local
+-include $(TOP)/../RELEASE.$(EPICS_HOST_ARCH).local
