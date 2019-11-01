@@ -2,7 +2,8 @@
 # Run "gnumake clean uninstall install" in the application
 # top directory each time this file is changed.
 
-include $(TOP)/configure/RELEASE_LIBS.local
+# This line ensures that the top-level synApps Makefile will get all dependencies for areaDetector
+include $(TOP)/configure/RELEASE_PRODS.local
 
 -include $(TOP)/configure/RELEASE.local
 
@@ -10,3 +11,4 @@ include $(TOP)/configure/RELEASE_LIBS.local
 # These can re-define EPICS_BASE and SUPPORT for other ARCHs, etc.
 -include $(TOP)/../RELEASE.local
 -include $(TOP)/../RELEASE.$(EPICS_HOST_ARCH).local
+
