@@ -6,12 +6,13 @@ Detector Drivers
 
     ADCore/ADDriver
     ADCore/guidelines
+    ADAndor/andorDoc
+    ADAravis/ADAravis
     ADFastCCD/index
     ADGenICam/ADGenICam
-    ADAravis/ADAravis
+    ADPointGrey/PointGreyDoc
+    ADProsilica/ADProsilica
+    ADRIXSCam/ADRIXSCam
     ADSpinnaker/ADSpinnaker
     ADVimba/ADVimba
-    ADProsilica/ADProsilica
-    ADPointGrey/PointGreyDoc
     specsAnalyser/index
-    ADRIXSCam/ADRIXSCam
