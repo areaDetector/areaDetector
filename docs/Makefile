@@ -32,7 +32,7 @@ sphinx:
 .PHONY: doxygen
 doxygen:
 	doxygen
-	cp doxy_output/html/* source/_extra/areaDetectorDoxygenHTML
+	rsync -a doxy_output/html/ source/_extra/areaDetectorDoxygenHTML
 
 
 .PHONY: clean
