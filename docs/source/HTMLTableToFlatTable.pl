@@ -31,6 +31,10 @@ foreach( @files ) {
     $text =~ s[^\s*\</tbody\>\n][]gm;
     $text =~ s[^\s*\</table\>\n][]gm;
     $text =~ s[\<br /\>\n\s*][, ]gm;
+    $text =~ s[\<li\>][]gm;
+    $text =~ s[\</li\>][ |br|]gm;
+    $text =~ s[\<ul\>\n\s*][ |br|]gm;
+    $text =~ s[^\s*\</ul\>\n][]gm;
     $text =~ s[^\s{5,}][      ]gm;
     $text =~ s[<code>][`]gm;
     $text =~ s[</code>][`]gm;
