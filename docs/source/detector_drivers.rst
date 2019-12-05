@@ -4,8 +4,8 @@ Detector Drivers
 .. toctree::
     :maxdepth: 2
 
-    ADCore/ADDriver
     ADCore/guidelines
+    ADCore/ADDriver
     ADAndor/andorDoc
     ADAravis/ADAravis
     ADFastCCD/index
