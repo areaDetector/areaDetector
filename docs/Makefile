@@ -7,6 +7,7 @@ DOCS_PATHS += -i ../ADAravis/docs
 DOCS_PATHS += -i ../ADCompVision/docs
 DOCS_PATHS += -i ../ADFastCCD/docs
 DOCS_PATHS += -i ../ADGenICam/docs
+DOCS_PATHS += -i ../ADPerkinElmer/docs
 DOCS_PATHS += -i ../ADPluginBar/docs
 DOCS_PATHS += -i ../ADPointGrey/docs
 DOCS_PATHS += -i ../ADProsilica/docs
