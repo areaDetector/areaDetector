@@ -165,7 +165,7 @@ html_theme_options = {
     'bootstrap_version': "3",
     
     # Maximum width
-    'body_max_width': 1200,
+    'body_max_width': 1600,
 }
 
 # Add any paths that contain custom static files (such as style sheets) here,
