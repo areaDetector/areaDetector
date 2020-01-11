@@ -372,7 +372,7 @@ RELEASE\* and CONFIG\* files
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 areaDetector RELEASE\* and CONFIG\* files are a little more complex than
-those in a typical EPICS modules. This is because they are designed to
+those in a typical EPICS module. This is because they are designed to
 meet the following requirements: 
 
 - If using the top-level areaDetector
