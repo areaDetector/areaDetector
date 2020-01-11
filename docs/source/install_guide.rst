@@ -377,7 +377,7 @@ meet the following requirements:
 
 - If using the top-level areaDetector
   repository then it is only necessary to edit the CONFIG\* and RELEASE\*
-  files in the ``areaDetector/configure directory``, and not in each of the
+  files in the ``areaDetector/configure`` directory, and not in each of the
   submodules, of which there are now about 40. 
 - Allows building multiple
   architectures in the same tree, including Linux and Windows. This means
