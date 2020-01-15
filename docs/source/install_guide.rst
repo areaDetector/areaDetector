@@ -797,7 +797,7 @@ configure a number of items.
 
         ``setenv EPICS_CA_MAX_ARRAY_BYTES 4154000``
 
-        Do not simply set ``EPICS_CA_MAX_ARRAY_BYTE``S to a very large number
+        Do not simply set ``EPICS_CA_MAX_ARRAY_BYTES`` to a very large number
         like 100MB or 1GB. EPICS Channel Access allocates buffers of
         exactly ``EPICS_CA_MAX_ARRAY`` bytes whenever the required buffer size
         exceeds 16 kB, and one does not want unnecessarily large buffers
