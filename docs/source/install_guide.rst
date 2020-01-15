@@ -355,7 +355,7 @@ download \* areaDetector/ADProsilica
 
 The areaDetector software is designed to be installed in the following
 tree structure, though this is not required. If it is installed this way
-then only the top-level areaDetector/configure directory needs to be
+then only the top-level ``areaDetector/configure`` directory needs to be
 edited for site-specific configuration.
 
 ::
