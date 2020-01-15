@@ -351,7 +351,9 @@ areaDetector and for testing, also download
 -  ``areaDetector/ADSimDetector``
 
 To also build a specific detector, for example the ADProsilica, also
-download \* areaDetector/ADProsilica
+download
+
+-  ``areaDetector/ADProsilica``
 
 The areaDetector software is designed to be installed in the following
 tree structure, though this is not required. If it is installed this way
