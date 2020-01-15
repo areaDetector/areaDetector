@@ -320,7 +320,7 @@ It can be downloaded 2 ways:
 
    git clone --recursive https://github.com/areaDetector/areaDetector.git
 
-After downloading with git clone –recursive each submodule will be in a
+After downloading with ``git clone --recursive`` each submodule will be in a
 “detached HEAD” state. This means that its state will be that of the
 last time that module was committed to the top-level areaDetector
 repository. This is normally not the desired state for each submodule.
