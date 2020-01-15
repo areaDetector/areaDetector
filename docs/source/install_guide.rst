@@ -417,7 +417,7 @@ example:
    cp EXAMPLE_CONFIG_SITE.local.WIN32                   CONFIG_SITE.local.WIN32
    cp EXAMPLE_CONFIG_SITE.local.linux-x86.vxWorks-ppc32 CONFIG_SITE.local.linux-x86.vxWorks-ppc32
 
-You can copy all of the ``EXAMPLE_\*`` files to the files actually used with
+You can copy all of the ``EXAMPLE_*`` files to the files actually used with
 the ``copyFromExample`` script in the ``areaDetector/configure`` directory. If
 you do this then be sure to edit the
 ``CONFIG_SITE.local.$(EPICS_HOST_ARCH)`` for your ``EPICS_HOST_ARCH`` as well.
