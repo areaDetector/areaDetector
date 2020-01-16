@@ -738,7 +738,7 @@ EDM
 ~~~
 
 This can be downloaded through links on the `EDM home
-page <http://ics-web.sns.ornl.gov/edm>`__.
+page <https://controlssoftware.sns.ornl.gov/edm/>`__.
 
 CSS
 ~~~
