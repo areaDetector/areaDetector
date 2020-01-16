@@ -320,7 +320,7 @@ It can be downloaded 2 ways:
 
    git clone --recursive https://github.com/areaDetector/areaDetector.git
 
-After downloading with git clone –recursive each submodule will be in a
+After downloading with ``git clone --recursive`` each submodule will be in a
 “detached HEAD” state. This means that its state will be that of the
 last time that module was committed to the top-level areaDetector
 repository. This is normally not the desired state for each submodule.
@@ -351,11 +351,13 @@ areaDetector and for testing, also download
 -  ``areaDetector/ADSimDetector``
 
 To also build a specific detector, for example the ADProsilica, also
-download \* areaDetector/ADProsilica
+download
+
+-  ``areaDetector/ADProsilica``
 
 The areaDetector software is designed to be installed in the following
 tree structure, though this is not required. If it is installed this way
-then only the top-level areaDetector/configure directory needs to be
+then only the top-level ``areaDetector/configure`` directory needs to be
 edited for site-specific configuration.
 
 ::
@@ -417,7 +419,7 @@ example:
    cp EXAMPLE_CONFIG_SITE.local.WIN32                   CONFIG_SITE.local.WIN32
    cp EXAMPLE_CONFIG_SITE.local.linux-x86.vxWorks-ppc32 CONFIG_SITE.local.linux-x86.vxWorks-ppc32
 
-You can copy all of the ``EXAMPLE_\*`` files to the files actually used with
+You can copy all of the ``EXAMPLE_*`` files to the files actually used with
 the ``copyFromExample`` script in the ``areaDetector/configure`` directory. If
 you do this then be sure to edit the
 ``CONFIG_SITE.local.$(EPICS_HOST_ARCH)`` for your ``EPICS_HOST_ARCH`` as well.
@@ -722,21 +724,21 @@ or more of MEDM, EDM, CSS, caQtDM.
 MEDM
 ~~~~
 
-The source code for medm can be downloaded from:
-`medm <https://www.aps.anl.gov/epics/extensions/medm/index.php>`__
+This can be downloaded through links on the `MEDM home
+page <https://epics.anl.gov/extensions/medm/index.php>`__.
 
-This requires `Motif <http://motif.ics.com/>`__. medm can be built from
+This requires `Motif <http://motif.ics.com/>`__. MEDM can be built from
 source on Linux if the Motif library is available (which it is not for
 some new releases, such as Fedora 20).
 
-It is available for Windows as via an `EPICS Windows Tools MSI installer
-package <https://www.aps.anl.gov/epics/distributions/win32/index.php>`__.
+It is available for Windows as an `EPICS Windows Tools MSI installer
+package <https://epics.anl.gov/distributions/win32/index.php>`__.
 
 EDM
 ~~~
 
 This can be downloaded through links on the `EDM home
-page <http://ics-web.sns.ornl.gov/edm>`__.
+page <https://controlssoftware.sns.ornl.gov/edm/>`__.
 
 CSS
 ~~~
@@ -797,7 +799,7 @@ configure a number of items.
 
         ``setenv EPICS_CA_MAX_ARRAY_BYTES 4154000``
 
-        Do not simply set ``EPICS_CA_MAX_ARRAY_BYTE``S to a very large number
+        Do not simply set ``EPICS_CA_MAX_ARRAY_BYTES`` to a very large number
         like 100MB or 1GB. EPICS Channel Access allocates buffers of
         exactly ``EPICS_CA_MAX_ARRAY`` bytes whenever the required buffer size
         exceeds 16 kB, and one does not want unnecessarily large buffers
