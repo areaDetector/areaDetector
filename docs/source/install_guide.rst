@@ -724,15 +724,15 @@ or more of MEDM, EDM, CSS, caQtDM.
 MEDM
 ~~~~
 
-The source code for medm can be downloaded from:
-`medm <https://www.aps.anl.gov/epics/extensions/medm/index.php>`__
+This can be downloaded through links on the `MEDM home
+page <https://epics.anl.gov/extensions/medm/index.php>`__.
 
-This requires `Motif <http://motif.ics.com/>`__. medm can be built from
+This requires `Motif <http://motif.ics.com/>`__. MEDM can be built from
 source on Linux if the Motif library is available (which it is not for
 some new releases, such as Fedora 20).
 
-It is available for Windows as via an `EPICS Windows Tools MSI installer
-package <https://www.aps.anl.gov/epics/distributions/win32/index.php>`__.
+It is available for Windows as an `EPICS Windows Tools MSI installer
+package <https://epics.anl.gov/distributions/win32/index.php>`__.
 
 EDM
 ~~~
