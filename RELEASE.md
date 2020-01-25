@@ -30,6 +30,11 @@ Versions
 Each submodule contains detailed release notes for each release of that submodule.  The release notes below
 only provide a short summary of the most significant items from the submodules.
 
+### R3-9 (January XXX, 2020)
+
+* All modules.
+  * Added .bob files for Phoebus, autoconverted from .adl files.
+
 ### R3-8 (October 22, 2019)
 
 * ADCore R3-8.
