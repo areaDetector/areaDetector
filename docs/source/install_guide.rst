@@ -320,7 +320,7 @@ It can be downloaded 2 ways:
 
    git clone --recursive https://github.com/areaDetector/areaDetector.git
 
-After downloading with git clone –recursive each submodule will be in a
+After downloading with ``git clone --recursive`` each submodule will be in a
 “detached HEAD” state. This means that its state will be that of the
 last time that module was committed to the top-level areaDetector
 repository. This is normally not the desired state for each submodule.
@@ -351,11 +351,13 @@ areaDetector and for testing, also download
 -  ``areaDetector/ADSimDetector``
 
 To also build a specific detector, for example the ADProsilica, also
-download \* areaDetector/ADProsilica
+download
+
+-  ``areaDetector/ADProsilica``
 
 The areaDetector software is designed to be installed in the following
 tree structure, though this is not required. If it is installed this way
-then only the top-level areaDetector/configure directory needs to be
+then only the top-level ``areaDetector/configure`` directory needs to be
 edited for site-specific configuration.
 
 ::
@@ -372,13 +374,14 @@ RELEASE\* and CONFIG\* files
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 areaDetector RELEASE\* and CONFIG\* files are a little more complex than
-those in a typical EPICS modules. This is because they are designed to
+those in a typical EPICS module. This is because they are designed to
 meet the following requirements: 
 
 - If using the top-level areaDetector
   repository then it is only necessary to edit the CONFIG\* and RELEASE\*
-  files in the ``areaDetector/configure directory``, and not in each of the
-  submodules, of which there are now about 40. - Allows building multiple
+  files in the ``areaDetector/configure`` directory, and not in each of the
+  submodules, of which there are now about 40. 
+- Allows building multiple
   architectures in the same tree, including Linux and Windows. This means
   that ``SUPPORT`` and ``EPICS_BASE`` may be defined differently for different
   architectures, since the path syntax is different for Linux and Windows.
@@ -403,7 +406,6 @@ areaDetector/configure directory:
 ::
 
    cp EXAMPLE_RELEASE.local         RELEASE.local
-   cp EXAMPLE_RELEASE_SUPPORT.local RELEASE_SUPPORT.local
    cp EXAMPLE_RELEASE_LIBS.local    RELEASE_LIBS.local
    cp EXAMPLE_RELEASE_PRODS.local   RELEASE_PRODS.local
    cp EXAMPLE_CONFIG_SITE.local     CONFIG_SITE.local
@@ -417,7 +419,7 @@ example:
    cp EXAMPLE_CONFIG_SITE.local.WIN32                   CONFIG_SITE.local.WIN32
    cp EXAMPLE_CONFIG_SITE.local.linux-x86.vxWorks-ppc32 CONFIG_SITE.local.linux-x86.vxWorks-ppc32
 
-You can copy all of the ``EXAMPLE_\*`` files to the files actually used with
+You can copy all of the ``EXAMPLE_*`` files to the files actually used with
 the ``copyFromExample`` script in the ``areaDetector/configure`` directory. If
 you do this then be sure to edit the
 ``CONFIG_SITE.local.$(EPICS_HOST_ARCH)`` for your ``EPICS_HOST_ARCH`` as well.
@@ -426,61 +428,23 @@ this may need to be changed if you do not have the boost-devel package
 installed. You can see your local modifications with the ``diffFromExample``
 script.
 
-Edit RELEASE_SUPPORT.local
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+Edit RELEASE_LIBS.local
+~~~~~~~~~~~~~~~~~~~~~~~
 
 The definition for ``SUPPORT`` normally points to the directory where the
 areaDetector, asyn, and the synApps modules (autosave, busy, calc, etc.)
 are located.
 
-- If using the EPICS Debian package: - ``SUPPORT`` should be defined to be
-  the root location of any modules which should **not** come from the
-  Debian package.
-
-- Do not define SUPPORT to be the location of the Debian packages. - In
-  the ``SUPPORT`` tree for those modules not from the Debian distribution
-  (e.g. asyn) their ``configure/RELEASE`` files should also not define
-  anything except ``EPICS_BASE`` to point to the location of the Debian
-  package. For example if building asyn from source in the ``SUPPORT`` tree
-  and IPAC and SNCSEQ from the Debian package then comment out the lines
-  for IPAC and SNCSEQ in ``asyn/configure/RELEASE``.
-
-Optionally create RELEASE_SUPPORT.local.$(EPICS_HOST_ARCH)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Some installations chose to build for multiple target architectures using
-different development machines in the same directory tree on a file server. In
-this case the path to SUPPORT may be different for each architecture. For
-example SUPPORT on Linux might be ``/home/epics/epics/support``, while on a
-Windows machine using the same copy of support the path might be
-``J:/epics/support``. In this case ``RELEASE_SUPPORT.local`` could specify the path
-for Linux while ``RELEASE_SUPPORT.local.win32-x86`` could specify the path for
-the win32-x86 build host. ``RELEASE_SUPPORT.local`` is read first, and then any
-definitions there will be replaced by
-``RELEASE_SUPPORT.local.$(EPICS_HOST_ARCH)`` if it exists.
-
-Optionally create RELEASE_BASE.local.$(EPICS_HOST_ARCH)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-If the path to ``EPICS_BASE`` is different for a specific ``EPICS_HOST_ARCH``
-from the one defined in ``RELEASE_LIBS.local`` and ``RELEASE_PRODS.local`` then
-it can be defined in this file. This is typically used only if building
-Windows and Linux in the same directory tree.
-
-Edit RELEASE_LIBS.local
-~~~~~~~~~~~~~~~~~~~~~~~
-
 The location of ASYN, AREA_DETECTOR and EPICS_BASE must be specified.
 asyn and areaDetector are normally placed in the SUPPORT directory
-defined in RELEASE_SUPPORT.local.
+defined in this file.
 
 As described above ``RELEASE_LIBS.local.$(EPICS_HOST_ARCH)`` can be used if the
 ASYN version or path is different for a specific target architecture. This is
 usually not necessary even for building Linux and Windows in the same tree,
-because only the definitions of ``SUPPORT`` in
-``RELEASE_SUPPORT.local.$(EPICS_HOST_ARCH)`` ``EPICS_BASE`` in
-``RELEASE_BASE.local.$(EPICS_HOST_ARCH)`` need
-to be changed.
+because, as described below, only the definitions of ``SUPPORT`` and ``EPICS_BASE`` in the
+top-level ``$(AREA_DETECTOR)/../RELEASE.$(EPICS_HOST_ARCH).local``
+need to be changed for Windows.
 
 If WITH_PVA=YES is defined in CONFIG_SITE.local and EPICS_BASE version
 is prior to 7.0 then PVA must define the location of the EPICS PVA
@@ -496,32 +460,38 @@ If using Debian packages then the following must be done:
 - For example to use a newer version of asyn and areaDetector then
   define ``ASYN``, ``AREA_DETECTOR``, ``ADCORE``, and ``ADSUPPORT`` here. To use the
   Debian version of asyn then comment out ``ASYN`` here.
+- In the ``SUPPORT`` tree for those modules not from the Debian distribution
+  (e.g. asyn) their ``configure/RELEASE`` files should also not define
+  anything except ``EPICS_BASE`` to point to the location of the Debian
+  package. For example if building asyn from source in the ``SUPPORT`` tree
+  and IPAC and SNCSEQ from the Debian package then comment out the lines
+  for IPAC and SNCSEQ in ``asyn/configure/RELEASE``.
+
 
 Edit RELEASE_PRODS.local
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 See the notes for ``RELEASE_LIBS.local`` above.
 
-The definitions for ``AUTOSAVE``, ``BUSY``, ``CALC``, and ``SSCAN`` must be
-specified.  If the CALC module is built with SNCSEQ support then SNCSEQ must
-also be
-specified. If DEVIOCSTATS or ALIVE are defined in ``RELEASE_PRODS.local``
+The definitions for ``AUTOSAVE``, ``BUSY``, ``CALC``, and ``SSCAN`` must be specified.  
+If the CALC module is built with SNCSEQ support then SNCSEQ must also be specified. 
+If DEVIOCSTATS or ALIVE are defined in ``RELEASE_PRODS.local``
 then IOC applications will be built with these modules as well.
 
-If ``WITH_PVA=YES`` is defined in ``CONFIG_SITE.local`` and ``EPICS_BASE`` version
-is prior to 7.0 then PVA must define the location of the EPICS PVA
-(formerly EPICS V4) libraries. Beginning with EPICS base 7.0 the PVA
-files are in EPICS base and PVA should not be defined.
+Optionally create or edit $(AREA_DETECTOR)/../RELEASE.$(EPICS_HOST_ARCH).local
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If using Debian packages then the following must be done: 
-
-- SUPPORT should be defined to be the root location of any modules which should
-  **not** come from the Debian package.  - Any modules which should come from
-  the Debian package should be commented out, except for ``EPICS_BASE``.  
-  
-- For example to use a newer version of asyn and areaDetector then define
-  ``ASYN``, ``AREA_DETECTOR``, ``ADCORE``, and ``ADSUPPORT`` here, but comment
-  out ``AUTOSAVE``, ``BUSY``, etc. because they come from the Debian package.
+Some installations chose to build for multiple target architectures using
+different development machines in the same directory tree on a file server. In
+this case the path to SUPPORT may be different for each architecture. For
+example SUPPORT on Linux might be ``/home/epics/epics/support``, while on a
+Windows machine using the same copy of support the path might be
+``J:/epics/support``. In this case ``RELEASE_LIBS.local`` and ``RELEASE_PRODS.local``
+could specify the path for Linux while ``$(AREA_DETECTOR)/../RELEASE.windows-x64.local``
+could specify the path for the windows-x64 build host. RELEASE_LIBS.local or
+RELEASE_PRODS.local will be read first, and then 
+``$(AREA_DETECTOR)/../RELEASE.$(EPICS_HOST_ARCH).local`` if it exists.
+Note that ``$(AREA_DETECTOR)/../`` is typically the same as ``synApps/support``.
 
 Edit CONFIG_SITE.local and optionally CONFIG_SITE.local.$(EPICS_HOST_ARCH)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -754,21 +724,21 @@ or more of MEDM, EDM, CSS, caQtDM.
 MEDM
 ~~~~
 
-The source code for medm can be downloaded from:
-`medm <https://www.aps.anl.gov/epics/extensions/medm/index.php>`__
+This can be downloaded through links on the `MEDM home
+page <https://epics.anl.gov/extensions/medm/index.php>`__.
 
-This requires `Motif <http://motif.ics.com/>`__. medm can be built from
+This requires `Motif <http://motif.ics.com/>`__. MEDM can be built from
 source on Linux if the Motif library is available (which it is not for
 some new releases, such as Fedora 20).
 
-It is available for Windows as via an `EPICS Windows Tools MSI installer
-package <https://www.aps.anl.gov/epics/distributions/win32/index.php>`__.
+It is available for Windows as an `EPICS Windows Tools MSI installer
+package <https://epics.anl.gov/distributions/win32/index.php>`__.
 
 EDM
 ~~~
 
 This can be downloaded through links on the `EDM home
-page <http://ics-web.sns.ornl.gov/edm>`__.
+page <https://controlssoftware.sns.ornl.gov/edm/>`__.
 
 CSS
 ~~~
@@ -829,7 +799,7 @@ configure a number of items.
 
         ``setenv EPICS_CA_MAX_ARRAY_BYTES 4154000``
 
-        Do not simply set ``EPICS_CA_MAX_ARRAY_BYTE``S to a very large number
+        Do not simply set ``EPICS_CA_MAX_ARRAY_BYTES`` to a very large number
         like 100MB or 1GB. EPICS Channel Access allocates buffers of
         exactly ``EPICS_CA_MAX_ARRAY`` bytes whenever the required buffer size
         exceeds 16 kB, and one does not want unnecessarily large buffers

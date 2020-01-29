@@ -4,13 +4,16 @@ Detector Drivers
 .. toctree::
     :maxdepth: 2
 
-    ADCore/ADDriver
     ADCore/guidelines
+    ADCore/ADDriver
+    ADAndor/andorDoc
+    ADAravis/ADAravis
     ADFastCCD/index
     ADGenICam/ADGenICam
-    ADAravis/ADAravis
-    ADSpinnaker/ADSpinnaker
-    ADProsilica/ADProsilica
+    ADPerkinElmer/PerkinElmerDoc
     ADPointGrey/PointGreyDoc
-    specsAnalyser/index
+    ADProsilica/ADProsilica
     ADRIXSCam/ADRIXSCam
+    ADSpinnaker/ADSpinnaker
+    ADVimba/ADVimba
+    specsAnalyser/index

@@ -30,6 +30,26 @@ Versions
 Each submodule contains detailed release notes for each release of that submodule.  The release notes below
 only provide a short summary of the most significant items from the submodules.
 
+### R3-9 (January XXX, 2020)
+
+* All modules.
+  * Added .bob files for Phoebus, autoconverted from .adl files.
+
+### R3-8 (October 22, 2019)
+
+* ADCore R3-8.
+  * Int64 support.  Requires asyn R4-37.
+* ADGenICam R1-1
+  * Minor updates
+* ADAravis R1-1
+  * Support for register caching that greatly improves performance.
+  * Requires aravis 0_7_2 or later
+  * ADAravis should be used in place of aravisGigE.
+* ADVimba R1-0
+  * Initial release.  ADVimba should be used in place of ADProsilica.
+* ADSimDetector R2-10
+  * Support for NDInt64/NDUInt64 NDArrays and NDAttrInt64/NDAttrUInt64 attributes.
+
 ### R3-7 (August 9, 2019)
 
 * New submodule repositories

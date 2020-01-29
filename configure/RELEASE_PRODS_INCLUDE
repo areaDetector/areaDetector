@@ -1,6 +1,8 @@
 # This file is intended to be included from ADxxx/iocs/yyyIOC/configure/RELEASE for submodule ADxxx and IOC yyy.
 
--include $(TOP)/../../../configure/RELEASE_SUPPORT.local
--include $(TOP)/../../../configure/RELEASE_SUPPORT.local.$(EPICS_HOST_ARCH)
 -include $(TOP)/../../../configure/RELEASE_PRODS.local
 
+# This includes files in the top-level support.
+# These can re-define EPICS_BASE and SUPPORT for other ARCHs, etc.
+-include $(TOP)/../../../../RELEASE.local
+-include $(TOP)/../../../../RELEASE.$(EPICS_HOST_ARCH).local
