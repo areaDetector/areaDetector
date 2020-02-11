@@ -4,6 +4,7 @@ DOCS_PATHS += -i ../ADCore/docs/
 DOCS_PATHS += -i ../ADViewers/docs
 DOCS_PATHS += -i ../ADAndor/docs
 DOCS_PATHS += -i ../ADAravis/docs
+DOCS_PATHS += -i ../ADEiger/docs
 DOCS_PATHS += -i ../ADCompVision/docs
 DOCS_PATHS += -i ../ADFastCCD/docs
 DOCS_PATHS += -i ../ADGenICam/docs
