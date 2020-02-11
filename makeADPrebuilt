@@ -14,7 +14,7 @@ find . -name 'core.*' -exec rm -fv {} \;
 find . -name '*.exe.*' -exec rm -fv {} \;
 
 AREA_DETECTOR=areaDetector-3-8
-ASYN=asyn-4-36
+ASYN=asyn-4-37
 AUTOSAVE=autosave-5-10
 BUSY=busy-1-7-2
 CALC=calc-3-7-3
@@ -22,7 +22,7 @@ DEVIOCSTATS=devIocStats-3-1-16
 SEQ=seq-2-2-5
 SSCAN=sscan-2-11-3
 BASE_TOP=/usr/local/epics-devel
-BASE=base-7.0.3
+BASE=base-7.0.3.1
 SUPPORT=/home/epics/devel
 DESTINATION=/home/epics/public_html/pub/$1/$1_Prebuilt_$AREA_DETECTOR_$2_$3
 # NOTE: This cd is needed so that wildcards work, even though the tar command has --directory
@@ -40,11 +40,16 @@ $AREA_DETECTOR/ADCore/documentation \
 $AREA_DETECTOR/ADCore/ADApp/Db \
 $AREA_DETECTOR/ADCore/ADApp/op \
 $AREA_DETECTOR/ADCore/iocBoot \
-$AREA_DETECTOR/ADViewers/ImageJ \
 $AREA_DETECTOR/ADCore/bin/$3 \
 $AREA_DETECTOR/ADCore/lib/$3 \
+$AREA_DETECTOR/ADViewers/ImageJ \
 $AREA_DETECTOR/ADSupport/bin/$3 \
 $AREA_DETECTOR/ADSupport/lib/$3 \
+$AREA_DETECTOR/ADGenICam/db \
+$AREA_DETECTOR/ADGenICam/GenICamApp/Db \
+$AREA_DETECTOR/ADGenICam/GenICamApp/op \
+$AREA_DETECTOR/ADGenICam/bin/$3 \
+$AREA_DETECTOR/ADCGenICam/lib/$3 \
 $AREA_DETECTOR/$1/db \
 $AREA_DETECTOR/$1/bin/$3 \
 $AREA_DETECTOR/$1/lib/$3 \
@@ -93,11 +98,16 @@ $AREA_DETECTOR/ADCore/documentation \
 $AREA_DETECTOR/ADCore/ADApp/Db \
 $AREA_DETECTOR/ADCore/ADApp/op \
 $AREA_DETECTOR/ADCore/iocBoot \
-$AREA_DETECTOR/ADViewers/ImageJ \
 $AREA_DETECTOR/ADCore/bin/$3 \
 $AREA_DETECTOR/ADCore/lib/$3 \
+$AREA_DETECTOR/ADViewers/ImageJ \
 $AREA_DETECTOR/ADSupport/bin/$3 \
 $AREA_DETECTOR/ADSupport/lib/$3 \
+$AREA_DETECTOR/ADGenICam/db \
+$AREA_DETECTOR/ADGenICam/GenICamApp/Db \
+$AREA_DETECTOR/ADGenICam/GenICamApp/op \
+$AREA_DETECTOR/ADGenICam/bin/$3 \
+$AREA_DETECTOR/ADCGenICam/lib/$3 \
 $AREA_DETECTOR/$1/db \
 $AREA_DETECTOR/$1/bin/$3 \
 $AREA_DETECTOR/$1/lib/$3 \
