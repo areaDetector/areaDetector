@@ -10,6 +10,7 @@ Detector Drivers
     ADAravis/ADAravis
     ADFastCCD/index
     ADGenICam/ADGenICam
+    ADmarCCD/marCCDDoc
     ADPerkinElmer/PerkinElmerDoc
     ADPointGrey/PointGreyDoc
     ADProsilica/ADProsilica
