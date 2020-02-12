@@ -9,12 +9,14 @@ DOCS_PATHS += -i ../ADFastCCD/docs
 DOCS_PATHS += -i ../ADGenICam/docs
 DOCS_PATHS += -i ../ADmarCCD/docs
 DOCS_PATHS += -i ../ADPerkinElmer/docs
+DOCS_PATHS += -i ../ADPilatus/docs
 DOCS_PATHS += -i ../ADPluginBar/docs
 DOCS_PATHS += -i ../ADPointGrey/docs
 DOCS_PATHS += -i ../ADProsilica/docs
 DOCS_PATHS += -i ../ADRIXSCam/docs
 DOCS_PATHS += -i ../ADSpinnaker/docs
 DOCS_PATHS += -i ../ADVimba/docs
+DOCS_PATHS += -i ../pvaDriver/docs
 DOCS_PATHS += -i ../specsAnalyser/docs
 
 BUILD = _build
