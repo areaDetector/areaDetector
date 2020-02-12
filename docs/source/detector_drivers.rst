@@ -12,9 +12,11 @@ Detector Drivers
     ADGenICam/ADGenICam
     ADmarCCD/marCCDDoc
     ADPerkinElmer/PerkinElmerDoc
+    ADPilatus/pilatusDoc
     ADPointGrey/PointGreyDoc
     ADProsilica/ADProsilica
     ADRIXSCam/ADRIXSCam
     ADSpinnaker/ADSpinnaker
     ADVimba/ADVimba
+    pvaDriver/pvaDriver
     specsAnalyser/index
