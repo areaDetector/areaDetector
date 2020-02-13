@@ -11,6 +11,7 @@ Detector Drivers
     ADEiger/eiger
     ADFastCCD/index
     ADGenICam/ADGenICam
+    ADLightField/ADLightField
     ADmarCCD/marCCDDoc
     ADPerkinElmer/PerkinElmerDoc
     ADPilatus/pilatusDoc

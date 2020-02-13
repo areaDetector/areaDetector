@@ -8,6 +8,7 @@ DOCS_PATHS += -i ../ADCompVision/docs
 DOCS_PATHS += -i ../ADEiger/docs
 DOCS_PATHS += -i ../ADFastCCD/docs
 DOCS_PATHS += -i ../ADGenICam/docs
+DOCS_PATHS += -i ../ADLightField/docs
 DOCS_PATHS += -i ../ADmarCCD/docs
 DOCS_PATHS += -i ../ADPerkinElmer/docs
 DOCS_PATHS += -i ../ADPilatus/docs
