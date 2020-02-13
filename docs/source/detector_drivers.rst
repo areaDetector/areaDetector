@@ -21,5 +21,6 @@ Detector Drivers
     ADRIXSCam/ADRIXSCam
     ADSpinnaker/ADSpinnaker
     ADVimba/ADVimba
+    ADURL/ADURL
     pvaDriver/pvaDriver
     specsAnalyser/index
