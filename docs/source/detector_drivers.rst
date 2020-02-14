@@ -19,6 +19,7 @@ Detector Drivers
     ADPointGrey/PointGreyDoc
     ADProsilica/ADProsilica
     ADRIXSCam/ADRIXSCam
+    ADSimDetector/simDetector
     ADSpinnaker/ADSpinnaker
     ADVimba/ADVimba
     ADURL/ADURL
