@@ -37,4 +37,5 @@ be used:
 * [Kernel.org Git tutorial on submodules](https://git.wiki.kernel.org/index.php/GitSubmoduleTutorial)
 
 To get a clone of the full areaDetector distribution (core, plugins and drivers) do a recursive clone of this repository:
+
 `git clone --recursive https://github.com/areaDetector/areaDetector.git`
