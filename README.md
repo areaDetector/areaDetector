@@ -25,12 +25,10 @@ of these are "core" submodules:
 All of the other submodules (ADProsilica, ADPilatus, etc.) contain drivers and EPICS IOC applications
 for specific detectors.
 
-The [Installation Guide](INSTALL_GUIDE.md) provides build and install
-instructions.
-
 Additional information:
-* [Overview documentation](https://cars.uchicago.edu/software/epics/areaDetector.html).
-* [Detailed documentation](https://cars.uchicago.edu/software/epics/areaDetectorDoc.html).
+* [Documentation home](https://areadetector.github.io/master/index.html).
+* [Installation Guide](https://areadetector.github.io/master/install_guide.html)
+* [User Guide](https://areadetector.github.io/master/user_guide.html).
 * [Release notes and links to source and binary releases](RELEASE.md).
 
 See the following documentation about the git submodule feature and how it can 
