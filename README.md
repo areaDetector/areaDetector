@@ -5,7 +5,7 @@ areaDetector
 
 The top-level repository for the
 [EPICS](http://www.aps.anl.gov/epics/) 
-[areaDetector](https://cars.uchicago.edu/software/epics/areaDetector.html) 
+[areaDetector](https://github.com/areaDetector/areaDetector/blob/master/README.md) 
 software.  This repository contains mostly documentation, configuration files,
 and a top-level Makefile to build the entire areaDetector package.
 
