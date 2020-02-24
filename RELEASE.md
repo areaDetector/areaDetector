@@ -69,6 +69,9 @@ only provide a short summary of the most significant items from the submodules.
 * ADAravis R1-2
   * Change integer features from epicsInt32 to epicsInt64.  Requires asyn R4-38.
 
+* ADUVC
+  * New driver for USB Video Class devices from Jakub Wlodek.
+ 
 
 ### R3-8 (October 22, 2019)
 
