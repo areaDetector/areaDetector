@@ -16,14 +16,14 @@ Contents
 .. toctree::
    :maxdepth: 1
 
+   Readme <readme>
+   User Guide <user_guide>
+   Install Guide <install_guide>
    Top-level Release Notes <release>
    ADCore Release Notes <ADCore_release>
    ADSupport Release Notes <ADSupport_release>
-   Readme <readme>
    License <license>
-   Install Guide <install_guide>
-   User Guide <user_guide>
+   Source Code Documentation <doxygen>
    Supported Detectors <detectors>
    Legacy Versions <legacy_versions>
-   Source Code Documentation <doxygen>
 
