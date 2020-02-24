@@ -1,8 +1,4 @@
 Source Code Documentation
 =========================
 
-.. doxygenstruct:: NDDimension 
-
-.. doxygenclass:: NDArray
-
-.. doxygenclass:: NDArrayPool
+`Doxygen documentation <areaDetectorDoxygenHTML/annotated.html>`__
