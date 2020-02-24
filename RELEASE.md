@@ -30,14 +30,49 @@ Versions
 Each submodule contains detailed release notes for each release of that submodule.  The release notes below
 only provide a short summary of the most significant items from the submodules.
 
-### R3-9 (January XXX, 2020)
+### R3-9 (February XXX, 2020)
 
 * All modules.
   * Added .bob files for Phoebus, autoconverted from .adl files.
 
+* Documentation
+  * Converted more of the driver HTML documentation hosted at cars.uchicago.edu 
+    to ReST hosted at areaDetector.githun.io.  Much of this work was done at the recent Codeathon
+    at Diamond Light Source.  Thanks to Timo, Andy, Gary, XXX, XXX for work on this.
+  * Updated the install_guide.rst to reflect the changes to the configure/ directory described below.
+  * Changes to Sphinx settings to make Web pages wider, improving appearance of tables.
+  * Change from Sphinx 1.8.4 to 1.8.5.
+
+* configure/ directory
+  * Fixed problems with EXAMPLE_RELEASE_LIBS.local and EXAMPLE_RELEASE_PRODS.local.
+    They were missing the definition of SUPPORT.
+  * Removed EXAMPLE_RELEASE_SUPPORT.local and EXAMPLE_RELEASE_BASE.local. 
+    RELEASE_SUPPORT.local and RELEASE_BASE.local are not longer used.  They were previously
+    used, for example, to allow building Linux and Windows in the same tree where the definition
+    of SUPPORT and EPICS_BASE would have a different syntax.  This is now handled in the more
+    standard way of optionally including $(TOP)/../RELEASE.local and $(TOP)/../RELEASE.$(EPICS_HOST_ARCH).local.
+  * RELEASE_LIBS_INCLUDE and RELEASE_PRODS_INCLUDE were changed to also optionally include these files from
+    the level above $(AREA_DETECTOR).
+
+* ADCore R3-9
+  * Added Int64 support to NDFileNetCDF.
+  * Support for compressed NDArrays in NDPluginStdArrays (Channel Access)
+
+* ADGenICam R1-2 and R1-3
+  * Change integer features from epicsInt32 to epicsInt64.  Requires asyn R4-38.
+  * Added databases and OPI files for many more FLIR and AVT cameras.
+
+* ADSpinnaker R2-1
+  * Change integer features from epicsInt32 to epicsInt64.  Requires asyn R4-38.
+  * Added vendor SFNC_GenTL*.xml files which are required to be present in the lib directory on Linux.
+
+* ADAravis R1-2
+  * Change integer features from epicsInt32 to epicsInt64.  Requires asyn R4-38.
+
+
 ### R3-8 (October 22, 2019)
 
-* ADCore R3-8.
+* ADCore R3-8
   * Int64 support.  Requires asyn R4-37.
 * ADGenICam R1-1
   * Minor updates
