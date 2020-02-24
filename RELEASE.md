@@ -38,7 +38,7 @@ only provide a short summary of the most significant items from the submodules.
 * Documentation
   * Converted more of the driver HTML documentation hosted at cars.uchicago.edu 
     to ReST hosted at areaDetector.githun.io.  Much of this work was done at the recent Codeathon
-    at Diamond Light Source.  Thanks to Timo, Andy, Gary, XXX, XXX for work on this.
+    at Diamond Light Source.  Thanks to Andy Wilson, Gary Yendell, and Timo Korhonen for work on this.
   * Updated the install_guide.rst to reflect the changes to the configure/ directory described below.
   * Changes to Sphinx settings to make Web pages wider, improving appearance of tables.
   * Change from Sphinx 1.8.4 to 1.8.5.
