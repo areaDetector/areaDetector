@@ -14,6 +14,7 @@ Detector Drivers
     ADGenICam/ADGenICam
     ADLightField/ADLightField
     ADmarCCD/marCCDDoc
+    ADmar345/mar345Doc
     ADPerkinElmer/PerkinElmerDoc
     ADPilatus/pilatusDoc
     ADPixirad/ADPixirad
