@@ -1,0 +1,42 @@
+# RULES_CONFIGURE
+
+ifndef CAT
+  # Base pre-3.15
+  ifeq ($(OS_CLASS),WIN32)
+    CAT = $(PERL) -MExtUtils::Command -e cat
+  else
+    CAT = cat
+  endif
+endif
+
+# Rules to create build config files
+#
+RELEASE_LIBS.host@: $(RELEASE_LIBS_PARTS:%=../%)
+	$(CAT) $^ > $@
+RELEASE_PRODS.host@: $(RELEASE_PRODS_PARTS:%=../%)
+	$(CAT) $^ > $@
+
+EXPAND_MODULES = $(foreach var, $(MODULES), \
+  $(if $($(var)), \
+    -D$(var)="$(var) = $(strip $($(var)))", \
+    -D$(var)="\#$(var) not defined"))
+
+RELEASE_%.$(EPICS_HOST_ARCH): RELEASE_%.host@ $(wildcard $(RELEASE_FILES:%=../%))
+	$(ECHO) "Creating $@"
+	@$(RM) $@
+	$(EXPAND_TOOL) $(EXPANDARCH) $(EXPANDFLAGS) $(EXPAND_MODULES) $< $@
+
+.PRECIOUS: RELEASE_%.$(EPICS_HOST_ARCH) RELEASE_%.host@
+
+# Housekeeping
+#
+clean: clean-releases
+clean-releases:
+	$(RM) RELEASE_LIBS.host@ RELEASE_PRODS.host@ \
+	    RELEASE_LIBS.$(EPICS_HOST_ARCH) RELEASE_PRODS.$(EPICS_HOST_ARCH)
+
+# Required targets that do nothing:
+uninstall:
+realuninstall:
+
+.PHONY: clean-releases
