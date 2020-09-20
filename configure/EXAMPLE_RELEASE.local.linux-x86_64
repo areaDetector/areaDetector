@@ -2,5 +2,9 @@
 
 ### ADPointGrey cannot be built on systems without libc 2.14
 ADPOINTGREY=$(AREA_DETECTOR)/ADPointGrey
-ADCOMPVISION=$(AREA_DETECTOR)/ADCompVision
 
+### ADEiger cannot be built on 32-bit Centos7 because libzmq.so is not available
+ADEIGER=$(AREA_DETECTOR)/ADEiger
+
+### ADAravis is only configured to be built on this system
+ADAravis=$(AREA_DETECTOR)/ADAravis
