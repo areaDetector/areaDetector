@@ -30,6 +30,38 @@ Versions
 Each submodule contains detailed release notes for each release of that submodule.  The release notes below
 only provide a short summary of the most significant items from the submodules.
 
+### R3-10 (September 20, 2020)
+
+* ADCore R3-10
+  * Numerous new features and bug fixes.
+
+* ADGenICam R1-4 and R1-5
+  * Added logic to pause and resume acquisition when any of the following parameters are changed:
+      - ADMinX, ADMinY 
+      - ADSizeX, ADSizeY
+      - ADBinX, ADBinY
+      - ADNumImages
+      - GCPixelFormat
+
+    Previously changing these parameters while acquiring had no effect.
+  * Added fix for cameras that don't support GenICam feature AcquisitionMode=MultiFrame.
+  * Added support for new cameras.
+
+* ADSpinnaker R2-2 and R3-0
+  * Updated Spinnaker version from 1.2.0 to 2.0.0.147.
+  * Worked around a bug that in epicsMessageQueueWaitWithTimeout that is present in
+    most versions of EPICS base.
+  * Tested that ADSpinnaker runs on Centos 8. 
+    It should also work on other Linux versions with gcc 7.5 and up, e.g. RHEL 8 and Debian 10.
+
+* ADAravis R1-3 and R2-0
+  * Updated from aravis 0.7.2 to 0.8.1.  The aravis API has changed, so sites will need to update their
+    local aravis installation to 0.8.1.
+  * Fixed a problem with GenICam boolean features.  Previously the code was calling the aravis functions
+    for integer features, which did not work.  It was changed to call the functions for boolean features,
+    and it now works correctly.
+  * Added .bob files for Phoebus Display Manager
+
 ### R3-9 (February 24, 2020)
 
 * All modules.
