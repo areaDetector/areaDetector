@@ -1,4 +1,4 @@
-areaDetector Documentaion To Do List
+areaDetector Documentation To Do List
 ====================================
 
 Drivers
