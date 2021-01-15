@@ -43,7 +43,6 @@ and my priority rating for completing the documentation.
 
 Plugin   | Status  | Priority
 -------  | ------- | --------
-
 ADCompVision | .rst exists, not linked from README.md | High, easy
 ADPluginBar | .rst exists, not linked from README.md | High, easy
 ADPluginEdge | Only documentation is README.md | Medium
