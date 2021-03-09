@@ -17,6 +17,7 @@ Detector Drivers
     ADmarCCD/marCCDDoc
     ADmar345/mar345Doc
     ADPerkinElmer/PerkinElmerDoc
+    ADPICam/PICamDoc
     ADPilatus/pilatusDoc
     ADPixirad/ADPixirad
     ADPointGrey/PointGreyDoc
