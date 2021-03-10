@@ -14,15 +14,15 @@ Driver   | Status  | Priority
 ADADSC | Raw .html needs conversion to .rst | Low (no longer in use?)
 ADAndor3 | Raw .html needs conversion to .rst | High
 ADBruker | Raw .html needs conversion to .rst | Low (no longer in use?)
-ADCSimDetector | Raw .html needs conversion to .rst | High
+ADCSimDetector | Raw .html needs conversion to .rst | Complete (minor reformatting needed)
 ADCameraLink | Only documentation is README.md | Low (no longer in use?)
 ADFireWireWin | Raw .html needs conversion to .rst | Low (no longer in use?)
-ADLambda | Raw .html needs conversion to .rst | High
+ADLambda | Raw .html needs conversion to .rst | Complete
 ADMMPAD | No documentation | Low (not in active use?)
 ADMerlin | No documentation | Medium
 ADMythen | No documentation | High
 ADPCO | Raw .html needs conversion to .rst | Low (no longer in use?)
-ADPICam | Raw .html needs conversion to .rst | High
+ADPICam | Raw .html needs conversion to .rst | Complete
 ADPSL | Raw .html needs conversion to .rst | Low (is it in use?)
 ADPCOWin | No documentation | High
 ADPhotonII | Raw .html needs conversion to .rst | Low (is it in use?)
