@@ -12,10 +12,12 @@ Detector Drivers
     ADEiger/eiger
     ADFastCCD/index
     ADGenICam/ADGenICam
+    ADLambda/ADLambda
     ADLightField/ADLightField
     ADmarCCD/marCCDDoc
     ADmar345/mar345Doc
     ADPerkinElmer/PerkinElmerDoc
+    ADPICam/PICamDoc
     ADPilatus/pilatusDoc
     ADPixirad/ADPixirad
     ADPointGrey/PointGreyDoc
