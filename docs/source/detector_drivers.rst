@@ -8,6 +8,7 @@ Detector Drivers
     ADCore/ADDriver
     ADAndor/andorDoc
     ADAravis/ADAravis
+    ADCSimDetector/ADCSimDetectorDoc
     ADDexela/ADDexela
     ADEiger/eiger
     ADFastCCD/index
