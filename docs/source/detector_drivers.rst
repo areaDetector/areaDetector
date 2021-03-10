@@ -7,6 +7,7 @@ Detector Drivers
     ADCore/guidelines
     ADCore/ADDriver
     ADAndor/andorDoc
+    ADAndor3/ADAndorDoc
     ADAravis/ADAravis
     ADCSimDetector/ADCSimDetectorDoc
     ADDexela/ADDexela

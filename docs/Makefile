@@ -3,6 +3,7 @@ SPHINX_MULTIBUILD=sphinx-multibuild
 DOCS_PATHS += -i ../ADCore/docs/
 DOCS_PATHS += -i ../ADViewers/docs
 DOCS_PATHS += -i ../ADAndor/docs
+DOCS_PATHS += -i ../ADAndor3/docs
 DOCS_PATHS += -i ../ADAravis/docs
 DOCS_PATHS += -i ../ADCSimDetector/docs
 DOCS_PATHS += -i ../ADCompVision/docs
