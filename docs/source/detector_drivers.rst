@@ -29,5 +29,6 @@ Detector Drivers
     ADSpinnaker/ADSpinnaker
     ADVimba/ADVimba
     ADURL/ADURL
+    NDDriverStdArrays/NDDriverStdArraysDoc
     pvaDriver/pvaDriver
     specsAnalyser/index
