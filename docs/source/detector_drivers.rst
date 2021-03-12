@@ -23,6 +23,7 @@ Detector Drivers
     ADPointGrey/PointGreyDoc
     ADProsilica/ADProsilica
     ADPvCam/pvcamDoc
+    ADQImaging/QImagingDoc
     ADRIXSCam/ADRIXSCam
     ADSimDetector/simDetector
     ADSpinnaker/ADSpinnaker
