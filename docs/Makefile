@@ -19,6 +19,7 @@ DOCS_PATHS += -i ../ADPluginBar/docs
 DOCS_PATHS += -i ../ADPointGrey/docs
 DOCS_PATHS += -i ../ADProsilica/docs
 DOCS_PATHS += -i ../ADPvCam/docs
+DOCS_PATHS += -i ../ADQImaging/docs
 DOCS_PATHS += -i ../ADRIXSCam/docs
 DOCS_PATHS += -i ../ADSimDetector/docs
 DOCS_PATHS += -i ../ADSpinnaker/docs
