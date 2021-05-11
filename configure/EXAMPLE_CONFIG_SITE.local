@@ -70,13 +70,17 @@ HDF5_EXTERNAL = NO
 #HDF5_INCLUDE =
 #HDF5_LIB     =
 
+# JSON is required for the NDPluginBadPixel plugin
+# The JSON parser requires C++11 and does not work on vxWorks 9.4
+WITH_JSON     = YES
+
 # JPEG is required for the NDFileJPEG and NDFileTIFF plugins
 WITH_JPEG     = YES
 JPEG_EXTERNAL = NO
 #JPEG_INCLUDE =
 #JPEG_LIB     =
 
-# JPEG is required for the NDFileNetCDF plugin
+# netCDF is required for the NDFileNetCDF plugin
 WITH_NETCDF     = YES
 NETCDF_EXTERNAL = NO
 #NETCDF_INCLUDE =
