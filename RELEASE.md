@@ -30,6 +30,49 @@ Versions
 Each submodule contains detailed release notes for each release of that submodule.  The release notes below
 only provide a short summary of the most significant items from the submodules.
 
+### R3-11 (May 26, 2021)
+
+* ADSupport R1-9-1, R1-10
+  * Changed the support for reading MJPEG streams in GraphicsMagickSrc and xml2Src.
+  * Fixed compilation errors with EPICS base 7.0.5 which changed the use of undefined functions
+    from being a warning to being an error.
+
+* ADCore R3-11
+  * New plugin NDPluginBadPixel.
+
+* ADGenICam R1-6, R1-7, and R1-7-1
+  * Added support for converting Mono12p and Mono12Packed formats to Mono16,
+    with optional left-shift operation.
+  * Fixed memory leak.
+
+* ADAravis R2-1, R2-2, R2-2-1
+  * Added support for PixelFormat=Mono12Packed and Mono12p.
+  * Added new ConvertPixelFormat mbbo record with choices of Mono16Low and Mono16High.
+    This record controls how Mono12Packed and Mono12p pixel formats are decompressed.
+  * Added continuous integration via Github Actions.  Thanks to Michael Davidsaver for this.
+  * Improve error reporting by fetching the underlying error from aravis.
+
+* ADSpinnaker R3-1, R3-2
+  * Added support for specifying the number of transport layer buffers in the configuration command.
+    This may require changes to startup scripts.
+  * Improved reporting of transport layer statistics.
+  * Updated Spinnaker version from 2.0.0.147 to 2.4.0.147.
+
+* ADURL R2-3
+  * Converted documentation to ReST, include in documentation on github.io.
+  * Added autoconverted OPI files for css/BOY, css/Phoebus, edm, and caQtDM.
+  * Fix to release the lock at least briefly between each image, otherwise EPICS puts don't get processed.
+
+* ADVimba R1-3
+  * Updated the version of the Vimba SDK being used to 4.0 (Windows) and 4.1 (Linux).
+  * Added automatic packet size negotiation for GigE cameras in the constructor.
+    Previously cameras would default to jumbo packets, and if the network did not support that
+    then streaming would fail until the packet size feature was decreased.
+
+* ADViewers R1-7
+  * Many enhancements to the Python PY_NTNDA_Viewer.
+  * Updated to the latest versions of the EPICS Java libraries.
+
 ### R3-10 (September 20, 2020)
 
 * ADCore R3-10
