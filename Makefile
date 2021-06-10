@@ -2,8 +2,15 @@
 TOP = .
 include $(TOP)/configure/CONFIG
 
+# Get the set of modules to be built
+include $(TOP)/configure/SITE_MODULES
+
+# Start with configure
+DIRS := configure
+
 # Always build ADSupport and ADCore
 DIRS := $(DIRS) $(ADSUPPORT)
+$(ADSUPPORT)_DEPEND_DIRS += configure
 
 DIRS := $(DIRS) $(ADCORE)
 $(ADCORE)_DEPEND_DIRS += $(ADSUPPORT)

@@ -2,13 +2,82 @@
 # Run "gnumake clean uninstall install" in the application
 # top directory each time this file is changed.
 
-# This line ensures that the top-level synApps Makefile will get all dependencies for areaDetector
-include $(TOP)/configure/RELEASE_PRODS.local
+# If using Debian packages then the following must be done:
+#  SUPPORT should be defined to be the root location of any modules which should NOT come from the Debian package.
+#  Any modules which should come from the Debian package should be commented out, except for EPICS_BASE.
+#  For example to use a newer version of asyn and areaDetector then define ASYN, AREA_DETECTOR, ADCORE,
+#  and ADSUPPORT here, but comment out AUTOSAVE, BUSY, etc.
 
--include $(TOP)/configure/RELEASE.local
+# If you don't want to install into $(TOP) then
+# define INSTALL_LOCATION_APP here
+#INSTALL_LOCATION_APP=<fullpathname>
 
-# This includes files in the top-level support.
-# These can re-define EPICS_BASE and SUPPORT for other ARCHs, etc.
+SUPPORT=/corvette/home/epics/devel
+
+# ASYN provides base classes
+ASYN=$(SUPPORT)/asyn-4-39
+
+AREA_DETECTOR=$(SUPPORT)/areaDetector-3-9
+
+# ADSupport is needed by ADCore plugins
+ADSUPPORT=$(AREA_DETECTOR)/ADSupport
+
+# ADCORE provides base classes and plugins
+ADCORE=$(AREA_DETECTOR)/ADCore
+
+
+## Modules needed by IOCs
+
+# AUTOSAVE provides save_restore
+AUTOSAVE=$(SUPPORT)/autosave-5-10
+
+# BUSY provides the busy record
+BUSY=$(SUPPORT)/busy-1-7-2
+
+# CALC provides the sseq record for the reset in NDStats.template
+# and which is loaded into the example IOCs for general purpose use.
+# CALC also provides the scalcout record for SSCAN
+CALC=$(SUPPORT)/calc-3-7-3
+
+# SNCSEQ is needed if CALC was built with SNCSEQ support (see CALC/configure/RELEASE)
+SNCSEQ=$(SUPPORT)/seq-2-2-5
+
+# SSCAN is needed for scanning threshold on Pilatus and general scanning.
+# SSCAN also provides support needed for the swait record in CALC
+SSCAN=$(SUPPORT)/sscan-2-11-3
+
+
+## Optional modules
+
+# DEVIOCSTATS is used to monitor IOC resources
+#DEVIOCSTATS=$(SUPPORT)/devIocStats-3-1-16
+
+# ALIVE can send IOC status data to a central server
+#ALIVE=$(SUPPORT)/alive-1-0-1
+
+# ADPLUGINEDGE is an optional plugin
+#ADPLUGINEDGE=$(AREA_DETECTOR)/ADPluginEdge
+
+
+## PVA modules
+
+# If CONFIG_SITE.local defines WITH_PVA=YES and EPICS_BASE is prior to 7.0 then define the path here
+# If using EPICS_BASE 7.0 or later the PVA files are in base itself and no additional definitions are needed.
+#PVA=/corvette/usr/local/epics-devel/epicsV4/EPICS-CPP-4.6.0
+
+# For versions prior to EPICS base 7.0 use this
+#PVCOMMON=$(PVA)/pvCommonCPP
+#PVACCESS=$(PVA)/pvAccessCPP
+#PVDATA=$(PVA)/pvDataCPP
+#PVDATABASE=$(PVA)/pvDatabaseCPP
+#NORMATIVETYPES=$(PVA)/normativeTypesCPP
+
+# EPICS Base comes last
+EPICS_BASE=/corvette/usr/local/epics-devel/base-7.0.3.1
+
+
+# Standard includes for parent and local configuration files.
 -include $(TOP)/../RELEASE.local
 -include $(TOP)/../RELEASE.$(EPICS_HOST_ARCH).local
-
+-include $(TOP)/configure/RELEASE.local
+-include $(TOP)/configure/RELEASE.$(EPICS_HOST_ARCH).local
