@@ -29,3 +29,7 @@
 # ADPLUGINEDGE is an optional plugin
 @ADPLUGINEDGE@
 
+# RECCASTER is the client for recsync, used to communicate IOC information
+# to a recceiver server
+@RECCASTER@
+
