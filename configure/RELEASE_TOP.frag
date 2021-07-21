@@ -1,4 +1,5 @@
-## I am a generated file, don't edit me!
+## RELEASE_LIBS.<arch> and RELEASE_PRODS.<arch> are generated files,
+## don't edit them directly!
 
 # ASYN provides base classes
 @ASYN@
