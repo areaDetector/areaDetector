@@ -11,7 +11,8 @@
 # CALC also provides the scalcout record for SSCAN
 @CALC@
 
-# SNCSEQ is needed if CALC was built with SNCSEQ support (see CALC/configure/RELEASE)
+# SNCSEQ is needed if CALC was built with SNCSEQ support.
+# See CALC/configure/RELEASE for details.
 @SNCSEQ@
 
 # SSCAN is needed for scanning threshold on Pilatus and general scanning.
