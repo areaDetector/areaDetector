@@ -15,9 +15,9 @@
 SUPPORT=/corvette/home/epics/devel
 
 # ASYN provides base classes
-ASYN=$(SUPPORT)/asyn-4-39
+ASYN=$(SUPPORT)/asyn-4-45
 
-AREA_DETECTOR=$(SUPPORT)/areaDetector-3-9
+AREA_DETECTOR=$(SUPPORT)/areaDetector-3-14
 
 # ADSupport is needed by ADCore plugins
 ADSUPPORT=$(AREA_DETECTOR)/ADSupport
@@ -29,22 +29,22 @@ ADCORE=$(AREA_DETECTOR)/ADCore
 ## Modules needed by IOCs
 
 # AUTOSAVE provides save_restore
-AUTOSAVE=$(SUPPORT)/autosave-5-10
+AUTOSAVE=$(SUPPORT)/autosave-5-11
 
 # BUSY provides the busy record
-BUSY=$(SUPPORT)/busy-1-7-2
+BUSY=$(SUPPORT)/busy-1-7-3
 
 # CALC provides the sseq record for the reset in NDStats.template
 # and which is loaded into the example IOCs for general purpose use.
 # CALC also provides the scalcout record for SSCAN
-CALC=$(SUPPORT)/calc-3-7-3
+CALC=$(SUPPORT)/calc-3-7-4
 
 # SNCSEQ is needed if CALC was built with SNCSEQ support (see CALC/configure/RELEASE)
-SNCSEQ=$(SUPPORT)/seq-2-2-5
+SNCSEQ=$(SUPPORT)/seq-2-2-9
 
 # SSCAN is needed for scanning threshold on Pilatus and general scanning.
 # SSCAN also provides support needed for the swait record in CALC
-SSCAN=$(SUPPORT)/sscan-2-11-3
+SSCAN=$(SUPPORT)/sscan-2-11-5
 
 
 ## Optional modules
@@ -76,7 +76,7 @@ SSCAN=$(SUPPORT)/sscan-2-11-3
 #NORMATIVETYPES=$(PVA)/normativeTypesCPP
 
 # EPICS Base comes last
-EPICS_BASE=/corvette/usr/local/epics-devel/base-7.0.3.1
+EPICS_BASE=/corvette/usr/local/epics-devel/base-7.0.10
 
 
 # Standard includes for parent and local configuration files.
