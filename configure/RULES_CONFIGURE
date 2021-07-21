@@ -16,10 +16,13 @@ RELEASE_LIBS.host@: $(RELEASE_LIBS_PARTS:%=../%)
 RELEASE_PRODS.host@: $(RELEASE_PRODS_PARTS:%=../%)
 	$(CAT) $^ > $@
 
+# Can't use a '#' directly in EXPAND_MODULES below, this works in
+# GNU Make versions 3.81 and 4.3 (which changed the escaping rules)
+hash := \#
 EXPAND_MODULES = $(foreach var, $(MODULES), \
   $(if $($(var)), \
     -D$(var)="$(var) = $(strip $($(var)))", \
-    -D$(var)="\#$(var) not defined"))
+    -D$(var)="$(hash)$(var) not defined"))
 
 RELEASE_%.$(EPICS_HOST_ARCH): RELEASE_%.host@ $(wildcard $(RELEASE_FILES:%=../%))
 	$(ECHO) "Creating $@"
