@@ -410,13 +410,19 @@ areaDetector/configure directory:
    cp EXAMPLE_RELEASE_PRODS.local   RELEASE_PRODS.local
    cp EXAMPLE_CONFIG_SITE.local     CONFIG_SITE.local
 
+On Windows you must do the following:
+
+::
+
+   cp EXAMPLE_CONFIG_SITE.local.WIN32   CONFIG_SITE.local.WIN32
+
 You may also want to copy the architecture dependent example files if
 you are building for multiple architectures in a single build tree, for
 example:
 
 ::
 
-   cp EXAMPLE_CONFIG_SITE.local.WIN32                   CONFIG_SITE.local.WIN32
+   cp EXAMPLE_CONFIG_SITE.local.linux-x86_64            CONFIG_SITE.local.linux-x86_x64
    cp EXAMPLE_CONFIG_SITE.local.linux-x86.vxWorks-ppc32 CONFIG_SITE.local.linux-x86.vxWorks-ppc32
 
 You can copy all of the ``EXAMPLE_*`` files to the files actually used with
