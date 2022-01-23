@@ -30,6 +30,27 @@ Versions
 Each submodule contains detailed release notes for each release of that submodule.  The release notes below
 only provide a short summary of the most significant items from the submodules.
 
+### R3-12-1 (January 22, 2022)
+
+* ADCore R3-12, R3-12-1
+  * ADAutoSaveMenu to save and restore configurations.
+  * Bug fixes.
+
+* ADEiger R3-2.
+  * Fixed race condition on Stream interface.
+
+* ADPerkinElmer R2-11.
+  * Added trigger modes.
+  * New vendor release.
+
+* ADGenICam R1-8
+  * Allow the asyn parameter datatype and the GenICam feature datatype to be different.
+    Needed for the areaDetector Gain feature (double) on GenICam cameras that do not implement the
+    GenICam Gain feature (also a double), but rather only implement the integer GainRaw or GainRawChannelA features.
+
+* ADSpinnaker R3-3
+  * Fixed a problem reading Integer GenICam feature values, and their min and max, when they exceed 2^32.
+  
 ### R3-11 (May 26, 2021)
 
 * ADSupport R1-9-1, R1-10
