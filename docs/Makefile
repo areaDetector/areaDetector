@@ -40,8 +40,7 @@ SOURCE = source
 OPTS =
 
 .PHONY: all
-all: sphinx
-
+all: sphinx doxygen
 
 .PHONY: all
 sphinx:
@@ -50,8 +49,6 @@ sphinx:
 .PHONY: doxygen
 doxygen:
 	doxygen
-	rsync -a doxy_output/html/ source/_extra/areaDetectorDoxygenHTML
-
 
 .PHONY: clean
 clean:
