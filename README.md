@@ -33,8 +33,8 @@ Additional information:
 
 See the following documentation about the git submodule feature and how it can 
 be used: 
-* [The Git Book](http://git-scm.com/docs/git-submodule)
-* [Kernel.org Git tutorial on submodules](https://git.wiki.kernel.org/index.php/GitSubmoduleTutorial)
+* [The Git Book](https://git-scm.com/docs/git-submodule)
+* [Git Book tutorial on submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules)
 
 To get a clone of the full areaDetector distribution (core, plugins and drivers) do a recursive clone of this repository:
 
