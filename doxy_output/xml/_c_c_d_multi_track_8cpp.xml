@@ -1,0 +1,284 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="_c_c_d_multi_track_8cpp" kind="file" language="C++">
+    <compoundname>CCDMultiTrack.cpp</compoundname>
+    <includes refid="_c_c_d_multi_track_8h" local="yes">CCDMultiTrack.h</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/CCDMultiTrack.cpp</label>
+        <link refid="_c_c_d_multi_track_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>epicsTypes.h</label>
+      </node>
+      <node id="4">
+        <label>NDAttributeList.h</label>
+        <link refid="_n_d_attribute_list_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>epicsMutex.h</label>
+      </node>
+      <node id="13">
+        <label>epicsVersion.h</label>
+      </node>
+      <node id="9">
+        <label>string</label>
+      </node>
+      <node id="12">
+        <label>ADCoreAPI.h</label>
+        <link refid="_a_d_core_a_p_i_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>CCDMultiTrack.h</label>
+        <link refid="_c_c_d_multi_track_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>ellLib.h</label>
+      </node>
+      <node id="8">
+        <label>NDAttribute.h</label>
+        <link refid="_n_d_attribute_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>asynDriver.h</label>
+      </node>
+      <node id="3">
+        <label>asynPortDriver.h</label>
+      </node>
+      <node id="5">
+        <label>stdio.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="_c_c_d_multi_track_8cpp_1a325434db76a27e0adaf72066b1a6c59b" prot="public" static="yes" mutable="no">
+        <type>const char *</type>
+        <definition>const char* CCDMultiTrackStartString</definition>
+        <argsstring></argsstring>
+        <name>CCDMultiTrackStartString</name>
+        <initializer>= &quot;CCD_MULTI_TRACK_START&quot;</initializer>
+        <briefdescription>
+<para>Area Detector class enabling multi-ROI driver for the Andor CCD. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This class is used by CCD camera modules that permit multiple regions-of-interest.</para>
+<para>Multi-ROI is typically used for multi-track spectrocopy application.</para>
+<para>There are 3 use cases: 1 - The user sets only the track start array. This provides a single height track at thos positions. 2 - The user sets the start and end tracks arrays. This provides a fully-binned track between the start and end positions. 3 - The user provides start, end and binning values. This provides (a less than fully binned) track between the start and end positions.</para>
+<para><simplesect kind="author"><para>Peter Heesterman </para>
+</simplesect>
+<simplesect kind="date"><para>Nov 2019 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/CCDMultiTrack.cpp" line="22" column="19" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/CCDMultiTrack.cpp" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_c_c_d_multi_track_8cpp_1a8132de269a05628170ac651cbfe4a76f" prot="public" static="yes" mutable="no">
+        <type>const char *</type>
+        <definition>const char* CCDMultiTrackEndString</definition>
+        <argsstring></argsstring>
+        <name>CCDMultiTrackEndString</name>
+        <initializer>= &quot;CCD_MULTI_TRACK_END&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/CCDMultiTrack.cpp" line="23" column="19" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/CCDMultiTrack.cpp" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_c_c_d_multi_track_8cpp_1aa4e1f46ec4a03a584679c6029e1d0c11" prot="public" static="yes" mutable="no">
+        <type>const char *</type>
+        <definition>const char* CCDMultiTrackBinString</definition>
+        <argsstring></argsstring>
+        <name>CCDMultiTrackBinString</name>
+        <initializer>= &quot;CCD_MULTI_TRACK_BIN&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/CCDMultiTrack.cpp" line="24" column="19" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/CCDMultiTrack.cpp" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_c_c_d_multi_track_8h" kindref="compound">CCDMultiTrack.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>CCDMultiTrackStartString<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;CCD_MULTI_TRACK_START&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>CCDMultiTrackEndString<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;CCD_MULTI_TRACK_END&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>CCDMultiTrackBinString<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;CCD_MULTI_TRACK_BIN&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><ref refid="class_c_c_d_multi_track_1a5585d63bcb56410bd51dd70cc94bd91d" kindref="member">CCDMultiTrack::CCDMultiTrack</ref>(asynPortDriver*<sp/>asynPortDriver)</highlight></codeline>
+<codeline lineno="27"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>mPortDriver<sp/>=<sp/>asynPortDriver;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>asynPortDriver-&gt;createParam(CCDMultiTrackStartString,<sp/>asynParamInt32Array,<sp/>&amp;mCCDMultiTrackStart);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>asynPortDriver-&gt;createParam(CCDMultiTrackEndString,<sp/>asynParamInt32Array,<sp/>&amp;mCCDMultiTrackEnd);</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>asynPortDriver-&gt;createParam(CCDMultiTrackBinString,<sp/>asynParamInt32Array,<sp/>&amp;mCCDMultiTrackBin);</highlight></codeline>
+<codeline lineno="32"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_c_c_d_multi_track_1ac28888199d73c25d37d603141494dd71" kindref="member">CCDMultiTrack::storeTrackAttributes</ref>(<ref refid="class_n_d_attribute_list" kindref="compound">NDAttributeList</ref>*<sp/>pAttributeList)</highlight></codeline>
+<codeline lineno="35"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacehdf5_1abeed318faeb13380e1b4221bd4198bf1aea271040d7a5b8d9af9cbf6564d262d5" kindref="member">std::string</ref><sp/>ROIString<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;ROI&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacehdf5_1abeed318faeb13380e1b4221bd4198bf1aea271040d7a5b8d9af9cbf6564d262d5" kindref="member">std::string</ref><sp/>TrackString<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;Track<sp/>&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(pAttributeList)</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>TrackNum<sp/>=<sp/>0;<sp/>TrackNum<sp/>&lt;<sp/><ref refid="class_c_c_d_multi_track_1ac3b99480f3bd7662dc39d04a0d3eb835" kindref="member">size</ref>();<sp/>TrackNum++)</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Add<sp/>new<sp/>attributes<sp/>listing.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>Buf[10];</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>epicsSnprintf(Buf,<sp/>10,<sp/></highlight><highlight class="stringliteral">&quot;%zd&quot;</highlight><highlight class="normal">,<sp/>TrackNum<sp/>+<sp/>1);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacehdf5_1abeed318faeb13380e1b4221bd4198bf1aea271040d7a5b8d9af9cbf6564d262d5" kindref="member">std::string</ref><sp/>TrackNumString<sp/>=<sp/>Buf;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacehdf5_1abeed318faeb13380e1b4221bd4198bf1aea271040d7a5b8d9af9cbf6564d262d5" kindref="member">std::string</ref><sp/>TrackStartName<sp/>=<sp/>ROIString<sp/>+<sp/>TrackNumString<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;start&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacehdf5_1abeed318faeb13380e1b4221bd4198bf1aea271040d7a5b8d9af9cbf6564d262d5" kindref="member">std::string</ref><sp/>TrackStartDescription<sp/>=<sp/>TrackString<sp/>+<sp/>TrackNumString<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;<sp/>start&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_c_c_d_multi_track_1a2fcee40e5a4f6dcf218aed2f25261bd0" kindref="member">TrackStart</ref><sp/>=<sp/><ref refid="class_c_c_d_multi_track_1a2fcee40e5a4f6dcf218aed2f25261bd0" kindref="member">CCDMultiTrack::TrackStart</ref>(TrackNum);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pAttributeList-&gt;<ref refid="class_n_d_attribute_list_1aa86fbdd59e20b734b86b2464f470d752" kindref="member">add</ref>(TrackStartName.c_str(),<sp/>TrackStartDescription.c_str(),<sp/><ref refid="_n_d_attribute_8h_1a8a795995acde8458f43ac9b01376ef07a52a96048ab842e5ee55012e5abd38088" kindref="member">NDAttrInt32</ref>,<sp/>&amp;<ref refid="class_c_c_d_multi_track_1a2fcee40e5a4f6dcf218aed2f25261bd0" kindref="member">TrackStart</ref>);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Set<sp/>new<sp/>attributes.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacehdf5_1abeed318faeb13380e1b4221bd4198bf1aea271040d7a5b8d9af9cbf6564d262d5" kindref="member">std::string</ref><sp/>TrackEndName<sp/>=<sp/>ROIString<sp/>+<sp/>TrackNumString<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;end&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacehdf5_1abeed318faeb13380e1b4221bd4198bf1aea271040d7a5b8d9af9cbf6564d262d5" kindref="member">std::string</ref><sp/>TrackEndDescription<sp/>=<sp/>TrackString<sp/>+<sp/>TrackNumString<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;<sp/>end&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_c_c_d_multi_track_1af4ebe135b4b0a0240c9763854d616044" kindref="member">TrackEnd</ref><sp/>=<sp/><ref refid="class_c_c_d_multi_track_1af4ebe135b4b0a0240c9763854d616044" kindref="member">CCDMultiTrack::TrackEnd</ref>(TrackNum);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pAttributeList-&gt;<ref refid="class_n_d_attribute_list_1aa86fbdd59e20b734b86b2464f470d752" kindref="member">add</ref>(TrackEndName.c_str(),<sp/>TrackEndDescription.c_str(),<sp/><ref refid="_n_d_attribute_8h_1a8a795995acde8458f43ac9b01376ef07a52a96048ab842e5ee55012e5abd38088" kindref="member">NDAttrInt32</ref>,<sp/>&amp;<ref refid="class_c_c_d_multi_track_1af4ebe135b4b0a0240c9763854d616044" kindref="member">TrackEnd</ref>);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Set<sp/>new<sp/>attributes.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacehdf5_1abeed318faeb13380e1b4221bd4198bf1aea271040d7a5b8d9af9cbf6564d262d5" kindref="member">std::string</ref><sp/>TrackBinName<sp/>=<sp/>ROIString<sp/>+<sp/>TrackNumString<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;bin&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacehdf5_1abeed318faeb13380e1b4221bd4198bf1aea271040d7a5b8d9af9cbf6564d262d5" kindref="member">std::string</ref><sp/>TrackBinDescription<sp/>=<sp/>TrackString<sp/>+<sp/>TrackNumString<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;<sp/>end&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_c_c_d_multi_track_1ad78d51074b87fab1d3ac7e51d88b4472" kindref="member">TrackBin</ref><sp/>=<sp/><ref refid="class_c_c_d_multi_track_1ad78d51074b87fab1d3ac7e51d88b4472" kindref="member">CCDMultiTrack::TrackBin</ref>(TrackNum);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pAttributeList-&gt;<ref refid="class_n_d_attribute_list_1aa86fbdd59e20b734b86b2464f470d752" kindref="member">add</ref>(TrackBinName.c_str(),<sp/>TrackBinDescription.c_str(),<sp/><ref refid="_n_d_attribute_8h_1a8a795995acde8458f43ac9b01376ef07a52a96048ab842e5ee55012e5abd38088" kindref="member">NDAttrInt32</ref>,<sp/>&amp;<ref refid="class_c_c_d_multi_track_1ad78d51074b87fab1d3ac7e51d88b4472" kindref="member">TrackBin</ref>);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="62"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>CCDMultiTrack::writeTrackStart(epicsInt32<sp/>*<ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>nElements)</highlight></codeline>
+<codeline lineno="65"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;int&gt;<sp/><ref refid="class_c_c_d_multi_track_1a2fcee40e5a4f6dcf218aed2f25261bd0" kindref="member">TrackStart</ref>(nElements);</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>TrackNum<sp/>=<sp/>0;<sp/>TrackNum<sp/>&lt;<sp/><ref refid="class_c_c_d_multi_track_1a2fcee40e5a4f6dcf218aed2f25261bd0" kindref="member">TrackStart</ref>.size();<sp/>TrackNum++)</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((TrackNum<sp/>&gt;<sp/>0)<sp/>&amp;&amp;<sp/>(<ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>[TrackNum]<sp/>&lt;=<sp/><ref refid="class_c_c_d_multi_track_1a2fcee40e5a4f6dcf218aed2f25261bd0" kindref="member">CCDMultiTrack::TrackStart</ref>(TrackNum<sp/>-<sp/>1)))</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/><ref refid="namespacehdf5_1abeed318faeb13380e1b4221bd4198bf1aea271040d7a5b8d9af9cbf6564d262d5" kindref="member">std::string</ref>(</highlight><highlight class="stringliteral">&quot;Tracks<sp/>starts<sp/>must<sp/>be<sp/>in<sp/>ascending<sp/>order&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Copy<sp/>the<sp/>new<sp/>data<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_c_c_d_multi_track_1a2fcee40e5a4f6dcf218aed2f25261bd0" kindref="member">TrackStart</ref>[TrackNum]<sp/>=<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>[TrackNum];</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(mTrackStart<sp/>!=<sp/><ref refid="class_c_c_d_multi_track_1a2fcee40e5a4f6dcf218aed2f25261bd0" kindref="member">TrackStart</ref>)</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mTrackStart<sp/>=<sp/><ref refid="class_c_c_d_multi_track_1a2fcee40e5a4f6dcf218aed2f25261bd0" kindref="member">TrackStart</ref>;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;int&gt;<sp/><ref refid="class_c_c_d_multi_track_1af4ebe135b4b0a0240c9763854d616044" kindref="member">TrackEnd</ref>(mTrackStart.size());</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>If<sp/>binning<sp/>is<sp/>already<sp/>set,<sp/>this<sp/>can<sp/>define<sp/>the<sp/>track<sp/>end.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>TrackNum<sp/>=<sp/>0;<sp/>TrackNum<sp/>&lt;<sp/><ref refid="class_c_c_d_multi_track_1af4ebe135b4b0a0240c9763854d616044" kindref="member">TrackEnd</ref>.size();<sp/>TrackNum++)</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_c_c_d_multi_track_1af4ebe135b4b0a0240c9763854d616044" kindref="member">TrackEnd</ref>[TrackNum]<sp/>=<sp/><ref refid="class_c_c_d_multi_track_1a2fcee40e5a4f6dcf218aed2f25261bd0" kindref="member">CCDMultiTrack::TrackStart</ref>(TrackNum)<sp/>+<sp/><ref refid="class_c_c_d_multi_track_1a422a147eddb5ab9611468eb46bfb5586" kindref="member">TrackHeight</ref>(TrackNum)<sp/>-<sp/>1;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;int&gt;<sp/><ref refid="class_c_c_d_multi_track_1ad78d51074b87fab1d3ac7e51d88b4472" kindref="member">TrackBin</ref>(mTrackStart.size());</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>If<sp/>track<sp/>end<sp/>is<sp/>already<sp/>set,<sp/>this<sp/>can<sp/>define<sp/>the<sp/>binning.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>TrackNum<sp/>=<sp/>0;<sp/>TrackNum<sp/>&lt;<sp/><ref refid="class_c_c_d_multi_track_1ad78d51074b87fab1d3ac7e51d88b4472" kindref="member">TrackBin</ref>.size();<sp/>TrackNum++)</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_c_c_d_multi_track_1ad78d51074b87fab1d3ac7e51d88b4472" kindref="member">TrackBin</ref>[TrackNum]<sp/>=<sp/><ref refid="class_c_c_d_multi_track_1ad78d51074b87fab1d3ac7e51d88b4472" kindref="member">CCDMultiTrack::TrackBin</ref>(TrackNum);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(mTrackEnd<sp/>!=<sp/><ref refid="class_c_c_d_multi_track_1af4ebe135b4b0a0240c9763854d616044" kindref="member">TrackEnd</ref>)</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mTrackEnd<sp/>=<sp/><ref refid="class_c_c_d_multi_track_1af4ebe135b4b0a0240c9763854d616044" kindref="member">TrackEnd</ref>;</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mPortDriver-&gt;doCallbacksInt32Array(&amp;(mTrackEnd[0]),<sp/>mTrackEnd.size(),<sp/><ref refid="class_c_c_d_multi_track_1a6d31ea8c8e0d2f56552cc358dd6d72a3" kindref="member">CCDMultiTrackEnd</ref>(),<sp/>0);</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(mTrackBin<sp/>!=<sp/><ref refid="class_c_c_d_multi_track_1ad78d51074b87fab1d3ac7e51d88b4472" kindref="member">TrackBin</ref>)</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mTrackBin<sp/>=<sp/><ref refid="class_c_c_d_multi_track_1ad78d51074b87fab1d3ac7e51d88b4472" kindref="member">TrackBin</ref>;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mPortDriver-&gt;doCallbacksInt32Array(&amp;(mTrackBin[0]),<sp/>mTrackBin.size(),<sp/><ref refid="class_c_c_d_multi_track_1ad38ad9c7d62c1982fd59edc359ffce81" kindref="member">CCDMultiTrackBin</ref>(),<sp/>0);</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="94"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>CCDMultiTrack::writeTrackEnd(epicsInt32<sp/>*<ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>nElements)</highlight></codeline>
+<codeline lineno="97"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;int&gt;<sp/><ref refid="class_c_c_d_multi_track_1af4ebe135b4b0a0240c9763854d616044" kindref="member">TrackEnd</ref>(nElements);</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/>mTrackEnd.resize(nElements);</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>TrackNum<sp/>=<sp/>0;<sp/>TrackNum<sp/>&lt;<sp/><ref refid="class_c_c_d_multi_track_1af4ebe135b4b0a0240c9763854d616044" kindref="member">TrackEnd</ref>.size();<sp/>TrackNum++)</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((TrackNum<sp/>&gt;<sp/>0)<sp/>&amp;&amp;<sp/>(<ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>[TrackNum]<sp/>&lt;=<sp/><ref refid="class_c_c_d_multi_track_1af4ebe135b4b0a0240c9763854d616044" kindref="member">CCDMultiTrack::TrackEnd</ref>(TrackNum<sp/>-<sp/>1)))</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/><ref refid="namespacehdf5_1abeed318faeb13380e1b4221bd4198bf1aea271040d7a5b8d9af9cbf6564d262d5" kindref="member">std::string</ref>(</highlight><highlight class="stringliteral">&quot;Tracks<sp/>ends<sp/>must<sp/>be<sp/>in<sp/>ascending<sp/>order&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Copy<sp/>the<sp/>new<sp/>data<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_c_c_d_multi_track_1af4ebe135b4b0a0240c9763854d616044" kindref="member">TrackEnd</ref>[TrackNum]<sp/>=<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>[TrackNum];</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(mTrackEnd<sp/>!=<sp/><ref refid="class_c_c_d_multi_track_1af4ebe135b4b0a0240c9763854d616044" kindref="member">TrackEnd</ref>)</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mTrackEnd<sp/>=<sp/><ref refid="class_c_c_d_multi_track_1af4ebe135b4b0a0240c9763854d616044" kindref="member">TrackEnd</ref>;</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;int&gt;<sp/><ref refid="class_c_c_d_multi_track_1ad78d51074b87fab1d3ac7e51d88b4472" kindref="member">TrackBin</ref>(mTrackEnd.size());</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>If<sp/>track<sp/>start<sp/>is<sp/>already<sp/>set,<sp/>this<sp/>can<sp/>define<sp/>the<sp/>binning<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>TrackNum<sp/>=<sp/>0;<sp/>TrackNum<sp/>&lt;<sp/><ref refid="class_c_c_d_multi_track_1ad78d51074b87fab1d3ac7e51d88b4472" kindref="member">TrackBin</ref>.size();<sp/>TrackNum++)</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_c_c_d_multi_track_1ad78d51074b87fab1d3ac7e51d88b4472" kindref="member">TrackBin</ref>[TrackNum]<sp/>=<sp/><ref refid="class_c_c_d_multi_track_1a422a147eddb5ab9611468eb46bfb5586" kindref="member">TrackHeight</ref>(TrackNum);</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(mTrackBin<sp/>!=<sp/><ref refid="class_c_c_d_multi_track_1ad78d51074b87fab1d3ac7e51d88b4472" kindref="member">TrackBin</ref>)</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mTrackBin<sp/>=<sp/><ref refid="class_c_c_d_multi_track_1ad78d51074b87fab1d3ac7e51d88b4472" kindref="member">TrackBin</ref>;</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mPortDriver-&gt;doCallbacksInt32Array(&amp;(mTrackBin[0]),<sp/>mTrackBin.size(),<sp/><ref refid="class_c_c_d_multi_track_1ad38ad9c7d62c1982fd59edc359ffce81" kindref="member">CCDMultiTrackBin</ref>(),<sp/>0);</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="118"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>CCDMultiTrack::writeTrackBin(epicsInt32<sp/>*<ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>nElements)</highlight></codeline>
+<codeline lineno="121"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;int&gt;<sp/><ref refid="class_c_c_d_multi_track_1ad78d51074b87fab1d3ac7e51d88b4472" kindref="member">TrackBin</ref>(nElements);</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>TrackNum<sp/>=<sp/>0;<sp/>TrackNum<sp/>&lt;<sp/><ref refid="class_c_c_d_multi_track_1ad78d51074b87fab1d3ac7e51d88b4472" kindref="member">TrackBin</ref>.size();<sp/>TrackNum++)</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>[TrackNum]<sp/>&lt;<sp/>1)</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/><ref refid="namespacehdf5_1abeed318faeb13380e1b4221bd4198bf1aea271040d7a5b8d9af9cbf6564d262d5" kindref="member">std::string</ref>(</highlight><highlight class="stringliteral">&quot;The<sp/>track<sp/>binning<sp/>must<sp/>be<sp/>&gt;=<sp/>1.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="class_c_c_d_multi_track_1a422a147eddb5ab9611468eb46bfb5586" kindref="member">TrackHeight</ref>(TrackNum)<sp/>%<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>[TrackNum]<sp/>!=<sp/>0)</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/><ref refid="namespacehdf5_1abeed318faeb13380e1b4221bd4198bf1aea271040d7a5b8d9af9cbf6564d262d5" kindref="member">std::string</ref>(</highlight><highlight class="stringliteral">&quot;Track<sp/>height<sp/>must<sp/>be<sp/>divisible<sp/>by<sp/>binning.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Copy<sp/>the<sp/>new<sp/>data<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_c_c_d_multi_track_1ad78d51074b87fab1d3ac7e51d88b4472" kindref="member">TrackBin</ref>[TrackNum]<sp/>=<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>[TrackNum];</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(mTrackBin<sp/>!=<sp/><ref refid="class_c_c_d_multi_track_1ad78d51074b87fab1d3ac7e51d88b4472" kindref="member">TrackBin</ref>)</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mTrackBin<sp/>=<sp/><ref refid="class_c_c_d_multi_track_1ad78d51074b87fab1d3ac7e51d88b4472" kindref="member">TrackBin</ref>;</highlight></codeline>
+<codeline lineno="134"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal">asynStatus<sp/><ref refid="class_c_c_d_multi_track_1a60cf027e96d52848f52ba7231a130575" kindref="member">CCDMultiTrack::writeInt32Array</ref>(asynUser<sp/>*pasynUser,<sp/>epicsInt32<sp/>*<ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>nElements)</highlight></codeline>
+<codeline lineno="137"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>=<sp/>pasynUser-&gt;reason;</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/>asynStatus<sp/>status<sp/>=<sp/>asynSuccess;</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>==<sp/><ref refid="class_c_c_d_multi_track_1ac4f12bc756e64fadeda3b11fe62c1eeb" kindref="member">CCDMultiTrackStart</ref>())</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>writeTrackStart(<ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>,<sp/>nElements);</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>==<sp/><ref refid="class_c_c_d_multi_track_1a6d31ea8c8e0d2f56552cc358dd6d72a3" kindref="member">CCDMultiTrackEnd</ref>())</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>writeTrackEnd(<ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>,<sp/>nElements);</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>==<sp/><ref refid="class_c_c_d_multi_track_1ad38ad9c7d62c1982fd59edc359ffce81" kindref="member">CCDMultiTrackBin</ref>())</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>writeTrackBin(<ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>,<sp/>nElements);</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>status<sp/>=<sp/>asynError;</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>status;</highlight></codeline>
+<codeline lineno="151"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_c_c_d_multi_track_1aab1533d666a4d479ee8d25bbbe331502" kindref="member">CCDMultiTrack::DataHeight</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="154"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_c_c_d_multi_track_1aab1533d666a4d479ee8d25bbbe331502" kindref="member">DataHeight</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>TrackNum<sp/>=<sp/>0;<sp/>TrackNum<sp/>&lt;<sp/><ref refid="class_c_c_d_multi_track_1ac3b99480f3bd7662dc39d04a0d3eb835" kindref="member">size</ref>();<sp/>TrackNum++)</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_c_c_d_multi_track_1aab1533d666a4d479ee8d25bbbe331502" kindref="member">DataHeight</ref><sp/>+=<sp/><ref refid="class_c_c_d_multi_track_1aab1533d666a4d479ee8d25bbbe331502" kindref="member">CCDMultiTrack::DataHeight</ref>(TrackNum);</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="class_c_c_d_multi_track_1aab1533d666a4d479ee8d25bbbe331502" kindref="member">DataHeight</ref>;</highlight></codeline>
+<codeline lineno="159"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/CCDMultiTrack.cpp"/>
+  </compounddef>
+</doxygen>

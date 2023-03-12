@@ -1,0 +1,140 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="structfree_n_d_array" kind="struct" language="C++" prot="public">
+    <compoundname>freeNDArray</compoundname>
+    <templateparamlist>
+      <param>
+        <type>typename dataType</type>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structfree_n_d_array_1a2d06b337b84c5b8edb3bc1b251678d62" prot="public" static="no" mutable="no">
+        <type><ref refid="class_n_d_array" kindref="compound">NDArray</ref> *</type>
+        <definition>NDArray* freeNDArray&lt; dataType &gt;::array</definition>
+        <argsstring></argsstring>
+        <name>array</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ntndArrayConverterSrc/ntndArrayConverter.cpp" line="42" column="13" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ntndArrayConverterSrc/ntndArrayConverter.cpp" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structfree_n_d_array_1a19ce4e42c05cb013a39dd15bd5bfbf1d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>freeNDArray&lt; dataType &gt;::freeNDArray</definition>
+        <argsstring>(NDArray *array)</argsstring>
+        <name>freeNDArray</name>
+        <param>
+          <type><ref refid="class_n_d_array" kindref="compound">NDArray</ref> *</type>
+          <declname>array</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ntndArrayConverterSrc/ntndArrayConverter.cpp" line="43" column="5" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ntndArrayConverterSrc/ntndArrayConverter.cpp" bodystart="43" bodyend="43"/>
+      </memberdef>
+      <memberdef kind="function" id="structfree_n_d_array_1a14b7cc16b56086bb2e7b1c105bd910ad" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void freeNDArray&lt; dataType &gt;::operator()</definition>
+        <argsstring>(dataType *data)</argsstring>
+        <name>operator()</name>
+        <param>
+          <type>dataType *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ntndArrayConverterSrc/ntndArrayConverter.cpp" line="44" column="10" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ntndArrayConverterSrc/ntndArrayConverter.cpp" bodystart="44" bodyend="44"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>freeNDArray&lt; dataType &gt;</label>
+        <link refid="structfree_n_d_array"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>array</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>NDDimension</label>
+        <link refid="struct_n_d_dimension"/>
+      </node>
+      <node id="9">
+        <label>asynPortDriver</label>
+      </node>
+      <node id="7">
+        <label>string</label>
+      </node>
+      <node id="6">
+        <label>Codec_t</label>
+        <link refid="struct_codec__t"/>
+        <childnode refid="7" relation="usage">
+          <edgelabel>name</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>NDArray</label>
+        <link refid="class_n_d_array"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>pNDArrayPool</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>dims</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>pAttributeList</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>codec</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>pDriver</edgelabel>
+        </childnode>
+      </node>
+      <node id="8">
+        <label>asynNDArrayDriver</label>
+        <link refid="classasyn_n_d_array_driver"/>
+        <childnode refid="9" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>pNDArrayPool</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>pAttributeList</edgelabel>
+        </childnode>
+        <childnode refid="2" relation="usage">
+          <edgelabel>pArrays</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>NDArrayPool</label>
+        <link refid="class_n_d_array_pool"/>
+      </node>
+      <node id="5">
+        <label>NDAttributeList</label>
+        <link refid="class_n_d_attribute_list"/>
+      </node>
+    </collaborationgraph>
+    <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ntndArrayConverterSrc/ntndArrayConverter.cpp" line="41" column="1" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ntndArrayConverterSrc/ntndArrayConverter.cpp" bodystart="41" bodyend="45"/>
+    <listofallmembers>
+      <member refid="structfree_n_d_array_1a2d06b337b84c5b8edb3bc1b251678d62" prot="public" virt="non-virtual"><scope>freeNDArray</scope><name>array</name></member>
+      <member refid="structfree_n_d_array_1a19ce4e42c05cb013a39dd15bd5bfbf1d" prot="public" virt="non-virtual"><scope>freeNDArray</scope><name>freeNDArray</name></member>
+      <member refid="structfree_n_d_array_1a14b7cc16b56086bb2e7b1c105bd910ad" prot="public" virt="non-virtual"><scope>freeNDArray</scope><name>operator()</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

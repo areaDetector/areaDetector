@@ -1,0 +1,207 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="class_a_dn_e_d_transform" kind="class" language="C++" prot="public">
+    <compoundname>ADnEDTransform</compoundname>
+    <basecompoundref refid="class_a_dn_e_d_transform_base" prot="public" virt="non-virtual">ADnEDTransformBase</basecompoundref>
+    <includes refid="_a_dn_e_d_transform_8h" local="no">ADnEDTransform.h</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_a_dn_e_d_transform_1a983598b51eb7c1e38cd36c7efe8764d4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ADnEDTransform::ADnEDTransform</definition>
+        <argsstring>()</argsstring>
+        <name>ADnEDTransform</name>
+        <briefdescription>
+<para>Constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><linebreak/>
+ </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADnED/ADnEDApp/src/ADnEDTransform.h" line="36" column="3" bodyfile="/home/runner/work/areaDetector/areaDetector/ADnED/ADnEDApp/src/ADnEDTransform.cpp" bodystart="8" bodyend="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_dn_e_d_transform_1a6e49fe6ae5ed8f40b56c26c232568b20" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>ADnEDTransform::~ADnEDTransform</definition>
+        <argsstring>()</argsstring>
+        <name>~ADnEDTransform</name>
+        <briefdescription>
+<para>Destructor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><linebreak/>
+ </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADnED/ADnEDApp/src/ADnEDTransform.h" line="37" column="11" bodyfile="/home/runner/work/areaDetector/areaDetector/ADnED/ADnEDApp/src/ADnEDTransform.cpp" bodystart="15" bodyend="17"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_dn_e_d_transform_1a7ed7692302b2338aa1117b45ddfcb8e4" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>epicsFloat64</type>
+        <definition>epicsFloat64 ADnEDTransform::calculate</definition>
+        <argsstring>(epicsUInt32 type, epicsUInt32 pixelID, epicsUInt32 tof) const</argsstring>
+        <name>calculate</name>
+        <reimplements refid="class_a_dn_e_d_transform_base_1a5408c9bb026b902610d14b97fb700d17">calculate</reimplements>
+        <param>
+          <type>epicsUInt32</type>
+          <declname>type</declname>
+        </param>
+        <param>
+          <type>epicsUInt32</type>
+          <declname>pixelID</declname>
+        </param>
+        <param>
+          <type>epicsUInt32</type>
+          <declname>tof</declname>
+        </param>
+        <briefdescription>
+<para>Transform the time of flight value into a another parameter. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The calculation used is specified by the type input param. The associated pixel ID is required for any calculation involving a pixelID based lookup in an array.</para>
+<para>Note: this could be a static factory method, returning <ref refid="class_a_dn_e_d_transform_base" kindref="compound">ADnEDTransformBase</ref> objects</para>
+<para>Transform types are:</para>
+<para>ADNED_TRANSFORM_TYPE1 - multiply the TOF by a pixel ID lookup in doubleArray[0]. Can be used for fixed geometry instruments to calculate dspace. Can be used on Vulcan for example.</para>
+<para>ADNED_TRANSFORM_TYPE2 - calculate dspace where the theta angle changes. Used for direct geometry instruments like Hyspec. NOTE: not sure how this works yet. <linebreak/>
+</para>
+<para>ADNED_TRANSFORM_TYPE3 - calculate deltaE for indirect geometry instruments for their inelastic detectors. This uses an equation which depends on the mass of the neutron, L1, an array of L2 and an array of Ef. The final energy per-pixelID, Ef, is known because of the use of mirrors to select energy. We can calculate incident energy using the known final energy and the TOF. So we are calculating energy transfer for each event.</para>
+<para>deltaE = (1/2)Mn * (L1 / (TOF - (L2*sqrt(Mn/(2*Ef))) ) )**2 - Ef where: Mn = mass of neutron in 1.674954 × 10-27 L1 = constant (in meters) Ef and L2 are double arrays based on pixelID. The Ef input array must be in units of MeV. The L2 array is in meters. TOF = time of flight (in seconds)</para>
+<para>Energy must be in Joules (1 eV = 1.602176565(35) × 10−19 J)</para>
+<para>Once the deltaE has been obtained in Joules, it is converted back to MeV. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADnED/ADnEDApp/src/ADnEDTransform.h" line="41" column="16" bodyfile="/home/runner/work/areaDetector/areaDetector/ADnED/ADnEDApp/src/ADnEDTransform.cpp" bodystart="57" bodyend="77"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_a_dn_e_d_transform_1a3dd46749d8db414096c66059782c4dab" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>epicsFloat64</type>
+        <definition>epicsFloat64 ADnEDTransform::calc_dspace_static</definition>
+        <argsstring>(epicsUInt32 pixelID, epicsUInt32 tof) const</argsstring>
+        <name>calc_dspace_static</name>
+        <param>
+          <type>epicsUInt32</type>
+          <declname>pixelID</declname>
+        </param>
+        <param>
+          <type>epicsUInt32</type>
+          <declname>tof</declname>
+        </param>
+        <briefdescription>
+<para>Type = ADNED_TRANSFORM_TYPE1 Parameters used: p_Array[0]. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADnED/ADnEDApp/src/ADnEDTransform.h" line="45" column="16" bodyfile="/home/runner/work/areaDetector/areaDetector/ADnED/ADnEDApp/src/ADnEDTransform.cpp" bodystart="84" bodyend="101"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_dn_e_d_transform_1a33b4d71a6713121272ab1e541f351f8b" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>epicsFloat64</type>
+        <definition>epicsFloat64 ADnEDTransform::calc_dspace_dynamic</definition>
+        <argsstring>(epicsUInt32 pixelID, epicsUInt32 tof) const</argsstring>
+        <name>calc_dspace_dynamic</name>
+        <param>
+          <type>epicsUInt32</type>
+          <declname>pixelID</declname>
+        </param>
+        <param>
+          <type>epicsUInt32</type>
+          <declname>tof</declname>
+        </param>
+        <briefdescription>
+<para>Type = ADNED_TRANSFORM_TYPE2. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADnED/ADnEDApp/src/ADnEDTransform.h" line="46" column="16" bodyfile="/home/runner/work/areaDetector/areaDetector/ADnED/ADnEDApp/src/ADnEDTransform.cpp" bodystart="106" bodyend="108"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_dn_e_d_transform_1a7a1cb5a4d142b04c7f43563e5db2475d" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>epicsFloat64</type>
+        <definition>epicsFloat64 ADnEDTransform::calc_deltaE</definition>
+        <argsstring>(epicsUInt32 pixelID, epicsUInt32 tof) const</argsstring>
+        <name>calc_deltaE</name>
+        <param>
+          <type>epicsUInt32</type>
+          <declname>pixelID</declname>
+        </param>
+        <param>
+          <type>epicsUInt32</type>
+          <declname>tof</declname>
+        </param>
+        <briefdescription>
+<para>Type = ADNED_TRANSFORM_TYPE3 Parameters used: ADNED_TRANSFORM_MN - The mass of the neutron in Kg m_doubleParam[0] - L1 in meters p_Array[0] - Ef in MeV (indexed by pixel ID) p_Array[1] - L2 in meters (indexed by pixel ID) </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The equation uses SI units. So the input parameters are converted internally. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADnED/ADnEDApp/src/ADnEDTransform.h" line="47" column="16" bodyfile="/home/runner/work/areaDetector/areaDetector/ADnED/ADnEDApp/src/ADnEDTransform.cpp" bodystart="121" bodyend="178"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Library of functions to use for transforming the time of flight value into another parameter (for example dspace). </para>
+    </briefdescription>
+    <detaileddescription>
+<para>The code is compiled into a seperate library and linked in with the <ref refid="class_a_dn_e_d" kindref="compound">ADnED</ref> IOC application. This makes it easy to modify or swap out with a different library. The library must be thread safe, and only one instance should be created per detector instance. It does depend on the <ref refid="_a_dn_e_d_globals_8h" kindref="compound">ADnEDGlobals.h</ref> file.</para>
+<para>Objects of this class have a range of parameters and arrays for use in the calculations. They are set by <ref refid="class_a_dn_e_d" kindref="compound">ADnED</ref>. Array storage is managed internally. The size of the arrays must be equal to the pixel ID range size for a particular detector.</para>
+<para>The internal parameters that can be set, which are used in the calculations are: N * epicsUInt32 parameters N * epicsFloat64 parameters N * arrays of type epicsFloat64</para>
+<para>The documentation for each calculation type will specify which parameter is used.</para>
+<para><simplesect kind="author"><para>Matt Pearson </para>
+</simplesect>
+<simplesect kind="date"><para>April 2015 </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>ADnEDTransformBase</label>
+        <link refid="class_a_dn_e_d_transform_base"/>
+      </node>
+      <node id="1">
+        <label>ADnEDTransform</label>
+        <link refid="class_a_dn_e_d_transform"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>ADnEDTransformBase</label>
+        <link refid="class_a_dn_e_d_transform_base"/>
+      </node>
+      <node id="1">
+        <label>ADnEDTransform</label>
+        <link refid="class_a_dn_e_d_transform"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/runner/work/areaDetector/areaDetector/ADnED/ADnEDApp/src/ADnEDTransform.h" line="33" column="1" bodyfile="/home/runner/work/areaDetector/areaDetector/ADnED/ADnEDApp/src/ADnEDTransform.h" bodystart="33" bodyend="49"/>
+    <listofallmembers>
+      <member refid="class_a_dn_e_d_transform_1a983598b51eb7c1e38cd36c7efe8764d4" prot="public" virt="non-virtual"><scope>ADnEDTransform</scope><name>ADnEDTransform</name></member>
+      <member refid="class_a_dn_e_d_transform_base_1a42d7b421620c51fc77ee626855b6c3bc" prot="public" virt="non-virtual"><scope>ADnEDTransform</scope><name>ADnEDTransformBase</name></member>
+      <member refid="class_a_dn_e_d_transform_1a7a1cb5a4d142b04c7f43563e5db2475d" prot="private" virt="non-virtual"><scope>ADnEDTransform</scope><name>calc_deltaE</name></member>
+      <member refid="class_a_dn_e_d_transform_1a33b4d71a6713121272ab1e541f351f8b" prot="private" virt="non-virtual"><scope>ADnEDTransform</scope><name>calc_dspace_dynamic</name></member>
+      <member refid="class_a_dn_e_d_transform_1a3dd46749d8db414096c66059782c4dab" prot="private" virt="non-virtual"><scope>ADnEDTransform</scope><name>calc_dspace_static</name></member>
+      <member refid="class_a_dn_e_d_transform_1a7ed7692302b2338aa1117b45ddfcb8e4" prot="public" virt="virtual"><scope>ADnEDTransform</scope><name>calculate</name></member>
+      <member refid="class_a_dn_e_d_transform_base_1a9cdc8521f43b0006016b0f94e480c9b7" prot="protected" virt="non-virtual"><scope>ADnEDTransform</scope><name>m_ArraySize</name></member>
+      <member refid="class_a_dn_e_d_transform_base_1a357bdb4c70f0318e2c1d2d9128d4452a" prot="protected" virt="non-virtual"><scope>ADnEDTransform</scope><name>m_debug</name></member>
+      <member refid="class_a_dn_e_d_transform_base_1a0dfca61aca333413228d4331104054c5" prot="protected" virt="non-virtual"><scope>ADnEDTransform</scope><name>m_doubleParam</name></member>
+      <member refid="class_a_dn_e_d_transform_base_1a6c271e9a5155a507d2e2cf0e21b63c58" prot="protected" virt="non-virtual"><scope>ADnEDTransform</scope><name>m_intParam</name></member>
+      <member refid="class_a_dn_e_d_transform_base_1a4751e7ce1ea5f1350c5dacf89d8d9237" prot="protected" virt="non-virtual"><scope>ADnEDTransform</scope><name>p_Array</name></member>
+      <member refid="class_a_dn_e_d_transform_base_1a95b80f6a697d9b5d639085c3734105f1" prot="public" virt="non-virtual"><scope>ADnEDTransform</scope><name>printParams</name></member>
+      <member refid="class_a_dn_e_d_transform_base_1ac7992fbee77d6bc255fa945985b8f0f5" prot="public" virt="non-virtual"><scope>ADnEDTransform</scope><name>setDebug</name></member>
+      <member refid="class_a_dn_e_d_transform_base_1abcfffba535cbea764554fba6ba80d40b" prot="public" virt="non-virtual"><scope>ADnEDTransform</scope><name>setDoubleArray</name></member>
+      <member refid="class_a_dn_e_d_transform_base_1a9b0dfe3ead5eeac1b2ab63732997fbe3" prot="public" virt="non-virtual"><scope>ADnEDTransform</scope><name>setDoubleParam</name></member>
+      <member refid="class_a_dn_e_d_transform_base_1a20f2b5688e3295651318777f9365cb97" prot="public" virt="non-virtual"><scope>ADnEDTransform</scope><name>setIntParam</name></member>
+      <member refid="class_a_dn_e_d_transform_1a6e49fe6ae5ed8f40b56c26c232568b20" prot="public" virt="virtual"><scope>ADnEDTransform</scope><name>~ADnEDTransform</name></member>
+      <member refid="class_a_dn_e_d_transform_base_1af29288635236c8cdf1aad56d14ab40e1" prot="public" virt="virtual"><scope>ADnEDTransform</scope><name>~ADnEDTransformBase</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

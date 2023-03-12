@@ -1,0 +1,184 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="_n_d_array_ring_8h" kind="file" language="C++">
+    <compoundname>NDArrayRing.h</compoundname>
+    <includes refid="_n_d_array_8h" local="yes">NDArray.h</includes>
+    <includedby refid="_n_d_array_ring_8cpp" local="yes">/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDArrayRing.cpp</includedby>
+    <includedby refid="_n_d_plugin_circular_buff_8h" local="yes">/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginCircularBuff.h</includedby>
+    <incdepgraph>
+      <node id="10">
+        <label>epicsTypes.h</label>
+      </node>
+      <node id="2">
+        <label>NDArray.h</label>
+        <link refid="_n_d_array_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>NDAttributeList.h</label>
+        <link refid="_n_d_attribute_list_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>epicsMutex.h</label>
+      </node>
+      <node id="13">
+        <label>epicsVersion.h</label>
+      </node>
+      <node id="8">
+        <label>string</label>
+      </node>
+      <node id="12">
+        <label>ADCoreAPI.h</label>
+        <link refid="_a_d_core_a_p_i_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>ellLib.h</label>
+      </node>
+      <node id="7">
+        <label>NDAttribute.h</label>
+        <link refid="_n_d_attribute_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>asynDriver.h</label>
+      </node>
+      <node id="15">
+        <label>Codec.h</label>
+        <link refid="_codec_8h"/>
+      </node>
+      <node id="1">
+        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDArrayRing.h</label>
+        <link refid="_n_d_array_ring_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>epicsTime.h</label>
+      </node>
+      <node id="3">
+        <label>set</label>
+      </node>
+      <node id="9">
+        <label>stdio.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDArrayRing.cpp</label>
+        <link refid="_n_d_array_ring_8cpp"/>
+      </node>
+      <node id="4">
+        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginCircularBuff.cpp</label>
+        <link refid="_n_d_plugin_circular_buff_8cpp"/>
+      </node>
+      <node id="3">
+        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginCircularBuff.h</label>
+        <link refid="_n_d_plugin_circular_buff_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDArrayRing.h</label>
+        <link refid="_n_d_array_ring_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_n_d_array_ring" prot="public">NDArrayRing</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>NDARRAYRING_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>NDARRAYRING_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_n_d_array_8h" kindref="compound">NDArray.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6" refid="class_n_d_array_ring" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_n_d_array_ring" kindref="compound">NDArrayRing</ref></highlight></codeline>
+<codeline lineno="7"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Creates<sp/>a<sp/>ring<sp/>with<sp/>pointers<sp/>to<sp/>buffers.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_n_d_array_ring_1ab60ad9f61aad64266397eae494765638" kindref="member">NDArrayRing</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>noOfBuffers);</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Destructor.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_n_d_array_ring_1ac504e82698eaaf10dda2bec9a269503f" kindref="member">~NDArrayRing</ref>();</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Read<sp/>the<sp/>current<sp/>size</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_n_d_array_ring_1a4d9289e0797acfb8f1c173fbbf8736b8" kindref="member">size</ref>();</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Add<sp/>a<sp/>new<sp/>buffer<sp/>reference<sp/>to<sp/>the<sp/>end<sp/>of<sp/>the<sp/>ring</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_n_d_array" kindref="compound">NDArray</ref><sp/>*<ref refid="class_n_d_array_ring_1a0f393388986651e26ed0e49affd4ef20" kindref="member">addToEnd</ref>(<ref refid="class_n_d_array" kindref="compound">NDArray</ref><sp/>*pArray);</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Read<sp/>out<sp/>the<sp/>first<sp/>buffer<sp/>reference<sp/>from<sp/>the<sp/>ring</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_n_d_array" kindref="compound">NDArray</ref><sp/>*<ref refid="class_n_d_array_ring_1a3d7ad2b4eab90267af45bbcf839de3f4" kindref="member">readFromStart</ref>();</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Read<sp/>out<sp/>the<sp/>next<sp/>buffer<sp/>reference<sp/>from<sp/>the<sp/>ring</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_n_d_array" kindref="compound">NDArray</ref><sp/>*<ref refid="class_n_d_array_ring_1a919c04adbee5c1fcccaa6f51baa2fd8b" kindref="member">readNext</ref>();</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Does<sp/>the<sp/>ring<sp/>have<sp/>any<sp/>other<sp/>data</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_n_d_array_ring_1a2787d043a582c80efb3061c587aacc43" kindref="member">hasNext</ref>();</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Removes<sp/>all<sp/>the<sp/>elements<sp/>from<sp/>the<sp/>ring.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_n_d_array_ring_1a12deb2e1c43f3edca659c946dfe17941" kindref="member">clear</ref>();</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Array<sp/>of<sp/>pointers<sp/>to<sp/>NDArrays</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_n_d_array" kindref="compound">NDArray</ref>**<sp/>buffers_;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>The<sp/>size<sp/>of<sp/>the<sp/>ring</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/>noOfBuffers_;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Index<sp/>to<sp/>read<sp/>the<sp/>next<sp/>buffer</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/>readIndex_;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Index<sp/>to<sp/>write<sp/>a<sp/>new<sp/>NDArray<sp/>pointer<sp/>into<sp/>the<sp/>ring</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/>writeIndex_;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Has<sp/>the<sp/>ring<sp/>wrapped<sp/>yet</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/>wrapped_;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDArrayRing.h"/>
+  </compounddef>
+</doxygen>

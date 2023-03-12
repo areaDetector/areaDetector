@@ -1,0 +1,2177 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classeiger_detector" kind="class" language="C++" prot="public">
+    <compoundname>eigerDetector</compoundname>
+    <basecompoundref refid="class_a_d_driver" prot="public" virt="non-virtual">ADDriver</basecompoundref>
+    <includes refid="eiger_detector_8h" local="no">eigerDetector.h</includes>
+      <sectiondef kind="public-type">
+      <memberdef kind="enum" id="classeiger_detector_1a10547056693d377f8fb6347056ba929d" prot="public" static="no" strong="no">
+        <type></type>
+        <name>roi_mode</name>
+        <enumvalue id="classeiger_detector_1a10547056693d377f8fb6347056ba929da49f07c863c1b1123895294cdd771b1b4" prot="public">
+          <name>ROI_MODE_DISABLED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classeiger_detector_1a10547056693d377f8fb6347056ba929dabf639ca2749e4487fdf6e5410d6c934d" prot="public">
+          <name>ROI_MODE_4M</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="126" column="5" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" bodystart="127" bodyend="130"/>
+      </memberdef>
+      <memberdef kind="enum" id="classeiger_detector_1aab5aa75ced593c5caab510b651f551c8" prot="public" static="no" strong="no">
+        <type></type>
+        <name>compression_algo</name>
+        <enumvalue id="classeiger_detector_1aab5aa75ced593c5caab510b651f551c8add7c8333bb75b60d166663c029aa5bf1" prot="public">
+          <name>COMP_ALGO_LZ4</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classeiger_detector_1aab5aa75ced593c5caab510b651f551c8a7838223e435789b4eb640c9b38155acc" prot="public">
+          <name>COMP_ALGO_BSLZ4</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="132" column="5" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" bodystart="133" bodyend="136"/>
+      </memberdef>
+      <memberdef kind="enum" id="classeiger_detector_1a9ea396e084baa77f714496967ac19ddc" prot="public" static="no" strong="no">
+        <type></type>
+        <name>trigger_mode</name>
+        <enumvalue id="classeiger_detector_1a9ea396e084baa77f714496967ac19ddca5b13985c1d556c7cd2252378fd06b274" prot="public">
+          <name>TRIGGER_MODE_INTS</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classeiger_detector_1a9ea396e084baa77f714496967ac19ddcaa2da887ae6e7da41d1e69870f9d31ee7" prot="public">
+          <name>TRIGGER_MODE_INTE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classeiger_detector_1a9ea396e084baa77f714496967ac19ddca3cdec6c16601ec5bb31dbae699da27dc" prot="public">
+          <name>TRIGGER_MODE_EXTS</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classeiger_detector_1a9ea396e084baa77f714496967ac19ddca643b87b65c2f50b310120d410a29f6f4" prot="public">
+          <name>TRIGGER_MODE_EXTE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classeiger_detector_1a9ea396e084baa77f714496967ac19ddcae24b556013ad6b651d7159b244118a77" prot="public">
+          <name>TRIGGER_MODE_CONTINUOUS</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classeiger_detector_1a9ea396e084baa77f714496967ac19ddca005855542f0084e75e19feb41f653ce8" prot="public">
+          <name>TRIGGER_MODE_EXTG</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="138" column="5" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" bodystart="139" bodyend="146"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classeiger_detector_1a35ab1268a426a7b6e3d9f056933a164f" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_eiger_param" kindref="compound">EigerParam</ref> *</type>
+        <definition>EigerParam* eigerDetector::mDataSource</definition>
+        <argsstring></argsstring>
+        <name>mDataSource</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="150" column="16" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" bodystart="150" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classeiger_detector_1a82ada4e19b6b4f3d850a55b5dc93d865" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_eiger_param" kindref="compound">EigerParam</ref> *</type>
+        <definition>EigerParam* eigerDetector::mFWAutoRemove</definition>
+        <argsstring></argsstring>
+        <name>mFWAutoRemove</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="151" column="16" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" bodystart="151" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classeiger_detector_1a696bd1d9b1562c53794213d597d302b2" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_eiger_param" kindref="compound">EigerParam</ref> *</type>
+        <definition>EigerParam* eigerDetector::mTrigger</definition>
+        <argsstring></argsstring>
+        <name>mTrigger</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="152" column="16" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" bodystart="152" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classeiger_detector_1a877df658d975a2f89c30dc83baced714" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_eiger_param" kindref="compound">EigerParam</ref> *</type>
+        <definition>EigerParam* eigerDetector::mTriggerExp</definition>
+        <argsstring></argsstring>
+        <name>mTriggerExp</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="153" column="16" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" bodystart="153" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classeiger_detector_1a3d0c7833e3ce238ed2440953110831b9" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_eiger_param" kindref="compound">EigerParam</ref> *</type>
+        <definition>EigerParam* eigerDetector::mManualTrigger</definition>
+        <argsstring></argsstring>
+        <name>mManualTrigger</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="154" column="16" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" bodystart="154" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classeiger_detector_1abf2c75c3f9f883389f61693dd270cd5f" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_eiger_param" kindref="compound">EigerParam</ref> *</type>
+        <definition>EigerParam* eigerDetector::mTriggerStartDelay</definition>
+        <argsstring></argsstring>
+        <name>mTriggerStartDelay</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="155" column="16" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" bodystart="155" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classeiger_detector_1a0f5da6b76e2aceb96b3c56d102e0a849" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_eiger_param" kindref="compound">EigerParam</ref> *</type>
+        <definition>EigerParam* eigerDetector::mArmed</definition>
+        <argsstring></argsstring>
+        <name>mArmed</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="156" column="16" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" bodystart="156" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classeiger_detector_1a44fefec895a4dad40220786fa5810f76" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_eiger_param" kindref="compound">EigerParam</ref> *</type>
+        <definition>EigerParam* eigerDetector::mSequenceId</definition>
+        <argsstring></argsstring>
+        <name>mSequenceId</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="157" column="16" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" bodystart="157" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classeiger_detector_1ae47d7610562ec0c4221509c4eeeb15d0" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_eiger_param" kindref="compound">EigerParam</ref> *</type>
+        <definition>EigerParam* eigerDetector::mPendingFiles</definition>
+        <argsstring></argsstring>
+        <name>mPendingFiles</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="158" column="16" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" bodystart="158" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classeiger_detector_1a6a2c352c6bf7c72999d1341bbf9d1847" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_eiger_param" kindref="compound">EigerParam</ref> *</type>
+        <definition>EigerParam* eigerDetector::mSaveFiles</definition>
+        <argsstring></argsstring>
+        <name>mSaveFiles</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="159" column="16" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" bodystart="159" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classeiger_detector_1a036c8e33d555146065efeddbc6333364" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_eiger_param" kindref="compound">EigerParam</ref> *</type>
+        <definition>EigerParam* eigerDetector::mFileOwner</definition>
+        <argsstring></argsstring>
+        <name>mFileOwner</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="160" column="16" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" bodystart="160" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classeiger_detector_1accdd422a441af7b00e546d7f33bfec62" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_eiger_param" kindref="compound">EigerParam</ref> *</type>
+        <definition>EigerParam* eigerDetector::mFileOwnerGroup</definition>
+        <argsstring></argsstring>
+        <name>mFileOwnerGroup</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="161" column="16" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" bodystart="161" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classeiger_detector_1a4c767e2939821e3bc0926a4138fd1a0d" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_eiger_param" kindref="compound">EigerParam</ref> *</type>
+        <definition>EigerParam* eigerDetector::mFilePerms</definition>
+        <argsstring></argsstring>
+        <name>mFilePerms</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="162" column="16" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" bodystart="162" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classeiger_detector_1a745933607f443201e0d2dfef6b6f81c5" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_eiger_param" kindref="compound">EigerParam</ref> *</type>
+        <definition>EigerParam* eigerDetector::mMonitorTimeout</definition>
+        <argsstring></argsstring>
+        <name>mMonitorTimeout</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="163" column="16" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" bodystart="163" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classeiger_detector_1a304279f68780ee3e9034752961431ed0" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_eiger_param" kindref="compound">EigerParam</ref> *</type>
+        <definition>EigerParam* eigerDetector::mStreamDecompress</definition>
+        <argsstring></argsstring>
+        <name>mStreamDecompress</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="164" column="16" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" bodystart="164" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classeiger_detector_1a2af5f94fa16e1686e2e446e542653c3b" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_eiger_param" kindref="compound">EigerParam</ref> *</type>
+        <definition>EigerParam* eigerDetector::mInitialize</definition>
+        <argsstring></argsstring>
+        <name>mInitialize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="165" column="16" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" bodystart="165" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classeiger_detector_1a48ab636a9ae7e102254ab10e51fbdfae" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_eiger_param" kindref="compound">EigerParam</ref> *</type>
+        <definition>EigerParam* eigerDetector::mHVResetTime</definition>
+        <argsstring></argsstring>
+        <name>mHVResetTime</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="166" column="16" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" bodystart="166" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classeiger_detector_1a5eafe150be5c31b260a6270b41a86336" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_eiger_param" kindref="compound">EigerParam</ref> *</type>
+        <definition>EigerParam* eigerDetector::mHVReset</definition>
+        <argsstring></argsstring>
+        <name>mHVReset</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="167" column="16" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" bodystart="167" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classeiger_detector_1aeec221b23ec2baa8cd6d7133864b3dc9" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_eiger_param" kindref="compound">EigerParam</ref> *</type>
+        <definition>EigerParam* eigerDetector::mWavelengthEpsilon</definition>
+        <argsstring></argsstring>
+        <name>mWavelengthEpsilon</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="168" column="16" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" bodystart="168" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classeiger_detector_1a8be595183bf8f1c2aae3c824f9fa6b3b" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_eiger_param" kindref="compound">EigerParam</ref> *</type>
+        <definition>EigerParam* eigerDetector::mEnergyEpsilon</definition>
+        <argsstring></argsstring>
+        <name>mEnergyEpsilon</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="169" column="16" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" bodystart="169" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classeiger_detector_1a880c6588537aea7b4aa51266b73b6d09" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_eiger_param" kindref="compound">EigerParam</ref> *</type>
+        <definition>EigerParam* eigerDetector::mDescription</definition>
+        <argsstring></argsstring>
+        <name>mDescription</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="172" column="16" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" bodystart="172" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classeiger_detector_1a7fd03af3dd80b22f47ee5be072794815" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_eiger_param" kindref="compound">EigerParam</ref> *</type>
+        <definition>EigerParam* eigerDetector::mWavelength</definition>
+        <argsstring></argsstring>
+        <name>mWavelength</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="175" column="16" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" bodystart="175" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classeiger_detector_1afa1a27da4ebde538df6823969edc7c99" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_eiger_param" kindref="compound">EigerParam</ref> *</type>
+        <definition>EigerParam* eigerDetector::mPhotonEnergy</definition>
+        <argsstring></argsstring>
+        <name>mPhotonEnergy</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="176" column="16" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" bodystart="176" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classeiger_detector_1ad58c395937485abf11c6cd1efc6f21e9" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_eiger_param" kindref="compound">EigerParam</ref> *</type>
+        <definition>EigerParam* eigerDetector::mThreshold</definition>
+        <argsstring></argsstring>
+        <name>mThreshold</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="177" column="16" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" bodystart="177" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classeiger_detector_1af78fc3c2eca994369aaf14fe6d34c9ab" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_eiger_param" kindref="compound">EigerParam</ref> *</type>
+        <definition>EigerParam* eigerDetector::mThreshold1Enable</definition>
+        <argsstring></argsstring>
+        <name>mThreshold1Enable</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="178" column="16" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" bodystart="178" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classeiger_detector_1a85ef1cc1dcfca806e1ba7b70279f620e" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_eiger_param" kindref="compound">EigerParam</ref> *</type>
+        <definition>EigerParam* eigerDetector::mThreshold2</definition>
+        <argsstring></argsstring>
+        <name>mThreshold2</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="179" column="16" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" bodystart="179" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classeiger_detector_1ad633addc28eae8d78a03dd4612bfab25" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_eiger_param" kindref="compound">EigerParam</ref> *</type>
+        <definition>EigerParam* eigerDetector::mThreshold2Enable</definition>
+        <argsstring></argsstring>
+        <name>mThreshold2Enable</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="180" column="16" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" bodystart="180" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classeiger_detector_1ab55f3bba06b413bc388333283b21689e" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_eiger_param" kindref="compound">EigerParam</ref> *</type>
+        <definition>EigerParam* eigerDetector::mThresholdDiffEnable</definition>
+        <argsstring></argsstring>
+        <name>mThresholdDiffEnable</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="181" column="16" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" bodystart="181" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classeiger_detector_1ab10afb496fe7a08cf469e8b930962cd7" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_eiger_param" kindref="compound">EigerParam</ref> *</type>
+        <definition>EigerParam* eigerDetector::mNTriggers</definition>
+        <argsstring></argsstring>
+        <name>mNTriggers</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="182" column="16" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" bodystart="182" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classeiger_detector_1abc33ea16368055e4bd7eb03f62cbbe56" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_eiger_param" kindref="compound">EigerParam</ref> *</type>
+        <definition>EigerParam* eigerDetector::mExtGateMode</definition>
+        <argsstring></argsstring>
+        <name>mExtGateMode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="183" column="16" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" bodystart="183" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classeiger_detector_1aa2605d2e9adafaeb1c4d5a83f1c51454" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_eiger_param" kindref="compound">EigerParam</ref> *</type>
+        <definition>EigerParam* eigerDetector::mCompressionAlgo</definition>
+        <argsstring></argsstring>
+        <name>mCompressionAlgo</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="184" column="16" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" bodystart="184" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classeiger_detector_1a9f09874d532fbb519fb3bb6519f13e81" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_eiger_param" kindref="compound">EigerParam</ref> *</type>
+        <definition>EigerParam* eigerDetector::mROIMode</definition>
+        <argsstring></argsstring>
+        <name>mROIMode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="185" column="16" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" bodystart="185" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classeiger_detector_1a49397a72691257a8e282a829e16181e9" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_eiger_param" kindref="compound">EigerParam</ref> *</type>
+        <definition>EigerParam* eigerDetector::mAutoSummation</definition>
+        <argsstring></argsstring>
+        <name>mAutoSummation</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="186" column="16" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" bodystart="186" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classeiger_detector_1a243c70fd2538b2c53039500c104da9d7" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_eiger_param" kindref="compound">EigerParam</ref> *</type>
+        <definition>EigerParam* eigerDetector::mState</definition>
+        <argsstring></argsstring>
+        <name>mState</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="189" column="16" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" bodystart="189" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classeiger_detector_1a2cceed44f977988d9b792416b6f2aa96" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_eiger_param" kindref="compound">EigerParam</ref> *</type>
+        <definition>EigerParam* eigerDetector::mHVState</definition>
+        <argsstring></argsstring>
+        <name>mHVState</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="190" column="16" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" bodystart="190" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classeiger_detector_1aaccc36554e7ab5ffad4755dfefab3dd3" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_eiger_param" kindref="compound">EigerParam</ref> *</type>
+        <definition>EigerParam* eigerDetector::mError</definition>
+        <argsstring></argsstring>
+        <name>mError</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="191" column="16" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" bodystart="191" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classeiger_detector_1ae5028aaef4139aa68c14ebe996ce8f6a" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_eiger_param" kindref="compound">EigerParam</ref> *</type>
+        <definition>EigerParam* eigerDetector::mThTemp0</definition>
+        <argsstring></argsstring>
+        <name>mThTemp0</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="192" column="16" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" bodystart="192" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classeiger_detector_1aa00a760d9d84cea2a8bade84d8198921" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_eiger_param" kindref="compound">EigerParam</ref> *</type>
+        <definition>EigerParam* eigerDetector::mThHumid0</definition>
+        <argsstring></argsstring>
+        <name>mThHumid0</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="193" column="16" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" bodystart="193" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classeiger_detector_1a999e37e86b5884901e2d44c3302c1c7c" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_eiger_param" kindref="compound">EigerParam</ref> *</type>
+        <definition>EigerParam* eigerDetector::mLink0</definition>
+        <argsstring></argsstring>
+        <name>mLink0</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="194" column="16" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" bodystart="194" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classeiger_detector_1addaf2f918da245275d33dd9b0b2d8e6d" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_eiger_param" kindref="compound">EigerParam</ref> *</type>
+        <definition>EigerParam* eigerDetector::mLink1</definition>
+        <argsstring></argsstring>
+        <name>mLink1</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="195" column="16" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" bodystart="195" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classeiger_detector_1ad1cd25f4e1ebe9792546b27708d66251" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_eiger_param" kindref="compound">EigerParam</ref> *</type>
+        <definition>EigerParam* eigerDetector::mLink2</definition>
+        <argsstring></argsstring>
+        <name>mLink2</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="196" column="16" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" bodystart="196" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classeiger_detector_1a1ec4739c4bba0a4035027f086b919b95" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_eiger_param" kindref="compound">EigerParam</ref> *</type>
+        <definition>EigerParam* eigerDetector::mLink3</definition>
+        <argsstring></argsstring>
+        <name>mLink3</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="197" column="16" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" bodystart="197" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classeiger_detector_1a3d03da657ce311cdbcfce6ce40f13f98" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_eiger_param" kindref="compound">EigerParam</ref> *</type>
+        <definition>EigerParam* eigerDetector::mDCUBufFree</definition>
+        <argsstring></argsstring>
+        <name>mDCUBufFree</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="198" column="16" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" bodystart="198" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classeiger_detector_1a6bcf285a11a8297313c3bdbeb110075a" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_eiger_param" kindref="compound">EigerParam</ref> *</type>
+        <definition>EigerParam* eigerDetector::mFWEnable</definition>
+        <argsstring></argsstring>
+        <name>mFWEnable</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="201" column="16" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" bodystart="201" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classeiger_detector_1aba211b7baf54bb3641f78715cda13793" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_eiger_param" kindref="compound">EigerParam</ref> *</type>
+        <definition>EigerParam* eigerDetector::mFWCompression</definition>
+        <argsstring></argsstring>
+        <name>mFWCompression</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="202" column="16" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" bodystart="202" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classeiger_detector_1af04ade5cc71bcedc4b27715e09947d7d" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_eiger_param" kindref="compound">EigerParam</ref> *</type>
+        <definition>EigerParam* eigerDetector::mFWNamePattern</definition>
+        <argsstring></argsstring>
+        <name>mFWNamePattern</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="203" column="16" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" bodystart="203" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classeiger_detector_1a96896f1f0eb418464a1846afe1390859" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_eiger_param" kindref="compound">EigerParam</ref> *</type>
+        <definition>EigerParam* eigerDetector::mFWNImgsPerFile</definition>
+        <argsstring></argsstring>
+        <name>mFWNImgsPerFile</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="204" column="16" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" bodystart="204" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classeiger_detector_1ae35c4a7eacee1e507b88d390da5fb5e5" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_eiger_param" kindref="compound">EigerParam</ref> *</type>
+        <definition>EigerParam* eigerDetector::mFWImgNumStart</definition>
+        <argsstring></argsstring>
+        <name>mFWImgNumStart</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="205" column="16" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" bodystart="205" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classeiger_detector_1a2d557ccf29638b5b415ad2eef3a78fe1" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_eiger_param" kindref="compound">EigerParam</ref> *</type>
+        <definition>EigerParam* eigerDetector::mFWState</definition>
+        <argsstring></argsstring>
+        <name>mFWState</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="206" column="16" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" bodystart="206" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classeiger_detector_1ac647c7c943644d99a81077b7d9acf4b7" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_eiger_param" kindref="compound">EigerParam</ref> *</type>
+        <definition>EigerParam* eigerDetector::mFWFree</definition>
+        <argsstring></argsstring>
+        <name>mFWFree</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="207" column="16" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" bodystart="207" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classeiger_detector_1a6b77a15b737174d58bda8dc9a69b8193" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_eiger_param" kindref="compound">EigerParam</ref> *</type>
+        <definition>EigerParam* eigerDetector::mFWClear</definition>
+        <argsstring></argsstring>
+        <name>mFWClear</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="208" column="16" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" bodystart="208" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classeiger_detector_1a8760a28b1c10e9e73a1cdbcec089e183" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_eiger_param" kindref="compound">EigerParam</ref> *</type>
+        <definition>EigerParam* eigerDetector::mMonitorEnable</definition>
+        <argsstring></argsstring>
+        <name>mMonitorEnable</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="211" column="16" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" bodystart="211" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classeiger_detector_1a222189e343f849a726e810b4e16f9436" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_eiger_param" kindref="compound">EigerParam</ref> *</type>
+        <definition>EigerParam* eigerDetector::mMonitorBufSize</definition>
+        <argsstring></argsstring>
+        <name>mMonitorBufSize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="212" column="16" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" bodystart="212" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classeiger_detector_1a3c9f913cdac2984ebe8933b9e4f6acdc" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_eiger_param" kindref="compound">EigerParam</ref> *</type>
+        <definition>EigerParam* eigerDetector::mMonitorState</definition>
+        <argsstring></argsstring>
+        <name>mMonitorState</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="213" column="16" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" bodystart="213" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classeiger_detector_1aa49484ce0d8f7f51c7856465a1acf340" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_eiger_param" kindref="compound">EigerParam</ref> *</type>
+        <definition>EigerParam* eigerDetector::mStreamEnable</definition>
+        <argsstring></argsstring>
+        <name>mStreamEnable</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="216" column="16" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" bodystart="216" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classeiger_detector_1aef08ff1f41daa2e19c832a602f425fa4" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_eiger_param" kindref="compound">EigerParam</ref> *</type>
+        <definition>EigerParam* eigerDetector::mStreamDropped</definition>
+        <argsstring></argsstring>
+        <name>mStreamDropped</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="217" column="16" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" bodystart="217" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classeiger_detector_1af918e0d438ab2aeabba4c5c6ed28f331" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_eiger_param" kindref="compound">EigerParam</ref> *</type>
+        <definition>EigerParam* eigerDetector::mStreamState</definition>
+        <argsstring></argsstring>
+        <name>mStreamState</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="218" column="16" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" bodystart="218" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classeiger_detector_1a96daacf3e1a4f58a67e70ceecd46569c" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_eiger_param" kindref="compound">EigerParam</ref> *</type>
+        <definition>EigerParam* eigerDetector::mAcquireTime</definition>
+        <argsstring></argsstring>
+        <name>mAcquireTime</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="221" column="16" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" bodystart="221" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classeiger_detector_1a9efd6e5485ef4c74dd9e71bdad82a6de" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_eiger_param" kindref="compound">EigerParam</ref> *</type>
+        <definition>EigerParam* eigerDetector::mAcquirePeriod</definition>
+        <argsstring></argsstring>
+        <name>mAcquirePeriod</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="222" column="16" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" bodystart="222" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classeiger_detector_1add8db02a00087ab8ae5c7376a3aec0e6" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_eiger_param" kindref="compound">EigerParam</ref> *</type>
+        <definition>EigerParam* eigerDetector::mNumImages</definition>
+        <argsstring></argsstring>
+        <name>mNumImages</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="223" column="16" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" bodystart="223" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classeiger_detector_1a666ddceb2768348b96075e070970b2ab" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_eiger_param" kindref="compound">EigerParam</ref> *</type>
+        <definition>EigerParam* eigerDetector::mNumExposures</definition>
+        <argsstring></argsstring>
+        <name>mNumExposures</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="224" column="16" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" bodystart="224" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classeiger_detector_1aac65b3d4e14ce879e588a347ee13b362" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_eiger_param" kindref="compound">EigerParam</ref> *</type>
+        <definition>EigerParam* eigerDetector::mTriggerMode</definition>
+        <argsstring></argsstring>
+        <name>mTriggerMode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="225" column="16" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" bodystart="225" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classeiger_detector_1a23ccd3c16d08b742b4d7d4e43c82d4f1" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_eiger_param" kindref="compound">EigerParam</ref> *</type>
+        <definition>EigerParam* eigerDetector::mSDKVersion</definition>
+        <argsstring></argsstring>
+        <name>mSDKVersion</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="226" column="16" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" bodystart="226" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classeiger_detector_1a3cda499f5f84dd38759f30eab1c536ef" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_eiger_param" kindref="compound">EigerParam</ref> *</type>
+        <definition>EigerParam* eigerDetector::mFirmwareVersion</definition>
+        <argsstring></argsstring>
+        <name>mFirmwareVersion</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="227" column="16" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" bodystart="227" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classeiger_detector_1a2960ad4e4a4af856c825aab9d417b038" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_eiger_param" kindref="compound">EigerParam</ref> *</type>
+        <definition>EigerParam* eigerDetector::mSerialNumber</definition>
+        <argsstring></argsstring>
+        <name>mSerialNumber</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="228" column="16" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" bodystart="228" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classeiger_detector_1a18d2eabb179b7ac676eab0a81b758931" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_eiger_param" kindref="compound">EigerParam</ref> *</type>
+        <definition>EigerParam* eigerDetector::mTemperatureActual</definition>
+        <argsstring></argsstring>
+        <name>mTemperatureActual</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="229" column="16" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" bodystart="229" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classeiger_detector_1afe910933fa80f410d4ef74b0a1c062d8" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_eiger_param" kindref="compound">EigerParam</ref> *</type>
+        <definition>EigerParam* eigerDetector::mNDArraySizeX</definition>
+        <argsstring></argsstring>
+        <name>mNDArraySizeX</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="230" column="16" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" bodystart="230" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classeiger_detector_1a4ec6bae97580707bf7b33704cb17e2c3" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_eiger_param" kindref="compound">EigerParam</ref> *</type>
+        <definition>EigerParam* eigerDetector::mNDArraySizeY</definition>
+        <argsstring></argsstring>
+        <name>mNDArraySizeY</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="231" column="16" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" bodystart="231" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classeiger_detector_1a09839da52fdc0faebc3a4e3b5be4bf16" prot="private" static="no" mutable="no">
+        <type>char</type>
+        <definition>char eigerDetector::mHostname[512]</definition>
+        <argsstring>[512]</argsstring>
+        <name>mHostname</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="234" column="10" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" bodystart="234" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classeiger_detector_1ad3d2fea9e85e6445f0bfc5cdc27d2eb2" prot="private" static="no" mutable="no">
+        <type><ref refid="class_rest_a_p_i" kindref="compound">RestAPI</ref></type>
+        <definition>RestAPI eigerDetector::mApi</definition>
+        <argsstring></argsstring>
+        <name>mApi</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="235" column="13" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" bodystart="235" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classeiger_detector_1a2efb033c8f93dd1e7a3bf1748aa97393" prot="private" static="no" mutable="no">
+        <type><ref refid="class_stream_a_p_i" kindref="compound">StreamAPI</ref> *</type>
+        <definition>StreamAPI* eigerDetector::mStreamAPI</definition>
+        <argsstring></argsstring>
+        <name>mStreamAPI</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="236" column="15" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" bodystart="236" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classeiger_detector_1aca1b575874b308ffe2e8e819fdc39b73" prot="private" static="no" mutable="no">
+        <type><ref refid="eiger_detector_8h_1aadbf8bfa4d794a7c76d3f4f83600297a" kindref="member">eigerModel_t</ref></type>
+        <definition>eigerModel_t eigerDetector::mEigerModel</definition>
+        <argsstring></argsstring>
+        <name>mEigerModel</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="237" column="18" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" bodystart="237" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classeiger_detector_1a3543666e04e84e90850229f41648ff29" prot="private" static="no" mutable="no">
+        <type><ref refid="rest_api_8h_1afd90a56eecf857322c679f314656bb22" kindref="member">eigerAPIVersion_t</ref></type>
+        <definition>eigerAPIVersion_t eigerDetector::mAPIVersion</definition>
+        <argsstring></argsstring>
+        <name>mAPIVersion</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="238" column="23" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" bodystart="238" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classeiger_detector_1a72495c23d4a4279b3c264557f3b10d13" prot="private" static="no" mutable="no">
+        <type>epicsEvent</type>
+        <definition>epicsEvent eigerDetector::mStartEvent</definition>
+        <argsstring></argsstring>
+        <name>mStartEvent</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="239" column="16" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" bodystart="239" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classeiger_detector_1a5c5c96a5f2da785425ea06ccaa2934d0" prot="private" static="no" mutable="no">
+        <type>epicsEvent</type>
+        <definition>epicsEvent eigerDetector::mStopEvent</definition>
+        <argsstring></argsstring>
+        <name>mStopEvent</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="239" column="28" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" bodystart="239" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classeiger_detector_1acf09e54cc77197569f32b383edec46f4" prot="private" static="no" mutable="no">
+        <type>epicsEvent</type>
+        <definition>epicsEvent eigerDetector::mTriggerEvent</definition>
+        <argsstring></argsstring>
+        <name>mTriggerEvent</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="239" column="39" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" bodystart="239" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classeiger_detector_1a536e7f16ff0a5f3ac6bc664d3377cbad" prot="private" static="no" mutable="no">
+        <type>epicsEvent</type>
+        <definition>epicsEvent eigerDetector::mStreamEvent</definition>
+        <argsstring></argsstring>
+        <name>mStreamEvent</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="239" column="53" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" bodystart="239" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classeiger_detector_1ad30c19587e0690d6a19b7fb0908582c7" prot="private" static="no" mutable="no">
+        <type>epicsEvent</type>
+        <definition>epicsEvent eigerDetector::mStreamDoneEvent</definition>
+        <argsstring></argsstring>
+        <name>mStreamDoneEvent</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="239" column="66" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" bodystart="239" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classeiger_detector_1a013c00ecdc278c46ce830114e53a5146" prot="private" static="no" mutable="no">
+        <type>epicsEvent</type>
+        <definition>epicsEvent eigerDetector::mPollDoneEvent</definition>
+        <argsstring></argsstring>
+        <name>mPollDoneEvent</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="240" column="13" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" bodystart="240" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classeiger_detector_1add34c1be5acad86d0d829bc5ec48a7f3" prot="private" static="no" mutable="no">
+        <type>epicsEvent</type>
+        <definition>epicsEvent eigerDetector::mInitializeEvent</definition>
+        <argsstring></argsstring>
+        <name>mInitializeEvent</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="240" column="28" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" bodystart="240" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classeiger_detector_1a48194726b9d38a1d540fef8eef2462c8" prot="private" static="no" mutable="no">
+        <type>epicsMessageQueue</type>
+        <definition>epicsMessageQueue eigerDetector::mPollQueue</definition>
+        <argsstring></argsstring>
+        <name>mPollQueue</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="241" column="23" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" bodystart="241" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classeiger_detector_1ae56eb4371320ddcc8b40a321ee39b60c" prot="private" static="no" mutable="no">
+        <type>epicsMessageQueue</type>
+        <definition>epicsMessageQueue eigerDetector::mDownloadQueue</definition>
+        <argsstring></argsstring>
+        <name>mDownloadQueue</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="241" column="34" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" bodystart="241" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classeiger_detector_1ac825d9caa1e25d8a932e22eeea4e9b48" prot="private" static="no" mutable="no">
+        <type>epicsMessageQueue</type>
+        <definition>epicsMessageQueue eigerDetector::mParseQueue</definition>
+        <argsstring></argsstring>
+        <name>mParseQueue</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="241" column="49" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" bodystart="241" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classeiger_detector_1a82387fd05adc9f03e61d6e1d73ec7560" prot="private" static="no" mutable="no">
+        <type>epicsMessageQueue</type>
+        <definition>epicsMessageQueue eigerDetector::mSaveQueue</definition>
+        <argsstring></argsstring>
+        <name>mSaveQueue</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="241" column="61" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" bodystart="241" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classeiger_detector_1ab692ec7d4622237436639ff425045860" prot="private" static="no" mutable="no">
+        <type>epicsMessageQueue</type>
+        <definition>epicsMessageQueue eigerDetector::mReapQueue</definition>
+        <argsstring></argsstring>
+        <name>mReapQueue</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="242" column="13" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" bodystart="242" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classeiger_detector_1aee4bf76535c656f8d543e7702bdc26a9" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool eigerDetector::mPollStop</definition>
+        <argsstring></argsstring>
+        <name>mPollStop</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="243" column="10" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" bodystart="243" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classeiger_detector_1a9b2cee64b439628c8abbbcf2402a3692" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool eigerDetector::mPollComplete</definition>
+        <argsstring></argsstring>
+        <name>mPollComplete</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="243" column="20" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" bodystart="243" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classeiger_detector_1aac8e5e107c17557e69c8f8a5adb5782e" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool eigerDetector::mStreamComplete</definition>
+        <argsstring></argsstring>
+        <name>mStreamComplete</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="243" column="34" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" bodystart="243" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classeiger_detector_1a13621074a034c239c0644fe45be4fa90" prot="private" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int eigerDetector::mFrameNumber</definition>
+        <argsstring></argsstring>
+        <name>mFrameNumber</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="244" column="18" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" bodystart="244" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classeiger_detector_1a6c81cb6195159988a363bb2de4b7fbb8" prot="private" static="no" mutable="no">
+        <type>uid_t</type>
+        <definition>uid_t eigerDetector::mFsUid</definition>
+        <argsstring></argsstring>
+        <name>mFsUid</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="245" column="11" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" bodystart="245" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classeiger_detector_1a2e00c3340af11c6d02c9189407a7b0cc" prot="private" static="no" mutable="no">
+        <type>uid_t</type>
+        <definition>uid_t eigerDetector::mFsGid</definition>
+        <argsstring></argsstring>
+        <name>mFsGid</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="245" column="18" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" bodystart="245" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classeiger_detector_1a41a580e58d846151c9db46bb4710b690" prot="private" static="no" mutable="no">
+        <type><ref refid="class_eiger_param_set" kindref="compound">EigerParamSet</ref></type>
+        <definition>EigerParamSet eigerDetector::mParams</definition>
+        <argsstring></argsstring>
+        <name>mParams</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="246" column="19" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" bodystart="246" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classeiger_detector_1a28a54bbe3d274401f220d450e78248e1" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int eigerDetector::mFirstParam</definition>
+        <argsstring></argsstring>
+        <name>mFirstParam</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="247" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" bodystart="247" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classeiger_detector_1a2395e853c7ad8e6c7cef62fcb1884232" prot="private" static="no" mutable="no">
+        <type>std::map&lt; std::string, <ref refid="rest_api_8h_1a14c3ad6f5fa82ee5ff47981398d0e13c" kindref="member">sys_t</ref> &gt;</type>
+        <definition>std::map&lt;std::string, sys_t&gt; eigerDetector::mSubSystemMap</definition>
+        <argsstring></argsstring>
+        <name>mSubSystemMap</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="248" column="14" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" bodystart="248" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classeiger_detector_1a4d202cd99f7c1b829cb17389e55042e1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>eigerDetector::eigerDetector</definition>
+        <argsstring>(const char *portName, const char *serverHostname, int maxBuffers, size_t maxMemory, int priority, int stackSize)</argsstring>
+        <name>eigerDetector</name>
+        <param>
+          <type>const char *</type>
+          <declname>portName</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>serverHostname</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>maxBuffers</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>maxMemory</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>priority</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>stackSize</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="103" column="5" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.cpp" bodystart="172" bodyend="439"/>
+      </memberdef>
+      <memberdef kind="function" id="classeiger_detector_1a9c645558be3b3f650c0fb39aca42f8e8" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>asynStatus</type>
+        <definition>asynStatus eigerDetector::writeInt32</definition>
+        <argsstring>(asynUser *pasynUser, epicsInt32 value)</argsstring>
+        <name>writeInt32</name>
+        <reimplements refid="class_a_d_driver_1abef6916bb90d032a1aeb6894adef12a6">writeInt32</reimplements>
+        <param>
+          <type>asynUser *</type>
+          <declname>pasynUser</declname>
+        </param>
+        <param>
+          <type>epicsInt32</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Sets an int32 parameter. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pasynUser</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>asynUser structure that contains the function code in pasynUser-&gt;reason. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value for this parameter</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+Takes action if the function code requires it. Currently only ADShutterControl requires action here. This method is normally called from the writeInt32 method in derived classes, which should set the value of the parameter in the parameter library. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="107" column="24" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.cpp" bodystart="449" bodyend="544"/>
+      </memberdef>
+      <memberdef kind="function" id="classeiger_detector_1afaad6cc6843ecd25373f1445ade3cd1e" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>asynStatus</type>
+        <definition>asynStatus eigerDetector::writeFloat64</definition>
+        <argsstring>(asynUser *pasynUser, epicsFloat64 value)</argsstring>
+        <name>writeFloat64</name>
+        <param>
+          <type>asynUser *</type>
+          <declname>pasynUser</declname>
+        </param>
+        <param>
+          <type>epicsFloat64</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="108" column="24" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.cpp" bodystart="555" bodyend="617"/>
+      </memberdef>
+      <memberdef kind="function" id="classeiger_detector_1ad00bcc67aeee39898210ad0b7507a7e8" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>asynStatus</type>
+        <definition>asynStatus eigerDetector::writeOctet</definition>
+        <argsstring>(asynUser *pasynUser, const char *value, size_t nChars, size_t *nActual)</argsstring>
+        <name>writeOctet</name>
+        <reimplements refid="classasyn_n_d_array_driver_1a84d981f8995d984035bb9feff727d520">writeOctet</reimplements>
+        <param>
+          <type>asynUser *</type>
+          <declname>pasynUser</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>value</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>nChars</declname>
+        </param>
+        <param>
+          <type>size_t *</type>
+          <declname>nActual</declname>
+        </param>
+        <briefdescription>
+<para>Called when asyn clients call pasynOctet-&gt;write(). </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function performs actions for EigerFWNamePattern For all parameters it sets the value in the parameter library and calls any registered callbacks. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pasynUser</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pasynUser structure that encodes the reason and address. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Address of the string to write. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">nChars</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of characters to write. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">nActual</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of characters actually written. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="109" column="24" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.cpp" bodystart="627" bodyend="695"/>
+      </memberdef>
+      <memberdef kind="function" id="classeiger_detector_1a6d6d68b3d7be3195745cc145864dba66" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void eigerDetector::report</definition>
+        <argsstring>(FILE *fp, int details)</argsstring>
+        <name>report</name>
+        <reimplements refid="classasyn_n_d_array_driver_1ac3f2d73a05eb54357ec3f052e1b000f2">report</reimplements>
+        <param>
+          <type>FILE *</type>
+          <declname>fp</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>details</declname>
+        </param>
+        <briefdescription>
+<para>Report status of the driver. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This method calls the report function in the asynPortDriver base class. It then calls the <ref refid="class_n_d_array_pool_1a3b5ad3c3c7dae275cd00e2a0a8261d42" kindref="member">NDArrayPool::report()</ref> method if details &gt;5. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">fp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File pointed passed by caller where the output is written to. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">details</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If &gt;5 then <ref refid="class_n_d_array_pool_1a3b5ad3c3c7dae275cd00e2a0a8261d42" kindref="member">NDArrayPool::report</ref> and <ref refid="class_n_d_attribute_list_1a159a6b286f3dd435392bbead7ccd6c3e" kindref="member">NDAttributeList::report</ref> are both called. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="111" column="10" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.cpp" bodystart="703" bodyend="717"/>
+      </memberdef>
+      <memberdef kind="function" id="classeiger_detector_1a76eb932c9d4d4fdcf2fc5ba2662dd896" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>asynStatus</type>
+        <definition>asynStatus eigerDetector::drvUserCreate</definition>
+        <argsstring>(asynUser *pasynUser, const char *drvInfo, const char **pptypeName, size_t *psize)</argsstring>
+        <name>drvUserCreate</name>
+        <param>
+          <type>asynUser *</type>
+          <declname>pasynUser</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>drvInfo</declname>
+        </param>
+        <param>
+          <type>const char **</type>
+          <declname>pptypeName</declname>
+        </param>
+        <param>
+          <type>size_t *</type>
+          <declname>psize</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="112" column="24" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.cpp" bodystart="1889" bodyend="1947"/>
+      </memberdef>
+      <memberdef kind="function" id="classeiger_detector_1a42f2c8e41d3e27bef65d5082f6ed9a86" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void eigerDetector::controlTask</definition>
+        <argsstring>(void)</argsstring>
+        <name>controlTask</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="116" column="10" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.cpp" bodystart="722" bodyend="1008"/>
+      </memberdef>
+      <memberdef kind="function" id="classeiger_detector_1a8a8a256549be65e41a6f7d271727488a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void eigerDetector::pollTask</definition>
+        <argsstring>(void)</argsstring>
+        <name>pollTask</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="117" column="10" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.cpp" bodystart="1010" bodyend="1103"/>
+      </memberdef>
+      <memberdef kind="function" id="classeiger_detector_1ad0f598b757f049653ecb1b1324351c7c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void eigerDetector::downloadTask</definition>
+        <argsstring>(void)</argsstring>
+        <name>downloadTask</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="118" column="10" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.cpp" bodystart="1105" bodyend="1133"/>
+      </memberdef>
+      <memberdef kind="function" id="classeiger_detector_1a9199938e97aa913f32dee86c5f69bf02" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void eigerDetector::parseTask</definition>
+        <argsstring>(void)</argsstring>
+        <name>parseTask</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="119" column="10" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.cpp" bodystart="1135" bodyend="1153"/>
+      </memberdef>
+      <memberdef kind="function" id="classeiger_detector_1a7eb5550d0f8b426ac36ce2d361f36e04" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void eigerDetector::saveTask</definition>
+        <argsstring>(void)</argsstring>
+        <name>saveTask</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="120" column="10" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.cpp" bodystart="1155" bodyend="1239"/>
+      </memberdef>
+      <memberdef kind="function" id="classeiger_detector_1a25eb3828e4891a552cc8eb4394a887ab" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void eigerDetector::reapTask</definition>
+        <argsstring>(void)</argsstring>
+        <name>reapTask</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="121" column="10" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.cpp" bodystart="1241" bodyend="1273"/>
+      </memberdef>
+      <memberdef kind="function" id="classeiger_detector_1a0249db2edfacbe747083b1b8d4615823" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void eigerDetector::monitorTask</definition>
+        <argsstring>(void)</argsstring>
+        <name>monitorTask</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="122" column="10" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.cpp" bodystart="1275" bodyend="1305"/>
+      </memberdef>
+      <memberdef kind="function" id="classeiger_detector_1af0eed21da770ce321e20d21eb1291763" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void eigerDetector::streamTask</definition>
+        <argsstring>(void)</argsstring>
+        <name>streamTask</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="123" column="10" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.cpp" bodystart="1307" bodyend="1480"/>
+      </memberdef>
+      <memberdef kind="function" id="classeiger_detector_1a495ad437bdd08846217296dbf22e049b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void eigerDetector::initializeTask</definition>
+        <argsstring>()</argsstring>
+        <name>initializeTask</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="124" column="10" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.cpp" bodystart="1482" bodyend="1506"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classeiger_detector_1a512b4b8586608f14070bc5e0a79cb509" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>asynStatus</type>
+        <definition>asynStatus eigerDetector::initParams</definition>
+        <argsstring>(void)</argsstring>
+        <name>initParams</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="251" column="16" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.cpp" bodystart="1508" bodyend="1565"/>
+      </memberdef>
+      <memberdef kind="function" id="classeiger_detector_1a6fb2deffc61be7ff112625dd9f968f5f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>asynStatus</type>
+        <definition>asynStatus eigerDetector::parseH5File</definition>
+        <argsstring>(char *buf, size_t len)</argsstring>
+        <name>parseH5File</name>
+        <param>
+          <type>char *</type>
+          <declname>buf</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>len</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="254" column="16" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.cpp" bodystart="1567" bodyend="1735"/>
+      </memberdef>
+      <memberdef kind="function" id="classeiger_detector_1a92515209b910c368165ead9403178ddd" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>asynStatus</type>
+        <definition>asynStatus eigerDetector::parseTiffFile</definition>
+        <argsstring>(char *buf, size_t len)</argsstring>
+        <name>parseTiffFile</name>
+        <param>
+          <type>char *</type>
+          <declname>buf</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>len</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="255" column="16" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.cpp" bodystart="1740" bodyend="1816"/>
+      </memberdef>
+      <memberdef kind="function" id="classeiger_detector_1a61b2c0789ffadcc644776245c0988031" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>asynStatus</type>
+        <definition>asynStatus eigerDetector::eigerStatus</definition>
+        <argsstring>(void)</argsstring>
+        <name>eigerStatus</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="258" column="16" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.cpp" bodystart="1821" bodyend="1878"/>
+      </memberdef>
+      <memberdef kind="function" id="classeiger_detector_1a09b71076ed48b5d41e5fb99ec15308fa" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool eigerDetector::acquiring</definition>
+        <argsstring>(void)</argsstring>
+        <name>acquiring</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="261" column="10" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.cpp" bodystart="1880" bodyend="1887"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="4">
+        <label>asynPortDriver</label>
+      </node>
+      <node id="3">
+        <label>asynNDArrayDriver</label>
+        <link refid="classasyn_n_d_array_driver"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>eigerDetector</label>
+        <link refid="classeiger_detector"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>ADDriver</label>
+        <link refid="class_a_d_driver"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="8">
+        <label>NDDimension</label>
+        <link refid="struct_n_d_dimension"/>
+      </node>
+      <node id="4">
+        <label>asynPortDriver</label>
+      </node>
+      <node id="10">
+        <label>string</label>
+      </node>
+      <node id="9">
+        <label>Codec_t</label>
+        <link refid="struct_codec__t"/>
+        <childnode refid="10" relation="usage">
+          <edgelabel>name</edgelabel>
+        </childnode>
+      </node>
+      <node id="7">
+        <label>NDArray</label>
+        <link refid="class_n_d_array"/>
+        <childnode refid="5" relation="usage">
+          <edgelabel>pNDArrayPool</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>dims</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>pAttributeList</edgelabel>
+        </childnode>
+        <childnode refid="9" relation="usage">
+          <edgelabel>codec</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>pDriver</edgelabel>
+        </childnode>
+      </node>
+      <node id="11">
+        <label>EigerParam</label>
+        <link refid="class_eiger_param"/>
+      </node>
+      <node id="3">
+        <label>asynNDArrayDriver</label>
+        <link refid="classasyn_n_d_array_driver"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>pNDArrayPool</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>pAttributeList</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>pArrays</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>NDArrayPool</label>
+        <link refid="class_n_d_array_pool"/>
+      </node>
+      <node id="1">
+        <label>eigerDetector</label>
+        <link refid="classeiger_detector"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="11" relation="usage">
+          <edgelabel>mAcquirePeriod</edgelabel>
+          <edgelabel>mAcquireTime</edgelabel>
+          <edgelabel>mArmed</edgelabel>
+          <edgelabel>mAutoSummation</edgelabel>
+          <edgelabel>mCompressionAlgo</edgelabel>
+          <edgelabel>mDCUBufFree</edgelabel>
+          <edgelabel>mDataSource</edgelabel>
+          <edgelabel>mDescription</edgelabel>
+          <edgelabel>mEnergyEpsilon</edgelabel>
+          <edgelabel>mError</edgelabel>
+          <edgelabel>...</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>ADDriver</label>
+        <link refid="class_a_d_driver"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>NDAttributeList</label>
+        <link refid="class_n_d_attribute_list"/>
+      </node>
+    </collaborationgraph>
+    <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="100" column="1" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" bodystart="101" bodyend="262"/>
+    <listofallmembers>
+      <member refid="classeiger_detector_1a09b71076ed48b5d41e5fb99ec15308fa" prot="private" virt="non-virtual"><scope>eigerDetector</scope><name>acquiring</name></member>
+      <member refid="classasyn_n_d_array_driver_1aa06c19f650b4619a7bdbf3a79397c3d3" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>ADAcquire</name></member>
+      <member refid="classasyn_n_d_array_driver_1aaeb5af71e22323b6a3d4f51be380bc7a" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>ADAcquireBusy</name></member>
+      <member refid="class_a_d_driver_1a8d5333aa86509cbd8f5fd824e79b2799" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>ADAcquirePeriod</name></member>
+      <member refid="class_a_d_driver_1a922005db3a5a52dd24e6706fdfe1a160" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>ADAcquireTime</name></member>
+      <member refid="class_a_d_driver_1a11d483194e60669d11e0a4ff4bb919f3" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>ADBinX</name></member>
+      <member refid="class_a_d_driver_1a0001097ff0ab8b55e564057699655c83" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>ADBinY</name></member>
+      <member refid="class_a_d_driver_1acc898497d3369c2f6f6ab1d83effdd25" prot="public" virt="non-virtual"><scope>eigerDetector</scope><name>ADDriver</name></member>
+      <member refid="classasyn_n_d_array_driver_1a4eadbf94d756dcf7b61d624f791fd516" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>ADFirmwareVersion</name></member>
+      <member refid="class_a_d_driver_1ae246f999cf99d4e97594beb939f15f21" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>ADFrameType</name></member>
+      <member refid="class_a_d_driver_1af7a169a1ab5a9069c5d556bf5c7ac387" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>ADGain</name></member>
+      <member refid="class_a_d_driver_1a7dcba273d750e726bb3f5e4b7a38f53a" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>ADImageMode</name></member>
+      <member refid="classasyn_n_d_array_driver_1a2deb25acd798e9e0da6c52741a07b915" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>ADManufacturer</name></member>
+      <member refid="class_a_d_driver_1a535f4c7d03e30b1efe4f7dad854cfc3f" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>ADMaxSizeX</name></member>
+      <member refid="class_a_d_driver_1a93caa26e32c3765ba19e1ac74a2f50cc" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>ADMaxSizeY</name></member>
+      <member refid="class_a_d_driver_1a23f8a7537c0c221ed3c5a72af90e276e" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>ADMinX</name></member>
+      <member refid="class_a_d_driver_1ae1b0c891ee0ecd596439b29e32e068e4" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>ADMinY</name></member>
+      <member refid="classasyn_n_d_array_driver_1a4c15720b7002ec1ff9278058240d82da" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>ADModel</name></member>
+      <member refid="class_a_d_driver_1a25e11dff81ea84715fc8fe5ca290bacb" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>ADNumExposures</name></member>
+      <member refid="class_a_d_driver_1a17625c89904128e0d5ecb935c475e4b7" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>ADNumExposuresCounter</name></member>
+      <member refid="class_a_d_driver_1a46e8f2fa100c21f2f0689c415b441fb0" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>ADNumImages</name></member>
+      <member refid="class_a_d_driver_1a8cdc9e9fbabaadaa3c87108aad2e2895" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>ADNumImagesCounter</name></member>
+      <member refid="class_a_d_driver_1adbd8c8af9cf7a17913f16ecd0252eaba" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>ADReadStatus</name></member>
+      <member refid="class_a_d_driver_1a52d579907f81c30b4b2df2dd0a3b4a3f" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>ADReverseX</name></member>
+      <member refid="class_a_d_driver_1ad6b830a6234b468e3390839204d5a768" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>ADReverseY</name></member>
+      <member refid="classasyn_n_d_array_driver_1a89d5bd570163bd569bc6d2a2163da9c2" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>ADSDKVersion</name></member>
+      <member refid="classasyn_n_d_array_driver_1aa4d910fd087c8eb02f3437b18b80bba1" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>ADSerialNumber</name></member>
+      <member refid="class_a_d_driver_1a4c4ffb55296fb91e113df88de960384a" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>ADShutterCloseDelay</name></member>
+      <member refid="class_a_d_driver_1aba1af712aed9f9374e5fea5dfc8c1bbd" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>ADShutterControl</name></member>
+      <member refid="class_a_d_driver_1aec7d41ff8a2b3059270450275160092f" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>ADShutterControlEPICS</name></member>
+      <member refid="class_a_d_driver_1a3a1afea96c657c64ab8dea2ee54d1ace" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>ADShutterMode</name></member>
+      <member refid="class_a_d_driver_1ac95c27f778d15963a1d9dd3a61c17d23" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>ADShutterOpenDelay</name></member>
+      <member refid="class_a_d_driver_1a13c7b3852b0a6662a701f8b0fd71eac2" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>ADShutterStatus</name></member>
+      <member refid="class_a_d_driver_1a918ef4b3d80695f6872fd169b09b639a" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>ADSizeX</name></member>
+      <member refid="class_a_d_driver_1a59ba3ba61b2b6f51dc9d88d81680b632" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>ADSizeY</name></member>
+      <member refid="class_a_d_driver_1a6a532aae0f51273450f4e897bf0aed1d" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>ADStatus</name></member>
+      <member refid="class_a_d_driver_1af8ca049bdf54eede6611e50a284152bc" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>ADStatusMessage</name></member>
+      <member refid="class_a_d_driver_1adb837da5ddf5ba868ea2dea316254c41" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>ADStringFromServer</name></member>
+      <member refid="class_a_d_driver_1a9f521abfc93c9ccba2b0e83acace6d0e" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>ADStringToServer</name></member>
+      <member refid="class_a_d_driver_1aef042b68b6b77d7b39dfaeceaa097a38" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>ADTemperature</name></member>
+      <member refid="class_a_d_driver_1a625f815727135a2af747ae5086bf21d5" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>ADTemperatureActual</name></member>
+      <member refid="class_a_d_driver_1a143d4816efe3d5e98f4e6656b0f1d539" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>ADTimeRemaining</name></member>
+      <member refid="class_a_d_driver_1ae191abe1436e6dd02510fcbbac59dbc1" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>ADTriggerMode</name></member>
+      <member refid="classasyn_n_d_array_driver_1adb00dde7e1d46856e0bd4b586aff6bd2" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>ADWaitForPlugins</name></member>
+      <member refid="classasyn_n_d_array_driver_1aaaccd27681be8d91d10246e1aad72034" prot="public" virt="non-virtual"><scope>eigerDetector</scope><name>asynNDArrayDriver</name></member>
+      <member refid="classasyn_n_d_array_driver_1aba7309da5e7c5571fc693b1998c9d236" prot="public" virt="virtual"><scope>eigerDetector</scope><name>checkPath</name></member>
+      <member refid="classasyn_n_d_array_driver_1aaca89f35ddf4c5a1c22374ff608593cd" prot="public" virt="virtual"><scope>eigerDetector</scope><name>checkPath</name></member>
+      <member refid="classeiger_detector_1aab5aa75ced593c5caab510b651f551c8a7838223e435789b4eb640c9b38155acc" prot="public" virt="non-virtual"><scope>eigerDetector</scope><name>COMP_ALGO_BSLZ4</name></member>
+      <member refid="classeiger_detector_1aab5aa75ced593c5caab510b651f551c8add7c8333bb75b60d166663c029aa5bf1" prot="public" virt="non-virtual"><scope>eigerDetector</scope><name>COMP_ALGO_LZ4</name></member>
+      <member refid="classeiger_detector_1aab5aa75ced593c5caab510b651f551c8" prot="public" virt="non-virtual"><scope>eigerDetector</scope><name>compression_algo</name></member>
+      <member refid="class_a_d_driver_1a619dfbdc35605a104d2a07ea46f37b5f" prot="public" virt="virtual"><scope>eigerDetector</scope><name>connect</name></member>
+      <member refid="classeiger_detector_1a42f2c8e41d3e27bef65d5082f6ed9a86" prot="public" virt="non-virtual"><scope>eigerDetector</scope><name>controlTask</name></member>
+      <member refid="classasyn_n_d_array_driver_1a813f6c84e96329cd89653a3b0497f8a9" prot="public" virt="virtual"><scope>eigerDetector</scope><name>createFileName</name></member>
+      <member refid="classasyn_n_d_array_driver_1af5494c8e3b3f317e049a5c336d8065f4" prot="public" virt="virtual"><scope>eigerDetector</scope><name>createFileName</name></member>
+      <member refid="classasyn_n_d_array_driver_1a42b3686c9c08b14ba054dd005a30fa0d" prot="public" virt="virtual"><scope>eigerDetector</scope><name>createFilePath</name></member>
+      <member refid="classasyn_n_d_array_driver_1acc2afad33faf8e45d6f21e251133ed94" prot="public" virt="non-virtual"><scope>eigerDetector</scope><name>decrementQueuedArrayCount</name></member>
+      <member refid="class_a_d_driver_1ad387fa6e2e45c812ba82adba2cc74bd0" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>deviceIsReachable</name></member>
+      <member refid="classeiger_detector_1ad0f598b757f049653ecb1b1324351c7c" prot="public" virt="non-virtual"><scope>eigerDetector</scope><name>downloadTask</name></member>
+      <member refid="classeiger_detector_1a76eb932c9d4d4fdcf2fc5ba2662dd896" prot="public" virt="virtual"><scope>eigerDetector</scope><name>drvUserCreate</name></member>
+      <member refid="classeiger_detector_1a4d202cd99f7c1b829cb17389e55042e1" prot="public" virt="non-virtual"><scope>eigerDetector</scope><name>eigerDetector</name></member>
+      <member refid="classeiger_detector_1a61b2c0789ffadcc644776245c0988031" prot="private" virt="non-virtual"><scope>eigerDetector</scope><name>eigerStatus</name></member>
+      <member refid="classasyn_n_d_array_driver_1a7492ba858d885e2ba226a1c7ef9dcf72" prot="public" virt="virtual"><scope>eigerDetector</scope><name>getAttributes</name></member>
+      <member refid="classasyn_n_d_array_driver_1a1a369bc9b605bba000f782c69429622b" prot="public" virt="non-virtual"><scope>eigerDetector</scope><name>getQueuedArrayCount</name></member>
+      <member refid="classasyn_n_d_array_driver_1ad55549fca656bc01cbe0e3c92e4d29e3" prot="public" virt="non-virtual"><scope>eigerDetector</scope><name>incrementQueuedArrayCount</name></member>
+      <member refid="classeiger_detector_1a495ad437bdd08846217296dbf22e049b" prot="public" virt="non-virtual"><scope>eigerDetector</scope><name>initializeTask</name></member>
+      <member refid="classeiger_detector_1a512b4b8586608f14070bc5e0a79cb509" prot="private" virt="non-virtual"><scope>eigerDetector</scope><name>initParams</name></member>
+      <member refid="classeiger_detector_1a9efd6e5485ef4c74dd9e71bdad82a6de" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>mAcquirePeriod</name></member>
+      <member refid="classeiger_detector_1a96daacf3e1a4f58a67e70ceecd46569c" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>mAcquireTime</name></member>
+      <member refid="classeiger_detector_1ad3d2fea9e85e6445f0bfc5cdc27d2eb2" prot="private" virt="non-virtual"><scope>eigerDetector</scope><name>mApi</name></member>
+      <member refid="classeiger_detector_1a3543666e04e84e90850229f41648ff29" prot="private" virt="non-virtual"><scope>eigerDetector</scope><name>mAPIVersion</name></member>
+      <member refid="classeiger_detector_1a0f5da6b76e2aceb96b3c56d102e0a849" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>mArmed</name></member>
+      <member refid="classeiger_detector_1a49397a72691257a8e282a829e16181e9" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>mAutoSummation</name></member>
+      <member refid="classeiger_detector_1aa2605d2e9adafaeb1c4d5a83f1c51454" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>mCompressionAlgo</name></member>
+      <member refid="classeiger_detector_1a35ab1268a426a7b6e3d9f056933a164f" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>mDataSource</name></member>
+      <member refid="classeiger_detector_1a3d03da657ce311cdbcfce6ce40f13f98" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>mDCUBufFree</name></member>
+      <member refid="classeiger_detector_1a880c6588537aea7b4aa51266b73b6d09" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>mDescription</name></member>
+      <member refid="classeiger_detector_1ae56eb4371320ddcc8b40a321ee39b60c" prot="private" virt="non-virtual"><scope>eigerDetector</scope><name>mDownloadQueue</name></member>
+      <member refid="classeiger_detector_1aca1b575874b308ffe2e8e819fdc39b73" prot="private" virt="non-virtual"><scope>eigerDetector</scope><name>mEigerModel</name></member>
+      <member refid="classeiger_detector_1a8be595183bf8f1c2aae3c824f9fa6b3b" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>mEnergyEpsilon</name></member>
+      <member refid="classeiger_detector_1aaccc36554e7ab5ffad4755dfefab3dd3" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>mError</name></member>
+      <member refid="classeiger_detector_1abc33ea16368055e4bd7eb03f62cbbe56" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>mExtGateMode</name></member>
+      <member refid="classeiger_detector_1a036c8e33d555146065efeddbc6333364" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>mFileOwner</name></member>
+      <member refid="classeiger_detector_1accdd422a441af7b00e546d7f33bfec62" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>mFileOwnerGroup</name></member>
+      <member refid="classeiger_detector_1a4c767e2939821e3bc0926a4138fd1a0d" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>mFilePerms</name></member>
+      <member refid="classeiger_detector_1a3cda499f5f84dd38759f30eab1c536ef" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>mFirmwareVersion</name></member>
+      <member refid="classeiger_detector_1a28a54bbe3d274401f220d450e78248e1" prot="private" virt="non-virtual"><scope>eigerDetector</scope><name>mFirstParam</name></member>
+      <member refid="classeiger_detector_1a13621074a034c239c0644fe45be4fa90" prot="private" virt="non-virtual"><scope>eigerDetector</scope><name>mFrameNumber</name></member>
+      <member refid="classeiger_detector_1a2e00c3340af11c6d02c9189407a7b0cc" prot="private" virt="non-virtual"><scope>eigerDetector</scope><name>mFsGid</name></member>
+      <member refid="classeiger_detector_1a6c81cb6195159988a363bb2de4b7fbb8" prot="private" virt="non-virtual"><scope>eigerDetector</scope><name>mFsUid</name></member>
+      <member refid="classeiger_detector_1a82ada4e19b6b4f3d850a55b5dc93d865" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>mFWAutoRemove</name></member>
+      <member refid="classeiger_detector_1a6b77a15b737174d58bda8dc9a69b8193" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>mFWClear</name></member>
+      <member refid="classeiger_detector_1aba211b7baf54bb3641f78715cda13793" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>mFWCompression</name></member>
+      <member refid="classeiger_detector_1a6bcf285a11a8297313c3bdbeb110075a" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>mFWEnable</name></member>
+      <member refid="classeiger_detector_1ac647c7c943644d99a81077b7d9acf4b7" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>mFWFree</name></member>
+      <member refid="classeiger_detector_1ae35c4a7eacee1e507b88d390da5fb5e5" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>mFWImgNumStart</name></member>
+      <member refid="classeiger_detector_1af04ade5cc71bcedc4b27715e09947d7d" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>mFWNamePattern</name></member>
+      <member refid="classeiger_detector_1a96896f1f0eb418464a1846afe1390859" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>mFWNImgsPerFile</name></member>
+      <member refid="classeiger_detector_1a2d557ccf29638b5b415ad2eef3a78fe1" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>mFWState</name></member>
+      <member refid="classeiger_detector_1a09839da52fdc0faebc3a4e3b5be4bf16" prot="private" virt="non-virtual"><scope>eigerDetector</scope><name>mHostname</name></member>
+      <member refid="classeiger_detector_1a5eafe150be5c31b260a6270b41a86336" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>mHVReset</name></member>
+      <member refid="classeiger_detector_1a48ab636a9ae7e102254ab10e51fbdfae" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>mHVResetTime</name></member>
+      <member refid="classeiger_detector_1a2cceed44f977988d9b792416b6f2aa96" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>mHVState</name></member>
+      <member refid="classeiger_detector_1a2af5f94fa16e1686e2e446e542653c3b" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>mInitialize</name></member>
+      <member refid="classeiger_detector_1add34c1be5acad86d0d829bc5ec48a7f3" prot="private" virt="non-virtual"><scope>eigerDetector</scope><name>mInitializeEvent</name></member>
+      <member refid="classeiger_detector_1a999e37e86b5884901e2d44c3302c1c7c" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>mLink0</name></member>
+      <member refid="classeiger_detector_1addaf2f918da245275d33dd9b0b2d8e6d" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>mLink1</name></member>
+      <member refid="classeiger_detector_1ad1cd25f4e1ebe9792546b27708d66251" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>mLink2</name></member>
+      <member refid="classeiger_detector_1a1ec4739c4bba0a4035027f086b919b95" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>mLink3</name></member>
+      <member refid="classeiger_detector_1a3d0c7833e3ce238ed2440953110831b9" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>mManualTrigger</name></member>
+      <member refid="classeiger_detector_1a222189e343f849a726e810b4e16f9436" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>mMonitorBufSize</name></member>
+      <member refid="classeiger_detector_1a8760a28b1c10e9e73a1cdbcec089e183" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>mMonitorEnable</name></member>
+      <member refid="classeiger_detector_1a3c9f913cdac2984ebe8933b9e4f6acdc" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>mMonitorState</name></member>
+      <member refid="classeiger_detector_1a745933607f443201e0d2dfef6b6f81c5" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>mMonitorTimeout</name></member>
+      <member refid="classeiger_detector_1afe910933fa80f410d4ef74b0a1c062d8" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>mNDArraySizeX</name></member>
+      <member refid="classeiger_detector_1a4ec6bae97580707bf7b33704cb17e2c3" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>mNDArraySizeY</name></member>
+      <member refid="classeiger_detector_1ab10afb496fe7a08cf469e8b930962cd7" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>mNTriggers</name></member>
+      <member refid="classeiger_detector_1a666ddceb2768348b96075e070970b2ab" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>mNumExposures</name></member>
+      <member refid="classeiger_detector_1add8db02a00087ab8ae5c7376a3aec0e6" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>mNumImages</name></member>
+      <member refid="classeiger_detector_1a0249db2edfacbe747083b1b8d4615823" prot="public" virt="non-virtual"><scope>eigerDetector</scope><name>monitorTask</name></member>
+      <member refid="classeiger_detector_1a41a580e58d846151c9db46bb4710b690" prot="private" virt="non-virtual"><scope>eigerDetector</scope><name>mParams</name></member>
+      <member refid="classeiger_detector_1ac825d9caa1e25d8a932e22eeea4e9b48" prot="private" virt="non-virtual"><scope>eigerDetector</scope><name>mParseQueue</name></member>
+      <member refid="classeiger_detector_1ae47d7610562ec0c4221509c4eeeb15d0" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>mPendingFiles</name></member>
+      <member refid="classeiger_detector_1afa1a27da4ebde538df6823969edc7c99" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>mPhotonEnergy</name></member>
+      <member refid="classeiger_detector_1a9b2cee64b439628c8abbbcf2402a3692" prot="private" virt="non-virtual"><scope>eigerDetector</scope><name>mPollComplete</name></member>
+      <member refid="classeiger_detector_1a013c00ecdc278c46ce830114e53a5146" prot="private" virt="non-virtual"><scope>eigerDetector</scope><name>mPollDoneEvent</name></member>
+      <member refid="classeiger_detector_1a48194726b9d38a1d540fef8eef2462c8" prot="private" virt="non-virtual"><scope>eigerDetector</scope><name>mPollQueue</name></member>
+      <member refid="classeiger_detector_1aee4bf76535c656f8d543e7702bdc26a9" prot="private" virt="non-virtual"><scope>eigerDetector</scope><name>mPollStop</name></member>
+      <member refid="classeiger_detector_1ab692ec7d4622237436639ff425045860" prot="private" virt="non-virtual"><scope>eigerDetector</scope><name>mReapQueue</name></member>
+      <member refid="classeiger_detector_1a9f09874d532fbb519fb3bb6519f13e81" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>mROIMode</name></member>
+      <member refid="classeiger_detector_1a6a2c352c6bf7c72999d1341bbf9d1847" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>mSaveFiles</name></member>
+      <member refid="classeiger_detector_1a82387fd05adc9f03e61d6e1d73ec7560" prot="private" virt="non-virtual"><scope>eigerDetector</scope><name>mSaveQueue</name></member>
+      <member refid="classeiger_detector_1a23ccd3c16d08b742b4d7d4e43c82d4f1" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>mSDKVersion</name></member>
+      <member refid="classeiger_detector_1a44fefec895a4dad40220786fa5810f76" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>mSequenceId</name></member>
+      <member refid="classeiger_detector_1a2960ad4e4a4af856c825aab9d417b038" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>mSerialNumber</name></member>
+      <member refid="classeiger_detector_1a72495c23d4a4279b3c264557f3b10d13" prot="private" virt="non-virtual"><scope>eigerDetector</scope><name>mStartEvent</name></member>
+      <member refid="classeiger_detector_1a243c70fd2538b2c53039500c104da9d7" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>mState</name></member>
+      <member refid="classeiger_detector_1a5c5c96a5f2da785425ea06ccaa2934d0" prot="private" virt="non-virtual"><scope>eigerDetector</scope><name>mStopEvent</name></member>
+      <member refid="classeiger_detector_1a2efb033c8f93dd1e7a3bf1748aa97393" prot="private" virt="non-virtual"><scope>eigerDetector</scope><name>mStreamAPI</name></member>
+      <member refid="classeiger_detector_1aac8e5e107c17557e69c8f8a5adb5782e" prot="private" virt="non-virtual"><scope>eigerDetector</scope><name>mStreamComplete</name></member>
+      <member refid="classeiger_detector_1a304279f68780ee3e9034752961431ed0" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>mStreamDecompress</name></member>
+      <member refid="classeiger_detector_1ad30c19587e0690d6a19b7fb0908582c7" prot="private" virt="non-virtual"><scope>eigerDetector</scope><name>mStreamDoneEvent</name></member>
+      <member refid="classeiger_detector_1aef08ff1f41daa2e19c832a602f425fa4" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>mStreamDropped</name></member>
+      <member refid="classeiger_detector_1aa49484ce0d8f7f51c7856465a1acf340" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>mStreamEnable</name></member>
+      <member refid="classeiger_detector_1a536e7f16ff0a5f3ac6bc664d3377cbad" prot="private" virt="non-virtual"><scope>eigerDetector</scope><name>mStreamEvent</name></member>
+      <member refid="classeiger_detector_1af918e0d438ab2aeabba4c5c6ed28f331" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>mStreamState</name></member>
+      <member refid="classeiger_detector_1a2395e853c7ad8e6c7cef62fcb1884232" prot="private" virt="non-virtual"><scope>eigerDetector</scope><name>mSubSystemMap</name></member>
+      <member refid="classeiger_detector_1a18d2eabb179b7ac676eab0a81b758931" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>mTemperatureActual</name></member>
+      <member refid="classeiger_detector_1aa00a760d9d84cea2a8bade84d8198921" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>mThHumid0</name></member>
+      <member refid="classeiger_detector_1ad58c395937485abf11c6cd1efc6f21e9" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>mThreshold</name></member>
+      <member refid="classeiger_detector_1af78fc3c2eca994369aaf14fe6d34c9ab" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>mThreshold1Enable</name></member>
+      <member refid="classeiger_detector_1a85ef1cc1dcfca806e1ba7b70279f620e" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>mThreshold2</name></member>
+      <member refid="classeiger_detector_1ad633addc28eae8d78a03dd4612bfab25" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>mThreshold2Enable</name></member>
+      <member refid="classeiger_detector_1ab55f3bba06b413bc388333283b21689e" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>mThresholdDiffEnable</name></member>
+      <member refid="classeiger_detector_1ae5028aaef4139aa68c14ebe996ce8f6a" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>mThTemp0</name></member>
+      <member refid="classeiger_detector_1a696bd1d9b1562c53794213d597d302b2" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>mTrigger</name></member>
+      <member refid="classeiger_detector_1acf09e54cc77197569f32b383edec46f4" prot="private" virt="non-virtual"><scope>eigerDetector</scope><name>mTriggerEvent</name></member>
+      <member refid="classeiger_detector_1a877df658d975a2f89c30dc83baced714" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>mTriggerExp</name></member>
+      <member refid="classeiger_detector_1aac65b3d4e14ce879e588a347ee13b362" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>mTriggerMode</name></member>
+      <member refid="classeiger_detector_1abf2c75c3f9f883389f61693dd270cd5f" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>mTriggerStartDelay</name></member>
+      <member refid="classeiger_detector_1a7fd03af3dd80b22f47ee5be072794815" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>mWavelength</name></member>
+      <member refid="classeiger_detector_1aeec221b23ec2baa8cd6d7133864b3dc9" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>mWavelengthEpsilon</name></member>
+      <member refid="classasyn_n_d_array_driver_1ad472f633149cd560959721e589d9ea54" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>NDADCoreVersion</name></member>
+      <member refid="classasyn_n_d_array_driver_1af2354f73acece6ee2427f5069b16fdb5" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>NDArrayCallbacks</name></member>
+      <member refid="classasyn_n_d_array_driver_1abec5f5fc9922549d745d7dc7f19243ea" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>NDArrayCounter</name></member>
+      <member refid="classasyn_n_d_array_driver_1a2b2fe51fba9a6ee4146813eac0c47fd1" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>NDArrayData</name></member>
+      <member refid="classasyn_n_d_array_driver_1abf6f05821c7d1a9ab6aef60c9374281e" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>NDArraySize</name></member>
+      <member refid="classasyn_n_d_array_driver_1a79c89c00ea62734d82c89e09ea8aa47b" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>NDArraySizeX</name></member>
+      <member refid="classasyn_n_d_array_driver_1a75753778fe16182d0771e924f05bde33" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>NDArraySizeY</name></member>
+      <member refid="classasyn_n_d_array_driver_1a72fac0fbaa730672f9a3a6da8c1d1a97" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>NDArraySizeZ</name></member>
+      <member refid="classasyn_n_d_array_driver_1a4fae01b5b72053b6ae11dcd37ff6aff0" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>NDAttributesFile</name></member>
+      <member refid="classasyn_n_d_array_driver_1abba302aca48e561ee5b40794db9f0708" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>NDAttributesMacros</name></member>
+      <member refid="classasyn_n_d_array_driver_1a0875da7319e3cc7f54212629208b1d95" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>NDAttributesStatus</name></member>
+      <member refid="classasyn_n_d_array_driver_1a9966536066c350fc218d3d7cb4d66aaf" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>NDAutoIncrement</name></member>
+      <member refid="classasyn_n_d_array_driver_1a73da5c2affb0342b82b470f96a068d1a" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>NDAutoSave</name></member>
+      <member refid="classasyn_n_d_array_driver_1a6e584ca2489de3a5e3e9d4d4e00bb7c0" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>NDBayerPattern</name></member>
+      <member refid="classasyn_n_d_array_driver_1a43641411ca31d630cbf30adab5e553b2" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>NDCodec</name></member>
+      <member refid="classasyn_n_d_array_driver_1abf7b27064b0d69440f16feb1e19f6cf2" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>NDColorMode</name></member>
+      <member refid="classasyn_n_d_array_driver_1a2a9b3db5995b201c2e153decfd79391e" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>NDCompressedSize</name></member>
+      <member refid="classasyn_n_d_array_driver_1af71358738ff1dbe4c9185f105807f799" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>NDDataType</name></member>
+      <member refid="classasyn_n_d_array_driver_1a23727b6252a78b74fc40868f15e656dc" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>NDDimensions</name></member>
+      <member refid="classasyn_n_d_array_driver_1a2be0f672f139c59f942bedfd7d94ff0f" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>NDDriverVersion</name></member>
+      <member refid="classasyn_n_d_array_driver_1a436f60f2a566a9be759c2dad9a9cbbaf" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>NDEpicsTSNsec</name></member>
+      <member refid="classasyn_n_d_array_driver_1af9d5abcc0a9ef2a21abce8607fd7650e" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>NDEpicsTSSec</name></member>
+      <member refid="classasyn_n_d_array_driver_1adc503aa2621ea29c553514b09784229a" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>NDFileCapture</name></member>
+      <member refid="classasyn_n_d_array_driver_1a726ad8d1b09b0fc5e08e0561e9bc255f" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>NDFileCreateDir</name></member>
+      <member refid="classasyn_n_d_array_driver_1a1ce29ba9f5d31b52628ae76129d15fa2" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>NDFileDeleteDriverFile</name></member>
+      <member refid="classasyn_n_d_array_driver_1a8911e3455de6adbfcb21093da9ff0500" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>NDFileFormat</name></member>
+      <member refid="classasyn_n_d_array_driver_1a8f5e5a7aae6848a12e55012273ab06c5" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>NDFileLazyOpen</name></member>
+      <member refid="classasyn_n_d_array_driver_1a513d2b4cc04ba240f434394c715f733f" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>NDFileName</name></member>
+      <member refid="classasyn_n_d_array_driver_1a6d7cf0fea0eba3eb69fe69a60b89b30c" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>NDFileNumber</name></member>
+      <member refid="classasyn_n_d_array_driver_1abd42667177a6b0ea88888487511514cd" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>NDFileNumCapture</name></member>
+      <member refid="classasyn_n_d_array_driver_1aa392d8dfaa3d659958deddf100d54aed" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>NDFileNumCaptured</name></member>
+      <member refid="classasyn_n_d_array_driver_1ac511e9800761d6cb070d3540940b24c3" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>NDFilePath</name></member>
+      <member refid="classasyn_n_d_array_driver_1a3cf47b7e4df08a87b0585c62509878bf" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>NDFilePathExists</name></member>
+      <member refid="classasyn_n_d_array_driver_1a2db8828aac3ad3c3df409291395fcb4d" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>NDFileTemplate</name></member>
+      <member refid="classasyn_n_d_array_driver_1a5523209bde8cdb69b0ea275628422e9f" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>NDFileTempSuffix</name></member>
+      <member refid="classasyn_n_d_array_driver_1a392868002486b6c806c587ef3f73c320" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>NDFileWriteMessage</name></member>
+      <member refid="classasyn_n_d_array_driver_1ae446f2d56cfb91299839a1a3fea72a62" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>NDFileWriteMode</name></member>
+      <member refid="classasyn_n_d_array_driver_1ab5b4722576613c52894c55da7153a05f" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>NDFileWriteStatus</name></member>
+      <member refid="classasyn_n_d_array_driver_1ad109404880a23929fc17dea1f09e0775" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>NDFullFileName</name></member>
+      <member refid="classasyn_n_d_array_driver_1aa13dc824ba27681f894f8319f3f13a8c" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>NDNDimensions</name></member>
+      <member refid="classasyn_n_d_array_driver_1aff0d6045cf18c21959a8c21228549ecd" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>NDNumQueuedArrays</name></member>
+      <member refid="classasyn_n_d_array_driver_1adf264650a61fe86c37dbc7a4e5c1fbd0" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>NDPoolAllocBuffers</name></member>
+      <member refid="classasyn_n_d_array_driver_1af3cacda934695b472269d32ba2d94a86" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>NDPoolEmptyFreeList</name></member>
+      <member refid="classasyn_n_d_array_driver_1a9514efd0d89337677ccb428b8b3ac518" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>NDPoolFreeBuffers</name></member>
+      <member refid="classasyn_n_d_array_driver_1a5ab509aca13c1642449253f6ce6eca2c" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>NDPoolMaxBuffers</name></member>
+      <member refid="classasyn_n_d_array_driver_1a7267d600284240edc0f0abe484dff2ee" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>NDPoolMaxMemory</name></member>
+      <member refid="classasyn_n_d_array_driver_1a2a7b868b8d6c542fff28993e1c977e4b" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>NDPoolUsedMemory</name></member>
+      <member refid="classasyn_n_d_array_driver_1acefc2096d9db2fd102542a957722ceef" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>NDPortNameSelf</name></member>
+      <member refid="classasyn_n_d_array_driver_1acdf9d2f3575481f29544c56c9fe46c5c" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>NDReadFile</name></member>
+      <member refid="classasyn_n_d_array_driver_1a9b5492ae014f21d0843658f19e955dc1" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>NDTimeStamp</name></member>
+      <member refid="classasyn_n_d_array_driver_1a8d713b9cc045417a599c91aacc98b08b" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>NDUniqueId</name></member>
+      <member refid="classasyn_n_d_array_driver_1a5d1ec3e763ea9aef2f3fd576611baeb5" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>NDWriteFile</name></member>
+      <member refid="classasyn_n_d_array_driver_1a6f5685f9951f6b3b897e85425b59ad69" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>pArrays</name></member>
+      <member refid="classeiger_detector_1a6fb2deffc61be7ff112625dd9f968f5f" prot="private" virt="non-virtual"><scope>eigerDetector</scope><name>parseH5File</name></member>
+      <member refid="classeiger_detector_1a9199938e97aa913f32dee86c5f69bf02" prot="public" virt="non-virtual"><scope>eigerDetector</scope><name>parseTask</name></member>
+      <member refid="classeiger_detector_1a92515209b910c368165ead9403178ddd" prot="private" virt="non-virtual"><scope>eigerDetector</scope><name>parseTiffFile</name></member>
+      <member refid="classasyn_n_d_array_driver_1a7bed3ca3a144124eb31053eeecc990e9" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>pAttributeList</name></member>
+      <member refid="classasyn_n_d_array_driver_1ad3969854a37329ef4061cc560e9022dc" prot="public" virt="non-virtual"><scope>eigerDetector</scope><name>pNDArrayPool</name></member>
+      <member refid="classeiger_detector_1a8a8a256549be65e41a6f7d271727488a" prot="public" virt="non-virtual"><scope>eigerDetector</scope><name>pollTask</name></member>
+      <member refid="classasyn_n_d_array_driver_1a5aeb82d51c34b79b77433e121722a141" prot="public" virt="virtual"><scope>eigerDetector</scope><name>readFloat64</name></member>
+      <member refid="classasyn_n_d_array_driver_1acac9d5044d62734723404ef7e53ee4e8" prot="public" virt="virtual"><scope>eigerDetector</scope><name>readGenericPointer</name></member>
+      <member refid="classasyn_n_d_array_driver_1a4c0e7e85f9f4a988614a273c035be813" prot="public" virt="virtual"><scope>eigerDetector</scope><name>readInt32</name></member>
+      <member refid="classasyn_n_d_array_driver_1a1da351ae597074c829204945f700098b" prot="public" virt="virtual"><scope>eigerDetector</scope><name>readNDAttributesFile</name></member>
+      <member refid="classeiger_detector_1a25eb3828e4891a552cc8eb4394a887ab" prot="public" virt="non-virtual"><scope>eigerDetector</scope><name>reapTask</name></member>
+      <member refid="classeiger_detector_1a6d6d68b3d7be3195745cc145864dba66" prot="public" virt="virtual"><scope>eigerDetector</scope><name>report</name></member>
+      <member refid="classeiger_detector_1a10547056693d377f8fb6347056ba929d" prot="public" virt="non-virtual"><scope>eigerDetector</scope><name>roi_mode</name></member>
+      <member refid="classeiger_detector_1a10547056693d377f8fb6347056ba929dabf639ca2749e4487fdf6e5410d6c934d" prot="public" virt="non-virtual"><scope>eigerDetector</scope><name>ROI_MODE_4M</name></member>
+      <member refid="classeiger_detector_1a10547056693d377f8fb6347056ba929da49f07c863c1b1123895294cdd771b1b4" prot="public" virt="non-virtual"><scope>eigerDetector</scope><name>ROI_MODE_DISABLED</name></member>
+      <member refid="classeiger_detector_1a7eb5550d0f8b426ac36ce2d361f36e04" prot="public" virt="non-virtual"><scope>eigerDetector</scope><name>saveTask</name></member>
+      <member refid="classasyn_n_d_array_driver_1abf87462bc5853f8e5a56db5e93acd956" prot="public" virt="virtual"><scope>eigerDetector</scope><name>setIntegerParam</name></member>
+      <member refid="classasyn_n_d_array_driver_1a3732469004adb2cd7eb5d5f047385915" prot="public" virt="virtual"><scope>eigerDetector</scope><name>setIntegerParam</name></member>
+      <member refid="class_a_d_driver_1ac05bfd5d3c6bc63910d6fbd4fb909d50" prot="public" virt="virtual"><scope>eigerDetector</scope><name>setShutter</name></member>
+      <member refid="classeiger_detector_1af0eed21da770ce321e20d21eb1291763" prot="public" virt="non-virtual"><scope>eigerDetector</scope><name>streamTask</name></member>
+      <member refid="classasyn_n_d_array_driver_1aa52489ae8673348bf596faf63b94e85e" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>threadPriority_</name></member>
+      <member refid="classasyn_n_d_array_driver_1a467b05b088bb8cf97e2fcad07a4a432f" prot="protected" virt="non-virtual"><scope>eigerDetector</scope><name>threadStackSize_</name></member>
+      <member refid="classeiger_detector_1a9ea396e084baa77f714496967ac19ddc" prot="public" virt="non-virtual"><scope>eigerDetector</scope><name>trigger_mode</name></member>
+      <member refid="classeiger_detector_1a9ea396e084baa77f714496967ac19ddcae24b556013ad6b651d7159b244118a77" prot="public" virt="non-virtual"><scope>eigerDetector</scope><name>TRIGGER_MODE_CONTINUOUS</name></member>
+      <member refid="classeiger_detector_1a9ea396e084baa77f714496967ac19ddca643b87b65c2f50b310120d410a29f6f4" prot="public" virt="non-virtual"><scope>eigerDetector</scope><name>TRIGGER_MODE_EXTE</name></member>
+      <member refid="classeiger_detector_1a9ea396e084baa77f714496967ac19ddca005855542f0084e75e19feb41f653ce8" prot="public" virt="non-virtual"><scope>eigerDetector</scope><name>TRIGGER_MODE_EXTG</name></member>
+      <member refid="classeiger_detector_1a9ea396e084baa77f714496967ac19ddca3cdec6c16601ec5bb31dbae699da27dc" prot="public" virt="non-virtual"><scope>eigerDetector</scope><name>TRIGGER_MODE_EXTS</name></member>
+      <member refid="classeiger_detector_1a9ea396e084baa77f714496967ac19ddcaa2da887ae6e7da41d1e69870f9d31ee7" prot="public" virt="non-virtual"><scope>eigerDetector</scope><name>TRIGGER_MODE_INTE</name></member>
+      <member refid="classeiger_detector_1a9ea396e084baa77f714496967ac19ddca5b13985c1d556c7cd2252378fd06b274" prot="public" virt="non-virtual"><scope>eigerDetector</scope><name>TRIGGER_MODE_INTS</name></member>
+      <member refid="classasyn_n_d_array_driver_1a688578d794900c0671da8dfaf771912b" prot="public" virt="non-virtual"><scope>eigerDetector</scope><name>updateQueuedArrayCount</name></member>
+      <member refid="classeiger_detector_1afaad6cc6843ecd25373f1445ade3cd1e" prot="public" virt="virtual"><scope>eigerDetector</scope><name>writeFloat64</name></member>
+      <member refid="classasyn_n_d_array_driver_1ad95feb77baff701f85641ef5fc3d5c65" prot="public" virt="virtual"><scope>eigerDetector</scope><name>writeGenericPointer</name></member>
+      <member refid="classeiger_detector_1a9c645558be3b3f650c0fb39aca42f8e8" prot="public" virt="virtual"><scope>eigerDetector</scope><name>writeInt32</name></member>
+      <member refid="classeiger_detector_1ad00bcc67aeee39898210ad0b7507a7e8" prot="public" virt="virtual"><scope>eigerDetector</scope><name>writeOctet</name></member>
+      <member refid="classasyn_n_d_array_driver_1ab392c48715c896b8f58c0456b7889723" prot="public" virt="virtual"><scope>eigerDetector</scope><name>~asynNDArrayDriver</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

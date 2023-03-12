@@ -1,0 +1,1001 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="merlin__sim_8c" kind="file" language="C++">
+    <compoundname>merlin_sim.c</compoundname>
+    <includes local="no">stdio.h</includes>
+    <includes local="no">stdlib.h</includes>
+    <includes local="no">sys/socket.h</includes>
+    <includes local="no">sys/types.h</includes>
+    <includes local="no">sys/wait.h</includes>
+    <includes local="no">netinet/in.h</includes>
+    <includes local="no">string.h</includes>
+    <includes local="no">signal.h</includes>
+    <includes local="no">errno.h</includes>
+    <includes local="no">unistd.h</includes>
+    <includes local="no">pthread.h</includes>
+    <includes local="no">stdint.h</includes>
+    <includes local="no">time.h</includes>
+    <incdepgraph>
+      <node id="7">
+        <label>netinet/in.h</label>
+      </node>
+      <node id="13">
+        <label>stdint.h</label>
+      </node>
+      <node id="3">
+        <label>stdlib.h</label>
+      </node>
+      <node id="10">
+        <label>errno.h</label>
+      </node>
+      <node id="12">
+        <label>pthread.h</label>
+      </node>
+      <node id="5">
+        <label>sys/types.h</label>
+      </node>
+      <node id="8">
+        <label>string.h</label>
+      </node>
+      <node id="11">
+        <label>unistd.h</label>
+      </node>
+      <node id="9">
+        <label>signal.h</label>
+      </node>
+      <node id="14">
+        <label>time.h</label>
+      </node>
+      <node id="6">
+        <label>sys/wait.h</label>
+      </node>
+      <node id="1">
+        <label>/home/runner/work/areaDetector/areaDetector/ADMerlin/merlinApp/src/merlin_sim.c</label>
+        <link refid="merlin__sim_8c"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>sys/socket.h</label>
+      </node>
+      <node id="2">
+        <label>stdio.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="merlin__sim_8c_1a3e937c42922f7601edb17b747602c471" prot="public" static="no">
+        <name>MAXLINE</name>
+        <initializer>256</initializer>
+        <briefdescription>
+<para>Simple TCP server to simulate a merlin Labview system. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Arguments: port number - port number to listen for connections</para>
+<para>Matthew Pearson Oct 2011</para>
+<para>Giles Knap Jan 2012 </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADMerlin/merlinApp/src/merlin_sim.c" line="28" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADMerlin/merlinApp/src/merlin_sim.c" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="merlin__sim_8c_1ae7e715c270481406658bbd2bafa2897f" prot="public" static="no">
+        <name>MAXDATA</name>
+        <initializer>256*256*2*2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADMerlin/merlinApp/src/merlin_sim.c" line="29" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADMerlin/merlinApp/src/merlin_sim.c" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="merlin__sim_8c_1a88915a49fad5bd0318b37b6c9674dbc4" prot="public" static="no">
+        <name>DATAHEADERLEN</name>
+        <initializer>252</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADMerlin/merlinApp/src/merlin_sim.c" line="30" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADMerlin/merlinApp/src/merlin_sim.c" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="merlin__sim_8c_1a910da24115054b1c15c8e0ddd9debfd1" prot="public" static="no">
+        <name>MPX_PROFILE_LEN</name>
+        <initializer>256 * 8</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADMerlin/merlinApp/src/merlin_sim.c" line="31" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADMerlin/merlinApp/src/merlin_sim.c" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="merlin__sim_8c_1a8fea89d87598a29493ad2c7f55154013" prot="public" static="no">
+        <name>MPX_SUM_LEN</name>
+        <initializer>4</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADMerlin/merlinApp/src/merlin_sim.c" line="32" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADMerlin/merlinApp/src/merlin_sim.c" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="merlin__sim_8c_1af83ab94da573d95ddc366030c5537d60" prot="public" static="no">
+        <name>CMDLEN</name>
+        <initializer>4</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADMerlin/merlinApp/src/merlin_sim.c" line="33" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADMerlin/merlinApp/src/merlin_sim.c" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="merlin__sim_8c_1ab8f5e10b9f780e53f9583724ac965a0c" prot="public" static="no">
+        <name>HEADER_LEN</name>
+        <initializer>15</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADMerlin/merlinApp/src/merlin_sim.c" line="34" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADMerlin/merlinApp/src/merlin_sim.c" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="merlin__sim_8c_1afd3bfa5add6477abed3eaa362c5702b4" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int frame_count</definition>
+        <argsstring></argsstring>
+        <name>frame_count</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADMerlin/merlinApp/src/merlin_sim.c" line="43" column="5" bodyfile="/home/runner/work/areaDetector/areaDetector/ADMerlin/merlinApp/src/merlin_sim.c" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="merlin__sim_8c_1adff22aaf1854bec2f8289678a60d1930" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int frames_to_send</definition>
+        <argsstring></argsstring>
+        <name>frames_to_send</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADMerlin/merlinApp/src/merlin_sim.c" line="44" column="5" bodyfile="/home/runner/work/areaDetector/areaDetector/ADMerlin/merlinApp/src/merlin_sim.c" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="merlin__sim_8c_1a78ddd0f7e94a7539b9728246b698552d" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int incrementer</definition>
+        <argsstring></argsstring>
+        <name>incrementer</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADMerlin/merlinApp/src/merlin_sim.c" line="46" column="5" bodyfile="/home/runner/work/areaDetector/areaDetector/ADMerlin/merlinApp/src/merlin_sim.c" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="merlin__sim_8c_1a5943b9a4873dc776a19821c4b2575685" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int data_exit</definition>
+        <argsstring></argsstring>
+        <name>data_exit</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADMerlin/merlinApp/src/merlin_sim.c" line="48" column="5" bodyfile="/home/runner/work/areaDetector/areaDetector/ADMerlin/merlinApp/src/merlin_sim.c" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="merlin__sim_8c_1ae9e20345ce09def049d986d8422f4f5d" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int do_data</definition>
+        <argsstring></argsstring>
+        <name>do_data</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADMerlin/merlinApp/src/merlin_sim.c" line="49" column="5" bodyfile="/home/runner/work/areaDetector/areaDetector/ADMerlin/merlinApp/src/merlin_sim.c" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="merlin__sim_8c_1a4efb5bd8a00ff7fecb176d93128f5769" prot="public" static="no" mutable="no">
+        <type>pthread_mutex_t</type>
+        <definition>pthread_mutex_t do_data_mutex</definition>
+        <argsstring></argsstring>
+        <name>do_data_mutex</name>
+        <initializer>= PTHREAD_MUTEX_INITIALIZER</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADMerlin/merlinApp/src/merlin_sim.c" line="50" column="17" bodyfile="/home/runner/work/areaDetector/areaDetector/ADMerlin/merlinApp/src/merlin_sim.c" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="merlin__sim_8c_1a2a11b2b23e753093cf90ed597541488a" prot="public" static="no" mutable="no">
+        <type>pthread_cond_t</type>
+        <definition>pthread_cond_t do_data_cond</definition>
+        <argsstring></argsstring>
+        <name>do_data_cond</name>
+        <initializer>= PTHREAD_COND_INITIALIZER</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADMerlin/merlinApp/src/merlin_sim.c" line="51" column="16" bodyfile="/home/runner/work/areaDetector/areaDetector/ADMerlin/merlinApp/src/merlin_sim.c" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="merlin__sim_8c_1ac66dbe0e082fd3cc29bc1572a4dccc09" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Depth</definition>
+        <argsstring></argsstring>
+        <name>Depth</name>
+        <initializer>= 12</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADMerlin/merlinApp/src/merlin_sim.c" line="53" column="5" bodyfile="/home/runner/work/areaDetector/areaDetector/ADMerlin/merlinApp/src/merlin_sim.c" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="merlin__sim_8c_1afceef742d30ed3d8c0dbc4891ae2229e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void sig_chld</definition>
+        <argsstring>(int signo)</argsstring>
+        <name>sig_chld</name>
+        <param>
+          <type>int</type>
+          <declname>signo</declname>
+        </param>
+        <briefdescription>
+<para>Signal handler for SIGCHLD. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>NOT NEEDED NOW WE ARE USING PTHREADS. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADMerlin/merlinApp/src/merlin_sim.c" line="213" column="6" bodyfile="/home/runner/work/areaDetector/areaDetector/ADMerlin/merlinApp/src/merlin_sim.c" bodystart="213" bodyend="222" declfile="/home/runner/work/areaDetector/areaDetector/ADMerlin/merlinApp/src/merlin_sim.c" declline="36" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="merlin__sim_8c_1add5a361abee0b0574de2b2b36a4acbe9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int echo_request</definition>
+        <argsstring>(int socket_fd)</argsstring>
+        <name>echo_request</name>
+        <param>
+          <type>int</type>
+          <declname>socket_fd</declname>
+        </param>
+        <briefdescription>
+<para>Read from socket and send back response. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Read a maximum of MAXLINE, or until a newline, then echo the command back. </para>
+        </detaileddescription>
+        <inbodydescription>
+<para>Read until end of current block (header or body)</para>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADMerlin/merlinApp/src/merlin_sim.c" line="228" column="5" bodyfile="/home/runner/work/areaDetector/areaDetector/ADMerlin/merlinApp/src/merlin_sim.c" bodystart="228" bodyend="442" declfile="/home/runner/work/areaDetector/areaDetector/ADMerlin/merlinApp/src/merlin_sim.c" declline="37" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="merlin__sim_8c_1a6febf812d940db3e239b821000b3ba9b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int produce_data</definition>
+        <argsstring>(int data_fd)</argsstring>
+        <name>produce_data</name>
+        <param>
+          <type>int</type>
+          <declname>socket_fd</declname>
+        </param>
+        <briefdescription>
+<para>Produce simulation data when we start acquisition. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADMerlin/merlinApp/src/merlin_sim.c" line="459" column="5" bodyfile="/home/runner/work/areaDetector/areaDetector/ADMerlin/merlinApp/src/merlin_sim.c" bodystart="459" bodyend="598" declfile="/home/runner/work/areaDetector/areaDetector/ADMerlin/merlinApp/src/merlin_sim.c" declline="38" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="merlin__sim_8c_1a2e330e31e7c1f56594fafc7205764f56" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void * commandThread</definition>
+        <argsstring>(void *command_fd)</argsstring>
+        <name>commandThread</name>
+        <param>
+          <type>void *</type>
+          <declname>command_fd</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADMerlin/merlinApp/src/merlin_sim.c" line="173" column="7" bodyfile="/home/runner/work/areaDetector/areaDetector/ADMerlin/merlinApp/src/merlin_sim.c" bodystart="173" bodyend="192" declfile="/home/runner/work/areaDetector/areaDetector/ADMerlin/merlinApp/src/merlin_sim.c" declline="39" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="merlin__sim_8c_1aa747e5f44c60477f71cdc568fe130107" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void * dataThread</definition>
+        <argsstring>(void *data_fd)</argsstring>
+        <name>dataThread</name>
+        <param>
+          <type>void *</type>
+          <declname>data_fd</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADMerlin/merlinApp/src/merlin_sim.c" line="194" column="7" bodyfile="/home/runner/work/areaDetector/areaDetector/ADMerlin/merlinApp/src/merlin_sim.c" bodystart="194" bodyend="207" declfile="/home/runner/work/areaDetector/areaDetector/ADMerlin/merlinApp/src/merlin_sim.c" declline="40" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="merlin__sim_8c_1a0ddf1224851353fc92bfbff6f499fa97" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int main</definition>
+        <argsstring>(int argc, char *argv[])</argsstring>
+        <name>main</name>
+        <param>
+          <type>int</type>
+          <declname>argc</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>argv</declname>
+          <array>[]</array>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADMerlin/merlinApp/src/merlin_sim.c" line="55" column="5" bodyfile="/home/runner/work/areaDetector/areaDetector/ADMerlin/merlinApp/src/merlin_sim.c" bodystart="55" bodyend="171"/>
+      </memberdef>
+      <memberdef kind="function" id="merlin__sim_8c_1ab7276f44050c94b925728f80b189fdec" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void endian_swap</definition>
+        <argsstring>(uint64_t *x)</argsstring>
+        <name>endian_swap</name>
+        <param>
+          <type>uint64_t *</type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADMerlin/merlinApp/src/merlin_sim.c" line="444" column="6" bodyfile="/home/runner/work/areaDetector/areaDetector/ADMerlin/merlinApp/src/merlin_sim.c" bodystart="444" bodyend="454"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdlib.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;sys/socket.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;sys/types.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;sys/wait.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;netinet/in.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;signal.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;errno.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;unistd.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;pthread.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;time.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MAXLINE<sp/>256</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MAXDATA<sp/>256*256*2*2<sp/></highlight><highlight class="comment">//<sp/>256<sp/>X<sp/>by<sp/>256<sp/>Y<sp/>by<sp/>2<sp/>bytes<sp/>per<sp/>pixel<sp/>*<sp/>2<sp/>for<sp/>24<sp/>bit<sp/>depth<sp/>(=<sp/>32<sp/>bits<sp/>data)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DATAHEADERLEN<sp/>252</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MPX_PROFILE_LEN<sp/>256<sp/>*<sp/>8</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MPX_SUM_LEN<sp/>4</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CMDLEN<sp/>4</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>HEADER_LEN<sp/>15<sp/></highlight><highlight class="comment">//<sp/>this<sp/>includes<sp/>2<sp/>commas<sp/>+<sp/>the<sp/>header<sp/>and<sp/>length<sp/>fields</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="comment">/*Function<sp/>prototypes.*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="merlin__sim_8c_1afceef742d30ed3d8c0dbc4891ae2229e" kindref="member">sig_chld</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>signo);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="merlin__sim_8c_1add5a361abee0b0574de2b2b36a4acbe9" kindref="member">echo_request</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>socket_fd);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="merlin__sim_8c_1a6febf812d940db3e239b821000b3ba9b" kindref="member">produce_data</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>socket_fd);</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<ref refid="merlin__sim_8c_1a2e330e31e7c1f56594fafc7205764f56" kindref="member">commandThread</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>command_fd);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<ref refid="merlin__sim_8c_1aa747e5f44c60477f71cdc568fe130107" kindref="member">dataThread</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>data_fd);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="merlin__sim_8c_1a6febf812d940db3e239b821000b3ba9b" kindref="member">produce_data</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>data_fd);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="merlin__sim_8c_1afd3bfa5add6477abed3eaa362c5702b4" kindref="member">frame_count</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="merlin__sim_8c_1adff22aaf1854bec2f8289678a60d1930" kindref="member">frames_to_send</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="merlin__sim_8c_1a78ddd0f7e94a7539b9728246b698552d" kindref="member">incrementer</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="merlin__sim_8c_1a5943b9a4873dc776a19821c4b2575685" kindref="member">data_exit</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="merlin__sim_8c_1ae9e20345ce09def049d986d8422f4f5d" kindref="member">do_data</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal">pthread_mutex_t<sp/><ref refid="merlin__sim_8c_1a4efb5bd8a00ff7fecb176d93128f5769" kindref="member">do_data_mutex</ref><sp/>=<sp/>PTHREAD_MUTEX_INITIALIZER;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal">pthread_cond_t<sp/><ref refid="merlin__sim_8c_1a2a11b2b23e753093cf90ed597541488a" kindref="member">do_data_cond</ref><sp/>=<sp/>PTHREAD_COND_INITIALIZER;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="merlin__sim_8c_1ac66dbe0e082fd3cc29bc1572a4dccc09" kindref="member">Depth</ref><sp/>=<sp/>12;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="merlin__sim_8c_1a0ddf1224851353fc92bfbff6f499fa97" kindref="member">main</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>argc,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*argv[])</highlight></codeline>
+<codeline lineno="56"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fd,<sp/>fd2,<sp/>fd_data,<sp/>fd2_data;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>socklen_t<sp/>client_size;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">sockaddr_in<sp/>server_addr,<sp/>client_addr,<sp/>server_addr_data,</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>client_addr_data;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>pthread_t<sp/>tid,<sp/>tid_data;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;Started<sp/>Merlin<sp/>simulation<sp/>server...\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(argc<sp/>!=<sp/>3)</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;<sp/><sp/>ERROR:<sp/>Use:<sp/>%s<sp/>{command<sp/>socket}<sp/>{data<sp/>socket}\n&quot;</highlight><highlight class="normal">,<sp/>argv[0]);</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>exit(EXIT_FAILURE);</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Create<sp/>a<sp/>TCP<sp/>socket.*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>fd<sp/>=<sp/><ref refid="structsocket" kindref="compound">socket</ref>(AF_INET,<sp/>SOCK_STREAM,<sp/>0);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>fd_data<sp/>=<sp/><ref refid="structsocket" kindref="compound">socket</ref>(AF_INET,<sp/>SOCK_STREAM,<sp/>0);</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Create<sp/>and<sp/>initialise<sp/>a<sp/>socket<sp/>address<sp/>structure.*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>memset(&amp;server_addr,<sp/>0,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>sockaddr_in));</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>server_addr.sin_family<sp/>=<sp/>AF_INET;</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/>server_addr.sin_addr.s_addr<sp/>=<sp/>htonl(INADDR_ANY<sp/>);</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/>server_addr.sin_port<sp/>=<sp/>htons(atoi(argv[1]));</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>memset(&amp;server_addr_data,<sp/>0,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>sockaddr_in));</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>server_addr_data.sin_family<sp/>=<sp/>AF_INET;</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>server_addr_data.sin_addr.s_addr<sp/>=<sp/>htonl(INADDR_ANY<sp/>);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>server_addr_data.sin_port<sp/>=<sp/>htons(atoi(argv[2]));</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Bind<sp/>the<sp/>socket<sp/>address<sp/>to<sp/>the<sp/>socket<sp/>buffer.*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/>bind(fd,<sp/>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>sockaddr<sp/>*)<sp/>&amp;server_addr,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(server_addr));</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/>bind(fd_data,<sp/>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>sockaddr<sp/>*)<sp/>&amp;server_addr_data,</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(server_addr_data));</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>data<sp/>socket<sp/>timeout<sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">timeval<sp/>timeout;</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/>timeout.tv_sec<sp/>=<sp/>2;</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/>timeout.tv_usec<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/>setsockopt(fd_data,<sp/>SOL_SOCKET,<sp/>SO_SNDTIMEO,<sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*)<sp/>&amp;timeout,</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(timeout));</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Listen<sp/>for<sp/>incoming<sp/>connections.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>listen(fd,<sp/>10);</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/>listen(fd_data,<sp/>10);</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Install<sp/>signal<sp/>handler<sp/>to<sp/>clean<sp/>up<sp/>children.*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/>signal(SIGCHLD,<sp/>sig_chld);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*Loop<sp/>forever.*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(1)</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*Command<sp/>socket*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;Waiting<sp/>for<sp/>command<sp/>socket...\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>client_size<sp/>=<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(client_addr);</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((fd2<sp/>=<sp/>accept(fd,<sp/>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>sockaddr<sp/>*)<sp/>&amp;client_addr,<sp/>&amp;client_size))</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;<sp/>0)</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(errno<sp/>==<sp/>EINTR)</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal">;<sp/></highlight><highlight class="comment">/*Deal<sp/>with<sp/>interupted<sp/>system<sp/>call,<sp/>since<sp/>this<sp/>blocks.*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>perror(argv[0]);</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>exit(EXIT_FAILURE);</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(fd2<sp/>&gt;<sp/>0)</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*Data<sp/>socket*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;Waiting<sp/>for<sp/>data<sp/>socket...\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>client_size<sp/>=<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(client_addr_data);</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((fd2_data<sp/>=<sp/>accept(fd_data,</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>sockaddr<sp/>*)<sp/>&amp;client_addr_data,<sp/>&amp;client_size))<sp/>&lt;<sp/>0)</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(errno<sp/>==<sp/>EINTR)</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal">;<sp/></highlight><highlight class="comment">/*Deal<sp/>with<sp/>interupted<sp/>system<sp/>call,<sp/>since<sp/>this<sp/>blocks.*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>perror(argv[0]);</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>exit(EXIT_FAILURE);</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(fd2_data<sp/>&gt;<sp/>0)</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pthread_create(&amp;tid,<sp/>NULL,<sp/>&amp;<ref refid="merlin__sim_8c_1a2e330e31e7c1f56594fafc7205764f56" kindref="member">commandThread</ref>,<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*)<sp/>fd2);</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pthread_create(&amp;tid_data,<sp/>NULL,<sp/>&amp;<ref refid="merlin__sim_8c_1aa747e5f44c60477f71cdc568fe130107" kindref="member">dataThread</ref>,<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*)<sp/>fd2_data);</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*Block<sp/>here<sp/>waiting<sp/>for<sp/>the<sp/>threads<sp/>to<sp/>finish.<sp/>This<sp/>only<sp/>allows<sp/>a<sp/>single<sp/>client<sp/>to</highlight></codeline>
+<codeline lineno="153"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>connect,<sp/>to<sp/>keep<sp/>it<sp/>simple.*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pthread_join(tid,<sp/>NULL<sp/>);</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;thread<sp/>1<sp/>finished.\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pthread_join(tid_data,<sp/>NULL<sp/>);</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;thread<sp/>2<sp/>finished.\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>close(fd2);</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"></highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"></highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*Should<sp/>never<sp/>get<sp/>here.*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;Finishing<sp/>Merlin<sp/>server.\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>EXIT_SUCCESS;</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"></highlight></codeline>
+<codeline lineno="171"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"></highlight></codeline>
+<codeline lineno="173"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/><ref refid="merlin__sim_8c_1a2e330e31e7c1f56594fafc7205764f56" kindref="member">commandThread</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*command_fd)</highlight></codeline>
+<codeline lineno="174"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;Started<sp/>commandThread.\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"></highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="merlin__sim_8c_1add5a361abee0b0574de2b2b36a4acbe9" kindref="member">echo_request</ref>((</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)<sp/>command_fd)<sp/>!=<sp/>EXIT_SUCCESS)</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;<sp/><sp/>Client<sp/>failed<sp/>to<sp/>handle<sp/>protocol,<sp/>or<sp/>connection<sp/>closed.\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*close<sp/>connected<sp/>socket*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>close((</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)<sp/>command_fd);</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*signal<sp/>data<sp/>thread<sp/>to<sp/>exit.*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;***signalling<sp/>data<sp/>thread<sp/>to<sp/>exit.\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pthread_mutex_lock(&amp;<ref refid="merlin__sim_8c_1a4efb5bd8a00ff7fecb176d93128f5769" kindref="member">do_data_mutex</ref>);</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="merlin__sim_8c_1ae9e20345ce09def049d986d8422f4f5d" kindref="member">do_data</ref><sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="merlin__sim_8c_1a5943b9a4873dc776a19821c4b2575685" kindref="member">data_exit</ref><sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pthread_cond_signal(&amp;<ref refid="merlin__sim_8c_1a2a11b2b23e753093cf90ed597541488a" kindref="member">do_data_cond</ref>);</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pthread_mutex_unlock(&amp;<ref refid="merlin__sim_8c_1a4efb5bd8a00ff7fecb176d93128f5769" kindref="member">do_data_mutex</ref>);</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*)<sp/>EXIT_FAILURE;</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*)<sp/>EXIT_SUCCESS;</highlight></codeline>
+<codeline lineno="192"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"></highlight></codeline>
+<codeline lineno="194"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/><ref refid="merlin__sim_8c_1aa747e5f44c60477f71cdc568fe130107" kindref="member">dataThread</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*data_fd)</highlight></codeline>
+<codeline lineno="195"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;Started<sp/>dataThread.\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"></highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="merlin__sim_8c_1a6febf812d940db3e239b821000b3ba9b" kindref="member">produce_data</ref>((</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)<sp/>data_fd)<sp/>!=<sp/>EXIT_SUCCESS)</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/>Data<sp/>client<sp/>failed<sp/>to<sp/>handle<sp/>protocol,<sp/>or<sp/>connection<sp/>closed.\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*close<sp/>connected<sp/>socket*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>close((</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)<sp/>data_fd);</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*)<sp/>EXIT_FAILURE;</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*)<sp/>EXIT_SUCCESS;</highlight></codeline>
+<codeline lineno="207"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"></highlight></codeline>
+<codeline lineno="213"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="merlin__sim_8c_1afceef742d30ed3d8c0dbc4891ae2229e" kindref="member">sig_chld</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>signo)</highlight></codeline>
+<codeline lineno="214"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/>pid_t<sp/>pid<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>status<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"></highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>((pid<sp/>=<sp/>waitpid(-1,<sp/>&amp;status,<sp/>WNOHANG))<sp/>&gt;<sp/>0)</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;Child<sp/>%d<sp/>has<sp/>terminated.<sp/>Status<sp/>=<sp/>%d\n&quot;</highlight><highlight class="normal">,<sp/>pid,<sp/>status);</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="222"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"></highlight></codeline>
+<codeline lineno="228"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="merlin__sim_8c_1add5a361abee0b0574de2b2b36a4acbe9" kindref="member">echo_request</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>socket_fd)</highlight></codeline>
+<codeline lineno="229"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nleft<sp/>=<sp/><ref refid="merlin__sim_8c_1ab8f5e10b9f780e53f9583724ac965a0c" kindref="member">HEADER_LEN</ref>;</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nread<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>buffer[<ref refid="merlin__sim_8c_1a3e937c42922f7601edb17b747602c471" kindref="member">MAXLINE</ref><sp/>+<sp/>1]<sp/>=</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/>{<sp/></highlight><highlight class="charliteral">&apos;\0&apos;</highlight><highlight class="normal"><sp/>};</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><ref refid="structresponse" kindref="compound">response</ref>[<ref refid="merlin__sim_8c_1a3e937c42922f7601edb17b747602c471" kindref="member">MAXLINE</ref>]<sp/>=</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/>{<sp/></highlight><highlight class="charliteral">&apos;\0&apos;</highlight><highlight class="normal"><sp/>};</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*bptr<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>inheader<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*tok<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*cmdType,<sp/>*cmdName,<sp/>*cmdValue;</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>cmdIntValue;</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>bodylen<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"></highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/>bptr<sp/>=<sp/>buffer;</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"></highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(socket_fd<sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;NULL<sp/>socket<sp/>fd<sp/>in<sp/>echo_request.\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>EXIT_FAILURE;</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"></highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>keep<sp/>reading<sp/>and<sp/>responding<sp/>until<sp/>an<sp/>error<sp/>occurs</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(1)</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>clear<sp/>response</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structresponse" kindref="compound">response</ref>[0]<sp/>=<sp/>(char)<sp/>NULL;</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>first<sp/>time<sp/>around<sp/>following<sp/>loop<sp/>we<sp/>read<sp/>header_len<sp/>bytes</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>nleft<sp/>=<sp/><ref refid="merlin__sim_8c_1ab8f5e10b9f780e53f9583724ac965a0c" kindref="member">HEADER_LEN</ref>;</highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>first<sp/>pass<sp/>of<sp/>the<sp/>while<sp/>loop<sp/>is<sp/>reading<sp/>header</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>inheader<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"></highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(nleft<sp/>&gt;<sp/>0)</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="264"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;reading<sp/>socket...\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((nread<sp/>=<sp/>read(socket_fd,<sp/>bptr,<sp/>nleft))<sp/>&lt;<sp/>0)</highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(errno<sp/>==<sp/>EINTR)</highlight></codeline>
+<codeline lineno="268"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="269"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>nread<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="270"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;EINTR&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="271"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="272"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="274"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;Unknown<sp/>read<sp/>error.\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="275"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>EXIT_FAILURE;</highlight></codeline>
+<codeline lineno="276"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="277"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="278"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(nread<sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="279"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="280"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;Read<sp/>nothing.<sp/>Socket<sp/>closed.\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="281"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>EXIT_FAILURE;<sp/></highlight><highlight class="comment">//Done.<sp/>Client<sp/>has<sp/>probably<sp/>disconnected.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="282"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="283"><highlight class="normal"></highlight></codeline>
+<codeline lineno="284"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>nleft<sp/>=<sp/>nleft<sp/>-<sp/>nread;</highlight></codeline>
+<codeline lineno="285"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(inheader)</highlight></codeline>
+<codeline lineno="286"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="287"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(nleft<sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="288"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="289"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>inheader<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="290"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bptr[<ref refid="merlin__sim_8c_1ab8f5e10b9f780e53f9583724ac965a0c" kindref="member">HEADER_LEN</ref>]<sp/>=<sp/>(char)<sp/>NULL;</highlight></codeline>
+<codeline lineno="291"><highlight class="normal"></highlight></codeline>
+<codeline lineno="292"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;received<sp/>command<sp/>header:<sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/>buffer);</highlight></codeline>
+<codeline lineno="293"><highlight class="normal"></highlight></codeline>
+<codeline lineno="294"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>nleft<sp/>=<sp/><ref refid="merlin__sim_8c_1a3e937c42922f7601edb17b747602c471" kindref="member">MAXLINE</ref><sp/>-<sp/><ref refid="merlin__sim_8c_1ab8f5e10b9f780e53f9583724ac965a0c" kindref="member">HEADER_LEN</ref>;</highlight></codeline>
+<codeline lineno="295"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tok<sp/>=<sp/>strtok(bptr,<sp/></highlight><highlight class="stringliteral">&quot;,&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="296"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tok<sp/>=<sp/>strtok(NULL,<sp/></highlight><highlight class="stringliteral">&quot;,&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="297"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(tok<sp/>==<sp/>NULL<sp/>)</highlight></codeline>
+<codeline lineno="298"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="299"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;MPX<sp/>Command<sp/>header<sp/>is<sp/>missing<sp/>length<sp/>field.\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="300"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="301"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="302"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="303"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="304"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>subtract<sp/>1<sp/>from<sp/>bodylen<sp/>since<sp/>we<sp/>already<sp/>read<sp/>the<sp/>1st<sp/>comma</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="305"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>nleft<sp/>=<sp/>bodylen<sp/>=<sp/>atoi(tok)<sp/>-<sp/>1;</highlight></codeline>
+<codeline lineno="306"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="307"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="308"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="309"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="310"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="311"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="312"><highlight class="normal"></highlight></codeline>
+<codeline lineno="313"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="314"><highlight class="normal"></highlight></codeline>
+<codeline lineno="315"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bptr[bodylen]<sp/>=<sp/>(char)<sp/>NULL;</highlight></codeline>
+<codeline lineno="316"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;received<sp/>command<sp/>body:<sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/>buffer);</highlight></codeline>
+<codeline lineno="317"><highlight class="normal"></highlight></codeline>
+<codeline lineno="318"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Handle<sp/>command</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="319"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bptr<sp/>=<sp/>buffer;</highlight></codeline>
+<codeline lineno="320"><highlight class="normal"></highlight></codeline>
+<codeline lineno="321"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cmdType<sp/>=<sp/>strtok(bptr,<sp/></highlight><highlight class="stringliteral">&quot;,&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="322"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cmdName<sp/>=<sp/>strtok(NULL,<sp/></highlight><highlight class="stringliteral">&quot;,&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="323"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(cmdType<sp/>==<sp/>NULL<sp/>||<sp/>cmdName<sp/>==<sp/>NULL<sp/>)</highlight></codeline>
+<codeline lineno="324"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="325"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;badly<sp/>formed<sp/>MPX<sp/>command\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="326"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sprintf(<ref refid="structresponse" kindref="compound">response</ref>,<sp/></highlight><highlight class="stringliteral">&quot;MPX,0000000008,ERROR,1&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="327"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="328"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="329"><highlight class="normal"></highlight></codeline>
+<codeline lineno="330"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!strncmp(cmdType,<sp/></highlight><highlight class="stringliteral">&quot;SET&quot;</highlight><highlight class="normal">,<sp/>3))</highlight></codeline>
+<codeline lineno="331"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="332"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cmdValue<sp/>=<sp/>strtok(NULL,<sp/></highlight><highlight class="stringliteral">&quot;,&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="333"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cmdIntValue<sp/>=<sp/>atoi(cmdValue);</highlight></codeline>
+<codeline lineno="334"><highlight class="normal"></highlight></codeline>
+<codeline lineno="335"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!strncmp(cmdName,<sp/></highlight><highlight class="stringliteral">&quot;NUMFRAMESTOACQUIRE&quot;</highlight><highlight class="normal">,<sp/><ref refid="merlin__sim_8c_1a3e937c42922f7601edb17b747602c471" kindref="member">MAXLINE</ref>))</highlight></codeline>
+<codeline lineno="336"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="337"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;setting<sp/>frame<sp/>count<sp/>to<sp/>%d\n\n&quot;</highlight><highlight class="normal">,<sp/>cmdIntValue);</highlight></codeline>
+<codeline lineno="338"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="merlin__sim_8c_1afd3bfa5add6477abed3eaa362c5702b4" kindref="member">frame_count</ref><sp/>=<sp/>cmdIntValue;</highlight></codeline>
+<codeline lineno="339"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="340"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!strcmp(cmdName,<sp/></highlight><highlight class="stringliteral">&quot;COUNTERDEPTH&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="341"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="342"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!strcmp(cmdValue,<sp/></highlight><highlight class="stringliteral">&quot;12&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="343"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="merlin__sim_8c_1ac66dbe0e082fd3cc29bc1572a4dccc09" kindref="member">Depth</ref><sp/>=<sp/>12;</highlight></codeline>
+<codeline lineno="344"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="345"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="merlin__sim_8c_1ac66dbe0e082fd3cc29bc1572a4dccc09" kindref="member">Depth</ref><sp/>=<sp/>24;</highlight></codeline>
+<codeline lineno="346"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;switching<sp/>counter<sp/>depth<sp/>to<sp/>%d\n\n&quot;</highlight><highlight class="normal">,<sp/><ref refid="merlin__sim_8c_1ac66dbe0e082fd3cc29bc1572a4dccc09" kindref="member">Depth</ref>);</highlight></codeline>
+<codeline lineno="347"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="348"><highlight class="normal"></highlight></codeline>
+<codeline lineno="349"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>default<sp/>response</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="350"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bodylen<sp/>=<sp/>strlen(cmdName)<sp/>+<sp/>7;</highlight></codeline>
+<codeline lineno="351"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sprintf(<ref refid="structresponse" kindref="compound">response</ref>,<sp/></highlight><highlight class="stringliteral">&quot;MPX,%010u,SET,%s,0&quot;</highlight><highlight class="normal">,<sp/>bodylen,<sp/>cmdName);</highlight></codeline>
+<codeline lineno="352"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="353"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!strncmp(cmdType,<sp/></highlight><highlight class="stringliteral">&quot;GET&quot;</highlight><highlight class="normal">,<sp/>3))</highlight></codeline>
+<codeline lineno="354"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="355"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>strResp[<ref refid="merlin__sim_8c_1a3e937c42922f7601edb17b747602c471" kindref="member">MAXLINE</ref>];</highlight></codeline>
+<codeline lineno="356"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sprintf(strResp,<sp/></highlight><highlight class="stringliteral">&quot;%d&quot;</highlight><highlight class="normal">,<sp/>++<ref refid="merlin__sim_8c_1a78ddd0f7e94a7539b9728246b698552d" kindref="member">incrementer</ref><sp/>*<sp/>100);</highlight></codeline>
+<codeline lineno="357"><highlight class="normal"></highlight></codeline>
+<codeline lineno="358"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!strncmp(cmdName,<sp/></highlight><highlight class="stringliteral">&quot;DETECTORSTATUS&quot;</highlight><highlight class="normal">,<sp/><ref refid="merlin__sim_8c_1a3e937c42922f7601edb17b747602c471" kindref="member">MAXLINE</ref>))</highlight></codeline>
+<codeline lineno="359"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>strcpy(strResp,<sp/></highlight><highlight class="stringliteral">&quot;0&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="360"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!strncmp(cmdName,<sp/></highlight><highlight class="stringliteral">&quot;GETSOFTWAREVERSION&quot;</highlight><highlight class="normal">,<sp/><ref refid="merlin__sim_8c_1a3e937c42922f7601edb17b747602c471" kindref="member">MAXLINE</ref>))</highlight></codeline>
+<codeline lineno="361"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>strcpy(strResp,<sp/></highlight><highlight class="stringliteral">&quot;2.2&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="362"><highlight class="normal"></highlight></codeline>
+<codeline lineno="363"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!strncmp(cmdName,<sp/></highlight><highlight class="stringliteral">&quot;CONTINUOUSRW&quot;</highlight><highlight class="normal">,<sp/><ref refid="merlin__sim_8c_1a3e937c42922f7601edb17b747602c471" kindref="member">MAXLINE</ref>))</highlight></codeline>
+<codeline lineno="364"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>strcpy(strResp,<sp/></highlight><highlight class="stringliteral">&quot;1&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="365"><highlight class="normal"></highlight></codeline>
+<codeline lineno="366"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!strncmp(cmdName,<sp/></highlight><highlight class="stringliteral">&quot;ENABLECOUNTER1&quot;</highlight><highlight class="normal">,<sp/><ref refid="merlin__sim_8c_1a3e937c42922f7601edb17b747602c471" kindref="member">MAXLINE</ref>))</highlight></codeline>
+<codeline lineno="367"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>strcpy(strResp,<sp/></highlight><highlight class="stringliteral">&quot;0&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="368"><highlight class="normal"></highlight></codeline>
+<codeline lineno="369"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="370"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if(!strncmp(cmdName,&quot;THSTART&quot;,MAXLINE))</highlight></codeline>
+<codeline lineno="371"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>strcpy(strResp,<sp/>&quot;2.0&quot;);</highlight></codeline>
+<codeline lineno="372"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if(!strncmp(cmdName,&quot;THSTOP&quot;,MAXLINE))</highlight></codeline>
+<codeline lineno="373"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>strcpy(strResp,<sp/>&quot;8.0&quot;);</highlight></codeline>
+<codeline lineno="374"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if(!strncmp(cmdName,&quot;THSTEP&quot;,MAXLINE))</highlight></codeline>
+<codeline lineno="375"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>strcpy(strResp,<sp/>&quot;1.0&quot;);</highlight></codeline>
+<codeline lineno="376"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="377"><highlight class="normal"></highlight></codeline>
+<codeline lineno="378"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bodylen<sp/>=<sp/>strlen(cmdName)<sp/>+<sp/>strlen(strResp)<sp/>+<sp/>8;</highlight></codeline>
+<codeline lineno="379"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sprintf(<ref refid="structresponse" kindref="compound">response</ref>,<sp/></highlight><highlight class="stringliteral">&quot;MPX,%010u,GET,%s,%s,0&quot;</highlight><highlight class="normal">,<sp/>bodylen,<sp/>cmdName,</highlight></codeline>
+<codeline lineno="380"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>strResp);</highlight></codeline>
+<codeline lineno="381"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="382"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!strncmp(cmdType,<sp/></highlight><highlight class="stringliteral">&quot;CMD&quot;</highlight><highlight class="normal">,<sp/>3))</highlight></codeline>
+<codeline lineno="383"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="384"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!strncmp(cmdName,<sp/></highlight><highlight class="stringliteral">&quot;STARTACQUISITION&quot;</highlight><highlight class="normal">,<sp/>16)</highlight></codeline>
+<codeline lineno="385"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>||<sp/>!strncmp(cmdName,<sp/></highlight><highlight class="stringliteral">&quot;THSTART&quot;</highlight><highlight class="normal">,<sp/>16)</highlight></codeline>
+<codeline lineno="386"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>||<sp/>!strncmp(cmdName,<sp/></highlight><highlight class="stringliteral">&quot;PROFILES&quot;</highlight><highlight class="normal">,<sp/>16))</highlight></codeline>
+<codeline lineno="387"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="388"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!strncmp(cmdName,<sp/></highlight><highlight class="stringliteral">&quot;THSTART&quot;</highlight><highlight class="normal">,<sp/>16))</highlight></codeline>
+<codeline lineno="389"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="merlin__sim_8c_1adff22aaf1854bec2f8289678a60d1930" kindref="member">frames_to_send</ref><sp/>=<sp/>7;</highlight></codeline>
+<codeline lineno="390"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="391"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="merlin__sim_8c_1adff22aaf1854bec2f8289678a60d1930" kindref="member">frames_to_send</ref><sp/>=<sp/><ref refid="merlin__sim_8c_1afd3bfa5add6477abed3eaa362c5702b4" kindref="member">frame_count</ref>;</highlight></codeline>
+<codeline lineno="392"><highlight class="normal"></highlight></codeline>
+<codeline lineno="393"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*signal<sp/>data<sp/>thread<sp/>to<sp/>send<sp/>some<sp/>data<sp/>back.*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="394"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;***signalling<sp/>data<sp/>thread.\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="395"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pthread_mutex_lock(&amp;<ref refid="merlin__sim_8c_1a4efb5bd8a00ff7fecb176d93128f5769" kindref="member">do_data_mutex</ref>);</highlight></codeline>
+<codeline lineno="396"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!strncmp(cmdName,<sp/></highlight><highlight class="stringliteral">&quot;PROFILES&quot;</highlight><highlight class="normal">,<sp/>16))</highlight></codeline>
+<codeline lineno="397"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="398"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>use<sp/>do_data<sp/>=<sp/>2<sp/>to<sp/>indicate<sp/>a<sp/>profiles<sp/>request</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="399"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="merlin__sim_8c_1ae9e20345ce09def049d986d8422f4f5d" kindref="member">do_data</ref><sp/>=<sp/>2;</highlight></codeline>
+<codeline lineno="400"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="401"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="402"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="403"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>use<sp/>do_data<sp/>=<sp/>1<sp/>to<sp/>indicate<sp/>an<sp/>image<sp/>request</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="404"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="merlin__sim_8c_1ae9e20345ce09def049d986d8422f4f5d" kindref="member">do_data</ref><sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="405"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="406"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pthread_cond_signal(&amp;<ref refid="merlin__sim_8c_1a2a11b2b23e753093cf90ed597541488a" kindref="member">do_data_cond</ref>);</highlight></codeline>
+<codeline lineno="407"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pthread_mutex_unlock(&amp;<ref refid="merlin__sim_8c_1a4efb5bd8a00ff7fecb176d93128f5769" kindref="member">do_data_mutex</ref>);</highlight></codeline>
+<codeline lineno="408"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;***data<sp/>thread<sp/>singnalled.\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="409"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="410"><highlight class="normal"></highlight></codeline>
+<codeline lineno="411"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>construct<sp/>response</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="412"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bodylen<sp/>=<sp/>strlen(cmdName)<sp/>+<sp/>7;</highlight></codeline>
+<codeline lineno="413"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sprintf(<ref refid="structresponse" kindref="compound">response</ref>,<sp/></highlight><highlight class="stringliteral">&quot;MPX,%010u,CMD,%s,0&quot;</highlight><highlight class="normal">,<sp/>bodylen,<sp/>cmdName);</highlight></codeline>
+<codeline lineno="414"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="415"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="416"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="417"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;Unknown<sp/>MPX<sp/>command:<sp/>&apos;%s&apos;\n&quot;</highlight><highlight class="normal">,<sp/>cmdName);</highlight></codeline>
+<codeline lineno="418"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sprintf(<ref refid="structresponse" kindref="compound">response</ref>,<sp/></highlight><highlight class="stringliteral">&quot;MPX,0000000008,ERROR,1&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="419"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="420"><highlight class="normal"></highlight></codeline>
+<codeline lineno="421"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>deliberately<sp/>send<sp/>junk<sp/>to<sp/>test<sp/>re-synch<sp/>capability</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="422"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="423"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(&quot;sending<sp/>garbage..\n&quot;);</highlight></codeline>
+<codeline lineno="424"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if(write(socket_fd,<sp/>&quot;garbage<sp/>MP<sp/>garbage&quot;,<sp/>15)<sp/>&lt;=0)</highlight></codeline>
+<codeline lineno="425"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(&quot;garbage<sp/>1<sp/>failed\n&quot;);</highlight></codeline>
+<codeline lineno="426"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="427"><highlight class="normal"></highlight></codeline>
+<codeline lineno="428"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;sending<sp/>response:<sp/>%s<sp/>\n&quot;</highlight><highlight class="normal">,<sp/><ref refid="structresponse" kindref="compound">response</ref>);</highlight></codeline>
+<codeline lineno="429"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(write(socket_fd,<sp/><ref refid="structresponse" kindref="compound">response</ref>,<sp/>strlen(<ref refid="structresponse" kindref="compound">response</ref>))<sp/>&lt;=<sp/>0)</highlight></codeline>
+<codeline lineno="430"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="431"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;Error<sp/>writing<sp/>back<sp/>to<sp/>client.\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="432"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>return<sp/>EXIT_FAILURE;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="433"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="434"><highlight class="normal"></highlight></codeline>
+<codeline lineno="435"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Clear<sp/>buffer<sp/>for<sp/>next<sp/>command.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="436"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>memset(&amp;buffer[0],<sp/></highlight><highlight class="charliteral">&apos;\0&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(buffer));</highlight></codeline>
+<codeline lineno="437"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="438"><highlight class="normal"></highlight></codeline>
+<codeline lineno="439"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;Buffer<sp/>full.<sp/>From<sp/>client:<sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/>buffer);</highlight></codeline>
+<codeline lineno="440"><highlight class="normal"></highlight></codeline>
+<codeline lineno="441"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>EXIT_SUCCESS;</highlight></codeline>
+<codeline lineno="442"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="443"><highlight class="normal"></highlight></codeline>
+<codeline lineno="444"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="merlin__sim_8c_1ab7276f44050c94b925728f80b189fdec" kindref="member">endian_swap</ref>(uint64_t*<sp/><ref refid="namespacemake_adl_1a75ac3107bf0f8a876fe96f2eed30eb15" kindref="member">x</ref>)</highlight></codeline>
+<codeline lineno="445"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="446"><highlight class="normal"><sp/><sp/><sp/><sp/>*<ref refid="namespacemake_adl_1a75ac3107bf0f8a876fe96f2eed30eb15" kindref="member">x</ref><sp/>=<sp/><sp/><sp/><sp/><sp/>((((*x)<sp/>&amp;<sp/>0x00000000000000FFLL)<sp/>&lt;&lt;<sp/>0x38)</highlight></codeline>
+<codeline lineno="447"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>(((*x)<sp/>&amp;<sp/>0x000000000000FF00LL)<sp/>&lt;&lt;<sp/>0x28)</highlight></codeline>
+<codeline lineno="448"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>(((*x)<sp/>&amp;<sp/>0x0000000000FF0000LL)<sp/>&lt;&lt;<sp/>0x18)</highlight></codeline>
+<codeline lineno="449"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>(((*x)<sp/>&amp;<sp/>0x00000000FF000000LL)<sp/>&lt;&lt;<sp/>0x08)</highlight></codeline>
+<codeline lineno="450"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>(((*x)<sp/>&amp;<sp/>0x000000FF00000000LL)<sp/>&gt;&gt;<sp/>0x08)</highlight></codeline>
+<codeline lineno="451"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>(((*x)<sp/>&amp;<sp/>0x0000FF0000000000LL)<sp/>&gt;&gt;<sp/>0x18)</highlight></codeline>
+<codeline lineno="452"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>(((*x)<sp/>&amp;<sp/>0x00FF000000000000LL)<sp/>&gt;&gt;<sp/>0x28)</highlight></codeline>
+<codeline lineno="453"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>(((*x)<sp/>&amp;<sp/>0xFF00000000000000LL)<sp/>&gt;&gt;<sp/>0x38));</highlight></codeline>
+<codeline lineno="454"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="455"><highlight class="normal"></highlight></codeline>
+<codeline lineno="459"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="merlin__sim_8c_1a6febf812d940db3e239b821000b3ba9b" kindref="member">produce_data</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>data_fd)</highlight></codeline>
+<codeline lineno="460"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="461"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//char<sp/>*data<sp/>=<sp/>&quot;Here<sp/>is<sp/>some<sp/>data.\r\n&quot;;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="462"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//unsigned<sp/>int<sp/>trailer<sp/>=<sp/>0xDA;<sp/>/*<sp/>CR<sp/>LF<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="463"><highlight class="normal"></highlight></codeline>
+<codeline lineno="464"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>frame<sp/>=<sp/>header<sp/>(including<sp/>comma)<sp/>+<sp/>data<sp/>frame<sp/>type<sp/>(3<sp/>chars)<sp/>+</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="465"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>comma<sp/>+<sp/>data<sp/>frame<sp/>header<sp/>+<sp/>image<sp/>data</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="466"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>frameSize24<sp/>=<sp/><ref refid="merlin__sim_8c_1ab8f5e10b9f780e53f9583724ac965a0c" kindref="member">HEADER_LEN</ref><sp/>+<sp/><ref refid="merlin__sim_8c_1af83ab94da573d95ddc366030c5537d60" kindref="member">CMDLEN</ref><sp/>+<sp/><ref refid="merlin__sim_8c_1a88915a49fad5bd0318b37b6c9674dbc4" kindref="member">DATAHEADERLEN</ref><sp/>+<sp/><ref refid="merlin__sim_8c_1ae7e715c270481406658bbd2bafa2897f" kindref="member">MAXDATA</ref>;</highlight></codeline>
+<codeline lineno="467"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>frameSize12<sp/>=<sp/><ref refid="merlin__sim_8c_1ab8f5e10b9f780e53f9583724ac965a0c" kindref="member">HEADER_LEN</ref><sp/>+<sp/><ref refid="merlin__sim_8c_1af83ab94da573d95ddc366030c5537d60" kindref="member">CMDLEN</ref><sp/>+<sp/><ref refid="merlin__sim_8c_1a88915a49fad5bd0318b37b6c9674dbc4" kindref="member">DATAHEADERLEN</ref><sp/>+<sp/><ref refid="merlin__sim_8c_1ae7e715c270481406658bbd2bafa2897f" kindref="member">MAXDATA</ref><sp/>/<sp/>2;</highlight></codeline>
+<codeline lineno="468"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>frameSizeProfile<sp/>=<sp/><ref refid="merlin__sim_8c_1ab8f5e10b9f780e53f9583724ac965a0c" kindref="member">HEADER_LEN</ref><sp/>+<sp/><ref refid="merlin__sim_8c_1af83ab94da573d95ddc366030c5537d60" kindref="member">CMDLEN</ref><sp/>+<sp/><ref refid="merlin__sim_8c_1a88915a49fad5bd0318b37b6c9674dbc4" kindref="member">DATAHEADERLEN</ref></highlight></codeline>
+<codeline lineno="469"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+<sp/><ref refid="merlin__sim_8c_1a910da24115054b1c15c8e0ddd9debfd1" kindref="member">MPX_PROFILE_LEN</ref><sp/>*<sp/>2+<sp/><ref refid="merlin__sim_8c_1a8fea89d87598a29493ad2c7f55154013" kindref="member">MPX_SUM_LEN</ref>;</highlight></codeline>
+<codeline lineno="470"><highlight class="normal"></highlight></codeline>
+<codeline lineno="471"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>data[frameSize24];</highlight></codeline>
+<codeline lineno="472"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>,<sp/>j;</highlight></codeline>
+<codeline lineno="473"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>headersLength<sp/>=<sp/><ref refid="merlin__sim_8c_1ab8f5e10b9f780e53f9583724ac965a0c" kindref="member">HEADER_LEN</ref><sp/>+<sp/><ref refid="merlin__sim_8c_1af83ab94da573d95ddc366030c5537d60" kindref="member">CMDLEN</ref><sp/>+<sp/><ref refid="merlin__sim_8c_1a88915a49fad5bd0318b37b6c9674dbc4" kindref="member">DATAHEADERLEN</ref>;</highlight></codeline>
+<codeline lineno="474"><highlight class="normal"></highlight></codeline>
+<codeline lineno="475"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(1)</highlight></codeline>
+<codeline lineno="476"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="477"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;***taking<sp/>mutex<sp/>in<sp/>data<sp/>thread.\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="478"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*Wait<sp/>for<sp/>signal<sp/>to<sp/>produce<sp/>some<sp/>data.*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="479"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pthread_mutex_lock(&amp;<ref refid="merlin__sim_8c_1a4efb5bd8a00ff7fecb176d93128f5769" kindref="member">do_data_mutex</ref>);</highlight></codeline>
+<codeline lineno="480"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(<ref refid="merlin__sim_8c_1ae9e20345ce09def049d986d8422f4f5d" kindref="member">do_data</ref><sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="481"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="482"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;***waiting<sp/>in<sp/>data<sp/>thread.\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="483"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pthread_cond_wait(&amp;<ref refid="merlin__sim_8c_1a2a11b2b23e753093cf90ed597541488a" kindref="member">do_data_cond</ref>,<sp/>&amp;<ref refid="merlin__sim_8c_1a4efb5bd8a00ff7fecb176d93128f5769" kindref="member">do_data_mutex</ref>);</highlight></codeline>
+<codeline lineno="484"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="485"><highlight class="normal"></highlight></codeline>
+<codeline lineno="486"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;***got<sp/>signal<sp/>in<sp/>data<sp/>thread.\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="487"><highlight class="normal"></highlight></codeline>
+<codeline lineno="488"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//printf(&quot;data_fd:<sp/>%d\n&quot;,<sp/>data_fd);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="489"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//printf(&quot;data_exit:<sp/>%d\n&quot;,<sp/>data_exit);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="490"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//printf(&quot;do_data:<sp/>%d\n&quot;,<sp/>do_data);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="491"><highlight class="normal"></highlight></codeline>
+<codeline lineno="492"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//printf(&quot;MAXDATA:<sp/>%d\n&quot;,<sp/>MAXDATA);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="493"><highlight class="normal"></highlight></codeline>
+<codeline lineno="494"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((<ref refid="merlin__sim_8c_1ae9e20345ce09def049d986d8422f4f5d" kindref="member">do_data</ref><sp/>&gt;<sp/>0)<sp/>&amp;&amp;<sp/>(<ref refid="merlin__sim_8c_1a5943b9a4873dc776a19821c4b2575685" kindref="member">data_exit</ref><sp/>==<sp/>0))</highlight></codeline>
+<codeline lineno="495"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="496"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;starting<sp/>frame<sp/>sending<sp/>with<sp/>do_data<sp/>=<sp/>%d\n&quot;</highlight><highlight class="normal">,<sp/><ref refid="merlin__sim_8c_1ae9e20345ce09def049d986d8422f4f5d" kindref="member">do_data</ref>);</highlight></codeline>
+<codeline lineno="497"><highlight class="normal"></highlight></codeline>
+<codeline lineno="498"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>send<sp/>a<sp/>silly<sp/>acquisition<sp/>header</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="499"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(write(data_fd,</highlight></codeline>
+<codeline lineno="500"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;MPX,0000000433,HDR,dummy<sp/>acquisition<sp/>header.0123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789END&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="501"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>433<sp/>+<sp/><ref refid="merlin__sim_8c_1ab8f5e10b9f780e53f9583724ac965a0c" kindref="member">HEADER_LEN</ref><sp/>-<sp/>1)<sp/>&lt;=<sp/>0)</highlight></codeline>
+<codeline lineno="502"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="503"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;Error<sp/>writing<sp/>acquisition<sp/>header<sp/>to<sp/>client.\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="504"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="merlin__sim_8c_1ae9e20345ce09def049d986d8422f4f5d" kindref="member">do_data</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="505"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pthread_mutex_unlock(&amp;<ref refid="merlin__sim_8c_1a4efb5bd8a00ff7fecb176d93128f5769" kindref="member">do_data_mutex</ref>);</highlight></codeline>
+<codeline lineno="506"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//return<sp/>EXIT_FAILURE;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="507"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="508"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;***<sp/>wrote<sp/>data<sp/>-<sp/>acquisition<sp/>header\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="509"><highlight class="normal"></highlight></codeline>
+<codeline lineno="510"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;***<sp/>writing<sp/>%d<sp/>data<sp/>frames\n&quot;</highlight><highlight class="normal">,<sp/><ref refid="merlin__sim_8c_1adff22aaf1854bec2f8289678a60d1930" kindref="member">frames_to_send</ref>);</highlight></codeline>
+<codeline lineno="511"><highlight class="normal"></highlight></codeline>
+<codeline lineno="512"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref><sp/>=<sp/>0;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref><sp/>&lt;<sp/><ref refid="merlin__sim_8c_1adff22aaf1854bec2f8289678a60d1930" kindref="member">frames_to_send</ref>;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>++)</highlight></codeline>
+<codeline lineno="513"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="514"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>timebuf[255];</highlight></codeline>
+<codeline lineno="515"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>buf2[255];</highlight></codeline>
+<codeline lineno="516"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>time_t<sp/>now;</highlight></codeline>
+<codeline lineno="517"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">tm<sp/>*current;</highlight></codeline>
+<codeline lineno="518"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>thisFrameSize<sp/>=<sp/><ref refid="merlin__sim_8c_1ac66dbe0e082fd3cc29bc1572a4dccc09" kindref="member">Depth</ref><sp/>==<sp/>12<sp/>?<sp/>frameSize12<sp/>:<sp/>frameSize24;</highlight></codeline>
+<codeline lineno="519"><highlight class="normal"></highlight></codeline>
+<codeline lineno="520"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="merlin__sim_8c_1ae9e20345ce09def049d986d8422f4f5d" kindref="member">do_data</ref><sp/>==<sp/>2)</highlight></codeline>
+<codeline lineno="521"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="522"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>thisFrameSize<sp/>=<sp/>frameSizeProfile;</highlight></codeline>
+<codeline lineno="523"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="524"><highlight class="normal"></highlight></codeline>
+<codeline lineno="525"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>now<sp/>=<sp/>time(0);<sp/></highlight><highlight class="comment">//current<sp/>time<sp/>in<sp/>C<sp/>representation</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="526"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>current<sp/>=<sp/>localtime(&amp;now);</highlight></codeline>
+<codeline lineno="527"><highlight class="normal"></highlight></codeline>
+<codeline lineno="528"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>strftime(timebuf,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(timebuf),<sp/></highlight><highlight class="stringliteral">&quot;%Y-%m-%d<sp/>%H:%M:%S.123&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="529"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>current);</highlight></codeline>
+<codeline lineno="530"><highlight class="normal"></highlight></codeline>
+<codeline lineno="531"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>???<sp/>getting<sp/>spurious<sp/>one<sp/>byte<sp/>garbage<sp/>-<sp/>so<sp/>adding<sp/>1<sp/>to<sp/>length<sp/>of<sp/>data<sp/>packet<sp/>???</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="532"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>snprintf(data,<sp/><ref refid="merlin__sim_8c_1ab8f5e10b9f780e53f9583724ac965a0c" kindref="member">HEADER_LEN</ref>,<sp/></highlight><highlight class="stringliteral">&quot;MPX,%010u,&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="533"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>thisFrameSize<sp/>-<sp/><ref refid="merlin__sim_8c_1ab8f5e10b9f780e53f9583724ac965a0c" kindref="member">HEADER_LEN</ref><sp/>+<sp/>1);</highlight></codeline>
+<codeline lineno="534"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sprintf(buf2,</highlight></codeline>
+<codeline lineno="535"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;%4d,1,%s.007,1.5E-2,6.0,8.01E2,1,2,3,4,5,6,7,8,9,10,1,2,3,4,5,6,7,8,1,20,21,22,23,24,25,00014&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="536"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>,<sp/>timebuf);</highlight></codeline>
+<codeline lineno="537"><highlight class="normal"></highlight></codeline>
+<codeline lineno="538"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="merlin__sim_8c_1ae9e20345ce09def049d986d8422f4f5d" kindref="member">do_data</ref><sp/>==<sp/>1)</highlight></codeline>
+<codeline lineno="539"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="540"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>offset<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="541"><highlight class="normal"></highlight></codeline>
+<codeline lineno="542"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;preparing<sp/>image<sp/>data\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="543"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sprintf((data<sp/>+<sp/><ref refid="merlin__sim_8c_1ab8f5e10b9f780e53f9583724ac965a0c" kindref="member">HEADER_LEN</ref>),<sp/></highlight><highlight class="stringliteral">&quot;%dB,%-251s&quot;</highlight><highlight class="normal">,<sp/><ref refid="merlin__sim_8c_1ac66dbe0e082fd3cc29bc1572a4dccc09" kindref="member">Depth</ref>,<sp/>buf2);</highlight></codeline>
+<codeline lineno="544"><highlight class="normal"></highlight></codeline>
+<codeline lineno="545"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>create<sp/>dummy<sp/>data</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="546"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(j<sp/>=<sp/>headersLength;</highlight></codeline>
+<codeline lineno="547"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>j<sp/>&lt;<sp/><ref refid="merlin__sim_8c_1ae7e715c270481406658bbd2bafa2897f" kindref="member">MAXDATA</ref><sp/>/<sp/>(24<sp/>/<sp/><ref refid="merlin__sim_8c_1ac66dbe0e082fd3cc29bc1572a4dccc09" kindref="member">Depth</ref>)<sp/>+<sp/>headersLength;<sp/>j++)</highlight></codeline>
+<codeline lineno="548"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="549"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>data[j]<sp/>=<sp/>(j+offset)<sp/>/<sp/>20<sp/>%<sp/>255;</highlight></codeline>
+<codeline lineno="550"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="551"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>offset<sp/>+=<sp/>20;</highlight></codeline>
+<codeline lineno="552"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="553"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="554"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="555"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;preparing<sp/>profile<sp/>data\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="556"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sprintf((data<sp/>+<sp/><ref refid="merlin__sim_8c_1ab8f5e10b9f780e53f9583724ac965a0c" kindref="member">HEADER_LEN</ref>),<sp/></highlight><highlight class="stringliteral">&quot;P%d,%-251s&quot;</highlight><highlight class="normal">,<sp/><ref refid="merlin__sim_8c_1ac66dbe0e082fd3cc29bc1572a4dccc09" kindref="member">Depth</ref>,<sp/>buf2);</highlight></codeline>
+<codeline lineno="557"><highlight class="normal"></highlight></codeline>
+<codeline lineno="558"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint64_t*<sp/>profileData<sp/>=<sp/>(uint64_t*)<sp/>(data<sp/>+<sp/>headersLength);</highlight></codeline>
+<codeline lineno="559"><highlight class="normal"></highlight></codeline>
+<codeline lineno="560"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>create<sp/>dummy<sp/>data</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="561"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(j<sp/>=<sp/>0;<sp/>j<sp/>&lt;<sp/>256<sp/>*<sp/>2;<sp/>j++)</highlight></codeline>
+<codeline lineno="562"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="563"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>profileData[j]<sp/>=<sp/>(uint64_t)j;</highlight></codeline>
+<codeline lineno="564"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//endian_swap(&amp;profileData[j]);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="565"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="566"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="567"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>write<sp/>an<sp/>image</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="568"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(write(data_fd,<sp/>data,<sp/>thisFrameSize)<sp/>&lt;=<sp/>0)</highlight></codeline>
+<codeline lineno="569"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="570"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;Error<sp/>writing<sp/>data<sp/>frame<sp/>1<sp/>to<sp/>client.\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="571"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="merlin__sim_8c_1ae9e20345ce09def049d986d8422f4f5d" kindref="member">do_data</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="572"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pthread_mutex_unlock(&amp;<ref refid="merlin__sim_8c_1a4efb5bd8a00ff7fecb176d93128f5769" kindref="member">do_data_mutex</ref>);</highlight></codeline>
+<codeline lineno="573"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//return<sp/>EXIT_FAILURE;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="574"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="575"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;***<sp/>wrote<sp/>data<sp/>-<sp/>image<sp/>%d<sp/>at<sp/>time<sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>,<sp/>timebuf);</highlight></codeline>
+<codeline lineno="576"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="577"><highlight class="normal"></highlight></codeline>
+<codeline lineno="578"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="merlin__sim_8c_1ae9e20345ce09def049d986d8422f4f5d" kindref="member">do_data</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="579"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="580"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="581"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="582"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="merlin__sim_8c_1a5943b9a4873dc776a19821c4b2575685" kindref="member">data_exit</ref>)</highlight></codeline>
+<codeline lineno="583"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="584"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;Exiting<sp/>data<sp/>thread.\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="585"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="merlin__sim_8c_1a5943b9a4873dc776a19821c4b2575685" kindref="member">data_exit</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="586"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="merlin__sim_8c_1ae9e20345ce09def049d986d8422f4f5d" kindref="member">do_data</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="587"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pthread_mutex_unlock(&amp;<ref refid="merlin__sim_8c_1a4efb5bd8a00ff7fecb176d93128f5769" kindref="member">do_data_mutex</ref>);</highlight></codeline>
+<codeline lineno="588"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="589"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="590"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="591"><highlight class="normal"></highlight></codeline>
+<codeline lineno="592"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pthread_mutex_unlock(&amp;<ref refid="merlin__sim_8c_1a4efb5bd8a00ff7fecb176d93128f5769" kindref="member">do_data_mutex</ref>);</highlight></codeline>
+<codeline lineno="593"><highlight class="normal"></highlight></codeline>
+<codeline lineno="594"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="595"><highlight class="normal"><sp/><sp/><sp/><sp/>pthread_mutex_unlock(&amp;<ref refid="merlin__sim_8c_1a4efb5bd8a00ff7fecb176d93128f5769" kindref="member">do_data_mutex</ref>);</highlight></codeline>
+<codeline lineno="596"><highlight class="normal"></highlight></codeline>
+<codeline lineno="597"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>EXIT_SUCCESS;</highlight></codeline>
+<codeline lineno="598"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="/home/runner/work/areaDetector/areaDetector/ADMerlin/merlinApp/src/merlin_sim.c"/>
+  </compounddef>
+</doxygen>

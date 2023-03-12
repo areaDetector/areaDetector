@@ -1,0 +1,884 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="_n_d_plugin_r_o_i_8cpp" kind="file" language="C++">
+    <compoundname>NDPluginROI.cpp</compoundname>
+    <includes local="no">string.h</includes>
+    <includes local="no">iocsh.h</includes>
+    <includes refid="_n_d_plugin_driver_8h" local="yes">NDPluginDriver.h</includes>
+    <includes refid="_n_d_plugin_r_o_i_8h" local="yes">NDPluginROI.h</includes>
+    <includes local="no">epicsExport.h</includes>
+    <incdepgraph>
+      <node id="3">
+        <label>iocsh.h</label>
+      </node>
+      <node id="6">
+        <label>epicsTypes.h</label>
+      </node>
+      <node id="16">
+        <label>NDArray.h</label>
+        <link refid="_n_d_array_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+      </node>
+      <node id="23">
+        <label>NDAttributeList.h</label>
+        <link refid="_n_d_attribute_list_8h"/>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>epicsMutex.h</label>
+      </node>
+      <node id="11">
+        <label>epicsVersion.h</label>
+      </node>
+      <node id="19">
+        <label>string</label>
+      </node>
+      <node id="8">
+        <label>epicsThread.h</label>
+      </node>
+      <node id="27">
+        <label>epicsExport.h</label>
+      </node>
+      <node id="26">
+        <label>NDPluginROI.h</label>
+        <link refid="_n_d_plugin_r_o_i_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="25">
+        <label>ADCoreVersion.h</label>
+        <link refid="_a_d_core_version_8h"/>
+      </node>
+      <node id="22">
+        <label>ADCoreAPI.h</label>
+        <link refid="_a_d_core_a_p_i_8h"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>asynNDArrayDriver.h</label>
+        <link refid="asyn_n_d_array_driver_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>string.h</label>
+      </node>
+      <node id="17">
+        <label>ellLib.h</label>
+      </node>
+      <node id="18">
+        <label>NDAttribute.h</label>
+        <link refid="_n_d_attribute_8h"/>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+      </node>
+      <node id="21">
+        <label>asynDriver.h</label>
+      </node>
+      <node id="1">
+        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginROI.cpp</label>
+        <link refid="_n_d_plugin_r_o_i_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>NDPluginDriver.h</label>
+        <link refid="_n_d_plugin_driver_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="24">
+        <label>Codec.h</label>
+        <link refid="_codec_8h"/>
+      </node>
+      <node id="9">
+        <label>epicsTime.h</label>
+      </node>
+      <node id="15">
+        <label>asynPortDriver.h</label>
+      </node>
+      <node id="10">
+        <label>NDPluginAPI.h</label>
+        <link refid="_n_d_plugin_a_p_i_8h"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>set</label>
+      </node>
+      <node id="7">
+        <label>epicsMessageQueue.h</label>
+      </node>
+      <node id="20">
+        <label>stdio.h</label>
+      </node>
+      <node id="14">
+        <label>epicsEvent.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="_n_d_plugin_r_o_i_8cpp_1ad935f1ff1a50822e317bdb321ce991ad" prot="public" static="no">
+        <name>MAX</name>
+        <param><defname>A</defname></param>
+        <param><defname>B</defname></param>
+        <initializer>(A)&gt;(B)?(A):(B)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginROI.cpp" line="21" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginROI.cpp" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_n_d_plugin_r_o_i_8cpp_1adcd021ac91d43a62b2cdecf9a5b971a7" prot="public" static="no">
+        <name>MIN</name>
+        <param><defname>A</defname></param>
+        <param><defname>B</defname></param>
+        <initializer>(A)&lt;(B)?(A):(B)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginROI.cpp" line="22" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginROI.cpp" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="_n_d_plugin_r_o_i_8cpp_1af0e94d13028051cd5339d204bfbb057d" prot="public" static="yes" mutable="no">
+        <type>const char *</type>
+        <definition>const char* driverName</definition>
+        <argsstring></argsstring>
+        <name>driverName</name>
+        <initializer>=&quot;NDPluginROI&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginROI.cpp" line="24" column="19" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginROI.cpp" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_n_d_plugin_r_o_i_8cpp_1a13021e744179110a6114bf84e9d47f32" prot="public" static="yes" mutable="no">
+        <type>const iocshArg</type>
+        <definition>const iocshArg initArg0</definition>
+        <argsstring></argsstring>
+        <name>initArg0</name>
+        <initializer>= { &quot;portName&quot;,iocshArgString}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginROI.cpp" line="369" column="23" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginROI.cpp" bodystart="369" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_n_d_plugin_r_o_i_8cpp_1a85f312f39f3c368a5fa10d1039dc40b2" prot="public" static="yes" mutable="no">
+        <type>const iocshArg</type>
+        <definition>const iocshArg initArg1</definition>
+        <argsstring></argsstring>
+        <name>initArg1</name>
+        <initializer>= { &quot;frame queue size&quot;,iocshArgInt}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginROI.cpp" line="370" column="23" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginROI.cpp" bodystart="370" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_n_d_plugin_r_o_i_8cpp_1a645a7d7d0d71a7522373e2af4008b520" prot="public" static="yes" mutable="no">
+        <type>const iocshArg</type>
+        <definition>const iocshArg initArg2</definition>
+        <argsstring></argsstring>
+        <name>initArg2</name>
+        <initializer>= { &quot;blocking callbacks&quot;,iocshArgInt}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginROI.cpp" line="371" column="23" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginROI.cpp" bodystart="371" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_n_d_plugin_r_o_i_8cpp_1aaa425474fd6655fa6347e1933b29038a" prot="public" static="yes" mutable="no">
+        <type>const iocshArg</type>
+        <definition>const iocshArg initArg3</definition>
+        <argsstring></argsstring>
+        <name>initArg3</name>
+        <initializer>= { &quot;NDArrayPort&quot;,iocshArgString}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginROI.cpp" line="372" column="23" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginROI.cpp" bodystart="372" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_n_d_plugin_r_o_i_8cpp_1a945c4d0bc0e2bc869aeaf5c6a815368a" prot="public" static="yes" mutable="no">
+        <type>const iocshArg</type>
+        <definition>const iocshArg initArg4</definition>
+        <argsstring></argsstring>
+        <name>initArg4</name>
+        <initializer>= { &quot;NDArrayAddr&quot;,iocshArgInt}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginROI.cpp" line="373" column="23" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginROI.cpp" bodystart="373" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_n_d_plugin_r_o_i_8cpp_1ac7e214be38a3b3bface5e0370ae97db0" prot="public" static="yes" mutable="no">
+        <type>const iocshArg</type>
+        <definition>const iocshArg initArg5</definition>
+        <argsstring></argsstring>
+        <name>initArg5</name>
+        <initializer>= { &quot;maxBuffers&quot;,iocshArgInt}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginROI.cpp" line="374" column="23" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginROI.cpp" bodystart="374" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_n_d_plugin_r_o_i_8cpp_1a43397205694aec859f3b5cb14a85edc3" prot="public" static="yes" mutable="no">
+        <type>const iocshArg</type>
+        <definition>const iocshArg initArg6</definition>
+        <argsstring></argsstring>
+        <name>initArg6</name>
+        <initializer>= { &quot;maxMemory&quot;,iocshArgInt}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginROI.cpp" line="375" column="23" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginROI.cpp" bodystart="375" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_n_d_plugin_r_o_i_8cpp_1a36049b095d9ed1f56a41821a2c8fc661" prot="public" static="yes" mutable="no">
+        <type>const iocshArg</type>
+        <definition>const iocshArg initArg7</definition>
+        <argsstring></argsstring>
+        <name>initArg7</name>
+        <initializer>= { &quot;priority&quot;,iocshArgInt}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginROI.cpp" line="376" column="23" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginROI.cpp" bodystart="376" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_n_d_plugin_r_o_i_8cpp_1a62a0c5258a2c1049720be5c31729f76d" prot="public" static="yes" mutable="no">
+        <type>const iocshArg</type>
+        <definition>const iocshArg initArg8</definition>
+        <argsstring></argsstring>
+        <name>initArg8</name>
+        <initializer>= { &quot;stackSize&quot;,iocshArgInt}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginROI.cpp" line="377" column="23" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginROI.cpp" bodystart="377" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_n_d_plugin_r_o_i_8cpp_1a310f7847b682c968669300db5550d9fa" prot="public" static="yes" mutable="no">
+        <type>const iocshArg</type>
+        <definition>const iocshArg initArg9</definition>
+        <argsstring></argsstring>
+        <name>initArg9</name>
+        <initializer>= { &quot;maxThreads&quot;,iocshArgInt}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginROI.cpp" line="378" column="23" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginROI.cpp" bodystart="378" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_n_d_plugin_r_o_i_8cpp_1ac0d7f455ac7138e5bcb473b630294718" prot="public" static="yes" mutable="no">
+        <type>const iocshArg *const</type>
+        <definition>const iocshArg* const initArgs[]</definition>
+        <argsstring>[]</argsstring>
+        <name>initArgs</name>
+        <initializer>= {&amp;initArg0,
+                                            &amp;initArg1,
+                                            &amp;initArg2,
+                                            &amp;initArg3,
+                                            &amp;initArg4,
+                                            &amp;initArg5,
+                                            &amp;initArg6,
+                                            &amp;initArg7,
+                                            &amp;initArg8,
+                                            &amp;initArg9}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginROI.cpp" line="379" column="30" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginROI.cpp" bodystart="379" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_n_d_plugin_r_o_i_8cpp_1a469a3ecf9fff33f8f388acddffc8db6a" prot="public" static="yes" mutable="no">
+        <type>const iocshFuncDef</type>
+        <definition>const iocshFuncDef initFuncDef</definition>
+        <argsstring></argsstring>
+        <name>initFuncDef</name>
+        <initializer>= {&quot;NDROIConfigure&quot;,10,initArgs}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginROI.cpp" line="389" column="27" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginROI.cpp" bodystart="389" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_n_d_plugin_r_o_i_8cpp_1a8261ba8b8d68fe5aca32b0c4a106b4a5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int NDROIConfigure</definition>
+        <argsstring>(const char *portName, int queueSize, int blockingCallbacks, const char *NDArrayPort, int NDArrayAddr, int maxBuffers, size_t maxMemory, int priority, int stackSize, int maxThreads)</argsstring>
+        <name>NDROIConfigure</name>
+        <param>
+          <type>const char *</type>
+          <declname>portName</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>queueSize</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>blockingCallbacks</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>NDArrayPort</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>NDArrayAddr</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>maxBuffers</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>maxMemory</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>priority</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>stackSize</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>maxThreads</declname>
+        </param>
+        <briefdescription>
+<para>Configuration command. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginROI.cpp" line="358" column="16" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginROI.cpp" bodystart="358" bodyend="366"/>
+      </memberdef>
+      <memberdef kind="function" id="_n_d_plugin_r_o_i_8cpp_1aeeec53c20b81d2e7f49be49509087df5" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void initCallFunc</definition>
+        <argsstring>(const iocshArgBuf *args)</argsstring>
+        <name>initCallFunc</name>
+        <param>
+          <type>const iocshArgBuf *</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginROI.cpp" line="390" column="13" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginROI.cpp" bodystart="390" bodyend="396"/>
+      </memberdef>
+      <memberdef kind="function" id="_n_d_plugin_r_o_i_8cpp_1a0e5d63244d7f2e3fb2269932706c14e2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void NDROIRegister</definition>
+        <argsstring>(void)</argsstring>
+        <name>NDROIRegister</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginROI.cpp" line="398" column="17" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginROI.cpp" bodystart="398" bodyend="401"/>
+      </memberdef>
+      <memberdef kind="function" id="_n_d_plugin_r_o_i_8cpp_1a2be4df251255b2c335ca28bf3061246d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>epicsExportRegistrar</definition>
+        <argsstring>(NDROIRegister)</argsstring>
+        <name>epicsExportRegistrar</name>
+        <param>
+          <type><ref refid="_n_d_plugin_r_o_i_8cpp_1a0e5d63244d7f2e3fb2269932706c14e2" kindref="member">NDROIRegister</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginROI.cpp" line="404" column="1" declfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginROI.cpp" declline="404" declcolumn="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>NDPluginROI.cpp</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>Region-of-Interest<sp/>(ROI)<sp/>plugin</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>Author:<sp/>Mark<sp/>Rivers</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>Created<sp/>April<sp/>23,<sp/>2008</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iocsh.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_n_d_plugin_driver_8h" kindref="compound">NDPluginDriver.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_n_d_plugin_r_o_i_8h" kindref="compound">NDPluginROI.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;epicsExport.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="comment">//static<sp/>const<sp/>char<sp/>*driverName=&quot;NDPluginROI&quot;;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MAX(A,B)<sp/>(A)&gt;(B)?(A):(B)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MIN(A,B)<sp/>(A)&lt;(B)?(A):(B)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*driverName=</highlight><highlight class="stringliteral">&quot;NDPluginROI&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_n_d_plugin_r_o_i_1a3365741890e3c087b5a0274cc6c07fd0" kindref="member">NDPluginROI::processCallbacks</ref>(<ref refid="class_n_d_array" kindref="compound">NDArray</ref><sp/>*pArray)</highlight></codeline>
+<codeline lineno="34"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>This<sp/>function<sp/>computes<sp/>the<sp/>ROIs.</highlight></codeline>
+<codeline lineno="36"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>It<sp/>is<sp/>called<sp/>with<sp/>the<sp/>mutex<sp/>already<sp/>locked.<sp/><sp/>It<sp/>unlocks<sp/>it<sp/>during<sp/>long<sp/>calculations<sp/>when<sp/>private</highlight></codeline>
+<codeline lineno="37"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>structures<sp/>don&apos;t<sp/>need<sp/>to<sp/>be<sp/>protected.</highlight></codeline>
+<codeline lineno="38"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dataType;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dim;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_n_d_dimension" kindref="compound">NDDimension_t</ref><sp/>dims[<ref refid="_n_d_array_8h_1ac4d72230192b5a071cf82e445b44ad2e" kindref="member">ND_ARRAY_MAX_DIMS</ref>],<sp/>tempDim,<sp/>*pDim;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>userDims[<ref refid="_n_d_array_8h_1ac4d72230192b5a071cf82e445b44ad2e" kindref="member">ND_ARRAY_MAX_DIMS</ref>];</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_n_d_array_info" kindref="compound">NDArrayInfo</ref><sp/>arrayInfo,<sp/>scratchInfo;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_n_d_array" kindref="compound">NDArray</ref><sp/>*pScratch,<sp/>*pOutput;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_n_d_array_8h_1a158fa3df51916c6942849dccdc7c5812" kindref="member">NDColorMode_t</ref><sp/>colorMode;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>*pData;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>enableScale,<sp/>enableDim[3],<sp/>autoSize[3];</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>scale;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>collapseDims;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//static<sp/>const<sp/>char*<sp/>functionName<sp/>=<sp/>&quot;processCallbacks&quot;;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>memset(dims,<sp/>0,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="struct_n_d_dimension" kindref="compound">NDDimension_t</ref>)<sp/>*<sp/><ref refid="_n_d_array_8h_1ac4d72230192b5a071cf82e445b44ad2e" kindref="member">ND_ARRAY_MAX_DIMS</ref>);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Get<sp/>all<sp/>parameters<sp/>while<sp/>we<sp/>have<sp/>the<sp/>mutex<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>getIntegerParam(<ref refid="class_n_d_plugin_r_o_i_1a7e8e674333852d68eab76267ca3b6620" kindref="member">NDPluginROIDim0Bin</ref>,<sp/><sp/><sp/><sp/><sp/><sp/>&amp;dims[0].binning);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>getIntegerParam(<ref refid="class_n_d_plugin_r_o_i_1a6ae9f3cbfef296162dcd8e7d199e6b57" kindref="member">NDPluginROIDim1Bin</ref>,<sp/><sp/><sp/><sp/><sp/><sp/>&amp;dims[1].binning);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>getIntegerParam(<ref refid="class_n_d_plugin_r_o_i_1ad90638b1549db0547bcba30750589e01" kindref="member">NDPluginROIDim2Bin</ref>,<sp/><sp/><sp/><sp/><sp/><sp/>&amp;dims[2].binning);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>getIntegerParam(<ref refid="class_n_d_plugin_r_o_i_1a96f7fbfd49e414211321c4adfee4eca7" kindref="member">NDPluginROIDim0Reverse</ref>,<sp/><sp/>&amp;dims[0].reverse);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>getIntegerParam(<ref refid="class_n_d_plugin_r_o_i_1a23a1d6b78dcbeebac7efa36be6e13253" kindref="member">NDPluginROIDim1Reverse</ref>,<sp/><sp/>&amp;dims[1].reverse);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>getIntegerParam(<ref refid="class_n_d_plugin_r_o_i_1a9b4c8d0b57358b0cf880719c3612544b" kindref="member">NDPluginROIDim2Reverse</ref>,<sp/><sp/>&amp;dims[2].reverse);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>getIntegerParam(<ref refid="class_n_d_plugin_r_o_i_1acf33e73b55168fb828dafc9394e10aa3" kindref="member">NDPluginROIDim0Enable</ref>,<sp/><sp/><sp/>&amp;enableDim[0]);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>getIntegerParam(<ref refid="class_n_d_plugin_r_o_i_1acc3a97cf5fd08b49a52b973237f56f39" kindref="member">NDPluginROIDim1Enable</ref>,<sp/><sp/><sp/>&amp;enableDim[1]);</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>getIntegerParam(<ref refid="class_n_d_plugin_r_o_i_1a1f607fdb6543f014e60f0cfad1d94829" kindref="member">NDPluginROIDim2Enable</ref>,<sp/><sp/><sp/>&amp;enableDim[2]);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>getIntegerParam(<ref refid="class_n_d_plugin_r_o_i_1a4210723a8d87d2af1770f2892c3c13ba" kindref="member">NDPluginROIDim0AutoSize</ref>,<sp/>&amp;autoSize[0]);</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>getIntegerParam(<ref refid="class_n_d_plugin_r_o_i_1a3245e5bff2ed5d355cbbb0bf1bd8e35d" kindref="member">NDPluginROIDim1AutoSize</ref>,<sp/>&amp;autoSize[1]);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>getIntegerParam(<ref refid="class_n_d_plugin_r_o_i_1a361ab1093961286f621159d1a3c96266" kindref="member">NDPluginROIDim2AutoSize</ref>,<sp/>&amp;autoSize[2]);</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>getIntegerParam(<ref refid="class_n_d_plugin_r_o_i_1adfe49325f0b480cb7b6a02a8c0dd4e15" kindref="member">NDPluginROIDataType</ref>,<sp/><sp/><sp/><sp/><sp/>&amp;dataType);</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>getIntegerParam(<ref refid="class_n_d_plugin_r_o_i_1a633e00ff33884cc973301805dab5f46b" kindref="member">NDPluginROIEnableScale</ref>,<sp/><sp/>&amp;enableScale);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>getDoubleParam(<ref refid="class_n_d_plugin_r_o_i_1a1766fc2579374bec90039bc626cdd378" kindref="member">NDPluginROIScale</ref>,<sp/>&amp;scale);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>getIntegerParam(<ref refid="class_n_d_plugin_r_o_i_1a18c41f04bd9c6a53c2a09af7f76dec11" kindref="member">NDPluginROICollapseDims</ref>,<sp/>&amp;collapseDims);</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Call<sp/>the<sp/>base<sp/>class<sp/>method<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_n_d_plugin_driver_1a1aef91c358b7b8bde97fc1a01eb7c00d" kindref="member">NDPluginDriver::beginProcessCallbacks</ref>(pArray);</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Get<sp/>information<sp/>about<sp/>the<sp/>array<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>pArray-&gt;<ref refid="class_n_d_array_1a47af97c0e2b8255d756207908f6b470d" kindref="member">getInfo</ref>(&amp;arrayInfo);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/>userDims[0]<sp/>=<sp/>arrayInfo.<ref refid="struct_n_d_array_info_1a0e5adfa5cbd756a03a03f091e1f853ba" kindref="member">xDim</ref>;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/>userDims[1]<sp/>=<sp/>arrayInfo.<ref refid="struct_n_d_array_info_1add899f2a712bd6ce7b15ff8bb81a29b5" kindref="member">yDim</ref>;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>userDims[2]<sp/>=<sp/>arrayInfo.<ref refid="struct_n_d_array_info_1ab60f4b1bae97786c2be58489b6aab952" kindref="member">colorDim</ref>;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Make<sp/>sure<sp/>dimensions<sp/>are<sp/>valid,<sp/>fix<sp/>them<sp/>if<sp/>they<sp/>are<sp/>not<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(dim=0;<sp/>dim&lt;pArray-&gt;<ref refid="class_n_d_array_1a4769c6ebb8275710a58bd88dba086b71" kindref="member">ndims</ref>;<sp/>dim++)<sp/>{</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pDim<sp/>=<sp/>&amp;dims[dim];</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(enableDim[dim])<sp/>{</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>newDimSize<sp/>=<sp/>pArray-&gt;<ref refid="class_n_d_array_1a71e5be2b11008face8dc6c5be19f71f1" kindref="member">dims</ref>[userDims[dim]].<ref refid="struct_n_d_dimension_1af32ef14ab526ed14d195875fc688f027" kindref="member">size</ref>;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pDim-&gt;<ref refid="struct_n_d_dimension_1a0498332bfb996e2aa43e3604a4923144" kindref="member">offset</ref><sp/><sp/>=<sp/>requestedOffset_[dim];</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pDim-&gt;<ref refid="struct_n_d_dimension_1af32ef14ab526ed14d195875fc688f027" kindref="member">size</ref><sp/><sp/><sp/><sp/>=<sp/>requestedSize_[dim];</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pDim-&gt;<ref refid="struct_n_d_dimension_1a0498332bfb996e2aa43e3604a4923144" kindref="member">offset</ref><sp/><sp/>=<sp/><ref refid="_n_d_plugin_r_o_i_8cpp_1ad935f1ff1a50822e317bdb321ce991ad" kindref="member">MAX</ref>(pDim-&gt;<ref refid="struct_n_d_dimension_1a0498332bfb996e2aa43e3604a4923144" kindref="member">offset</ref>,<sp/><sp/>0);</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pDim-&gt;<ref refid="struct_n_d_dimension_1a0498332bfb996e2aa43e3604a4923144" kindref="member">offset</ref><sp/><sp/>=<sp/><ref refid="_n_d_plugin_r_o_i_8cpp_1adcd021ac91d43a62b2cdecf9a5b971a7" kindref="member">MIN</ref>(pDim-&gt;<ref refid="struct_n_d_dimension_1a0498332bfb996e2aa43e3604a4923144" kindref="member">offset</ref>,<sp/><sp/>newDimSize-1);</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(autoSize[dim])<sp/>pDim-&gt;<ref refid="struct_n_d_dimension_1af32ef14ab526ed14d195875fc688f027" kindref="member">size</ref><sp/>=<sp/>newDimSize;</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pDim-&gt;<ref refid="struct_n_d_dimension_1af32ef14ab526ed14d195875fc688f027" kindref="member">size</ref><sp/><sp/><sp/><sp/>=<sp/><ref refid="_n_d_plugin_r_o_i_8cpp_1ad935f1ff1a50822e317bdb321ce991ad" kindref="member">MAX</ref>(pDim-&gt;<ref refid="struct_n_d_dimension_1af32ef14ab526ed14d195875fc688f027" kindref="member">size</ref>,<sp/><sp/><sp/><sp/>1);</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pDim-&gt;<ref refid="struct_n_d_dimension_1af32ef14ab526ed14d195875fc688f027" kindref="member">size</ref><sp/><sp/><sp/><sp/>=<sp/><ref refid="_n_d_plugin_r_o_i_8cpp_1adcd021ac91d43a62b2cdecf9a5b971a7" kindref="member">MIN</ref>(pDim-&gt;<ref refid="struct_n_d_dimension_1af32ef14ab526ed14d195875fc688f027" kindref="member">size</ref>,<sp/><sp/><sp/><sp/>newDimSize<sp/>-<sp/>pDim-&gt;<ref refid="struct_n_d_dimension_1a0498332bfb996e2aa43e3604a4923144" kindref="member">offset</ref>);</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pDim-&gt;<ref refid="struct_n_d_dimension_1a6d5ea1ce1544d57ac3812f43a6ca7a94" kindref="member">binning</ref><sp/>=<sp/><ref refid="_n_d_plugin_r_o_i_8cpp_1ad935f1ff1a50822e317bdb321ce991ad" kindref="member">MAX</ref>(pDim-&gt;<ref refid="struct_n_d_dimension_1a6d5ea1ce1544d57ac3812f43a6ca7a94" kindref="member">binning</ref>,<sp/>1);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pDim-&gt;<ref refid="struct_n_d_dimension_1a6d5ea1ce1544d57ac3812f43a6ca7a94" kindref="member">binning</ref><sp/>=<sp/><ref refid="_n_d_plugin_r_o_i_8cpp_1adcd021ac91d43a62b2cdecf9a5b971a7" kindref="member">MIN</ref>(pDim-&gt;<ref refid="struct_n_d_dimension_1a6d5ea1ce1544d57ac3812f43a6ca7a94" kindref="member">binning</ref>,<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)pDim-&gt;<ref refid="struct_n_d_dimension_1af32ef14ab526ed14d195875fc688f027" kindref="member">size</ref>);</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pDim-&gt;<ref refid="struct_n_d_dimension_1a0498332bfb996e2aa43e3604a4923144" kindref="member">offset</ref><sp/><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pDim-&gt;<ref refid="struct_n_d_dimension_1af32ef14ab526ed14d195875fc688f027" kindref="member">size</ref><sp/><sp/><sp/><sp/>=<sp/>pArray-&gt;<ref refid="class_n_d_array_1a71e5be2b11008face8dc6c5be19f71f1" kindref="member">dims</ref>[userDims[dim]].<ref refid="struct_n_d_dimension_1af32ef14ab526ed14d195875fc688f027" kindref="member">size</ref>;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pDim-&gt;<ref refid="struct_n_d_dimension_1a6d5ea1ce1544d57ac3812f43a6ca7a94" kindref="member">binning</ref><sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Update<sp/>the<sp/>parameters<sp/>that<sp/>may<sp/>have<sp/>changed<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classasyn_n_d_array_driver_1abf87462bc5853f8e5a56db5e93acd956" kindref="member">setIntegerParam</ref>(<ref refid="class_n_d_plugin_r_o_i_1a179a8ec0e66e728f4f1dc6c4ab8cc75e" kindref="member">NDPluginROIDim0MaxSize</ref>,<sp/>0);</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classasyn_n_d_array_driver_1abf87462bc5853f8e5a56db5e93acd956" kindref="member">setIntegerParam</ref>(<ref refid="class_n_d_plugin_r_o_i_1a60ed85f725d7431dc9c37aa766907f6a" kindref="member">NDPluginROIDim1MaxSize</ref>,<sp/>0);</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classasyn_n_d_array_driver_1abf87462bc5853f8e5a56db5e93acd956" kindref="member">setIntegerParam</ref>(<ref refid="class_n_d_plugin_r_o_i_1aaddf9a489ce5d9c74f7451cdf6399fe6" kindref="member">NDPluginROIDim2MaxSize</ref>,<sp/>0);</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(pArray-&gt;<ref refid="class_n_d_array_1a4769c6ebb8275710a58bd88dba086b71" kindref="member">ndims</ref><sp/>&gt;<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pDim<sp/>=<sp/>&amp;dims[0];</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classasyn_n_d_array_driver_1abf87462bc5853f8e5a56db5e93acd956" kindref="member">setIntegerParam</ref>(<ref refid="class_n_d_plugin_r_o_i_1a179a8ec0e66e728f4f1dc6c4ab8cc75e" kindref="member">NDPluginROIDim0MaxSize</ref>,<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)pArray-&gt;<ref refid="class_n_d_array_1a71e5be2b11008face8dc6c5be19f71f1" kindref="member">dims</ref>[userDims[0]].<ref refid="struct_n_d_dimension_1af32ef14ab526ed14d195875fc688f027" kindref="member">size</ref>);</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(enableDim[0])<sp/>{</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classasyn_n_d_array_driver_1abf87462bc5853f8e5a56db5e93acd956" kindref="member">setIntegerParam</ref>(<ref refid="class_n_d_plugin_r_o_i_1adb0068de79c3424ad79eb5d10057708d" kindref="member">NDPluginROIDim0Min</ref>,<sp/><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)pDim-&gt;<ref refid="struct_n_d_dimension_1a0498332bfb996e2aa43e3604a4923144" kindref="member">offset</ref>);</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classasyn_n_d_array_driver_1abf87462bc5853f8e5a56db5e93acd956" kindref="member">setIntegerParam</ref>(<ref refid="class_n_d_plugin_r_o_i_1a63888da617e1baf4e29dd65d039c9707" kindref="member">NDPluginROIDim0Size</ref>,<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)pDim-&gt;<ref refid="struct_n_d_dimension_1af32ef14ab526ed14d195875fc688f027" kindref="member">size</ref>);</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classasyn_n_d_array_driver_1abf87462bc5853f8e5a56db5e93acd956" kindref="member">setIntegerParam</ref>(<ref refid="class_n_d_plugin_r_o_i_1a7e8e674333852d68eab76267ca3b6620" kindref="member">NDPluginROIDim0Bin</ref>,<sp/><sp/>pDim-&gt;<ref refid="struct_n_d_dimension_1a6d5ea1ce1544d57ac3812f43a6ca7a94" kindref="member">binning</ref>);</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(pArray-&gt;<ref refid="class_n_d_array_1a4769c6ebb8275710a58bd88dba086b71" kindref="member">ndims</ref><sp/>&gt;<sp/>1)<sp/>{</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pDim<sp/>=<sp/>&amp;dims[1];</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classasyn_n_d_array_driver_1abf87462bc5853f8e5a56db5e93acd956" kindref="member">setIntegerParam</ref>(<ref refid="class_n_d_plugin_r_o_i_1a60ed85f725d7431dc9c37aa766907f6a" kindref="member">NDPluginROIDim1MaxSize</ref>,<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)pArray-&gt;<ref refid="class_n_d_array_1a71e5be2b11008face8dc6c5be19f71f1" kindref="member">dims</ref>[userDims[1]].<ref refid="struct_n_d_dimension_1af32ef14ab526ed14d195875fc688f027" kindref="member">size</ref>);</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(enableDim[1])<sp/>{</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classasyn_n_d_array_driver_1abf87462bc5853f8e5a56db5e93acd956" kindref="member">setIntegerParam</ref>(<ref refid="class_n_d_plugin_r_o_i_1a04af81355130ddf5b5979ee75e52c39f" kindref="member">NDPluginROIDim1Min</ref>,<sp/><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)pDim-&gt;<ref refid="struct_n_d_dimension_1a0498332bfb996e2aa43e3604a4923144" kindref="member">offset</ref>);</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classasyn_n_d_array_driver_1abf87462bc5853f8e5a56db5e93acd956" kindref="member">setIntegerParam</ref>(<ref refid="class_n_d_plugin_r_o_i_1a7c100011afec4167d6a7f4cf32a2bcff" kindref="member">NDPluginROIDim1Size</ref>,<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)pDim-&gt;<ref refid="struct_n_d_dimension_1af32ef14ab526ed14d195875fc688f027" kindref="member">size</ref>);</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classasyn_n_d_array_driver_1abf87462bc5853f8e5a56db5e93acd956" kindref="member">setIntegerParam</ref>(<ref refid="class_n_d_plugin_r_o_i_1a6ae9f3cbfef296162dcd8e7d199e6b57" kindref="member">NDPluginROIDim1Bin</ref>,<sp/><sp/>pDim-&gt;<ref refid="struct_n_d_dimension_1a6d5ea1ce1544d57ac3812f43a6ca7a94" kindref="member">binning</ref>);</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(pArray-&gt;<ref refid="class_n_d_array_1a4769c6ebb8275710a58bd88dba086b71" kindref="member">ndims</ref><sp/>&gt;<sp/>2)<sp/>{</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pDim<sp/>=<sp/>&amp;dims[2];</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classasyn_n_d_array_driver_1abf87462bc5853f8e5a56db5e93acd956" kindref="member">setIntegerParam</ref>(<ref refid="class_n_d_plugin_r_o_i_1aaddf9a489ce5d9c74f7451cdf6399fe6" kindref="member">NDPluginROIDim2MaxSize</ref>,<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)pArray-&gt;<ref refid="class_n_d_array_1a71e5be2b11008face8dc6c5be19f71f1" kindref="member">dims</ref>[userDims[2]].<ref refid="struct_n_d_dimension_1af32ef14ab526ed14d195875fc688f027" kindref="member">size</ref>);</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(enableDim[2])<sp/>{</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classasyn_n_d_array_driver_1abf87462bc5853f8e5a56db5e93acd956" kindref="member">setIntegerParam</ref>(<ref refid="class_n_d_plugin_r_o_i_1a9faade39f322ae8e4bb9fc41e49c5d85" kindref="member">NDPluginROIDim2Min</ref>,<sp/><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)pDim-&gt;<ref refid="struct_n_d_dimension_1a0498332bfb996e2aa43e3604a4923144" kindref="member">offset</ref>);</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classasyn_n_d_array_driver_1abf87462bc5853f8e5a56db5e93acd956" kindref="member">setIntegerParam</ref>(<ref refid="class_n_d_plugin_r_o_i_1a8617667dfdfe96d88fd5e04da9bb4099" kindref="member">NDPluginROIDim2Size</ref>,<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)pDim-&gt;<ref refid="struct_n_d_dimension_1af32ef14ab526ed14d195875fc688f027" kindref="member">size</ref>);</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classasyn_n_d_array_driver_1abf87462bc5853f8e5a56db5e93acd956" kindref="member">setIntegerParam</ref>(<ref refid="class_n_d_plugin_r_o_i_1ad90638b1549db0547bcba30750589e01" kindref="member">NDPluginROIDim2Bin</ref>,<sp/><sp/>pDim-&gt;<ref refid="struct_n_d_dimension_1a6d5ea1ce1544d57ac3812f43a6ca7a94" kindref="member">binning</ref>);</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>This<sp/>function<sp/>is<sp/>called<sp/>with<sp/>the<sp/>lock<sp/>taken,<sp/>and<sp/>it<sp/>must<sp/>be<sp/>set<sp/>when<sp/>we<sp/>exit.</highlight></codeline>
+<codeline lineno="138"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>The<sp/>following<sp/>code<sp/>can<sp/>be<sp/>executed<sp/>without<sp/>the<sp/>mutex<sp/>because<sp/>we<sp/>are<sp/>not<sp/>accessing<sp/>memory</highlight></codeline>
+<codeline lineno="139"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>that<sp/>other<sp/>threads<sp/>can<sp/>access.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;unlock();</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Extract<sp/>this<sp/>ROI<sp/>from<sp/>the<sp/>input<sp/>array.<sp/><sp/>The<sp/>convert()<sp/>function<sp/>allocates</highlight></codeline>
+<codeline lineno="143"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>a<sp/>new<sp/>array<sp/>and<sp/>it<sp/>is<sp/>reserved<sp/>(reference<sp/>count<sp/>=<sp/>1)<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(dataType<sp/>==<sp/>-1)<sp/>dataType<sp/>=<sp/>(int)pArray-&gt;<ref refid="class_n_d_array_1ad3757e8e6a87bc8a5889f60a3d0cdb59" kindref="member">dataType</ref>;</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>We<sp/>treat<sp/>the<sp/>case<sp/>of<sp/>RGB1<sp/>data<sp/>specially,<sp/>so<sp/>that<sp/>NX<sp/>and<sp/>NY<sp/>are<sp/>the<sp/>X<sp/>and<sp/>Y<sp/>dimensions<sp/>of<sp/>the</highlight></codeline>
+<codeline lineno="146"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>image,<sp/>not<sp/>the<sp/>first<sp/>2<sp/>dimensions.<sp/><sp/>This<sp/>makes<sp/>it<sp/>much<sp/>easier<sp/>to<sp/>switch<sp/>back<sp/>and<sp/>forth<sp/>between</highlight></codeline>
+<codeline lineno="147"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>RGB1<sp/>and<sp/>mono<sp/>mode<sp/>when<sp/>using<sp/>an<sp/>ROI.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(arrayInfo.<ref refid="struct_n_d_array_info_1a41327fb012e83efdbb77cb58620cfd9d" kindref="member">colorMode</ref><sp/>==<sp/><ref refid="_n_d_array_8h_1a158fa3df51916c6942849dccdc7c5812ab189c5eca6618929ea57f516e3dd5e5d" kindref="member">NDColorModeRGB1</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tempDim<sp/>=<sp/>dims[0];</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dims[0]<sp/>=<sp/>dims[2];</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dims[2]<sp/>=<sp/>dims[1];</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dims[1]<sp/>=<sp/>tempDim;</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(arrayInfo.<ref refid="struct_n_d_array_info_1a41327fb012e83efdbb77cb58620cfd9d" kindref="member">colorMode</ref><sp/>==<sp/><ref refid="_n_d_array_8h_1a158fa3df51916c6942849dccdc7c5812afe7ba5e4260cfb01d99d89f0f65c8b01" kindref="member">NDColorModeRGB2</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tempDim<sp/>=<sp/>dims[1];</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dims[1]<sp/>=<sp/>dims[2];</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dims[2]<sp/>=<sp/>tempDim;</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(enableScale<sp/>&amp;&amp;<sp/>(scale<sp/>!=<sp/>0)<sp/>&amp;&amp;<sp/>(scale<sp/>!=<sp/>1))<sp/>{</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>This<sp/>is<sp/>tricky.<sp/><sp/>We<sp/>want<sp/>to<sp/>do<sp/>the<sp/>operation<sp/>to<sp/>avoid<sp/>errors<sp/>due<sp/>to<sp/>integer<sp/>truncation.</highlight></codeline>
+<codeline lineno="162"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>For<sp/>example,<sp/>if<sp/>an<sp/>image<sp/>with<sp/>all<sp/>pixels=1<sp/>is<sp/>binned<sp/>3x3<sp/>with<sp/>scale=9<sp/>(divide<sp/>by<sp/>9),<sp/>then</highlight></codeline>
+<codeline lineno="163"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>the<sp/>output<sp/>should<sp/>also<sp/>have<sp/>all<sp/>pixels=1.</highlight></codeline>
+<codeline lineno="164"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>We<sp/>do<sp/>this<sp/>by<sp/>extracting<sp/>the<sp/>ROI<sp/>and<sp/>converting<sp/>to<sp/>double,<sp/>do<sp/>the<sp/>scaling,<sp/>then<sp/>convert</highlight></codeline>
+<codeline lineno="165"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>to<sp/>the<sp/>desired<sp/>data<sp/>type.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classasyn_n_d_array_driver_1ad3969854a37329ef4061cc560e9022dc" kindref="member">pNDArrayPool</ref>-&gt;<ref refid="class_n_d_array_pool_1ade048931af82929ee2d0a33fcc5c5fea" kindref="member">convert</ref>(pArray,<sp/>&amp;pScratch,<sp/><ref refid="_n_d_attribute_8h_1a34b835bcabc3b7f546f4b25c5767cb16a623c10faaa72cf1b79d5ab4916941298" kindref="member">NDFloat64</ref>,<sp/>dims);</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pScratch-&gt;<ref refid="class_n_d_array_1a47af97c0e2b8255d756207908f6b470d" kindref="member">getInfo</ref>(&amp;scratchInfo);</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pData<sp/>=<sp/>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>*)pScratch-&gt;<ref refid="class_n_d_array_1a9581f9d8f38225a2c2977bbed70fa2b8" kindref="member">pData</ref>;</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>for<sp/>(<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>=0;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>&lt;scratchInfo.<ref refid="struct_n_d_array_info_1a60783541b9eda5a6222e5cdad797c387" kindref="member">nElements</ref>;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>++)<sp/>pData[<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>]<sp/>=<sp/>pData[<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>]/scale;</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classasyn_n_d_array_driver_1ad3969854a37329ef4061cc560e9022dc" kindref="member">pNDArrayPool</ref>-&gt;<ref refid="class_n_d_array_pool_1ade048931af82929ee2d0a33fcc5c5fea" kindref="member">convert</ref>(pScratch,<sp/>&amp;pOutput,<sp/>(<ref refid="_n_d_attribute_8h_1a34b835bcabc3b7f546f4b25c5767cb16" kindref="member">NDDataType_t</ref>)dataType);</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pScratch-&gt;<ref refid="class_n_d_array_1a0c4c61ea4d44ce97db979d24305c996e" kindref="member">release</ref>();</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classasyn_n_d_array_driver_1ad3969854a37329ef4061cc560e9022dc" kindref="member">pNDArrayPool</ref>-&gt;<ref refid="class_n_d_array_pool_1ade048931af82929ee2d0a33fcc5c5fea" kindref="member">convert</ref>(pArray,<sp/>&amp;pOutput,<sp/>(<ref refid="_n_d_attribute_8h_1a34b835bcabc3b7f546f4b25c5767cb16" kindref="member">NDDataType_t</ref>)dataType,<sp/>dims);</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"></highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>If<sp/>we<sp/>selected<sp/>just<sp/>one<sp/>color<sp/>from<sp/>the<sp/>array,<sp/>then<sp/>we<sp/>need<sp/>to<sp/>collapse<sp/>the</highlight></codeline>
+<codeline lineno="178"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>dimensions<sp/>and<sp/>set<sp/>the<sp/>color<sp/>mode<sp/>to<sp/>mono<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/>colorMode<sp/>=<sp/><ref refid="_n_d_array_8h_1a158fa3df51916c6942849dccdc7c5812a7ce7370097e884f4954fc8b3d069a620" kindref="member">NDColorModeMono</ref>;</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((pOutput-&gt;<ref refid="class_n_d_array_1a4769c6ebb8275710a58bd88dba086b71" kindref="member">ndims</ref><sp/>==<sp/>3)<sp/>&amp;&amp;</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(arrayInfo.<ref refid="struct_n_d_array_info_1a41327fb012e83efdbb77cb58620cfd9d" kindref="member">colorMode</ref><sp/>==<sp/><ref refid="_n_d_array_8h_1a158fa3df51916c6942849dccdc7c5812ab189c5eca6618929ea57f516e3dd5e5d" kindref="member">NDColorModeRGB1</ref>)<sp/>&amp;&amp;</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(pOutput-&gt;<ref refid="class_n_d_array_1a71e5be2b11008face8dc6c5be19f71f1" kindref="member">dims</ref>[0].<ref refid="struct_n_d_dimension_1af32ef14ab526ed14d195875fc688f027" kindref="member">size</ref><sp/>==<sp/>1))</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>collapseDims<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pOutput-&gt;<ref refid="class_n_d_array_1af5aad7b41118f465621cf045ed957469" kindref="member">pAttributeList</ref>-&gt;<ref refid="class_n_d_attribute_list_1aa86fbdd59e20b734b86b2464f470d752" kindref="member">add</ref>(</highlight><highlight class="stringliteral">&quot;ColorMode&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;Color<sp/>mode&quot;</highlight><highlight class="normal">,<sp/><ref refid="_n_d_attribute_8h_1a8a795995acde8458f43ac9b01376ef07a52a96048ab842e5ee55012e5abd38088" kindref="member">NDAttrInt32</ref>,<sp/>&amp;colorMode);</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((pOutput-&gt;<ref refid="class_n_d_array_1a4769c6ebb8275710a58bd88dba086b71" kindref="member">ndims</ref><sp/>==<sp/>3)<sp/>&amp;&amp;</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(arrayInfo.<ref refid="struct_n_d_array_info_1a41327fb012e83efdbb77cb58620cfd9d" kindref="member">colorMode</ref><sp/>==<sp/><ref refid="_n_d_array_8h_1a158fa3df51916c6942849dccdc7c5812afe7ba5e4260cfb01d99d89f0f65c8b01" kindref="member">NDColorModeRGB2</ref>)<sp/>&amp;&amp;</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(pOutput-&gt;<ref refid="class_n_d_array_1a71e5be2b11008face8dc6c5be19f71f1" kindref="member">dims</ref>[1].<ref refid="struct_n_d_dimension_1af32ef14ab526ed14d195875fc688f027" kindref="member">size</ref><sp/>==<sp/>1))</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>collapseDims<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pOutput-&gt;<ref refid="class_n_d_array_1af5aad7b41118f465621cf045ed957469" kindref="member">pAttributeList</ref>-&gt;<ref refid="class_n_d_attribute_list_1aa86fbdd59e20b734b86b2464f470d752" kindref="member">add</ref>(</highlight><highlight class="stringliteral">&quot;ColorMode&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;Color<sp/>mode&quot;</highlight><highlight class="normal">,<sp/><ref refid="_n_d_attribute_8h_1a8a795995acde8458f43ac9b01376ef07a52a96048ab842e5ee55012e5abd38088" kindref="member">NDAttrInt32</ref>,<sp/>&amp;colorMode);</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((pOutput-&gt;<ref refid="class_n_d_array_1a4769c6ebb8275710a58bd88dba086b71" kindref="member">ndims</ref><sp/>==<sp/>3)<sp/>&amp;&amp;</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(arrayInfo.<ref refid="struct_n_d_array_info_1a41327fb012e83efdbb77cb58620cfd9d" kindref="member">colorMode</ref><sp/>==<sp/><ref refid="_n_d_array_8h_1a158fa3df51916c6942849dccdc7c5812ad34753cea9fd562ba5053e2395accb6e" kindref="member">NDColorModeRGB3</ref>)<sp/>&amp;&amp;</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(pOutput-&gt;<ref refid="class_n_d_array_1a71e5be2b11008face8dc6c5be19f71f1" kindref="member">dims</ref>[2].<ref refid="struct_n_d_dimension_1af32ef14ab526ed14d195875fc688f027" kindref="member">size</ref><sp/>==<sp/>1))</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>collapseDims<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pOutput-&gt;<ref refid="class_n_d_array_1af5aad7b41118f465621cf045ed957469" kindref="member">pAttributeList</ref>-&gt;<ref refid="class_n_d_attribute_list_1aa86fbdd59e20b734b86b2464f470d752" kindref="member">add</ref>(</highlight><highlight class="stringliteral">&quot;ColorMode&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;Color<sp/>mode&quot;</highlight><highlight class="normal">,<sp/><ref refid="_n_d_attribute_8h_1a8a795995acde8458f43ac9b01376ef07a52a96048ab842e5ee55012e5abd38088" kindref="member">NDAttrInt32</ref>,<sp/>&amp;colorMode);</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"></highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>If<sp/>collapseDims<sp/>is<sp/>set<sp/>then<sp/>collapse<sp/>any<sp/>dimensions<sp/>of<sp/>size<sp/>1<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(collapseDims)<sp/>{</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>=0,<sp/>j;</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>((i<sp/>&lt;<sp/>pOutput-&gt;ndims)<sp/>&amp;&amp;<sp/>(pOutput-&gt;<ref refid="class_n_d_array_1a4769c6ebb8275710a58bd88dba086b71" kindref="member">ndims</ref><sp/>&gt;<sp/>1))<sp/>{</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(pOutput-&gt;<ref refid="class_n_d_array_1a71e5be2b11008face8dc6c5be19f71f1" kindref="member">dims</ref>[<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>].<ref refid="struct_n_d_dimension_1af32ef14ab526ed14d195875fc688f027" kindref="member">size</ref><sp/>==<sp/>1)<sp/>{</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(j=<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>+1;<sp/>j&lt;pOutput-&gt;<ref refid="class_n_d_array_1a4769c6ebb8275710a58bd88dba086b71" kindref="member">ndims</ref>;<sp/>j++)<sp/>{</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pOutput-&gt;<ref refid="class_n_d_array_1a71e5be2b11008face8dc6c5be19f71f1" kindref="member">dims</ref>[j-1]<sp/>=<sp/>pOutput-&gt;<ref refid="class_n_d_array_1a71e5be2b11008face8dc6c5be19f71f1" kindref="member">dims</ref>[j];</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(pOutput-&gt;<ref refid="class_n_d_array_1a4769c6ebb8275710a58bd88dba086b71" kindref="member">ndims</ref><sp/>&gt;<sp/>1)<sp/>pOutput-&gt;<ref refid="class_n_d_array_1a4769c6ebb8275710a58bd88dba086b71" kindref="member">ndims</ref>--;</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>++;</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;lock();</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"></highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Set<sp/>the<sp/>image<sp/>size<sp/>of<sp/>the<sp/>ROI<sp/>image<sp/>data<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classasyn_n_d_array_driver_1abf87462bc5853f8e5a56db5e93acd956" kindref="member">setIntegerParam</ref>(<ref refid="classasyn_n_d_array_driver_1a79c89c00ea62734d82c89e09ea8aa47b" kindref="member">NDArraySizeX</ref>,<sp/>0);</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classasyn_n_d_array_driver_1abf87462bc5853f8e5a56db5e93acd956" kindref="member">setIntegerParam</ref>(<ref refid="classasyn_n_d_array_driver_1a75753778fe16182d0771e924f05bde33" kindref="member">NDArraySizeY</ref>,<sp/>0);</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classasyn_n_d_array_driver_1abf87462bc5853f8e5a56db5e93acd956" kindref="member">setIntegerParam</ref>(<ref refid="classasyn_n_d_array_driver_1a72fac0fbaa730672f9a3a6da8c1d1a97" kindref="member">NDArraySizeZ</ref>,<sp/>0);</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(pOutput-&gt;<ref refid="class_n_d_array_1a4769c6ebb8275710a58bd88dba086b71" kindref="member">ndims</ref><sp/>&gt;<sp/>0)<sp/><ref refid="classasyn_n_d_array_driver_1abf87462bc5853f8e5a56db5e93acd956" kindref="member">setIntegerParam</ref>(<ref refid="classasyn_n_d_array_driver_1a79c89c00ea62734d82c89e09ea8aa47b" kindref="member">NDArraySizeX</ref>,<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)pOutput-&gt;<ref refid="class_n_d_array_1a71e5be2b11008face8dc6c5be19f71f1" kindref="member">dims</ref>[userDims[0]].<ref refid="struct_n_d_dimension_1af32ef14ab526ed14d195875fc688f027" kindref="member">size</ref>);</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(pOutput-&gt;<ref refid="class_n_d_array_1a4769c6ebb8275710a58bd88dba086b71" kindref="member">ndims</ref><sp/>&gt;<sp/>1)<sp/><ref refid="classasyn_n_d_array_driver_1abf87462bc5853f8e5a56db5e93acd956" kindref="member">setIntegerParam</ref>(<ref refid="classasyn_n_d_array_driver_1a75753778fe16182d0771e924f05bde33" kindref="member">NDArraySizeY</ref>,<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)pOutput-&gt;<ref refid="class_n_d_array_1a71e5be2b11008face8dc6c5be19f71f1" kindref="member">dims</ref>[userDims[1]].<ref refid="struct_n_d_dimension_1af32ef14ab526ed14d195875fc688f027" kindref="member">size</ref>);</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(pOutput-&gt;<ref refid="class_n_d_array_1a4769c6ebb8275710a58bd88dba086b71" kindref="member">ndims</ref><sp/>&gt;<sp/>2)<sp/><ref refid="classasyn_n_d_array_driver_1abf87462bc5853f8e5a56db5e93acd956" kindref="member">setIntegerParam</ref>(<ref refid="classasyn_n_d_array_driver_1a72fac0fbaa730672f9a3a6da8c1d1a97" kindref="member">NDArraySizeZ</ref>,<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)pOutput-&gt;<ref refid="class_n_d_array_1a71e5be2b11008face8dc6c5be19f71f1" kindref="member">dims</ref>[userDims[2]].<ref refid="struct_n_d_dimension_1af32ef14ab526ed14d195875fc688f027" kindref="member">size</ref>);</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"></highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_n_d_plugin_driver_1ad2a1210161a2f542f347482aa93f3797" kindref="member">NDPluginDriver::endProcessCallbacks</ref>(pOutput,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"></highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/>callParamCallbacks();</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"></highlight></codeline>
+<codeline lineno="230"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"></highlight></codeline>
+<codeline lineno="238"><highlight class="normal">asynStatus<sp/><ref refid="class_n_d_plugin_r_o_i_1a4e9c62295377c2391b3c84ae7a3afead" kindref="member">NDPluginROI::writeInt32</ref>(asynUser<sp/>*pasynUser,<sp/>epicsInt32<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>)</highlight></codeline>
+<codeline lineno="239"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>=<sp/>pasynUser-&gt;reason;</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/>asynStatus<sp/>status<sp/>=<sp/>asynSuccess;</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>functionName<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;writeInt32&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"></highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Set<sp/>the<sp/>parameter<sp/>in<sp/>the<sp/>parameter<sp/>library.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/>status<sp/>=<sp/>(asynStatus)<sp/><ref refid="classasyn_n_d_array_driver_1abf87462bc5853f8e5a56db5e93acd956" kindref="member">setIntegerParam</ref>(</highlight><highlight class="keyword">function</highlight><highlight class="normal">,<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>);</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"></highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>==<sp/><ref refid="class_n_d_plugin_r_o_i_1adb0068de79c3424ad79eb5d10057708d" kindref="member">NDPluginROIDim0Min</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>requestedOffset_[0]<sp/>=<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>;</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>==<sp/><ref refid="class_n_d_plugin_r_o_i_1a04af81355130ddf5b5979ee75e52c39f" kindref="member">NDPluginROIDim1Min</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>requestedOffset_[1]<sp/>=<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>;</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>==<sp/><ref refid="class_n_d_plugin_r_o_i_1a9faade39f322ae8e4bb9fc41e49c5d85" kindref="member">NDPluginROIDim2Min</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>requestedOffset_[2]<sp/>=<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>;</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>==<sp/><ref refid="class_n_d_plugin_r_o_i_1a63888da617e1baf4e29dd65d039c9707" kindref="member">NDPluginROIDim0Size</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>requestedSize_[0]<sp/>=<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>;</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>==<sp/><ref refid="class_n_d_plugin_r_o_i_1a7c100011afec4167d6a7f4cf32a2bcff" kindref="member">NDPluginROIDim1Size</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>requestedSize_[1]<sp/>=<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>;</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>==<sp/><ref refid="class_n_d_plugin_r_o_i_1a8617667dfdfe96d88fd5e04da9bb4099" kindref="member">NDPluginROIDim2Size</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>requestedSize_[2]<sp/>=<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>;</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>If<sp/>this<sp/>parameter<sp/>belongs<sp/>to<sp/>a<sp/>base<sp/>class<sp/>call<sp/>its<sp/>method<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>&lt;<sp/><ref refid="_n_d_plugin_r_o_i_8h_1a66df5b31dba8cf5e8db56374ec10097b" kindref="member">FIRST_NDPLUGIN_ROI_PARAM</ref>)</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>status<sp/>=<sp/><ref refid="class_n_d_plugin_driver_1a5f60198f46fd7cd89c101dce9533f3aa" kindref="member">NDPluginDriver::writeInt32</ref>(pasynUser,<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>);</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="264"><highlight class="normal"></highlight></codeline>
+<codeline lineno="265"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Do<sp/>callbacks<sp/>so<sp/>higher<sp/>layers<sp/>see<sp/>any<sp/>changes<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/>callParamCallbacks();</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"></highlight></codeline>
+<codeline lineno="268"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>paramName;</highlight></codeline>
+<codeline lineno="269"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(status)<sp/>{</highlight></codeline>
+<codeline lineno="270"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>getParamName(<sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal">,<sp/>&amp;paramName<sp/>);</highlight></codeline>
+<codeline lineno="271"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>asynPrint(pasynUser,<sp/>ASYN_TRACE_ERROR,</highlight></codeline>
+<codeline lineno="272"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;%s:%s:<sp/>function=%d<sp/>%s,<sp/>value=%d\n&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>driverName,<sp/>functionName,<sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal">,<sp/>paramName,<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>);</highlight></codeline>
+<codeline lineno="274"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="275"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="276"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>pasynTrace-&gt;getTraceMask(pasynUser)<sp/>&amp;<sp/>ASYN_TRACEIO_DRIVER<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="277"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>getParamName(<sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal">,<sp/>&amp;paramName<sp/>);</highlight></codeline>
+<codeline lineno="278"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>asynPrint(pasynUser,<sp/>ASYN_TRACEIO_DRIVER,</highlight></codeline>
+<codeline lineno="279"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;%s:%s:<sp/>function=%d<sp/>%s,<sp/>paramvalue=%d\n&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="280"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>driverName,<sp/>functionName,<sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal">,<sp/>paramName,<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>);</highlight></codeline>
+<codeline lineno="281"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="282"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="283"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>status;</highlight></codeline>
+<codeline lineno="284"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="285"><highlight class="normal"></highlight></codeline>
+<codeline lineno="286"><highlight class="normal"></highlight></codeline>
+<codeline lineno="307"><highlight class="normal"><ref refid="class_n_d_plugin_r_o_i_1a8d4b2b3ce9777198d656af25cf3a7aef" kindref="member">NDPluginROI::NDPluginROI</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*portName,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>queueSize,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>blockingCallbacks,</highlight></codeline>
+<codeline lineno="308"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*NDArrayPort,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>NDArrayAddr,</highlight></codeline>
+<codeline lineno="309"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>maxBuffers,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>maxMemory,</highlight></codeline>
+<codeline lineno="310"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>priority,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>stackSize,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>maxThreads)</highlight></codeline>
+<codeline lineno="311"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Invoke<sp/>the<sp/>base<sp/>class<sp/>constructor<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="312"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/><ref refid="class_n_d_plugin_driver" kindref="compound">NDPluginDriver</ref>(portName,<sp/>queueSize,<sp/>blockingCallbacks,</highlight></codeline>
+<codeline lineno="313"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>NDArrayPort,<sp/>NDArrayAddr,<sp/>1,<sp/>maxBuffers,<sp/>maxMemory,</highlight></codeline>
+<codeline lineno="314"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>asynInt32ArrayMask<sp/>|<sp/>asynFloat64ArrayMask<sp/>|<sp/>asynGenericPointerMask,</highlight></codeline>
+<codeline lineno="315"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>asynInt32ArrayMask<sp/>|<sp/>asynFloat64ArrayMask<sp/>|<sp/>asynGenericPointerMask,</highlight></codeline>
+<codeline lineno="316"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ASYN_MULTIDEVICE,<sp/>1,<sp/>priority,<sp/>stackSize,<sp/>maxThreads)</highlight></codeline>
+<codeline lineno="317"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="318"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//static<sp/>const<sp/>char<sp/>*functionName<sp/>=<sp/>&quot;NDPluginROI&quot;;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="319"><highlight class="normal"></highlight></codeline>
+<codeline lineno="320"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>ROI<sp/>general<sp/>parameters<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="321"><highlight class="normal"><sp/><sp/><sp/><sp/>createParam(<ref refid="_n_d_plugin_r_o_i_8h_1a2414347c66e1b7e29266020b14689368" kindref="member">NDPluginROINameString</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>asynParamOctet,<sp/>&amp;NDPluginROIName);</highlight></codeline>
+<codeline lineno="322"><highlight class="normal"></highlight></codeline>
+<codeline lineno="323"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>ROI<sp/>definition<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="324"><highlight class="normal"><sp/><sp/><sp/><sp/>createParam(<ref refid="_n_d_plugin_r_o_i_8h_1aa1a84bc649f92a938e6821c1a315da71" kindref="member">NDPluginROIDim0MinString</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>asynParamInt32,<sp/>&amp;NDPluginROIDim0Min);</highlight></codeline>
+<codeline lineno="325"><highlight class="normal"><sp/><sp/><sp/><sp/>createParam(<ref refid="_n_d_plugin_r_o_i_8h_1a062a6ea3681d8669b7983b18e7be7da5" kindref="member">NDPluginROIDim1MinString</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>asynParamInt32,<sp/>&amp;NDPluginROIDim1Min);</highlight></codeline>
+<codeline lineno="326"><highlight class="normal"><sp/><sp/><sp/><sp/>createParam(<ref refid="_n_d_plugin_r_o_i_8h_1a44a61eb7cc9cecec785c8f5149677110" kindref="member">NDPluginROIDim2MinString</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>asynParamInt32,<sp/>&amp;NDPluginROIDim2Min);</highlight></codeline>
+<codeline lineno="327"><highlight class="normal"><sp/><sp/><sp/><sp/>createParam(<ref refid="_n_d_plugin_r_o_i_8h_1a5930193af6573e2c5a8693c6a9bab790" kindref="member">NDPluginROIDim0SizeString</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>asynParamInt32,<sp/>&amp;NDPluginROIDim0Size);</highlight></codeline>
+<codeline lineno="328"><highlight class="normal"><sp/><sp/><sp/><sp/>createParam(<ref refid="_n_d_plugin_r_o_i_8h_1a47685863c43c7cc79665a5fd8f67add3" kindref="member">NDPluginROIDim1SizeString</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>asynParamInt32,<sp/>&amp;NDPluginROIDim1Size);</highlight></codeline>
+<codeline lineno="329"><highlight class="normal"><sp/><sp/><sp/><sp/>createParam(<ref refid="_n_d_plugin_r_o_i_8h_1a20275016f5f4858eff1ff6e8ac19c4bd" kindref="member">NDPluginROIDim2SizeString</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>asynParamInt32,<sp/>&amp;NDPluginROIDim2Size);</highlight></codeline>
+<codeline lineno="330"><highlight class="normal"><sp/><sp/><sp/><sp/>createParam(<ref refid="_n_d_plugin_r_o_i_8h_1add3e4013c6dd742c54acee341507e29d" kindref="member">NDPluginROIDim0MaxSizeString</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/>asynParamInt32,<sp/>&amp;NDPluginROIDim0MaxSize);</highlight></codeline>
+<codeline lineno="331"><highlight class="normal"><sp/><sp/><sp/><sp/>createParam(<ref refid="_n_d_plugin_r_o_i_8h_1a1865be5e03ccaa69e4611a6a78d0e72c" kindref="member">NDPluginROIDim1MaxSizeString</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/>asynParamInt32,<sp/>&amp;NDPluginROIDim1MaxSize);</highlight></codeline>
+<codeline lineno="332"><highlight class="normal"><sp/><sp/><sp/><sp/>createParam(<ref refid="_n_d_plugin_r_o_i_8h_1a0a8f959988c0c7b95f788ad1bee67a83" kindref="member">NDPluginROIDim2MaxSizeString</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/>asynParamInt32,<sp/>&amp;NDPluginROIDim2MaxSize);</highlight></codeline>
+<codeline lineno="333"><highlight class="normal"><sp/><sp/><sp/><sp/>createParam(<ref refid="_n_d_plugin_r_o_i_8h_1a7890dd1c60a1ad63cd66d1e3c5db7946" kindref="member">NDPluginROIDim0BinString</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>asynParamInt32,<sp/>&amp;NDPluginROIDim0Bin);</highlight></codeline>
+<codeline lineno="334"><highlight class="normal"><sp/><sp/><sp/><sp/>createParam(<ref refid="_n_d_plugin_r_o_i_8h_1ac9dd768e6192f702dcded9fecd273dcd" kindref="member">NDPluginROIDim1BinString</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>asynParamInt32,<sp/>&amp;NDPluginROIDim1Bin);</highlight></codeline>
+<codeline lineno="335"><highlight class="normal"><sp/><sp/><sp/><sp/>createParam(<ref refid="_n_d_plugin_r_o_i_8h_1abc8ec321d0af3dce5cecbf71e61eb835" kindref="member">NDPluginROIDim2BinString</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>asynParamInt32,<sp/>&amp;NDPluginROIDim2Bin);</highlight></codeline>
+<codeline lineno="336"><highlight class="normal"><sp/><sp/><sp/><sp/>createParam(<ref refid="_n_d_plugin_r_o_i_8h_1a4531be951e6b09db9c210bcc00f9d813" kindref="member">NDPluginROIDim0ReverseString</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/>asynParamInt32,<sp/>&amp;NDPluginROIDim0Reverse);</highlight></codeline>
+<codeline lineno="337"><highlight class="normal"><sp/><sp/><sp/><sp/>createParam(<ref refid="_n_d_plugin_r_o_i_8h_1ae35eeea992064b356dc7b98eac513590" kindref="member">NDPluginROIDim1ReverseString</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/>asynParamInt32,<sp/>&amp;NDPluginROIDim1Reverse);</highlight></codeline>
+<codeline lineno="338"><highlight class="normal"><sp/><sp/><sp/><sp/>createParam(<ref refid="_n_d_plugin_r_o_i_8h_1a54f15f71fe520cba40f7d97eb98790d6" kindref="member">NDPluginROIDim2ReverseString</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/>asynParamInt32,<sp/>&amp;NDPluginROIDim2Reverse);</highlight></codeline>
+<codeline lineno="339"><highlight class="normal"><sp/><sp/><sp/><sp/>createParam(<ref refid="_n_d_plugin_r_o_i_8h_1afc0939c39e04c42cd515352bb95e1a14" kindref="member">NDPluginROIDim0EnableString</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>asynParamInt32,<sp/>&amp;NDPluginROIDim0Enable);</highlight></codeline>
+<codeline lineno="340"><highlight class="normal"><sp/><sp/><sp/><sp/>createParam(<ref refid="_n_d_plugin_r_o_i_8h_1aed1cc323d86d8226c8a50b1ab656a402" kindref="member">NDPluginROIDim1EnableString</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>asynParamInt32,<sp/>&amp;NDPluginROIDim1Enable);</highlight></codeline>
+<codeline lineno="341"><highlight class="normal"><sp/><sp/><sp/><sp/>createParam(<ref refid="_n_d_plugin_r_o_i_8h_1aafee40c0370b58ab935c97465f6492c6" kindref="member">NDPluginROIDim2EnableString</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>asynParamInt32,<sp/>&amp;NDPluginROIDim2Enable);</highlight></codeline>
+<codeline lineno="342"><highlight class="normal"><sp/><sp/><sp/><sp/>createParam(<ref refid="_n_d_plugin_r_o_i_8h_1a7905b1b5b8bc359e6d1ec30fd65bad20" kindref="member">NDPluginROIDim0AutoSizeString</ref>,<sp/><sp/><sp/><sp/><sp/><sp/>asynParamInt32,<sp/>&amp;NDPluginROIDim0AutoSize);</highlight></codeline>
+<codeline lineno="343"><highlight class="normal"><sp/><sp/><sp/><sp/>createParam(<ref refid="_n_d_plugin_r_o_i_8h_1ac2bf64cd23d70f356122af672798ff3f" kindref="member">NDPluginROIDim1AutoSizeString</ref>,<sp/><sp/><sp/><sp/><sp/><sp/>asynParamInt32,<sp/>&amp;NDPluginROIDim1AutoSize);</highlight></codeline>
+<codeline lineno="344"><highlight class="normal"><sp/><sp/><sp/><sp/>createParam(<ref refid="_n_d_plugin_r_o_i_8h_1a93edce558e741d2d765586b52248edc9" kindref="member">NDPluginROIDim2AutoSizeString</ref>,<sp/><sp/><sp/><sp/><sp/><sp/>asynParamInt32,<sp/>&amp;NDPluginROIDim2AutoSize);</highlight></codeline>
+<codeline lineno="345"><highlight class="normal"><sp/><sp/><sp/><sp/>createParam(<ref refid="_n_d_plugin_r_o_i_8h_1a8fc9406996f9982640452faa1f3c5d3c" kindref="member">NDPluginROIDataTypeString</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>asynParamInt32,<sp/>&amp;NDPluginROIDataType);</highlight></codeline>
+<codeline lineno="346"><highlight class="normal"><sp/><sp/><sp/><sp/>createParam(<ref refid="_n_d_plugin_r_o_i_8h_1a205f1b28a641980d7fcdaf6923ad4850" kindref="member">NDPluginROIEnableScaleString</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/>asynParamInt32,<sp/>&amp;NDPluginROIEnableScale);</highlight></codeline>
+<codeline lineno="347"><highlight class="normal"><sp/><sp/><sp/><sp/>createParam(<ref refid="_n_d_plugin_r_o_i_8h_1ab1d45f00fd88f4e0acf3bf2211e0197f" kindref="member">NDPluginROIScaleString</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>asynParamFloat64,<sp/>&amp;NDPluginROIScale);</highlight></codeline>
+<codeline lineno="348"><highlight class="normal"><sp/><sp/><sp/><sp/>createParam(<ref refid="_n_d_plugin_r_o_i_8h_1afbe0bd83e6e858c595c35bfcb692e586" kindref="member">NDPluginROICollapseDimsString</ref>,<sp/><sp/><sp/><sp/><sp/><sp/>asynParamInt32,<sp/>&amp;NDPluginROICollapseDims);</highlight></codeline>
+<codeline lineno="349"><highlight class="normal"></highlight></codeline>
+<codeline lineno="350"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Set<sp/>the<sp/>plugin<sp/>type<sp/>string<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="351"><highlight class="normal"><sp/><sp/><sp/><sp/>setStringParam(NDPluginDriverPluginType,<sp/></highlight><highlight class="stringliteral">&quot;NDPluginROI&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="352"><highlight class="normal"></highlight></codeline>
+<codeline lineno="353"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Try<sp/>to<sp/>connect<sp/>to<sp/>the<sp/>array<sp/>port<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="354"><highlight class="normal"><sp/><sp/><sp/><sp/>connectToArrayPort();</highlight></codeline>
+<codeline lineno="355"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="356"><highlight class="normal"></highlight></codeline>
+<codeline lineno="358"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="_n_d_plugin_r_o_i_8cpp_1a8261ba8b8d68fe5aca32b0c4a106b4a5" kindref="member">NDROIConfigure</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*portName,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>queueSize,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>blockingCallbacks,</highlight></codeline>
+<codeline lineno="359"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*NDArrayPort,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>NDArrayAddr,</highlight></codeline>
+<codeline lineno="360"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>maxBuffers,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>maxMemory,</highlight></codeline>
+<codeline lineno="361"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>priority,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>stackSize,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>maxThreads)</highlight></codeline>
+<codeline lineno="362"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="363"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_n_d_plugin_r_o_i" kindref="compound">NDPluginROI</ref><sp/>*pPlugin<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_n_d_plugin_r_o_i" kindref="compound">NDPluginROI</ref>(portName,<sp/>queueSize,<sp/>blockingCallbacks,<sp/>NDArrayPort,<sp/>NDArrayAddr,</highlight></codeline>
+<codeline lineno="364"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>maxBuffers,<sp/>maxMemory,<sp/>priority,<sp/>stackSize,<sp/>maxThreads);</highlight></codeline>
+<codeline lineno="365"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>pPlugin-&gt;<ref refid="class_n_d_plugin_driver_1a085bcf8d331f7dedac92af07c94b2d15" kindref="member">start</ref>();</highlight></codeline>
+<codeline lineno="366"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="367"><highlight class="normal"></highlight></codeline>
+<codeline lineno="368"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>EPICS<sp/>iocsh<sp/>shell<sp/>commands<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="369"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>iocshArg<sp/>initArg0<sp/>=<sp/>{<sp/></highlight><highlight class="stringliteral">&quot;portName&quot;</highlight><highlight class="normal">,iocshArgString};</highlight></codeline>
+<codeline lineno="370"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>iocshArg<sp/>initArg1<sp/>=<sp/>{<sp/></highlight><highlight class="stringliteral">&quot;frame<sp/>queue<sp/>size&quot;</highlight><highlight class="normal">,iocshArgInt};</highlight></codeline>
+<codeline lineno="371"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>iocshArg<sp/>initArg2<sp/>=<sp/>{<sp/></highlight><highlight class="stringliteral">&quot;blocking<sp/>callbacks&quot;</highlight><highlight class="normal">,iocshArgInt};</highlight></codeline>
+<codeline lineno="372"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>iocshArg<sp/>initArg3<sp/>=<sp/>{<sp/></highlight><highlight class="stringliteral">&quot;NDArrayPort&quot;</highlight><highlight class="normal">,iocshArgString};</highlight></codeline>
+<codeline lineno="373"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>iocshArg<sp/>initArg4<sp/>=<sp/>{<sp/></highlight><highlight class="stringliteral">&quot;NDArrayAddr&quot;</highlight><highlight class="normal">,iocshArgInt};</highlight></codeline>
+<codeline lineno="374"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>iocshArg<sp/>initArg5<sp/>=<sp/>{<sp/></highlight><highlight class="stringliteral">&quot;maxBuffers&quot;</highlight><highlight class="normal">,iocshArgInt};</highlight></codeline>
+<codeline lineno="375"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>iocshArg<sp/>initArg6<sp/>=<sp/>{<sp/></highlight><highlight class="stringliteral">&quot;maxMemory&quot;</highlight><highlight class="normal">,iocshArgInt};</highlight></codeline>
+<codeline lineno="376"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>iocshArg<sp/>initArg7<sp/>=<sp/>{<sp/></highlight><highlight class="stringliteral">&quot;priority&quot;</highlight><highlight class="normal">,iocshArgInt};</highlight></codeline>
+<codeline lineno="377"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>iocshArg<sp/>initArg8<sp/>=<sp/>{<sp/></highlight><highlight class="stringliteral">&quot;stackSize&quot;</highlight><highlight class="normal">,iocshArgInt};</highlight></codeline>
+<codeline lineno="378"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>iocshArg<sp/>initArg9<sp/>=<sp/>{<sp/></highlight><highlight class="stringliteral">&quot;maxThreads&quot;</highlight><highlight class="normal">,iocshArgInt};</highlight></codeline>
+<codeline lineno="379"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>iocshArg<sp/>*<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>initArgs[]<sp/>=<sp/>{&amp;initArg0,</highlight></codeline>
+<codeline lineno="380"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;initArg1,</highlight></codeline>
+<codeline lineno="381"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;initArg2,</highlight></codeline>
+<codeline lineno="382"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;initArg3,</highlight></codeline>
+<codeline lineno="383"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;initArg4,</highlight></codeline>
+<codeline lineno="384"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;initArg5,</highlight></codeline>
+<codeline lineno="385"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;initArg6,</highlight></codeline>
+<codeline lineno="386"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;initArg7,</highlight></codeline>
+<codeline lineno="387"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;initArg8,</highlight></codeline>
+<codeline lineno="388"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;initArg9};</highlight></codeline>
+<codeline lineno="389"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>iocshFuncDef<sp/>initFuncDef<sp/>=<sp/>{</highlight><highlight class="stringliteral">&quot;NDROIConfigure&quot;</highlight><highlight class="normal">,10,initArgs};</highlight></codeline>
+<codeline lineno="390"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>initCallFunc(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>iocshArgBuf<sp/>*<ref refid="namespacemake_adl_1a1d55f39db2066eab50e6f2b21abc00f1" kindref="member">args</ref>)</highlight></codeline>
+<codeline lineno="391"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="392"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_n_d_plugin_r_o_i_8cpp_1a8261ba8b8d68fe5aca32b0c4a106b4a5" kindref="member">NDROIConfigure</ref>(<ref refid="namespacemake_adl_1a1d55f39db2066eab50e6f2b21abc00f1" kindref="member">args</ref>[0].sval,<sp/><ref refid="namespacemake_adl_1a1d55f39db2066eab50e6f2b21abc00f1" kindref="member">args</ref>[1].ival,<sp/><ref refid="namespacemake_adl_1a1d55f39db2066eab50e6f2b21abc00f1" kindref="member">args</ref>[2].ival,</highlight></codeline>
+<codeline lineno="393"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacemake_adl_1a1d55f39db2066eab50e6f2b21abc00f1" kindref="member">args</ref>[3].sval,<sp/><ref refid="namespacemake_adl_1a1d55f39db2066eab50e6f2b21abc00f1" kindref="member">args</ref>[4].ival,<sp/><ref refid="namespacemake_adl_1a1d55f39db2066eab50e6f2b21abc00f1" kindref="member">args</ref>[5].ival,</highlight></codeline>
+<codeline lineno="394"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacemake_adl_1a1d55f39db2066eab50e6f2b21abc00f1" kindref="member">args</ref>[6].ival,<sp/><ref refid="namespacemake_adl_1a1d55f39db2066eab50e6f2b21abc00f1" kindref="member">args</ref>[7].ival,<sp/><ref refid="namespacemake_adl_1a1d55f39db2066eab50e6f2b21abc00f1" kindref="member">args</ref>[8].ival,</highlight></codeline>
+<codeline lineno="395"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacemake_adl_1a1d55f39db2066eab50e6f2b21abc00f1" kindref="member">args</ref>[9].ival);</highlight></codeline>
+<codeline lineno="396"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="397"><highlight class="normal"></highlight></codeline>
+<codeline lineno="398"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_n_d_plugin_r_o_i_8cpp_1a0e5d63244d7f2e3fb2269932706c14e2" kindref="member">NDROIRegister</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="399"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="400"><highlight class="normal"><sp/><sp/><sp/><sp/>iocshRegister(&amp;initFuncDef,initCallFunc);</highlight></codeline>
+<codeline lineno="401"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="402"><highlight class="normal"></highlight></codeline>
+<codeline lineno="403"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="404"><highlight class="normal"><ref refid="_n_d_plugin_r_o_i_8cpp_1a2be4df251255b2c335ca28bf3061246d" kindref="member">epicsExportRegistrar</ref>(<ref refid="_n_d_plugin_r_o_i_8cpp_1a0e5d63244d7f2e3fb2269932706c14e2" kindref="member">NDROIRegister</ref>);</highlight></codeline>
+<codeline lineno="405"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginROI.cpp"/>
+  </compounddef>
+</doxygen>

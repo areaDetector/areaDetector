@@ -1,0 +1,163 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="stream_api_8h" kind="file" language="C++">
+    <compoundname>streamApi.h</compoundname>
+    <includes local="no">stdlib.h</includes>
+    <includedby refid="eiger_detector_8cpp" local="yes">/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.cpp</includedby>
+    <includedby refid="eiger_detector_8h" local="yes">/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h</includedby>
+    <includedby refid="stream_api_8cpp" local="yes">/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/streamApi.cpp</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>stdlib.h</label>
+      </node>
+      <node id="1">
+        <label>/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/streamApi.h</label>
+        <link refid="stream_api_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="4">
+        <label>/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/streamApi.cpp</label>
+        <link refid="stream_api_8cpp"/>
+      </node>
+      <node id="2">
+        <label>/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.cpp</label>
+        <link refid="eiger_detector_8cpp"/>
+      </node>
+      <node id="3">
+        <label>/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h</label>
+        <link refid="eiger_detector_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/streamApi.h</label>
+        <link refid="stream_api_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structstream__header__t" prot="public">stream_header_t</innerclass>
+    <innerclass refid="structstream__frame" prot="public">stream_frame</innerclass>
+    <innerclass refid="class_stream_a_p_i" prot="public">StreamAPI</innerclass>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="stream_api_8h_1a2d05e4c8303106d1425a9efa4ff1fb69" prot="public" static="no" strong="no">
+        <type></type>
+        <name>stream_err</name>
+        <enumvalue id="stream_api_8h_1a2d05e4c8303106d1425a9efa4ff1fb69a7286620d00da9549f767d5c060c47be0" prot="public">
+          <name>STREAM_SUCCESS</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="stream_api_8h_1a2d05e4c8303106d1425a9efa4ff1fb69ab2fcccf86b42738805e2ed631d7566d0" prot="public">
+          <name>STREAM_TIMEOUT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="stream_api_8h_1a2d05e4c8303106d1425a9efa4ff1fb69ab762f1f6f06eb71dfe066e0621eb8f36" prot="public">
+          <name>STREAM_WRONG_HTYPE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="stream_api_8h_1a2d05e4c8303106d1425a9efa4ff1fb69a939db9f16cb937a74d2173143d503d14" prot="public">
+          <name>STREAM_ERROR</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/streamApi.h" line="6" column="1" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/streamApi.h" bodystart="7" bodyend="12"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="stream_api_8h_1ada67d1da8cd5167b36ef4e9e2298ef0d" prot="public" static="no">
+        <type>struct <ref refid="structstream__frame" kindref="compound">stream_frame</ref></type>
+        <definition>typedef struct stream_frame stream_frame_t</definition>
+        <argsstring></argsstring>
+        <name>stream_frame_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/streamApi.h" line="30" column="15"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>STREAM_API_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>STREAM_API_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdlib.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6" refid="stream_api_8h_1a2d05e4c8303106d1425a9efa4ff1fb69" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="stream_api_8h_1a2d05e4c8303106d1425a9efa4ff1fb69" kindref="member">stream_err</ref></highlight></codeline>
+<codeline lineno="7"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="8" refid="stream_api_8h_1a2d05e4c8303106d1425a9efa4ff1fb69a7286620d00da9549f767d5c060c47be0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="stream_api_8h_1a2d05e4c8303106d1425a9efa4ff1fb69a7286620d00da9549f767d5c060c47be0" kindref="member">STREAM_SUCCESS</ref>,</highlight></codeline>
+<codeline lineno="9" refid="stream_api_8h_1a2d05e4c8303106d1425a9efa4ff1fb69ab2fcccf86b42738805e2ed631d7566d0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="stream_api_8h_1a2d05e4c8303106d1425a9efa4ff1fb69ab2fcccf86b42738805e2ed631d7566d0" kindref="member">STREAM_TIMEOUT</ref>,</highlight></codeline>
+<codeline lineno="10" refid="stream_api_8h_1a2d05e4c8303106d1425a9efa4ff1fb69ab762f1f6f06eb71dfe066e0621eb8f36" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="stream_api_8h_1a2d05e4c8303106d1425a9efa4ff1fb69ab762f1f6f06eb71dfe066e0621eb8f36" kindref="member">STREAM_WRONG_HTYPE</ref>,</highlight></codeline>
+<codeline lineno="11" refid="stream_api_8h_1a2d05e4c8303106d1425a9efa4ff1fb69a939db9f16cb937a74d2173143d503d14" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="stream_api_8h_1a2d05e4c8303106d1425a9efa4ff1fb69a939db9f16cb937a74d2173143d503d14" kindref="member">STREAM_ERROR</ref>,</highlight></codeline>
+<codeline lineno="12"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14" refid="structstream__header__t" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="16" refid="structstream__header__t_1a1bf201340efe35dfa07333da61e30cf9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="structstream__header__t_1a1bf201340efe35dfa07333da61e30cf9" kindref="member">series</ref>;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal">}<ref refid="structstream__header__t" kindref="compound">stream_header_t</ref>;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19" refid="structstream__frame" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structstream__frame" kindref="compound">stream_frame</ref></highlight></codeline>
+<codeline lineno="20"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="21" refid="structstream__frame_1a56de6090a15f971a67bf3b105a7a0b2f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="structstream__frame_1a56de6090a15f971a67bf3b105a7a0b2f" kindref="member">end</ref>;</highlight></codeline>
+<codeline lineno="22" refid="structstream__frame_1a3dccf2fd5c32e48714d8182119ffb065" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="structstream__frame_1a1820fb2722186e355aabb3c8e6553204" kindref="member">series</ref>,<sp/><ref refid="structstream__frame_1a3dccf2fd5c32e48714d8182119ffb065" kindref="member">frame</ref>;</highlight></codeline>
+<codeline lineno="23" refid="structstream__frame_1a91dc06471c5f5f90376934a3d8b7beb2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="structstream__frame_1a91dc06471c5f5f90376934a3d8b7beb2" kindref="member">shape</ref>[2];</highlight></codeline>
+<codeline lineno="24" refid="structstream__frame_1aff75c17af0310f069f160f4344e71f5e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>{<sp/><ref refid="structstream__frame_1aca1774c8a8ce98fa6e729072f766e8c8aea266a65c573d124cf8668945309aa54" kindref="member">UINT8</ref>,<sp/><ref refid="structstream__frame_1aca1774c8a8ce98fa6e729072f766e8c8a30d93f6019a5994d0c84767f7bf79156" kindref="member">UINT16</ref>,<sp/><ref refid="structstream__frame_1aca1774c8a8ce98fa6e729072f766e8c8ac3bca264d9aa653cf95dda8aaaba554a" kindref="member">UINT32</ref><sp/>}<sp/><ref refid="structstream__frame_1aff75c17af0310f069f160f4344e71f5e" kindref="member">type</ref>;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26" refid="structstream__frame_1ae01dffe6ddd72098543d284444080539" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><ref refid="structstream__frame_1ae01dffe6ddd72098543d284444080539" kindref="member">encoding</ref>[32];</highlight></codeline>
+<codeline lineno="27" refid="structstream__frame_1a4643e401984ff522767f37fa4db86113" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="structstream__frame_1a4643e401984ff522767f37fa4db86113" kindref="member">compressedSize</ref>,<sp/><ref refid="structstream__frame_1ae8471acc5d2d33d441a261ff928e9c9f" kindref="member">uncompressedSize</ref>;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29" refid="structstream__frame_1a269b2ffbd3ac61e673e35893a76dc55b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<ref refid="structstream__frame_1a269b2ffbd3ac61e673e35893a76dc55b" kindref="member">data</ref>;</highlight></codeline>
+<codeline lineno="30" refid="stream_api_8h_1ada67d1da8cd5167b36ef4e9e2298ef0d" refkind="member"><highlight class="normal">}<ref refid="stream_api_8h_1ada67d1da8cd5167b36ef4e9e2298ef0d" kindref="member">stream_frame_t</ref>;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32" refid="class_stream_a_p_i" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_stream_a_p_i" kindref="compound">StreamAPI</ref></highlight></codeline>
+<codeline lineno="33"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*mHostname;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*mCtx,<sp/>*mSock;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>poll<sp/><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>timeout);<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>timeout<sp/>in<sp/>seconds</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_stream_a_p_i_1ae9a7ff7b17c1ae8114794f636e47ebe4" kindref="member">StreamAPI</ref><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*hostname);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_stream_a_p_i_1a221b41076c1d20623f26c30e5da8e3c4" kindref="member">~StreamAPI</ref><sp/><sp/><sp/><sp/><sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_stream_a_p_i_1af1544d01763c4aab4763e05f705c297f" kindref="member">getHeader</ref><sp/><sp/>(<ref refid="structstream__header__t" kindref="compound">stream_header_t</ref><sp/>*header,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>timeout<sp/>=<sp/>0);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_stream_a_p_i_1a275da62cd5e7cd6a572966deb9d0b08d" kindref="member">getFrame</ref><sp/><sp/><sp/>(<ref refid="structstream__frame" kindref="compound">stream_frame_t</ref><sp/><sp/>*frame,<sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>timeout<sp/>=<sp/>0);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_stream_a_p_i_1af89f41843077a1208690b4ba7b833716" kindref="member">uncompress</ref><sp/>(<ref refid="structstream__frame" kindref="compound">stream_frame_t</ref><sp/>*frame,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*data<sp/>=<sp/>NULL);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/streamApi.h"/>
+  </compounddef>
+</doxygen>

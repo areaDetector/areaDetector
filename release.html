@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>areaDetector Releases &mdash; areaDetector Support</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme_overrides.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="ADCore Releases" href="ADCore_release.html" />
+    <link rel="prev" title="areaDetector: Installation Guide" href="install_guide.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            areaDetector
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="readme.html">Readme</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user_guide.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install_guide.html">Install Guide</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Top-level Release Notes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#versions">Versions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#r3-12-1-january-22-2022">R3-12-1 (January 22, 2022)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#r3-11-may-26-2021">R3-11 (May 26, 2021)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#r3-10-september-20-2020">R3-10 (September 20, 2020)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#r3-9-february-24-2020">R3-9 (February 24, 2020)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#r3-8-october-22-2019">R3-8 (October 22, 2019)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#r3-7-august-9-2019">R3-7 (August 9, 2019)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#r3-6-may-29-2019">R3-6 (May 29, 2019)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#r3-5-april-12-2019">R3-5 (April 12, 2019)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#r3-4-december-3-2018">R3-4 (December 3, 2018)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#r3-3-2-july-9-2018">R3-3-2 (July 9, 2018)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#r3-3-1-july-1-2018">R3-3-1 (July 1, 2018)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#r3-3-june-27-2018">R3-3 (June 27, 2018)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#r3-2-january-28-2018">R3-2 (January 28, 2018)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#r3-1-july-3-2017">R3-1 (July 3, 2017)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#r3-0-may-5-2017">R3-0 (May 5, 2017)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#r2-6-february-22-2017">R2-6 (February 22, 2017)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#r2-5-october-28-2016">R2-5 (October 28, 2016)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#r2-4-september-18-2015">R2-4 (September 18, 2015)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#r2-3-july-24-2015">R2-3 (July 24, 2015)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#r2-2-march-23-2015">R2-2 (March 23, 2015)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#r2-0-april-4-2014">R2-0 (April 4, 2014)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#r1-9-1-and-earlier">R1-9-1 and earlier</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ADCore_release.html">ADCore Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ADSupport_release.html">ADSupport Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="doxygen.html">Source Code Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="detectors.html">Supported Detectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="legacy_versions.html">Legacy Versions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">areaDetector</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">areaDetector Releases</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/release.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="areadetector-releases">
+<h1>areaDetector Releases<a class="headerlink" href="#areadetector-releases" title="Permalink to this heading"></a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading"></a></h2>
+<p>The latest untagged master branch can be obtained at
+<a class="reference external" href="https://github.com/areaDetector/areaDetector">https://github.com/areaDetector/areaDetector</a>.</p>
+<p>Tagged source code and pre-built binary releases prior to R2-0 are included
+in the areaDetector releases available via links at
+<a class="reference external" href="https://cars.uchicago.edu/software/epics/areaDetector.html">https://cars.uchicago.edu/software/epics/areaDetector.html</a>.</p>
+<p>Tagged source code releases from R2-0 onward can be obtained at
+<a class="reference external" href="https://github.com/areaDetector/areaDetector/releases">https://github.com/areaDetector/areaDetector/releases</a>.</p>
+<p>Tagged prebuilt binaries from R2-0 onward can be obtained in the detector-specific directories in:
+<a class="reference external" href="https://cars.uchicago.edu/software/pub/">https://cars.uchicago.edu/software/pub/</a>.  For example the Pilatus binaries are in
+<a class="reference external" href="https://cars.uchicago.edu/software/pub/ADPilatus">https://cars.uchicago.edu/software/pub/ADPilatus</a>.</p>
+<p>The versions of EPICS base, asyn, and other synApps modules used for each release can be obtained from
+the EXAMPLE_RELEASE_LIBS.local, and EXAMPLE_RELEASE_PRODS.local files respectively, in the appropriate release of the
+<a class="reference external" href="https://github.com/areaDetector/areaDetector">top-level areaDetector</a> repository.</p>
+</section>
+<section id="versions">
+<h2>Versions<a class="headerlink" href="#versions" title="Permalink to this heading"></a></h2>
+<p>Each submodule contains detailed release notes for each release of that submodule.  The release notes below
+only provide a short summary of the most significant items from the submodules.</p>
+<section id="r3-12-1-january-22-2022">
+<h3>R3-12-1 (January 22, 2022)<a class="headerlink" href="#r3-12-1-january-22-2022" title="Permalink to this heading"></a></h3>
+<ul class="simple">
+<li><p>ADCore R3-12, R3-12-1</p>
+<ul>
+<li><p>ADAutoSaveMenu to save and restore configurations.</p></li>
+<li><p>Bug fixes.</p></li>
+</ul>
+</li>
+<li><p>ADEiger R3-2.</p>
+<ul>
+<li><p>Fixed race condition on Stream interface.</p></li>
+</ul>
+</li>
+<li><p>ADPerkinElmer R2-11.</p>
+<ul>
+<li><p>Added trigger modes.</p></li>
+<li><p>New vendor release.</p></li>
+</ul>
+</li>
+<li><p>ADGenICam R1-8</p>
+<ul>
+<li><p>Allow the asyn parameter datatype and the GenICam feature datatype to be different.
+Needed for the areaDetector Gain feature (double) on GenICam cameras that do not implement the
+GenICam Gain feature (also a double), but rather only implement the integer GainRaw or GainRawChannelA features.</p></li>
+</ul>
+</li>
+<li><p>ADSpinnaker R3-3</p>
+<ul>
+<li><p>Fixed a problem reading Integer GenICam feature values, and their min and max, when they exceed 2^32.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="r3-11-may-26-2021">
+<h3>R3-11 (May 26, 2021)<a class="headerlink" href="#r3-11-may-26-2021" title="Permalink to this heading"></a></h3>
+<ul class="simple">
+<li><p>ADSupport R1-9-1, R1-10</p>
+<ul>
+<li><p>Changed the support for reading MJPEG streams in GraphicsMagickSrc and xml2Src.</p></li>
+<li><p>Fixed compilation errors with EPICS base 7.0.5 which changed the use of undefined functions
+from being a warning to being an error.</p></li>
+</ul>
+</li>
+<li><p>ADCore R3-11</p>
+<ul>
+<li><p>New plugin NDPluginBadPixel.</p></li>
+</ul>
+</li>
+<li><p>ADGenICam R1-6, R1-7, and R1-7-1</p>
+<ul>
+<li><p>Added support for converting Mono12p and Mono12Packed formats to Mono16,
+with optional left-shift operation.</p></li>
+<li><p>Fixed memory leak.</p></li>
+</ul>
+</li>
+<li><p>ADAravis R2-1, R2-2, R2-2-1</p>
+<ul>
+<li><p>Added support for PixelFormat=Mono12Packed and Mono12p.</p></li>
+<li><p>Added new ConvertPixelFormat mbbo record with choices of Mono16Low and Mono16High.
+This record controls how Mono12Packed and Mono12p pixel formats are decompressed.</p></li>
+<li><p>Added continuous integration via Github Actions.  Thanks to Michael Davidsaver for this.</p></li>
+<li><p>Improve error reporting by fetching the underlying error from aravis.</p></li>
+</ul>
+</li>
+<li><p>ADSpinnaker R3-1, R3-2</p>
+<ul>
+<li><p>Added support for specifying the number of transport layer buffers in the configuration command.
+This may require changes to startup scripts.</p></li>
+<li><p>Improved reporting of transport layer statistics.</p></li>
+<li><p>Updated Spinnaker version from 2.0.0.147 to 2.4.0.147.</p></li>
+</ul>
+</li>
+<li><p>ADURL R2-3</p>
+<ul>
+<li><p>Converted documentation to ReST, include in documentation on github.io.</p></li>
+<li><p>Added autoconverted OPI files for css/BOY, css/Phoebus, edm, and caQtDM.</p></li>
+<li><p>Fix to release the lock at least briefly between each image, otherwise EPICS puts don’t get processed.</p></li>
+</ul>
+</li>
+<li><p>ADVimba R1-3</p>
+<ul>
+<li><p>Updated the version of the Vimba SDK being used to 4.0 (Windows) and 4.1 (Linux).</p></li>
+<li><p>Added automatic packet size negotiation for GigE cameras in the constructor.
+Previously cameras would default to jumbo packets, and if the network did not support that
+then streaming would fail until the packet size feature was decreased.</p></li>
+</ul>
+</li>
+<li><p>ADViewers R1-7</p>
+<ul>
+<li><p>Many enhancements to the Python PY_NTNDA_Viewer.</p></li>
+<li><p>Updated to the latest versions of the EPICS Java libraries.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="r3-10-september-20-2020">
+<h3>R3-10 (September 20, 2020)<a class="headerlink" href="#r3-10-september-20-2020" title="Permalink to this heading"></a></h3>
+<ul>
+<li><p>ADCore R3-10</p>
+<ul class="simple">
+<li><p>Numerous new features and bug fixes.</p></li>
+</ul>
+</li>
+<li><p>ADGenICam R1-4 and R1-5</p>
+<ul>
+<li><p>Added logic to pause and resume acquisition when any of the following parameters are changed:</p>
+<ul class="simple">
+<li><p>ADMinX, ADMinY</p></li>
+<li><p>ADSizeX, ADSizeY</p></li>
+<li><p>ADBinX, ADBinY</p></li>
+<li><p>ADNumImages</p></li>
+<li><p>GCPixelFormat</p></li>
+</ul>
+<p>Previously changing these parameters while acquiring had no effect.</p>
+</li>
+<li><p>Added fix for cameras that don’t support GenICam feature AcquisitionMode=MultiFrame.</p></li>
+<li><p>Added support for new cameras.</p></li>
+</ul>
+</li>
+<li><p>ADSpinnaker R2-2 and R3-0</p>
+<ul class="simple">
+<li><p>Updated Spinnaker version from 1.2.0 to 2.0.0.147.</p></li>
+<li><p>Worked around a bug that in epicsMessageQueueWaitWithTimeout that is present in
+most versions of EPICS base.</p></li>
+<li><p>Tested that ADSpinnaker runs on Centos 8.
+It should also work on other Linux versions with gcc 7.5 and up, e.g. RHEL 8 and Debian 10.</p></li>
+</ul>
+</li>
+<li><p>ADAravis R1-3 and R2-0</p>
+<ul class="simple">
+<li><p>Updated from aravis 0.7.2 to 0.8.1.  The aravis API has changed, so sites will need to update their
+local aravis installation to 0.8.1.</p></li>
+<li><p>Fixed a problem with GenICam boolean features.  Previously the code was calling the aravis functions
+for integer features, which did not work.  It was changed to call the functions for boolean features,
+and it now works correctly.</p></li>
+<li><p>Added .bob files for Phoebus Display Manager</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="r3-9-february-24-2020">
+<h3>R3-9 (February 24, 2020)<a class="headerlink" href="#r3-9-february-24-2020" title="Permalink to this heading"></a></h3>
+<ul class="simple">
+<li><p>All modules.</p>
+<ul>
+<li><p>Added .bob files for Phoebus, autoconverted from .adl files.</p></li>
+</ul>
+</li>
+<li><p>Documentation</p>
+<ul>
+<li><p>Converted more of the driver HTML documentation hosted at cars.uchicago.edu
+to ReST hosted at areaDetector.githun.io.  Much of this work was done at the recent Codeathon
+at Diamond Light Source.  Thanks to Andy Wilson, Gary Yendell, and Timo Korhonen for work on this.</p></li>
+<li><p>Updated the install_guide.rst to reflect the changes to the configure/ directory described below.</p></li>
+<li><p>Changes to Sphinx settings to make Web pages wider, improving appearance of tables.</p></li>
+<li><p>Change from Sphinx 1.8.4 to 1.8.5.</p></li>
+</ul>
+</li>
+<li><p>configure/ directory</p>
+<ul>
+<li><p>Fixed problems with EXAMPLE_RELEASE_LIBS.local and EXAMPLE_RELEASE_PRODS.local.
+They were missing the definition of SUPPORT.</p></li>
+<li><p>Removed EXAMPLE_RELEASE_SUPPORT.local and EXAMPLE_RELEASE_BASE.local.
+RELEASE_SUPPORT.local and RELEASE_BASE.local are not longer used.  They were previously
+used, for example, to allow building Linux and Windows in the same tree where the definition
+of SUPPORT and EPICS_BASE would have a different syntax.  This is now handled in the more
+standard way of optionally including $(TOP)/../RELEASE.local and $(TOP)/../RELEASE.$(EPICS_HOST_ARCH).local.</p></li>
+<li><p>RELEASE_LIBS_INCLUDE and RELEASE_PRODS_INCLUDE were changed to also optionally include these files from
+the level above $(AREA_DETECTOR).</p></li>
+</ul>
+</li>
+<li><p>ADCore R3-9</p>
+<ul>
+<li><p>Added Int64 support to NDFileNetCDF.</p></li>
+<li><p>Support for compressed NDArrays in NDPluginStdArrays (Channel Access)</p></li>
+</ul>
+</li>
+<li><p>ADGenICam R1-2 and R1-3</p>
+<ul>
+<li><p>Change integer features from epicsInt32 to epicsInt64.  Requires asyn R4-38.</p></li>
+<li><p>Added databases and OPI files for many more FLIR and AVT cameras.</p></li>
+</ul>
+</li>
+<li><p>ADSpinnaker R2-1</p>
+<ul>
+<li><p>Change integer features from epicsInt32 to epicsInt64.  Requires asyn R4-38.</p></li>
+<li><p>Added vendor SFNC_GenTL*.xml files which are required to be present in the lib directory on Linux.</p></li>
+</ul>
+</li>
+<li><p>ADAravis R1-2</p>
+<ul>
+<li><p>Change integer features from epicsInt32 to epicsInt64.  Requires asyn R4-38.</p></li>
+</ul>
+</li>
+<li><p>ADUVC</p>
+<ul>
+<li><p>New driver for USB Video Class devices from Jakub Wlodek.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="r3-8-october-22-2019">
+<h3>R3-8 (October 22, 2019)<a class="headerlink" href="#r3-8-october-22-2019" title="Permalink to this heading"></a></h3>
+<ul class="simple">
+<li><p>ADCore R3-8</p>
+<ul>
+<li><p>Int64 support.  Requires asyn R4-37.</p></li>
+</ul>
+</li>
+<li><p>ADGenICam R1-1</p>
+<ul>
+<li><p>Minor updates</p></li>
+</ul>
+</li>
+<li><p>ADAravis R1-1</p>
+<ul>
+<li><p>Support for register caching that greatly improves performance.</p></li>
+<li><p>Requires aravis 0_7_2 or later</p></li>
+<li><p>ADAravis should be used in place of aravisGigE.</p></li>
+</ul>
+</li>
+<li><p>ADVimba R1-0</p>
+<ul>
+<li><p>Initial release.  ADVimba should be used in place of ADProsilica.</p></li>
+</ul>
+</li>
+<li><p>ADSimDetector R2-10</p>
+<ul>
+<li><p>Support for NDInt64/NDUInt64 NDArrays and NDAttrInt64/NDAttrUInt64 attributes.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="r3-7-august-9-2019">
+<h3>R3-7 (August 9, 2019)<a class="headerlink" href="#r3-7-august-9-2019" title="Permalink to this heading"></a></h3>
+<ul class="simple">
+<li><p>New submodule repositories</p>
+<ul>
+<li><p>ADRIXSCam</p>
+<ul>
+<li><p>Driver for the RIXSCAM developed by <a class="reference external" href="http://www.xcam.co.uk/">XCAM UK</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>ADCore R3-7.</p>
+<ul>
+<li><p>Bug fixes.  Requires asyn R4-36.</p></li>
+</ul>
+</li>
+<li><p>ADSupport R1-9.</p>
+<ul>
+<li><p>Fixes for HDF5 compression plugins.</p></li>
+</ul>
+</li>
+<li><p>ADSpinnaker</p>
+<ul>
+<li><p>The master branch now uses ADGenICam, and is ready for testing.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="r3-6-may-29-2019">
+<h3>R3-6 (May 29, 2019)<a class="headerlink" href="#r3-6-may-29-2019" title="Permalink to this heading"></a></h3>
+<ul class="simple">
+<li><p>New submodule repositories</p>
+<ul>
+<li><p>specsAnalyser</p>
+<ul>
+<li><p>Driver for SPECS Phoibos electron spectrometers, with DLD (Delay Line Detector)</p></li>
+<li><p>From Pete Leicester, Stuart Wilkins and others.</p></li>
+</ul>
+</li>
+<li><p>ADCompVision</p>
+<ul>
+<li><p>Plugin to perform imaging processing using opencv library</p></li>
+<li><p>From Jakub Wlodek and Kaz Gofron.</p></li>
+</ul>
+</li>
+<li><p>ADPluginBar</p>
+<ul>
+<li><p>Plugin to process bar codes</p></li>
+<li><p>From Jakub Wlodek and Kaz Gofron.</p></li>
+</ul>
+</li>
+<li><p>ADPcoWin</p>
+<ul>
+<li><p>Driver for PCO cameras, using their SDK which is Windows only.</p></li>
+<li><p>From Jonathan Thompson and others.</p></li>
+</ul>
+</li>
+<li><p>ADMMPAD</p>
+<ul>
+<li><p>Driver for the MMPAD detectors from Sol Gruner’s group at Cornell.</p></li>
+<li><p>From Mark Rivers.</p></li>
+</ul>
+</li>
+<li><p>ADGenICam</p>
+<ul>
+<li><p>New base class for GenICam cameras.  Used by ADAravis, ADSpinnaker, and ADVimba.</p></li>
+<li><p>Not yet ready for production use.</p></li>
+<li><p>From Mark Rivers.</p></li>
+</ul>
+</li>
+<li><p>ADAravis</p>
+<ul>
+<li><p>Designed to replace aravisGigE.  It is simpler because it uses ADGeniICam.</p></li>
+<li><p>Not yet ready for production use.</p></li>
+<li><p>From Mark Rivers, based on aravisGigE which is by Tom Cobb and others.</p></li>
+</ul>
+</li>
+<li><p>ADVimba</p>
+<ul>
+<li><p>Driver for AVT/Prosilica cameras using their new Vimba SDK.  Uses ADGenICam.</p></li>
+<li><p>Not yet ready for production use.</p></li>
+<li><p>From Mark Rivers.</p></li>
+</ul>
+</li>
+<li><p>ADSpinnaker</p>
+<ul>
+<li><p>Driver for FLIR/Point Grey cameras using their new Spinnaker SDK.</p></li>
+<li><p>This is not a new repository, but it now contains a new GenICam branch that uses ADGenICam.</p></li>
+<li><p>GenICam branch is not yet ready for production use</p></li>
+<li><p>From Mark Rivers.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="r3-5-april-12-2019">
+<h3>R3-5 (April 12, 2019)<a class="headerlink" href="#r3-5-april-12-2019" title="Permalink to this heading"></a></h3>
+<ul class="simple">
+<li><p>Documentation</p>
+<ul>
+<li><p>Began conversion of all areaDetector documentation from raw HTML documentation to .rst files using Sphinx.</p></li>
+<li><p>Added a new docs/ directory which replaces the old documentation directory.</p></li>
+<li><p>The old .html files were converted to .rst using <a class="reference external" href="https://pandoc.org">pandoc</a>.
+Most documentation includes tables that describe the driver or plugin parameters and
+record names.  These tables do not convert well to .rst so they have been left as native
+html in the files.</p></li>
+<li><p>The new documentation is hosted at <a class="reference external" href="https://areaDetector.github.io">areaDetector.github.io</a>.</p></li>
+<li><p>At this point the top-level documentation in this areaDetector respository has been converted,
+as well as ADCore, ADViewers, ADProsilica, and ADFastCDD.</p></li>
+<li><p>Many thanks to Stuart Wilkins for this major effort.</p></li>
+</ul>
+</li>
+<li><p>configure/EXAMPLE_CONFIG_SITE.local
+Added WITH_BITSHUFFLE and BITSHUFFLE_EXTERNAL for bitshuffle which is supported in new
+versions of ADSupport, ADCore, and ADEiger.</p></li>
+</ul>
+</section>
+<section id="r3-4-december-3-2018">
+<h3>R3-4 (December 3, 2018)<a class="headerlink" href="#r3-4-december-3-2018" title="Permalink to this heading"></a></h3>
+<ul class="simple">
+<li><p>No significant changes in this top-level repository.</p></li>
+<li><p>Committed ADCore R3-4, ADSupport R1-6, ADViewers R1-3.</p></li>
+</ul>
+</section>
+<section id="r3-3-2-july-9-2018">
+<h3>R3-3-2 (July 9, 2018)<a class="headerlink" href="#r3-3-2-july-9-2018" title="Permalink to this heading"></a></h3>
+<ul>
+<li><p>configure/EXAMPLE_CONFIG_SITE.local</p>
+<p>Added new WITH_QSRV variable.  3.14.12 supports pvAccess but does not support qsrv.
+By setting WITH_PVA=YES and WITH_QSRV=NO IOCs can be built with pvAccess support but without qsrv support.</p>
+</li>
+</ul>
+</section>
+<section id="r3-3-1-july-1-2018">
+<h3>R3-3-1 (July 1, 2018)<a class="headerlink" href="#r3-3-1-july-1-2018" title="Permalink to this heading"></a></h3>
+<ul>
+<li><p>configure/EXAMPLE_CONFIG_SITE.local*</p>
+<p>Prior to areaDetector R3-3-1 these files had commented out lines like the following for defining include library paths:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#HDF5_INCLUDE = -I$(HDF5)/include</span>
+</pre></div>
+</div>
+<p>These examples were incorrect, because the Makefiles in ADCore and driver repositories were adding the -I before
+these variables.  It has been decided that the Makefiles are the correct place to add the -I flags, so the -I
+has been removed from configure/EXAMPLE_CONFIG_SITE.local* files.</p>
+<p>The Makefiles in ADCore and all detector driver repositories now all use $(addprefix -I, $(XXX_INCLUDE)) to add the
+-I prefix (where XXX is HDF5, XML2, etc.)  This means that it will work even if these variables contain multiple paths.</p>
+</li>
+<li><p>configure/EXAMPLE_CONFIG_SITE.local</p>
+<p>Changed the definition of the GLIB include files from this</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">GLIB_INC1</span><span class="o">=/</span><span class="n">usr</span><span class="o">/</span><span class="n">include</span><span class="o">/</span><span class="n">glib</span><span class="o">-</span><span class="mf">2.0</span>
+<span class="n">GLIB_INC2</span><span class="o">=/</span><span class="n">usr</span><span class="o">/</span><span class="n">lib64</span><span class="o">/</span><span class="n">glib</span><span class="o">-</span><span class="mf">2.0</span><span class="o">/</span><span class="n">include</span>
+</pre></div>
+</div>
+<p>to this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">GLIB_INCLUDE</span> <span class="o">=</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">include</span><span class="o">/</span><span class="n">glib</span><span class="o">-</span><span class="mf">2.0</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">lib64</span><span class="o">/</span><span class="n">glib</span><span class="o">-</span><span class="mf">2.0</span><span class="o">/</span><span class="n">include</span>
+</pre></div>
+</div>
+<p>This is cleaner and is now possible because the Makefile (in ararisGigE) uses addprefix to add the -I to multiple paths.</p>
+</li>
+<li><p>INSTALL_GUIDE.md</p>
+<p>Documented that user-defined include directories should not include the -I flag.</p>
+</li>
+</ul>
+</section>
+<section id="r3-3-june-27-2018">
+<h3>R3-3 (June 27, 2018)<a class="headerlink" href="#r3-3-june-27-2018" title="Permalink to this heading"></a></h3>
+<ul class="simple">
+<li><p>Changes in the configure/RELEASE* files to ensure that EPICS_BASE is defined last.</p></li>
+<li><p>Changes to allow building when some modules come from a Debian package and some do not.</p>
+<ul>
+<li><p>If a Debian package is being used for any module then it must also be used for EPICS_BASE.</p></li>
+</ul>
+</li>
+<li><p>The INSTALL_GUIDE.md has been updated to describe the new system.</p></li>
+<li><p>This is a brief description of what has changed and what users need to do.</p>
+<ul>
+<li><p>In the areaDetector/configure directory type
+<code class="docutils literal notranslate"><span class="pre">./copyFromExample</span></code>.
+This will copy the <code class="docutils literal notranslate"><span class="pre">EXAMPLE_*</span></code> files to CONFIG* and RELEASE*.</p></li>
+<li><p>Edit CONFIG_SITE.local and CONFIG_SITE.local.$(EPICS_HOST_ARCH) as required.</p></li>
+<li><p>Edit RELEASE.local and RELEASE.local.$(EPICS_HOST_ARCH) as required.</p></li>
+<li><p>Edit RELEASE_SUPPORT.local.  This file replaces RELEASE_PATHS.local from earlier releases.
+Define SUPPORT to be the top location of the modules that you <strong>do not</strong> want to get from the Debian package.</p>
+<ul>
+<li><p>RELEASE_SUPPORT.$(EPICS_HOST_ARCH) can be used to define an alternative location of SUPPORT for a specific
+architecture.  It is typically only needed when building Windows and Linux in the same tree.</p></li>
+</ul>
+</li>
+<li><p>Edit RELEASE_LIBS.local.  Define the locations of the modules. Modules from the Debian package must be defined last.</p>
+<ul>
+<li><p>These would normally be defined using the SUPPORT definition done above.</p></li>
+<li><p>Define the location of EPICS_BASE.</p>
+<ul>
+<li><p>If using the Debian package then define EPICS_BASE to be the location of the Debian distribution.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Edit RELEASE_PRODS.local.  Do the same as for RELEASE_LIBS.local above.</p>
+<ul>
+<li><p>If using the Debian package then the definitions for modules that you want to use from the
+Debian package (e.g. CALC, BUSY, etc.) must come last.</p></li>
+</ul>
+</li>
+<li><p>RELEASE_BASE.$(EPICS_HOST_ARCH) can be used to define an alternative location of EPICS_BASE for a specific
+architecture.  It is typically only needed when building Windows and Linux in the same tree.</p></li>
+</ul>
+</li>
+<li><p>The RELEASE files in many detector modules have been updated so that they only load RELEASE_LIBS_INCLUDE or
+RELEASE_PRODS_INCLUDE from areaDetector/configure.  This change was previously optional and had already been done for
+some detector modules in previous releases.  This change is now required and so all detector modules have been updated
+to use it.</p></li>
+<li><p>Added new ADSpinnaker submodule.  This is for detectors from Point Grey/FLIR using their new Spinnaker SDK.</p></li>
+<li><p>Added ADEiger submodule.  This is for Eiger detectors from Dectris.  Thanks to Bruno Martins for this.</p></li>
+</ul>
+</section>
+<section id="r3-2-january-28-2018">
+<h3>R3-2 (January 28, 2018)<a class="headerlink" href="#r3-2-january-28-2018" title="Permalink to this heading"></a></h3>
+<ul class="simple">
+<li><p>Requirements:</p>
+<ul>
+<li><p>ADCore R3-2</p></li>
+<li><p>ADSupport R1-4 or higher</p></li>
+<li><p>asyn R4-32 or higher</p></li>
+<li><p>EPICS base 3.14.12.4 or higher</p></li>
+</ul>
+</li>
+<li><p>Added the blosc compression library to ADSupport and to the NDFileHDF5 writer in ADCore.</p></li>
+<li><p>Added capability to automatically convert medm adl files to edm edl, caQtDM ui, and CSS-BOY opi files.
+This is done by running make in the yyyAPP/op/ directory.  The files are placed in the edl/autoconvert
+ui/autoconvert, and opi/autoconvert directories.  This will keep these files up to date with the medm files.</p></li>
+</ul>
+</section>
+<section id="r3-1-july-3-2017">
+<h3>R3-1 (July 3, 2017)<a class="headerlink" href="#r3-1-july-3-2017" title="Permalink to this heading"></a></h3>
+<ul class="simple">
+<li><p>Requirements:</p>
+<ul>
+<li><p>ADCore R3-1</p></li>
+<li><p>ADSupport R1-3 or higher</p></li>
+<li><p>asyn R4-32 or higher</p></li>
+<li><p>EPICS base 3.14.12.4 or higher</p></li>
+</ul>
+</li>
+<li><p>Added GraphicsMagick to ADSupport.</p></li>
+<li><p>Changed ADCore to allow building with GraphicsMagick either from ADSupport or using a system library.</p></li>
+<li><p>Added support for 32-bit images in NDFileMagick in ADCore.</p></li>
+<li><p>Changed configure/EXAMPLE_CONFIG_SITE.local to use XXX_EXTERNAL=NO for all libraries in ADSupport.</p></li>
+</ul>
+</section>
+<section id="r3-0-may-5-2017">
+<h3>R3-0 (May 5, 2017)<a class="headerlink" href="#r3-0-may-5-2017" title="Permalink to this heading"></a></h3>
+<ul class="simple">
+<li><p>Requirements</p>
+<ul>
+<li><p>ADCore R3-0</p></li>
+<li><p>ADSupport R1-2 or higher</p></li>
+<li><p>asyn R4-31 or higher</p></li>
+<li><p>EPICS base 3.14.12.4 or higher</p></li>
+</ul>
+</li>
+<li><p>Prior to releasing R3-0 the following tags were applied to modules that needed to change for R3-0.<span class="raw-html-m2r"><br></span>
+These changes were required because these modules contain plugins and the NDPluginDriver base class
+has different constructor arguments and methods.
+Thus these tags are compatible with R2-6.  Everything after this requires R3-0 of ADCore.</p></li>
+</ul>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Repository</p></th>
+<th class="head"><p>Tag</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ADFastCCD</p></td>
+<td><p>R1-0 (initial tag)</p></td>
+</tr>
+<tr class="row-odd"><td><p>ADPCO</p></td>
+<td><p>R1-0</p></td>
+</tr>
+<tr class="row-even"><td><p>ADPluginEdge</p></td>
+<td><p>R1-1</p></td>
+</tr>
+<tr class="row-odd"><td><p>ADnED</p></td>
+<td><p>rel1.8_20170502</p></td>
+</tr>
+<tr class="row-even"><td><p>ffmpegServer</p></td>
+<td><p>R1-0 (initial tag)</p></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p>ADAndor is the only driver that required changes for R3-0 because it was using TinyXml and has been
+changed to use libxml2. ADAndor R2-5 is the last release that works with ADCore R2-6, everything later
+will require ADCore R3-0</p></li>
+</ul>
+</section>
+<section id="r2-6-february-22-2017">
+<h3>R2-6 (February 22, 2017)<a class="headerlink" href="#r2-6-february-22-2017" title="Permalink to this heading"></a></h3>
+<ul class="simple">
+<li><p>Requirements</p>
+<ul>
+<li><p>ADCore R2-6</p></li>
+<li><p>ADSupport R1-0 or higher</p></li>
+<li><p>Requires asyn R4-31</p></li>
+</ul>
+</li>
+<li><p>ADExample has been replaced by 3 new repositories</p>
+<ul>
+<li><p>ADSimDetector  The simulation detector</p></li>
+<li><p>ADCSimDetector The ADC simulation detector</p></li>
+<li><p>pvaDriver      The EPICS V4 PVAccess driver</p></li>
+</ul>
+</li>
+<li><p>New NDDriverStdArrays that supports sending NDArrays to an areaDetector IOC from Channel Access clients
+via waveform records and other PVs.</p></li>
+<li><p>New releases of many drivers with minor changes to source code and medm screens for the enhancements
+in ADCore R2-6.</p></li>
+</ul>
+</section>
+<section id="r2-5-october-28-2016">
+<h3>R2-5 (October 28, 2016)<a class="headerlink" href="#r2-5-october-28-2016" title="Permalink to this heading"></a></h3>
+<ul class="simple">
+<li><p>Requires R2-5 of ADCore.  This requires some changes to CONFIG_SITE.local.
+ADCore R2-5 has many new features, including support for HDF5 SWMR mode, support for EPICS V4
+NTNDArrays, and new TimeSeries and FFT plugins.</p></li>
+<li><p>Added ADSupport repository.  This replaces ADBinaries and some of the source
+directories that were previously in ADCore.  It builds support for TIFF, JPEG, NETCDF
+ZLIB, SZIP, HDF5, XML2, and NEXUS.  All of these support libraries are now optional.
+The configure directory and INSTALL_GUIDE.md have many changes to support this.</p></li>
+<li><p>New ADLambda repository that supports the detectors from Lambda.  Thanks to John Hammonds for this.</p></li>
+<li><p>New ADCameraLink repository that supports Silicon Software and Dalsa/Coreco.  Thanks to Tim Madden for this.</p></li>
+<li><p>New ADPCO repository that supports PCO CameraLink cameras.  Thanks to Tim Madden for this.</p></li>
+<li><p>Added LICENSE files to all repositories.</p></li>
+</ul>
+</section>
+<section id="r2-4-september-18-2015">
+<h3>R2-4 (September 18, 2015)<a class="headerlink" href="#r2-4-september-18-2015" title="Permalink to this heading"></a></h3>
+<ul class="simple">
+<li><p>Requires R2-4 of ADCore.  This requires some changes to CONFIG_SITE.local.</p></li>
+<li><p>Moved the simDetector from ADCore into a new repository ADExample.</p></li>
+<li><p>New ADMythen module for Dectris Mythen detectors.  Written by Matthew Moore at the APS.</p></li>
+<li><p>New ADPluginEdge module that provides an edge detection plugin using the opencv library.  Written by
+Keith Brister from Northwestern University.</p></li>
+<li><p>configure/RELEASE.local now optionally includes configure/RELEASE.local.$(EPICS_HOST_ARCH).
+This allows restricting building of a detector module to a subset of supported architectures when
+building from the top-level Makefile.</p></li>
+</ul>
+</section>
+<section id="r2-3-july-24-2015">
+<h3>R2-3 (July 24, 2015)<a class="headerlink" href="#r2-3-july-24-2015" title="Permalink to this heading"></a></h3>
+<ul class="simple">
+<li><p>Changed top-level Makefile so that a detector sub-module is only built if the appropriate
+variable is set in configure/RELEASE.local.  EXAMPLE_RELEASE.local contains all detector
+submodules commented out.  This file should be copied to RELEASE.local and the lines for
+the desired detectors uncommented.</p></li>
+<li><p>Added new ADnED driver for neutron event data.  This is from Matt Pearson at ORNL.</p></li>
+</ul>
+</section>
+<section id="r2-2-march-23-2015">
+<h3>R2-2 (March 23, 2015)<a class="headerlink" href="#r2-2-march-23-2015" title="Permalink to this heading"></a></h3>
+<ul class="simple">
+<li><p>Added new modules ffmegViewer, ffmpegServer, aravisGigE, firewireDCAM.  These are all from Tom Cobb
+and Ulrik Pedersen from Diamond Light Source.</p></li>
+<li><p>Added new ADQImaging module.  This is from Arthur Glowacki at the APS.</p></li>
+<li><p>Added new ADDexela module.  This is from Mark Rivers at the University of Chicago.</p></li>
+<li><p>Added new ADFastCCD module.  This is from Stuart Wilkins at the NSLS-II.</p></li>
+<li><p>Added new ADPICam module.  This is from John Hammonds at the APS.</p></li>
+<li><p>Added new ADMerlin module.  This is from Giles Knap at Diamond Light Source.</p></li>
+<li><p>Changed to use HTTPS (<a class="reference external" href="https://github.com/areaDetector">https://github.com/areaDetector</a>) for submodules, rather
+than SSH (<a class="reference external" href="mailto:git&#37;&#52;&#48;github&#46;com">git<span>&#64;</span>github<span>&#46;</span>com</a>:areaDetector).  This allows a recursive checkout without a Github account.</p></li>
+<li><p>This release includes the following releases of the submodules:</p></li>
+</ul>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Module</p></th>
+<th class="head"><p>Release</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ADCore</p></td>
+<td><p>R2-2</p></td>
+</tr>
+<tr class="row-odd"><td><p>ADBinaries</p></td>
+<td><p>R2-2</p></td>
+</tr>
+<tr class="row-even"><td><p>ADADSC</p></td>
+<td><p>R2-0</p></td>
+</tr>
+<tr class="row-odd"><td><p>ADAndor</p></td>
+<td><p>R2-2</p></td>
+</tr>
+<tr class="row-even"><td><p>ADAndor3</p></td>
+<td><p>R2-0</p></td>
+</tr>
+<tr class="row-odd"><td><p>ADBruker</p></td>
+<td><p>R2-0</p></td>
+</tr>
+<tr class="row-even"><td><p>ADDexela</p></td>
+<td><p>R2-0-beta1</p></td>
+</tr>
+<tr class="row-odd"><td><p>ADFastCCD</p></td>
+<td><p>none</p></td>
+</tr>
+<tr class="row-even"><td><p>ADFireWireWin</p></td>
+<td><p>R2-0</p></td>
+</tr>
+<tr class="row-odd"><td><p>ADLightField</p></td>
+<td><p>R2-1</p></td>
+</tr>
+<tr class="row-even"><td><p>ADMerlin</p></td>
+<td><p>3-1-1</p></td>
+</tr>
+<tr class="row-odd"><td><p>ADPICam</p></td>
+<td><p>none</p></td>
+</tr>
+<tr class="row-even"><td><p>ADPSL</p></td>
+<td><p>R2-1</p></td>
+</tr>
+<tr class="row-odd"><td><p>ADPerkinElmer</p></td>
+<td><p>R2-0</p></td>
+</tr>
+<tr class="row-even"><td><p>ADPilatus</p></td>
+<td><p>R2-0</p></td>
+</tr>
+<tr class="row-odd"><td><p>ADPixirad</p></td>
+<td><p>R2-0</p></td>
+</tr>
+<tr class="row-even"><td><p>ADPointGrey</p></td>
+<td><p>R2-0</p></td>
+</tr>
+<tr class="row-odd"><td><p>ADProsilica</p></td>
+<td><p>R2-1</p></td>
+</tr>
+<tr class="row-even"><td><p>ADPvCam</p></td>
+<td><p>R2-0</p></td>
+</tr>
+<tr class="row-odd"><td><p>ADQImaging</p></td>
+<td><p>none</p></td>
+</tr>
+<tr class="row-even"><td><p>ADRoper</p></td>
+<td><p>R2-0</p></td>
+</tr>
+<tr class="row-odd"><td><p>ADURL</p></td>
+<td><p>R2-0</p></td>
+</tr>
+<tr class="row-even"><td><p>ADmar345</p></td>
+<td><p>R2-0</p></td>
+</tr>
+<tr class="row-odd"><td><p>ADmarCCD</p></td>
+<td><p>R2-0</p></td>
+</tr>
+<tr class="row-even"><td><p>aravisGigE</p></td>
+<td><p>dls-r105549</p></td>
+</tr>
+<tr class="row-odd"><td><p>ffmpegServer</p></td>
+<td><p>none</p></td>
+</tr>
+<tr class="row-even"><td><p>ffmpegViewer</p></td>
+<td><p>none</p></td>
+</tr>
+<tr class="row-odd"><td><p>firewireDCAM</p></td>
+<td><p>none</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="r2-0-april-4-2014">
+<h3>R2-0 (April 4, 2014)<a class="headerlink" href="#r2-0-april-4-2014" title="Permalink to this heading"></a></h3>
+<ul class="simple">
+<li><p>Moved the repository to <a class="reference external" href="https://github.com/areaDetector/areaDetector">Github</a>.</p></li>
+<li><p>Re-organized the directory structure to separate the driver libraries from the example IOC applications.</p></li>
+<li><p>Added new detector drivers:</p>
+<ul>
+<li><p>ADLightField:  Driver for newer Princeton Instruments detectors using their LightField program</p></li>
+<li><p>ADPixirad: Driver for CdTe pixel array detectors from Pixirad</p></li>
+<li><p>ADPointGrey: Driver for Firewire, USB, and GigE cameras from Point Grey</p></li>
+</ul>
+</li>
+<li><p>ADmarCCD driver: Added support for triggered and timed acquisition modes on the new high-speed (-HS) series
+of detectors.</p></li>
+<li><p>ADProsilica driver: Added support for conversion from raw Bayer to RGB1, RGB2, and RGB3 in the driver.
+In areaDetector releases prior to R2-0 this could be done in the NDPluginColorConvert plugin.<span class="raw-html-m2r"><br></span>
+That capability has been removed from the plugin to make the plugin independent of the AVT PvApi library.</p></li>
+<li><p>All submodules now have display files for medm (adl), edm (edl), CSS Boy (opi), and caQtDM (ui).<span class="raw-html-m2r"><br></span>
+The original files are the medm adl files.  The edm, CSS Boy, and caQtDm files that were created by converting
+the medm files are found in the autoconvert directories (e.g. pilatusApp/op/opi/autoconvert).
+If there are manually tweaked files they are found in the level above the autoconvert directory
+(e.g. pilatusApp/op/opi).  Thanks to Tim Mooney for doing all of these conversions.</p></li>
+<li><p>Added new NDPluginAttribute plugin from Matt Pearson.</p></li>
+</ul>
+</section>
+<section id="r1-9-1-and-earlier">
+<h3>R1-9-1 and earlier<a class="headerlink" href="#r1-9-1-and-earlier" title="Permalink to this heading"></a></h3>
+<p>Release notes are part of the
+<a class="reference external" href="https://cars.uchicago.edu/software/epics/areaDetectorReleaseNotes.html">areaDetector Release Notes</a>.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="install_guide.html" class="btn btn-neutral float-left" title="areaDetector: Installation Guide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="ADCore_release.html" class="btn btn-neutral float-right" title="ADCore Releases" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Mark Rivers.
+      <span class="lastupdated">Last updated on 2023-March-12.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

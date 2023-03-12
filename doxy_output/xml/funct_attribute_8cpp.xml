@@ -1,0 +1,224 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="funct_attribute_8cpp" kind="file" language="C++">
+    <compoundname>functAttribute.cpp</compoundname>
+    <includes local="no">stdlib.h</includes>
+    <includes local="no">epicsString.h</includes>
+    <includes local="no">registryFunction.h</includes>
+    <includes refid="funct_attribute_8h" local="yes">functAttribute.h</includes>
+    <incdepgraph>
+      <node id="10">
+        <label>epicsTypes.h</label>
+      </node>
+      <node id="2">
+        <label>stdlib.h</label>
+      </node>
+      <node id="4">
+        <label>registryFunction.h</label>
+      </node>
+      <node id="13">
+        <label>epicsVersion.h</label>
+      </node>
+      <node id="8">
+        <label>string</label>
+      </node>
+      <node id="12">
+        <label>ADCoreAPI.h</label>
+        <link refid="_a_d_core_a_p_i_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>epicsString.h</label>
+      </node>
+      <node id="9">
+        <label>ellLib.h</label>
+      </node>
+      <node id="7">
+        <label>NDAttribute.h</label>
+        <link refid="_n_d_attribute_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>asynDriver.h</label>
+      </node>
+      <node id="1">
+        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/functAttribute.cpp</label>
+        <link refid="funct_attribute_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>functAttribute.h</label>
+        <link refid="funct_attribute_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>stdio.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="funct_attribute_8cpp_1af0e94d13028051cd5339d204bfbb057d" prot="public" static="yes" mutable="no">
+        <type>const char *</type>
+        <definition>const char* driverName</definition>
+        <argsstring></argsstring>
+        <name>driverName</name>
+        <initializer>= &quot;functAttribute&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/functAttribute.cpp" line="19" column="19" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/functAttribute.cpp" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="funct_attribute_8cpp_1adaf4ab21081cf9ae867f9f3cf3c97e1e" prot="public" static="yes" mutable="no">
+        <type>asynUser *</type>
+        <definition>asynUser* pasynUserSelf</definition>
+        <argsstring></argsstring>
+        <name>pasynUserSelf</name>
+        <initializer>= NULL</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/functAttribute.cpp" line="25" column="17" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/functAttribute.cpp" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*<sp/>functAttribute.cpp</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>\author<sp/>Mark<sp/>Rivers</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>\author<sp/>University<sp/>of<sp/>Chicago</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>\date<sp/>April<sp/>30,<sp/>2009</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdlib.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;epicsString.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;registryFunction.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="funct_attribute_8h" kindref="compound">functAttribute.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*driverName<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;functAttribute&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>This<sp/>asynUser<sp/>is<sp/>not<sp/>attached<sp/>to<sp/>any<sp/>device.</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>It<sp/>lets<sp/>one<sp/>turn<sp/>on<sp/>debugging<sp/>by<sp/>settings<sp/>the<sp/>global<sp/>asynTrace<sp/>flag<sp/>bits</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*<sp/>ASTN_TRACE_ERROR<sp/>(default),<sp/>ASYN_TRACE_FLOW,<sp/>etc.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>asynUser<sp/>*pasynUserSelf<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><ref refid="classfunct_attribute_1af766f0ca2f5075599fcf5db83e006533" kindref="member">functAttribute::functAttribute</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*pName,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*pDescription,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*pSource,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*pParam)</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/><ref refid="class_n_d_attribute" kindref="compound">NDAttribute</ref>(pName,<sp/>pDescription,<sp/><ref refid="_n_d_attribute_8h_1a9f7184b8fbaae0823a57b493ef50080eace505bbcd2de8e044a09b47be3bb7798" kindref="member">NDAttrSourceFunct</ref>,<sp/>pSource,<sp/><ref refid="_n_d_attribute_8h_1a8a795995acde8458f43ac9b01376ef07ad2b6b7a3754f8ab384256307a8b7b2ac" kindref="member">NDAttrUndefined</ref>,<sp/>0),</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>pFunction(0),<sp/>functionPvt(0)</highlight></codeline>
+<codeline lineno="37"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*functionName<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;functAttribute&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Create<sp/>the<sp/>static<sp/>pasynUser<sp/>if<sp/>not<sp/>already<sp/>done<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!pasynUserSelf)<sp/>pasynUserSelf<sp/>=<sp/>pasynManager-&gt;createAsynUser(0,0);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(pParam)</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>functParam<sp/>=<sp/>epicsStrDup(pParam);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>functParam<sp/>=<sp/>epicsStrDup(</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!pSource)<sp/>{</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>asynPrint(pasynUserSelf,<sp/>ASYN_TRACE_ERROR,</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;%s:%s:<sp/>ERROR,<sp/>must<sp/>specify<sp/>function<sp/>name\n&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>driverName,<sp/>functionName);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">goto</highlight><highlight class="normal"><sp/>error;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;pFunction<sp/>=<sp/>(<ref refid="funct_attribute_8h_1a05103e0874ed0f5eba9b9d9f5813d692" kindref="member">NDAttributeFunction</ref>)registryFunctionFind(pSource);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!this-&gt;pFunction)<sp/>{</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>asynPrint(pasynUserSelf,<sp/>ASYN_TRACE_ERROR,</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;%s:%s:<sp/>ERROR,<sp/>cannot<sp/>find<sp/>function<sp/>%s\n&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>driverName,<sp/>functionName,<sp/>pSource);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">goto</highlight><highlight class="normal"><sp/>error;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal">error:</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><ref refid="classfunct_attribute_1af766f0ca2f5075599fcf5db83e006533" kindref="member">functAttribute::functAttribute</ref>(<ref refid="classfunct_attribute" kindref="compound">functAttribute</ref>&amp;<sp/>attribute)</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/><ref refid="class_n_d_attribute" kindref="compound">NDAttribute</ref>(attribute)</highlight></codeline>
+<codeline lineno="70"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>functParam<sp/>=<sp/>epicsStrDup(attribute.functParam);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>pFunction<sp/>=<sp/>attribute.pFunction;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>functionPvt<sp/>=<sp/>attribute.functionPvt;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><ref refid="classfunct_attribute_1ae6e91af49dc0c8e95eb6cb636b5bcc8b" kindref="member">functAttribute::~functAttribute</ref>()</highlight></codeline>
+<codeline lineno="79"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/>free(functParam);</highlight></codeline>
+<codeline lineno="81"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><ref refid="classfunct_attribute" kindref="compound">functAttribute</ref>*<sp/><ref refid="classfunct_attribute_1a6184012fe7080f97f01e6c2a076d1c3e" kindref="member">functAttribute::copy</ref>(<ref refid="class_n_d_attribute" kindref="compound">NDAttribute</ref><sp/>*pAttr)</highlight></codeline>
+<codeline lineno="84"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><ref refid="classfunct_attribute" kindref="compound">functAttribute</ref><sp/>*pOut<sp/>=<sp/>(<ref refid="classfunct_attribute" kindref="compound">functAttribute</ref><sp/>*)pAttr;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!pOut)</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/>pOut<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classfunct_attribute_1af766f0ca2f5075599fcf5db83e006533" kindref="member">functAttribute</ref>(*</highlight><highlight class="keyword">this</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>NOTE:<sp/>We<sp/>assume<sp/>that<sp/>if<sp/>the<sp/>attribute<sp/>name<sp/>is<sp/>the<sp/>same<sp/>then<sp/>the<sp/>function<sp/>name<sp/>and<sp/>parameter<sp/>are<sp/>also<sp/>the<sp/>same</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>are<sp/>also<sp/>the<sp/>same</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_n_d_attribute_1a17dfc6c9abb94701330d86429927c41b" kindref="member">NDAttribute::copy</ref>(pOut);</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">(pOut);</highlight></codeline>
+<codeline lineno="94"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classfunct_attribute_1a67a2ec22f10d79350fd0cbb22658acdb" kindref="member">functAttribute::updateValue</ref>()</highlight></codeline>
+<codeline lineno="101"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//static<sp/>const<sp/>char<sp/>*functionName<sp/>=<sp/>&quot;updateValue&quot;;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!this-&gt;pFunction)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>asynError;</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;pFunction(this-&gt;functParam,<sp/>&amp;functionPvt,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>asynSuccess;</highlight></codeline>
+<codeline lineno="108"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classfunct_attribute_1a549777393eaf50fc16f234c8fe435aad" kindref="member">functAttribute::report</ref>(FILE<sp/>*fp,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>details)</highlight></codeline>
+<codeline lineno="117"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_n_d_attribute_1a9cbb80eb0e20786c64dbb562c589f1aa" kindref="member">NDAttribute::report</ref>(fp,<sp/>details);</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/>fprintf(fp,<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/>functAttribute\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/>fprintf(fp,<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/><sp/>functParam=%s\n&quot;</highlight><highlight class="normal">,<sp/>this-&gt;functParam);</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/>fprintf(fp,<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/><sp/>pFunction=%p\n&quot;</highlight><highlight class="normal">,<sp/>this-&gt;pFunction);</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/>fprintf(fp,<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/><sp/>functionPvt=%p\n&quot;</highlight><highlight class="normal">,<sp/>this-&gt;functionPvt);</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">(<ref refid="_n_d_attribute_8h_1a0bcdf5b219c47403272d8eb586395733" kindref="member">ND_SUCCESS</ref>);</highlight></codeline>
+<codeline lineno="124"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/functAttribute.cpp"/>
+  </compounddef>
+</doxygen>

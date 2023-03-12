@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="throttler_8cpp" kind="file" language="C++">
+    <compoundname>throttler.cpp</compoundname>
+    <includes refid="throttler_8h" local="yes">throttler.h</includes>
+    <includes local="no">algorithm</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/throttler.cpp</label>
+        <link refid="throttler_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>throttler.h</label>
+        <link refid="throttler_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>epicsTime.h</label>
+      </node>
+      <node id="4">
+        <label>algorithm</label>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="throttler_8h" kindref="compound">throttler.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;algorithm&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"><ref refid="class_throttler_1af031e30fa40f3aff9c30862463f4d224" kindref="member">Throttler::Throttler</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>limit)</highlight></codeline>
+<codeline lineno="6"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_throttler_1a2ececdaddb448c9050fdc7258c13dfc4" kindref="member">reset</ref>(limit);</highlight></codeline>
+<codeline lineno="8"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_throttler_1a2ececdaddb448c9050fdc7258c13dfc4" kindref="member">Throttler::reset</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>limit)</highlight></codeline>
+<codeline lineno="11"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/>available_<sp/>=<sp/>limit_<sp/>=<sp/>limit;</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/>refillAmount_<sp/>=<sp/>limit<sp/>/<sp/>1000.0;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/>epicsTimeGetCurrent(&amp;lastRefill_);</highlight></codeline>
+<codeline lineno="15"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_throttler_1a11fdc5e4f0623939c2b6b4056bc9aaa7" kindref="member">Throttler::refill</ref>()</highlight></codeline>
+<codeline lineno="18"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>epicsTimeStamp<sp/>now;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>epicsTimeGetCurrent(&amp;now);</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>refillCount<sp/>=<sp/>(int)epicsTimeDiffInSeconds(&amp;now,<sp/>&amp;lastRefill_)*1000;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(refillCount)<sp/>{</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>available_<sp/>=<sp/><ref refid="mar3xx__pck_8c_1abb702d8b501669a23aa0ab3b281b9384" kindref="member">std::min</ref>(limit_,<sp/>available_<sp/>+<sp/>refillCount*refillAmount_);</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>lastRefill_<sp/>=<sp/>now;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>available_;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_throttler_1a36344932002cd41de34b2351aa223f73" kindref="member">Throttler::tryTake</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>tokens)</highlight></codeline>
+<codeline lineno="33"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(tokens<sp/>&gt;<sp/><ref refid="class_throttler_1a11fdc5e4f0623939c2b6b4056bc9aaa7" kindref="member">refill</ref>())</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>available_<sp/>-=<sp/>tokens;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/throttler.cpp"/>
+  </compounddef>
+</doxygen>

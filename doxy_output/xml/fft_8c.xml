@@ -1,0 +1,249 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="fft_8c" kind="file" language="C++">
+    <compoundname>fft.c</compoundname>
+    <includes local="no">math.h</includes>
+    <includes refid="fft_8h" local="yes">fft.h</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/fft.c</label>
+        <link refid="fft_8c"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>fft.h</label>
+        <link refid="fft_8h"/>
+      </node>
+      <node id="2">
+        <label>math.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="fft_8c_1aac9153aee4bdb92701df902e06a74eb3" prot="public" static="no">
+        <name>SWAP</name>
+        <param><defname>a</defname></param>
+        <param><defname>b</defname></param>
+        <initializer>tempr=(a);(a)=(b);(b)=tempr</initializer>
+        <briefdescription>
+<para>Modified code from Numerical Recipes four1 and fourn. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/fft.c" line="4" column="10" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/fft.c" bodystart="4" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="fft_8c_1ae71449b1cc6e6250b91f539153a7a0d3" prot="public" static="no">
+        <name>M_PI</name>
+        <initializer>3.14159265358979323846</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/fft.c" line="10" column="11" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/fft.c" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="fft_8c_1af8fbdc158ca7a4c5c0547f0cfa6994bb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void fft_1D</definition>
+        <argsstring>(double data[], unsigned long nn, int isign)</argsstring>
+        <name>fft_1D</name>
+        <param>
+          <type>double</type>
+          <declname>data</declname>
+          <array>[]</array>
+        </param>
+        <param>
+          <type>unsigned long</type>
+          <declname>nn</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>isign</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/fft.c" line="13" column="6" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/fft.c" bodystart="13" bodyend="61"/>
+      </memberdef>
+      <memberdef kind="function" id="fft_8c_1a32b08af213a19d655dbac8197989a5c4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void fft_ND</definition>
+        <argsstring>(double data[], unsigned long nn[], int ndim, int isign)</argsstring>
+        <name>fft_ND</name>
+        <param>
+          <type>double</type>
+          <declname>data</declname>
+          <array>[]</array>
+        </param>
+        <param>
+          <type>unsigned long</type>
+          <declname>nn</declname>
+          <array>[]</array>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ndim</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>isign</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/fft.c" line="63" column="6" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/fft.c" bodystart="63" bodyend="132"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;math.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SWAP(a,b)<sp/>tempr=(a);(a)=(b);(b)=tempr</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="fft_8h" kindref="compound">fft.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Some<sp/>systems<sp/>do<sp/>not<sp/>define<sp/>M_PI<sp/>in<sp/>math.h<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>M_PI</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/>#define<sp/>M_PI<sp/>3.14159265358979323846</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="fft_8c_1af8fbdc158ca7a4c5c0547f0cfa6994bb" kindref="member">fft_1D</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>data[],<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>nn,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>isign)</highlight></codeline>
+<codeline lineno="14"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>n,mmax,m,j,istep,<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>wtemp,wr,wpr,wpi,wi,theta;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>tempr,tempi;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>This<sp/>algorithm<sp/>uses<sp/>1-based<sp/>array<sp/>indices.<sp/><sp/>To<sp/>be<sp/>cleanly<sp/>callable<sp/>from<sp/>C</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>we<sp/>subtract<sp/>1<sp/>here<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/>data--;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/>n=nn<sp/>&lt;&lt;<sp/>1;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/>j=1;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>=1;<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>&lt;n;<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>+=2)<sp/>{</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(j<sp/>&gt;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="fft_8c_1aac9153aee4bdb92701df902e06a74eb3" kindref="member">SWAP</ref>(data[j],data[<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>]);</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="fft_8c_1aac9153aee4bdb92701df902e06a74eb3" kindref="member">SWAP</ref>(data[j+1],data[<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>+1]);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>m=n<sp/>&gt;&gt;<sp/>1;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(m<sp/>&gt;=<sp/>2<sp/>&amp;&amp;<sp/>j<sp/>&gt;<sp/>m)<sp/>{</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>j<sp/>-=<sp/>m;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>m<sp/>&gt;&gt;=<sp/>1;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>j<sp/>+=<sp/>m;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/>mmax=2;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(n<sp/>&gt;<sp/>mmax)<sp/>{</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>istep=mmax<sp/>&lt;&lt;<sp/>1;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>theta=isign*(<ref refid="fft_8c_1ae71449b1cc6e6250b91f539153a7a0d3" kindref="member">M_PI</ref>*2/mmax);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>wtemp=sin(0.5*theta);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>wpr<sp/>=<sp/>-2.0*wtemp*wtemp;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>wpi=sin(theta);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/>wr=1.0;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>wi=0.0;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(m=1;m&lt;mmax;m+=2)<sp/>{</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>=m;<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>&lt;=n;<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>+=istep)<sp/>{</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>j=<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>+mmax;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tempr=(double)(wr*data[j]-wi*data[j+1]);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tempi=(double)(wr*data[j+1]+wi*data[j]);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>data[j]=data[<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>]-tempr;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>data[j+1]=data[<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>+1]-tempi;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>data[<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>]<sp/>+=<sp/>tempr;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>data[<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>+1]<sp/>+=<sp/>tempi;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>wr=(wtemp=wr)*wpr-wi*wpi+wr;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>wi=wi*wpr+wtemp*wpi+wi;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>mmax=istep;</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="61"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="fft_8c_1a32b08af213a19d655dbac8197989a5c4" kindref="member">fft_ND</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>data[],<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>nn[],<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ndim,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>isign)</highlight></codeline>
+<codeline lineno="64"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>idim;</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>i1,i2,i3,i2rev,i3rev,ip1,ip2,ip3,ifp1,ifp2;</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>ibit,k1,k2,n,nprev,nrem,ntot;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>tempi,tempr;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>theta,wi,wpi,wpr,wr,wtemp;</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>This<sp/>algorithm<sp/>uses<sp/>1-based<sp/>array<sp/>indices.<sp/><sp/>To<sp/>be<sp/>cleanly<sp/>callable<sp/>from<sp/>C</highlight></codeline>
+<codeline lineno="72"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>we<sp/>subtract<sp/>1<sp/>here<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/>data--;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/>nn--;</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(ntot=1,idim=1;idim&lt;=ndim;idim++)</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>ntot<sp/>*=<sp/>nn[idim];</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/>nprev=1;</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(idim=ndim;idim&gt;=1;idim--)<sp/>{</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/>n=nn[idim];</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/>nrem=ntot/(n*nprev);</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>ip1=nprev<sp/>&lt;&lt;<sp/>1;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>ip2=ip1*n;</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>ip3=ip2*nrem;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>i2rev=1;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(i2=1;i2&lt;=ip2;i2+=ip1)<sp/>{</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(i2<sp/>&lt;<sp/>i2rev)<sp/>{</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(i1=i2;i1&lt;=i2+ip1-2;i1+=2)<sp/>{</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(i3=i1;i3&lt;=ip3;i3+=ip2)<sp/>{</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i3rev=i2rev+i3-i2;</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="fft_8c_1aac9153aee4bdb92701df902e06a74eb3" kindref="member">SWAP</ref>(data[i3],data[i3rev]);</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="fft_8c_1aac9153aee4bdb92701df902e06a74eb3" kindref="member">SWAP</ref>(data[i3+1],data[i3rev+1]);</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>ibit=ip2<sp/>&gt;&gt;<sp/>1;</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(ibit<sp/>&gt;=<sp/>ip1<sp/>&amp;&amp;<sp/>i2rev<sp/>&gt;<sp/>ibit)<sp/>{</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i2rev<sp/>-=<sp/>ibit;</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ibit<sp/>&gt;&gt;=<sp/>1;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>i2rev<sp/>+=<sp/>ibit;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/>ifp1=ip1;</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(ifp1<sp/>&lt;<sp/>ip2)<sp/>{</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>ifp2=ifp1<sp/>&lt;&lt;<sp/>1;</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>theta=isign*<ref refid="fft_8c_1ae71449b1cc6e6250b91f539153a7a0d3" kindref="member">M_PI</ref>*2/(ifp2/ip1);</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>wtemp=sin(0.5*theta);</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>wpr<sp/>=<sp/>-2.0*wtemp*wtemp;</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>wpi=sin(theta);</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>wr=1.0;</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>wi=0.0;</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(i3=1;i3&lt;=ifp1;i3+=ip1)<sp/>{</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(i1=i3;i1&lt;=i3+ip1-2;i1+=2)<sp/>{</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(i2=i1;i2&lt;=ip3;i2+=ifp2)<sp/>{</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>k1=i2;</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>k2=k1+ifp1;</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tempr=(double)wr*data[k2]-(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal">)wi*data[k2+1];</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tempi=(double)wr*data[k2+1]+(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal">)wi*data[k2];</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>data[k2]=data[k1]-tempr;</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>data[k2+1]=data[k1+1]-tempi;</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>data[k1]<sp/>+=<sp/>tempr;</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>data[k1+1]<sp/>+=<sp/>tempi;</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>wr=(wtemp=wr)*wpr-wi*wpi+wr;</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>wi=wi*wpr+wtemp*wpi+wi;</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>ifp1=ifp2;</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/>nprev<sp/>*=<sp/>n;</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="132"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/fft.c"/>
+  </compounddef>
+</doxygen>

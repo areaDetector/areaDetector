@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>areaDetector: Installation Guide &mdash; areaDetector Support</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme_overrides.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="areaDetector Releases" href="release.html" />
+    <link rel="prev" title="Acknowledgements and licenses" href="acknowledgements.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            areaDetector
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="readme.html">Readme</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user_guide.html">User Guide</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Install Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#license">License</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installing-and-building-from-source-code">Installing and Building from Source Code</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#epics-products-required-for-building-areadetector">EPICS Products Required for Building areaDetector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#external-products-required-for-building-areadetector">External Products Required for Building areaDetector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tiff-jpeg-xml2-and-z">TIFF, JPEG, XML2, and Z</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#tiff">TIFF</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#zlib">ZLIB</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#jpeg">JPEG</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#xml2">XML2</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#hdf5-szip-and-graphics-magick">HDF5, SZIP, and GRAPHICS_MAGICK</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#szip">SZIP</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hdf5">HDF5</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#graphicsmagick">GRAPHICSMAGICK</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#downloading-and-installing-areadetector-source-code">Downloading and Installing areaDetector Source Code</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#release-and-config-files">RELEASE* and CONFIG* files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#edit-release-libs-local">Edit RELEASE_LIBS.local</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#edit-release-prods-local">Edit RELEASE_PRODS.local</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#optionally-create-or-edit-area-detector-release-epics-host-arch-local">Optionally create or edit $(AREA_DETECTOR)/../RELEASE.$(EPICS_HOST_ARCH).local</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#edit-config-site-local-and-optionally-config-site-local-epics-host-arch">Edit CONFIG_SITE.local and optionally CONFIG_SITE.local.$(EPICS_HOST_ARCH)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#edit-release-local">Edit RELEASE.local</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#make">make</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#example-files-in-adcore-iocboot">Example files in ADCore/iocBoot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#run-simdetector">Run SimDetector</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#installing-pre-built-binary-versions-of-areadetector">Installing Pre-Built Binary Versions of areaDetector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#display-managers">Display Managers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#medm">MEDM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#edm">EDM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#css">CSS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#caqtdm">caQtDM</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#configuration">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#running-the-ioc-application">Running the IOC Application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#image-viewers">Image Viewers</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="release.html">Top-level Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ADCore_release.html">ADCore Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ADSupport_release.html">ADSupport Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="doxygen.html">Source Code Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="detectors.html">Supported Detectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="legacy_versions.html">Legacy Versions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">areaDetector</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">areaDetector: Installation Guide</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/install_guide.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="areadetector-installation-guide">
+<h1><a class="toc-backref" href="#id1" role="doc-backlink">areaDetector: Installation Guide</a><a class="headerlink" href="#areadetector-installation-guide" title="Permalink to this heading"></a></h1>
+<p><em>Marty Kraimer, Brookhaven National Laboratory</em></p>
+<p><em>Mark Rivers, University of Chicago</em></p>
+<nav class="contents" id="install-guide-contents">
+<p class="topic-title">Install Guide Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#areadetector-installation-guide" id="id1">areaDetector: Installation Guide</a></p>
+<ul>
+<li><p><a class="reference internal" href="#introduction" id="id2">Introduction</a></p></li>
+<li><p><a class="reference internal" href="#license" id="id3">License</a></p></li>
+<li><p><a class="reference internal" href="#installing-and-building-from-source-code" id="id4">Installing and Building from Source Code</a></p>
+<ul>
+<li><p><a class="reference internal" href="#epics-products-required-for-building-areadetector" id="id5">EPICS Products Required for Building areaDetector</a></p></li>
+<li><p><a class="reference internal" href="#external-products-required-for-building-areadetector" id="id6">External Products Required for Building areaDetector</a></p></li>
+<li><p><a class="reference internal" href="#tiff-jpeg-xml2-and-z" id="id7">TIFF, JPEG, XML2, and Z</a></p></li>
+<li><p><a class="reference internal" href="#hdf5-szip-and-graphics-magick" id="id8">HDF5, SZIP, and GRAPHICS_MAGICK</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#downloading-and-installing-areadetector-source-code" id="id9">Downloading and Installing areaDetector Source Code</a></p>
+<ul>
+<li><p><a class="reference internal" href="#release-and-config-files" id="id10">RELEASE* and CONFIG* files</a></p></li>
+<li><p><a class="reference internal" href="#edit-release-libs-local" id="id11">Edit RELEASE_LIBS.local</a></p></li>
+<li><p><a class="reference internal" href="#edit-release-prods-local" id="id12">Edit RELEASE_PRODS.local</a></p></li>
+<li><p><a class="reference internal" href="#optionally-create-or-edit-area-detector-release-epics-host-arch-local" id="id13">Optionally create or edit $(AREA_DETECTOR)/../RELEASE.$(EPICS_HOST_ARCH).local</a></p></li>
+<li><p><a class="reference internal" href="#edit-config-site-local-and-optionally-config-site-local-epics-host-arch" id="id14">Edit CONFIG_SITE.local and optionally CONFIG_SITE.local.$(EPICS_HOST_ARCH)</a></p></li>
+<li><p><a class="reference internal" href="#edit-release-local" id="id15">Edit RELEASE.local</a></p></li>
+<li><p><a class="reference internal" href="#make" id="id16">make</a></p></li>
+<li><p><a class="reference internal" href="#example-files-in-adcore-iocboot" id="id17">Example files in ADCore/iocBoot</a></p></li>
+<li><p><a class="reference internal" href="#run-simdetector" id="id18">Run SimDetector</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#installing-pre-built-binary-versions-of-areadetector" id="id19">Installing Pre-Built Binary Versions of areaDetector</a></p></li>
+<li><p><a class="reference internal" href="#display-managers" id="id20">Display Managers</a></p>
+<ul>
+<li><p><a class="reference internal" href="#medm" id="id21">MEDM</a></p></li>
+<li><p><a class="reference internal" href="#edm" id="id22">EDM</a></p></li>
+<li><p><a class="reference internal" href="#css" id="id23">CSS</a></p></li>
+<li><p><a class="reference internal" href="#caqtdm" id="id24">caQtDM</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#configuration" id="id25">Configuration</a></p></li>
+<li><p><a class="reference internal" href="#running-the-ioc-application" id="id26">Running the IOC Application</a></p></li>
+<li><p><a class="reference internal" href="#image-viewers" id="id27">Image Viewers</a></p></li>
+</ul>
+</li>
+</ul>
+</nav>
+<section id="introduction">
+<h2><a class="toc-backref" href="#id2" role="doc-backlink">Introduction</a><a class="headerlink" href="#introduction" title="Permalink to this heading"></a></h2>
+<p>This is a guide for installing and building R3-0 and later of the EPICS
+areaDetector module. This guide is intended for both areaDetector users
+and developers. areaDetector can be obtained as a release or by cloning
+from the github repository.</p>
+<p>This guide provides instructions for:</p>
+<ul class="simple">
+<li><p>Installing, building, and running from source code. These
+instructions should work on any supported EPICS host architecture,
+e.g. Linux, Windows, macOS, vxWorks. This document assumes that the
+reader has already installed an EPICS development environment, and
+has built <a class="reference external" href="https://www.aps.anl.gov/epics/base">EPICS base</a>, the
+<a class="reference external" href="https://www.aps.anl.gov/epics/modules/soft/asyn">EPICS asyn
+module</a>, and the
+required <a class="reference external" href="https://www.aps.anl.gov/bcda/synApps">EPICS synApps
+modules</a>.</p></li>
+<li><p>Installing and running a pre-built binary distribution.</p></li>
+</ul>
+</section>
+<section id="license">
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">License</a><a class="headerlink" href="#license" title="Permalink to this heading"></a></h2>
+<p>This product is made available subject to acceptance of the
+<a class="reference internal" href="license.html"><span class="doc">areaDetector License</span></a></p>
+</section>
+<section id="installing-and-building-from-source-code">
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">Installing and Building from Source Code</a><a class="headerlink" href="#installing-and-building-from-source-code" title="Permalink to this heading"></a></h2>
+<p>The build process attempts to make the build process easy for typical
+cases but allow site specific overrides. areaDetector uses many other
+products.</p>
+<section id="epics-products-required-for-building-areadetector">
+<h3><a class="toc-backref" href="#id5" role="doc-backlink">EPICS Products Required for Building areaDetector</a><a class="headerlink" href="#epics-products-required-for-building-areadetector" title="Permalink to this heading"></a></h3>
+<p>areaDetector requires <a class="reference external" href="https://www.aps.anl.gov/epics/base/index.php">EPICS
+base</a>. R3.14.12.4 or
+higher, any 3.15 release should work.</p>
+<p>areaDetector also requires
+<a class="reference external" href="https://www.aps.anl.gov/epics/modules/soft/asyn/">asyn</a>. The most
+recent release of asyn is recommended.</p>
+<p>Each areaDetector detector module builds both a library and an EPICS IOC
+application. To build the library only EPICS base and asynDriver are
+required. To build the IOC application the
+<a class="reference external" href="https://www.aps.anl.gov/bcda/synApps">synApps</a> modules AUTOSAVE,
+BUSY, CALC, and SSCAN are required. If the CALC module is built with
+SNCSEQ support then SNCSEQ is also required. The most recent release of
+the synApps modules is recommended.</p>
+<p>The DEVIOCSTATS and ALIVE modules are optional.</p>
+<p>EPICS base, asyn and the synApps modules must be built before building
+areaDetector.</p>
+</section>
+<section id="external-products-required-for-building-areadetector">
+<h3><a class="toc-backref" href="#id6" role="doc-backlink">External Products Required for Building areaDetector</a><a class="headerlink" href="#external-products-required-for-building-areadetector" title="Permalink to this heading"></a></h3>
+<p>areaDetector optionally uses the NETCDF, TIFF, ZLIB, JPEG, SZIP, HDF5,
+NEXUS, GRAPHICSMAGIC, OPENCV, and EPICS PVA (formerly V4) libraries.
+These are used for plugins and drivers and are not required. The XML2
+library is required.</p>
+<p>Prior to areaDetector R2-5 the TIFF, ZLIB, JPEG, SZIP, XML2, HDF5
+libraries needed to be installed on Linux. On Windows they were provided
+as pre-built libraries in the ADBinaries module in areaDetector. NETCDF
+and NEXUS were built from source in ADCore.</p>
+<p>Beginning with R2-5 the ADSupport module was added to areaDetector.
+This module builds the GRAPHICSMAGICK, NETCDF, TIFF, ZLIB, JPEG, SZIP, XML2,
+HDF5, BLOSC, and NEXUS libraries from source code. ADSupport on
+Darwin may be added in a future release. ADSupport will almost always
+be used to build the libraries on Windows and vxWorks.</p>
+<p>On Linux each library can either be built in ADSupport or installed in
+a location external to areaDetector.</p>
+<p>For each library XXX (XXX=TIFF, NETCDF, etc.) there are 4 Makefile
+variables that can be defined in <code class="docutils literal notranslate"><span class="pre">CONFIG_SITE.local</span></code>.</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>WITH_XXX</dt><dd><ul>
+<li><p>If WITH_XXX=YES then build the plugins and drivers that require this
+library.</p></li>
+<li><p>If XXX_EXTERNAL=NO then also build the source code for this
+library in ADSupport.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>XXX_EXTERNAL</dt><dd><ul>
+<li><p>If NO then build the source code for this library in ADSupport.</p></li>
+<li><p>If YES then this library is installed external to areaDetector</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>XXX_INCLUDE</dt><dd><ul>
+<li><p>If XXX_EXTERNAL=YES then this is the path to the directory
+containing the include files for XXX. This can be a space-delimited
+list of paths if more than one directory is required. XXX_INCLUDE
+should only contain the paths, without a preceeding -I. The -I will be
+added in the Makefiles. However, if XXX is a system library whose include
+files are in a standard include search path then do not define XXX_INCLUDE.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>XXX_LIB</dt><dd><ul>
+<li><p>If XXX_EXTERNAL=YES then this is the path to the library files for XXX.
+However, if XXX is a system library whose library files in a standard
+library search path then do not define XXX_LIB.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<p>XML2 is an exception. It is required, so WITH_XML2 is not supported, but
+XML2_EXTERNAL, XML2_INCLUDE, and XML2_LIB are supported.</p>
+<p>Note that there are some library interdependencies.
+- If <code class="docutils literal notranslate"><span class="pre">WITH_TIFF=YES</span></code> then <code class="docutils literal notranslate"><span class="pre">WITH_ZLIB</span></code> must also be <code class="docutils literal notranslate"><span class="pre">YES</span></code>.
+- If <code class="docutils literal notranslate"><span class="pre">WITH_HDF5=YES</span></code> then <code class="docutils literal notranslate"><span class="pre">WITH_ZLIB</span></code> and <code class="docutils literal notranslate"><span class="pre">WITH_SZIP</span></code> must also be <code class="docutils literal notranslate"><span class="pre">YES</span></code>.
+- If <code class="docutils literal notranslate"><span class="pre">WITH_NEXUS=YES</span></code> then <code class="docutils literal notranslate"><span class="pre">WITH_HDF5</span></code> must also be <code class="docutils literal notranslate"><span class="pre">YES</span></code>.</p>
+<p>ADSupport can be used to build the libraries for the following
+operating systems.</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>Linux</dt><dd><ul>
+<li><p>32/64 bit, Intel architectures only.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Windows</dt><dd><ul>
+<li><p>Visual Studio or mingw, 32/64-bit, static or dynamic</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>vxWorks</dt><dd><ul>
+<li><p>On vxWorks 6.x all libraries are supported.</p></li>
+<li><p>On vxWorks 5.x only XML2, TIFF, ZLIB, JPEG, and NETCDF are
+supported. WITH_SZIP, WITH_HDF5, and WITH_NEXUS must be set to NO</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Darwin</dt><dd><ul>
+<li><p>This is not currently supported but will be added in a future release.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<p>The following instructions can be used for installing these libraries
+externally to areaDetector if that is desired.</p>
+</section>
+<section id="tiff-jpeg-xml2-and-z">
+<h3><a class="toc-backref" href="#id7" role="doc-backlink">TIFF, JPEG, XML2, and Z</a><a class="headerlink" href="#tiff-jpeg-xml2-and-z" title="Permalink to this heading"></a></h3>
+<p>On Linux and Darwin the libtiff, libjpeg, libxml2, and libz libraries
+often come already installed. If they are not already installed then
+they are normally available for installation via the standard package
+installation tools, e.g. “yum install” on Redhat systems, “apt get” for
+Debian systems, etc.</p>
+<p>If for some reason you cannot install these libraries using the standard
+package installation tools, they can be installed from source code
+distributions as follows.</p>
+<p>For each product download the source code from a product download site
+and then build.</p>
+<p>Each site provides some combination of .zip, .tar, .tar.gz, etc. If the
+file is a zip file then just execute:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">unzip</span> <span class="n">file</span><span class="o">.</span><span class="n">zip</span>
+</pre></div>
+</div>
+<p>If the file is any flavor of tar just execute:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tar</span> <span class="n">xf</span> <span class="n">file</span>
+</pre></div>
+</div>
+<p>All of the following products put the result of unzip or tar into a
+sub-directory. cd to that directory and follow the instructions for the
+appropriate sub-section.</p>
+<section id="tiff">
+<h4>TIFF<a class="headerlink" href="#tiff" title="Permalink to this heading"></a></h4>
+<p>This can be downloaded from
+<a class="reference external" href="http://www.remotesensing.org/libtiff">libTIFF</a>. Then click on the
+Master Download Site and download the latest stable release. After the
+latest release is unziped cd to the release and execute the commands:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">configure</span>
+<span class="n">make</span>
+<span class="n">sudo</span> <span class="n">make</span> <span class="n">install</span>
+</pre></div>
+</div>
+<p>The include and library files are installed by default into
+<code class="docutils literal notranslate"><span class="pre">/usr/local</span></code></p>
+</section>
+<section id="zlib">
+<h4>ZLIB<a class="headerlink" href="#zlib" title="Permalink to this heading"></a></h4>
+<p>This can be downloaded from <a class="reference external" href="http://www.zlib.net">zlib</a>.</p>
+<p>Then look for latest release download.</p>
+<p>After untaring the release</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">configure</span>
+<span class="n">make</span>
+<span class="n">sudo</span> <span class="n">make</span> <span class="n">install</span>
+</pre></div>
+</div>
+<p>The include and library files are installed by default into
+<code class="docutils literal notranslate"><span class="pre">/usr/local</span></code></p>
+</section>
+<section id="jpeg">
+<h4>JPEG<a class="headerlink" href="#jpeg" title="Permalink to this heading"></a></h4>
+<p>This can be downloaded from
+<a class="reference external" href="http://www.linuxfromscratch.org/blfs/view/svn/general/libjpeg.html">libjpeg</a>.</p>
+<p>Read the instructions from the web site about installing. I suggest that
+it be installed into <code class="docutils literal notranslate"><span class="pre">/usr/local</span></code> instead of <code class="docutils literal notranslate"><span class="pre">/usr</span></code>. Thus to
+install:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">configure</span> <span class="o">--</span><span class="n">prefix</span><span class="o">=/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span>  \
+     <span class="o">--</span><span class="n">mandir</span><span class="o">=/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">man</span> \
+     <span class="o">--</span><span class="k">with</span><span class="o">-</span><span class="n">jpeg8</span>  \
+     <span class="o">--</span><span class="n">disable</span><span class="o">-</span><span class="n">static</span> \
+     <span class="o">&amp;&amp;</span><span class="p">;</span> \
+<span class="n">sed</span> <span class="o">-</span><span class="n">i</span> <span class="o">-</span><span class="n">e</span> <span class="s1">&#39;/^docdir/ s/$/\/libjpeg-turbo-1.3.0/&#39;</span>   \
+     <span class="o">-</span><span class="n">e</span> <span class="s1">&#39;/^exampledir/ s/$/\/libjpeg-turbo-1.3.0/&#39;</span> <span class="n">Makefile</span> <span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span><span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span>
+<span class="n">make</span>
+<span class="n">make</span> <span class="n">test</span>
+<span class="n">sudo</span> <span class="n">make</span> <span class="n">install</span>
+</pre></div>
+</div>
+</section>
+<section id="xml2">
+<h4>XML2<a class="headerlink" href="#xml2" title="Permalink to this heading"></a></h4>
+<p>This can be downloaded from
+<a class="reference external" href="http://www.xmlsoft.org/downloads.html">libxml2</a>.</p>
+<p>Then look for latest release download.</p>
+<p>After untaring the release</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">configure</span>
+<span class="n">make</span>
+<span class="n">sudo</span> <span class="n">make</span> <span class="n">install</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="hdf5-szip-and-graphics-magick">
+<h3><a class="toc-backref" href="#id8" role="doc-backlink">HDF5, SZIP, and GRAPHICS_MAGICK</a><a class="headerlink" href="#hdf5-szip-and-graphics-magick" title="Permalink to this heading"></a></h3>
+<p>On Linux and Darwin these libraries may not be installed, and may not be
+available via the standard package installation tools. Follow these
+steps to install them from source.</p>
+<section id="szip">
+<h4>SZIP<a class="headerlink" href="#szip" title="Permalink to this heading"></a></h4>
+<p>This can be downloaded from
+<a class="reference external" href="http://www.hdfgroup.org/doc_resource/SZIP">SZIP</a>.</p>
+<p>Click on <strong>SZIP Source</strong> and download the release that appears.</p>
+<p>After the latest release is untared, cd to the release and execute the
+commands:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">configure</span> <span class="o">--</span><span class="n">prefix</span><span class="o">=/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span>
+<span class="n">make</span>
+<span class="n">make</span> <span class="n">check</span>
+<span class="n">sudo</span> <span class="n">make</span> <span class="n">install</span>
+</pre></div>
+</div>
+</section>
+<section id="hdf5">
+<h4>HDF5<a class="headerlink" href="#hdf5" title="Permalink to this heading"></a></h4>
+<p>This can be downloaded from <a class="reference external" href="http://www.hdfgroup.org/HDF5/">HDF
+Group</a>.</p>
+<p>Click on Downloads, then Current Release, then HDF5 Software, then
+Source Code, then latest release.</p>
+<p>After the latest release is untared, cd to the release and execute the
+commands:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">configure</span> <span class="o">--</span><span class="n">prefix</span><span class="o">=/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">hdf5</span> <span class="o">--</span><span class="k">with</span><span class="o">-</span><span class="n">szlib</span><span class="o">=/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span>
+<span class="n">make</span>
+<span class="n">make</span> <span class="n">check</span>
+<span class="n">sudo</span> <span class="n">make</span> <span class="n">install</span>
+<span class="n">make</span> <span class="n">check</span><span class="o">-</span><span class="n">install</span>
+</pre></div>
+</div>
+</section>
+<section id="graphicsmagick">
+<h4>GRAPHICSMAGICK<a class="headerlink" href="#graphicsmagick" title="Permalink to this heading"></a></h4>
+<p>This can be downloaded from
+<a class="reference external" href="https://sourceforge.net/projects/graphicsmagick">Sourceforge</a></p>
+<p>After the latest release is untared, cd to the release and execute the
+commands:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">configure</span>
+<span class="n">make</span>
+<span class="n">sudo</span> <span class="n">make</span> <span class="n">install</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+<section id="downloading-and-installing-areadetector-source-code">
+<h2><a class="toc-backref" href="#id9" role="doc-backlink">Downloading and Installing areaDetector Source Code</a><a class="headerlink" href="#downloading-and-installing-areadetector-source-code" title="Permalink to this heading"></a></h2>
+<p>The areaDetector source code is kept on
+<a class="reference external" href="https://github.com/areaDetector">gitub.com/areaDetector</a>.</p>
+<p>It can be downloaded 2 ways:</p>
+<p><strong>Via the “git clone” command</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="o">--</span><span class="n">recursive</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">areaDetector</span><span class="o">/</span><span class="n">areaDetector</span><span class="o">.</span><span class="n">git</span>
+</pre></div>
+</div>
+<p>After downloading with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">--recursive</span></code> each submodule will be in a
+“detached HEAD” state. This means that its state will be that of the
+last time that module was committed to the top-level areaDetector
+repository. This is normally not the desired state for each submodule.
+Rather, one should cd to each submodule and type either
+<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">master</span></code> to work on the master branch, or
+<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">RX-Y</span></code> to use release RX-Y of that submodule.</p>
+<p><strong>By downloading tar.gz or zip file</strong></p>
+<p>A specific release of each module can be downloaded through a Web
+browser or by the wget command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">wget</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">areaDetector</span><span class="o">/</span><span class="n">areaDetector</span><span class="o">/</span><span class="n">archive</span><span class="o">/</span><span class="n">R2</span><span class="o">-</span><span class="mf">6.</span><span class="n">tar</span><span class="o">.</span><span class="n">gz</span>
+</pre></div>
+</div>
+<p>If downloading tar files then each repository must be downloaded
+separately. To build the “core” of areaDetector the following
+repositories must be downloaded:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">areaDetector/areaDetector</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">areaDetector/ADSupport</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">areaDetector/ADCore</span></code></p></li>
+</ul>
+<p>To build the simulation detector, which is very useful for learning
+areaDetector and for testing, also download</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">areaDetector/ADSimDetector</span></code></p></li>
+</ul>
+<p>To also build a specific detector, for example the ADProsilica, also
+download</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">areaDetector/ADProsilica</span></code></p></li>
+</ul>
+<p>The areaDetector software is designed to be installed in the following
+tree structure, though this is not required. If it is installed this way
+then only the top-level <code class="docutils literal notranslate"><span class="pre">areaDetector/configure</span></code> directory needs to be
+edited for site-specific configuration.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">areaDetector</span>
+  <span class="n">ADSupport</span>
+  <span class="n">ADCore</span>
+  <span class="n">ADSimDetector</span>
+  <span class="n">ADCSmDetector</span>
+  <span class="n">pvaDriver</span>
+  <span class="n">ADPilatus</span><span class="p">,</span> <span class="n">etc</span><span class="o">.</span>
+</pre></div>
+</div>
+<section id="release-and-config-files">
+<h3><a class="toc-backref" href="#id10" role="doc-backlink">RELEASE* and CONFIG* files</a><a class="headerlink" href="#release-and-config-files" title="Permalink to this heading"></a></h3>
+<p>areaDetector RELEASE* and CONFIG* files are a little more complex than
+those in a typical EPICS module. This is because they are designed to
+meet the following requirements:</p>
+<ul class="simple">
+<li><p>If using the top-level areaDetector
+repository then it is only necessary to edit the CONFIG* and RELEASE*
+files in the <code class="docutils literal notranslate"><span class="pre">areaDetector/configure</span></code> directory, and not in each of the
+submodules, of which there are now about 40.</p></li>
+<li><p>Allows building multiple
+architectures in the same tree, including Linux and Windows. This means
+that <code class="docutils literal notranslate"><span class="pre">SUPPORT</span></code> and <code class="docutils literal notranslate"><span class="pre">EPICS_BASE</span></code> may be defined differently for different
+architectures, since the path syntax is different for Linux and Windows.</p></li>
+<li><p>Allows using the top-level
+<a class="reference external" href="https://github.com/epics-synApps/support">synApps/support</a> and
+<a class="reference external" href="https://github.com/epics-synApps/support/configure">synApps/support/configure</a>
+directories. If these are used then one can edit
+<code class="docutils literal notranslate"><span class="pre">synApps/support/configure/RELEASE</span></code> to set the locations of <code class="docutils literal notranslate"><span class="pre">EPICS_BASE</span></code> and
+the versions of asyn, calc, etc. Typing <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">release</span></code> in the
+top-level synApps/support directory will update the RELEASE* files in
+all modules defined in that <code class="docutils literal notranslate"><span class="pre">RELEASE</span></code> file, including those in
+<code class="docutils literal notranslate"><span class="pre">areaDetector/configure</span></code>.</p></li>
+<li><p>Allows using the Debian EPICS package for
+<code class="docutils literal notranslate"><span class="pre">EPICS_BASE</span></code> and the support modules (asyn, calc, etc.). It is also
+possible to use the Debian package for some of the modules, but use more
+recent versions of some modules (e.g. asyn) that are built from source.</p></li>
+</ul>
+<p>After all the required products have been installed and a release of
+areaDetector has been downloaded then do the following in the
+areaDetector/configure directory:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cp</span> <span class="n">EXAMPLE_RELEASE</span><span class="o">.</span><span class="n">local</span>         <span class="n">RELEASE</span><span class="o">.</span><span class="n">local</span>
+<span class="n">cp</span> <span class="n">EXAMPLE_RELEASE_LIBS</span><span class="o">.</span><span class="n">local</span>    <span class="n">RELEASE_LIBS</span><span class="o">.</span><span class="n">local</span>
+<span class="n">cp</span> <span class="n">EXAMPLE_RELEASE_PRODS</span><span class="o">.</span><span class="n">local</span>   <span class="n">RELEASE_PRODS</span><span class="o">.</span><span class="n">local</span>
+<span class="n">cp</span> <span class="n">EXAMPLE_CONFIG_SITE</span><span class="o">.</span><span class="n">local</span>     <span class="n">CONFIG_SITE</span><span class="o">.</span><span class="n">local</span>
+</pre></div>
+</div>
+<p>On Windows you must do the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cp</span> <span class="n">EXAMPLE_CONFIG_SITE</span><span class="o">.</span><span class="n">local</span><span class="o">.</span><span class="n">WIN32</span>   <span class="n">CONFIG_SITE</span><span class="o">.</span><span class="n">local</span><span class="o">.</span><span class="n">WIN32</span>
+</pre></div>
+</div>
+<p>You may also want to copy the architecture dependent example files if
+you are building for multiple architectures in a single build tree, for
+example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cp</span> <span class="n">EXAMPLE_CONFIG_SITE</span><span class="o">.</span><span class="n">local</span><span class="o">.</span><span class="n">linux</span><span class="o">-</span><span class="n">x86_64</span>            <span class="n">CONFIG_SITE</span><span class="o">.</span><span class="n">local</span><span class="o">.</span><span class="n">linux</span><span class="o">-</span><span class="n">x86_x64</span>
+<span class="n">cp</span> <span class="n">EXAMPLE_CONFIG_SITE</span><span class="o">.</span><span class="n">local</span><span class="o">.</span><span class="n">linux</span><span class="o">-</span><span class="n">x86</span><span class="o">.</span><span class="n">vxWorks</span><span class="o">-</span><span class="n">ppc32</span> <span class="n">CONFIG_SITE</span><span class="o">.</span><span class="n">local</span><span class="o">.</span><span class="n">linux</span><span class="o">-</span><span class="n">x86</span><span class="o">.</span><span class="n">vxWorks</span><span class="o">-</span><span class="n">ppc32</span>
+</pre></div>
+</div>
+<p>You can copy all of the <code class="docutils literal notranslate"><span class="pre">EXAMPLE_*</span></code> files to the files actually used with
+the <code class="docutils literal notranslate"><span class="pre">copyFromExample</span></code> script in the <code class="docutils literal notranslate"><span class="pre">areaDetector/configure</span></code> directory. If
+you do this then be sure to edit the
+<code class="docutils literal notranslate"><span class="pre">CONFIG_SITE.local.$(EPICS_HOST_ARCH)</span></code> for your <code class="docutils literal notranslate"><span class="pre">EPICS_HOST_ARCH</span></code> as well.
+For example <code class="docutils literal notranslate"><span class="pre">CONFIG_SITE.local.linux-x86_64</span></code> defines <code class="docutils literal notranslate"><span class="pre">WITH_BOOST=YES</span></code> and
+this may need to be changed if you do not have the boost-devel package
+installed. You can see your local modifications with the <code class="docutils literal notranslate"><span class="pre">diffFromExample</span></code>
+script.</p>
+</section>
+<section id="edit-release-libs-local">
+<h3><a class="toc-backref" href="#id11" role="doc-backlink">Edit RELEASE_LIBS.local</a><a class="headerlink" href="#edit-release-libs-local" title="Permalink to this heading"></a></h3>
+<p>The definition for <code class="docutils literal notranslate"><span class="pre">SUPPORT</span></code> normally points to the directory where the
+areaDetector, asyn, and the synApps modules (autosave, busy, calc, etc.)
+are located.</p>
+<p>The location of ASYN, AREA_DETECTOR and EPICS_BASE must be specified.
+asyn and areaDetector are normally placed in the SUPPORT directory
+defined in this file.</p>
+<p>As described above <code class="docutils literal notranslate"><span class="pre">RELEASE_LIBS.local.$(EPICS_HOST_ARCH)</span></code> can be used if the
+ASYN version or path is different for a specific target architecture. This is
+usually not necessary even for building Linux and Windows in the same tree,
+because, as described below, only the definitions of <code class="docutils literal notranslate"><span class="pre">SUPPORT</span></code> and <code class="docutils literal notranslate"><span class="pre">EPICS_BASE</span></code> in the
+top-level <code class="docutils literal notranslate"><span class="pre">$(AREA_DETECTOR)/../RELEASE.$(EPICS_HOST_ARCH).local</span></code>
+need to be changed for Windows.</p>
+<p>If WITH_PVA=YES is defined in CONFIG_SITE.local and EPICS_BASE version
+is prior to 7.0 then PVA must define the location of the EPICS PVA
+(formerly EPICS V4) libraries. Beginning with EPICS base 7.0 the PVA
+files are in EPICS base and PVA should not be defined.</p>
+<p>If using Debian packages then the following must be done:</p>
+<ul class="simple">
+<li><p>SUPPORT should be defined to be the root location of any modules which should
+<strong>not</strong> come from the Debian package.</p></li>
+<li><p>Any modules which should come
+from the Debian package should be commented out, except for <code class="docutils literal notranslate"><span class="pre">EPICS_BASE</span></code>.</p></li>
+<li><p>For example to use a newer version of asyn and areaDetector then
+define <code class="docutils literal notranslate"><span class="pre">ASYN</span></code>, <code class="docutils literal notranslate"><span class="pre">AREA_DETECTOR</span></code>, <code class="docutils literal notranslate"><span class="pre">ADCORE</span></code>, and <code class="docutils literal notranslate"><span class="pre">ADSUPPORT</span></code> here. To use the
+Debian version of asyn then comment out <code class="docutils literal notranslate"><span class="pre">ASYN</span></code> here.</p></li>
+<li><p>In the <code class="docutils literal notranslate"><span class="pre">SUPPORT</span></code> tree for those modules not from the Debian distribution
+(e.g. asyn) their <code class="docutils literal notranslate"><span class="pre">configure/RELEASE</span></code> files should also not define
+anything except <code class="docutils literal notranslate"><span class="pre">EPICS_BASE</span></code> to point to the location of the Debian
+package. For example if building asyn from source in the <code class="docutils literal notranslate"><span class="pre">SUPPORT</span></code> tree
+and IPAC and SNCSEQ from the Debian package then comment out the lines
+for IPAC and SNCSEQ in <code class="docutils literal notranslate"><span class="pre">asyn/configure/RELEASE</span></code>.</p></li>
+</ul>
+</section>
+<section id="edit-release-prods-local">
+<h3><a class="toc-backref" href="#id12" role="doc-backlink">Edit RELEASE_PRODS.local</a><a class="headerlink" href="#edit-release-prods-local" title="Permalink to this heading"></a></h3>
+<p>See the notes for <code class="docutils literal notranslate"><span class="pre">RELEASE_LIBS.local</span></code> above.</p>
+<p>The definitions for <code class="docutils literal notranslate"><span class="pre">AUTOSAVE</span></code>, <code class="docutils literal notranslate"><span class="pre">BUSY</span></code>, <code class="docutils literal notranslate"><span class="pre">CALC</span></code>, and <code class="docutils literal notranslate"><span class="pre">SSCAN</span></code> must be specified.
+If the CALC module is built with SNCSEQ support then SNCSEQ must also be specified.
+If DEVIOCSTATS or ALIVE are defined in <code class="docutils literal notranslate"><span class="pre">RELEASE_PRODS.local</span></code>
+then IOC applications will be built with these modules as well.</p>
+</section>
+<section id="optionally-create-or-edit-area-detector-release-epics-host-arch-local">
+<h3><a class="toc-backref" href="#id13" role="doc-backlink">Optionally create or edit $(AREA_DETECTOR)/../RELEASE.$(EPICS_HOST_ARCH).local</a><a class="headerlink" href="#optionally-create-or-edit-area-detector-release-epics-host-arch-local" title="Permalink to this heading"></a></h3>
+<p>Some installations chose to build for multiple target architectures using
+different development machines in the same directory tree on a file server. In
+this case the path to SUPPORT may be different for each architecture. For
+example SUPPORT on Linux might be <code class="docutils literal notranslate"><span class="pre">/home/epics/epics/support</span></code>, while on a
+Windows machine using the same copy of support the path might be
+<code class="docutils literal notranslate"><span class="pre">J:/epics/support</span></code>. In this case <code class="docutils literal notranslate"><span class="pre">RELEASE_LIBS.local</span></code> and <code class="docutils literal notranslate"><span class="pre">RELEASE_PRODS.local</span></code>
+could specify the path for Linux while <code class="docutils literal notranslate"><span class="pre">$(AREA_DETECTOR)/../RELEASE.windows-x64.local</span></code>
+could specify the path for the windows-x64 build host. RELEASE_LIBS.local or
+RELEASE_PRODS.local will be read first, and then
+<code class="docutils literal notranslate"><span class="pre">$(AREA_DETECTOR)/../RELEASE.$(EPICS_HOST_ARCH).local</span></code> if it exists.
+Note that <code class="docutils literal notranslate"><span class="pre">$(AREA_DETECTOR)/../</span></code> is typically the same as <code class="docutils literal notranslate"><span class="pre">synApps/support</span></code>.</p>
+</section>
+<section id="edit-config-site-local-and-optionally-config-site-local-epics-host-arch">
+<h3><a class="toc-backref" href="#id14" role="doc-backlink">Edit CONFIG_SITE.local and optionally CONFIG_SITE.local.$(EPICS_HOST_ARCH)</a><a class="headerlink" href="#edit-config-site-local-and-optionally-config-site-local-epics-host-arch" title="Permalink to this heading"></a></h3>
+<p>This file is used to define which support libraries are to be used, and
+if a library is to be used then where it should be found. The following
+definitions are needed.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">WITH_BOOST</span><span class="o">=</span><span class="n">YES</span> <span class="ow">or</span> <span class="n">NO</span>
+</pre></div>
+</div>
+<p>boost is needed only to built the test programs in
+<code class="docutils literal notranslate"><span class="pre">ADCore/ADApp/pluginTests</span></code>. If <code class="docutils literal notranslate"><span class="pre">WITH_BOOST=YES</span></code> then <code class="docutils literal notranslate"><span class="pre">BOOST_INCLUDE</span></code> and
+<code class="docutils literal notranslate"><span class="pre">BOOST_LIB</span></code> can be defined to point to the locations of the boost library.
+If the boost include and library file are located in default system
+locations then <code class="docutils literal notranslate"><span class="pre">BOOST_INCLUDE</span></code> and <code class="docutils literal notranslate"><span class="pre">BOOST_LIB</span></code> should not be defined.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">WITH_PVA</span> <span class="o">=</span> <span class="n">YES</span> <span class="ow">or</span> <span class="n">NO</span>
+</pre></div>
+</div>
+<p>EPICS PVA (formerly V4) libraries are needed for the NDPluginPVA in
+ADCore and the pvaDriver repository. To build these components set
+<code class="docutils literal notranslate"><span class="pre">WITH_PVA=YES</span></code>. If using a version of <code class="docutils literal notranslate"><span class="pre">EPICS_BASE</span></code> prior to 7.0 then define
+the location of the PVA libraries in <code class="docutils literal notranslate"><span class="pre">RELEASE_LIBS.local</span></code> and
+<code class="docutils literal notranslate"><span class="pre">RELEASE_PRODS.local</span></code>. If using EPICS_BASE 7.0 or later it is not
+necessary to define PVA in these files because the PVA files are located
+in EPICS_BASE.</p>
+<ul class="simple">
+<li><p>NETCDF JPEG, TIFF, ZLIB, SZIP, XML2, HDF5, NEXUS, GRAPHICSMAGICK,
+OPENCV</p>
+<ul>
+<li><p>NETCDF is required for the NDFileNetCDF plugin</p></li>
+<li><p>JPEG is required for the NDFileJPEG and GraphicsMagick</p></li>
+<li><p>TIFF is required for the NDFileTIFF and GraphicsMagick</p></li>
+<li><p>ZLIB is required for the NDFileTIFF and NDFileHDF5 plugins</p></li>
+<li><p>XML2 is required for ADCore</p></li>
+<li><p>HDF5 is required for the NDFileHDF5 and NDFileNexus plugins</p></li>
+<li><p>NEXUS is required for the NDFileNexus plugin</p></li>
+<li><p>GRAPHICSMAGICK is required for the NDFileMagick plugin and the
+ADURL driver</p></li>
+<li><p>OPENCV is required for the ADPluginEdge plugin</p></li>
+</ul>
+</li>
+</ul>
+<p>For each library XXX (XXX=TIFF, NETCDF, etc.) there are 4 Makefile
+variables that can be defined in <code class="docutils literal notranslate"><span class="pre">CONFIG_SITE.local</span></code>.</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>WITH_XXX</dt><dd><ul>
+<li><p>If <code class="docutils literal notranslate"><span class="pre">WITH_XXX=YES</span></code> then build the plugins and drivers that require this
+library.</p></li>
+<li><p>If <code class="docutils literal notranslate"><span class="pre">XXX_EXTERNAL=NO</span></code> then also build the source code for this
+library in ADSupport.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>XXX_EXTERNAL</dt><dd><ul>
+<li><p>If NO then build the source code for this library in ADSupport.</p></li>
+<li><p>If YES then this library is installed external to areaDetector</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>XXX_INCLUDE</dt><dd><ul>
+<li><p>If <code class="docutils literal notranslate"><span class="pre">XXX_EXTERNAL=YES</span></code> then this is the path to the include files for
+XXX. However, if XXX is a system library whose include files are in a
+standard include search path then do not define <code class="docutils literal notranslate"><span class="pre">XXX_INCLUDE</span></code>.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>XXX_LIB</dt><dd><ul>
+<li><p>If <code class="docutils literal notranslate"><span class="pre">XXX_EXTERNAL=YES</span></code> then this is the path to the library files for
+XXX. However, if XXX is a system library whose library files in a
+standard library search path then do not define <code class="docutils literal notranslate"><span class="pre">XXX_LIB</span></code>.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<p>XML2 is an exception. It is required, so WITH_XML2 is not supported, but
+<code class="docutils literal notranslate"><span class="pre">XML2_EXTERNAL</span></code>, <code class="docutils literal notranslate"><span class="pre">XML2_INCLUDE</span></code>, and <code class="docutils literal notranslate"><span class="pre">XML2_LIB</span></code> are supported.</p>
+<p>Note that there are some library interdependencies.</p>
+<ul class="simple">
+<li><p>If <code class="docutils literal notranslate"><span class="pre">WITH_TIFF=YES</span></code> then <code class="docutils literal notranslate"><span class="pre">WITH_ZLIB</span></code> must also be <code class="docutils literal notranslate"><span class="pre">YES</span></code>.</p></li>
+<li><p>If <code class="docutils literal notranslate"><span class="pre">WITH_HDF5=YES</span></code> then <code class="docutils literal notranslate"><span class="pre">WITH_ZLIB</span></code> and <code class="docutils literal notranslate"><span class="pre">WITH_SZIP</span></code> must also be <code class="docutils literal notranslate"><span class="pre">YES</span></code>.</p></li>
+<li><p>If <code class="docutils literal notranslate"><span class="pre">WITH_NEXUS=YES</span></code> then <code class="docutils literal notranslate"><span class="pre">WITH_HDF5</span></code> must also be <code class="docutils literal notranslate"><span class="pre">YES</span></code>.</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">CONFIG_SITE.local</span></code> contains the following lines at the end:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># The definitions above can be overridden in the following files.</span>
+<span class="c1"># The files are searched in this order, with the last definition being used.</span>
+<span class="c1">#    CONFIG_SITE.local.$(OS_CLASS)</span>
+<span class="c1">#    CONFIG_SITE.local.$(EPICS_HOST_ARCH)</span>
+<span class="c1">#    CONFIG_SITE.local.$(EPICS_HOST_ARCH).$(T_A)</span>
+</pre></div>
+</div>
+<p>Thus if multiple architectures are being built in the same tree the
+settings can be different for each <code class="docutils literal notranslate"><span class="pre">OS_CLASS</span></code>, <code class="docutils literal notranslate"><span class="pre">EPICS_HOST_ARCH</span></code>, or
+<code class="docutils literal notranslate"><span class="pre">EPICS_HOST_ARCH.T_A</span></code>.</p>
+</section>
+<section id="edit-release-local">
+<h3><a class="toc-backref" href="#id15" role="doc-backlink">Edit RELEASE.local</a><a class="headerlink" href="#edit-release-local" title="Permalink to this heading"></a></h3>
+<p>Uncomment the lines for the drivers that should be built. None of the
+detector drivers are included by default. Some detectors cannot be built
+on all systems. For example the Roper driver can only be built on
+Windows systems with the Princeton Instruments WinView or WinSpec
+programs installed, and the Point Grey driver can currently only be
+built on Linux systems if the version of libc.so is 2.14 or greater.</p>
+<p><code class="docutils literal notranslate"><span class="pre">RELEASE.local.$(EPICS_HOST_ARCH)</span></code> can be used to build different drivers
+on different <code class="docutils literal notranslate"><span class="pre">EPICS_HOST_ARCH</span></code> builds in the same tree.</p>
+</section>
+<section id="make">
+<h3><a class="toc-backref" href="#id16" role="doc-backlink">make</a><a class="headerlink" href="#make" title="Permalink to this heading"></a></h3>
+<p>Just type:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span>
+</pre></div>
+</div>
+<p>If this fails then some required products have probably not been
+installed.</p>
+</section>
+<section id="example-files-in-adcore-iocboot">
+<h3><a class="toc-backref" href="#id17" role="doc-backlink">Example files in ADCore/iocBoot</a><a class="headerlink" href="#example-files-in-adcore-iocboot" title="Permalink to this heading"></a></h3>
+<p>Copy <code class="docutils literal notranslate"><span class="pre">EXAMPLE_commonPlugins.cmd</span></code> to <code class="docutils literal notranslate"><span class="pre">commonPlugins.cmd</span></code> and
+<code class="docutils literal notranslate"><span class="pre">EXAMPLE_commonPlugin_settings.req</span></code> to <code class="docutils literal notranslate"><span class="pre">commonPlugin_settings.req</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cp</span> <span class="n">EXAMPLE_commonPlugins</span><span class="o">.</span><span class="n">cmd</span>           <span class="n">commonPlugins</span><span class="o">.</span><span class="n">cmd</span>
+<span class="n">cp</span> <span class="n">EXAMPLE_commonPlugin_settings</span><span class="o">.</span><span class="n">req</span>   <span class="n">commonPlugin_settings</span><span class="o">.</span><span class="n">req</span>
+</pre></div>
+</div>
+<p>Edit <code class="docutils literal notranslate"><span class="pre">commonPlugins.cmd</span></code> and <code class="docutils literal notranslate"><span class="pre">commonPlugin_settings.req</span></code>. Change whether or
+not the lines for optional modules (e.g. DEVIOCSTATS, ALIVE) are
+commented out depending on whether these modules were defined in
+<code class="docutils literal notranslate"><span class="pre">RELEASE_PRODS.local</span></code>.</p>
+</section>
+<section id="run-simdetector">
+<h3><a class="toc-backref" href="#id18" role="doc-backlink">Run SimDetector</a><a class="headerlink" href="#run-simdetector" title="Permalink to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">ADSimDetector</span><span class="o">/</span><span class="n">iocs</span><span class="o">/</span><span class="n">simDetectorIOC</span><span class="o">/</span><span class="n">iocBoot</span><span class="o">/</span><span class="n">iocSimDetector</span>
+<span class="c1">### Edit Makefile to set ARCH to your $(EPICS_HOST_ARCH) architecture</span>
+<span class="n">make</span>
+<span class="o">../../</span><span class="nb">bin</span><span class="o">/</span><span class="n">linux</span><span class="o">-</span><span class="n">x86_64</span><span class="o">/</span><span class="n">simDetectorApp</span> <span class="n">st</span><span class="o">.</span><span class="n">cmd</span>
+
+<span class="c1">### If you want to be able to easily run Linux and Windows in the same tree do the following:</span>
+<span class="c1">###   Set ARCH in Makefile for Linux, run make on the Linux machine, and copy envPaths to envPaths.linux</span>
+<span class="c1">###   Set ARCH in Makefile for Windows, run make on the Windows machine, and copy envPaths to envPaths.windows</span>
+<span class="c1">### Start the IOC for Linux:</span>
+<span class="o">../../</span><span class="nb">bin</span><span class="o">/</span><span class="n">linux</span><span class="o">-</span><span class="n">x86_64</span><span class="o">/</span><span class="n">simDetectorApp</span> <span class="n">st</span><span class="o">.</span><span class="n">cmd</span><span class="o">.</span><span class="n">linux</span>
+<span class="c1">### Start the IOC for Windows:</span>
+<span class="o">../../</span><span class="nb">bin</span><span class="o">/</span><span class="n">windows</span><span class="o">-</span><span class="n">x64</span><span class="o">/</span><span class="n">simDetectorApp</span> <span class="n">st</span><span class="o">.</span><span class="n">cmd</span><span class="o">.</span><span class="n">windows</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="installing-pre-built-binary-versions-of-areadetector">
+<h2><a class="toc-backref" href="#id19" role="doc-backlink">Installing Pre-Built Binary Versions of areaDetector</a><a class="headerlink" href="#installing-pre-built-binary-versions-of-areadetector" title="Permalink to this heading"></a></h2>
+<p>Pre-built binary versions of areaDetector can be provided for each
+detector. This is provided as a convenience so that it is not necessary
+to set up a build system to run areaDetector on a specific detector.</p>
+<p>The instructions here use the Pilatus (ADPilatus) module as an example.
+Substitute Pilatus with the name of the detector you are working with.</p>
+<p>The pre-built binaries can be found on the <a class="reference external" href="https://cars.uchicago.edu/software/pub/">CARS Web
+site</a>. There is a
+subdirectory there for each detector (e.g. ADPilatus) that contains
+releases for that detector. If you don’t see a pre-built package for the
+detector you are looking for send an e-mail to Mark Rivers and I can
+create one for you.</p>
+<p>The pre-built binaries contain executables for one or more of the
+following architectures:</p>
+<ul class="simple">
+<li><p>linux-x86 (32-bit Linux built on Centos7, gcc 4.8.5, libc 2.17)</p></li>
+<li><p>linux-x86_64 (64-bit Linux built on Centos7, gcc 4.8.5, libc 2.17)</p></li>
+<li><p>linux-x86_rhel6 (32-bit Linux build on RHEL6, gcc 4.4.7, libc 2.12)</p></li>
+<li><p>linux-x86_64-gcc42 (64-bit Linux built on SUSE, gcc 4.2.1, libc 2.6.1)</p></li>
+<li><p>darwin-x86 (64-bit Mac OS X built on Darwin 11.4.2, ??, clang 4.2)</p></li>
+<li><p>win32-x86-static (32-bit Windows, VS2010 compiler, statically linked)</p></li>
+<li><p>win32-x86 (32-bit Windows, VX2010 compiler, dyanamically linked)</p></li>
+<li><p>windows-x64-static (64-bit Windows, VS2010 compiler, statically linked)</p></li>
+<li><p>windows-x64 (64-bit Windows, VX2010 compiler, dyanamically linked)</p></li>
+</ul>
+<p>Note that the linux-x86 and linux-x86_64 builds are done a relatively
+new Linux system and will not run on RHEL 6, for example. The
+linux-x86-rhel6 build will run on RHEL 6. The linux-x86_64-gcc42 build
+uses a very old version of libc and should run on most Linux systems.</p>
+<p>Follow these steps to use the prebuilt version.</p>
+<ul>
+<li><p>Create an installation directory for the module. On Windows I
+typically use <code class="docutils literal notranslate"><span class="pre">C:\EPICS\support</span></code>. On Linux I
+typically use <code class="docutils literal notranslate"><span class="pre">/home/ACCOUNT/epics/support</span></code>, where <code class="docutils literal notranslate"><span class="pre">ACCOUNT</span></code>
+is the name of the account that is normally used to run the detector
+software, e.g. marccd on a marCCD detector, mar345 on a mar345
+detector, det on a Pilatus detector, etc.</p></li>
+<li><p>Place the distribution file in this directory. Then issue the
+commands (Unix style)</p>
+<p><code class="docutils literal notranslate"><span class="pre">tar</span> <span class="pre">xvzf</span> <span class="pre">ADPilatus_RX-Y.tgz</span></code></p>
+<p>On Windows it is more convenient to download the zip file and extract
+it using Windows Explorer.</p>
+</li>
+<li><p>In the <code class="docutils literal notranslate"><span class="pre">ADPilatus/iocs/pilatusIOC/iocBoot/</span></code> directory make a <em>copy</em> of
+the example <code class="docutils literal notranslate"><span class="pre">iocPilatus</span></code> directory and give it a new local name,
+e.g. ioc13Pilatus1. By doing this you will be able to update to later
+versions of areaDetector without overwriting modifications you make
+in the <code class="docutils literal notranslate"><span class="pre">ioc13Pilatus1</span></code> directory.</p></li>
+<li><p>In the new <code class="docutils literal notranslate"><span class="pre">io13Pilatus1</span></code> directory you just created edit st.cmd to
+change the PV prefix <code class="docutils literal notranslate"><span class="pre">$(PREFIX)</span></code> to one that is unique to your site. PV
+prefixes must be unique on the subnet, and if you use the default
+prefix there could be a conflict with other detectors of the same
+type.</p></li>
+<li><p>In the same <code class="docutils literal notranslate"><span class="pre">ioc13Pilatus1</span></code> directory edit the file envPaths to point
+to the locations of all of the support modules on your system.
+Normally this is handled by the EPICS build system, but when using
+the prebuilt version this must be manually edited. Do not worry about
+the path to <code class="docutils literal notranslate"><span class="pre">EPICS_BASE</span></code>, it is not required.</p></li>
+</ul>
+</section>
+<section id="display-managers">
+<h2><a class="toc-backref" href="#id20" role="doc-backlink">Display Managers</a><a class="headerlink" href="#display-managers" title="Permalink to this heading"></a></h2>
+<p>A display manager is needed to view the areaDetector control screens.
+Control screens are provided for the following display managers: MEDM,
+EDM, CSS, and caQtDM. The native screens are created manually using
+MEDM. The EDM, CSS and caQtDM screens are converted from the MEDM
+screens using conversion utilities. These are discussed in a later
+section.</p>
+<p>In order to control the detectors and the plugins you should install one
+or more of MEDM, EDM, CSS, caQtDM.</p>
+<section id="medm">
+<h3><a class="toc-backref" href="#id21" role="doc-backlink">MEDM</a><a class="headerlink" href="#medm" title="Permalink to this heading"></a></h3>
+<p>This can be downloaded through links on the <a class="reference external" href="https://epics.anl.gov/extensions/medm/index.php">MEDM home
+page</a>.</p>
+<p>This requires <a class="reference external" href="http://motif.ics.com/">Motif</a>. MEDM can be built from
+source on Linux if the Motif library is available (which it is not for
+some new releases, such as Fedora 20).</p>
+<p>It is available for Windows as an <a class="reference external" href="https://epics.anl.gov/distributions/win32/index.php">EPICS Windows Tools MSI installer
+package</a>.</p>
+</section>
+<section id="edm">
+<h3><a class="toc-backref" href="#id22" role="doc-backlink">EDM</a><a class="headerlink" href="#edm" title="Permalink to this heading"></a></h3>
+<p>This can be downloaded through links on the <a class="reference external" href="https://controlssoftware.sns.ornl.gov/edm/">EDM home
+page</a>.</p>
+</section>
+<section id="css">
+<h3><a class="toc-backref" href="#id23" role="doc-backlink">CSS</a><a class="headerlink" href="#css" title="Permalink to this heading"></a></h3>
+<p>This can be downloaded through links on the <a class="reference external" href="http://controlsystemstudio.org">CSS home
+page</a>.</p>
+</section>
+<section id="caqtdm">
+<h3><a class="toc-backref" href="#id24" role="doc-backlink">caQtDM</a><a class="headerlink" href="#caqtdm" title="Permalink to this heading"></a></h3>
+<p>This can be downloaded through links on the <a class="reference external" href="http://epics.web.psi.ch/software/caqtdm">caQtDM home
+page</a>.</p>
+</section>
+</section>
+<section id="configuration">
+<h2><a class="toc-backref" href="#id25" role="doc-backlink">Configuration</a><a class="headerlink" href="#configuration" title="Permalink to this heading"></a></h2>
+<p>Before running an areaDetector application it is usually necessary to
+configure a number of items.</p>
+<ul>
+<li><p>EPICS environment variables. There are several environment variables
+that EPICS uses. I suggest setting these in the .cshrc (or .bashrc)
+file for the account that will be used to run the detector.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">EPICS_CA_AUTO_ADDR_LIST</span></code> and <code class="docutils literal notranslate"><span class="pre">EPICS_CA_ADDR_LIST</span></code>. These variables
+control the IP addresses that EPICS clients use when searching for
+EPICS PVs. The default is <code class="docutils literal notranslate"><span class="pre">EPICS_CA_AUTO_ADDR_LIST=YES</span></code> and
+<code class="docutils literal notranslate"><span class="pre">EPICS_CA_ADDR_LIST</span></code> to be the broadcast address of all networks
+connected to the host. Some detectors, for example the marCCD and
+mar345, come with 2 network cards, which are on 2 different
+subnets, typically a private one connected to the detector and a
+public one connected to the local LAN. If the default value of
+these variables is used then EPICS clients ( e.g. medm) running on
+the detector host computer will generate many errors because each
+EPICS PV will appear to be coming from both networks. The solution
+is to set these variables as follows:</p>
+<p><code class="docutils literal notranslate"><span class="pre">setenv</span> <span class="pre">EPICS_CA_AUTO_ADDR_LIST</span> <span class="pre">NO</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">setenv</span> <span class="pre">EPICS_CA_ADDR_LIST</span> <span class="pre">localhost:XX.YY.ZZ.255</span></code></p>
+<p>where XX.YY.ZZ.255 should be replaced with the broadcast address
+for the public network on this computer.</p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">EPICS_CA_MAX_ARRAY_BYTES</span></code>. This variable controls the maximum
+array size that EPICS can transmit with Channel Access. The
+default is only 16kB, which is much too small for most detector
+data. This value must be set to a large enough value on both the
+EPICS server computer (e.g. the one running the areaDetector
+IOC) and client computer (e.g. the one running medm, ImageJ,
+IDL, etc.). This should be set to a value that is larger than
+the largest waveform record that will be used for the detector.
+For example if using a detector with 1024x1024 pixels and
+4-bytes per pixel (waveform record FTVL=LONG) then
+<code class="docutils literal notranslate"><span class="pre">EPICS_CA_MAX_ARRAY_BYTES</span></code> would need to be at least 1024 * 1024
+* 4 = 4153344.
+In practice it should be set at least 100 bytes larger than this
+because there is some overhead. For example:</p>
+<p><code class="docutils literal notranslate"><span class="pre">setenv</span> <span class="pre">EPICS_CA_MAX_ARRAY_BYTES</span> <span class="pre">4154000</span></code></p>
+<p>Do not simply set <code class="docutils literal notranslate"><span class="pre">EPICS_CA_MAX_ARRAY_BYTES</span></code> to a very large number
+like 100MB or 1GB. EPICS Channel Access allocates buffers of
+exactly <code class="docutils literal notranslate"><span class="pre">EPICS_CA_MAX_ARRAY</span></code> bytes whenever the required buffer size
+exceeds 16 kB, and one does not want unnecessarily large buffers
+to be allocated.</p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">EPICS_DISPLAY_PATH</span></code>. This variable controls where medm looks for
+.adl display files. If the recommendation below is followed to
+copy all adl files to a single directory, then this environment
+variable should be defined to point to that directory. For
+example:</p>
+<p><code class="docutils literal notranslate"><span class="pre">setenv</span> <span class="pre">EPICS_DISPLAY_PATH</span> <span class="pre">/home/det/epics/adls</span></code></p>
+</li>
+</ul>
+</li>
+<li><p>medm display files. It is convenient to copy all medm .adl files to a
+single directory and then point the environment variable
+<code class="docutils literal notranslate"><span class="pre">EPICS_DISPLAY_PATH</span></code> to this directory. The alternative is to point
+<code class="docutils literal notranslate"><span class="pre">EPICS_DISPLAY_PATH</span></code> to a long list of directories where the adl files
+are located in the distributions, which is harder to maintain. On the
+Pilatus, for example, create a directory called <code class="docutils literal notranslate"><span class="pre">/home/det/epics/adls</span></code>,
+and put all of the adl files there. To simplify copying the adl files
+to that location use the following one-line script, which can be
+placed in <code class="docutils literal notranslate"><span class="pre">/home/det/bin/sync_adls</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">find</span> <span class="pre">/home/det/epics/support</span> <span class="pre">-name</span> <span class="pre">'*.adl'</span> <span class="pre">-exec</span> <span class="pre">cp</span> <span class="pre">-fv</span> <span class="pre">{}</span> <span class="pre">/home/det/epics/adls</span> <span class="pre">\;</span></code></p>
+<p>This script finds all adl files in the <code class="docutils literal notranslate"><span class="pre">epics/support</span></code> tree and copies
+them to <code class="docutils literal notranslate"><span class="pre">/home/det/epics/adls</span></code>. That directory must be created before
+running this script. Similar scripts can be used for other Linux
+detectors (marCCD, mar345, etc.) and can be used on Windows as well
+if Cygwin is installed. Each time a new release of areaDetector is
+installed remove the old versions of each support module
+(areaDetector, asyn, autosave, etc.) and then run this script to
+install the latest medm files.</p>
+</li>
+</ul>
+</section>
+<section id="running-the-ioc-application">
+<h2><a class="toc-backref" href="#id26" role="doc-backlink">Running the IOC Application</a><a class="headerlink" href="#running-the-ioc-application" title="Permalink to this heading"></a></h2>
+<p>Each example IOC directory comes with a Linux script (start_epics) or a
+Windows batch file (start_epics.bat) or both depending on the
+architectures that the detector runs on. These scripts provide simple
+examples of how to start medm and the EPICS IOC. For example, for the
+mar345 <code class="docutils literal notranslate"><span class="pre">iocBoot/iocMAR345/start_epics</span></code> contains the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">medm</span> <span class="o">-</span><span class="n">x</span> <span class="o">-</span><span class="n">macro</span> <span class="s2">&quot;P=13MAR345_1:, R=cam1:&quot;</span> <span class="n">mar345</span><span class="o">.</span><span class="n">adl</span> <span class="o">&amp;</span>
+<span class="o">../../</span><span class="nb">bin</span><span class="o">/</span><span class="n">linux</span><span class="o">-</span><span class="n">x86</span><span class="o">/</span><span class="n">mar345App</span> <span class="n">st</span><span class="o">.</span><span class="n">cmd</span>
+</pre></div>
+</div>
+<p>This script starts medm in execute mode with the appropriate medm
+display file and macro parameters, running it in the background. It then
+runs the IOC application. This script assumes that <code class="docutils literal notranslate"><span class="pre">iocBoot/iocMAR345</span></code> is
+the default directory when it is run, which could be added to the
+command or set in the configuration if this script is set as the target
+of a desktop shortcut, etc. The script assumes that <code class="docutils literal notranslate"><span class="pre">EPICS_DISPLAY_PATH</span></code>
+has been defined to be a location where the <code class="docutils literal notranslate"><span class="pre">mar345.adl</span></code> and related
+displays that it loads can be found. You will need to edit the script in
+your copy of the iocXXX directory to change the prefix (P) from
+<code class="docutils literal notranslate"><span class="pre">13MAR345_1:</span></code> to whatever prefix you chose for your IOC. The start_epics
+script could also be copied to a location in your PATH (e.g.
+<code class="docutils literal notranslate"><span class="pre">/home/mar345/bin/start_epics</span></code>). Add a command like</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">mar345</span><span class="o">/</span><span class="n">epics</span><span class="o">/</span><span class="n">support</span><span class="o">/</span><span class="n">areaDetector</span><span class="o">-</span><span class="mi">2</span><span class="o">-</span><span class="mi">0</span><span class="o">/</span><span class="n">ADmar345</span><span class="o">/</span><span class="n">iocs</span><span class="o">/</span><span class="n">mar345IOC</span><span class="o">/</span><span class="n">iocBoot</span><span class="o">/</span><span class="n">iocMAR345</span>
+</pre></div>
+</div>
+<p>at the beginning of the script and then type</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">start_epics</span>
+</pre></div>
+</div>
+<p>from any directory to start the EPICS IOC.</p>
+</section>
+<section id="image-viewers">
+<h2><a class="toc-backref" href="#id27" role="doc-backlink">Image Viewers</a><a class="headerlink" href="#image-viewers" title="Permalink to this heading"></a></h2>
+<p>The <a class="reference external" href="https://github.com/areaDetector/ADViewers">areaDetector/ADViewers
+repository</a> comes with
+tools to display images over EPICS Channel Access using ImageJ and IDL.
+These viewers are described in
+<span class="xref std std-doc">ADViewers/ad_viewers</span></p>
+<p>HDFView can be used to view files saved with the HDF5 file writing
+plugins. ImageJ can also be used to view files saved with the TIFF,
+JPEG, and netCDF plugins.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="acknowledgements.html" class="btn btn-neutral float-left" title="Acknowledgements and licenses" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="release.html" class="btn btn-neutral float-right" title="areaDetector Releases" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Mark Rivers.
+      <span class="lastupdated">Last updated on 2023-March-12.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
