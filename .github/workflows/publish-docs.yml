@@ -1,0 +1,66 @@
+name: Publish Sphinx Docs to GitHub Pages
+on:
+  # Build the docs on pushes to main branch, PRs to main branch, and new tags.
+  # Publish only on demand.
+  push:
+    branches:
+      - master
+    tags:
+      - '*'  # all tags
+  workflow_dispatch:   # allow manual triggering
+    inputs:
+      deploy:
+        description: 'Deploy documentation'
+        type: boolean
+        required: true
+        default: false
+
+
+# see: https://sphinx-notes.github.io/pages/
+# see: https://github.com/marketplace/actions/sphinx-to-github-pages
+
+jobs:
+
+  build-docs:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Deploy Information
+      if: ${{ github.event.inputs.deploy }}
+      run: |
+        echo "The will be published from this workflow run."
+
+    - name: Checkout
+      uses: actions/checkout@master
+      with:
+        fetch-depth: 0 # otherwise, you will fail to push refs to dest repo
+        submodules: "true"
+
+    - name: Setup Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: "3.10"
+
+    - name: Build Docs
+      run: |
+        pip install m2r2 "pygments >=2.7.0" "sphinx_rtd_theme >=1.2.0" sphinx-multibuild
+        sphinx-build -ET docs/source docs/_build/html/
+
+    - name: Install Doxygen
+      run: sudo apt-get install doxygen graphviz -y
+      shell: bash
+
+    - name: Generate Doxygen Documentation
+      # Doxygen output is put in _build/html/doxy_output/html by the Doxyfile
+      # So it will be published by Publish Jobs below
+      run: |
+        cd docs
+        doxygen
+        cd -
+
+    - name: Publish Docs
+      uses: peaceiris/actions-gh-pages@v3.8.0
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: docs/_build/html
+        keep_files: true
