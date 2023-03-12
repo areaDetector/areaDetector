@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NDFileTIFF &mdash; areaDetector Support</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme_overrides.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="NDFileHDF5" href="NDFileHDF5.html" />
+    <link rel="prev" title="NDFileJPEG" href="NDFileJPEG.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            areaDetector
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../readme.html">Readme</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../user_guide.html">User Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arch.html">Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="asynPortDriver.html">asynPortDriver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NDArray.html">NDArray</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../detector_drivers.html">Detector Drivers</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="plugins.html">areaDetector Plugins</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="plugin_overview.html">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginDriver.html">NDPluginDriver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="plugin_guidelines.html">Guidelines and rules for plugins</a></li>
+<li class="toctree-l3"><a class="reference internal" href="plugin_medm.html">Base class medm screens</a></li>
+<li class="toctree-l3"><a class="reference internal" href="common_plugins.html">commonPlugins.cmd</a></li>
+<li class="toctree-l3"><a class="reference internal" href="plugin_performance.html">Performance example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginAttrPlot.html">NDPluginAttrPlot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginAttribute.html">NDPluginAttribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginBadPixel.html">NDPluginBadPixel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginCircularBuff.html">NDPluginCircularBuff</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginCodec.html">NDPluginCodec</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginColorConvert.html">NDPluginColorConvert</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginFFT.html">NDPluginFFT</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="NDPluginFile.html">NDPluginFile</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="NDFileJPEG.html">NDFileJPEG</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">NDFileTIFF</a></li>
+<li class="toctree-l4"><a class="reference internal" href="NDFileHDF5.html">NDFileHDF5</a></li>
+<li class="toctree-l4"><a class="reference internal" href="NDFileNexus.html">NDFileNexus</a></li>
+<li class="toctree-l4"><a class="reference internal" href="NDFileMagick.html">NDFileMagick</a></li>
+<li class="toctree-l4"><a class="reference internal" href="NDFileNetCDF.html">NDFileNetCDF</a></li>
+<li class="toctree-l4"><a class="reference internal" href="NDPluginFile.html#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="NDPluginFile.html#null-file-plugin">Null file plugin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="NDPluginFile.html#performance">Performance</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginGather.html">NDPluginGather</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginOverlay.html">NDPluginOverlay</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginProcess.html">NDPluginProcess</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginPva.html">NDPluginPva</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginROI.html">NDPluginROI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginROIStat.html">NDPluginROIStat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginScatter.html">NDPluginScatter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginStats.html">NDPluginStats</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginStdArrays.html">NDPluginStdArrays</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginTimeSeries.html">NDPluginTimeSeries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginTransform.html">NDPluginTransform</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginPos.html">NDPosPlugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ffmpegServer.html">ffmpegServer</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../additional_plugins.html">Additional plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="medm.html">MEDM screens</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADViewers/ad_viewers.html">areaDetector Viewers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../acknowledgements.html">Acknowledgements and licenses</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../install_guide.html">Install Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release.html">Top-level Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ADCore_release.html">ADCore Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ADSupport_release.html">ADSupport Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../doxygen.html">Source Code Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../detectors.html">Supported Detectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../legacy_versions.html">Legacy Versions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">areaDetector</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../user_guide.html">areaDetector Users Guide</a></li>
+          <li class="breadcrumb-item"><a href="plugins.html">areaDetector Plugins</a></li>
+          <li class="breadcrumb-item"><a href="NDPluginFile.html">NDPluginFile</a></li>
+      <li class="breadcrumb-item active">NDFileTIFF</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/ADCore/NDFileTIFF.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="ndfiletiff">
+<h1><a class="toc-backref" href="#id1" role="doc-backlink">NDFileTIFF</a><a class="headerlink" href="#ndfiletiff" title="Permalink to this heading"></a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">author<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Mark Rivers, University of Chicago</p>
+</dd>
+</dl>
+<nav class="contents" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#ndfiletiff" id="id1">NDFileTIFF</a></p>
+<ul>
+<li><p><a class="reference internal" href="#overview" id="id2">Overview</a></p></li>
+<li><p><a class="reference internal" href="#configuration" id="id3">Configuration</a></p></li>
+<li><p><a class="reference internal" href="#screen-shots" id="id4">Screen Shots</a></p></li>
+</ul>
+</li>
+</ul>
+</nav>
+<section id="overview">
+<h2><a class="toc-backref" href="#id2" role="doc-backlink">Overview</a><a class="headerlink" href="#overview" title="Permalink to this heading"></a></h2>
+<p>NDFileTIFF inherits from NDPluginFile. This plugin saves data in the
+<a class="reference external" href="http://en.wikipedia.org/wiki/Tagged_Image_File_Format">TIFF</a> file
+format, which is a popular file format for storing images. There is TIFF
+support for almost all languages and programs such as IDL and Matlab.</p>
+<p>The TIFF plugin supports all 8 NDArray data types (signed and unsigned
+8, 16, 32, 64 bit integers, 32 and 64 bit floating point. It supports all
+color modes (Mono, RGB1, RGB2, and RGB3). Note that many TIFF readers do
+not support 16, 32 or 64 bit integer TIFF files, floating point TIFF files,
+and 16 or 32 bit color files. NDFileTIFF is limited to a single array
+per file, but capture and stream mode are supported by writing multiple
+TIFF files.</p>
+<p>Tests were done with IDL, ImageJ, and the Python Imaging Library (PIL)
+to read TIFF files with all 10 data types. IDL can read all 10 types,
+although it does not support signed 8-bit integers so it treats them as
+unsigned. ImageJ can read all types except NDFloat64, NDInt64, and NDUInt64.
+PIL cannot read NDInt8, NDUInt32, or NDFloat64.</p>
+<p>The TIFF plugin writes four NDArray class members as TIFF tags starting
+with tag number 65000. For historical reasons these tags do not have labels.
+They are the following NDArray class members converted to ASCII:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span>  <span class="mi">65000</span><span class="p">:</span> <span class="n">timeStamp</span>
+<span class="o">-</span>  <span class="mi">65001</span><span class="p">:</span> <span class="n">uniqueID</span>
+<span class="o">-</span>  <span class="mi">65002</span><span class="p">:</span> <span class="n">epicsTS</span> <span class="p">(</span><span class="n">seconds</span><span class="p">)</span>
+<span class="o">-</span>  <span class="mi">65003</span><span class="p">:</span> <span class="n">epicsTS</span> <span class="p">(</span><span class="n">nano</span><span class="o">-</span><span class="n">seconds</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The TIFF plugin also writes all NDAttributes attached to the NDArray as TIFF
+ASCII file tags, up to a maximum of 536 attributes. These tags start with
+number 65010. The NDAttributes are converted to ASCII with attribute name,
+followed by a colon and the attribute value. This information can be displayed,
+for example, with the tiffinfo program:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span><span class="n">tiffinfo</span> <span class="o">~/</span><span class="n">scratch</span><span class="o">/</span><span class="n">test_001</span><span class="o">.</span><span class="n">tif</span>
+<span class="n">TIFF</span> <span class="n">Directory</span> <span class="n">at</span> <span class="n">offset</span> <span class="mh">0x400008</span> <span class="p">(</span><span class="mi">4194312</span><span class="p">)</span>
+<span class="n">Image</span> <span class="n">Width</span><span class="p">:</span> <span class="mi">1024</span> <span class="n">Image</span> <span class="n">Length</span><span class="p">:</span> <span class="mi">1024</span>
+<span class="n">Bits</span><span class="o">/</span><span class="n">Sample</span><span class="p">:</span> <span class="mi">32</span>
+<span class="n">Sample</span> <span class="n">Format</span><span class="p">:</span> <span class="n">IEEE</span> <span class="n">floating</span> <span class="n">point</span>
+<span class="n">Compression</span> <span class="n">Scheme</span><span class="p">:</span> <span class="kc">None</span>
+<span class="n">Photometric</span> <span class="n">Interpretation</span><span class="p">:</span> <span class="nb">min</span><span class="o">-</span><span class="ow">is</span><span class="o">-</span><span class="n">black</span>
+<span class="n">Samples</span><span class="o">/</span><span class="n">Pixel</span><span class="p">:</span> <span class="mi">1</span>
+<span class="n">Rows</span><span class="o">/</span><span class="n">Strip</span><span class="p">:</span> <span class="mi">1024</span>
+<span class="n">Planar</span> <span class="n">Configuration</span><span class="p">:</span> <span class="n">single</span> <span class="n">image</span> <span class="n">plane</span>
+<span class="n">Make</span><span class="p">:</span> <span class="n">Unknown</span>
+<span class="n">Model</span><span class="p">:</span> <span class="n">Unknown</span>
+<span class="n">Software</span><span class="p">:</span> <span class="n">EPICS</span> <span class="n">areaDetector</span>
+<span class="n">Tag</span> <span class="mi">65000</span><span class="p">:</span> <span class="mf">854478417.972736</span>
+<span class="n">Tag</span> <span class="mi">65001</span><span class="p">:</span> <span class="mi">3059</span>
+<span class="n">Tag</span> <span class="mi">65002</span><span class="p">:</span> <span class="mi">854478418</span>
+<span class="n">Tag</span> <span class="mi">65003</span><span class="p">:</span> <span class="mi">1977554</span>
+<span class="n">Tag</span> <span class="mi">65010</span><span class="p">:</span> <span class="n">ColorMode</span><span class="p">:</span><span class="mi">0</span>
+<span class="n">Tag</span> <span class="mi">65011</span><span class="p">:</span> <span class="n">RingCurrent</span><span class="p">:</span><span class="mf">100.010157</span>
+<span class="n">Tag</span> <span class="mi">65012</span><span class="p">:</span> <span class="n">RingCurrent_EGU</span><span class="p">:</span><span class="n">mA</span>
+<span class="n">Tag</span> <span class="mi">65013</span><span class="p">:</span> <span class="n">ID_Energy</span><span class="p">:</span><span class="mf">42.181675</span>
+<span class="n">Tag</span> <span class="mi">65014</span><span class="p">:</span> <span class="n">ID_Energy_EGU</span><span class="p">:</span><span class="n">keV</span>
+<span class="n">Tag</span> <span class="mi">65015</span><span class="p">:</span> <span class="n">ImageCounter</span><span class="p">:</span><span class="mi">3059</span>
+<span class="n">Tag</span> <span class="mi">65016</span><span class="p">:</span> <span class="n">MaxSizeX</span><span class="p">:</span><span class="mi">1024</span>
+<span class="n">Tag</span> <span class="mi">65017</span><span class="p">:</span> <span class="n">MaxSizeY</span><span class="p">:</span><span class="mi">1024</span>
+<span class="n">Tag</span> <span class="mi">65018</span><span class="p">:</span> <span class="n">CameraModel</span><span class="p">:</span><span class="n">Basic</span> <span class="n">simulator</span>
+<span class="n">Tag</span> <span class="mi">65019</span><span class="p">:</span> <span class="n">AttributesFileParam</span><span class="p">:</span><span class="n">simDetectorAttributes</span><span class="o">.</span><span class="n">xml</span>
+<span class="n">Tag</span> <span class="mi">65020</span><span class="p">:</span> <span class="n">AttributesFileNative</span><span class="p">:</span><span class="mi">1139</span>
+<span class="n">Tag</span> <span class="mi">65021</span><span class="p">:</span> <span class="n">AttributesFileString</span><span class="p">:</span><span class="n">simDetectorAttributes</span><span class="o">.</span><span class="n">xml</span>
+<span class="n">Tag</span> <span class="mi">65022</span><span class="p">:</span> <span class="n">CameraManufacturer</span><span class="p">:</span><span class="n">Simulated</span> <span class="n">detector</span>
+<span class="n">Tag</span> <span class="mi">65023</span><span class="p">:</span> <span class="n">Pi</span><span class="p">:</span><span class="mf">3.141593</span>
+<span class="n">Tag</span> <span class="mi">65024</span><span class="p">:</span> <span class="n">E</span><span class="p">:</span><span class="mf">2.718282</span>
+<span class="n">Tag</span> <span class="mi">65025</span><span class="p">:</span> <span class="n">Ten</span><span class="p">:</span><span class="mi">10</span>
+<span class="n">Tag</span> <span class="mi">65026</span><span class="p">:</span> <span class="n">Gettysburg</span><span class="p">:</span><span class="n">Four</span> <span class="n">score</span> <span class="ow">and</span> <span class="n">seven</span> <span class="n">years</span> <span class="n">ago</span> <span class="n">our</span> <span class="n">fathers</span>
+</pre></div>
+</div>
+<p>If there is an NDAttribute of type NDAttrString named
+TIFFImageDescription then this attribute is written to the
+TIFFTAG_IMAGEDESCRIPTION tag in the TIFF file. This is the output of
+tiffinfo on a file written by the TIFF plugin. The data is from a
+Pilatus detector. The areaDetector ADPilatus driver reads the
+TIFFTAG_IMAGEDESCRIPTION data from the original TIFF file that camserver
+writes, and adds it to the NDArray as the TIFFImageDescription
+attribute. Note that the ImageDescription data is present twice, both in
+the standard TIFF ImageDesciption tag and in user tag 65010 in the TIFF
+file with all other NDAttributes. This is OK because some data
+processing code may expect to find the information in one location or
+the other.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span><span class="n">tiffinfo</span> <span class="o">~/</span><span class="n">scratch</span><span class="o">/</span><span class="n">pilatus_test_000</span><span class="o">.</span><span class="n">tif</span>
+<span class="n">TIFF</span> <span class="n">Directory</span> <span class="n">at</span> <span class="n">offset</span> <span class="mh">0x5cbdc</span> <span class="p">(</span><span class="mi">379868</span><span class="p">)</span>
+  <span class="n">Image</span> <span class="n">Width</span><span class="p">:</span> <span class="mi">487</span> <span class="n">Image</span> <span class="n">Length</span><span class="p">:</span> <span class="mi">195</span>
+  <span class="n">Bits</span><span class="o">/</span><span class="n">Sample</span><span class="p">:</span> <span class="mi">32</span>
+  <span class="n">Sample</span> <span class="n">Format</span><span class="p">:</span> <span class="n">signed</span> <span class="n">integer</span>
+  <span class="n">Compression</span> <span class="n">Scheme</span><span class="p">:</span> <span class="kc">None</span>
+  <span class="n">Photometric</span> <span class="n">Interpretation</span><span class="p">:</span> <span class="nb">min</span><span class="o">-</span><span class="ow">is</span><span class="o">-</span><span class="n">black</span>
+  <span class="n">Samples</span><span class="o">/</span><span class="n">Pixel</span><span class="p">:</span> <span class="mi">1</span>
+  <span class="n">Rows</span><span class="o">/</span><span class="n">Strip</span><span class="p">:</span> <span class="mi">195</span>
+  <span class="n">Planar</span> <span class="n">Configuration</span><span class="p">:</span> <span class="n">single</span> <span class="n">image</span> <span class="n">plane</span>
+  <span class="n">ImageDescription</span><span class="p">:</span> <span class="c1"># Pixel_size 172e-6 m x 172e-6 m</span>
+<span class="c1"># Silicon sensor, thickness 0.000320 m</span>
+<span class="c1"># Exposure_time 1.0000000 s</span>
+<span class="c1"># Exposure_period 1.0000000 s</span>
+<span class="c1"># Tau = 203.0e-09 s</span>
+<span class="c1"># Count_cutoff 1390572 counts</span>
+<span class="c1"># Threshold_setting: 7000 eV</span>
+<span class="c1"># Gain_setting: mid gain (vrf = -0.200)</span>
+<span class="c1"># N_excluded_pixels = 0</span>
+<span class="c1"># Excluded_pixels: (nil)</span>
+<span class="c1"># Flat_field: (nil)</span>
+<span class="c1"># Trim_file: p100k0118_E10000_T7000_vrf_m0p20.bin</span>
+<span class="c1"># Image_path: .../Data/gpd_user/data/idc/2017/run1/setup_603/setup/images/</span>
+<span class="c1"># Wavelength 1.54000 A</span>
+<span class="c1"># Energy_range (0, 0) eV</span>
+<span class="c1"># Detector_distance 1.00000 m</span>
+<span class="c1"># Detector_Voffset 0.00000 m</span>
+<span class="c1"># Beam_xy (0.00, 0.00) pixels</span>
+<span class="c1"># Flux 0.000000</span>
+<span class="c1"># Filter_transmission 1.0000</span>
+<span class="c1"># Start_angle 0.0000 deg.</span>
+<span class="c1"># Angle_increment 0.1000 deg.</span>
+<span class="c1"># Detector_2theta 0.0000 deg.</span>
+<span class="c1"># Polarization 0.990</span>
+<span class="c1"># Alpha 0.0000 deg.</span>
+<span class="c1"># Kappa 0.0000 deg.</span>
+<span class="c1"># Phi 0.0000 deg.</span>
+<span class="c1"># Phi_increment 0.1000 deg.</span>
+<span class="c1"># Omega 0.0000 deg.</span>
+<span class="c1"># Omega_increment 0.1000 deg.</span>
+<span class="c1"># Chi 0.0000 deg.</span>
+<span class="c1"># Chi_increment 0.1000 deg.</span>
+<span class="c1"># Oscillation_axis X, CW</span>
+<span class="c1"># N_oscillations 1</span>
+
+  <span class="n">Make</span><span class="p">:</span> <span class="n">Unknown</span>
+  <span class="n">Model</span><span class="p">:</span> <span class="n">Unknown</span>
+  <span class="n">Software</span><span class="p">:</span> <span class="n">EPICS</span> <span class="n">areaDetector</span>
+  <span class="n">Tag</span> <span class="mi">65000</span><span class="p">:</span> <span class="mf">854479056.813133</span>
+  <span class="n">Tag</span> <span class="mi">65001</span><span class="p">:</span> <span class="mi">1</span>
+  <span class="n">Tag</span> <span class="mi">65002</span><span class="p">:</span> <span class="mi">854479058</span>
+  <span class="n">Tag</span> <span class="mi">65003</span><span class="p">:</span> <span class="mi">208583261</span>
+  <span class="n">Tag</span> <span class="mi">65010</span><span class="p">:</span> <span class="n">TIFFImageDescription</span><span class="p">:</span><span class="c1"># Pixel_size 172e-6 m x 172e-6 m</span>
+<span class="c1"># Silicon sensor, thickness 0.000320 m</span>
+<span class="c1"># Exposure_time 1.0000000 s</span>
+<span class="c1"># Exposure_period 1.0000000 s</span>
+<span class="c1"># Tau = 203.0e-09 s</span>
+<span class="c1"># Count_cutoff 1390572 counts</span>
+<span class="c1"># Threshold_setting: 7000 eV</span>
+<span class="c1"># Gain_setting: mid gain (vrf = -0.200)</span>
+<span class="c1"># N_excluded_pixels = 0</span>
+<span class="c1"># Excluded_pixels: (nil)</span>
+<span class="c1"># Flat_field: (nil)</span>
+<span class="c1"># Trim_file: p100k0118_E10000_T7000_vrf_m0p20.bin</span>
+<span class="c1"># Image_path: .../Data/gpd_user/data/idc/2017/run1/setup_603/setup/images/</span>
+<span class="c1"># Wavelength 1.54000 A</span>
+<span class="c1"># Energy_range (0, 0) eV</span>
+<span class="c1"># Detector_distance 1.00000 m</span>
+<span class="c1"># Detector_Voffset 0.00000 m</span>
+<span class="c1"># Beam_xy (0.00, 0.00) pixels</span>
+<span class="c1"># Flux 0.000000</span>
+<span class="c1"># Filter_transmission 1.0000</span>
+<span class="c1"># Start_angle 0.0000 deg.</span>
+<span class="c1"># Angle_increment 0.1000 deg.</span>
+<span class="c1"># Detector_2theta 0.0000 deg.</span>
+<span class="c1"># Polarization 0.990</span>
+<span class="c1"># Alpha 0.0000 deg.</span>
+<span class="c1"># Kappa 0.0000 deg.</span>
+<span class="c1"># Phi 0.0000 deg.</span>
+<span class="c1"># Phi_increment 0.1000 deg.</span>
+<span class="c1"># Omega 0.0000 deg.</span>
+<span class="c1"># Omega_increment 0.1000 deg.</span>
+<span class="c1"># Chi 0.0000 deg.</span>
+<span class="c1"># Chi_increment 0.1000 deg.</span>
+<span class="c1"># Oscillation_axis X, CW</span>
+<span class="c1"># N_oscillations 1</span>
+</pre></div>
+</div>
+<p>The <a class="reference external" href="../areaDetectorDoxygenHTML/class_n_d_file_t_i_f_f.html">NDFileNetTIFF class
+documentation</a>
+describes this class in detail.</p>
+</section>
+<section id="configuration">
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">Configuration</a><a class="headerlink" href="#configuration" title="Permalink to this heading"></a></h2>
+<p>The NDFileTIFF plugin is created with the <code class="docutils literal notranslate"><span class="pre">NDFileTIFFConfigure</span></code> command,
+either from C/C++ or from the EPICS IOC shell.</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">NDFileTIFFConfigure</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">portName</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">queueSize</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">blockingCallbacks</span><span class="p">,</span>
+<span class="w">                     </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">NDArrayPort</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">NDArrayAddr</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">maxMemory</span><span class="p">,</span>
+<span class="w">                     </span><span class="kt">int</span><span class="w"> </span><span class="n">priority</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">stackSize</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>For details on the meaning of the parameters to this function refer to
+the detailed documentation on the NDFileTIFFConfigure function in the
+<a class="reference external" href="../areaDetectorDoxygenHTML/_n_d_file_t_i_f_f_8cpp.html">NDFileTIFF.cpp
+documentation</a>
+and in the documentation for the constructor for the <a class="reference external" href="../areaDetectorDoxygenHTML/class_n_d_file_t_i_f_f.html">NDFileTIFF
+class</a>.</p>
+</section>
+<section id="screen-shots">
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">Screen Shots</a><a class="headerlink" href="#screen-shots" title="Permalink to this heading"></a></h2>
+<figure class="align-center">
+<img alt="../_images/NDFileTIFF.png" src="../_images/NDFileTIFF.png" />
+</figure>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="NDFileJPEG.html" class="btn btn-neutral float-left" title="NDFileJPEG" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="NDFileHDF5.html" class="btn btn-neutral float-right" title="NDFileHDF5" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Mark Rivers.
+      <span class="lastupdated">Last updated on 2023-March-12.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

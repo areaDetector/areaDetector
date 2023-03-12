@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Overview &mdash; areaDetector Support</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme_overrides.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="NDPluginDriver" href="NDPluginDriver.html" />
+    <link rel="prev" title="areaDetector Plugins" href="plugins.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            areaDetector
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../readme.html">Readme</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../user_guide.html">User Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arch.html">Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="asynPortDriver.html">asynPortDriver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NDArray.html">NDArray</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../detector_drivers.html">Detector Drivers</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="plugins.html">areaDetector Plugins</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginDriver.html">NDPluginDriver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="plugin_guidelines.html">Guidelines and rules for plugins</a></li>
+<li class="toctree-l3"><a class="reference internal" href="plugin_medm.html">Base class medm screens</a></li>
+<li class="toctree-l3"><a class="reference internal" href="common_plugins.html">commonPlugins.cmd</a></li>
+<li class="toctree-l3"><a class="reference internal" href="plugin_performance.html">Performance example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginAttrPlot.html">NDPluginAttrPlot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginAttribute.html">NDPluginAttribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginBadPixel.html">NDPluginBadPixel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginCircularBuff.html">NDPluginCircularBuff</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginCodec.html">NDPluginCodec</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginColorConvert.html">NDPluginColorConvert</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginFFT.html">NDPluginFFT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginFile.html">NDPluginFile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginGather.html">NDPluginGather</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginOverlay.html">NDPluginOverlay</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginProcess.html">NDPluginProcess</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginPva.html">NDPluginPva</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginROI.html">NDPluginROI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginROIStat.html">NDPluginROIStat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginScatter.html">NDPluginScatter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginStats.html">NDPluginStats</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginStdArrays.html">NDPluginStdArrays</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginTimeSeries.html">NDPluginTimeSeries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginTransform.html">NDPluginTransform</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginPos.html">NDPosPlugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ffmpegServer.html">ffmpegServer</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../additional_plugins.html">Additional plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="medm.html">MEDM screens</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADViewers/ad_viewers.html">areaDetector Viewers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../acknowledgements.html">Acknowledgements and licenses</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../install_guide.html">Install Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release.html">Top-level Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ADCore_release.html">ADCore Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ADSupport_release.html">ADSupport Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../doxygen.html">Source Code Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../detectors.html">Supported Detectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../legacy_versions.html">Legacy Versions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">areaDetector</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../user_guide.html">areaDetector Users Guide</a></li>
+          <li class="breadcrumb-item"><a href="plugins.html">areaDetector Plugins</a></li>
+      <li class="breadcrumb-item active">Overview</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/ADCore/plugin_overview.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="overview">
+<h1>Overview<a class="headerlink" href="#overview" title="Permalink to this heading"></a></h1>
+<p>A powerful feature of the areaDetector module is the concept of
+plugins. A plugin is code that is called by a driver that passes NDArray
+data in a callback. Plugins can be used to process array data in real
+time. Existing plugins do operations such as compute statistics
+(NDPluginStats), convert data to standard asyn arrays
+(NDPluginStdArrays), save data to disk (NDPluginFile), select
+regions-of-interest (NDPluginROI), as well as many more. New plugins can
+be written to perform specialized functions. Once a plugin is written it
+will work with any areaDetector driver. Plugins have the the following
+properties:</p>
+<ul class="simple">
+<li><p>They can execute either in a blocking mode or a non-blocking mode. In
+the blocking mode the callback is executed by the driver callback
+thread. In this mode the callback is guaranteed to execute for each
+NDArray callback. However, it can slow down the driver, and does not
+utilize the multi-core capability of modern CPUs. In the non-blocking
+mode the driver callback simply places the NDArray data in a queue
+that is part of the plugin. The plugin then executes the callback
+code in one or more of its own threads. It removes NDArray data from
+the queue, processes it, and releases the data back to the
+NDArrayPool when it is done. In the non-blocking mode some additional
+memory is required for the NDArray objects that are in the queue. It
+is also possible to drop NDArray data if the queue is full when a
+callback occurs, i.e. some callback data will not be processed. The
+non-blocking mode can utilize the multi-core capabilities of modern
+CPUs because each plugin is executing in its own threads. The
+operation of the queue and the NDArrayPool class means that data
+never needs to be copied unless it is modified, each plugin has a
+pointer to the data which will continue to be valid until the last
+plugin is done with it.</p></li>
+<li><p>They can be enabled or disabled at run time.</p></li>
+<li><p>They can be throttled to only execute at a limited rate. This means,
+for example, that a detector can be saving data to disk at full
+speed, but images can be posted to EPICS at a reduced rate.</p></li>
+<li><p>They can be throttled to limit their output data rate. This means,
+for example, that a detector can be saving data to disk at full
+speed, but images sent across the netword at a fixed network
+bandwidth. The number of images/s may vary with detector ROI,
+binning, and data compression.</p></li>
+<li><p>They can be unplugged from one driver, and plugged into another
+driver at run time. For example, the NDPluginROI driver is itself a
+source of NDArray data callbacks, so a file saving plugin could be
+unplugged from a detector driver (where it would be saving the entire
+detector), and plugged into a particular ROI, where it would just
+save a portion of the detector. Similarly the NDPluginColorConvert
+plugin is also a source of NDArray data callbacks. A pipeline of
+plugins can be constructed, for example
+NDPluginColorConvert-&gt;NDPluginROI-&gt;NDPluginStdArrays. Each stage of
+this pipeline can be executing in its own threads, and on modern
+multi-core processors each can be executing on its own cores.</p></li>
+<li><p>In non-blocking mode the maximum allowed number of threads is fixed
+when the plugin is created, but the actual number of threads to use
+can be changed from 1 to this upper limit at run time.</p></li>
+<li><p>When there are multiple threads in use it is likely that the output
+NDArrays will not be in the correct order of ascending values of
+NDArray::UniqueId because each thread is processing asynchronously.
+All plugins therefore have an option to sort the output arrays before
+sending them. This comes at the expense of an increase in memory use
+and latency between the input and output arrays.</p></li>
+<li><p>Plugins store the last input array so they can be processed again
+with different settings without waiting for a new input array to
+arrive.</p></li>
+</ul>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="plugins.html" class="btn btn-neutral float-left" title="areaDetector Plugins" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="NDPluginDriver.html" class="btn btn-neutral float-right" title="NDPluginDriver" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Mark Rivers.
+      <span class="lastupdated">Last updated on 2023-March-12.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

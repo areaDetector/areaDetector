@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NDPosPlugin &mdash; areaDetector Support</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme_overrides.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="ffmpegServer" href="ffmpegServer.html" />
+    <link rel="prev" title="NDPluginTransform" href="NDPluginTransform.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            areaDetector
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../readme.html">Readme</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../user_guide.html">User Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arch.html">Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="asynPortDriver.html">asynPortDriver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NDArray.html">NDArray</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../detector_drivers.html">Detector Drivers</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="plugins.html">areaDetector Plugins</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="plugin_overview.html">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginDriver.html">NDPluginDriver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="plugin_guidelines.html">Guidelines and rules for plugins</a></li>
+<li class="toctree-l3"><a class="reference internal" href="plugin_medm.html">Base class medm screens</a></li>
+<li class="toctree-l3"><a class="reference internal" href="common_plugins.html">commonPlugins.cmd</a></li>
+<li class="toctree-l3"><a class="reference internal" href="plugin_performance.html">Performance example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginAttrPlot.html">NDPluginAttrPlot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginAttribute.html">NDPluginAttribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginBadPixel.html">NDPluginBadPixel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginCircularBuff.html">NDPluginCircularBuff</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginCodec.html">NDPluginCodec</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginColorConvert.html">NDPluginColorConvert</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginFFT.html">NDPluginFFT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginFile.html">NDPluginFile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginGather.html">NDPluginGather</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginOverlay.html">NDPluginOverlay</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginProcess.html">NDPluginProcess</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginPva.html">NDPluginPva</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginROI.html">NDPluginROI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginROIStat.html">NDPluginROIStat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginScatter.html">NDPluginScatter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginStats.html">NDPluginStats</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginStdArrays.html">NDPluginStdArrays</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginTimeSeries.html">NDPluginTimeSeries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginTransform.html">NDPluginTransform</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">NDPosPlugin</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#xml-defined-positions">XML Defined Positions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#using-the-plugin">Using the plugin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#frame-identification-tracking">Frame Identification tracking</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#parameters-and-records">Parameters and Records</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#screen-shots">Screen Shots</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ffmpegServer.html">ffmpegServer</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../additional_plugins.html">Additional plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="medm.html">MEDM screens</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADViewers/ad_viewers.html">areaDetector Viewers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../acknowledgements.html">Acknowledgements and licenses</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../install_guide.html">Install Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release.html">Top-level Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ADCore_release.html">ADCore Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ADSupport_release.html">ADSupport Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../doxygen.html">Source Code Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../detectors.html">Supported Detectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../legacy_versions.html">Legacy Versions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">areaDetector</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../user_guide.html">areaDetector Users Guide</a></li>
+          <li class="breadcrumb-item"><a href="plugins.html">areaDetector Plugins</a></li>
+      <li class="breadcrumb-item active">NDPosPlugin</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/ADCore/NDPluginPos.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="ndposplugin">
+<h1><a class="toc-backref" href="#id1" role="doc-backlink">NDPosPlugin</a><a class="headerlink" href="#ndposplugin" title="Permalink to this heading"></a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">author<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Alan Greer (Observatory Sciences)</p>
+</dd>
+</dl>
+<nav class="contents" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#ndposplugin" id="id1">NDPosPlugin</a></p>
+<ul>
+<li><p><a class="reference internal" href="#overview" id="id2">Overview</a></p></li>
+<li><p><a class="reference internal" href="#xml-defined-positions" id="id3">XML Defined Positions</a></p></li>
+<li><p><a class="reference internal" href="#using-the-plugin" id="id4">Using the plugin</a></p></li>
+<li><p><a class="reference internal" href="#frame-identification-tracking" id="id5">Frame Identification tracking</a></p></li>
+<li><p><a class="reference internal" href="#parameters-and-records" id="id6">Parameters and Records</a></p></li>
+<li><p><a class="reference internal" href="#screen-shots" id="id7">Screen Shots</a></p></li>
+</ul>
+</li>
+</ul>
+</nav>
+<section id="overview">
+<h2><a class="toc-backref" href="#id2" role="doc-backlink">Overview</a><a class="headerlink" href="#overview" title="Permalink to this heading"></a></h2>
+<p>NDPosPlugin can be used to attach positional information to NDArrays in
+the form of NDAttributes. This plugin accepts an XML description of the
+position data and then attaches each position to NDArrays as they are
+passed through the plugin. Each position can contain a set of index
+values and each index is attached as a separate NDAttribute. The plugin
+operates using a FIFO and new positions can be added to the queue while
+the plugin is actively attaching position data. When used in conjunction
+with the HDF5 writer (<a class="reference internal" href="NDFileHDF5.html"><span class="doc">NDFileHDF5</span></a>) it is possible
+to store NDArrays in an arbitrary pattern within a multi-dimensional
+dataset.</p>
+<p>The NDPosPlugin plugin is created with the <code class="docutils literal notranslate"><span class="pre">NDPosPluginConfigure</span></code> command,
+either from C/C++ or from the EPICS IOC shell.</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">NDPosPluginConfigure</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">portName</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">queueSize</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">blockingCallbacks</span><span class="p">,</span>
+<span class="w">                     </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">NDArrayPort</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">NDArrayAddr</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">maxMemory</span><span class="p">,</span>
+<span class="w">                     </span><span class="kt">int</span><span class="w"> </span><span class="n">priority</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">stackSize</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>For details on the meaning of the parameters to this function refer to
+the detailed documentation on the NDPosPluginConfigure function in the
+<a class="reference external" href="../areaDetectorDoxygenHTML/_n_d_file_h_d_f5_8cpp.html">NDPosPlugin.cpp
+documentation</a>
+and in the documentation for the constructor for the <a class="reference external" href="../areaDetectorDoxygenHTML/class_n_d_file_h_d_f5.html">NDPosPlugin
+class</a>.</p>
+</section>
+<section id="xml-defined-positions">
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">XML Defined Positions</a><a class="headerlink" href="#xml-defined-positions" title="Permalink to this heading"></a></h2>
+<p>The position data is supplied to the plugin as an XML description. The
+parameter <strong>NDPos_Filename</strong> can either accept the full path to an XML
+file with the position data description, or the XML can be injected
+directly into the parameter. There is a 1,000,000 byte limit on the
+parameter, but multiple injections can take place in sequence with each
+set of points appended to the FIFO.</p>
+<p>The XML definition contains the following 4 main elements: dimensions,
+dimension, positions, and position.</p>
+<ul class="simple">
+<li><p><strong>dimensions:</strong> Contains the dimension elements that provide the
+dimension name definitions</p></li>
+<li><p><strong>dimension:</strong> The name of a dimension. This name is used for the
+NDAttribute name that is attached to the NDArray with position
+information.</p></li>
+<li><p><strong>positions:</strong> Contains the position elements.</p></li>
+<li><p><strong>position:</strong> Represent a single position to be added to the FIFO.</p></li>
+</ul>
+<p>The XML can contain any number of dimension elements (grouped within the
+dimensions element), and each dimension must contain a single attribute
+<strong>name</strong> that names the particular dimension. Once the dimensions have
+been defined, the position elements are added. The XML can contain any
+number of position elements (grouped within the positions element). Each
+position element should have an attribute for each of the named
+dimensions with the value of the position for that dimension. An example
+of a simple XML description is presented below:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;pos_layout&gt;</span>
+<span class="w">    </span><span class="nt">&lt;dimensions&gt;</span>
+<span class="w">        </span><span class="nt">&lt;dimension</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;x&quot;</span><span class="nt">&gt;&lt;/dimension&gt;</span>
+<span class="w">        </span><span class="nt">&lt;dimension</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;y&quot;</span><span class="nt">&gt;&lt;/dimension&gt;</span>
+<span class="w">        </span><span class="nt">&lt;dimension</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;z&quot;</span><span class="nt">&gt;&lt;/dimension&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/dimensions&gt;</span>
+<span class="w">    </span><span class="nt">&lt;positions&gt;</span>
+<span class="w">        </span><span class="nt">&lt;position</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;0&quot;</span><span class="nt">&gt;&lt;/position&gt;</span>
+<span class="w">        </span><span class="nt">&lt;position</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;&lt;/position&gt;</span>
+<span class="w">        </span><span class="nt">&lt;position</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;0&quot;</span><span class="nt">&gt;&lt;/position&gt;</span>
+<span class="w">        </span><span class="nt">&lt;position</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;&lt;/position&gt;</span>
+<span class="w">        </span><span class="nt">&lt;position</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;0&quot;</span><span class="nt">&gt;&lt;/position&gt;</span>
+<span class="w">        </span><span class="nt">&lt;position</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;&lt;/position&gt;</span>
+<span class="w">        </span><span class="nt">&lt;position</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;0&quot;</span><span class="nt">&gt;&lt;/position&gt;</span>
+<span class="w">        </span><span class="nt">&lt;position</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;&lt;/position&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/positions&gt;</span>
+<span class="nt">&lt;/pos_layout&gt;</span>
+</pre></div>
+</div>
+<p>In the example above, three dimensions have been defined (x, y and z).
+The positions are then defined with value for each dimension provided.
+This XML description will result in three NDAttriubtes being attached to
+each NDArray, with the names x, y and z respectively. The value of each
+of the NDAttributes will be set according to the position that is
+currently at the front of the FIFO.</p>
+<p>A complete example XML layout file is provided in
+“ADCore/iocBoot/pos_plugin_demo.xml”.</p>
+<p>An XML schema is provided in “ADCore/iocBoot/pos_plugin_schema.xsd”. The
+schema defines the syntax that is allowed in the user’s XML definition.
+It can also be used with the ‘xmllint’ command to validate a user’s XML
+definition:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">xmllint</span> <span class="o">--</span><span class="n">noout</span> <span class="o">--</span><span class="n">schema</span> <span class="n">ADCore</span><span class="o">/</span><span class="n">iocBoot</span><span class="o">/</span><span class="n">pos_plugin_schema</span><span class="o">.</span><span class="n">xsd</span> <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">users</span><span class="o">/</span><span class="n">layout</span><span class="o">.</span><span class="n">xml</span>
+</pre></div>
+</div>
+</section>
+<section id="using-the-plugin">
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">Using the plugin</a><a class="headerlink" href="#using-the-plugin" title="Permalink to this heading"></a></h2>
+<p>The plugin offers two modes of operation: <strong>Discard</strong> and <strong>Keep</strong>. When
+executed in discard mode the plugin will throw away a position every
+time it is attached to an NDArray, and the FIFO will continue to
+decrease in size until it reaches zero. When executed in Keep mode the
+positions will still be sent in order but they will not be discarded. A
+parameter can be used to reset the current position to the start and
+then the same set can be reused. The position attachment can be started
+and stopped, and the FIFO can be cleared. A record of the number of
+positions in the FIFO, the current index and a string representation of
+the last position sent are provided through the parameter interface.</p>
+</section>
+<section id="frame-identification-tracking">
+<h2><a class="toc-backref" href="#id5" role="doc-backlink">Frame Identification tracking</a><a class="headerlink" href="#frame-identification-tracking" title="Permalink to this heading"></a></h2>
+<p>The plugin tracks frame information to ensure that the incoming frames
+are in the correct order and there are no missing or duplicated frames.
+This is achieved using three parameters, <strong>IDName</strong>, <strong>IDStart</strong> and
+<strong>IDDifference</strong>. The IDName tells the plugin which incoming attribute
+to use as the ID to track, or if it is left empty then the uniqueId
+member variable of the NDArray is used. The IDStart value informs this
+plugin of the first expected ID when the acquisition is started, and the
+IDDifference informs this plugin of the expected delta ID between each
+frame. An IDStart of 5 and IDDifference of 10 would result in the plugin
+expecting the following sequence of ID values attached to the incoming
+frames: 5,15,25,35… If incoming frames contain IDs that are greater
+than the expected ID then the plugin will print a warning and throw away
+any position information up until the expected ID matches the frame ID;
+this is a case where the frames are assumed to have been dropped. If
+incoming frames contain IDs that are less than the exptected ID then the
+plugin will print an error and drop the frames until the incoming frame
+ID matches the expected ID. This is a more serious case of the plugin
+dropping frames and this is why the error is printed. In both of these
+error situations the plugin will record the event into the corresponding
+counter and continue to process frames.</p>
+</section>
+<section id="parameters-and-records">
+<h2><a class="toc-backref" href="#id6" role="doc-backlink">Parameters and Records</a><a class="headerlink" href="#parameters-and-records" title="Permalink to this heading"></a></h2>
+<table class="table-bordered table-striped table-hover docutils align-default">
+<colgroup>
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 70%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head"></th>
+<th class="head" colspan="5"><p><strong>Parameter Definitions and EPICS Record Definitions in NDPosPlugin.template</strong></p></th>
+</tr>
+<tr class="row-even"><th class="head"><p>Parameter index variable</p></th>
+<th class="head"><p>asyn interface</p></th>
+<th class="head"><p>Access</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>drvInfo string</p></th>
+<th class="head"><p>EPICS record name</p></th>
+<th class="head"><p>EPICS record type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-odd"><td></td>
+<td></td>
+<td colspan="5"><p><strong>XML Position Definition</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>NDPos_Filename</p></td>
+<td><p>asynOctet</p></td>
+<td><p>r/w</p></td>
+<td><p>XML filename, pointing to an XML position set description, This waveform also supports loading raw XML code directly; up to a maximum of 1,000,000
+Bytes long (NELM=1,000,000).</p></td>
+<td><p>NDPos_Filename</p></td>
+<td><p>$(P)$(R)FileName, $(P)$(R)FileName_RBV</p></td>
+<td><p>waveform</p></td>
+</tr>
+<tr class="row-odd"><td><p>NDPos_FileValid</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/o</p></td>
+<td><p>Flag to report the validity (xml syntax only) of the loaded XML. Updated when the
+NDPos_Filename is updated with a new filename.</p></td>
+<td><p>NDPos_FileValid</p></td>
+<td><p>$(P)$(R)FileValid_RBV</p></td>
+<td><p>bi</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td colspan="5"><p><strong>Execution</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>NDPos_Running</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>Start or stop appending of position data to NDArrays.</p></td>
+<td><p>NDPos_Running</p></td>
+<td><p>$(P)$(R)Running, $(P)$(R)Running_RBV</p></td>
+<td><p>busy, bi</p></td>
+</tr>
+<tr class="row-even"><td><p>NDPos_Restart</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>Reset the current position index to zero (front of FIFO) when executing in <strong>Keep</strong>
+mode. Has no effect if executing in <strong>Discard</strong> mode.</p></td>
+<td><p>NDPos_Restart</p></td>
+<td><p>$(P)$(R)Reset</p></td>
+<td><p>bo</p></td>
+</tr>
+<tr class="row-odd"><td><p>NDPos_Delete</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>Delete any position data in the FIFO. If the plugin is running then this will stop
+the plugin. The size and current index will both be set to zero.</p></td>
+<td><p>NDPos_Delete</p></td>
+<td><p>$(P)$(R)Delete</p></td>
+<td><p>bo</p></td>
+</tr>
+<tr class="row-even"><td><p>NDPos_Mode</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>Select the mode of operation, <strong>Discard</strong> or <strong>Keep</strong>. Discard mode throws
+away each position once it has been attached to an NDArray, whereas Keep mode keeps
+the value and traverses through the FIFO, reatining all position data.</p></td>
+<td><p>NDPos_Mode</p></td>
+<td><p>$(P)$(R)Mode, $(P)$(R)Mode_RBV</p></td>
+<td><p>bo, bi</p></td>
+</tr>
+<tr class="row-odd"><td><p>NDPos_IDName</p></td>
+<td><p>asynOctet</p></td>
+<td><p>r/w</p></td>
+<td><p>Use this attribute name for the incoming frame IDs. If this parameter is left empty
+then the incoming frame’s uniqueId is used for the index count.</p></td>
+<td><p>NDPos_IDName</p></td>
+<td><p>$(P)$(R)IDName, $(P)$(R)IDName_RBV</p></td>
+<td><p>stringout, stringin</p></td>
+</tr>
+<tr class="row-even"><td><p>NDPos_IDStart</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>When a new acquisition is started this value is the expected ID for the first processed
+frame.</p></td>
+<td><p>NDPos_IDName</p></td>
+<td><p>$(P)$(R)IDStart, $(P)$(R)IDStart_RBV</p></td>
+<td><p>longout, longin</p></td>
+</tr>
+<tr class="row-odd"><td><p>NDPos_IDDifference</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>This value represents the delta ID between each processed frame, and is useful is
+frames are processed by plugins before reaching this plugin (eg integration of several
+frames into one). If the start ID is set to 1 and this parameter is set to 2 then
+the expected IDs would be 1,3,5,7,9….</p></td>
+<td><p>NDPos_IDDifference</p></td>
+<td><p>$(P)$(R)IDDifference, $(P)$(R)IDDifference_RBV</p></td>
+<td><p>longout, longin</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td colspan="5"><p><strong>Information</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>NDPos_CurrentQty</p></td>
+<td><p>asynInt3264</p></td>
+<td><p>r/o</p></td>
+<td><p>Current number of position points in the FIFO.</p></td>
+<td><p>NDPos_CurrentQty</p></td>
+<td><p>$(P)$(R)Qty_RBV</p></td>
+<td><p>longin</p></td>
+</tr>
+<tr class="row-even"><td><p>NDPos_CurrentIndex</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/o</p></td>
+<td><p>Current index of pointer to position within FIFO (0 for Discard mode).</p></td>
+<td><p>NDPos_CurrentIndex</p></td>
+<td><p>$(P)$(R)Index_RBV</p></td>
+<td><p>longin</p></td>
+</tr>
+<tr class="row-odd"><td><p>NDPos_CurrentPos</p></td>
+<td><p>asynOctet</p></td>
+<td><p>r/o</p></td>
+<td><p>String representation of the last position to be attached to an NDArray.</p></td>
+<td><p>NDPos_CurrentPos</p></td>
+<td><p>$(P)$(R)Position_RBV</p></td>
+<td><p>stringin</p></td>
+</tr>
+<tr class="row-even"><td><p>NDPos_MissingFrames</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>Counter of the number of missed/dropped frames. Write a 0 to the parameter to reset.</p></td>
+<td><p>NDPos_MissingFrames</p></td>
+<td><p>$(P)$(R)Missing, $(P)$(R)Missing_RBV</p></td>
+<td><p>longout, longin</p></td>
+</tr>
+<tr class="row-odd"><td><p>NDPos_DuplicateFrames</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>Counter of the number of duplicated frames. Write a 0 to the parameter to reset.</p></td>
+<td><p>NDPos_DuplicateFrames</p></td>
+<td><p>$(P)$(R)Duplicate, $(P)$(R)Duplicate_RBV</p></td>
+<td><p>longout, longin</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="screen-shots">
+<h2><a class="toc-backref" href="#id7" role="doc-backlink">Screen Shots</a><a class="headerlink" href="#screen-shots" title="Permalink to this heading"></a></h2>
+<figure class="align-center">
+<img alt="../_images/NDPluginPos.png" src="../_images/NDPluginPos.png" />
+</figure>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="NDPluginTransform.html" class="btn btn-neutral float-left" title="NDPluginTransform" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="ffmpegServer.html" class="btn btn-neutral float-right" title="ffmpegServer" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Mark Rivers.
+      <span class="lastupdated">Last updated on 2023-March-12.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

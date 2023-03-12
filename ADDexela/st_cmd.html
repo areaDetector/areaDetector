@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Example st.cmd Startup File &mdash; areaDetector Support</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme_overrides.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="ADEiger" href="../ADEiger/eiger.html" />
+    <link rel="prev" title="ADDexela" href="ADDexela.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            areaDetector
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../readme.html">Readme</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../user_guide.html">User Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/overview.html">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/arch.html">Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/asynPortDriver.html">asynPortDriver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/NDArray.html">NDArray</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../detector_drivers.html">Detector Drivers</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../ADCore/guidelines.html">Guidelines and rules for drivers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADCore/ADDriver.html">ADDriver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADAndor/andorDoc.html">ADAndor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADAndor3/ADAndorDoc.html">ADAndor3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADAravis/ADAravis.html">ADAravis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADCSimDetector/ADCSimDetectorDoc.html">ADCSimDetector</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="ADDexela.html">ADDexela</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="ADDexela.html#introduction">Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ADDexela.html#implementation-of-standard-driver-parameters">Implementation of standard driver parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ADDexela.html#dexela-specific-parameters">Dexela specific parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ADDexela.html#unsupported-standard-driver-parameters">Unsupported standard driver parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ADDexela.html#configuration">Configuration</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="ADDexela.html#example-st-cmd-startup-file">Example st.cmd startup file</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ADDexela.html#medm-screens">MEDM screens</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ADDexela.html#performance-measurements">Performance measurements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ADDexela.html#restrictions">Restrictions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../ADEiger/eiger.html">ADEiger</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADFastCCD/index.html">ADFastCCD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADGenICam/ADGenICam.html">ADGenICam</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADLambda/ADLambda.html">ADLambda</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADLightField/ADLightField.html">ADLightField</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADmarCCD/marCCDDoc.html">ADmarCCD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADmar345/mar345Doc.html">ADmar345</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPerkinElmer/PerkinElmerDoc.html">ADPerkinElmer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPICam/PICamDoc.html">ADPICam</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPilatus/pilatusDoc.html">ADPilatus</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPixirad/ADPixirad.html">ADPixirad</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPointGrey/PointGreyDoc.html">ADPointGrey</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADProsilica/ADProsilica.html">ADProsilica</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPvCam/pvcamDoc.html">ADPvCam</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADQImaging/QImagingDoc.html">ADQImaging</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADRIXSCam/ADRIXSCam.html">ADRIXSCam</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADSimDetector/simDetector.html">ADSimDetector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADSpinnaker/ADSpinnaker.html">ADSpinnaker</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADVimba/ADVimba.html">ADVimba</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADURL/ADURL.html">ADURL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../NDDriverStdArrays/NDDriverStdArraysDoc.html">NDDriverStdArrays</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../pvaDriver/pvaDriver.html">pvaDriver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../specsAnalyser/index.html">specsAnalyser</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/plugins.html">areaDetector Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../additional_plugins.html">Additional plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/medm.html">MEDM screens</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADViewers/ad_viewers.html">areaDetector Viewers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../acknowledgements.html">Acknowledgements and licenses</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../install_guide.html">Install Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release.html">Top-level Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ADCore_release.html">ADCore Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ADSupport_release.html">ADSupport Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../doxygen.html">Source Code Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../detectors.html">Supported Detectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../legacy_versions.html">Legacy Versions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">areaDetector</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../user_guide.html">areaDetector Users Guide</a></li>
+          <li class="breadcrumb-item"><a href="../detector_drivers.html">Detector Drivers</a></li>
+          <li class="breadcrumb-item"><a href="ADDexela.html">ADDexela</a></li>
+      <li class="breadcrumb-item active">Example st.cmd Startup File</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/ADDexela/st_cmd.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="example-st-cmd-startup-file">
+<h1>Example st.cmd Startup File<a class="headerlink" href="#example-st-cmd-startup-file" title="Permalink to this heading"></a></h1>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>errlogInit(20000)
+
+&lt; envPaths
+
+dbLoadDatabase(&quot;$(TOP)/dbd/DexelaApp.dbd&quot;)
+DexelaApp_registerRecordDeviceDriver(pdbbase) 
+
+# Prefix for all records
+epicsEnvSet(&quot;PREFIX&quot;, &quot;13DEX1:&quot;)
+# The port name for the detector
+epicsEnvSet(&quot;PORT&quot;,   &quot;DEX1&quot;)
+# The queue size for all plugins
+epicsEnvSet(&quot;QSIZE&quot;,  &quot;20&quot;)
+# The maximim image width; used for row profiles in the NDPluginStats plugin
+epicsEnvSet(&quot;XSIZE&quot;,  &quot;2048&quot;)
+# The maximim image height; used for column profiles in the NDPluginStats plugin
+epicsEnvSet(&quot;YSIZE&quot;,  &quot;2048&quot;)
+# The maximum number of time seried points in the NDPluginStats plugin
+epicsEnvSet(&quot;NCHANS&quot;, &quot;2048&quot;)
+# The maximum number of frames buffered in the NDPluginCircularBuff plugin
+epicsEnvSet(&quot;CBUFFS&quot;, &quot;500&quot;)
+# The search path for database files
+epicsEnvSet(&quot;EPICS_DB_INCLUDE_PATH&quot;, &quot;$(ADCORE)/db&quot;)
+
+# Create a Dexels driver
+# DexelaConfig(const char *portName, detIndex, maxBuffers, size_t maxMemory, int priority, int stackSize)
+
+# This is for the first detector in the system
+DexelaConfig(&quot;$(PORT)&quot;, 0, 0, 0, 0, 0)
+
+asynSetTraceIOMask($(PORT), 0, 2)
+#asynSetTraceMask($(PORT),0,0xff)
+
+dbLoadRecords(&quot;$(ADDEXELA)/db/Dexela.template&quot;, &quot;P=$(PREFIX),R=cam1:,PORT=$(PORT),ADDR=0,TIMEOUT=1&quot;)
+
+# Create a standard arrays plugin, set it to get data from Driver.
+NDStdArraysConfigure(&quot;Image1&quot;, 3, 0, &quot;$(PORT)&quot;, 0)
+# Set NELEMENTS to at least the total number of pixels in the detector.  The following is a little larger than 4096 x 4096
+dbLoadRecords(&quot;$(ADCORE)/db/NDStdArrays.template&quot;, &quot;P=$(PREFIX),R=image1:,PORT=Image1,ADDR=0,TIMEOUT=1,NDARRAY_PORT=$(PORT),TYPE=Int16,SIZE=16,FTVL=SHORT,NELEMENTS=17000000&quot;)
+
+# Load all other plugins using commonPlugins.cmd
+&lt; $(ADCORE)/iocBoot/commonPlugins.cmd
+set_requestfile_path(&quot;$(ADDEXELA)/dexelaApp/Db&quot;)
+
+iocInit()
+
+# save things every thirty seconds
+create_monitor_set(&quot;auto_settings.req&quot;, 30, &quot;P=$(PREFIX)&quot;)
+
+#asynSetTraceMask($(PORT),0,0xff)
+</pre></div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="ADDexela.html" class="btn btn-neutral float-left" title="ADDexela" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../ADEiger/eiger.html" class="btn btn-neutral float-right" title="ADEiger" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Mark Rivers.
+      <span class="lastupdated">Last updated on 2023-March-12.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

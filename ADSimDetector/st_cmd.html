@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Example st.cmd Startup File &mdash; areaDetector Support</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme_overrides.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="ADSpinnaker" href="../ADSpinnaker/ADSpinnaker.html" />
+    <link rel="prev" title="ADSimDetector" href="simDetector.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            areaDetector
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../readme.html">Readme</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../user_guide.html">User Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/overview.html">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/arch.html">Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/asynPortDriver.html">asynPortDriver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/NDArray.html">NDArray</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../detector_drivers.html">Detector Drivers</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../ADCore/guidelines.html">Guidelines and rules for drivers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADCore/ADDriver.html">ADDriver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADAndor/andorDoc.html">ADAndor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADAndor3/ADAndorDoc.html">ADAndor3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADAravis/ADAravis.html">ADAravis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADCSimDetector/ADCSimDetectorDoc.html">ADCSimDetector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADDexela/ADDexela.html">ADDexela</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADEiger/eiger.html">ADEiger</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADFastCCD/index.html">ADFastCCD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADGenICam/ADGenICam.html">ADGenICam</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADLambda/ADLambda.html">ADLambda</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADLightField/ADLightField.html">ADLightField</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADmarCCD/marCCDDoc.html">ADmarCCD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADmar345/mar345Doc.html">ADmar345</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPerkinElmer/PerkinElmerDoc.html">ADPerkinElmer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPICam/PICamDoc.html">ADPICam</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPilatus/pilatusDoc.html">ADPilatus</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPixirad/ADPixirad.html">ADPixirad</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPointGrey/PointGreyDoc.html">ADPointGrey</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADProsilica/ADProsilica.html">ADProsilica</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPvCam/pvcamDoc.html">ADPvCam</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADQImaging/QImagingDoc.html">ADQImaging</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADRIXSCam/ADRIXSCam.html">ADRIXSCam</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="simDetector.html">ADSimDetector</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="simDetector.html#table-of-contents">Table of Contents</a></li>
+<li class="toctree-l4"><a class="reference internal" href="simDetector.html#introduction">Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="simDetector.html#simulation-driver-specific-parameters">Simulation driver specific parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="simDetector.html#simulation-modes">Simulation Modes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="simDetector.html#unsupported-standard-driver-parameters">Unsupported standard driver parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="simDetector.html#configuration">Configuration</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="simDetector.html#example-st-cmd-startup-file">Example st.cmd startup file</a></li>
+<li class="toctree-l4"><a class="reference internal" href="simDetector.html#screenshots">Screenshots</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../ADSpinnaker/ADSpinnaker.html">ADSpinnaker</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADVimba/ADVimba.html">ADVimba</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADURL/ADURL.html">ADURL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../NDDriverStdArrays/NDDriverStdArraysDoc.html">NDDriverStdArrays</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../pvaDriver/pvaDriver.html">pvaDriver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../specsAnalyser/index.html">specsAnalyser</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/plugins.html">areaDetector Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../additional_plugins.html">Additional plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/medm.html">MEDM screens</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADViewers/ad_viewers.html">areaDetector Viewers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../acknowledgements.html">Acknowledgements and licenses</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../install_guide.html">Install Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release.html">Top-level Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ADCore_release.html">ADCore Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ADSupport_release.html">ADSupport Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../doxygen.html">Source Code Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../detectors.html">Supported Detectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../legacy_versions.html">Legacy Versions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">areaDetector</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../user_guide.html">areaDetector Users Guide</a></li>
+          <li class="breadcrumb-item"><a href="../detector_drivers.html">Detector Drivers</a></li>
+          <li class="breadcrumb-item"><a href="simDetector.html">ADSimDetector</a></li>
+      <li class="breadcrumb-item active">Example st.cmd Startup File</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/ADSimDetector/st_cmd.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="example-st-cmd-startup-file">
+<h1>Example st.cmd Startup File<a class="headerlink" href="#example-st-cmd-startup-file" title="Permalink to this heading"></a></h1>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="n">envPaths</span>
+<span class="o">&lt;</span> <span class="n">st_base</span><span class="o">.</span><span class="n">cmd</span>
+</pre></div>
+</div>
+<p>with st_base.cmd</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># Must have loaded envPaths via st.cmd*
+
+errlogInit(20000)
+
+dbLoadDatabase(&quot;$(TOP)/dbd/simDetectorApp.dbd&quot;)
+simDetectorApp_registerRecordDeviceDriver(pdbbase) 
+
+# Prefix for all records
+epicsEnvSet(&quot;PREFIX&quot;, &quot;13SIM1:&quot;)
+# The port name for the detector
+epicsEnvSet(&quot;PORT&quot;,   &quot;SIM1&quot;)
+# The queue size for all plugins
+epicsEnvSet(&quot;QSIZE&quot;,  &quot;20&quot;)
+# The maximum image width; used to set the maximum size for this driver and for row profiles in the NDPluginStats plugin
+epicsEnvSet(&quot;XSIZE&quot;,  &quot;1024&quot;)
+# The maximum image height; used to set the maximum size for this driver and for column profiles in the NDPluginStats plugin
+epicsEnvSet(&quot;YSIZE&quot;,  &quot;1024&quot;)
+# The maximum number of time series points in the NDPluginStats plugin
+epicsEnvSet(&quot;NCHANS&quot;, &quot;2048&quot;)
+# The maximum number of frames buffered in the NDPluginCircularBuff plugin
+epicsEnvSet(&quot;CBUFFS&quot;, &quot;500&quot;)
+# The maximum number of threads for plugins which can run in multiple threads
+epicsEnvSet(&quot;MAX_THREADS&quot;, &quot;8&quot;)
+# The search path for database files
+epicsEnvSet(&quot;EPICS_DB_INCLUDE_PATH&quot;, &quot;$(ADCORE)/db&quot;)
+
+asynSetMinTimerPeriod(0.001)
+
+# The EPICS environment variable EPICS_CA_MAX_ARRAY_BYTES needs to be set to a value at least as large
+# as the largest image that the standard arrays plugin will send.
+# That value is $(XSIZE) * $(YSIZE) * sizeof(FTVL data type) for the FTVL used when loading the NDStdArrays.template file.
+# The variable can be set in the environment before running the IOC or it can be set here.
+# It is often convenient to set it in the environment outside the IOC to the largest array any client 
+# or server will need.  For example 10000000 (ten million) bytes may be enough.
+# If it is set here then remember to also set it outside the IOC for any CA clients that need to access the waveform record.  
+# Do not set EPICS_CA_MAX_ARRAY_BYTES to a value much larger than that required, because EPICS Channel Access actually
+# allocates arrays of this size every time it needs a buffer larger than 16K.
+# Uncomment the following line to set it in the IOC.
+#epicsEnvSet(&quot;EPICS_CA_MAX_ARRAY_BYTES&quot;, &quot;10000000&quot;)
+
+# Create a simDetector driver
+# simDetectorConfig(const char *portName, int maxSizeX, int maxSizeY, int dataType,
+#                   int maxBuffers, int maxMemory, int priority, int stackSize)
+simDetectorConfig(&quot;$(PORT)&quot;, $(XSIZE), $(YSIZE), 1, 0, 0)
+# To have the rate calculation use a non-zero smoothing factor use the following line
+#dbLoadRecords(&quot;simDetector.template&quot;,     &quot;P=$(PREFIX),R=cam1:,PORT=$(PORT),ADDR=0,TIMEOUT=1,RATE_SMOOTH=0.2&quot;)
+dbLoadRecords(&quot;$(ADSIMDETECTOR)/db/simDetector.template&quot;,&quot;P=$(PREFIX),R=cam1:,PORT=$(PORT),ADDR=0,TIMEOUT=1&quot;)
+
+# Create a second simDetector driver
+simDetectorConfig(&quot;SIM2&quot;, 300, 200, 1, 50, 50000000)
+dbLoadRecords(&quot;$(ADSIMDETECTOR)/db/simDetector.template&quot;,&quot;P=$(PREFIX),R=cam2:,PORT=SIM2,ADDR=0,TIMEOUT=1&quot;)
+
+# Load an NDFile database.  This is not supported for the simDetector which does not write files.
+#dbLoadRecords(&quot;NDFile.template&quot;,&quot;P=$(PREFIX),R=cam1:,PORT=SIM1,ADDR=0,TIMEOUT=1&quot;)
+
+# Create a standard arrays plugin, set it to get data from first simDetector driver.
+NDStdArraysConfigure(&quot;Image1&quot;, 20, 0, &quot;$(PORT)&quot;, 0, 0, 0, 0, 0, 5)
+
+# This creates a waveform large enough for 2000x2000x3 (e.g. RGB color) arrays.
+# This waveform only allows transporting 8-bit images
+dbLoadRecords(&quot;NDStdArrays.template&quot;, &quot;P=$(PREFIX),R=image1:,PORT=Image1,ADDR=0,TIMEOUT=1,NDARRAY_PORT=$(PORT),TYPE=Int8,FTVL=UCHAR,NELEMENTS=12000000&quot;)
+# This waveform only allows transporting 16-bit images
+#dbLoadRecords(&quot;NDStdArrays.template&quot;, &quot;P=$(PREFIX),R=image1:,PORT=Image1,ADDR=0,TIMEOUT=1,NDARRAY_PORT=$(PORT),TYPE=Int16,FTVL=SHORT,NELEMENTS=12000000&quot;)
+# This waveform allows transporting 32-bit images
+#dbLoadRecords(&quot;NDStdArrays.template&quot;, &quot;P=$(PREFIX),R=image1:,PORT=Image1,ADDR=0,TIMEOUT=1,NDARRAY_PORT=$(PORT),TYPE=Int32,FTVL=LONG,NELEMENTS=12000000&quot;)
+# This waveform allows transporting 64-bit float images
+#dbLoadRecords(&quot;NDStdArrays.template&quot;, &quot;P=$(PREFIX),R=image1:,PORT=Image1,ADDR=0,TIMEOUT=1,NDARRAY_PORT=$(PORT),TYPE=Float64,FTVL=DOUBLE,NELEMENTS=12000000&quot;)
+
+# Load all other plugins using commonPlugins.cmd
+&lt; $(ADCORE)/iocBoot/commonPlugins.cmd
+
+# Create a standard arrays plugin, set it to get data from FFT plugin.
+NDStdArraysConfigure(&quot;Image2&quot;, 3, 0, &quot;FFT1&quot;, 0)
+# This waveform allows transporting 64-bit images, so it can handle any detector data type at the expense of more memory and bandwidth
+dbLoadRecords(&quot;NDStdArrays.template&quot;, &quot;P=$(PREFIX),R=image2:,PORT=Image2,ADDR=0,TIMEOUT=1,NDARRAY_PORT=FFT1,TYPE=Float64,FTVL=DOUBLE,NELEMENTS=12000000&quot;)
+
+set_requestfile_path(&quot;$(ADSIMDETECTOR)/simDetectorApp/Db&quot;)
+
+asynSetTraceIOMask(&quot;$(PORT)&quot;,0,2)
+#asynSetTraceMask(&quot;$(PORT)&quot;,0,ASYN_TRACE_ERROR+ASYN_TRACE_WARNING+ASYN_TRACE_FLOW)
+#asynSetTraceIOMask(&quot;FileNetCDF&quot;,0,2)
+#asynSetTraceMask(&quot;FileNetCDF&quot;,0,255)
+#asynSetTraceMask(&quot;FileNexus&quot;,0,255)
+#asynSetTraceMask(&quot;SIM2&quot;,0,255)
+
+iocInit()
+
+# save things every thirty seconds
+create_monitor_set(&quot;auto_settings.req&quot;, 30, &quot;P=$(PREFIX)&quot;)
+</pre></div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="simDetector.html" class="btn btn-neutral float-left" title="ADSimDetector" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../ADSpinnaker/ADSpinnaker.html" class="btn btn-neutral float-right" title="ADSpinnaker" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Mark Rivers.
+      <span class="lastupdated">Last updated on 2023-March-12.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

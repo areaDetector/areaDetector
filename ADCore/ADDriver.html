@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ADDriver &mdash; areaDetector Support</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme_overrides.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="ADAndor" href="../ADAndor/andorDoc.html" />
+    <link rel="prev" title="Guidelines and rules for drivers" href="guidelines.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            areaDetector
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../readme.html">Readme</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../user_guide.html">User Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arch.html">Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="asynPortDriver.html">asynPortDriver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NDArray.html">NDArray</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../detector_drivers.html">Detector Drivers</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="guidelines.html">Guidelines and rules for drivers</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">ADDriver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADAndor/andorDoc.html">ADAndor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADAndor3/ADAndorDoc.html">ADAndor3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADAravis/ADAravis.html">ADAravis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADCSimDetector/ADCSimDetectorDoc.html">ADCSimDetector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADDexela/ADDexela.html">ADDexela</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADEiger/eiger.html">ADEiger</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADFastCCD/index.html">ADFastCCD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADGenICam/ADGenICam.html">ADGenICam</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADLambda/ADLambda.html">ADLambda</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADLightField/ADLightField.html">ADLightField</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADmarCCD/marCCDDoc.html">ADmarCCD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADmar345/mar345Doc.html">ADmar345</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPerkinElmer/PerkinElmerDoc.html">ADPerkinElmer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPICam/PICamDoc.html">ADPICam</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPilatus/pilatusDoc.html">ADPilatus</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPixirad/ADPixirad.html">ADPixirad</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPointGrey/PointGreyDoc.html">ADPointGrey</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADProsilica/ADProsilica.html">ADProsilica</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPvCam/pvcamDoc.html">ADPvCam</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADQImaging/QImagingDoc.html">ADQImaging</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADRIXSCam/ADRIXSCam.html">ADRIXSCam</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADSimDetector/simDetector.html">ADSimDetector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADSpinnaker/ADSpinnaker.html">ADSpinnaker</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADVimba/ADVimba.html">ADVimba</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADURL/ADURL.html">ADURL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../NDDriverStdArrays/NDDriverStdArraysDoc.html">NDDriverStdArrays</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../pvaDriver/pvaDriver.html">pvaDriver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../specsAnalyser/index.html">specsAnalyser</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="plugins.html">areaDetector Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../additional_plugins.html">Additional plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="medm.html">MEDM screens</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADViewers/ad_viewers.html">areaDetector Viewers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../acknowledgements.html">Acknowledgements and licenses</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../install_guide.html">Install Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release.html">Top-level Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ADCore_release.html">ADCore Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ADSupport_release.html">ADSupport Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../doxygen.html">Source Code Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../detectors.html">Supported Detectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../legacy_versions.html">Legacy Versions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">areaDetector</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../user_guide.html">areaDetector Users Guide</a></li>
+          <li class="breadcrumb-item"><a href="../detector_drivers.html">Detector Drivers</a></li>
+      <li class="breadcrumb-item active">ADDriver</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/ADCore/ADDriver.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="addriver">
+<h1>ADDriver<a class="headerlink" href="#addriver" title="Permalink to this heading"></a></h1>
+<p>ADDriver inherits from asynNDArrayDriver. This is the class from which
+area detector drivers are directly derived. It provides parameters and
+methods that are specific to area detectors, while asynNDArrayDriver is
+a general NDArray driver. The <a class="reference external" href="../areaDetectorDoxygenHTML/class_a_d_driver.html">ADDriver class
+documentation</a> describes
+this class in detail.</p>
+<p>The file <a class="reference external" href="../areaDetectorDoxygenHTML/_a_d_driver_8h.html">ADDriver.h</a>
+defines the parameters that all areaDetector drivers should implement if
+possible.</p>
+<table class="table-bordered table-striped table-hover docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head"></th>
+<th class="head" colspan="5"><p>Parameter Definitions in ADDriver.h and EPICS Record Definitions in ADBase.template</p></th>
+</tr>
+<tr class="row-even"><th class="head"><p>Parameter index variable</p></th>
+<th class="head"><p>asyn interface</p></th>
+<th class="head"><p>Access</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>drvInfo string</p></th>
+<th class="head"><p>EPICS record name</p></th>
+<th class="head"><p>EPICS record type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-odd"><td></td>
+<td></td>
+<td></td>
+<td colspan="4"><p><strong>Information about the detector</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>ADMaxSizeX</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/o</p></td>
+<td><p>Maximum (sensor) size in the X direction</p></td>
+<td><p>MAX_SIZE_X</p></td>
+<td><p>$(P)$(R)MaxSizeX_RBV</p></td>
+<td><p>longin</p></td>
+</tr>
+<tr class="row-odd"><td><p>ADMaxSizeY</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/o</p></td>
+<td><p>Maximum (sensor) size in the Y direction</p></td>
+<td><p>MAX_SIZE_Y</p></td>
+<td><p>$(P)$(R)MaxSizeY_RBV</p></td>
+<td><p>longin</p></td>
+</tr>
+<tr class="row-even"><td><p>ADTemperature</p></td>
+<td><p>asynFloat64</p></td>
+<td><p>r/w</p></td>
+<td><p>Detector temperature</p></td>
+<td><p>TEMPERATURE</p></td>
+<td><p>$(P)$(R)Temperature, $(P)$(R)Temperature_RBV</p></td>
+<td><p>ao, ai</p></td>
+</tr>
+<tr class="row-odd"><td><p>ADTemperatureActual</p></td>
+<td><p>asynFloat64</p></td>
+<td><p>r/o</p></td>
+<td><p>Actual detector temperature</p></td>
+<td><p>TEMPERATURE_ACTUAL</p></td>
+<td><p>$(P)$(R)Temperature_Actual</p></td>
+<td><p>ai</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td colspan="5"><p><strong>Detector readout control including gain, binning, region start and size, reversal</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>ADGain</p></td>
+<td><p>asynFloat64</p></td>
+<td><p>r/w</p></td>
+<td><p>Detector gain</p></td>
+<td><p>GAIN</p></td>
+<td><p>$(P)$(R)Gain, $(P)$(R)Gain_RBV</p></td>
+<td><p>ao, ai</p></td>
+</tr>
+<tr class="row-even"><td><p>ADBinX</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>Binning in the X direction</p></td>
+<td><p>BIN_X</p></td>
+<td><p>$(P)$(R)BinX, $(P)$(R)BinX_RBV</p></td>
+<td><p>longout, longin</p></td>
+</tr>
+<tr class="row-odd"><td><p>ADBinY</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>Binning in the Y direction</p></td>
+<td><p>BIN_Y</p></td>
+<td><p>$(P)$(R)BinY, $(P)$(R)BinY_RBV</p></td>
+<td><p>longout, longin</p></td>
+</tr>
+<tr class="row-even"><td><p>ADMinX</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>First pixel to read in the X direction. 0 is the first pixel on the detector.</p></td>
+<td><p>MIN_X</p></td>
+<td><p>$(P)$(R)MinX, $(P)$(R)MinX_RBV</p></td>
+<td><p>longout, longin</p></td>
+</tr>
+<tr class="row-odd"><td><p>ADMinY</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>First pixel to read in the Y direction. 0 is the first pixel on the detector.</p></td>
+<td><p>MIN_Y</p></td>
+<td><p>$(P)$(R)MinY, $(P)$(R)MinY_RBV</p></td>
+<td><p>longout, longin</p></td>
+</tr>
+<tr class="row-even"><td><p>ADSizeX</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>Size of the region to read in the X direction</p></td>
+<td><p>SIZE_X</p></td>
+<td><p>$(P)$(R)SizeX, $(P)$(R)SizeX_RBV</p></td>
+<td><p>longout, longin</p></td>
+</tr>
+<tr class="row-odd"><td><p>ADSizeY</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>Size of the region to read in the Y direction</p></td>
+<td><p>SIZE_Y</p></td>
+<td><p>$(P)$(R)SizeY, $(P)$(R)SizeY_RBV</p></td>
+<td><p>longout, longin</p></td>
+</tr>
+<tr class="row-even"><td><p>ADReverseX</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>Reverse array in the X direction, (0=No, 1=Yes)</p></td>
+<td><p>REVERSE_X</p></td>
+<td><p>$(P)$(R)ReverseX, $(P)$(R)ReverseX_RBV</p></td>
+<td><p>longout, longin</p></td>
+</tr>
+<tr class="row-odd"><td><p>ADReverseY</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>Reverse array in the Y direction, (0=No, 1=Yes)</p></td>
+<td><p>REVERSE_Y</p></td>
+<td><p>$(P)$(R)ReverseY, $(P)$(R)ReverseY_RBV</p></td>
+<td><p>longout, longin</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td></td>
+<td colspan="4"><p><strong>Image and trigger modes</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>ADImageMode</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>Image mode (ADImageMode_t).</p></td>
+<td><p>IMAGE_MODE</p></td>
+<td><p>$(P)$(R)ImageMode, $(P)$(R)ImageMode_RBV</p></td>
+<td><p>mbbo, mbbi</p></td>
+</tr>
+<tr class="row-even"><td><p>ADTriggerMode</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>Trigger mode (ADTriggerMode_t).</p></td>
+<td><p>TRIGGER_MODE</p></td>
+<td><p>$(P)$(R)TriggerMode, $(P)$(R)TriggerMode_RBV</p></td>
+<td><p>mbbo, mbbi</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td></td>
+<td colspan="4"><p><strong>Frame type</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>ADFrameType</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>Frame type (ADFrameType_t).</p></td>
+<td><p>FRAME_TYPE</p></td>
+<td><p>$(P)$(R)FrameType, $(P)$(R)FrameType_RBV</p></td>
+<td><p>mbbo, mbbi</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td></td>
+<td colspan="4"><p><strong>Acquisition time and period</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>ADAcquireTime</p></td>
+<td><p>asynFloat64</p></td>
+<td><p>r/w</p></td>
+<td><p>Acquisition time per image</p></td>
+<td><p>ACQ_TIME</p></td>
+<td><p>$(P)$(R)AcquireTime, $(P)$(R)AcquireTime_RBV</p></td>
+<td><p>ao, ai</p></td>
+</tr>
+<tr class="row-odd"><td><p>ADAcquirePeriod</p></td>
+<td><p>asynFloat64</p></td>
+<td><p>r/w</p></td>
+<td><p>Acquisition period between images</p></td>
+<td><p>ACQ_PERIOD</p></td>
+<td><p>$(P)$(R)AcquirePeriod, $(P)$(R)AcquirePeriod_RBV</p></td>
+<td><p>ao, ai</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td></td>
+<td colspan="4"><p><strong>Number of exposures and number of images</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>ADNumExposures</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>Number of exposures per image to acquire</p></td>
+<td><p>NEXPOSURES</p></td>
+<td><p>$(P)$(R)NumExposures, $(P)$(R)NumExposures_RBV</p></td>
+<td><p>longout, longin</p></td>
+</tr>
+<tr class="row-even"><td><p>ADNumImages</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>Number of images to acquire in one acquisition sequence</p></td>
+<td><p>NIMAGES</p></td>
+<td><p>$(P)$(R)NumImages, $(P)$(R)NumImages_RBV</p></td>
+<td><p>longout, longin</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td></td>
+<td colspan="4"><p><strong>Status information</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>ADStatus</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/o</p></td>
+<td><p>Acquisition status (ADStatus_t)</p></td>
+<td><p>STATUS</p></td>
+<td><p>$(P)$(R)DetectorState_RBV</p></td>
+<td><p>mbbi</p></td>
+</tr>
+<tr class="row-odd"><td><p>ADStatusMessage</p></td>
+<td><p>asynOctet</p></td>
+<td><p>r/o</p></td>
+<td><p>Status message string</p></td>
+<td><p>STATUS_MESSAGE</p></td>
+<td><p>$(P)$(R)StatusMessage_RBV</p></td>
+<td><p>waveform</p></td>
+</tr>
+<tr class="row-even"><td><p>ADStringToServer</p></td>
+<td><p>asynOctet</p></td>
+<td><p>r/o</p></td>
+<td><p>String from driver to string-based vendor server</p></td>
+<td><p>STRING_TO_SERVER</p></td>
+<td><p>$(P)$(R)StringToServer_RBV</p></td>
+<td><p>waveform</p></td>
+</tr>
+<tr class="row-odd"><td><p>ADStringFromServer</p></td>
+<td><p>asynOctet</p></td>
+<td><p>r/o</p></td>
+<td><p>String from string-based vendor server to driver</p></td>
+<td><p>STRING_FROM_SERVER</p></td>
+<td><p>$(P)$(R)StringFromServer_RBV</p></td>
+<td><p>waveform</p></td>
+</tr>
+<tr class="row-even"><td><p>ADNumExposuresCounter</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/o</p></td>
+<td><p>Counter that increments by 1 each time an exposure is acquired for the current image.
+Driver resets to 0 when acquisition is started.</p></td>
+<td><p>NUM_EXPOSURES_COUNTER</p></td>
+<td><p>$(P)$(R)NumExposuresCounter_RBV</p></td>
+<td><p>longin</p></td>
+</tr>
+<tr class="row-odd"><td><p>ADNumImagesCounter</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/o</p></td>
+<td><p>Counter that increments by 1 each time an image is acquired in the current acquisition
+sequence. Driver resets to 0 when acquisition is started. Drivers can use this as
+the loop counter when ADImageMode=ADImageMultiple.</p></td>
+<td><p>NUM_IMAGES_COUNTER</p></td>
+<td><p>$(P)$(R)NumImagesCounter_RBV</p></td>
+<td><p>longin</p></td>
+</tr>
+<tr class="row-even"><td><p>ADTimeRemaining</p></td>
+<td><p>asynFloat64</p></td>
+<td><p>r/o</p></td>
+<td><p>Time remaining for current image. Drivers should update this value if they are doing
+the exposure timing internally, rather than in the detector hardware.</p></td>
+<td><p>TIME_REMAINING</p></td>
+<td><p>$(P)$(R)TimeRemaining_RBV</p></td>
+<td><p>ai</p></td>
+</tr>
+<tr class="row-odd"><td><p>ADReadStatus</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>Write a 1 to this parameter to force a read of the detector status. Detector drivers
+normally read the status as required, so this is usually not necessary, but there
+may be some circumstances under which forcing a status read may be needed.</p></td>
+<td><p>READ_STATUS</p></td>
+<td><p>$(P)$(R)ReadStatus</p></td>
+<td><p>bo</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td></td>
+<td colspan="4"><p><strong>Shutter control</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>ADShutterMode</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>Shutter mode (None, detector-controlled or EPICS-controlled) (ADShutterMode_t)</p></td>
+<td><p>SHUTTER_MODE</p></td>
+<td><p>$(P)$(R)ShutterMode, $(P)$(R)ShutterMode_RBV</p></td>
+<td><p>mbbo, mbbi</p></td>
+</tr>
+<tr class="row-even"><td><p>ADShutterControl</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>Shutter control for the selected (detector or EPICS) shutter (ADShutterStatus_t)</p></td>
+<td><p>SHUTTER_CONTROL</p></td>
+<td><p>$(P)$(R)ShutterControl, $(P)$(R)ShutterControl_RBV</p></td>
+<td><p>bo, bi</p></td>
+</tr>
+<tr class="row-odd"><td><p>ADShutterControlEPICS</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>This record processes when it receives a callback from the driver to open or close
+the EPICS shutter. It triggers the records below to actually open or close the EPICS
+shutter.</p></td>
+<td><p>SHUTTER_CONTROL_EPICS</p></td>
+<td><p>$(P)$(R)ShutterControlEPICS</p></td>
+<td><p>bi</p></td>
+</tr>
+<tr class="row-even"><td><p>N/A</p></td>
+<td><p>N/A</p></td>
+<td><p>r/w</p></td>
+<td><p>This record writes its OVAL field to its OUT field when the EPICS shutter is told
+to open. The OCAL (and hence OVAL) and OUT fields are user-configurable, so any
+EPICS-controllable shutter can be used.</p></td>
+<td><p>N/A</p></td>
+<td><p>$(P)$(R)ShutterOpenEPICS</p></td>
+<td><p>calcout</p></td>
+</tr>
+<tr class="row-odd"><td><p>N/A</p></td>
+<td><p>N/A</p></td>
+<td><p>r/w</p></td>
+<td><p>This record writes its OVAL field to its OUT field when the EPICS shutter is told
+to close. The OCAL (and hence OVAL) and OUT fields are user-configurable, so any
+EPICS-controllable shutter can be used.</p></td>
+<td><p>N/A</p></td>
+<td><p>$(P)$(R)ShutterCloseEPICS</p></td>
+<td><p>calcout</p></td>
+</tr>
+<tr class="row-even"><td><p>ADShutterStatus</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/o</p></td>
+<td><p>Status of the detector-controlled shutter (ADShutterStatus_t)</p></td>
+<td><p>SHUTTER_STATUS</p></td>
+<td><p>$(P)$(R)ShutterStatus_RBV</p></td>
+<td><p>bi</p></td>
+</tr>
+<tr class="row-odd"><td><p>N/A</p></td>
+<td><p>N/A</p></td>
+<td><p>r/o</p></td>
+<td><p>Status of the EPICS-controlled shutter. This record should have its input link (INP)
+set to a record that contains the open/close status information for the shutter.
+The link should have the “CP” attribute, so this record processes when the input
+changes. The ZRVL field should be set to the value of the input link when the shutter
+is closed, and the ONVL field should be set to the value of the input link when
+the shutter is open.</p></td>
+<td><p>N/A</p></td>
+<td><p>$(P)$(R)ShutterStatusEPICS_RBV</p></td>
+<td><p>mbbi</p></td>
+</tr>
+<tr class="row-even"><td><p>ADShutterOpenDelay</p></td>
+<td><p>asynFloat64</p></td>
+<td><p>r/w</p></td>
+<td><p>Time required for the shutter to actually open (ADShutterStatus_t)</p></td>
+<td><p>SHUTTER_OPEN_DELAY</p></td>
+<td><p>$(P)$(R)ShutterOpenDelay, $(P)$(R)ShutterOpenDelay_RBV</p></td>
+<td><p>ao, ai</p></td>
+</tr>
+<tr class="row-odd"><td><p>ADShutterCloseDelay</p></td>
+<td><p>asynFloat64</p></td>
+<td><p>r/w</p></td>
+<td><p>Time required for the shutter to actually close (ADShutterStatus_t)</p></td>
+<td><p>SHUTTER_CLOSE_DELAY</p></td>
+<td><p>$(P)$(R)ShutterCloseDelay, $(P)$(R)ShutterCloseDelay_RBV</p></td>
+<td><p>ao, ai</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="guidelines.html" class="btn btn-neutral float-left" title="Guidelines and rules for drivers" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../ADAndor/andorDoc.html" class="btn btn-neutral float-right" title="ADAndor" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Mark Rivers.
+      <span class="lastupdated">Last updated on 2023-March-12.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

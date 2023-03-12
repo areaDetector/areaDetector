@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ADmarCCD &mdash; areaDetector Support</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme_overrides.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Example st.cmd Startup File" href="st_cmd.html" />
+    <link rel="prev" title="Example st.cmd Startup File" href="../ADLightField/st_cmd.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            areaDetector
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../readme.html">Readme</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../user_guide.html">User Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/overview.html">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/arch.html">Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/asynPortDriver.html">asynPortDriver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/NDArray.html">NDArray</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../detector_drivers.html">Detector Drivers</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../ADCore/guidelines.html">Guidelines and rules for drivers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADCore/ADDriver.html">ADDriver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADAndor/andorDoc.html">ADAndor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADAndor3/ADAndorDoc.html">ADAndor3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADAravis/ADAravis.html">ADAravis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADCSimDetector/ADCSimDetectorDoc.html">ADCSimDetector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADDexela/ADDexela.html">ADDexela</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADEiger/eiger.html">ADEiger</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADFastCCD/index.html">ADFastCCD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADGenICam/ADGenICam.html">ADGenICam</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADLambda/ADLambda.html">ADLambda</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADLightField/ADLightField.html">ADLightField</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">ADmarCCD</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#implementation-of-standard-driver-parameters">Implementation of standard driver parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#marccd-specific-parameters">MarCCD specific parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#unsupported-standard-driver-parameters">Unsupported standard driver parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#configuration">Configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#example-st-cmd-startup-file">Example st.cmd startup file</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#medm-screens">MEDM screens</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#performance-measurements">Performance measurements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#restrictions">Restrictions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../ADmar345/mar345Doc.html">ADmar345</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPerkinElmer/PerkinElmerDoc.html">ADPerkinElmer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPICam/PICamDoc.html">ADPICam</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPilatus/pilatusDoc.html">ADPilatus</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPixirad/ADPixirad.html">ADPixirad</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPointGrey/PointGreyDoc.html">ADPointGrey</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADProsilica/ADProsilica.html">ADProsilica</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPvCam/pvcamDoc.html">ADPvCam</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADQImaging/QImagingDoc.html">ADQImaging</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADRIXSCam/ADRIXSCam.html">ADRIXSCam</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADSimDetector/simDetector.html">ADSimDetector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADSpinnaker/ADSpinnaker.html">ADSpinnaker</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADVimba/ADVimba.html">ADVimba</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADURL/ADURL.html">ADURL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../NDDriverStdArrays/NDDriverStdArraysDoc.html">NDDriverStdArrays</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../pvaDriver/pvaDriver.html">pvaDriver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../specsAnalyser/index.html">specsAnalyser</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/plugins.html">areaDetector Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../additional_plugins.html">Additional plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/medm.html">MEDM screens</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADViewers/ad_viewers.html">areaDetector Viewers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../acknowledgements.html">Acknowledgements and licenses</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../install_guide.html">Install Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release.html">Top-level Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ADCore_release.html">ADCore Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ADSupport_release.html">ADSupport Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../doxygen.html">Source Code Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../detectors.html">Supported Detectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../legacy_versions.html">Legacy Versions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">areaDetector</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../user_guide.html">areaDetector Users Guide</a></li>
+          <li class="breadcrumb-item"><a href="../detector_drivers.html">Detector Drivers</a></li>
+      <li class="breadcrumb-item active">ADmarCCD</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/ADmarCCD/marCCDDoc.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="admarccd">
+<h1><a class="toc-backref" href="#id1" role="doc-backlink">ADmarCCD</a><a class="headerlink" href="#admarccd" title="Permalink to this heading"></a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">author<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Mark Rivers, University of Chicago</p>
+</dd>
+</dl>
+<nav class="contents" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#admarccd" id="id1">ADmarCCD</a></p>
+<ul>
+<li><p><a class="reference internal" href="#overview" id="id2">Overview</a></p></li>
+<li><p><a class="reference internal" href="#implementation-of-standard-driver-parameters" id="id3">Implementation of standard driver parameters</a></p></li>
+<li><p><a class="reference internal" href="#marccd-specific-parameters" id="id4">MarCCD specific parameters</a></p></li>
+<li><p><a class="reference internal" href="#unsupported-standard-driver-parameters" id="id5">Unsupported standard driver parameters</a></p></li>
+<li><p><a class="reference internal" href="#configuration" id="id6">Configuration</a></p></li>
+<li><p><a class="reference internal" href="#example-st-cmd-startup-file" id="id7">Example st.cmd startup file</a></p></li>
+<li><p><a class="reference internal" href="#medm-screens" id="id8">MEDM screens</a></p></li>
+<li><p><a class="reference internal" href="#performance-measurements" id="id9">Performance measurements</a></p></li>
+<li><p><a class="reference internal" href="#restrictions" id="id10">Restrictions</a></p></li>
+</ul>
+</li>
+</ul>
+</nav>
+<section id="overview">
+<h2><a class="toc-backref" href="#id2" role="doc-backlink">Overview</a><a class="headerlink" href="#overview" title="Permalink to this heading"></a></h2>
+<p>This is an <a class="reference internal" href="../index.html"><span class="doc">areaDetector</span></a> driver for <a class="reference external" href="https://www.mar-usa.com">Rayonix</a> marCCD detectors.</p>
+<p>The interface to the detector is via a TCP/IP socket interface to the
+<code class="docutils literal notranslate"><span class="pre">marccd\_server\_socket</span></code> server that Rayonix provides. The
+<code class="docutils literal notranslate"><span class="pre">marccd\_server\_socket</span></code> program must be started before the areaDetector
+software is started, by running the marccd program and executing
+<code class="docutils literal notranslate"><span class="pre">Acquire/Remote</span> <span class="pre">Control/Start</span></code>.</p>
+<p>marccd must be using Version 1 (for non-HS detectors) or 2 (for HS
+detectors) of the remote protocol. This is normally done done by editing
+the file <code class="docutils literal notranslate"><span class="pre">marccd/configuration/marccd.conf</span></code> and replacing the line:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">include</span> <span class="n">marccd_server_v0</span><span class="o">.</span><span class="n">conf</span>
+</pre></div>
+</div>
+<p>with:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">include</span> <span class="n">marccd_server_v1</span><span class="o">.</span><span class="n">conf</span>
+</pre></div>
+</div>
+<p>The file <code class="docutils literal notranslate"><span class="pre">marccd_server_v1.conf</span></code> should contain the lines:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">remote_mode_server_command</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">marccd</span><span class="o">/</span><span class="n">contrib</span><span class="o">/</span><span class="n">marccd_server</span><span class="o">/</span><span class="n">marccd_server_socket</span>
+<span class="n">remote_mode_server_arguments</span> <span class="mi">2222</span>
+</pre></div>
+</div>
+<p>The first line points to the location of the <cite>marccd_server_socket</cite>
+program that is used to implement remote control. In order to work with
+the areaDetector driver this must be a version of this program created
+after November 11, 2008 when support for the <cite>get_frameshift</cite> command
+was added. A recent version of this program can be downloaded from the
+<a class="reference external" href="ftp://ftp.rayonix.com/pub/marccd/example_marccd_server.tgz">Rayonix FTP site</a>.</p>
+<p>The marccd program saves the data to disk as TIFF files. The
+areaDetector software reads these disk files in order to read the data,
+because marccd does not provide another mechanism to access the data.</p>
+<p>This driver inherits from <a class="reference internal" href="../ADCore/ADDriver.html"><span class="doc">ADDriver</span></a>.
+It implements nearly all of the parameters in
+<a class="reference external" href="../areaDetectorDoxygenHTML/asyn_n_d_array_driver_8h.html">asynNDArrayDriver.h</a>
+and in
+<a class="reference external" href="../areaDetectorDoxygenHTML/_a_d_driver_8h.html">ADArrayDriver.h</a>. It
+also implements a number of parameters that are specific to the
+marCCD detectors. The <a class="reference external" href="../areaDetectorDoxygenHTML/class_mar_C_D_C.html">marCCD class
+documentation</a>
+describes this class in detail.</p>
+</section>
+<section id="implementation-of-standard-driver-parameters">
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">Implementation of standard driver parameters</a><a class="headerlink" href="#implementation-of-standard-driver-parameters" title="Permalink to this heading"></a></h2>
+<p>The following table describes how the MarCCD driver implements some of
+the standard driver parameters.</p>
+<table class="table-bordered table-striped table-hover docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 60%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head" colspan="3"><p><strong>Implementation of Parameters in asynNDArrayDriver.h and ADDriver.h, and EPICS Record
+Definitions in ADBase.template and NDFile.template</strong></p></th>
+</tr>
+<tr class="row-even"><th class="head"><p>Parameter index variable</p></th>
+<th class="head"><p>EPICS record name</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-odd"><td><p>ADFrameType</p></td>
+<td><p>$(P)$(R)FrameType</p></td>
+<td><p>The driver redefines the choices for the ADFrameType parameter (record $(P)$(R)FrameType)
+from ADDriver.h. The choices for the MarCCD are: <br>
+<code class="docutils literal notranslate"><span class="pre">Normal</span></code> (corrected data frame without double correlation) <br>
+<code class="docutils literal notranslate"><span class="pre">Background</span></code> (background frame with 0 exposure time, done with double correlation
+to remove zingers) <br>
+<code class="docutils literal notranslate"><span class="pre">Raw</span></code> (data frame without correction for background or spatial distortion) <br>
+<code class="docutils literal notranslate"><span class="pre">DblCorrelation</span></code> (two images each collected for half the nominal acquisition time,
+zingers removed by double correlation) <br></p></td>
+</tr>
+<tr class="row-even"><td><p>ADImageMode</p></td>
+<td><p>$(P)$(R)ImageMode</p></td>
+<td><p>The driver redefines the choices for the ADImageMode parameter (record $(P)$(R)ImageMode)
+from ADDriver.h.
+<code class="docutils literal notranslate"><span class="pre">Single</span></code> (aingle frame acquisition) <br>
+<code class="docutils literal notranslate"><span class="pre">Multiple</span></code> (acquire ADNumImages images) <br>
+<code class="docutils literal notranslate"><span class="pre">Continuous</span></code> (acquire images continuously until ADAcquire is set to 0) <br>
+<code class="docutils literal notranslate"><span class="pre">Series</span> <span class="pre">triggered</span></code> (acquire a series of images using an external trigger signal) <br>
+<code class="docutils literal notranslate"><span class="pre">Series</span> <span class="pre">timed</span></code> (acquire a series of images using the internal clock) <br>
+<code class="docutils literal notranslate"><span class="pre">Series</span> <span class="pre">triggered</span></code> and <code class="docutils literal notranslate"><span class="pre">Series</span> <span class="pre">timed</span></code> are only supported for ServerMode=2 servers.</p></td>
+</tr>
+<tr class="row-odd"><td><p>ADTriggerMode</p></td>
+<td><p>$(P)$(R)TriggerMode</p></td>
+<td><p>The driver redefines the choices for the ADTriggerMode parameter (record $(P)$(R)TriggerMode)
+from ADDriver.h.
+<code class="docutils literal notranslate"><span class="pre">Internal</span></code> (Single frame acquisition) <br>
+<code class="docutils literal notranslate"><span class="pre">Frame</span></code> (rising edge causes frame transfer/readout and start of next acquisition) <br>
+<code class="docutils literal notranslate"><span class="pre">Bulb</span></code> (rising edge of trigger starts acquisition, falling edge causes frame transfer/readout) <br>
+<code class="docutils literal notranslate"><span class="pre">Timed</span></code> (rising edge of trigger causes frame transfer/readout and each exposure lasts for time
+ADAcquireTime) <br>
+ServerMode=1 servers only support <code class="docutils literal notranslate"><span class="pre">Internal</span></code>, ServerMode=2 servers support all 4 modes.</p></td>
+</tr>
+<tr class="row-even"><td><p>ADNumImages</p></td>
+<td><p>$(P)$(R)NumImages</p></td>
+<td><p>Controls the number of images to acquire when ADImageMode is ADImageMultiple.</p></td>
+</tr>
+<tr class="row-odd"><td><p>ADAcquirePeriod</p></td>
+<td><p>$(P)$(R)AcquirePeriod</p></td>
+<td><p>Controls the period between images when ADImageMode is ADImageMultiple or ADImageContinuous.
+If this is greater than the acquisition time plus readout overhead then the driver
+will wait until the period has elapsed before starting the next acquisition.</p></td>
+</tr>
+<tr class="row-even"><td><p>ADReadStatus</p></td>
+<td><p>$(P)$(R)ReadStatus</p></td>
+<td><p>Writing 1 to this parameter causes the status to be read from the marccd server.
+By processing or periodically scanning this record the status information can be
+refreshed. This is normally not necessary, but if ADArrayCallbacks is 0 and marCCDOverlap
+is 1 then the status will not indicate that the system is idle when acquisition
+is complete, because the driver polling stops before the file is written. This record
+can be used to eliminate the confusion that might cause.</p></td>
+</tr>
+<tr class="row-odd"><td><p>NDFilePath</p></td>
+<td><p>$(P)$(R)FilePath</p></td>
+<td><p>Controls the path for saving images. It must be a valid path for marccd <em>and</em>
+for the areaDetector driver, which is normally running in an EPICS IOC. If marccd
+and the EPICS IOC are not running on the same machine then soft links will typically
+be used to make the paths look identical.</p></td>
+</tr>
+<tr class="row-even"><td><p>NDFileFormat</p></td>
+<td><p>$(P)$(R)FileFormat</p></td>
+<td><p>marccd only supports TIFF files.</p></td>
+</tr>
+</tbody>
+</table>
+<p>It is useful to use an NDPluginStats plugin set to use the entire marCCD
+detector. The MaxValue_RBV PV can be monitored to make sure that the
+16-bit limit of 65,535 is not being approached in any pixel.</p>
+</section>
+<section id="marccd-specific-parameters">
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">MarCCD specific parameters</a><a class="headerlink" href="#marccd-specific-parameters" title="Permalink to this heading"></a></h2>
+<p>The MarCCD driver implements the following parameters in addition to
+those in asynNDArrayDriver.h and ADDriver.h. Note that to reduce the
+width of this table the parameter index variable names have been split
+into 2 lines, but these are just a single name, for example
+<code class="docutils literal notranslate"><span class="pre">marCCDState</span></code>.</p>
+<table class="table-bordered table-striped table-hover docutils align-default">
+<colgroup>
+<col style="width: 70%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head" colspan="4"><p><strong>Parameter Definitions in marccd.cpp and EPICS Record Definitions in marccd.template</strong></p></th>
+</tr>
+<tr class="row-even"><th class="head"><p>Description</p></th>
+<th class="head"><p>drvInfo string</p></th>
+<th class="head"><p>EPICS record name</p></th>
+<th class="head"><p>EPICS record type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-odd"><td colspan="4"><p><strong>Status parameters</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>The version number of the server software running on the detector.  This is 1 for the
+servers running on non-HS detectors, and 2 for the servers running on HS detectors.</p></td>
+<td><p>MAR_SERVER_MODE</p></td>
+<td><p>$(P)$(R)ServerMode_RBV</p></td>
+<td><p>longin</p></td>
+</tr>
+<tr class="row-odd"><td><p>State word returned by marccd server. The low-order 4-bits of this word are the
+state of the marccd server, and will be Idle (0x0), Error (0x7), or Busy (0x8).
+The next 24 bits encode the state of the 6 server tasks (Acquire, Readout, Correct,
+Save, Dezinger, Series) with 4-bits per task. Each task can be in the state Idle (0x0),
+Queued (0x1), Executing (0x2), Error (0x4), or Reserved (0x8).</p></td>
+<td><p>MAR_STATE</p></td>
+<td><p>$(P)$(R)MarState_RBV</p></td>
+<td><p>longin</p></td>
+</tr>
+<tr class="row-even"><td><p>Status of the marccd server task (Idle, Error, or Busy)</p></td>
+<td><p>MAR_STATUS</p></td>
+<td><p>$(P)$(R)MarStatus_RBV</p></td>
+<td><p>mbbi</p></td>
+</tr>
+<tr class="row-odd"><td><p>Status of the marccd server acquire task (Idle, Queued, Executing, Error, or Reserved)</p></td>
+<td><p>MAR_ACQUIRE_STATUS</p></td>
+<td><p>$(P)$(R)MarAcquireStatus_RBV</p></td>
+<td><p>mbbi</p></td>
+</tr>
+<tr class="row-even"><td><p>Status of the marccd server readout task (Idle, Queued, Executing, Error, or Reserved)</p></td>
+<td><p>MAR_READOUT_STATUS</p></td>
+<td><p>$(P)$(R)MarReadoutStatus_RBV</p></td>
+<td><p>mbbi</p></td>
+</tr>
+<tr class="row-odd"><td><p>Status of the marccd server correct task (Idle, Queued, Executing, Error, or Reserved)</p></td>
+<td><p>MAR_CORRECT_STATUS</p></td>
+<td><p>$(P)$(R)MarCorrectStatus_RBV</p></td>
+<td><p>mbbi</p></td>
+</tr>
+<tr class="row-even"><td><p>Status of the marccd server file writing task (Idle, Queued, Executing, Error, or
+Reserved)</p></td>
+<td><p>MAR_WRITING_STATUS</p></td>
+<td><p>$(P)$(R)MarWritingStatus_RBV</p></td>
+<td><p>mbbi</p></td>
+</tr>
+<tr class="row-odd"><td><p>Status of the marccd server dezinger task (Idle, Queued, Executing, Error, or Reserved)</p></td>
+<td><p>MAR_DEZINGER_STATUS</p></td>
+<td><p>$(P)$(R)MarDezingerStatus_RBV</p></td>
+<td><p>mbbi</p></td>
+</tr>
+<tr class="row-even"><td><p>Status of the marccd server series acquisition task (Idle, Queued, Executing, Error, or Reserved).</p></td>
+<td><p>MAR_SERIES_STATUS</p></td>
+<td><p>$(P)$(R)MarSeriesStatus_RBV</p></td>
+<td><p>mbbi</p></td>
+</tr>
+<tr class="row-odd"><td colspan="4"><p><strong>Optimization parameters</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>The marccd server has 5 tasks (Acquire, Readout, Correct, Write, Dezinger) that
+can overlap their operation. The areaDetector driver can exploit this to improve
+performance in some circumstances. If this parameter is set to 1 (Overlap) then
+the ADAcquire parameter will go to 0 (Done) when the Readout task is done executing,
+but before the Correct and Write tasks have finished correcting and saving the file
+to disk. This improves performance because the next image can begin as soon as ADAcquire
+goes to done, and hence before the previous image is written to disk. Note, however
+that this parameter must be set to 0 (Sequential) if callbacks are being used to
+compute statistics that are being used in data collection, e.g. in a scan. If this is
+not done then the statistics information will be grabbed before it is updated and incorrect
+scan data will result.</p></td>
+<td><p>MAR_OVERLAP</p></td>
+<td><p>$(P)$(R)OverlapMode, $(P)$(R)OverlapMode_RBV</p></td>
+<td><p>bo, bi</p></td>
+</tr>
+<tr class="row-odd"><td colspan="4"><p><strong>Frameshift parameters</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>marccd can be used for time-resolved studies by collecting multiple data sets before
+reading out the detector. This is done by placing a mask in front of the detector
+that restricts the x-rays to horizontal stripe. An exposure is made, and then an
+external signal causes the detector to shift the image by the number of lines given
+by this parameter. A number of images separated by times of a few milliseconds can
+be collected, and then the detector is read out. Set this parameter to 0 to disable
+frameshift mode.</p></td>
+<td><p>MAR_FRAME_SHIFT</p></td>
+<td><p>$(P)$(R)FrameShift, $(P)$(R)FrameShift_RBV</p></td>
+<td><p>longout, longin</p></td>
+</tr>
+<tr class="row-odd"><td colspan="4"><p><strong>Series acquisition parameters (ServerMode=2 only)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>The template for the file names written in trigger or timed series acquisition modes.
+The FilePath, FileName and FileNumber are combined into a string using this
+C format string.  This is used to construct a base file name.
+The actual file names in the series are constructed using this base file name plus
+the SeriesFileFirst and SeriesFileDigits records. Example: “%s%s_%3.3d”</p></td>
+<td><p>MAR_SERIES_FILE_TEMPLATE</p></td>
+<td><p>$(P)$(R)SeriesFileTemplate, $(P)$(R)SeriesFileTemplate_RBV</p></td>
+<td><p>waveform, waveform</p></td>
+</tr>
+<tr class="row-odd"><td><p>The number of the first file in a triggered or timed series acquisition.</p></td>
+<td><p>MAR_SERIES_FILE_FIRST</p></td>
+<td><p>$(P)$(R)SeriesFileFirst, $(P)$(R)SeriesFileFirst_RBV</p></td>
+<td><p>longout, longin</p></td>
+</tr>
+<tr class="row-even"><td><p>The number of digits to use for the file numbers in triggered or timed series acquisition.</p></td>
+<td><p>MAR_SERIES_FILE_DIGITS</p></td>
+<td><p>$(P)$(R)SeriesFileDigits, $(P)$(R)SeriesFileDigits_RBV</p></td>
+<td><p>longout, longin</p></td>
+</tr>
+<tr class="row-odd"><td colspan="4"><p><strong>Gating and readout parameters (ServerMode=2 only)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>The gating mode for the detector. Choices are: , “None” , “Gated”</p></td>
+<td><p>MAR_GATE_MODE</p></td>
+<td><p>$(P)$(R)GateMode, $(P)$(R)GateMode_RBV</p></td>
+<td><p>mbbo, mbbi</p></td>
+</tr>
+<tr class="row-odd"><td><p>The readout mode for the detector. Choices are: <code class="docutils literal notranslate"><span class="pre">Standard</span></code>, <code class="docutils literal notranslate"><span class="pre">High</span> <span class="pre">gain</span></code>
+<code class="docutils literal notranslate"><span class="pre">Low</span> <span class="pre">noise</span></code> , <code class="docutils literal notranslate"><span class="pre">HDR</span></code> (High Dynamic Range)</p></td>
+<td><p>MAR_GATE_MODE</p></td>
+<td><p>$(P)$(R)GateMode, $(P)$(R)GateMode_RBV</p></td>
+<td><p>mbbo, mbbi</p></td>
+</tr>
+<tr class="row-even"><td colspan="4"><p><strong>Baseline stabilization parameters</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>The following text is from a document describing baseline stabilization from Rayonix.
+“Baseline stabilization is an optional addition to the marccd data collection software.
+This software option stabilizes the baseline offset level of each CCD image to a
+more accurate value than only the analog electronics provide. This feature is important
+in any type of measurement that requires comparisons between successive data frames
+that include, for example, subtracting (or adding) two data frames, such as one
+often must do in small angle scattering experiments. Baseline instability can make
+it appear that there are slightly more or slightly less X-rays across the entire
+detector (or readout channel) in a data frame. That is different than the read noise,
+which has no net effect on the average. A stable baseline is less critical for data
+analysis in which a background value is calculated by measuring the background around
+each individual spot on the same data frame (typically done in single crystal crystallography
+experiments). The baseline level of a CCD is usually established by measuring an
+analog voltage of the readout amplifier, and the “zero” level can drift over time
+due to ambient temperature changes or other electronic instability. The time scale
+on which the drift occurs is usually greater than about 20 minutes or so; therefore,
+the marccd software default for recollecting background images is every 20 minutes
+or once every data segment in a dataset. Expected baseline stability improvement
+Whereas the older MarCCD detectors had a baseline stability that was only good to
+about &amp;plusmn;1-2 ADU, the SX Series and MX Series detectors have improved electronic
+baseline stability, closer to +-0.5 ADU. When this Baseline Stabilization
+software option is used, the baseline can be improved much further, with baseline
+stability as low as about +-0.01 ADU. CCD overscan The method of improving
+the baseline is by an overscan technique. When this option is “on”, extra blank
+pixels are read out from the CCD after each line of the CCD is read out from the
+serial register. In the marccd program memory, a temporary data frame which is larger
+than the normal data frame is recorded, and the pixels outside the imaging area
+are used to compute the baseline. These blank pixels do not correspond to any real
+region of the CCD; they are just a result of telling the readout electronics to
+readout with no charge present., The user must also enter a target baseline stability value.
+This number represents
+the accuracy to which the program will try to stabilize the baseline, in ADU (analog-to-digital
+units). The resulting data frame will have a baseline value that is approximately
+the corrected_frame_bias, typically 10 or 100, plus or minus the target baseline
+stability value. For example, if the user enters 0.1, and the corrected_frame_bias
+is 10 (i.e. images with no X-rays normally have a baseline around 10 ADU), then
+a data frame with X-rays will result in a baseline value of approximately 10 &amp;plusmn;0.1
+ADU (and each individual pixel will also have contributions due to X-rays and read
+noise). The accuracy limit of this software feature is about 0.01 ADU, so any target
+value entered between 0 and 0.01 is automatically converted to the limit, 0.01 ADU.
+Entering a target value of 0 is equivalent to turning off the baseline stabilization.”</p></td>
+<td><p>MAR_STABILITY</p></td>
+<td><p>$(P)$(R)Stability, $(P)$(R)Stability_RBV</p></td>
+<td><p>ao, ai</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td colspan="3"><p><strong>Timeout parameters</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>Timeout in seconds when reading a TIFF file. It should be set to several seconds,
+because there it can take some time for the marccd server to write the file.</p></td>
+<td><p>MAR_TIFF_TIMEOUT</p></td>
+<td><p>$(P)$(R)ReadTiffTimeout</p></td>
+<td><p>ao</p></td>
+</tr>
+<tr class="row-even"><td colspan="4"><p><strong>Ancillary parameters. These parameters are written to the header of the marccd
+TIFF file.</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>Distance from the sample to the detector (mm)</p></td>
+<td><p>MAR_DETECTOR_DISTANCE</p></td>
+<td><p>$(P)$(R)DetectorDistance</p></td>
+<td><p>ao</p></td>
+</tr>
+<tr class="row-even"><td><p>X position of the direct beam on the detector (mm)</p></td>
+<td><p>MAR_BEAM_X</p></td>
+<td><p>$(P)$(R)BeamX</p></td>
+<td><p>ao</p></td>
+</tr>
+<tr class="row-odd"><td><p>Y position of the direct beam on the detector (mm)</p></td>
+<td><p>MAR_BEAM_Y</p></td>
+<td><p>$(P)$(R)BeamY</p></td>
+<td><p>ao</p></td>
+</tr>
+<tr class="row-even"><td><p>Starting value of phi rotation (deg)</p></td>
+<td><p>MAR_START_PHI</p></td>
+<td><p>$(P)$(R)StartPhi</p></td>
+<td><p>ao</p></td>
+</tr>
+<tr class="row-odd"><td><p>Rotation axis being used (phi, omega, etc.)</p></td>
+<td><p>MAR_ROTATION_AXIS</p></td>
+<td><p>$(P)$(R)RotationAxis</p></td>
+<td><p>stringout</p></td>
+</tr>
+<tr class="row-even"><td><p>Rotation range of the rotation axis.</p></td>
+<td><p>MAR_ROTATION_RANGE</p></td>
+<td><p>$(P)$(R)RotationRange</p></td>
+<td><p>ao</p></td>
+</tr>
+<tr class="row-odd"><td><p>Detector two-theta angle (deg); requires theta axis definition with display name
+“TwoTheta” in a marccd configuration file (i.e. <code class="docutils literal notranslate"><span class="pre">theta_display_name</span> <span class="pre">TwoTheta</span></code>).
+This configuration file is typically goniostat_none.conf or goniostat_sw.conf, but
+any configuration file that gets loaded can be used.</p></td>
+<td><p>MAR_TWO_THETA</p></td>
+<td><p>$(P)$(R)TwoTheta</p></td>
+<td><p>ao</p></td>
+</tr>
+<tr class="row-even"><td><p>Wavelength in Angstroms.</p></td>
+<td><p>MAR_WAVELENGTH</p></td>
+<td><p>$(P)$(R)Wavelength</p></td>
+<td><p>ao</p></td>
+</tr>
+<tr class="row-odd"><td><p>Comments for this file.</p></td>
+<td><p>MAR_FILE_COMMENTS</p></td>
+<td><p>$(P)$(R)FileComments</p></td>
+<td><p>waveform</p></td>
+</tr>
+<tr class="row-even"><td><p>Comments for this dataset.</p></td>
+<td><p>MAR_DATASET_COMMENTS</p></td>
+<td><p>$(P)$(R)DatasetComments</p></td>
+<td><p>waveform</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td colspan="3"><p><strong>Debugging</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>asyn record to control debugging communication with marccd_server_socket program</p></td>
+<td><p>N/A</p></td>
+<td><p>$(P)$(R)marSserverAsyn</p></td>
+<td><p>asyn</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="unsupported-standard-driver-parameters">
+<h2><a class="toc-backref" href="#id5" role="doc-backlink">Unsupported standard driver parameters</a><a class="headerlink" href="#unsupported-standard-driver-parameters" title="Permalink to this heading"></a></h2>
+<p>The MarCCD driver does not support the following standard driver
+parameters because they are not supported in the marccd program:</p>
+<ul class="simple">
+<li><p>Number of exposures per image (ADNumExposures)</p></li>
+<li><p>Gain (ADGain)</p></li>
+<li><p>Region to read out (ADMinX, ADMinY, ADSizeX, ADSizeY, ADReverseX,
+ADReverseY)</p></li>
+<li><p>Data type (NDDataType)</p></li>
+<li><p>Reading previous files (NDReadFile)</p></li>
+<li><p>Capture or stream file saving (NDFileWriteMode, NDFileCapture,
+NDNumCapture, NDNumCaptured)</p></li>
+</ul>
+</section>
+<section id="configuration">
+<h2><a class="toc-backref" href="#id6" role="doc-backlink">Configuration</a><a class="headerlink" href="#configuration" title="Permalink to this heading"></a></h2>
+<p>The marCCD driver is created with the marCCDConfig command, either from
+C/C++ or from the EPICS IOC shell.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span> <span class="n">marCCDConfig</span><span class="p">(</span><span class="n">const</span> <span class="n">char</span> <span class="o">*</span><span class="n">portName</span><span class="p">,</span> <span class="n">const</span> <span class="n">char</span> <span class="o">*</span><span class="n">serverPort</span><span class="p">,</span>
+                 <span class="nb">int</span> <span class="n">maxBuffers</span><span class="p">,</span> <span class="n">size_t</span> <span class="n">maxMemory</span><span class="p">,</span>
+                 <span class="nb">int</span> <span class="n">priority</span><span class="p">,</span> <span class="nb">int</span> <span class="n">stackSize</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>For details on the meaning of the parameters to this function refer to
+the detailed documentation on the marCCDConfig function in the
+<a class="reference external" href="../areaDetectorDoxygenHTML/mar_c_c_d_8cpp.html">marCCD.cpp documentation</a> and
+in the documentation for the constructor for the
+<a class="reference external" href="../areaDetectorDoxygenHTML/classmar_c_c_d.html">marCCD class</a>.</p>
+</section>
+<section id="example-st-cmd-startup-file">
+<h2><a class="toc-backref" href="#id7" role="doc-backlink">Example st.cmd startup file</a><a class="headerlink" href="#example-st-cmd-startup-file" title="Permalink to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+</div>
+<p>There is an example IOC boot directory and startup script
+<a class="reference internal" href="st_cmd.html#admarccd-st-cmd-example"><span class="std std-ref">st.cmd</span></a> provided with
+areaDetector.</p>
+</section>
+<section id="medm-screens">
+<h2><a class="toc-backref" href="#id8" role="doc-backlink">MEDM screens</a><a class="headerlink" href="#medm-screens" title="Permalink to this heading"></a></h2>
+<p>The following show the MEDM screens that are used to control the MarCCD
+detector. Note that the general purpose screen ADBase.adl can be used,
+but it exposes many controls that are not applicable to the MarCCD, and
+lacks some fields that are important for the MarCCD.</p>
+<p><code class="docutils literal notranslate"><span class="pre">marCCD.adl</span></code> is the main screen used to control the marCCD driver.</p>
+<figure class="align-center">
+<img alt="../_images/marCCD.png" src="../_images/marCCD.png" />
+</figure>
+<p><code class="docutils literal notranslate"><span class="pre">marccdAncillary.adl</span></code> is the screen used to input ancillary
+information that is written to the MarCCD TIFF files.</p>
+<figure class="align-center">
+<img alt="../_images/MarCCDAncillary.png" src="../_images/MarCCDAncillary.png" />
+</figure>
+<p><code class="docutils literal notranslate"><span class="pre">asynRecord.adl</span></code> is used to control the debugging information printed
+by the asyn TCP/IP driver (asynTraceIODriver) and the EPICS device
+support (asynTraceIODevice).</p>
+<figure class="align-center">
+<img alt="../_images/MarCCDAsynRecord.png" src="../_images/MarCCDAsynRecord.png" />
+</figure>
+<p><code class="docutils literal notranslate"><span class="pre">asynOctet.adl</span></code> can be used to send any command to the marccd remote
+server and display the response. It can be loaded from the More menu in
+asynRecord.adl above.</p>
+<figure class="align-center">
+<img alt="../_images/MarCCDAsynOctet.png" src="../_images/MarCCDAsynOctet.png" />
+</figure>
+</section>
+<section id="performance-measurements">
+<h2><a class="toc-backref" href="#id9" role="doc-backlink">Performance measurements</a><a class="headerlink" href="#performance-measurements" title="Permalink to this heading"></a></h2>
+<p>The following measurements were done to demonstrate the performance that
+can be obtained with the areaDetector MarCCD driver. These measurements
+were made with a MAR-165 CCD. The EPICS IOC was running on the same
+Linux machine as the marccd program. The acquisition time was 1 second.</p>
+<table class="table-bordered table-striped table-hover docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Binning</p></th>
+<th class="head"><p>Image size</p></th>
+<th class="head"><p>marCCDOverlap</p></th>
+<th class="head"><p>Time for 10 images</p></th>
+<th class="head"><p>Overhead per image</p></th>
+<th class="head"><p>Time per task</p></th>
+</tr>
+<tr class="row-even"><th class="head"><p>2x2</p></th>
+<th class="head"><p>2048x2048</p></th>
+<th class="head"><p>Sequential</p></th>
+<th class="head"><p>50.0</p></th>
+<th class="head"><p>4.00</p></th>
+<th class="head"><p>Readout: 3.02
+, Correct: 0.56
+, Save: 0.20</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-odd"><td><p>2x2</p></td>
+<td><p>2048x2048</p></td>
+<td><p>Overlap</p></td>
+<td><p>46.2</p></td>
+<td><p>3.62</p></td>
+<td><p>Same</p></td>
+</tr>
+<tr class="row-even"><td><p>4x4</p></td>
+<td><p>1024x1024</p></td>
+<td><p>Sequential</p></td>
+<td><p>29.0</p></td>
+<td><p>1.90</p></td>
+<td><p>Readout: 1.30
+, Correct: 0.28
+, Save: 0.06</p></td>
+</tr>
+<tr class="row-odd"><td><p>4x4</p></td>
+<td><p>1024x1024</p></td>
+<td><p>Overlap</p></td>
+<td><p>28.7</p></td>
+<td><p>1.87</p></td>
+<td><p>Same</p></td>
+</tr>
+<tr class="row-even"><td><p>8x8</p></td>
+<td><p>512x512</p></td>
+<td><p>Sequential</p></td>
+<td><p>24.0</p></td>
+<td><p>1.40</p></td>
+<td><p>Readout: 0.78
+, Correct: 0.29
+, Save: 0.06</p></td>
+</tr>
+<tr class="row-odd"><td><p>8x8</p></td>
+<td><p>512x512</p></td>
+<td><p>Overlap</p></td>
+<td><p>23.6</p></td>
+<td><p>1.36</p></td>
+<td><p>Same</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="restrictions">
+<h2><a class="toc-backref" href="#id10" role="doc-backlink">Restrictions</a><a class="headerlink" href="#restrictions" title="Permalink to this heading"></a></h2>
+<p>The following are some current restrictions of the MarCCD driver:</p>
+<ul class="simple">
+<li><p>The marccd program can save files in many different formats, with
+TIFF being the default. The areaDetector driver can only read TIFF
+files, not other formats.</p></li>
+<li><p>The areaDetector driver can in principle be run on machines other
+than the Linux machine running marccd, since the connection is via a
+socket. It has only been tested on Linux.</p></li>
+<li><p>The MarCCD driver keeps retrying to read each TIFF file until the
+modification date of the TIFF file is <em>after</em> the time that the
+exposure command was issued. If it did not do this check then it
+could be reading and displaying old files that happen to have the
+same name as the current files being collected. This check requires
+that the computer that is running the soft IOC must have its clock
+well synchronized with the clock on the computer on which the files
+are being written (i.e. the computer generating the file modification
+time). If the clocks are not synchronized then the files may appear
+to be stale when they are not, and the driver will time out. The
+driver actually tolerates up to 10 second clock skew betweeen the
+computers but any more than this may lead to problems.</p></li>
+<li><p>The following items are hardcoded in the driver. They can be changed
+by recompiling compiling if necessary.</p>
+<ul>
+<li><p>MAX_MESSAGE_SIZE=256 The maximum size of message to/from
+marccd_socket_server.</p></li>
+<li><p>MAX_FILENAME_LEN=256 The maximum size of a complete file name
+including path and extension.</p></li>
+<li><p>MARCCD_SERVER_TIMEOUT=1.0 Timeout when communicating with
+marccd_socket_server.</p></li>
+<li><p>FILE_READ_DELAY=.01 seconds. The time between polling to see if
+the TIFF file exists or if it is the expected size.</p></li>
+<li><p>MARCCD_POLL_DELAY=.01 seconds. The time between polling the
+marccd_socket_server status to see when a task has completed.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../ADLightField/st_cmd.html" class="btn btn-neutral float-left" title="Example st.cmd Startup File" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="st_cmd.html" class="btn btn-neutral float-right" title="Example st.cmd Startup File" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Mark Rivers.
+      <span class="lastupdated">Last updated on 2023-March-12.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

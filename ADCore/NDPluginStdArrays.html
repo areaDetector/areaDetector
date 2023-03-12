@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NDPluginStdArrays &mdash; areaDetector Support</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme_overrides.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="NDPluginTimeSeries" href="NDPluginTimeSeries.html" />
+    <link rel="prev" title="NDPluginStats" href="NDPluginStats.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            areaDetector
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../readme.html">Readme</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../user_guide.html">User Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arch.html">Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="asynPortDriver.html">asynPortDriver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NDArray.html">NDArray</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../detector_drivers.html">Detector Drivers</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="plugins.html">areaDetector Plugins</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="plugin_overview.html">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginDriver.html">NDPluginDriver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="plugin_guidelines.html">Guidelines and rules for plugins</a></li>
+<li class="toctree-l3"><a class="reference internal" href="plugin_medm.html">Base class medm screens</a></li>
+<li class="toctree-l3"><a class="reference internal" href="common_plugins.html">commonPlugins.cmd</a></li>
+<li class="toctree-l3"><a class="reference internal" href="plugin_performance.html">Performance example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginAttrPlot.html">NDPluginAttrPlot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginAttribute.html">NDPluginAttribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginBadPixel.html">NDPluginBadPixel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginCircularBuff.html">NDPluginCircularBuff</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginCodec.html">NDPluginCodec</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginColorConvert.html">NDPluginColorConvert</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginFFT.html">NDPluginFFT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginFile.html">NDPluginFile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginGather.html">NDPluginGather</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginOverlay.html">NDPluginOverlay</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginProcess.html">NDPluginProcess</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginPva.html">NDPluginPva</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginROI.html">NDPluginROI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginROIStat.html">NDPluginROIStat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginScatter.html">NDPluginScatter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginStats.html">NDPluginStats</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">NDPluginStdArrays</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#configuration">Configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#screen-shots">Screen shots</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginTimeSeries.html">NDPluginTimeSeries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginTransform.html">NDPluginTransform</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginPos.html">NDPosPlugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ffmpegServer.html">ffmpegServer</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../additional_plugins.html">Additional plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="medm.html">MEDM screens</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADViewers/ad_viewers.html">areaDetector Viewers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../acknowledgements.html">Acknowledgements and licenses</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../install_guide.html">Install Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release.html">Top-level Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ADCore_release.html">ADCore Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ADSupport_release.html">ADSupport Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../doxygen.html">Source Code Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../detectors.html">Supported Detectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../legacy_versions.html">Legacy Versions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">areaDetector</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../user_guide.html">areaDetector Users Guide</a></li>
+          <li class="breadcrumb-item"><a href="plugins.html">areaDetector Plugins</a></li>
+      <li class="breadcrumb-item active">NDPluginStdArrays</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/ADCore/NDPluginStdArrays.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="ndpluginstdarrays">
+<h1><a class="toc-backref" href="#id1" role="doc-backlink">NDPluginStdArrays</a><a class="headerlink" href="#ndpluginstdarrays" title="Permalink to this heading"></a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">author<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Mark Rivers, University of Chicago</p>
+</dd>
+</dl>
+<nav class="contents" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#ndpluginstdarrays" id="id1">NDPluginStdArrays</a></p>
+<ul>
+<li><p><a class="reference internal" href="#overview" id="id2">Overview</a></p></li>
+<li><p><a class="reference internal" href="#configuration" id="id3">Configuration</a></p></li>
+<li><p><a class="reference internal" href="#screen-shots" id="id4">Screen shots</a></p></li>
+</ul>
+</li>
+</ul>
+</nav>
+<section id="overview">
+<h2><a class="toc-backref" href="#id2" role="doc-backlink">Overview</a><a class="headerlink" href="#overview" title="Permalink to this heading"></a></h2>
+<p>This plugin is the tool for converting the NDArray data produced by
+asynNDArrayDriver drivers into a form that can be accessed by EPICS Channel Access clients.</p>
+<p>NDPluginStdArrays inherits from NDPluginDriver. NDPluginStdArrays
+converts the NDArray data from a callback into the 1-dimensional arrays
+supported by the standard asyn array interfaces, i.e. asyn[Int8, Int16,
+Int32, Int64, Float32, Float64]Array. These interfaces are supported by the
+EPICS waveform record using standard asyn device support. Because this
+plugin inherits from <a class="reference internal" href="NDPluginDriver.html"><span class="doc">NDPluginDriver</span></a>
+it also provides additional information on the array data (e.g. number
+of dimensions and dimension data) that are made available as EPICS PVs
+so that clients can correctly interpret the array data. The
+<a class="reference external" href="../areaDetectorDoxygenHTML/class_n_d_plugin_std_arrays.html">NDPluginStdArrays class
+documentation</a>
+describes this class in detail.</p>
+<p>NDPluginStdArrays defines the following parameters. It also implements
+all of the standard plugin parameters from
+<a class="reference internal" href="NDPluginDriver.html"><span class="doc">NDPluginDriver</span></a>. The EPICS database
+<code class="docutils literal notranslate"><span class="pre">NDStdArrays.template</span></code> provides access to these parameters, listed in the
+following table.</p>
+<table class="table-bordered table-striped table-hover docutils align-default">
+<colgroup>
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 70%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head" colspan="6"><p><strong>Parameter Definitions in NDPluginStdArrays.h and EPICS Record Definitions in NDStdArrays.template</strong></p></th>
+</tr>
+<tr class="row-even"><th class="head"><p>Parameter index variable</p></th>
+<th class="head"><p>asyn interface</p></th>
+<th class="head"><p>Access</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>drvInfo string</p></th>
+<th class="head"><p>EPICS record name</p></th>
+<th class="head"><p>EPICS record type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-odd"><td><p>NDPluginStdArraysData</p></td>
+<td><p>asyn[Int8, Int16, Int32, Int64, Float32, Float64]Array</p></td>
+<td><p>r/o</p></td>
+<td><p>Array data as a 1-D array, possibly converted in data type from that in the NDArray
+object to the specific asyn interface.</p></td>
+<td><p>STD_ARRAY_DATA</p></td>
+<td><p>$(P)$(R)ArrayData</p></td>
+<td><p>waveform</p></td>
+</tr>
+</tbody>
+</table>
+<p>If the array data contains more than 16,000 bytes then in order for
+EPICS clients to receive this data the environment variable <code class="docutils literal notranslate"><span class="pre">EPICS_CA_MAX_ARRAY_BYTES</span></code> on
+both the EPICS IOC computer and EPICS client computer must be set to a
+value at least as large as the array size in bytes.</p>
+</section>
+<section id="configuration">
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">Configuration</a><a class="headerlink" href="#configuration" title="Permalink to this heading"></a></h2>
+<p>The NDPluginStdArrays plugin is created with the <code class="docutils literal notranslate"><span class="pre">NDStdArraysConfigure</span></code>
+command, either from C/C++ or from the EPICS IOC shell.</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">NDStdArraysConfigure</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">portName</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">queueSize</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">blockingCallbacks</span><span class="p">,</span>
+<span class="w">                      </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">NDArrayPort</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">NDArrayAddr</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">maxMemory</span><span class="p">,</span>
+<span class="w">                      </span><span class="kt">int</span><span class="w"> </span><span class="n">priority</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">stackSize</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>For details on the meaning of the parameters to this function refer to
+the detailed documentation on the NDStdArraysConfigure function in the
+<a class="reference external" href="../areaDetectorDoxygenHTML/_n_d_plugin_std_arrays_8cpp.html">NDPluginStdArrays.cpp
+documentation</a>
+and in the documentation for the constructor for the <a class="reference external" href="../areaDetectorDoxygenHTML/class_n_d_plugin_std_arrays.html">NDPluginStdArrays
+class</a>.</p>
+</section>
+<section id="screen-shots">
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">Screen shots</a><a class="headerlink" href="#screen-shots" title="Permalink to this heading"></a></h2>
+<p>The following is the MEDM screen that provides access to the parameters
+in NDPluginDriver.h and NDPluginStdArrays.h through records in
+NDPluginBase.template and NDStdArrays.template. This is the MEDM screen
+that is normally used to control the display of images via EPICS channel
+access.</p>
+<figure class="align-center">
+<img alt="../_images/NDStdArrays.png" src="../_images/NDStdArrays.png" />
+</figure>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="NDPluginStats.html" class="btn btn-neutral float-left" title="NDPluginStats" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="NDPluginTimeSeries.html" class="btn btn-neutral float-right" title="NDPluginTimeSeries" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Mark Rivers.
+      <span class="lastupdated">Last updated on 2023-March-12.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

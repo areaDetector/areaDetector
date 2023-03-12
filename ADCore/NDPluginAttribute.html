@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NDPluginAttribute &mdash; areaDetector Support</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme_overrides.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="NDPluginBadPixel" href="NDPluginBadPixel.html" />
+    <link rel="prev" title="NDPluginAttrPlot" href="NDPluginAttrPlot.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            areaDetector
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../readme.html">Readme</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../user_guide.html">User Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arch.html">Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="asynPortDriver.html">asynPortDriver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NDArray.html">NDArray</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../detector_drivers.html">Detector Drivers</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="plugins.html">areaDetector Plugins</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="plugin_overview.html">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginDriver.html">NDPluginDriver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="plugin_guidelines.html">Guidelines and rules for plugins</a></li>
+<li class="toctree-l3"><a class="reference internal" href="plugin_medm.html">Base class medm screens</a></li>
+<li class="toctree-l3"><a class="reference internal" href="common_plugins.html">commonPlugins.cmd</a></li>
+<li class="toctree-l3"><a class="reference internal" href="plugin_performance.html">Performance example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginAttrPlot.html">NDPluginAttrPlot</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">NDPluginAttribute</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#configuration">Configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#screen-shots">Screen shots</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginBadPixel.html">NDPluginBadPixel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginCircularBuff.html">NDPluginCircularBuff</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginCodec.html">NDPluginCodec</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginColorConvert.html">NDPluginColorConvert</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginFFT.html">NDPluginFFT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginFile.html">NDPluginFile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginGather.html">NDPluginGather</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginOverlay.html">NDPluginOverlay</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginProcess.html">NDPluginProcess</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginPva.html">NDPluginPva</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginROI.html">NDPluginROI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginROIStat.html">NDPluginROIStat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginScatter.html">NDPluginScatter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginStats.html">NDPluginStats</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginStdArrays.html">NDPluginStdArrays</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginTimeSeries.html">NDPluginTimeSeries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginTransform.html">NDPluginTransform</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginPos.html">NDPosPlugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ffmpegServer.html">ffmpegServer</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../additional_plugins.html">Additional plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="medm.html">MEDM screens</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADViewers/ad_viewers.html">areaDetector Viewers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../acknowledgements.html">Acknowledgements and licenses</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../install_guide.html">Install Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release.html">Top-level Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ADCore_release.html">ADCore Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ADSupport_release.html">ADSupport Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../doxygen.html">Source Code Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../detectors.html">Supported Detectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../legacy_versions.html">Legacy Versions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">areaDetector</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../user_guide.html">areaDetector Users Guide</a></li>
+          <li class="breadcrumb-item"><a href="plugins.html">areaDetector Plugins</a></li>
+      <li class="breadcrumb-item active">NDPluginAttribute</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/ADCore/NDPluginAttribute.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="ndpluginattribute">
+<h1><a class="toc-backref" href="#id1" role="doc-backlink">NDPluginAttribute</a><a class="headerlink" href="#ndpluginattribute" title="Permalink to this heading"></a></h1>
+<nav class="contents" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#ndpluginattribute" id="id1">NDPluginAttribute</a></p>
+<ul>
+<li><p><a class="reference internal" href="#overview" id="id2">Overview</a></p></li>
+<li><p><a class="reference internal" href="#configuration" id="id3">Configuration</a></p></li>
+<li><p><a class="reference internal" href="#screen-shots" id="id4">Screen shots</a></p></li>
+</ul>
+</li>
+</ul>
+</nav>
+<section id="overview">
+<h2><a class="toc-backref" href="#id2" role="doc-backlink">Overview</a><a class="headerlink" href="#overview" title="Permalink to this heading"></a></h2>
+<p>This plugin provides the ability to extract an NDArray attributes and
+publish their values over channel access. It also publishes arrays of
+the attribute values, and the integrated values.</p>
+<p>Each NDPluginAttribute plugin supports any number of attributes, each
+publishing the last attribute value, the sum of that attribute value
+since the last reset, and a time-series array of the attribute value.
+The number of attributes is defined when the NDPluginAttribute is
+created in the startup script. Each attribute is referenced by its asyn
+“addr” address field.</p>
+<p>In addition to the actual NDAttributes attached to the NDArray this
+plugin supports 4 virtual attributes. These correspond to properties of
+all NDArray objects. These virtual attribute names can use used in the
+<code class="docutils literal notranslate"><span class="pre">$(P)$(R)AttrName</span></code> record to select that NDArray property.</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Virtual attribute name</p></th>
+<th class="head"><p>NDArray property</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>NDArrayUniqueId</p></td>
+<td><p>NDArray.uniqueId</p></td>
+</tr>
+<tr class="row-odd"><td><p>NDArrayTimeStamp</p></td>
+<td><p>NDArray.timeStamp</p></td>
+</tr>
+<tr class="row-even"><td><p>NDArrayEpicsTSSec</p></td>
+<td><p>NDArray.epicsTS.secPastEpoch</p></td>
+</tr>
+<tr class="row-odd"><td><p>NDArrayEpicsTSnSec</p></td>
+<td><p>NDArray.epicsTS.nsec</p></td>
+</tr>
+</tbody>
+</table>
+<p>The time-series arrays use the same PVs to control acquisition as the
+NDPluginStats plugin. Acquisition of arrays for all attributes are
+started an stopped at the same time.</p>
+<p>NDPluginAttribute inherits from NDPluginDriver. The <a class="reference external" href="../areaDetectorDoxygenHTML/class_n_d_plugin_attribute.html">NDPluginAttribute
+class
+documentation</a>
+describes this class in detail.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The plugin only supports epicsFloat64 type NDAttribute data at the
+moment. Any data of other numeric types will be converted. String
+attributes are not supported.</p>
+</div>
+<p>NDPluginAttribute defines the following parameters. It also implements
+all of the standard plugin parameters from <a class="reference internal" href="NDPluginDriver.html"><span class="doc">NDPluginDriver</span></a></p>
+<table class="table-bordered table-striped table-hover docutils align-default">
+<colgroup>
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 70%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head" colspan="6"><p>Parameter Definitions in NDPluginAttribute.h and EPICS Record Definitions in NDAttribute.template</p></th>
+</tr>
+<tr class="row-even"><th class="head"><p>Parameter index variable</p></th>
+<th class="head"><p>asyn interface</p></th>
+<th class="head"><p>Access</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>drvInfo string</p></th>
+<th class="head"><p>EPICS record name</p></th>
+<th class="head"><p>EPICS record type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-odd"><td><p>NDPluginAttribute, Reset</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>Reset the plugin data. This zeros the array, and resets the value sum and value
+to zero.</p></td>
+<td><p>ATTR_RESET</p></td>
+<td><p>$(P)$(R)Reset</p></td>
+<td><p>bo</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td colspan="5"><p><strong>Time-Series data</strong></p></td>
+</tr>
+<tr class="row-odd"><td colspan="7"><p>The time series is implemented by loading an instance of the ::doc:NDPluginTimeSeries
+plugin for each NDPluginAttribute plugin, and the time series control
+uses records in NDTimeSeries.template. That documentation should be consulted for
+an explanation of these records. The prefix and record name macro for the time-series
+plugin records from NDTimeSeries.template is $(P)$(R)TS:. <br>
+<strong>NOTE:</strong> The time-series plugin is often used with drivers which sample at a
+fixed well-defined time interval. This cannot be guaranteed with the statistics
+plugin, so the averaging time records and time axis waveform record from NDPluginTimeSeries
+are typically not used, and the statistics data are plotted against time point #,
+rather than actual time. <br>
+The time-series waveform records for each statistic are defined in NDAttributeN.template.</p></td>
+</tr>
+<tr class="row-even"><td><p>NDPluginTimeSeries, TSTimeSeries</p></td>
+<td><p>asynFloat64Array</p></td>
+<td><p>r/o</p></td>
+<td><p>The time series data arrays of the basic statistics and centroid and sigma statistics
+described above.</p></td>
+<td><p>TS_TIME_SERIES</p></td>
+<td><p>$(P)$(R)TSArrayValue</p></td>
+<td><p>waveform</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td colspan="6"><p><strong>Parameter Definitions in NDPluginAttribute.h and EPICS Record Definitions in NDAttributeN.template</strong> <br>
+<strong>There is one of these records for each attribute in the plugin.</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>NDPluginAttributeAttrName</p></td>
+<td><p>asynOctet</p></td>
+<td><p>r/w</p></td>
+<td><p>The name of the NDAttribute parameter that we want to publish. This can be modified
+at runtime.</p></td>
+<td><p>ATTR_ATTRNAME</p></td>
+<td><p>$(P)$(R)AttrName
+, $(P)$(R)AttrName_RBV</p></td>
+<td><p>waveform</p></td>
+</tr>
+<tr class="row-odd"><td><p>NDPluginAttributeVal</p></td>
+<td><p>asynFloat64</p></td>
+<td><p>r/o</p></td>
+<td><p>Attribute value</p></td>
+<td><p>ATTR_VAL</p></td>
+<td><p>$(P)$(R)Value_RBV</p></td>
+<td><p>ai</p></td>
+</tr>
+<tr class="row-even"><td><p>NDPluginAttributeValSum</p></td>
+<td><p>asynFloat64</p></td>
+<td><p>r/o</p></td>
+<td><p>Sum of the attribute value, since the last reset.</p></td>
+<td><p>ATTR_VAL_SUM</p></td>
+<td><p>$(P)$(R)ValueSum_RBV</p></td>
+<td><p>ai</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="configuration">
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">Configuration</a><a class="headerlink" href="#configuration" title="Permalink to this heading"></a></h2>
+<p>The NDPluginAttribute plugin is created with the <code class="docutils literal notranslate"><span class="pre">NDAttrConfigure</span></code>
+command, either from C/C++ or from the EPICS IOC shell.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">NDAttrConfigure</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">portName</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">queueSize</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">blockingCallbacks</span><span class="p">,</span>
+<span class="w">                      </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">NDArrayPort</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">NDArrayAddr</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">maxAttributes</span><span class="p">,</span>
+<span class="w">                      </span><span class="kt">int</span><span class="w"> </span><span class="n">maxBuffers</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">maxMemory</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">priority</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">stackSize</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>All arguments except maxAttributes are common to all plugins.
+maxAttributes defines the maximum number of attributes that this plugin
+will support.</p>
+<p>For details on the meaning of the parameters to this function refer to
+the detailed documentation on the <code class="docutils literal notranslate"><span class="pre">NDAttrConfigure</span></code> function in the
+<a class="reference external" href="../areaDetectorDoxygenHTML/_n_d_plugin_attribute_8cpp.html">NDPluginAttribute.cpp
+documentation</a>
+and in the documentation for the constructor for the <a class="reference external" href="../areaDetectorDoxygenHTML/class_n_d_plugin_attribute.html">NDPluginAttribute
+class</a>.</p>
+</section>
+<section id="screen-shots">
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">Screen shots</a><a class="headerlink" href="#screen-shots" title="Permalink to this heading"></a></h2>
+<p>The following is the MEDM screen that provides access to the parameters
+in NDPluginDriver.h and NDPluginAttribute.h through records in
+NDPluginBase.template and NDAttribute.template.</p>
+<a class="reference internal image-reference" href="../_images/NDPluginAttribute.png"><img alt="../_images/NDPluginAttribute.png" class="align-center" src="../_images/NDPluginAttribute.png" style="width: 60%;" /></a>
+<p>The following is the MEDM screen that provides control and display of
+the parameters for 8 attributes.</p>
+<a class="reference internal image-reference" href="../_images/NDPluginAttribute8.png"><img alt="../_images/NDPluginAttribute8.png" class="align-center" src="../_images/NDPluginAttribute8.png" style="width: 60%;" /></a>
+<p>The following is the MEDM screen that displays the time-series data for
+each attribute. The first screen shows a plot of NDArrayUniqueID and the
+second shows NDArrayEpicsTSnSec.</p>
+<a class="reference internal image-reference" href="../_images/NDPluginAttributeTSUniqueID.png"><img alt="../_images/NDPluginAttributeTSUniqueID.png" src="../_images/NDPluginAttributeTSUniqueID.png" style="width: 48%;" /></a>
+<a class="reference internal image-reference" href="../_images/NDPluginAttributeTSEpicsTSnSec.png"><img alt="../_images/NDPluginAttributeTSEpicsTSnSec.png" src="../_images/NDPluginAttributeTSEpicsTSnSec.png" style="width: 48%;" /></a>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="NDPluginAttrPlot.html" class="btn btn-neutral float-left" title="NDPluginAttrPlot" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="NDPluginBadPixel.html" class="btn btn-neutral float-right" title="NDPluginBadPixel" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Mark Rivers.
+      <span class="lastupdated">Last updated on 2023-March-12.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

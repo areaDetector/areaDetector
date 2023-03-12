@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Configuration &mdash; areaDetector Support</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme_overrides.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Example st.cmd Startup File" href="st_cmd.html" />
+    <link rel="prev" title="Implementation of standard driver parameters" href="parameters.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            areaDetector
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../readme.html">Readme</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../user_guide.html">User Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/overview.html">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/arch.html">Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/asynPortDriver.html">asynPortDriver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/NDArray.html">NDArray</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../detector_drivers.html">Detector Drivers</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../ADCore/guidelines.html">Guidelines and rules for drivers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADCore/ADDriver.html">ADDriver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADAndor/andorDoc.html">ADAndor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADAndor3/ADAndorDoc.html">ADAndor3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADAravis/ADAravis.html">ADAravis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADCSimDetector/ADCSimDetectorDoc.html">ADCSimDetector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADDexela/ADDexela.html">ADDexela</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADEiger/eiger.html">ADEiger</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">ADFastCCD</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="index.html#fastccd-detector-driver">FastCCD Detector Driver</a></li>
+<li class="toctree-l4"><a class="reference internal" href="index.html#fastccd-processing-plugin">FastCCD Processing Plugin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="index.html#search">Search</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../ADGenICam/ADGenICam.html">ADGenICam</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADLambda/ADLambda.html">ADLambda</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADLightField/ADLightField.html">ADLightField</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADmarCCD/marCCDDoc.html">ADmarCCD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADmar345/mar345Doc.html">ADmar345</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPerkinElmer/PerkinElmerDoc.html">ADPerkinElmer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPICam/PICamDoc.html">ADPICam</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPilatus/pilatusDoc.html">ADPilatus</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPixirad/ADPixirad.html">ADPixirad</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPointGrey/PointGreyDoc.html">ADPointGrey</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADProsilica/ADProsilica.html">ADProsilica</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPvCam/pvcamDoc.html">ADPvCam</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADQImaging/QImagingDoc.html">ADQImaging</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADRIXSCam/ADRIXSCam.html">ADRIXSCam</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADSimDetector/simDetector.html">ADSimDetector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADSpinnaker/ADSpinnaker.html">ADSpinnaker</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADVimba/ADVimba.html">ADVimba</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADURL/ADURL.html">ADURL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../NDDriverStdArrays/NDDriverStdArraysDoc.html">NDDriverStdArrays</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../pvaDriver/pvaDriver.html">pvaDriver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../specsAnalyser/index.html">specsAnalyser</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/plugins.html">areaDetector Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../additional_plugins.html">Additional plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/medm.html">MEDM screens</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADViewers/ad_viewers.html">areaDetector Viewers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../acknowledgements.html">Acknowledgements and licenses</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../install_guide.html">Install Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release.html">Top-level Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ADCore_release.html">ADCore Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ADSupport_release.html">ADSupport Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../doxygen.html">Source Code Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../detectors.html">Supported Detectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../legacy_versions.html">Legacy Versions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">areaDetector</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../user_guide.html">areaDetector Users Guide</a></li>
+          <li class="breadcrumb-item"><a href="../detector_drivers.html">Detector Drivers</a></li>
+          <li class="breadcrumb-item"><a href="index.html">ADFastCCD</a></li>
+      <li class="breadcrumb-item active">Configuration</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/ADFastCCD/configuration.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="configuration">
+<h1>Configuration<a class="headerlink" href="#configuration" title="Permalink to this heading"></a></h1>
+<section id="ioc-shell">
+<h2>IOC Shell<a class="headerlink" href="#ioc-shell" title="Permalink to this heading"></a></h2>
+<p>The FastCCD driver is created with the FastCCDConfig command, either
+from C/C++ or from the EPICS IOC shell.</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">FastCCDConfig</span><span class="p">(</span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">portName</span><span class="p">,</span>
+<span class="w">                  </span><span class="kt">int</span><span class="w"> </span><span class="n">maxBuffers</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">maxMemory</span><span class="p">,</span>
+<span class="w">                  </span><span class="kt">int</span><span class="w"> </span><span class="n">priority</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">stackSize</span><span class="p">,</span>
+<span class="w">                  </span><span class="kt">int</span><span class="w"> </span><span class="n">packetBuffer</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">imageBuffer</span><span class="p">,</span>
+<span class="w">                  </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">baseIP</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">fabricIP</span><span class="p">,</span>
+<span class="w">                  </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">fabricMAC</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The <cite>packetBuffer</cite> and <code class="docutils literal notranslate"><span class="pre">imageBuffer</span></code> parameters specify how many
+packet frames and images to buffer in the <code class="docutils literal notranslate"><span class="pre">libcin</span></code> driver. These are
+directly passed to <code class="docutils literal notranslate"><span class="pre">libcin</span></code> on initialization.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">baseIP</span></code> and <code class="docutils literal notranslate"><span class="pre">fabricIP</span></code> are the ip addresses of the base and
+fabric interfaces on the camera interface node (CIN). A null “” string
+sets the default as defined in the <code class="docutils literal notranslate"><span class="pre">libcin</span></code> driver.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">fabricMAC</span></code> parameter causes the <code class="docutils literal notranslate"><span class="pre">libcin</span></code> driver to set the MAC
+address of the CIN on initialization. This can be used to broadcast the
+image data by using the <code class="docutils literal notranslate"><span class="pre">FF:FF:FF:FF:FF</span></code> mac address.</p>
+<p>For details on the meaning of the other parameters to this function
+refer to the detailed documentation on the FastCCDConfig function in the
+<a class="reference external" href="http://cars9.uchicago.edu/software/epics/areaDetectorDoxygenHTML/_fast_c_c_d_8cpp.html">FastCCD.cpp
+documentation</a>
+and in the documentation for the constructor for the <a class="reference external" href="http://cars9.uchicago.edu/software/epics/areaDetectorDoxygenHTML/class_fast_c_c_d.html">FastCCD
+class</a>.</p>
+</section>
+<section id="setting-the-image-size">
+<h2>Setting the image size<a class="headerlink" href="#setting-the-image-size" title="Permalink to this heading"></a></h2>
+<p>Due to the multicolum nature of the FastCCD, setting the image size is
+not trivial. This is due to the nature of the image descrambling and if
+overscan is used on each supercolumn. For this reason the image size is
+governed by two paramaters, <code class="docutils literal notranslate"><span class="pre">$(P)$(R)OverscanCols</span></code> and
+<code class="docutils literal notranslate"><span class="pre">$(P)$(R)ADSizeY</span></code>.</p>
+<p>The definition used for the image orientation in this driver is that
+columns are along the <em>X</em> direction and rows are along the <em>Y</em>
+direction. As the number of columns per <em>supercolumn</em> is fixed in timing
+to 10 columns, the only free parameter is the number of overscan cols to
+include and specified by the <code class="docutils literal notranslate"><span class="pre">$(P)$(R)OverscanCols</span></code> PV. For this
+reason setting of the <code class="docutils literal notranslate"><span class="pre">$(P)$(R)ADSizeX</span></code> PV is ignored by the driver.
+The number of rows defines how many rows per column to process and is
+set by the <code class="docutils literal notranslate"><span class="pre">$(P)$(R)ADSizeY</span></code> PV.</p>
+<p>The actual image size is therefore given by:</p>
+<ul class="simple">
+<li><p><em>X</em> Direction (row wise) <code class="docutils literal notranslate"><span class="pre">$(P)$(R)ADSizeY</span></code> [usually set to 2000 to
+have some overscan]</p></li>
+<li><p><em>Y</em> Direction (column wise) (10 + <code class="docutils literal notranslate"><span class="pre">$(P)$(R)OverscanCols</span></code>) * 96
+[for no overscan 960]</p></li>
+</ul>
+</section>
+<section id="auto-configuration-of-the-fastccd">
+<h2>Auto Configuration of the FastCCD<a class="headerlink" href="#auto-configuration-of-the-fastccd" title="Permalink to this heading"></a></h2>
+<p>The FastCCD can be configured by using the built in <em>firmware</em> and
+settings in the <a class="reference external" href="https://github.com/NSLS-II/libcin">libcin driver</a>.
+This is controled by the PVs defined in the section <em>FastCCD Auto
+Setting Commands</em>. The PVs <code class="docutils literal notranslate"><span class="pre">$(P)$(R)TimingName[0..9]_RBV</span></code> show strings
+with names defined in the <code class="docutils literal notranslate"><span class="pre">libcin</span></code> driver corresponding to the modes 1
+through 10. To boot into one of these modes, the user should set the PV
+<code class="docutils literal notranslate"><span class="pre">$(P)$(R)TimingMode</span></code> to number of the mode required (0 through 9). The
+PV <code class="docutils literal notranslate"><span class="pre">$(P)$(R)TimingName_RBV</span></code> will indicate the mode selected.</p>
+<p>To boot the FastCCD, the user should write 1 to the PV <code class="docutils literal notranslate"><span class="pre">$(P)$(R)Boot</span></code>.
+This will cause the FastCCD to reset the CIN (by power cycling it) and
+upload the firmware and timing configuration. At this point the user
+should be able to see the test pattern from the CIN by triggering the
+detector. The user can then configure the <em>fCRICs</em> by writing 1 to the
+PV <code class="docutils literal notranslate"><span class="pre">$(P)$(R)SendFCRIC</span></code>. The bias configuration can be upload by
+writing 1 to the PV <code class="docutils literal notranslate"><span class="pre">$(P)$(R)SendBias</span></code>. The latter two steps require
+the camera head to be powered. This is out of the scope of this driver.</p>
+</section>
+<section id="connection-management">
+<h2>Connection management<a class="headerlink" href="#connection-management" title="Permalink to this heading"></a></h2>
+<p>As the FastCCD <em>CIN</em> only uses UDP sockets, there is no permanent
+connection, the driver relies on being able to read such parameters as
+the serial nnumber of the software to be able to confirm that
+commuincation with the driver is occuring.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="parameters.html" class="btn btn-neutral float-left" title="Implementation of standard driver parameters" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="st_cmd.html" class="btn btn-neutral float-right" title="Example st.cmd Startup File" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Mark Rivers.
+      <span class="lastupdated">Last updated on 2023-March-12.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

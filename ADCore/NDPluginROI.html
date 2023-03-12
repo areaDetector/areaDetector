@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NDPluginROI &mdash; areaDetector Support</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme_overrides.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="NDPluginROIStat" href="NDPluginROIStat.html" />
+    <link rel="prev" title="NDPluginPva" href="NDPluginPva.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            areaDetector
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../readme.html">Readme</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../user_guide.html">User Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arch.html">Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="asynPortDriver.html">asynPortDriver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NDArray.html">NDArray</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../detector_drivers.html">Detector Drivers</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="plugins.html">areaDetector Plugins</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="plugin_overview.html">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginDriver.html">NDPluginDriver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="plugin_guidelines.html">Guidelines and rules for plugins</a></li>
+<li class="toctree-l3"><a class="reference internal" href="plugin_medm.html">Base class medm screens</a></li>
+<li class="toctree-l3"><a class="reference internal" href="common_plugins.html">commonPlugins.cmd</a></li>
+<li class="toctree-l3"><a class="reference internal" href="plugin_performance.html">Performance example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginAttrPlot.html">NDPluginAttrPlot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginAttribute.html">NDPluginAttribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginBadPixel.html">NDPluginBadPixel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginCircularBuff.html">NDPluginCircularBuff</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginCodec.html">NDPluginCodec</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginColorConvert.html">NDPluginColorConvert</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginFFT.html">NDPluginFFT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginFile.html">NDPluginFile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginGather.html">NDPluginGather</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginOverlay.html">NDPluginOverlay</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginProcess.html">NDPluginProcess</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginPva.html">NDPluginPva</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">NDPluginROI</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#configuration">Configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#screen-shots">Screen shots</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginROIStat.html">NDPluginROIStat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginScatter.html">NDPluginScatter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginStats.html">NDPluginStats</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginStdArrays.html">NDPluginStdArrays</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginTimeSeries.html">NDPluginTimeSeries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginTransform.html">NDPluginTransform</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginPos.html">NDPosPlugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ffmpegServer.html">ffmpegServer</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../additional_plugins.html">Additional plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="medm.html">MEDM screens</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADViewers/ad_viewers.html">areaDetector Viewers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../acknowledgements.html">Acknowledgements and licenses</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../install_guide.html">Install Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release.html">Top-level Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ADCore_release.html">ADCore Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ADSupport_release.html">ADSupport Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../doxygen.html">Source Code Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../detectors.html">Supported Detectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../legacy_versions.html">Legacy Versions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">areaDetector</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../user_guide.html">areaDetector Users Guide</a></li>
+          <li class="breadcrumb-item"><a href="plugins.html">areaDetector Plugins</a></li>
+      <li class="breadcrumb-item active">NDPluginROI</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/ADCore/NDPluginROI.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="ndpluginroi">
+<h1><a class="toc-backref" href="#id1" role="doc-backlink">NDPluginROI</a><a class="headerlink" href="#ndpluginroi" title="Permalink to this heading"></a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">author<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Mark Rivers, University of Chicago</p>
+</dd>
+</dl>
+<nav class="contents" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#ndpluginroi" id="id1">NDPluginROI</a></p>
+<ul>
+<li><p><a class="reference internal" href="#overview" id="id2">Overview</a></p></li>
+<li><p><a class="reference internal" href="#configuration" id="id3">Configuration</a></p></li>
+<li><p><a class="reference internal" href="#screen-shots" id="id4">Screen shots</a></p></li>
+</ul>
+</li>
+</ul>
+</nav>
+<section id="overview">
+<h2><a class="toc-backref" href="#id2" role="doc-backlink">Overview</a><a class="headerlink" href="#overview" title="Permalink to this heading"></a></h2>
+<p>NDPluginROI selects a rectangular “Region-Of-Interest” (ROI) from the
+NDArray callback data. The ROI can be any size, from a single array
+element to the entire array. NDPluginROI  does the following operations,
+in this order:</p>
+<ol class="arabic simple">
+<li><p>Extracts the ROI as defined by its offset (starting array element)
+and size in each dimension.</p></li>
+<li><p>Optional binning in any dimension.</p></li>
+<li><p>Optional orientation reversal (mirroring) in any dimension.</p></li>
+<li><p>Optional scaling (dividing) by a scale factor.</p></li>
+<li><p>Optional conversion to a new data type.</p></li>
+<li><p>Optional collapsing (removing) of dimensions whose value is 1.</p></li>
+<li><p>Export the ROI as a new NDArray object. The NDPluginROI is both a
+<strong>recipient</strong> of callbacks and a <strong>source</strong> of NDArray callbacks, as
+a driver is. This means that other plugins like NDPluginStdArrays and
+NDPluginFile can be connected to an NDPluginROI plugin, in which case
+they will display or save the selected ROI rather than the full
+detector driver data.</p></li>
+</ol>
+<p>If scaling is enabled then the array is promoted to a double when it is
+extracted and binned. The scaling is done on this double-precision
+array, and then the array is converted back to the desired output data
+type. This makes scaling relatively computationally intensive, but
+ensures that correct results are obtained, without integer truncation
+problems.</p>
+<p>Note that while the NDPluginROI should be N-dimensional, the EPICS
+interface to the definition of the ROI is currently limited to a maximum
+of 3-D. This limitation may be removed in a future release.</p>
+<p>NDPluginROI inherits from NDPluginDriver. The <a class="reference external" href="../areaDetectorDoxygenHTML/class_n_d_plugin_r_o_i.html">NDPluginROI class
+documentation</a>
+describes this class in detail.</p>
+<p><code class="docutils literal notranslate"><span class="pre">NDPluginROI.h</span></code> defines the following parameters. It also implements all
+of the standard plugin parameters from
+<a class="reference internal" href="NDPluginDriver.html"><span class="doc">NDPluginDriver</span></a>. The EPICS database
+<code class="docutils literal notranslate"><span class="pre">NDROI.template</span></code> provide access to these parameters, listed in the
+following table. Note that to reduce the width of this table the
+parameter index variable names have been split into 2 lines, but these
+are just a single name, for example <code class="docutils literal notranslate"><span class="pre">NDPluginROIName</span></code>.</p>
+<table class="table-bordered table-striped table-hover docutils align-default">
+<colgroup>
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 70%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head"></th>
+<th class="head" colspan="5"><p><strong>Parameter Definitions in NDPluginROI.h and EPICS Record Definitions in NDROI.template</strong></p></th>
+</tr>
+<tr class="row-even"><th class="head"><p>Parameter index variable</p></th>
+<th class="head"><p>asyn interface</p></th>
+<th class="head"><p>Access</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>drvInfo string</p></th>
+<th class="head"><p>EPICS record name</p></th>
+<th class="head"><p>EPICS record type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-odd"><td><p>NDPluginROI, Name</p></td>
+<td><p>asynOctet</p></td>
+<td><p>r/w</p></td>
+<td><p>Name of this ROI</p></td>
+<td><p>NAME</p></td>
+<td><p>$(P)$(R)Name, $(P)$(R)Name_RBV</p></td>
+<td><p>stringout, stringin</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td colspan="5"><p><strong>ROI definition</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>NDPluginROI, Dim0Enable</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>Enable ROI calculations in the X dimension. If not enabled then the start, size,
+binning, and reverse operations are disabled in the X dimension, and the values
+from the input array are used.</p></td>
+<td><p>DIM0_ENABLE</p></td>
+<td><p>$(P)$(R)EnableX, $(P)$(R)EnableX_RBV</p></td>
+<td><p>bo, bi</p></td>
+</tr>
+<tr class="row-even"><td><p>NDPluginROI, Dim1Enable</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>Enable ROI calculations in the Y dimension. If not enabled then the start, size,
+binning, and reverse operations are disabled in the Y dimension, and the values
+from the input array are used.</p></td>
+<td><p>DIM1_ENABLE</p></td>
+<td><p>$(P)$(R)EnableY, $(P)$(R)EnableY_RBV</p></td>
+<td><p>bo, bi</p></td>
+</tr>
+<tr class="row-odd"><td><p>NDPluginROI, Dim2Enable</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>Enable ROI calculations in the Z dimension. If not enabled then the start, size,
+binning, and reverse operations are disabled in the Z dimension, and the values
+from the input array are used.</p></td>
+<td><p>DIM2_ENABLE</p></td>
+<td><p>$(P)$(R)EnableZ, $(P)$(R)EnableZ_RBV</p></td>
+<td><p>bo, bi</p></td>
+</tr>
+<tr class="row-even"><td><p>NDPluginROI, Dim0Bin</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>Binning in the X dimension</p></td>
+<td><p>DIM0_BIN</p></td>
+<td><p>$(P)$(R)BinX, $(P)$(R)BinX_RBV</p></td>
+<td><p>longout, longin</p></td>
+</tr>
+<tr class="row-odd"><td><p>NDPluginROI, Dim1Bin</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>Binning in the Y dimension</p></td>
+<td><p>DIM1_BIN</p></td>
+<td><p>$(P)$(R)BinY, $(P)$(R)BinY_RBV</p></td>
+<td><p>longout, longin</p></td>
+</tr>
+<tr class="row-even"><td><p>NDPluginROI, Dim2Bin</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>Binning in the Z dimension</p></td>
+<td><p>DIM2_BIN</p></td>
+<td><p>$(P)$(R)BinZ, $(P)$(R)BinZ_RBV</p></td>
+<td><p>longout, longin</p></td>
+</tr>
+<tr class="row-odd"><td><p>NDPluginROI, Dim0Min</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>First pixel in the ROI in the X dimension. 0 is the first pixel in the array.</p></td>
+<td><p>DIM0_MIN</p></td>
+<td><p>$(P)$(R)MinX, $(P)$(R)MinX_RBV</p></td>
+<td><p>longout, longin</p></td>
+</tr>
+<tr class="row-even"><td><p>NDPluginROI, Dim1Min</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>First pixel in the ROI in the Y dimension., 0 is the first pixel in the array.</p></td>
+<td><p>DIM1_MIN</p></td>
+<td><p>$(P)$(R)MinY, $(P)$(R)MinY_RBV</p></td>
+<td><p>longout, longin</p></td>
+</tr>
+<tr class="row-odd"><td><p>NDPluginROI, Dim2Min</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>First pixel in the ROI in the Z dimension., 0 is the first pixel in the array.</p></td>
+<td><p>DIM2_MIN</p></td>
+<td><p>$(P)$(R)MinZ, $(P)$(R)MinZ_RBV</p></td>
+<td><p>longout, longin</p></td>
+</tr>
+<tr class="row-even"><td><p>NDPluginROI, Dim0Size</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>Size of the ROI in the X dimension</p></td>
+<td><p>DIM0_SIZE</p></td>
+<td><p>$(P)$(R)SizeX, $(P)$(R)SizeX_RBV</p></td>
+<td><p>longout, longin</p></td>
+</tr>
+<tr class="row-odd"><td><p>NDPluginROI, Dim1Size</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>Size of the ROI in the Y dimension</p></td>
+<td><p>DIM1_SIZE</p></td>
+<td><p>$(P)$(R)SizeY, $(P)$(R)SizeY_RBV</p></td>
+<td><p>longout, longin</p></td>
+</tr>
+<tr class="row-even"><td><p>NDPluginROI, Dim2Size</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>Size of the ROI in the Z dimension</p></td>
+<td><p>DIM2_SIZE</p></td>
+<td><p>$(P)$(R)SizeZ, $(P)$(R)SizeZ_RBV</p></td>
+<td><p>longout, longin</p></td>
+</tr>
+<tr class="row-odd"><td><p>NDPluginROI, Dim0AutoSize</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>Automatically set SizeX to the input array size minus MinX</p></td>
+<td><p>DIM0_AUTO_SIZE</p></td>
+<td><p>$(P)$(R)AutoSizeX, $(P)$(R)AutoSizeX_RBV</p></td>
+<td><p>bo, bi</p></td>
+</tr>
+<tr class="row-even"><td><p>NDPluginROI, Dim1AutoSize</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>Automatically set SizeY to the input array size minus MinY</p></td>
+<td><p>DIM1_AUTO_SIZE</p></td>
+<td><p>$(P)$(R)AutoSizeY, $(P)$(R)AutoSizeY_RBV</p></td>
+<td><p>bo, bi</p></td>
+</tr>
+<tr class="row-odd"><td><p>NDPluginROI, Dim2AutoSize</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>Automatically set SizeZ to the input array size minus MinZ</p></td>
+<td><p>DIM2_AUTO_SIZE</p></td>
+<td><p>$(P)$(R)AutoSizeZ, $(P)$(R)AutoSizeZ_RBV</p></td>
+<td><p>bo, bi</p></td>
+</tr>
+<tr class="row-even"><td><p>NDPluginROI, Dim0MaxSize</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/o</p></td>
+<td><p>Maximum size of the ROI in the X dimension</p></td>
+<td><p>DIM0_MAX_SIZE</p></td>
+<td><p>$(P)$(R)MaxSizeX_RBV</p></td>
+<td><p>longin</p></td>
+</tr>
+<tr class="row-odd"><td><p>NDPluginROI, Dim1MaxSize</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/o</p></td>
+<td><p>Maximum size of the ROI in the Y dimension</p></td>
+<td><p>DIM1_MAX_SIZE</p></td>
+<td><p>$(P)$(R)MaxSizeY_RBV</p></td>
+<td><p>longin</p></td>
+</tr>
+<tr class="row-even"><td><p>NDPluginROI, Dim2MaxSize</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/o</p></td>
+<td><p>Maximum size of the ROI in the Z dimension</p></td>
+<td><p>DIM2_MAX_SIZE</p></td>
+<td><p>$(P)$(R)MaxSizeZ_RBV</p></td>
+<td><p>longin</p></td>
+</tr>
+<tr class="row-odd"><td><p>NDPluginROI, Dim0Reverse</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>Reverse ROI in the X dimension. (0=No, 1=Yes)</p></td>
+<td><p>DIM0_REVERSE</p></td>
+<td><p>$(P)$(R)ReverseX, $(P)$(R)ReverseX_RBV</p></td>
+<td><p>longout, longin</p></td>
+</tr>
+<tr class="row-even"><td><p>NDPluginROI, Dim1Reverse</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>Reverse ROI in the Y dimension. (0=No, 1=Yes)</p></td>
+<td><p>DIM1_REVERSE</p></td>
+<td><p>$(P)$(R)ReverseY, $(P)$(R)ReverseY_RBV</p></td>
+<td><p>longout, longin</p></td>
+</tr>
+<tr class="row-odd"><td><p>NDPluginROI, Dim2Reverse</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>Reverse ROI in the Z dimension. (0=No, 1=Yes)</p></td>
+<td><p>DIM2_REVERSE</p></td>
+<td><p>$(P)$(R)ReverseZ, $(P)$(R)ReverseZ_RBV</p></td>
+<td><p>longout, longin</p></td>
+</tr>
+<tr class="row-even"><td><p>NDPluginROI, DataType</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>Data type of the ROI (NDDataType_t). This can be different from the data type of
+the NDArray callback data.</p></td>
+<td><p>ROI_DATA_TYPE</p></td>
+<td><p>$(P)$(R)DataType, $(P)$(R)DataType_RBV</p></td>
+<td><p>mbbo, mbbi</p></td>
+</tr>
+<tr class="row-odd"><td><p>NDArraySizeX</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/o</p></td>
+<td><p>Size of the ROI data in the X dimension</p></td>
+<td><p>ARRAY_SIZE_X</p></td>
+<td><p>$(P)$(R)ArraySizeX_RBV</p></td>
+<td><p>longin</p></td>
+</tr>
+<tr class="row-even"><td><p>NDArraySizeY</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/o</p></td>
+<td><p>Size of the ROI data in the Y dimension</p></td>
+<td><p>ARRAY_SIZE_Y</p></td>
+<td><p>$(P)$(R)ArraySizeY_RBV</p></td>
+<td><p>longin</p></td>
+</tr>
+<tr class="row-odd"><td><p>NDArraySizeZ</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/o</p></td>
+<td><p>Size of the ROI data in the Z dimension</p></td>
+<td><p>ARRAY_SIZE_Z</p></td>
+<td><p>$(P)$(R)ArraySizeZ_RBV</p></td>
+<td><p>longin</p></td>
+</tr>
+<tr class="row-even"><td><p>NDPluginROI, EnableScale</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>Enable dividing by the Scale value. (0=Disable, 1=Enable). This is very useful when
+binning or when converting from a higher precision data type to a lower precision
+data type. For example when binning 2x2, then Scale=4 (dividing by 4) will prevent
+integer overflow. Similarly, when converting from 16-bit to 8-bit integers one might
+scale by 256, or perhaps a smaller number if the 16-bit data does not use the full
+16-bit range.</p></td>
+<td><p>ENABLE_SCALE</p></td>
+<td><p>$(P)$(R)EnableScale, $(P)$(R)EnableScale_RBV</p></td>
+<td><p>bo, bi</p></td>
+</tr>
+<tr class="row-odd"><td><p>NDPluginROI, Scale</p></td>
+<td><p>asynFloat64</p></td>
+<td><p>r/w</p></td>
+<td><p>The scale value to divide by if EnableScale is enabled.</p></td>
+<td><p>SCALE_VALUE</p></td>
+<td><p>$(P)$(R)Scale, $(P)$(R)Scale_RBV</p></td>
+<td><p>ao, ai</p></td>
+</tr>
+<tr class="row-even"><td><p>NDPluginROI, CollapseDims</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>Collapse (remove) output array dimensions whose value is 1. Consider the case when
+the input array to the ROI plugin has dimensions [4, 256, 256] and the plugin is
+configured with MinX=1, SizeX=1, MinY=0, SizeY=256, MinZ=0, SizeZ=256. If CollapseDims=Disable
+then the output arrays will be of size [1, 256, 256]. If CollapseDims=Enable then
+the output array will be [256, 256]. This is convenient for some purposes. For example
+file plugins like JPEG or TIFF will not work with arrays of [1, 256, 256], nor will
+the ImageJ display plugin. They all require that the array have only 2 dimensions
+unless it is the special case of 3-D color arrays (RGB1, RGB2, RGB3) where one of
+the dimensons is 3.</p></td>
+<td><p>COLLAPSE_DIMS</p></td>
+<td><p>$(P)$(R)CollapseDims, $(P)$(R)CollapseDims_RBV</p></td>
+<td><p>bo, bi</p></td>
+</tr>
+</tbody>
+</table>
+<p>A special case is made when the NDArray data has
+<code class="docutils literal notranslate"><span class="pre">colorMode=NDColorModeRGB1</span></code> or <code class="docutils literal notranslate"><span class="pre">NDColorModeRGB2</span></code>. In these cases the user
+interface to the array dimensions is changed so that the Z PVs always
+refer to the color dimension (as for <code class="docutils literal notranslate"><span class="pre">NDColorModeRGB3</span></code>), the X dimension
+refers to the horizontal dimension, and the Y dimension refers to the
+vertical dimension. This is very convenient, because it means that the
+ROI does not need to redefined if, for example, the color mode is
+changed from Mono to RGB1, which would be required if the X, Y and Z
+dimensions were not automatically switched.</p>
+</section>
+<section id="configuration">
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">Configuration</a><a class="headerlink" href="#configuration" title="Permalink to this heading"></a></h2>
+<p>The NDPluginROI plugin is created with the <code class="docutils literal notranslate"><span class="pre">NDROIConfigure</span></code> command,
+either from C/C++ or from the EPICS IOC shell.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">NDROIConfigure</span><span class="p">(</span><span class="n">const</span> <span class="n">char</span> <span class="o">*</span><span class="n">portName</span><span class="p">,</span> <span class="nb">int</span> <span class="n">queueSize</span><span class="p">,</span> <span class="nb">int</span> <span class="n">blockingCallbacks</span><span class="p">,</span>
+               <span class="n">const</span> <span class="n">char</span> <span class="o">*</span><span class="n">NDArrayPort</span><span class="p">,</span> <span class="nb">int</span> <span class="n">NDArrayAddr</span><span class="p">,</span>
+               <span class="nb">int</span> <span class="n">maxBuffers</span><span class="p">,</span> <span class="n">size_t</span> <span class="n">maxMemory</span><span class="p">,</span>
+               <span class="nb">int</span> <span class="n">priority</span><span class="p">,</span> <span class="nb">int</span> <span class="n">stackSize</span><span class="p">,</span> <span class="nb">int</span> <span class="n">maxThreads</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>For details on the meaning of the parameters to this function refer to
+the detailed documentation on the <code class="docutils literal notranslate"><span class="pre">NDROIConfigure</span></code> function in the
+<a class="reference external" href="../areaDetectorDoxygenHTML/_n_d_plugin_r_o_i_8cpp.html">NDPluginROI.cpp
+documentation</a>
+and in the documentation for the constructor for the <a class="reference external" href="../areaDetectorDoxygenHTML/class_n_d_plugin_r_o_i.html">NDPluginROI
+class</a>.</p>
+</section>
+<section id="screen-shots">
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">Screen shots</a><a class="headerlink" href="#screen-shots" title="Permalink to this heading"></a></h2>
+<p>The following MEDM screen provides access to the parameters in
+<code class="docutils literal notranslate"><span class="pre">NDPluginDriver.h</span></code> and <code class="docutils literal notranslate"><span class="pre">NDPluginROI.h</span></code> through records in
+<code class="docutils literal notranslate"><span class="pre">NDPluginBase.template</span></code> and <code class="docutils literal notranslate"><span class="pre">NDROI.template</span></code>.</p>
+<img alt="../_images/NDROI.png" class="align-center" src="../_images/NDROI.png" />
+<p>The following MEDM screen provides access to 4 ROIs at once.</p>
+<img alt="../_images/NDROI4.png" src="../_images/NDROI4.png" />
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="NDPluginPva.html" class="btn btn-neutral float-left" title="NDPluginPva" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="NDPluginROIStat.html" class="btn btn-neutral float-right" title="NDPluginROIStat" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Mark Rivers.
+      <span class="lastupdated">Last updated on 2023-March-12.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

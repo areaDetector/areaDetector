@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NDPluginStats &mdash; areaDetector Support</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme_overrides.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="NDPluginStdArrays" href="NDPluginStdArrays.html" />
+    <link rel="prev" title="NDPluginScatter" href="NDPluginScatter.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            areaDetector
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../readme.html">Readme</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../user_guide.html">User Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arch.html">Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="asynPortDriver.html">asynPortDriver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NDArray.html">NDArray</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../detector_drivers.html">Detector Drivers</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="plugins.html">areaDetector Plugins</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="plugin_overview.html">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginDriver.html">NDPluginDriver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="plugin_guidelines.html">Guidelines and rules for plugins</a></li>
+<li class="toctree-l3"><a class="reference internal" href="plugin_medm.html">Base class medm screens</a></li>
+<li class="toctree-l3"><a class="reference internal" href="common_plugins.html">commonPlugins.cmd</a></li>
+<li class="toctree-l3"><a class="reference internal" href="plugin_performance.html">Performance example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginAttrPlot.html">NDPluginAttrPlot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginAttribute.html">NDPluginAttribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginBadPixel.html">NDPluginBadPixel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginCircularBuff.html">NDPluginCircularBuff</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginCodec.html">NDPluginCodec</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginColorConvert.html">NDPluginColorConvert</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginFFT.html">NDPluginFFT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginFile.html">NDPluginFile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginGather.html">NDPluginGather</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginOverlay.html">NDPluginOverlay</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginProcess.html">NDPluginProcess</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginPva.html">NDPluginPva</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginROI.html">NDPluginROI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginROIStat.html">NDPluginROIStat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginScatter.html">NDPluginScatter</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">NDPluginStats</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#configuration">Configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#screen-shots">Screen shots</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginStdArrays.html">NDPluginStdArrays</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginTimeSeries.html">NDPluginTimeSeries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginTransform.html">NDPluginTransform</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginPos.html">NDPosPlugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ffmpegServer.html">ffmpegServer</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../additional_plugins.html">Additional plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="medm.html">MEDM screens</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADViewers/ad_viewers.html">areaDetector Viewers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../acknowledgements.html">Acknowledgements and licenses</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../install_guide.html">Install Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release.html">Top-level Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ADCore_release.html">ADCore Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ADSupport_release.html">ADSupport Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../doxygen.html">Source Code Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../detectors.html">Supported Detectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../legacy_versions.html">Legacy Versions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">areaDetector</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../user_guide.html">areaDetector Users Guide</a></li>
+          <li class="breadcrumb-item"><a href="plugins.html">areaDetector Plugins</a></li>
+      <li class="breadcrumb-item active">NDPluginStats</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/ADCore/NDPluginStats.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="ndpluginstats">
+<h1><a class="toc-backref" href="#id1" role="doc-backlink">NDPluginStats</a><a class="headerlink" href="#ndpluginstats" title="Permalink to this heading"></a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">author<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Mark Rivers, University of Chicago</p>
+</dd>
+</dl>
+<nav class="contents" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#ndpluginstats" id="id1">NDPluginStats</a></p>
+<ul>
+<li><p><a class="reference internal" href="#overview" id="id2">Overview</a></p></li>
+<li><p><a class="reference internal" href="#configuration" id="id3">Configuration</a></p></li>
+<li><p><a class="reference internal" href="#screen-shots" id="id4">Screen shots</a></p></li>
+</ul>
+</li>
+</ul>
+</nav>
+<section id="overview">
+<h2><a class="toc-backref" href="#id2" role="doc-backlink">Overview</a><a class="headerlink" href="#overview" title="Permalink to this heading"></a></h2>
+<p><cite>NDPluginStats</cite> computes the following.</p>
+<ol class="arabic simple">
+<li><p>Basic statistics: minimum, maximum, mean, sigma, total, and net
+(background subtracted).</p></li>
+<li><p>Centroid, sigma, skewness and kurtosis values in the X and Y
+dimensions.</p></li>
+<li><p>Profiles of the array in the X and Y dimensions. A total of 8
+profiles are calculated:</p>
+<ul class="simple">
+<li><p>The average profiles in the X and Y directions.</p></li>
+<li><p>The average profiles in the X and Y directions, for array elements
+greater than the centroid threshold.</p></li>
+<li><p>The profiles in the X and Y directions at the X and Y centroid
+position.</p></li>
+<li><p>The profiles in the X and Y directions at a user-defined X and Y
+cursor position.</p></li>
+</ul>
+</li>
+<li><p>A histogram of the values (e.g. number of pixels versus intensity per
+pixel).</p></li>
+</ol>
+<p>Each calculcation can be independently enabled and disabled.
+Calculations 1 and 4 can be perfomed on arrays of any dimension.
+Calculations 2 and 3 are restricted to 2-D arrays.</p>
+<p>Time-series arrays of the basic statistics, centroid and sigma
+statistics can also be collected. This is very useful for on-the-fly
+data acquisition, where the NDStats plugin computes the net or total
+counts in the detector or an ROI. It can also be used to quickly plot a
+time-history of beam position or width, etc. The time series can also be
+used in a circular buffer mode where is continuously displays the last N
+values of the statistic.</p>
+<p>NDPluginStats inherits from NDPluginDriver. The <a class="reference external" href="../areaDetectorDoxygenHTML/class_n_d_plugin_stats.html">NDPluginStats class
+documentation</a>
+describes this class in detail.</p>
+<p><code class="docutils literal notranslate"><span class="pre">NDPluginStats.h</span></code> defines the following parameters. It also implements all
+of the standard plugin parameters from
+<a class="reference internal" href="NDPluginDriver.html"><span class="doc">NDPluginDriver</span></a>. The EPICS database
+<code class="docutils literal notranslate"><span class="pre">NDStats.template</span></code> provide access to these parameters, listed in the
+following table. Note that to reduce the width of this table the
+parameter index variable names have been split into 2 lines, but these
+are just a single name, for example <code class="docutils literal notranslate"><span class="pre">NDPluginStatsComputeStatistics</span></code>.</p>
+<table class="table-bordered table-striped table-hover docutils align-default">
+<colgroup>
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 70%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head"></th>
+<th class="head" colspan="5"><p>Parameter Definitions in NDPluginStats.h and EPICS Record Definitions in NDStats.template</p></th>
+</tr>
+<tr class="row-even"><th class="head"><p>Parameter index variable</p></th>
+<th class="head"><p>asyn interface</p></th>
+<th class="head"><p>Access</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>drvInfo string</p></th>
+<th class="head"><p>EPICS record name</p></th>
+<th class="head"><p>EPICS record type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-odd"><td></td>
+<td></td>
+<td colspan="5"><p><strong>Basic statistics</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>NDPluginStats <br> ComputeStatistics</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>Flag to control whether to compute statistics for this array (0=No, 1=Yes). Not
+computing statistics reduces CPU load. Basic statistics computations are quite fast,
+since they involve mostly double precision addition, with 1 multiply to compute
+sigma, per array element.</p></td>
+<td><p>COMPUTE_STATISTICS</p></td>
+<td><p>$(P)$(R)ComputeStatistics, $(P)$(R)ComputeStatistics_RBV</p></td>
+<td><p>bo, bi</p></td>
+</tr>
+<tr class="row-odd"><td><p>NDPluginStats <br> BgdWidth</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>Width of the background in pixels to use when computing net counts. 0=no background
+subtraction, so the net counts is the same as the total counts.</p></td>
+<td><p>BGD_WIDTH</p></td>
+<td><p>$(P)$(R)BgdWidth, $(P)$(R)BgdWidth_RBV</p></td>
+<td><p>longout, longin</p></td>
+</tr>
+<tr class="row-even"><td><p>NDPluginStats <br> MinValue</p></td>
+<td><p>asynFloat64</p></td>
+<td><p>r/o</p></td>
+<td><p>Minimum value in any element in the array</p></td>
+<td><p>MIN_VALUE</p></td>
+<td><p>$(P)$(R)MinValue_RBV</p></td>
+<td><p>ai</p></td>
+</tr>
+<tr class="row-odd"><td><p>NDPluginStats <br> MinX</p></td>
+<td><p>asynFloat64</p></td>
+<td><p>r/o</p></td>
+<td><p>X pixel location of minimum value in the array. This is only valid for 2-D monochromatic
+arrays.</p></td>
+<td><p>MIN_X</p></td>
+<td><p>$(P)$(R)MinX_RBV</p></td>
+<td><p>ai</p></td>
+</tr>
+<tr class="row-even"><td><p>NDPluginStats <br> MinY</p></td>
+<td><p>asynFloat64</p></td>
+<td><p>r/o</p></td>
+<td><p>Y pixel location of minimum value in the array. This is only valid for 2-D monochromatic
+arrays.</p></td>
+<td><p>MIN_Y</p></td>
+<td><p>$(P)$(R)MinY_RBV</p></td>
+<td><p>ai</p></td>
+</tr>
+<tr class="row-odd"><td><p>NDPluginStats <br> MaxValue</p></td>
+<td><p>asynFloat64</p></td>
+<td><p>r/o</p></td>
+<td><p>Maximum value in any element in the array</p></td>
+<td><p>MAX_VALUE</p></td>
+<td><p>$(P)$(R)MaxValue_RBV</p></td>
+<td><p>ai</p></td>
+</tr>
+<tr class="row-even"><td><p>NDPluginStats <br> MaxX</p></td>
+<td><p>asynFloat64</p></td>
+<td><p>r/o</p></td>
+<td><p>X pixel location of maximum value in the array. This is only valid for 2-D monochromatic
+arrays.</p></td>
+<td><p>MAX_X</p></td>
+<td><p>$(P)$(R)MaxX_RBV</p></td>
+<td><p>ai</p></td>
+</tr>
+<tr class="row-odd"><td><p>NDPluginStats <br> MaxY</p></td>
+<td><p>asynFloat64</p></td>
+<td><p>r/o</p></td>
+<td><p>Y pixel location of maximum value in the array. This is only valid for 2-D monochromatic
+arrays.</p></td>
+<td><p>MAX_Y</p></td>
+<td><p>$(P)$(R)MaxY_RBV</p></td>
+<td><p>ai</p></td>
+</tr>
+<tr class="row-even"><td><p>NDPluginStats <br> MeanValue</p></td>
+<td><p>asynFloat64</p></td>
+<td><p>r/o</p></td>
+<td><p>Mean value in the array</p></td>
+<td><p>MEAN_VALUE</p></td>
+<td><p>$(P)$(R)MeanValue_RBV</p></td>
+<td><p>ai</p></td>
+</tr>
+<tr class="row-odd"><td><p>NDPluginStats <br> Total</p></td>
+<td><p>asynFloat64</p></td>
+<td><p>r/o</p></td>
+<td><p>Sum (total) of all elements in the array. This is available as an ai record. The
+total counts are also available as epicsInt32 values in an mca record via callbacks
+to the drvFastSweep driver. The mca record is very useful for on-the-fly data acquisition
+of the total counts in the detector or in an ROI.</p></td>
+<td><p>TOTAL</p></td>
+<td><p>$(P)$(R)Total_RBV, $(P)$(R)TotalArray</p></td>
+<td><p>ai, mca</p></td>
+</tr>
+<tr class="row-even"><td><p>NDPluginStats <br> Net</p></td>
+<td><p>asynFloat64</p></td>
+<td><p>r/o</p></td>
+<td><p>Net (background subtracted) total of all elements in the array. The background is
+calculated by determining the average counts per array element in a border around
+the array of width NDPluginStatsBgdWidth. This average background counts per element
+is then subtracted from all elements inside the array. If NDPluginStatsBgdWidth
+is &amp;le; 0 then no background is computed. The net counts is available as an ai record.
+The net counts is also available as epicsInt32 values in an mca record via callbacks
+to the drvFastSweep driver. The mca record is very useful for on-the-fly data acquisition
+of the net counts in the detector or in an ROI.</p></td>
+<td><p>NET</p></td>
+<td><p>$(P)$(R)Net_RBV, $(P)$(R)NetArray</p></td>
+<td><p>ai, mca</p></td>
+</tr>
+<tr class="row-odd"><td><p>NDPluginStats <br> SigmaValue</p></td>
+<td><p>asynFloat64</p></td>
+<td><p>r/o</p></td>
+<td><p>Sigma (standard deviation) of all elements in the array</p></td>
+<td><p>SIGMA_VALUE</p></td>
+<td><p>$(P)$(R)Sigma_RBV</p></td>
+<td><p>ai</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td colspan="5"><p><strong>Centroid statistics</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>NDPluginStats <br> ComputeCentroid</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>Flag to control whether to compute the centroid statistics (0=No, 1=Yes). The centroids
+are computed from the average row and column profiles above the centroid threshold.
+These calculations are also quite fast, since they just involve addition operations
+for each array element.</p></td>
+<td><p>COMPUTE_CENTROID</p></td>
+<td><p>$(P)$(R)ComputeCentroid, $(P)$(R)ComputeCentroid_RBV</p></td>
+<td><p>bo, bi</p></td>
+</tr>
+<tr class="row-even"><td><p>NDPluginStats <br> CentroidThreshold</p></td>
+<td><p>asynFloat64</p></td>
+<td><p>r/w</p></td>
+<td><p>Threshold used when computing the centroid statistics. All array elements less than
+this value are set to 0 for computing the centroid statistics. It is important to
+set this value to ignore the “background” when computing the position and size of
+a “beam” image, for example.</p></td>
+<td><p>CENTROID_THRESHOLD</p></td>
+<td><p>$(P)$(R)CentroidThreshold, $(P)$(R)CentroidThreshold_RBV</p></td>
+<td><p>ao, ai</p></td>
+</tr>
+<tr class="row-odd"><td><p>NDPluginStats <br> CentroidTotal</p></td>
+<td><p>asynFloat64</p></td>
+<td><p>r/o</p></td>
+<td><p>Total mass, sum of all elements above the threshold.</p></td>
+<td><p>CENTROID_TOTAL</p></td>
+<td><p>$(P)$(R)CentroidTotal_RBV</p></td>
+<td><p>ai</p></td>
+</tr>
+<tr class="row-even"><td><p>NDPluginStats <br> CentroidX</p></td>
+<td><p>asynFloat64</p></td>
+<td><p>r/o</p></td>
+<td><p>X centroid of the array above the centroid threshold.</p></td>
+<td><p>CENTROIDX_VALUE</p></td>
+<td><p>$(P)$(R)CentroidX_RBV</p></td>
+<td><p>ai</p></td>
+</tr>
+<tr class="row-odd"><td><p>NDPluginStats <br> CentroidY</p></td>
+<td><p>asynFloat64</p></td>
+<td><p>r/o</p></td>
+<td><p>Y centroid of the array above the centroid threshold.</p></td>
+<td><p>CENTROIDY_VALUE</p></td>
+<td><p>$(P)$(R)CentroidY_RBV</p></td>
+<td><p>ai</p></td>
+</tr>
+<tr class="row-even"><td><p>NDPluginStats <br> SigmaX</p></td>
+<td><p>asynFloat64</p></td>
+<td><p>r/o</p></td>
+<td><p>Sigma X (width) of the distribution above the centroid threshold.</p></td>
+<td><p>SIGMAX_VALUE</p></td>
+<td><p>$(P)$(R)SigmaX_RBV</p></td>
+<td><p>ai</p></td>
+</tr>
+<tr class="row-odd"><td><p>NDPluginStats <br> SigmaY</p></td>
+<td><p>asynFloat64</p></td>
+<td><p>r/o</p></td>
+<td><p>Sigma Y (height) of the distribution above the centroid threshold.</p></td>
+<td><p>SIGMAY_VALUE</p></td>
+<td><p>$(P)$(R)SigmaY_RBV</p></td>
+<td><p>ai</p></td>
+</tr>
+<tr class="row-even"><td><p>NDPluginStats <br> SigmaXY</p></td>
+<td><p>asynFloat64</p></td>
+<td><p>r/o</p></td>
+<td><p>This is the normalized value of sigmaXY, i.e. sigmaXY/(sigmaX * sigmaY). This is
+often called the correlation coefficient, r. It is zero if the X and Y profiles
+are not correlated, meaning that the distribution is not tilted with respect to
+the X and Y axes.</p></td>
+<td><p>SIGMAXY_VALUE</p></td>
+<td><p>$(P)$(R)SigmaXY_RBV</p></td>
+<td><p>ai</p></td>
+</tr>
+<tr class="row-odd"><td><p>NDPluginStats <br> SkewX</p></td>
+<td><p>asynFloat64</p></td>
+<td><p>r/o</p></td>
+<td><p>Skewness X (symmetry) of the distribution above the centroid threshold, in relation
+to the center of mass. <br>
+== 0, symmetric distribution <br>
+&lt; 0, distribution assymetric to the left <br>
+&gt; 0, distribution assymetric to the right</p></td>
+<td><p>SKEWX_VALUE</p></td>
+<td><p>$(P)$(R)SkewX_RBV</p></td>
+<td><p>ai</p></td>
+</tr>
+<tr class="row-even"><td><p>NDPluginStats <br> SkewY</p></td>
+<td><p>asynFloat64</p></td>
+<td><p>r/o</p></td>
+<td><p>Skewness Y (symmetry) of the distribution above the centroid threshold, in relation
+to the center of mass. <br>
+== 0, symmetric distribution <br>
+&lt; 0, distribution assymetric to the top <br>
+&gt; 0, distribution assymetric to the bottom</p></td>
+<td><p>SKEWY_VALUE</p></td>
+<td><p>$(P)$(R)SkewY_RBV</p></td>
+<td><p>ai</p></td>
+</tr>
+<tr class="row-odd"><td><p>NDPluginStats <br> KurtosisX</p></td>
+<td><p>asynFloat64</p></td>
+<td><p>r/o</p></td>
+<td><p>Excess Kurtosis X (flatness) of the distribution above the centroid threshold <br>
+== 0, Gaussian (normal) distribution <br>
+&lt; 0, distribution flatter than normal <br>
+&gt; 0, distribution more peaky than normal</p></td>
+<td><p>KURTOSISX_VALUE</p></td>
+<td><p>$(P)$(R)KurtosisX_RBV</p></td>
+<td><p>ai</p></td>
+</tr>
+<tr class="row-even"><td><p>NDPluginStats <br> KurtosisY</p></td>
+<td><p>asynFloat64</p></td>
+<td><p>r/o</p></td>
+<td><p>Excess Kurtosis Y (flatness) of the distribution above the centroid threshold. <br>
+== 0, Gaussian (normal) distribution <br>
+&lt; 0, distribution flatter than normal <br>
+&gt; 0, distribution more peaky than normal</p></td>
+<td><p>KURTOSISY_VALUE</p></td>
+<td><p>$(P)$(R)KurtosisY_RBV</p></td>
+<td><p>ai</p></td>
+</tr>
+<tr class="row-odd"><td><p>NDPluginStats <br> Eccentricity</p></td>
+<td><p>asynFloat64</p></td>
+<td><p>r/o</p></td>
+<td><p>Eccentricity, can take values from 0 to 1. 0 means a perfectly round object and
+1 mean a line shaped object.</p></td>
+<td><p>ECCENTRICITY_VALUE</p></td>
+<td><p>$(P)$(R)Eccentricity_RBV</p></td>
+<td><p>ai</p></td>
+</tr>
+<tr class="row-even"><td><p>NDPluginStats <br> Orientation</p></td>
+<td><p>asynFloat64</p></td>
+<td><p>r/o</p></td>
+<td><p>Orientation of the object, orientation of the “long” direction with respect to horizontal
+(x axis).</p></td>
+<td><p>ORIENTATION_VALUE</p></td>
+<td><p>$(P)$(R)Orientation_RBV</p></td>
+<td><p>ai</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td colspan="5"><p><strong>Time-Series data</strong></p></td>
+</tr>
+<tr class="row-even"><td colspan="7"><p>The time series is implemented by loading an instance of the <a class="reference internal" href="NDPluginTimeSeries.html"><span class="doc">NDPluginTimeSeries</span></a>
+plugin for each NDPluginStats plugin, and the time series control
+uses records in NDTimeSeries.template. That documentation should be consulted for
+an explanation of these records. The prefix and record name macro for the time-series
+plugin records from NDTimeSeries.template is $(P)$(R)TS:. <br>
+<strong>NOTE:</strong> The time-series plugin is often used with drivers which sample at a
+fixed well-defined time interval. This cannot be guaranteed with the statistics
+plugin, so the averaging time records and time axis waveform record from NDPluginTimeSeries
+are typically not used, and the statistics data are plotted against time point #,
+rather than actual time. <br>
+The time-series waveform records for each statistic are defined in NDStats.template.</p></td>
+</tr>
+<tr class="row-odd"><td><p>NDPluginTimeSeries, TSTimeSeries</p></td>
+<td><p>asynFloat64Array</p></td>
+<td><p>r/o</p></td>
+<td><p>The time series data arrays of the basic statistics and centroid and sigma statistics
+described above.</p></td>
+<td><p>TS_TIME_SERIES</p></td>
+<td><p>$(P)$(R)XXX, where XXX is: <br>
+TSMinValue <br>
+TSMinX <br>
+TSMinY <br>
+TSMaxValue <br>
+TSMaxX <br>
+TSMaxY <br>
+TSMeanValue <br>
+TSSigma <br>
+TSTotal <br>
+TSNet <br>
+TSCentroidX <br>
+TSCentroidY <br>
+TSSigmaX <br>
+TSSigmaY <br>
+TSSigmaXY <br>
+TSSkewX <br>
+TSSkewY <br>
+TSKurtosisX <br>
+TSKurtosisY <br>
+TSEccenticity <br>
+TSOrientation <br>
+TSTimestamp <br></p></td>
+<td><p>waveform</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td colspan="5"><p><strong>X and Y Profiles</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>NDPluginStats <br> ComputeProfiles</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>Flag to control whether to compute the profiles for this array (0=No, 1=Yes).</p></td>
+<td><p>COMPUTE_PROFILES</p></td>
+<td><p>$(P)$(R)ComputeProfiles, $(P)$(R)ComputeProfiles_RBV</p></td>
+<td><p>bo, bi</p></td>
+</tr>
+<tr class="row-even"><td><p>NDPluginStats <br> ProfileSizeX</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>Number of array elements in the X profiles.</p></td>
+<td><p>PROFILE_SIZE_X</p></td>
+<td><p>$(P)$(R)ProfileSizeX_RBV</p></td>
+<td><p>longin</p></td>
+</tr>
+<tr class="row-odd"><td><p>NDPluginStats <br> ProfileSizeY</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>Number of array elements in the Y profiles.</p></td>
+<td><p>PROFILE_SIZE_Y</p></td>
+<td><p>$(P)$(R)ProfileSizeY_RBV</p></td>
+<td><p>longin</p></td>
+</tr>
+<tr class="row-even"><td><p>NDPluginStats <br> CursorX</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>X position of a user-defined cursor for profiles.</p></td>
+<td><p>CURSOR_X</p></td>
+<td><p>$(P)$(R)CursorX, $(P)$(R)CursorX_RBV</p></td>
+<td><p>longout, longin</p></td>
+</tr>
+<tr class="row-odd"><td><p>NDPluginStats <br> CursorY</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>Y position of a user-defined cursor for profiles.</p></td>
+<td><p>CURSOR_Y</p></td>
+<td><p>$(P)$(R)CursorY, $(P)$(R)CursorY_RBV</p></td>
+<td><p>longout, longin</p></td>
+</tr>
+<tr class="row-even"><td><p>NDPluginStats <br> CursorVal</p></td>
+<td><p>asynFloat64</p></td>
+<td><p>r/o</p></td>
+<td><p>Value of the pixel at the current cursor position.</p></td>
+<td><p>CURSOR_VAL</p></td>
+<td><p>$(P)$(R)CursorVal</p></td>
+<td><p>ai</p></td>
+</tr>
+<tr class="row-odd"><td><p>NDPluginStats <br> ProfileAverageX</p></td>
+<td><p>asynFloat64Array</p></td>
+<td><p>r/o</p></td>
+<td><p>Profile of the average row in the array, i.e. the sum of all rows in the array divided
+by the number of rows.</p></td>
+<td><p>PROFILE_AVERAGE_X</p></td>
+<td><p>$(P)$(R)ProfileAverageX_RBV</p></td>
+<td><p>waveform</p></td>
+</tr>
+<tr class="row-even"><td><p>NDPluginStats <br> ProfileAverageY</p></td>
+<td><p>asynFloat64Array</p></td>
+<td><p>r/o</p></td>
+<td><p>Profile of the average column in the array, i.e. the sum of all columns in the array
+divided by the number of columns.</p></td>
+<td><p>PROFILE_AVERAGE_Y</p></td>
+<td><p>$(P)$(R)ProfileAverageY_RBV</p></td>
+<td><p>waveform</p></td>
+</tr>
+<tr class="row-odd"><td><p>NDPluginStats <br> ProfileThresholdX</p></td>
+<td><p>asynFloat64Array</p></td>
+<td><p>r/o</p></td>
+<td><p>Same as ProfileAverageX except that all array elements less than CentroidThreshold
+are set to zero when computing the average.</p></td>
+<td><p>PROFILE_THRESHOLD_X</p></td>
+<td><p>$(P)$(R)ProfileThresholdX_RBV</p></td>
+<td><p>waveform</p></td>
+</tr>
+<tr class="row-even"><td><p>NDPluginStats <br> ProfileThresholdY</p></td>
+<td><p>asynFloat64Array</p></td>
+<td><p>r/o</p></td>
+<td><p>Same as ProfileAverageY except that all array elements less than CentroidThreshold
+are set to zero when computing the average.</p></td>
+<td><p>PROFILE_THRESHOLD_Y</p></td>
+<td><p>$(P)$(R)ProfileThresholdY_RBV</p></td>
+<td><p>waveform</p></td>
+</tr>
+<tr class="row-odd"><td><p>NDPluginStats <br> ProfileCentroidX</p></td>
+<td><p>asynFloat64Array</p></td>
+<td><p>r/o</p></td>
+<td><p>X profile through the array in the row defined by CentroidY.</p></td>
+<td><p>PROFILE_CENTROID_X</p></td>
+<td><p>$(P)$(R)ProfileCentroidX_RBV</p></td>
+<td><p>waveform</p></td>
+</tr>
+<tr class="row-even"><td><p>NDPluginStats <br> ProfileCentroidY</p></td>
+<td><p>asynFloat64Array</p></td>
+<td><p>r/o</p></td>
+<td><p>Y profile through the array in the column defined by CentroidX.</p></td>
+<td><p>PROFILE_CENTROID_Y</p></td>
+<td><p>$(P)$(R)ProfileCentroidY_RBV</p></td>
+<td><p>waveform</p></td>
+</tr>
+<tr class="row-odd"><td><p>NDPluginStats <br> ProfileCursorX</p></td>
+<td><p>asynFloat64Array</p></td>
+<td><p>r/o</p></td>
+<td><p>X profile through the array in the row defined by CursorY.</p></td>
+<td><p>PROFILE_CURSOR_X</p></td>
+<td><p>$(P)$(R)ProfileCursorX_RBV</p></td>
+<td><p>waveform</p></td>
+</tr>
+<tr class="row-even"><td><p>NDPluginStats <br> ProfileCursorY</p></td>
+<td><p>asynFloat64Array</p></td>
+<td><p>r/o</p></td>
+<td><p>Y profile through the array in the row defined by CursorX.</p></td>
+<td><p>PROFILE_CURSOR_Y</p></td>
+<td><p>$(P)$(R)ProfileCursorY_RBV</p></td>
+<td><p>waveform</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td colspan="5"><p><strong>Array histogram</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>NDPluginStats <br> ComputeHistogram</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>Flag to control whether to compute the histogram for this array (0=No, 1=Yes). Not
+computing the histogram reduces CPU load.</p></td>
+<td><p>COMPUTE_HISTOGRAM</p></td>
+<td><p>$(P)$(R)ComputeHistogram, $(P)$(R)ComputeHistogram_RBV</p></td>
+<td><p>bo, bi</p></td>
+</tr>
+<tr class="row-odd"><td><p>NDPluginStats <br> HistSize</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>Number of elements (bins) in the histogram</p></td>
+<td><p>HIST_SIZE</p></td>
+<td><p>$(P)$(R)HistSize, $(P)$(R)HistSize_RBV</p></td>
+<td><p>longout, longin</p></td>
+</tr>
+<tr class="row-even"><td><p>NDPluginStats <br> HistMin</p></td>
+<td><p>asynFloat64</p></td>
+<td><p>r/w</p></td>
+<td><p>Minimum value for the histogram. All values less than this will be counted in HistBelow.</p></td>
+<td><p>HIST_MIN</p></td>
+<td><p>$(P)$(R)HistMin, $(P)$(R)HistMin_RBV</p></td>
+<td><p>ao, ai</p></td>
+</tr>
+<tr class="row-odd"><td><p>NDPluginStats <br> HistMax</p></td>
+<td><p>asynFloat64</p></td>
+<td><p>r/w</p></td>
+<td><p>Maximum value for the histogram. All values greater than this will be counted in
+HistAbove.</p></td>
+<td><p>HIST_MAX</p></td>
+<td><p>$(P)$(R)HistMax, $(P)$(R)HistMax_RBV</p></td>
+<td><p>ao, ai</p></td>
+</tr>
+<tr class="row-even"><td><p>NDPluginStats <br> HistBelow</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/o</p></td>
+<td><p>Count of all values less than HistMin.</p></td>
+<td><p>HIST_BELOW</p></td>
+<td><p>$(P)$(R)HistBelow_RBV</p></td>
+<td><p>longin</p></td>
+</tr>
+<tr class="row-odd"><td><p>NDPluginStats <br> HistAbove</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/o</p></td>
+<td><p>Count of all values greater than HistMax.</p></td>
+<td><p>HIST_ABOVE</p></td>
+<td><p>$(P)$(R)HistAbove_RBV</p></td>
+<td><p>longin</p></td>
+</tr>
+<tr class="row-even"><td><p>NDPluginStats <br> HistEntropy</p></td>
+<td><p>asynFloat64</p></td>
+<td><p>r/o</p></td>
+<td><p>Entropy of the image. This is a measure of the sharpness of the histogram, and is
+often a useful figure of merit for determining sharpness of focus, etc. It is defined
+as -SUM(BIN[i]*log(BIN[i]), where the sum is over the number of bins in the histogram
+and BIN[i] is the number of elements in bin i.</p></td>
+<td><p>HIST_ENTROPY</p></td>
+<td><p>$(P)$(R)HistEntropy_RBV</p></td>
+<td><p>ai</p></td>
+</tr>
+<tr class="row-odd"><td><p>NDPluginStats <br> HistArray</p></td>
+<td><p>asynFloat64Array</p></td>
+<td><p>r/o</p></td>
+<td><p>Histogram array, i.e. counts in each histogram bin.</p></td>
+<td><p>HIST_ARRAY</p></td>
+<td><p>$(P)$(R)Histogram_RBV</p></td>
+<td><p>waveform</p></td>
+</tr>
+<tr class="row-even"><td><p>NDPluginStats <br> HistXArray</p></td>
+<td><p>asynFloat64Array</p></td>
+<td><p>r/o</p></td>
+<td><p>Histogram X-axis array, i.e. minimum intensity in each histogram bin.</p></td>
+<td><p>HIST_X_ARRAY</p></td>
+<td><p>$(P)$(R)HistogramX_RBV</p></td>
+<td><p>waveform</p></td>
+</tr>
+</tbody>
+</table>
+<p>If the values of CentroidThreshold, CursorX, or CursorY are changed then
+the centroid and profile calculations are performed again immediately on
+the last array collected. Thus updated centroid statistics and profiles
+can be displayed even when new arrays are not being acquired. These
+calculations are only performed when enabled by ComputeCentroid and
+ComputeProfiles.</p>
+</section>
+<section id="configuration">
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">Configuration</a><a class="headerlink" href="#configuration" title="Permalink to this heading"></a></h2>
+<p>The NDPluginStats plugin is created with the NDStatsConfigure command,
+either from C/C++ or from the EPICS IOC shell.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">NDStatsConfigure</span><span class="p">(</span><span class="n">const</span> <span class="n">char</span> <span class="o">*</span><span class="n">portName</span><span class="p">,</span> <span class="nb">int</span> <span class="n">queueSize</span><span class="p">,</span> <span class="nb">int</span> <span class="n">blockingCallbacks</span><span class="p">,</span>
+               <span class="n">const</span> <span class="n">char</span> <span class="o">*</span><span class="n">NDArrayPort</span><span class="p">,</span> <span class="nb">int</span> <span class="n">NDArrayAddr</span><span class="p">,</span>
+               <span class="nb">int</span> <span class="n">maxBuffers</span><span class="p">,</span> <span class="n">size_t</span> <span class="n">maxMemory</span><span class="p">,</span>
+               <span class="nb">int</span> <span class="n">priority</span><span class="p">,</span> <span class="nb">int</span> <span class="n">stackSize</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>For details on the meaning of the parameters to this function refer to
+the detailed documentation on the NDStatsConfigure function in the
+<a class="reference external" href="areaDetectorDoxygenHTML/_n_d_plugin_stats_8cpp.html">NDPluginStats.cpp
+documentation</a>
+and in the documentation for the constructor for the <a class="reference external" href="areaDetectorDoxygenHTML/class_n_d_plugin_stats.html">NDPluginStats
+class</a>.</p>
+</section>
+<section id="screen-shots">
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">Screen shots</a><a class="headerlink" href="#screen-shots" title="Permalink to this heading"></a></h2>
+<p>The following MEDM screen provides access to the parameters in
+NDPluginDriver.h and NDPluginStats.h through records in
+NDPluginBase.template and NDStats.template.</p>
+<figure class="align-center">
+<img alt="../_images/NDStats.png" src="../_images/NDStats.png" />
+</figure>
+<p>The following MEDM screen shows the average profile of an image in the X
+direction.</p>
+<figure class="align-center">
+<img alt="../_images/NDStats_AverageX.png" src="../_images/NDStats_AverageX.png" />
+</figure>
+<p>The following MEDM screen shows the profile of an image in the Y
+direction at the location of the user-defined cursor.</p>
+<figure class="align-center">
+<img alt="../_images/NDStats_CursorY.png" src="../_images/NDStats_CursorY.png" />
+</figure>
+<p>The following MEDM screen shows the histogram of intensities of an
+array.</p>
+<figure class="align-center">
+<img alt="../_images/NDStats_Histogram.png" src="../_images/NDStats_Histogram.png" />
+</figure>
+<p>The following MEDM screen combines many parameters for 5 NDPluginStats
+plugins on a single screen.</p>
+<figure class="align-center">
+<img alt="../_images/NDStats5.png" src="../_images/NDStats5.png" />
+</figure>
+<p>The following MEDM screen shows the the total counts from the Stats1
+plugin. This is the total counts as a function of time.</p>
+<figure class="align-center">
+<img alt="../_images/NDStatsTimeSeriesTotal.png" src="../_images/NDStatsTimeSeriesTotal.png" />
+</figure>
+<p>The following MEDM screen shows the Y centroid as a function of time
+from the Stats1 plugin.</p>
+<figure class="align-center">
+<img alt="../_images/NDStatsTimeSeriesCentroidY.png" src="../_images/NDStatsTimeSeriesCentroidY.png" />
+</figure>
+<p>The following MEDM screen shows all of the basic statistics as a
+function of time from the Stats1 plugin.</p>
+<figure class="align-center">
+<img alt="../_images/NDStatsTimeSeriesBasicAll.png" src="../_images/NDStatsTimeSeriesBasicAll.png" />
+</figure>
+<p>The following MEDM screen shows all of the centroid statistics as a
+function of time from the Stats1 plugin.</p>
+<figure class="align-center">
+<img alt="../_images/NDStatsTimeSeriesCentroidAll.png" src="../_images/NDStatsTimeSeriesCentroidAll.png" />
+</figure>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="NDPluginScatter.html" class="btn btn-neutral float-left" title="NDPluginScatter" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="NDPluginStdArrays.html" class="btn btn-neutral float-right" title="NDPluginStdArrays" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Mark Rivers.
+      <span class="lastupdated">Last updated on 2023-March-12.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NDFileNetCDF &mdash; areaDetector Support</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme_overrides.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="NDPluginGather" href="NDPluginGather.html" />
+    <link rel="prev" title="NDFileMagick" href="NDFileMagick.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            areaDetector
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../readme.html">Readme</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../user_guide.html">User Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arch.html">Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="asynPortDriver.html">asynPortDriver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NDArray.html">NDArray</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../detector_drivers.html">Detector Drivers</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="plugins.html">areaDetector Plugins</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="plugin_overview.html">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginDriver.html">NDPluginDriver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="plugin_guidelines.html">Guidelines and rules for plugins</a></li>
+<li class="toctree-l3"><a class="reference internal" href="plugin_medm.html">Base class medm screens</a></li>
+<li class="toctree-l3"><a class="reference internal" href="common_plugins.html">commonPlugins.cmd</a></li>
+<li class="toctree-l3"><a class="reference internal" href="plugin_performance.html">Performance example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginAttrPlot.html">NDPluginAttrPlot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginAttribute.html">NDPluginAttribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginBadPixel.html">NDPluginBadPixel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginCircularBuff.html">NDPluginCircularBuff</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginCodec.html">NDPluginCodec</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginColorConvert.html">NDPluginColorConvert</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginFFT.html">NDPluginFFT</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="NDPluginFile.html">NDPluginFile</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="NDFileJPEG.html">NDFileJPEG</a></li>
+<li class="toctree-l4"><a class="reference internal" href="NDFileTIFF.html">NDFileTIFF</a></li>
+<li class="toctree-l4"><a class="reference internal" href="NDFileHDF5.html">NDFileHDF5</a></li>
+<li class="toctree-l4"><a class="reference internal" href="NDFileNexus.html">NDFileNexus</a></li>
+<li class="toctree-l4"><a class="reference internal" href="NDFileMagick.html">NDFileMagick</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">NDFileNetCDF</a></li>
+<li class="toctree-l4"><a class="reference internal" href="NDPluginFile.html#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="NDPluginFile.html#null-file-plugin">Null file plugin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="NDPluginFile.html#performance">Performance</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginGather.html">NDPluginGather</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginOverlay.html">NDPluginOverlay</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginProcess.html">NDPluginProcess</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginPva.html">NDPluginPva</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginROI.html">NDPluginROI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginROIStat.html">NDPluginROIStat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginScatter.html">NDPluginScatter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginStats.html">NDPluginStats</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginStdArrays.html">NDPluginStdArrays</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginTimeSeries.html">NDPluginTimeSeries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginTransform.html">NDPluginTransform</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginPos.html">NDPosPlugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ffmpegServer.html">ffmpegServer</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../additional_plugins.html">Additional plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="medm.html">MEDM screens</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADViewers/ad_viewers.html">areaDetector Viewers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../acknowledgements.html">Acknowledgements and licenses</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../install_guide.html">Install Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release.html">Top-level Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ADCore_release.html">ADCore Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ADSupport_release.html">ADSupport Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../doxygen.html">Source Code Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../detectors.html">Supported Detectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../legacy_versions.html">Legacy Versions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">areaDetector</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../user_guide.html">areaDetector Users Guide</a></li>
+          <li class="breadcrumb-item"><a href="plugins.html">areaDetector Plugins</a></li>
+          <li class="breadcrumb-item"><a href="NDPluginFile.html">NDPluginFile</a></li>
+      <li class="breadcrumb-item active">NDFileNetCDF</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/ADCore/NDFileNetCDF.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="ndfilenetcdf">
+<span id="id1"></span><h1><a class="toc-backref" href="#id2" role="doc-backlink">NDFileNetCDF</a><a class="headerlink" href="#ndfilenetcdf" title="Permalink to this heading"></a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">author<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Mark Rivers, University of Chicago</p>
+</dd>
+</dl>
+<nav class="contents" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#ndfilenetcdf" id="id2">NDFileNetCDF</a></p>
+<ul>
+<li><p><a class="reference internal" href="#overview" id="id3">Overview</a></p></li>
+<li><p><a class="reference internal" href="#configuration" id="id4">Configuration</a></p></li>
+<li><p><a class="reference internal" href="#screen-shots" id="id5">Screen Shots</a></p></li>
+</ul>
+</li>
+</ul>
+</nav>
+<section id="overview">
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">Overview</a><a class="headerlink" href="#overview" title="Permalink to this heading"></a></h2>
+<p>NDFileNetCDF inherits from NDPluginFile. This plugin saves data in the
+<a class="reference external" href="http://www.unidata.ucar.edu/software/netcdf/">netCDF</a> file format,
+which is a portable self-describing binary file format supported by
+<a class="reference external" href="http://www.unidata.ucar.edu/">UniData</a> at <a class="reference external" href="http://www.ucar.edu/">UCAR (University
+Corporation for Atmospheric Research).</a> There
+are netCDF libraries for C, C++, Fortran, and Java. Other languages,
+including Matlab and IDL have built-in support for netCDF. There are
+also add-on interfaces available for Python, Ruby and other languages.</p>
+<p>The netCDF plugin supports all NDArray data types and any number of
+array dimensions. It also has full support for NDArray attributes. It
+will write all attributes associated with the NDArray to the file. If
+multiple arrays are written to a single netCDF file (stream or capture
+mode) then each attribute will be an array, with the attribute value for
+each NDArray in the file being stored. Note that the number and data
+types of attributes must not be changed while file capture or file
+streaming are in progress because that would change the structure of the
+attribute array. Also the colorMode attribute must not be changed while
+capture or streaming is in progress, because that would change the
+structure of the NDArray data.</p>
+<p>The netCDF classic file format does not handle 64-bit integer data, so cannot
+actually store NDArrays with types NDInt64 or NDUInt64, or NDAttributes of type
+NDAttrInt64 or NDAttrUInt64. This plugin works around this restriction by casting the data to float64,
+so the netCDF library thinks it is writing float64 (double) data, and marks the netCDF data in in the file as double.
+However the netCDF global attribute “datatype” (enum NDDataType_t) will correctly indicate the actual datatype.
+File readers will need to cast the data to the actual datatype after reading the data with the netCDF
+library functions.</p>
+<p>The <a class="reference external" href="../areaDetectorDoxygenHTML/class_n_d_file_net_c_d_f.html">NDFileNetCDF class
+documentation</a>
+describes this class in detail.</p>
+</section>
+<section id="configuration">
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">Configuration</a><a class="headerlink" href="#configuration" title="Permalink to this heading"></a></h2>
+<p>The NDFileNetCDF plugin is created with the <code class="docutils literal notranslate"><span class="pre">NDFileNetCDFConfigure</span></code>
+command, either from C/C++ or from the EPICS IOC shell.</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">NDFileNetCDFConfigure</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">portName</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">queueSize</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">blockingCallbacks</span><span class="p">,</span>
+<span class="w">                       </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">NDArrayPort</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">NDArrayAddr</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">maxMemory</span><span class="p">,</span>
+<span class="w">                       </span><span class="kt">int</span><span class="w"> </span><span class="n">priority</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">stackSize</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>For details on the meaning of the parameters to this function refer to
+the detailed documentation on the NDFileNetCDFConfigure function in the
+<a class="reference external" href="../areaDetectorDoxygenHTML/_n_d_file_net_c_d_f_8cpp.html">NDFileNetCDF.cpp
+documentation</a>
+and in the documentation for the constructor for the <a class="reference external" href="../areaDetectorDoxygenHTML/class_n_d_file_net_c_d_f.html">NDFileNetCDF
+class</a>.</p>
+<p>The following is the header contents of a netCDF file produced by this
+plugin. This information was produced with the following command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ncdump</span> <span class="o">-</span><span class="n">h</span> <span class="n">test_netCDF_68</span><span class="o">.</span><span class="n">nc</span>
+
+<span class="n">netcdf</span> <span class="n">test_netCDF_68</span> <span class="p">{</span>
+<span class="n">dimensions</span><span class="p">:</span>
+    <span class="n">numArrays</span> <span class="o">=</span> <span class="n">UNLIMITED</span> <span class="p">;</span> <span class="o">//</span> <span class="p">(</span><span class="mi">10</span> <span class="n">currently</span><span class="p">)</span>
+    <span class="n">dim0</span> <span class="o">=</span> <span class="mi">240</span> <span class="p">;</span>
+    <span class="n">dim1</span> <span class="o">=</span> <span class="mi">320</span> <span class="p">;</span>
+    <span class="n">dim2</span> <span class="o">=</span> <span class="mi">1</span> <span class="p">;</span>
+    <span class="n">attrStringSize</span> <span class="o">=</span> <span class="mi">256</span> <span class="p">;</span>
+<span class="n">variables</span><span class="p">:</span>
+    <span class="nb">int</span> <span class="n">uniqueId</span><span class="p">(</span><span class="n">numArrays</span><span class="p">)</span> <span class="p">;</span>
+    <span class="n">double</span> <span class="n">timeStamp</span><span class="p">(</span><span class="n">numArrays</span><span class="p">)</span> <span class="p">;</span>
+    <span class="nb">float</span> <span class="n">array_data</span><span class="p">(</span><span class="n">numArrays</span><span class="p">,</span> <span class="n">dim0</span><span class="p">,</span> <span class="n">dim1</span><span class="p">,</span> <span class="n">dim2</span><span class="p">)</span> <span class="p">;</span>
+    <span class="nb">int</span> <span class="n">Attr_colorMode</span><span class="p">(</span><span class="n">numArrays</span><span class="p">)</span> <span class="p">;</span>
+    <span class="n">double</span> <span class="n">Attr_AcquireTime</span><span class="p">(</span><span class="n">numArrays</span><span class="p">)</span> <span class="p">;</span>
+    <span class="n">double</span> <span class="n">Attr_RingCurrent</span><span class="p">(</span><span class="n">numArrays</span><span class="p">)</span> <span class="p">;</span>
+    <span class="nb">int</span> <span class="n">Attr_ImageCounter</span><span class="p">(</span><span class="n">numArrays</span><span class="p">)</span> <span class="p">;</span>
+    <span class="n">char</span> <span class="n">Attr_CameraModel</span><span class="p">(</span><span class="n">numArrays</span><span class="p">,</span> <span class="n">attrStringSize</span><span class="p">)</span> <span class="p">;</span>
+    <span class="nb">int</span> <span class="n">Attr_BinX</span><span class="p">(</span><span class="n">numArrays</span><span class="p">)</span> <span class="p">;</span>
+    <span class="nb">int</span> <span class="n">Attr_BinY</span><span class="p">(</span><span class="n">numArrays</span><span class="p">)</span> <span class="p">;</span>
+    <span class="n">double</span> <span class="n">Attr_AttrTimeStamp</span><span class="p">(</span><span class="n">numArrays</span><span class="p">)</span> <span class="p">;</span>
+    <span class="n">double</span> <span class="n">Attr_ROI0Mean</span><span class="p">(</span><span class="n">numArrays</span><span class="p">)</span> <span class="p">;</span>
+    <span class="n">double</span> <span class="n">Attr_ROI1Mean</span><span class="p">(</span><span class="n">numArrays</span><span class="p">)</span> <span class="p">;</span>
+    <span class="n">char</span> <span class="n">Attr_FilePath</span><span class="p">(</span><span class="n">numArrays</span><span class="p">,</span> <span class="n">attrStringSize</span><span class="p">)</span> <span class="p">;</span>
+    <span class="n">char</span> <span class="n">Attr_FileName</span><span class="p">(</span><span class="n">numArrays</span><span class="p">,</span> <span class="n">attrStringSize</span><span class="p">)</span> <span class="p">;</span>
+
+<span class="o">//</span> <span class="k">global</span> <span class="n">attributes</span><span class="p">:</span>
+        <span class="p">:</span><span class="n">dataType</span> <span class="o">=</span> <span class="mi">6</span> <span class="p">;</span>
+        <span class="p">:</span><span class="n">NDNetCDFFileVersion</span> <span class="o">=</span> <span class="mf">3.</span> <span class="p">;</span>
+        <span class="p">:</span><span class="n">numArrayDims</span> <span class="o">=</span> <span class="mi">3</span> <span class="p">;</span>
+        <span class="p">:</span><span class="n">dimSize</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">320</span><span class="p">,</span> <span class="mi">240</span> <span class="p">;</span>
+        <span class="p">:</span><span class="n">dimOffset</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span> <span class="p">;</span>
+        <span class="p">:</span><span class="n">dimBinning</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span> <span class="p">;</span>
+        <span class="p">:</span><span class="n">dimReverse</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span> <span class="p">;</span>
+        <span class="p">:</span><span class="n">Attr_colorMode_DataType</span> <span class="o">=</span> <span class="s2">&quot;Int32&quot;</span> <span class="p">;</span>
+        <span class="p">:</span><span class="n">Attr_colorMode_Description</span> <span class="o">=</span> <span class="s2">&quot;Color mode&quot;</span> <span class="p">;</span>
+        <span class="p">:</span><span class="n">Attr_colorMode_Source</span> <span class="o">=</span>  <span class="p">;</span>
+        <span class="p">:</span><span class="n">Attr_colorMode_SourceType</span> <span class="o">=</span> <span class="s2">&quot;Driver&quot;</span> <span class="p">;</span>
+        <span class="p">:</span><span class="n">Attr_AcquireTime_DataType</span> <span class="o">=</span> <span class="s2">&quot;Float64&quot;</span> <span class="p">;</span>
+        <span class="p">:</span><span class="n">Attr_AcquireTime_Description</span> <span class="o">=</span> <span class="s2">&quot;Camera acquire time&quot;</span> <span class="p">;</span>
+        <span class="p">:</span><span class="n">Attr_AcquireTime_Source</span> <span class="o">=</span> <span class="s2">&quot;13SIM1:cam1:AcquireTime&quot;</span> <span class="p">;</span>
+        <span class="p">:</span><span class="n">Attr_AcquireTime_SourceType</span> <span class="o">=</span> <span class="s2">&quot;EPICS_PV&quot;</span> <span class="p">;</span>
+        <span class="p">:</span><span class="n">Attr_RingCurrent_DataType</span> <span class="o">=</span> <span class="s2">&quot;Float64&quot;</span> <span class="p">;</span>
+        <span class="p">:</span><span class="n">Attr_RingCurrent_Description</span> <span class="o">=</span> <span class="s2">&quot;Storage ring current&quot;</span> <span class="p">;</span>
+        <span class="p">:</span><span class="n">Attr_RingCurrent_Source</span> <span class="o">=</span> <span class="s2">&quot;S:SRcurrentAI&quot;</span> <span class="p">;</span>
+        <span class="p">:</span><span class="n">Attr_RingCurrent_SourceType</span> <span class="o">=</span> <span class="s2">&quot;EPICS_PV&quot;</span> <span class="p">;</span>
+        <span class="p">:</span><span class="n">Attr_ImageCounter_DataType</span> <span class="o">=</span> <span class="s2">&quot;Int32&quot;</span> <span class="p">;</span>
+        <span class="p">:</span><span class="n">Attr_ImageCounter_Description</span> <span class="o">=</span> <span class="s2">&quot;Image counter&quot;</span> <span class="p">;</span>
+        <span class="p">:</span><span class="n">Attr_ImageCounter_Source</span> <span class="o">=</span> <span class="s2">&quot;ARRAY_COUNTER&quot;</span> <span class="p">;</span>
+        <span class="p">:</span><span class="n">Attr_ImageCounter_SourceType</span> <span class="o">=</span> <span class="s2">&quot;Param&quot;</span> <span class="p">;</span>
+        <span class="p">:</span><span class="n">Attr_CameraModel_DataType</span> <span class="o">=</span> <span class="s2">&quot;String&quot;</span> <span class="p">;</span>
+        <span class="p">:</span><span class="n">Attr_CameraModel_Description</span> <span class="o">=</span> <span class="s2">&quot;Camera model&quot;</span> <span class="p">;</span>
+        <span class="p">:</span><span class="n">Attr_CameraModel_Source</span> <span class="o">=</span> <span class="s2">&quot;MODEL&quot;</span> <span class="p">;</span>
+        <span class="p">:</span><span class="n">Attr_CameraModel_SourceType</span> <span class="o">=</span> <span class="s2">&quot;Param&quot;</span> <span class="p">;</span>
+        <span class="p">:</span><span class="n">Attr_BinX_DataType</span> <span class="o">=</span> <span class="s2">&quot;Int32&quot;</span> <span class="p">;</span>
+        <span class="p">:</span><span class="n">Attr_BinX_Description</span> <span class="o">=</span> <span class="s2">&quot;X binning&quot;</span> <span class="p">;</span>
+        <span class="p">:</span><span class="n">Attr_BinX_Source</span> <span class="o">=</span> <span class="s2">&quot;13SIM1:ROI1:0:BinX_RBV&quot;</span> <span class="p">;</span>
+        <span class="p">:</span><span class="n">Attr_BinX_SourceType</span> <span class="o">=</span> <span class="s2">&quot;EPICS_PV&quot;</span> <span class="p">;</span>
+        <span class="p">:</span><span class="n">Attr_BinY_DataType</span> <span class="o">=</span> <span class="s2">&quot;Int32&quot;</span> <span class="p">;</span>
+        <span class="p">:</span><span class="n">Attr_BinY_Description</span> <span class="o">=</span> <span class="s2">&quot;Y binning&quot;</span> <span class="p">;</span>
+        <span class="p">:</span><span class="n">Attr_BinY_Source</span> <span class="o">=</span> <span class="s2">&quot;13SIM1:ROI1:0:BinY_RBV&quot;</span> <span class="p">;</span>
+        <span class="p">:</span><span class="n">Attr_BinY_SourceType</span> <span class="o">=</span> <span class="s2">&quot;EPICS_PV&quot;</span> <span class="p">;</span>
+        <span class="p">:</span><span class="n">Attr_AttrTimeStamp_DataType</span> <span class="o">=</span> <span class="s2">&quot;Float64&quot;</span> <span class="p">;</span>
+        <span class="p">:</span><span class="n">Attr_AttrTimeStamp_Description</span> <span class="o">=</span> <span class="s2">&quot;Time stamp&quot;</span> <span class="p">;</span>
+        <span class="p">:</span><span class="n">Attr_AttrTimeStamp_Source</span> <span class="o">=</span> <span class="s2">&quot;TIME_STAMP&quot;</span> <span class="p">;</span>
+        <span class="p">:</span><span class="n">Attr_AttrTimeStamp_SourceType</span> <span class="o">=</span> <span class="s2">&quot;Param&quot;</span> <span class="p">;</span>
+        <span class="p">:</span><span class="n">Attr_ROI0Mean_DataType</span> <span class="o">=</span> <span class="s2">&quot;Float64&quot;</span> <span class="p">;</span>
+        <span class="p">:</span><span class="n">Attr_ROI0Mean_Description</span> <span class="o">=</span> <span class="s2">&quot;Mean value ROI 0&quot;</span> <span class="p">;</span>
+        <span class="p">:</span><span class="n">Attr_ROI0Mean_Source</span> <span class="o">=</span> <span class="s2">&quot;MEAN_VALUE&quot;</span> <span class="p">;</span>
+        <span class="p">:</span><span class="n">Attr_ROI0Mean_SourceType</span> <span class="o">=</span> <span class="s2">&quot;Param&quot;</span> <span class="p">;</span>
+        <span class="p">:</span><span class="n">Attr_ROI1Mean_DataType</span> <span class="o">=</span> <span class="s2">&quot;Float64&quot;</span> <span class="p">;</span>
+        <span class="p">:</span><span class="n">Attr_ROI1Mean_Description</span> <span class="o">=</span> <span class="s2">&quot;Mean value ROI 0&quot;</span> <span class="p">;</span>
+        <span class="p">:</span><span class="n">Attr_ROI1Mean_Source</span> <span class="o">=</span> <span class="s2">&quot;MEAN_VALUE&quot;</span> <span class="p">;</span>
+        <span class="p">:</span><span class="n">Attr_ROI1Mean_SourceType</span> <span class="o">=</span> <span class="s2">&quot;Param&quot;</span> <span class="p">;</span>
+        <span class="p">:</span><span class="n">Attr_FilePath_DataType</span> <span class="o">=</span> <span class="s2">&quot;String&quot;</span> <span class="p">;</span>
+        <span class="p">:</span><span class="n">Attr_FilePath_Description</span> <span class="o">=</span> <span class="s2">&quot;File path&quot;</span> <span class="p">;</span>
+        <span class="p">:</span><span class="n">Attr_FilePath_Source</span> <span class="o">=</span> <span class="s2">&quot;13SIM1:netCDF1:FilePath_RBV&quot;</span> <span class="p">;</span>
+        <span class="p">:</span><span class="n">Attr_FilePath_SourceType</span> <span class="o">=</span> <span class="s2">&quot;EPICS_PV&quot;</span> <span class="p">;</span>
+        <span class="p">:</span><span class="n">Attr_FileName_DataType</span> <span class="o">=</span> <span class="s2">&quot;String&quot;</span> <span class="p">;</span>
+        <span class="p">:</span><span class="n">Attr_FileName_Description</span> <span class="o">=</span> <span class="s2">&quot;File name&quot;</span> <span class="p">;</span>
+        <span class="p">:</span><span class="n">Attr_FileName_Source</span> <span class="o">=</span> <span class="s2">&quot;13SIM1:netCDF1:FileName_RBV&quot;</span> <span class="p">;</span>
+        <span class="p">:</span><span class="n">Attr_FileName_SourceType</span> <span class="o">=</span> <span class="s2">&quot;EPICS_PV&quot;</span> <span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>ncdump is one of a number of very useful command line utilities that
+come with the netCDF package. The -h option to ncdump means to dump only
+the header information, not the variable data. This is an explanation of
+this output:</p>
+<ul class="simple">
+<li><p>dimensions: numArrays is the number of arrays in the file. It will be
+1 for files collected in Single mode, and is normally &gt;1 for files
+collected in Capture or Stream mode. For each array dim0 is the
+slowest varying dimension, dim1 the next slowest, etc. attrStringSize
+is the maximum string length for string attributes.</p></li>
+<li><p>variables: There are 15 variables in this netCDF file. uniqueId is
+the unique ID number of each array. timeStamp is the timestamp in
+seconds for each array. array_data is the array data. Its data type
+depends on the data type of the NDArray data passed in the callbacks.
+It dimensions are [numArrays, dim0, dim1, …dimN]. This notation is
+in the Fortran syntax where the slowest varying dimension comes first
+in the list. The remaining variables all have the prefix Attr_ and
+are the attributes for the arrays. Each can have its own data type,
+and all have the numArrays elements.</p></li>
+<li><p>global attributes. dataType is the NDDataType_t enum value for the
+array data type. numArrayDims is the number of dimensions in each
+array. array_data has 1 more dimension than this, numArrays, because
+it contains all of the array callback data. dimSize is an
+array[numArrayDims] containing the size of each dimension, with the
+fastest varying dimension first. dimOffset, dimBinning, and
+dimReverse are the values of the offset, binning and reverse fields
+in the NDDimension_t structure for each dimension. The remaining
+netCDF global attributes all have the prefix Attr_, and describe the
+NDArray attribute values. For each NDArray attribute there is
+information on the data type, a description, source string and source
+type.</p></li>
+</ul>
+<p>There is an IDL function,
+<a class="reference external" href="https://cars.uchicago.edu/software/idl/detector_routines.html#read_nd_netcdf">read_nd_netcdf</a>
+that can be used to read the netCDF files created by this plugin. This
+routine is contained in the <a class="reference external" href="https://github.com/CARS-UChicago/IDL_Detectors/blob/master/read_nd_netcdf.pro">CARS IDL detector
+package</a>.
+This function is also contained in the areaDetector distribution in the
+Viewers/IDL directory.</p>
+<p>There is a plugin for the popular <a class="reference external" href="http://rsbweb.nih.gov/ij/">ImageJ</a>
+program that can be used to read the netCDF files created by this
+plugin. This ImageJ plugin can be downloaded
+<a class="reference external" href="http://lmb.informatik.uni-freiburg.de/lmbsoft/imagej_plugins/netcdf.html">here</a>.
+This plugin is also contained in the areaDetector distribution in the
+Viewers/ImageJ/EPICS_areaDetector directory.</p>
+</section>
+<section id="screen-shots">
+<h2><a class="toc-backref" href="#id5" role="doc-backlink">Screen Shots</a><a class="headerlink" href="#screen-shots" title="Permalink to this heading"></a></h2>
+<figure class="align-center">
+<img alt="../_images/NDFileNetCDF.png" src="../_images/NDFileNetCDF.png" />
+</figure>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="NDFileMagick.html" class="btn btn-neutral float-left" title="NDFileMagick" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="NDPluginGather.html" class="btn btn-neutral float-right" title="NDPluginGather" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Mark Rivers.
+      <span class="lastupdated">Last updated on 2023-March-12.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

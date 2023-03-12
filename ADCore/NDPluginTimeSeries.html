@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NDPluginTimeSeries &mdash; areaDetector Support</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme_overrides.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="NDPluginTransform" href="NDPluginTransform.html" />
+    <link rel="prev" title="NDPluginStdArrays" href="NDPluginStdArrays.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            areaDetector
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../readme.html">Readme</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../user_guide.html">User Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arch.html">Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="asynPortDriver.html">asynPortDriver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NDArray.html">NDArray</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../detector_drivers.html">Detector Drivers</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="plugins.html">areaDetector Plugins</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="plugin_overview.html">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginDriver.html">NDPluginDriver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="plugin_guidelines.html">Guidelines and rules for plugins</a></li>
+<li class="toctree-l3"><a class="reference internal" href="plugin_medm.html">Base class medm screens</a></li>
+<li class="toctree-l3"><a class="reference internal" href="common_plugins.html">commonPlugins.cmd</a></li>
+<li class="toctree-l3"><a class="reference internal" href="plugin_performance.html">Performance example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginAttrPlot.html">NDPluginAttrPlot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginAttribute.html">NDPluginAttribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginBadPixel.html">NDPluginBadPixel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginCircularBuff.html">NDPluginCircularBuff</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginCodec.html">NDPluginCodec</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginColorConvert.html">NDPluginColorConvert</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginFFT.html">NDPluginFFT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginFile.html">NDPluginFile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginGather.html">NDPluginGather</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginOverlay.html">NDPluginOverlay</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginProcess.html">NDPluginProcess</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginPva.html">NDPluginPva</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginROI.html">NDPluginROI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginROIStat.html">NDPluginROIStat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginScatter.html">NDPluginScatter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginStats.html">NDPluginStats</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginStdArrays.html">NDPluginStdArrays</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">NDPluginTimeSeries</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#configuration">Configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#screen-shots">Screen shots</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginTransform.html">NDPluginTransform</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginPos.html">NDPosPlugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ffmpegServer.html">ffmpegServer</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../additional_plugins.html">Additional plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="medm.html">MEDM screens</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADViewers/ad_viewers.html">areaDetector Viewers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../acknowledgements.html">Acknowledgements and licenses</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../install_guide.html">Install Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release.html">Top-level Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ADCore_release.html">ADCore Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ADSupport_release.html">ADSupport Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../doxygen.html">Source Code Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../detectors.html">Supported Detectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../legacy_versions.html">Legacy Versions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">areaDetector</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../user_guide.html">areaDetector Users Guide</a></li>
+          <li class="breadcrumb-item"><a href="plugins.html">areaDetector Plugins</a></li>
+      <li class="breadcrumb-item active">NDPluginTimeSeries</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/ADCore/NDPluginTimeSeries.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="ndplugintimeseries">
+<h1><a class="toc-backref" href="#id1" role="doc-backlink">NDPluginTimeSeries</a><a class="headerlink" href="#ndplugintimeseries" title="Permalink to this heading"></a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">author<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Mark Rivers, University of Chicago</p>
+</dd>
+</dl>
+<nav class="contents" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#ndplugintimeseries" id="id1">NDPluginTimeSeries</a></p>
+<ul>
+<li><p><a class="reference internal" href="#overview" id="id2">Overview</a></p></li>
+<li><p><a class="reference internal" href="#configuration" id="id3">Configuration</a></p></li>
+<li><p><a class="reference internal" href="#screen-shots" id="id4">Screen shots</a></p></li>
+</ul>
+</li>
+</ul>
+</nav>
+<section id="overview">
+<h2><a class="toc-backref" href="#id2" role="doc-backlink">Overview</a><a class="headerlink" href="#overview" title="Permalink to this heading"></a></h2>
+<p>This plugin accepts 1-D arrays of dimension [NumSignals] or 2-D arrays
+of dimension [NumSignals, NewTimePoints]. The plugin creates NumSignals
+NDArrays of dimension [NumTimePoints], each of which is the time-series
+for one signal. It also creates an NDArray of dimension [NumTimePoints,
+NumSignals] containing the data for all of the signals. It also exports
+waveform records containing the time-series data for each signal, and a
+time-axis array containing the relative times of each point in the
+time-series. These waveform records are useful for plotting in OPI
+screens.</p>
+<p>On each callback the new time points are appended to the existing time
+series arrays. The plugin can operate either two modes. In fixed time
+mode the time-series arrays are cleared when acquisition is started, and
+new time points are appended until NumTimePoints points have been
+received, at which point acquisition stops and further callbacks are
+ignored. In circular buffer mode once NumTimePoints samples are received
+then acquisition continues with the new time points replacing the oldest
+ones in the circular buffer.</p>
+<p>The plugin requires knowing the time interval between samples from the
+driver (TimePerPoint). This information normally comes from a database
+link to a record in the detector driver, but it can be manually
+specified as well. The plugin exports a 1-D waveform record containing
+the relative time values of each sample, which can be used for the
+horizontal axis in an OPI display.</p>
+<p>The plugin optionally does time averaging of the input signal. It can
+average any integer number of input samples(NumAverage), so that the
+time between points in the output waveforms is NumAverage*TimePerPoint =
+AveragingTime.</p>
+<p>NDPluginTimeSeries inherits from NDPluginDriver. The <a class="reference external" href="../areaDetectorDoxygenHTML/class_n_d_plugin_time_series.html">NDPluginTimeSeries
+class
+documentation</a>
+describes this class in detail.</p>
+<p>Two database template files are provided:</p>
+<table class="table-bordered table-striped table-hover docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Template File Name</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">NDTimeSeries.template</span></code></p></td>
+<td><p>This needs to be instantiated once for each instance of the plugin.
+It provides records that apply to the entire plugin or to all signals.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">NDTimeSeriesN.template</span></code></p></td>
+<td><p>This needs to be instantiated once for each signal in the plugin
+(the number must equal the number of signals specified in the IOC shell function).
+The template provides records that apply to each signal.</p></td>
+</tr>
+</tbody>
+</table>
+<p>NDPluginTimeSeries inherits from NDPluginDriver.</p>
+<p>NDPluginTimeSeries defines the following parameters. It also implements
+all of the standard plugin parameters from
+<a class="reference internal" href="NDPluginDriver.html"><span class="doc">NDPluginDriver</span></a>. The template files
+listed above provide access to these parameters, listed in the following
+tables.</p>
+<table class="table-bordered table-striped table-hover docutils align-default">
+<colgroup>
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 70%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head" colspan="6"><p>Parameters for entire plugin. Definitions in NDPluginTimeSeries.h and NDTimeSeries.template.</p></th>
+</tr>
+<tr class="row-even"><th class="head"><p>Parameter index variable</p></th>
+<th class="head"><p>asyn interface</p></th>
+<th class="head"><p>Access</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>drvInfo string</p></th>
+<th class="head"><p>EPICS record name</p></th>
+<th class="head"><p>EPICS record type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-odd"><td><p>TSAcquire</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>Starts and stops time-series data collection. Value are: <br>
+<strong>0</strong>: “Done”: Stops times-series data collection. Performs callbacks on all time-series
+waveform records. The record automatically goes to Done when acquisition completes
+in Fixed Length acquire mode. <br>
+<strong>1</strong>: “Acquire”: Clears all time-series arrays, sets TS_CURRENT_POINT=0, and starts
+time-series data collection.</p></td>
+<td><p>TS_ACQUIRE</p></td>
+<td><p>$(P)$(R)TSAcquire, $(P)$(R)TSAcquiring</p></td>
+<td><p>busy, bi</p></td>
+</tr>
+<tr class="row-even"><td><p>TSRead</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>Forces the plugin to do callbacks with the time series NDArrays and waveform records.
+This record SCAN field can be set to periodically update the waveforms. The callbacks
+are automatically done when TSAcquire goes to done at the end of acquisition in
+Fixed Length mode.</p></td>
+<td><p>TS_READ</p></td>
+<td><p>$(P)$(R)TSRead</p></td>
+<td><p>bo</p></td>
+</tr>
+<tr class="row-odd"><td><p>TSNumPoints</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>Controls the number of time-series points to collect. There is no maximum value,
+the time-series arrays in the plugin are freed and reallocated each time this value
+is changed. However, the size of the waveform records is fixed when the IOC is started,
+so NELM in those records must be large enough for the largest time-series needed.</p></td>
+<td><p>TS_NUM_POINTS</p></td>
+<td><p>$(P)$(R)TSNumPoints</p></td>
+<td><p>longout</p></td>
+</tr>
+<tr class="row-even"><td><p>TSCurrentPoint</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/o</p></td>
+<td><p>The current time-series point. In Fixed Length mode when TSCurrentPoint reaches
+TSNumPoints then time-series acquisition is automatically stopped, and callbacks
+are done on all time-series NDArrays and waveform records, updating the values.
+This means that even if TSRead.SCAN is Passive that the NDArrays and waveform records
+will update when time-series acquisition is complete.</p></td>
+<td><p>TS_CURRENT_POINT</p></td>
+<td><p>$(P)$(R)TSCurrentPoint</p></td>
+<td><p>longin</p></td>
+</tr>
+<tr class="row-odd"><td><p>TSAcquireMode</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>The time series acquisition mode. Choices are:, 0: “Fixed length”
+, 1: “Circ. buffer”</p></td>
+<td><p>TS_ACQUIRE_MODE</p></td>
+<td><p>$(P)$(R)TSAcquireMode, $(P)$(R)TSAcquireMode_RBV</p></td>
+<td><p>mbbo
+, mbbi</p></td>
+</tr>
+<tr class="row-even"><td><p>TSTimePerPoint</p></td>
+<td><p>asynFloat64</p></td>
+<td><p>r/w</p></td>
+<td><p>The time interval between samples in the waveforms from the driver. This value is
+normally updated automatically using the TSTimePerPointLink record described below.
+It can also be manually changed if there is no EPICS record available to provide
+this value automatically. This value is used to compute NumAverage, and to construct
+the TSTimeAxis array.</p></td>
+<td><p>TS_TIME_PER_POINT</p></td>
+<td><p>$(P)$(R)TSTimePerPoint, $(P)$(R)TSTimePerPoint_RBV</p></td>
+<td><p>ao, ai</p></td>
+</tr>
+<tr class="row-odd"><td><p>N.A</p></td>
+<td><p>N.A.</p></td>
+<td><p>r/w</p></td>
+<td><p>This record has OMSL=”closed_loop” and DOL set to a record that contains the time
+between points from the driver. The link will normally have the CP attribute, so
+this record processes whenever the input record changes. The OUT field of this record
+is TSTimePerPoint.</p></td>
+<td><p>N.A.</p></td>
+<td><p>$(P)$(R)TSTimePerPointLink</p></td>
+<td><p>ao</p></td>
+</tr>
+<tr class="row-even"><td><p>TSAveragingTime</p></td>
+<td><p>asynFloat64</p></td>
+<td><p>r/w</p></td>
+<td><p>The requested value of the time interval over which input time-series points are
+averaged. If the TSAveragingTime is not an integer multiple of TSTimePerPoint then
+TSAveragingTime_RBV will be different from TSAveragingTime and will be the actual
+averaging time.</p></td>
+<td><p>TS_AVERAGING_TIME</p></td>
+<td><p>$(P)$(R)TSAveragingTime, $(P)$(R)TSAveragingTime_RBV</p></td>
+<td><p>ao, ai</p></td>
+</tr>
+<tr class="row-odd"><td><p>TSNumAverage</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/o</p></td>
+<td><p>The number of time points from the driver that will be averaged in the plugin. This
+is computed from TSAveragingTime/TSTimePerPoint. It is constrained to be the nearest
+positive integer to this ratio.</p></td>
+<td><p>TS_NUM_AVERAGE</p></td>
+<td><p>$(P)$(R)TSNumAverage</p></td>
+<td><p>longin</p></td>
+</tr>
+<tr class="row-even"><td><p>TSElapsedTime</p></td>
+<td><p>asynFloat64</p></td>
+<td><p>r/w</p></td>
+<td><p>The elapsed time since TSAcquire was set to 1. Stops updating when TSAcquire goes
+to 0.</p></td>
+<td><p>TS_ELAPSED_TIME</p></td>
+<td><p>$(P)$(R)TSElapsedTime</p></td>
+<td><p>ai</p></td>
+</tr>
+<tr class="row-odd"><td><p>TSTimeAxis</p></td>
+<td><p>asynFloat64ArrayIn</p></td>
+<td><p>r/o</p></td>
+<td><p>A waveform record containing the time value of each point in the TimeSeries waveforms.
+When AcquireMode=”Fixed length”; then time=0 is the time when acquisition
+started and <cite>TSTimeAxis[i] = TSAveragingTime_RBV * i.</cite>
+When AcquireMode=”Circ. buffer”; then time=0 is the most recent time and
+<cite>TSTimeAxis[i] = -TSAveragingTime_RBV * (NumTimePoints-1-i)</cite>, so the oldest time point is the most negative.</p></td>
+<td><p>TS_TIME_AXIS</p></td>
+<td><p>$(P)$(R)TSTimeAxis</p></td>
+<td><p>waveform</p></td>
+</tr>
+<tr class="row-even"><td><p>TSTimeStamp</p></td>
+<td><p>asynFloat64ArrayIn</p></td>
+<td><p>r/o</p></td>
+<td><p>A waveform record containing the NDArray timestamp for each sample from the input
+NDArray. Note that since multiple time points can be contained in a single NDArray
+there can be repeated values in this waveform. Assuming the driver provides a reliable
+value for TSTimePerPoint described above, then the TSTimeAxis waveform provides
+a more accurate relative time array to use in plotting. The values in this waveform
+are absolute timestamps which can also be useful.</p></td>
+<td><p>TS_TIMESTAMP</p></td>
+<td><p>$(P)$(R)TSTimestamp</p></td>
+<td><p>waveform</p></td>
+</tr>
+</tbody>
+</table>
+<table class="table-bordered table-striped table-hover docutils align-default">
+<colgroup>
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 70%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head" colspan="6"><p>Parameters for each signal N. Definitions in NDPluginTimeSeries.h and NDTimeSeriesN.template</p></th>
+</tr>
+<tr class="row-even"><th class="head"><p>Parameter index variable</p></th>
+<th class="head"><p>asyn interface</p></th>
+<th class="head"><p>Access</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>drvInfo string</p></th>
+<th class="head"><p>EPICS record name</p></th>
+<th class="head"><p>EPICS record type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-odd"><td><p>TSSignalName</p></td>
+<td><p>N.A.</p></td>
+<td><p>r/w</p></td>
+<td><p>The name for this signal.</p></td>
+<td><p>N.A.</p></td>
+<td><p>$(P)$(R)SignalName</p></td>
+<td><p>stringout</p></td>
+</tr>
+<tr class="row-even"><td><p>TSTimeSeries</p></td>
+<td><p>asynFloat64ArrayIn</p></td>
+<td><p>r/o</p></td>
+<td><p>The time series data arrays.</p></td>
+<td><p>TS_TIME_SERIES</p></td>
+<td><p>$(P)$(R)TimeSeries</p></td>
+<td><p>waveform</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="configuration">
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">Configuration</a><a class="headerlink" href="#configuration" title="Permalink to this heading"></a></h2>
+<p>The NDPluginTimeSeries plugin is created with the <code class="docutils literal notranslate"><span class="pre">NDTimeSeriesConfigure</span></code>
+function, either from C/C++ or from the EPICS IOC shell.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">NDTimeSeriesConfigure</span><span class="p">(</span><span class="n">const</span> <span class="n">char</span> <span class="o">*</span><span class="n">portName</span><span class="p">,</span> <span class="nb">int</span> <span class="n">queueSize</span><span class="p">,</span> <span class="nb">int</span> <span class="n">blockingCallbacks</span><span class="p">,</span>
+                          <span class="n">const</span> <span class="n">char</span> <span class="o">*</span><span class="n">NDArrayPort</span><span class="p">,</span> <span class="nb">int</span> <span class="n">NDArrayAddr</span><span class="p">,</span> <span class="nb">int</span> <span class="n">maxSignals</span><span class="p">,</span>
+                          <span class="nb">int</span> <span class="n">maxBuffers</span><span class="p">,</span>  <span class="n">size_t</span> <span class="n">maxMemory</span><span class="p">,</span> <span class="nb">int</span> <span class="n">priority</span><span class="p">,</span> <span class="nb">int</span> <span class="n">stackSize</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>All but the <code class="docutils literal notranslate"><span class="pre">maxSignals</span></code> parameter are common to all plugins.</p>
+<p>maxSignals defines how many signals this plugin will deal with. Usually
+this will match the number of NDTimeSeriesN templates have been loaded.</p>
+<p>For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">NDTimeSeriesConfigure</span><span class="p">(</span><span class="s2">&quot;TS1&quot;</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;DET1&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="screen-shots">
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">Screen shots</a><a class="headerlink" href="#screen-shots" title="Permalink to this heading"></a></h2>
+<p>The following MEDM screen provides access to the parameters in
+NDPluginDriver.h and NDPluginTimeSeries.h through records in
+NDPluginBase.template, and NDTimeSeries.template.</p>
+<figure class="align-center">
+<img alt="../_images/NDPluginTimeSeries.png" src="../_images/NDPluginTimeSeries.png" />
+</figure>
+<p>The following MEDM screen shows the time series plot for an array in
+NDPluginTimeSeriesN.template.</p>
+<figure class="align-center">
+<img alt="../_images/NDTimeSeriesPlot.png" src="../_images/NDTimeSeriesPlot.png" />
+</figure>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="NDPluginStdArrays.html" class="btn btn-neutral float-left" title="NDPluginStdArrays" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="NDPluginTransform.html" class="btn btn-neutral float-right" title="NDPluginTransform" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Mark Rivers.
+      <span class="lastupdated">Last updated on 2023-March-12.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

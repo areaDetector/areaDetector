@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NDPluginCircularBuff &mdash; areaDetector Support</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme_overrides.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="NDPluginCodec" href="NDPluginCodec.html" />
+    <link rel="prev" title="NDPluginBadPixel" href="NDPluginBadPixel.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            areaDetector
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../readme.html">Readme</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../user_guide.html">User Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arch.html">Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="asynPortDriver.html">asynPortDriver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NDArray.html">NDArray</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../detector_drivers.html">Detector Drivers</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="plugins.html">areaDetector Plugins</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="plugin_overview.html">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginDriver.html">NDPluginDriver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="plugin_guidelines.html">Guidelines and rules for plugins</a></li>
+<li class="toctree-l3"><a class="reference internal" href="plugin_medm.html">Base class medm screens</a></li>
+<li class="toctree-l3"><a class="reference internal" href="common_plugins.html">commonPlugins.cmd</a></li>
+<li class="toctree-l3"><a class="reference internal" href="plugin_performance.html">Performance example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginAttrPlot.html">NDPluginAttrPlot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginAttribute.html">NDPluginAttribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginBadPixel.html">NDPluginBadPixel</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">NDPluginCircularBuff</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#screen-shots">Screen shots</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#configuration">Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginCodec.html">NDPluginCodec</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginColorConvert.html">NDPluginColorConvert</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginFFT.html">NDPluginFFT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginFile.html">NDPluginFile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginGather.html">NDPluginGather</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginOverlay.html">NDPluginOverlay</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginProcess.html">NDPluginProcess</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginPva.html">NDPluginPva</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginROI.html">NDPluginROI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginROIStat.html">NDPluginROIStat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginScatter.html">NDPluginScatter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginStats.html">NDPluginStats</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginStdArrays.html">NDPluginStdArrays</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginTimeSeries.html">NDPluginTimeSeries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginTransform.html">NDPluginTransform</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginPos.html">NDPosPlugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ffmpegServer.html">ffmpegServer</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../additional_plugins.html">Additional plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="medm.html">MEDM screens</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADViewers/ad_viewers.html">areaDetector Viewers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../acknowledgements.html">Acknowledgements and licenses</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../install_guide.html">Install Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release.html">Top-level Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ADCore_release.html">ADCore Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ADSupport_release.html">ADSupport Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../doxygen.html">Source Code Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../detectors.html">Supported Detectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../legacy_versions.html">Legacy Versions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">areaDetector</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../user_guide.html">areaDetector Users Guide</a></li>
+          <li class="breadcrumb-item"><a href="plugins.html">areaDetector Plugins</a></li>
+      <li class="breadcrumb-item active">NDPluginCircularBuff</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/ADCore/NDPluginCircularBuff.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="ndplugincircularbuff">
+<h1><a class="toc-backref" href="#id1" role="doc-backlink">NDPluginCircularBuff</a><a class="headerlink" href="#ndplugincircularbuff" title="Permalink to this heading"></a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">author<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Edmund Warrick, Diamond Light Source and Mark Rivers, University of Chicago</p>
+</dd>
+</dl>
+<nav class="contents" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#ndplugincircularbuff" id="id1">NDPluginCircularBuff</a></p>
+<ul>
+<li><p><a class="reference internal" href="#overview" id="id2">Overview</a></p></li>
+<li><p><a class="reference internal" href="#screen-shots" id="id3">Screen shots</a></p></li>
+<li><p><a class="reference internal" href="#configuration" id="id4">Configuration</a></p></li>
+</ul>
+</li>
+</ul>
+</nav>
+<section id="overview">
+<h2><a class="toc-backref" href="#id2" role="doc-backlink">Overview</a><a class="headerlink" href="#overview" title="Permalink to this heading"></a></h2>
+<p>NDPluginCircularBuff is a triggering plugin. It receives NDArrays from a
+plugin or driver and checks whether a user-defined trigger condition has
+been met. The trigger condition is based on the values of up to two
+NDAttributes attached to the NDArray. The attribute values are used in a
+general calculation expression that defines the trigger condition. Once
+the trigger condition is detected the plugin outputs the triggering
+NDArray, along with a configurable number of pre- and post-trigger
+NDArrays. Triggering can also be performed using a soft trigger,
+controlled from the “Trigger” database record.</p>
+<p>Acquisition is started by setting the “NDCircBuffControl” parameter to
+non-zero (via the “Capture” record in the associated database). The
+plugin then copies all received NDArrays to its ring buffer, wrapping
+once the specified pre-count is reached.</p>
+<p>Once the trigger is detected, the plugin will immediately output all the
+NDArrays stored in the ring buffer in order from oldest to newest (by
+calling doCallbacksGenericPointer). After the trigger is set, new
+NDArrays will then be output as soon as they arrive, until the
+post-count is reached. The plugin will then stop buffering or outputting
+NDArrays until it is restarted via NDCircBuffControl. The plugin will
+also automatically restart if the following condition is true:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">PresetTriggerCount</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="o">||</span> <span class="p">((</span><span class="n">PresetTriggerCount</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">ActualTriggerCount</span> <span class="o">&lt;</span> <span class="n">PresetTriggerCount</span><span class="p">)))</span>
+</pre></div>
+</div>
+<p>NDPluginCircularBuff inherits from NDPluginDriver. The
+<a class="reference external" href="../areaDetectorDoxygenHTML/class_n_d_plugin_circular_buff.html">NDPluginCircularBuff class
+documentation</a>
+describes this class in detail.</p>
+<p>NDPluginCircularBuff defines the following parameters. It also
+implements all of the standard plugin parameters from
+<a class="reference internal" href="NDPluginDriver.html"><span class="doc">NDPluginDriver</span></a>. The EPICS database</p>
+<p>NDCircularBuff.template provides access to these parameters, listed in
+the following table.</p>
+<table class="table-bordered table-striped table-hover docutils align-default">
+<colgroup>
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 70%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head" colspan="6"><p>Parameter Definitions in NDPluginCircularBuff.h and EPICS Record Definitions in
+NDCircularBuff.template</p></th>
+</tr>
+<tr class="row-even"><th class="head"><p>Parameter index variable</p></th>
+<th class="head"><p>asyn interface</p></th>
+<th class="head"><p>Access</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>drvInfo string</p></th>
+<th class="head"><p>EPICS record name</p></th>
+<th class="head"><p>EPICS record type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-odd"><td><p>NDCircBuffControl</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>Toggle triggering &amp; buffering on/off</p></td>
+<td><p>CIRC_BUFF_CONTROL</p></td>
+<td><p>$(P)$(R)Capture, $(P)$(R)Capture_RBV</p></td>
+<td><p>busy, bi</p></td>
+</tr>
+<tr class="row-even"><td><p>NDCircBuffStatus</p></td>
+<td><p>asynOctet</p></td>
+<td><p>r/o</p></td>
+<td><p>Plugin status feedback string</p></td>
+<td><p>CIRC_BUFF_STATUS</p></td>
+<td><p>$(P)$(R)StatusMessage</p></td>
+<td><p>stringin</p></td>
+</tr>
+<tr class="row-odd"><td><p>NDCircBuffPreTrigger</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>Number of pre-trigger NDArrays to store</p></td>
+<td><p>CIRC_BUFF_PRE_TRIGGER</p></td>
+<td><p>$(P)$(R)PreCount, $(P)$(R)PreCount_RBV</p></td>
+<td><p>longout, longin</p></td>
+</tr>
+<tr class="row-even"><td><p>NDCircBuffPostTrigger</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>Number of post-trigger NDArrays to output</p></td>
+<td><p>CIRC_BUFF_POST_TRIGGER</p></td>
+<td><p>$(P)$(R)PostCount, $(P)$(R)PostCount_RBV</p></td>
+<td><p>longout, longin</p></td>
+</tr>
+<tr class="row-odd"><td><p>NDCircBuffTriggerA</p></td>
+<td><p>asynOctet</p></td>
+<td><p>r/w</p></td>
+<td><p>Name of the NDAttribute for trigger A.</p></td>
+<td><p>CIRC_BUFF_TRIGGER_A</p></td>
+<td><p>$(P)$(R)TriggerA, $(P)$(R)TriggerA_RBV</p></td>
+<td><p>stringout, stringin</p></td>
+</tr>
+<tr class="row-even"><td><p>NDCircBuffTriggerB</p></td>
+<td><p>asynOctet</p></td>
+<td><p>r/w</p></td>
+<td><p>Name of the NDAttribute for trigger B</p></td>
+<td><p>CIRC_BUFF_TRIGGER_B</p></td>
+<td><p>$(P)$(R)TriggerB, $(P)$(R)TriggerB_RBV</p></td>
+<td><p>stringout, stringin</p></td>
+</tr>
+<tr class="row-odd"><td><p>NDCircBuffTriggerAVal</p></td>
+<td><p>asynFloat64</p></td>
+<td><p>r/o</p></td>
+<td><p>Value of the NDAttribute for trigger A. The attribute defined by TriggerA must have
+a numeric datatype, not string. This value field only updates when the plugin is
+capturing (Capture=1).</p></td>
+<td><p>CIRC_BUFF_TRIGGER_A_VAL</p></td>
+<td><p>$(P)$(R)TriggerAVal</p></td>
+<td><p>ai</p></td>
+</tr>
+<tr class="row-even"><td><p>NDCircBuffTriggerBVal</p></td>
+<td><p>asynFloat64</p></td>
+<td><p>r/o</p></td>
+<td><p>Value of the NDAttribute for trigger B. The attribute defined by TriggerB must have
+a numeric datatype, not string. This value field only updates when the plugin is
+capturing (Capture=1).</p></td>
+<td><p>CIRC_BUFF_TRIGGER_B_VAL</p></td>
+<td><p>$(P)$(R)TriggerBVal</p></td>
+<td><p>ai</p></td>
+</tr>
+<tr class="row-odd"><td><p>NDCircBuffTriggerCalc</p></td>
+<td><p>asynOctet</p></td>
+<td><p>r/w</p></td>
+<td><p>The calculation expression for the trigger. This can be any valid expression accepted
+by the EPICS calc routines in libCom, and used for example in the EPICS calc record.
+The maximum length of the expression is currently set to MAX_INFIX_SIZE (100) defined
+in postfix.h in EPICS base.</p></td>
+<td><p>CIRC_BUFF_TRIGGER_CALC</p></td>
+<td><p>$(P)$(R)TriggerCalc, $(P)$(R)TriggerCalc_RBV</p></td>
+<td><p>waveform, waveform</p></td>
+</tr>
+<tr class="row-even"><td><p>NDCircBuffTriggerCalcVal</p></td>
+<td><p>asynFloat64</p></td>
+<td><p>r/o</p></td>
+<td><p>Value of the calculated expression. This value field only updates when the plugin
+is capturing (Capture=1).</p></td>
+<td><p>CIRC_BUFF_TRIGGER_CALC_VAL</p></td>
+<td><p>$(P)$(R)TriggerCalcVal</p></td>
+<td><p>ai</p></td>
+</tr>
+<tr class="row-odd"><td><p>NDCircBuffPresetTriggerCount</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>Controls how many times the plugin can be triggered before capture stops. The default
+is 1, so the plugin will only trigger once and then stop capturing. If this is 0
+then the plugin will continue to retrigger forever until it is stopped by setting
+Capture=0.</p></td>
+<td><p>CIRC_BUFF_PRESET_TRIGGER_COUNT</p></td>
+<td><p>$(P)$(R)PresetTriggerCount, $(P)$(R)PresetTriggerCount_RBV</p></td>
+<td><p>longout, longin</p></td>
+</tr>
+<tr class="row-even"><td><p>NDCircBuffActualTriggerCount</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/o</p></td>
+<td><p>The number of triggers that have occurred since capture was last started.</p></td>
+<td><p>CIRC_BUFF_ACTUAL_TRIGGER_COUNT</p></td>
+<td><p>$(P)$(R)ActualTriggerCount_RBV</p></td>
+<td><p>longin</p></td>
+</tr>
+<tr class="row-odd"><td><p>NDCircBuffCurrentImage</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/o</p></td>
+<td><p>Number of NDArrays currently stored in ring buffer</p></td>
+<td><p>CIRC_BUFF_CURRENT_IMAGE</p></td>
+<td><p>$(P)$(R)CurrentQty_RBV</p></td>
+<td><p>longin</p></td>
+</tr>
+<tr class="row-even"><td><p>NDCircBuffPostCount</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/o</p></td>
+<td><p>Number of post-trigger NDArrays emitted so far</p></td>
+<td><p>CIRC_BUFF_POST_COUNT</p></td>
+<td><p>$(P)$(R)PostTriggerQty_RBV</p></td>
+<td><p>longin</p></td>
+</tr>
+<tr class="row-odd"><td><p>NDCircBuffSoftTrigger</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>Set to non-zero to force a trigger on next NDArray</p></td>
+<td><p>CIRC_BUFF_SOFT_TRIGGER</p></td>
+<td><p>$(P)$(R)Trigger</p></td>
+<td><p>busy</p></td>
+</tr>
+<tr class="row-even"><td><p>NDCircBuffTriggered</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/o</p></td>
+<td><p>Current trigger status</p></td>
+<td><p>CIRC_BUFF_TRIGGERED</p></td>
+<td><p>$(P)$(R)Trigger_RBV</p></td>
+<td><p>bi</p></td>
+</tr>
+<tr class="row-odd"><td><p>NDCircBuffFlushOnSoftTrig</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/o</p></td>
+<td><p>Defines behaviour of the flush functionality. Choices are: <br>
+“OnNewImage” (0, default) Flushes on new image. <br>
+“Immediately” (1) Flushes immediately on software trigger.</p></td>
+<td><p>CIRC_BUFF_FLUSH_ON_SOFTTRIGGER</p></td>
+<td><p>$(P)$(R)FlushOnSoftTrg, $(P)$(R)FlushOnSoftTrg_RBV</p></td>
+<td><p>bo, bi</p></td>
+</tr>
+</tbody>
+</table>
+<p>Triggering using NDArray attributes is quite powerful. Two NDArray
+attributes can be used for triggering. The names of these attributes are
+defined with the TriggerA and TriggerB records. The values of these
+attributes must be numeric, not string. The TriggerCalc record defines a
+calculation expression that uses that same syntax as the EPICS calc
+record. If the expression evaluates to a non-zero value then the plugin
+will be triggered. The variables in the expression are defined as
+follows:</p>
+<ul class="simple">
+<li><p>A The current value of the NDAttribute defined by TriggerA.</p></li>
+<li><p>B The current value of the NDAttribute defined by TriggerB.</p></li>
+<li><p>C The value of the PreCount record</p></li>
+<li><p>D The value of the PostCount record</p></li>
+<li><p>E The value of the CurrentQty_RBV record</p></li>
+<li><p>F The value of the PostTriggerQty_RBV record</p></li>
+<li><p>G The value of the Trigger_RBV record</p></li>
+</ul>
+<p>The following are some example expressions. They assume that the
+NDPluginCircularBuff plugin is getting its data from the NDPluginStats
+plugin and that the NDPluginStats plugin is using an attributes XML file
+containing the following lines:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">attribute</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;MaxValue&quot;</span>  <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;PARAM&quot;</span> <span class="n">source</span><span class="o">=</span><span class="s2">&quot;MAX_VALUE&quot;</span>       <span class="n">datatype</span><span class="o">=</span><span class="s2">&quot;DOUBLE&quot;</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Maximum value&quot;</span> <span class="o">/&gt;</span>
+<span class="o">&lt;</span><span class="n">attribute</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;CentroidX&quot;</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;PARAM&quot;</span> <span class="n">source</span><span class="o">=</span><span class="s2">&quot;CENTROIDX_VALUE&quot;</span> <span class="n">datatype</span><span class="o">=</span><span class="s2">&quot;DOUBLE&quot;</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Centroid X position&quot;</span> <span class="o">/&gt;</span>
+</pre></div>
+</div>
+<p>Assume that TriggerA is set to MaxValue and TriggerB is set to
+CentroidX.</p>
+<p>The following are examples of some expressions that can then be used for
+triggering:</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Expression</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>A&lt;200</p></td>
+<td><p>Intensity of brightest pixel is
+less than 200</p></td>
+</tr>
+<tr class="row-odd"><td><p>A&gt;1.5*H &amp;&amp; E&gt;50;H:=A</p></td>
+<td><p>Intensity of brightest pixel (A)
+is more than 150% of the value in
+the previous image (H) and there
+are at least 50 images in the
+circular buffer. Set H to A after
+evaluation.</p></td>
+</tr>
+<tr class="row-even"><td><p>B&lt;300 || A&gt;100</p></td>
+<td><p>X centroid is less than pixel 300
+or the maximum intensity is
+greater than 100.</p></td>
+</tr>
+</tbody>
+</table>
+<p>If the TriggerA or TriggerB attrbutes do not exist, or if they are
+non-numeric datatype then the TriggerAVal or TriggerBVal is set to NaN
+(Not a Number). If that value is used in the calculation expression then
+in some cases the TriggerCalcVal will also be NaN (for example A+B will
+be NaN). If TriggerCalcVal is NaN or Infinity then the expression is
+treated as 0 and the trigger will not occur. However, some expressions
+involving NaN arguments do not result in a NaN result and could result
+in false triggers. For example (A&amp;&amp;B) evaluates as 1 when both A and B
+are NaN. To avoid this problem the <code class="docutils literal notranslate"><span class="pre">isnan()</span></code> and <code class="docutils literal notranslate"><span class="pre">isinf()</span></code> functions can be
+used in the expression.</p>
+<p>It is possible to continuously output individual NDArrays that match the
+trigger condition. To do this set PreCount=0, PostCount=1, and
+PresetTriggerCount=0.</p>
+</section>
+<section id="screen-shots">
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">Screen shots</a><a class="headerlink" href="#screen-shots" title="Permalink to this heading"></a></h2>
+<p>The following is the MEDM screen that provides access to the parameters
+in NDPluginDriver.h and NDPluginCircularBuff.h through records in
+NDPluginBase.template and NDCircularBuff.template.</p>
+<img alt="../_images/NDCircularBuff.png" class="align-center" src="../_images/NDCircularBuff.png" />
+</section>
+<section id="configuration">
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">Configuration</a><a class="headerlink" href="#configuration" title="Permalink to this heading"></a></h2>
+<p>The NDPluginCircularBuff plugin is created with the
+NDCircularBuffConfigure command, either from C/C++ or from the EPICS IOC
+shell.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">NDCircularBuffConfigure</span><span class="p">(</span><span class="n">const</span> <span class="n">char</span> <span class="o">*</span><span class="n">portName</span><span class="p">,</span> <span class="nb">int</span> <span class="n">queueSize</span><span class="p">,</span> <span class="nb">int</span> <span class="n">blockingCallbacks</span><span class="p">,</span>
+                        <span class="n">const</span> <span class="n">char</span> <span class="o">*</span><span class="n">NDArrayPort</span><span class="p">,</span> <span class="nb">int</span> <span class="n">NDArrayAddr</span><span class="p">,</span>
+                        <span class="nb">int</span> <span class="n">maxBuffers</span><span class="p">,</span> <span class="n">size_t</span> <span class="n">maxMemory</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>For details on the meaning of the parameters to this function refer to
+the detailed documentation on the NDCircularBuffConfigure function in
+the <a class="reference external" href="../areaDetectorDoxygenHTML/_n_d_plugin_circular_buff_8cpp.html">NDPluginCircularBuff.cpp
+documentation</a>
+and in the documentation for the constructor for the
+<a class="reference external" href="../areaDetectorDoxygenHTML/class_n_d_plugin_circular_buff.html">NDPluginCircularBuff
+class</a>.</p>
+<p>In particular, note that maxBuffers constrains the size of the ring
+buffer - the plugin will discard any changes to the pre- or post count
+if this would result in (pre-count + post-count) exceeding maxBuffers.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="NDPluginBadPixel.html" class="btn btn-neutral float-left" title="NDPluginBadPixel" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="NDPluginCodec.html" class="btn btn-neutral float-right" title="NDPluginCodec" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Mark Rivers.
+      <span class="lastupdated">Last updated on 2023-March-12.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

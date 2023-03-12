@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ADURL &mdash; areaDetector Support</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme_overrides.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Example st.cmd Startup File" href="st_cmd.html" />
+    <link rel="prev" title="ADVimba" href="../ADVimba/ADVimba.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            areaDetector
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../readme.html">Readme</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../user_guide.html">User Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/overview.html">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/arch.html">Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/asynPortDriver.html">asynPortDriver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/NDArray.html">NDArray</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../detector_drivers.html">Detector Drivers</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../ADCore/guidelines.html">Guidelines and rules for drivers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADCore/ADDriver.html">ADDriver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADAndor/andorDoc.html">ADAndor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADAndor3/ADAndorDoc.html">ADAndor3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADAravis/ADAravis.html">ADAravis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADCSimDetector/ADCSimDetectorDoc.html">ADCSimDetector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADDexela/ADDexela.html">ADDexela</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADEiger/eiger.html">ADEiger</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADFastCCD/index.html">ADFastCCD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADGenICam/ADGenICam.html">ADGenICam</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADLambda/ADLambda.html">ADLambda</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADLightField/ADLightField.html">ADLightField</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADmarCCD/marCCDDoc.html">ADmarCCD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADmar345/mar345Doc.html">ADmar345</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPerkinElmer/PerkinElmerDoc.html">ADPerkinElmer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPICam/PICamDoc.html">ADPICam</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPilatus/pilatusDoc.html">ADPilatus</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPixirad/ADPixirad.html">ADPixirad</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPointGrey/PointGreyDoc.html">ADPointGrey</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADProsilica/ADProsilica.html">ADProsilica</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPvCam/pvcamDoc.html">ADPvCam</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADQImaging/QImagingDoc.html">ADQImaging</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADRIXSCam/ADRIXSCam.html">ADRIXSCam</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADSimDetector/simDetector.html">ADSimDetector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADSpinnaker/ADSpinnaker.html">ADSpinnaker</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADVimba/ADVimba.html">ADVimba</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">ADURL</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#implementation-of-standard-driver-parameters">Implementation of standard driver parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#url-driver-specific-parameters">URL driver specific parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#unsupported-standard-driver-parameters">Unsupported standard driver parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#configuration">Configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#example-st-cmd-startup-file">Example st.cmd startup file</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#medm-screens">MEDM screens</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../NDDriverStdArrays/NDDriverStdArraysDoc.html">NDDriverStdArrays</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../pvaDriver/pvaDriver.html">pvaDriver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../specsAnalyser/index.html">specsAnalyser</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/plugins.html">areaDetector Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../additional_plugins.html">Additional plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/medm.html">MEDM screens</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADViewers/ad_viewers.html">areaDetector Viewers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../acknowledgements.html">Acknowledgements and licenses</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../install_guide.html">Install Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release.html">Top-level Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ADCore_release.html">ADCore Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ADSupport_release.html">ADSupport Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../doxygen.html">Source Code Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../detectors.html">Supported Detectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../legacy_versions.html">Legacy Versions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">areaDetector</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../user_guide.html">areaDetector Users Guide</a></li>
+          <li class="breadcrumb-item"><a href="../detector_drivers.html">Detector Drivers</a></li>
+      <li class="breadcrumb-item active">ADURL</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/ADURL/ADURL.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="adurl">
+<h1><a class="toc-backref" href="#id1" role="doc-backlink">ADURL</a><a class="headerlink" href="#adurl" title="Permalink to this heading"></a></h1>
+<p>areaDetector URL driver</p>
+<dl class="field-list simple">
+<dt class="field-odd">author<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Mark Rivers, University of Chicago</p>
+</dd>
+</dl>
+<nav class="contents" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#adurl" id="id1">ADURL</a></p>
+<ul>
+<li><p><a class="reference internal" href="#introduction" id="id2">Introduction</a></p></li>
+<li><p><a class="reference internal" href="#implementation-of-standard-driver-parameters" id="id3">Implementation of standard driver parameters</a></p></li>
+<li><p><a class="reference internal" href="#url-driver-specific-parameters" id="id4">URL driver specific parameters</a></p></li>
+<li><p><a class="reference internal" href="#unsupported-standard-driver-parameters" id="id5">Unsupported standard driver parameters</a></p></li>
+<li><p><a class="reference internal" href="#configuration" id="id6">Configuration</a></p></li>
+<li><p><a class="reference internal" href="#example-st-cmd-startup-file" id="id7">Example st.cmd startup file</a></p></li>
+<li><p><a class="reference internal" href="#medm-screens" id="id8">MEDM screens</a></p>
+<ul>
+<li><p><a class="reference internal" href="#urldriver-adl" id="id9">URLDriver.adl</a></p></li>
+<li><p><a class="reference internal" href="#urldriversetup-adl" id="id10">URLDriverSetup.adl</a></p></li>
+<li><p><a class="reference internal" href="#imagej-viewer-of-url-driver-with-axis-video-server" id="id11">ImageJ Viewer of URL driver with Axis video server</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+<section id="introduction">
+<h2><a class="toc-backref" href="#id2" role="doc-backlink">Introduction</a><a class="headerlink" href="#introduction" title="Permalink to this heading"></a></h2>
+<p>This is an <a class="reference internal" href="../index.html"><span class="doc">areaDetector</span></a> driver for reading images from a
+URL. It can be used to read images from Web cameras, <a class="reference external" href="http://www.axis.com/">Axis video
+servers</a>, or simply from a disk file. It reads the images using
+<a class="reference external" href="http://www.graphicsmagick.org/">GraphicsMagick</a> and can thus read images encoded in any of the
+formats supported by GraphicsMagick, such as JPEG, TIFF, PNG, etc.</p>
+<p>The driver simply reads images from the specified URL at the rate
+determined by the AcquirePeriod. Web cameras and Axis video servers
+have a URL address from which the current image can be read. There are
+often several addresses for different image sizes.</p>
+<p>This driver inherits from <a class="reference internal" href="../ADCore/ADDriver.html"><span class="doc">ADDriver</span></a>. It implements many
+of the parameters in <a class="reference external" href="../areaDetectorDoxygenHTML/asyn_n_d_array_driver_8h.html">asynNDArrayDriver.h</a> and in <a class="reference external" href="../areaDetectorDoxygenHTML/_a_d_driver_8h.html">ADArrayDriver.h</a>. It also
+implements a number of parameters that are specific to the URL
+driver. The <a class="reference external" href="../areaDetectorDoxygenHTML/class_u_r_l_driver.html">URLDriver class</a> documentation describes this class in
+detail.</p>
+</section>
+<section id="implementation-of-standard-driver-parameters">
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">Implementation of standard driver parameters</a><a class="headerlink" href="#implementation-of-standard-driver-parameters" title="Permalink to this heading"></a></h2>
+<p>The following table describes how the URL driver implements some of
+the standard driver parameters.</p>
+<table class="table-bordered table-striped table-hover docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 60%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head" colspan="3"><p><strong>Implementation of Parameters in asynNDArrayDriver.h and ADDriver.h,
+and EPICS Record Definitions in ADBase.template and NDFile.template</strong></p></th>
+</tr>
+<tr class="row-even"><th class="head"><p>Parameter index variable</p></th>
+<th class="head"><p>EPICS record name</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-odd"><td><p>ADAcquirePeriod</p></td>
+<td><p>$(P)$(R)AcquirePeriod</p></td>
+<td><p>This controls the period between reading images.
+The driver attempts to collect images at the rate determined by
+this value.</p>
+<p><strong>NOTE: If this value is set to 0 or too small a value can
+result in the driver using 100% of the CPU and becoming unresponsive
+to EPICS.</strong></p>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="url-driver-specific-parameters">
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">URL driver specific parameters</a><a class="headerlink" href="#url-driver-specific-parameters" title="Permalink to this heading"></a></h2>
+<p>The URL driver implements the following parameters in addition to
+those in asynNDArrayDriver.h and ADDriver.h.</p>
+<table class="table-bordered table-striped table-hover docutils align-default">
+<colgroup>
+<col style="width: 60%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head" colspan="3"><p><strong>Parameter Definitions in URLDriver.cpp and EPICS Record Definitions
+in URLDriver.template</strong></p></th>
+</tr>
+<tr class="row-even"><th class="head"><p>Description</p></th>
+<th class="head"><p>EPICS record name</p></th>
+<th class="head"><p>EPICS record type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-odd"><td><p>The name of the URL to read images from. There are 10
+output records to control the URL name.</p></td>
+<td><p>$(P)$(R)URL[1-10], $(P)$(R)URL_RBV</p></td>
+<td><p>waveform, waveform</p></td>
+</tr>
+<tr class="row-even"><td><p>Selects which os the 10 URLs to read from.</p></td>
+<td><p>$(P)$(R)URLSelect</p></td>
+<td><p>mbbo</p></td>
+</tr>
+</tbody>
+</table>
+<p>The URLs for Web cameras and video servers are typically long strings,
+which are difficult to remember and to type. Thus, for convenience
+there is an EPICS mbbo record ($(P)$(R)URLSelect) which is used to select 1 of 10 URLs.
+This allows easily switching between cameras, etc. The mbbo menu
+string fields (e.g. ZRST, ONST, etc.) can be edited to supply a useful
+short description of each camera (e.g. “Sample camera”), and the
+corresponding URL waveform record will store the actual URL. Both are
+in save/restore. Note that when the mbbo menu string fields are edited
+then one will need to close the main URLDriver.adl medm screen and
+reopen it to see the new menu choices. This is due to restrictions in
+medm and Channel Access.</p>
+</section>
+<section id="unsupported-standard-driver-parameters">
+<h2><a class="toc-backref" href="#id5" role="doc-backlink">Unsupported standard driver parameters</a><a class="headerlink" href="#unsupported-standard-driver-parameters" title="Permalink to this heading"></a></h2>
+<p>The URL driver does not support many of the standard driver parameters
+because it does not provide control of image acquisition. Thus
+AcquireTime, binning, region to read out, trigger modes, etc. are not
+supported.</p>
+</section>
+<section id="configuration">
+<h2><a class="toc-backref" href="#id6" role="doc-backlink">Configuration</a><a class="headerlink" href="#configuration" title="Permalink to this heading"></a></h2>
+<p>The URL driver is created with the URLDriverConfig command, either
+from C/C++ or from the EPICS IOC shell.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span> <span class="n">URLDriverConfig</span><span class="p">(</span><span class="n">const</span> <span class="n">char</span> <span class="o">*</span><span class="n">portName</span><span class="p">,</span>
+                <span class="nb">int</span> <span class="n">maxBuffers</span><span class="p">,</span> <span class="n">size_t</span> <span class="n">maxMemory</span><span class="p">,</span>
+                <span class="nb">int</span> <span class="n">priority</span><span class="p">,</span> <span class="nb">int</span> <span class="n">stackSize</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>For details on the meaning of the parameters to this function refer to
+the detailed documentation on the URLDirverConfig function in the
+<a class="reference external" href="../areaDetectorDoxygenHTML/_u_r_l_driver_8cpp.html">URLDriver.cpp documentation</a> and in the documentation for the
+constructor for the <a class="reference external" href="../areaDetectorDoxygenHTML/class_u_r_l_driver.html">URLDriver class</a>.</p>
+</section>
+<section id="example-st-cmd-startup-file">
+<h2><a class="toc-backref" href="#id7" role="doc-backlink">Example st.cmd startup file</a><a class="headerlink" href="#example-st-cmd-startup-file" title="Permalink to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+</div>
+<p>There is an example IOC boot directory and startup script
+provided with areaDetector: <a class="reference internal" href="st_cmd.html"><span class="doc">Example st.cmd Startup File</span></a>.</p>
+</section>
+<section id="medm-screens">
+<h2><a class="toc-backref" href="#id8" role="doc-backlink">MEDM screens</a><a class="headerlink" href="#medm-screens" title="Permalink to this heading"></a></h2>
+<p>The following show the MEDM screens that are used to control the URL
+driver. Note that the general purpose screen ADBase.adl can be used,
+but it exposes many controls that are not applicable to the URL
+driver, and lacks some fields that are important for the URL driver.</p>
+<section id="urldriver-adl">
+<h3><a class="toc-backref" href="#id9" role="doc-backlink">URLDriver.adl</a><a class="headerlink" href="#urldriver-adl" title="Permalink to this heading"></a></h3>
+<p><cite>URLDriver.adl</cite> is the main screen used to control the URL driver.</p>
+<img alt="../_images/URLDriver.png" src="../_images/URLDriver.png" />
+</section>
+<section id="urldriversetup-adl">
+<h3><a class="toc-backref" href="#id10" role="doc-backlink">URLDriverSetup.adl</a><a class="headerlink" href="#urldriversetup-adl" title="Permalink to this heading"></a></h3>
+<p><cite>URLDriverSetup.adl</cite> is the screen used to configure the mbbo menu
+choices and the URL strings for up to 10 preset URLs. Note that when a
+new value is entered into any of the URL string waveform records that
+URL will be immediately displayed, even if it is not the URL currently
+selected in the mbbo menu.</p>
+<img alt="../_images/URLDriverSetup.png" src="../_images/URLDriverSetup.png" />
+</section>
+<section id="imagej-viewer-of-url-driver-with-axis-video-server">
+<h3><a class="toc-backref" href="#id11" role="doc-backlink">ImageJ Viewer of URL driver with Axis video server</a><a class="headerlink" href="#imagej-viewer-of-url-driver-with-axis-video-server" title="Permalink to this heading"></a></h3>
+<p>The following is an ImageJ viewer window looking at the URL driver
+connected to analog camera through an Axis video server.</p>
+<img alt="../_images/ImageJ_URLDriver_Pva.jpg" src="../_images/ImageJ_URLDriver_Pva.jpg" />
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../ADVimba/ADVimba.html" class="btn btn-neutral float-left" title="ADVimba" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="st_cmd.html" class="btn btn-neutral float-right" title="Example st.cmd Startup File" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Mark Rivers.
+      <span class="lastupdated">Last updated on 2023-March-12.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

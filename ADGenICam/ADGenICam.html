@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ADGenICam &mdash; areaDetector Support</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme_overrides.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="ADLambda" href="../ADLambda/ADLambda.html" />
+    <link rel="prev" title="Introduction" href="../ADFastCCD/plugin_introduction.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            areaDetector
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../readme.html">Readme</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../user_guide.html">User Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/overview.html">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/arch.html">Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/asynPortDriver.html">asynPortDriver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/NDArray.html">NDArray</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../detector_drivers.html">Detector Drivers</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../ADCore/guidelines.html">Guidelines and rules for drivers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADCore/ADDriver.html">ADDriver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADAndor/andorDoc.html">ADAndor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADAndor3/ADAndorDoc.html">ADAndor3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADAravis/ADAravis.html">ADAravis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADCSimDetector/ADCSimDetectorDoc.html">ADCSimDetector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADDexela/ADDexela.html">ADDexela</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADEiger/eiger.html">ADEiger</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADFastCCD/index.html">ADFastCCD</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">ADGenICam</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#derived-classes">Derived classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#adgenicam-and-aravis">ADGenICam and aravis</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#installing-aravis">Installing aravis</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#downloading-the-xml-file">Downloading the XML file</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#python-scripts">Python scripts</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#shell-scripts">Shell scripts</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#adgenicam-classes">ADGenICam Classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#linux-usb-and-gige-system-settings">Linux USB and GigE System Settings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#medm-screens">MEDM screens</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#known-issues">Known issues</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../ADLambda/ADLambda.html">ADLambda</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADLightField/ADLightField.html">ADLightField</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADmarCCD/marCCDDoc.html">ADmarCCD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADmar345/mar345Doc.html">ADmar345</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPerkinElmer/PerkinElmerDoc.html">ADPerkinElmer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPICam/PICamDoc.html">ADPICam</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPilatus/pilatusDoc.html">ADPilatus</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPixirad/ADPixirad.html">ADPixirad</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPointGrey/PointGreyDoc.html">ADPointGrey</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADProsilica/ADProsilica.html">ADProsilica</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPvCam/pvcamDoc.html">ADPvCam</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADQImaging/QImagingDoc.html">ADQImaging</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADRIXSCam/ADRIXSCam.html">ADRIXSCam</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADSimDetector/simDetector.html">ADSimDetector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADSpinnaker/ADSpinnaker.html">ADSpinnaker</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADVimba/ADVimba.html">ADVimba</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADURL/ADURL.html">ADURL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../NDDriverStdArrays/NDDriverStdArraysDoc.html">NDDriverStdArrays</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../pvaDriver/pvaDriver.html">pvaDriver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../specsAnalyser/index.html">specsAnalyser</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/plugins.html">areaDetector Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../additional_plugins.html">Additional plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/medm.html">MEDM screens</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADViewers/ad_viewers.html">areaDetector Viewers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../acknowledgements.html">Acknowledgements and licenses</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../install_guide.html">Install Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release.html">Top-level Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ADCore_release.html">ADCore Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ADSupport_release.html">ADSupport Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../doxygen.html">Source Code Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../detectors.html">Supported Detectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../legacy_versions.html">Legacy Versions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">areaDetector</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../user_guide.html">areaDetector Users Guide</a></li>
+          <li class="breadcrumb-item"><a href="../detector_drivers.html">Detector Drivers</a></li>
+      <li class="breadcrumb-item active">ADGenICam</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/ADGenICam/ADGenICam.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="adgenicam">
+<h1><a class="toc-backref" href="#id3" role="doc-backlink">ADGenICam</a><a class="headerlink" href="#adgenicam" title="Permalink to this heading"></a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">author<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Mark Rivers, University of Chicago</p>
+</dd>
+</dl>
+<nav class="contents" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#adgenicam" id="id3">ADGenICam</a></p>
+<ul>
+<li><p><a class="reference internal" href="#overview" id="id4">Overview</a></p></li>
+<li><p><a class="reference internal" href="#derived-classes" id="id5">Derived classes</a></p></li>
+<li><p><a class="reference internal" href="#adgenicam-and-aravis" id="id6">ADGenICam and aravis</a></p></li>
+<li><p><a class="reference internal" href="#installing-aravis" id="id7">Installing aravis</a></p></li>
+<li><p><a class="reference internal" href="#downloading-the-xml-file" id="id8">Downloading the XML file</a></p></li>
+<li><p><a class="reference internal" href="#python-scripts" id="id9">Python scripts</a></p>
+<ul>
+<li><p><a class="reference internal" href="#python-script-to-create-epics-database" id="id10">Python script to create EPICS database</a></p></li>
+<li><p><a class="reference internal" href="#python-script-to-create-medm-screens" id="id11">Python script to create medm screens</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#shell-scripts" id="id12">Shell scripts</a></p></li>
+<li><p><a class="reference internal" href="#adgenicam-classes" id="id13">ADGenICam Classes</a></p>
+<ul>
+<li><p><a class="reference internal" href="#genicamfeature-class" id="id14">GenICamFeature class</a></p></li>
+<li><p><a class="reference internal" href="#adgenicamfeatureset" id="id15">ADGenICamFeatureSet</a></p></li>
+<li><p><a class="reference internal" href="#id2" id="id16">ADGenICam class</a></p>
+<ul>
+<li><p><a class="reference internal" href="#standard-driver-parameters" id="id17">Standard driver parameters</a></p></li>
+<li><p><a class="reference internal" href="#adgenicam-driver-parameters" id="id18">ADGenICam driver parameters</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#linux-usb-and-gige-system-settings" id="id19">Linux USB and GigE System Settings</a></p></li>
+<li><p><a class="reference internal" href="#medm-screens" id="id20">MEDM screens</a></p></li>
+<li><p><a class="reference internal" href="#known-issues" id="id21">Known issues</a></p></li>
+</ul>
+</li>
+</ul>
+</nav>
+<section id="overview">
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">Overview</a><a class="headerlink" href="#overview" title="Permalink to this heading"></a></h2>
+<p>This is an <a class="reference internal" href="../index.html"><span class="doc">areaDetector</span></a> base class driver for GenICam cameras.</p>
+<p><a class="reference external" href="https://www.emva.org/standards-technology/genicam">GenICam</a> is a Generic Interface for Cameras from the European Machine Vision Association (EMVA).
+The stated goal of GenICam is:</p>
+<ul class="simple">
+<li><p>The goal of GenICam (Generic Interface for Cameras) is to provide a generic programming interface for
+all kinds of devices (mainly cameras), no matter what interface technology (GigE Vision, USB3 Vision, CoaXPress,
+Camera Link HS, Camera Link etc.) they are using or what features they are implementing.
+The result is that the application programming interface (API) will be identical regardless
+of interface technology.</p></li>
+</ul>
+<p>GenICam supports the following interface standards:</p>
+<ul class="simple">
+<li><p>GigE Vision</p></li>
+<li><p>USB3 Vision</p></li>
+<li><p>Camera Link</p></li>
+<li><p>Camera Link HS</p></li>
+<li><p>IIDC2 (Firewire)</p></li>
+</ul>
+<p>GenICam cameras are controlled via <em>features</em> such as ExposureTime, Gain, TriggerMode, etc.  Each feature has a
+name, data type, flags indicating whether it can be read or written, etc.
+Many features are defined in the GenICam specification, and vendors must use these names
+for those features.  Vendors are also free to add new features that are specific to their cameras.</p>
+<p>All GenICam cameras contain an XML file that provides a complete description of all of the features available
+in that camera. ADGenICam provides Python scripts that read and parse the XML file and automatically produce
+the EPICS database (.template) file and medm display (.adl) files.  These medm files can then be autoconverted
+to edm, CSS-Boy, and caQtDM files.</p>
+<p>This is a small snippet from an XML file for the feature called PixelFormat:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">Enumeration</span> <span class="n">Name</span><span class="o">=</span><span class="s2">&quot;PixelFormat&quot;</span> <span class="n">NameSpace</span><span class="o">=</span><span class="s2">&quot;Standard&quot;</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">ToolTip</span><span class="o">&gt;</span><span class="n">Format</span> <span class="n">of</span> <span class="n">the</span> <span class="n">pixel</span> <span class="n">data</span><span class="o">.&lt;/</span><span class="n">ToolTip</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">Description</span><span class="o">&gt;</span><span class="n">Format</span> <span class="n">of</span> <span class="n">the</span> <span class="n">pixel</span> <span class="n">data</span><span class="o">.&lt;/</span><span class="n">Description</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">DisplayName</span><span class="o">&gt;</span><span class="n">Pixel</span> <span class="n">Format</span><span class="o">&lt;/</span><span class="n">DisplayName</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">Visibility</span><span class="o">&gt;</span> <span class="n">Beginner</span><span class="o">&lt;/</span><span class="n">Visibility</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">pIsLocked</span><span class="o">&gt;</span><span class="n">TLParamsLocked</span><span class="o">&lt;/</span><span class="n">pIsLocked</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">ImposedAccessMode</span><span class="o">&gt;</span><span class="n">RW</span><span class="o">&lt;/</span><span class="n">ImposedAccessMode</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">EnumEntry</span> <span class="n">Name</span><span class="o">=</span><span class="s2">&quot;Mono8&quot;</span> <span class="n">NameSpace</span><span class="o">=</span><span class="s2">&quot;Standard&quot;</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">ToolTip</span><span class="o">&gt;</span><span class="n">Pixel</span> <span class="nb">format</span> <span class="nb">set</span> <span class="n">to</span> <span class="n">Mono</span> <span class="mf">8.</span><span class="o">&lt;/</span><span class="n">ToolTip</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">Description</span><span class="o">&gt;</span><span class="n">Pixel</span> <span class="nb">format</span> <span class="nb">set</span> <span class="n">to</span> <span class="n">Mono</span> <span class="mf">8.</span><span class="o">&lt;/</span><span class="n">Description</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">DisplayName</span><span class="o">&gt;</span><span class="n">Mono</span> <span class="mi">8</span><span class="o">&lt;/</span><span class="n">DisplayName</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">pIsImplemented</span><span class="o">&gt;</span><span class="n">Mono8Inq_Reg</span><span class="o">&lt;/</span><span class="n">pIsImplemented</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">Value</span><span class="o">&gt;</span><span class="mh">0x01080001</span><span class="o">&lt;/</span><span class="n">Value</span><span class="o">&gt;</span>
+  <span class="o">&lt;/</span><span class="n">EnumEntry</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="derived-classes">
+<h2><a class="toc-backref" href="#id5" role="doc-backlink">Derived classes</a><a class="headerlink" href="#derived-classes" title="Permalink to this heading"></a></h2>
+<p>ADGenICam is a base class from which actual detector driver classes are derived.  areaDetector includes the following
+derived classes:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/areaDetector/ADAravis">ADAravis</a>: Driver that uses the <a class="reference external" href="https://github.com/AravisProject/aravis">aravis</a> library.  Runs on most Linux systems, and can control any <a class="reference external" href="https://www.emva.org/standards-technology/genicam">GenICam</a> camera.</p></li>
+<li><p><a class="reference external" href="https://github.com/areaDetector/ADSpinnaker">ADSpinnaker</a>: Driver that uses the FLIR Spinnaker SDK.  Runs on Windows and Linux Ubuntu 18. Controls only FLIR/Point Grey cameras.</p></li>
+<li><p><a class="reference external" href="https://github.com/areaDetector/ADVimba">ADVimba</a>: Driver that uses the AVT Vimba SDK.  Runs on Windows and most Linux systems.  Controls only AVT/Prosilica cameras.</p></li>
+</ul>
+<p><a class="reference external" href="../areaDetectorDoxygenHTML/class_a_d_gen_i_cam.html">ADGenICam class</a> describes this class in detail.</p>
+</section>
+<section id="adgenicam-and-aravis">
+<h2><a class="toc-backref" href="#id6" role="doc-backlink">ADGenICam and aravis</a><a class="headerlink" href="#adgenicam-and-aravis" title="Permalink to this heading"></a></h2>
+<p>A problem with the GenICam standard is that while it provides a reference implementation, it is not
+open-source.  Source code derived from the reference implementation cannot be freely distributed.</p>
+<p>One solution to this is the <a class="reference external" href="https://github.com/AravisProject/aravis">aravis</a> project, which is a reverse-engineered library and utilities for GenICam cameras.
+<a class="reference external" href="https://github.com/AravisProject/aravis">aravis</a> is available only on Linux.
+areaDetector has long had an <a class="reference external" href="https://github.com/areaDetector/aravisGigE">aravisGigE</a> driver based on <a class="reference external" href="https://github.com/AravisProject/aravis">aravis</a>.
+Although it is called aravisGigE, the driver actually supports USB cameras as well as GigE and 10 GigE cameras.</p>
+<p>There is a new <a class="reference external" href="https://github.com/areaDetector/ADAravis">ADAravis</a> driver.  This driver also uses
+<a class="reference external" href="https://github.com/AravisProject/aravis">aravis</a>, but it differs from <a class="reference external" href="https://github.com/areaDetector/aravisGigE">aravisGigE</a> by using this <a class="reference external" href="https://github.com/areaDetector/ADGenICam">ADGenICam</a> base class to significantly reduce the amount of code.
+Many of the ideas in <a class="reference external" href="https://github.com/areaDetector/ADGenICam">ADGenICam</a> were borrowed from <a class="reference external" href="https://github.com/areaDetector/aravisGigE">aravisGigE</a>.</p>
+</section>
+<section id="installing-aravis">
+<span id="adgenicam-installing-aravis"></span><h2><a class="toc-backref" href="#id7" role="doc-backlink">Installing aravis</a><a class="headerlink" href="#installing-aravis" title="Permalink to this heading"></a></h2>
+<p>The <a class="reference external" href="https://github.com/AravisProject/aravis">aravis</a> package is required for <a class="reference external" href="https://github.com/areaDetector/aravisGigE">aravisGigE</a> and <a class="reference external" href="https://github.com/areaDetector/ADAravis">ADAravis</a> drivers.  It is also required to extract
+the XML file from the camera, even when using drivers that are not based on <a class="reference external" href="https://github.com/AravisProject/aravis">aravis</a>, e.g. the
+<a class="reference external" href="https://github.com/areaDetector/ADSpinnaker">ADSpinnaker</a> driver or the <a class="reference external" href="https://github.com/areaDetector/ADVimba">ADVimba</a> driver.  <a class="reference external" href="https://github.com/areaDetector/ADSpinnaker">ADSpinnaker</a> and <a class="reference external" href="https://github.com/areaDetector/ADVimba">ADVimba</a> can run on Windows, but the XML
+file extraction must be done once on Linux.</p>
+<p>aravis 0.7.x and higher use the <a class="reference external" href="https://mesonbuild.com">meson</a> and <a class="reference external" href="https://ninja-build.org">ninja</a> build systems, rather than the autoconf and gnumake
+systems used in previous versions.</p>
+<p>The following shows the steps to build and install aravis 0.8.1 on a Centos 7 machine running as root:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">yum</span> <span class="n">install</span> <span class="n">ninja</span><span class="o">-</span><span class="n">build</span>
+<span class="n">yum</span> <span class="n">install</span> <span class="n">meson</span>
+<span class="n">yum</span> <span class="n">install</span> <span class="n">glib2</span><span class="o">-</span><span class="n">devel</span>
+<span class="n">yum</span> <span class="n">install</span> <span class="n">gtk</span><span class="o">-</span><span class="n">doc</span>
+<span class="n">yum</span> <span class="n">install</span> <span class="n">libxml2</span><span class="o">-</span><span class="n">devel</span>
+<span class="n">yum</span> <span class="n">install</span> <span class="n">gtk3</span><span class="o">-</span><span class="n">devel</span>
+<span class="n">yum</span> <span class="n">install</span> <span class="n">gstreamer1</span>
+<span class="n">yum</span> <span class="n">install</span> <span class="n">gstreamer1</span><span class="o">-</span><span class="n">devel</span>
+<span class="n">yum</span> <span class="n">install</span> <span class="n">gstreamer1</span><span class="o">-</span><span class="n">plugins</span><span class="o">-</span><span class="n">base</span><span class="o">-</span><span class="n">devel</span>
+<span class="n">yum</span> <span class="n">install</span> <span class="n">libnotify</span><span class="o">-</span><span class="n">devel</span>
+<span class="n">yum</span> <span class="n">install</span> <span class="n">gtk</span><span class="o">-</span><span class="n">doc</span>
+<span class="n">yum</span> <span class="n">install</span> <span class="n">gobject</span><span class="o">-</span><span class="n">introspection</span><span class="o">-</span><span class="n">devel</span>
+<span class="n">yum</span> <span class="n">install</span> <span class="n">zlib</span><span class="o">-</span><span class="n">devel</span>
+<span class="n">cd</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span>
+<span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">AravisProject</span><span class="o">/</span><span class="n">aravis</span>
+<span class="n">cd</span> <span class="n">aravis</span><span class="o">/</span>
+<span class="n">git</span> <span class="n">checkout</span> <span class="n">ARAVIS_0_8_1</span>
+<span class="n">meson</span> <span class="n">build</span>
+<span class="n">cd</span> <span class="n">build</span>
+<span class="n">ninja</span><span class="o">-</span><span class="n">build</span>
+<span class="n">ninja</span><span class="o">-</span><span class="n">build</span> <span class="n">install</span>
+</pre></div>
+</div>
+<p>The steps above will be different if you do not have root access and need to install elsewhere,
+or if you are running another OS like Ubuntu where <cite>apt install</cite> is used in place of <cite>yum install</cite>.
+The names of the required packages will also be different on another OS like Ubuntu.</p>
+</section>
+<section id="downloading-the-xml-file">
+<span id="adgenicam-download-xml"></span><h2><a class="toc-backref" href="#id8" role="doc-backlink">Downloading the XML file</a><a class="headerlink" href="#downloading-the-xml-file" title="Permalink to this heading"></a></h2>
+<p>To use the ADGenICam driver it is first necessary to download the XML file from the camera.
+To my knowledge the only code available to download the XML file from any GenICam camera
+is the <strong>arv-tool</strong> program that is included in the aravis package.  This means that the aravis
+package is required to create the XML file, and so the camera must be available from a Linux
+system at least once initially.</p>
+<p>However, if using the <a class="reference external" href="https://github.com/areaDetector/ADSpinnaker">ADSpinnaker</a> driver or the <a class="reference external" href="https://github.com/areaDetector/ADVimba">ADVimba</a> driver <a class="reference external" href="https://github.com/AravisProject/aravis">aravis</a> is not needed to build the
+driver or at run-time.</p>
+<p>To extract the XML file from the camera first run the arv-tool program to make a list of all the
+GenICam cameras that are visible from the Linux system, for example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">TahoeU18</span><span class="p">:</span><span class="o">/</span><span class="n">corvette</span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">epics</span><span class="o">/</span><span class="n">devel</span><span class="o">/</span><span class="n">areaDetector</span><span class="o">/</span><span class="n">ADGenICam</span><span class="o">&gt;</span> <span class="n">arv</span><span class="o">-</span><span class="n">tool</span><span class="o">-</span><span class="mf">0.8</span>
+<span class="n">Allied</span> <span class="n">Vision</span> <span class="n">Technologies</span><span class="o">-</span><span class="n">GC1380H</span> <span class="p">(</span><span class="mi">02</span><span class="o">-</span><span class="mi">2142</span><span class="n">A</span><span class="p">)</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="mi">2142</span><span class="n">A</span><span class="o">-</span><span class="mi">06178</span> <span class="p">(</span><span class="mf">164.54.160.58</span><span class="p">)</span>
+<span class="n">Allied</span> <span class="n">Vision</span> <span class="n">Technologies</span><span class="o">-</span><span class="n">GT1380</span> <span class="p">(</span><span class="mi">02</span><span class="o">-</span><span class="mi">2604</span><span class="n">A</span><span class="p">)</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="mi">2604</span><span class="n">A</span><span class="o">-</span><span class="mi">07008</span> <span class="p">(</span><span class="mf">164.54.160.104</span><span class="p">)</span>
+<span class="n">Allied</span> <span class="n">Vision</span> <span class="n">Technologies</span><span class="o">-</span><span class="n">Manta</span> <span class="n">G</span><span class="o">-</span><span class="mi">507</span><span class="n">B</span> <span class="p">(</span><span class="n">E0022704</span><span class="p">)</span><span class="o">-</span><span class="mi">50</span><span class="o">-</span><span class="mi">0503479161</span> <span class="p">(</span><span class="mf">164.54.160.4</span><span class="p">)</span>
+<span class="n">Allied</span> <span class="n">Vision</span> <span class="n">Technologies</span><span class="o">-</span><span class="n">Manta</span> <span class="n">G</span><span class="o">-</span><span class="mi">507</span><span class="n">C</span> <span class="p">(</span><span class="n">E0022705</span><span class="p">)</span><span class="o">-</span><span class="mi">50</span><span class="o">-</span><span class="mi">0503419258</span> <span class="p">(</span><span class="mf">164.54.160.21</span><span class="p">)</span>
+<span class="n">Allied</span> <span class="n">Vision</span> <span class="n">Technologies</span><span class="o">-</span><span class="n">Manta_G</span><span class="o">-</span><span class="mi">146</span><span class="n">C</span> <span class="p">(</span><span class="n">E0020011</span><span class="p">)</span><span class="o">-</span><span class="mi">50</span><span class="o">-</span><span class="mi">0503317598</span> <span class="p">(</span><span class="mf">164.54.160.62</span><span class="p">)</span>
+<span class="n">FLIR</span><span class="o">-</span><span class="n">Oryx</span> <span class="n">ORX</span><span class="o">-</span><span class="mi">10</span><span class="n">G</span><span class="o">-</span><span class="mi">51</span><span class="n">S5M</span><span class="o">-</span><span class="mi">18011754</span> <span class="p">(</span><span class="mf">192.168.0.2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Then download the XML file with the command <cite>arv-tool -n cameraName genicam &gt; XML_file_name</cite>, for example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">TahoeU18</span><span class="p">:</span><span class="o">/</span><span class="n">corvette</span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">epics</span><span class="o">/</span><span class="n">devel</span><span class="o">/</span><span class="n">areaDetector</span><span class="o">/</span><span class="n">ADGenICam</span><span class="o">&gt;</span> <span class="n">arv</span><span class="o">-</span><span class="n">tool</span><span class="o">-</span><span class="mf">0.8</span> <span class="o">-</span><span class="n">n</span> <span class="s2">&quot;Allied Vision Technologies-Manta G-507B (E0022704)-50-0503479161&quot;</span> <span class="n">genicam</span> <span class="o">&gt;</span> <span class="n">xml</span><span class="o">/</span><span class="n">AVT_Manta_G507B</span><span class="o">.</span><span class="n">xml</span>
+<span class="n">TahoeU18</span><span class="p">:</span><span class="o">/</span><span class="n">corvette</span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">epics</span><span class="o">/</span><span class="n">devel</span><span class="o">/</span><span class="n">areaDetector</span><span class="o">/</span><span class="n">ADGenICam</span><span class="o">&gt;</span> <span class="n">ls</span> <span class="o">-</span><span class="n">ltr</span> <span class="n">xml</span>
+<span class="n">total</span> <span class="mi">19496</span>
+<span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="o">--</span> <span class="mi">1</span> <span class="n">epics</span> <span class="n">domain</span> <span class="n">users</span>  <span class="mi">332287</span> <span class="n">Oct</span>  <span class="mi">7</span>  <span class="mi">2018</span> <span class="n">PGR_Blackfly_50S5C</span><span class="o">.</span><span class="n">xml</span>
+<span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="o">--</span><span class="n">r</span><span class="o">--</span> <span class="mi">1</span> <span class="n">epics</span> <span class="n">domain</span> <span class="n">users</span>  <span class="mi">317859</span> <span class="n">Jun</span>  <span class="mi">2</span>  <span class="mi">2019</span> <span class="n">PGR_Blackfly_20E4C</span><span class="o">.</span><span class="n">xml</span>
+<span class="o">...</span>
+<span class="o">-</span><span class="n">rwxrwxr</span><span class="o">-</span><span class="n">x</span> <span class="mi">1</span> <span class="n">epics</span> <span class="n">domain</span> <span class="n">users</span>  <span class="mi">202059</span> <span class="n">May</span> <span class="mi">14</span> <span class="mi">14</span><span class="p">:</span><span class="mi">59</span> <span class="n">AVT_Mako_G158C</span><span class="o">.</span><span class="n">xml</span>
+<span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="o">--</span> <span class="mi">1</span> <span class="n">epics</span> <span class="n">domain</span> <span class="n">users</span>  <span class="mi">483863</span> <span class="n">Sep</span> <span class="mi">15</span> <span class="mi">18</span><span class="p">:</span><span class="mi">32</span> <span class="n">Basler_piA640_210gm</span><span class="o">.</span><span class="n">xml</span>
+<span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="o">--</span> <span class="mi">1</span> <span class="n">epics</span> <span class="n">domain</span> <span class="n">users</span>  <span class="mi">924352</span> <span class="n">Sep</span> <span class="mi">15</span> <span class="mi">18</span><span class="p">:</span><span class="mi">32</span> <span class="n">FLIR_BFS_70S7M</span><span class="o">.</span><span class="n">xml</span>
+<span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="o">--</span><span class="n">r</span><span class="o">--</span> <span class="mi">1</span> <span class="n">epics</span> <span class="n">domain</span> <span class="n">users</span>  <span class="mi">232180</span> <span class="n">Sep</span> <span class="mi">29</span> <span class="mi">12</span><span class="p">:</span><span class="mi">12</span> <span class="n">AVT_Manta_G507B</span><span class="o">.</span><span class="n">xml</span>
+</pre></div>
+</div>
+</section>
+<section id="python-scripts">
+<span id="adgenicam-python-scripts"></span><h2><a class="toc-backref" href="#id9" role="doc-backlink">Python scripts</a><a class="headerlink" href="#python-scripts" title="Permalink to this heading"></a></h2>
+<section id="python-script-to-create-epics-database">
+<h3><a class="toc-backref" href="#id10" role="doc-backlink">Python script to create EPICS database</a><a class="headerlink" href="#python-script-to-create-epics-database" title="Permalink to this heading"></a></h3>
+<p><strong>ADGenICam/scripts/makeDb.py</strong> is a Python program to read the XML file and produce an EPICS database (.template) file.
+The first argument is the name of the XML file and the second argument is the name of the .template file.</p>
+<p>For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">TahoeU18</span><span class="p">:</span><span class="o">/</span><span class="n">corvette</span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">epics</span><span class="o">/</span><span class="n">devel</span><span class="o">/</span><span class="n">areaDetector</span><span class="o">/</span><span class="n">ADGenICam</span><span class="o">&gt;</span> <span class="n">python</span> <span class="n">scripts</span><span class="o">/</span><span class="n">makeDb</span><span class="o">.</span><span class="n">py</span> <span class="n">xml</span><span class="o">/</span><span class="n">PGR_Blackfly_20E4C</span><span class="o">.</span><span class="n">xml</span> <span class="n">GenICamApp</span><span class="o">/</span><span class="n">Db</span><span class="o">/</span><span class="n">PGR_Blackfly_20E4C</span><span class="o">.</span><span class="n">template</span>
+<span class="n">More</span> <span class="n">than</span> <span class="mi">16</span> <span class="n">enum</span> <span class="n">entries</span> <span class="k">for</span> <span class="n">PixelFormat</span> <span class="n">mbbi</span> <span class="n">record</span><span class="p">,</span> <span class="n">discarding</span> <span class="n">additional</span> <span class="n">options</span><span class="o">.</span>
+   <span class="n">If</span> <span class="n">needed</span><span class="p">,</span> <span class="n">edit</span> <span class="n">the</span> <span class="n">Enumeration</span> <span class="n">tag</span> <span class="k">for</span> <span class="n">PixelFormat</span> <span class="n">to</span> <span class="n">select</span> <span class="n">the</span> <span class="mi">16</span> <span class="n">you</span> <span class="n">want</span><span class="o">.</span>
+<span class="n">Don</span><span class="s1">&#39;t know what to do with Register</span>
+<span class="n">More</span> <span class="n">than</span> <span class="mi">16</span> <span class="n">enum</span> <span class="n">entries</span> <span class="k">for</span> <span class="n">GevSupportedOptionSelector</span> <span class="n">mbbi</span> <span class="n">record</span><span class="p">,</span> <span class="n">discarding</span> <span class="n">additional</span> <span class="n">options</span><span class="o">.</span>
+   <span class="n">If</span> <span class="n">needed</span><span class="p">,</span> <span class="n">edit</span> <span class="n">the</span> <span class="n">Enumeration</span> <span class="n">tag</span> <span class="k">for</span> <span class="n">GevSupportedOptionSelector</span> <span class="n">to</span> <span class="n">select</span> <span class="n">the</span> <span class="mi">16</span> <span class="n">you</span> <span class="n">want</span><span class="o">.</span>
+<span class="n">More</span> <span class="n">than</span> <span class="mi">16</span> <span class="n">enum</span> <span class="n">entries</span> <span class="k">for</span> <span class="n">ChunkPixelFormat</span> <span class="n">mbbi</span> <span class="n">record</span><span class="p">,</span> <span class="n">discarding</span> <span class="n">additional</span> <span class="n">options</span><span class="o">.</span>
+   <span class="n">If</span> <span class="n">needed</span><span class="p">,</span> <span class="n">edit</span> <span class="n">the</span> <span class="n">Enumeration</span> <span class="n">tag</span> <span class="k">for</span> <span class="n">ChunkPixelFormat</span> <span class="n">to</span> <span class="n">select</span> <span class="n">the</span> <span class="mi">16</span> <span class="n">you</span> <span class="n">want</span><span class="o">.</span>
+
+<span class="n">TahoeU18</span><span class="p">:</span><span class="o">/</span><span class="n">corvette</span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">epics</span><span class="o">/</span><span class="n">devel</span><span class="o">/</span><span class="n">areaDetector</span><span class="o">/</span><span class="n">ADGenICam</span><span class="o">&gt;</span> <span class="n">ls</span> <span class="o">-</span><span class="n">ltr</span> <span class="n">GenICamApp</span><span class="o">/</span><span class="n">Db</span><span class="o">/*.</span><span class="n">template</span>
+<span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="o">--</span> <span class="mi">1</span> <span class="n">epics</span> <span class="n">domain</span> <span class="n">users</span> <span class="mi">142961</span> <span class="n">Oct</span>  <span class="mi">8</span>  <span class="mi">2018</span> <span class="n">GenICamApp</span><span class="o">/</span><span class="n">Db</span><span class="o">/</span><span class="n">PGR_Blackfly_50S5C</span><span class="o">.</span><span class="n">template</span>
+<span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="o">--</span> <span class="mi">1</span> <span class="n">epics</span> <span class="n">domain</span> <span class="n">users</span> <span class="mi">117222</span> <span class="n">Oct</span> <span class="mi">30</span>  <span class="mi">2018</span> <span class="n">GenICamApp</span><span class="o">/</span><span class="n">Db</span><span class="o">/</span><span class="n">AVT_Manta_G507C</span><span class="o">.</span><span class="n">template</span>
+<span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="o">--</span><span class="n">r</span><span class="o">--</span> <span class="mi">1</span> <span class="n">epics</span> <span class="n">domain</span> <span class="n">users</span> <span class="mi">220518</span> <span class="n">May</span> <span class="mi">31</span> <span class="mi">10</span><span class="p">:</span><span class="mi">43</span> <span class="n">GenICamApp</span><span class="o">/</span><span class="n">Db</span><span class="o">/</span><span class="n">FLIR_ORX_10G_51S5</span><span class="o">.</span><span class="n">template</span>
+<span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="o">--</span><span class="n">r</span><span class="o">--</span> <span class="mi">1</span> <span class="n">epics</span> <span class="n">domain</span> <span class="n">users</span> <span class="mi">137902</span> <span class="n">Jun</span>  <span class="mi">2</span> <span class="mi">09</span><span class="p">:</span><span class="mi">38</span> <span class="n">GenICamApp</span><span class="o">/</span><span class="n">Db</span><span class="o">/</span><span class="n">PGR_Blackfly_20E4C</span><span class="o">.</span><span class="n">template</span>
+</pre></div>
+</div>
+<p>Note that there were some warnings from makeDb.py about more than 16 enumeration options.
+Some GenICam cameras support more than 16 choices for some enumeration features, but EPICS mbbo/mbbi records are limited to 16.
+However, this warning is usually not significant, because the XML file contains all possible values for the enum choices,
+but at run-time ADGenICam limits the choices to those actually available for the current camera and operating mode,
+and in practice appears never to be more than 16.
+Ignore the warning about <cite>Don’t know what to do with Register</cite>, the register entries are not needed.</p>
+<p>This is a portion of the PGR_Blackfly_20E4C.template created above for the ExposureAuto mbbi and mbbo records:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">record</span><span class="p">(</span><span class="n">mbbi</span><span class="p">,</span> <span class="s2">&quot;$(P)$(R)GC_ExposureAuto_RBV&quot;</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">field</span><span class="p">(</span><span class="n">DTYP</span><span class="p">,</span> <span class="s2">&quot;asynInt32&quot;</span><span class="p">)</span>
+  <span class="n">field</span><span class="p">(</span><span class="n">INP</span><span class="p">,</span>  <span class="s2">&quot;@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))GC_E_ExposureAuto&quot;</span><span class="p">)</span>
+  <span class="n">field</span><span class="p">(</span><span class="n">ZRST</span><span class="p">,</span> <span class="s2">&quot;Off&quot;</span><span class="p">)</span>
+  <span class="n">field</span><span class="p">(</span><span class="n">ZRVL</span><span class="p">,</span> <span class="s2">&quot;0&quot;</span><span class="p">)</span>
+  <span class="n">field</span><span class="p">(</span><span class="n">ONST</span><span class="p">,</span> <span class="s2">&quot;Once&quot;</span><span class="p">)</span>
+  <span class="n">field</span><span class="p">(</span><span class="n">ONVL</span><span class="p">,</span> <span class="s2">&quot;1&quot;</span><span class="p">)</span>
+  <span class="n">field</span><span class="p">(</span><span class="n">TWST</span><span class="p">,</span> <span class="s2">&quot;Continuous&quot;</span><span class="p">)</span>
+  <span class="n">field</span><span class="p">(</span><span class="n">TWVL</span><span class="p">,</span> <span class="s2">&quot;2&quot;</span><span class="p">)</span>
+  <span class="n">field</span><span class="p">(</span><span class="n">SCAN</span><span class="p">,</span> <span class="s2">&quot;I/O Intr&quot;</span><span class="p">)</span>
+  <span class="n">field</span><span class="p">(</span><span class="n">DISA</span><span class="p">,</span> <span class="s2">&quot;0&quot;</span><span class="p">)</span>
+  <span class="n">info</span><span class="p">(</span><span class="n">autosaveFields</span><span class="p">,</span> <span class="s2">&quot;DESC ZRSV ONSV TWSV THSV FRSV FVSV SXSV SVSV EISV NISV TESV ELSV TVSV TTSV FTSV FFSV TSE&quot;</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="n">record</span><span class="p">(</span><span class="n">mbbo</span><span class="p">,</span> <span class="s2">&quot;$(P)$(R)GC_ExposureAuto&quot;</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">field</span><span class="p">(</span><span class="n">DTYP</span><span class="p">,</span> <span class="s2">&quot;asynInt32&quot;</span><span class="p">)</span>
+  <span class="n">field</span><span class="p">(</span><span class="n">OUT</span><span class="p">,</span>  <span class="s2">&quot;@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))GC_E_ExposureAuto&quot;</span><span class="p">)</span>
+  <span class="n">field</span><span class="p">(</span><span class="n">DOL</span><span class="p">,</span>  <span class="s2">&quot;0&quot;</span><span class="p">)</span>
+  <span class="n">field</span><span class="p">(</span><span class="n">ZRST</span><span class="p">,</span> <span class="s2">&quot;Off&quot;</span><span class="p">)</span>
+  <span class="n">field</span><span class="p">(</span><span class="n">ZRVL</span><span class="p">,</span> <span class="s2">&quot;0&quot;</span><span class="p">)</span>
+  <span class="n">field</span><span class="p">(</span><span class="n">ONST</span><span class="p">,</span> <span class="s2">&quot;Once&quot;</span><span class="p">)</span>
+  <span class="n">field</span><span class="p">(</span><span class="n">ONVL</span><span class="p">,</span> <span class="s2">&quot;1&quot;</span><span class="p">)</span>
+  <span class="n">field</span><span class="p">(</span><span class="n">TWST</span><span class="p">,</span> <span class="s2">&quot;Continuous&quot;</span><span class="p">)</span>
+  <span class="n">field</span><span class="p">(</span><span class="n">TWVL</span><span class="p">,</span> <span class="s2">&quot;2&quot;</span><span class="p">)</span>
+  <span class="n">field</span><span class="p">(</span><span class="n">DISA</span><span class="p">,</span> <span class="s2">&quot;0&quot;</span><span class="p">)</span>
+  <span class="n">info</span><span class="p">(</span><span class="n">autosaveFields</span><span class="p">,</span> <span class="s2">&quot;DESC ZRSV ONSV TWSV THSV FRSV FVSV SXSV SVSV EISV NISV TESV ELSV TVSV TTSV FTSV FFSV TSE PINI VAL&quot;</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>GenICam integer features are 64 bit integers.  Prior to R1-2 of ADGenICam EPICS longin and longout records were used
+for these features.  However, longin and longout records are limited to 32 bits, and thus cannot represent the features
+when the value is larger than 32 bits.  In EPICS base 3.16.1 or 7.0 and higher int64in and int64out records can be used for
+these 64-bit integer features.  Prior to base 3.6.1 ai and ao record can be used.  These are 64-bit floats, which can exactly
+represent integers up to 52 bits, which is a significant improvement over the 32 bit limitation of longin and longout records.</p>
+<p>In R1-2 makeDb.py makeDb.py was changed to accept a <cite>–devInt64</cite> flag.  If this flag is present then the database will use
+int64in and int64out records.  This is recommended when using base 3.16.1 or 7.0 or higher.  For previous versions of base
+the <cite>–devInt64</cite> flag must not be used, and makeDb.py will create ai and ao records instead.</p>
+<p>This Python script, and the one to create medm screens described next, attempt to name the EPICS records as the name of the
+GenICam feature, preceded by the string <cite>GC_</cite> to prevent conflict with any record names already defined in areaDetector.
+However, many GenICam feature names are quite long and this would lead to record names that are too long, particularly
+since they will have IOC-specific prefixes added to them.  The Python scripts limit the record names to being 20 characters.
+This truncation is done by trimming <em>words</em> in the name to 3 characters, where words are defined to begin with an upper-case
+character.  The words are trimmed from left to right until the record name is no more than 20 characters.
+For example, the GenICam feature name <cite>AutoExposureTimeLowerLimit</cite> has the record name <cite>GC_AutExpTimLowLimit</cite>.
+This trimming algorithm is different from the one in <a class="reference external" href="https://github.com/areaDetector/aravisGigE">aravisGigE</a>, and has the advantage that the names are more readable,
+and a given GenICam feature name will almost always result in the same record name, which was not true for <a class="reference external" href="https://github.com/areaDetector/aravisGigE">aravisGigE</a>.
+In <a class="reference external" href="https://github.com/areaDetector/aravisGigE">aravisGigE</a> the feature names were truncated to 16, and a final digit was assigned in case of duplicate names.</p>
+<p>For example, for the GenICam property <cite>AcquisitionFrameRate</cite> on a Point Grey BlackFly 20E4C <a class="reference external" href="https://github.com/areaDetector/aravisGigE">aravisGigE</a> produces the record name
+<cite>$(P)$(R)AcquisitionFram1</cite>, while ADGenICam produces <cite>$(P)$(R)GC_AcqFrameRate</cite>, which is more understandable because it
+includes the word <cite>Rate</cite>.  Furthermore ADGenICam produces this same record name for this feature on the FLIR Oryx 51S5, while
+aravisGigE produces <cite>$(P)$(R)AcquisitionFram6</cite>, which is different from what is produces for the BlackFly camera.
+This is because the number of duplicate names after truncation is different for the 2 cameras.</p>
+</section>
+<section id="python-script-to-create-medm-screens">
+<h3><a class="toc-backref" href="#id11" role="doc-backlink">Python script to create medm screens</a><a class="headerlink" href="#python-script-to-create-medm-screens" title="Permalink to this heading"></a></h3>
+<p><strong>ADGenICam/scripts/makeAdl.py</strong> is a Python program to read the XML file and produce a medm (.adl) files.
+The first argument is the name of the XML file and the second argument is the base name of the adl files.
+The medm files are <strong>[baseFile]-features1.adl</strong>, <strong>[baseFile]-features2.adl</strong>, etc.</p>
+<p>For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">TahoeU18</span><span class="p">:</span><span class="o">/</span><span class="n">corvette</span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">epics</span><span class="o">/</span><span class="n">devel</span><span class="o">/</span><span class="n">areaDetector</span><span class="o">/</span><span class="n">ADGenICam</span><span class="o">&gt;</span> <span class="n">python</span> <span class="n">scripts</span><span class="o">/</span><span class="n">makeAdl</span><span class="o">.</span><span class="n">py</span> <span class="n">xml</span><span class="o">/</span><span class="n">PGR_Blackfly_20E4C</span><span class="o">.</span><span class="n">xml</span> <span class="n">GenICamApp</span><span class="o">/</span><span class="n">op</span><span class="o">/</span><span class="n">adl</span><span class="o">/</span><span class="n">PGR_Blackfly_20E4C</span>
+<span class="n">Don</span><span class="s1">&#39;t know what to do with Register</span>
+<span class="n">TahoeU18</span><span class="p">:</span><span class="o">/</span><span class="n">corvette</span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">epics</span><span class="o">/</span><span class="n">devel</span><span class="o">/</span><span class="n">areaDetector</span><span class="o">/</span><span class="n">ADGenICam</span><span class="o">&gt;</span> <span class="n">ls</span> <span class="o">-</span><span class="n">ltr</span> <span class="n">GenICamApp</span><span class="o">/</span><span class="n">op</span><span class="o">/</span><span class="n">adl</span><span class="o">/</span><span class="n">PGR_Blackfly_20E4C</span><span class="o">-</span><span class="n">features_</span><span class="o">*</span>
+<span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="o">--</span><span class="n">r</span><span class="o">--</span> <span class="mi">1</span> <span class="n">epics</span> <span class="n">domain</span> <span class="n">users</span> <span class="mi">50125</span> <span class="n">Jun</span>  <span class="mi">3</span> <span class="mi">14</span><span class="p">:</span><span class="mi">40</span> <span class="n">GenICamApp</span><span class="o">/</span><span class="n">op</span><span class="o">/</span><span class="n">adl</span><span class="o">/</span><span class="n">PGR_Blackfly_20E4C</span><span class="o">-</span><span class="n">features_1</span><span class="o">.</span><span class="n">adl</span>
+<span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="o">--</span><span class="n">r</span><span class="o">--</span> <span class="mi">1</span> <span class="n">epics</span> <span class="n">domain</span> <span class="n">users</span> <span class="mi">40041</span> <span class="n">Jun</span>  <span class="mi">3</span> <span class="mi">14</span><span class="p">:</span><span class="mi">40</span> <span class="n">GenICamApp</span><span class="o">/</span><span class="n">op</span><span class="o">/</span><span class="n">adl</span><span class="o">/</span><span class="n">PGR_Blackfly_20E4C</span><span class="o">-</span><span class="n">features_2</span><span class="o">.</span><span class="n">adl</span>
+<span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="o">--</span><span class="n">r</span><span class="o">--</span> <span class="mi">1</span> <span class="n">epics</span> <span class="n">domain</span> <span class="n">users</span> <span class="mi">49498</span> <span class="n">Jun</span>  <span class="mi">3</span> <span class="mi">14</span><span class="p">:</span><span class="mi">40</span> <span class="n">GenICamApp</span><span class="o">/</span><span class="n">op</span><span class="o">/</span><span class="n">adl</span><span class="o">/</span><span class="n">PGR_Blackfly_20E4C</span><span class="o">-</span><span class="n">features_3</span><span class="o">.</span><span class="n">adl</span>
+<span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="o">--</span><span class="n">r</span><span class="o">--</span> <span class="mi">1</span> <span class="n">epics</span> <span class="n">domain</span> <span class="n">users</span>  <span class="mi">5760</span> <span class="n">Jun</span>  <span class="mi">3</span> <span class="mi">14</span><span class="p">:</span><span class="mi">40</span> <span class="n">GenICamApp</span><span class="o">/</span><span class="n">op</span><span class="o">/</span><span class="n">adl</span><span class="o">/</span><span class="n">PGR_Blackfly_20E4C</span><span class="o">-</span><span class="n">features_4</span><span class="o">.</span><span class="n">adl</span>
+</pre></div>
+</div>
+<p>The number of camera specific screens generated is determined by the number of features in a specific camera
+and by the maximum screen size specified in the Python program.  In this case 4 .adl files were created.
+These are shown in the <a class="reference internal" href="#medm-screens">MEDM screens</a> section below.</p>
+<p>To change the maximum size of the adl files these 2 lines
+in makeAdl.py can be edited:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">maxScreenWidth</span> <span class="o">=</span> <span class="mi">1600</span>
+<span class="n">maxScreenHeight</span> <span class="o">=</span> <span class="mi">850</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="shell-scripts">
+<h2><a class="toc-backref" href="#id12" role="doc-backlink">Shell scripts</a><a class="headerlink" href="#shell-scripts" title="Permalink to this heading"></a></h2>
+<p><cite>addCamera.sh</cite> is a simple script that runs both makeDb.py and makeAdl.py.
+It is run from the top-level ADGenICam directory and is passed the name of the camera,
+i.e. the name of the XML file without the path and without the .xml extension.
+It can be edited to enable or disable the –devInt64 flag for makeDb.py.</p>
+<p><cite>updateCameras.sh</cite> is a simple script that runs <cite>addCamera.sh</cite> for all cameras in the
+xml/ directory.  It is useful for updating all databases and OPI screens when the Python
+scripts are changed.</p>
+</section>
+<section id="adgenicam-classes">
+<h2><a class="toc-backref" href="#id13" role="doc-backlink">ADGenICam Classes</a><a class="headerlink" href="#adgenicam-classes" title="Permalink to this heading"></a></h2>
+<p>ADGenICam provides three classes that are used by derived classes for real cameras.</p>
+<section id="genicamfeature-class">
+<h3><a class="toc-backref" href="#id14" role="doc-backlink">GenICamFeature class</a><a class="headerlink" href="#genicamfeature-class" title="Permalink to this heading"></a></h3>
+<p>This class defines a GenICam feature and associates it with an asyn parameter.
+Real drivers must define a class derived from ADGenICam that implements
+a number of pure virtual functions, for example to write/read features to/from the camera.
+This is the complete list of all pure virtual functions that the derived class must implement:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">//</span> <span class="n">These</span> <span class="n">are</span> <span class="n">the</span> <span class="n">pure</span> <span class="n">virtual</span> <span class="n">functions</span> <span class="n">that</span> <span class="n">derived</span> <span class="n">classes</span> <span class="n">must</span> <span class="n">implement</span>
+<span class="n">virtual</span> <span class="nb">bool</span> <span class="n">isImplemented</span><span class="p">(</span><span class="n">void</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="n">virtual</span> <span class="nb">bool</span> <span class="n">isAvailable</span><span class="p">(</span><span class="n">void</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="n">virtual</span> <span class="nb">bool</span> <span class="n">isReadable</span><span class="p">(</span><span class="n">void</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="n">virtual</span> <span class="nb">bool</span> <span class="n">isWritable</span><span class="p">(</span><span class="n">void</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="n">virtual</span> <span class="nb">int</span> <span class="n">readInteger</span><span class="p">(</span><span class="n">void</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="n">virtual</span> <span class="nb">int</span> <span class="n">readIntegerMin</span><span class="p">(</span><span class="n">void</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="n">virtual</span> <span class="nb">int</span> <span class="n">readIntegerMax</span><span class="p">(</span><span class="n">void</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="n">virtual</span> <span class="nb">int</span> <span class="n">readIncrement</span><span class="p">(</span><span class="n">void</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="n">virtual</span> <span class="n">void</span> <span class="n">writeInteger</span><span class="p">(</span><span class="nb">int</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="n">virtual</span> <span class="nb">bool</span> <span class="n">readBoolean</span><span class="p">(</span><span class="n">void</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="n">virtual</span> <span class="n">void</span> <span class="n">writeBoolean</span> <span class="p">(</span><span class="nb">bool</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="n">virtual</span> <span class="n">double</span> <span class="n">readDouble</span><span class="p">(</span><span class="n">void</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="n">virtual</span> <span class="n">double</span> <span class="n">readDoubleMin</span><span class="p">(</span><span class="n">void</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="n">virtual</span> <span class="n">double</span> <span class="n">readDoubleMax</span><span class="p">(</span><span class="n">void</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="n">virtual</span> <span class="n">void</span> <span class="n">writeDouble</span><span class="p">(</span><span class="n">double</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="n">virtual</span> <span class="nb">int</span> <span class="n">readEnumIndex</span><span class="p">(</span><span class="n">void</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="n">virtual</span> <span class="n">void</span> <span class="n">writeEnumIndex</span><span class="p">(</span><span class="nb">int</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="n">virtual</span> <span class="n">std</span><span class="p">::</span><span class="n">string</span> <span class="n">readEnumString</span><span class="p">(</span><span class="n">void</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="n">virtual</span> <span class="n">void</span> <span class="n">writeEnumString</span><span class="p">(</span><span class="n">std</span><span class="p">::</span><span class="n">string</span> <span class="n">const</span> <span class="o">&amp;</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="n">virtual</span> <span class="n">void</span> <span class="n">readEnumChoices</span><span class="p">(</span><span class="n">std</span><span class="p">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="p">::</span><span class="n">string</span><span class="o">&gt;&amp;</span> <span class="n">enumStrings</span><span class="p">,</span> <span class="n">std</span><span class="p">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="nb">int</span><span class="o">&gt;&amp;</span> <span class="n">enumValues</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="n">virtual</span> <span class="n">std</span><span class="p">::</span><span class="n">string</span> <span class="n">readString</span><span class="p">(</span><span class="n">void</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="n">virtual</span> <span class="n">void</span> <span class="n">writeString</span><span class="p">(</span><span class="n">std</span><span class="p">::</span><span class="n">string</span> <span class="n">const</span> <span class="o">&amp;</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="n">virtual</span> <span class="n">void</span> <span class="n">writeCommand</span><span class="p">(</span><span class="n">void</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>This class includes the following properties:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="p">::</span><span class="n">string</span> <span class="n">mAsynName</span><span class="p">;</span>        <span class="o">//</span> <span class="n">asyn</span> <span class="n">parameter</span> <span class="n">name</span>
+<span class="n">asynParamType</span> <span class="n">mAsynType</span><span class="p">;</span>      <span class="o">//</span> <span class="n">asyn</span> <span class="n">parameter</span> <span class="nb">type</span>
+<span class="nb">int</span> <span class="n">mAsynIndex</span><span class="p">;</span>               <span class="o">//</span> <span class="n">asyn</span> <span class="n">parameter</span> <span class="n">index</span>
+<span class="n">std</span><span class="p">::</span><span class="n">string</span> <span class="n">mFeatureName</span><span class="p">;</span>     <span class="o">//</span> <span class="n">GenICam</span> <span class="n">feature</span> <span class="n">name</span>
+<span class="n">GCFeatureType_t</span> <span class="n">mFeatureType</span><span class="p">;</span> <span class="o">//</span> <span class="n">GenICam</span> <span class="n">feature</span> <span class="nb">type</span>
+</pre></div>
+</div>
+<p>The class contains methods to convert the units used by EPICS drivers to/from those used by
+GenICam.  These conversions currently include:</p>
+<ul class="simple">
+<li><p>GenICam <strong>ExposureTime</strong>, <strong>ExposureTimeAbs</strong>, and <strong>TriggerDelay</strong> features: EPICS uses seconds, GenICam uses microseconds</p></li>
+<li><p>EPICS <strong>AcquirePeriod</strong>: EPICS uses period in seconds, GenICam uses frame rate in Hz</p></li>
+<li><p>EPICS <strong>ImageMode</strong>: EPICS uses [Single, Multiple, Continuous] enums, GenICam uses [Continuous, SingleFrame, Multiframe],
+and we want to use the EPICS values.</p></li>
+</ul>
+<p>The class contains methods to write the features value to the camera, and to read the current value of the
+feature from the camera.</p>
+</section>
+<section id="adgenicamfeatureset">
+<h3><a class="toc-backref" href="#id15" role="doc-backlink">ADGenICamFeatureSet</a><a class="headerlink" href="#adgenicamfeatureset" title="Permalink to this heading"></a></h3>
+<p>This class is a collection of all of the GenICamFeature objects for the camera, implemented as a C++ std::multiset.
+It provides methods to insert and find the GenICamFeature objects, to read all of the feature values from the camera,
+and to print a report of all of the feature attributes and values.  This report() method is called when asynReport is
+called for the owner ADGenICam class.</p>
+</section>
+<section id="id2">
+<h3><a class="toc-backref" href="#id16" role="doc-backlink">ADGenICam class</a><a class="headerlink" href="#id2" title="Permalink to this heading"></a></h3>
+<p>This is the base class from which the actual camera driver will derive.  ADGenICam inherits from <a class="reference internal" href="../ADCore/ADDriver.html"><span class="doc">ADDriver</span></a>.</p>
+<p>It contains the following methods:</p>
+<ul class="simple">
+<li><p><strong>createFeature()</strong> This is a pure virtual method that the derived class must implement.  It creates a detector-specific
+feature object derived from GenICamFeature.</p></li>
+<li><p><strong>drvUserCreate()</strong> This is the method that is called when EPICS base is initializing the records during iocInit.
+Most areaDetector drivers do not implement this method.  This is because they create their detector-specific parameters
+in their constructor, and the asynPortDriver base class implements <strong>drvUserCreate</strong>.
+ADGenICam is different.  It creates the detector-specific parameters dynamically as the database file created by
+the Python script described above is read in during iocInit.  For each GenICam feature that is passed in the drvUser
+argument to this function it calls createFeature() described above.</p></li>
+<li><p><strong>addADDriverFeatures()</strong>  This function creates GenICam features for all of the standard ADDriver parameters that map to GenICam
+features.  This allows the standard records such as ADManufacturer, ADModel, ADMaxSizeX, ADMaxSizeY, etc. to get their values
+with no feature-specific code in this class or the derived class.</p></li>
+<li><p><strong>writeInt32()</strong> This function handles writes to integer parameters.  If the parameter is associated with a GenICam feature
+then it writes the value to the camera.
+Because writing to one feature can affect the values of other features, the values of all GenICam features are read back after
+the write is complete.  This includes the enum strings and values for all enum features, since these may have changed as well.</p></li>
+<li><p><strong>writeFloat64()</strong> This function handles writes to double precision parameters.  If the parameter is associated with a GenICam feature
+then it writes the value to the camera.
+Because writing to one feature can affect the values of other features, the values of all GenICam features are read back after
+the write is complete.  This includes the enum strings and values for all enum features, since these may have changed as well.</p></li>
+<li><p><strong>readEnum()</strong> This reads the enum strings associated with a parameter.  If the parameter is associated with a GenICam feature
+then it reads the enum strings and values for that feature, so EPICS bo/bi/mbbo/mbbi record enum choices are constructed
+at run-time with the choices the camera actually supports.  This function is called at iocInit for all enum features.
+These enum choices can also change at run-time as explained above, and this class does callbacks to device support with
+the new choices.</p></li>
+<li><p><strong>startCapture()</strong> This is a pure virtual function that the derived class must implement to start the camera acquisition.</p></li>
+<li><p><strong>stopCapture()</strong>  This is a pure virtual function that the derived class must implement to stop the camera acquisition.</p></li>
+</ul>
+<p>The following is part of the output of the <strong>asynReport 1 ARV1</strong> command for the ADAravis driver, which inherits from ADGenICam.
+Note that it prints the list of features:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">epics</span><span class="o">&gt;</span> <span class="n">asynReport</span> <span class="mi">1</span> <span class="n">ARV1</span>
+<span class="n">ARV1</span> <span class="n">multiDevice</span><span class="p">:</span><span class="n">No</span> <span class="n">canBlock</span><span class="p">:</span><span class="n">Yes</span> <span class="n">autoConnect</span><span class="p">:</span><span class="n">Yes</span>
+    <span class="n">enabled</span><span class="p">:</span><span class="n">Yes</span> <span class="n">connected</span><span class="p">:</span><span class="n">Yes</span> <span class="n">numberConnects</span> <span class="mi">1</span>
+    <span class="n">nDevices</span> <span class="mi">0</span> <span class="n">nQueued</span> <span class="mi">0</span> <span class="n">blocked</span><span class="p">:</span><span class="n">No</span>
+    <span class="n">asynManagerLock</span><span class="p">:</span><span class="n">No</span> <span class="n">synchronousLock</span><span class="p">:</span><span class="n">No</span>
+    <span class="n">exceptionActive</span><span class="p">:</span><span class="n">No</span> <span class="n">exceptionUsers</span> <span class="mi">1</span> <span class="n">exceptionNotifys</span> <span class="mi">0</span>
+    <span class="n">traceMask</span><span class="p">:</span><span class="mh">0x1</span> <span class="n">traceIOMask</span><span class="p">:</span><span class="mh">0x2</span> <span class="n">traceInfoMask</span><span class="p">:</span><span class="mh">0x1</span>
+<span class="n">Aravis</span> <span class="n">GigE</span> <span class="n">detector</span> <span class="n">ARV1</span>
+  <span class="n">NX</span><span class="p">,</span> <span class="n">NY</span><span class="p">:</span>            <span class="mi">1600</span>  <span class="mi">1200</span>
+  <span class="n">Data</span> <span class="nb">type</span><span class="p">:</span>         <span class="mi">1</span>
+<span class="n">Feature</span> <span class="nb">list</span>
+
+      <span class="n">Node</span> <span class="n">name</span><span class="p">:</span> <span class="n">AcquisitionFrameCount</span>
+          <span class="n">value</span><span class="p">:</span> <span class="mi">1</span>
+
+      <span class="n">Node</span> <span class="n">name</span><span class="p">:</span> <span class="n">AcquisitionFrameCount</span>
+          <span class="n">value</span><span class="p">:</span> <span class="mi">1</span>
+
+      <span class="n">Node</span> <span class="n">name</span><span class="p">:</span> <span class="n">AcquisitionFrameRate</span>
+          <span class="n">value</span><span class="p">:</span> <span class="mf">43.956043</span>
+
+      <span class="n">Node</span> <span class="n">name</span><span class="p">:</span> <span class="n">AcquisitionFrameRate</span>
+          <span class="n">value</span><span class="p">:</span> <span class="mf">43.956043</span>
+
+      <span class="n">Node</span> <span class="n">name</span><span class="p">:</span> <span class="n">AcquisitionFrameRate</span>
+          <span class="n">value</span><span class="p">:</span> <span class="mf">43.956043</span>
+
+      <span class="n">Node</span> <span class="n">name</span><span class="p">:</span> <span class="n">AcquisitionFrameRateAuto</span>
+          <span class="n">value</span><span class="p">:</span> <span class="n">Continuous</span>
+
+      <span class="n">Node</span> <span class="n">name</span><span class="p">:</span> <span class="n">AcquisitionFrameRateEnabled</span>
+          <span class="n">value</span><span class="p">:</span> <span class="n">false</span>
+
+      <span class="n">Node</span> <span class="n">name</span><span class="p">:</span> <span class="n">AcquisitionFrameRateEnabled</span>
+          <span class="n">value</span><span class="p">:</span> <span class="n">false</span>
+
+      <span class="n">Node</span> <span class="n">name</span><span class="p">:</span> <span class="n">AcquisitionMode</span>
+          <span class="n">value</span><span class="p">:</span> <span class="n">Continuous</span>
+
+<span class="o">...</span>
+</pre></div>
+</div>
+<p>This is the output of <strong>asynReport</strong> with <strong>details</strong> increased from 1 to 2 so additional information about each feature is printed:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">epics</span><span class="o">&gt;</span> <span class="n">asynReport</span> <span class="mi">2</span> <span class="n">ARV1</span>
+<span class="n">ARV1</span> <span class="n">multiDevice</span><span class="p">:</span><span class="n">No</span> <span class="n">canBlock</span><span class="p">:</span><span class="n">Yes</span> <span class="n">autoConnect</span><span class="p">:</span><span class="n">Yes</span>
+    <span class="n">enabled</span><span class="p">:</span><span class="n">Yes</span> <span class="n">connected</span><span class="p">:</span><span class="n">Yes</span> <span class="n">numberConnects</span> <span class="mi">1</span>
+    <span class="n">nDevices</span> <span class="mi">0</span> <span class="n">nQueued</span> <span class="mi">0</span> <span class="n">blocked</span><span class="p">:</span><span class="n">No</span>
+    <span class="n">asynManagerLock</span><span class="p">:</span><span class="n">No</span> <span class="n">synchronousLock</span><span class="p">:</span><span class="n">No</span>
+    <span class="n">exceptionActive</span><span class="p">:</span><span class="n">No</span> <span class="n">exceptionUsers</span> <span class="mi">1</span> <span class="n">exceptionNotifys</span> <span class="mi">0</span>
+    <span class="n">traceMask</span><span class="p">:</span><span class="mh">0x1</span> <span class="n">traceIOMask</span><span class="p">:</span><span class="mh">0x2</span> <span class="n">traceInfoMask</span><span class="p">:</span><span class="mh">0x1</span>
+    <span class="n">interposeInterfaceList</span>
+        <span class="n">asynOctet</span> <span class="n">pinterface</span> <span class="mh">0x55d81c1bbfa0</span> <span class="n">drvPvt</span> <span class="mh">0x55d81ca033c0</span>
+    <span class="n">interfaceList</span>
+        <span class="n">asynCommon</span> <span class="n">pinterface</span> <span class="mh">0x55d81c1baed0</span> <span class="n">drvPvt</span> <span class="mh">0x55d81c9ff750</span>
+        <span class="n">asynDrvUser</span> <span class="n">pinterface</span> <span class="mh">0x55d81c1bacc0</span> <span class="n">drvPvt</span> <span class="mh">0x55d81c9ff750</span>
+        <span class="n">asynOctet</span> <span class="n">pinterface</span> <span class="mh">0x55d81c1bade0</span> <span class="n">drvPvt</span> <span class="mh">0x55d81c9ff750</span>
+        <span class="n">asynInt32</span> <span class="n">pinterface</span> <span class="mh">0x55d81c1baea0</span> <span class="n">drvPvt</span> <span class="mh">0x55d81c9ff750</span>
+        <span class="n">asynFloat64</span> <span class="n">pinterface</span> <span class="mh">0x55d81c1bae40</span> <span class="n">drvPvt</span> <span class="mh">0x55d81c9ff750</span>
+        <span class="n">asynInt32Array</span> <span class="n">pinterface</span> <span class="mh">0x55d81c1bad80</span> <span class="n">drvPvt</span> <span class="mh">0x55d81c9ff750</span>
+        <span class="n">asynGenericPointer</span> <span class="n">pinterface</span> <span class="mh">0x55d81c1bad20</span> <span class="n">drvPvt</span> <span class="mh">0x55d81c9ff750</span>
+        <span class="n">asynEnum</span> <span class="n">pinterface</span> <span class="mh">0x55d81c1bace0</span> <span class="n">drvPvt</span> <span class="mh">0x55d81c9ff750</span>
+<span class="n">Aravis</span> <span class="n">GigE</span> <span class="n">detector</span> <span class="n">ARV1</span>
+  <span class="n">NX</span><span class="p">,</span> <span class="n">NY</span><span class="p">:</span>            <span class="mi">1600</span>  <span class="mi">1200</span>
+  <span class="n">Data</span> <span class="nb">type</span><span class="p">:</span>         <span class="mi">1</span>
+<span class="n">Feature</span> <span class="nb">list</span>
+
+      <span class="n">Node</span> <span class="n">name</span><span class="p">:</span> <span class="n">AcquisitionFrameCount</span>
+          <span class="n">value</span><span class="p">:</span> <span class="mi">1</span>
+      <span class="n">asynIndex</span><span class="p">:</span> <span class="mi">72</span>
+       <span class="n">asynName</span><span class="p">:</span> <span class="n">NIMAGES</span>
+       <span class="n">asynType</span><span class="p">:</span> <span class="mi">1</span>
+  <span class="n">isImplemented</span><span class="p">:</span> <span class="n">true</span>
+    <span class="n">isAvailable</span><span class="p">:</span> <span class="n">false</span>
+     <span class="n">isReadable</span><span class="p">:</span> <span class="n">true</span>
+     <span class="n">isWritable</span><span class="p">:</span> <span class="n">true</span>
+
+      <span class="n">Node</span> <span class="n">name</span><span class="p">:</span> <span class="n">AcquisitionFrameCount</span>
+          <span class="n">value</span><span class="p">:</span> <span class="mi">1</span>
+      <span class="n">asynIndex</span><span class="p">:</span> <span class="mi">215</span>
+       <span class="n">asynName</span><span class="p">:</span> <span class="n">GC_I_AcquisitionFrameCount</span>
+       <span class="n">asynType</span><span class="p">:</span> <span class="mi">1</span>
+  <span class="n">isImplemented</span><span class="p">:</span> <span class="n">true</span>
+    <span class="n">isAvailable</span><span class="p">:</span> <span class="n">false</span>
+     <span class="n">isReadable</span><span class="p">:</span> <span class="n">true</span>
+     <span class="n">isWritable</span><span class="p">:</span> <span class="n">true</span>
+
+      <span class="n">Node</span> <span class="n">name</span><span class="p">:</span> <span class="n">AcquisitionFrameRate</span>
+          <span class="n">value</span><span class="p">:</span> <span class="mf">43.956043</span>
+      <span class="n">asynIndex</span><span class="p">:</span> <span class="mi">134</span>
+       <span class="n">asynName</span><span class="p">:</span> <span class="n">GC_D_AcquisitionFrameRate</span>
+       <span class="n">asynType</span><span class="p">:</span> <span class="mi">3</span>
+  <span class="n">isImplemented</span><span class="p">:</span> <span class="n">true</span>
+    <span class="n">isAvailable</span><span class="p">:</span> <span class="n">true</span>
+     <span class="n">isReadable</span><span class="p">:</span> <span class="n">true</span>
+     <span class="n">isWritable</span><span class="p">:</span> <span class="n">false</span>
+
+      <span class="n">Node</span> <span class="n">name</span><span class="p">:</span> <span class="n">AcquisitionFrameRate</span>
+          <span class="n">value</span><span class="p">:</span> <span class="mf">43.956043</span>
+      <span class="n">asynIndex</span><span class="p">:</span> <span class="mi">94</span>
+       <span class="n">asynName</span><span class="p">:</span> <span class="n">GC_FRAMERATE</span>
+       <span class="n">asynType</span><span class="p">:</span> <span class="mi">3</span>
+  <span class="n">isImplemented</span><span class="p">:</span> <span class="n">true</span>
+    <span class="n">isAvailable</span><span class="p">:</span> <span class="n">true</span>
+     <span class="n">isReadable</span><span class="p">:</span> <span class="n">true</span>
+     <span class="n">isWritable</span><span class="p">:</span> <span class="n">false</span>
+
+      <span class="n">Node</span> <span class="n">name</span><span class="p">:</span> <span class="n">AcquisitionFrameRate</span>
+          <span class="n">value</span><span class="p">:</span> <span class="mf">43.956043</span>
+      <span class="n">asynIndex</span><span class="p">:</span> <span class="mi">75</span>
+       <span class="n">asynName</span><span class="p">:</span> <span class="n">ACQ_PERIOD</span>
+       <span class="n">asynType</span><span class="p">:</span> <span class="mi">3</span>
+  <span class="n">isImplemented</span><span class="p">:</span> <span class="n">true</span>
+    <span class="n">isAvailable</span><span class="p">:</span> <span class="n">true</span>
+     <span class="n">isReadable</span><span class="p">:</span> <span class="n">true</span>
+     <span class="n">isWritable</span><span class="p">:</span> <span class="n">false</span>
+
+      <span class="n">Node</span> <span class="n">name</span><span class="p">:</span> <span class="n">AcquisitionFrameRateAuto</span>
+          <span class="n">value</span><span class="p">:</span> <span class="n">Continuous</span>
+      <span class="n">asynIndex</span><span class="p">:</span> <span class="mi">165</span>
+       <span class="n">asynName</span><span class="p">:</span> <span class="n">GC_E_AcquisitionFrameRateAuto</span>
+       <span class="n">asynType</span><span class="p">:</span> <span class="mi">1</span>
+  <span class="n">isImplemented</span><span class="p">:</span> <span class="n">true</span>
+    <span class="n">isAvailable</span><span class="p">:</span> <span class="n">true</span>
+     <span class="n">isReadable</span><span class="p">:</span> <span class="n">true</span>
+     <span class="n">isWritable</span><span class="p">:</span> <span class="n">false</span>
+          <span class="n">enums</span><span class="p">:</span> <span class="mi">0</span><span class="p">:</span> <span class="n">Off</span>
+                 <span class="mi">2</span><span class="p">:</span> <span class="n">Continuous</span>
+
+      <span class="n">Node</span> <span class="n">name</span><span class="p">:</span> <span class="n">AcquisitionFrameRateEnabled</span>
+          <span class="n">value</span><span class="p">:</span> <span class="n">false</span>
+      <span class="n">asynIndex</span><span class="p">:</span> <span class="mi">299</span>
+       <span class="n">asynName</span><span class="p">:</span> <span class="n">GC_B_AcquisitionFrameRateEnabled</span>
+       <span class="n">asynType</span><span class="p">:</span> <span class="mi">1</span>
+  <span class="n">isImplemented</span><span class="p">:</span> <span class="n">true</span>
+    <span class="n">isAvailable</span><span class="p">:</span> <span class="n">true</span>
+     <span class="n">isReadable</span><span class="p">:</span> <span class="n">true</span>
+     <span class="n">isWritable</span><span class="p">:</span> <span class="n">true</span>
+
+      <span class="n">Node</span> <span class="n">name</span><span class="p">:</span> <span class="n">AcquisitionFrameRateEnabled</span>
+          <span class="n">value</span><span class="p">:</span> <span class="n">false</span>
+      <span class="n">asynIndex</span><span class="p">:</span> <span class="mi">95</span>
+       <span class="n">asynName</span><span class="p">:</span> <span class="n">GC_FRAMERATE_ENABLE</span>
+       <span class="n">asynType</span><span class="p">:</span> <span class="mi">1</span>
+  <span class="n">isImplemented</span><span class="p">:</span> <span class="n">true</span>
+    <span class="n">isAvailable</span><span class="p">:</span> <span class="n">true</span>
+     <span class="n">isReadable</span><span class="p">:</span> <span class="n">true</span>
+     <span class="n">isWritable</span><span class="p">:</span> <span class="n">true</span>
+
+      <span class="n">Node</span> <span class="n">name</span><span class="p">:</span> <span class="n">AcquisitionMode</span>
+          <span class="n">value</span><span class="p">:</span> <span class="n">Continuous</span>
+      <span class="n">asynIndex</span><span class="p">:</span> <span class="mi">69</span>
+       <span class="n">asynName</span><span class="p">:</span> <span class="n">IMAGE_MODE</span>
+       <span class="n">asynType</span><span class="p">:</span> <span class="mi">1</span>
+  <span class="n">isImplemented</span><span class="p">:</span> <span class="n">true</span>
+    <span class="n">isAvailable</span><span class="p">:</span> <span class="n">true</span>
+     <span class="n">isReadable</span><span class="p">:</span> <span class="n">true</span>
+     <span class="n">isWritable</span><span class="p">:</span> <span class="n">true</span>
+
+      <span class="n">Node</span> <span class="n">name</span><span class="p">:</span> <span class="n">AcquisitionMode</span>
+          <span class="n">value</span><span class="p">:</span> <span class="n">Continuous</span>
+      <span class="n">asynIndex</span><span class="p">:</span> <span class="mi">164</span>
+       <span class="n">asynName</span><span class="p">:</span> <span class="n">GC_E_AcquisitionMode</span>
+       <span class="n">asynType</span><span class="p">:</span> <span class="mi">1</span>
+  <span class="n">isImplemented</span><span class="p">:</span> <span class="n">true</span>
+    <span class="n">isAvailable</span><span class="p">:</span> <span class="n">true</span>
+     <span class="n">isReadable</span><span class="p">:</span> <span class="n">true</span>
+     <span class="n">isWritable</span><span class="p">:</span> <span class="n">true</span>
+          <span class="n">enums</span><span class="p">:</span> <span class="mi">0</span><span class="p">:</span> <span class="n">Continuous</span>
+                 <span class="mi">1</span><span class="p">:</span> <span class="n">SingleFrame</span>
+                 <span class="mi">2</span><span class="p">:</span> <span class="n">MultiFrame</span>
+
+<span class="o">...</span>
+</pre></div>
+</div>
+<section id="standard-driver-parameters">
+<h4><a class="toc-backref" href="#id17" role="doc-backlink">Standard driver parameters</a><a class="headerlink" href="#standard-driver-parameters" title="Permalink to this heading"></a></h4>
+<p>ADGenICam implements many of the driver parameters from the ADDriver base class
+by mapping these parameters to GenICam features.  The following table lists the mapping between
+the standard records and GenICam features.</p>
+<table class="table-bordered table-striped table-hover docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>EPICS record names</p></th>
+<th class="head"><p>Record types</p></th>
+<th class="head"><p>GenICam features</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Manufacturer_RBV</p></td>
+<td><p>stringin</p></td>
+<td><p>DeviceVendorName</p></td>
+<td><p>The camera manufacturer name</p></td>
+</tr>
+<tr class="row-odd"><td><p>Model_RBV</p></td>
+<td><p>stringin</p></td>
+<td><p>DeviceModelName</p></td>
+<td><p>The camera model name</p></td>
+</tr>
+<tr class="row-even"><td><p>FirmwareVersion_RBV</p></td>
+<td><p>stringin</p></td>
+<td><p>DeviceFirmwareVersion</p></td>
+<td><p>The camera firmware version</p></td>
+</tr>
+<tr class="row-odd"><td><p>SerialNumber_RBV</p></td>
+<td><p>stringin</p></td>
+<td><p>DeviceSerialNumber</p></td>
+<td><p>The camera serial number</p></td>
+</tr>
+<tr class="row-even"><td><p>MaxSizeX_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>WidthMax</p></td>
+<td><p>Sensor width</p></td>
+</tr>
+<tr class="row-odd"><td><p>MaxSizeY_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>HeightMax</p></td>
+<td><p>Sensor height</p></td>
+</tr>
+<tr class="row-even"><td><p>SizeX, SizeX_RBV</p></td>
+<td><p>longout, longin</p></td>
+<td><p>Width</p></td>
+<td><p>Width of region to read out</p></td>
+</tr>
+<tr class="row-odd"><td><p>SizeY, SizeY_RBV</p></td>
+<td><p>longout, longin</p></td>
+<td><p>Height</p></td>
+<td><p>Height of region to read out</p></td>
+</tr>
+<tr class="row-even"><td><p>MinX, MinX_RBV</p></td>
+<td><p>longout, longin</p></td>
+<td><p>OffsetX</p></td>
+<td><p>X start of region to read out</p></td>
+</tr>
+<tr class="row-odd"><td><p>MinY, MinY_RBV</p></td>
+<td><p>longout, longin</p></td>
+<td><p>OffsetY</p></td>
+<td><p>Y start of region to read out</p></td>
+</tr>
+<tr class="row-even"><td><p>BinX, BinX_RBV</p></td>
+<td><p>longout, longin</p></td>
+<td><p>BinningHorizontal</p></td>
+<td><p>Horizontal binning factor</p></td>
+</tr>
+<tr class="row-odd"><td><p>BinY, BinY_RBV</p></td>
+<td><p>longout, longin</p></td>
+<td><p>BinningVertial</p></td>
+<td><p>Vertical binning factor</p></td>
+</tr>
+<tr class="row-even"><td><p>ImageMode, ImageMode_RBV</p></td>
+<td><p>mbbo, mbbi</p></td>
+<td><p>AcquisitionMode</p></td>
+<td><p>The driver maps the standard areaDetector enums [Single, Multiple, Continuous] into the GenICam enums
+[Continuous, SingleFrame, MultiFrame].</p></td>
+</tr>
+<tr class="row-odd"><td><p>AcquireTime, AcquireTime_RBV</p></td>
+<td><p>ao, ai</p></td>
+<td><p>ExposureTime or ExposureTimeAbs</p></td>
+<td><p>Exposure time in seconds. The units are converted to/from the microseconds used by GenICam.</p></td>
+</tr>
+<tr class="row-even"><td><p>AcquirePeriod, AcquirePeriod_RBV</p></td>
+<td><p>ao, ai</p></td>
+<td><p>AcquisitionFrameRate or AcquisitionFrameRateAbs</p></td>
+<td><p>Acquire period in seconds. The units are converted to/from the frames/s used by GenICam.</p></td>
+</tr>
+<tr class="row-odd"><td><p>AcquireTime, AcquireTime_RBV</p></td>
+<td><p>ao, ai</p></td>
+<td><p>ExposureTime or ExposureTimeAbs</p></td>
+<td><p>Exposure time in seconds. The units are converted to/from the microseconds used by GenICam.</p></td>
+</tr>
+<tr class="row-even"><td><p>NumImages,, NumImages_RBV</p></td>
+<td><p>longout, longin</p></td>
+<td><p>AcquisitionFrameCount</p></td>
+<td><p>Number of images to acquire when ImageMode=Multiple</p></td>
+</tr>
+<tr class="row-odd"><td><p>Gain, Gain_RBV</p></td>
+<td><p>ao, ai</p></td>
+<td><p>Gain</p></td>
+<td><p>Analog gain.  Units may vary, often in dB.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="adgenicam-driver-parameters">
+<h4><a class="toc-backref" href="#id18" role="doc-backlink">ADGenICam driver parameters</a><a class="headerlink" href="#adgenicam-driver-parameters" title="Permalink to this heading"></a></h4>
+<p>ADGenICam adds a number of driver parameters beyond those in the ADDriver base class
+and the camera-specific parameters described above.
+These parameters are intended to abstract the most commonly used GenICam features so that they:</p>
+<ul class="simple">
+<li><p>Have the same EPICS record names regardless of the actual GenICam feature name.</p></li>
+<li><p>Exist even if there is no corresponding GenICam feature for a specific camera, so that OPI screens don’t show invalid widgets
+and scripts will not generate errors due to non-existent PVs.</p></li>
+</ul>
+<table class="table-bordered table-striped table-hover docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>EPICS record names</p></th>
+<th class="head"><p>Record types</p></th>
+<th class="head"><p>GenICam features</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>FrameRate, FrameRate_RBV</p></td>
+<td><p>ao, ai</p></td>
+<td><p>AcquisitionFrameRate or AcquisitionFrameRateAbs</p></td>
+<td><p>Frame rate in frames/s</p></td>
+</tr>
+<tr class="row-odd"><td><p>FrameRateEnable, FrameRateEnable_RBV</p></td>
+<td><p>bo, bi</p></td>
+<td><p>AcquisitionFrameRateEnable or AcquisitionFrameRateEnabled</p></td>
+<td><p>Enables/disables frame rate.  If disabled then exposure time or readout time determines frame rate.</p></td>
+</tr>
+<tr class="row-even"><td><p>TriggerSource, TriggerSource_RBV</p></td>
+<td><p>mbbo, mbbi</p></td>
+<td><p>TriggerSource</p></td>
+<td><p>Source of trigger signals.</p></td>
+</tr>
+<tr class="row-odd"><td><p>TriggerOverlap, TriggerOverlap_RBV</p></td>
+<td><p>mbbo, mbbi</p></td>
+<td><p>TriggerOverlap</p></td>
+<td><p>Controls whether trigger signals can overlap the exposure or readout.</p></td>
+</tr>
+<tr class="row-even"><td><p>TriggerSoftware</p></td>
+<td><p>bo</p></td>
+<td><p>TriggerSoftware</p></td>
+<td><p>Generates a software trigger when processed.</p></td>
+</tr>
+<tr class="row-odd"><td><p>ExposureMode, ExposureMode_RBV</p></td>
+<td><p>mbbo, mbbi</p></td>
+<td><p>ExposureMode</p></td>
+<td><p>Typical values are <strong>Timed</strong> and <strong>TriggerWidth</strong>.</p></td>
+</tr>
+<tr class="row-even"><td><p>ExposureAuto, ExposureAuto_RBV</p></td>
+<td><p>mbbo, mbbi</p></td>
+<td><p>ExposureAuto</p></td>
+<td><p>Enables automatically changing the <strong>ExposureTime</strong> for optimal image.</p></td>
+</tr>
+<tr class="row-odd"><td><p>GainAuto, GainAuto_RBV</p></td>
+<td><p>mbbo, mbbi</p></td>
+<td><p>GainAuto</p></td>
+<td><p>Enables automatically changing the <strong>Gain</strong> for optimal image.</p></td>
+</tr>
+<tr class="row-even"><td><p>PixelFormat, PixelFormat_RBV</p></td>
+<td><p>mbbo, mbbi</p></td>
+<td><p>PixelFormat</p></td>
+<td><p>Typical values are <strong>Mono8</strong>, <strong>Mono16</strong>, <strong>RGB8Packed</strong>, etc.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+</section>
+<section id="linux-usb-and-gige-system-settings">
+<span id="adgenicam-linux-system-settings"></span><h2><a class="toc-backref" href="#id19" role="doc-backlink">Linux USB and GigE System Settings</a><a class="headerlink" href="#linux-usb-and-gige-system-settings" title="Permalink to this heading"></a></h2>
+<p>In order to run GigE and USB-3 cameras at their full frame rates on Linux it is necessary to change some
+of the default Linux system settings.</p>
+<p>For GigE cameras the default values of the net.core.rmem_max and net.core.rmem_default are typically much to low
+(~200 KB) for optimal performance of GigE and 10 GigE cameras.  These should be increased to 8 MB.  To set the
+values immediately execute the following commands as root:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sysctl</span> <span class="o">-</span><span class="n">w</span> <span class="n">net</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">rmem_max</span><span class="o">=</span><span class="mi">8388608</span> <span class="n">net</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">rmem_default</span><span class="o">=</span><span class="mi">8388608</span>
+</pre></div>
+</div>
+<p>To make the settings permanent add these lines to /etc/sysctl.conf:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">net</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">rmem_max</span><span class="o">=</span><span class="mi">8388608</span>
+<span class="n">net</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">rmem_default</span><span class="o">=</span><span class="mi">8388608</span>
+</pre></div>
+</div>
+<p>For USB-3 cameras by default Linux limits image capture to 2 MB.
+To capture images over 2 MB, extend the USBFS limit on how many buffers can be locked into the driver.
+This is done by updating the boot params in grub. You can set the memory limit until the next reboot, or set it permanently.</p>
+<p>To set the maximum usbfs memory limit until the next reboot, run this command as root:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">modprobe</span> <span class="n">usbcore</span> <span class="n">usbfs_memory_mb</span><span class="o">=</span><span class="mi">1000</span>
+</pre></div>
+</div>
+<p>This method does not work with Ubuntu 14.04 or newer. With Ubuntu 14.04, users must set the memory limit permanently.</p>
+<p>To set the maximum usbfs memory limit permanently:</p>
+<p>Open the /etc/default/grub file in any text editor. Find and replace:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">GRUB_CMDLINE_LINUX_DEFAULT</span><span class="o">=</span><span class="s2">&quot;quiet splash&quot;</span>
+</pre></div>
+</div>
+<p>with this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">GRUB_CMDLINE_LINUX_DEFAULT</span><span class="o">=</span><span class="s2">&quot;quiet splash usbcore.usbfs_memory_mb=1000&quot;</span>
+</pre></div>
+</div>
+<p>Update grub with these settings:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">update</span><span class="o">-</span><span class="n">grub</span>
+</pre></div>
+</div>
+<p>On some Linux systems the update-grub command does not exist, so use this instead:</p>
+<p>grub2-mkconfig -o /boot/grub2/grub.cfg</p>
+<p>Reboot and test a USB 3 camera.</p>
+<p>If this method fails to set the memory limit, run the following command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sh</span> <span class="o">-</span><span class="n">c</span> <span class="s1">&#39;echo 1000 &gt; /sys/module/usbcore/parameters/usbfs_memory_mb&#39;</span>
+</pre></div>
+</div>
+<p>To confirm that you have successfully updated the memory limit, run the following command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="o">/</span><span class="n">sys</span><span class="o">/</span><span class="n">module</span><span class="o">/</span><span class="n">usbcore</span><span class="o">/</span><span class="n">parameters</span><span class="o">/</span><span class="n">usbfs_memory_mb</span>
+</pre></div>
+</div>
+</section>
+<section id="medm-screens">
+<h2><a class="toc-backref" href="#id20" role="doc-backlink">MEDM screens</a><a class="headerlink" href="#medm-screens" title="Permalink to this heading"></a></h2>
+<p>The following is the MEDM screen ADGenICam.adl when controlling a Point Grey Blackfly BFLY-PGE-20E4C camera.
+This screen is generic and can be used for any GemICam camera.</p>
+<figure class="align-center">
+<img alt="../_images/ADGenICam.png" src="../_images/ADGenICam.png" />
+</figure>
+<p>The following is the MEDM screen PGR_Blackyfly_20E4C-features1.adl when controlling a Point Grey Blackfly BFLY-PGE-20E4C camera.
+This screen was autogenerated by the Python script described above, and is specific to this camera model.
+It is loaded from the “Camera-specific features” related display widget in the above screen.</p>
+<figure class="align-center">
+<img alt="../_images/ADGenICam_features1.png" src="../_images/ADGenICam_features1.png" />
+</figure>
+<p>The following are the additional three feature screens generated by the Python program described above.
+The number of camera specific screens generated is determined by the number of features in a specific camera
+and by the maximum screen size specified in the Python program.</p>
+<figure class="align-center">
+<img alt="../_images/ADGenICam_features2.png" src="../_images/ADGenICam_features2.png" />
+</figure>
+<figure class="align-center">
+<img alt="../_images/ADGenICam_features3.png" src="../_images/ADGenICam_features3.png" />
+</figure>
+<figure class="align-center">
+<img alt="../_images/ADGenICam_features4.png" src="../_images/ADGenICam_features4.png" />
+</figure>
+</section>
+<section id="known-issues">
+<h2><a class="toc-backref" href="#id21" role="doc-backlink">Known issues</a><a class="headerlink" href="#known-issues" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>New cameras use the Gain feature, which is a double.  Some old cameras use GainRaw or GainRawChannelB which is an integer.
+The ADGain parameter cannot be used for GainRawChannelB because the data types don’t match, so one must use feature itself.</p></li>
+<li><p>Some cameras use an integer for the AcquireTime or AcquirePeriod features.  These won’t work, the data types won’t match, so one must use raw feature.</p>
+<ul>
+<li><p>These problems could possibly be fixed by checking for the case when asynType is different from expected.</p></li>
+</ul>
+</li>
+<li><p>BinningMode feature is only supported by raw feature.  I have no way to test this, I don’t have any cameras with that feature.</p>
+<ul>
+<li><p>aravisGige allowed setting the binning with ADBinX and ADBinY even if BinningMode only supported certain enums.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../ADFastCCD/plugin_introduction.html" class="btn btn-neutral float-left" title="Introduction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../ADLambda/ADLambda.html" class="btn btn-neutral float-right" title="ADLambda" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Mark Rivers.
+      <span class="lastupdated">Last updated on 2023-March-12.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

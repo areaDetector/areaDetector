@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NDPluginFFT &mdash; areaDetector Support</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme_overrides.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="NDPluginFile" href="NDPluginFile.html" />
+    <link rel="prev" title="NDPluginColorConvert" href="NDPluginColorConvert.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            areaDetector
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../readme.html">Readme</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../user_guide.html">User Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arch.html">Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="asynPortDriver.html">asynPortDriver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NDArray.html">NDArray</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../detector_drivers.html">Detector Drivers</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="plugins.html">areaDetector Plugins</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="plugin_overview.html">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginDriver.html">NDPluginDriver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="plugin_guidelines.html">Guidelines and rules for plugins</a></li>
+<li class="toctree-l3"><a class="reference internal" href="plugin_medm.html">Base class medm screens</a></li>
+<li class="toctree-l3"><a class="reference internal" href="common_plugins.html">commonPlugins.cmd</a></li>
+<li class="toctree-l3"><a class="reference internal" href="plugin_performance.html">Performance example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginAttrPlot.html">NDPluginAttrPlot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginAttribute.html">NDPluginAttribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginBadPixel.html">NDPluginBadPixel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginCircularBuff.html">NDPluginCircularBuff</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginCodec.html">NDPluginCodec</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginColorConvert.html">NDPluginColorConvert</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">NDPluginFFT</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#configuration">Configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#screen-shots">Screen shots</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginFile.html">NDPluginFile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginGather.html">NDPluginGather</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginOverlay.html">NDPluginOverlay</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginProcess.html">NDPluginProcess</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginPva.html">NDPluginPva</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginROI.html">NDPluginROI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginROIStat.html">NDPluginROIStat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginScatter.html">NDPluginScatter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginStats.html">NDPluginStats</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginStdArrays.html">NDPluginStdArrays</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginTimeSeries.html">NDPluginTimeSeries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginTransform.html">NDPluginTransform</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginPos.html">NDPosPlugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ffmpegServer.html">ffmpegServer</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../additional_plugins.html">Additional plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="medm.html">MEDM screens</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADViewers/ad_viewers.html">areaDetector Viewers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../acknowledgements.html">Acknowledgements and licenses</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../install_guide.html">Install Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release.html">Top-level Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ADCore_release.html">ADCore Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ADSupport_release.html">ADSupport Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../doxygen.html">Source Code Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../detectors.html">Supported Detectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../legacy_versions.html">Legacy Versions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">areaDetector</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../user_guide.html">areaDetector Users Guide</a></li>
+          <li class="breadcrumb-item"><a href="plugins.html">areaDetector Plugins</a></li>
+      <li class="breadcrumb-item active">NDPluginFFT</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/ADCore/NDPluginFFT.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="ndpluginfft">
+<h1><a class="toc-backref" href="#id12" role="doc-backlink">NDPluginFFT</a><a class="headerlink" href="#ndpluginfft" title="Permalink to this heading"></a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">author<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Mark Rivers, University of Chicago</p>
+</dd>
+</dl>
+<nav class="contents" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#ndpluginfft" id="id12">NDPluginFFT</a></p>
+<ul>
+<li><p><a class="reference internal" href="#overview" id="id13">Overview</a></p></li>
+<li><p><a class="reference internal" href="#configuration" id="id14">Configuration</a></p></li>
+<li><p><a class="reference internal" href="#screen-shots" id="id15">Screen shots</a></p></li>
+</ul>
+</li>
+</ul>
+</nav>
+<section id="overview">
+<h2><a class="toc-backref" href="#id13" role="doc-backlink">Overview</a><a class="headerlink" href="#overview" title="Permalink to this heading"></a></h2>
+<p>This plugin computes 1-D or 2-D Fast Fourier Transforms (FFTs). It
+exports 1-D or 2-D NDArrays containing the absolute value of the FFT. It
+creates 1-D waveform records of the input, and the real, imaginary, and
+absolute values of the first row of the FFT. It also creates 1-D
+waveform records of the time and frequency axes, which are useful for
+plotting if the 1-D input represents a time-series. The plugin
+optionally does recursive averaging of the computed FFTs to increase the
+signal to noise.</p>
+<p>The FFT algorithm used requires that the input array dimensions be a
+power of 2. The plugin will pad the array to the next larger power of 2
+if the input array does not meet this requirement.</p>
+<p>The <a class="reference external" href="ADCSimDetectorDoc.html">ADCSimDetector</a> application simulates an
+8-channel ADC with different waveforms. This application is useful for
+testing and demonstrating the NDPluginFFT plugin with 1-D NDArray input.</p>
+<p>The <a class="reference external" href="simDetectorDoc.html">simDetector</a> application has a Sine
+simulation mode that generates images based on the sums and/or products
+of 4 sine waves. This can be used to generate images with well-defined
+frequency components in X and Y to test and demonstrate the NDPluginFFT
+plugin, as shown in the images below. The Peaks simulation mode can also
+be used to generate interesting frequency patterns, as shown in the
+images below. This application is thus useful for testing and
+demonstrating the NDPluginFFT plugin with 2-D NDArray input.</p>
+<p>For 1-D FFTs the plugin exports a 1-D array containing the frequency
+values for each point. In order to construct this the plugin requires
+knowing the time interval between samples (TimePerPoint). This
+information normally comes from a database link to a record in the
+detector driver, but it can be manually specified as well.</p>
+<p>NDPluginFFT inherits from NDPluginDriver. The <a class="reference external" href="../areaDetectorDoxygenHTML/class_n_d_plugin_f_f_t.html">NDPluginFFT class
+documentation</a>
+describes this class in detail.</p>
+<p>NDPluginFFT defines the following parameters. It also implements all of
+the standard plugin parameters from
+<a class="reference internal" href="NDPluginDriver.html"><span class="doc">NDPluginDriver</span></a>. The template files
+listed above provide access to these parameters, listed in the following
+tables.</p>
+<table class="table-bordered table-striped table-hover docutils align-default">
+<colgroup>
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 70%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head" colspan="7"><p>Parameters for entire plugin. Parameter Definitions in NDPluginFFT.h and
+EPICS Record Definitions in NDFFT.template</p></th>
+</tr>
+<tr class="row-even"><th class="head"><p>Parameter index variable</p></th>
+<th class="head"><p>asyn interface</p></th>
+<th class="head"><p>Access</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>drvInfo string</p></th>
+<th class="head"><p>EPICS record name</p></th>
+<th class="head"><p>EPICS record type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-odd"><td><p>FFTTimePerPoint</p></td>
+<td><p>asynFloat64</p></td>
+<td><p>r/w</p></td>
+<td><p>The time interval between samples in the waveforms from the driver. This value is
+normally updated automatically using the FFTTimePerPointLink record described below.
+It can also be manually changed if there is no EPICS record available to provide
+this value automatically.</p></td>
+<td><p>FFT_TIME_PER_POINT</p></td>
+<td><p>$(P)$(R)FFTTimePerPoint, $(P)$(R)FFTTimePerPoint_RBV</p></td>
+<td><p>ao, ai</p></td>
+</tr>
+<tr class="row-even"><td><p>N.A.</p></td>
+<td><p>N.A.</p></td>
+<td><p>r/w</p></td>
+<td><p>This record has OMSL=”closed_loop” and DOL set to an record that contains the time
+between points from the driver. The link will normally have the CP attribute, so
+this record processes whenever the input record changes. The OUT field of this record
+is FFTTimePerPoint.</p></td>
+<td><p>N.A.</p></td>
+<td><p>$(P)$(R)FFTTimePerPointLink</p></td>
+<td><p>ao</p></td>
+</tr>
+<tr class="row-odd"><td><p>FFTTimeAxis</p></td>
+<td><p>asynFloat64ArrayIn</p></td>
+<td><p>r/o</p></td>
+<td><p>A waveform record containing the time value of each point in the TimeSeries waveforms.
+FFTTimeAxis[i] = FFTTimePerPoint * i. Note that this record is useful for 1-D FFTs
+where the input array is a time-series and the TimePerPoint value is correctly set.</p></td>
+<td><p>FFT_TIME_AXIS</p></td>
+<td><p>$(P)$(R)FFTTimeAxis</p></td>
+<td><p>waveform</p></td>
+</tr>
+<tr class="row-even"><td><p>FFTFreqAxis</p></td>
+<td><p>asynFloat64ArrayIn</p></td>
+<td><p>r/o</p></td>
+<td><p>A waveform record containing the frequency value of each point in the FFT waveform
+records. FFTFreqAxis[i] = FrequencyStep * i, where FrequencyStep is controlled by
+TimePerPoint and the number of time points in the input array. Note that this record
+is useful for 1-D FFTs where the input array is a time-series and the TimePerPoint
+value is correctly set.</p></td>
+<td><p>FFT_FREQ_AXIS</p></td>
+<td><p>$(P)$(R)FFTFreqAxis</p></td>
+<td><p>waveform</p></td>
+</tr>
+<tr class="row-odd"><td><p>FFTDirection</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>The FFT direction. Choices are:, 0: Time to frequency, 1: Frequency to time, NOTE: This is not yet implemented because frequency to time requires complex data,
+and complex data is not yet supported in areaDetector. Currently only Time to frequency
+is supported, and the frequency output consists of float64 arrays containing the
+real part, imaginary part, and absolute value of the FFT.</p></td>
+<td><p>FFT_DIRECTION</p></td>
+<td><p>$(P)$(R)FFTDirection, $(P)$(R)FFTDirection_RBV</p></td>
+<td><p>bo, bi</p></td>
+</tr>
+<tr class="row-even"><td><p>FFTSuppressDC</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>Option to set the zero frequency (DC) value in the output arrays to 0. Choices are:, 0: Disable, 1: Enable, If the signal has a large DC offset then setting the zero frequency component to
+0 in the output arrays can make plots look better. This is because the DC component
+can be much larger than all other frequency components.</p></td>
+<td><p>FFT_SUPPRESS_DC</p></td>
+<td><p>$(P)$(R)FFTSuppressDC, $(P)$(R)FFTSuppressDC_RBV</p></td>
+<td><p>bo, bi</p></td>
+</tr>
+<tr class="row-odd"><td><p>FFTNumAverage</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>The characteristic number of FFTs in the recursive average. The equations for the
+FFT averaging are: <br>
+<cite>Out = ((1-1/NumAveraged) * Old) + (1/NumAveraged * New)</cite> <br>
+<cite>Old = Out</cite> <br>
+<cite>if (NumAveraged &lt; NumAverage) NumAveraged = NumAveraged + 1</cite> <br>
+when Old is the previous output and New is the latest FFT calculation. <br>
+If NumAverage=1 then there is no averaging.</p></td>
+<td><p>FFT_NUM_AVERAGE</p></td>
+<td><p>$(P)$(R)FFTNumAverage, $(P)$(R)FFTNumAverage_RBV</p></td>
+<td><p>longout, longin</p></td>
+</tr>
+<tr class="row-even"><td><p>FFTNumAveraged</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/o</p></td>
+<td><p>The number of FFTs averaged in the current output. This value increases until it
+reaches the value of NumAverage. See the equations for NumAverage above.</p></td>
+<td><p>FFT_NUM_AVERAGED</p></td>
+<td><p>$(P)$(R)FFTNumAveraged</p></td>
+<td><p>longin</p></td>
+</tr>
+<tr class="row-odd"><td><p>FFTResetAverage</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/o</p></td>
+<td><p>Setting this record to 1 resets NumAveraged to 0, so the averaging process starts
+over.</p></td>
+<td><p>FFT_RESET_AVERAGE</p></td>
+<td><p>$(P)$(R)FFTResetAverage</p></td>
+<td><p>bo</p></td>
+</tr>
+<tr class="row-even"><td><p>N.A.</p></td>
+<td><p>N.A.</p></td>
+<td><p>r/w</p></td>
+<td><p>The name for this signal.</p></td>
+<td><p>N.A.</p></td>
+<td><p>$(P)$(R)SignalName</p></td>
+<td><p>stringout</p></td>
+</tr>
+<tr class="row-odd"><td><p>FFTTimeSeries</p></td>
+<td><p>asynFloat64ArrayIn</p></td>
+<td><p>r/o</p></td>
+<td><p>The time series data array.</p></td>
+<td><p>FFT_TIME_SERIES</p></td>
+<td><p>$(P)$(R)TimeSeries</p></td>
+<td><p>waveform</p></td>
+</tr>
+<tr class="row-even"><td><p>FFTReal</p></td>
+<td><p>asynFloat64ArrayIn</p></td>
+<td><p>r/o</p></td>
+<td><p>The real part of the FFT. <br>
+NOTE: this value is only available as a 1-D waveform. It is not exported as an NDArray.
+For 2-D FFTs it contains only the first row of the FFT.</p></td>
+<td><p>FFT_FFT_REAL</p></td>
+<td><p>$(P)$(R)FFTReal</p></td>
+<td><p>waveform</p></td>
+</tr>
+<tr class="row-odd"><td><p>FFTImaginary</p></td>
+<td><p>asynFloat64ArrayIn</p></td>
+<td><p>r/o</p></td>
+<td><p>The imaginary part of the FFT. <br>
+NOTE: this value is only available as a 1-D waveform. It is not exported as an NDArray.
+For 2-D FFTs it contains only the first row of the FFT.</p></td>
+<td><p>FFT_FFT_IMAGINARY</p></td>
+<td><p>$(P)$(R)FFTImaginary</p></td>
+<td><p>waveform</p></td>
+</tr>
+<tr class="row-even"><td><p>FFTAbsValue</p></td>
+<td><p>asynFloat64ArrayIn</p></td>
+<td><p>r/o</p></td>
+<td><p>The absolute value of the FFT.
+, NOTE: this is exported as an NDArray, either 1-D or 2-D depending on the rank of
+the input NDArray. However, for 2-D arrays the waveform record contains only the
+first row of the FFT.</p></td>
+<td><p>FFT_ABS_VALUE</p></td>
+<td><p>$(P)$(R)FFTAbsValue</p></td>
+<td><p>waveform</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="configuration">
+<h2><a class="toc-backref" href="#id14" role="doc-backlink">Configuration</a><a class="headerlink" href="#configuration" title="Permalink to this heading"></a></h2>
+<p>The NDPluginFFT plugin is created with the NDFFTConfigure function,
+either from C/C++ or from the EPICS IOC shell.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">NDFFTConfigure</span><span class="p">(</span><span class="n">const</span> <span class="n">char</span> <span class="o">*</span><span class="n">portName</span><span class="p">,</span> <span class="nb">int</span> <span class="n">queueSize</span><span class="p">,</span> <span class="nb">int</span> <span class="n">blockingCallbacks</span><span class="p">,</span>
+                      <span class="n">const</span> <span class="n">char</span> <span class="o">*</span><span class="n">NDArrayPort</span><span class="p">,</span> <span class="nb">int</span> <span class="n">NDArrayAddr</span><span class="p">,</span>
+                      <span class="nb">int</span> <span class="n">maxBuffers</span><span class="p">,</span>  <span class="n">size_t</span> <span class="n">maxMemory</span><span class="p">,</span> <span class="nb">int</span> <span class="n">priority</span><span class="p">,</span> <span class="nb">int</span> <span class="n">stackSize</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>All of theses parameters are from the NDPluginDriver base class.</p>
+<p>For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">NDFFTConfigure</span><span class="p">(</span><span class="s2">&quot;FFT1&quot;</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;TS1&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="screen-shots">
+<h2><a class="toc-backref" href="#id15" role="doc-backlink">Screen shots</a><a class="headerlink" href="#screen-shots" title="Permalink to this heading"></a></h2>
+<p>The following MEDM screen provides access to the parameters in
+<code class="docutils literal notranslate"><span class="pre">NDPluginDriver.h</span></code> and <code class="docutils literal notranslate"><span class="pre">NDPluginFFT.h</span></code> through records in
+<code class="docutils literal notranslate"><span class="pre">NDPluginBase.template</span></code>, and <code class="docutils literal notranslate"><span class="pre">NDTimeSeries.template</span></code>.</p>
+<img alt="../_images/NDPluginFFT.png" class="align-center" src="../_images/NDPluginFFT.png" />
+<p>The following MEDM screen provides access to NDPluginFFT.adl and the
+plot screens show below for up to 16 signals.</p>
+<img alt="../_images/NDFFT16.png" class="align-center" src="../_images/NDFFT16.png" />
+<p>The following MEDM screens show the time series and FFT plots for arrays
+in NDFFT.template and NDPluginTimeSeriesN.template. These 1-D
+time-series are produced using the ADCSimDetector driver in ADExample.</p>
+<figure class="align-center" id="id1">
+<img alt="../_images/NDFFTTimeSeriesPlot.png" src="../_images/NDFFTTimeSeriesPlot.png" />
+<figcaption>
+<p><span class="caption-text">Time-series plot. This is the Sawtooth waveform with 10 Hz frequency.</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id2">
+<img alt="../_images/NDFFTPlotAbsValue.png" src="../_images/NDFFTPlotAbsValue.png" />
+<figcaption>
+<p><span class="caption-text">Absolute value of FFT. Note that the FFT of a sawtooth has
+the 10 Hz fundamental frequency plus all even and odd harmonics.</span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id3">
+<img alt="../_images/NDFFTTimeSeriesPlotNoisy.png" src="../_images/NDFFTTimeSeriesPlotNoisy.png" />
+<figcaption>
+<p><span class="caption-text">Time-series plot. This is the Sawtooth waveform with 10 Hz
+frequency with addition of noise.</span><a class="headerlink" href="#id3" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id4">
+<img alt="../_images/NDFFTTimeSeriesPlotFFTAbsValueNoisyAvg1.png" src="../_images/NDFFTTimeSeriesPlotFFTAbsValueNoisyAvg1.png" />
+<figcaption>
+<p><span class="caption-text">Absolute value of FFT of noisy waveform above with
+<code class="docutils literal notranslate"><span class="pre">NumAverage=1</span></code> (no averaging). Only the first peak in the power
+spectrum is clearly visible.</span><a class="headerlink" href="#id4" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id5">
+<img alt="../_images/NDFFTTimeSeriesPlotFFTAbsValueNoisyAvg100.png" src="../_images/NDFFTTimeSeriesPlotFFTAbsValueNoisyAvg100.png" />
+<figcaption>
+<p><span class="caption-text">Absolute value of FFT of noisy waveform above with
+NumAverage=100. The first 7 peaks in the power spectrum are now
+clearly visible.</span><a class="headerlink" href="#id5" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id6">
+<img alt="../_images/NDFFTPlotAll.png" src="../_images/NDFFTPlotAll.png" />
+<figcaption>
+<p><span class="caption-text">Combined plot with time-series, FFT absolute value, FFT
+real, and FFT imaginary. This is the sin(x)*cos(x) waveform, with the
+sine frequency=20 Hz and the cosine frequency=1 Hz.</span><a class="headerlink" href="#id6" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>The following MEDM screens show the real-space images and 2-D FFT plots
+for arrays in <code class="docutils literal notranslate"><span class="pre">NDFFT.template</span></code> and <code class="docutils literal notranslate"><span class="pre">NDPluginTimeSeriesN.template</span></code>. These 2-D
+images are produced using the simDetector driver in ADExample using the
+settings show in the screen shot below.</p>
+<figure class="align-center" id="id7">
+<img alt="../_images/NDFFTSimDetectorSetup.png" src="../_images/NDFFTSimDetectorSetup.png" />
+<figcaption>
+<p><span class="caption-text">Setup screen for the simDetector driver showing the values
+that were used to generate the images and FFTs shown below.</span><a class="headerlink" href="#id7" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id8">
+<img alt="../_images/NDFFTPeaksImage.png" src="../_images/NDFFTPeaksImage.png" />
+<figcaption>
+<p><span class="caption-text">Real space image. This is generated using the Peaks mode in
+the simDetector driver.</span><a class="headerlink" href="#id8" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id9">
+<img alt="../_images/NDFFTPeaksAbsVal.png" src="../_images/NDFFTPeaksAbsVal.png" />
+<figcaption>
+<p><span class="caption-text">2-D FFT absolute value of the above image.</span><a class="headerlink" href="#id9" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id10">
+<img alt="../_images/NDFFTSineImage.png" src="../_images/NDFFTSineImage.png" />
+<figcaption>
+<p><span class="caption-text">Real space image. This is generated using the Sine mode in
+the simDetector driver.</span><a class="headerlink" href="#id10" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id11">
+<img alt="../_images/NDFFTSineAbsVal.png" src="../_images/NDFFTSineAbsVal.png" />
+<figcaption>
+<p><span class="caption-text">2-D FFT absolute value of the above image.</span><a class="headerlink" href="#id11" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>Note in the above image that the two X freqencies are 2 and 50 Hz, which
+are the values in the SimDetectorSetup screen shown above, because these
+two sine waves are added together. Note, however, that the two Y
+frequencies, 1 Hz and 20 Hz do not appear in the FFT because these two
+sine waves are multiplied together. The frequencies in the FFT are the
+sum and difference of sine wave frequencies, 19 and 21 Hz.</p>
+<p>The FFT images above were captured by setting the NDStdArrays plugin to
+get its data from the NDPluginFFT plugin, which is port FFT1 in the
+simDetector example IOC in the ADExample module. The ImageJ viewer was
+then used to view the EPICS waveform record from the NDStdArrays plugin.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="NDPluginColorConvert.html" class="btn btn-neutral float-left" title="NDPluginColorConvert" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="NDPluginFile.html" class="btn btn-neutral float-right" title="NDPluginFile" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Mark Rivers.
+      <span class="lastupdated">Last updated on 2023-March-12.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

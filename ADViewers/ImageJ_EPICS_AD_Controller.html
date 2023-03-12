@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ImageJ Controller (EPICS_AD_Controller.java) &mdash; areaDetector Support</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme_overrides.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="PY_NTNDA_Viewer" href="PY_NTNDA_Viewer.html" />
+    <link rel="prev" title="ImageJ pvAccess Viewer (EPICS_NTNDA_Viewer.java)" href="ImageJ_EPICS_NTNDA_Viewer.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            areaDetector
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../readme.html">Readme</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../user_guide.html">User Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/overview.html">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/arch.html">Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/asynPortDriver.html">asynPortDriver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/NDArray.html">NDArray</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../detector_drivers.html">Detector Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/plugins.html">areaDetector Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../additional_plugins.html">Additional plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/medm.html">MEDM screens</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="ad_viewers.html">areaDetector Viewers</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="IDL_Viewer.html">IDL Viewer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ImageJ_EPICS_AD_Viewer.html">ImageJ Channel Access Viewer (EPICS_AD_Viewer.java)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ImageJ_EPICS_NTNDA_Viewer.html">ImageJ pvAccess Viewer (EPICS_NTNDA_Viewer.java)</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">ImageJ Controller (EPICS_AD_Controller.java)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PY_NTNDA_Viewer.html">PY_NTNDA_Viewer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ad_viewers.html#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ad_viewers.html#imagej-viewers">ImageJ Viewers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ad_viewers.html#imagej-controller-epics-ad-controller-java">ImageJ Controller (EPICS_AD_Controller.java)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ad_viewers.html#imagej-gaussian-profiler-gaussianprofiler-java">ImageJ Gaussian Profiler (GaussianProfiler.java)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ad_viewers.html#python-viewer">Python Viewer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ad_viewers.html#idl-viewer">IDL Viewer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ad_viewers.html#troubleshooting">Troubleshooting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ad_viewers.html#feature-comparison">Feature comparison</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ad_viewers.html#performance-comparison">Performance comparison</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../acknowledgements.html">Acknowledgements and licenses</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../install_guide.html">Install Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release.html">Top-level Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ADCore_release.html">ADCore Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ADSupport_release.html">ADSupport Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../doxygen.html">Source Code Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../detectors.html">Supported Detectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../legacy_versions.html">Legacy Versions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">areaDetector</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../user_guide.html">areaDetector Users Guide</a></li>
+          <li class="breadcrumb-item"><a href="ad_viewers.html">areaDetector Viewers</a></li>
+      <li class="breadcrumb-item active">ImageJ Controller (EPICS_AD_Controller.java)</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/ADViewers/ImageJ_EPICS_AD_Controller.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="imagej-controller-epics-ad-controller-java">
+<h1><a class="toc-backref" href="#id3" role="doc-backlink">ImageJ Controller (EPICS_AD_Controller.java)</a><a class="headerlink" href="#imagej-controller-epics-ad-controller-java" title="Permalink to this heading"></a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">author<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Mark Rivers</p>
+</dd>
+<dt class="field-even">affiliation<span class="colon">:</span></dt>
+<dd class="field-even"><p>University of Chicago</p>
+</dd>
+</dl>
+<nav class="contents" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#imagej-controller-epics-ad-controller-java" id="id3">ImageJ Controller (EPICS_AD_Controller.java)</a></p></li>
+</ul>
+</nav>
+<p>This is an ImageJ plugin which can be used to graphically control the
+following:</p>
+<ul class="simple">
+<li><p>The readout region of the detector or camera.</p></li>
+<li><p>The size and position of an ROI (NDPluginROI).</p></li>
+<li><p>The size and position of an overlay (NDPluginOverlay).</p></li>
+</ul>
+<p>Normally this plugin will be used together with the EPICS_AD_Viewer
+plugin described above. However, that is not required. For example, the
+ImageJ window used with EPICS_AD_Controller could be a window read from
+a TIFF file that the detector previously wrote.</p>
+<p>The detector and plugin chain can include any of the following elements
+and settings:</p>
+<ul class="simple">
+<li><p>Camera/detector (MinX, MinY, SizeX, SizeY, BinX, BinY, ReverseX,
+ReverseY)</p></li>
+<li><p>Transform plugin (NDPluginTransform) (Type, i.e. the transform
+operation None, Rot90, Mirror, etc.)</p></li>
+<li><p>ROI plugin (NDPluginROI) (MinX, MinY, SizeX, SizeY, BinX, BinY,
+ReverseX, ReverseY))</p></li>
+<li><p>Overlay plugin (NDPluginOverlay)</p></li>
+<li><p>NDPluginStdArrays plugin (used by EPICS_AD_Viewer to get images)</p></li>
+</ul>
+<p>All of the above components are optional, they do not need to be
+present. However, the components that are present must be in the above
+order in the “viewing” plugin chain. In other words the Transform plugin
+must come before the ROI and Overlay plugins, and the ROI plugin must
+come before the Overlay plugin. For the Transform and ROI plugins there
+is a flag that allows selecting whether or not this plugin is included
+the plugin chain. Note that this flag does not control the plugin chain,
+rather it must be set to correctly reflect the actual setting of the
+plugin chain. It is possible to use EPICS_AD_Control to control the ROI
+without the ROI plugin being in the plugin chain. In fact this is a
+common use case.</p>
+<p>The following is the EPICS_AD_Controller plugin control, located in the
+ImageJ “Plugins/EPICS_areaDetector/EPICS AD Controller” menu.</p>
+<figure class="align-center" id="id1">
+<img alt="../_images/ImageJ_EPICS_AD_Controller.png" src="../_images/ImageJ_EPICS_AD_Controller.png" />
+<figcaption>
+<p><span class="caption-text">ImageJ EPICS_AD_Controller plugin control window</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>The following are the controls on the EPICS_AD_Controller screen:</p>
+<ul class="simple">
+<li><p>String input controls for the EPICS PV prefixes for the Camera,
+Transform plugin, ROI plugin, and Overlay plugin.</p></li>
+<li><p>“Output PVs” combo box control that selects which component will be
+defined when the Set button is pushed. Choices are “Camera”, “ROI”,
+and “Overlay”.</p></li>
+<li><p>“Set” control button. Pressing this button calculates the coordinates
+of the component to be defined and writes the values to the desired
+PVs.</p></li>
+<li><p>“Reset camera region” control button. Pressing this button resets the
+MinX and MinY of the camera to 0 and sets SizeX and SizeY to the
+maximum image size (MaxSizeX, MaxSizeY). Note that it does not modify
+the camera BinX, BinY, ReverseX, or ReverseY.</p></li>
+<li><p>“Reset ROI” control button. Pressing this button resets the MinX and
+MinY of the ROI to 0 and sets SizeX and SizeY to the maximum camera
+image size (MaxSizeX, MaxSizeY). Note that it does not modify the ROI
+BinX, BinY, ReverseX, or ReverseY.</p></li>
+<li><p>“Transform Plugin In Chain” checkbox. Check this box if the Transform
+plugin is part of the viewing plugin chain.</p></li>
+<li><p>“ROI Plugin In Chain” checkbox. Check this box if the ROI plugin is
+part of the viewing plugin chain. Note that EPICS_AD_Controller can
+define the ROI even if it is not part of the viewing plugin chain,
+and in fact this is a common use case.</p></li>
+<li><p>Status text box. Errors and informational messages are displayed
+here.</p></li>
+</ul>
+<p>When using EPICS_AD_Controller to define the camera readout region then
+the following rule must be followed. If the ROI plugin is in the viewing
+chain then it must first be set to pass the entire image, i.e. MinX and
+MinY must be 0, and SizeX and SizeY must be at least as large as the
+image from the camera. This can be conveniently done by pressing the
+“Reset ROI” button before defining the ImageJ ROI to select the camera
+readout region. This is not required if the ROI is not in the viewing
+plugin chain.</p>
+<p>The following is the EPICS_AD_Viewer image display window with an
+ellipse overlay that was defined using an ImageJ rectangular ROI and
+EPICS_AD_Controller.</p>
+<figure class="align-center" id="id2">
+<img alt="../_images/ImageJ_EPICS_AD_Controller_Overlay.png" src="../_images/ImageJ_EPICS_AD_Controller_Overlay.png" />
+<figcaption>
+<p><span class="caption-text">ImageJ EPICS_AD_Viewer plugin display window with
+rectangular Image ROI defining an elliptical overlay NDPluginOverlay</span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>The EPICS_AD_Control plugin must be compiled in the same manner
+described for EPICS_AD_Viewer above.</p>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="ImageJ_EPICS_NTNDA_Viewer.html" class="btn btn-neutral float-left" title="ImageJ pvAccess Viewer (EPICS_NTNDA_Viewer.java)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="PY_NTNDA_Viewer.html" class="btn btn-neutral float-right" title="PY_NTNDA_Viewer" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Mark Rivers.
+      <span class="lastupdated">Last updated on 2023-March-12.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

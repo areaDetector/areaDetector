@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ADPluginBar Documentation &mdash; areaDetector Support</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme_overrides.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="MEDM screens" href="../ADCore/medm.html" />
+    <link rel="prev" title="ADCompVision area detector plugin Input/output manual/guide" href="../ADCompVision/ADCompVisionManual.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            areaDetector
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../readme.html">Readme</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../user_guide.html">User Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/overview.html">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/arch.html">Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/asynPortDriver.html">asynPortDriver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/NDArray.html">NDArray</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../detector_drivers.html">Detector Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/plugins.html">areaDetector Plugins</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../additional_plugins.html">Additional plugins</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../ADCompVision/ADCompVision.html">ADCompVision Documentation</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">ADPluginBar Documentation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#author-jakub-wlodek">Author: Jakub Wlodek</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#corresponding-author-kazimierz-gofron">Corresponding Author: Kazimierz Gofron</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#using-adpluginbar">Using ADPluginBar</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#r2-0-4-january-2018">R2-0 (4-January-2018)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#r1-1-27-june-2018">R1-1 (27-June-2018)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#r1-0-22-june-2018">R1-0 (22-June-2018)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#adpluginbar-file-structure">ADPluginBar File structure</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/medm.html">MEDM screens</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADViewers/ad_viewers.html">areaDetector Viewers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../acknowledgements.html">Acknowledgements and licenses</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../install_guide.html">Install Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release.html">Top-level Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ADCore_release.html">ADCore Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ADSupport_release.html">ADSupport Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../doxygen.html">Source Code Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../detectors.html">Supported Detectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../legacy_versions.html">Legacy Versions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">areaDetector</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../user_guide.html">areaDetector Users Guide</a></li>
+          <li class="breadcrumb-item"><a href="../additional_plugins.html">Additional plugins</a></li>
+      <li class="breadcrumb-item active">ADPluginBar Documentation</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/ADPluginBar/ADPluginBar.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="adpluginbar-documentation">
+<h1>ADPluginBar Documentation<a class="headerlink" href="#adpluginbar-documentation" title="Permalink to this heading"></a></h1>
+<section id="author-jakub-wlodek">
+<h2>Author: Jakub Wlodek<a class="headerlink" href="#author-jakub-wlodek" title="Permalink to this heading"></a></h2>
+</section>
+<section id="corresponding-author-kazimierz-gofron">
+<h2>Corresponding Author: Kazimierz Gofron<a class="headerlink" href="#corresponding-author-kazimierz-gofron" title="Permalink to this heading"></a></h2>
+<section id="installing-the-plugin">
+<h3>Installing the plugin<a class="headerlink" href="#installing-the-plugin" title="Permalink to this heading"></a></h3>
+<p>The ADPluginBar plugin depends on several external libraries. These
+include:</p>
+<ul class="simple">
+<li><p>Opencv: Can be built from source from
+<a class="reference external" href="https://github.com/opencv/opencv">github</a>. Otherwise install from
+package manager.</p></li>
+<li><p>Zbar: Can be built from source from
+<a class="reference external" href="https://github.com/ZBar/ZBar">github</a>. Otherwise install from
+package manager.</p></li>
+<li><p>EPICS, Area Detector, and their submodules, all of whuch can be found
+on github.</p></li>
+</ul>
+<p>Further installation instructions are located in the README.md file in
+the top level of this repository.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="using-adpluginbar">
+<h2>Using ADPluginBar<a class="headerlink" href="#using-adpluginbar" title="Permalink to this heading"></a></h2>
+<p><em>The sample image used in all screens in this document captured with a
+prosilica camera</em></p>
+<p><a class="reference internal" href="../_images/barcode.png"><img alt="barcode" src="../_images/barcode.png" style="width: 500px;" /></a></p>
+<div class="line-block">
+<div class="line">ADPluginBar (current version 2-0) has several requirements for proper
+functionality. As pf R2-0, 8 bit and 16 bit images are supported, in
+both Mono and RGB mode.</div>
+<div class="line">Not that the image will be converted to grayscale if input is in RGB.
+Output arrays from the plugin will be in RGB because barcode bounding
+boxes are displayed in blue.</div>
+<div class="line">Some conversion information between NDArrays and OpenCV Mat objects
+used as a conversion element is included in a file in the barSrc
+directory. Additionally, though inverted</div>
+<div class="line">bar codes are supported, they require a PV flag to be set, and thus
+cannot be read in conjunction with standard bar or QR codes. They are
+also only supported in 8-bit mode. This is another feature</div>
+<div class="line">that is being considered for a future release.</div>
+<div class="line">Once ADPluginBar is installed, Some edits must be made to the common
+plugins screen linked to your detector. It should look as follows:</div>
+</div>
+<p><a class="reference internal" href="../_images/commonplugins.png"><img alt="commonplugins" src="../_images/commonplugins.png" style="width: 700px;" /></a></p>
+<div class="line-block">
+<div class="line">The Address that should be passed to each of the elements is Bar1.
+Thus, the entire PV would be, for example, “$(P)Bar1:PortName_RBV”
+for the portname field.</div>
+<div class="line">The “more” button should be linked to the provided “NDPluginBar.opi”
+screen, or an equivalent adl or edl screen. (Currently only CSS
+screens are provided, though</div>
+<div class="line">other types may be looked into in the future.) The NDPluginBar.opi
+screen looks as follows:</div>
+</div>
+<p><a class="reference internal" href="../_images/Barcodemain.png"><img alt="NDPluginBar.opi" src="../_images/Barcodemain.png" style="width: 700px;" /></a></p>
+<div class="line-block">
+<div class="line">ADPluginBar supports reading up to 5 bar codes simultaneously, though
+currently only the first discovered barcode has its coordinates stored
+as a PV.</div>
+<div class="line">In order to access the remaining 4 barcodes, simply press the button
+titled: “View 1-5”. Once pressed, the following screen will display:</div>
+</div>
+<p><a class="reference internal" href="../_images/bar1-5.png"><img alt="barcodes1-5" src="../_images/bar1-5.png" style="width: 500px;" /></a></p>
+<div class="line-block">
+<div class="line">As you can see, in the sample image used above, two barcodes are
+present, the QR code which was generated with a test message, and a
+two dimensional barcode taken form</div>
+<div class="line">a box from around the test area. Both codes were detected ane placed
+into PVs BarcodeMessage1_RBV, BarcodeType1_RBV and the ‘2’
+equivalents.</div>
+</div>
+<p><a class="reference internal" href="../_images/liveupdate.png"><img alt="liveupdate" src="../_images/liveupdate.png" style="width: 1000px;" /></a></p>
+<div class="line-block">
+<div class="line">As of release R2-0, ADPluginBar supports a live view of the detected
+barcodes in an image. To use this feature, set use any EPICS viewer,
+and set the Array Port to BAR1,</div>
+<div class="line">or whatever port your plugin has been set to. In the image above, I
+used the NDPluginStdArrays plugin for viewing in CSS. When a barcode
+is detected, a blue bounding box is drawn</div>
+<div class="line">around the code.</div>
+<div class="line">For more information on the newest release of ADPluginBar please check
+the RELEASE.md file in the top level directory. Additionally, please
+contact the</div>
+<div class="line">author with any questions regarding the usage of the plugin or feature
+requests.</div>
+</div>
+<hr class="docutils" />
+<section id="release-notes">
+<h3>Release Notes<a class="headerlink" href="#release-notes" title="Permalink to this heading"></a></h3>
+<p>R2-1 (8-May-2019)</p>
+<hr class="docutils" />
+<ul class="simple">
+<li><p>Features Added:</p>
+<ul>
+<li><p>Threading has been added (similar to NDPluginDmtx) for much faster
+performance, and no lost frames</p></li>
+</ul>
+</li>
+<li><p>Bug Fixes</p>
+<ul>
+<li><p>Threading for improved performance removes issues with dropped
+frames when image size was too large</p></li>
+<li><p>Y-coordinate for corner PVs now indicates from the bottom up
+rather than from the top down</p></li>
+</ul>
+</li>
+<li><p>Future Plans</p>
+<ul>
+<li><p>Possible integration with
+<a class="reference external" href="https://github.com/epicsNSLS2-areaDetector/ADPluginDmtx">ADPluginDmtx</a></p></li>
+<li><p>Image autosaving when barcode detected</p></li>
+<li><p>Database integration</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+<section id="r2-0-4-january-2018">
+<h2>R2-0 (4-January-2018)<a class="headerlink" href="#r2-0-4-january-2018" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>Features Added:</p>
+<ul>
+<li><p>Corners can now be displayed for any of the 5 barcodes via a PV
+toggle</p></li>
+<li><p>Number Codes now lists the number of codes in the image not the
+total number of codes</p></li>
+<li><p>Passing the ADPluginBar Array Port to an EPICS Viewer allows for
+live display of detected barcodes and QR codes</p></li>
+<li><p>Support for both 8 bit and 16 bit images</p></li>
+<li><p>Added support for input of RGB images as opposed to only Mono
+images</p></li>
+<li><p>Barcode Message PVs changed to waveforms to increase max character
+count to 256</p></li>
+</ul>
+</li>
+<li><p>Bug Fixes/Code Refactoring:</p>
+<ul>
+<li><p>Fixed issue where plugin would freeze in certain situations where
+codes were repeated.</p></li>
+<li><p>Removed redundant functions, split up large functions into more
+compact pieces</p></li>
+<li><p>Improved documentation for all functions</p></li>
+</ul>
+</li>
+<li><p>Future Plans:</p>
+<ul>
+<li><p>Add support for automatic image saving when barcodes detected</p></li>
+<li><p>Support for databases like MySQL and MongoDB</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="r1-1-27-june-2018">
+<h2>R1-1 (27-June-2018)<a class="headerlink" href="#r1-1-27-june-2018" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>Several key features added and bugs fixed:</p>
+<ul>
+<li><p>Support added for reading up to 5 codes in one image (Corner data
+stored in PV for first code)</p></li>
+<li><p>Support added for reading inverted bar codes i.e. white code on
+black background</p></li>
+<li><p>Fixed issue where number of barcodes would continue to increment
+when seeing the same bar code</p></li>
+<li><p>Fixed issuse where seeing the same barcode would cause an infinite
+loop of asyn messages in the IOC shell</p></li>
+</ul>
+</li>
+<li><p>Future plans:</p>
+<ul>
+<li><p>Add ability to save image file with detected barcodes marked.</p></li>
+<li><p>Add ability to pipe information into an NDArray and display it in
+CSS</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="r1-0-22-june-2018">
+<h2>R1-0 (22-June-2018)<a class="headerlink" href="#r1-0-22-june-2018" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>Original release. Some issues that can be resolved with future
+releases:</p>
+<ul>
+<li><p>Only mono images supported</p></li>
+<li><p>stringin record used for barcode message, so limit of 40
+characters currently</p></li>
+</ul>
+</li>
+</ul>
+<hr class="docutils" />
+<section id="code-documentation">
+<h3>Code Documentation<a class="headerlink" href="#code-documentation" title="Permalink to this heading"></a></h3>
+<p>Below is an explanation of functions included in ADPluginBar and the
+general plugin structure.</p>
+</section>
+</section>
+<section id="adpluginbar-file-structure">
+<h2>ADPluginBar File structure<a class="headerlink" href="#adpluginbar-file-structure" title="Permalink to this heading"></a></h2>
+<p><a class="reference internal" href="../_images/fileStructure.png"><img alt="ADPluginBar file structure" src="../_images/fileStructure.png" style="width: 400px;" /></a></p>
+<p>All of the plugin Source code is housed in the barApp/barSrc directory.
+The barApp/Db/NDBar.template file contains PV definitions.
+barApp/screens contains CSS .opi files.</p>
+<p>Function definitions</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Function Name</p></th>
+<th class="head"><p>InputArgs</p></th>
+<th class="head"><p>OutputArgs</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>initPVArrays</p></td>
+<td><p>None</p></td>
+<td><p>None</p></td>
+<td><p>Function that places PV indexes into arrays for easier iteration</p></td>
+</tr>
+<tr class="row-odd"><td><p>printCVError</p></td>
+<td><p>None</p></td>
+<td><p>None</p></td>
+<td><p>Function for printing out OpenCV exception information</p></td>
+</tr>
+<tr class="row-even"><td><p>clearPreviousCodes</p></td>
+<td><p>None</p></td>
+<td><p>None</p></td>
+<td><p>Function that clears out the currently detected barcodes.</p></td>
+</tr>
+<tr class="row-odd"><td><p>ndArray2Mat</p></td>
+<td><p>pArray, arrayInfo</p></td>
+<td><p>img</p></td>
+<td><p>Function that converts input NDArray pArray into output Mat img</p></td>
+</tr>
+<tr class="row-even"><td><p>mat2NDArray</p></td>
+<td><p>img</p></td>
+<td><p>pScratch</p></td>
+<td><p>Function that converts input Mat img into output NDArray pScratch</p></td>
+</tr>
+<tr class="row-odd"><td><p>fix_inverted</p></td>
+<td><p>img</p></td>
+<td><p>None</p></td>
+<td><p>Function that inverts black and white in image to allow for detecting inverted codes</p></td>
+</tr>
+<tr class="row-even"><td><p>push_corners</p></td>
+<td><p>symbol, update_corners</p></td>
+<td><p>discovered</p></td>
+<td><p>Function that updates poition of discovered code from symbol and updates PVs if update_corners flag set</p></td>
+</tr>
+<tr class="row-odd"><td><p>update_corners</p></td>
+<td><p>discovered</p></td>
+<td><p>None</p></td>
+<td><p>Function that updateds corner PVs to those of discovered</p></td>
+</tr>
+<tr class="row-even"><td><p>scan_image</p></td>
+<td><p>img</p></td>
+<td><p>None</p></td>
+<td><p>Function that changes Mat to zbar image and scans it with zbar</p></td>
+</tr>
+<tr class="row-odd"><td><p>clear_unused_barcode_pvs</p></td>
+<td><p>counter</p></td>
+<td><p>None</p></td>
+<td><p>Function that resets PVs that had detected barcode earlier, but no longer do</p></td>
+</tr>
+<tr class="row-even"><td><p>decode_bar_codes</p></td>
+<td><p>img</p></td>
+<td><p>None</p></td>
+<td><p>Function that scans image, then loops over any detected codes and updates PVs</p></td>
+</tr>
+<tr class="row-odd"><td><p>show_bar_codes</p></td>
+<td><p>img</p></td>
+<td><p>None</p></td>
+<td><p>Function that takes list of discovered codes and draws them on the image based on pushed corners</p></td>
+</tr>
+<tr class="row-even"><td><p>writeInt32</p></td>
+<td><p>pasynUser, value</p></td>
+<td><p>None</p></td>
+<td><p>Function that is called when a PV is written to</p></td>
+</tr>
+<tr class="row-odd"><td><p>processCallbacks</p></td>
+<td><p>pArray</p></td>
+<td><p>None</p></td>
+<td><p>Function that is called for each NDArray created by the attached driver</p></td>
+</tr>
+</tbody>
+</table>
+<p>More detailed documentation can be found in the plugin Src.</p>
+<section id="copyright-brookhaven-national-laboratory-2017-2019">
+<h3>copyright: Brookhaven National Laboratory 2017-2019<a class="headerlink" href="#copyright-brookhaven-national-laboratory-2017-2019" title="Permalink to this heading"></a></h3>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../ADCompVision/ADCompVisionManual.html" class="btn btn-neutral float-left" title="ADCompVision area detector plugin Input/output manual/guide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../ADCore/medm.html" class="btn btn-neutral float-right" title="MEDM screens" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Mark Rivers.
+      <span class="lastupdated">Last updated on 2023-March-12.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

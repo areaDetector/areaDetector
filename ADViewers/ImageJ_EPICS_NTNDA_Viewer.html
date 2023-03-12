@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ImageJ pvAccess Viewer (EPICS_NTNDA_Viewer.java) &mdash; areaDetector Support</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme_overrides.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="ImageJ Controller (EPICS_AD_Controller.java)" href="ImageJ_EPICS_AD_Controller.html" />
+    <link rel="prev" title="ImageJ Channel Access Viewer (EPICS_AD_Viewer.java)" href="ImageJ_EPICS_AD_Viewer.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            areaDetector
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../readme.html">Readme</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../user_guide.html">User Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/overview.html">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/arch.html">Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/asynPortDriver.html">asynPortDriver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/NDArray.html">NDArray</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../detector_drivers.html">Detector Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/plugins.html">areaDetector Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../additional_plugins.html">Additional plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/medm.html">MEDM screens</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="ad_viewers.html">areaDetector Viewers</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="IDL_Viewer.html">IDL Viewer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ImageJ_EPICS_AD_Viewer.html">ImageJ Channel Access Viewer (EPICS_AD_Viewer.java)</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">ImageJ pvAccess Viewer (EPICS_NTNDA_Viewer.java)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ImageJ_EPICS_AD_Controller.html">ImageJ Controller (EPICS_AD_Controller.java)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PY_NTNDA_Viewer.html">PY_NTNDA_Viewer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ad_viewers.html#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ad_viewers.html#imagej-viewers">ImageJ Viewers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ad_viewers.html#imagej-controller-epics-ad-controller-java">ImageJ Controller (EPICS_AD_Controller.java)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ad_viewers.html#imagej-gaussian-profiler-gaussianprofiler-java">ImageJ Gaussian Profiler (GaussianProfiler.java)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ad_viewers.html#python-viewer">Python Viewer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ad_viewers.html#idl-viewer">IDL Viewer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ad_viewers.html#troubleshooting">Troubleshooting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ad_viewers.html#feature-comparison">Feature comparison</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ad_viewers.html#performance-comparison">Performance comparison</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../acknowledgements.html">Acknowledgements and licenses</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../install_guide.html">Install Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release.html">Top-level Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ADCore_release.html">ADCore Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ADSupport_release.html">ADSupport Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../doxygen.html">Source Code Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../detectors.html">Supported Detectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../legacy_versions.html">Legacy Versions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">areaDetector</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../user_guide.html">areaDetector Users Guide</a></li>
+          <li class="breadcrumb-item"><a href="ad_viewers.html">areaDetector Viewers</a></li>
+      <li class="breadcrumb-item active">ImageJ pvAccess Viewer (EPICS_NTNDA_Viewer.java)</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/ADViewers/ImageJ_EPICS_NTNDA_Viewer.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="imagej-pvaccess-viewer-epics-ntnda-viewer-java">
+<h1>ImageJ pvAccess Viewer (EPICS_NTNDA_Viewer.java)<a class="headerlink" href="#imagej-pvaccess-viewer-epics-ntnda-viewer-java" title="Permalink to this heading"></a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">author<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Mark Rivers, Tim Madden, Marty Kraimer</p>
+</dd>
+<dt class="field-even">affiliation<span class="colon">:</span></dt>
+<dd class="field-even"><p>University of Chicago, Argonne National Laboratory</p>
+</dd>
+</dl>
+<p>This plugin uses EPICS V4 pvAccess to display NTNDArrays that the
+<a class="reference internal" href="../ADCore/NDPluginPva.html"><span class="doc">NDPluginPva</span></a> sends to EPICS.</p>
+<p>The EPICS_NTNDA_Viewer has a number of significant advantages compared to
+the EPICS_AD_Viewer:</p>
+<ul class="simple">
+<li><p>The NTNDArray data is transmitted “atomically” over the network,
+rather than using separate PVs for the image data and the metadata
+(image dimensions, color mode, etc.)</p></li>
+<li><p>NTNDArrays and pvAccess support sending compressed arrays over the
+network. Beginning with ADViewers R1-3 the EPICS_NTNDA_Viewer can
+decompress the NTNDArrays and display them. This can significantly
+reduce the required network bandwith when the IOC and the viewer are
+running on different machines.</p></li>
+<li><p>When using Channel Access the data type of the waveform record is
+fixed at iocInit, and cannot be changed at runtime. This means, for
+example, that if the user might want to view both 8-bit images,
+16-bit images, and 64-bit double FFT images then the waveform record
+would need to be 64-bit double, which adds a factor of 8 network
+overhead when viewing 8-bit images. pvAccess changes the data type of
+the NTNDArrays dynamically at run-time, removing this restriction.</p></li>
+<li><p>Channel Access requires setting <code class="docutils literal notranslate"><span class="pre">EPICS_CA_MAX_ARRAY_BYTES</span></code>, which is a
+source of considerable confusion and frustration for users. pvAccess
+does not use <code class="docutils literal notranslate"><span class="pre">EPICS_CA_MAX_ARRAY_BYTES</span></code> and there is no restriction on
+the size of the NTNDArrays.</p></li>
+<li><p>The performance using pvAccess is significantly better than using
+Channel Access. NDPluginPva is 5-10 times faster than
+NDPluginStdArrays, and ImageJ can display 1.5-2 times more images/s
+with pvAccess than with Channel Access.</p></li>
+</ul>
+<p>To use these ImageJ plugins do the following:</p>
+<p>To use this ImageJ plugin do the following:</p>
+<ul>
+<li><p>Install ImageJ from <a class="reference external" href="https://imagej.nih.gov/ij/download.html">ImageJ download
+site</a>.</p></li>
+<li><p>Copy the entire directory <code class="docutils literal notranslate"><span class="pre">ADViewers/ImageJ/EPICS_areaDetector</span></code> to
+the <code class="docutils literal notranslate"><span class="pre">plugins/</span></code> directory in the ImageJ installation location. On OS X
+this can be done with the command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cp</span> <span class="o">-</span><span class="n">r</span> <span class="n">ADViewers</span><span class="o">/</span><span class="n">ImageJ</span><span class="o">/</span><span class="n">EPICS_areaDetector</span> <span class="o">/</span><span class="n">Applications</span><span class="o">/</span><span class="n">ImageJ</span><span class="o">/</span><span class="n">plugins</span>
+</pre></div>
+</div>
+</li>
+<li><p>The ImageJ plugins are supplied as Java source code, so you will need
+to compile the Java code.
+This can be done in the <code class="docutils literal notranslate"><span class="pre">ImageJ</span> <span class="pre">Plugins/Compile</span> <span class="pre">and</span> <span class="pre">Run</span></code> menu.
+Browse for the appropriate source file
+(<code class="docutils literal notranslate"><span class="pre">EPICS_NTNDA_Viewer.java</span></code>) to compile and run it.
+The compilation step only needs to be done once, creating the required .class files.
+After this it will appear in the <code class="docutils literal notranslate"><span class="pre">ImageJ/Plugins/EPICS_areaDetector</span></code> menu.</p></li>
+<li><p>For the EPICS_NTNDA_Viewer to decompress arrays these additional
+steps are required:</p>
+<ul>
+<li><p>The decompression is done using the C libraries because there does
+not appear to be native Java code for blosc decompression, and the
+native Java code for jpeg decompression is signifcantly more
+complicated (and probably slower) than just using the C library.
+The required libraries on Linux are <code class="docutils literal notranslate"><span class="pre">decompressJPEG.so</span></code>, <code class="docutils literal notranslate"><span class="pre">libjpeg.so</span></code>,
+<code class="docutils literal notranslate"><span class="pre">libblosc.so</span></code>, and <code class="docutils literal notranslate"><span class="pre">libzlib.so</span></code>. On Windows the libraries are
+<code class="docutils literal notranslate"><span class="pre">decompressJPEG.dll</span></code>, <code class="docutils literal notranslate"><span class="pre">jpeg.dll</span></code>, <code class="docutils literal notranslate"><span class="pre">blosc.dll</span></code>, and <code class="docutils literal notranslate"><span class="pre">zlib.dll</span></code>.</p></li>
+<li><p>These libraries can all be built as part of
+<code class="docutils literal notranslate"><span class="pre">areaDetector/ADSupport</span></code>, and this is recommended. If the ImageJ
+viewers are being installed at a location which is not building
+ADSupport then pre-built versions of the ADSupport libraries are
+available at
+<a class="reference external" href="https://cars.uchicago.edu/software/pub/ADSupport">cars.uchicago.edu/software/pub/ADSupport</a>.
+Both tar and zip files are available there.</p></li>
+<li><p>ImageJ needs to be able to find these shareable libraries to
+handle compressed arrays. One way to do this is to add
+<code class="docutils literal notranslate"><span class="pre">[YOUR_LOCATION]areaDetector/ADSupport/lib/linux-x86_64/</span></code> to the
+<code class="docutils literal notranslate"><span class="pre">LD_LIBRARY_PATH</span></code> environment variable on Linux, and
+<code class="docutils literal notranslate"><span class="pre">[YOUR_LOCATION]areaDetector/ADSupport/bin/windows-x64</span></code> to the <code class="docutils literal notranslate"><span class="pre">PATH</span></code>
+environment variable on Windows. This assumes that ADSupport was
+built using <code class="docutils literal notranslate"><span class="pre">WITH_BLOSC=YES</span></code>, <code class="docutils literal notranslate"><span class="pre">WITH_JPEG=YES</span></code>, <code class="docutils literal notranslate"><span class="pre">BLOSC_EXTERNAL=NO</span></code>, and
+<code class="docutils literal notranslate"><span class="pre">JPEG_EXTERNAL=NO</span></code>.</p></li>
+<li><p>In principle another way to do this is to set the jna.library.path
+property to point to that directory when starting ImageJ, e.g.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">java</span> <span class="o">-</span><span class="n">Djna</span><span class="o">.</span><span class="n">library</span><span class="o">.</span><span class="n">path</span><span class="o">=/</span><span class="n">home</span><span class="o">/</span><span class="n">epics</span><span class="o">/</span><span class="n">support</span><span class="o">/</span><span class="n">areaDetector</span><span class="o">/</span><span class="n">ADSupport</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">linux</span><span class="o">-</span><span class="n">x86_64</span> <span class="o">-</span><span class="n">jar</span> <span class="n">ij</span><span class="o">.</span><span class="n">jar</span>
+</pre></div>
+</div>
+<p>However, ImageJ is normally started via an executable file rather
+than a script invoking <code class="docutils literal notranslate"><span class="pre">ij.jar</span></code> on both Linux and Windows, and
+loading via the above command requires other settings as well to
+make ImageJ work properly.</p>
+</li>
+<li><p>The ADViewers distribution includes two new jar files,
+<code class="docutils literal notranslate"><span class="pre">jna-5.1.0.jar</span></code> and <code class="docutils literal notranslate"><span class="pre">jblosc-1.0.1.dev.jar</span></code>. The jna file provides
+support for Java Native Access, which is the interface to calling
+the shareable libraries. The jblosc file provides a Java wrapper
+around the blosc shareable library. These files need to be copied
+to <code class="docutils literal notranslate"><span class="pre">ImageJ/plugins/EPICS_areaDetector</span></code> along with the other files in
+the <code class="docutils literal notranslate"><span class="pre">ADViewers/ImageJ/EPICS_areaDetector</span></code> directory.</p></li>
+</ul>
+</li>
+<li><p>This ImageJ viewer uses the pure-Java libraries for EPICS pvAccess.
+This means that unlike the IDL Viewer, no
+C-based shareable-libraries or DLLs are needed.</p></li>
+<li><p>When using this V4 EPICS_NTNDA_Viewer it is not necessary to
+set <code class="docutils literal notranslate"><span class="pre">EPICS_CA_MAX_ARRAY_BYTES</span></code> on either the ImageJ client or the IOC
+processes.</p></li>
+<li><p>Start ImageJ and go to the <code class="docutils literal notranslate"><span class="pre">Plugins/EPICS_areaDetector/EPICS_NTNDA_Viewer</span></code>
+to run the plugin.</p></li>
+<li><p>Type in the channel name for the NDPluginPva plugin for the detector to be viewed
+(e.g. 13SIM1:Pva1:Image).</p></li>
+<li><p>The background color of the channel name will change to green
+and you should see message saying that the channel has connected. If you
+don’t the most likely problem is a firewall.</p></li>
+<li><p>Press the Start button to begin displaying images.</p></li>
+</ul>
+<p>The control window for EPICS_NTNDA_Viewer is shown below.
+The channel name can be entered manually, or can be set before running ImageJ
+with the environment variable EPICS_NTNDA_VIEWER_CHANNELNAME.
+If the environment variable is not set then the channel name will be automatically
+restored from a settings file the next time the plugin is run.
+The array dimensions and the number of frames per second actually
+being displayed by ImageJ is shown. There is a status window that shows
+whether the EPICS PVs are connected and the number of arrays received
+since the last status update, which is every 2 seconds.</p>
+<p>Press the Snap button to make a copy of the current frame in a new
+window. ImageJ can then be used to process, annotate, etc. that image.</p>
+<p>To capture a sequence of images into an ImageJ “stack” select “Capture
+To Stack”. The image sequence will be stored in the ImageJ buffer and a
+scroll bar will appear to allow you to scroll through the images. The
+stack can be saved to disk in a large number of formats, including AVI.</p>
+<p>Note that plugin automatically resets the image image brightness and contrast
+when creating a new window.
+This will often provide a reasonable values. To optimize the brightness and
+contrast use the Image/Adjust/Brightness/Control menu in ImageJ. The
+keyboard shortcut for this is Control+Shift+C, which is worth
+remembering. Opening the Brightness and Contrast window will first do an
+autoscaling, which is often quite good. Pressing the Auto button
+repeatedly will step through several brightness/contrast settings.</p>
+<p>The following is the main ImageJ window.</p>
+<figure class="align-center" id="id1">
+<img alt="../_images/ImageJ_Main_Screen.png" src="../_images/ImageJ_Main_Screen.png" />
+<figcaption>
+<p><span class="caption-text">ImageJ main window.</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>The following is the EPICS_NTNDA_Viewer plugin control, located in the
+ImageJ “Plugins/EPICS_areaDetector/EPICS NTNDA Viewer” menu.</p>
+<figure class="align-center" id="id2">
+<img alt="../_images/ImageJ_EPICS_NTNDA_Viewer.png" src="../_images/ImageJ_EPICS_NTNDA_Viewer.png" />
+<figcaption>
+<p><span class="caption-text">ImageJ EPICS_NTNDA_Viewer plugin control window</span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>The following is the image display window, which will appear when the
+Start button is pressed in the EPICS_NTNDA_Viewer control window.</p>
+<figure class="align-center" id="id3">
+<img alt="../_images/ImageJ_EPICS_AD_Viewer_display.jpg" src="../_images/ImageJ_EPICS_AD_Viewer_display.jpg" />
+<figcaption>
+<p><span class="caption-text">ImageJ EPICS_NTNDA_Viewer plugin display window with line selection</span><a class="headerlink" href="#id3" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id4">
+<img alt="../_images/ImageJ_EPICS_AD_Viewer_DynamicProfile.png" src="../_images/ImageJ_EPICS_AD_Viewer_DynamicProfile.png" />
+<figcaption>
+<p><span class="caption-text">ImageJ EPICS_NTNDA_Viewer dynamic line profile of the above image</span><a class="headerlink" href="#id4" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>The following is a screen shot when using the EPICS_NTNDA_Viewer to
+display compressed NTNDArrays. The source is the simDetector running on
+a Linux machine, generating 1024x1024 UInt8 images at about 95 frames/s.
+This is about 95MB/s or 760 Mb/s. The NDPluginCodec is compressing using
+the Blosc ZSTD compressor with compression level=5 and Bit shuffle.
+Actually Bit shuffle does nothing in 8-bit mode, so this could also be
+None. There are 6 Blosc threads. The compression factor is 151, i.e. the
+output arrays are 151 times smaller than the uncompressed arrays. The
+Codec output goes to the NDPluginPva plugin which serves the NTNDArrays
+on the network. The ImageJ viewer is running on a Windows machine and is
+decompressing the arrays and displaying them at the full 95 frames/s
+rate. The Windows Task Manager Network Monitor shows that the actual
+network utilization is only 6.5 Mb/s, compared to over 760 Mb/s if we
+were transmitting uncompressed arrays. The Windows machine has 8 cores,
+and ImageJ is using approximately 1 core to decompress the arrays and
+update the display at 95 frames/s.</p>
+<figure class="align-center" id="id5">
+<img alt="../_images/ImageJ_EPICS_NTNDA_Viewer_Decompress.png" src="../_images/ImageJ_EPICS_NTNDA_Viewer_Decompress.png" />
+<figcaption>
+<p><span class="caption-text">Screen ImageJ EPICS_NTNDA_Viewer on a Windows machine
+displaying Blosc/ZLIB compressed images</span><a class="headerlink" href="#id5" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="ImageJ_EPICS_AD_Viewer.html" class="btn btn-neutral float-left" title="ImageJ Channel Access Viewer (EPICS_AD_Viewer.java)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="ImageJ_EPICS_AD_Controller.html" class="btn btn-neutral float-right" title="ImageJ Controller (EPICS_AD_Controller.java)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Mark Rivers.
+      <span class="lastupdated">Last updated on 2023-March-12.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

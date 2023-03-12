@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NDPluginCodec &mdash; areaDetector Support</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme_overrides.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="NDPluginColorConvert" href="NDPluginColorConvert.html" />
+    <link rel="prev" title="NDPluginCircularBuff" href="NDPluginCircularBuff.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            areaDetector
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../readme.html">Readme</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../user_guide.html">User Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arch.html">Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="asynPortDriver.html">asynPortDriver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NDArray.html">NDArray</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../detector_drivers.html">Detector Drivers</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="plugins.html">areaDetector Plugins</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="plugin_overview.html">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginDriver.html">NDPluginDriver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="plugin_guidelines.html">Guidelines and rules for plugins</a></li>
+<li class="toctree-l3"><a class="reference internal" href="plugin_medm.html">Base class medm screens</a></li>
+<li class="toctree-l3"><a class="reference internal" href="common_plugins.html">commonPlugins.cmd</a></li>
+<li class="toctree-l3"><a class="reference internal" href="plugin_performance.html">Performance example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginAttrPlot.html">NDPluginAttrPlot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginAttribute.html">NDPluginAttribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginBadPixel.html">NDPluginBadPixel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginCircularBuff.html">NDPluginCircularBuff</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">NDPluginCodec</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#compressed-ndarray-semantics">Compressed NDArray Semantics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#compression">Compression</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#decompression">Decompression</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#configuration">Configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#screen-shots">Screen shots</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#performance">Performance</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginColorConvert.html">NDPluginColorConvert</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginFFT.html">NDPluginFFT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginFile.html">NDPluginFile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginGather.html">NDPluginGather</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginOverlay.html">NDPluginOverlay</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginProcess.html">NDPluginProcess</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginPva.html">NDPluginPva</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginROI.html">NDPluginROI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginROIStat.html">NDPluginROIStat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginScatter.html">NDPluginScatter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginStats.html">NDPluginStats</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginStdArrays.html">NDPluginStdArrays</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginTimeSeries.html">NDPluginTimeSeries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginTransform.html">NDPluginTransform</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginPos.html">NDPosPlugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ffmpegServer.html">ffmpegServer</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../additional_plugins.html">Additional plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="medm.html">MEDM screens</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADViewers/ad_viewers.html">areaDetector Viewers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../acknowledgements.html">Acknowledgements and licenses</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../install_guide.html">Install Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release.html">Top-level Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ADCore_release.html">ADCore Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ADSupport_release.html">ADSupport Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../doxygen.html">Source Code Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../detectors.html">Supported Detectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../legacy_versions.html">Legacy Versions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">areaDetector</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../user_guide.html">areaDetector Users Guide</a></li>
+          <li class="breadcrumb-item"><a href="plugins.html">areaDetector Plugins</a></li>
+      <li class="breadcrumb-item active">NDPluginCodec</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/ADCore/NDPluginCodec.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="ndplugincodec">
+<h1><a class="toc-backref" href="#id4" role="doc-backlink">NDPluginCodec</a><a class="headerlink" href="#ndplugincodec" title="Permalink to this heading"></a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">author<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Bruno Martins, Facility for Rare Isotope Beams
+and Mark Rivers, University of Chicago</p>
+</dd>
+</dl>
+<nav class="contents" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#ndplugincodec" id="id4">NDPluginCodec</a></p>
+<ul>
+<li><p><a class="reference internal" href="#overview" id="id5">Overview</a></p></li>
+<li><p><a class="reference internal" href="#compressed-ndarray-semantics" id="id6">Compressed NDArray Semantics</a></p>
+<ul>
+<li><p><a class="reference internal" href="#uncompressed-ndarrays" id="id7">Uncompressed NDArrays</a></p></li>
+<li><p><a class="reference internal" href="#compressed-ndarrays" id="id8">Compressed NDArrays</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#compression" id="id9">Compression</a></p></li>
+<li><p><a class="reference internal" href="#decompression" id="id10">Decompression</a></p></li>
+<li><p><a class="reference internal" href="#parameters" id="id11">Parameters</a></p></li>
+<li><p><a class="reference internal" href="#configuration" id="id12">Configuration</a></p></li>
+<li><p><a class="reference internal" href="#screen-shots" id="id13">Screen shots</a></p></li>
+<li><p><a class="reference internal" href="#performance" id="id14">Performance</a></p></li>
+</ul>
+</li>
+</ul>
+</nav>
+<section id="overview">
+<h2><a class="toc-backref" href="#id5" role="doc-backlink">Overview</a><a class="headerlink" href="#overview" title="Permalink to this heading"></a></h2>
+<p>NDPluginCodec is a tool for compressing and decomppressing NDArray data
+according to a user selectable codec. Compression information is stored
+in the <code class="docutils literal notranslate"><span class="pre">codec</span></code> and <code class="docutils literal notranslate"><span class="pre">compressionSize</span></code> fields of the NDArray.</p>
+</section>
+<section id="compressed-ndarray-semantics">
+<h2><a class="toc-backref" href="#id6" role="doc-backlink">Compressed NDArray Semantics</a><a class="headerlink" href="#compressed-ndarray-semantics" title="Permalink to this heading"></a></h2>
+<p>The new NDArray field <code class="docutils literal notranslate"><span class="pre">codec</span></code> is used to indicate if an NDArray holds
+compressed or uncompressed data.</p>
+<section id="uncompressed-ndarrays">
+<h3><a class="toc-backref" href="#id7" role="doc-backlink">Uncompressed NDArrays</a><a class="headerlink" href="#uncompressed-ndarrays" title="Permalink to this heading"></a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">codec</span></code> is empty (<code class="docutils literal notranslate"><span class="pre">codec.empty()==true</span></code>).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">compressedSize</span></code> is equal to <code class="docutils literal notranslate"><span class="pre">dataSize</span></code>.</p></li>
+</ul>
+</section>
+<section id="compressed-ndarrays">
+<h3><a class="toc-backref" href="#id8" role="doc-backlink">Compressed NDArrays</a><a class="headerlink" href="#compressed-ndarrays" title="Permalink to this heading"></a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">codec.name</span></code> holds the name of the codec that was used to compress the
+data. This plugin currently supports four codecs: “jpeg”, “blosc”, “lz4”, and “bzlz4”.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">compressedSize</span></code> holds the length of the compressed data in
+<code class="docutils literal notranslate"><span class="pre">pData</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dataSize</span></code> holds the length of the allocated <code class="docutils literal notranslate"><span class="pre">pData</span></code> buffer, as
+usual.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pData</span></code> holds the compressed data as <code class="docutils literal notranslate"><span class="pre">unsigned</span> <span class="pre">char</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dataType</span></code> holds the data type of the <strong>uncompressed</strong> data. This
+will be used for decompression.</p></li>
+</ul>
+</section>
+</section>
+<section id="compression">
+<h2><a class="toc-backref" href="#id9" role="doc-backlink">Compression</a><a class="headerlink" href="#compression" title="Permalink to this heading"></a></h2>
+<p>To compress the data, the Mode parameter must be set to Compress. Also,
+the parameter Compressor must be set to something other than None. After
+the compression is done, the CompFactor parameter will be updated with
+the compression factor achieved. CompFactor is calculated according to
+the following formula:</p>
+<p><code class="docutils literal notranslate"><span class="pre">dataSize/compressedSize</span></code></p>
+<p>Currently, five choices are available for the Compressor parameter:</p>
+<ul class="simple">
+<li><p>None: No compression will be performed. The NDArray will be passed
+forward as-is.</p></li>
+<li><p>JPEG: The compression will be performed according to the JPEG format.
+<code class="docutils literal notranslate"><span class="pre">pData</span></code> will contain a full, valid JPEG file in memory after the
+compression is done. JPEG compression is limited to unsigned 8-bit data (UInt8).
+It is also limited to ColorMode=Mono or RGB1.  For Mono the input data is
+2-D (NX, NY).  For RGB1 it is 3-D [3, NX, NY].
+JPEG compression is controlled with the following parameters:</p>
+<ul>
+<li><p>JPEGQuality: The image quality to be used for the compression. The
+quality value must be between 1 and 100, with 100 meaning best
+quality (and worst compression factor).</p></li>
+</ul>
+</li>
+<li><p>Blosc: The compression will be performed according to the Blosc
+format. The compression is controlled via the following parameters:</p>
+<ul>
+<li><p>BloscCompressor: which compression algorithm to use. Available
+choices: BloscLZ, LZ4, LZ4HC, Snappy, ZLIB and ZSTD.</p></li>
+<li><p>BloscCLevel: the compression level for the selected algorithm.</p></li>
+<li><p>BloscShuffle: controls whether data will be shuffled before
+compression. Choices are None, Byte, and Bit.</p></li>
+<li><p>BloscNumThreads: controls how many threads will be used by the
+Blosc compressor to improve performance.</p></li>
+</ul>
+</li>
+<li><p>LZ4: The compression will be performed according to the LZ4
+format. This is similar to the Blosc compressor with BloscShuffle=None
+but uses the native LZ4 library, rather than Blosc.
+It is one of the compressors used on the ZeroMQ socket interface on
+the Eiger detector from Dectris. NDPluginCodec can thus be used to decompress
+this data.</p></li>
+<li><p>BSLZ4: The compression will be performed according to the Bitshuffle/LZ4
+format. This is similar to the Blosc compressor with BloscShuffle=Bit
+but uses the native LZ4 library, rather than Blosc.
+It is one of the compressors used on the ZeroMQ socket interface on
+the Eiger detector from Dectris. NDPluginCodec can thus be used to decompress
+this data.</p></li>
+</ul>
+<p>Note that BloscNumThreads controls the number of threads created from a
+single NDPluginCodec thread. The performance of all the
+compressors can also be increased by running multiple NDPluginCodec
+threads within a single plugin instance. This is controlled with the
+NumThreads record, as for most other plugins.</p>
+<p>It is important to note that plugins downstream of NDCodec that are
+receiving compressed NDArrays <strong>must</strong> have been constructed with
+NDPluginDriver’s <code class="docutils literal notranslate"><span class="pre">compressionAware=true</span></code>, otherwise compressed arrays
+<strong>will be dropped</strong> by them at runtime. Currently only NDPluginCodec,
+NDPluginPva, and NDFileHDF5 are able to handle compressed NDArrays.</p>
+</section>
+<section id="decompression">
+<h2><a class="toc-backref" href="#id10" role="doc-backlink">Decompression</a><a class="headerlink" href="#decompression" title="Permalink to this heading"></a></h2>
+<p>If Mode is set to Decompress, decompression happens automatically and
+transparently if the codec is supported. No other parameter needs to be
+set for the decompression to work.</p>
+</section>
+<section id="parameters">
+<h2><a class="toc-backref" href="#id11" role="doc-backlink">Parameters</a><a class="headerlink" href="#parameters" title="Permalink to this heading"></a></h2>
+<p>NDPluginCodec inherits from NDPluginDriver. The <a class="reference external" href="../areaDetectorDoxygenHTML/class_n_d_plugin_codec.html">NDPluginCodec class
+documentation</a>
+describes this class in detail.</p>
+<p>NDPluginCodec defines the following parameters. It also implements all
+of the standard plugin parameters from
+<a class="reference internal" href="NDPluginDriver.html"><span class="doc">NDPluginDriver</span></a>. The EPICS database
+NDCodec.template provides access to these parameters, listed in the
+following table.</p>
+<table class="table-bordered table-striped table-hover docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 40%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head"></th>
+<th class="head" colspan="5"><p><strong>Parameter Definitions in NDPluginCodec.h and EPICS Record Definitions in NDCodec.template</strong></p></th>
+</tr>
+<tr class="row-even"><th class="head"><p>Parameter index variable</p></th>
+<th class="head"><p>asyn interface</p></th>
+<th class="head"><p>Access</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>drvInfo string</p></th>
+<th class="head"><p>EPICS record name</p></th>
+<th class="head"><p>EPICS record type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-odd"><td><p>NDCodecMode</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>The plugin mode (NDCodecMode_t).</p></td>
+<td><p>MODE</p></td>
+<td><p>$(P)$(R)Mode, $(P)$(R)Mode_RBV</p></td>
+<td><p>mbbo, mbbi</p></td>
+</tr>
+<tr class="row-even"><td><p>NDCodecCompressor</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>Which compressor to use (NDCodecCompressor_t). Choices are: <br>
+None <br>
+JPEG <br>
+Blosc <br>
+LZ4 <br>
+BSLZ4 <br></p></td>
+<td><p>COMPRESSOR</p></td>
+<td><p>$(P)$(R)Compressor, $(P)$(R)Compressor_RBV</p></td>
+<td><p>mbbo, mbbi</p></td>
+</tr>
+<tr class="row-odd"><td><p>NDCodecCompFactor</p></td>
+<td><p>asynFloat64</p></td>
+<td><p>r/w</p></td>
+<td><p>Compression factor.</p></td>
+<td><p>COMP_FACTOR</p></td>
+<td><p>$(P)$(R)CompFactor</p></td>
+<td><p>ai</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td colspan="5"><p><strong>Parameters for the JPEG Compressor</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>NDCodecJPEGQuality</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>JPEG compression quality, 1-100.</p></td>
+<td><p>JPEG_QUALITY</p></td>
+<td><p>$(P)$(R)JPEGQuality, $(P)$(R)JPEGQuality_RBV</p></td>
+<td><p>longout, longin</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td colspan="5"><p><strong>Parameters for the Blosc Compressor</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>NDCodecBloscCompressor</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>Which Blosc compressor to use (NDCodecBloscComp_t). Choices are: <br>
+BloscLZ <br>
+LZ4 <br>
+LZ4HC <br>
+SNAPPY <br>
+ZLIB <br>
+ZSTD <br></p></td>
+<td><p>BLOSC_COMPRESSOR</p></td>
+<td><p>$(P)$(R)BloscCompressor, $(P)$(R)BloscCompressor_RBV</p></td>
+<td><p>mbbo, mbbi</p></td>
+</tr>
+<tr class="row-even"><td><p>NDCodecBloscCLevel</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>Blosc compression level.</p></td>
+<td><p>BLOSC_CLEVEL</p></td>
+<td><p>$(P)$(R)BloscCLevel, $(P)$(R)BloscCLevel_RBV</p></td>
+<td><p>longout, longin</p></td>
+</tr>
+<tr class="row-odd"><td><p>NDCodecBloscShuffle</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>Blosc shuffle data before compression. Choices are: <br>
+None <br>
+Bit Shuffle <br>
+Byte Shuffle <br></p></td>
+<td><p>BLOSC_SHUFFLE</p></td>
+<td><p>$(P)$(R)BloscShuffle, $(P)$(R)BloscShuffle_RBV</p></td>
+<td><p>mbbo, mbbi</p></td>
+</tr>
+<tr class="row-even"><td><p>NDCodecBloscNumThreads</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>Blosc number of threads for compression/decompression.</p></td>
+<td><p>BLOSC_NUMTHREADS</p></td>
+<td><p>$(P)$(R)BloscNumThreads, $(P)$(R)BloscNumThreads_RBV</p></td>
+<td><p>longout, longin</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td colspan="5"><p><strong>Parameters for Diagnostics</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>NDCodecCodecStatus</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/o</p></td>
+<td><p>Status of the compression/decompression. Values are “Success”, “Warning”, and “Error”.</p></td>
+<td><p>CODEC_STATUS</p></td>
+<td><p>$(P)$(R)CodecStatus</p></td>
+<td><p>mbbi</p></td>
+</tr>
+<tr class="row-odd"><td><p>NDCodecCodecError</p></td>
+<td><p>asynOctet</p></td>
+<td><p>r/o</p></td>
+<td><p>Error message if CodecStatus is “Warning” or “Error”.</p></td>
+<td><p>CODEC_ERROR</p></td>
+<td><p>$(P)$(R)CodecError</p></td>
+<td><p>waveform</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="configuration">
+<h2><a class="toc-backref" href="#id12" role="doc-backlink">Configuration</a><a class="headerlink" href="#configuration" title="Permalink to this heading"></a></h2>
+<p>The NDPluginCodec plugin is created with the following command, either
+from C/C++ or from the EPICS IOC shell.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span> <span class="n">NDCodecConfigure</span><span class="p">(</span><span class="n">const</span> <span class="n">char</span> <span class="o">*</span><span class="n">portName</span><span class="p">,</span> <span class="nb">int</span> <span class="n">queueSize</span><span class="p">,</span> <span class="nb">int</span> <span class="n">blockingCallbacks</span><span class="p">,</span>
+                            <span class="n">const</span> <span class="n">char</span> <span class="o">*</span><span class="n">NDArrayPort</span><span class="p">,</span> <span class="nb">int</span> <span class="n">NDArrayAddr</span><span class="p">,</span>
+                            <span class="nb">int</span> <span class="n">maxBuffers</span><span class="p">,</span> <span class="n">size_t</span> <span class="n">maxMemory</span><span class="p">,</span>
+                            <span class="nb">int</span> <span class="n">priority</span><span class="p">,</span> <span class="nb">int</span> <span class="n">stackSize</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>For details on the meaning of the parameters to this function refer to
+the detailed documentation on the NDCodecConfigure function in the
+<a class="reference external" href="../areaDetectorDoxygenHTML/_n_d_plugin_codec_8cpp.html">NDPluginCodec.cpp
+documentation</a>
+and in the documentation for the constructor for the <a class="reference external" href="../areaDetectorDoxygenHTML/class_n_d_plugin_codec.html">NDPluginCodec
+class</a>.</p>
+</section>
+<section id="screen-shots">
+<h2><a class="toc-backref" href="#id13" role="doc-backlink">Screen shots</a><a class="headerlink" href="#screen-shots" title="Permalink to this heading"></a></h2>
+<p>The following is the MEDM screen that provides access to the parameters
+in NDPluginDriver.h and NDPluginCodec.h through records in
+NDPluginBase.template and NDCodec.template.</p>
+<figure class="align-center" id="id1">
+<img alt="../_images/NDCodec.png" src="../_images/NDCodec.png" />
+<figcaption>
+<p><span class="caption-text">NDCodec.adl</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="performance">
+<h2><a class="toc-backref" href="#id14" role="doc-backlink">Performance</a><a class="headerlink" href="#performance" title="Permalink to this heading"></a></h2>
+<p>The following screens show the performance that can be achieved with
+NDPluginCodec. For this test the simDetector driver was generating
+1024x1024 UInt32 arrays at ~1280 arrays/s. These were compressed using
+Blosc LZ4 compression with Bit shuffle and 6 Blosc threads. The
+compression factor was ~42, so the output arrays were 98 KB, compared to
+the input size of 4 MB. When running with a single plugin thread
+(NumThreads=1) the plugin sometimes could not keep up. By increasing
+numThreads to 2 the plugin could always process the full 1280 arrays/s
+without dropping any arrays. The test was run on a 20-core Linux
+machine, and the simDetector IOC was using ~7 cores. NDPluginCodec was
+using ~6 of these. Since each array is 4 MB, this is a compression rate
+of ~5.0 GB/s, or about 5 times the capacity of 10 Gbit Ethernet.</p>
+<figure class="align-center" id="id2">
+<img alt="../_images/NDCodec_Performance.png" src="../_images/NDCodec_Performance.png" />
+<figcaption>
+<p><span class="caption-text">NDCodec performance with ~1280 32-bit frames/s</span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id3">
+<img alt="../_images/NDCodec_Performance_More.png" src="../_images/NDCodec_Performance_More.png" />
+<figcaption>
+<p><span class="caption-text">NDPluginBaseFull.adl showing that NumThreads was set to 2</span><a class="headerlink" href="#id3" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="NDPluginCircularBuff.html" class="btn btn-neutral float-left" title="NDPluginCircularBuff" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="NDPluginColorConvert.html" class="btn btn-neutral float-right" title="NDPluginColorConvert" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Mark Rivers.
+      <span class="lastupdated">Last updated on 2023-March-12.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

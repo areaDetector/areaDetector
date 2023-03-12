@@ -1,0 +1,1277 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NDFileHDF5 &mdash; areaDetector Support</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme_overrides.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="NDFileNexus" href="NDFileNexus.html" />
+    <link rel="prev" title="NDFileTIFF" href="NDFileTIFF.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            areaDetector
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../readme.html">Readme</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../user_guide.html">User Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arch.html">Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="asynPortDriver.html">asynPortDriver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NDArray.html">NDArray</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../detector_drivers.html">Detector Drivers</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="plugins.html">areaDetector Plugins</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="plugin_overview.html">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginDriver.html">NDPluginDriver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="plugin_guidelines.html">Guidelines and rules for plugins</a></li>
+<li class="toctree-l3"><a class="reference internal" href="plugin_medm.html">Base class medm screens</a></li>
+<li class="toctree-l3"><a class="reference internal" href="common_plugins.html">commonPlugins.cmd</a></li>
+<li class="toctree-l3"><a class="reference internal" href="plugin_performance.html">Performance example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginAttrPlot.html">NDPluginAttrPlot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginAttribute.html">NDPluginAttribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginBadPixel.html">NDPluginBadPixel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginCircularBuff.html">NDPluginCircularBuff</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginCodec.html">NDPluginCodec</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginColorConvert.html">NDPluginColorConvert</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginFFT.html">NDPluginFFT</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="NDPluginFile.html">NDPluginFile</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="NDFileJPEG.html">NDFileJPEG</a></li>
+<li class="toctree-l4"><a class="reference internal" href="NDFileTIFF.html">NDFileTIFF</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">NDFileHDF5</a></li>
+<li class="toctree-l4"><a class="reference internal" href="NDFileNexus.html">NDFileNexus</a></li>
+<li class="toctree-l4"><a class="reference internal" href="NDFileMagick.html">NDFileMagick</a></li>
+<li class="toctree-l4"><a class="reference internal" href="NDFileNetCDF.html">NDFileNetCDF</a></li>
+<li class="toctree-l4"><a class="reference internal" href="NDPluginFile.html#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="NDPluginFile.html#null-file-plugin">Null file plugin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="NDPluginFile.html#performance">Performance</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginGather.html">NDPluginGather</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginOverlay.html">NDPluginOverlay</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginProcess.html">NDPluginProcess</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginPva.html">NDPluginPva</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginROI.html">NDPluginROI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginROIStat.html">NDPluginROIStat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginScatter.html">NDPluginScatter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginStats.html">NDPluginStats</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginStdArrays.html">NDPluginStdArrays</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginTimeSeries.html">NDPluginTimeSeries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginTransform.html">NDPluginTransform</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginPos.html">NDPosPlugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ffmpegServer.html">ffmpegServer</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../additional_plugins.html">Additional plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="medm.html">MEDM screens</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADViewers/ad_viewers.html">areaDetector Viewers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../acknowledgements.html">Acknowledgements and licenses</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../install_guide.html">Install Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release.html">Top-level Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ADCore_release.html">ADCore Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ADSupport_release.html">ADSupport Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../doxygen.html">Source Code Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../detectors.html">Supported Detectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../legacy_versions.html">Legacy Versions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">areaDetector</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../user_guide.html">areaDetector Users Guide</a></li>
+          <li class="breadcrumb-item"><a href="plugins.html">areaDetector Plugins</a></li>
+          <li class="breadcrumb-item"><a href="NDPluginFile.html">NDPluginFile</a></li>
+      <li class="breadcrumb-item active">NDFileHDF5</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/ADCore/NDFileHDF5.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="ndfilehdf5">
+<h1><a class="toc-backref" href="#id2" role="doc-backlink">NDFileHDF5</a><a class="headerlink" href="#ndfilehdf5" title="Permalink to this heading"></a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">authors<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Ulrik Pedersen (Diamond Light Source), Arthur Glowacki
+(Argonne National Laboratory), Alan Greer (Observatory Sciences),
+Mark Rivers (University of Chicago)</p>
+</dd>
+</dl>
+<nav class="contents" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#ndfilehdf5" id="id2">NDFileHDF5</a></p>
+<ul>
+<li><p><a class="reference internal" href="#overview" id="id3">Overview</a></p></li>
+<li><p><a class="reference internal" href="#file-structure-layout" id="id4">File Structure Layout</a></p>
+<ul>
+<li><p><a class="reference internal" href="#xml-defined-file-structure-layout" id="id5">XML Defined File Structure Layout</a></p></li>
+<li><p><a class="reference internal" href="#default-file-structure-layout" id="id6">Default File Structure Layout</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#ndarray-attributes" id="id7">NDArray attributes</a></p></li>
+<li><p><a class="reference internal" href="#default-tree-structure" id="id8">Default tree structure</a></p></li>
+<li><p><a class="reference internal" href="#hdf5-file-viewers" id="id9">HDF5 File Viewers</a></p></li>
+<li><p><a class="reference internal" href="#multiple-dimensions" id="id10">Multiple Dimensions</a></p></li>
+<li><p><a class="reference internal" href="#chunking" id="id11">Chunking</a></p></li>
+<li><p><a class="reference internal" href="#compression" id="id12">Compression</a></p></li>
+<li><p><a class="reference internal" href="#single-writer-multiple-reader-swmr" id="id13">Single Writer Multiple Reader (SWMR)</a></p></li>
+<li><p><a class="reference internal" href="#storing-attributes-with-dataset-dimensions" id="id14">Storing Attributes with Dataset Dimensions</a></p></li>
+<li><p><a class="reference internal" href="#selective-positional-placement-of-individual-frames" id="id15">Selective Positional Placement of Individual Frames</a></p></li>
+<li><p><a class="reference internal" href="#writing-index-datasets" id="id16">Writing Index Datasets</a></p></li>
+<li><p><a class="reference internal" href="#parameters-and-records" id="id17">Parameters and Records</a></p></li>
+<li><p><a class="reference internal" href="#screenshots" id="id18">Screenshots</a></p></li>
+</ul>
+</li>
+</ul>
+</nav>
+<section id="overview">
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">Overview</a><a class="headerlink" href="#overview" title="Permalink to this heading"></a></h2>
+<p>NDFileHDF5 inherits from NDPluginFile. This plugin uses the HDF5
+libraries to store data. HDF5 file format is a self-describing binary
+format supported by the <a class="reference external" href="http://www.hdfgroup.org/HDF5">hdfgroup</a>.</p>
+<p>The plugin supports all NDArray datatypes and any number of NDArray
+dimensions (tested up to 3). It supports storing multiple NDArrays in a
+single file (in stream or capture modes) where each NDArray gets
+appended to an extra dimension.</p>
+<p>NDArray attributes are stored in the HDF5 file. In case of multi-frame
+files the attributes are stored in 1D datasets (arrays).</p>
+<p>The NDFileHDF5 plugin is created with the NDFileHDF5Configure command,
+either from C/C++ or from the EPICS IOC shell.</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">NDFileHDF5Configure</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">portName</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">queueSize</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">blockingCallbacks</span><span class="p">,</span>
+<span class="w">                     </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">NDArrayPort</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">NDArrayAddr</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">maxMemory</span><span class="p">,</span>
+<span class="w">                     </span><span class="kt">int</span><span class="w"> </span><span class="n">priority</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">stackSize</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>For details on the meaning of the parameters to this function refer to
+the detailed documentation on the NDFileHDF5Configure function in the
+<a class="reference external" href="../areaDetectorDoxygenHTML/_n_d_file_h_d_f5_8cpp.html">NDFileHDF5.cpp
+documentation</a>
+and in the documentation for the constructor for the <a class="reference external" href="../areaDetectorDoxygenHTML/class_n_d_file_h_d_f5.html">NDFileHDF5
+class</a>.</p>
+</section>
+<section id="file-structure-layout">
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">File Structure Layout</a><a class="headerlink" href="#file-structure-layout" title="Permalink to this heading"></a></h2>
+<p>The HDF5 files comprises a hierachial data structure, similar to a file
+system structure with directories (groups) and files (datasets)
+[<a class="reference external" href="http://www.hdfgroup.org/HDF5/Tutor/fileorg.html">ref</a>]</p>
+<section id="xml-defined-file-structure-layout">
+<h3><a class="toc-backref" href="#id5" role="doc-backlink">XML Defined File Structure Layout</a><a class="headerlink" href="#xml-defined-file-structure-layout" title="Permalink to this heading"></a></h3>
+<p>It is possible to define the layout of the data structures in an XML
+definition file. The XML file allow defining the location of HDF5
+Groups, Datasets and Attributes based on detector data (NDArrays),
+metadata (NDAttributes) and constants (for instance NeXus tags).</p>
+<p>The XML definition contains the following 4 main elements: group,
+dataset, attribute, and hardlink. The terms refer to the HDF5 elements
+of the same names.</p>
+<ul class="simple">
+<li><p><strong>attribute:</strong> represent a HDF5 attribute (key, value metadata) and
+is assigned to groups and datasets</p></li>
+<li><p><strong>dataset:</strong> represent a HDF5 dataset (N-dimensional array). Can
+contain attributes and is assigned to a group</p></li>
+<li><p><strong>group:</strong> represent a HDF5 group. Groups can contain datasets,
+attributes and other groups (recursively)</p></li>
+<li><p><strong>hardlink:</strong> represent an HDF5 hard link. Hardlinks can point to
+other elements in the file, such as datasets. They are analogous to
+hard links in the Linux file system.</p></li>
+<li><p><strong>global:</strong> Rather than representing a HDF5 object; this element
+represents a global functionality definition</p></li>
+</ul>
+<table class="table-bordered table-striped table-hover docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>XML attribute</p></th>
+<th class="head"><p>Required</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td></td>
+<td></td>
+<td colspan="2"><p><strong>XML “attribute” element attributes</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>name</p></td>
+<td><p>yes</p></td>
+<td><p>Name (key) of the HDF attribute (key, value) pair</p></td>
+<td><p>string</p></td>
+</tr>
+<tr class="row-even"><td><p>source</p></td>
+<td><p>yes</p></td>
+<td><p>Definition of where the attribute gets its value from</p></td>
+<td><p>Enum string: “constant”, “ndattribute”</p></td>
+</tr>
+<tr class="row-odd"><td><p>when</p></td>
+<td><p>optional</p></td>
+<td><p>Event when the attribute data is written</p></td>
+<td><p>Enum string: “OnFileOpen” (default), “OnFileClose”</p></td>
+</tr>
+<tr class="row-even"><td><p>value</p></td>
+<td><p>Required only if source=”constant”</p></td>
+<td><p>The constant value to give the attribute</p></td>
+<td><p>string (possibly containing an int or float)</p></td>
+</tr>
+<tr class="row-odd"><td><p>type</p></td>
+<td><p>optional - use if source=”constant”</p></td>
+<td><p>The constant datatype</p></td>
+<td><p>Enum string: “int”, “float”, “string”</p></td>
+</tr>
+<tr class="row-even"><td><p>ndattribute</p></td>
+<td><p>Required only if source=”ndattribute”</p></td>
+<td><p>Name of the areaDetector NDAttribute which is the source of this HDF5 attribute’s
+data value</p></td>
+<td><p>string containing the name of an NDAttribute</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td colspan="2"><p><strong>XML “group” element attributes</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>name</p></td>
+<td><p>yes</p></td>
+<td><p>The (relative) name of the HDF5 group</p></td>
+<td><p>string</p></td>
+</tr>
+<tr class="row-odd"><td><p>ndattr_default</p></td>
+<td><p>optional</p></td>
+<td><p>This attribute flags a group as being a ‘default’ container for NDAttributes which
+have not been defined to be stored elsewhere. If there is no group defined with
+ndaddr_default=true, and if the root group does not have auto_ndattr_default=false,
+then the ‘default’ container will be the root group.</p></td>
+<td><p>boolean (default=false)</p></td>
+</tr>
+<tr class="row-even"><td><p>auto_ndattr_default</p></td>
+<td><p>optional</p></td>
+<td><p>If this attribute is present for the root group and is set to false then NDAttributes
+which have not been defined to be stored elsewhere will not be stored at all</p></td>
+<td><p>boolean (default=false)</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td colspan="2"><p><strong>XML “dataset” element attributes</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>name</p></td>
+<td><p>yes</p></td>
+<td><p>Name of the HDF5 dataset</p></td>
+<td><p>string</p></td>
+</tr>
+<tr class="row-odd"><td><p>source</p></td>
+<td><p>yes</p></td>
+<td><p>Definition of where the dataset gets its data values from</p></td>
+<td><p>string enum: “detector”, “ndattribute”, “constant”</p></td>
+</tr>
+<tr class="row-even"><td><p>when</p></td>
+<td><p>optional</p></td>
+<td><p>Event when the dataset data is written</p></td>
+<td><p>Enum string: “OnFileOpen”, “OnFileClose”, “OnFileWrite” (default)</p></td>
+</tr>
+<tr class="row-odd"><td><p>value</p></td>
+<td><p>Required only if source=”constant”</p></td>
+<td><p>Constant value to write directly into the HDF5 dataset</p></td>
+<td><p>String - possibly containing int or float values. Arrays of int and float values
+can also be represented in a comma-separated string</p></td>
+</tr>
+<tr class="row-even"><td><p>ndattribute</p></td>
+<td><p>Required only if source=”ndattribute”</p></td>
+<td><p>The name of the areaDetector NDAttribute to use as a data source for this HDF5 dataset</p></td>
+<td><p>string containing the name of the NDAttribute</p></td>
+</tr>
+<tr class="row-odd"><td><p>det_default</p></td>
+<td><p>optional</p></td>
+<td><p>Flag to indicate that this HDF5 dataset is the default dataset for the detector
+to write NDArrays into. Only sensible to set true if source=”detector”</p></td>
+<td><p>boolean (default=false)</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td colspan="2"><p><strong>XML “global” element attributes</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>name</p></td>
+<td><p>yes</p></td>
+<td><p>Name of the global functionality or parameter to set</p></td>
+<td><p>enum string: “detector_data_destination”
+, (currently only one supported parameter)</p></td>
+</tr>
+<tr class="row-even"><td><p>ndattribute</p></td>
+<td><p>Required when name=”detector_data_destination”</p></td>
+<td><p>Name of the NDAttribute which defines the name of the dataset where incoming NDArrays
+are to be stored</p></td>
+<td><p>string containing the name of an NDAttribute</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td colspan="2"><p><strong>XML “hardlink” element attributes</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>name</p></td>
+<td><p>yes</p></td>
+<td><p>Name of the link</p></td>
+<td><p>string: string containing the name of the hardlink being created</p></td>
+</tr>
+<tr class="row-odd"><td><p>target</p></td>
+<td><p>yes</p></td>
+<td><p>Name of the existing target object in the HDF5 file being linked to.</p></td>
+<td><p>string containing the name of the target object being linked to</p></td>
+</tr>
+</tbody>
+</table>
+<p>An example XML layout file is provided in
+<code class="docutils literal notranslate"><span class="pre">ADExample/iocs/simDetectorIOC/iocBoot/iocSimDetector/hdf5_layout_demo.xml</span></code>.</p>
+<p>An XML schema is provided in
+<code class="docutils literal notranslate"><span class="pre">ADCore/iocBoot/hdf5_xml_layout_schema.xsd</span></code>. The schema defines the
+syntax that is allowed in the user’s XML definition. It can also be used
+with the ‘xmllint’ command to validate a user’s XML definition:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">xmllint</span> <span class="o">--</span><span class="n">noout</span> <span class="o">--</span><span class="n">schema</span> <span class="n">ADCore</span><span class="o">/</span><span class="n">iocBoot</span><span class="o">/</span><span class="n">hdf5_xml_layout_schema</span><span class="o">.</span><span class="n">xsd</span> <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">users</span><span class="o">/</span><span class="n">layout</span><span class="o">.</span><span class="n">xml</span>
+</pre></div>
+</div>
+</section>
+<section id="default-file-structure-layout">
+<h3><a class="toc-backref" href="#id6" role="doc-backlink">Default File Structure Layout</a><a class="headerlink" href="#default-file-structure-layout" title="Permalink to this heading"></a></h3>
+<p>If no XML Layout Definition file is loaded, the plugin will revert to
+using its default file structure layout. The default layout is
+compatible with the plugin’s original, hard-code layout. This layout is
+actually defined by an XML layout string defined in the source code file
+NDFileHDF5LayoutXML.cpp.</p>
+<p>This default layout is compatible with the Nexus file format. This is
+achieved by defining a specific hierachial structure of groups and
+datasets and by tagging elements in the hierachy with certain
+“NX_class=nnn” attributes. Although Nexus libraries are not used to
+write the data to disk, this file structure allow Nexus-aware readers to
+open and read the content of these HDF5 files. This has been tested with
+the Nexus reader in the <a class="reference external" href="http://opengda.org/">GDA application</a>.
+Hardlinks in the HDF5 file can be used to make the same dataset appear
+in more than one location. This can be useful for defining a layout that
+is Nexus compatible, as well as conforming to some other desired layout.</p>
+</section>
+</section>
+<section id="ndarray-attributes">
+<h2><a class="toc-backref" href="#id7" role="doc-backlink">NDArray attributes</a><a class="headerlink" href="#ndarray-attributes" title="Permalink to this heading"></a></h2>
+<p>The attributes from NDArrays are stored in the HDF5 files. The list of
+attributes is loaded when a file is opened so XML attributes files
+should not be reloaded while writing a file in stream mode.</p>
+<p>If the dataset is defined in the XML layout file then the user-specified
+name is used for the dataset. If the dataset is not defined in the XML
+layout file then the dataset name will be the the NDArray attribute
+name. The NDArray attribute datasets automatically have 4 HDF
+“attributes”) to indicate their source type and origin. These are:</p>
+<ul class="simple">
+<li><p>NDAttrName: The name of the NDArray attribute.</p></li>
+<li><p>NDAttrDescrption: The description of the NDArray attribute.</p></li>
+<li><p>NDAttrSourceType: The source type of the NDArray attribute:
+NDAttrSourceDriver, NDAttrSourceParam, NDAttrSourceEPICSPV, or
+NDAttrSourceFunct.</p></li>
+<li><p>NDAttrSource: The source of the NDArray attribute data, i.e. the name
+of the EPICS PV, the drvInfo string for the parameter, or the name of
+the attribute function.</p></li>
+</ul>
+<p>NDArray attributes will be stored as 1D datasets. If the location of an
+NDArray attribute dataset is not defined in the XML layout file then the
+dataset will appear in the group that has the property
+ndattr_default=”true”. If there is no group with that property then the
+dataset will appear in the root group. If the root group has the
+property auto_ndattr_default=”false” then datasets that are not
+explicitly defined in the XML layout file will not appear in the HDF5
+file at all.</p>
+<p>There are 4 “virtual” attributes that are automatically created. These
+are:</p>
+<ul class="simple">
+<li><p>NDArrayUniqueId: The NDArray.uniqueId value.</p></li>
+<li><p>NDArrayTimeStamp: The NDArray.timeStamp value.</p></li>
+<li><p>NDArrayEpicsTSSec: The NDArray.epicsTS.secPastEpoch value.</p></li>
+<li><p>NDArrayEpicsTSnSec: The NDArray.epicsTS.nsec value.</p></li>
+</ul>
+<p>These properties are added to the property list and will be written to
+the HDF5 file following the same rules as the actual NDArray
+ndAttributes described above.</p>
+<p>It is possible to validate the syntax of an NDArray attributes XML file.
+For example, the command (starting from the <code class="docutils literal notranslate"><span class="pre">iocBoot</span></code> directory) to
+validate the syntax of the
+<code class="docutils literal notranslate"><span class="pre">iocBoot/iocSimDetector/simDetectorAttributes.xml</span></code> file is:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">xmllint</span> <span class="o">--</span><span class="n">noout</span> <span class="o">--</span><span class="n">schema</span> <span class="o">./</span><span class="n">attributes</span><span class="o">.</span><span class="n">xsd</span> <span class="n">iocSimDetector</span><span class="o">/</span><span class="n">simDetectorAttributes</span><span class="o">.</span><span class="n">xml</span>
+</pre></div>
+</div>
+</section>
+<section id="default-tree-structure">
+<h2><a class="toc-backref" href="#id8" role="doc-backlink">Default tree structure</a><a class="headerlink" href="#default-tree-structure" title="Permalink to this heading"></a></h2>
+<p>The group/dataset structure of the HDF5 files, generated by this plugin:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">entry</span>                   <span class="o">&lt;--</span> <span class="n">NX_class</span><span class="o">=</span><span class="n">NXentry</span>
+<span class="o">|</span>
+<span class="o">+--</span><span class="n">instrument</span>           <span class="o">&lt;--</span> <span class="n">NX_class</span><span class="o">=</span><span class="n">NXinstrument</span>
+   <span class="o">|</span>
+   <span class="o">+--</span><span class="n">detector</span>          <span class="o">&lt;--</span> <span class="n">NX_class</span><span class="o">=</span><span class="n">NXdetector</span>
+   <span class="o">|</span>  <span class="o">|</span>
+   <span class="o">|</span>  <span class="o">+--</span><span class="n">data</span>           <span class="o">&lt;--</span> <span class="n">NX_class</span><span class="o">=</span><span class="n">SDS</span><span class="p">,</span> <span class="n">signal</span><span class="o">=</span><span class="mi">1</span>
+   <span class="o">|</span>  <span class="o">|</span>
+   <span class="o">|</span>  <span class="o">+--</span><span class="n">NDAttributes</span>
+   <span class="o">|</span>     <span class="o">|</span>
+   <span class="o">|</span>     <span class="o">+--</span><span class="n">ColorMode</span>
+   <span class="o">|</span>
+   <span class="o">+--</span><span class="n">NDAttributes</span>      <span class="o">&lt;--</span> <span class="n">NX_class</span><span class="o">=</span><span class="n">NXCollection</span><span class="p">,</span> <span class="n">ndattr_default</span><span class="o">=</span><span class="s2">&quot;true&quot;</span>
+   <span class="o">|</span>  <span class="o">|</span>
+   <span class="o">|</span>  <span class="o">+---</span>              <span class="o">&lt;--</span> <span class="n">Any</span> <span class="n">number</span> <span class="n">of</span> <span class="n">NDAttributes</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">NDArrays</span> <span class="k">as</span> <span class="n">individual</span> <span class="mi">1</span><span class="n">D</span> <span class="n">datasets</span>
+   <span class="o">|</span>
+   <span class="o">+--</span><span class="n">performance</span>       <span class="o">&lt;--</span> <span class="n">Performance</span> <span class="n">of</span> <span class="n">the</span> <span class="n">file</span> <span class="n">writing</span>
+      <span class="o">|</span>
+      <span class="o">+--</span><span class="n">timestamp</span>      <span class="o">&lt;--</span> <span class="n">A</span> <span class="mi">2</span><span class="n">D</span> <span class="n">dataset</span> <span class="n">of</span> <span class="n">different</span> <span class="n">timing</span> <span class="n">measurements</span> <span class="n">taking</span> <span class="n">during</span> <span class="n">file</span> <span class="n">writing</span>
+<span class="o">+--</span><span class="n">data</span>                 <span class="o">&lt;--</span> <span class="n">NX_class</span><span class="o">=</span><span class="n">NDdata</span>
+   <span class="o">|</span>  <span class="o">|</span>
+   <span class="o">|</span>  <span class="o">+--</span><span class="n">data</span>           <span class="o">&lt;--</span> <span class="n">Hardlink</span> <span class="n">to</span> <span class="o">/</span><span class="n">entry</span><span class="o">/</span><span class="n">instrument</span><span class="o">/</span><span class="n">detector</span><span class="o">/</span><span class="n">data</span>
+</pre></div>
+</div>
+</section>
+<section id="hdf5-file-viewers">
+<h2><a class="toc-backref" href="#id9" role="doc-backlink">HDF5 File Viewers</a><a class="headerlink" href="#hdf5-file-viewers" title="Permalink to this heading"></a></h2>
+<p>Note that if the Single Writer Multiple Reader (SWMR) feature is
+disabled then it is not possible to do a live “monitoring” of a file
+which is being written by another process. The file writers mentioned in
+this section can only be used to open, browse and read the HDF5 files
+<strong>after</strong> the NDFileHDF5 plugin has completed writing and closed the
+file. It is possible to view files while they are being written if the
+following are all true:</p>
+<ul class="simple">
+<li><p>SWMR support is enabled in the plugin.</p></li>
+<li><p>The viewer client is built using HDF5 1.10 or later.</p></li>
+<li><p>The file is being accessed using either a local, GPFS, or Lustre file
+system by both the client and the IOC.</p></li>
+</ul>
+<p><a class="reference external" href="http://www.hdfgroup.org/hdf-java-html/hdfview/index.html">HDFView</a>
+is a simple GUI tool for viewing and browsing HDF files. It has some
+limited support for viewing images, plotting graphs and displaying data
+tables.</p>
+<p>The <a class="reference external" href="http://www.hdfgroup.org/HDF5/release/obtain5.html">HDF5
+libraries</a> also
+ships with a number of command-line tools for browsing and dumping data.</p>
+<p>The screenshot below shows the hdfview application with a datafile open.
+The datafile is generated by the plugin and a number of elements are
+visible:</p>
+<ul class="simple">
+<li><p>The NDArray NDAttributes appear as 1D datasets in the group
+“/entry/instrument/NDAttributes/”</p></li>
+<li><p>The image data is in the dataset “/entry/instrument/detector/data”.
+The metadata (in HDF known as “attributes”) for that dataset indicate
+8bit unsigned char data, 10 frames of 60x40 pixels</p></li>
+<li><p>Image and table view of the first frame data is open</p></li>
+</ul>
+<figure class="align-center">
+<img alt="../_images/HDFView-screenshot.png" src="../_images/HDFView-screenshot.png" />
+</figure>
+</section>
+<section id="multiple-dimensions">
+<h2><a class="toc-backref" href="#id10" role="doc-backlink">Multiple Dimensions</a><a class="headerlink" href="#multiple-dimensions" title="Permalink to this heading"></a></h2>
+<p>Both areaDetector and the HDF5 file format supports multidimensional
+datasets. The dimensions from the NDArray are preserved when writing to
+the HDF5 file. In multi-frame files (plugin in Stream or Capture mode)
+an additional dimension is added to the dataset to hold the array of
+frames.</p>
+<p>In addition to the dimensions of the NDArray it is also possible to
+specify up to 9 extra “virtual” dimensions to store datasets in the
+file. This is to support applications where a sample is scanned in up to
+nine dimensions. For two extra dimensions, say X and Y each scan point
+contains a dataset comprising of multiple frames which can be stored.
+The length of (i.e. number of points in) each of the virtual dimensions
+have to be specified before the plugin opens the file for writing. This
+feature is only supported in the Stream and Capture modes.</p>
+<p>This feature allow for creating very large sets of scan data which
+matches the dimensions of the performed scan in one datafile. Depending
+on the application this can be a benefit in post processing.</p>
+<p>The figure below illustrate the use of the two extra “virtual”
+dimensions in a 2D (X,Y) raster scan with N frames per point:</p>
+<figure class="align-center">
+<img alt="../_images/HDFmultiple-dimensions.png" src="../_images/HDFmultiple-dimensions.png" />
+</figure>
+<p>Prior to starting a scan like this the user will need to configure the
+number of virtual dimensions to use (from 0 up to 9); the number of
+frames per point; and the length of each of the virtual dimensions (4 x
+2 in the example figure). It is not possible to change the number or
+size of dimensions while the file is open.</p>
+<p>For 2D image (greyscale) formats the dimensions in the multiframe HDF5
+file are organised as follows. Note that for backwards compatibility
+(previously only 2 extra dimensions were available) when extra
+dimensions are specified they are in reverse order
+9th,8th,7th,6th,5th,4th,3rd,Yth,Xth and dimensions 2 and 1 are named Y
+and X:</p>
+<ul class="simple">
+<li><p>For a multiframe file with no use of “virtual” dimension the order
+is: {Nth frame, width, height}</p></li>
+<li><p>For a multiframe file using 1 “virtual” dimension (X) the order is:
+{X, Nth frame, width, height}</p></li>
+<li><p>For a multiframe file using 2 “virtual” dimensions (X,Y) the order
+is: {Y, X, Nth frame, width, height}</p></li>
+<li><p>For a multiframe file using 3 “virtual” dimensions (X,Y,3rd) the
+order is: {3rd, Y, X, Nth frame, width, height}</p></li>
+<li><p>For a multiframe file using 4 “virtual” dimensions (X,Y,3rd,4th) the
+order is: {4th, 3rd, Y, X, Nth frame, width, height}</p></li>
+<li><p>For a multiframe file using 5 “virtual” dimensions (X,Y,3rd,4th,5th)
+the order is: {5th, 4th, 3rd, Y, X, Nth frame, width, height}</p></li>
+</ul>
+</section>
+<section id="chunking">
+<h2><a class="toc-backref" href="#id11" role="doc-backlink">Chunking</a><a class="headerlink" href="#chunking" title="Permalink to this heading"></a></h2>
+<p>This plugin uses HDF5 chunking to store the raw image data. The chunk
+size (the size of each I/O block) can be either automatically configured
+(ChunkSizeAuto=Yes) or user-configured (ChunkSizeAuto=No). If automatically
+configured then the chunk size in each dimension is the size of the NDArray
+in that dimension.  NumFramesChunks defaults to 1, but if it is set higher
+then each chunk can be multiple NDArrays, (which essentially implies memory
+caching before writing to disk). Configuring chunking correctly for a
+given application is a complex matter where both the write performance
+and the read performance for a given post processing application will
+have to be evaluated. As a basic starting point, setting the ChunkSizeAuto=Yes,
+should give a decent result. Further explanations and documentation of the HDF5
+chunking feature is available in the HDF5 documentation:</p>
+<ul class="simple">
+<li><p>HDF5 documentation advanced topics: <a class="reference external" href="https://portal.hdfgroup.org/display/HDF5/Chunking+in+HDF5">Chunking in
+HDF5</a></p></li>
+<li><p>hdfgroup presentation: <a class="reference external" href="http://www.hdfgroup.org/pubs/presentations/HDF5-EOSXIII-Advanced-Chunking.pdf">HDF5 Advanced Topics - Chunking in
+HDF5</a></p></li>
+</ul>
+</section>
+<section id="compression">
+<h2><a class="toc-backref" href="#id12" role="doc-backlink">Compression</a><a class="headerlink" href="#compression" title="Permalink to this heading"></a></h2>
+<p>The HDF5 library supports a number of compression algorithms. When using
+HDF5 libraries to write and read files the with standard HDF5 compressions
+(N-bit, szip, and libz) it only need to be switched on when writing and HDF5 enabled applications
+can read the files without any additional configuration. When using Blosc, LZ4, BSLZ4 and JPEG no
+additional configuration is required for NDFileHDF5 to write the files, because it registers
+these compression filters.  However, when reading files written with Blosc, LZ4, BSLZ4, or JPEG
+the environment variable HDF5_PLUGIN_PATH must point to a directory containing the shareable libraries
+for the decompression filter plugins.  This allows any application built with HDF5 1.8.11 or later to
+read files written with these compression filters. The areaDetector/ADSupport modules builds these shareable
+libraries for Linux, Windows, and Mac.
+Only one compression filter can be applied at the time.</p>
+<p>The following compression filters are supported in the NDFileHDF5
+plugin:</p>
+<ul>
+<li><div class="line-block">
+<div class="line">Lossless <a class="reference external" href="http://www.hdfgroup.org/doc_resource/SZIP/">SZIP</a>
+compression is using a separate library from the hdfgroup. NOTE: The
+szip library contains the following in its COPYING license agreement
+file:</div>
+</div>
+<div class="line-block">
+<div class="line"><cite>Revocable (in the event of breach by the user or if required by law),
+royalty-free,         nonexclusive sublicense to use SZIP compression
+software routines and underlying         patents for non-commercial,
+scientific use only is hereby granted by ICs, LLC, to         users of and
+in conjunction with HDF data storage and retrieval file format and
+software library products.</cite></div>
+</div>
+<div class="line-block">
+<div class="line">This means that the szip compression should
+not be used by commercial users without first obtaining a license.</div>
+</div>
+</li>
+<li><p>External libz -also lossless</p></li>
+<li><p><a class="reference external" href="http://www.hdfgroup.org/HDF5/doc/RM/RM_H5P.html#Property-SetNbit">N-bit</a>
+compression is a bit-packing scheme to be used when a detector
+provide fewer databits than standard 8,16,32 bit words. Data width
+and offset in the word is user configurable.</p></li>
+<li><dl class="simple">
+<dt><a class="reference external" href="http://blosc.org/">Blosc</a> compression. Blosc is lossless and contains several compressors,</dt><dd><p>including LZ4 with Bitshuffle.</p>
+</dd>
+</dl>
+</li>
+<li><p><a class="reference external" href="https://lz4.github.io/lz4/">LZ4</a> compression. LZ4 is lossless.</p></li>
+<li><p><a class="reference external" href="https://github.com/kiyo-masui/bitshuffle">Bitshuffle/LZ4</a> compression. BSLZ4 is lossless.</p></li>
+<li><p><a class="reference external" href="https://jpeg.org/">JPEG</a> compression. JPEG is lossy, with a user-defined quality factor.</p></li>
+</ul>
+</section>
+<section id="single-writer-multiple-reader-swmr">
+<h2><a class="toc-backref" href="#id13" role="doc-backlink">Single Writer Multiple Reader (SWMR)</a><a class="headerlink" href="#single-writer-multiple-reader-swmr" title="Permalink to this heading"></a></h2>
+<p>From version 1-10 of the HDF5 library, reader applications shall be able
+to access the file whilst it is being written. The plugin has been
+updated to support the additional SWMR feature when writing a file. The
+plugin will know if SWMR mode is supported depending on the version of
+the HDF5 library that the plugin has been compiled against, and SWMR
+mode can be enabled or disabled by setting the appropriate parameter
+(disabled by default). Once placed into SWMR mode the plugin accepts
+parameters to control how often frames are flushed, how often
+NDAttributes are flushed and the current SWMR status and number of
+flushes that have taken place are reported for an acquisition. The SWMR
+active status parameter can be used to signify that it is safe for
+readers to open the file (the file has been placed into SWMR mode).
+Data can be flushed to disk on demand using the FlushNow command.</p>
+</section>
+<section id="storing-attributes-with-dataset-dimensions">
+<h2><a class="toc-backref" href="#id14" role="doc-backlink">Storing Attributes with Dataset Dimensions</a><a class="headerlink" href="#storing-attributes-with-dataset-dimensions" title="Permalink to this heading"></a></h2>
+<div class="line-block">
+<div class="line">The plugin has the option of storing all NDAttribute datasets as a
+single array of data values, or else these NDAttribute datasets can be
+stored with the same dimensionality as the main dataset.</div>
+<div class="line">As an example, consider a multi-dimensional dataset of images
+width=800 and height=600.</div>
+</div>
+<ul class="simple">
+<li><p>If two “virtual” dimensions are selected with N=3, X=4 and Y=5 then
+the main dataset will have the dimensions 5x4x3x600x800.</p></li>
+<li><p>If the NDAttribute datasets are stored in the standard way then the
+dataset would be a single dimension array of 60 items.</p></li>
+<li><p>If however, the NDAttribute dataset is stored with the same
+dimensionality as the main dataset then the NDAttribute dataset will
+have the dimensions of 5x4x3.</p></li>
+</ul>
+</section>
+<section id="selective-positional-placement-of-individual-frames">
+<h2><a class="toc-backref" href="#id15" role="doc-backlink">Selective Positional Placement of Individual Frames</a><a class="headerlink" href="#selective-positional-placement-of-individual-frames" title="Permalink to this heading"></a></h2>
+<p>The plugin can now store frames at specified positions within a dataset.
+Each individual dimension index can be specified with NDAttributes that
+are attached to the frame. The names of the NDAttributes that will be
+used as the index values for each dimension are specified using
+parameters (see parameter table below). The NDAttribute values
+themselves must be integer type zero based index values; if values are
+specified that are outside the maximum size of the dataset in any
+dimension then the acquisition will fail. A named attribute must be
+specified for each additional dimension if position placement mode is to
+be used, if attributes are not specified or not named correctly then the
+acquisition will fail.</p>
+<p>The position placement mode of operation is enabled by setting the
+PositionMode parameter to “On” and can be used with or without SWMR mode
+enabled.</p>
+</section>
+<section id="writing-index-datasets">
+<h2><a class="toc-backref" href="#id16" role="doc-backlink">Writing Index Datasets</a><a class="headerlink" href="#writing-index-datasets" title="Permalink to this heading"></a></h2>
+<p>The plugin will write out an index dataset for an extra dimension
+multidimensional dataset if requested. This writing out of index values
+can only take place when running in selective positional placement mode
+and when storing attributes with dataset dimensions (see above). The
+index parameters take the name of the NDAttribute that contains the
+index values for the particular dimensions that you are interested in.</p>
+<p>For example, extra X and Y dimensions specified along with positional
+placement mode looking for NDAttributes called “x” and “y”. If the index
+dataset for the X dimension is set to “x” also then an additional
+dataset will be written that contains only the index values for the X
+dimension. The dataset will be a 1 dimensional dataset. Consider the
+following index values</p>
+<p>x=0, y=0</p>
+<p>x=1, y=0</p>
+<p>x=0, y=1</p>
+<p>x=1, y=1</p>
+<p>x=0, y=2</p>
+<p>x=1, y=2</p>
+<p>If the X index parameter is set to x then a 1D dataset will be produced
+containing the values (0, 1). If the Y index parameter is set to y then
+a 1D dataset will be produced containing the values (0, 1, 2).</p>
+</section>
+<section id="parameters-and-records">
+<h2><a class="toc-backref" href="#id17" role="doc-backlink">Parameters and Records</a><a class="headerlink" href="#parameters-and-records" title="Permalink to this heading"></a></h2>
+<table class="table-bordered table-striped table-hover docutils align-default">
+<colgroup>
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 53%" />
+<col style="width: 11%" />
+<col style="width: 16%" />
+<col style="width: 11%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head"></th>
+<th class="head" colspan="4"><p><strong>Parameter Definitions and EPICS Record Definitions in NDFileHDF5.template</strong></p></th>
+</tr>
+<tr class="row-even"><th class="head"><p>asyn interface</p></th>
+<th class="head"><p>Access</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>drvInfo string</p></th>
+<th class="head"><p>EPICS record name</p></th>
+<th class="head"><p>EPICS record type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-odd"><td></td>
+<td></td>
+<td colspan="4"><p><strong>HDF5 XML Layout Definition</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>asynOctet</p></td>
+<td><p>r/w</p></td>
+<td><p>XML filename, pointing to an XML HDF5 Layout Definition, This waveform also supports loading raw XML code directly; up to a maximum of 1MB
+long (NELM=1MB)</p></td>
+<td><p>HDF5_layoutFilename</p></td>
+<td><p>$(P)$(R)XMLFileName, $(P)$(R)XMLFileName_RBV</p></td>
+<td><p>waveform</p></td>
+</tr>
+<tr class="row-odd"><td><p>asynInt32</p></td>
+<td><p>r/o</p></td>
+<td><p>Flag to report the validity (xml syntax only) of the loaded XML. Updated when the
+XMLFileName is updated with a new filename and when the XML file is read at HDF5
+file creation</p></td>
+<td><p>HDF5_layoutValid</p></td>
+<td><p>$(P)$(R)XMLValid_RBV</p></td>
+<td><p>bi</p></td>
+</tr>
+<tr class="row-even"><td><p>asynOctet</p></td>
+<td><p>r/o</p></td>
+<td><p>XML parser error message</p></td>
+<td><p>HDF5_layoutErrorMsg</p></td>
+<td><p>$(P)$(R)XMLErrorMsg_RBV</p></td>
+<td><p>waveform</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td colspan="4"><p><strong>HDF5 Chunk Configuration</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>No (0) or Yes (1). If Yes then the chunk size for each dimension of the NDArray is set to be the size of the NDArray in that dimension.</p></td>
+<td><p>HDF5_chunkSizeAuto</p></td>
+<td><p>$(P)$(R)ChunkSizeAuto, $(P)$(R)ChunkSizeAuto_RBV</p></td>
+<td><p>bo, bi</p></td>
+</tr>
+<tr class="row-odd"><td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>Configure HDF5 “chunking” to approriate size for the filesystem: sets number of
+columns (dimension 0 of NDArray) to use per chunk</p></td>
+<td><p>HDF5_nColChunks</p></td>
+<td><p>$(P)$(R)NumColChunks, $(P)$(R)NumColChunks_RBV</p></td>
+<td><p>longout, longin</p></td>
+</tr>
+<tr class="row-even"><td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>Configure HDF5 “chunking” to approriate size for the filesystem: sets number of
+rows (dimension 1 of NDArray) to use per chunk</p></td>
+<td><p>HDF5_nRowChunks</p></td>
+<td><p>$(P)$(R)NumRowChunks, $(P)$(R)NumRowChunks_RBV</p></td>
+<td><p>longout, longin</p></td>
+</tr>
+<tr class="row-odd"><td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>Configure HDF5 “chunking” to approriate size for the filesystem: sets the number of
+elements in dimension N use per chunk</p></td>
+<td><p>HDF5_chunkSize</p></td>
+<td><p>$(P)$(R)ChunkSize(N), $(P)$(R)ChunkSize(N)_RBV</p></td>
+<td><p>longout, longin</p></td>
+</tr>
+<tr class="row-even"><td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>Configure HDF5 “chunking” to approriate size for the filesystem: sets number of
+NDArrays to use per chunk. Setting this parameter &gt; 1 essentially
+implies using in-memory cache as HDF5 only writes full chunks to disk.</p></td>
+<td><p>HDF5_nFramesChunks</p></td>
+<td><p>$(P)$(R)NumFramesChunks, $(P)$(R)NumFramesChunks_RBV</p></td>
+<td><p>longout, longin</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td colspan="4"><p><strong>Disk Boundary Alignment</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>Set the disk boundary alignment in bytes. This parameter can be used to optimise
+file I/O performance on some file systems. For instance on the Lustre file system
+where the it is optimal to align data to the ‘stripe size’ (default 1MB).
+, This parameter applies to all datasets in the file.
+, Setting this parameter to 0 disables use of disk boundary alignment.
+, <em>Warning: setting this parameter to a larger size than the size of a single chunk
+will cause datafiles to grow larger than the actual contained data.</em></p></td>
+<td><p>HDF5_chunkBoundaryAlign</p></td>
+<td><p>$(P)$(R)BoundaryAlign, $(P)$(R)BoundaryAlign_RBV</p></td>
+<td><p>longout, longin</p></td>
+</tr>
+<tr class="row-odd"><td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>Set a minimum size (bytes) of chunk or dataset where boundary alignment is to be
+applied. This can be used to filter out small datasets like NDAttributes from the
+boundary alignment as it could blow up the file size.
+, Setting this parameter to 0 will disable the use of boundary alignment</p></td>
+<td><p>HDF5_chunkBoundaryThreshold</p></td>
+<td><p>$(P)$(R)BoundaryThreshold, $(P)$(R)BoundaryThreshold_RBV</p></td>
+<td><p>longout, longin</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td colspan="4"><p><strong>Metadata</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>Enable or disable support for storing NDArray attributes in file</p></td>
+<td><p>HDF5_storeAttributes</p></td>
+<td><p>$(P)$(R)StoreAttr, $(P)$(R)StoreAttr_RBV</p></td>
+<td><p>bo, bi</p></td>
+</tr>
+<tr class="row-even"><td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>Enable or disable support for storing file IO timing measurements in file</p></td>
+<td><p>HDF5_storePerformance</p></td>
+<td><p>$(P)$(R)StorePerform, $(P)$(R)StorePerform_RBV</p></td>
+<td><p>bo, bi</p></td>
+</tr>
+<tr class="row-odd"><td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>Turn on or off NDAttribute dataset dimensions (1 = On, 0 = Off). When switched on
+NDAttribute datasets are forced to have the same dimensionality as the main dataset.</p></td>
+<td><p>HDF5_dimAttDatasets</p></td>
+<td><p>$(P)$(R)DimAttDatasets, $(P)$(R)DimAttDatasets_RBV</p></td>
+<td><p>bo, bi</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td colspan="4"><p><strong>SWMR</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>asynInt32</p></td>
+<td><p>r/o</p></td>
+<td><p>Does the HDF5 library version support SWMR mode of operation (1 = Supported, 0 =
+Not Supported).</p></td>
+<td><p>HDF5_SWMRSupported</p></td>
+<td><p>$(P)$(R)SWMRSupported_RBV</p></td>
+<td><p>bi</p></td>
+</tr>
+<tr class="row-even"><td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>Turn on or off SWMR mode for the next acquisition (1 = On, 0 = Off). Turning on
+will only work if SWMR mode is supported.</p></td>
+<td><p>HDF5_SWMRMode</p></td>
+<td><p>$(P)$(R)SWMRMode, $(P)$(R)SMWRMode_RBV</p></td>
+<td><p>bo, bi</p></td>
+</tr>
+<tr class="row-odd"><td><p>asynInt32</p></td>
+<td><p>r/o</p></td>
+<td><p>This value is set to 1 once a file has been opened and placed into SWMR mode. It
+returns to 0 once the acquisition has completed.</p></td>
+<td><p>HDF5_SWMRRunning</p></td>
+<td><p>$(P)$(R)SWMRActive_RBV</p></td>
+<td><p>bi</p></td>
+</tr>
+<tr class="row-even"><td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>Flush the image to disk every N’th frame.</p></td>
+<td><p>HDF5_flushNthFrame</p></td>
+<td><p>$(P)$(R)NumFramesFlush, $(P)$(R)NumFramesFlush_RBV</p></td>
+<td><p>longout, longin</p></td>
+</tr>
+<tr class="row-odd"><td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>This value is used to determine when to flush NDAttribute datasets to disk, and
+the corresponding datasets chunk size. A value of zero will default where possible
+to the size of the dataset for a one dimensional dataset.</p></td>
+<td><p>HDF5_NDAttributeChunk</p></td>
+<td><p>$(P)$(R)NDAttributeChunk, $(P)$(R)NDAttributeChunk_RBV</p></td>
+<td><p>longout, longin</p></td>
+</tr>
+<tr class="row-even"><td><p>asynInt32</p></td>
+<td><p>r/o</p></td>
+<td><p>The number of flushes that have taken place for the current acquisition. In the
+case where flushing occurs for every frame and no flushing is set for NDAttribute
+datasets then this value will increment by one for each frame, and once the acquisition
+has completed it will jump by the number of flushes required for the NDAttribute
+datasets, one flush for each dataset.</p></td>
+<td><p>HDF5_SWMRCbCounter</p></td>
+<td><p>$(P)$(R)SWMRCbCounter_RBV</p></td>
+<td><p>longin</p></td>
+</tr>
+<tr class="row-odd"><td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>Forces an immediate HDF5 flush.</p></td>
+<td><p>HDF5_SWMRFlushNow</p></td>
+<td><p>$(P)$(R)FlushNow</p></td>
+<td><p>busy</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td colspan="4"><p><strong>Additional Virtual Dimensions</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>Number of extra dimensions [0..9]</p></td>
+<td><p>HDF5_nExtraDims</p></td>
+<td><p>$(P)$(R)NumExtraDims, $(P)$(R)NumExtraDims</p></td>
+<td><p>mbbo, mbbi</p></td>
+</tr>
+<tr class="row-even"><td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>Size of extra dimension N (no. of frames per point)</p></td>
+<td><p>HDF5_extraDimSizeN</p></td>
+<td><p>$(P)$(R)ExtraDimSizeN, $(P)$(R)ExtraDimSizeN_RBV</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>Size of extra dimension X</p></td>
+<td><p>HDF5_extraDimSizeX</p></td>
+<td><p>$(P)$(R)ExtraDimSizeX, $(P)$(R)ExtraDimSizeX_RBV</p></td>
+<td><p>longout, longin</p></td>
+</tr>
+<tr class="row-even"><td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>Size of extra dimension Y</p></td>
+<td><p>HDF5_extraDimSizeY</p></td>
+<td><p>$(P)$(R)ExtraDimSizeY, $(P)$(R)ExtraDimSizeY_RBV</p></td>
+<td><p>longout, longin</p></td>
+</tr>
+<tr class="row-odd"><td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>Size of extra dimension 3</p></td>
+<td><p>HDF5_extraDimSize3</p></td>
+<td><p>$(P)$(R)ExtraDimSize3, $(P)$(R)ExtraDimSize3_RBV</p></td>
+<td><p>longout, longin</p></td>
+</tr>
+<tr class="row-even"><td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>Size of extra dimension 4</p></td>
+<td><p>HDF5_extraDimSize4</p></td>
+<td><p>$(P)$(R)ExtraDimSize4, $(P)$(R)ExtraDimSize4_RBV</p></td>
+<td><p>longout, longin</p></td>
+</tr>
+<tr class="row-odd"><td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>Size of extra dimension 5</p></td>
+<td><p>HDF5_extraDimSize5</p></td>
+<td><p>$(P)$(R)ExtraDimSize5, $(P)$(R)ExtraDimSize5_RBV</p></td>
+<td><p>longout, longin</p></td>
+</tr>
+<tr class="row-even"><td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>Size of extra dimension 6</p></td>
+<td><p>HDF5_extraDimSize6</p></td>
+<td><p>$(P)$(R)ExtraDimSize6, $(P)$(R)ExtraDimSize6_RBV</p></td>
+<td><p>longout, longin</p></td>
+</tr>
+<tr class="row-odd"><td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>Size of extra dimension 7</p></td>
+<td><p>HDF5_extraDimSize7</p></td>
+<td><p>$(P)$(R)ExtraDimSize7, $(P)$(R)ExtraDimSize7_RBV</p></td>
+<td><p>longout, longin</p></td>
+</tr>
+<tr class="row-even"><td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>Size of extra dimension 8</p></td>
+<td><p>HDF5_extraDimSize8</p></td>
+<td><p>$(P)$(R)ExtraDimSize8, $(P)$(R)ExtraDimSize8_RBV</p></td>
+<td><p>longout, longin</p></td>
+</tr>
+<tr class="row-odd"><td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>Size of extra dimension 9</p></td>
+<td><p>HDF5_extraDimSize9</p></td>
+<td><p>$(P)$(R)ExtraDimSize9, $(P)$(R)ExtraDimSize9_RBV</p></td>
+<td><p>longout, longin</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td colspan="4"><p><strong>Positional Placement</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>Turn on/off positional placement mode</p></td>
+<td><p>HDF5_posRunning</p></td>
+<td><p>$(P)$(R)PositionMode, $(P)$(R)PositionMode_RBV</p></td>
+<td><p>bo, bi</p></td>
+</tr>
+<tr class="row-even"><td><p>asynOctet</p></td>
+<td><p>r/w</p></td>
+<td><p>Specify the NDAttribute name for the N index</p></td>
+<td><p>HDF5_posNameDimN</p></td>
+<td><p>$(P)$(R)PosNameDimN, $(P)$(R)PosNameDimN_RBV</p></td>
+<td><p>stringout, stringin</p></td>
+</tr>
+<tr class="row-odd"><td><p>asynOctet</p></td>
+<td><p>r/w</p></td>
+<td><p>Specify the NDAttribute name for the X index</p></td>
+<td><p>HDF5_posNameDimX</p></td>
+<td><p>$(P)$(R)PosNameDimX, $(P)$(R)PosNameDimX_RBV</p></td>
+<td><p>stringout, stringin</p></td>
+</tr>
+<tr class="row-even"><td><p>asynOctet</p></td>
+<td><p>r/w</p></td>
+<td><p>Specify the NDAttribute name for the Y index</p></td>
+<td><p>HDF5_posNameDimY</p></td>
+<td><p>$(P)$(R)PosNameDimY, $(P)$(R)PosNameDimY_RBV</p></td>
+<td><p>stringout, stringin</p></td>
+</tr>
+<tr class="row-odd"><td><p>asynOctet</p></td>
+<td><p>r/w</p></td>
+<td><p>Specify the NDAttribute name for the 3rd index</p></td>
+<td><p>HDF5_posNameDim3</p></td>
+<td><p>$(P)$(R)PosNameDim3, $(P)$(R)PosNameDim3_RBV</p></td>
+<td><p>stringout, stringin</p></td>
+</tr>
+<tr class="row-even"><td><p>asynOctet</p></td>
+<td><p>r/w</p></td>
+<td><p>Specify the NDAttribute name for the 4th index</p></td>
+<td><p>HDF5_posNameDim4</p></td>
+<td><p>$(P)$(R)PosNameDim4, $(P)$(R)PosNameDim4_RBV</p></td>
+<td><p>stringout, stringin</p></td>
+</tr>
+<tr class="row-odd"><td><p>asynOctet</p></td>
+<td><p>r/w</p></td>
+<td><p>Specify the NDAttribute name for the 5th index</p></td>
+<td><p>HDF5_posNameDim5</p></td>
+<td><p>$(P)$(R)PosNameDim5, $(P)$(R)PosNameDim5_RBV</p></td>
+<td><p>stringout, stringin</p></td>
+</tr>
+<tr class="row-even"><td><p>asynOctet</p></td>
+<td><p>r/w</p></td>
+<td><p>Specify the NDAttribute name for the 6th index</p></td>
+<td><p>HDF5_posNameDim6</p></td>
+<td><p>$(P)$(R)PosNameDim6, $(P)$(R)PosNameDim6_RBV</p></td>
+<td><p>stringout, stringin</p></td>
+</tr>
+<tr class="row-odd"><td><p>asynOctet</p></td>
+<td><p>r/w</p></td>
+<td><p>Specify the NDAttribute name for the 7th index</p></td>
+<td><p>HDF5_posNameDim7</p></td>
+<td><p>$(P)$(R)PosNameDim7, $(P)$(R)PosNameDim7_RBV</p></td>
+<td><p>stringout, stringin</p></td>
+</tr>
+<tr class="row-even"><td><p>asynOctet</p></td>
+<td><p>r/w</p></td>
+<td><p>Specify the NDAttribute name for the 8th index</p></td>
+<td><p>HDF5_posNameDim8</p></td>
+<td><p>$(P)$(R)PosNameDim8, $(P)$(R)PosNameDim8_RBV</p></td>
+<td><p>stringout, stringin</p></td>
+</tr>
+<tr class="row-odd"><td><p>asynOctet</p></td>
+<td><p>r/w</p></td>
+<td><p>Specify the NDAttribute name for the 9th index</p></td>
+<td><p>HDF5_posNameDim9</p></td>
+<td><p>$(P)$(R)PosNameDim9, $(P)$(R)PosNameDim9_RBV</p></td>
+<td><p>stringout, stringin</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td colspan="4"><p><strong>Index Datasets</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>asynOctet</p></td>
+<td><p>r/w</p></td>
+<td><p>Specify the NDAttribute index for the N dimension</p></td>
+<td><p>HDF5_posIndexDimN</p></td>
+<td><p>$(P)$(R)PosIndexDimN, $(P)$(R)PosIndexDimN_RBV</p></td>
+<td><p>stringout, stringin</p></td>
+</tr>
+<tr class="row-even"><td><p>asynOctet</p></td>
+<td><p>r/w</p></td>
+<td><p>Specify the NDAttribute index for the X dimension</p></td>
+<td><p>HDF5_posIndexDimX</p></td>
+<td><p>$(P)$(R)posIndexDimX, $(P)$(R)posIndexDimX_RBV</p></td>
+<td><p>stringout, stringin</p></td>
+</tr>
+<tr class="row-odd"><td><p>asynOctet</p></td>
+<td><p>r/w</p></td>
+<td><p>Specify the NDAttribute index for the Y dimension</p></td>
+<td><p>HDF5_posIndexDimY</p></td>
+<td><p>$(P)$(R)posIndexDimY, $(P)$(R)posIndexDimY_RBV</p></td>
+<td><p>stringout, stringin</p></td>
+</tr>
+<tr class="row-even"><td><p>asynOctet</p></td>
+<td><p>r/w</p></td>
+<td><p>Specify the NDAttribute index for the 3rd dimension</p></td>
+<td><p>HDF5_posIndexDim3</p></td>
+<td><p>$(P)$(R)posIndexDim3, $(P)$(R)posIndexDim3_RBV</p></td>
+<td><p>stringout, stringin</p></td>
+</tr>
+<tr class="row-odd"><td><p>asynOctet</p></td>
+<td><p>r/w</p></td>
+<td><p>Specify the NDAttribute index for the 4th dimension</p></td>
+<td><p>HDF5_posIndexDim4</p></td>
+<td><p>$(P)$(R)posIndexDim4, $(P)$(R)posIndexDim4_RBV</p></td>
+<td><p>stringout, stringin</p></td>
+</tr>
+<tr class="row-even"><td><p>asynOctet</p></td>
+<td><p>r/w</p></td>
+<td><p>Specify the NDAttribute index for the 5th dimension</p></td>
+<td><p>HDF5_posIndexDim5</p></td>
+<td><p>$(P)$(R)posIndexDim5, $(P)$(R)posIndexDim5_RBV</p></td>
+<td><p>stringout, stringin</p></td>
+</tr>
+<tr class="row-odd"><td><p>asynOctet</p></td>
+<td><p>r/w</p></td>
+<td><p>Specify the NDAttribute index for the 6th dimension</p></td>
+<td><p>HDF5_posIndexDim6</p></td>
+<td><p>$(P)$(R)posIndexDim6, $(P)$(R)posIndexDim6_RBV</p></td>
+<td><p>stringout, stringin</p></td>
+</tr>
+<tr class="row-even"><td><p>asynOctet</p></td>
+<td><p>r/w</p></td>
+<td><p>Specify the NDAttribute index for the 7th dimension</p></td>
+<td><p>HDF5_posIndexDim7</p></td>
+<td><p>$(P)$(R)posIndexDim7, $(P)$(R)posIndexDim7_RBV</p></td>
+<td><p>stringout, stringin</p></td>
+</tr>
+<tr class="row-odd"><td><p>asynOctet</p></td>
+<td><p>r/w</p></td>
+<td><p>Specify the NDAttribute index for the 8th dimension</p></td>
+<td><p>HDF5_posIndexDim8</p></td>
+<td><p>$(P)$(R)posIndexDim8, $(P)$(R)posIndexDim8_RBV</p></td>
+<td><p>stringout, stringin</p></td>
+</tr>
+<tr class="row-even"><td><p>asynOctet</p></td>
+<td><p>r/w</p></td>
+<td><p>Specify the NDAttribute index for the 9th dimension</p></td>
+<td><p>HDF5_posIndexDim9</p></td>
+<td><p>$(P)$(R)posIndexDim9, $(P)$(R)posIndexDim9_RBV</p></td>
+<td><p>stringout, stringin</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td colspan="4"><p><strong>Runtime Statistics</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>asynFloat64</p></td>
+<td><p>r/o</p></td>
+<td><p>Total runtime in seconds from first frame to file closed</p></td>
+<td><p>HDF5_totalRuntime</p></td>
+<td><p>$(P)$(R)Runtime</p></td>
+<td><p>ai</p></td>
+</tr>
+<tr class="row-odd"><td><p>asynFloat64</p></td>
+<td><p>r/o</p></td>
+<td><p>Overall IO write speed in megabit per second from first frame to file closed</p></td>
+<td><p>HDF5_totalIoSpeed</p></td>
+<td><p>$(P)$(R)IOSpeed</p></td>
+<td><p>ai</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td colspan="4"><p><strong>Compression Filters</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>Select or switch off compression filter. Choices are: [None, N-bit, szip, zlib, Blosc, BSLZ4, LZ4, JPEG]</p></td>
+<td><p>HDF5_compressionType</p></td>
+<td><p>$(P)$(R)Compression, $(P)$(R)Compression_RBV</p></td>
+<td><p>mbbo, mbbi</p></td>
+</tr>
+<tr class="row-even"><td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>N-bit compression filter: number of data bits per pixel</p></td>
+<td><p>HDF5_nbitsPrecision</p></td>
+<td><p>$(P)$(R)NumDataBits, $(P)$(R)NumDataBits_RBV</p></td>
+<td><p>longout, longin</p></td>
+</tr>
+<tr class="row-odd"><td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>N-bit compression filter: dataword bit-offset in pixel</p></td>
+<td><p>HDF5_nbitsOffset</p></td>
+<td><p>$(P)$(R)DataBitsOffset, $(P)$(R)DataBitsOffset_RBV</p></td>
+<td><p>longout, longin</p></td>
+</tr>
+<tr class="row-even"><td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>szip compression filter: number of pixels in filter [1..32]</p></td>
+<td><p>HDF5_szipNumPixels</p></td>
+<td><p>$(P)$(R)SZipNumPixels, $(P)$(R)SZipNumPixels_RBV</p></td>
+<td><p>longout, longin</p></td>
+</tr>
+<tr class="row-odd"><td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>zlib compression filter: compression level [1..9]</p></td>
+<td><p>HDF5_zCompressLevel</p></td>
+<td><p>$(P)$(R)ZLevel, $(P)$(R)ZLevel_RBV</p></td>
+<td><p>longout, longin</p></td>
+</tr>
+<tr class="row-even"><td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>Blosc compressor. Choices are: [BloscLZ, LZ4, LZ4HC, SNAPPY, ZLIB, ZSTD]</p></td>
+<td><p>HDF5_bloscCompressor</p></td>
+<td><p>$(P)$(R)BloscCompressor, $(P)$(R)BloscCompressor_RBV</p></td>
+<td><p>mbbo, mbbi</p></td>
+</tr>
+<tr class="row-odd"><td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>Blosc shuffle. Choices are: [None, Byte, Bit]</p></td>
+<td><p>HDF5_bloscShuffle</p></td>
+<td><p>$(P)$(R)BloscShuffle, $(P)$(R)BloscShuffle_RBV</p></td>
+<td><p>mbbo, mbbi</p></td>
+</tr>
+<tr class="row-even"><td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>Blosc compression filter: compression level [0..9]</p></td>
+<td><p>HDF5_bloscCompressLevel</p></td>
+<td><p>$(P)$(R)BloscLevel, $(P)$(R)BloscLevel_RBV</p></td>
+<td><p>longout, longin</p></td>
+</tr>
+<tr class="row-odd"><td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>JPEG quality level [1..100]</p></td>
+<td><p>HDF5_jpegQuality</p></td>
+<td><p>$(P)$(R)JPEGQuality, $(P)$(R)JPEGQuality_RBV</p></td>
+<td><p>longout, longin</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="screenshots">
+<h2><a class="toc-backref" href="#id18" role="doc-backlink">Screenshots</a><a class="headerlink" href="#screenshots" title="Permalink to this heading"></a></h2>
+<figure class="align-center" id="id1">
+<img alt="../_images/NDFileHDF5.png" src="../_images/NDFileHDF5.png" />
+<figcaption>
+<p><span class="caption-text">NDFileHDF5.adl</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="NDFileTIFF.html" class="btn btn-neutral float-left" title="NDFileTIFF" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="NDFileNexus.html" class="btn btn-neutral float-right" title="NDFileNexus" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Mark Rivers.
+      <span class="lastupdated">Last updated on 2023-March-12.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

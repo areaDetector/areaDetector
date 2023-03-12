@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ADSimDetector &mdash; areaDetector Support</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme_overrides.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Example st.cmd Startup File" href="st_cmd.html" />
+    <link rel="prev" title="ADRIXSCam" href="../ADRIXSCam/ADRIXSCam.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            areaDetector
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../readme.html">Readme</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../user_guide.html">User Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/overview.html">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/arch.html">Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/asynPortDriver.html">asynPortDriver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/NDArray.html">NDArray</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../detector_drivers.html">Detector Drivers</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../ADCore/guidelines.html">Guidelines and rules for drivers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADCore/ADDriver.html">ADDriver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADAndor/andorDoc.html">ADAndor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADAndor3/ADAndorDoc.html">ADAndor3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADAravis/ADAravis.html">ADAravis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADCSimDetector/ADCSimDetectorDoc.html">ADCSimDetector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADDexela/ADDexela.html">ADDexela</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADEiger/eiger.html">ADEiger</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADFastCCD/index.html">ADFastCCD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADGenICam/ADGenICam.html">ADGenICam</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADLambda/ADLambda.html">ADLambda</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADLightField/ADLightField.html">ADLightField</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADmarCCD/marCCDDoc.html">ADmarCCD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADmar345/mar345Doc.html">ADmar345</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPerkinElmer/PerkinElmerDoc.html">ADPerkinElmer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPICam/PICamDoc.html">ADPICam</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPilatus/pilatusDoc.html">ADPilatus</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPixirad/ADPixirad.html">ADPixirad</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPointGrey/PointGreyDoc.html">ADPointGrey</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADProsilica/ADProsilica.html">ADProsilica</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPvCam/pvcamDoc.html">ADPvCam</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADQImaging/QImagingDoc.html">ADQImaging</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADRIXSCam/ADRIXSCam.html">ADRIXSCam</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">ADSimDetector</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#table-of-contents">Table of Contents</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#simulation-driver-specific-parameters">Simulation driver specific parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#simulation-modes">Simulation Modes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#unsupported-standard-driver-parameters">Unsupported standard driver parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#configuration">Configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#example-st-cmd-startup-file">Example st.cmd startup file</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#screenshots">Screenshots</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../ADSpinnaker/ADSpinnaker.html">ADSpinnaker</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADVimba/ADVimba.html">ADVimba</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADURL/ADURL.html">ADURL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../NDDriverStdArrays/NDDriverStdArraysDoc.html">NDDriverStdArrays</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../pvaDriver/pvaDriver.html">pvaDriver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../specsAnalyser/index.html">specsAnalyser</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/plugins.html">areaDetector Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../additional_plugins.html">Additional plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/medm.html">MEDM screens</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADViewers/ad_viewers.html">areaDetector Viewers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../acknowledgements.html">Acknowledgements and licenses</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../install_guide.html">Install Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release.html">Top-level Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ADCore_release.html">ADCore Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ADSupport_release.html">ADSupport Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../doxygen.html">Source Code Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../detectors.html">Supported Detectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../legacy_versions.html">Legacy Versions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">areaDetector</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../user_guide.html">areaDetector Users Guide</a></li>
+          <li class="breadcrumb-item"><a href="../detector_drivers.html">Detector Drivers</a></li>
+      <li class="breadcrumb-item active">ADSimDetector</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/ADSimDetector/simDetector.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="adsimdetector">
+<h1><a class="toc-backref" href="#id1" role="doc-backlink">ADSimDetector</a><a class="headerlink" href="#adsimdetector" title="Permalink to this heading"></a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">author<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Mark Rivers (University of Chicago), John Hammonds (Argonne National Laboratory)</p>
+</dd>
+</dl>
+<section id="table-of-contents">
+<h2><a class="toc-backref" href="#id2" role="doc-backlink">Table of Contents</a><a class="headerlink" href="#table-of-contents" title="Permalink to this heading"></a></h2>
+<nav class="contents" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#adsimdetector" id="id1">ADSimDetector</a></p>
+<ul>
+<li><p><a class="reference internal" href="#table-of-contents" id="id2">Table of Contents</a></p></li>
+<li><p><a class="reference internal" href="#introduction" id="id3">Introduction</a></p></li>
+<li><p><a class="reference internal" href="#simulation-driver-specific-parameters" id="id4">Simulation driver specific parameters</a></p></li>
+<li><p><a class="reference internal" href="#simulation-modes" id="id5">Simulation Modes</a></p>
+<ul>
+<li><p><a class="reference internal" href="#linear-ramp" id="id6">Linear Ramp</a></p></li>
+<li><p><a class="reference internal" href="#array-of-peaks" id="id7">Array of Peaks</a></p></li>
+<li><p><a class="reference internal" href="#sine" id="id8">Sine</a></p></li>
+<li><p><a class="reference internal" href="#offset" id="id9">Offset</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#unsupported-standard-driver-parameters" id="id10">Unsupported standard driver parameters</a></p></li>
+<li><p><a class="reference internal" href="#configuration" id="id11">Configuration</a></p></li>
+<li><p><a class="reference internal" href="#example-st-cmd-startup-file" id="id12">Example st.cmd startup file</a></p></li>
+<li><p><a class="reference internal" href="#screenshots" id="id13">Screenshots</a></p>
+<ul>
+<li><p><a class="reference internal" href="#simdetector-adl" id="id14">simDetector.adl</a></p></li>
+<li><p><a class="reference internal" href="#linear-ramp-mode" id="id15">Linear Ramp Mode</a></p></li>
+<li><p><a class="reference internal" href="#ramp-mode" id="id16">Ramp Mode</a></p></li>
+<li><p><a class="reference internal" href="#simulation-setup-screen-with-peaks-mode-selected" id="id17">Simulation setup screen with Peaks mode selected</a></p></li>
+<li><p><a class="reference internal" href="#imagej-display-with-the-above-peaks-mode-parameters" id="id18">ImageJ display with the above Peaks mode parameters</a></p></li>
+<li><p><a class="reference internal" href="#simulation-setup-screen-with-simple-sine-mode-setup" id="id19">Simulation setup screen with simple Sine mode setup</a></p></li>
+<li><p><a class="reference internal" href="#imagej-display-with-the-above-simple-sine-mode-parameters" id="id20">ImageJ display with the above simple Sine mode parameters</a></p></li>
+<li><p><a class="reference internal" href="#simulation-setup-screen-with-complex-sine-mode-parameters" id="id21">Simulation setup screen with complex Sine mode parameters</a></p></li>
+<li><p><a class="reference internal" href="#imagej-display-with-the-above-complex-sine-mode-parameters" id="id22">ImageJ display with the above complex Sine mode parameters</a></p></li>
+<li><p><a class="reference internal" href="#imagej-x-profile-with-the-above-complex-sine-mode-parameters" id="id23">ImageJ X profile with the above complex Sine mode parameters.</a></p></li>
+<li><p><a class="reference internal" href="#imagej-y-profile-with-the-above-complex-sine-mode-parameters" id="id24">ImageJ Y profile with the above complex Sine mode parameters.</a></p></li>
+<li><p><a class="reference internal" href="#simulation-setup-screen-with-sine-mode-parameters-in-rgb1-color-mode" id="id25">Simulation setup screen with Sine mode parameters in RGB1 color mode</a></p></li>
+<li><p><a class="reference internal" href="#imagej-display-with-the-above-color-sine-mode-parameters" id="id26">ImageJ display with the above color Sine mode parameters.</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</section>
+<section id="introduction">
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">Introduction</a><a class="headerlink" href="#introduction" title="Permalink to this heading"></a></h2>
+<p>This is an <a class="reference external" href="http://www.aps.anl.gov/epics/">EPICS</a> <a class="reference external" href="../index.html">areaDetector</a> driver for a simulated area
+detector. The simulation detector is useful as a model for writing
+real detector drivers. It is also very useful for testing plugins and
+channel access clients.</p>
+<p>This driver inherits from <a class="reference external" href="../ADCore/ADDriver.html">ADDriver</a>. It implements nearly all of the
+parameters in <a class="reference external" href="../areaDetectorDoxygenHTML/asyn_n_d_array_driver_8h.html">asynNDArrayDriver.h</a> and in <a class="reference external" href="../areaDetectorDoxygenHTML/_a_d_driver_8h.html">ADArrayDriver.h</a>, with
+the exception of the file saving parameters, which it does not
+implement. It also implements a few parameters that are specific to
+the simulation detector. The <a class="reference external" href="../areaDetectorDoxygenHTML/classsim_detector.html">simDetector class</a>
+describes this class in detail.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">writeInt32</span></code> and <code class="docutils literal notranslate"><span class="pre">writeFloat64</span></code> methods override those in the base
+class. The driver takes action when new parameters are passed via
+those interfaces. For example, the <code class="docutils literal notranslate"><span class="pre">ADAcquire</span></code> parameter (on the
+<code class="docutils literal notranslate"><span class="pre">asynInt32</span></code> interface) is used to turn acquisition (i.e. computing new
+images) on and off.</p>
+</section>
+<section id="simulation-driver-specific-parameters">
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">Simulation driver specific parameters</a><a class="headerlink" href="#simulation-driver-specific-parameters" title="Permalink to this heading"></a></h2>
+<p>The simulation driver-specific parameters are the following:</p>
+<table class="table-bordered table-striped table-hover docutils align-default">
+<colgroup>
+<col style="width: 40%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head" colspan="4"><p><strong>Parameter Definitions in simDetector.cpp and EPICS Record Definitions in simDetector.template</strong></p></th>
+</tr>
+<tr class="row-even"><th class="head"><p>Description</p></th>
+<th class="head"><p>drvInfo string</p></th>
+<th class="head"><p>EPICS record name</p></th>
+<th class="head"><p>EPICS record type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-odd"><td><p>Gain in the X direction</p></td>
+<td><p>SIM_GAINX</p></td>
+<td><p>$(P)$(R)GainX, $(P)$(R)GainX_RBV</p></td>
+<td><p>ao, ai</p></td>
+</tr>
+<tr class="row-even"><td><p>Gain in the Y direction</p></td>
+<td><p>SIM_GAINY</p></td>
+<td><p>$(P)$(R)GainY, $(P)$(R)GainY_RBV</p></td>
+<td><p>ao, ai</p></td>
+</tr>
+<tr class="row-odd"><td><p>Gain of the red channel</p></td>
+<td><p>SIM_GAIN_RED</p></td>
+<td><p>$(P)$(R)GainRed, $(P)$(R)GainRed_RBV</p></td>
+<td><p>ao, ai</p></td>
+</tr>
+<tr class="row-even"><td><p>Gain of the green channel</p></td>
+<td><p>SIM_GAIN_GREEN</p></td>
+<td><p>$(P)$(R)GainGreen, $(P)$(R)GainGreen_RBV</p></td>
+<td><p>ao, ai</p></td>
+</tr>
+<tr class="row-odd"><td><p>Gain of the blue channel</p></td>
+<td><p>SIM_GAIN_BLUE</p></td>
+<td><p>$(P)$(R)GainBlue, $(P)$(R)GainBlue_RBV</p></td>
+<td><p>ao, ai</p></td>
+</tr>
+<tr class="row-even"><td><p>The offset added to the image.</p></td>
+<td><p>SIM_OFFSET</p></td>
+<td><p>$(P)$(R)Offset, $(P)$(R)Offset_RBV</p></td>
+<td><p>ao, ai</p></td>
+</tr>
+<tr class="row-odd"><td><p>The amount of random noise added to the image.</p></td>
+<td><p>SIM_NOISE</p></td>
+<td><p>$(P)$(R)Noise, $(P)$(R)Noise_RBV</p></td>
+<td><p>ao, ai</p></td>
+</tr>
+<tr class="row-even"><td><p>Set to 1 to reset image back to initial conditions</p></td>
+<td><p>RESET_IMAGE</p></td>
+<td><p>$(P)$(R)Reset, $(P)$(R)Reset_RBV</p></td>
+<td><p>longout, longin</p></td>
+</tr>
+<tr class="row-odd"><td><p>Sets the simulation mode. Options are:</p>
+<ul class="simple">
+<li><p>0: LinearRamp (linear ramp)</p></li>
+<li><p>1: Peaks (Array of peaks)</p></li>
+<li><p>2: Sine (Sum or product of sine waves)</p></li>
+<li><p>3: Offset&amp;Noise (Offset and noise only, fastest mode)</p></li>
+</ul>
+</td>
+<td><p>SIM_MODE</p></td>
+<td><p>$(P)$(R)SimMode, $(P)$(R)SimMode_RBV</p></td>
+<td><p>mbbo, mbbi</p></td>
+</tr>
+<tr class="row-even"><td colspan="4"><p><strong>Parameters for Array of Peaks Mode</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>X location of the first peak centroid</p></td>
+<td><p>SIM_PEAK_START_X</p></td>
+<td><p>$(P)$(R)PeakStartX, $(P)$(R)PeakStartX_RBV</p></td>
+<td><p>longout, longin</p></td>
+</tr>
+<tr class="row-even"><td><p>Y location of the first peak centroid</p></td>
+<td><p>SIM_PEAK_START_Y</p></td>
+<td><p>$(P)$(R)PeakStartY, $(P)$(R)PeakStartY_RBV</p></td>
+<td><p>longout, longin</p></td>
+</tr>
+<tr class="row-odd"><td><p>X width of the peaks</p></td>
+<td><p>SIM_PEAK_WIDTH_X</p></td>
+<td><p>$(P)$(R)PeakWidthX, $(P)$(R)PeakWidthX_RBV</p></td>
+<td><p>longout, longin</p></td>
+</tr>
+<tr class="row-even"><td><p>Y width of the peaks</p></td>
+<td><p>SIM_PEAK_WIDTH_Y</p></td>
+<td><p>$(P)$(R)PeakWidthY, $(P)$(R)PeakWidthY_RBV</p></td>
+<td><p>longout, longin</p></td>
+</tr>
+<tr class="row-odd"><td><p>Number of peaks in X direction</p></td>
+<td><p>SIM_PEAK_NUM_X</p></td>
+<td><p>$(P)$(R)PeakNumX, $(P)$(R)PeakNumX_RBV</p></td>
+<td><p>longout, longin</p></td>
+</tr>
+<tr class="row-even"><td><p>Number of peaks in Y direction</p></td>
+<td><p>SIM_PEAK_NUM_Y</p></td>
+<td><p>$(P)$(R)PeakNumY, $(P)$(R)PeakNumY_RBV</p></td>
+<td><p>longout, longin</p></td>
+</tr>
+<tr class="row-odd"><td><p>X step between peaks</p></td>
+<td><p>SIM_PEAK_STEP_X</p></td>
+<td><p>$(P)$(R)PeakStepX, $(P)$(R)PeakStepX_RBV</p></td>
+<td><p>longout, longin</p></td>
+</tr>
+<tr class="row-even"><td><p>Y step between peaks</p></td>
+<td><p>SIM_PEAK_STEP_Y</p></td>
+<td><p>$(P)$(R)PeakStepY, $(P)$(R)PeakStepY_RBV</p></td>
+<td><p>longout, longin</p></td>
+</tr>
+<tr class="row-odd"><td><p>Used to introduce randomness in the peak height. If non-zero then each gaussian
+peak in the array is assigned a scaling factor:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">scalingFactor</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">+</span> <span class="p">(</span><span class="n">rand</span><span class="p">()</span> <span class="o">%</span> <span class="n">peakVariation</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="mf">100.0</span>
+</pre></div>
+</div>
+</td>
+<td><p>SIM_PEAK_HEIGHT_VARIATION</p></td>
+<td><p>$(P)$(R)PeakVariation, $(P)$(R)PeakVariation_RBV</p></td>
+<td><p>longout, longin</p></td>
+</tr>
+<tr class="row-even"><td colspan="4"><p><strong>Parameters for Sine Mode</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>The operation to use to combine XSine1 and XSine2. Choices are:</p>
+<ul class="simple">
+<li><p>0: Add</p></li>
+<li><p>1: Multiply</p></li>
+</ul>
+</td>
+<td><p>SIM_XSIN_OPERATION</p></td>
+<td><p>$(P)$(R)XSineOperation, $(P)$(R)XSineOperation_RBV</p></td>
+<td><p>mbbo, mbbi</p></td>
+</tr>
+<tr class="row-even"><td><p>The operation to use to combine YSine1 and YSine2. Choices are:</p>
+<ul class="simple">
+<li><p>0: Add</p></li>
+<li><p>1: Multiply</p></li>
+</ul>
+</td>
+<td><p>SIM_YSIN_OPERATION</p></td>
+<td><p>$(P)$(R)YSineOperation, $(P)$(R)YSineOperation_RBV</p></td>
+<td><p>mbbo, mbbi</p></td>
+</tr>
+<tr class="row-odd"><td><p>The amplitude of the sine wave. There is a record for each of the 4 sine waves:
+XSine1, XSine2, YSine1, YSine2.</p></td>
+<td><p>SIM_[X,Y]SIN[1,2]_AMPLITUDE</p></td>
+<td><p>$(P)$(R)[X,Y]Sine[1,2]Amplitude, $(P)$(R)[X,Y]Sine[1,2]Amplitude_RBV</p></td>
+<td><p>ao, ai</p></td>
+</tr>
+<tr class="row-even"><td><p>The frequency of the sine wave. A frequency of 1 means there is one complete period
+of the sine wave across the image in the X or Y direction. There is a record for
+each of the 4 sine waves: XSine1, XSine2, YSine1, YSine2.</p></td>
+<td><p>SIM_[X,Y]SIN[1,2]_FREQUENCY</p></td>
+<td><p>$(P)$(R)[X,Y]Sine[1,2]Frequency, $(P)$(R)[X,Y]Sine[1,2]Frequency_RBV</p></td>
+<td><p>ao, ai</p></td>
+</tr>
+<tr class="row-odd"><td><p>The phase of the sine wave in degrees. A phase of 90 is the same as a cosine wave.
+There is a record for each of the 4 sine waves: XSine1, XSine2, YSine1, YSine2.</p></td>
+<td><p>SIM_[X,Y]SIN[1,2]_PHASE</p></td>
+<td><p>$(P)$(R)[X,Y]Sine[1,2]Phase, $(P)$(R)[X,Y]Sine[1,2]Phase_RBV</p></td>
+<td><p>ao, ai</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="simulation-modes">
+<h2><a class="toc-backref" href="#id5" role="doc-backlink">Simulation Modes</a><a class="headerlink" href="#simulation-modes" title="Permalink to this heading"></a></h2>
+<section id="linear-ramp">
+<h3><a class="toc-backref" href="#id6" role="doc-backlink">Linear Ramp</a><a class="headerlink" href="#linear-ramp" title="Permalink to this heading"></a></h3>
+<p>For monochrome images (<code class="docutils literal notranslate"><span class="pre">NDColorMode</span></code> = <code class="docutils literal notranslate"><span class="pre">NDColorModeMono</span></code>) the simulation
+driver initially sets the <code class="docutils literal notranslate"><span class="pre">image[i,</span> <span class="pre">j]</span> <span class="pre">=</span> <span class="pre">i</span> <span class="pre">*</span> <span class="pre">SimGainX</span> <span class="pre">+</span> <span class="pre">j</span> <span class="pre">*</span> <span class="pre">SimGainY</span> <span class="pre">*</span>
+<span class="pre">ADGain</span> <span class="pre">*</span> <span class="pre">ADAcquireTime</span> <span class="pre">*</span> <span class="pre">1000</span></code>. Thus the image is a linear ramp in the
+X and Y directions, with the gains in each direction being detector-
+specific parameters. Each subsquent acquisition increments each pixel
+value by <code class="docutils literal notranslate"><span class="pre">ADGain</span> <span class="pre">*</span> <span class="pre">ADAcquireTime</span> <span class="pre">*</span> <span class="pre">1000</span></code>. Thus if <code class="docutils literal notranslate"><span class="pre">ADGain</span></code> = 1 and
+<code class="docutils literal notranslate"><span class="pre">ADAcquireTime</span></code> = .001 second then the pixels are incremented by 1. If the
+array is an unsigned 8 or 16 bit integer then the pixels will overflow
+and wrap around to 0 after some period of time. This gives the
+appearance of bands that appear to move with time. The slope of the
+bands and their periodicity can be adjusted by changing the gains and
+acquire times.</p>
+<p>For color images (<code class="docutils literal notranslate"><span class="pre">NDColorMode</span></code> = <code class="docutils literal notranslate"><span class="pre">NDColorModeRGB1/RGB2/RGB3</span></code>) there are
+3 images computed, one each for the red, green and blue channels. Each
+image is computed with the same algorithm as for the monochrome case,
+except each is multiplied by its appropriate gain factor (<code class="docutils literal notranslate"><span class="pre">SimGainRed</span></code>,
+<code class="docutils literal notranslate"><span class="pre">SimGainGreen</span></code>, <code class="docutils literal notranslate"><span class="pre">SimGainBlue</span></code>). Thus if each of these color gains is 1.0
+the color image will be identical to the monochrome image, but if the
+color gains are different from each other then image will have color
+bands.</p>
+</section>
+<section id="array-of-peaks">
+<h3><a class="toc-backref" href="#id7" role="doc-backlink">Array of Peaks</a><a class="headerlink" href="#array-of-peaks" title="Permalink to this heading"></a></h3>
+<p>For monochrome images, an array of gaussian peaks is produced. The
+user specifies the start location for the first peak in <code class="docutils literal notranslate"><span class="pre">PeakStartX</span></code> &amp;
+<code class="docutils literal notranslate"><span class="pre">PeakStartY</span></code>. The size of the peak is controlled by <code class="docutils literal notranslate"><span class="pre">PeakWidthX</span></code> and
+<code class="docutils literal notranslate"><span class="pre">PeakWidthY</span></code>. The array is specified by giving the number of peaks in
+each direction with <code class="docutils literal notranslate"><span class="pre">PeakNumX</span></code> and <code class="docutils literal notranslate"><span class="pre">PeakNumY</span></code> and the step size between
+peak centroids with <code class="docutils literal notranslate"><span class="pre">PeakStepX</span></code> and <code class="docutils literal notranslate"><span class="pre">PeakStepY</span></code>. The amplitude of each
+peak is controlled by <code class="docutils literal notranslate"><span class="pre">SimGainX</span></code>, <code class="docutils literal notranslate"><span class="pre">SimGainY</span></code>, and <code class="docutils literal notranslate"><span class="pre">ADGain</span></code>. If
+<code class="docutils literal notranslate"><span class="pre">SimGainX</span></code> = 1, <code class="docutils literal notranslate"><span class="pre">SimGainY</span></code> = 1, <code class="docutils literal notranslate"><span class="pre">SimNoise</span></code> = 0, and
+<code class="docutils literal notranslate"><span class="pre">SimPeakHeightVariation</span></code> = 0 then the peak height is equal to <code class="docutils literal notranslate"><span class="pre">ADGain</span></code>,
+<code class="docutils literal notranslate"><span class="pre">ADGain</span></code> = 255 would be appropriate for an 8-bit image. Note that data for
+each peak is only added to the image over a range of four times the
+<code class="docutils literal notranslate"><span class="pre">PeakWidth</span></code> in any direction (in the interest of speed).</p>
+<p>Dynamic behavior can be introduced into the system by changing
+<code class="docutils literal notranslate"><span class="pre">PeakVariation</span></code> and <code class="docutils literal notranslate"><span class="pre">Noise</span></code> records. <code class="docutils literal notranslate"><span class="pre">PeakVariation</span></code> introduces variation
+in the height of each peak in the array and Noise introduces variation in
+each pixel.</p>
+<p>The description for RGB images is the same as for the Linear Ramp.
+Pixels are computed the same way as for monochrome and there is a
+separate gain for each color.</p>
+</section>
+<section id="sine">
+<h3><a class="toc-backref" href="#id8" role="doc-backlink">Sine</a><a class="headerlink" href="#sine" title="Permalink to this heading"></a></h3>
+<p>The image is constructed from 2 sine waves in the X direction and 2
+sine waves in the Y direction. The amplitude, frequency, and phase of
+each of the 4 sine waves can be controlled. The two sine waves in each
+direction can be combined either by addition or by multiplication.
+There also global offset and noise parameters. Each sine wave is
+constructed using the following equation:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">X</span><span class="o">/</span><span class="n">YSine</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">Amplitude</span> <span class="o">*</span> <span class="n">sin</span><span class="p">((</span><span class="n">Count</span><span class="p">[</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p">]</span> <span class="o">*</span> <span class="n">Gain</span><span class="p">[</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p">]</span> <span class="o">/</span> <span class="n">Size</span><span class="p">[</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p">]</span> <span class="o">*</span> <span class="n">Frequency</span> <span class="o">+</span> <span class="n">Phase</span><span class="o">/</span><span class="mi">360</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">PI</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>where</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Count[X,Y]</span></code> is an integer counter that increments by 1 for each
+element of the sine wave for each new image. It reset to 0 when the
+image is reset with SimResetImage, or when the image dimensions or
+datatype are changed.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Amplitude</span></code> sets the sine-wave amplitude. The peak-to-peak value is
+twice this.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">i</span></code> is an index that goes from 0 to the image dimension SizeX or
+SizeY.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Gain[X,Y]</span></code> is <code class="docutils literal notranslate"><span class="pre">GainX</span></code> or <code class="docutils literal notranslate"><span class="pre">GainY</span></code> defined above.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Size[X,Y]</span></code> is <code class="docutils literal notranslate"><span class="pre">SizeX</span></code> or <code class="docutils literal notranslate"><span class="pre">SizeY</span></code>, the number of pixels in the X or Y
+direction.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Frequency</span></code> is the sine wave frequency. <code class="docutils literal notranslate"><span class="pre">Frequency</span></code> = 1 is one full
+period across the image.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Phase</span></code> is the phase angle in degrees.</p></li>
+</ul>
+<p>There are 4 separate values for Amplitude, Gain, and Frequency, one
+for each of the 4 sine waves.</p>
+<p>If the Frequency is an integer then there will be an integer number of
+sine wave periods across the image, and these will appear to be
+stationary from one image to the next. If Frequency is not an integer
+then there will be a non-integer number of periods across the image,
+and the sine wave will appear to move from one image to the next. This
+is because Count[X,Y] is not reset to 0 for each new image.</p>
+<p>In monochrome mode the following equation is used to construct each
+image:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Value</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">Gain</span> <span class="o">*</span> <span class="p">(</span><span class="n">Offset</span> <span class="o">+</span> <span class="p">(</span><span class="n">Noise</span> <span class="o">*</span> <span class="n">random</span><span class="p">)</span> <span class="o">+</span> <span class="n">XSine1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="p">(</span><span class="o">+</span> <span class="ow">or</span> <span class="o">*</span><span class="p">)</span> <span class="n">XSine2</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">YSine1</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="p">(</span><span class="o">+</span> <span class="ow">or</span> <span class="o">*</span><span class="p">)</span> <span class="n">YSine2</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>where</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Gain</span></code> is the overall image gain defined in <code class="docutils literal notranslate"><span class="pre">ADBase.template</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Noise</span></code> is the overall noise level in the image.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">random</span></code> is a random number in the range -1 to 1 that is different
+for each pixel in the image.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">i</span></code> is an index that goes from 0 to the image dimension SizeX.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">j</span></code> is an index that goes from 0 to the image dimension SizeY.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">XSine1</span></code>, <code class="docutils literal notranslate"><span class="pre">XSine1</span></code>, <code class="docutils literal notranslate"><span class="pre">YSine1</span></code>, <code class="docutils literal notranslate"><span class="pre">YSine2</span></code> are the 4 sine waves described
+above.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">(+</span> <span class="pre">or</span> <span class="pre">-)</span></code> is either addition or multiplication depending on the
+value of <code class="docutils literal notranslate"><span class="pre">XSineOperation</span></code> and <code class="docutils literal notranslate"><span class="pre">YSineOperation</span></code> described above.</p></li>
+</ul>
+<p>In color mode (<code class="docutils literal notranslate"><span class="pre">NDColorMode</span></code> = <code class="docutils literal notranslate"><span class="pre">NDColorModeRGB1/RGB2/RGB3</span></code>) the
+following equations are used to construct each image:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Red</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span>   <span class="o">=</span> <span class="n">Gain</span> <span class="o">*</span> <span class="n">GainRed</span>   <span class="o">*</span> <span class="p">(</span><span class="n">Offset</span> <span class="o">+</span> <span class="p">(</span><span class="n">Noise</span> <span class="o">*</span> <span class="n">random</span><span class="p">)</span> <span class="o">+</span> <span class="n">XSine1</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+<span class="n">Green</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">Gain</span> <span class="o">*</span> <span class="n">GainGreen</span> <span class="o">*</span> <span class="p">(</span><span class="n">Offset</span> <span class="o">+</span> <span class="p">(</span><span class="n">Noise</span> <span class="o">*</span> <span class="n">random</span><span class="p">)</span> <span class="o">+</span> <span class="n">YSine1</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+<span class="n">Blue</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span>  <span class="o">=</span> <span class="n">Gain</span> <span class="o">*</span> <span class="n">GainBlue</span>  <span class="o">*</span> <span class="p">(</span><span class="n">Offset</span> <span class="o">+</span> <span class="p">(</span><span class="n">Noise</span> <span class="o">*</span> <span class="n">random</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">XSine2</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">YSine2</span><span class="p">[</span><span class="n">j</span><span class="p">])</span> <span class="o">/</span> <span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>where the values have the same meaning as for monochrome images, and
+<code class="docutils literal notranslate"><span class="pre">GainRed</span></code>, <code class="docutils literal notranslate"><span class="pre">GainGreen</span></code>, and <code class="docutils literal notranslate"><span class="pre">GainBlue</span></code> are the same as for Linear Ramp
+mode explained above. Note that the red image is a single sine wave in the
+X direction (<code class="docutils literal notranslate"><span class="pre">XSine1</span></code>), the green image is a single sine wave in the Y
+direction (<code class="docutils literal notranslate"><span class="pre">YSine1</span></code>), and the blue image is the sum of <code class="docutils literal notranslate"><span class="pre">XSine2</span></code> and
+<code class="docutils literal notranslate"><span class="pre">YSine2</span></code>.</p>
+</section>
+<section id="offset">
+<h3><a class="toc-backref" href="#id9" role="doc-backlink">Offset</a><a class="headerlink" href="#offset" title="Permalink to this heading"></a></h3>
+<p>The image is controlled only by the <code class="docutils literal notranslate"><span class="pre">Offset</span></code> and <code class="docutils literal notranslate"><span class="pre">Noise</span></code> parameters. This
+is the fastest mode.</p>
+</section>
+</section>
+<section id="unsupported-standard-driver-parameters">
+<h2><a class="toc-backref" href="#id10" role="doc-backlink">Unsupported standard driver parameters</a><a class="headerlink" href="#unsupported-standard-driver-parameters" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>Collect: Number of exposures per image (ADNumExposures)</p></li>
+<li><p>Collect: Trigger mode (ADTriggerMode)</p></li>
+<li><p>File control: No file I/O is supported</p></li>
+</ul>
+</section>
+<section id="configuration">
+<h2><a class="toc-backref" href="#id11" role="doc-backlink">Configuration</a><a class="headerlink" href="#configuration" title="Permalink to this heading"></a></h2>
+<p>The simDetector driver is created with the simDetectorConfig command,
+either from C/C++ or from the EPICS IOC shell:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span> <span class="n">simDetectorConfig</span><span class="p">(</span><span class="n">const</span> <span class="n">char</span> <span class="o">*</span><span class="n">portName</span><span class="p">,</span>
+                      <span class="nb">int</span> <span class="n">maxSizeX</span><span class="p">,</span> <span class="nb">int</span> <span class="n">maxSizeY</span><span class="p">,</span> <span class="nb">int</span> <span class="n">dataType</span><span class="p">,</span>
+                      <span class="nb">int</span> <span class="n">maxBuffers</span><span class="p">,</span> <span class="n">size_t</span> <span class="n">maxMemory</span><span class="p">,</span>
+                      <span class="nb">int</span> <span class="n">priority</span><span class="p">,</span> <span class="nb">int</span> <span class="n">stackSize</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The simDetector-specific fields in this command are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">maxSizeX</span></code> Maximum number of pixels in the X direction for the
+simulated detector.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">maxSizeY</span></code> Maximum number of pixels in the Y direction for the
+simulated detector.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dataType</span></code> Initial data type of the detector data. These are the
+enum values for <code class="docutils literal notranslate"><span class="pre">NDDataType_t</span></code>, i.e.</p>
+<ul>
+<li><p>0: NDInt8</p></li>
+<li><p>1: NDUInt8</p></li>
+<li><p>2: NDInt16</p></li>
+<li><p>3: NDUInt16</p></li>
+<li><p>4: NDInt32</p></li>
+<li><p>5: NDUInt32</p></li>
+<li><p>6: NDFloat32</p></li>
+<li><p>7: NDFloat64</p></li>
+</ul>
+</li>
+</ul>
+<p>For details on the meaning of the other parameters to this function
+refer to the detailed documentation on the simDetectorConfig function
+in the <a class="reference external" href="../areaDetectorDoxygenHTML/sim_detector_8cpp.html">simDetector.cpp</a> and in the documentation for
+the constructor for the <a class="reference external" href="../areaDetectorDoxygenHTML/classsim_detector.html">simDetector class</a>.</p>
+</section>
+<section id="example-st-cmd-startup-file">
+<h2><a class="toc-backref" href="#id12" role="doc-backlink">Example st.cmd startup file</a><a class="headerlink" href="#example-st-cmd-startup-file" title="Permalink to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+</div>
+<p>There an example IOC boot directory and startup script
+provided with areaDetector: <a class="reference internal" href="st_cmd.html"><span class="doc">Example st.cmd Startup File</span></a>.</p>
+</section>
+<section id="screenshots">
+<h2><a class="toc-backref" href="#id13" role="doc-backlink">Screenshots</a><a class="headerlink" href="#screenshots" title="Permalink to this heading"></a></h2>
+<section id="simdetector-adl">
+<h3><a class="toc-backref" href="#id14" role="doc-backlink">simDetector.adl</a><a class="headerlink" href="#simdetector-adl" title="Permalink to this heading"></a></h3>
+<p>The following is the MEDM screen simDetector.adl for the simulation
+detector.</p>
+<a class="reference internal image-reference" href="../_images/simDetector.png"><img alt="../_images/simDetector.png" class="align-center" src="../_images/simDetector.png" style="width: 75%;" /></a>
+</section>
+<section id="linear-ramp-mode">
+<h3><a class="toc-backref" href="#id15" role="doc-backlink">Linear Ramp Mode</a><a class="headerlink" href="#linear-ramp-mode" title="Permalink to this heading"></a></h3>
+<p>The following is an IDL <a class="reference external" href="../ADViewers/ad_viewers.html#idl-viewer">epics_ad_display</a> screen using <a class="reference external" href="https://cars.uchicago.edu/software/idl/imaging_routines.html#image_display">image_display</a> to
+display the simulation detector in monochrome linear ramp mode.</p>
+<p>IDL epics_ad_display.pro display of simulation detector in monochrome</p>
+<a class="reference internal image-reference" href="../_images/simDetector_image_display.png"><img alt="../_images/simDetector_image_display.png" class="align-center" src="../_images/simDetector_image_display.png" style="width: 75%;" /></a>
+</section>
+<section id="ramp-mode">
+<h3><a class="toc-backref" href="#id16" role="doc-backlink">Ramp Mode</a><a class="headerlink" href="#ramp-mode" title="Permalink to this heading"></a></h3>
+<p>The following is an ImageJ plugin <a class="reference external" href="../ADViewers/ad_viewers.html#imagej-viewers">EPICS_AD_Viewer</a> screen
+displaying the simulation detector in color linear ramp mode.</p>
+<p>ImageJ EPICS_AD_Viewer display of simulation detector in color linear</p>
+<a class="reference internal image-reference" href="../_images/simDetector_ImageJ_display.png"><img alt="../_images/simDetector_ImageJ_display.png" class="align-center" src="../_images/simDetector_ImageJ_display.png" style="width: 60%;" /></a>
+</section>
+<section id="simulation-setup-screen-with-peaks-mode-selected">
+<h3><a class="toc-backref" href="#id17" role="doc-backlink">Simulation setup screen with Peaks mode selected</a><a class="headerlink" href="#simulation-setup-screen-with-peaks-mode-selected" title="Permalink to this heading"></a></h3>
+<p>This is an example of the MEDM screen that provides access to the
+specific parameters for the simulation detector. In this case Peaks
+mode is selected.</p>
+<a class="reference internal image-reference" href="../_images/simDetectorSetupPeaks.png"><img alt="../_images/simDetectorSetupPeaks.png" class="align-center" src="../_images/simDetectorSetupPeaks.png" style="width: 100%;" /></a>
+</section>
+<section id="imagej-display-with-the-above-peaks-mode-parameters">
+<h3><a class="toc-backref" href="#id18" role="doc-backlink">ImageJ display with the above Peaks mode parameters</a><a class="headerlink" href="#imagej-display-with-the-above-peaks-mode-parameters" title="Permalink to this heading"></a></h3>
+<a class="reference internal image-reference" href="../_images/simDetectorImagePeaks.png"><img alt="../_images/simDetectorImagePeaks.png" class="align-center" src="../_images/simDetectorImagePeaks.png" style="width: 50%;" /></a>
+</section>
+<section id="simulation-setup-screen-with-simple-sine-mode-setup">
+<h3><a class="toc-backref" href="#id19" role="doc-backlink">Simulation setup screen with simple Sine mode setup</a><a class="headerlink" href="#simulation-setup-screen-with-simple-sine-mode-setup" title="Permalink to this heading"></a></h3>
+<p>This is a simple example of Sine mode. The <code class="docutils literal notranslate"><span class="pre">XSine1</span></code> frequency is 2 and
+the <code class="docutils literal notranslate"><span class="pre">YSine1</span></code> frequency is 4. The <code class="docutils literal notranslate"><span class="pre">Sine2</span></code> amplitudes are zero, so there is
+a single sine wave in each direction.</p>
+<a class="reference internal image-reference" href="../_images/simDetectorSetupSimpleSine.png"><img alt="../_images/simDetectorSetupSimpleSine.png" class="align-center" src="../_images/simDetectorSetupSimpleSine.png" style="width: 100%;" /></a>
+</section>
+<section id="imagej-display-with-the-above-simple-sine-mode-parameters">
+<h3><a class="toc-backref" href="#id20" role="doc-backlink">ImageJ display with the above simple Sine mode parameters</a><a class="headerlink" href="#imagej-display-with-the-above-simple-sine-mode-parameters" title="Permalink to this heading"></a></h3>
+<a class="reference internal image-reference" href="../_images/simDetectorImageSimpleSine.png"><img alt="../_images/simDetectorImageSimpleSine.png" class="align-center" src="../_images/simDetectorImageSimpleSine.png" style="width: 50%;" /></a>
+<p>This is a complex example of Sine mode. There are 2 sine waves in each
+direction, with multiplication in X and addition in Y.</p>
+</section>
+<section id="simulation-setup-screen-with-complex-sine-mode-parameters">
+<h3><a class="toc-backref" href="#id21" role="doc-backlink">Simulation setup screen with complex Sine mode parameters</a><a class="headerlink" href="#simulation-setup-screen-with-complex-sine-mode-parameters" title="Permalink to this heading"></a></h3>
+<a class="reference internal image-reference" href="../_images/simDetectorSetupComplexSine.png"><img alt="../_images/simDetectorSetupComplexSine.png" class="align-center" src="../_images/simDetectorSetupComplexSine.png" style="width: 100%;" /></a>
+</section>
+<section id="imagej-display-with-the-above-complex-sine-mode-parameters">
+<h3><a class="toc-backref" href="#id22" role="doc-backlink">ImageJ display with the above complex Sine mode parameters</a><a class="headerlink" href="#imagej-display-with-the-above-complex-sine-mode-parameters" title="Permalink to this heading"></a></h3>
+<a class="reference internal image-reference" href="../_images/simDetectorImageComplexSine.png"><img alt="../_images/simDetectorImageComplexSine.png" class="align-center" src="../_images/simDetectorImageComplexSine.png" style="width: 50%;" /></a>
+</section>
+<section id="imagej-x-profile-with-the-above-complex-sine-mode-parameters">
+<h3><a class="toc-backref" href="#id23" role="doc-backlink">ImageJ X profile with the above complex Sine mode parameters.</a><a class="headerlink" href="#imagej-x-profile-with-the-above-complex-sine-mode-parameters" title="Permalink to this heading"></a></h3>
+<a class="reference internal image-reference" href="../_images/simDetectorXProfileComplexSine.png"><img alt="../_images/simDetectorXProfileComplexSine.png" class="align-center" src="../_images/simDetectorXProfileComplexSine.png" style="width: 75%;" /></a>
+</section>
+<section id="imagej-y-profile-with-the-above-complex-sine-mode-parameters">
+<h3><a class="toc-backref" href="#id24" role="doc-backlink">ImageJ Y profile with the above complex Sine mode parameters.</a><a class="headerlink" href="#imagej-y-profile-with-the-above-complex-sine-mode-parameters" title="Permalink to this heading"></a></h3>
+<a class="reference internal image-reference" href="../_images/simDetectorYProfileComplexSine.png"><img alt="../_images/simDetectorYProfileComplexSine.png" class="align-center" src="../_images/simDetectorYProfileComplexSine.png" style="width: 75%;" /></a>
+</section>
+<section id="simulation-setup-screen-with-sine-mode-parameters-in-rgb1-color-mode">
+<h3><a class="toc-backref" href="#id25" role="doc-backlink">Simulation setup screen with Sine mode parameters in RGB1 color mode</a><a class="headerlink" href="#simulation-setup-screen-with-sine-mode-parameters-in-rgb1-color-mode" title="Permalink to this heading"></a></h3>
+<p>This is a example of Sine mode in RGB1 color mode.</p>
+<ul class="simple">
+<li><p>The red signal is controlled by a horizontal sine wave with a
+frequency of 2 and a phase of 90 degrees.</p></li>
+<li><p>The green signal is controlled by a vertical sine wave with a
+frequency of 4 and a phase of 45 degrees.</p></li>
+<li><p>The blue signal is controlled by the sum of sine waves in the
+horizontal with a frequency of 5 and in the vertical with a frequency
+of 20.</p></li>
+</ul>
+<a class="reference internal image-reference" href="../_images/simDetectorSetupColorSine.png"><img alt="../_images/simDetectorSetupColorSine.png" class="align-center" src="../_images/simDetectorSetupColorSine.png" style="width: 100%;" /></a>
+</section>
+<section id="imagej-display-with-the-above-color-sine-mode-parameters">
+<h3><a class="toc-backref" href="#id26" role="doc-backlink">ImageJ display with the above color Sine mode parameters.</a><a class="headerlink" href="#imagej-display-with-the-above-color-sine-mode-parameters" title="Permalink to this heading"></a></h3>
+<a class="reference internal image-reference" href="../_images/simDetectorImageColorSine.png"><img alt="../_images/simDetectorImageColorSine.png" class="align-center" src="../_images/simDetectorImageColorSine.png" style="width: 50%;" /></a>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../ADRIXSCam/ADRIXSCam.html" class="btn btn-neutral float-left" title="ADRIXSCam" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="st_cmd.html" class="btn btn-neutral float-right" title="Example st.cmd Startup File" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Mark Rivers.
+      <span class="lastupdated">Last updated on 2023-March-12.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

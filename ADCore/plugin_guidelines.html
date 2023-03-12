@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guidelines and rules for plugins &mdash; areaDetector Support</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme_overrides.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Base class medm screens" href="plugin_medm.html" />
+    <link rel="prev" title="NDPluginDriver" href="NDPluginDriver.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            areaDetector
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../readme.html">Readme</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../user_guide.html">User Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arch.html">Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="asynPortDriver.html">asynPortDriver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NDArray.html">NDArray</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../detector_drivers.html">Detector Drivers</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="plugins.html">areaDetector Plugins</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="plugin_overview.html">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginDriver.html">NDPluginDriver</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Guidelines and rules for plugins</a></li>
+<li class="toctree-l3"><a class="reference internal" href="plugin_medm.html">Base class medm screens</a></li>
+<li class="toctree-l3"><a class="reference internal" href="common_plugins.html">commonPlugins.cmd</a></li>
+<li class="toctree-l3"><a class="reference internal" href="plugin_performance.html">Performance example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginAttrPlot.html">NDPluginAttrPlot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginAttribute.html">NDPluginAttribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginBadPixel.html">NDPluginBadPixel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginCircularBuff.html">NDPluginCircularBuff</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginCodec.html">NDPluginCodec</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginColorConvert.html">NDPluginColorConvert</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginFFT.html">NDPluginFFT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginFile.html">NDPluginFile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginGather.html">NDPluginGather</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginOverlay.html">NDPluginOverlay</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginProcess.html">NDPluginProcess</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginPva.html">NDPluginPva</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginROI.html">NDPluginROI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginROIStat.html">NDPluginROIStat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginScatter.html">NDPluginScatter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginStats.html">NDPluginStats</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginStdArrays.html">NDPluginStdArrays</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginTimeSeries.html">NDPluginTimeSeries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginTransform.html">NDPluginTransform</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginPos.html">NDPosPlugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ffmpegServer.html">ffmpegServer</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../additional_plugins.html">Additional plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="medm.html">MEDM screens</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADViewers/ad_viewers.html">areaDetector Viewers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../acknowledgements.html">Acknowledgements and licenses</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../install_guide.html">Install Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release.html">Top-level Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ADCore_release.html">ADCore Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ADSupport_release.html">ADSupport Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../doxygen.html">Source Code Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../detectors.html">Supported Detectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../legacy_versions.html">Legacy Versions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">areaDetector</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../user_guide.html">areaDetector Users Guide</a></li>
+          <li class="breadcrumb-item"><a href="plugins.html">areaDetector Plugins</a></li>
+      <li class="breadcrumb-item active">Guidelines and rules for plugins</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/ADCore/plugin_guidelines.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="guidelines-and-rules-for-plugins">
+<h1>Guidelines and rules for plugins<a class="headerlink" href="#guidelines-and-rules-for-plugins" title="Permalink to this heading"></a></h1>
+<p>The following are guidelines and rules for writing plugins</p>
+<ul class="simple">
+<li><p>Plugins will almost always implement the <code class="docutils literal notranslate"><span class="pre">processCallbacks()</span></code> function.
+This function will be called with an NDArray pointer each time an
+NDArray callback occurs. This function will normally call the
+<code class="docutils literal notranslate"><span class="pre">NDPluginDriver::processCallbacks()</span></code> base class function, which handles
+tasks common to all plugins, including callbacks with information
+about the array, etc.</p></li>
+<li><p>Plugins will generally implement one or more of the <code class="docutils literal notranslate"><span class="pre">writeInt32()</span></code>,
+<code class="docutils literal notranslate"><span class="pre">writeFloat64()</span></code> or <code class="docutils literal notranslate"><span class="pre">writeOctet()</span></code> functions if they need to act
+immediately on a new value of a parameter. For many parameters it is
+normally sufficient to simply have them written to the parameter
+library, and not to handle them in the writeXXX() functions. The
+parameters are then retrieved from the parameter library with the
+<code class="docutils literal notranslate"><span class="pre">getIntParam()</span></code>, <code class="docutils literal notranslate"><span class="pre">getDoubleParam()</span></code>, or <code class="docutils literal notranslate"><span class="pre">getStringParam()</span></code> function calls
+when they are needed.</p></li>
+<li><p>If the <code class="docutils literal notranslate"><span class="pre">writeInt32()</span></code>, <code class="docutils literal notranslate"><span class="pre">writeFloat64()</span></code> or <code class="docutils literal notranslate"><span class="pre">writeOctet()</span></code> functions are
+implemented they <strong>must</strong> call the base class function for parameters
+that they do not handle and whose parameter index value is less than
+the first parameter of this class, i.e. parameters that belong to a
+base class.</p></li>
+<li><p>Plugins will need to call the <code class="docutils literal notranslate"><span class="pre">createParam()</span></code> function in their
+constructor if they have additional parameters beyond those in the
+asynPortDriver or NDPluginDriver base classes.</p></li>
+<li><p>Plugins may <strong>never</strong> modify the NDArray that they receive in the
+<code class="docutils literal notranslate"><span class="pre">processCallbacks()</span></code> function. The reason is that other plugins may be
+concurrently operating on the same NDArray, since each is passed the
+same pointer. This means also that when getting the attributes for
+this plugin that
+<code class="docutils literal notranslate"><span class="pre">asynNDArrayDriver::getAttributes(pArray-&gt;pAttributeList)</span></code> must not be
+called with the NDArray passed to <code class="docutils literal notranslate"><span class="pre">processCallbacks()</span></code>, because that
+will modify the NDArray attribute list, and hence the NDArray that
+other plugins are operating on. Plugins such as NDPluginROI and
+NDPluginColorConvert create new NDArrays via <code class="docutils literal notranslate"><span class="pre">NDArrayPool::copy()</span></code> or
+<code class="docutils literal notranslate"><span class="pre">NDArrayPool::convert()</span></code> (which copy the attributes to the new array)
+and then call <code class="docutils literal notranslate"><span class="pre">getAttributes(pArray-&gt;pAttributeList)</span></code> with the new
+array.</p></li>
+<li><p>Plugins must release their mutex by calling <code class="docutils literal notranslate"><span class="pre">this-&gt;unlock()</span></code> when they
+do time-consuming operations. If they do not then they will not be
+able to queue new NDArrays callbacks or obtain new parameter values.
+Obviously they must not access memory locations that other threads
+could modify during this time, so they should only access local
+variables, not class variables (which includes the parameter
+library).</p></li>
+<li><p>If plugins generate new or modified NDArrays then they must call
+<code class="docutils literal notranslate"><span class="pre">NDPluginDriver::doNDArrayCallbacks()</span></code> so that registered clients can
+get the values of the new arrays.</p></li>
+</ul>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="NDPluginDriver.html" class="btn btn-neutral float-left" title="NDPluginDriver" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="plugin_medm.html" class="btn btn-neutral float-right" title="Base class medm screens" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Mark Rivers.
+      <span class="lastupdated">Last updated on 2023-March-12.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

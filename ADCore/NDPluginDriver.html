@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NDPluginDriver &mdash; areaDetector Support</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme_overrides.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Guidelines and rules for plugins" href="plugin_guidelines.html" />
+    <link rel="prev" title="Overview" href="plugin_overview.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            areaDetector
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../readme.html">Readme</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../user_guide.html">User Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arch.html">Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="asynPortDriver.html">asynPortDriver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NDArray.html">NDArray</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../detector_drivers.html">Detector Drivers</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="plugins.html">areaDetector Plugins</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="plugin_overview.html">Overview</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">NDPluginDriver</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#sorting-of-output-ndarrays">Sorting of output NDArrays</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="plugin_guidelines.html">Guidelines and rules for plugins</a></li>
+<li class="toctree-l3"><a class="reference internal" href="plugin_medm.html">Base class medm screens</a></li>
+<li class="toctree-l3"><a class="reference internal" href="common_plugins.html">commonPlugins.cmd</a></li>
+<li class="toctree-l3"><a class="reference internal" href="plugin_performance.html">Performance example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginAttrPlot.html">NDPluginAttrPlot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginAttribute.html">NDPluginAttribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginBadPixel.html">NDPluginBadPixel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginCircularBuff.html">NDPluginCircularBuff</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginCodec.html">NDPluginCodec</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginColorConvert.html">NDPluginColorConvert</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginFFT.html">NDPluginFFT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginFile.html">NDPluginFile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginGather.html">NDPluginGather</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginOverlay.html">NDPluginOverlay</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginProcess.html">NDPluginProcess</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginPva.html">NDPluginPva</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginROI.html">NDPluginROI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginROIStat.html">NDPluginROIStat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginScatter.html">NDPluginScatter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginStats.html">NDPluginStats</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginStdArrays.html">NDPluginStdArrays</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginTimeSeries.html">NDPluginTimeSeries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginTransform.html">NDPluginTransform</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginPos.html">NDPosPlugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ffmpegServer.html">ffmpegServer</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../additional_plugins.html">Additional plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="medm.html">MEDM screens</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADViewers/ad_viewers.html">areaDetector Viewers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../acknowledgements.html">Acknowledgements and licenses</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../install_guide.html">Install Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release.html">Top-level Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ADCore_release.html">ADCore Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ADSupport_release.html">ADSupport Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../doxygen.html">Source Code Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../detectors.html">Supported Detectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../legacy_versions.html">Legacy Versions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">areaDetector</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../user_guide.html">areaDetector Users Guide</a></li>
+          <li class="breadcrumb-item"><a href="plugins.html">areaDetector Plugins</a></li>
+      <li class="breadcrumb-item active">NDPluginDriver</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/ADCore/NDPluginDriver.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="ndplugindriver">
+<h1>NDPluginDriver<a class="headerlink" href="#ndplugindriver" title="Permalink to this heading"></a></h1>
+<p>NDPluginDriver inherits from
+<a class="reference external" href="areaDetectorDoc.html#asynNDArrayDriver">asynNDArrayDriver</a>.
+NDPluginDriver is the class from which actual plugins are directly
+derived. The EPICS database NDArrayBase.template provides access to each
+of the parameters defined in asynNDArrayDriver, and the
+<a class="reference external" href="areaDetectorDoc.html#asynNDArrayDriver">asynNDArrayDriver</a>
+documentation describes that database. The NDPluginDriver class handles
+most of the details of processing NDArray callbacks from the driver.
+Plugins derived from this class typically need to implement the
+processCallbacks method, and one or more of the write(Int32, Float64,
+Octet) methods. The <a class="reference external" href="../areaDetectorDoxygenHTML/class_n_d_plugin_driver.html">NDPluginDriver class
+documentation</a>
+describes this class in detail.</p>
+<p>NDPluginDriver defines parameters that all plugin drivers should
+implement if possible. These parameters are defined by strings (drvInfo
+strings in asyn) with an associated asyn interface, and access
+(read-only or read-write). The EPICS database NDPluginBase.template
+provides access to these standard plugin parameters, listed in the
+following table.</p>
+<table class="table-bordered table-striped table-hover docutils align-default">
+<colgroup>
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 60%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head"></th>
+<th class="head" colspan="4"><p><strong>Parameter Definitions in NDPluginDriver.h and EPICS Record Definitions in NDPluginBase.template</strong></p></th>
+</tr>
+<tr class="row-even"><th class="head"><p>asyn interface</p></th>
+<th class="head"><p>Access</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>drvInfo string</p></th>
+<th class="head"><p>EPICS record name</p></th>
+<th class="head"><p>EPICS record type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-odd"><td></td>
+<td></td>
+<td colspan="4"><p><strong>Information about this plugin</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>asynOctet</p></td>
+<td><p>r/o</p></td>
+<td><p>A string describing the plugin type.</p></td>
+<td><p>PLUGIN_TYPE</p></td>
+<td><p>$(P)$(R)PluginType_RBV</p></td>
+<td><p>stringin</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td colspan="4"><p><strong>asyn NDArray driver doing callbacks to this plugin</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>asynOctet</p></td>
+<td><p>r/w</p></td>
+<td><p>asyn port name for NDArray driver that will make callbacks to this plugin. This
+port can be changed at run time, connecting the plugin to a different NDArray driver.</p></td>
+<td><p>NDARRAY_PORT</p></td>
+<td><p>$(P)$(R)NDArrayPort, (P)$(R)NDArrayPort_RBV</p></td>
+<td><p>stringout, stringin</p></td>
+</tr>
+<tr class="row-odd"><td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>asyn port address for NDArray driver that will make callbacks to this plugin. This
+address can be changed at run time, connecting the plugin to a different address
+in the NDArray driver.</p></td>
+<td><p>NDARRAY_ADDR</p></td>
+<td><p>$(P)$(R)NDArrayAddress, $(P)$(R)NDArrayAddress_RBV</p></td>
+<td><p>longout, longin</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td colspan="4"><p><strong>Queue size and status</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>The total queue size for callbacks when BlockingCallbacks=0. This can be changed
+at run time to increase or decrease the size of the queue and thus the buffering
+in this plugin. This changes the memory requirements of the plugin. When the queue
+size is changed the plugin temporarily stops the callbacks from the input driver
+and waits for all NDArrays currently in the queue to process.</p></td>
+<td><p>QUEUE_SIZE</p></td>
+<td><p>$(P)$(R)QueueSize, $(P)$(R)QueueSize_RBV</p></td>
+<td><p>longout, longin</p></td>
+</tr>
+<tr class="row-even"><td><p>asynInt32</p></td>
+<td><p>r/o</p></td>
+<td><p>The number of free queue elements. This record goes into minor alarm when the queue
+is 75% full and major alarm when the queue is 100% full.</p></td>
+<td><p>QUEUE_FREE</p></td>
+<td><p>$(P)$(R)QueueFree</p></td>
+<td><p>longin</p></td>
+</tr>
+<tr class="row-odd"><td><p>N/A</p></td>
+<td><p>r/o</p></td>
+<td><p>The number of used queue elements.</p></td>
+<td><p>N/A</p></td>
+<td><p>$(P)$(R)QueueUse</p></td>
+<td><p>calc</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td colspan="4"><p><strong>Number of threads</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>asynInt32</p></td>
+<td><p>r/o</p></td>
+<td><p>The maximum number of threads that this plugin is allowed to use. This is defined
+when the plugin is created, and cannot be changed at run-time. Note that some plugins
+are not thread-safe for multiple threads running in the same plugin object, and
+these must force MaxThreads=1.</p></td>
+<td><p>MAX_THREADS</p></td>
+<td><p>$(P)$(R)MaxThreads_RBV</p></td>
+<td><p>longin</p></td>
+</tr>
+<tr class="row-even"><td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>The number of threads to use for this plugin. The value must be between 1 and MaxThreads.</p></td>
+<td><p>NUM_THREADS</p></td>
+<td><p>$(P)$(R)NumThreads, $(P)$(R)NumThreads_RBV</p></td>
+<td><p>longout, longin</p></td>
+</tr>
+<tr class="row-odd"><td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>Selects whether the plugin outputs NDArrays in the order in which they arrive (Unsorted=1)
+or sorted by UniqueId (Sorted=1).</p></td>
+<td><p>SORT_MODE</p></td>
+<td><p>$(P)$(R)SortMode, $(P)$(R)SortMode_RBV</p></td>
+<td><p>mbbo, mbbi</p></td>
+</tr>
+<tr class="row-even"><td><p>asynFloat64</p></td>
+<td><p>r/w</p></td>
+<td><p>Sets the minimum time that the plugin will wait for preceeding arrays to arrive
+before outputting array N when SortMode=Sorted.</p></td>
+<td><p>SORT_TIME</p></td>
+<td><p>$(P)$(R)SortTime, $(P)$(R)SortTime_RBV</p></td>
+<td><p>ao, ai</p></td>
+</tr>
+<tr class="row-odd"><td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>The maximum allowed size of the std::multiset. This can be changed at run time to
+increase or decrease the size of the queue and thus the buffering in this plugin.
+This changes the memory requirements of the plugin.</p></td>
+<td><p>SORT_SIZE</p></td>
+<td><p>$(P)$(R)SortSize, $(P)$(R)SortSize_RBV</p></td>
+<td><p>longout, longin</p></td>
+</tr>
+<tr class="row-even"><td><p>asynInt32</p></td>
+<td><p>r/o</p></td>
+<td><p>The number of NDArrays remaining before the std::multiset will not be allowed to
+grow larger and the plugin may begin to drop output frames.</p></td>
+<td><p>SORT_FREE</p></td>
+<td><p>$(P)$(R)SortFree</p></td>
+<td><p>longin</p></td>
+</tr>
+<tr class="row-odd"><td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>The number of NDArrays that have been output in the “wrong” order. The definition
+of the wrong order for NDArray[N] is that NDArray[N].uniqueId=NDArray[N-1].uniqueId
+or NDArray[N].uniqueId=NDArray[N-1].uniqueId+1. The reason for the equality test
+is explained above.</p></td>
+<td><p>DISORDERED_ARRAYS</p></td>
+<td><p>$(P)$(R)DisorderedArrays, $(P)$(R)DisorderedArrays_RBV</p></td>
+<td><p>longout, longin</p></td>
+</tr>
+<tr class="row-even"><td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>Counter that increments by 1 each time an NDArray callback occurs when SortMode=1
+and the std::multiset is full (SortFree=0), so the NDArray cannot be added to the
+std::multiset.</p></td>
+<td><p>DROPPED_OUTPUT_ARRAYS</p></td>
+<td><p>$(P)$(R)DroppedOutputArrays, $(P)$(R)DroppedOutputArrays_RBV</p></td>
+<td><p>longout, longin</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td colspan="4"><p><strong>Callback enable, throttling, and statistics</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>Enable (1) or disable (0) callbacks from the driver to this plugin. If callbacks
+are disabled then the plugin will normally be idle and consume no CPU resources.
+When disabling the plugin it will continue to process any NDArrays that are already
+in the queue.</p></td>
+<td><p>ENABLE_CALLBACKS</p></td>
+<td><p>$(P)$(R)EnableCallbacks, $(P)$(R)EnableCallbacks_RBV</p></td>
+<td><p>bo, bi</p></td>
+</tr>
+<tr class="row-odd"><td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>0 = callbacks from the driver do not block; the NDArray data is put on a queue and
+the callback processes in one of the plugin threads.
+, 1 = callbacks from the driver block; the callback processes in the driver callback
+thread.</p></td>
+<td><p>BLOCKING_CALLBACKS</p></td>
+<td><p>$(P)$(R)BlockingCallbacks, $(P)$(R)BlockingCallbacks_RBV</p></td>
+<td><p>bo, bi</p></td>
+</tr>
+<tr class="row-even"><td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>NDPluginDriver maintains a pointer to the last NDArray that the plugin received.
+If the ProcessPlugin record is processed then the plugin runs again using this same
+NDArray. This can be used to change the plugin parameters and observe the effects
+on downstream plugins and image viewers without requiring the underlying detector
+to collect another NDArray. When the plugin is disabled the cached NDArray is released
+back to the NDArrayPool.</p></td>
+<td><p>PROCESS_PLUGIN</p></td>
+<td><p>$(P)$(R)ProcessPlugin</p></td>
+<td><p>bo</p></td>
+</tr>
+<tr class="row-odd"><td><p>asynFloat64</p></td>
+<td><p>r/o</p></td>
+<td><p>The execution time when the plugin processes. This is useful for measuring the performance
+of the plugin</p></td>
+<td><p>EXECUTION_TIME</p></td>
+<td><p>$(P)$(R)ExecutionTime_RBV</p></td>
+<td><p>ai</p></td>
+</tr>
+<tr class="row-even"><td><p>asynFloat64</p></td>
+<td><p>r/w</p></td>
+<td><p>The minimum time in seconds between calls to processCallbacks. Any callbacks occuring
+before this minimum time has elapsed will be ignored. 0 means no minimum time, i.e.
+process all callbacks.</p></td>
+<td><p>MIN_CALLBACK_TIME</p></td>
+<td><p>$(P)$(R)MinCallbackTime, $(P)$(R)MinCallbackTime_RBV</p></td>
+<td><p>ao, ai</p></td>
+</tr>
+<tr class="row-odd"><td><p>asynFloat64</p></td>
+<td><p>r/w</p></td>
+<td><p>The maximum data output rate in bytes/s. If the output rate would exceed this then
+the output array is dropped and DroppedOutputArrays is incremented. This can be
+useful, for example, to limit the network bandwidth from a plugin. For most plugins
+this logic is implemented in NDPluginDriver::endProcessCallbacks() when the plugin
+is finishing its operation and is doing callbacks to any downstream plugins. However,
+the NDPluginPva and NDPluginStdArrays plugins are treated differently because the
+output we generally want to throttle is not the NDArray passed to downstream plugins,
+but rather the size of the output for the pvaServer (NDPluginPva) or the size of
+the arrays passed back to device support for waveform records (NDPluginStdArrays).
+For these plugins the throttling logic is thus also implemented inside the plugin.
+If these plugins are throttled then they really do no useful work, and so ArrayCounter
+is not incremented. This makes the ArrayRate reflect the rate at which the plugin
+is actually doing useful work. For NDPluginStdArrays this is also important because
+clients (e.g. ImageJ) may monitor the ArrayCounter_RBV field to decide when to read
+the array and update the display.</p></td>
+<td><p>MAX_BYTE_RATE</p></td>
+<td><p>$(P)$(R)MaxByteRate, $(P)$(R)MaxByteRate_RBV</p></td>
+<td><p>ao, ai</p></td>
+</tr>
+<tr class="row-even"><td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>Counter that increments by 1 each time an NDArray callback occurs when NDPluginDriverBlockingCallbacks=0
+and the plugin driver queue is full, so the callback cannot be processed.</p></td>
+<td><p>DROPPED_ARRAYS</p></td>
+<td><p>$(P)$(R)DroppedArrays, $(P)$(R)DroppedArrays_RBV</p></td>
+<td><p>longout, longin</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td colspan="4"><p><strong>Debugging control</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>N/A</p></td>
+<td><p>N/A</p></td>
+<td><p>N/A</p></td>
+<td><p>$(P)$(R)AsynIO</p></td>
+<td colspan="2"><p>asyn</p></td>
+</tr>
+</tbody>
+</table>
+<section id="sorting-of-output-ndarrays">
+<h2>Sorting of output NDArrays<a class="headerlink" href="#sorting-of-output-ndarrays" title="Permalink to this heading"></a></h2>
+<p>When using a plugin with multiple threads, or when the input plugin is NDPluginGather
+it is likely that the NDArray output will be slightly out of order, i.e. NDArray::uniqueId
+fields will not be monotonically increasing. This is because the threads are running
+asynchronously and at slightly different speeds. As a consequence a file plugin
+downstream of this plugin would write NDArrays to the file in the “wrong” order.
+Plugins have an option to sort the NDArrays by uniqueId to attempt to output them
+in the correct order. This sorting option is enabled by setting SortMode=Sorted,
+and works using the following algorithm:</p>
+<ul class="simple">
+<li><p>An std::multiset object is created to store the NDArray output pointers as they
+are received in NDArrayDriver::doNDArrayCallbacks. This is the method that all derived
+classes must call to output NDArrays to downstream plugins. This std::multiset also
+stores the time at which each NDArray was received by the NDArrayDriver::doNDArrayCallbacks
+method. This multiset is automatically sorted by the uniqueId of each NDArray.</p></li>
+<li><p>A worker thread is created which processes at the time interval specified by SortTime.
+This thread outputs the next array (NDArray[N]) in the multiset if any of the following
+are true:</p>
+<ul>
+<li><p>NDArray[N].uniqueId = NDArray[N-1].uniqueId. This allows for the case where multiple
+upstream plugins are processing the same NDArray. This may happen, for example,
+if NDPluginGather is being used and not all of its inputs are getting their NDArrays
+from from NDPluginScatter.</p></li>
+<li><p>NDArray[N].uniqueId = NDArray[N-1].uniqueId + 1. This is the normal case.</p></li>
+<li><p>NDArray[N] has been in the multiset for longer than SortTime. This will be the
+case if the next array that &lt;i&gt;should&lt;/i&gt; have been output has not arrived, perhaps
+because it has been dropped by some upstream plugin and will never arrive. Increasing
+the SortTime will allow longer for out of order arrays to arrive, at the expense
+of more memory because the multiset will grow larger before outputting the arrays.</p></li>
+</ul>
+</li>
+</ul>
+<p>When NDArrays are added to the multiset they have their reference count increased,
+and so will still be consuming memory. The multiset is limited in size to SortSize.
+If the multiset would grow larger than this because arrays are arriving faster than
+they are being removed with the specified SortTime, then they will be dropped in
+the same manner as when NDArrays are dropped from the normal input queue. In this
+case DroppedOutputArrays will be incremented. Note that because NDArrays can be
+stored in both the normal input queue and the multiset the total memory potentially
+used by the plugin is determined by both QueueSize and SortSize.
+If the plugin is receiving 500 NDArrays/s (2 ms period), and the maximum time the
+plugin threads require to execute is 20 msec, then the minimum value of SortTime
+should be 0.02 sec, and the minimum value of SortSize would be 10. It is a good
+idea to add a safety margin to these values, so perhaps SortSize=50 and SortTime=0.04
+sec.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="plugin_overview.html" class="btn btn-neutral float-left" title="Overview" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="plugin_guidelines.html" class="btn btn-neutral float-right" title="Guidelines and rules for plugins" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Mark Rivers.
+      <span class="lastupdated">Last updated on 2023-March-12.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

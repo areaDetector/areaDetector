@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ADmar345 &mdash; areaDetector Support</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme_overrides.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Example st.cmd Startup File" href="st_cmd.html" />
+    <link rel="prev" title="Example st.cmd Startup File" href="../ADmarCCD/st_cmd.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            areaDetector
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../readme.html">Readme</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../user_guide.html">User Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/overview.html">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/arch.html">Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/asynPortDriver.html">asynPortDriver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/NDArray.html">NDArray</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../detector_drivers.html">Detector Drivers</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../ADCore/guidelines.html">Guidelines and rules for drivers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADCore/ADDriver.html">ADDriver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADAndor/andorDoc.html">ADAndor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADAndor3/ADAndorDoc.html">ADAndor3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADAravis/ADAravis.html">ADAravis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADCSimDetector/ADCSimDetectorDoc.html">ADCSimDetector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADDexela/ADDexela.html">ADDexela</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADEiger/eiger.html">ADEiger</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADFastCCD/index.html">ADFastCCD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADGenICam/ADGenICam.html">ADGenICam</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADLambda/ADLambda.html">ADLambda</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADLightField/ADLightField.html">ADLightField</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADmarCCD/marCCDDoc.html">ADmarCCD</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">ADmar345</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#implementation-of-standard-driver-parameters">Implementation of standard driver parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mar345-specific-parameters">mar345 specific parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#unsupported-standard-driver-parameters">Unsupported standard driver parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#configuration">Configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#example-st-cmd-startup-file">Example st.cmd startup file</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#medm-screens">MEDM screens</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#performance-measurements">Performance measurements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#restrictions">Restrictions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPerkinElmer/PerkinElmerDoc.html">ADPerkinElmer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPICam/PICamDoc.html">ADPICam</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPilatus/pilatusDoc.html">ADPilatus</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPixirad/ADPixirad.html">ADPixirad</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPointGrey/PointGreyDoc.html">ADPointGrey</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADProsilica/ADProsilica.html">ADProsilica</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPvCam/pvcamDoc.html">ADPvCam</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADQImaging/QImagingDoc.html">ADQImaging</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADRIXSCam/ADRIXSCam.html">ADRIXSCam</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADSimDetector/simDetector.html">ADSimDetector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADSpinnaker/ADSpinnaker.html">ADSpinnaker</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADVimba/ADVimba.html">ADVimba</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADURL/ADURL.html">ADURL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../NDDriverStdArrays/NDDriverStdArraysDoc.html">NDDriverStdArrays</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../pvaDriver/pvaDriver.html">pvaDriver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../specsAnalyser/index.html">specsAnalyser</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/plugins.html">areaDetector Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../additional_plugins.html">Additional plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/medm.html">MEDM screens</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADViewers/ad_viewers.html">areaDetector Viewers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../acknowledgements.html">Acknowledgements and licenses</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../install_guide.html">Install Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release.html">Top-level Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ADCore_release.html">ADCore Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ADSupport_release.html">ADSupport Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../doxygen.html">Source Code Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../detectors.html">Supported Detectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../legacy_versions.html">Legacy Versions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">areaDetector</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../user_guide.html">areaDetector Users Guide</a></li>
+          <li class="breadcrumb-item"><a href="../detector_drivers.html">Detector Drivers</a></li>
+      <li class="breadcrumb-item active">ADmar345</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/ADmar345/mar345Doc.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="admar345">
+<h1><a class="toc-backref" href="#id1" role="doc-backlink">ADmar345</a><a class="headerlink" href="#admar345" title="Permalink to this heading"></a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">author<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Mark Rivers, University of Chicago</p>
+</dd>
+</dl>
+<nav class="contents" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#admar345" id="id1">ADmar345</a></p>
+<ul>
+<li><p><a class="reference internal" href="#overview" id="id2">Overview</a></p></li>
+<li><p><a class="reference internal" href="#introduction" id="id3">Introduction</a></p></li>
+<li><p><a class="reference internal" href="#implementation-of-standard-driver-parameters" id="id4">Implementation of standard driver parameters</a></p></li>
+<li><p><a class="reference internal" href="#mar345-specific-parameters" id="id5">mar345 specific parameters</a></p></li>
+<li><p><a class="reference internal" href="#unsupported-standard-driver-parameters" id="id6">Unsupported standard driver parameters</a></p></li>
+<li><p><a class="reference internal" href="#configuration" id="id7">Configuration</a></p></li>
+<li><p><a class="reference internal" href="#example-st-cmd-startup-file" id="id8">Example st.cmd startup file</a></p></li>
+<li><p><a class="reference internal" href="#medm-screens" id="id9">MEDM screens</a></p></li>
+<li><p><a class="reference internal" href="#performance-measurements" id="id10">Performance measurements</a></p></li>
+<li><p><a class="reference internal" href="#restrictions" id="id11">Restrictions</a></p></li>
+</ul>
+</li>
+</ul>
+</nav>
+<section id="overview">
+<h2><a class="toc-backref" href="#id2" role="doc-backlink">Overview</a><a class="headerlink" href="#overview" title="Permalink to this heading"></a></h2>
+<p>This is an <a class="reference internal" href="../index.html"><span class="doc">areaDetector</span></a> driver for the <a class="reference external" href="https://marxperts.com">marXperts</a> mar345 detector.</p>
+</section>
+<section id="introduction">
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">Introduction</a><a class="headerlink" href="#introduction" title="Permalink to this heading"></a></h2>
+<p>The interface to the detector is via a TCP/IP socket interface to the
+<strong>mar345dtb</strong> program that <a class="reference external" href="https://marxperts.com">marXperts</a> provides. The mar345dtb program
+must be started before the areaDetector software is started.</p>
+<p>mar345dtb must be configured to accepts commands on a TCP/IP socket
+port. This is done by editing the file /home/mar345/tables/config.xxx
+(where xxx is the serial number of that detector) and editing the
+COMMAND line to the following format:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">COMMAND</span> <span class="n">PORT</span> <span class="mi">5001</span>
+</pre></div>
+</div>
+<p>where 5001 is the TCP/IP port to use. Any high port number can be used,
+but it must agree with the one specified in the areaDetector
+<cite>mar345Config</cite> command described below.</p>
+<p>The mar345dtb program saves the data to disk as compressed binary files.
+The areaDetector software reads these disk files in order to read the
+data, because mar345dtb does not provide another mechanism to access the
+data.</p>
+<p>This driver inherits from <a class="reference internal" href="../ADCore/ADDriver.html"><span class="doc">ADDriver</span></a>.
+It implements nearly all of the parameters in
+<a class="reference external" href="../areaDetectorDoxygenHTML/asyn_n_d_array_driver_8h.html">asynNDArrayDriver.h</a>
+and in
+<a class="reference external" href="../areaDetectorDoxygenHTML/_a_d_driver_8h.html">ADArrayDriver.h</a>. It
+also implements a number of parameters that are specific to the
+mar345 detector. The <a class="reference external" href="../areaDetectorDoxygenHTML/classmar345.html">mar345 class
+documentation</a> describes this class in detail.</p>
+</section>
+<section id="implementation-of-standard-driver-parameters">
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">Implementation of standard driver parameters</a><a class="headerlink" href="#implementation-of-standard-driver-parameters" title="Permalink to this heading"></a></h2>
+<p>The following table describes how the mar345 driver implements some of
+the standard driver parameters.</p>
+<table class="table-bordered table-striped table-hover docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 80%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head" colspan="3"><p><strong>Implementation of Parameters in asynNDArrayDriver.h and ADDriver.h, and EPICS Record
+Definitions in ADBase.template and NDFile.template</strong></p></th>
+</tr>
+<tr class="row-even"><th class="head"><p>Parameter index variable</p></th>
+<th class="head"><p>EPICS record name</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-odd"><td><p>ADAcquire</p></td>
+<td><p>$(P)$(R)Acquire</p></td>
+<td><p>Setting this to 1 starts an acquisition sequence. If ADNumImages is greater than
+1 then it acquires multiple frames. For each frame it does the following:</p>
+<ol class="arabic simple">
+<li><p>Erases the detector if mar345EraseMode is “Before expose”.</p></li>
+<li><p>Opens the shutter if either the mar345 shutter or EPICS shutter controls are enabled.</p></li>
+<li><p>Waits for the desired exposure time.</p></li>
+<li><p>Closes the shutter if either the mar345 shutter or EPICS shutter controls are enabled.</p></li>
+<li><p>Scans the detector and saves the file.</p></li>
+<li><p>Erases the detector if mar345EraseMode is “After scan”.</p></li>
+</ol>
+<p>If ADAcquire is set to 0 during exposure (step 3 above) then it proceeds immediately
+to step 4, finishes collecting the current frame and stops the acquisition sequence
+if ADNumImages is greater than 1. If mar345Abort is set to 0 then the acquisition
+is terminated as soon as possible without saving the data. Note however that commands
+to the mar345 server to erase, change mode, or scan cannot be aborted, so the driver
+must wait for these commands to complete.</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>ADNumImages</p></td>
+<td><p>$(P)$(R)NumImages</p></td>
+<td><p>Controls the number of images to acquire when ADImageMode is ADImageMultiple.</p></td>
+</tr>
+<tr class="row-odd"><td><p>ADAcquirePeriod</p></td>
+<td><p>$(P)$(R)AcquirePeriod</p></td>
+<td><p>Controls the period between images when ADImageMode is ADImageMultiple or ADImageContinuous.
+If this is greater than the acquisition time plus readout overhead then the driver
+will wait until the period has elapsed before starting the next acquisition.</p></td>
+</tr>
+<tr class="row-even"><td><p>NDFilePath</p></td>
+<td><p>$(P)$(R)FilePath</p></td>
+<td><p>Controls the path for saving images. It must be a valid path for mar345dtb <em>and</em>
+for the areaDetector driver, which is normally running in an EPICS IOC. If mar345dtb
+and the EPICS IOC are not running on the same machine then soft links will typically
+be used to make the paths look identical.</p></td>
+</tr>
+<tr class="row-odd"><td><p>NDFileTemplate</p></td>
+<td><p>$(P)$(R)FileTemplate</p></td>
+<td><p>The mar345dtb program uses a file extension which describes the scan size and resolution,
+e.g. 3450, etc. Thus the FileTemplate should not include an extension. Furthermore
+mar345dtb always uses exactly 3 digits for the FileNumber (with leading zeros if
+required), just before the extension. Thus the final 3 characters of the FileTemplate
+must be “%3.3d”. If they are not then mar345dtb will successfully save the file,
+but with a different name than the areaDetector driver was expecting it to use,
+and the driver will generate an error when it tries to open the file to read the
+data. A good value for FileTemplate is thus “%s%s_%3.3d”, which will concatentate
+the FilePath and FileName, followed by an underscore and then a 3 digit number with
+leading zeros if required. The underscore is optional, and other characters can
+be placed between the FileName and the FileNumber if desired.</p></td>
+</tr>
+<tr class="row-even"><td><p>NDFileFormat</p></td>
+<td><p>$(P)$(R)FileFormat</p></td>
+<td><p>mar345 only supports mar345 format binary files.</p></td>
+</tr>
+<tr class="row-odd"><td><p>NDStatus</p></td>
+<td><p>$(P)$(R)DetectorState_RBV</p></td>
+<td><p>mar345 replaces the state strings with the following: Exposing, Scanning, Erasing,
+Changing Mode, Aborting, Error, and Waiting.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="mar345-specific-parameters">
+<h2><a class="toc-backref" href="#id5" role="doc-backlink">mar345 specific parameters</a><a class="headerlink" href="#mar345-specific-parameters" title="Permalink to this heading"></a></h2>
+<p>The mar345 driver implements the following parameters in addition to
+those in asynNDArrayDriver.h and ADDriver.h. Note that to reduce the
+width of this table the parameter index variable names have been split
+into 2 lines, but these are just a single name, for example
+<code class="docutils literal notranslate"><span class="pre">mar345ScanSize</span></code>.</p>
+<table class="table-bordered table-striped table-hover docutils align-default">
+<colgroup>
+<col style="width: 80%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head" colspan="3"><p><strong>Parameter Definitions in mar345.cpp and EPICS Record Definitions in mar345.template</strong></p></th>
+</tr>
+<tr class="row-even"><th class="head"><p>Description</p></th>
+<th class="head"><p>EPICS record name</p></th>
+<th class="head"><p>EPICS record type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-odd"><td colspan="3"><p><strong>Readout parameters</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>The detector diameter to read out. Choices are 180mm, 240mm, 300mm, and 345mm.</p></td>
+<td><p>$(P)$(R)ScanSize, $(P)$(R)ScanSize_RBV</p></td>
+<td><p>mbbo, mbbi</p></td>
+</tr>
+<tr class="row-odd"><td><p>The pixel size to use when reading the detector out. Choices are 0.10 and 0.15mm.</p></td>
+<td><p>$(P)$(R)ScanResolution, $(P)$(R)ScanResolution_RBV</p></td>
+<td><p>mbbo, mbbi</p></td>
+</tr>
+<tr class="row-even"><td><p>Writing 1 to this parameter causes the ScanSize and ScanResolution values to be
+sent to the server, changing the scan mode. This is not strictly necessary, because
+the size and resolution is also encoded in the file extension used in the scan command.
+However, changing the mode before doing a scan reduces the time for the scan, because
+the detector is already configured for the correct mode.</p></td>
+<td><p>$(P)$(R)ChangeMode, $(P)$(R)ChangedMode_RBV</p></td>
+<td><p>busy, bi</p></td>
+</tr>
+<tr class="row-odd"><td colspan="3"><p><strong>Erase parameters</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>Controls whether an erase cycle should be automatically performed during acquisition.
+Choices are None, Before expose, and After scan.</p></td>
+<td><p>$(P)$(R)EraseMode, $(P)$(R)EraseMode_RBV</p></td>
+<td><p>mbbo, mbbi</p></td>
+</tr>
+<tr class="row-odd"><td><p>The number of erase cycles to perform each time the detector is erased, either because
+the mar345Erase parameter is set to 1, or because of an automatic erase as part
+of an acquisition.</p></td>
+<td><p>$(P)$(R)NumErase, $(P)$(R)NumErase_RBV</p></td>
+<td><p>longout, longin</p></td>
+</tr>
+<tr class="row-even"><td><p>Write 1 to this parameter to initiate erasing the detector. The detector will be
+erased multiple times if mar345NumErase is greater than 1.</p></td>
+<td><p>$(P)$(R)Erase, $(P)$(R)Erase_RBV</p></td>
+<td><p>busy, bi</p></td>
+</tr>
+<tr class="row-odd"><td colspan="3"><p><strong>Abort parameters</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>Writing 1 to this parameter aborts the current operation as soon as possible and
+returns the driver to the idle state. Note however that commands to the mar345 server
+cannot be aborted, so the driver must wait for the current command to complete.</p></td>
+<td><p>$(P)$(R)Abort, $(P)$(R)Abort_RBV</p></td>
+<td><p>bo, bi</p></td>
+</tr>
+<tr class="row-odd"><td colspan="3"><p><strong>Debugging</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>asyn record to control debugging communication with mar345dtb program</p></td>
+<td><p>$(P)$(R)marSserverAsyn</p></td>
+<td><p>asyn</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="unsupported-standard-driver-parameters">
+<h2><a class="toc-backref" href="#id6" role="doc-backlink">Unsupported standard driver parameters</a><a class="headerlink" href="#unsupported-standard-driver-parameters" title="Permalink to this heading"></a></h2>
+<p>The mar345 driver does not support the following standard driver
+parameters because they are not supported in the mar345dtb program:</p>
+<ul class="simple">
+<li><p>Number of exposures per image (ADNumExposures)</p></li>
+<li><p>Trigger mode (ADTriggerMode)</p></li>
+<li><p>Gain (ADGain)</p></li>
+<li><p>Region to read out (ADMinX, ADMinY, ADSizeX, ADSizeY, ADReverseX,
+ADReverseY)</p></li>
+<li><p>Binning (ADBinX, ADBinY)</p></li>
+<li><p>Frame type (ADFrameType)</p></li>
+<li><p>Data type (NDDataType)</p></li>
+<li><p>Reading previous files (NDReadFile)</p></li>
+<li><p>Capture or stream file saving (NDFileWriteMode, NDFileCapture,
+NDNumCapture, NDNumCaptured)</p></li>
+</ul>
+</section>
+<section id="configuration">
+<h2><a class="toc-backref" href="#id7" role="doc-backlink">Configuration</a><a class="headerlink" href="#configuration" title="Permalink to this heading"></a></h2>
+<p>The mar345 driver is created with the mar345Config command, either from
+C/C++ or from the EPICS IOC shell.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span> <span class="n">mar345Config</span><span class="p">(</span><span class="n">const</span> <span class="n">char</span> <span class="o">*</span><span class="n">portName</span><span class="p">,</span> <span class="n">const</span> <span class="n">char</span> <span class="o">*</span><span class="n">serverPort</span><span class="p">,</span>
+                 <span class="nb">int</span> <span class="n">maxBuffers</span><span class="p">,</span> <span class="n">size_t</span> <span class="n">maxMemory</span><span class="p">,</span>
+                 <span class="nb">int</span> <span class="n">priority</span><span class="p">,</span> <span class="nb">int</span> <span class="n">stackSize</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>For details on the meaning of the parameters to this function refer to
+the detailed documentation on the mar345Config function in the
+<a class="reference external" href="../areaDetectorDoxygenHTML/mar345_8cpp.html">mar345.cpp documentation</a> and
+in the documentation for the constructor for the
+<a class="reference external" href="../areaDetectorDoxygenHTML/classmar345.html">mar345 class</a>.</p>
+</section>
+<section id="example-st-cmd-startup-file">
+<h2><a class="toc-backref" href="#id8" role="doc-backlink">Example st.cmd startup file</a><a class="headerlink" href="#example-st-cmd-startup-file" title="Permalink to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+</div>
+<p>There is an example IOC boot directory and startup script
+<a class="reference internal" href="st_cmd.html#admar345-st-cmd-example"><span class="std std-ref">st.cmd</span></a> provided with
+areaDetector.</p>
+</section>
+<section id="medm-screens">
+<h2><a class="toc-backref" href="#id9" role="doc-backlink">MEDM screens</a><a class="headerlink" href="#medm-screens" title="Permalink to this heading"></a></h2>
+<p>The following show the MEDM screens that are used to control the mar345
+detector. Note that the general purpose screen ADBase.adl can be used,
+but it exposes many controls that are not applicable to the mar345, and
+lacks some fields that are important for the mar345.</p>
+<p><code class="docutils literal notranslate"><span class="pre">mar345.adl</span></code> is the main screen used to control the mar345 driver.</p>
+<figure class="align-center">
+<img alt="../_images/mar345.png" src="../_images/mar345.png" />
+</figure>
+</section>
+<section id="performance-measurements">
+<h2><a class="toc-backref" href="#id10" role="doc-backlink">Performance measurements</a><a class="headerlink" href="#performance-measurements" title="Permalink to this heading"></a></h2>
+<p>The mar345 is definitely not a fast detector! The following measurements
+show the time to perform various erase and scan operations. Note that
+because the mar345 file format is compressed the file sizes are
+typically much less than the image sizes listed.</p>
+<table class="table-bordered table-striped table-hover docutils align-default">
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Scan diameter</p></th>
+<th class="head"><p>Pixel size</p></th>
+<th class="head"><p>Image dimensions</p></th>
+<th class="head"><p>Image size (MB)</p></th>
+<th class="head"><p>Time to scan</p></th>
+<th class="head"><p>Time to erase</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>180 mm</p></td>
+<td><p>0.15 mm</p></td>
+<td><p>1200x1200</p></td>
+<td><p>2.7</p></td>
+<td><p>38.6</p></td>
+<td><p>37.8</p></td>
+</tr>
+<tr class="row-odd"><td><p>240 mm</p></td>
+<td><p>0.15 mm</p></td>
+<td><p>1600x1600</p></td>
+<td><p>4.9</p></td>
+<td><p>50.4</p></td>
+<td><p>50.8</p></td>
+</tr>
+<tr class="row-even"><td><p>300 mm</p></td>
+<td><p>0.15 mm</p></td>
+<td><p>2000x2000</p></td>
+<td><p>7.6</p></td>
+<td><p>74.7</p></td>
+<td><p>66.9</p></td>
+</tr>
+<tr class="row-odd"><td><p>345 mm</p></td>
+<td><p>0.15 mm</p></td>
+<td><p>2300x2300</p></td>
+<td><p>10.1</p></td>
+<td><p>88.6</p></td>
+<td><p>82.7</p></td>
+</tr>
+<tr class="row-even"><td><p>180 mm</p></td>
+<td><p>0.10 mm</p></td>
+<td><p>1800x1800</p></td>
+<td><p>6.2</p></td>
+<td><p>46.4</p></td>
+<td><p>45.9</p></td>
+</tr>
+<tr class="row-odd"><td><p>240 mm</p></td>
+<td><p>0.10 mm</p></td>
+<td><p>2400x2400</p></td>
+<td><p>11.0</p></td>
+<td><p>71.9</p></td>
+<td><p>63.8</p></td>
+</tr>
+<tr class="row-even"><td><p>300 mm</p></td>
+<td><p>0.10 mm</p></td>
+<td><p>3000x3000</p></td>
+<td><p>17.2</p></td>
+<td><p>89.1</p></td>
+<td><p>87.0</p></td>
+</tr>
+<tr class="row-odd"><td><p>345 mm</p></td>
+<td><p>0.10 mm</p></td>
+<td><p>3450x3450</p></td>
+<td><p>22.7</p></td>
+<td><p>107.5</p></td>
+<td><p>107.1</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="restrictions">
+<h2><a class="toc-backref" href="#id11" role="doc-backlink">Restrictions</a><a class="headerlink" href="#restrictions" title="Permalink to this heading"></a></h2>
+<p>The following are some current restrictions of the mar345 driver:</p>
+<ul class="simple">
+<li><p>The areaDetector driver can in principle be run on machines other
+than the Linux machine running mar345dtb, since the connection is via
+a socket. It has only been tested on Linux.</p></li>
+<li><p>The following items are hardcoded in the driver. They can be changed
+by recompiling compiling if necessary.</p>
+<ul>
+<li><p>MAX_MESSAGE_SIZE=256 The maximum size of message to/from
+mar345dtb server.</p></li>
+<li><p>MAX_FILENAME_LEN=256 The maximum size of a complete file name
+including path and extension.</p></li>
+<li><p>MAR345_COMMAND_TIMEOUT=180.0 Timeout for a complete erase or
+scan command to complete.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../ADmarCCD/st_cmd.html" class="btn btn-neutral float-left" title="Example st.cmd Startup File" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="st_cmd.html" class="btn btn-neutral float-right" title="Example st.cmd Startup File" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Mark Rivers.
+      <span class="lastupdated">Last updated on 2023-March-12.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

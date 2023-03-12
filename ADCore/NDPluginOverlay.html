@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NDPluginOverlay &mdash; areaDetector Support</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme_overrides.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="NDPluginProcess" href="NDPluginProcess.html" />
+    <link rel="prev" title="NDPluginGather" href="NDPluginGather.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            areaDetector
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../readme.html">Readme</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../user_guide.html">User Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arch.html">Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="asynPortDriver.html">asynPortDriver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NDArray.html">NDArray</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../detector_drivers.html">Detector Drivers</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="plugins.html">areaDetector Plugins</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="plugin_overview.html">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginDriver.html">NDPluginDriver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="plugin_guidelines.html">Guidelines and rules for plugins</a></li>
+<li class="toctree-l3"><a class="reference internal" href="plugin_medm.html">Base class medm screens</a></li>
+<li class="toctree-l3"><a class="reference internal" href="common_plugins.html">commonPlugins.cmd</a></li>
+<li class="toctree-l3"><a class="reference internal" href="plugin_performance.html">Performance example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginAttrPlot.html">NDPluginAttrPlot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginAttribute.html">NDPluginAttribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginBadPixel.html">NDPluginBadPixel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginCircularBuff.html">NDPluginCircularBuff</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginCodec.html">NDPluginCodec</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginColorConvert.html">NDPluginColorConvert</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginFFT.html">NDPluginFFT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginFile.html">NDPluginFile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginGather.html">NDPluginGather</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">NDPluginOverlay</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#configuration">Configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#screen-shots">Screen shots</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginProcess.html">NDPluginProcess</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginPva.html">NDPluginPva</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginROI.html">NDPluginROI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginROIStat.html">NDPluginROIStat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginScatter.html">NDPluginScatter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginStats.html">NDPluginStats</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginStdArrays.html">NDPluginStdArrays</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginTimeSeries.html">NDPluginTimeSeries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginTransform.html">NDPluginTransform</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginPos.html">NDPosPlugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ffmpegServer.html">ffmpegServer</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../additional_plugins.html">Additional plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="medm.html">MEDM screens</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADViewers/ad_viewers.html">areaDetector Viewers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../acknowledgements.html">Acknowledgements and licenses</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../install_guide.html">Install Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release.html">Top-level Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ADCore_release.html">ADCore Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ADSupport_release.html">ADSupport Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../doxygen.html">Source Code Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../detectors.html">Supported Detectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../legacy_versions.html">Legacy Versions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">areaDetector</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../user_guide.html">areaDetector Users Guide</a></li>
+          <li class="breadcrumb-item"><a href="plugins.html">areaDetector Plugins</a></li>
+      <li class="breadcrumb-item active">NDPluginOverlay</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/ADCore/NDPluginOverlay.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="ndpluginoverlay">
+<h1><a class="toc-backref" href="#id2" role="doc-backlink">NDPluginOverlay</a><a class="headerlink" href="#ndpluginoverlay" title="Permalink to this heading"></a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">author<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Mark Rivers, University of Chicago</p>
+</dd>
+</dl>
+<nav class="contents" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#ndpluginoverlay" id="id2">NDPluginOverlay</a></p>
+<ul>
+<li><p><a class="reference internal" href="#overview" id="id3">Overview</a></p>
+<ul>
+<li><p><a class="reference internal" href="#display-limits-for-position-and-size-fields" id="id4">Display limits for Position and Size fields</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#configuration" id="id5">Configuration</a></p></li>
+<li><p><a class="reference internal" href="#screen-shots" id="id6">Screen shots</a></p></li>
+</ul>
+</li>
+</ul>
+</nav>
+<section id="overview">
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">Overview</a><a class="headerlink" href="#overview" title="Permalink to this heading"></a></h2>
+<p>NDPluginOverlay adds graphics overlays to an NDArray image. It can be
+used to highlight ROIs on an image, to implement cursors, add text
+annotation, and other similar operations. It supports any number of
+overlay objects. For each object there is control of the location, size,
+line width, color, and drawing mode. The size, line width and location
+can be directly controlled, or links can be used to control the position
+and size from other PVs. For example, links to the PVs definining an ROI
+in the NDPluginROI plugin can be used to define a rectangular overlay in
+thus plugin. Similarly links to the PVs defining the X and Y centroid
+and sigma of an image computed in the NDPluginStats plugin can be used
+to control the location and size of a crosshair overlay in this plugin.
+The cursor will then follow the location of a “beam” in the image.
+Putting such graphics overlays into an areaDetector plugin allows the
+use of simple image display clients, which don’t need to compute the
+graphics themselves.</p>
+<p>Each NDPluginOverlay plugin can contain any number of overlay objects,
+each with a different shape, position, color, etc. The number of overlay
+objects is defined when the NDPluginOverlay is created in the startup
+script. Each object is referenced by its asyn “addr” address field.</p>
+<p>NDPluginOverlay is both a <strong>recipient</strong> of callbacks and a <strong>source</strong> of
+NDArray callbacks. This means that other plugins, such as the
+NDPluginStdArray plugin, can be connected to an NDPluginOverlay plugin.
+In that case an image display client will receive the arrays with the
+graphics overlays.</p>
+<p>NDPluginOverlay can only be used for 2-D arrays or 3-D color arrays, it
+is not fully N-dimensional.</p>
+<p>NDPluginOverlay inherits from NDPluginDriver. The <a class="reference external" href="../areaDetectorDoxygenHTML/class_n_d_plugin_overlay.html">NDPluginOverlay class
+documentation</a>
+describes this class in detail.</p>
+<p>NDPluginOverlay.h defines the following parameters. It also implements
+all of the standard plugin parameters from
+<a class="reference internal" href="NDPluginDriver.html"><span class="doc">NDPluginDriver</span></a>. There are 2 EPICS
+databases for the NDPluginOverlay plugin. NDOverlay.template provides
+access to global parameters that are not specific to each overlay
+object. There are currently no records in this database, because it
+currently needs nothing beyond what is contained in
+NDPluginBase.template, but there may be records added to this in the
+future. NDOverlayN.template provides access to the parameters for each
+individual overlay object, described in the following table. Note that
+to reduce the width of this table the parameter index variable names
+have been split into 2 lines, but these are just a single name, for
+example <code class="docutils literal notranslate"><span class="pre">NDPluginOverlayName</span></code>.</p>
+<table class="table-bordered table-striped table-hover docutils align-default">
+<colgroup>
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 70%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head"></th>
+<th class="head" colspan="5"><p><strong>Parameter Definitions in NDPluginOverlay.h and EPICS Record Definitions in NDOverlayN.template</strong></p></th>
+</tr>
+<tr class="row-even"><th class="head"><p>Parameter index variable</p></th>
+<th class="head"><p>asyn interface</p></th>
+<th class="head"><p>Access</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>drvInfo string</p></th>
+<th class="head"><p>EPICS record name</p></th>
+<th class="head"><p>EPICS record type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-odd"><td><p>NDPluginOverlay, Name</p></td>
+<td><p>asynOctet</p></td>
+<td><p>r/w</p></td>
+<td><p>Name for this overlay.</p></td>
+<td><p>NAME</p></td>
+<td><p>$(P)$(R)Name, $(P)$(R)Name_RBV</p></td>
+<td><p>stringout, stringin</p></td>
+</tr>
+<tr class="row-even"><td><p>NDPluginOverlay, Use</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>Flag indicating whether to use (enable) this overlay. 0=No, 1=Yes.</p></td>
+<td><p>USE</p></td>
+<td><p>$(P)$(R)Use, $(P)$(R)Use_RBV</p></td>
+<td><p>bo, bi</p></td>
+</tr>
+<tr class="row-odd"><td><p>NDPluginOverlay, OverlayPositionX</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>The X position of this overlay. This is the left edge of the overlay. This will
+automatically update if CenterX is changed.</p></td>
+<td><p>OVERLAY_POSITION_X</p></td>
+<td><p>$(P)$(R)PositionX, $(P)$(R)PositionX_RBV</p></td>
+<td><p>longout, longin</p></td>
+</tr>
+<tr class="row-even"><td><p>N.A.</p></td>
+<td><p>N.A.</p></td>
+<td><p>r/w</p></td>
+<td><p>Link to fetch the desired X position of this overlay. The .DOL field of this record
+can be set to another record which will then change PositionX whenever the other
+record updates. The link <em>must</em> have the “CP” attribute, so that this record
+processes whenever the record it is linked to changes. For example, the link could
+be set to “13PS1:Stats1:CentroidX_RBV CP NMS” to fetch its position from the X centroid
+calculated by an NDPluginStats plugin, or to “13PS1:ROI1:MinX_RBV CP MS” to fetch
+its position from the X position of an ROI. If this link field is blank or points
+to a non-existent record then the X position of the overlay can be manually controlled.
+Note that this linking is done entirely in the EPICS database, and not in the plugin
+code.</p></td>
+<td><p>N.A.</p></td>
+<td><p>$(P)$(R)PositionXLink</p></td>
+<td><p>longout</p></td>
+</tr>
+<tr class="row-odd"><td><p>NDPluginOverlay, OverlayPositionY</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>The Y position of this overlay. This is the top edge of the overlay. This will automatically
+update if CenterY is changed.</p></td>
+<td><p>OVERLAY_POSITION_Y</p></td>
+<td><p>$(P)$(R)PositionY, $(P)$(R)PositionY_RBV</p></td>
+<td><p>longout, longin</p></td>
+</tr>
+<tr class="row-even"><td><p>N.A.</p></td>
+<td><p>N.A.</p></td>
+<td><p>r/w</p></td>
+<td><p>Link to fetch the desired Y position of this overlay. See the notes for PositionXLink
+above.</p></td>
+<td><p>N.A.</p></td>
+<td><p>$(P)$(R)PositionYLink</p></td>
+<td><p>longout</p></td>
+</tr>
+<tr class="row-odd"><td><p>NDPluginOverlay, OverlayCenterX</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>The X position of the center of this overlay. Sometimes it is more convenient to
+specify the center of the overlay rather than the left edge. This will automatically
+update if CenterX or SizeX is changed.</p></td>
+<td><p>OVERLAY_CENTER_X</p></td>
+<td><p>$(P)$(R)CenterX, $(P)$(R)CenterX_RBV</p></td>
+<td><p>longout, longin</p></td>
+</tr>
+<tr class="row-even"><td><p>N.A.</p></td>
+<td><p>N.A.</p></td>
+<td><p>r/w</p></td>
+<td><p>Link to fetch the desired X center of this overlay. See the notes for PositionXLink
+above.</p></td>
+<td><p>N.A.</p></td>
+<td><p>$(P)$(R)CenterXLink</p></td>
+<td><p>longout</p></td>
+</tr>
+<tr class="row-odd"><td><p>NDPluginOverlay, OverlayCenterY</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>The Y position of the center of this overlay. Sometimes it is more convenient to
+specify the center of the overlay rather than the top edge. This will automatically
+update if CenterY or SizeY is changed.</p></td>
+<td><p>OVERLAY_CENTER_Y</p></td>
+<td><p>$(P)$(R)CenterY, $(P)$(R)CenterY_RBV</p></td>
+<td><p>longout, longin</p></td>
+</tr>
+<tr class="row-even"><td><p>N.A.</p></td>
+<td><p>N.A.</p></td>
+<td><p>r/w</p></td>
+<td><p>Link to fetch the desired Y center of this overlay. See the notes for PositionXLink
+above.</p></td>
+<td><p>N.A.</p></td>
+<td><p>$(P)$(R)CenterYLink</p></td>
+<td><p>longout</p></td>
+</tr>
+<tr class="row-odd"><td><p>NDPluginOverlay, OverlaySizeX</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>The X size of this overlay. This does not apply to Text overlay shapes.</p></td>
+<td><p>OVERLAY_SIZE_X</p></td>
+<td><p>$(P)$(R)SizeX, $(P)$(R)SizeX_RBV</p></td>
+<td><p>longout, longin</p></td>
+</tr>
+<tr class="row-even"><td><p>N.A.</p></td>
+<td><p>N.A.</p></td>
+<td><p>r/w</p></td>
+<td><p>Link to fetch the desired X size of this overlay. See the notes for PositionXLink
+above.</p></td>
+<td><p>N.A.</p></td>
+<td><p>$(P)$(R)SizeXLink</p></td>
+<td><p>longout</p></td>
+</tr>
+<tr class="row-odd"><td><p>NDPluginOverlay, OverlaySizeY</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>The Y size of this overlay. This does not apply to Text overlay shapes.</p></td>
+<td><p>OVERLAY_SIZE_Y</p></td>
+<td><p>$(P)$(R)SizeY, $(P)$(R)SizeY_RBV</p></td>
+<td><p>longout, longin</p></td>
+</tr>
+<tr class="row-even"><td><p>N.A.</p></td>
+<td><p>N.A.</p></td>
+<td><p>r/w</p></td>
+<td><p>Link to fetch the desired Y size of this overlay. See the notes for PositionXLink
+above.</p></td>
+<td><p>N.A.</p></td>
+<td><p>$(P)$(R)SizeYLink</p></td>
+<td><p>longout</p></td>
+</tr>
+<tr class="row-odd"><td><p>NDPluginOverlay, OverlayWidthX</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>The X line width of this overlay. For the cross overlay this will increase the width
+of the line on both sides at the same time, to maintain the central point of the
+cross. For the rectangle and ellipse overlays the line thickness will grow inwards
+to the center. For cross overlay shapes the widths &amp;gt;1 are restricted to even
+numbers; odd widths &amp;gt;1 are decreased by 1.</p></td>
+<td><p>OVERLAY_WIDTH_X</p></td>
+<td><p>$(P)$(R)WidthX, $(P)$(R)WidthX_RBV</p></td>
+<td><p>longout, longin</p></td>
+</tr>
+<tr class="row-even"><td><p>N.A.</p></td>
+<td><p>N.A.</p></td>
+<td><p>r/w</p></td>
+<td><p>Link to fetch the desired X line width of this overlay. See the notes for PositionXLink
+above.</p></td>
+<td><p>N.A.</p></td>
+<td><p>$(P)$(R)WidthXLink</p></td>
+<td><p>longout</p></td>
+</tr>
+<tr class="row-odd"><td><p>NDPluginOverlay, OverlayWidthY</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>The Y line width of this overlay. This behaves in the same way as the OverlayWidthX.</p></td>
+<td><p>OVERLAY_WIDTH_Y</p></td>
+<td><p>$(P)$(R)WidthY, $(P)$(R)WidthY_RBV</p></td>
+<td><p>longout, longin</p></td>
+</tr>
+<tr class="row-even"><td><p>N.A.</p></td>
+<td><p>N.A.</p></td>
+<td><p>r/w</p></td>
+<td><p>Link to fetch the desired Y line width of this overlay. See the notes for PositionXLink
+above.</p></td>
+<td><p>N.A.</p></td>
+<td><p>$(P)$(R)WidthYLink</p></td>
+<td><p>longout</p></td>
+</tr>
+<tr class="row-odd"><td><p>NDPluginOverlay, Shape</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>The shape of this overlay. Choices are: <br>
+0=”Cross” <br>
+1=”Rectangle” <br>
+2=”Text” <br>
+3=”Ellipse” <br>
+Other shapes may be added in the future.</p></td>
+<td><p>OVERLAY_SHAPE</p></td>
+<td><p>$(P)$(R)Shape, $(P)$(R)Shape_RBV</p></td>
+<td><p>mbbo, mbbi</p></td>
+</tr>
+<tr class="row-even"><td><p>NDPluginOverlay, DrawMode</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>The operation to use when drawing this overlay. Choices are: <br>
+0=”Set” <br>
+1=”XOR” <br>
+In Set mode the Red, Green, and Blue values (Green for mono images) are written
+directly into the pixel values. In XOR mode the value in the pixel is XOR’ed with
+the Red, Green, and Blue values. XOR operation typically results in an overlay that
+has better visibility no matter what the values of the surrounding pixels, while
+Set mode with Green=255, for example, will show up well on dark areas of the image,
+but will be hard to see in bright areas of the image. Note that XOR is not supported
+for NDFloat32 or NDFloat64 data types directly, but they are cast to int if XOR
+is selected for arrays with those data types.</p></td>
+<td><p>OVERLAY_DRAW_MODE</p></td>
+<td><p>$(P)$(R)DrawMode, $(P)$(R)DrawMode_RBV</p></td>
+<td><p>mbbo, mbbi</p></td>
+</tr>
+<tr class="row-odd"><td><p>NDPluginOverlay, Red</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>The red value to use when drawing the overlay. This is only used for color images.</p></td>
+<td><p>OVERLAY_RED</p></td>
+<td><p>$(P)$(R)Red, $(P)$(R)Red_RBV</p></td>
+<td><p>longout, longin</p></td>
+</tr>
+<tr class="row-even"><td><p>NDPluginOverlay, Green</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>The green value to use when drawing the overlay. This is the value that is used
+for monochrome images as well.</p></td>
+<td><p>OVERLAY_GREEN</p></td>
+<td><p>$(P)$(R)Green, $(P)$(R)Green_RBV</p></td>
+<td><p>longout, longin</p></td>
+</tr>
+<tr class="row-odd"><td><p>NDPluginOverlay, Blue</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>The blue value to use when drawing the overlay. This is only used for color images.</p></td>
+<td><p>OVERLAY_BLUE</p></td>
+<td><p>$(P)$(R)Blue, $(P)$(R)Blue_RBV</p></td>
+<td><p>longout, longin</p></td>
+</tr>
+<tr class="row-even"><td><p>NDPluginOverlay, DisplayText</p></td>
+<td><p>asynOctet</p></td>
+<td><p>r/w</p></td>
+<td><p>The text string to write for this overlay if Shape=”Text”.</p></td>
+<td><p>OVERLAY_DISPLAY_TEXT</p></td>
+<td><p>$(P)$(R)DisplayText, $(P)$(R)DisplayText_RBV</p></td>
+<td><p>waveform, waveform</p></td>
+</tr>
+<tr class="row-odd"><td><p>NDPluginOverlay, TimeStampFormat</p></td>
+<td><p>asynOctet</p></td>
+<td><p>r/w</p></td>
+<td><p>The format string to use when outputting the EPICS time stamp (epicsTS) field of
+the NDArray in the text overlay. Default=”%Y-%m-%d %H:%M:%S.%03f”. Any of the components
+of the format can be omitted to suppress the display of that field.</p></td>
+<td><p>OVERLAY_TIMESTAMP_FORMAT</p></td>
+<td><p>$(P)$(R)TimeStampFormat, $(P)$(R)TimeStampFormat_RBV</p></td>
+<td><p>stringout, stringin</p></td>
+</tr>
+<tr class="row-even"><td><p>NDPluginOverlay, Font</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>The font to use for the text display. Choices are: <br>
+0=”6x13” <br>
+1=”6x13 Bold” <br>
+2=”9x15” <br>
+3=”9x15 Bold” <br></p></td>
+<td><p>OVERLAY_FONT</p></td>
+<td><p>$(P)$(R)Font, $(P)$(R)Font_RBV</p></td>
+<td><p>mbbo, mbbi</p></td>
+</tr>
+</tbody>
+</table>
+<section id="display-limits-for-position-and-size-fields">
+<h3><a class="toc-backref" href="#id4" role="doc-backlink">Display limits for Position and Size fields</a><a class="headerlink" href="#display-limits-for-position-and-size-fields" title="Permalink to this heading"></a></h3>
+<p>It is very convenient to have slider widgets to control the size and
+position of user-defined overlays. For these to work correctly, the HOPR
+fields of the X and Y position and size widgets must be set to the
+maximum allowed values. This is handled in the NDOverlay.template
+database, where the HOPR fields are automatically set to the actual size
+of the input array whenever that changes. Note that if HOPR changes,
+then with medm it is necessary to close and reopen the display with the
+sliders, because medm only retrieves the value the display limits when
+it first connects to a channel.</p>
+</section>
+</section>
+<section id="configuration">
+<span id="id1"></span><h2><a class="toc-backref" href="#id5" role="doc-backlink">Configuration</a><a class="headerlink" href="#configuration" title="Permalink to this heading"></a></h2>
+<p>The NDPluginOverlay plugin is created with the NDOverlayConfigure
+command, either from C/C++ or from the EPICS IOC shell.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">NDOverlayConfigure</span><span class="p">(</span><span class="n">const</span> <span class="n">char</span> <span class="o">*</span><span class="n">portName</span><span class="p">,</span> <span class="nb">int</span> <span class="n">queueSize</span><span class="p">,</span> <span class="nb">int</span> <span class="n">blockingCallbacks</span><span class="p">,</span>
+                   <span class="n">const</span> <span class="n">char</span> <span class="o">*</span><span class="n">NDArrayPort</span><span class="p">,</span> <span class="nb">int</span> <span class="n">NDArrayAddr</span><span class="p">,</span> <span class="nb">int</span> <span class="n">maxOverlays</span><span class="p">,</span>
+                   <span class="nb">int</span> <span class="n">maxBuffers</span><span class="p">,</span> <span class="n">size_t</span> <span class="n">maxMemory</span><span class="p">,</span>
+                   <span class="nb">int</span> <span class="n">priority</span><span class="p">,</span> <span class="nb">int</span> <span class="n">stackSize</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>For details on the meaning of the parameters to this function refer to
+the detailed documentation on the NDOverlayConfigure function in the
+<a class="reference external" href="../areaDetectorDoxygenHTML/_n_d_plugin_overlay_8cpp.html">NDPluginOverlay.cpp
+documentation</a>
+and in the documentation for the constructor for the <a class="reference external" href="../areaDetectorDoxygenHTML/class_n_d_plugin_attribute.html">NDPluginOverlay
+class</a>.</p>
+</section>
+<section id="screen-shots">
+<span id="screens"></span><h2><a class="toc-backref" href="#id6" role="doc-backlink">Screen shots</a><a class="headerlink" href="#screen-shots" title="Permalink to this heading"></a></h2>
+<p>The following is the MEDM screen that provides access to the parameters
+in NDPluginDriver.h and NDPluginOverlay.h through records in
+NDPluginBase.template and NDOverlay.template. This screen does not
+provide anything beyond the PVs in NDPluginBase.template except for the
+menus to call up the related displays.</p>
+<img alt="../_images/NDOverlay.png" class="align-center" src="../_images/NDOverlay.png" />
+<p>The following is the MEDM screen that provides access to the parameters
+in NDPluginOverlay.h through records in NDOverlayN.template. This allows
+control of the parameters of a single overlay object.</p>
+<img alt="../_images/NDOverlayN.png" class="align-center" src="../_images/NDOverlayN.png" />
+<p>The following is the MEDM screen that provides control of most the
+parameters of 8 overlay objects, and a link to the screen above for each
+one.</p>
+<img alt="../_images/NDOverlay8.png" class="align-center" src="../_images/NDOverlay8.png" />
+<p>Image display from ImageJ where the cursor is set to track the centroid
+of a laser pointer via its X and Y center input links from the
+NDPluginStats plugin.</p>
+<img alt="../_images/NDOverlay_image.jpg" class="align-center" src="../_images/NDOverlay_image.jpg" />
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="NDPluginGather.html" class="btn btn-neutral float-left" title="NDPluginGather" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="NDPluginProcess.html" class="btn btn-neutral float-right" title="NDPluginProcess" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Mark Rivers.
+      <span class="lastupdated">Last updated on 2023-March-12.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

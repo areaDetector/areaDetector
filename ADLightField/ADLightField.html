@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ADLightField &mdash; areaDetector Support</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme_overrides.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Example st.cmd Startup File" href="st_cmd.html" />
+    <link rel="prev" title="ADLambda" href="../ADLambda/ADLambda.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            areaDetector
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../readme.html">Readme</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../user_guide.html">User Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/overview.html">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/arch.html">Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/asynPortDriver.html">asynPortDriver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/NDArray.html">NDArray</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../detector_drivers.html">Detector Drivers</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../ADCore/guidelines.html">Guidelines and rules for drivers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADCore/ADDriver.html">ADDriver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADAndor/andorDoc.html">ADAndor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADAndor3/ADAndorDoc.html">ADAndor3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADAravis/ADAravis.html">ADAravis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADCSimDetector/ADCSimDetectorDoc.html">ADCSimDetector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADDexela/ADDexela.html">ADDexela</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADEiger/eiger.html">ADEiger</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADFastCCD/index.html">ADFastCCD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADGenICam/ADGenICam.html">ADGenICam</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADLambda/ADLambda.html">ADLambda</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">ADLightField</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#implementation-of-standard-driver-parameters">Implementation of standard driver parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#lightfield-specific-parameters">LightField specific parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#configuration">Configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#example-st-cmd-startup-file">Example st.cmd startup file</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#medm-screens">MEDM screens</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#restrictions">Restrictions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../ADmarCCD/marCCDDoc.html">ADmarCCD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADmar345/mar345Doc.html">ADmar345</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPerkinElmer/PerkinElmerDoc.html">ADPerkinElmer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPICam/PICamDoc.html">ADPICam</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPilatus/pilatusDoc.html">ADPilatus</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPixirad/ADPixirad.html">ADPixirad</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPointGrey/PointGreyDoc.html">ADPointGrey</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADProsilica/ADProsilica.html">ADProsilica</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPvCam/pvcamDoc.html">ADPvCam</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADQImaging/QImagingDoc.html">ADQImaging</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADRIXSCam/ADRIXSCam.html">ADRIXSCam</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADSimDetector/simDetector.html">ADSimDetector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADSpinnaker/ADSpinnaker.html">ADSpinnaker</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADVimba/ADVimba.html">ADVimba</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADURL/ADURL.html">ADURL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../NDDriverStdArrays/NDDriverStdArraysDoc.html">NDDriverStdArrays</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../pvaDriver/pvaDriver.html">pvaDriver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../specsAnalyser/index.html">specsAnalyser</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/plugins.html">areaDetector Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../additional_plugins.html">Additional plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/medm.html">MEDM screens</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADViewers/ad_viewers.html">areaDetector Viewers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../acknowledgements.html">Acknowledgements and licenses</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../install_guide.html">Install Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release.html">Top-level Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ADCore_release.html">ADCore Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ADSupport_release.html">ADSupport Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../doxygen.html">Source Code Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../detectors.html">Supported Detectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../legacy_versions.html">Legacy Versions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">areaDetector</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../user_guide.html">areaDetector Users Guide</a></li>
+          <li class="breadcrumb-item"><a href="../detector_drivers.html">Detector Drivers</a></li>
+      <li class="breadcrumb-item active">ADLightField</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/ADLightField/ADLightField.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="adlightfield">
+<h1><a class="toc-backref" href="#id1" role="doc-backlink">ADLightField</a><a class="headerlink" href="#adlightfield" title="Permalink to this heading"></a></h1>
+<p>areaDetector LightField driver</p>
+<dl class="field-list simple">
+<dt class="field-odd">author<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Mark Rivers, University of Chicago</p>
+</dd>
+</dl>
+<nav class="contents" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#adlightfield" id="id1">ADLightField</a></p>
+<ul>
+<li><p><a class="reference internal" href="#introduction" id="id2">Introduction</a></p></li>
+<li><p><a class="reference internal" href="#implementation-of-standard-driver-parameters" id="id3">Implementation of standard driver parameters</a></p></li>
+<li><p><a class="reference internal" href="#lightfield-specific-parameters" id="id4">LightField specific parameters</a></p></li>
+<li><p><a class="reference internal" href="#configuration" id="id5">Configuration</a></p></li>
+<li><p><a class="reference internal" href="#example-st-cmd-startup-file" id="id6">Example st.cmd startup file</a></p></li>
+<li><p><a class="reference internal" href="#medm-screens" id="id7">MEDM screens</a></p>
+<ul>
+<li><p><a class="reference internal" href="#lightfield-adl" id="id8">LightField.adl</a></p></li>
+<li><p><a class="reference internal" href="#lightfieldfile-adl" id="id9">LightFieldFile.adl</a></p></li>
+<li><p><a class="reference internal" href="#lighfield-program-from-priceton-instruments" id="id10">LighField program from Priceton Instruments</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#restrictions" id="id11">Restrictions</a></p></li>
+</ul>
+</li>
+</ul>
+</nav>
+<section id="introduction">
+<h2><a class="toc-backref" href="#id2" role="doc-backlink">Introduction</a><a class="headerlink" href="#introduction" title="Permalink to this heading"></a></h2>
+<p>This is an <a class="reference internal" href="../index.html"><span class="doc">areaDetector</span></a> driver for recent <a class="reference external" href="http://www.princetoninstruments.com/">Princeton Instruments</a>
+detectors including the ProEM, PIXIS, PI-MAX3, PI-MAX4,
+PyLoN, and Quad-RO. It also supports the Acton Series spectrographs.</p>
+<p>The interface to the detector is via the Microsoft Common Language
+Runtime (CLR) interface to the <strong>LightField</strong> program that Princeton
+Instruments sells. The areaDetector driver effectively “drives”
+LightField through the CLR interface, performing most of the same
+operations that can be performed using the LightField GUI. The
+advantage of this communication mechanism is that the user can
+continue to use LightField for viewing images and for configuration
+operations. LightField is automatically started when the areaDetector
+software is started.</p>
+<p>Because EPICS and the LightField GUI can control many of the same
+parameters the user must be aware of the interactions between the two
+control systems. The basic rule is that the value of a parameter will
+be determined by whichever control system last wrote to that
+parameter. The LightField widget will display the current value of a
+parameter no matter how it was last changed. EPICS will correctly
+display the current value of the parameter in the “readback” record,
+which typically ends in “_RBV”, no matter how the value was last
+changed. However the EPICS output record does not currently update if
+the value is changed in LightField. This may change in a future
+version of asyn device support.</p>
+<p>This driver inherits from <a class="reference internal" href="../ADCore/ADDriver.html"><span class="doc">ADDriver</span></a>. It implements many of the
+parameters <a class="reference external" href="../areaDetectorDoxygenHTML/asyn_n_d_array_driver_8h.html">asynNDArrayDriver.h</a> and in <a class="reference external" href="../areaDetectorDoxygenHTML/_a_d_driver_8h.html">ADArrayDriver.h</a>. It also
+implements a number of parameters that are specific to the LightField
+application.The <a class="reference external" href="../areaDetectorDoxygenHTML/class_light_field.html">LightField class</a> documentation describes this
+class in detail.</p>
+</section>
+<section id="implementation-of-standard-driver-parameters">
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">Implementation of standard driver parameters</a><a class="headerlink" href="#implementation-of-standard-driver-parameters" title="Permalink to this heading"></a></h2>
+<p>The following table describes how the LightField driver implements
+some of the standard driver parameters. Note that there are 4 possible
+levels of nested acquisition looping when using the LightField driver.
+From the innermost to outermost loop these are as follows:</p>
+<ol class="arabic simple">
+<li><p>LFNumAccumulations <code class="docutils literal notranslate"><span class="pre">$(P)$(R)NumAccumularions</span></code>. This controls the
+number of accumulations per image. Accumulations are acquired in
+hardware on the detector before it is read out.</p></li>
+<li><p>ADNumExposures <code class="docutils literal notranslate"><span class="pre">$(P)$(R)NumExposures</span></code>. This controls the number of
+images that are summed together by LightField into a single image.</p></li>
+<li><p>ADNumImages <code class="docutils literal notranslate"><span class="pre">$(P)$(R)NumImages</span></code>. This controls the number of images
+per acquisition. This is also called AcquisitionFramesToStore in
+LightField’s terminology. These images will all be acquired into a
+single 3-D array, and saved to a single SPE file in LightField.</p></li>
+<li><p>LFNumAcquisitions <code class="docutils literal notranslate"><span class="pre">$(P)$(R)NumAcquisitions</span></code>. This controls the
+number of times that the driver will repeat an acquisition sequence.
+This is has no equivalent in LightField, it is handled entirely by the
+areaDetector driver. It can be used to acquire multiple data sets,
+where each is controlled by the above parameters. NOTE:
+NumAcquisitions is not yet implemented, but is planned in a future
+release.</p></li>
+</ol>
+<table class="table-bordered table-striped table-hover docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 60%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head" colspan="3"><p><strong>Implementation of Parameters in asynNDArrayDriver.h and ADDriver.h, and EPICS Record
+Definitions in ADBase.template and NDFile.template</strong></p></th>
+</tr>
+<tr class="row-even"><th class="head"><p>Parameter index variable</p></th>
+<th class="head"><p>EPICS record name</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-odd"><td><p>ADImageMode</p></td>
+<td><p>$(P)$(R)ImageMode</p></td>
+<td><p>The driver redefines the choices for the ADImageMode parameter (record $(P)$(R)ImageMode)
+from ADDriver.h. The choices for the LightField are:</p>
+<dl class="simple">
+<dt>Normal</dt><dd><p>This is the same as pressing the Acquire button in LightField. It may
+collect more than 1 accumulation per image if numAccumulations &gt; 1, more than 1
+exposure per image if NumExposures &gt; 1, more than 1 image per acquisition if NumImages &gt; 1,
+and more than 1 aquisition if NumAcquisitions &gt; 1.</p>
+</dd>
+<dt>Preview</dt><dd><p>This is the same as pressing the Preview button in LightField. It causes
+acquisition to proceed as quickly as possible. It does not save the data.</p>
+</dd>
+<dt>Background</dt><dd><p>This will cause the driver to acquire a background image to be used
+when background subtraction is enabled.</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="row-even"><td><p>ADNumExposures</p></td>
+<td><p>$(P)$(R)NumExposures</p></td>
+<td><p>Controls the number of exposures that LightField will sum into a single image.</p></td>
+</tr>
+<tr class="row-odd"><td><p>ADNumImages</p></td>
+<td><p>$(P)$(R)NumImages</p></td>
+<td><p>Controls the number of images to acquire into a single 3-D data set.</p></td>
+</tr>
+<tr class="row-even"><td><p>ADGain</p></td>
+<td><p>$(P)$(R)Gain</p></td>
+<td><p>The precision of the $(P)$(R)Gain record is changed to 0 because the gain in LightField
+is an integer. Allowed values are detector dependent, but 1 and 2 are typically
+supported.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="lightfield-specific-parameters">
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">LightField specific parameters</a><a class="headerlink" href="#lightfield-specific-parameters" title="Permalink to this heading"></a></h2>
+<p>The LightField driver implements the following parameters in addition
+to those in asynNDArrayDriver.h and ADDriver.h.</p>
+<table class="table-bordered table-striped table-hover docutils align-default">
+<colgroup>
+<col style="width: 80%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head" colspan="3"><p><strong>Parameter Definitions in LightField.cpp and EPICS Record Definitions in LightField.template</strong></p></th>
+</tr>
+<tr class="row-even"><th class="head"><p>Description</p></th>
+<th class="head"><p>EPICS record name</p></th>
+<th class="head"><p>EPICS record type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-odd"><td colspan="3"><p><strong>Acquisition parameters</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>The number of on-chip accumulations to perform per image.</p></td>
+<td><p>$(P)$(R)NumAccumulations, $(P)$(R)NumAccumulations_RBV</p></td>
+<td><p>longout, longin</p></td>
+</tr>
+<tr class="row-odd"><td><p>The number of acquisitions to perform when acquisition is started. This controls
+the number of iterations in the outermost acquisition loop explained above.</p>
+<p><strong>NOTE: This is not yet implemented, it is planned for a future release.</strong></p>
+</td>
+<td><p>$(P)$(R)NumAcquisitions, $(P)$(R)NumAcquisitions_RBV</p></td>
+<td><p>longout, longin</p></td>
+</tr>
+<tr class="row-even"><td><p>The number of acquisitions performed so far.</p></td>
+<td><p>$(P)$(R)NumAcquisitionsCounter_RBV</p></td>
+<td><p>longin</p></td>
+</tr>
+<tr class="row-odd"><td><p>The camera gain. This parameter is used instead of the base class ADGain parameter
+so that it can be displayed as a menu as LightField does.</p></td>
+<td><p>$(P)$(R)LFGain, $(P)$(R)LFGain_RBV</p></td>
+<td><p>mbbo, mbbi</p></td>
+</tr>
+<tr class="row-even"><td><p>The shutter operating mode for shutters controlled by LightField. Allowed values
+are:</p>
+<dl class="simple">
+<dt>Normal</dt><dd><p>The detector shutter will be opened and closed normally for each exposure.</p>
+</dd>
+<dt>Always closed</dt><dd><p>The shutter will be kept closed. Useful for taking a dark current
+image.</p>
+</dd>
+<dt>Always open</dt><dd><p>The shutter will be kept open. Useful if the light source is a strobe
+so the shutter is not needed.</p>
+</dd>
+<dt>Open before trigger</dt><dd><p>The detector shutter will be opened before the trigger.</p>
+</dd>
+</dl>
+</td>
+<td><p>$(P)$(R)LFShutterMode, $(P)$(R)LFShutterMode_RBV</p></td>
+<td><p>mbbo, mbbi</p></td>
+</tr>
+<tr class="row-odd"><td colspan="3"><p><strong>Experiment parameters</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>Selects the LightField experiment, which is a set of experimental conditions including
+the selected camera, etc. The record choices are constructed at run-time based on
+the experiment files currently available.</p></td>
+<td><p>$(P)$(R)LFExperimentName, $(P)$(R)LFExperimentName_RBV</p></td>
+<td><p>mbbo, mbbi</p></td>
+</tr>
+<tr class="row-odd"><td><p>Updates the choices in the LFExperimentName records. This is only needed if a new
+experiment is created after the EPICS IOC is started.</p></td>
+<td><p>$(P)$(R)LFUpdateExperiments</p></td>
+<td><p>bo</p></td>
+</tr>
+<tr class="row-even"><td colspan="3"><p><strong>Spectrometer parameters</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>Selects the spectrometer grating. The record choices are constructed at run-time
+based on the gratings actually available.</p></td>
+<td><p>$(P)$(R)LFGrating, $(P)$(R)LFGrating_RBV</p></td>
+<td><p>mbbo, mbbi</p></td>
+</tr>
+<tr class="row-even"><td><p>Selects the center wavelength of the spectrometer.</p></td>
+<td><p>$(P)$(R)LFGratingWL, $(P)$(R)LFGratingWL_RBV</p></td>
+<td><p>ao, ai</p></td>
+</tr>
+<tr class="row-odd"><td><p>Selects the starting wavelength of the spectrometer for Step And Glue.</p></td>
+<td><p>$(P)$(R)LFSAGStartingWL, $(P)$(R)LFSAGStartingWL_RBV</p></td>
+<td><p>ao, ai</p></td>
+</tr>
+<tr class="row-even"><td><p>Selects the ending wavelength of the spectrometer for Step And Glue.</p></td>
+<td><p>$(P)$(R)LFSAGEndingWL, $(P)$(R)LFSAGEndingWL_RBV</p></td>
+<td><p>ao, ai</p></td>
+</tr>
+<tr class="row-odd"><td><p>Enables and disables Step and Glue.</p></td>
+<td><p>$(P)$(R)LFSAGEnable, $(P)$(R)LFSAGEnable_RBV</p></td>
+<td><p>bo, bi</p></td>
+</tr>
+<tr class="row-even"><td><p>Selects the entrance width of the side port on the spectrometer in microns.</p></td>
+<td><p>$(P)$(R)LFEntranceWidth, $(P)$(R)LFEntranceWidth_RBV</p></td>
+<td><p>longout, longin</p></td>
+</tr>
+<tr class="row-odd"><td><p>Selects the entrance port of the spectrometer. Choices are:</p>
+<ul class="simple">
+<li><p>Side</p></li>
+<li><p>Front</p></li>
+</ul>
+</td>
+<td><p>$(P)$(R)LFEntrancePort, $(P)$(R)LFEntrancePort_RBV</p></td>
+<td><p>mbbo, mbbi</p></td>
+</tr>
+<tr class="row-even"><td><p>Selects the exit port of the spectrometer. Choices are:</p>
+<ul class="simple">
+<li><p>Side</p></li>
+<li><p>Front</p></li>
+</ul>
+</td>
+<td><p>$(P)$(R)LFExitPort, $(P)$(R)LFExitPort_RBV</p></td>
+<td><p>mbbo, mbbi</p></td>
+</tr>
+<tr class="row-odd"><td colspan="3"><p><strong>File name parameters. These are in addition to the normal parameters from NDFile.template.</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>The actual file path for saving data.</p></td>
+<td><p>$(P)$(R)LFFilePath_RBV</p></td>
+<td><p>waveform</p></td>
+</tr>
+<tr class="row-odd"><td><p>The actual file name for saving data.</p></td>
+<td><p>$(P)$(R)LFFileName_RBV</p></td>
+<td><p>waveform</p></td>
+</tr>
+<tr class="row-even"><td><p>The file path to use for saving background data.</p></td>
+<td><p>$(P)$(R)LFBackgroundPath, $(P)$(R)LFBackgroundPath_RBV</p></td>
+<td><p>waveform, waveform</p></td>
+</tr>
+<tr class="row-odd"><td><p>Flag to indicate if the file path to use for saving background data exists. If it
+does not exist it will be created if the $(P)$(R)CreateDirectory PV is set appropriately.</p></td>
+<td><p>$(P)$(R)LFBackgroundPathExists_RBV</p></td>
+<td><p>bi</p></td>
+</tr>
+<tr class="row-even"><td><p>The file name to use for saving background data.</p></td>
+<td><p>$(P)$(R)LFBackgroundFile, $(P)$(R)LFBackgroundFile_RBV</p></td>
+<td><p>waveform, waveform</p></td>
+</tr>
+<tr class="row-odd"><td><p>The actual full file name for saving background data.</p></td>
+<td><p>$(P)$(R)LFBackgroundFullFile_RBV</p></td>
+<td><p>waveform</p></td>
+</tr>
+<tr class="row-even"><td><p>Enable background correction.</p></td>
+<td><p>$(P)$(R)LFBackgroundEnable, $(P)$(R)LFBackgroundEnable_RBV</p></td>
+<td><p>bo, bi</p></td>
+</tr>
+<tr class="row-odd"><td colspan="3"><p><strong>Image intensifier and timing parameters.</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>Enable image intensifier.</p></td>
+<td><p>$(P)$(R)LFIntensifierEnable, $(P)$(R)LFIntensifierEnable_RBV</p></td>
+<td><p>bo, bi</p></td>
+</tr>
+<tr class="row-odd"><td><p>Image intensifier gain.</p></td>
+<td><p>$(P)$(R)LFIntensifierGain, $(P)$(R)LFIntensifierGain_RBV</p></td>
+<td><p>ao, ai</p></td>
+</tr>
+<tr class="row-even"><td><p>Image intensifier gating mode. Choices are:</p>
+<ul class="simple">
+<li><p>Repetitive</p></li>
+<li><p>Sequential</p></li>
+</ul>
+</td>
+<td><p>$(P)$(R)LFGatingMode, $(P)$(R)LFGatingMode_RBV</p></td>
+<td><p>mbbo, mbbi</p></td>
+</tr>
+<tr class="row-odd"><td><p>Selects the intensifier trigger frequency.</p></td>
+<td><p>$(P)$(R)LFTriggerFrequency, $(P)$(R)LFTriggerFrequency_RBV</p></td>
+<td><p>ao, ai</p></td>
+</tr>
+<tr class="row-even"><td><p>Enable sync master.</p></td>
+<td><p>$(P)$(R)LFSyncMasterEnable, $(P)$(R)LFSyncMasterEnable_RBV</p></td>
+<td><p>bo, bi</p></td>
+</tr>
+<tr class="row-odd"><td><p>Selects the sync master 2 delay.</p></td>
+<td><p>$(P)$(R)LFSyncMaster2Delay, $(P)$(R)LFSyncMaster2Delay_RBV</p></td>
+<td><p>ao, ai</p></td>
+</tr>
+<tr class="row-even"><td><p>Selects the repetitive gate width.</p></td>
+<td><p>$(P)$(R)LFRepGateWidth, $(P)$(R)LFRepGateWidth_RBV</p></td>
+<td><p>ao, ai</p></td>
+</tr>
+<tr class="row-odd"><td><p>Selects the repetitive gate delay.</p></td>
+<td><p>$(P)$(R)LFRepGateDelay, $(P)$(R)LFRepGateDelay_RBV</p></td>
+<td><p>ao, ai</p></td>
+</tr>
+<tr class="row-even"><td><p>Selects the sequential start gate width.</p></td>
+<td><p>$(P)$(R)LFSeqStartGateWidth, $(P)$(R)LFSeqStartGateWidth_RBV</p></td>
+<td><p>ao, ai</p></td>
+</tr>
+<tr class="row-odd"><td><p>Selects the sequential start gate delay.</p></td>
+<td><p>$(P)$(R)LFSeqStartGateDelay, $(P)$(R)LFSeqStartGateDelay_RBV</p></td>
+<td><p>ao, ai</p></td>
+</tr>
+<tr class="row-even"><td><p>Selects the sequential end gate width.</p></td>
+<td><p>$(P)$(R)LFSeqEndGateWidth, $(P)$(R)LFSeqEndGateWidth_RBV</p></td>
+<td><p>ao, ai</p></td>
+</tr>
+<tr class="row-odd"><td><p>Selects the sequential end gate delay.</p></td>
+<td><p>$(P)$(R)LFSeqEndGateDelay, $(P)$(R)LFSeqEndGateDelay_RBV</p></td>
+<td><p>ao, ai</p></td>
+</tr>
+<tr class="row-even"><td><p>Selects the auxiliary width.</p></td>
+<td><p>$(P)$(R)LFAuxWidth, $(P)$(R)LFAuxWidth_RBV</p></td>
+<td><p>ao, ai</p></td>
+</tr>
+<tr class="row-odd"><td><p>Selects the auxiliary delay.</p></td>
+<td><p>$(P)$(R)LFAuxDelay, $(P)$(R)LFAuxDelay_RBV</p></td>
+<td><p>ao, ai</p></td>
+</tr>
+<tr class="row-even"><td colspan="3"><p><strong>Miscellaneous parameters.</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>Enable background correction.</p></td>
+<td><p>$(P)$(R)LFBackgroundEnable, $(P)$(R)LFBackgroundEnable_RBV</p></td>
+<td><p>bo, bi</p></td>
+</tr>
+<tr class="row-even"><td><p>Flag indicating if LighField is ready to collect data.</p></td>
+<td><p>$(P)$(R)ReadyToRun</p></td>
+<td><p>bi</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="configuration">
+<h2><a class="toc-backref" href="#id5" role="doc-backlink">Configuration</a><a class="headerlink" href="#configuration" title="Permalink to this heading"></a></h2>
+<p>The LightField driver is created with the LightFieldConfig command,
+either from C/C++ or from the EPICS IOC shell.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span> <span class="n">LightFieldConfig</span><span class="p">(</span><span class="n">const</span> <span class="n">char</span> <span class="o">*</span><span class="n">portName</span><span class="p">,</span> <span class="n">const</span> <span class="n">char</span> <span class="o">*</span><span class="n">experimentName</span><span class="p">,</span>
+                <span class="nb">int</span> <span class="n">maxBuffers</span><span class="p">,</span> <span class="n">size_t</span> <span class="n">maxMemory</span><span class="p">,</span>
+                <span class="nb">int</span> <span class="n">priority</span><span class="p">,</span> <span class="nb">int</span> <span class="n">stackSize</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>For details on the meaning of the parameters to this function refer to
+the detailed documentation on the LightFieldConfig function in the
+<a class="reference external" href="../areaDetectorDoxygenHTML/_light_field_8cpp.html">LightField.cpp documentation</a> and in the documentation for the
+constructor for the <a class="reference external" href="../areaDetectorDoxygenHTML/class_light_field.html">LightField class</a>.</p>
+</section>
+<section id="example-st-cmd-startup-file">
+<h2><a class="toc-backref" href="#id6" role="doc-backlink">Example st.cmd startup file</a><a class="headerlink" href="#example-st-cmd-startup-file" title="Permalink to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+</div>
+<p>There an example IOC boot directory and startup script provided
+with areaDetector:  <a class="reference internal" href="st_cmd.html"><span class="doc">Example st.cmd Startup File</span></a>.</p>
+</section>
+<section id="medm-screens">
+<h2><a class="toc-backref" href="#id7" role="doc-backlink">MEDM screens</a><a class="headerlink" href="#medm-screens" title="Permalink to this heading"></a></h2>
+<p>The following show the MEDM screens that are used to control the
+LightField detector. Note that the general purpose screen ADBase.adl
+can be used, but it exposes a few controls that are not applicable to
+the LightField, and lacks some fields that are important for the
+LightField.</p>
+<section id="lightfield-adl">
+<h3><a class="toc-backref" href="#id8" role="doc-backlink">LightField.adl</a><a class="headerlink" href="#lightfield-adl" title="Permalink to this heading"></a></h3>
+<p><cite>LightField.adl</cite> is the main screen used to control the LightField
+driver.</p>
+<img alt="../_images/LightField.png" src="../_images/LightField.png" />
+</section>
+<section id="lightfieldfile-adl">
+<h3><a class="toc-backref" href="#id9" role="doc-backlink">LightFieldFile.adl</a><a class="headerlink" href="#lightfieldfile-adl" title="Permalink to this heading"></a></h3>
+<p><cite>LightFieldFile.adl</cite> is the screen used to control LighField file I/O.</p>
+<img alt="../_images/LightFieldFile.png" src="../_images/LightFieldFile.png" />
+</section>
+<section id="lighfield-program-from-priceton-instruments">
+<h3><a class="toc-backref" href="#id10" role="doc-backlink">LighField program from Priceton Instruments</a><a class="headerlink" href="#lighfield-program-from-priceton-instruments" title="Permalink to this heading"></a></h3>
+<p><cite>LighField</cite> is the program that the LightField driver is controlling via
+Microsoft Common Language Runtime.</p>
+<img alt="../_images/LightFieldApplication.png" src="../_images/LightFieldApplication.png" />
+</section>
+</section>
+<section id="restrictions">
+<h2><a class="toc-backref" href="#id11" role="doc-backlink">Restrictions</a><a class="headerlink" href="#restrictions" title="Permalink to this heading"></a></h2>
+<p>The following are some current restrictions of the LightField driver:</p>
+<ul class="simple">
+<li><p>If LightField encounters an error it will crash the IOC. The driver
+establishes an exception handler, but this does not seem to work
+correctly with the LightField CLR interface.</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../ADLambda/ADLambda.html" class="btn btn-neutral float-left" title="ADLambda" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="st_cmd.html" class="btn btn-neutral float-right" title="Example st.cmd Startup File" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Mark Rivers.
+      <span class="lastupdated">Last updated on 2023-March-12.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

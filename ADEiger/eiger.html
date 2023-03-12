@@ -1,0 +1,1327 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ADEiger &mdash; areaDetector Support</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme_overrides.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="ADFastCCD" href="../ADFastCCD/index.html" />
+    <link rel="prev" title="Example st.cmd Startup File" href="../ADDexela/st_cmd.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            areaDetector
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../readme.html">Readme</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../user_guide.html">User Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/overview.html">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/arch.html">Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/asynPortDriver.html">asynPortDriver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/NDArray.html">NDArray</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../detector_drivers.html">Detector Drivers</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../ADCore/guidelines.html">Guidelines and rules for drivers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADCore/ADDriver.html">ADDriver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADAndor/andorDoc.html">ADAndor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADAndor3/ADAndorDoc.html">ADAndor3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADAravis/ADAravis.html">ADAravis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADCSimDetector/ADCSimDetectorDoc.html">ADCSimDetector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADDexela/ADDexela.html">ADDexela</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">ADEiger</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#accessing-new-parameters">Accessing New Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#trigger-modes">Trigger Modes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#manual-trigger">Manual Trigger</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#data-acquisition">Data Acquisition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#crystallography-parameters">Crystallography Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#implementation-of-standard-driver-parameters">Implementation of standard driver parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#eiger-specific-parameters">Eiger specific parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#unsupported-standard-driver-parameters">Unsupported standard driver parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#configuration">Configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#medm-screens">medm screens</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#using-2-energy-thresholds">Using 2 energy thresholds</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#known-issues">Known Issues</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../ADFastCCD/index.html">ADFastCCD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADGenICam/ADGenICam.html">ADGenICam</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADLambda/ADLambda.html">ADLambda</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADLightField/ADLightField.html">ADLightField</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADmarCCD/marCCDDoc.html">ADmarCCD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADmar345/mar345Doc.html">ADmar345</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPerkinElmer/PerkinElmerDoc.html">ADPerkinElmer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPICam/PICamDoc.html">ADPICam</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPilatus/pilatusDoc.html">ADPilatus</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPixirad/ADPixirad.html">ADPixirad</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPointGrey/PointGreyDoc.html">ADPointGrey</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADProsilica/ADProsilica.html">ADProsilica</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPvCam/pvcamDoc.html">ADPvCam</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADQImaging/QImagingDoc.html">ADQImaging</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADRIXSCam/ADRIXSCam.html">ADRIXSCam</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADSimDetector/simDetector.html">ADSimDetector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADSpinnaker/ADSpinnaker.html">ADSpinnaker</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADVimba/ADVimba.html">ADVimba</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADURL/ADURL.html">ADURL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../NDDriverStdArrays/NDDriverStdArraysDoc.html">NDDriverStdArrays</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../pvaDriver/pvaDriver.html">pvaDriver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../specsAnalyser/index.html">specsAnalyser</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/plugins.html">areaDetector Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../additional_plugins.html">Additional plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/medm.html">MEDM screens</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADViewers/ad_viewers.html">areaDetector Viewers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../acknowledgements.html">Acknowledgements and licenses</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../install_guide.html">Install Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release.html">Top-level Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ADCore_release.html">ADCore Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ADSupport_release.html">ADSupport Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../doxygen.html">Source Code Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../detectors.html">Supported Detectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../legacy_versions.html">Legacy Versions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">areaDetector</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../user_guide.html">areaDetector Users Guide</a></li>
+          <li class="breadcrumb-item"><a href="../detector_drivers.html">Detector Drivers</a></li>
+      <li class="breadcrumb-item active">ADEiger</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/ADEiger/eiger.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="adeiger">
+<h1><a class="toc-backref" href="#id1" role="doc-backlink">ADEiger</a><a class="headerlink" href="#adeiger" title="Permalink to this heading"></a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">author<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Bruno Martins, Diego Omitto, Mark Rivers</p>
+</dd>
+</dl>
+<nav class="contents" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#adeiger" id="id1">ADEiger</a></p>
+<ul>
+<li><p><a class="reference internal" href="#introduction" id="id2">Introduction</a></p></li>
+<li><p><a class="reference internal" href="#accessing-new-parameters" id="id3">Accessing New Parameters</a></p></li>
+<li><p><a class="reference internal" href="#trigger-modes" id="id4">Trigger Modes</a></p></li>
+<li><p><a class="reference internal" href="#manual-trigger" id="id5">Manual Trigger</a></p></li>
+<li><p><a class="reference internal" href="#data-acquisition" id="id6">Data Acquisition</a></p>
+<ul>
+<li><p><a class="reference internal" href="#using-filewriter" id="id7">Using FileWriter</a></p></li>
+<li><p><a class="reference internal" href="#using-stream" id="id8">Using Stream</a></p></li>
+<li><p><a class="reference internal" href="#using-monitor" id="id9">Using Monitor</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#crystallography-parameters" id="id10">Crystallography Parameters</a></p></li>
+<li><p><a class="reference internal" href="#implementation-of-standard-driver-parameters" id="id11">Implementation of standard driver parameters</a></p></li>
+<li><p><a class="reference internal" href="#eiger-specific-parameters" id="id12">Eiger specific parameters</a></p>
+<ul>
+<li><p><a class="reference internal" href="#detector-information" id="id13">Detector Information</a></p></li>
+<li><p><a class="reference internal" href="#detector-status" id="id14">Detector Status</a></p></li>
+<li><p><a class="reference internal" href="#acquisition-setup" id="id15">Acquisition Setup</a></p></li>
+<li><p><a class="reference internal" href="#trigger-setup" id="id16">Trigger Setup</a></p></li>
+<li><p><a class="reference internal" href="#readout-setup" id="id17">Readout Setup</a></p></li>
+<li><p><a class="reference internal" href="#acquisition-status" id="id18">Acquisition Status</a></p></li>
+<li><p><a class="reference internal" href="#filewriter-interface" id="id19">FileWriter Interface</a></p></li>
+<li><p><a class="reference internal" href="#stream-interface" id="id20">Stream Interface</a></p></li>
+<li><p><a class="reference internal" href="#monitor-interface" id="id21">Monitor Interface</a></p></li>
+<li><p><a class="reference internal" href="#acquisition-metadata" id="id22">Acquisition Metadata</a></p></li>
+<li><p><a class="reference internal" href="#detector-metadata" id="id23">Detector Metadata</a></p></li>
+<li><p><a class="reference internal" href="#minimum-change-allowed" id="id24">Minimum change allowed</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#unsupported-standard-driver-parameters" id="id25">Unsupported standard driver parameters</a></p></li>
+<li><p><a class="reference internal" href="#configuration" id="id26">Configuration</a></p></li>
+<li><p><a class="reference internal" href="#medm-screens" id="id27">medm screens</a></p></li>
+<li><p><a class="reference internal" href="#using-2-energy-thresholds" id="id28">Using 2 energy thresholds</a></p></li>
+<li><p><a class="reference internal" href="#known-issues" id="id29">Known Issues</a></p>
+<ul>
+<li><p><a class="reference internal" href="#changing-the-photon-energy" id="id30">Changing the Photon Energy</a></p></li>
+<li><p><a class="reference internal" href="#status-parameters-polling" id="id31">Status Parameters Polling</a></p></li>
+<li><p><a class="reference internal" href="#internal-enable-mode" id="id32">Internal Enable Mode</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+<section id="introduction">
+<h2><a class="toc-backref" href="#id2" role="doc-backlink">Introduction</a><a class="headerlink" href="#introduction" title="Permalink to this heading"></a></h2>
+<p>This is an <a class="reference external" href="http://www.aps.anl.gov/epics">EPICS</a> <a class="reference external" href="https://areadetector.github.io/master/index.html">areaDetector</a> driver for the Eiger and Eiger2 detectors
+from <a class="reference external" href="http://www.dectris.com">Dectris</a>. It has been tested on the Eiger 500K, 1M, 4M and 16M
+with the firmware version 1.6.4+, and Eiger2 with firmware 2020.2.
+The driver communicates with the detector via its SIMPLON REST interface,
+so no library from Dectris is required. The images can pulled from the detector
+as HDF5 files, as a ZeroMQ stream or both.
+The files can be both saved to disk and passed to the areaDetector pipeline at the same time.</p>
+<p>All trigger modes are supported, although Internal Enable mode seems
+to not be working properly. See Known Issues.</p>
+<p>This driver inherits from <a class="reference external" href="https://areadetector.github.io/master/ADCore/ADDriver.html">ADDriver</a>. It implements many of the
+parameters in <a class="reference external" href="https://areadetector.github.io/master/ADCore/NDArray.html#asynndarraydriver">asynNDArrayDriver</a> and in <a class="reference external" href="https://areadetector.github.io/master/ADCore/ADDriver.html">ADDriver</a>. It
+also implements a number of parameters that are specific to the Eiger
+detector. The <a class="reference external" href="https://areadetector.github.io/master/areaDetectorDoxygenHTML/classeiger_detector.html">eigerDetector class</a> describes this
+class in detail.</p>
+<p>This document does not attempt to explain the meaning of the Eiger-
+specific parameters, as they are explained in the SIMPLON API
+Reference and in the EIGER Detector Manual documents from Dectris.
+Sometimes it does, however, refer to those parameters as they are
+named in Dectris’ documentation.</p>
+<p>The SIMPLON API provides ways to query parameter limits, valid values
+for enums, error conditions, etc. The driver will clamp values to
+their minimum or maximum value if they are outside the acceptable
+range. Setting a parameter will immediately push its value to the
+detector.</p>
+<p>This driver was built upon a multithreaded architecture. A combination
+of threads is used to simultaneously pull files from the detector,
+save them to disk and parse them into NDArrays. A dedicated thread is
+used to receive images in a ZeroMQ stream.</p>
+<p>A few Eiger parameters are set at IOC initialization time and are
+expected to not change. Namely:</p>
+<ul class="simple">
+<li><p>detector/config/auto_summation = true</p></li>
+<li><p>filewriter/config/image_nr_start = 1</p></li>
+<li><p>monitor/config/buffer_size = 1</p></li>
+</ul>
+</section>
+<section id="accessing-new-parameters">
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">Accessing New Parameters</a><a class="headerlink" href="#accessing-new-parameters" title="Permalink to this heading"></a></h2>
+<p>Some parameters are not relevant to the driver operation and as such
+are not exposed initially by the driver as PVs. However, there is a
+mechanism to access other parameters not created automatically by the
+driver by simply instantiating new records with the appropriate
+<cite>drvInfo</cite> string. Some of the PVs are created this way. For example,
+the PV XPixelSize_RBV has the following <cite>drvInfo</cite>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">EIG_DCD_x_pixel_size</span>
+</pre></div>
+</div>
+<p>For those parameters, the first four characters must be <cite>EIG_</cite>. Then
+the fifth character must be one of:</p>
+<ul class="simple">
+<li><p><cite>D</cite>: Detector subsystem</p></li>
+<li><p><cite>M</cite>: Monitor subsystem</p></li>
+<li><p><cite>F</cite>: FileWriter subsystem</p></li>
+<li><p><cite>S</cite>: Stream subsystem</p></li>
+</ul>
+<p>The sixth character determines if the parameter is a configuration or
+a status parameter:</p>
+<ul class="simple">
+<li><p><cite>C</cite>: Configuration</p></li>
+<li><p><cite>S</cite>: Status</p></li>
+</ul>
+<p>The seventh character determines which asyn parameter type to use:</p>
+<ul class="simple">
+<li><p><cite>I</cite>: Integer (<cite>asynParamInt32</cite>)</p></li>
+<li><p><cite>D</cite>: Double (<cite>asynParamFloat64</cite>)</p></li>
+<li><p><cite>S</cite>: String (<cite>asynParamOctet</cite>)</p></li>
+</ul>
+<p>The eighth character must be a ‘_’, and the remaining characters are
+the parameter’s name according to the SIMPLON API Manual. Hence, for
+this example, this PV will be accessing the parameter:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">detector</span><span class="o">/</span><span class="n">api</span><span class="o">/&lt;</span><span class="n">version</span><span class="o">&gt;/</span><span class="n">config</span><span class="o">/</span><span class="n">x_pixel_size</span>
+</pre></div>
+</div>
+</section>
+<section id="trigger-modes">
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">Trigger Modes</a><a class="headerlink" href="#trigger-modes" title="Permalink to this heading"></a></h2>
+<p>There are six trigger modes available:</p>
+<ul class="simple">
+<li><p><strong>Internal Series</strong>: one internal trigger pulse generates N images</p></li>
+<li><p><strong>Internal Enable</strong>: one internal trigger pulse generates one image</p></li>
+<li><p><strong>External Series</strong>: one external trigger pulse generates N images</p></li>
+<li><p><strong>External Enable</strong>: one external trigger pulse generates one image</p></li>
+<li><p><strong>Continuous</strong>: same as internal series, but automatically restarts after series</p></li>
+<li><dl class="simple">
+<dt><strong>External Gate</strong>: This mode is used only with new firmware on the Eiger2</dt><dd><p>which has 2 counters per pixel.  The behavior depend on the setting
+the ExtGateMode PV.</p>
+</dd>
+</dl>
+</li>
+</ul>
+<p>The total number of images generated by <strong>Internal</strong> and <strong>External
+Series</strong> modes is given by the product of the NumImages and
+NumTriggers PVs (nimages and ntriggers in Dectris terminology).</p>
+<p>On both <strong>Internal Enable</strong> and <strong>External Enable</strong> modes the total number of
+images generated is given solely by the NumTriggers PV (ntriggers).
+NumImages is set to 1 temporarily during the acquisition.</p>
+<p>Triggers for <strong>Internal Enable</strong> mode are sent by processing the
+Trigger PV. The exposure for each individual image is given by the
+TriggerExposure PV and can change between triggers in the same
+acquisition. This mode is experimental as of firmware 1.5.0. See Known
+Issues.</p>
+</section>
+<section id="manual-trigger">
+<h2><a class="toc-backref" href="#id5" role="doc-backlink">Manual Trigger</a><a class="headerlink" href="#manual-trigger" title="Permalink to this heading"></a></h2>
+<p>On <strong>Internal Series</strong> and <strong>Internal Enable</strong> modes, if the
+ManualTrigger PV is set to <strong>Yes</strong>, the triggers are not auto generated by
+the driver. Instead, they are sent by processing the Trigger PV. On
+<strong>Internal Enable</strong> mode the trigger carries an exposure value that
+can change for each trigger, which is set by the TriggerExposure PV.
+Note that the <strong>Internal Enable</strong> mode is experimental as of firmware
+1.5.0, see Known Issues.</p>
+</section>
+<section id="data-acquisition">
+<h2><a class="toc-backref" href="#id6" role="doc-backlink">Data Acquisition</a><a class="headerlink" href="#data-acquisition" title="Permalink to this heading"></a></h2>
+<p>Data generated by the Eiger can be pulled from the detector in a
+number of ways. The detector has three modules (in Dectris’
+terminology) that make the results of the acquisition available in
+different ways. The <strong>FileWriter</strong> module writes the generated images
+to the detector disk as HDF5 files that consist of a master (header)
+file and a number of data files. The <strong>Stream</strong> module makes the
+images available as soon as they are captured as a ZeroMQ stream. The
+<strong>Monitor</strong> module produces TIFF images every so often to monitor how
+a long acquisition is progressing.</p>
+<p>Data from the FileWriter or from the Stream mode can be parsed into
+NDArrays for the areaDetector pipeline. The actual source is selected
+with the DataSource PV. If DataSource is set to None, however, no data
+will be sent to the areaDetector pipeline but the detector will still
+be controllable via the areaDetector driver; third-party clients can
+then pull files or listen to the ZeroMQ stream independently of this
+driver.</p>
+<section id="using-filewriter">
+<h3><a class="toc-backref" href="#id7" role="doc-backlink">Using FileWriter</a><a class="headerlink" href="#using-filewriter" title="Permalink to this heading"></a></h3>
+<p>The FileWriter module is activated when FWEnable is set to Yes. Files
+generated by the FileWriter have names according to the FWNamePattern
+PV. The default pattern is “series_$id”, where $id is replaced by the
+Sequence ID of the acquisition. A master file is generated as soon as
+the detector is successfully armed. A number of data files follow. The
+number of data files generated depends on the total number of images
+of the acquisition and the FWNFilesPerImage PV.</p>
+<p>For example, if TriggerMode is <strong>External Enable</strong>, NumImages is 60,
+NumTriggers is 2, FWNImagesPerFile is 100, Sequence ID for the
+acquisition is 1 and FWNamePattern is “series_$id”, a total of three
+files will be generated:</p>
+<ul class="simple">
+<li><p>series_1_master.h5</p></li>
+<li><p>series_1_data_000001.h5 (with 100 images)</p></li>
+<li><p>series_1_data_000002.h5 (with 20 images)</p></li>
+</ul>
+<p>The generated files will be downloaded either if DataSource is set to
+FileWriter or if SaveFiles is set to Yes. Files are downloaded as soon
+as they are available. To determine if a file is available the driver
+polls the detector at a nominal rate of 10Hz. While a file is being
+processed the next file available is downloaded in parallel. All files
+will remain on the detector disk unless FWAutoRemove is set to Yes.</p>
+<p>When saving files to disk (SaveFiles = Yes) it is possible to set the
+file’s owner, its group and its access permissions with FileOwner,
+FileOwnerGrp and FilePerms PVs. To be able to set arbitrary owners the
+IOC executable requires CAP_SETUID and CAP_SETGID capabilities, which
+can be given with the command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">setcap</span> <span class="n">cap_setuid</span><span class="p">,</span><span class="n">cap_setgid</span><span class="o">+</span><span class="n">ep</span> <span class="n">eigerDetectorApp</span>
+</pre></div>
+</div>
+<p>All files on the detector disk can be deleted at once by processing
+the FWClear PV.  This is only available with the Eiger1 and Simplon API version
+1.6.0.</p>
+<p>If the last data file of a series won’t be full (e.g.
+series_1_data_000002.h5 with 20 images) then it will only appear on
+the detector disk after a disarm command (issued when the acquisition
+is stopped), which flushes the FileWriter buffer.</p>
+</section>
+<section id="using-stream">
+<h3><a class="toc-backref" href="#id8" role="doc-backlink">Using Stream</a><a class="headerlink" href="#using-stream" title="Permalink to this heading"></a></h3>
+<p>The Stream module is activated when StreamEnable is set to Yes. Data
+will then be available on the detector’s tcp port 9999 as a ZMQ_PUSH
+socket. If DataSource is set to Stream, this driver opens a
+corresponding ZMQ_PULL socket and parses the incoming data as
+NDArrays. Otherwise a third-party client can listen on that socket for
+data. The format of the packets is specified in the Eiger SIMPLON API
+documentation.</p>
+</section>
+<section id="using-monitor">
+<h3><a class="toc-backref" href="#id9" role="doc-backlink">Using Monitor</a><a class="headerlink" href="#using-monitor" title="Permalink to this heading"></a></h3>
+<p>The Monitor module is activated when MonitorEnable is set to Yes. Data
+will be available whenever the monitor module buffer is full (has one
+image available). This driver waits MonitorTimeout ms for data to be
+available. There is a rate-limit of 10Hz. Once downloaded, the TIFF
+image is parsed into areaDetector’s NDArray on NDArrayAddr 1
+(therefore, an independent NDArray stream).</p>
+</section>
+</section>
+<section id="crystallography-parameters">
+<h2><a class="toc-backref" href="#id10" role="doc-backlink">Crystallography Parameters</a><a class="headerlink" href="#crystallography-parameters" title="Permalink to this heading"></a></h2>
+<p>A few parameters are available as metadata for the acquisition. These
+values are stored on the master file and sent as metadata in ZeroMQ
+stream, but otherwise don’t affect the acquisition, with the exception
+of the Wavelength parameter, which sets Photon Energy accordingly.</p>
+</section>
+<section id="implementation-of-standard-driver-parameters">
+<h2><a class="toc-backref" href="#id11" role="doc-backlink">Implementation of standard driver parameters</a><a class="headerlink" href="#implementation-of-standard-driver-parameters" title="Permalink to this heading"></a></h2>
+<p>The following table describes how the Eiger driver implements some of
+the standard driver parameters defined in asynNDArrayDriver.h and ADDriver.h,
+ADBase.template and NDFile.template</p>
+<table class="table-bordered table-striped table-hover docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 80%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>EPICS record name</p></th>
+<th class="head"><p>Eiger Parameter</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>$(P)$(R)TriggerMode, $(P)$(R)TriggerMode_RBV</p></td>
+<td><p>detector/config/trigger_mode</p></td>
+<td><p>Sets the trigger mode for the detector. Options are:</p>
+<ul class="simple">
+<li><p>Internal Series</p></li>
+<li><p>Internal Enable</p></li>
+<li><p>External Series</p></li>
+<li><p>External Enable</p></li>
+<li><p>External Gate (Eiger2 with 2021 firmware only)</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P)$(R)NumImages, $(P)$(R)NumImages_RBV</p></td>
+<td><p>detector/config/nimages</p></td>
+<td><p>Sets the number of images to take per trigger when on Internal Series or External
+Series mode.</p></td>
+</tr>
+<tr class="row-even"><td><p>$(P)$(R)NumExposures, $(P)$(R)NumExposures_RBV</p></td>
+<td><p>detector/config/nexpi</p></td>
+<td><p>Sets the number of exposures per image in External Gate trigger mode.</p></td>
+</tr>
+<tr class="row-odd"><td><p>$(P)$(R)AcquireTime, $(P)$(R)AcquireTime_RBV</p></td>
+<td><p>detector/config/count_time</p></td>
+<td><p>Sets the parameter “count_time”, which is the exposure time for a single image in
+Internal Series or External Series mode.</p></td>
+</tr>
+<tr class="row-even"><td><p>$(P)$(R)AcquirePeriod, $(P)$(R)AcquirePeriod_RBV</p></td>
+<td><p>detector/config/frame_time</p></td>
+<td><p>Sets the parameter “frame_time”, which directly affects the frame rate of the detector.
+The resulting frame rate will be 1/AcquirePeriod.</p></td>
+</tr>
+<tr class="row-odd"><td><p>$(P)$(R)DataType_RBV</p></td>
+<td><p>N.A</p></td>
+<td><p>The data type of the image data. This depends on the Eiger model, the AcquirePeriod (frame rate) and
+the AcquireTime (exposure time). At long exposure times it is UInt32, at intermediate frame rates it
+is UInt16, and at very high frame rates it is UInt8.  For example, on an Eiger2 500K:</p>
+<ul class="simple">
+<li><p>AcquireTime &gt; 0.0066 ms: DataType_RBV=UInt32</p></li>
+<li><p>AcquirePeriod &lt;  .00045 (2200 frames/s): DataType_RBV=UInt8</p></li>
+<li><p>Neither of above conditions: DataType_RBV=UInt16</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P)$(R)TemperatureActual</p></td>
+<td><p>detector/status/board_000/th0_temp</p></td>
+<td><p>Reads the actual temperature of the detector.</p></td>
+</tr>
+<tr class="row-odd"><td><p>$(P)$(R)MaxSizeX_RBV</p></td>
+<td><p>N.A</p></td>
+<td><p>Detector sensor size in the X direction.</p></td>
+</tr>
+<tr class="row-even"><td><p>$(P)$(R)MaxSizeY_RBV</p></td>
+<td><p>N.A</p></td>
+<td><p>Detector sensor size in the Y direction.</p></td>
+</tr>
+<tr class="row-odd"><td><p>$(P)$(R)ArraySizeX_RBV</p></td>
+<td><p>detector/config/x_pixels_in_detector</p></td>
+<td><p>Current detector sensor size in the X direction. This can change depending on the
+ROI Mode selected.</p></td>
+</tr>
+<tr class="row-even"><td><p>$(P)$(R)ArraySizeY_RBV</p></td>
+<td><p>detector/config/y_pixels_in_detector</p></td>
+<td><p>Current detector sensor size in the Y direction. This can change depending on the
+ROI Mode selected.</p></td>
+</tr>
+<tr class="row-odd"><td><p>$(P)$(R)Manufacturer_RBV, $(P)$(R)Model_RBV</p></td>
+<td><p>detector/config/description</p></td>
+<td><p>Reads the detector manufacturer (Dectris) and model (Eiger xx M).</p></td>
+</tr>
+<tr class="row-even"><td><p>$(P)$(R)SerialNumber_RBV</p></td>
+<td><p>detector/config/detector_number</p></td>
+<td><p>Detector serial number</p></td>
+</tr>
+<tr class="row-odd"><td><p>$(P)$(R)FirmwareVersion_RBV</p></td>
+<td><p>detector/config/eiger_fw_version</p></td>
+<td><p>Detector firmware version</p></td>
+</tr>
+<tr class="row-even"><td><p>$(P)$(R)SDKVersion_RBV</p></td>
+<td><p>detector/api/version</p></td>
+<td><p>Simplon API version</p></td>
+</tr>
+<tr class="row-odd"><td><p>$(P)$(R)DriverVersion_RBV</p></td>
+<td><p>N.A</p></td>
+<td><p>This driver’s version</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="eiger-specific-parameters">
+<h2><a class="toc-backref" href="#id12" role="doc-backlink">Eiger specific parameters</a><a class="headerlink" href="#eiger-specific-parameters" title="Permalink to this heading"></a></h2>
+<p>The Eiger driver implements the following parameters in addition to those in asynNDArrayDriver.h and ADDriver.h.
+Most records are in eigerBase.template, and are common to both the Eiger1 and Eiger2.
+The records specific to the Eiger1 are in eiger1.template, and those specific to the Eiger2 are in eiger2.template.
+exist on the Eiger1, and some only on the Eiger2.  This is noted in the tables.</p>
+<section id="detector-information">
+<h3><a class="toc-backref" href="#id13" role="doc-backlink">Detector Information</a><a class="headerlink" href="#detector-information" title="Permalink to this heading"></a></h3>
+<table class="table-bordered table-striped table-hover docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Eiger Parameter</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>EPICS record name</p></th>
+<th class="head"><p>EPICS record type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>detector/config/description</p></td>
+<td><p>Detector’s manufacturer and model</p></td>
+<td><p>Description_RBV</p></td>
+<td><p>stringin</p></td>
+</tr>
+<tr class="row-odd"><td><p>detector/config/x_pixel_size</p></td>
+<td><p>Detector’s pixel size in the X direction, in meters</p></td>
+<td><p>XPixelSize_RBV</p></td>
+<td><p>ai</p></td>
+</tr>
+<tr class="row-even"><td><p>detector/config/y_pixel_size</p></td>
+<td><p>Detector’s pixel size in the Y direction, in meters</p></td>
+<td><p>YPixelSize_RBV</p></td>
+<td><p>ai</p></td>
+</tr>
+<tr class="row-odd"><td><p>detector/config/sensor_material</p></td>
+<td><p>Detector’s sensor material</p></td>
+<td><p>SensorMaterial_RBV</p></td>
+<td><p>stringin</p></td>
+</tr>
+<tr class="row-even"><td><p>detector/config/sensor_thickness</p></td>
+<td><p>Detector’s sensor thickness, in meters</p></td>
+<td><p>SensorThickness_RBV</p></td>
+<td><p>ai</p></td>
+</tr>
+<tr class="row-odd"><td><p>detector/config/detector_readout_time</p></td>
+<td><p>Detector’s readout time (dead time) between frames. Changes with different Threshold
+Energies.</p></td>
+<td><p>DeadTime_RBV</p></td>
+<td><p>ai</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="detector-status">
+<h3><a class="toc-backref" href="#id14" role="doc-backlink">Detector Status</a><a class="headerlink" href="#detector-status" title="Permalink to this heading"></a></h3>
+<table class="table-bordered table-striped table-hover docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Eiger Parameter</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>EPICS record name</p></th>
+<th class="head"><p>EPICS record type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>N.A.</p></td>
+<td><p>Initializes the detector DCU.  This command takes many seconds.</p></td>
+<td><p>Initialize</p></td>
+<td><p>busy</p></td>
+</tr>
+<tr class="row-odd"><td><p>detector/status/state</p></td>
+<td><p>State of the detector</p></td>
+<td><p>State_RBV</p></td>
+<td><p>stringin</p></td>
+</tr>
+<tr class="row-even"><td><p>detector/status/error</p></td>
+<td><p>List of parameters causing an error state</p></td>
+<td><p>Error_RBV</p></td>
+<td><p>stringin</p></td>
+</tr>
+<tr class="row-odd"><td><p>detector/status/board_000/th0_temp</p></td>
+<td><p>Temperature of the first module</p></td>
+<td><p>Temp0_RBV</p></td>
+<td><p>ai</p></td>
+</tr>
+<tr class="row-even"><td><p>detector/status/board_000/th0_humidity</p></td>
+<td><p>Humidity of the first module</p></td>
+<td><p>Humid0_RBV</p></td>
+<td><p>ai</p></td>
+</tr>
+<tr class="row-odd"><td><p>detector/status/link_0, detector/status/link_1, detector/status/link_2, detector/status/link_3</p></td>
+<td><p>Status of the four links between the detector server and the head. Eiger1 only.</p></td>
+<td><p>Link0_RBV, Link1_RBV, Link2_RBV, Link3_RBV</p></td>
+<td><p>bi</p></td>
+</tr>
+<tr class="row-even"><td><p>detector/status/builder/dcu_buffer_free</p></td>
+<td><p>Percentage of the detector’s internal buffer that is free. Low values may indicate
+a problem. Eiger1 only.</p></td>
+<td><p>DCUBufferFree_RBV</p></td>
+<td><p>ai</p></td>
+</tr>
+<tr class="row-odd"><td><p>N.A.</p></td>
+<td><p>High voltage reset time. Eiger2 only.</p></td>
+<td><p>HVResetTime, HVResetTime_RBV</p></td>
+<td><p>ao, ai</p></td>
+</tr>
+<tr class="row-even"><td><p>N.A.</p></td>
+<td><p>High voltage reset command.
+Turns off high voltage for HVResetTime and then turns it back on. Eiger2 only.</p></td>
+<td><p>HVReset</p></td>
+<td><p>bo</p></td>
+</tr>
+<tr class="row-odd"><td><p>detector/status/high_voltage/state</p></td>
+<td><p>High voltage state.
+State of the high voltage. Eiger2 only.</p></td>
+<td><p>HVState_RBV</p></td>
+<td><p>stringin</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="acquisition-setup">
+<h3><a class="toc-backref" href="#id15" role="doc-backlink">Acquisition Setup</a><a class="headerlink" href="#acquisition-setup" title="Permalink to this heading"></a></h3>
+<table class="table-bordered table-striped table-hover docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Eiger Parameter</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>EPICS record name</p></th>
+<th class="head"><p>EPICS record type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>detector/config/threshold_energy</p></td>
+<td><p>Energy threshold 1 for the acquisition. This is the only threshold on the Eiger1.</p></td>
+<td><p>Threshold, Threshold_RBV</p></td>
+<td><p>ao, ai</p></td>
+</tr>
+<tr class="row-odd"><td><p>detector/config/threshold/1/mode</p></td>
+<td><p>Enable or disable threshold 1. Eiger2 only.</p></td>
+<td><p>Threshold1Enable, Threshold1Enable_RBV</p></td>
+<td><p>bo, bi</p></td>
+</tr>
+<tr class="row-even"><td><p>detector/config/threshold/2/energy</p></td>
+<td><p>Energy threshold 2 for the acquisition. Eiger2 only.</p></td>
+<td><p>Threshold2, Threshold2_RBV</p></td>
+<td><p>ao, ai</p></td>
+</tr>
+<tr class="row-odd"><td><p>detector/config/threshold/2/mode</p></td>
+<td><p>Enable or disable threshold 2. Eiger2 only.</p></td>
+<td><p>Threshold2Enable, Threshold2Enable_RBV</p></td>
+<td><p>bo, bi</p></td>
+</tr>
+<tr class="row-even"><td><p>detector/config/threshold/difference/mode</p></td>
+<td><p>Enable or disable difference mode, where the output image is threshold1-threshold2. Eiger2 only.</p></td>
+<td><p>ThresholdDiffEnable, ThresholdDiffEnable_RBV</p></td>
+<td><p>bo, bi</p></td>
+</tr>
+<tr class="row-odd"><td><p>detector/config/photon_energy</p></td>
+<td><p>Photon energy for the acquisition</p></td>
+<td><p>PhotonEnergy, PhotonEnergy_RBV</p></td>
+<td><p>ao, ai</p></td>
+</tr>
+<tr class="row-even"><td><p>detector/config/counting_mode</p></td>
+<td><p>Counting mode, “Normal” or “Retrigger”. Eiger2 only.</p></td>
+<td><p>CountingMode, CountingMode_RBV</p></td>
+<td><p>bo, bi</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="trigger-setup">
+<h3><a class="toc-backref" href="#id16" role="doc-backlink">Trigger Setup</a><a class="headerlink" href="#trigger-setup" title="Permalink to this heading"></a></h3>
+<table class="table-bordered table-striped table-hover docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Eiger Parameter</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>EPICS record name</p></th>
+<th class="head"><p>EPICS record type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>detector/config/extg_mode</p></td>
+<td><p>Mode to be used when TriggerMode=External Gate.
+Choices are “Pump &amp; Probe” and “HDR”.  Eiger2 with 2021 firmware only.</p></td>
+<td><p>ExtGateMode, ExtGateMode_RBV</p></td>
+<td><p>mbbo, mbbi</p></td>
+</tr>
+<tr class="row-odd"><td><p>detector/command/trigger</p></td>
+<td><p>Software trigger to be used on modes Internal Series and Internal Enable when ManualTrigger is set</p></td>
+<td><p>Trigger</p></td>
+<td><p>ao</p></td>
+</tr>
+<tr class="row-even"><td><p>N.A.</p></td>
+<td><p>Exposure to be used with the triggers on the Internal Enable trigger mode</p></td>
+<td><p>TriggerExposure, TriggerExposure_RBV</p></td>
+<td><p>ao, ai</p></td>
+</tr>
+<tr class="row-odd"><td><p>detector/config/ntrigger</p></td>
+<td><p>Number of triggers for the acquisition</p></td>
+<td><p>NumTriggers, NumTriggers_RBV</p></td>
+<td><p>ao, ai</p></td>
+</tr>
+<tr class="row-even"><td><p>N.A.</p></td>
+<td><p>On Internal Series and Internal Enable modes, controls whether triggers will be issued automatically (0)
+or only via the Trigger PV (1).</p></td>
+<td><p>ManualTrigger, ManualTrigger_RBV</p></td>
+<td><p>bo, bi</p></td>
+</tr>
+<tr class="row-odd"><td><p>detector/config/trigger_start_delay</p></td>
+<td><p>Delay time in second after receipt of trigger signal before taking action. Eiger2 only.</p></td>
+<td><p>TriggerStartDelay, TriggerStartDelay_RBV</p></td>
+<td><p>ao, ai</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="readout-setup">
+<h3><a class="toc-backref" href="#id17" role="doc-backlink">Readout Setup</a><a class="headerlink" href="#readout-setup" title="Permalink to this heading"></a></h3>
+<table class="table-bordered table-striped table-hover docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Eiger Parameter</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>EPICS record name</p></th>
+<th class="head"><p>EPICS record type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>detector/config/roi_mode</p></td>
+<td><dl class="simple">
+<dt>Which ROI mode to use. <strong>Only supported on Eiger 9M and 16M.</strong> Options are:</dt><dd><ul class="simple">
+<li><p>Disabled</p></li>
+<li><p>4M</p></li>
+</ul>
+</dd>
+</dl>
+</td>
+<td><p>ROIMode, ROIMode_RBV</p></td>
+<td><p>mbbo, mbbi</p></td>
+</tr>
+<tr class="row-odd"><td><p>detector/config/flatfield_correction_applied</p></td>
+<td><p>Controls whether the flatfield correction should be applied</p></td>
+<td><p>FlatfieldApplied, FlatfieldApplied_RBV</p></td>
+<td><p>bo, bi</p></td>
+</tr>
+<tr class="row-even"><td><p>detector/config/countrate_correction_applied</p></td>
+<td><p>Controls whether the count rate correction should be applied</p></td>
+<td><p>CountrateCorrApplied, CountrateCorrApplied_RBV</p></td>
+<td><p>bo, bi</p></td>
+</tr>
+<tr class="row-odd"><td><p>detector/config/pixel_mask_applied</p></td>
+<td><p>Controls whether the pixel mask should be applied</p></td>
+<td><p>PixelMaskApplied, PixelMaskApplied_RBV</p></td>
+<td><p>bo, bi</p></td>
+</tr>
+<tr class="row-even"><td><p>detector/config/auto_summation</p></td>
+<td><p>Controls whether autosummation should be done.</p></td>
+<td><p>AutoSummation, AutoSummation_RBV</p></td>
+<td><p>bo, bi</p></td>
+</tr>
+<tr class="row-odd"><td><p>detector/config/compression</p></td>
+<td><dl class="simple">
+<dt>Compression algorithm to use when compression is enabled. Options are:</dt><dd><ul class="simple">
+<li><p>lz4</p></li>
+<li><p>bslz4 (bitshuffle lz4)</p></li>
+<li><p>None (API 1.8.0 only)</p></li>
+</ul>
+</dd>
+</dl>
+<p>The selected algorithm will always be used on the Stream ZMQ interface. It will
+also be used for HDF5 files written by the FileWriter interface if FWCompression=Enabled.</p>
+</td>
+<td><p>CompressionAlgo, CompressionAlgo_RBV</p></td>
+<td><p>mbbo, mbbi</p></td>
+</tr>
+<tr class="row-even"><td><p>N.A.</p></td>
+<td><dl class="simple">
+<dt>Which data source to use for areaDetector pipeline. Valid values:</dt><dd><ul class="simple">
+<li><p>None</p></li>
+<li><p>FileWriter</p></li>
+<li><p>Stream</p></li>
+</ul>
+</dd>
+</dl>
+</td>
+<td><p>DataSource, DataSource_RBV</p></td>
+<td><p>mbbo, mbbi</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="acquisition-status">
+<h3><a class="toc-backref" href="#id18" role="doc-backlink">Acquisition Status</a><a class="headerlink" href="#acquisition-status" title="Permalink to this heading"></a></h3>
+<table class="table-bordered table-striped table-hover docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Eiger Parameter</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>EPICS record name</p></th>
+<th class="head"><p>EPICS record type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>N.A.</p></td>
+<td><p>Armed state of the detector</p></td>
+<td><p>Armed</p></td>
+<td><p>bi</p></td>
+</tr>
+<tr class="row-odd"><td><p>detector/config/bit_depth_image</p></td>
+<td><p>The bit depth of the image data. This depends on the Eiger model, the AcquirePeriod (frame rate) and
+the AcquireTime (exposure time). At long exposure times it is 32, at intermediate frame rates it
+is 16, and at very high frame rates it is 8.  For example, on an Eiger2 500K:</p>
+<ul class="simple">
+<li><p>AcquireTime &gt; 0.0066 ms: BitDepthImage_RBV=32</p></li>
+<li><p>AcquirePeriod &lt;  .00045 (2200 frames/s): BitDepthImage_RBV=8</p></li>
+<li><p>Neither of above conditions: BitDepthImage_RBV=16</p></li>
+</ul>
+</td>
+<td><p>$(P)$(R)BitDepthImage_RBV</p></td>
+<td><p>longin</p></td>
+</tr>
+<tr class="row-even"><td><p>detector/config/countrate_correction_count_cutoff</p></td>
+<td><p>Number of counts after which the detector will cutoff due to the count rate correction.</p></td>
+<td><p>CountCutoff_RBV</p></td>
+<td><p>ai</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="filewriter-interface">
+<h3><a class="toc-backref" href="#id19" role="doc-backlink">FileWriter Interface</a><a class="headerlink" href="#filewriter-interface" title="Permalink to this heading"></a></h3>
+<table class="table-bordered table-striped table-hover docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Eiger Parameter</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>EPICS record name</p></th>
+<th class="head"><p>EPICS record type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>filewriter/config/mode</p></td>
+<td><p>Enables or disables the FileWriter module</p></td>
+<td><p>FWEnable, FWEnable_RBV</p></td>
+<td><p>bo, bi</p></td>
+</tr>
+<tr class="row-odd"><td><p>filewriter/status/state</p></td>
+<td><p>State of the FileWriter module</p></td>
+<td><p>FWState_RBV</p></td>
+<td><p>stringin</p></td>
+</tr>
+<tr class="row-even"><td><p>filewriter/config/compression_enabled</p></td>
+<td><p>Enables or disables LZ4 or BSLZ4 compression for HDF5 files written by the DCU</p></td>
+<td><p>FWCompression, FWCompression_RBV</p></td>
+<td><p>bo, bi</p></td>
+</tr>
+<tr class="row-odd"><td><p>filewriter/config/nimages_per_file</p></td>
+<td><p>Number of images per HDF5 data file</p></td>
+<td><p>FWNImgsPerFile, FWNImgsPerFile_RBV</p></td>
+<td><p>ao, ai</p></td>
+</tr>
+<tr class="row-even"><td><p>filewriter/config/name_patttern</p></td>
+<td><p>Name pattern for the generated HDF5 files. The pattern can be anything, but it must
+contain the string ‘$id’ in it. This string is replaced with the current sequence
+id of the acquisition. The default is: “series_$id”, which would generate the files:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="n">series_1_master</span><span class="o">.</span><span class="n">h5</span>
+<span class="o">*</span> <span class="n">series_1_data_000001</span><span class="o">.</span><span class="n">h5</span>
+<span class="o">*</span> <span class="n">series_1_data_000002</span><span class="o">.</span><span class="n">h5</span>
+<span class="o">*</span> <span class="o">...</span>
+</pre></div>
+</div>
+<p>For the sequence id 1. If ‘$id’ is omitted, files might get overwritten on the server,
+because then every acquisition would generate files with the same name</p>
+</td>
+<td><p>FWNamePattern, FWNamePattern_RBV</p></td>
+<td><p>stringout, stringin</p></td>
+</tr>
+<tr class="row-odd"><td><p>N.A.</p></td>
+<td><p>Sequence ID of the current acquisition</p></td>
+<td><p>SequenceId</p></td>
+<td><p>ai</p></td>
+</tr>
+<tr class="row-even"><td><p>N.A.</p></td>
+<td><p>Controls whether acquired files should be saved locally to disk</p></td>
+<td><p>SaveFiles, SaveFiles_RBV</p></td>
+<td><p>bo, bi</p></td>
+</tr>
+<tr class="row-odd"><td><p>N.A.</p></td>
+<td><p>Controls the owner of the file saved to disk. Requires the IOC to have the CAP_SETUID
+capability.</p></td>
+<td><p>FileOwner, FileOwner_RBV</p></td>
+<td><p>stringout, stringin</p></td>
+</tr>
+<tr class="row-even"><td><p>N.A.</p></td>
+<td><p>Controls the owner group of the file saved to disk. Requires the IOC to have the
+CAP_SETGID capability.</p></td>
+<td><p>FileOwnerGrp, FileOwnerGrp_RBV</p></td>
+<td><p>stringout, stringin</p></td>
+</tr>
+<tr class="row-odd"><td><p>N.A.</p></td>
+<td><p>Controls the permissions for the files saved to disk.
+Normal Linux octal bitmask format, for Owner/Group/World, e.g. 0666 is r+w owner, group, and world.</p></td>
+<td><p>FilePerms</p></td>
+<td><p>ao</p></td>
+</tr>
+<tr class="row-even"><td><p>filewriter/status/buffer_free</p></td>
+<td><p>Free space on detector disk.</p></td>
+<td><p>FWFree_RBV</p></td>
+<td><p>ai</p></td>
+</tr>
+<tr class="row-odd"><td><p>N.A.</p></td>
+<td><p>Controls whether downloaded files should be removed from the detector disk</p></td>
+<td><p>FWAutoRemove, FWAutoRemove_RBV</p></td>
+<td><p>bo, bi</p></td>
+</tr>
+<tr class="row-even"><td><p>filewriter/config/clear</p></td>
+<td><p>Writing to this PV clears <em>all</em> files on the detector server disk. Eiger1 only.</p></td>
+<td><p>FWClear</p></td>
+<td><p>ao</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="stream-interface">
+<h3><a class="toc-backref" href="#id20" role="doc-backlink">Stream Interface</a><a class="headerlink" href="#stream-interface" title="Permalink to this heading"></a></h3>
+<table class="table-bordered table-striped table-hover docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Eiger Parameter</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>EPICS record name</p></th>
+<th class="head"><p>EPICS record type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>stream/config/mode</p></td>
+<td><p>Enables or disables the Stream module</p></td>
+<td><p>StreamEnable, StreamEnable_RBV</p></td>
+<td><p>bo, bi</p></td>
+</tr>
+<tr class="row-odd"><td><p>stream/status/state</p></td>
+<td><p>State of the Stream module</p></td>
+<td><p>StreamState_RBV</p></td>
+<td><p>stringin</p></td>
+</tr>
+<tr class="row-even"><td><p>N.A.</p></td>
+<td><p>Controls whether the NDArrays from the Stream interface are decompressed (Yes) or
+compressed (No)</p></td>
+<td><p>StreamDecompress, StreamDecompress_RBV</p></td>
+<td><p>bo, bi</p></td>
+</tr>
+<tr class="row-odd"><td><p>stream/config/header_detail</p></td>
+<td><dl class="simple">
+<dt>Selects the level of detail for Stream API Headers. Options are:</dt><dd><ul class="simple">
+<li><p>All</p></li>
+<li><p>Basic</p></li>
+<li><p>None</p></li>
+</ul>
+</dd>
+</dl>
+</td>
+<td><p>StreamHdrDetail, StreamHdrDetail_RBV</p></td>
+<td><p>mbbo, mbbi</p></td>
+</tr>
+<tr class="row-even"><td><p>stream/config/header_appendix</p></td>
+<td><p>Sets the text to be appended to the Stream API headers</p></td>
+<td><p>StreamHdrAppendix</p></td>
+<td><p>waveform</p></td>
+</tr>
+<tr class="row-odd"><td><p>stream/config/image_appendix</p></td>
+<td><p>Sets the text to be appended to the Stream API images</p></td>
+<td><p>StreamImgAppendix</p></td>
+<td><p>waveform</p></td>
+</tr>
+<tr class="row-even"><td><p>stream/status/dropped</p></td>
+<td><p>Indicates how many images were dropped in the last acquisition</p></td>
+<td><p>StreamDropped_RBV</p></td>
+<td><p>ai</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="monitor-interface">
+<h3><a class="toc-backref" href="#id21" role="doc-backlink">Monitor Interface</a><a class="headerlink" href="#monitor-interface" title="Permalink to this heading"></a></h3>
+<table class="table-bordered table-striped table-hover docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Eiger Parameter</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>EPICS record name</p></th>
+<th class="head"><p>EPICS record type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>monitor/config/mode</p></td>
+<td><p>Enables or disables the Monitor module</p></td>
+<td><p>MonitorEnable, MonitorEnable_RBV</p></td>
+<td><p>bo, bi</p></td>
+</tr>
+<tr class="row-odd"><td><p>monitor/status/state</p></td>
+<td><p>State of the Monitor module</p></td>
+<td><p>MonitorState_RBV</p></td>
+<td><p>stringin</p></td>
+</tr>
+<tr class="row-even"><td><p>N.A.</p></td>
+<td><p>Timeout for queries on the Monitor interface for new images</p></td>
+<td><p>MonitorTimeout, MonitorTimeout_RBV</p></td>
+<td><p>ao, ai</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="acquisition-metadata">
+<h3><a class="toc-backref" href="#id22" role="doc-backlink">Acquisition Metadata</a><a class="headerlink" href="#acquisition-metadata" title="Permalink to this heading"></a></h3>
+<table class="table-bordered table-striped table-hover docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Eiger Parameter</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>EPICS record name</p></th>
+<th class="head"><p>EPICS record type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>detector/config/beam_center_x</p></td>
+<td><p>X position of the beam</p></td>
+<td><p>BeamX, BeamX_RBV</p></td>
+<td><p>ao, ai</p></td>
+</tr>
+<tr class="row-odd"><td><p>detector/config/beam_center_y</p></td>
+<td><p>Y position of the beam</p></td>
+<td><p>BeamY, BeamY_RBV</p></td>
+<td><p>ao, ai</p></td>
+</tr>
+<tr class="row-even"><td><p>detector/config/detector_distance</p></td>
+<td><p>Detector distance</p></td>
+<td><p>DetDist, DetDist_RBV</p></td>
+<td><p>ao, ai</p></td>
+</tr>
+<tr class="row-odd"><td><p>detector/config/wavelength</p></td>
+<td><p>Wavelength of the beam. This parameter is automatically changed whenever the PhotonEnergy
+changes</p></td>
+<td><p>Wavelength, Wavelength_RBV</p></td>
+<td><p>ao, ai</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="detector-metadata">
+<h3><a class="toc-backref" href="#id23" role="doc-backlink">Detector Metadata</a><a class="headerlink" href="#detector-metadata" title="Permalink to this heading"></a></h3>
+<table class="table-bordered table-striped table-hover docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Eiger Parameter</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>EPICS record name</p></th>
+<th class="head"><p>EPICS record type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>detector/config/chi_start</p></td>
+<td><p>Start value of the Chi angle</p></td>
+<td><p>ChiStart, ChiStart_RBV</p></td>
+<td><p>ao, ai</p></td>
+</tr>
+<tr class="row-odd"><td><p>detector/config/chi_increment</p></td>
+<td><p>Chi angle increment per frame</p></td>
+<td><p>ChiIncr, ChiIncr_RBV</p></td>
+<td><p>ao, ai</p></td>
+</tr>
+<tr class="row-even"><td><p>detector/config/kappa_start</p></td>
+<td><p>Start value of the Kappa angle</p></td>
+<td><p>KappaStart, KappaStart_RBV</p></td>
+<td><p>ao, ai</p></td>
+</tr>
+<tr class="row-odd"><td><p>detector/config/kappa_increment</p></td>
+<td><p>Kappa angle increment per frame</p></td>
+<td><p>KappaIncr, KappaIncr_RBV</p></td>
+<td><p>ao, ai</p></td>
+</tr>
+<tr class="row-even"><td><p>detector/config/omega_start</p></td>
+<td><p>Start value of the Omega angle</p></td>
+<td><p>OmegaStart, OmegaStart_RBV</p></td>
+<td><p>ao, ai</p></td>
+</tr>
+<tr class="row-odd"><td><p>detector/config/omega_increment</p></td>
+<td><p>Omega angle increment per frame</p></td>
+<td><p>OmegaIncr, OmegaIncr_RBV</p></td>
+<td><p>ao, ai</p></td>
+</tr>
+<tr class="row-even"><td><p>detector/config/phi_start</p></td>
+<td><p>Start value of the Phi angle</p></td>
+<td><p>PhiStart, PhiStart_RBV</p></td>
+<td><p>ao, ai</p></td>
+</tr>
+<tr class="row-odd"><td><p>detector/config/phi_increment</p></td>
+<td><p>Phi angle increment per frame</p></td>
+<td><p>PhiIncr, PhiIncr_RBV</p></td>
+<td><p>ao, ai</p></td>
+</tr>
+<tr class="row-even"><td><p>detector/config/two_theta_start</p></td>
+<td><p>Start value of the TwoTheta angle</p></td>
+<td><p>TwoThetaStart, TwoThetaStart_RBV</p></td>
+<td><p>ao, ai</p></td>
+</tr>
+<tr class="row-odd"><td><p>detector/config/two_theta_increment</p></td>
+<td><p>TwoTheta angle increment per frame</p></td>
+<td><p>TwoThetaIncr, TwoThetaIncr_RBV</p></td>
+<td><p>ao, ai</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="minimum-change-allowed">
+<h3><a class="toc-backref" href="#id24" role="doc-backlink">Minimum change allowed</a><a class="headerlink" href="#minimum-change-allowed" title="Permalink to this heading"></a></h3>
+<table class="table-bordered table-striped table-hover docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Eiger Parameter</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>EPICS record name</p></th>
+<th class="head"><p>EPICS record type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>N.A.</p></td>
+<td><p>Minimum amount of change allowed to Wavelength, in Angstroms</p></td>
+<td><p>WavelengthEps, WavelengthEps_RBV</p></td>
+<td><p>ao, ai</p></td>
+</tr>
+<tr class="row-odd"><td><p>N.A.</p></td>
+<td><p>Minimum amount of change allowed to PhotonEnergy, Threshold and Threshold2, in eV</p></td>
+<td><p>EnergyEps, EnergyEps_RBV</p></td>
+<td><p>ao, ai</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="unsupported-standard-driver-parameters">
+<h2><a class="toc-backref" href="#id25" role="doc-backlink">Unsupported standard driver parameters</a><a class="headerlink" href="#unsupported-standard-driver-parameters" title="Permalink to this heading"></a></h2>
+<p>All standard parameters not mentioned in this document are not supported.</p>
+</section>
+<section id="configuration">
+<h2><a class="toc-backref" href="#id26" role="doc-backlink">Configuration</a><a class="headerlink" href="#configuration" title="Permalink to this heading"></a></h2>
+<p>The Eiger driver is created with the eigerDetectorConfig command,
+either from C/C++ or from the EPICS IOC shell.:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span> <span class="n">eigerDetectorConfig</span><span class="p">(</span><span class="n">const</span> <span class="n">char</span> <span class="o">*</span><span class="n">portName</span><span class="p">,</span> <span class="n">const</span> <span class="n">char</span> <span class="o">*</span><span class="n">hostname</span><span class="p">,</span>
+                        <span class="nb">int</span> <span class="n">maxBuffers</span><span class="p">,</span> <span class="n">size_t</span> <span class="n">maxMemory</span><span class="p">,</span> <span class="nb">int</span> <span class="n">priority</span><span class="p">,</span> <span class="nb">int</span> <span class="n">stackSize</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>For details on the meaning of the parameters to this function refer to
+the detailed documentation on the eigerDetectorConfig function in the
+<a class="reference external" href="https://areadetector.github.io/master/areaDetectorDoxygenHTML/eiger_detector_8cpp.html">eigerDetector</a> and in the documentation for the
+constructor for the <a class="reference external" href="https://areadetector.github.io/master/areaDetectorDoxygenHTML/classeiger_detector.html">eigerDetector class</a></p>
+<p>There an example IOC boot directory and startup script provided with
+areaDetector.</p>
+</section>
+<section id="medm-screens">
+<h2><a class="toc-backref" href="#id27" role="doc-backlink">medm screens</a><a class="headerlink" href="#medm-screens" title="Permalink to this heading"></a></h2>
+<p>The following shows the medm screens that are used to control the Eiger
+and Eiger2 detectors. Note that the general purpose screen ADBase.adl can be used,
+but it exposes a few PVs that are not applicable to the Eiger,
+and lacks many PVs that are important for the Eiger.</p>
+<p>eigerDetector.adl is the screen used to control the Eiger1 detector.</p>
+<a class="reference internal image-reference" href="../_images/eiger1.png"><img alt="../_images/eiger1.png" class="align-center" src="../_images/eiger1.png" style="width: 100%;" /></a>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>eiger2Detector.adl is the screen used to control the Eiger2 detector.</p>
+<a class="reference internal image-reference" href="../_images/eiger2.png"><img alt="../_images/eiger2.png" class="align-center" src="../_images/eiger2.png" style="width: 100%;" /></a>
+</section>
+<section id="using-2-energy-thresholds">
+<h2><a class="toc-backref" href="#id28" role="doc-backlink">Using 2 energy thresholds</a><a class="headerlink" href="#using-2-energy-thresholds" title="Permalink to this heading"></a></h2>
+<p>The Eiger2 detector supports 2 energy thresholds.  Threshold1 must always be lower in energy
+than threshold2.  These can be independently enabled, but at least one of the thresholds
+must be enabled. If both are enabled then enabling ThresholdDiffEnable will result in the image being
+the difference of threshold1 - threshold2.</p>
+<p>The following images were acquired with two radioactive sources placed in front of the detector.
+On the left is Fe55 which generates Mn Ka x-rays at about 5.9 keV.  On the right is Cd109 which
+generates Ag Ka x-rays at about 23 keV.  Threshold1 was set to 3.0 keV, about 50% of the Fe55 x-ray energy.
+Threshold2 was set to 11 keV, about 50% of the Cd109 x-ray energy.</p>
+<p>This image was acquired with Threshold1Enable=Enable and Threshold2Enable=Disable.  Note that both sources
+are detected because both are above 3 keV.</p>
+<a class="reference internal image-reference" href="../_images/eigerThreshold1.png"><img alt="../_images/eigerThreshold1.png" class="align-center" src="../_images/eigerThreshold1.png" style="width: 100%;" /></a>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>This image was acquired with Threshold1Enable=Disable and Threshold2Enable=Enable.  Note that the Fe55
+source is not detected because it is below 11 keV.</p>
+<a class="reference internal image-reference" href="../_images/eigerThreshold2.png"><img alt="../_images/eigerThreshold2.png" class="align-center" src="../_images/eigerThreshold2.png" style="width: 100%;" /></a>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>This image was acquired with Threshold1Enable=Enable and Threshold2Enable=Enable, and ThresholdDiffEnable=Enable.
+Note that only the Fe55 source is detected because any events that were above both 3 keV and 11 keV are discarded.</p>
+<a class="reference internal image-reference" href="../_images/eigerThresholdDiff.png"><img alt="../_images/eigerThresholdDiff.png" class="align-center" src="../_images/eigerThresholdDiff.png" style="width: 100%;" /></a>
+</section>
+<section id="known-issues">
+<h2><a class="toc-backref" href="#id29" role="doc-backlink">Known Issues</a><a class="headerlink" href="#known-issues" title="Permalink to this heading"></a></h2>
+<section id="changing-the-photon-energy">
+<h3><a class="toc-backref" href="#id30" role="doc-backlink">Changing the Photon Energy</a><a class="headerlink" href="#changing-the-photon-energy" title="Permalink to this heading"></a></h3>
+<p>Changing the Photon Energy is a potentially slow operation, depending
+on the detector size. On the 16M it takes around ten seconds. Other
+parameters also take this long because they also affect the Photon
+Energy, namely Threshold Energy and Wavelength. The StatusMessage PV
+indicates when setting any of these parameters start and finish.</p>
+<p>In order to prevent minute or accidental changes to Energy and Wavelength from taking
+too long to be applied, their values are only updated if the difference between the
+desired and current value is greater than some configurable parameters. Specifically,
+changes in Wavelength only take effect if they result in a difference greater than
+WavelengthEps (default: 0.0005 Angstroms). Similarly, changes to PhotonEnergy, Threshold
+and Threshold2 only take effect if they are greater than EnergyEps (default: 0.05 eV).</p>
+</section>
+<section id="status-parameters-polling">
+<h3><a class="toc-backref" href="#id31" role="doc-backlink">Status Parameters Polling</a><a class="headerlink" href="#status-parameters-polling" title="Permalink to this heading"></a></h3>
+<p>A few status parameters are read every time the ReadStatus PV is
+processed. A high rate polling causes issues, sometimes causing the
+detector to hang when, in conjunction, a parameter is set to an
+invalid value.</p>
+</section>
+<section id="internal-enable-mode">
+<h3><a class="toc-backref" href="#id32" role="doc-backlink">Internal Enable Mode</a><a class="headerlink" href="#internal-enable-mode" title="Permalink to this heading"></a></h3>
+<p>The Internal Enable mode is marked as experimental by Dectris. At the
+moment it is very flaky (firmware 1.5.0) and often doesn’t generate
+all the files it is supposed to.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../ADDexela/st_cmd.html" class="btn btn-neutral float-left" title="Example st.cmd Startup File" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../ADFastCCD/index.html" class="btn btn-neutral float-right" title="ADFastCCD" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Mark Rivers.
+      <span class="lastupdated">Last updated on 2023-March-12.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

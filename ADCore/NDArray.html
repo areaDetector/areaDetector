@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NDArray &mdash; areaDetector Support</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme_overrides.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Detector Drivers" href="../detector_drivers.html" />
+    <link rel="prev" title="asynPortDriver" href="asynPortDriver.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            areaDetector
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../readme.html">Readme</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../user_guide.html">User Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arch.html">Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="asynPortDriver.html">asynPortDriver</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">NDArray</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">NDArray</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ndarraypool">NDArrayPool</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ndattribute">NDAttribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ndattributelist">NDAttributeList</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pvattribute">PVAttribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#paramattribute">paramAttribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#functattribute">functAttribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#asynndarraydriver">asynNDArrayDriver</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../detector_drivers.html">Detector Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plugins.html">areaDetector Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../additional_plugins.html">Additional plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="medm.html">MEDM screens</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADViewers/ad_viewers.html">areaDetector Viewers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../acknowledgements.html">Acknowledgements and licenses</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../install_guide.html">Install Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release.html">Top-level Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ADCore_release.html">ADCore Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ADSupport_release.html">ADSupport Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../doxygen.html">Source Code Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../detectors.html">Supported Detectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../legacy_versions.html">Legacy Versions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">areaDetector</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../user_guide.html">areaDetector Users Guide</a></li>
+      <li class="breadcrumb-item active">NDArray</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/ADCore/NDArray.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="ndarray">
+<h1>NDArray<a class="headerlink" href="#ndarray" title="Permalink to this heading"></a></h1>
+<section id="id1">
+<h2>NDArray<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h2>
+<p>The NDArray (N-Dimensional array) is the class that is used for passing
+detector data from drivers to plugins. An NDArray is a general purpose
+class for handling array data. An NDArray object is self-describing,
+meaning it contains enough information to describe the data itself. It
+can optionally contain “attributes” (class NDAttribute) which contain
+meta-data describing how the data was collected, etc.</p>
+<p>An NDArray can have up to ND_ARRAY_MAX_DIMS dimensions, currently 10. A
+fixed maximum number of dimensions is used to significantly simplify the
+code compared to unlimited number of dimensions. Each dimension of the
+array is described by an <a class="reference external" href="../areaDetectorDoxygenHTML/struct_n_d_dimension.html">NDDimension
+structure</a>. The
+<a class="reference external" href="../areaDetectorDoxygenHTML/class_n_d_array.html">NDArray class
+documentation</a>describes
+this class in detail.</p>
+</section>
+<section id="ndarraypool">
+<h2>NDArrayPool<a class="headerlink" href="#ndarraypool" title="Permalink to this heading"></a></h2>
+<p>The NDArrayPool class manages a free list (pool) of NDArray objects.
+Drivers allocate NDArray objects from the pool, and pass these objects
+to plugins. Plugins increase the reference count on the object when they
+place the object on their queue, and decrease the reference count when
+they are done processing the array. When the reference count reaches 0
+again the NDArray object is placed back on the free list. This mechanism
+minimizes the copying of array data in plugins. The <a class="reference external" href="../areaDetectorDoxygenHTML/class_n_d_array_pool.html">NDArrayPool class
+documentation</a>describes
+this class in detail.</p>
+</section>
+<section id="ndattribute">
+<h2>NDAttribute<a class="headerlink" href="#ndattribute" title="Permalink to this heading"></a></h2>
+<p>The NDAttribute is a class for linking metadata to an NDArray. An
+NDattribute has a name, description, data type, value, source type and
+source information. Attributes are identified by their names, which are
+case-sensitive. There are methods to set and get the information for an
+attribute.</p>
+<p>It is useful to define some conventions for attribute names, so that
+plugins or data analysis programs can look for a specific attribute. The
+following are the attribute conventions used in current plugins:</p>
+<table class="table-bordered table-striped table-hover docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 60%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head" colspan="2"><p><strong>Conventions for standard attribute names</strong></p></th>
+</tr>
+<tr class="row-even"><th class="head"><p>Attribute name</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Data type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-odd"><td><p>ColorMode</p></td>
+<td><p>Color mode of the NDArray. Used by many plugins to determine how to process the
+array.</p></td>
+<td><p>NDAttrInt32 (NDColorMode_t)</p></td>
+</tr>
+<tr class="row-even"><td><p>BayerPattern</p></td>
+<td><p>Bayer patter of an image collect by a color camera with a Bayer mask. Could be used
+to convert to a an RGB color image. This capability may be added to NDPluginColorConvert.</p></td>
+<td><p>NDAttrInt32 (NDBayerPattern_t)</p></td>
+</tr>
+<tr class="row-odd"><td><p>DriverFilename</p></td>
+<td><p>The name of the file originally collected by the driver. This is used by NDPluginFile
+to delete the original driver file if the DeleteDriverFile flag is set and the NDArray
+has been successfully saved in another file.</p></td>
+<td><p>NDAttrString</p></td>
+</tr>
+<tr class="row-even"><td><p>FilePluginDestination</p></td>
+<td><p>This is used by NDPluginFile to determine whether to process this NDArray. If this
+attribute is present and is “all” or the name of this plugin then the NDArray is
+processed, otherwise it is ignored.</p></td>
+<td><p>NDAttrString</p></td>
+</tr>
+<tr class="row-odd"><td><p>FilePluginFileName</p></td>
+<td><p>This is used by NDPluginFile to set the file name when saving this NDArray.</p></td>
+<td><p>NDAttrString</p></td>
+</tr>
+<tr class="row-even"><td><p>FilePluginFileNumber</p></td>
+<td><p>This is used by NDPluginFile to set the file number when saving this NDArray.</p></td>
+<td><p>NDAttrInt32</p></td>
+</tr>
+<tr class="row-odd"><td><p>FilePluginFileClose</p></td>
+<td><p>This is used by NDPluginFile to close the file after processing this NDArray.</p></td>
+<td><p>NDAttrInt32</p></td>
+</tr>
+<tr class="row-even"><td><p>[HDF dataset name]</p></td>
+<td><p>This is used by NDFileHDF5 to determine which dataset in the file this NDArray should
+be written to. The attribute name is the name of the HDF5 dataset.</p></td>
+<td><p>NDAttrString</p></td>
+</tr>
+<tr class="row-odd"><td><p>[posName]</p></td>
+<td><p>This is used by NDFileHDF5 to determine which position in the dataset this NDArray
+should be written to. The attribute name is contained in a <em>PosName</em> record defined
+in NDFileHDF5.template. This is designed to allow, for example, “snake scan” data
+to be placed in the correct order in an HDF5 file.</p></td>
+<td><p>NDAttrInt32</p></td>
+</tr>
+</tbody>
+</table>
+<p>Attribute names are case-sensitive. For attributes not in this table a
+good convention would be to use the corresponding driver parameter
+without the leading ND or AD, and with the first character of every
+“word” of the name starting with upper case. For example, the standard
+attribute name for ADManufacturer should be “Manufacturer”,
+ADNumExposures should be “NumExposures”, etc.</p>
+<p>The <a class="reference external" href="../areaDetectorDoxygenHTML/class_n_d_attribute.html">NDAttribute class
+documentation</a>
+describes this class in detail.</p>
+</section>
+<section id="ndattributelist">
+<h2>NDAttributeList<a class="headerlink" href="#ndattributelist" title="Permalink to this heading"></a></h2>
+<p>The NDAttributeList implements a linked list of NDAttribute objects.
+NDArray objects contain an NDAttributeList which is how attributes are
+associated with an NDArray. There are methods to add, delete and search
+for NDAttribute objects in an NDAttributeList. Each attribute in the
+list must have a unique name, which is case-sensitive.</p>
+<p>When NDArrays are copied with the NDArrayPool methods the attribute list
+is also copied.</p>
+<p>IMPORTANT NOTE: When a new NDArray is allocated using
+<code class="docutils literal notranslate"><span class="pre">NDArrayPool::alloc()</span></code> the behavior of any existing attribute list on the
+NDArray taken from the pool is determined by the value of the global
+variable <code class="docutils literal notranslate"><span class="pre">eraseNDAttributes</span></code>. By default the value of this variable is
+0. This means that when a new NDArray is allocated from the pool its
+attribute list is <strong>not</strong> cleared. This greatly improves efficiency in
+the normal case where attributes for a given driver are defined once at
+initialization and never deleted. (The attribute <strong>values</strong> may of
+course be changing.) It eliminates allocating and deallocating attribute
+memory each time an array is obtained from the pool. It is still
+possible to add new attributes to the array, but any existing attributes
+will continue to exist even if they are ostensibly cleared e.g.
+<code class="docutils literal notranslate"><span class="pre">asynNDArrayDriver::readNDAttributesFile()</span></code> is called again. If it is
+desired to eliminate all existing attributes from NDArrays each time a
+new one is allocated then the global variable <code class="docutils literal notranslate"><span class="pre">eraseNDAttributes</span></code>
+should be set to 1. This can be done at the iocsh prompt with the
+command:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">var</span><span class="w"> </span><span class="n">eraseNDAttributes</span><span class="w"> </span><span class="mi">1</span>
+</pre></div>
+</div>
+<p>The <a class="reference external" href="../areaDetectorDoxygenHTML/class_n_d_attribute_list.html">NDAttributeList class
+documentation</a>
+describes this class in detail.</p>
+</section>
+<section id="pvattribute">
+<h2>PVAttribute<a class="headerlink" href="#pvattribute" title="Permalink to this heading"></a></h2>
+<p>The PVAttribute class is derived from NDAttribute. It obtains its value
+by monitor callbacks from an EPICS PV, and is thus used to associate
+current the value of any EPICS PV with an NDArray. The <a class="reference external" href="../areaDetectorDoxygenHTML/class_p_v_attribute.html">PVAttribute
+class
+documentation</a>
+describes this class in detail.</p>
+</section>
+<section id="paramattribute">
+<h2>paramAttribute<a class="headerlink" href="#paramattribute" title="Permalink to this heading"></a></h2>
+<p>The paramAttribute class is derived from NDAttribute. It obtains its
+value from the current value of a driver or plugin parameter. The
+paramAttribute class is typically used when it is important to have the
+current value of the parameter and the value of a corresponding
+PVAttribute might not be current because the EPICS PV has not yet
+updated. The <a class="reference external" href="../areaDetectorDoxygenHTML/classparam_attribute.html">paramAttribute class
+documentation</a>
+describes this class in detail.</p>
+</section>
+<section id="functattribute">
+<h2>functAttribute<a class="headerlink" href="#functattribute" title="Permalink to this heading"></a></h2>
+<p>The functAttribute class is derived from NDAttribute. It obtains its
+value from a user-written C++ function. The functAttribute class is thus
+very general, and can be used to add almost any information to an
+NDArray. ADCore contains example code, myAttributeFunctions.cpp that
+demonstates how to write such functions. The <a class="reference external" href="../areaDetectorDoxygenHTML/classfunct_attribute.html">functAttribute class
+documentation</a>
+describes this class in detail.</p>
+</section>
+<section id="asynndarraydriver">
+<h2>asynNDArrayDriver<a class="headerlink" href="#asynndarraydriver" title="Permalink to this heading"></a></h2>
+<p>asynNDArrayDriver inherits from asynPortDriver. It implements the
+asynGenericPointer functions for NDArray objects. This is the class from
+which both plugins and area detector drivers are indirectly derived. The
+<a class="reference external" href="../areaDetectorDoxygenHTML/classasyn_n_d_array_driver.html">asynNDArrayDriver class
+documentation</a>describes
+this class in detail.</p>
+<p>The file
+<a class="reference external" href="../areaDetectorDoxygenHTML/asyn_n_d_array_driver_8h.html">asynNDArrayDriver.h</a>
+defines a number of parameters that all NDArray drivers and plugins
+should implement if possible. These parameters are defined by strings
+(drvInfo strings in asyn) with an associated asyn interface, and access
+(read-only or read-write). There is also an integer index to the
+parameter which is assigned by asynPortDriver when the parameter is
+created in the parameter library. The EPICS database
+NDArrayBase.template provides access to these standard driver
+parameters. The following table lists the standard driver parameters.
+The columns are defined as follows:</p>
+<ul class="simple">
+<li><p><strong>Parameter index variable:</strong> The variable name for this parameter
+index in the driver. There are several EPICS records in
+ADBase.template that do not have corresponding parameter indices, and
+these are indicated as Not Applicable (N/A).</p></li>
+<li><p><strong>asyn interface:</strong> The asyn interface used to pass this parameter to
+the driver.</p></li>
+<li><p><strong>Access:</strong> Read-write (r/w) or read-only (r/o).</p></li>
+<li><p><strong>drvInfo string:</strong> The string used to look up the parameter in the
+driver through the drvUser interface. This string is used in the
+EPICS database file for generic asyn device support to associate a
+record with a particular parameter. It is also used to associate a
+<a class="reference external" href="../areaDetectorDoxygenHTML/classparam_attribute.html">paramAttribute</a>
+with a driver parameter in the XML file that is read by
+asynNDArrayDriver::readNDAttributesFile</p></li>
+<li><p><strong>EPICS record name:</strong> The name of the record in ADBase.template.
+Each record name begins with the two macro parameters $(P) and $(R).
+In the case of read/write parameters there are normally two records,
+one for writing the value, and a second, ending in _RBV, that
+contains the actual value (Read Back Value) of the parameter.</p></li>
+<li><p><strong>EPICS record type:</strong> The record type of the record. Waveform
+records are used to hold long strings, with length (NELM) = 256 bytes
+and EPICS data type (FTVL) = UCHAR. This removes the 40 character
+restriction string lengths that arise if an EPICS “string” PV is
+used. MEDM allows one to edit and display such records correctly.
+EPICS clients will typically need to convert such long strings from a
+string to an integer or byte array before sending the path name to
+EPICS. In IDL this is done as follows:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">;</span> <span class="n">Convert</span> <span class="n">a</span> <span class="n">string</span> <span class="n">to</span> <span class="n">a</span> <span class="n">null</span><span class="o">-</span><span class="n">terminated</span> <span class="n">byte</span> <span class="n">array</span> <span class="ow">and</span> <span class="n">write</span> <span class="k">with</span> <span class="n">caput</span>
+<span class="n">IDL</span><span class="o">&gt;</span> <span class="n">t</span> <span class="o">=</span> <span class="n">caput</span><span class="p">(</span><span class="s1">&#39;13PS1:TIFF1:FilePath&#39;</span><span class="p">,</span> <span class="p">[</span><span class="n">byte</span><span class="p">(</span><span class="s1">&#39;/home/epics/scratch&#39;</span><span class="p">),</span><span class="mi">0</span><span class="n">B</span><span class="p">])</span>
+<span class="p">;</span> <span class="n">Read</span> <span class="n">a</span> <span class="n">null</span> <span class="n">terminated</span> <span class="n">byte</span> <span class="n">array</span>
+<span class="n">IDL</span><span class="o">&gt;</span> <span class="n">t</span> <span class="o">=</span> <span class="n">caget</span><span class="p">(</span><span class="s1">&#39;13PS1:TIFF1:FilePath&#39;</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
+<span class="p">;</span> <span class="n">Convert</span> <span class="n">to</span> <span class="n">a</span> <span class="n">string</span>
+<span class="n">IDL</span><span class="o">&gt;</span> <span class="n">s</span> <span class="o">=</span> <span class="n">string</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>In SPEC this is done as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">array</span> <span class="n">_temp</span><span class="p">[</span><span class="mi">256</span><span class="p">]</span>
+<span class="c1"># Setting the array to &quot;&quot; will zero-fill it</span>
+<span class="n">_temp</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+<span class="c1"># Copy the string to the array.  Note, this does not null terminate, so if array already contains</span>
+<span class="c1"># a longer string it needs to first be zeroed by setting it to &quot;&quot;.</span>
+<span class="n">_temp</span> <span class="o">=</span> <span class="s2">&quot;/home/epics/scratch&quot;</span>
+<span class="n">epics_put</span><span class="p">(</span><span class="s2">&quot;13PS1:TIFF1:FilePath&quot;</span><span class="p">,</span> <span class="n">_temp</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Note that for parameters whose values are defined by enum values (e.g
+NDDataType, NDColorMode, etc.), drivers can use a different set of enum
+values for these parameters. They can override the enum menu in
+ADBase.template with driver-specific choices by loading a
+driver-specific template file that redefines that record field after
+loading ADBase.template.</p>
+<table class="table-bordered table-striped table-hover docutils align-default">
+<colgroup>
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 70%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head" colspan="7"><p><strong>Parameter Definitions in asynNDArrayDriver.h and EPICS Record Definitions in NDArrayBase.template
+(file-related records are in NDFile.template)</strong></p></th>
+</tr>
+<tr class="row-even"><th class="head"><p>Parameter index variable</p></th>
+<th class="head"><p>asyn interface</p></th>
+<th class="head"><p>Access</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>drvInfo string</p></th>
+<th class="head"><p>EPICS record name</p></th>
+<th class="head"><p>EPICS record type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-odd"><td></td>
+<td></td>
+<td></td>
+<td colspan="4"><p><strong>Information about the version of ADCore and the plugin or driver</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>NDADCoreVersion</p></td>
+<td><p>asynOctet</p></td>
+<td><p>r/o</p></td>
+<td><p>ADCore version number. This can be used by Channel Access clients to alter their
+behavior depending on the version of ADCore that was used to build this driver or
+plugin.</p></td>
+<td><p>ADCORE_VERSION</p></td>
+<td><p>$(P)$(R)ADCoreVersion_RBV</p></td>
+<td><p>stringin</p></td>
+</tr>
+<tr class="row-odd"><td><p>NDDriverVersion</p></td>
+<td><p>asynOctet</p></td>
+<td><p>r/o</p></td>
+<td><p>Driver or plugin version number. This can be used by Channel Access clients to alter
+their behavior depending on the version of the plugin or driver.</p></td>
+<td><p>DRIVER_VERSION</p></td>
+<td><p>$(P)$(R)DriverVersion_RBV</p></td>
+<td><p>stringin</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td></td>
+<td colspan="4"><p><strong>Information about the device</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>ADManufacturer</p></td>
+<td><p>asynOctet</p></td>
+<td><p>r/o</p></td>
+<td><p>Detector manufacturer name</p></td>
+<td><p>MANUFACTURER</p></td>
+<td><p>$(P)$(R)Manufacturer_RBV</p></td>
+<td><p>stringin</p></td>
+</tr>
+<tr class="row-even"><td><p>ADModel</p></td>
+<td><p>asynOctet</p></td>
+<td><p>r/o</p></td>
+<td><p>Detector model name</p></td>
+<td><p>MODEL</p></td>
+<td><p>$(P)$(R)Model_RBV</p></td>
+<td><p>stringin</p></td>
+</tr>
+<tr class="row-odd"><td><p>ADSerialNumber</p></td>
+<td><p>asynOctet</p></td>
+<td><p>r/o</p></td>
+<td><p>Detector serial number</p></td>
+<td><p>SERIAL_NUMBER</p></td>
+<td><p>$(P)$(R)SerialNumber_RBV</p></td>
+<td><p>stringin</p></td>
+</tr>
+<tr class="row-even"><td><p>ADFirmwareVersion</p></td>
+<td><p>asynOctet</p></td>
+<td><p>r/o</p></td>
+<td><p>Detector firmware version</p></td>
+<td><p>FIRMWARE_VERSION</p></td>
+<td><p>$(P)$(R)FirmwareVersion_RBV</p></td>
+<td><p>stringin</p></td>
+</tr>
+<tr class="row-odd"><td><p>ADSDKVersion</p></td>
+<td><p>asynOctet</p></td>
+<td><p>r/o</p></td>
+<td><p>Detector vendor’s Software Development Kit (SDK) version number.</p></td>
+<td><p>SDK_VERSION</p></td>
+<td><p>$(P)$(R)SDKVersion_RBV</p></td>
+<td><p>stringin</p></td>
+</tr>
+<tr class="row-even"><td><p>ADFirmwareVersion</p></td>
+<td><p>asynOctet</p></td>
+<td><p>r/o</p></td>
+<td><p>Detector firmware version number.</p></td>
+<td><p>FIRMWARE_VERSION</p></td>
+<td><p>$(P)$(R)FirmwareVersion_RBV</p></td>
+<td><p>stringin</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td></td>
+<td colspan="4"><p><strong>Acquisition control</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>ADAcquire</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>Start (1) or stop (0) image acquisition. This record forward links to $(P)$(R)AcquireBusy
+which is an EPICS busy record that does not process its forward link until acquisition
+is complete. Clients should write 1 to the Acquire record to start acquisition,
+and wait for AcquireBusy to go to 0 to know that acquisition is complete. This can
+be done automatically with ca_put_callback.</p></td>
+<td><p>ACQUIRE</p></td>
+<td><p>$(P)$(R)Acquire, $(P)$(R)Acquire_RBV</p></td>
+<td><p>bo, bi</p></td>
+</tr>
+<tr class="row-odd"><td><p>N.A.</p></td>
+<td><p>N.A.</p></td>
+<td><p>r/o</p></td>
+<td><p>This is an EPICS busy record that is set to 1 when Acquire is set to 1 and not process
+its forward link until acquisition is complete.</p></td>
+<td><p>N.A.</p></td>
+<td><p>$(P)$(R)AcquireBusy</p></td>
+<td><p>busy</p></td>
+</tr>
+<tr class="row-even"><td><p>N.A.</p></td>
+<td><p>N.A.</p></td>
+<td><p>r/o</p></td>
+<td><p>This record controls whether AcquireBusy goes to 0 when the detector is done (Acquire=0),
+or whether it waits until $(P)$(R)NumQueuedArrays also goes to 0, i.e. that all
+plugins are also done. Choices are No (0) and Yes(1).</p></td>
+<td><p>N.A.</p></td>
+<td><p>$(P)$(R)WaitForPlugins</p></td>
+<td><p>bo</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td></td>
+<td colspan="4"><p><strong>Information about the asyn port</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>NDPortNameSelf</p></td>
+<td><p>asynOctet</p></td>
+<td><p>r/o</p></td>
+<td><p>asyn port name</p></td>
+<td><p>PORT_NAME_SELF</p></td>
+<td><p>$(P)$(R)PortName_RBV</p></td>
+<td><p>stringin</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td></td>
+<td colspan="4"><p><strong>Data type</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>NDDataType</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>Data type (NDDataType_t).</p></td>
+<td><p>DATA_TYPE</p></td>
+<td><p>$(P)$(R)DataType, $(P)$(R)DataType_RBV</p></td>
+<td><p>mbbo, mbbi</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td></td>
+<td colspan="4"><p><strong>Color mode</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>NDColorMode</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>Color mode (NDColorMode_t).</p></td>
+<td><p>COLOR_MODE</p></td>
+<td><p>$(P)$(R)ColorMode, $(P)$(R)ColorMode_RBV</p></td>
+<td><p>mbbo, mbbi</p></td>
+</tr>
+<tr class="row-odd"><td><p>NDBayerPattern</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/o</p></td>
+<td><p>Bayer pattern (NDBayerPattern_t) of NDArray data.</p></td>
+<td><p>BAYER_PATTERN</p></td>
+<td><p>$(P)$(R)BayerPattern_RBV</p></td>
+<td><p>mbbi</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td></td>
+<td colspan="4"><p><strong>Actual dimensions of array data</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>NDNDimensions</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>Number of dimensions in the array</p></td>
+<td><p>ARRAY_NDIMENSIONS</p></td>
+<td><p>$(P)$(R)NDimensions, $(P)$(R)NDimensions_RBV</p></td>
+<td><p>longout, longin</p></td>
+</tr>
+<tr class="row-even"><td><p>NDDimensions</p></td>
+<td><p>asynInt32Array</p></td>
+<td><p>r/w</p></td>
+<td><p>Size of each dimension in the array</p></td>
+<td><p>ARRAY_DIMENSIONS</p></td>
+<td><p>$(P)$(R)Dimensions, $(P)$(R)Dimensions_RBV</p></td>
+<td><p>waveform (out), waveform (in)</p></td>
+</tr>
+<tr class="row-odd"><td><p>N.A.</p></td>
+<td><p>N.A</p></td>
+<td><p>r/o</p></td>
+<td><p>Size of each array dimension, extracted from the $(P)$(R)Dimensions and $(P)$(R)Dimensions_RBV
+waveform records. Note that these are both longin record, i.e. readonly values using
+subarray records. In the future longout records may be added to write to the individual
+values in $(P)$(R)Dimensions.</p></td>
+<td><p>N.A.</p></td>
+<td><p>$(P)$(R)ArraySize[N] N=0-9
+, (P)$(R)ArraySize[N]_RBV</p></td>
+<td><p>longin, longin</p></td>
+</tr>
+<tr class="row-even"><td><p>NDArraySizeX</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/o</p></td>
+<td><p>Size of the array data in the X direction</p></td>
+<td><p>ARRAY_SIZE_X</p></td>
+<td><p>$(P)$(R)ArraySizeX_RBV</p></td>
+<td><p>longin</p></td>
+</tr>
+<tr class="row-odd"><td><p>NDArraySizeY</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/o</p></td>
+<td><p>Size of the array data in the Y direction</p></td>
+<td><p>ARRAY_SIZE_Y</p></td>
+<td><p>$(P)$(R)ArraySizeY_RBV</p></td>
+<td><p>longin</p></td>
+</tr>
+<tr class="row-even"><td><p>NDArraySizeZ</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/o</p></td>
+<td><p>Size of the array data in the Z direction</p></td>
+<td><p>ARRAY_SIZE_Z</p></td>
+<td><p>$(P)$(R)ArraySizeZ_RBV</p></td>
+<td><p>longin</p></td>
+</tr>
+<tr class="row-odd"><td><p>NDArraySize</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/o</p></td>
+<td><p>Total size of the array data in bytes</p></td>
+<td><p>ARRAY_SIZE</p></td>
+<td><p>$(P)$(R)ArraySize_RBV</p></td>
+<td><p>longin</p></td>
+</tr>
+<tr class="row-even"><td><p>NDCodec</p></td>
+<td><p>asynOctet</p></td>
+<td><p>r/o</p></td>
+<td><p>The codec used to compress this array</p></td>
+<td><p>CODEC</p></td>
+<td><p>$(P)$(R)Codec_RBV</p></td>
+<td><p>stringin</p></td>
+</tr>
+<tr class="row-odd"><td><p>NDCompressedSize</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/o</p></td>
+<td><p>Compressed size of the array data in bytes. Only meaningful if NDCodec is not empty
+string.</p></td>
+<td><p>COMPRESSED_SIZE</p></td>
+<td><p>$(P)$(R)Compressed_RBV</p></td>
+<td><p>longin</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td></td>
+<td colspan="4"><p><strong>Array data</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>NDArrayCallbacks</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>Controls whether the driver or plugin does callbacks with the array data to registered
+plugins. 0=No, 1=Yes. Setting this to 0 in a driver can reduce overhead in the case
+that the driver is being used only to control the device, and not to make the data
+available to plugins or to EPICS clients. Setting this to 0 in a plugin can reduce
+overhead by eliminating the need to copy the NDArray if that plugin is not being
+used as a source of NDArrays to other plugins.</p></td>
+<td><p>ARRAY_CALLBACKS</p></td>
+<td><p>$(P)$(R)ArrayCallbacks, $(P)$(R)ArrayCallbacks_RBV</p></td>
+<td><p>bo, bi</p></td>
+</tr>
+<tr class="row-even"><td><p>NDArrayData</p></td>
+<td><p>asynGenericPointer</p></td>
+<td><p>r/w</p></td>
+<td><p>The array data as an NDArray object</p></td>
+<td><p>NDARRAY_DATA</p></td>
+<td><p>N/A. EPICS access to array data is through NDStdArrays plugin.</p></td>
+<td><p>N/A</p></td>
+</tr>
+<tr class="row-odd"><td><p>NDArrayCounter</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>Counter that increments by 1 each time an array is acquired. Can be reset by writing
+a value to it.</p></td>
+<td><p>ARRAY_COUNTER</p></td>
+<td><p>$(P)$(R)ArrayCounter, $(P)$(R)ArrayCounter_RBV</p></td>
+<td><p>longout, longin</p></td>
+</tr>
+<tr class="row-even"><td><p>N/A</p></td>
+<td><p>N/A</p></td>
+<td><p>r/o</p></td>
+<td><p>Rate at which arrays are being acquired. Computed in the ADBase.template database.</p></td>
+<td><p>N/A</p></td>
+<td><p>$(P)$(R)ArrayRate_RBV</p></td>
+<td><p>calc</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td></td>
+<td colspan="4"><p><strong>Array attributes</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>NDAttributesFile</p></td>
+<td><p>asynOctet</p></td>
+<td><p>r/w</p></td>
+<td><p>The name of an XML file defining the NDAttributes to be added to each NDArray by
+this driver or plugin. The format of the XML file is described in the documentation
+for <a class="reference external" href="../areaDetectorDoxygenHTML/classasyn_n_d_array_driver.html">asynNDArrayDriver::readNDAttributesFile()</a></p></td>
+<td><p>ND_ATTRIBUTES_FILE</p></td>
+<td><p>$(P)$(R)NDAttributesFile</p></td>
+<td><p>waveform</p></td>
+</tr>
+<tr class="row-odd"><td><p>NDAttributesMacros</p></td>
+<td><p>asynOctet</p></td>
+<td><p>r/w</p></td>
+<td><p>A macro definition string that can be used to do macro substitution in the XML file.
+For example if this string is “CAMERA=13SIM1:cam1:,ID=ID13us:” then all $(CAMERA)
+and $(ID) strings in the XML file will be replaced with 13SIM1:cam1: and ID13us:
+respectively.</p></td>
+<td><p>ND_ATTRIBUTES_MACROS</p></td>
+<td><p>$(P)$(R)NDAttributesMacros</p></td>
+<td><p>waveform</p></td>
+</tr>
+<tr class="row-even"><td><p>NDAttributesStatus</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/o</p></td>
+<td><p>The status of reading and parsing the XML attributes file. This is used to indicate
+if the file cannot be found, if there is an XML syntax error, or if there is a macro
+substitutions error.</p></td>
+<td><p>ND_ATTRIBUTES_STATUS</p></td>
+<td><p>$(P)$(R)NDAttributesStatus</p></td>
+<td><p>mbbi</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td></td>
+<td colspan="4"><p><strong>Array pool status</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>NDPoolMaxMemory</p></td>
+<td><p>asynFloat64</p></td>
+<td><p>r/o</p></td>
+<td><p>The maximum number of NDArrayPool memory bytes that can be allocated. 0=unlimited.</p></td>
+<td><p>POOL_MAX_MEMORY</p></td>
+<td><p>$(P)$(R)PoolMaxMem</p></td>
+<td><p>ai</p></td>
+</tr>
+<tr class="row-odd"><td><p>NDPoolUsedMemory</p></td>
+<td><p>asynFloat64</p></td>
+<td><p>r/o</p></td>
+<td><p>The number of NDArrayPool memory bytes currently allocated. The SCAN rate of this
+record controls the scanning of all of the dynamic NDArrayPool status records.</p></td>
+<td><p>POOL_USED_MEMORY</p></td>
+<td><p>$(P)$(R)PoolUsedMem</p></td>
+<td><p>ai</p></td>
+</tr>
+<tr class="row-even"><td><p>NDPoolAllocBuffers</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/o</p></td>
+<td><p>The number of NDArrayPool buffers currently allocated.</p></td>
+<td><p>POOL_ALLOC_BUFFERS</p></td>
+<td><p>$(P)$(R)PoolAllocBuffers</p></td>
+<td><p>longin</p></td>
+</tr>
+<tr class="row-odd"><td><p>NDPoolFreeBuffers</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/o</p></td>
+<td><p>The number of NDArrayPool buffers currently allocated but free.</p></td>
+<td><p>POOL_FREE_BUFFERS</p></td>
+<td><p>$(P)$(R)PoolFreeBuffers</p></td>
+<td><p>longin</p></td>
+</tr>
+<tr class="row-even"><td><p>N.A.</p></td>
+<td><p>N.A.</p></td>
+<td><p>r/o</p></td>
+<td><p>The number of NDArrayPool buffers currently in use. This is calculated as NDPoolAllocBuffers
+- NDPoolFreeBuffers.</p></td>
+<td><p>N.A.</p></td>
+<td><p>$(P)$(R)PoolUsedBuffers</p></td>
+<td><p>calc</p></td>
+</tr>
+<tr class="row-odd"><td><p>NDPoolEmptyFreeList</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>Processing this record deletes all of the NDArrays on the freelist and sets the
+freelist size to 0. This provides a mechanism to free large amounts of memory and
+return it to the operating system, for example after a rapid acquisition with large
+plugin queues. On Windows the memory is returned to the operating system immediately.
+On Linux the freed memory may not actually be returned to the operating system even
+though it has been freed in the areaDetector process. On Centos7 (and presumably
+many other versions of Linux) setting the value of the environment variable <cite>MALLOC_TRIM_THRESHOLD_</cite>
+to a small value will allow the memory to actually be returned to the operating
+system.</p></td>
+<td><p>POOL_EMPTY_FREELIST</p></td>
+<td><p>$(P)$(R)EmptyFreeList</p></td>
+<td><p>bo</p></td>
+</tr>
+<tr class="row-even"><td><p>NDNumQueuedArrays</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/o</p></td>
+<td><p>The number of NDArrays from this driver’s NDArrayPool that are currently queued
+for processing by plugins. When this number goes to 0 the plugins have all completed
+processing.</p></td>
+<td><p>NUM_QUEUED_ARRAYS</p></td>
+<td><p>$(P)$(R)NumQueuedArrays</p></td>
+<td><p>longin</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td></td>
+<td colspan="4"><p><strong>Debugging control</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>N/A</p></td>
+<td><p>N/A</p></td>
+<td><p>N/A</p></td>
+<td><p>asyn record to control debugging (asynTrace)</p></td>
+<td><p>N/A</p></td>
+<td><p>$(P)$(R)AsynIO</p></td>
+<td><p>asyn</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td></td>
+<td colspan="4"><p><strong>File saving parameters (records are defined in NDFile.template)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>NDFilePath</p></td>
+<td><p>asynOctet</p></td>
+<td><p>r/w</p></td>
+<td><p>File path</p></td>
+<td><p>FILE_PATH</p></td>
+<td><p>$(P)$(R)FilePath, $(P)$(R)FilePath_RBV</p></td>
+<td><p>waveform, waveform</p></td>
+</tr>
+<tr class="row-odd"><td><p>NDFilePathExists</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/o</p></td>
+<td><p>Flag indicating if file path exists</p></td>
+<td><p>FILE_PATH_EXISTS</p></td>
+<td><p>$(P)$(R)FilePathExists_RBV</p></td>
+<td><p>bi</p></td>
+</tr>
+<tr class="row-even"><td><p>NDFileName</p></td>
+<td><p>asynOctet</p></td>
+<td><p>r/w</p></td>
+<td><p>File name</p></td>
+<td><p>FILE_NAME</p></td>
+<td><p>$(P)$(R)FileName, $(P)$(R)FileName_RBV</p></td>
+<td><p>waveform, waveform</p></td>
+</tr>
+<tr class="row-odd"><td><p>NDFileNumber</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>File number</p></td>
+<td><p>FILE_NUMBER</p></td>
+<td><p>$(P)$(R)FileNumber, $(P)$(R)FileNumber_RBV</p></td>
+<td><p>longout, longin</p></td>
+</tr>
+<tr class="row-even"><td><p>NDFileTemplate</p></td>
+<td><p>asynOctet</p></td>
+<td><p>r/w</p></td>
+<td><p>Format string for constructing NDFullFileName from NDFilePath, NDFileName, and NDFileNumber.
+The final file name (which is placed in NDFullFileName) is created with the following
+code:
+<code class="docutils literal notranslate"><span class="pre">epicsSnprintf(FullFilename,</span> <span class="pre">sizeof(FullFilename),</span> <span class="pre">FileTemplate,</span> <span class="pre">FilePath,</span> <span class="pre">Filename,</span> <span class="pre">FileNumber);</span></code>
+FilePath, Filename, FileNumber are converted in that order with FileTemplate. An
+example file format is <cite>“%s%s%4.4d.tif”</cite>. The first %s converts the FilePath,
+followed immediately by another %s for Filename. FileNumber is formatted with %4.4d,
+which results in a fixed field with of 4 digits, with leading zeros as required.
+Finally, the .tif extension is added to the file name. This mechanism for creating
+file names is very flexible. Other characters, such as _ can be put in Filename
+or FileTemplate as desired. If one does not want to have FileNumber in the file
+name at all, then just omit the %d format specifier from FileTemplate. If the client
+wishes to construct the complete file name itself, then it can just put that file
+name into NDFileTemplate with no format specifiers at all, in which case NDFilePath,
+NDFileName, and NDFileNumber will be ignored.</p></td>
+<td><p>FILE_TEMPLATE</p></td>
+<td><p>$(P)$(R)FileTemplate, $(P)$(R)FileTemplate_RBV</p></td>
+<td><p>waveform, waveform</p></td>
+</tr>
+<tr class="row-odd"><td><p>NDFullFileName</p></td>
+<td><p>asynOctet</p></td>
+<td><p>r/o</p></td>
+<td><p>Full file name constructed using the algorithm described in NDFileTemplate</p></td>
+<td><p>FULL_FILE_NAME</p></td>
+<td><p>$(P)$(R)FullFileName_RBV</p></td>
+<td><p>waveform, waveform</p></td>
+</tr>
+<tr class="row-even"><td><p>NDAutoIncrement</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>Auto-increment flag. Controls whether FileNumber is automatically incremented by
+1 each time a file is saved (0=No, 1=Yes)</p></td>
+<td><p>AUTO_INCREMENT</p></td>
+<td><p>$(P)$(R)AutoIncrement, $(P)$(R)AutoIncrement_RBV</p></td>
+<td><p>bo, bi</p></td>
+</tr>
+<tr class="row-odd"><td><p>NDAutoSave</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>Auto-save flag (0=No, 1=Yes) controlling whether a file is automatically saved each
+time acquisition completes.</p></td>
+<td><p>AUTO_SAVE</p></td>
+<td><p>$(P)$(R)AutoSave, $(P)$(R)AutoSave_RBV</p></td>
+<td><p>bo, bi</p></td>
+</tr>
+<tr class="row-even"><td><p>NDFileFormat</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>File format. The format to write/read data in (e.g. TIFF, netCDF, etc.)</p></td>
+<td><p>FILE_FORMAT</p></td>
+<td><p>$(P)$(R)FileFormat, $(P)$(R)FileFormat_RBV</p></td>
+<td><p>mbbo, mbbi</p></td>
+</tr>
+<tr class="row-odd"><td><p>NDWriteFile</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>Manually save the most recent array to a file when value=1</p></td>
+<td><p>WRITE_FILE</p></td>
+<td><p>$(P)$(R)WriteFile, $(P)$(R)WriteFile_RBV</p></td>
+<td><p>busy, bi</p></td>
+</tr>
+<tr class="row-even"><td><p>NDReadFile</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>Manually read a file when value=1</p></td>
+<td><p>READ_FILE</p></td>
+<td><p>$(P)$(R)ReadFile, $(P)$(R)ReadFile_RBV</p></td>
+<td><p>busy, bi</p></td>
+</tr>
+<tr class="row-odd"><td><p>NDFileWriteMode</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>File saving mode (Single, Capture, Stream)(NDFileMode_t)</p></td>
+<td><p>WRITE_MODE</p></td>
+<td><p>$(P)$(R)FileWriteMode, $(P)$(R)FileWriteMode_RBV</p></td>
+<td><p>mbbo, mbbi</p></td>
+</tr>
+<tr class="row-even"><td><p>NDFileWriteStatus</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/o</p></td>
+<td><p>File write status. Gives status information on last file open or file write operation.
+Values are WriteOK (0) and WriteError (1).</p></td>
+<td><p>WRITE_STATUS</p></td>
+<td><p>$(P)$(R)FileWriteStatus</p></td>
+<td><p>mbbi</p></td>
+</tr>
+<tr class="row-odd"><td><p>NDFileWriteMessage</p></td>
+<td><p>asynOctet</p></td>
+<td><p>r/o</p></td>
+<td><p>File write error message. An error message string if the previous file open or file
+write operation resulted in an error.</p></td>
+<td><p>WRITE_MESSAGE</p></td>
+<td><p>$(P)$(R)FileWriteMessage</p></td>
+<td><p>waveform</p></td>
+</tr>
+<tr class="row-even"><td><p>NDFileCapture</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>Start (1) or stop (0) file capture or streaming</p></td>
+<td><p>CAPTURE</p></td>
+<td><p>$(P)$(R)Capture, $(P)$(R)Capture_RBV</p></td>
+<td><p>busy, bi</p></td>
+</tr>
+<tr class="row-odd"><td><p>NDFileNumCapture</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>Number of frames to acquire in capture or streaming mode</p></td>
+<td><p>NUM_CAPTURE</p></td>
+<td><p>$(P)$(R)NumCapture, $(P)$(R)NumCapture_RBV</p></td>
+<td><p>longout, longin</p></td>
+</tr>
+<tr class="row-even"><td><p>NDFileNumCaptured</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/o</p></td>
+<td><p>Number of arrays currently acquired capture or streaming mode</p></td>
+<td><p>NUM_CAPTURED</p></td>
+<td><p>$(P)$(R)NumCaptured_RBV</p></td>
+<td><p>longin</p></td>
+</tr>
+<tr class="row-odd"><td><p>NDFileDeleteDriverFile</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>Flag to enable deleting original driver file after a plugin has re-written the file
+in a different format. This can be useful for detectors that must write the data
+to disk in order for the areaDetector driver to read it back. Once a file-writing
+plugin has rewritten the data in another format it can be desireable to then delete
+the original file.</p></td>
+<td><p>DELETE_DRIVER_FILE</p></td>
+<td><p>$(P)$(R)DeleteDriverFile, $(P)$(R)DeleteDriverFile_RBV</p></td>
+<td><p>bo, bi</p></td>
+</tr>
+<tr class="row-even"><td><p>NDFileLazyOpen</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>Flag to defer the creation of a new file until the first NDArray to write has been
+received. This removes the need for passing an extra NDArray through the file writing
+plugin to initialise dimensions and possibly NDAttribute list before opening the
+file. The downside is that file creation can potentially be time-consuming so processing
+the first NDArray may be slower than subsequent ones.
+, Only makes sense to use with file plugins which support multiple frames per file
+and only in “Stream” mode.</p></td>
+<td><p>FILE_LAZY_OPEN</p></td>
+<td><p>$(P)$(R)LazyOpen, $(P)$(R)LazyOpen_RBV</p></td>
+<td><p>bo, bi</p></td>
+</tr>
+<tr class="row-odd"><td><p>NDFileCreateDir</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>This parameter is used to automatically create directories if they don’t exist.
+If it is zero (default), no directories are created. If it is negative, then the
+absolute value is the maximum of directories that will be created (i.e. -1 will
+create a maximum of one directory to complete the path, -2 will create a maximum
+of 2 directories). If it is positive, then at least that many directories in the
+path must exist (i.e. a value of 1 will create all directories below the root directory
+and 2 will not create a directory in the root directory).</p></td>
+<td><p>CREATE_DIR</p></td>
+<td><p>$(P)$(R)CreateDirectory, $(P)$(R)CreateDirectory_RBV</p></td>
+<td><p>longout, longin</p></td>
+</tr>
+<tr class="row-even"><td><p>NDFileTempSuffix</p></td>
+<td><p>asynOctet</p></td>
+<td><p>r/w</p></td>
+<td><p>If this string is non-null, the file is opened with this suffix temporarily appended
+to the file name. When the file is closed it is then renamed to the correct file
+name without the suffix. This is useful for processing software watching for the
+file to appear since the file appears as an atomic operation when it is ready to
+be opened.</p></td>
+<td><p>FILE_TEMP_SUFFIX</p></td>
+<td><p>$(P)$(R)TempSuffix, $(P)$(R)TempSuffix_RBV</p></td>
+<td><p>stringout, stringin</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="asynPortDriver.html" class="btn btn-neutral float-left" title="asynPortDriver" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../detector_drivers.html" class="btn btn-neutral float-right" title="Detector Drivers" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Mark Rivers.
+      <span class="lastupdated">Last updated on 2023-March-12.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NDPluginGather &mdash; areaDetector Support</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme_overrides.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="NDPluginOverlay" href="NDPluginOverlay.html" />
+    <link rel="prev" title="NDFileNetCDF" href="NDFileNetCDF.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            areaDetector
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../readme.html">Readme</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../user_guide.html">User Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arch.html">Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="asynPortDriver.html">asynPortDriver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NDArray.html">NDArray</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../detector_drivers.html">Detector Drivers</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="plugins.html">areaDetector Plugins</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="plugin_overview.html">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginDriver.html">NDPluginDriver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="plugin_guidelines.html">Guidelines and rules for plugins</a></li>
+<li class="toctree-l3"><a class="reference internal" href="plugin_medm.html">Base class medm screens</a></li>
+<li class="toctree-l3"><a class="reference internal" href="common_plugins.html">commonPlugins.cmd</a></li>
+<li class="toctree-l3"><a class="reference internal" href="plugin_performance.html">Performance example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginAttrPlot.html">NDPluginAttrPlot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginAttribute.html">NDPluginAttribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginBadPixel.html">NDPluginBadPixel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginCircularBuff.html">NDPluginCircularBuff</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginCodec.html">NDPluginCodec</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginColorConvert.html">NDPluginColorConvert</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginFFT.html">NDPluginFFT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginFile.html">NDPluginFile</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">NDPluginGather</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#configuration">Configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#screen-shots">Screen shots</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#detailed-example">Detailed example</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginOverlay.html">NDPluginOverlay</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginProcess.html">NDPluginProcess</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginPva.html">NDPluginPva</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginROI.html">NDPluginROI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginROIStat.html">NDPluginROIStat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginScatter.html">NDPluginScatter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginStats.html">NDPluginStats</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginStdArrays.html">NDPluginStdArrays</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginTimeSeries.html">NDPluginTimeSeries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginTransform.html">NDPluginTransform</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginPos.html">NDPosPlugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ffmpegServer.html">ffmpegServer</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../additional_plugins.html">Additional plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="medm.html">MEDM screens</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADViewers/ad_viewers.html">areaDetector Viewers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../acknowledgements.html">Acknowledgements and licenses</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../install_guide.html">Install Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release.html">Top-level Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ADCore_release.html">ADCore Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ADSupport_release.html">ADSupport Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../doxygen.html">Source Code Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../detectors.html">Supported Detectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../legacy_versions.html">Legacy Versions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">areaDetector</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../user_guide.html">areaDetector Users Guide</a></li>
+          <li class="breadcrumb-item"><a href="plugins.html">areaDetector Plugins</a></li>
+      <li class="breadcrumb-item active">NDPluginGather</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/ADCore/NDPluginGather.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="ndplugingather">
+<h1><a class="toc-backref" href="#id1" role="doc-backlink">NDPluginGather</a><a class="headerlink" href="#ndplugingather" title="Permalink to this heading"></a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">author<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Mark Rivers, University of Chicago</p>
+</dd>
+</dl>
+<nav class="contents" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#ndplugingather" id="id1">NDPluginGather</a></p>
+<ul>
+<li><p><a class="reference internal" href="#overview" id="id2">Overview</a></p></li>
+<li><p><a class="reference internal" href="#configuration" id="id3">Configuration</a></p></li>
+<li><p><a class="reference internal" href="#screen-shots" id="id4">Screen shots</a></p></li>
+<li><p><a class="reference internal" href="#detailed-example" id="id5">Detailed example</a></p></li>
+</ul>
+</li>
+</ul>
+</nav>
+<section id="overview">
+<h2><a class="toc-backref" href="#id2" role="doc-backlink">Overview</a><a class="headerlink" href="#overview" title="Permalink to this heading"></a></h2>
+<p>This plugin is used to gather NDArrays from multiple upstream plugins
+and merge them into a single stream. When used together with
+<a class="reference internal" href="NDPluginScatter.html"><span class="doc">NDPluginScatter</span></a> it allows multiple intances
+of a plugin to process NDArrays in parallel, utilizing multiple cores to
+increase throughput.</p>
+<p>This plugin works differently from other plugins that receive callbacks
+from upstream plugins. Other plugins subscribe to NDArray callbacks from
+a single upstream plugin or driver. NDPluginGather allows subscribing to
+callbacks from any number of upstream plugins. It combines the NDArrays
+it receives into a single stream which it passes to all downstream
+plugins. The example commonPlugins.cmd and medm files in ADCore allow up
+to 8 upstream plugins, but this number can easily be changed by editing
+the startup script and operator display file.</p>
+<p>NDPluginGather inherits from NDPluginDriver. NDPluginGather does not do
+any modification to the NDArrays that it receives except for possibly
+adding new NDAttributes if an attribute file is specified. The
+<a class="reference external" href="../areaDetectorDoxygenHTML/class_n_d_plugin_gather.html">NDPluginGather class
+documentation</a>
+describes this class in detail.</p>
+<p>NDPluginGather.h defines the following parameters. It also implements
+all of the standard plugin parameters from
+<a class="reference internal" href="NDPluginDriver.html"><span class="doc">NDPluginDriver</span></a>. It extends the
+standard NDPluginDriverArrayPort and NDPluginDriverArrayAddr parameters
+by supporting more than one asyn address field for each, i.e. there can
+be multiple NDArrayPort and NDArrayAddr records, each specifying a
+different upstream plugin. There are 2 EPICS databases for the
+NDPluginGather plugin. NDGather.template provides access to global
+parameters that are not specific to each input source. There are
+currently no such global parameters, so NDGather.template does not
+define any new records. NDGatherN.template provides access to the
+parameters for each individual NDArray input source. Note that to reduce
+the width of this table the parameter index variable names have been
+split into 2 lines, but these are just a single name, for example
+<code class="docutils literal notranslate"><span class="pre">NDPluginGatherSortMode</span></code>.</p>
+<table class="table-bordered table-striped table-hover docutils align-default">
+<colgroup>
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 70%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head" colspan="6"><p>Parameter Definitions in NDPluginDriver.h and EPICS Record
+Definitions in NDPluginBase.template and NDGatherN.template</p></th>
+</tr>
+<tr class="row-even"><th class="head"><p>Parameter index variable</p></th>
+<th class="head"><p>asyn interface</p></th>
+<th class="head"><p>Access</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>drvInfo string</p></th>
+<th class="head"><p>EPICS record name</p></th>
+<th class="head"><p>EPICS record type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-odd"><td><p>NDPluginDriver <br>
+ArrayPort</p></td>
+<td><p>asynOctet</p></td>
+<td><p>r/w</p></td>
+<td><p>asyn port name for NDArray driver that will make callbacks to this plugin. This
+port can be changed at run time, connecting the plugin to a different NDArray driver.
+There can be more than one such input port. The maximum is number is specified in
+the NDGatherConfigure command in the startup script.</p></td>
+<td><p>NDARRAY_PORT</p></td>
+<td><p>$(P)$(R)NDArrayPort_[N], (P)$(R)NDArrayPort_[N]_RBV</p></td>
+<td><p>stringout, stringin</p></td>
+</tr>
+<tr class="row-even"><td><p>NDPluginDriver <br>
+ArrayAddr</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>asyn port address for NDArray driver that will make callbacks to this plugin. This
+address can be changed at run time, connecting the plugin to a different address
+in the NDArray driver. There can be more than one such input port. The maximum is
+number is specified in the NDGatherConfigure command in the startup script.</p></td>
+<td><p>NDARRAY_ADDR</p></td>
+<td><p>$(P)$(R)NDArrayAddress_[N], $(P)$(R)NDArrayAddress_[N]_RBV</p></td>
+<td><p>longout, longin</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="configuration">
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">Configuration</a><a class="headerlink" href="#configuration" title="Permalink to this heading"></a></h2>
+<p>The NDPluginGather plugin is created with the <code class="docutils literal notranslate"><span class="pre">NDGatherConfigure</span></code> command,
+either from C/C++ or from the EPICS IOC shell.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">NDGatherConfigure</span> <span class="p">(</span><span class="n">const</span> <span class="n">char</span> <span class="o">*</span><span class="n">portName</span><span class="p">,</span> <span class="nb">int</span> <span class="n">queueSize</span><span class="p">,</span> <span class="nb">int</span> <span class="n">blockingCallbacks</span><span class="p">,</span>
+                   <span class="n">maxPorts</span><span class="p">,</span> <span class="n">size_t</span> <span class="n">maxMemory</span><span class="p">,</span>
+                   <span class="nb">int</span> <span class="n">priority</span><span class="p">,</span> <span class="nb">int</span> <span class="n">stackSize</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>For details on the meaning of the parameters to this function refer to
+the detailed documentation on the NDGatherConfigure function in the
+<a class="reference external" href="../areaDetectorDoxygenHTML/_n_d_plugin_gather_8cpp.html">NDPluginGather.cpp
+documentation</a>
+and in the documentation for the constructor for the <a class="reference external" href="../areaDetectorDoxygenHTML/class_n_d_plugin_gather.html">NDPluginGather
+class</a>.</p>
+</section>
+<section id="screen-shots">
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">Screen shots</a><a class="headerlink" href="#screen-shots" title="Permalink to this heading"></a></h2>
+<p>The following is the MEDM screen that provides control of the
+NDPluginGather plugin.</p>
+<img alt="../_images/NDGather.png" class="align-center" src="../_images/NDGather.png" />
+</section>
+<section id="detailed-example">
+<h2><a class="toc-backref" href="#id5" role="doc-backlink">Detailed example</a><a class="headerlink" href="#detailed-example" title="Permalink to this heading"></a></h2>
+<p>The following is a detailed example of using the NDPluginScatter and
+NDPluginGather plugins. In this example the simDetector is generating
+1024x1024 Float32 images at about 535 frames/s. The simDetector output
+goes to the NDPluginScatter plugin.</p>
+<p>There are 5 NDPluginStats statistics plugins that all receive NDArrays
+from the NDPluginScatter plugin. Each statistics plugin can only process
+about 115 frames/s before it uses 100% of the CPU time on its core. Thus
+in order to be able to generate statistics on all 535 frames/s it is
+necessary to run 5 statistics plugins in parallel.</p>
+<p>The NDPluginGather plugin is configured to get its input arrays from the
+5 statistics plugins. It is thus receiving about 535 frames/s. For this
+test the NDPluginGather plugin was run in both Sorted and Unsorted
+modes. The SortTime was set to 0.1 second which was found to be long
+enough to ensure that all of the arrays would arrive in time to be
+correctly sorted. There should be 54 frames arriving in the 0.1 second
+time interval between when the NDPluginGather plugin processes. The
+SortSize was set to 100 to provide a safety margin that prevented
+dropped output arrays.</p>
+<p>The output of the NDPluginGather plugin was sent to the NDFileNetCDF
+plugin which saved images to disk. For the files tests the simDetector
+was set to ImageMode=Multiple with NumImages=1000 and the NDFileNetCDF
+plugin was set to StreamMode with NumCapture=1000. Two files were saved,
+one with NDPluginGather set to Unsorted and the other with
+NDPluginGather set to Sorted. The files were read into IDL and the value
+of UniqueId for each array was printed to test that the sorting worked
+correctly.</p>
+<p>The following show the configuration of the simDetector driver. It is
+generating 1024x1024 Float32 frames at about 535 frames/s, which is over
+2 GB/s. It is running in LinearRamp mode.</p>
+<img alt="../_images/scatterGatherExample_simDetector.png" class="align-center" src="../_images/scatterGatherExample_simDetector.png" />
+<img alt="../_images/scatterGatherExample_simDetectorSetup.png" class="align-center" src="../_images/scatterGatherExample_simDetectorSetup.png" />
+<p>The following shows the setup of all of the plugins. Note that the
+NDScatter plugin is running at the full frame rate of about 535
+frames/s, while each of the 5 statistics plugins is running at 1/5 of
+this speed, about 107 frames/s.</p>
+<img alt="../_images/scatterGatherExample_commonPlugins.png" class="align-center" src="../_images/scatterGatherExample_commonPlugins.png" />
+<p>The following shows the setup of the NDPluginScatter plugin.</p>
+<img alt="../_images/scatterGatherExample_NDScatter.png" class="align-center" src="../_images/scatterGatherExample_NDScatter.png" />
+<p>The following shows the setup of the first NDPluginStats plugin,
+performing all statistics calculations. All statistics plugins were
+configured identically.</p>
+<img alt="../_images/scatterGatherExample_NDStats.png" class="align-center" src="../_images/scatterGatherExample_NDStats.png" />
+<p>The following shows the setup of the NDPluginGather plugin. Note that it
+is getting its input from the 5 statistics plugins and is receiving
+frames at about 535 frames/s.</p>
+<img alt="../_images/scatterGatherExample_NDGather.png" class="align-center" src="../_images/scatterGatherExample_NDGather.png" />
+<p>The following shows the full setup of the NDPluginGather plugin. It has
+a SortTime of 0.1 seconds, a SortSize of 200, and SortMode is set to
+Sorted.</p>
+<img alt="../_images/scatterGatherExample_NDGatherFull.png" class="align-center" src="../_images/scatterGatherExample_NDGatherFull.png" />
+<p>The following shows the output of the Linux “top” command when the IOC
+was running as shown above. The top program was running with the -H
+option which displays the statistics for each thread, sorted by top CPU
+usage. Note that each of the 5 statistics plugins is using about 98% of
+a core. The simDetector, NDPluginGather, and NDPluginScatter are each
+using about 55% of a core. The total CPU usage on the machine is 40%,
+and this is a 20-core machine, so there about 8 cores being fully
+utilized.</p>
+<img alt="../_images/scatterGatherExample_top_threads.png" class="align-center" src="../_images/scatterGatherExample_top_threads.png" />
+<p>The following shows the setup of the NDFileNetCDF plugin. It is getting
+its input from the NDPluginGather plugin and is running in Stream mode,
+saving 1000 arrays. Note that it is only able to save about 116
+frames/s, while it is receiving about 535 frames/s, so it needs a large
+input queue to avoid losing frames. The input queue is currently set to
+1000 frames, which is large enough to save 1000 frames without dropping
+any.</p>
+<img alt="../_images/scatterGatherExample_NDFileNetCDF.png" class="align-center" src="../_images/scatterGatherExample_NDFileNetCDF.png" />
+<p>The following shows the output when reading the netCDF file that was
+written when NDPluginGather was set to <code class="docutils literal notranslate"><span class="pre">SortMode=Unsorted</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">attr[0].pvalue</span></code> is the value of the UniqueId attribute for all 1000
+NDArrays. Note that the arrays are not in the correct <code class="docutils literal notranslate"><span class="pre">UniqueId</span></code> order.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">IDL</span><span class="o">&gt;</span> <span class="n">t</span> <span class="o">=</span> <span class="n">read_nd_netcdf</span><span class="p">(</span><span class="s1">&#39;gather_test_sorted_001.nc&#39;</span><span class="p">,</span> <span class="n">attr</span><span class="o">=</span><span class="n">attr</span><span class="p">)</span>
+<span class="n">IDL</span><span class="o">&gt;</span> <span class="n">u</span><span class="o">=*</span><span class="n">attr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">pvalue</span>
+<span class="n">IDL</span><span class="o">&gt;</span> <span class="nb">print</span><span class="p">,</span> <span class="n">u</span>
+      <span class="mi">155438</span>      <span class="mi">155440</span>      <span class="mi">155439</span>      <span class="mi">155441</span>      <span class="mi">155442</span>      <span class="mi">155445</span>      <span class="mi">155443</span>      <span class="mi">155446</span>      <span class="mi">155447</span>      <span class="mi">155444</span>
+      <span class="mi">155450</span>      <span class="mi">155451</span>      <span class="mi">155452</span>      <span class="mi">155449</span>      <span class="mi">155448</span>      <span class="mi">155455</span>      <span class="mi">155456</span>      <span class="mi">155457</span>      <span class="mi">155454</span>      <span class="mi">155460</span>
+      <span class="mi">155461</span>      <span class="mi">155453</span>      <span class="mi">155462</span>      <span class="mi">155465</span>      <span class="mi">155459</span>      <span class="mi">155466</span>      <span class="mi">155470</span>      <span class="mi">155467</span>      <span class="mi">155458</span>      <span class="mi">155471</span>
+      <span class="mi">155464</span>      <span class="mi">155475</span>      <span class="mi">155472</span>      <span class="mi">155476</span>      <span class="mi">155469</span>      <span class="mi">155463</span>      <span class="mi">155480</span>      <span class="mi">155477</span>      <span class="mi">155481</span>      <span class="mi">155474</span>
+      <span class="mi">155485</span>      <span class="mi">155468</span>      <span class="mi">155482</span>      <span class="mi">155486</span>      <span class="mi">155490</span>      <span class="mi">155479</span>      <span class="mi">155473</span>      <span class="mi">155487</span>      <span class="mi">155495</span>      <span class="mi">155491</span>
+      <span class="mi">155484</span>      <span class="mi">155478</span>      <span class="mi">155500</span>      <span class="mi">155492</span>      <span class="mi">155489</span>      <span class="mi">155496</span>      <span class="mi">155483</span>      <span class="mi">155505</span>      <span class="mi">155497</span>      <span class="mi">155494</span>
+      <span class="mi">155488</span>      <span class="mi">155501</span>      <span class="mi">155510</span>      <span class="mi">155502</span>      <span class="mi">155499</span>      <span class="mi">155493</span>      <span class="mi">155506</span>      <span class="mi">155515</span>      <span class="mi">155507</span>      <span class="mi">155504</span>
+      <span class="mi">155498</span>      <span class="mi">155511</span>      <span class="mi">155512</span>      <span class="mi">155509</span>      <span class="mi">155520</span>      <span class="mi">155516</span>      <span class="mi">155503</span>      <span class="mi">155517</span>      <span class="mi">155514</span>      <span class="mi">155521</span>
+      <span class="mi">155508</span>      <span class="mi">155525</span>      <span class="mi">155522</span>      <span class="mi">155519</span>      <span class="mi">155526</span>      <span class="mi">155513</span>      <span class="mi">155527</span>      <span class="mi">155524</span>      <span class="mi">155530</span>      <span class="mi">155531</span>
+      <span class="mi">155518</span>      <span class="mi">155532</span>      <span class="mi">155529</span>      <span class="mi">155536</span>      <span class="mi">155535</span>      <span class="mi">155523</span>      <span class="mi">155537</span>      <span class="mi">155534</span>      <span class="mi">155541</span>      <span class="mi">155542</span>
+      <span class="mi">155540</span>      <span class="mi">155528</span>      <span class="mi">155539</span>      <span class="mi">155546</span>      <span class="mi">155547</span>      <span class="mi">155545</span>      <span class="mi">155533</span>      <span class="mi">155544</span>      <span class="mi">155551</span>      <span class="mi">155552</span>
+      <span class="mi">155550</span>      <span class="mi">155549</span>      <span class="mi">155556</span>      <span class="mi">155538</span>      <span class="mi">155555</span>      <span class="mi">155557</span>      <span class="mi">155554</span>      <span class="mi">155561</span>      <span class="mi">155560</span>      <span class="mi">155562</span>
+      <span class="mi">155543</span>      <span class="mi">155559</span>      <span class="mi">155566</span>      <span class="mi">155565</span>      <span class="mi">155567</span>      <span class="mi">155571</span>      <span class="mi">155548</span>      <span class="mi">155570</span>      <span class="mi">155572</span>      <span class="mi">155564</span>
+      <span class="mi">155576</span>      <span class="mi">155575</span>      <span class="mi">155577</span>      <span class="mi">155553</span>      <span class="mi">155581</span>      <span class="mi">155569</span>      <span class="mi">155580</span>      <span class="mi">155582</span>      <span class="mi">155558</span>      <span class="mi">155586</span>
+      <span class="mi">155585</span>      <span class="mi">155587</span>      <span class="mi">155574</span>      <span class="mi">155563</span>      <span class="mi">155591</span>      <span class="mi">155590</span>      <span class="mi">155592</span>      <span class="mi">155579</span>      <span class="mi">155596</span>      <span class="mi">155568</span>
+      <span class="mi">155595</span>      <span class="mi">155597</span>      <span class="mi">155601</span>      <span class="mi">155600</span>      <span class="mi">155602</span>      <span class="mi">155584</span>      <span class="mi">155573</span>      <span class="mi">155606</span>      <span class="mi">155607</span>      <span class="mi">155605</span>
+      <span class="mi">155611</span>      <span class="mi">155578</span>      <span class="mi">155589</span>      <span class="mi">155612</span>      <span class="mi">155610</span>      <span class="mi">155616</span>      <span class="mi">155617</span>      <span class="mi">155583</span>      <span class="mi">155594</span>      <span class="mi">155615</span>
+      <span class="mi">155621</span>      <span class="mi">155622</span>      <span class="mi">155588</span>      <span class="mi">155620</span>      <span class="mi">155626</span>      <span class="mi">155627</span>      <span class="mi">155599</span>      <span class="mi">155593</span>      <span class="mi">155625</span>      <span class="mi">155631</span>
+      <span class="mi">155632</span>      <span class="mi">155598</span>      <span class="mi">155604</span>      <span class="mi">155636</span>      <span class="mi">155630</span>      <span class="mi">155603</span>      <span class="mi">155637</span>      <span class="mi">155641</span>      <span class="mi">155635</span>      <span class="mi">155609</span>
+      <span class="mi">155608</span>      <span class="mi">155642</span>      <span class="mi">155646</span>      <span class="mi">155640</span>      <span class="mi">155647</span>      <span class="mi">155613</span>      <span class="mi">155651</span>      <span class="mi">155614</span>      <span class="mi">155645</span>      <span class="mi">155652</span>
+      <span class="mi">155618</span>      <span class="mi">155656</span>      <span class="mi">155650</span>      <span class="mi">155657</span>      <span class="mi">155623</span>      <span class="mi">155661</span>      <span class="mi">155619</span>      <span class="mi">155662</span>      <span class="mi">155655</span>      <span class="mi">155628</span>
+      <span class="mi">155666</span>      <span class="mi">155667</span>      <span class="mi">155624</span>      <span class="mi">155633</span>      <span class="mi">155660</span>      <span class="mi">155671</span>      <span class="mi">155672</span>      <span class="mi">155638</span>      <span class="mi">155665</span>      <span class="mi">155676</span>
+      <span class="mi">155629</span>      <span class="mi">155677</span>      <span class="mi">155643</span>      <span class="mi">155670</span>      <span class="mi">155681</span>      <span class="mi">155682</span>      <span class="mi">155648</span>      <span class="mi">155634</span>      <span class="mi">155686</span>      <span class="mi">155675</span>
+      <span class="mi">155687</span>      <span class="mi">155653</span>      <span class="mi">155691</span>      <span class="mi">155639</span>      <span class="mi">155680</span>      <span class="mi">155658</span>      <span class="mi">155692</span>      <span class="mi">155696</span>      <span class="mi">155663</span>      <span class="mi">155685</span>
+      <span class="mi">155697</span>      <span class="mi">155644</span>      <span class="mi">155668</span>      <span class="mi">155701</span>      <span class="mi">155702</span>      <span class="mi">155690</span>      <span class="mi">155673</span>      <span class="mi">155649</span>      <span class="mi">155706</span>      <span class="mi">155707</span>
+      <span class="mi">155695</span>      <span class="mi">155678</span>      <span class="mi">155711</span>      <span class="mi">155712</span>      <span class="mi">155654</span>      <span class="mi">155700</span>      <span class="mi">155683</span>      <span class="mi">155716</span>      <span class="mi">155717</span>      <span class="mi">155688</span>
+      <span class="mi">155705</span>      <span class="mi">155659</span>      <span class="mi">155721</span>      <span class="mi">155722</span>      <span class="mi">155693</span>      <span class="mi">155710</span>      <span class="mi">155726</span>      <span class="mi">155727</span>      <span class="mi">155698</span>      <span class="mi">155664</span>
+      <span class="mi">155715</span>      <span class="mi">155731</span>      <span class="mi">155732</span>      <span class="mi">155703</span>      <span class="mi">155720</span>      <span class="mi">155669</span>      <span class="mi">155708</span>      <span class="mi">155736</span>      <span class="mi">155737</span>      <span class="mi">155725</span>
+      <span class="mi">155713</span>      <span class="mi">155741</span>      <span class="mi">155674</span>      <span class="mi">155742</span>      <span class="mi">155718</span>      <span class="mi">155730</span>      <span class="mi">155746</span>      <span class="mi">155747</span>      <span class="mi">155723</span>      <span class="mi">155679</span>
+      <span class="mi">155735</span>      <span class="mi">155751</span>      <span class="mi">155752</span>      <span class="mi">155728</span>      <span class="mi">155756</span>      <span class="mi">155740</span>      <span class="mi">155757</span>      <span class="mi">155684</span>      <span class="mi">155733</span>      <span class="mi">155761</span>
+      <span class="mi">155762</span>      <span class="mi">155745</span>      <span class="mi">155738</span>      <span class="mi">155689</span>      <span class="mi">155766</span>      <span class="mi">155767</span>      <span class="mi">155743</span>      <span class="mi">155750</span>      <span class="mi">155694</span>      <span class="mi">155771</span>
+      <span class="mi">155772</span>      <span class="mi">155748</span>      <span class="mi">155755</span>      <span class="mi">155776</span>      <span class="mi">155699</span>      <span class="mi">155777</span>      <span class="mi">155753</span>      <span class="mi">155760</span>      <span class="mi">155781</span>      <span class="mi">155704</span>
+      <span class="mi">155782</span>      <span class="mi">155758</span>      <span class="mi">155765</span>      <span class="mi">155786</span>      <span class="mi">155787</span>      <span class="mi">155709</span>      <span class="mi">155763</span>      <span class="mi">155770</span>      <span class="mi">155791</span>      <span class="mi">155792</span>
+      <span class="mi">155714</span>      <span class="mi">155768</span>      <span class="mi">155775</span>      <span class="mi">155796</span>      <span class="mi">155797</span>      <span class="mi">155719</span>      <span class="mi">155773</span>      <span class="mi">155780</span>      <span class="mi">155801</span>      <span class="mi">155724</span>
+      <span class="mi">155802</span>      <span class="mi">155778</span>      <span class="mi">155785</span>      <span class="mi">155806</span>      <span class="mi">155729</span>      <span class="mi">155783</span>      <span class="mi">155807</span>      <span class="mi">155790</span>      <span class="mi">155811</span>      <span class="mi">155734</span>
+      <span class="mi">155788</span>      <span class="mi">155795</span>      <span class="mi">155812</span>      <span class="mi">155816</span>      <span class="mi">155739</span>      <span class="mi">155793</span>      <span class="mi">155800</span>      <span class="mi">155817</span>      <span class="mi">155744</span>      <span class="mi">155798</span>
+      <span class="mi">155821</span>      <span class="mi">155805</span>      <span class="mi">155749</span>      <span class="mi">155822</span>      <span class="mi">155803</span>      <span class="mi">155826</span>      <span class="mi">155810</span>      <span class="mi">155754</span>      <span class="mi">155827</span>      <span class="mi">155831</span>
+      <span class="mi">155808</span>      <span class="mi">155815</span>      <span class="mi">155832</span>      <span class="mi">155759</span>      <span class="mi">155836</span>      <span class="mi">155820</span>      <span class="mi">155837</span>      <span class="mi">155813</span>      <span class="mi">155825</span>      <span class="mi">155841</span>
+      <span class="mi">155764</span>      <span class="mi">155842</span>      <span class="mi">155830</span>      <span class="mi">155818</span>      <span class="mi">155846</span>      <span class="mi">155847</span>      <span class="mi">155769</span>      <span class="mi">155835</span>      <span class="mi">155851</span>      <span class="mi">155852</span>
+      <span class="mi">155774</span>      <span class="mi">155823</span>      <span class="mi">155840</span>      <span class="mi">155856</span>      <span class="mi">155857</span>      <span class="mi">155779</span>      <span class="mi">155845</span>      <span class="mi">155861</span>      <span class="mi">155828</span>      <span class="mi">155862</span>
+      <span class="mi">155784</span>      <span class="mi">155850</span>      <span class="mi">155866</span>      <span class="mi">155867</span>      <span class="mi">155833</span>      <span class="mi">155789</span>      <span class="mi">155855</span>      <span class="mi">155871</span>      <span class="mi">155872</span>      <span class="mi">155794</span>
+      <span class="mi">155860</span>      <span class="mi">155838</span>      <span class="mi">155876</span>      <span class="mi">155877</span>      <span class="mi">155799</span>      <span class="mi">155865</span>      <span class="mi">155881</span>      <span class="mi">155882</span>      <span class="mi">155804</span>      <span class="mi">155843</span>
+      <span class="mi">155870</span>      <span class="mi">155886</span>      <span class="mi">155809</span>      <span class="mi">155887</span>      <span class="mi">155875</span>      <span class="mi">155848</span>      <span class="mi">155814</span>      <span class="mi">155891</span>      <span class="mi">155892</span>      <span class="mi">155880</span>
+      <span class="mi">155819</span>      <span class="mi">155896</span>      <span class="mi">155853</span>      <span class="mi">155885</span>      <span class="mi">155897</span>      <span class="mi">155824</span>      <span class="mi">155901</span>      <span class="mi">155890</span>      <span class="mi">155902</span>      <span class="mi">155829</span>
+      <span class="mi">155858</span>      <span class="mi">155906</span>      <span class="mi">155895</span>      <span class="mi">155907</span>      <span class="mi">155834</span>      <span class="mi">155863</span>      <span class="mi">155900</span>      <span class="mi">155911</span>      <span class="mi">155912</span>      <span class="mi">155839</span>
+      <span class="mi">155905</span>      <span class="mi">155916</span>      <span class="mi">155844</span>      <span class="mi">155868</span>      <span class="mi">155917</span>      <span class="mi">155910</span>      <span class="mi">155849</span>      <span class="mi">155921</span>      <span class="mi">155922</span>      <span class="mi">155915</span>
+      <span class="mi">155873</span>      <span class="mi">155854</span>      <span class="mi">155927</span>      <span class="mi">155926</span>      <span class="mi">155920</span>      <span class="mi">155932</span>      <span class="mi">155859</span>      <span class="mi">155931</span>      <span class="mi">155878</span>      <span class="mi">155925</span>
+      <span class="mi">155937</span>      <span class="mi">155936</span>      <span class="mi">155864</span>      <span class="mi">155930</span>      <span class="mi">155942</span>      <span class="mi">155883</span>      <span class="mi">155941</span>      <span class="mi">155869</span>      <span class="mi">155935</span>      <span class="mi">155947</span>
+      <span class="mi">155946</span>      <span class="mi">155874</span>      <span class="mi">155888</span>      <span class="mi">155940</span>      <span class="mi">155952</span>      <span class="mi">155951</span>      <span class="mi">155879</span>      <span class="mi">155957</span>      <span class="mi">155945</span>      <span class="mi">155956</span>
+      <span class="mi">155893</span>      <span class="mi">155884</span>      <span class="mi">155962</span>      <span class="mi">155950</span>      <span class="mi">155961</span>      <span class="mi">155889</span>      <span class="mi">155898</span>      <span class="mi">155967</span>      <span class="mi">155955</span>      <span class="mi">155966</span>
+      <span class="mi">155894</span>      <span class="mi">155972</span>      <span class="mi">155960</span>      <span class="mi">155971</span>      <span class="mi">155899</span>      <span class="mi">155903</span>      <span class="mi">155977</span>      <span class="mi">155965</span>      <span class="mi">155976</span>      <span class="mi">155904</span>
+      <span class="mi">155982</span>      <span class="mi">155908</span>      <span class="mi">155981</span>      <span class="mi">155970</span>      <span class="mi">155909</span>      <span class="mi">155987</span>      <span class="mi">155986</span>      <span class="mi">155975</span>      <span class="mi">155914</span>      <span class="mi">155913</span>
+      <span class="mi">155992</span>      <span class="mi">155991</span>      <span class="mi">155980</span>      <span class="mi">155919</span>      <span class="mi">155997</span>      <span class="mi">155996</span>      <span class="mi">155918</span>      <span class="mi">155985</span>      <span class="mi">155924</span>      <span class="mi">156002</span>
+      <span class="mi">156001</span>      <span class="mi">155923</span>      <span class="mi">155990</span>      <span class="mi">155929</span>      <span class="mi">156007</span>      <span class="mi">156006</span>      <span class="mi">155928</span>      <span class="mi">155934</span>      <span class="mi">156012</span>      <span class="mi">156011</span>
+      <span class="mi">155995</span>      <span class="mi">155933</span>      <span class="mi">155939</span>      <span class="mi">156017</span>      <span class="mi">156016</span>      <span class="mi">156000</span>      <span class="mi">155944</span>      <span class="mi">155938</span>      <span class="mi">156022</span>      <span class="mi">156021</span>
+      <span class="mi">156005</span>      <span class="mi">155949</span>      <span class="mi">156027</span>      <span class="mi">155943</span>      <span class="mi">156026</span>      <span class="mi">156010</span>      <span class="mi">156032</span>      <span class="mi">155954</span>      <span class="mi">156031</span>      <span class="mi">155948</span>
+      <span class="mi">156015</span>      <span class="mi">156037</span>      <span class="mi">155959</span>      <span class="mi">156036</span>      <span class="mi">156020</span>      <span class="mi">155953</span>      <span class="mi">156042</span>      <span class="mi">155964</span>      <span class="mi">156041</span>      <span class="mi">156025</span>
+      <span class="mi">155958</span>      <span class="mi">156047</span>      <span class="mi">155969</span>      <span class="mi">156046</span>      <span class="mi">156030</span>      <span class="mi">155963</span>      <span class="mi">155974</span>      <span class="mi">156052</span>      <span class="mi">156051</span>      <span class="mi">156035</span>
+      <span class="mi">155968</span>      <span class="mi">155979</span>      <span class="mi">156057</span>      <span class="mi">156056</span>      <span class="mi">156040</span>      <span class="mi">155984</span>      <span class="mi">155973</span>      <span class="mi">156062</span>      <span class="mi">156061</span>      <span class="mi">156045</span>
+      <span class="mi">155989</span>      <span class="mi">155978</span>      <span class="mi">156067</span>      <span class="mi">156066</span>      <span class="mi">156050</span>      <span class="mi">155994</span>      <span class="mi">155983</span>      <span class="mi">156072</span>      <span class="mi">156071</span>      <span class="mi">156055</span>
+      <span class="mi">155999</span>      <span class="mi">155988</span>      <span class="mi">156077</span>      <span class="mi">156076</span>      <span class="mi">156060</span>      <span class="mi">156004</span>      <span class="mi">155993</span>      <span class="mi">156082</span>      <span class="mi">156081</span>      <span class="mi">156065</span>
+      <span class="mi">156009</span>      <span class="mi">155998</span>      <span class="mi">156086</span>      <span class="mi">156087</span>      <span class="mi">156070</span>      <span class="mi">156014</span>      <span class="mi">156003</span>      <span class="mi">156092</span>      <span class="mi">156091</span>      <span class="mi">156019</span>
+      <span class="mi">156075</span>      <span class="mi">156097</span>      <span class="mi">156008</span>      <span class="mi">156096</span>      <span class="mi">156024</span>      <span class="mi">156080</span>      <span class="mi">156102</span>      <span class="mi">156013</span>      <span class="mi">156029</span>      <span class="mi">156101</span>
+      <span class="mi">156085</span>      <span class="mi">156107</span>      <span class="mi">156034</span>      <span class="mi">156018</span>      <span class="mi">156106</span>      <span class="mi">156090</span>      <span class="mi">156112</span>      <span class="mi">156023</span>      <span class="mi">156111</span>      <span class="mi">156039</span>
+      <span class="mi">156095</span>      <span class="mi">156117</span>      <span class="mi">156028</span>      <span class="mi">156116</span>      <span class="mi">156044</span>      <span class="mi">156122</span>      <span class="mi">156100</span>      <span class="mi">156033</span>      <span class="mi">156121</span>      <span class="mi">156049</span>
+      <span class="mi">156127</span>      <span class="mi">156105</span>      <span class="mi">156126</span>      <span class="mi">156038</span>      <span class="mi">156132</span>      <span class="mi">156054</span>      <span class="mi">156110</span>      <span class="mi">156131</span>      <span class="mi">156137</span>      <span class="mi">156043</span>
+      <span class="mi">156115</span>      <span class="mi">156136</span>      <span class="mi">156059</span>      <span class="mi">156142</span>      <span class="mi">156120</span>      <span class="mi">156048</span>      <span class="mi">156141</span>      <span class="mi">156147</span>      <span class="mi">156064</span>      <span class="mi">156125</span>
+      <span class="mi">156146</span>      <span class="mi">156152</span>      <span class="mi">156053</span>      <span class="mi">156130</span>      <span class="mi">156151</span>      <span class="mi">156069</span>      <span class="mi">156157</span>      <span class="mi">156058</span>      <span class="mi">156135</span>      <span class="mi">156156</span>
+      <span class="mi">156162</span>      <span class="mi">156074</span>      <span class="mi">156140</span>      <span class="mi">156161</span>      <span class="mi">156167</span>      <span class="mi">156063</span>      <span class="mi">156145</span>      <span class="mi">156166</span>      <span class="mi">156079</span>      <span class="mi">156172</span>
+      <span class="mi">156068</span>      <span class="mi">156171</span>      <span class="mi">156150</span>      <span class="mi">156177</span>      <span class="mi">156084</span>      <span class="mi">156176</span>      <span class="mi">156155</span>      <span class="mi">156073</span>      <span class="mi">156182</span>      <span class="mi">156181</span>
+      <span class="mi">156089</span>      <span class="mi">156160</span>      <span class="mi">156187</span>      <span class="mi">156186</span>      <span class="mi">156078</span>      <span class="mi">156165</span>      <span class="mi">156094</span>      <span class="mi">156192</span>      <span class="mi">156191</span>      <span class="mi">156083</span>
+      <span class="mi">156170</span>      <span class="mi">156197</span>      <span class="mi">156196</span>      <span class="mi">156099</span>      <span class="mi">156175</span>      <span class="mi">156202</span>      <span class="mi">156088</span>      <span class="mi">156201</span>      <span class="mi">156104</span>      <span class="mi">156180</span>
+      <span class="mi">156207</span>      <span class="mi">156206</span>      <span class="mi">156093</span>      <span class="mi">156185</span>      <span class="mi">156109</span>      <span class="mi">156212</span>      <span class="mi">156211</span>      <span class="mi">156190</span>      <span class="mi">156098</span>      <span class="mi">156114</span>
+      <span class="mi">156217</span>      <span class="mi">156216</span>      <span class="mi">156195</span>      <span class="mi">156103</span>      <span class="mi">156222</span>      <span class="mi">156221</span>      <span class="mi">156119</span>      <span class="mi">156200</span>      <span class="mi">156227</span>      <span class="mi">156108</span>
+      <span class="mi">156226</span>      <span class="mi">156205</span>      <span class="mi">156124</span>      <span class="mi">156232</span>      <span class="mi">156231</span>      <span class="mi">156113</span>      <span class="mi">156210</span>      <span class="mi">156237</span>      <span class="mi">156236</span>      <span class="mi">156129</span>
+      <span class="mi">156215</span>      <span class="mi">156118</span>      <span class="mi">156242</span>      <span class="mi">156241</span>      <span class="mi">156220</span>      <span class="mi">156134</span>      <span class="mi">156246</span>      <span class="mi">156247</span>      <span class="mi">156123</span>      <span class="mi">156225</span>
+      <span class="mi">156251</span>      <span class="mi">156139</span>      <span class="mi">156252</span>      <span class="mi">156230</span>      <span class="mi">156128</span>      <span class="mi">156256</span>      <span class="mi">156257</span>      <span class="mi">156144</span>      <span class="mi">156261</span>      <span class="mi">156235</span>
+      <span class="mi">156133</span>      <span class="mi">156262</span>      <span class="mi">156266</span>      <span class="mi">156240</span>      <span class="mi">156149</span>      <span class="mi">156267</span>      <span class="mi">156271</span>      <span class="mi">156138</span>      <span class="mi">156245</span>      <span class="mi">156154</span>
+      <span class="mi">156272</span>      <span class="mi">156276</span>      <span class="mi">156250</span>      <span class="mi">156143</span>      <span class="mi">156277</span>      <span class="mi">156281</span>      <span class="mi">156159</span>      <span class="mi">156255</span>      <span class="mi">156148</span>      <span class="mi">156282</span>
+      <span class="mi">156286</span>      <span class="mi">156260</span>      <span class="mi">156164</span>      <span class="mi">156287</span>      <span class="mi">156291</span>      <span class="mi">156153</span>      <span class="mi">156265</span>      <span class="mi">156292</span>      <span class="mi">156296</span>      <span class="mi">156169</span>
+      <span class="mi">156270</span>      <span class="mi">156158</span>      <span class="mi">156297</span>      <span class="mi">156301</span>      <span class="mi">156275</span>      <span class="mi">156174</span>      <span class="mi">156302</span>      <span class="mi">156306</span>      <span class="mi">156163</span>      <span class="mi">156307</span>
+      <span class="mi">156280</span>      <span class="mi">156311</span>      <span class="mi">156179</span>      <span class="mi">156168</span>      <span class="mi">156312</span>      <span class="mi">156285</span>      <span class="mi">156316</span>      <span class="mi">156317</span>      <span class="mi">156184</span>      <span class="mi">156290</span>
+      <span class="mi">156321</span>      <span class="mi">156173</span>      <span class="mi">156322</span>      <span class="mi">156295</span>      <span class="mi">156189</span>      <span class="mi">156327</span>      <span class="mi">156326</span>      <span class="mi">156178</span>      <span class="mi">156300</span>      <span class="mi">156194</span>
+      <span class="mi">156332</span>      <span class="mi">156331</span>      <span class="mi">156305</span>      <span class="mi">156183</span>      <span class="mi">156337</span>      <span class="mi">156336</span>      <span class="mi">156310</span>      <span class="mi">156199</span>      <span class="mi">156188</span>      <span class="mi">156341</span>
+      <span class="mi">156342</span>      <span class="mi">156315</span>      <span class="mi">156204</span>      <span class="mi">156346</span>      <span class="mi">156193</span>      <span class="mi">156347</span>      <span class="mi">156320</span>      <span class="mi">156351</span>      <span class="mi">156352</span>      <span class="mi">156209</span>
+      <span class="mi">156325</span>      <span class="mi">156198</span>      <span class="mi">156356</span>      <span class="mi">156357</span>      <span class="mi">156330</span>      <span class="mi">156361</span>      <span class="mi">156214</span>      <span class="mi">156362</span>      <span class="mi">156203</span>      <span class="mi">156335</span>
+      <span class="mi">156366</span>      <span class="mi">156367</span>      <span class="mi">156340</span>      <span class="mi">156219</span>      <span class="mi">156208</span>      <span class="mi">156371</span>      <span class="mi">156372</span>      <span class="mi">156345</span>      <span class="mi">156224</span>      <span class="mi">156213</span>
+      <span class="mi">156377</span>      <span class="mi">156376</span>      <span class="mi">156350</span>      <span class="mi">156218</span>      <span class="mi">156382</span>      <span class="mi">156229</span>      <span class="mi">156355</span>      <span class="mi">156381</span>      <span class="mi">156223</span>      <span class="mi">156387</span>
+      <span class="mi">156234</span>      <span class="mi">156360</span>      <span class="mi">156386</span>      <span class="mi">156228</span>      <span class="mi">156392</span>      <span class="mi">156365</span>      <span class="mi">156239</span>      <span class="mi">156391</span>      <span class="mi">156233</span>      <span class="mi">156397</span>
+      <span class="mi">156370</span>      <span class="mi">156244</span>      <span class="mi">156396</span>      <span class="mi">156238</span>      <span class="mi">156402</span>      <span class="mi">156375</span>      <span class="mi">156249</span>      <span class="mi">156401</span>      <span class="mi">156243</span>      <span class="mi">156407</span>
+      <span class="mi">156380</span>      <span class="mi">156254</span>      <span class="mi">156406</span>      <span class="mi">156248</span>      <span class="mi">156412</span>      <span class="mi">156385</span>      <span class="mi">156259</span>      <span class="mi">156411</span>      <span class="mi">156253</span>      <span class="mi">156417</span>
+      <span class="mi">156390</span>      <span class="mi">156264</span>      <span class="mi">156416</span>      <span class="mi">156258</span>      <span class="mi">156422</span>      <span class="mi">156395</span>      <span class="mi">156269</span>      <span class="mi">156421</span>      <span class="mi">156263</span>      <span class="mi">156427</span>
+      <span class="mi">156400</span>      <span class="mi">156274</span>      <span class="mi">156432</span>      <span class="mi">156268</span>      <span class="mi">156426</span>      <span class="mi">156405</span>      <span class="mi">156279</span>      <span class="mi">156437</span>      <span class="mi">156273</span>      <span class="mi">156431</span>
+      <span class="mi">156410</span>      <span class="mi">156284</span>      <span class="mi">156278</span>      <span class="mi">156436</span>      <span class="mi">156415</span>      <span class="mi">156289</span>      <span class="mi">156283</span>      <span class="mi">156420</span>      <span class="mi">156294</span>      <span class="mi">156288</span>
+      <span class="mi">156425</span>      <span class="mi">156299</span>      <span class="mi">156293</span>      <span class="mi">156304</span>      <span class="mi">156430</span>      <span class="mi">156298</span>      <span class="mi">156309</span>      <span class="mi">156435</span>      <span class="mi">156303</span>      <span class="mi">156314</span>
+      <span class="mi">156308</span>      <span class="mi">156319</span>      <span class="mi">156313</span>      <span class="mi">156324</span>      <span class="mi">156318</span>      <span class="mi">156329</span>      <span class="mi">156323</span>      <span class="mi">156334</span>      <span class="mi">156328</span>      <span class="mi">156339</span>
+      <span class="mi">156333</span>      <span class="mi">156344</span>      <span class="mi">156338</span>      <span class="mi">156349</span>      <span class="mi">156343</span>      <span class="mi">156354</span>      <span class="mi">156348</span>      <span class="mi">156359</span>      <span class="mi">156353</span>      <span class="mi">156358</span>
+      <span class="mi">156364</span>      <span class="mi">156363</span>      <span class="mi">156369</span>      <span class="mi">156368</span>      <span class="mi">156374</span>      <span class="mi">156373</span>      <span class="mi">156379</span>      <span class="mi">156378</span>      <span class="mi">156384</span>      <span class="mi">156383</span>
+      <span class="mi">156389</span>      <span class="mi">156388</span>      <span class="mi">156394</span>      <span class="mi">156393</span>      <span class="mi">156398</span>      <span class="mi">156399</span>      <span class="mi">156403</span>      <span class="mi">156404</span>      <span class="mi">156408</span>      <span class="mi">156409</span>
+      <span class="mi">156413</span>      <span class="mi">156414</span>      <span class="mi">156418</span>      <span class="mi">156419</span>      <span class="mi">156423</span>      <span class="mi">156424</span>      <span class="mi">156428</span>      <span class="mi">156429</span>      <span class="mi">156433</span>      <span class="mi">156434</span>
+</pre></div>
+</div>
+<p>The following shows the output when reading the netCDF file that was
+written when NDPluginGather was set to <code class="docutils literal notranslate"><span class="pre">SortMode=Sorted</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">attr[0].pvalue</span></code> is the value of the UniqueId attribute for all 1000
+NDArrays. Note that the arrays are now in the correct <code class="docutils literal notranslate"><span class="pre">UniqueId</span></code> order.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">IDL</span><span class="o">&gt;</span> <span class="n">t</span> <span class="o">=</span> <span class="n">read_nd_netcdf</span><span class="p">(</span><span class="s1">&#39;gather_test_sorted_001.nc&#39;</span><span class="p">,</span> <span class="n">attr</span><span class="o">=</span><span class="n">attr</span><span class="p">)</span>
+<span class="n">IDL</span><span class="o">&gt;</span> <span class="n">u</span><span class="o">=*</span><span class="n">attr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">pvalue</span>
+<span class="n">IDL</span><span class="o">&gt;</span> <span class="nb">print</span><span class="p">,</span> <span class="n">u</span>
+      <span class="mi">157438</span>      <span class="mi">157439</span>      <span class="mi">157440</span>      <span class="mi">157441</span>      <span class="mi">157442</span>      <span class="mi">157443</span>      <span class="mi">157444</span>      <span class="mi">157445</span>      <span class="mi">157446</span>      <span class="mi">157447</span>
+      <span class="mi">157448</span>      <span class="mi">157449</span>      <span class="mi">157450</span>      <span class="mi">157451</span>      <span class="mi">157452</span>      <span class="mi">157453</span>      <span class="mi">157454</span>      <span class="mi">157455</span>      <span class="mi">157456</span>      <span class="mi">157457</span>
+      <span class="mi">157458</span>      <span class="mi">157459</span>      <span class="mi">157460</span>      <span class="mi">157461</span>      <span class="mi">157462</span>      <span class="mi">157463</span>      <span class="mi">157464</span>      <span class="mi">157465</span>      <span class="mi">157466</span>      <span class="mi">157467</span>
+      <span class="mi">157468</span>      <span class="mi">157469</span>      <span class="mi">157470</span>      <span class="mi">157471</span>      <span class="mi">157472</span>      <span class="mi">157473</span>      <span class="mi">157474</span>      <span class="mi">157475</span>      <span class="mi">157476</span>      <span class="mi">157477</span>
+      <span class="mi">157478</span>      <span class="mi">157479</span>      <span class="mi">157480</span>      <span class="mi">157481</span>      <span class="mi">157482</span>      <span class="mi">157483</span>      <span class="mi">157484</span>      <span class="mi">157485</span>      <span class="mi">157486</span>      <span class="mi">157487</span>
+      <span class="mi">157488</span>      <span class="mi">157489</span>      <span class="mi">157490</span>      <span class="mi">157491</span>      <span class="mi">157492</span>      <span class="mi">157493</span>      <span class="mi">157494</span>      <span class="mi">157495</span>      <span class="mi">157496</span>      <span class="mi">157497</span>
+      <span class="mi">157498</span>      <span class="mi">157499</span>      <span class="mi">157500</span>      <span class="mi">157501</span>      <span class="mi">157502</span>      <span class="mi">157503</span>      <span class="mi">157504</span>      <span class="mi">157505</span>      <span class="mi">157506</span>      <span class="mi">157507</span>
+      <span class="mi">157508</span>      <span class="mi">157509</span>      <span class="mi">157510</span>      <span class="mi">157511</span>      <span class="mi">157512</span>      <span class="mi">157513</span>      <span class="mi">157514</span>      <span class="mi">157515</span>      <span class="mi">157516</span>      <span class="mi">157517</span>
+      <span class="mi">157518</span>      <span class="mi">157519</span>      <span class="mi">157520</span>      <span class="mi">157521</span>      <span class="mi">157522</span>      <span class="mi">157523</span>      <span class="mi">157524</span>      <span class="mi">157525</span>      <span class="mi">157526</span>      <span class="mi">157527</span>
+      <span class="mi">157528</span>      <span class="mi">157529</span>      <span class="mi">157530</span>      <span class="mi">157531</span>      <span class="mi">157532</span>      <span class="mi">157533</span>      <span class="mi">157534</span>      <span class="mi">157535</span>      <span class="mi">157536</span>      <span class="mi">157537</span>
+      <span class="mi">157538</span>      <span class="mi">157539</span>      <span class="mi">157540</span>      <span class="mi">157541</span>      <span class="mi">157542</span>      <span class="mi">157543</span>      <span class="mi">157544</span>      <span class="mi">157545</span>      <span class="mi">157546</span>      <span class="mi">157547</span>
+      <span class="mi">157548</span>      <span class="mi">157549</span>      <span class="mi">157550</span>      <span class="mi">157551</span>      <span class="mi">157552</span>      <span class="mi">157553</span>      <span class="mi">157554</span>      <span class="mi">157555</span>      <span class="mi">157556</span>      <span class="mi">157557</span>
+      <span class="mi">157558</span>      <span class="mi">157559</span>      <span class="mi">157560</span>      <span class="mi">157561</span>      <span class="mi">157562</span>      <span class="mi">157563</span>      <span class="mi">157564</span>      <span class="mi">157565</span>      <span class="mi">157566</span>      <span class="mi">157567</span>
+      <span class="mi">157568</span>      <span class="mi">157569</span>      <span class="mi">157570</span>      <span class="mi">157571</span>      <span class="mi">157572</span>      <span class="mi">157573</span>      <span class="mi">157574</span>      <span class="mi">157575</span>      <span class="mi">157576</span>      <span class="mi">157577</span>
+      <span class="mi">157578</span>      <span class="mi">157579</span>      <span class="mi">157580</span>      <span class="mi">157581</span>      <span class="mi">157582</span>      <span class="mi">157583</span>      <span class="mi">157584</span>      <span class="mi">157585</span>      <span class="mi">157586</span>      <span class="mi">157587</span>
+      <span class="mi">157588</span>      <span class="mi">157589</span>      <span class="mi">157590</span>      <span class="mi">157591</span>      <span class="mi">157592</span>      <span class="mi">157593</span>      <span class="mi">157594</span>      <span class="mi">157595</span>      <span class="mi">157596</span>      <span class="mi">157597</span>
+      <span class="mi">157598</span>      <span class="mi">157599</span>      <span class="mi">157600</span>      <span class="mi">157601</span>      <span class="mi">157602</span>      <span class="mi">157603</span>      <span class="mi">157604</span>      <span class="mi">157605</span>      <span class="mi">157606</span>      <span class="mi">157607</span>
+      <span class="mi">157608</span>      <span class="mi">157609</span>      <span class="mi">157610</span>      <span class="mi">157611</span>      <span class="mi">157612</span>      <span class="mi">157613</span>      <span class="mi">157614</span>      <span class="mi">157615</span>      <span class="mi">157616</span>      <span class="mi">157617</span>
+      <span class="mi">157618</span>      <span class="mi">157619</span>      <span class="mi">157620</span>      <span class="mi">157621</span>      <span class="mi">157622</span>      <span class="mi">157623</span>      <span class="mi">157624</span>      <span class="mi">157625</span>      <span class="mi">157626</span>      <span class="mi">157627</span>
+      <span class="mi">157628</span>      <span class="mi">157629</span>      <span class="mi">157630</span>      <span class="mi">157631</span>      <span class="mi">157632</span>      <span class="mi">157633</span>      <span class="mi">157634</span>      <span class="mi">157635</span>      <span class="mi">157636</span>      <span class="mi">157637</span>
+      <span class="mi">157638</span>      <span class="mi">157639</span>      <span class="mi">157640</span>      <span class="mi">157641</span>      <span class="mi">157642</span>      <span class="mi">157643</span>      <span class="mi">157644</span>      <span class="mi">157645</span>      <span class="mi">157646</span>      <span class="mi">157647</span>
+      <span class="mi">157648</span>      <span class="mi">157649</span>      <span class="mi">157650</span>      <span class="mi">157651</span>      <span class="mi">157652</span>      <span class="mi">157653</span>      <span class="mi">157654</span>      <span class="mi">157655</span>      <span class="mi">157656</span>      <span class="mi">157657</span>
+      <span class="mi">157658</span>      <span class="mi">157659</span>      <span class="mi">157660</span>      <span class="mi">157661</span>      <span class="mi">157662</span>      <span class="mi">157663</span>      <span class="mi">157664</span>      <span class="mi">157665</span>      <span class="mi">157666</span>      <span class="mi">157667</span>
+      <span class="mi">157668</span>      <span class="mi">157669</span>      <span class="mi">157670</span>      <span class="mi">157671</span>      <span class="mi">157672</span>      <span class="mi">157673</span>      <span class="mi">157674</span>      <span class="mi">157675</span>      <span class="mi">157676</span>      <span class="mi">157677</span>
+      <span class="mi">157678</span>      <span class="mi">157679</span>      <span class="mi">157680</span>      <span class="mi">157681</span>      <span class="mi">157682</span>      <span class="mi">157683</span>      <span class="mi">157684</span>      <span class="mi">157685</span>      <span class="mi">157686</span>      <span class="mi">157687</span>
+      <span class="mi">157688</span>      <span class="mi">157689</span>      <span class="mi">157690</span>      <span class="mi">157691</span>      <span class="mi">157692</span>      <span class="mi">157693</span>      <span class="mi">157694</span>      <span class="mi">157695</span>      <span class="mi">157696</span>      <span class="mi">157697</span>
+      <span class="mi">157698</span>      <span class="mi">157699</span>      <span class="mi">157700</span>      <span class="mi">157701</span>      <span class="mi">157702</span>      <span class="mi">157703</span>      <span class="mi">157704</span>      <span class="mi">157705</span>      <span class="mi">157706</span>      <span class="mi">157707</span>
+      <span class="mi">157708</span>      <span class="mi">157709</span>      <span class="mi">157710</span>      <span class="mi">157711</span>      <span class="mi">157712</span>      <span class="mi">157713</span>      <span class="mi">157714</span>      <span class="mi">157715</span>      <span class="mi">157716</span>      <span class="mi">157717</span>
+      <span class="mi">157718</span>      <span class="mi">157719</span>      <span class="mi">157720</span>      <span class="mi">157721</span>      <span class="mi">157722</span>      <span class="mi">157723</span>      <span class="mi">157724</span>      <span class="mi">157725</span>      <span class="mi">157726</span>      <span class="mi">157727</span>
+      <span class="mi">157728</span>      <span class="mi">157729</span>      <span class="mi">157730</span>      <span class="mi">157731</span>      <span class="mi">157732</span>      <span class="mi">157733</span>      <span class="mi">157734</span>      <span class="mi">157735</span>      <span class="mi">157736</span>      <span class="mi">157737</span>
+      <span class="mi">157738</span>      <span class="mi">157739</span>      <span class="mi">157740</span>      <span class="mi">157741</span>      <span class="mi">157742</span>      <span class="mi">157743</span>      <span class="mi">157744</span>      <span class="mi">157745</span>      <span class="mi">157746</span>      <span class="mi">157747</span>
+      <span class="mi">157748</span>      <span class="mi">157749</span>      <span class="mi">157750</span>      <span class="mi">157751</span>      <span class="mi">157752</span>      <span class="mi">157753</span>      <span class="mi">157754</span>      <span class="mi">157755</span>      <span class="mi">157756</span>      <span class="mi">157757</span>
+      <span class="mi">157758</span>      <span class="mi">157759</span>      <span class="mi">157760</span>      <span class="mi">157761</span>      <span class="mi">157762</span>      <span class="mi">157763</span>      <span class="mi">157764</span>      <span class="mi">157765</span>      <span class="mi">157766</span>      <span class="mi">157767</span>
+      <span class="mi">157768</span>      <span class="mi">157769</span>      <span class="mi">157770</span>      <span class="mi">157771</span>      <span class="mi">157772</span>      <span class="mi">157773</span>      <span class="mi">157774</span>      <span class="mi">157775</span>      <span class="mi">157776</span>      <span class="mi">157777</span>
+      <span class="mi">157778</span>      <span class="mi">157779</span>      <span class="mi">157780</span>      <span class="mi">157781</span>      <span class="mi">157782</span>      <span class="mi">157783</span>      <span class="mi">157784</span>      <span class="mi">157785</span>      <span class="mi">157786</span>      <span class="mi">157787</span>
+      <span class="mi">157788</span>      <span class="mi">157789</span>      <span class="mi">157790</span>      <span class="mi">157791</span>      <span class="mi">157792</span>      <span class="mi">157793</span>      <span class="mi">157794</span>      <span class="mi">157795</span>      <span class="mi">157796</span>      <span class="mi">157797</span>
+      <span class="mi">157798</span>      <span class="mi">157799</span>      <span class="mi">157800</span>      <span class="mi">157801</span>      <span class="mi">157802</span>      <span class="mi">157803</span>      <span class="mi">157804</span>      <span class="mi">157805</span>      <span class="mi">157806</span>      <span class="mi">157807</span>
+      <span class="mi">157808</span>      <span class="mi">157809</span>      <span class="mi">157810</span>      <span class="mi">157811</span>      <span class="mi">157812</span>      <span class="mi">157813</span>      <span class="mi">157814</span>      <span class="mi">157815</span>      <span class="mi">157816</span>      <span class="mi">157817</span>
+      <span class="mi">157818</span>      <span class="mi">157819</span>      <span class="mi">157820</span>      <span class="mi">157821</span>      <span class="mi">157822</span>      <span class="mi">157823</span>      <span class="mi">157824</span>      <span class="mi">157825</span>      <span class="mi">157826</span>      <span class="mi">157827</span>
+      <span class="mi">157828</span>      <span class="mi">157829</span>      <span class="mi">157830</span>      <span class="mi">157831</span>      <span class="mi">157832</span>      <span class="mi">157833</span>      <span class="mi">157834</span>      <span class="mi">157835</span>      <span class="mi">157836</span>      <span class="mi">157837</span>
+      <span class="mi">157838</span>      <span class="mi">157839</span>      <span class="mi">157840</span>      <span class="mi">157841</span>      <span class="mi">157842</span>      <span class="mi">157843</span>      <span class="mi">157844</span>      <span class="mi">157845</span>      <span class="mi">157846</span>      <span class="mi">157847</span>
+      <span class="mi">157848</span>      <span class="mi">157849</span>      <span class="mi">157850</span>      <span class="mi">157851</span>      <span class="mi">157852</span>      <span class="mi">157853</span>      <span class="mi">157854</span>      <span class="mi">157855</span>      <span class="mi">157856</span>      <span class="mi">157857</span>
+      <span class="mi">157858</span>      <span class="mi">157859</span>      <span class="mi">157860</span>      <span class="mi">157861</span>      <span class="mi">157862</span>      <span class="mi">157863</span>      <span class="mi">157864</span>      <span class="mi">157865</span>      <span class="mi">157866</span>      <span class="mi">157867</span>
+      <span class="mi">157868</span>      <span class="mi">157869</span>      <span class="mi">157870</span>      <span class="mi">157871</span>      <span class="mi">157872</span>      <span class="mi">157873</span>      <span class="mi">157874</span>      <span class="mi">157875</span>      <span class="mi">157876</span>      <span class="mi">157877</span>
+      <span class="mi">157878</span>      <span class="mi">157879</span>      <span class="mi">157880</span>      <span class="mi">157881</span>      <span class="mi">157882</span>      <span class="mi">157883</span>      <span class="mi">157884</span>      <span class="mi">157885</span>      <span class="mi">157886</span>      <span class="mi">157887</span>
+      <span class="mi">157888</span>      <span class="mi">157889</span>      <span class="mi">157890</span>      <span class="mi">157891</span>      <span class="mi">157892</span>      <span class="mi">157893</span>      <span class="mi">157894</span>      <span class="mi">157895</span>      <span class="mi">157896</span>      <span class="mi">157897</span>
+      <span class="mi">157898</span>      <span class="mi">157899</span>      <span class="mi">157900</span>      <span class="mi">157901</span>      <span class="mi">157902</span>      <span class="mi">157903</span>      <span class="mi">157904</span>      <span class="mi">157905</span>      <span class="mi">157906</span>      <span class="mi">157907</span>
+      <span class="mi">157908</span>      <span class="mi">157909</span>      <span class="mi">157910</span>      <span class="mi">157911</span>      <span class="mi">157912</span>      <span class="mi">157913</span>      <span class="mi">157914</span>      <span class="mi">157915</span>      <span class="mi">157916</span>      <span class="mi">157917</span>
+      <span class="mi">157918</span>      <span class="mi">157919</span>      <span class="mi">157920</span>      <span class="mi">157921</span>      <span class="mi">157922</span>      <span class="mi">157923</span>      <span class="mi">157924</span>      <span class="mi">157925</span>      <span class="mi">157926</span>      <span class="mi">157927</span>
+      <span class="mi">157928</span>      <span class="mi">157929</span>      <span class="mi">157930</span>      <span class="mi">157931</span>      <span class="mi">157932</span>      <span class="mi">157933</span>      <span class="mi">157934</span>      <span class="mi">157935</span>      <span class="mi">157936</span>      <span class="mi">157937</span>
+      <span class="mi">157938</span>      <span class="mi">157939</span>      <span class="mi">157940</span>      <span class="mi">157941</span>      <span class="mi">157942</span>      <span class="mi">157943</span>      <span class="mi">157944</span>      <span class="mi">157945</span>      <span class="mi">157946</span>      <span class="mi">157947</span>
+      <span class="mi">157948</span>      <span class="mi">157949</span>      <span class="mi">157950</span>      <span class="mi">157951</span>      <span class="mi">157952</span>      <span class="mi">157953</span>      <span class="mi">157954</span>      <span class="mi">157955</span>      <span class="mi">157956</span>      <span class="mi">157957</span>
+      <span class="mi">157958</span>      <span class="mi">157959</span>      <span class="mi">157960</span>      <span class="mi">157961</span>      <span class="mi">157962</span>      <span class="mi">157963</span>      <span class="mi">157964</span>      <span class="mi">157965</span>      <span class="mi">157966</span>      <span class="mi">157967</span>
+      <span class="mi">157968</span>      <span class="mi">157969</span>      <span class="mi">157970</span>      <span class="mi">157971</span>      <span class="mi">157972</span>      <span class="mi">157973</span>      <span class="mi">157974</span>      <span class="mi">157975</span>      <span class="mi">157976</span>      <span class="mi">157977</span>
+      <span class="mi">157978</span>      <span class="mi">157979</span>      <span class="mi">157980</span>      <span class="mi">157981</span>      <span class="mi">157982</span>      <span class="mi">157983</span>      <span class="mi">157984</span>      <span class="mi">157985</span>      <span class="mi">157986</span>      <span class="mi">157987</span>
+      <span class="mi">157988</span>      <span class="mi">157989</span>      <span class="mi">157990</span>      <span class="mi">157991</span>      <span class="mi">157992</span>      <span class="mi">157993</span>      <span class="mi">157994</span>      <span class="mi">157995</span>      <span class="mi">157996</span>      <span class="mi">157997</span>
+      <span class="mi">157998</span>      <span class="mi">157999</span>      <span class="mi">158000</span>      <span class="mi">158001</span>      <span class="mi">158002</span>      <span class="mi">158003</span>      <span class="mi">158004</span>      <span class="mi">158005</span>      <span class="mi">158006</span>      <span class="mi">158007</span>
+      <span class="mi">158008</span>      <span class="mi">158009</span>      <span class="mi">158010</span>      <span class="mi">158011</span>      <span class="mi">158012</span>      <span class="mi">158013</span>      <span class="mi">158014</span>      <span class="mi">158015</span>      <span class="mi">158016</span>      <span class="mi">158017</span>
+      <span class="mi">158018</span>      <span class="mi">158019</span>      <span class="mi">158020</span>      <span class="mi">158021</span>      <span class="mi">158022</span>      <span class="mi">158023</span>      <span class="mi">158024</span>      <span class="mi">158025</span>      <span class="mi">158026</span>      <span class="mi">158027</span>
+      <span class="mi">158028</span>      <span class="mi">158029</span>      <span class="mi">158030</span>      <span class="mi">158031</span>      <span class="mi">158032</span>      <span class="mi">158033</span>      <span class="mi">158034</span>      <span class="mi">158035</span>      <span class="mi">158036</span>      <span class="mi">158037</span>
+      <span class="mi">158038</span>      <span class="mi">158039</span>      <span class="mi">158040</span>      <span class="mi">158041</span>      <span class="mi">158042</span>      <span class="mi">158043</span>      <span class="mi">158044</span>      <span class="mi">158045</span>      <span class="mi">158046</span>      <span class="mi">158047</span>
+      <span class="mi">158048</span>      <span class="mi">158049</span>      <span class="mi">158050</span>      <span class="mi">158051</span>      <span class="mi">158052</span>      <span class="mi">158053</span>      <span class="mi">158054</span>      <span class="mi">158055</span>      <span class="mi">158056</span>      <span class="mi">158057</span>
+      <span class="mi">158058</span>      <span class="mi">158059</span>      <span class="mi">158060</span>      <span class="mi">158061</span>      <span class="mi">158062</span>      <span class="mi">158063</span>      <span class="mi">158064</span>      <span class="mi">158065</span>      <span class="mi">158066</span>      <span class="mi">158067</span>
+      <span class="mi">158068</span>      <span class="mi">158069</span>      <span class="mi">158070</span>      <span class="mi">158071</span>      <span class="mi">158072</span>      <span class="mi">158073</span>      <span class="mi">158074</span>      <span class="mi">158075</span>      <span class="mi">158076</span>      <span class="mi">158077</span>
+      <span class="mi">158078</span>      <span class="mi">158079</span>      <span class="mi">158080</span>      <span class="mi">158081</span>      <span class="mi">158082</span>      <span class="mi">158083</span>      <span class="mi">158084</span>      <span class="mi">158085</span>      <span class="mi">158086</span>      <span class="mi">158087</span>
+      <span class="mi">158088</span>      <span class="mi">158089</span>      <span class="mi">158090</span>      <span class="mi">158091</span>      <span class="mi">158092</span>      <span class="mi">158093</span>      <span class="mi">158094</span>      <span class="mi">158095</span>      <span class="mi">158096</span>      <span class="mi">158097</span>
+      <span class="mi">158098</span>      <span class="mi">158099</span>      <span class="mi">158100</span>      <span class="mi">158101</span>      <span class="mi">158102</span>      <span class="mi">158103</span>      <span class="mi">158104</span>      <span class="mi">158105</span>      <span class="mi">158106</span>      <span class="mi">158107</span>
+      <span class="mi">158108</span>      <span class="mi">158109</span>      <span class="mi">158110</span>      <span class="mi">158111</span>      <span class="mi">158112</span>      <span class="mi">158113</span>      <span class="mi">158114</span>      <span class="mi">158115</span>      <span class="mi">158116</span>      <span class="mi">158117</span>
+      <span class="mi">158118</span>      <span class="mi">158119</span>      <span class="mi">158120</span>      <span class="mi">158121</span>      <span class="mi">158122</span>      <span class="mi">158123</span>      <span class="mi">158124</span>      <span class="mi">158125</span>      <span class="mi">158126</span>      <span class="mi">158127</span>
+      <span class="mi">158128</span>      <span class="mi">158129</span>      <span class="mi">158130</span>      <span class="mi">158131</span>      <span class="mi">158132</span>      <span class="mi">158133</span>      <span class="mi">158134</span>      <span class="mi">158135</span>      <span class="mi">158136</span>      <span class="mi">158137</span>
+      <span class="mi">158138</span>      <span class="mi">158139</span>      <span class="mi">158140</span>      <span class="mi">158141</span>      <span class="mi">158142</span>      <span class="mi">158143</span>      <span class="mi">158144</span>      <span class="mi">158145</span>      <span class="mi">158146</span>      <span class="mi">158147</span>
+      <span class="mi">158148</span>      <span class="mi">158149</span>      <span class="mi">158150</span>      <span class="mi">158151</span>      <span class="mi">158152</span>      <span class="mi">158153</span>      <span class="mi">158154</span>      <span class="mi">158155</span>      <span class="mi">158156</span>      <span class="mi">158157</span>
+      <span class="mi">158158</span>      <span class="mi">158159</span>      <span class="mi">158160</span>      <span class="mi">158161</span>      <span class="mi">158162</span>      <span class="mi">158163</span>      <span class="mi">158164</span>      <span class="mi">158165</span>      <span class="mi">158166</span>      <span class="mi">158167</span>
+      <span class="mi">158168</span>      <span class="mi">158169</span>      <span class="mi">158170</span>      <span class="mi">158171</span>      <span class="mi">158172</span>      <span class="mi">158173</span>      <span class="mi">158174</span>      <span class="mi">158175</span>      <span class="mi">158176</span>      <span class="mi">158177</span>
+      <span class="mi">158178</span>      <span class="mi">158179</span>      <span class="mi">158180</span>      <span class="mi">158181</span>      <span class="mi">158182</span>      <span class="mi">158183</span>      <span class="mi">158184</span>      <span class="mi">158185</span>      <span class="mi">158186</span>      <span class="mi">158187</span>
+      <span class="mi">158188</span>      <span class="mi">158189</span>      <span class="mi">158190</span>      <span class="mi">158191</span>      <span class="mi">158192</span>      <span class="mi">158193</span>      <span class="mi">158194</span>      <span class="mi">158195</span>      <span class="mi">158196</span>      <span class="mi">158197</span>
+      <span class="mi">158198</span>      <span class="mi">158199</span>      <span class="mi">158200</span>      <span class="mi">158201</span>      <span class="mi">158202</span>      <span class="mi">158203</span>      <span class="mi">158204</span>      <span class="mi">158205</span>      <span class="mi">158206</span>      <span class="mi">158207</span>
+      <span class="mi">158208</span>      <span class="mi">158209</span>      <span class="mi">158210</span>      <span class="mi">158211</span>      <span class="mi">158212</span>      <span class="mi">158213</span>      <span class="mi">158214</span>      <span class="mi">158215</span>      <span class="mi">158216</span>      <span class="mi">158217</span>
+      <span class="mi">158218</span>      <span class="mi">158219</span>      <span class="mi">158220</span>      <span class="mi">158221</span>      <span class="mi">158222</span>      <span class="mi">158223</span>      <span class="mi">158224</span>      <span class="mi">158225</span>      <span class="mi">158226</span>      <span class="mi">158227</span>
+      <span class="mi">158228</span>      <span class="mi">158229</span>      <span class="mi">158230</span>      <span class="mi">158231</span>      <span class="mi">158232</span>      <span class="mi">158233</span>      <span class="mi">158234</span>      <span class="mi">158235</span>      <span class="mi">158236</span>      <span class="mi">158237</span>
+      <span class="mi">158238</span>      <span class="mi">158239</span>      <span class="mi">158240</span>      <span class="mi">158241</span>      <span class="mi">158242</span>      <span class="mi">158243</span>      <span class="mi">158244</span>      <span class="mi">158245</span>      <span class="mi">158246</span>      <span class="mi">158247</span>
+      <span class="mi">158248</span>      <span class="mi">158249</span>      <span class="mi">158250</span>      <span class="mi">158251</span>      <span class="mi">158252</span>      <span class="mi">158253</span>      <span class="mi">158254</span>      <span class="mi">158255</span>      <span class="mi">158256</span>      <span class="mi">158257</span>
+      <span class="mi">158258</span>      <span class="mi">158259</span>      <span class="mi">158260</span>      <span class="mi">158261</span>      <span class="mi">158262</span>      <span class="mi">158263</span>      <span class="mi">158264</span>      <span class="mi">158265</span>      <span class="mi">158266</span>      <span class="mi">158267</span>
+      <span class="mi">158268</span>      <span class="mi">158269</span>      <span class="mi">158270</span>      <span class="mi">158271</span>      <span class="mi">158272</span>      <span class="mi">158273</span>      <span class="mi">158274</span>      <span class="mi">158275</span>      <span class="mi">158276</span>      <span class="mi">158277</span>
+      <span class="mi">158278</span>      <span class="mi">158279</span>      <span class="mi">158280</span>      <span class="mi">158281</span>      <span class="mi">158282</span>      <span class="mi">158283</span>      <span class="mi">158284</span>      <span class="mi">158285</span>      <span class="mi">158286</span>      <span class="mi">158287</span>
+      <span class="mi">158288</span>      <span class="mi">158289</span>      <span class="mi">158290</span>      <span class="mi">158291</span>      <span class="mi">158292</span>      <span class="mi">158293</span>      <span class="mi">158294</span>      <span class="mi">158295</span>      <span class="mi">158296</span>      <span class="mi">158297</span>
+      <span class="mi">158298</span>      <span class="mi">158299</span>      <span class="mi">158300</span>      <span class="mi">158301</span>      <span class="mi">158302</span>      <span class="mi">158303</span>      <span class="mi">158304</span>      <span class="mi">158305</span>      <span class="mi">158306</span>      <span class="mi">158307</span>
+      <span class="mi">158308</span>      <span class="mi">158309</span>      <span class="mi">158310</span>      <span class="mi">158311</span>      <span class="mi">158312</span>      <span class="mi">158313</span>      <span class="mi">158314</span>      <span class="mi">158315</span>      <span class="mi">158316</span>      <span class="mi">158317</span>
+      <span class="mi">158318</span>      <span class="mi">158319</span>      <span class="mi">158320</span>      <span class="mi">158321</span>      <span class="mi">158322</span>      <span class="mi">158323</span>      <span class="mi">158324</span>      <span class="mi">158325</span>      <span class="mi">158326</span>      <span class="mi">158327</span>
+      <span class="mi">158328</span>      <span class="mi">158329</span>      <span class="mi">158330</span>      <span class="mi">158331</span>      <span class="mi">158332</span>      <span class="mi">158333</span>      <span class="mi">158334</span>      <span class="mi">158335</span>      <span class="mi">158336</span>      <span class="mi">158337</span>
+      <span class="mi">158338</span>      <span class="mi">158339</span>      <span class="mi">158340</span>      <span class="mi">158341</span>      <span class="mi">158342</span>      <span class="mi">158343</span>      <span class="mi">158344</span>      <span class="mi">158345</span>      <span class="mi">158346</span>      <span class="mi">158347</span>
+      <span class="mi">158348</span>      <span class="mi">158349</span>      <span class="mi">158350</span>      <span class="mi">158351</span>      <span class="mi">158352</span>      <span class="mi">158353</span>      <span class="mi">158354</span>      <span class="mi">158355</span>      <span class="mi">158356</span>      <span class="mi">158357</span>
+      <span class="mi">158358</span>      <span class="mi">158359</span>      <span class="mi">158360</span>      <span class="mi">158361</span>      <span class="mi">158362</span>      <span class="mi">158363</span>      <span class="mi">158364</span>      <span class="mi">158365</span>      <span class="mi">158366</span>      <span class="mi">158367</span>
+      <span class="mi">158368</span>      <span class="mi">158369</span>      <span class="mi">158370</span>      <span class="mi">158371</span>      <span class="mi">158372</span>      <span class="mi">158373</span>      <span class="mi">158374</span>      <span class="mi">158375</span>      <span class="mi">158376</span>      <span class="mi">158377</span>
+      <span class="mi">158378</span>      <span class="mi">158379</span>      <span class="mi">158380</span>      <span class="mi">158381</span>      <span class="mi">158382</span>      <span class="mi">158383</span>      <span class="mi">158384</span>      <span class="mi">158385</span>      <span class="mi">158386</span>      <span class="mi">158387</span>
+      <span class="mi">158388</span>      <span class="mi">158389</span>      <span class="mi">158390</span>      <span class="mi">158391</span>      <span class="mi">158392</span>      <span class="mi">158393</span>      <span class="mi">158394</span>      <span class="mi">158395</span>      <span class="mi">158396</span>      <span class="mi">158397</span>
+      <span class="mi">158398</span>      <span class="mi">158399</span>      <span class="mi">158400</span>      <span class="mi">158401</span>      <span class="mi">158402</span>      <span class="mi">158403</span>      <span class="mi">158404</span>      <span class="mi">158405</span>      <span class="mi">158406</span>      <span class="mi">158407</span>
+      <span class="mi">158408</span>      <span class="mi">158409</span>      <span class="mi">158410</span>      <span class="mi">158411</span>      <span class="mi">158412</span>      <span class="mi">158413</span>      <span class="mi">158414</span>      <span class="mi">158415</span>      <span class="mi">158416</span>      <span class="mi">158417</span>
+      <span class="mi">158418</span>      <span class="mi">158419</span>      <span class="mi">158420</span>      <span class="mi">158421</span>      <span class="mi">158422</span>      <span class="mi">158423</span>      <span class="mi">158424</span>      <span class="mi">158425</span>      <span class="mi">158426</span>      <span class="mi">158427</span>
+      <span class="mi">158428</span>      <span class="mi">158429</span>      <span class="mi">158430</span>      <span class="mi">158431</span>      <span class="mi">158432</span>      <span class="mi">158433</span>      <span class="mi">158434</span>      <span class="mi">158435</span>      <span class="mi">158436</span>      <span class="mi">158437</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="NDFileNetCDF.html" class="btn btn-neutral float-left" title="NDFileNetCDF" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="NDPluginOverlay.html" class="btn btn-neutral float-right" title="NDPluginOverlay" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Mark Rivers.
+      <span class="lastupdated">Last updated on 2023-March-12.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

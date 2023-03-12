@@ -1,0 +1,1258 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Implementation of standard driver parameters &mdash; areaDetector Support</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme_overrides.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Configuration" href="configuration.html" />
+    <link rel="prev" title="ADFastCCD Releases" href="release.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            areaDetector
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../readme.html">Readme</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../user_guide.html">User Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/overview.html">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/arch.html">Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/asynPortDriver.html">asynPortDriver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/NDArray.html">NDArray</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../detector_drivers.html">Detector Drivers</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../ADCore/guidelines.html">Guidelines and rules for drivers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADCore/ADDriver.html">ADDriver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADAndor/andorDoc.html">ADAndor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADAndor3/ADAndorDoc.html">ADAndor3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADAravis/ADAravis.html">ADAravis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADCSimDetector/ADCSimDetectorDoc.html">ADCSimDetector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADDexela/ADDexela.html">ADDexela</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADEiger/eiger.html">ADEiger</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">ADFastCCD</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="index.html#fastccd-detector-driver">FastCCD Detector Driver</a></li>
+<li class="toctree-l4"><a class="reference internal" href="index.html#fastccd-processing-plugin">FastCCD Processing Plugin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="index.html#search">Search</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../ADGenICam/ADGenICam.html">ADGenICam</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADLambda/ADLambda.html">ADLambda</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADLightField/ADLightField.html">ADLightField</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADmarCCD/marCCDDoc.html">ADmarCCD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADmar345/mar345Doc.html">ADmar345</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPerkinElmer/PerkinElmerDoc.html">ADPerkinElmer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPICam/PICamDoc.html">ADPICam</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPilatus/pilatusDoc.html">ADPilatus</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPixirad/ADPixirad.html">ADPixirad</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPointGrey/PointGreyDoc.html">ADPointGrey</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADProsilica/ADProsilica.html">ADProsilica</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPvCam/pvcamDoc.html">ADPvCam</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADQImaging/QImagingDoc.html">ADQImaging</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADRIXSCam/ADRIXSCam.html">ADRIXSCam</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADSimDetector/simDetector.html">ADSimDetector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADSpinnaker/ADSpinnaker.html">ADSpinnaker</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADVimba/ADVimba.html">ADVimba</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADURL/ADURL.html">ADURL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../NDDriverStdArrays/NDDriverStdArraysDoc.html">NDDriverStdArrays</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../pvaDriver/pvaDriver.html">pvaDriver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../specsAnalyser/index.html">specsAnalyser</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/plugins.html">areaDetector Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../additional_plugins.html">Additional plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/medm.html">MEDM screens</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADViewers/ad_viewers.html">areaDetector Viewers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../acknowledgements.html">Acknowledgements and licenses</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../install_guide.html">Install Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release.html">Top-level Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ADCore_release.html">ADCore Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ADSupport_release.html">ADSupport Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../doxygen.html">Source Code Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../detectors.html">Supported Detectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../legacy_versions.html">Legacy Versions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">areaDetector</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../user_guide.html">areaDetector Users Guide</a></li>
+          <li class="breadcrumb-item"><a href="../detector_drivers.html">Detector Drivers</a></li>
+          <li class="breadcrumb-item"><a href="index.html">ADFastCCD</a></li>
+      <li class="breadcrumb-item active">Implementation of standard driver parameters</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/ADFastCCD/parameters.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="implementation-of-standard-driver-parameters">
+<h1>Implementation of standard driver parameters<a class="headerlink" href="#implementation-of-standard-driver-parameters" title="Permalink to this heading"></a></h1>
+<p>The driver redefines the choices for several of the parameters defined
+in ADDriver.h. The ADTriggerMode choices for the FastCCD are:</p>
+<ul class="simple">
+<li><p>Internal (Software trigger)</p></li>
+<li><p>External 1 (external trigger on input 1)</p></li>
+<li><p>External 2 (external trigger on input 2)</p></li>
+<li><p>External 1+2 (external trigger on input 1 OR input 2)</p></li>
+</ul>
+<p>The NDDataType choices for the FastCCD are:</p>
+<ul class="simple">
+<li><p>NDUInt16 (16 bit data)</p></li>
+</ul>
+<p>The NDColorMode choices for the FastCCD are:</p>
+<ul class="simple">
+<li><p>NDColorModeMono (monochromatic data)</p></li>
+</ul>
+</section>
+<section id="implementation-of-fastccd-specific-parameters">
+<h1>Implementation of FastCCD specific parameters<a class="headerlink" href="#implementation-of-fastccd-specific-parameters" title="Permalink to this heading"></a></h1>
+<p>The FastCCD driver implements the following parameters in addition to
+those in asynNDArrayDriver.h and ADDriver.h:</p>
+<section id="fastccd-image-size-and-overscan-settings">
+<h2>FastCCD Image Size and Overscan Settings<a class="headerlink" href="#fastccd-image-size-and-overscan-settings" title="Permalink to this heading"></a></h2>
+<table class="table table-striped">
+<thead>
+<tr>
+<th>
+Parameter index variable
+</th>
+<th>
+asyn interface
+</th>
+<th>
+Access
+</th>
+<th>
+Description
+</th>
+<th>
+drvInfo string
+</th>
+<th>
+EPICS record name
+</th>
+<th>
+EPICS record type
+</th>
+</tr>
+</thead>
+<tbody>
+<td>
+FastCCDOverscanRows
+</td>
+<td>
+asynParamInt32
+</td>
+<td>
+r/w
+</td>
+<td>
+Specify the number of overscan rows to use when descrambling
+</td>
+<td>
+OVERSCAN_ROWS
+</td>
+<td>
+$(P)$(R)OverscanRows<br />$(P)$(R)OverscanRows_RBV
+</td>
+<td>
+longout<br />longin
+</td>
+</tr>
+<tr>
+<td>
+FastCCDOverscanCols
+</td>
+<td>
+asynParamInt32
+</td>
+<td>
+r/w
+</td>
+<td>
+Specify the number of overscan columns to use when descrambling
+</td>
+<td>
+OVERSCAN_COLS
+</td>
+<td>
+$(P)$(R)OverscanCols<br />$(P)$(R)OverscanCols_RBV
+</td>
+<td>
+longout<br />longin
+</td>
+</tr>
+</tbody>
+</table></section>
+<section id="fastccd-cin-power-settings">
+<h2>FastCCD CIN Power Settings<a class="headerlink" href="#fastccd-cin-power-settings" title="Permalink to this heading"></a></h2>
+<table class="table table-striped">
+<thead>
+<tr>
+<th>
+Parameter index variable
+</th>
+<th>
+asyn interface
+</th>
+<th>
+Access
+</th>
+<th>
+Description
+</th>
+<th>
+drvInfo string
+</th>
+<th>
+EPICS record name
+</th>
+<th>
+EPICS record type
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+FastCCDPower
+</td>
+<td>
+asynParamInt32
+</td>
+<td>
+r/w
+</td>
+<td>
+Powers on and off the CIN (0 = off, 1 = on)
+</td>
+<td>
+CIN_POWER
+</td>
+<td>
+$(P)$(R)Power<br />$(P)$(R)Power_RBV
+</td>
+<td>
+bo<br />bi
+</td>
+</tr>
+<tr>
+<td>
+FastCCDFPPower
+</td>
+<td>
+asynParamInt32
+</td>
+<td>
+r/w
+</td>
+<td>
+Powers on and off the CIN front panel (0 = off, 1 = on)
+</td>
+<td>
+CIN_POWER
+</td>
+<td>
+$(P)$(R)FPPower<br />$(P)$(R)FPPower_RBV
+</td>
+<td>
+bo<br />bi
+</td>
+</tr>
+</tbody>
+</table></section>
+<section id="fastccd-power-settings-bias-and-clocking">
+<h2>FastCCD Power settings (Bias and Clocking)<a class="headerlink" href="#fastccd-power-settings-bias-and-clocking" title="Permalink to this heading"></a></h2>
+<table class="table table-striped">
+<thead>
+<tr>
+<th>
+Parameter index variable
+</th>
+<th>
+asyn interface
+</th>
+<th>
+Access
+</th>
+<th>
+Description
+</th>
+<th>
+drvInfo string
+</th>
+<th>
+EPICS record name
+</th>
+<th>
+EPICS record type
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+FastCCDCameraPowerMode
+</td>
+<td>
+asynParamInt32
+</td>
+<td>
+r/w
+</td>
+<td>
+Set the power mode of the FastCCD cmaera head to be turned on and off by <em>FastCCDCameraPower</em>. Possible values are: NONE<br /> CLOCKS<br /> BIAS<br /> BIAS AND CLOCKS
+</td>
+<td>
+CAMERA_POWER_MODE
+</td>
+<td>
+$(P)$(R)CameraPwrMode<br />$(P)$(R)CameraPwrMode_RBV
+</td>
+<td>
+mbbo<br />mbbi
+</td>
+</tr>
+<tr>
+<td>
+FastCCDCameraPower
+</td>
+<td>
+asynParamInt32
+</td>
+<td>
+r/w
+</td>
+<td>
+Powers on and off the FastCCD camera head (0 = off, 1 = on)
+</td>
+<td>
+CAMERA_POWER
+</td>
+<td>
+$(P)$(R)CameraPwr<br />$(P)$(R)CameraPwr_RBV
+</td>
+<td>
+bo<br />bi
+</td>
+</tr>
+<tr>
+<td>
+FastCCDBias
+</td>
+<td>
+asynParamInt32
+</td>
+<td>
+ro
+</td>
+<td>
+Indicates if the CIN is requesting the camera head to turn on or off the bias power (0 = off, 1 = on)
+</td>
+<td>
+BIAS
+</td>
+<td>
+$(P)$(R)Bias_RBV
+</td>
+<td>
+bo<br />bi
+</td>
+</tr>
+<tr>
+<td>
+FastCCDClocks
+</td>
+<td>
+asynParamInt32
+</td>
+<td>
+ro
+</td>
+<td>
+Indicates if the CIN is requesting the camera head to turn on or off the clocking power (0 = off, 1 = on)
+</td>
+<td>
+CLOCKS
+</td>
+<td>
+$(P)$(R)Clocks_RBV
+</td>
+<td>
+bo<br />bi
+</td>
+</tr>
+</tbody>
+</table></section>
+<section id="fastccd-fcric-and-cin-settings">
+<h2>FastCCD fCRIC and CIN Settings<a class="headerlink" href="#fastccd-fcric-and-cin-settings" title="Permalink to this heading"></a></h2>
+<table class="table table-striped">
+<thead>
+<tr>
+<th>
+Parameter index variable
+</th>
+<th>
+asyn interface
+</th>
+<th>
+Access
+</th>
+<th>
+Description
+</th>
+<th>
+drvInfo string
+</th>
+<th>
+EPICS record name
+</th>
+<th>
+EPICS record type
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+FastCCDMux1
+</td>
+<td>
+asynParamInt32
+</td>
+<td>
+r/w
+</td>
+<td>
+Set the output muxer on the CIN to monitor timing signals. Allowed values are:<br /> EXPOSE<br /> VCLK1<br /> VCLK2<br /> VCLK3<br /> ATG<br /> VFSCLK1<br /> VFSCLK2<br /> VFSCLK3<br /> HCLK1<br /> HCLK2<br /> OSW<br /> RST<br /> CONVERT<br /> SHUTTER<br /> SWTRIGGER<br /> TRIGMON
+</td>
+<td>
+FCCD_MUX1
+</td>
+<td>
+$(P)$(R)Mux1<br />$(P)$(R)Mux1_RBV
+</td>
+<td>
+mbbo<br />mbbi
+</td>
+</tr>
+<tr>
+<td>
+FastCCDMux2
+</td>
+<td>
+asynParamInt32
+</td>
+<td>
+r/w
+</td>
+<td>
+Set the output muxer on the CIN to monitor timing signals. Allowed values are:<br /> EXPOSE<br /> VCLK1<br /> VCLK2<br /> VCLK3<br /> ATG<br /> VFSCLK1<br /> VFSCLK2<br /> VFSCLK3<br /> HCLK1<br /> HCLK2<br /> HCLK3<br /> OSW<br /> RST<br /> CONVERT<br /> SAVE<br /> HWTRIG
+</td>
+<td>
+FCCD_MUX2
+</td>
+<td>
+$(P)$(R)Mux2<br />$(P)$(R)Mux2_RBV
+</td>
+<td>
+mbbo<br />mbbi
+</td>
+</tr>
+<tr>
+<td>
+FastCCDFCRICGain
+</td>
+<td>
+asynParamInt32
+</td>
+<td>
+r/w
+</td>
+<td>
+Sets the fCRIC gain. Allowed values are:<br /> Auto<br /> x2<br /> x1
+</td>
+<td>
+FCRIC_GAIN
+</td>
+<td>
+$(P)$(R)FCRICGain<br />$(P)$(R)FCRICGain_RBV
+</td>
+<td>
+mbbo<br />mbbi
+</td>
+</tr>
+<tr>
+<td>
+FastCCDFCRICClamp
+</td>
+<td>
+asynParamInt32
+</td>
+<td>
+r/w
+</td>
+<td>
+Sets the fCRIC clamp mode. Allowed values are:<br /> CLAMP OFF<br /> CLAMP ON
+</td>
+<td>
+FCRIC_CLAMP
+</td>
+<td>
+$(P)$(R)FCRICClamp<br />$(P)$(R)FCRICClamp_RBV
+</td>
+<td>
+bo<br />bi
+</td>
+</tr>
+<tr>
+<td>
+FastCCDFOTest
+</td>
+<td>
+asynParamInt32
+</td>
+<td>
+r/w
+</td>
+<td>
+Sets the fiberoptic module test mode. Allowed values are:<br /> Off<br /> On
+</td>
+<td>
+FO_TEST
+</td>
+<td>
+$(P)$(R)FOTest<br />$(P)$(R)FOTest_RBV
+</td>
+<td>
+bo<br />bi
+</td>
+</tr>
+</tbody>
+</table></section>
+<section id="fastccd-cin-setting-upload">
+<h2>FastCCD CIN Setting Upload<a class="headerlink" href="#fastccd-cin-setting-upload" title="Permalink to this heading"></a></h2>
+<table class="table table-striped">
+<thead>
+<tr>
+<th>
+Parameter index variable
+</th>
+<th>
+asyn interface
+</th>
+<th>
+Access
+</th>
+<th>
+Description
+</th>
+<th>
+drvInfo string
+</th>
+<th>
+EPICS record name
+</th>
+<th>
+EPICS record type
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+FastCCDFirmwarePath
+</td>
+<td>
+asynParamOctet
+</td>
+<td>
+r/w
+</td>
+<td>
+Sets the path for the CIN firmware file to upload
+</td>
+<td>
+FIRMWARE_PATH
+</td>
+<td>
+$(P)$(R)FirmwarePath<br />$(P)$(R)FirmwarePath_RBV
+</td>
+<td>
+waveform
+</td>
+</tr>
+<tr>
+<td>
+FastCCDFirmwareUpload
+</td>
+<td>
+asynParamInt32
+</td>
+<td>
+r/w
+</td>
+<td>
+Uploads the firmware to the CIN specified in the <em>FastCCDFirmwarePath</em>
+</td>
+<td>
+FIRMWARE_UPLOAD
+</td>
+<td>
+$(P)$(R)FwUpload<br />$(P)$(R)FwUpload_RBV
+</td>
+<td>
+busy<br />bi
+</td>
+</tr>
+<tr>
+<td>
+FastCCDClockPath
+</td>
+<td>
+asynParamOctet
+</td>
+<td>
+r/w
+</td>
+<td>
+Sets the path for the clocking (timing) file to upload
+</td>
+<td>
+CLOCK_PATH
+</td>
+<td>
+$(P)$(R)ClockPath<br />$(P)$(R)ClockPath_RBV
+</td>
+<td>
+waveform
+</td>
+</tr>
+<tr>
+<td>
+FastCCDClockUpload
+</td>
+<td>
+asynParamInt32
+</td>
+<td>
+r/w
+</td>
+<td>
+Uploads the clock (timing) to the CIN specified in the <em>FastCCDClockPath</em>
+</td>
+<td>
+CLOCK_UPLOAD
+</td>
+<td>
+$(P)$(R)ClockUpload<br />$(P)$(R)ClockUpload_RBV
+</td>
+<td>
+busy<br />bi
+</td>
+</tr>
+<tr>
+<td>
+FastCCDFCRICPath
+</td>
+<td>
+asynParamOctet
+</td>
+<td>
+r/w
+</td>
+<td>
+Sets the path for the fCRIC configuration file to upload
+</td>
+<td>
+FCRIC_PATH
+</td>
+<td>
+$(P)$(R)FCRICPath<br />$(P)$(R)FCRICPath_RBV
+</td>
+<td>
+waveform
+</td>
+</tr>
+<tr>
+<td>
+FastCCDFCRICUpload
+</td>
+<td>
+asynParamInt32
+</td>
+<td>
+r/w
+</td>
+<td>
+Uploads the fCRIC configuration to the CIN specified in the <em>FastCCDFCRICPath</em>
+</td>
+<td>
+FCRIC_UPLOAD
+</td>
+<td>
+$(P)$(R)FCRICUpload<br />$(P)$(R)FCRICUpload_RBV
+</td>
+<td>
+busy<br />bi
+</td>
+</tr>
+<tr>
+<td>
+FastCCDBiasPath
+</td>
+<td>
+asynParamOctet
+</td>
+<td>
+r/w
+</td>
+<td>
+Sets the path for the sensor bias configuration file to upload
+</td>
+<td>
+BIAS_PATH
+</td>
+<td>
+$(P)$(R)BiasPath<br />$(P)$(R)BiasPath_RBV
+</td>
+<td>
+waveform
+</td>
+</tr>
+<tr>
+<td>
+FastCCDBiasUpload
+</td>
+<td>
+asynParamInt32
+</td>
+<td>
+r/w
+</td>
+<td>
+Uploads the bias configuration to the CIN specified in the <em>FastCCDBiasPath</em>
+</td>
+<td>
+BIAS_UPLOAD
+</td>
+<td>
+$(P)$(R)BiasUpload<br />$(P)$(R)BiasUpload_RBV
+</td>
+<td>
+busy<br />bi
+</td>
+</tr>
+</tbody>
+</table></section>
+<section id="fastccd-auto-setting-parameters">
+<h2>FastCCD Auto Setting Parameters<a class="headerlink" href="#fastccd-auto-setting-parameters" title="Permalink to this heading"></a></h2>
+<table class="table table-striped">
+<thead>
+<tr>
+<th>
+Parameter index variable
+</th>
+<th>
+asyn interface
+</th>
+<th>
+Access
+</th>
+<th>
+Description
+</th>
+<th>
+drvInfo string
+</th>
+<th>
+EPICS record name
+</th>
+<th>
+EPICS record type
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+FastCCDTimingMode
+</td>
+<td>
+asynParamInt32
+</td>
+<td>
+r/w
+</td>
+<td>
+Set the timing mode to use for auto booting the FastCCD
+</td>
+<td>
+TIMING_MODE
+</td>
+<td>
+$(P)$(R)TimingMode<br />$(P)$(R)TimingMode_RBV
+</td>
+<td>
+mbbo<br />mbbi
+</td>
+</tr>
+<tr>
+<td>
+FastCCDTimingName
+</td>
+<td>
+asynParamOctet
+</td>
+<td>
+ro
+</td>
+<td>
+The name of the timing mode last set by the FastCCD auto boot sequence.
+</td>
+<td>
+TIMING_NAME
+</td>
+<td>
+$(P)$(R)TimingName_RBV
+</td>
+<td>
+stringin
+</td>
+</tr>
+<tr>
+<td>
+FastCCDTimingName0
+</td>
+<td>
+asynParamOctet
+</td>
+<td>
+ro
+</td>
+<td>
+The name of the timing mode assigned to mode number 1
+</td>
+<td>
+TIMING_NAME_0
+</td>
+<td>
+$(P)$(R)TimingName1_RBV
+</td>
+<td>
+stringin
+</td>
+</tr>
+<tr>
+<td>
+FastCCDTimingName1
+</td>
+<td>
+asynParamOctet
+</td>
+<td>
+ro
+</td>
+<td>
+The name of the timing mode assigned to mode number 2
+</td>
+<td>
+TIMING_NAME_1
+</td>
+<td>
+$(P)$(R)TimingName1_RBV
+</td>
+<td>
+stringin
+</td>
+</tr>
+<tr>
+<td>
+FastCCDTimingName2
+</td>
+<td>
+asynParamOctet
+</td>
+<td>
+ro
+</td>
+<td>
+The name of the timing mode assigned to mode number 3
+</td>
+<td>
+TIMING_NAME_2
+</td>
+<td>
+$(P)$(R)TimingName1_RBV
+</td>
+<td>
+stringin
+</td>
+</tr>
+<tr>
+<td>
+FastCCDTimingName3
+</td>
+<td>
+asynParamOctet
+</td>
+<td>
+ro
+</td>
+<td>
+The name of the timing mode assigned to mode number 4
+</td>
+<td>
+TIMING_NAME_3
+</td>
+<td>
+$(P)$(R)TimingName3_RBV
+</td>
+<td>
+stringin
+</td>
+</tr>
+<tr>
+<td>
+FastCCDTimingName4
+</td>
+<td>
+asynParamOctet
+</td>
+<td>
+ro
+</td>
+<td>
+The name of the timing mode assigned to mode number 5
+</td>
+<td>
+TIMING_NAME_4
+</td>
+<td>
+$(P)$(R)TimingName4_RBV
+</td>
+<td>
+stringin
+</td>
+</tr>
+<tr>
+<td>
+FastCCDTimingName5
+</td>
+<td>
+asynParamOctet
+</td>
+<td>
+ro
+</td>
+<td>
+The name of the timing mode assigned to mode number 6
+</td>
+<td>
+TIMING_NAME_5
+</td>
+<td>
+$(P)$(R)TimingName5_RBV
+</td>
+<td>
+stringin
+</td>
+</tr>
+<tr>
+<td>
+FastCCDTimingName6
+</td>
+<td>
+asynParamOctet
+</td>
+<td>
+ro
+</td>
+<td>
+The name of the timing mode assigned to mode number 7
+</td>
+<td>
+TIMING_NAME_6
+</td>
+<td>
+$(P)$(R)TimingName6_RBV
+</td>
+<td>
+stringin
+</td>
+</tr>
+<tr>
+<td>
+FastCCDTimingName7
+</td>
+<td>
+asynParamOctet
+</td>
+<td>
+ro
+</td>
+<td>
+The name of the timing mode assigned to mode number 8
+</td>
+<td>
+TIMING_NAME_7
+</td>
+<td>
+$(P)$(R)TimingName7_RBV
+</td>
+<td>
+stringin
+</td>
+</tr>
+<tr>
+<td>
+FastCCDTimingName8
+</td>
+<td>
+asynParamOctet
+</td>
+<td>
+ro
+</td>
+<td>
+The name of the timing mode assigned to mode number 9
+</td>
+<td>
+TIMING_NAME_8
+</td>
+<td>
+$(P)$(R)TimingName8_RBV
+</td>
+<td>
+stringin
+</td>
+</tr>
+<tr>
+<td>
+FastCCDTimingName9
+</td>
+<td>
+asynParamOctet
+</td>
+<td>
+ro
+</td>
+<td>
+The name of the timing mode assigned to mode number 10
+</td>
+<td>
+TIMING_NAME_9
+</td>
+<td>
+$(P)$(R)TimingName9_RBV
+</td>
+<td>
+stringin
+</td>
+</tr>
+</tbody>
+</table></section>
+<section id="fastccd-auto-setting-commands">
+<h2>FastCCD Auto Setting Commands<a class="headerlink" href="#fastccd-auto-setting-commands" title="Permalink to this heading"></a></h2>
+<table class="table table-striped">
+<thead>
+<tr>
+<th>
+Parameter index variable
+</th>
+<th>
+asyn interface
+</th>
+<th>
+Access
+</th>
+<th>
+Description
+</th>
+<th>
+drvInfo string
+</th>
+<th>
+EPICS record name
+</th>
+<th>
+EPICS record type
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+FastCCDBoot
+</td>
+<td>
+asynParamInt32
+</td>
+<td>
+r/w
+</td>
+<td>
+Boot the CIN using the timing mode defined by <em>FastCCDTimingMode</em>. This causes the CIN to be reset (power cycled), the firmware to be uploaded and the timing to be uploaeded to the CIN.
+</td>
+<td>
+BOOT
+</td>
+<td>
+$(P)$(R)Boot<br />$(P)$(R)Boot_RBV
+</td>
+<td>
+busy<br />bi
+</td>
+</tr>
+<tr>
+<td>
+FastCCDSendTiming
+</td>
+<td>
+asynParamInt32
+</td>
+<td>
+r/w
+</td>
+<td>
+Send the timing information to the CIN as set by <em>FastCCDTimingMode</em>. This causes the CIN timing to change.
+</td>
+<td>
+SEND_TIMING
+</td>
+<td>
+$(P)$(R)SendTiming<br />$(P)$(R)SendTiming_RBV
+</td>
+<td>
+busy<br />bi
+</td>
+</tr>
+<tr>
+<td>
+FastCCDSendFCRIC
+</td>
+<td>
+asynParamInt32
+</td>
+<td>
+r/w
+</td>
+<td>
+Send the fCRIC configuration information to the CIN as set by <em>FastCCDTimingMode</em>.
+</td>
+<td>
+SEND_FCRIC
+</td>
+<td>
+$(P)$(R)SendFCRIC<br />$(P)$(R)SendFCRIC_RBV
+</td>
+<td>
+busy<br />bi
+</td>
+</tr>
+<tr>
+<td>
+FastCCDSendBias
+</td>
+<td>
+asynParamInt32
+</td>
+<td>
+r/w
+</td>
+<td>
+Send the bias voltage configuration information to the CIN as set by <em>FastCCDTimingMode</em>.
+</td>
+<td>
+SEND_BIAS
+</td>
+<td>
+$(P)$(R)SendBias<br />$(P)$(R)SendBias_RBV
+</td>
+<td>
+busy<br />bi
+</td>
+</tr>
+</tbody>
+</table></section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="release.html" class="btn btn-neutral float-left" title="ADFastCCD Releases" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="configuration.html" class="btn btn-neutral float-right" title="Configuration" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Mark Rivers.
+      <span class="lastupdated">Last updated on 2023-March-12.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

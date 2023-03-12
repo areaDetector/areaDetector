@@ -1,0 +1,1 @@
+.. mdinclude:: ../../../specsAnalyser/RELEASE.md

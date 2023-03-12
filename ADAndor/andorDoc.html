@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ADAndor &mdash; areaDetector Support</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme_overrides.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Example st.cmd Startup File" href="st_cmd.html" />
+    <link rel="prev" title="ADDriver" href="../ADCore/ADDriver.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            areaDetector
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../readme.html">Readme</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../user_guide.html">User Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/overview.html">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/arch.html">Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/asynPortDriver.html">asynPortDriver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/NDArray.html">NDArray</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../detector_drivers.html">Detector Drivers</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../ADCore/guidelines.html">Guidelines and rules for drivers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADCore/ADDriver.html">ADDriver</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">ADAndor</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#implementation-of-standard-driver-parameters">Implementation of standard driver parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#andor-specific-parameters">Andor specific parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#unsupported-standard-driver-parameters">Unsupported standard driver parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#shamrock-spectrograph-control">Shamrock spectrograph control</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#usage">Usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#configuration">Configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#example-st-cmd-startup-file">Example st.cmd startup file</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#medm-screens">MEDM screens</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#restrictions">Restrictions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../ADAndor3/ADAndorDoc.html">ADAndor3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADAravis/ADAravis.html">ADAravis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADCSimDetector/ADCSimDetectorDoc.html">ADCSimDetector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADDexela/ADDexela.html">ADDexela</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADEiger/eiger.html">ADEiger</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADFastCCD/index.html">ADFastCCD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADGenICam/ADGenICam.html">ADGenICam</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADLambda/ADLambda.html">ADLambda</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADLightField/ADLightField.html">ADLightField</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADmarCCD/marCCDDoc.html">ADmarCCD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADmar345/mar345Doc.html">ADmar345</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPerkinElmer/PerkinElmerDoc.html">ADPerkinElmer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPICam/PICamDoc.html">ADPICam</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPilatus/pilatusDoc.html">ADPilatus</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPixirad/ADPixirad.html">ADPixirad</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPointGrey/PointGreyDoc.html">ADPointGrey</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADProsilica/ADProsilica.html">ADProsilica</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPvCam/pvcamDoc.html">ADPvCam</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADQImaging/QImagingDoc.html">ADQImaging</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADRIXSCam/ADRIXSCam.html">ADRIXSCam</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADSimDetector/simDetector.html">ADSimDetector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADSpinnaker/ADSpinnaker.html">ADSpinnaker</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADVimba/ADVimba.html">ADVimba</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADURL/ADURL.html">ADURL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../NDDriverStdArrays/NDDriverStdArraysDoc.html">NDDriverStdArrays</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../pvaDriver/pvaDriver.html">pvaDriver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../specsAnalyser/index.html">specsAnalyser</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/plugins.html">areaDetector Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../additional_plugins.html">Additional plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/medm.html">MEDM screens</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADViewers/ad_viewers.html">areaDetector Viewers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../acknowledgements.html">Acknowledgements and licenses</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../install_guide.html">Install Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release.html">Top-level Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ADCore_release.html">ADCore Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ADSupport_release.html">ADSupport Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../doxygen.html">Source Code Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../detectors.html">Supported Detectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../legacy_versions.html">Legacy Versions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">areaDetector</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../user_guide.html">areaDetector Users Guide</a></li>
+          <li class="breadcrumb-item"><a href="../detector_drivers.html">Detector Drivers</a></li>
+      <li class="breadcrumb-item active">ADAndor</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/ADAndor/andorDoc.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="adandor">
+<h1><a class="toc-backref" href="#id1" role="doc-backlink">ADAndor</a><a class="headerlink" href="#adandor" title="Permalink to this heading"></a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">author<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Matthew Pearson, Oak Ridge National Laboratory and
+Mark Rivers, University of Chicago</p>
+</dd>
+</dl>
+<nav class="contents" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#adandor" id="id1">ADAndor</a></p>
+<ul>
+<li><p><a class="reference internal" href="#introduction" id="id2">Introduction</a></p></li>
+<li><p><a class="reference internal" href="#implementation-of-standard-driver-parameters" id="id3">Implementation of standard driver parameters</a></p></li>
+<li><p><a class="reference internal" href="#andor-specific-parameters" id="id4">Andor specific parameters</a></p></li>
+<li><p><a class="reference internal" href="#unsupported-standard-driver-parameters" id="id5">Unsupported standard driver parameters</a></p></li>
+<li><p><a class="reference internal" href="#shamrock-spectrograph-control" id="id6">Shamrock spectrograph control</a></p></li>
+<li><p><a class="reference internal" href="#usage" id="id7">Usage</a></p></li>
+<li><p><a class="reference internal" href="#configuration" id="id8">Configuration</a></p></li>
+<li><p><a class="reference internal" href="#example-st-cmd-startup-file" id="id9">Example st.cmd startup file</a></p></li>
+<li><p><a class="reference internal" href="#medm-screens" id="id10">MEDM screens</a></p></li>
+<li><p><a class="reference internal" href="#restrictions" id="id11">Restrictions</a></p></li>
+</ul>
+</li>
+</ul>
+</nav>
+<section id="introduction">
+<h2><a class="toc-backref" href="#id2" role="doc-backlink">Introduction</a><a class="headerlink" href="#introduction" title="Permalink to this heading"></a></h2>
+<p>This is an <a class="reference internal" href="../index.html"><span class="doc">areaDetector</span></a> driver for CCD detectors from
+<a class="reference external" href="http://www.andor.com">Andor Technology</a> using Version 2 of the Andor
+Software Development Kit (SDK). It has been tested on the Andor iKon and
+DU401 CCD cameras with USB interface, but should work with other cameras
+as well. The driver is supported on 32-bit and 64- bit Linux and 32-bit
+and 64-bit Windows.</p>
+<p>The driver currently provides access to most of the features of the
+Andor cameras:</p>
+<ul class="simple">
+<li><p>All Andor acquisition modes (Single Scan, Accumulate, Kinetics, Run
+Till Abort, and Fast Kinetics</p></li>
+<li><p>Control of the exposure time, accumulate cycle time, and kinetic
+cycle time</p></li>
+<li><p>Support for all of the Andor trigger modes</p></li>
+<li><p>Support for all of the Andor shutter modes</p></li>
+<li><p>Support for reading the detectors with 16-bit or 32-bit depth</p></li>
+<li><p>Saving files using the Andor SDK and/or with the standard
+areaDetector plugins</p></li>
+<li><p>Change the ADC sampling speed (0.05MHz and 2.5MHz on the iKon) and
+the Vertical Shift Period</p></li>
+<li><p>Set a region of interest (a smaller region can be read out faster)</p></li>
+<li><p>Set and monitor the CCD temperature</p></li>
+<li><p>Electron Multiplying (EM) Gain on supported detectors</p></li>
+<li><p>Support for selecting between Full Vertical Binning (FVB) and Image
+readout modes</p></li>
+<li><p>Support for Frame Transfer mode</p></li>
+</ul>
+<p>The Andor module includes a separate driver to control the Andor
+Shamrock spectrographs. If the detector data is saved in the Princeton
+Instruments SPE file format using the Andor driver then it will include
+the Shamrock wavelength calibration information. No other file formats
+support saving the calibration.</p>
+<p>This driver inherits from <a class="reference internal" href="../ADCore/ADDriver.html"><span class="doc">ADDriver</span></a>
+It implements many of the parameters in
+<a class="reference external" href="../areaDetectorDoxygenHTML/asyn_n_d_array_driver_8h.html">asynNDArrayDriver.h</a>
+and in
+<a class="reference external" href="../areaDetectorDoxygenHTML/_a_d_driver_8h.html">ADArrayDriver.h</a>. It
+also implements a number of parameters that are specific to the Andor
+detectors. The <a class="reference external" href="../areaDetectorDoxygenHTML/class_andor_c_c_d.html">Andor class
+documentation</a>
+describes this class in detail.</p>
+<p>This document does not attempt to explain the meaning of the
+Andor-specific parameters. The Andor Software Development Kit
+documentation provides this detailed information. Andor does not allow
+me to redistribute the SDK documentation as part of areaDetector. It
+must be obtained from <a class="reference external" href="http://www.andor.com/scientific-software/software-development-kit/andor-sdk">Andor’s Web
+site</a>.</p>
+<p>areaDetector includes the header and library files required to build the
+andor driver on any Linux or Windows computer. However, it does not
+include the shareable libraries, DLLs or drivers to actually run a
+detector. Those must be obtained from Andor, either by purchasing their
+SDK or their Solis application software. On Windows the path to the
+directory containing the Andor DLLs from the SDK or Solis must be added
+to the PATH environment variable when running the areaDetector IOC. On
+Linux the path to the directory containing the Andor shareable libraries
+from the SDK must be added to the LD_LIBRARY_PATH environment variable
+when running the areaDetector IOC.</p>
+<p>NOTE: When using the Shamrock spectrograph on Windows the following DLLs
+must actually be copied from the SDK directory to the current working
+directory from which the IOC application is being run, e.g.
+iocBoot/iocAndor.</p>
+<ul class="simple">
+<li><p>atmcd32d.dll</p></li>
+<li><p>ShamrockCIF.dll</p></li>
+<li><p>atshamrock.dll</p></li>
+</ul>
+<p>This is a rather strange requirement of the Andor Shamrock SDK, which
+will hopefully be fixed by them in a future release.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When using SDK version &gt;= 2.102.30000.0 on Linux one must make
+sure that libUSBI2C-[ARCH].so.[VERSION] is installed as part of support
+into libUSBI2C.so and libUSBI2C.so.2.</p>
+</div>
+<p>Also <cite>libd2xx_table.so</cite> might be needed to get Shamrock communicating. See
+<cite>andorSupport/ftdi_table.c</cite> for more.</p>
+<p>Compile with:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ gcc -fpic -shared -Wl,-soname,libd2xx_table.so -o libd2xx_table.so ftdi_table.c
+</pre></div>
+</div>
+<p>Place the <cite>libd2xx_table.so</cite> into the folder with the rest of SDK support
+libraries.</p>
+</section>
+<section id="implementation-of-standard-driver-parameters">
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">Implementation of standard driver parameters</a><a class="headerlink" href="#implementation-of-standard-driver-parameters" title="Permalink to this heading"></a></h2>
+<p>The following table describes how the Andor driver implements some of
+the standard driver parameters.</p>
+<table class="table-bordered table-striped table-hover docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 80%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head" colspan="3"><p>Implementation of Parameters in asynNDArrayDriver.h and ADDriver.h, and EPICS Record
+Definitions in ADBase.template and NDFile.template</p></th>
+</tr>
+<tr class="row-even"><th class="head"><p>Parameter index variable</p></th>
+<th class="head"><p>EPICS record name</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-odd"><td><p>ADTriggerMode</p></td>
+<td><p>$(P)$(R)TriggerMode, $(P)$(R)TriggerMode_RBV</p></td>
+<td><p>Sets the trigger mode for the detector. Options are:</p>
+<ul class="simple">
+<li><p>Internal</p></li>
+<li><p>External</p></li>
+<li><p>External Start</p></li>
+<li><p>External Exposure</p></li>
+<li><p>External FVP</p></li>
+<li><p>Software</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>ADImageMode</p></td>
+<td><p>$(P)$(R)ImageMode, $(P)$(R)ImageMode_RBV</p></td>
+<td><p>Sets the image mode for the detector. Options are:</p>
+<ul class="simple">
+<li><p>Single</p></li>
+<li><p>Multiple</p></li>
+<li><p>Continuous</p></li>
+<li><p>Fast Kinetics</p></li>
+</ul>
+<p>The relation of ImageMode to the Andor acquisition modes are given in the table
+below.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>ADNumExposures</p></td>
+<td><p>$(P)$(R)NumExposures, $(P)$(R)NumExposures_RBV</p></td>
+<td><p>Sets the number of accumulations (performed in software in Andor’s driver) in Single
+and Multiple modes</p></td>
+</tr>
+<tr class="row-even"><td><p>ADNumImages</p></td>
+<td><p>$(P)$(R)NumImages, $(P)$(R)NumImages_RBV</p></td>
+<td><p>Sets the number of images to take in multiple (Kinetics Series) mode</p></td>
+</tr>
+<tr class="row-odd"><td><p>ADAcquirePeriod</p></td>
+<td><p>$(P)$(R)AcquirePeriod, $(P)$(R)AcquirePeriod_RBV</p></td>
+<td><p>Sets the time between images in Multiple (Kinetics Series) and Continuous (Run Till
+Abort) modes</p></td>
+</tr>
+<tr class="row-even"><td><p>ADGain</p></td>
+<td><p>$(P)$(R)Gain, $(P)$(R)Gain_RBV</p></td>
+<td><p>Sets the pre-amp gain of the detector. For the Andor driver the Gain is treated
+as an integer index into the supported gain table of the specific detector. The
+list of supported gains for the detector gain be found by typing “asynReport 1,ANDOR”
+at the IOC prompt. For example, on the iKon-M the relationship is:</p>
+<ul class="simple">
+<li><p>Gain=0 Andor gain=1.0</p></li>
+<li><p>Gain=1 Andor gain=2.0</p></li>
+<li><p>Gain=2 Andor gain=4.0</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>NDDataType</p></td>
+<td><p>$(P)$(R)DataType, $(P)$(R)DataType_RBV</p></td>
+<td><p>Sets data type for reading out the detector. Allowed values are:</p>
+<ul class="simple">
+<li><p>UInt16</p></li>
+<li><p>UInt32</p></li>
+</ul>
+<p>UInt16 can be used when reading out a 16-bit detector with NumExposures=1, (i.e.
+without accumulations), or when one can be sure that multiple accumulations will
+not overflow 16 bits. UInt32 should be used for 32-bit detectors or when multiple
+accumulations could cause 16-bit overflow.</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>ADTemperature</p></td>
+<td><p>$(P)$(R)Temperature, $(P)$(R)Temperature_RBV</p></td>
+<td><p>Sets the setpoint temperature of the CCD (-120C to 20C)</p></td>
+</tr>
+<tr class="row-odd"><td><p>ADTemperatureActual</p></td>
+<td><p>$(P)$(R)TemperatureActual</p></td>
+<td><p>Reads the actual temperature of the CCD</p></td>
+</tr>
+<tr class="row-even"><td><p>NDFileFormat</p></td>
+<td><p>$(P)$(R)FileFormat, $(P)$(R)FileFormat_RBV</p></td>
+<td><p>Selects the file format for saving files with the Andor driver. Choices are:</p>
+<ul class="simple">
+<li><p>TIFF</p></li>
+<li><p>BMP</p></li>
+<li><p>SIF</p></li>
+<li><p>EDF</p></li>
+<li><p>RAW</p></li>
+<li><p>FITS</p></li>
+<li><p>SPE</p></li>
+</ul>
+<p>All of the file formats except SPE are written by the Andor SDK. The SPE file format
+is written directly by the driver. It uses version 3.0 of the SPE format, which
+includes XML metadata after the image data. Only the SPE format is able to save
+the wavelength calibration from the Shamrock spectrographs.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>The following table shows the relationship of ImageMode to the Andor acquisition
+modes, and the meaning of NumExposures and NumImages.</p>
+<table class="table-bordered table-striped table-hover docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 15%" />
+<col style="width: 15%" />
+<col style="width: 15%" />
+<col style="width: 15%" />
+<col style="width: 15%" />
+<col style="width: 15%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head" colspan="6"><p>Relationship of ImageMode to the Andor acquisition modes, and the meaning of NumExposures
+and NumImages.</p></th>
+</tr>
+<tr class="row-even"><th class="head"><p>ImageMode</p></th>
+<th class="head"><p>NumExposures</p></th>
+<th class="head"><p>AcquireTime</p></th>
+<th class="head"><p>AndorAccumulatePeriod</p></th>
+<th class="head"><p>NumImages</p></th>
+<th class="head"><p>AcquirePeriod</p></th>
+<th class="head"><p>Andor acquisition mode</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-odd"><td><p>Single</p></td>
+<td><p>1</p></td>
+<td><p>Sets exposure time</p></td>
+<td><p>Not applicable</p></td>
+<td><p>Not applicable</p></td>
+<td><p>Not applicable</p></td>
+<td><p>Single Scan</p></td>
+</tr>
+<tr class="row-even"><td><p>Single</p></td>
+<td><p>&gt;1 Sets number of accumulations per image.</p></td>
+<td><p>Sets exposure time per accumulation</p></td>
+<td><p>Sets accumulation period (cycle time)</p></td>
+<td><p>Not applicable</p></td>
+<td><p>Not applicable</p></td>
+<td><p>Accumulate</p></td>
+</tr>
+<tr class="row-odd"><td><p>Multiple</p></td>
+<td><p>Sets number of accumulations per image</p></td>
+<td><p>Sets exposure time per accumulation</p></td>
+<td><p>Sets accumulation period if NumExposures &gt; 1</p></td>
+<td><p>Sets number of images</p></td>
+<td><p>Sets time between images (cycle time)</p></td>
+<td><p>Kinetic Series</p></td>
+</tr>
+<tr class="row-even"><td><p>Continuous</p></td>
+<td><p>Not applicable</p></td>
+<td><p>Sets exposure time per image</p></td>
+<td><p>Not applicable</p></td>
+<td><p>Not applicable</p></td>
+<td><p>Sets time between images (cycle time)</p></td>
+<td><p>Run Till Abort</p></td>
+</tr>
+<tr class="row-odd"><td><p>Fast Kinetics</p></td>
+<td><p>Not applicable</p></td>
+<td><p>Sets exposure time per sub-area</p></td>
+<td><p>Not applicable</p></td>
+<td><p>Controls number of sub-area exposures, each being followed by a vertical shift of
+SizeY. MinY controls the offset of the first row from the bottom of the CCD. SizeY
+controls the sub-area height. BinX and BinY control the horizontal and vertical
+binning.</p></td>
+<td><p>Not applicable</p></td>
+<td><p>Fast Kinetics</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="andor-specific-parameters">
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">Andor specific parameters</a><a class="headerlink" href="#andor-specific-parameters" title="Permalink to this heading"></a></h2>
+<p>The Andor driver implements the following parameters in addition to
+those in asynNDArrayDriver.h and ADDriver.h.</p>
+<table class="table-bordered table-striped table-hover docutils align-default">
+<colgroup>
+<col style="width: 70%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head" colspan="4"><p>Parameter Definitions in andorCCD.h and EPICS Record Definitions in andorCCD.template</p></th>
+</tr>
+<tr class="row-even"><th class="head"><p>Description</p></th>
+<th class="head"><p>drvInfo string</p></th>
+<th class="head"><p>EPICS record name</p></th>
+<th class="head"><p>EPICS record type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-odd"><td><p>Turn the CCD cooler on and off</p></td>
+<td><p>ANDOR_COOLER</p></td>
+<td><p>AndorCooler, AndorCooler_RBV</p></td>
+<td><p>bo, bi</p></td>
+</tr>
+<tr class="row-even"><td><p>Temperature status message.</p></td>
+<td><p>ANDOR_TEMP_STAT</p></td>
+<td><p>AndorTempStatus_RBV</p></td>
+<td><p>waveform</p></td>
+</tr>
+<tr class="row-odd"><td><p>Other status message.</p></td>
+<td><p>ANDOR_MESSAGE</p></td>
+<td><p>AndorMessage_RBV</p></td>
+<td><p>waveform</p></td>
+</tr>
+<tr class="row-even"><td><p>Selects the Andor shutter mode. Choices are:
+Full Auto
+Always Open
+Always Closed
+Open for FVB
+Open for Any</p></td>
+<td><p>ANDOR_SHUTTER_MODE</p></td>
+<td><p>AndorShutterMode</p></td>
+<td><p>mbbo</p></td>
+</tr>
+<tr class="row-odd"><td><p>Selects the TTL polarity of an external shutter. Choices are:
+Low To Open
+High To Open</p></td>
+<td><p>ANDOR_SHUTTER_EXTTL</p></td>
+<td><p>AndorShutterExTTL</p></td>
+<td><p>bo</p></td>
+</tr>
+<tr class="row-even"><td><p>Path and Filename of pallette file (used for TIFF and BMP file colours) (255 chars
+max).</p></td>
+<td><p>ANDOR_PAL_FILE_PATH</p></td>
+<td><p>PALFilePath</p></td>
+<td><p>waveform</p></td>
+</tr>
+<tr class="row-odd"><td><p>Switch between the slow (low noise) ADC and the fast ADC. Choices are:</p>
+<ul class="simple">
+<li><p>0.05 MHz</p></li>
+<li><p>2.5 MHz</p></li>
+</ul>
+</td>
+<td><p>ANDOR_ADC_SPEED</p></td>
+<td><p>AndorADCSpeed, AndorADCSpeed_RBV</p></td>
+<td><p>mbbo, mbbi</p></td>
+</tr>
+<tr class="row-even"><td><p>Controls the period between accumulations when ImageMode=Single or Multiple and
+NumExposures&amp;gt;1. NOTE: Some Andor detectors (including the iKon) only support
+a single period when doing multiple accumulations in kinetic series mode. For these
+cameras ANDOR_ACCUMULATE_PERIOD has no effect, ACQUIRE_PERIOD determines the time
+between accumulations, and the time between images is 0, i.e. the next image starts
+as soon as the previous one is complete.</p></td>
+<td><p>ANDOR_ACCUMULATE_PERIOD</p></td>
+<td><p>AndorAccumulatePeriod, AndorAccumulatePeriod_RBV</p></td>
+<td><p>ao, ai</p></td>
+</tr>
+<tr class="row-odd"><td><p>Reads the actual value of AndorAccumulatePeriod, which may differ from the requested
+value due to timing limitations of the detector.</p></td>
+<td><p>ANDOR_ACCUMULATE_PERIOD_ACTUAL</p></td>
+<td><p>AndorAccumulatePeriodActual</p></td>
+<td><p>ai</p></td>
+</tr>
+<tr class="row-even"><td><p>Reads the actual value of ADAcquireTime, which may differ from the requested value
+due to timing limitations of the detector.</p></td>
+<td><p>ANDOR_ACQUIRE_TIME_ACTUAL</p></td>
+<td><p>AndorAcquireTimeActual</p></td>
+<td><p>ai</p></td>
+</tr>
+<tr class="row-odd"><td><p>Reads the actual value of ADAcquirePeriod, which may differ from the requested value
+due to timing limitations of the detector.</p></td>
+<td><p>ANDOR_ACQUIRE_PERIOD_ACTUAL</p></td>
+<td><p>AndorAcquirePeriodActual</p></td>
+<td><p>ai</p></td>
+</tr>
+<tr class="row-even"><td><p>Enable or disable the baseline clamp option.</p></td>
+<td><p>ANDOR_BASELINE_CLAMP</p></td>
+<td><p>AndorBaselineClamp, AndorBaselineClamp_RBV</p></td>
+<td><p>bo, bi</p></td>
+</tr>
+<tr class="row-odd"><td><p>Controls the Electron Multiplying (EM) Gain level on supported detectors. The valid
+range depends on the value of AndorEMGainMode and the detector temperature. For
+cameras that do not support EM Gain, AndorEMGain has no effect.</p></td>
+<td><p>ANDOR_EM_GAIN</p></td>
+<td><p>AndorEMGain, AndorEMGain_RBV</p></td>
+<td><p>ao, ai</p></td>
+</tr>
+<tr class="row-even"><td><p>Sets the EM Gain mode on supported detectors. Choices are:</p>
+<ul class="simple">
+<li><p>8 bit DAC</p></li>
+<li><p>12 bit DAC</p></li>
+<li><p>Linear Mode</p></li>
+<li><p>Real EM Gain</p></li>
+</ul>
+<p>For cameras that do not support EM Gain, AndorEMGainMode has no effect.</p>
+</td>
+<td><p>ANDOR_EM_GAIN_MODE</p></td>
+<td><p>AndorEMGainMode, AndorEMGainMode_RBV</p></td>
+<td><p>mbbo, mbbi</p></td>
+</tr>
+<tr class="row-odd"><td><p>Enables access to higher EM Gain levels. Choices are:</p>
+<ul class="simple">
+<li><p>Disabled</p></li>
+<li><p>Enabled</p></li>
+</ul>
+<p>For cameras that do not support EM Gain, AndorEMGainAdvanced has no effect. <br>
+NOTE: Before using higher levels, you should ensure that light levels do not exceed the
+regime of tens of photons per pixel, otherwise accelerated ageing of the sensor
+can occur.</p>
+</td>
+<td><p>ANDOR_EM_GAIN_ADVANCED</p></td>
+<td><p>AndorEMGainAdvanced, AndorEMGainAdvanced_RBV</p></td>
+<td><p>bo, bi</p></td>
+</tr>
+<tr class="row-even"><td><p>Switch between the readout modes. Choices are:
+Full Vertical Binning (FVB)
+Image</p></td>
+<td><p>ANDOR_READOUT_MODE</p></td>
+<td><p>AndorReadOutMode, AndorReadOutMode_RBV</p></td>
+<td><p>mbbo, mbbi</p></td>
+</tr>
+<tr class="row-odd"><td><p>Set Frame Transfer mode. Choices are:</p>
+<ul class="simple">
+<li><p>Disabled</p></li>
+<li><p>Enabled</p></li>
+</ul>
+<p>Note: Only available on supported CCDs.</p>
+</td>
+<td><p>ANDOR_FT_MODE</p></td>
+<td><p>AndorFTMode, AndorFTMode_RBV</p></td>
+<td><p>bo, bi</p></td>
+</tr>
+<tr class="row-even"><td><p>Sets Vertical Shift Period, in units of microseconds per pixel shift.
+Choices are constructed at runtime. For example, the choices for an iDus are:</p>
+<ul class="simple">
+<li><p>4.25 us</p></li>
+<li><p>8.25 us</p></li>
+<li><p>16.25 us</p></li>
+<li><p>32.25 us</p></li>
+<li><p>64.25 us</p></li>
+</ul>
+</td>
+<td><p>ANDOR_VS_PERIOD</p></td>
+<td><p>AndorVSPeriod, AndorVSPeriod_RBV</p></td>
+<td><p>mbbo, mbbi</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="unsupported-standard-driver-parameters">
+<h2><a class="toc-backref" href="#id5" role="doc-backlink">Unsupported standard driver parameters</a><a class="headerlink" href="#unsupported-standard-driver-parameters" title="Permalink to this heading"></a></h2>
+<p>ColorMode, ReverseX, and ReverseY are currently not supported.</p>
+</section>
+<section id="shamrock-spectrograph-control">
+<h2><a class="toc-backref" href="#id6" role="doc-backlink">Shamrock spectrograph control</a><a class="headerlink" href="#shamrock-spectrograph-control" title="Permalink to this heading"></a></h2>
+<p>The Andor module also includes a driver for the Andor Shamrock
+spectrographs. This driver allows control of the grating, central
+wavelength, and slit sizes.</p>
+<table class="table-bordered table-striped table-hover docutils align-default">
+<colgroup>
+<col style="width: 70%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head"></th>
+<th class="head" colspan="2"><p>Parameter Definitions in shamrock.cpp and EPICS Record Definitions in shamrock.template</p></th>
+</tr>
+<tr class="row-even"><th class="head"><p>Description</p></th>
+<th class="head"><p>drvInfo string</p></th>
+<th class="head"><p>EPICS record name</p></th>
+<th class="head"><p>EPICS record type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-odd"><td><p>Selects the grating to use</p></td>
+<td><p>SR_GRATING</p></td>
+<td><p>Grating, Grating_RBV</p></td>
+<td><p>mbbo, mbbi</p></td>
+</tr>
+<tr class="row-even"><td><p>Flag indicating if a grating is present</p></td>
+<td><p>SR_GRATING_EXISTS</p></td>
+<td><p>GratingExists[N], N=1-3</p></td>
+<td><p>bi</p></td>
+</tr>
+<tr class="row-odd"><td><p>Selects the central wavelength</p></td>
+<td><p>SR_WAVELENGTH</p></td>
+<td><p>Wavelength, Wavelength_RBV</p></td>
+<td><p>ao, ai</p></td>
+</tr>
+<tr class="row-even"><td><p>The minimum wavelength of the current configuration (ADDR=0) or the minimum wavelength
+of grating N (N=1-3)</p></td>
+<td><p>SR_MIN_WAVELENGTH</p></td>
+<td><p>MinWavelength, MinWavelength[N], N=1-3</p></td>
+<td><p>ai</p></td>
+</tr>
+<tr class="row-odd"><td><p>The maximum wavelength of the current configuration or the maximum wavelength of
+grating N (N=1-3)</p></td>
+<td><p>SR_MAX_WAVELENGTH</p></td>
+<td><p>MaxWavelength, MaxWavelength[N], N=1-3</p></td>
+<td><p>ai</p></td>
+</tr>
+<tr class="row-even"><td><p>The size of slit N, N=1-4. The slits are numbered as follows:
+1. Input slit side
+2. Input slit direct
+3. Output slit side
+4. Output slit direct</p></td>
+<td><p>SR_SLIT_SIZE</p></td>
+<td><p>SlitSize[N], N=1-4, SlitSize[N]_RBV</p></td>
+<td><p>ao, ai</p></td>
+</tr>
+<tr class="row-odd"><td><p>Flag indicating if a slit is present</p></td>
+<td><p>SR_SLIT_EXISTS</p></td>
+<td><p>SlitExists[N], N=1-4</p></td>
+<td><p>bi</p></td>
+</tr>
+<tr class="row-even"><td><p>Array containing the wavelength calibration of each X pixel of the detector in nm.</p></td>
+<td><p>SR_CALIBRATION</p></td>
+<td><p>Calibration</p></td>
+<td><p>bi</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="usage">
+<h2><a class="toc-backref" href="#id7" role="doc-backlink">Usage</a><a class="headerlink" href="#usage" title="Permalink to this heading"></a></h2>
+<p>Always use channel access put callback when setting parameters.</p>
+<p>If any of the parameters set are out of range or fail in some way, then
+the PV will be put into alarm state. This should be checked after every
+PV set.</p>
+<p>An example palette file for a TIFF file is GREY.PAL in the iocAndor
+directory.</p>
+</section>
+<section id="configuration">
+<h2><a class="toc-backref" href="#id8" role="doc-backlink">Configuration</a><a class="headerlink" href="#configuration" title="Permalink to this heading"></a></h2>
+<p>The Andor driver is created with the andorCCDConfig command, either from
+C/C++ or from the EPICS IOC shell.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span> <span class="n">andorCCDConfig</span><span class="p">(</span><span class="n">const</span> <span class="n">char</span> <span class="o">*</span><span class="n">portName</span><span class="p">,</span>
+                <span class="nb">int</span> <span class="n">maxBuffers</span><span class="p">,</span> <span class="n">size_t</span> <span class="n">maxMemory</span><span class="p">,</span>
+                <span class="n">const</span> <span class="n">char</span><span class="o">*</span> <span class="n">installPath</span><span class="p">,</span>
+                <span class="nb">int</span> <span class="n">priority</span><span class="p">,</span> <span class="nb">int</span> <span class="n">stackSize</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The Shamrock driver is created with the shamrockConfig command, either
+from C/C++ or from the EPICS IOC shell.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span> <span class="n">shamrockConfig</span><span class="p">(</span><span class="n">const</span> <span class="n">char</span> <span class="o">*</span><span class="n">portName</span><span class="p">,</span>
+                          <span class="nb">int</span> <span class="n">shamrockId</span><span class="p">,</span> <span class="n">const</span> <span class="n">char</span> <span class="o">*</span><span class="n">iniPath</span><span class="p">,</span>
+                          <span class="nb">int</span> <span class="n">priority</span><span class="p">,</span> <span class="nb">int</span> <span class="n">stackSize</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>For details on the meaning of the parameters to this function refer to
+the detailed documentation on the andorCCDConfig function in the
+<a class="reference external" href="../areaDetectorDoxygenHTML/shamrock_8cpp.html">shamrock.cpp
+documentation</a> and in the
+documentation for the constructor for the <a class="reference external" href="../areaDetectorDoxygenHTML/classshamrock.html">shamrock
+class</a>.</p>
+</section>
+<section id="example-st-cmd-startup-file">
+<h2><a class="toc-backref" href="#id9" role="doc-backlink">Example st.cmd startup file</a><a class="headerlink" href="#example-st-cmd-startup-file" title="Permalink to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+</div>
+<p>There an example IOC boot directory and startup script
+<a class="reference internal" href="st_cmd.html#adandor-st-cmd-example"><span class="std std-ref">st.cmd</span></a> provided with
+areaDetector.</p>
+</section>
+<section id="medm-screens">
+<h2><a class="toc-backref" href="#id10" role="doc-backlink">MEDM screens</a><a class="headerlink" href="#medm-screens" title="Permalink to this heading"></a></h2>
+<p>The following shows the MEDM screen that is used to control the Andor
+detector. Note that the general purpose screen ADBase.adl can be used,
+but it exposes a few controls that are not applicable to the Andor, and
+lacks some fields that are important for the Andor.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Andor.adl</span></code> is the main screen used to control the Andor driver.</p>
+<figure class="align-center">
+<img alt="../_images/Andor.png" src="../_images/Andor.png" />
+</figure>
+<p>The following shows the MEDM screen that is used to save files directly
+with the Andor detector.</p>
+<figure class="align-center">
+<img alt="../_images/AndorFile.png" src="../_images/AndorFile.png" />
+</figure>
+<p>The following shows the MEDM screen that is used to control the Shamrock
+spectrograph.</p>
+<figure class="align-center">
+<img alt="../_images/Shamrock.png" src="../_images/Shamrock.png" />
+</figure>
+</section>
+<section id="restrictions">
+<h2><a class="toc-backref" href="#id11" role="doc-backlink">Restrictions</a><a class="headerlink" href="#restrictions" title="Permalink to this heading"></a></h2>
+<p>The following are known restrictions of the Andor driver. These should
+be fixed in a future release.</p>
+<ul class="simple">
+<li><p>No support for detector output signals (trigger and gate).</p></li>
+<li><p>Some Andor detectors (including the iKon) only support a single
+period when doing multiple accumulations in kinetic series mode. For
+these cameras ANDOR_ACCUMULATE_PERIOD has no effect, ACQUIRE_PERIOD
+determines the time between accumulations, and the time between
+images is 0, i.e. the next image starts as soon as the previous one
+is complete.</p></li>
+<li><p>Saving files using the Andor driver in Multiple and Continuous modes
+results in errors because the Andor SDK functions won’t save files if
+acquisition is in progress. Saving files in Single mode and Fast
+Kinetics mode works fine.</p></li>
+<li><p>Trigger modes have not been tested.</p></li>
+<li><p>The Shamrock wavelength calibration is only saved in SPE files. The
+Andor SDK file writers do not save the calibration, and it is not
+possible to pass the calibration to other file plugins as an
+attribute because array attributes are not currently supported in
+areaDetector.</p></li>
+<li><p>Single-Track, Multi-Track and Random-Track readout modes are not yet
+supported.</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../ADCore/ADDriver.html" class="btn btn-neutral float-left" title="ADDriver" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="st_cmd.html" class="btn btn-neutral float-right" title="Example st.cmd Startup File" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Mark Rivers.
+      <span class="lastupdated">Last updated on 2023-March-12.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ADCompVision area detector plugin Input/output manual/guide &mdash; areaDetector Support</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme_overrides.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="ADPluginBar Documentation" href="../ADPluginBar/ADPluginBar.html" />
+    <link rel="prev" title="ADCompVision Documentation" href="ADCompVision.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            areaDetector
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../readme.html">Readme</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../user_guide.html">User Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/overview.html">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/arch.html">Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/asynPortDriver.html">asynPortDriver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/NDArray.html">NDArray</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../detector_drivers.html">Detector Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/plugins.html">areaDetector Plugins</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../additional_plugins.html">Additional plugins</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="ADCompVision.html">ADCompVision Documentation</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">ADCompVision area detector plugin Input/output manual/guide</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ADCompVision.html#installing-the-plugin">Installing the plugin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ADCompVision.html#using-adcompvision">Using ADCompVision</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ADCompVision.html#issues-and-pull-requests">Issues and Pull Requests</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ADCompVision.html#important-links">Important Links</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPluginBar/ADPluginBar.html">ADPluginBar Documentation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/medm.html">MEDM screens</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADViewers/ad_viewers.html">areaDetector Viewers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../acknowledgements.html">Acknowledgements and licenses</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../install_guide.html">Install Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release.html">Top-level Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ADCore_release.html">ADCore Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ADSupport_release.html">ADSupport Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../doxygen.html">Source Code Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../detectors.html">Supported Detectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../legacy_versions.html">Legacy Versions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">areaDetector</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../user_guide.html">areaDetector Users Guide</a></li>
+          <li class="breadcrumb-item"><a href="../additional_plugins.html">Additional plugins</a></li>
+          <li class="breadcrumb-item"><a href="ADCompVision.html">ADCompVision Documentation</a></li>
+      <li class="breadcrumb-item active">ADCompVision area detector plugin Input/output manual/guide</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/ADCompVision/ADCompVisionManual.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="adcompvision-area-detector-plugin-input-output-manual-guide">
+<h1><a class="toc-backref" href="#id1" role="doc-backlink">ADCompVision area detector plugin Input/output manual/guide</a><a class="headerlink" href="#adcompvision-area-detector-plugin-input-output-manual-guide" title="Permalink to this heading"></a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">author<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Jakub Wlodek, Brookhaven National Laboratory</p>
+</dd>
+<dt class="field-even">date<span class="colon">:</span></dt>
+<dd class="field-even"><p>November 21, 2018</p>
+</dd>
+<dt class="field-odd">updated<span class="colon">:</span></dt>
+<dd class="field-odd"><p>June 25, 2019</p>
+</dd>
+</dl>
+<div class="line-block">
+<div class="line"><a class="reference external" href="ADCompVision.html">Return</a></div>
+</div>
+<nav class="contents" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#adcompvision-area-detector-plugin-input-output-manual-guide" id="id1">ADCompVision area detector plugin Input/output manual/guide</a></p>
+<ul>
+<li><p><a class="reference internal" href="#introduction" id="id2">Introduction</a></p></li>
+<li><p><a class="reference internal" href="#wrapper-function-inputs-outputs" id="id3">Wrapper function inputs/outputs</a></p></li>
+<li><p><a class="reference internal" href="#function-descriptions" id="id4">Function descriptions</a></p>
+<ul>
+<li><p><a class="reference internal" href="#gaussianblur" id="id5">GaussianBlur</a></p></li>
+<li><p><a class="reference internal" href="#thresholdimage" id="id6">ThresholdImage</a></p></li>
+<li><p><a class="reference internal" href="#laplacianedgedetector" id="id7">LaplacianEdgeDetector</a></p></li>
+<li><p><a class="reference internal" href="#sharpen" id="id8">Sharpen</a></p></li>
+<li><p><a class="reference internal" href="#cannyedgedetector" id="id9">CannyEdgeDetector</a></p></li>
+<li><p><a class="reference internal" href="#subtractconsecutiveimages" id="id10">SubtractConsecutiveImages</a></p></li>
+<li><p><a class="reference internal" href="#computeimagestats" id="id11">ComputeImageStats</a></p></li>
+<li><p><a class="reference internal" href="#videorecord" id="id12">VideoRecord</a></p></li>
+<li><p><a class="reference internal" href="#findobjectcentroids" id="id13">FindObjectCentroids</a></p></li>
+<li><p><a class="reference internal" href="#movementvectors-testing" id="id14">MovementVectors (Testing)</a></p></li>
+<li><p><a class="reference internal" href="#objectidentification-testing" id="id15">ObjectIdentification (Testing)</a></p></li>
+<li><p><a class="reference internal" href="#userfunction" id="id16">UserFunction</a></p></li>
+<li><p><a class="reference internal" href="#distancebetweencontours" id="id17">Distancebetweencontours</a></p></li>
+<li><p><a class="reference internal" href="#convertimageformat" id="id18">ConvertImageFormat</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+<section id="introduction">
+<h2><a class="toc-backref" href="#id2" role="doc-backlink">Introduction</a><a class="headerlink" href="#introduction" title="Permalink to this heading"></a></h2>
+<p>This is a manual that documents the input and output types of each
+WRAPPER function supported by ADCompVision</p>
+</section>
+<section id="wrapper-function-inputs-outputs">
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">Wrapper function inputs/outputs</a><a class="headerlink" href="#wrapper-function-inputs-outputs" title="Permalink to this heading"></a></h2>
+<p>Below is a table that details the inputs and outputs used by each
+function, along with descriptions for each function</p>
+<table border="1" cellpadding="2" cellspacing="2" style="text-align: left">
+  <tbody>
+    <tr>
+      <td align="center" colspan="7">
+        <b>Input/Output values for each ADCompVision Function</b>
+      </td>
+    </tr>
+    <tr>
+    <th>
+      Function Name</th>
+    <th>
+      Num inputs</th>
+    <th>
+      Input value format</th>
+    <th>
+      Num outputs</th>
+    <th>
+      Output value format</th>
+</tr><tr>
+<th>GaussianBlur
+</th>
+<th>1
+</th>
+<th>[blurDegree (Int)]
+</th>
+<th>0
+</th>
+<th>N/A
+</th>
+</tr>
+<tr>
+<th>ThresholdImage
+</th>
+<th>3
+</th>
+<th>[Threshhold Value (Int), Max Pixel Value (Int)]
+</th>
+<th>0
+</th>
+<th>N/A
+</th>
+</tr>
+<tr>
+<th>LaplacianEdgeDetector
+</th>
+<th>1
+</th>
+<th>[Blur degree (Int)]
+</th>
+<th>0
+</th>
+<th>None
+</th>
+</tr>
+<tr>
+<th>Sharpen
+</th>
+<th>4
+</th>
+<th>[Gaussian blurr (Int), Laplacian kernel size (Int), Laplacian scale (Int), Laplacian delat (Int) ]
+</th>
+<th>0
+</th>
+<th>N/A
+</th>
+</tr>
+<tr>
+<th>CannyEdgeDetector
+</th>
+<th>3
+</th>
+<th>[Threshold value (Int), Threshold ratio (Int), Blur degree (Int), Kernel Size (Int)]
+</th>
+<th>8
+</th>
+<th>[Horizontal Center, Horizontal Size, Vertical Center, Vertical Size, Top Pixel, Bottom Pixel, Left Pixel, Right Pixel]
+</th>
+</tr>
+<tr>
+<th>SubtractConsecutiveImages
+</th>
+<th>0
+</th>
+<th>N/A
+</th>
+<th>0
+</th>
+<th>N/A
+</th>
+</tr>
+<tr>
+<th>ComputeImageStats
+</th>
+<th>0
+</th>
+<th>N/A
+</th>
+<th>9
+</th>
+<th>[total, min, min x, min y, max, max x, max y, mean, sigma]
+</th>
+</tr>
+<tr>
+<th>VideoRecord
+</th>
+<th>4
+</th>
+<th>[Framerate (Int), Start/Stop (1 or 0), color (1 or 0), encoding (1-4), Output File Type (1 or 0)]
+</th>
+<th>0
+</th>
+<th>N/A
+</th>
+</tr>
+<tr>
+<th>FindObjectCentroids
+</th>
+<th>5
+</th>
+<th>[Num Largest Contours (Int), Blur Degree (Int), Threshold Value (Int), Upper Size Threshold (Int), Lower Size Threshold (Int)]
+</th>
+<th>2-10
+</th>
+<th>[CentroidX (Int), CentroidY (Int) ... ]
+</th>
+</tr>
+<tr>
+<th>MovementVectors(Testing)
+</th>
+<th>2
+</th>
+<th>[Frames Between Images (Int), Num Vectors (Int)]
+</th>
+<th>0-8
+</th>
+<th>[Vector 1 Start X (Int), Vector 1 Start Y (Int), Vector 1 End X, Vector 1 End Y ...]
+</th>
+</tr>
+<tr>
+<th>ObjectIdentification
+</th>
+<th>4
+</th>
+<th>[Param1 (Int), Param2 (Double) ...]
+</th>
+<th>10
+</th>
+<th>[Param1 (Int), Param2 (Double) ...]
+</th>
+</tr>
+<tr>
+<th>UserFunction
+</th>
+<th>n
+</th>
+<th>[Param1 (Int), Param2 (Double) ...]
+</th>
+<th>n
+</th>
+<th>[Param1 (Int), Param2 (Double) ...]
+</th>
+</tr>
+<tr>
+<th>DistanceBetweenContours
+</th>
+<th>5
+</th>
+<th>[Distance Threshold (Int), Blur Kernel Size (Int), Threshold (Int), Apply Blur (Toggle), Pixel Size Threshold (Int)]
+</th>
+<th>2
+</th>
+<th>[Is Within Threshold (Binary Int), Distance in Pixels (Int)]
+</th>
+</tr>
+<tr>
+<th>ConvertImageFormat
+</th>
+<th>2
+</th>
+<th>[To grayscale (Toggle), To rgb (Toggle)]
+</th>
+<th>0
+</th>
+<th>N/A
+</th>
+</tr>
+
+</tbody>
+</table></section>
+<section id="function-descriptions">
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">Function descriptions</a><a class="headerlink" href="#function-descriptions" title="Permalink to this heading"></a></h2>
+<section id="gaussianblur">
+<h3><a class="toc-backref" href="#id5" role="doc-backlink">GaussianBlur</a><a class="headerlink" href="#gaussianblur" title="Permalink to this heading"></a></h3>
+<p>Blurs image based on a gaussian kernel. A gaussian kernel is simply a
+matrix of a set size that fills Gaussian properties.</p>
+</section>
+<section id="thresholdimage">
+<h3><a class="toc-backref" href="#id6" role="doc-backlink">ThresholdImage</a><a class="headerlink" href="#thresholdimage" title="Permalink to this heading"></a></h3>
+<p>Function that thresholds an image based on a certain pixel value. First,
+the image is converted to grayscale. RGB images cannot be thresholded.
+For each pixel, if the grayscale value is larger than the threshold, set
+it to white, otherwise set it to black. Creates a binary image</p>
+</section>
+<section id="laplacianedgedetector">
+<h3><a class="toc-backref" href="#id7" role="doc-backlink">LaplacianEdgeDetector</a><a class="headerlink" href="#laplacianedgedetector" title="Permalink to this heading"></a></h3>
+<p>Function for laplacian-based edge detection. First, the image is
+converted to grayscale if it is not already. Next, the image is blurred
+using a gaussian kernel to emphasize edges. Then a laplacian kernel runs
+over the images assigning a ‘sharpness’ value to each pixel. The
+sharpest values are hard edges from black to white.</p>
+</section>
+<section id="sharpen">
+<h3><a class="toc-backref" href="#id8" role="doc-backlink">Sharpen</a><a class="headerlink" href="#sharpen" title="Permalink to this heading"></a></h3>
+<p>Sharpens image by sutracting Laplacian from blurred image</p>
+</section>
+<section id="cannyedgedetector">
+<h3><a class="toc-backref" href="#id9" role="doc-backlink">CannyEdgeDetector</a><a class="headerlink" href="#cannyedgedetector" title="Permalink to this heading"></a></h3>
+<p>Function for canny-based edge detection. First, we ensure that the image
+is grayscale. Then, the image is blurred, so that only strong edges
+remain. Then, a threshold is applied to the image in order to further
+reinforce strong edges. Finally, the canny algorithm is applied to the
+image, and the edges are displayed. The function outputs some
+information based on the detected edges that can assist with object
+detection/identification: the top, bottom, left, and right pixels are
+the min and max X and Y pixel values that appear on one of the edges.
+The horizontal and vertical size and center give you the spacing between
+these min and max values and their midpoint.</p>
+</section>
+<section id="subtractconsecutiveimages">
+<h3><a class="toc-backref" href="#id10" role="doc-backlink">SubtractConsecutiveImages</a><a class="headerlink" href="#subtractconsecutiveimages" title="Permalink to this heading"></a></h3>
+<p>Function that allows the user to take consecutive images recieved from
+area detector and subtract them in pairs. Reads first image into memory,
+then waits for second one, when it receives the second one, subtract
+them.</p>
+</section>
+<section id="computeimagestats">
+<h3><a class="toc-backref" href="#id11" role="doc-backlink">ComputeImageStats</a><a class="headerlink" href="#computeimagestats" title="Permalink to this heading"></a></h3>
+<p>OpenCV accelerated computation of Image statistics</p>
+</section>
+<section id="videorecord">
+<h3><a class="toc-backref" href="#id12" role="doc-backlink">VideoRecord</a><a class="headerlink" href="#videorecord" title="Permalink to this heading"></a></h3>
+<p>This function uses the opencv_video and opencv_videoio libraries for writing a video from areaDetector cameras.
+A valid file path is required. Output video framerate should be set to the camera framerate if a real time video
+is desired. Supported encodings are: H264, MPEG, DIVX, and LAGS. Not all encodings will be present on each machine,
+thus some experimentation may be required. The output video will $FILEPATH/CV_Output_Vid_$DATETIME.mp4</p>
+</section>
+<section id="findobjectcentroids">
+<h3><a class="toc-backref" href="#id13" role="doc-backlink">FindObjectCentroids</a><a class="headerlink" href="#findobjectcentroids" title="Permalink to this heading"></a></h3>
+<p>Function for finding centroids of objects in an image. Useful for
+alignment of objects First, blur the object based on a certain blur
+degree (kernel size). Then threshold the image based on a certain
+threshold value. Then find contours in the image using the
+findContours() function. Then get the centroids from the contour
+objects. Draw the contours and centroids on the image. Set the first 5
+centroid coordinates to the output values. A size filter can also be
+used to remove contours that are too large, removing contours that span
+the entire size of the image. Any contour with area &gt; upper threshold is
+removed, and any lower than lower threshold</p>
+</section>
+<section id="movementvectors-testing">
+<h3><a class="toc-backref" href="#id14" role="doc-backlink">MovementVectors (Testing)</a><a class="headerlink" href="#movementvectors-testing" title="Permalink to this heading"></a></h3>
+<p>Function that does feature detection on images a set number of frames
+apart, and attempts to calculate the movement vector for the calculated
+key points. It uses ORB feature detection and vector flow NOT YET
+IMPLEMENTED/TESTED</p>
+</section>
+<section id="objectidentification-testing">
+<h3><a class="toc-backref" href="#id15" role="doc-backlink">ObjectIdentification (Testing)</a><a class="headerlink" href="#objectidentification-testing" title="Permalink to this heading"></a></h3>
+<p>Function that detects contours in an image and returns information
+regarding said contours NOT YET IMPLEMENTED/TESTED</p>
+</section>
+<section id="userfunction">
+<h3><a class="toc-backref" href="#id16" role="doc-backlink">UserFunction</a><a class="headerlink" href="#userfunction" title="Permalink to this heading"></a></h3>
+<p>This is an unimplemented wrapper function that has already been added to
+the PV database in order to simplify creating user defined functions.
+Simply implement this function and its description function, and then
+select ‘User Function’ in function set 3.</p>
+</section>
+<section id="distancebetweencontours">
+<h3><a class="toc-backref" href="#id17" role="doc-backlink">Distancebetweencontours</a><a class="headerlink" href="#distancebetweencontours" title="Permalink to this heading"></a></h3>
+<p>Function that computes bounding boxes between the two largest computed
+contours in the image, checks the distance between them and sends an
+alarm if they are within a distance threshold.</p>
+</section>
+<section id="convertimageformat">
+<h3><a class="toc-backref" href="#id18" role="doc-backlink">ConvertImageFormat</a><a class="headerlink" href="#convertimageformat" title="Permalink to this heading"></a></h3>
+<p>Converts the format of the image to a different one for use with other AD Plugins. This is useful for
+cameras that only support one format but a different one is required, ex. ADPluginDmtx needs 8bit rgb image, so
+grayscale camera needs to be converted.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="ADCompVision.html" class="btn btn-neutral float-left" title="ADCompVision Documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../ADPluginBar/ADPluginBar.html" class="btn btn-neutral float-right" title="ADPluginBar Documentation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Mark Rivers.
+      <span class="lastupdated">Last updated on 2023-March-12.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

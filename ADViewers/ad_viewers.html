@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>areaDetector Viewers &mdash; areaDetector Support</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme_overrides.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="IDL Viewer" href="IDL_Viewer.html" />
+    <link rel="prev" title="MEDM screens" href="../ADCore/medm.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            areaDetector
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../readme.html">Readme</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../user_guide.html">User Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/overview.html">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/arch.html">Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/asynPortDriver.html">asynPortDriver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/NDArray.html">NDArray</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../detector_drivers.html">Detector Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/plugins.html">areaDetector Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../additional_plugins.html">Additional plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/medm.html">MEDM screens</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">areaDetector Viewers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="IDL_Viewer.html">IDL Viewer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ImageJ_EPICS_AD_Viewer.html">ImageJ Channel Access Viewer (EPICS_AD_Viewer.java)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ImageJ_EPICS_NTNDA_Viewer.html">ImageJ pvAccess Viewer (EPICS_NTNDA_Viewer.java)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ImageJ_EPICS_AD_Controller.html">ImageJ Controller (EPICS_AD_Controller.java)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PY_NTNDA_Viewer.html">PY_NTNDA_Viewer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#imagej-viewers">ImageJ Viewers</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#epics-ad-viewer-java">EPICS_AD_Viewer.java</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#epics-ntnda-viewer-java">EPICS_NTNDA_Viewer.java</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#imagej-controller-epics-ad-controller-java">ImageJ Controller (EPICS_AD_Controller.java)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#imagej-gaussian-profiler-gaussianprofiler-java">ImageJ Gaussian Profiler (GaussianProfiler.java)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#python-viewer">Python Viewer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#idl-viewer">IDL Viewer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#troubleshooting">Troubleshooting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#feature-comparison">Feature comparison</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#performance-comparison">Performance comparison</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../acknowledgements.html">Acknowledgements and licenses</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../install_guide.html">Install Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release.html">Top-level Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ADCore_release.html">ADCore Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ADSupport_release.html">ADSupport Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../doxygen.html">Source Code Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../detectors.html">Supported Detectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../legacy_versions.html">Legacy Versions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">areaDetector</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../user_guide.html">areaDetector Users Guide</a></li>
+      <li class="breadcrumb-item active">areaDetector Viewers</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/ADViewers/ad_viewers.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="areadetector-viewers">
+<h1><a class="toc-backref" href="#id2" role="doc-backlink">areaDetector Viewers</a><a class="headerlink" href="#areadetector-viewers" title="Permalink to this heading"></a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">author<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Mark Rivers, Tim Madden, Marty Kraimer</p>
+</dd>
+<dt class="field-even">affiliation<span class="colon">:</span></dt>
+<dd class="field-even"><p>University of Chicago, Advanced Photon Source</p>
+</dd>
+</dl>
+<nav class="contents" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#areadetector-viewers" id="id2">areaDetector Viewers</a></p>
+<ul>
+<li><p><a class="reference internal" href="#overview" id="id3">Overview</a></p></li>
+<li><p><a class="reference internal" href="#imagej-viewers" id="id4">ImageJ Viewers</a></p>
+<ul>
+<li><p><a class="reference internal" href="#epics-ad-viewer-java" id="id5">EPICS_AD_Viewer.java</a></p></li>
+<li><p><a class="reference internal" href="#epics-ntnda-viewer-java" id="id6">EPICS_NTNDA_Viewer.java</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#imagej-controller-epics-ad-controller-java" id="id7">ImageJ Controller (EPICS_AD_Controller.java)</a></p></li>
+<li><p><a class="reference internal" href="#imagej-gaussian-profiler-gaussianprofiler-java" id="id8">ImageJ Gaussian Profiler (GaussianProfiler.java)</a></p></li>
+<li><p><a class="reference internal" href="#python-viewer" id="id9">Python Viewer</a></p></li>
+<li><p><a class="reference internal" href="#idl-viewer" id="id10">IDL Viewer</a></p></li>
+<li><p><a class="reference internal" href="#troubleshooting" id="id11">Troubleshooting</a></p></li>
+<li><p><a class="reference internal" href="#feature-comparison" id="id12">Feature comparison</a></p></li>
+<li><p><a class="reference internal" href="#performance-comparison" id="id13">Performance comparison</a></p></li>
+</ul>
+</li>
+</ul>
+</nav>
+<div class="toctree-wrapper compound">
+</div>
+<section id="overview">
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">Overview</a><a class="headerlink" href="#overview" title="Permalink to this heading"></a></h2>
+<p>One of the advantages of areaDetector is that it enables the use of
+generic image display clients that obtain their data via EPICS Channel
+Access or pvAccess and work with any detector. There are currently four
+such generic clients provided with the areaDetector distribution.</p>
+<p>The first two are plugins for the popular ImageJ Java-based image processing
+program. <code class="docutils literal notranslate"><span class="pre">EPICS_AD_Viewer.java</span></code> uses EPICS Channel Access, while
+<code class="docutils literal notranslate"><span class="pre">EPICS_NTNDA_Viewer.java</span></code> uses EPICS pvAccess.</p>
+<p>The third is a Python program that uses Qt widgets and uses EPICS pvAccess.</p>
+<p>The fourth is an IDL-based viewer which can be run without an IDL license under the IDL
+Virtual Machine.</p>
+<p>Because ImageJ and Python are free and more widely available and
+used than IDL, future enhancements are more likely to be done on the
+ImageJ plugins and Python viewer, rather than the IDL viewer.</p>
+<p>These viewers are contained
+in the areaDetector distribution in the <a class="reference external" href="https://github.com/areaDetector/ADViewers">ADViewers
+repository</a></p>
+<p>In addition to the ImageJ viewer plugins, there is an ImageJ plugin to
+graphically define the detector/camera readout region, ROIs, and
+overlays (<code class="docutils literal notranslate"><span class="pre">EPICS_AD_Controller.java</span></code>). Another ImageJ plugin provided with
+areaDetector does realtime line profiles with Gaussian peak fitting
+(<code class="docutils literal notranslate"><span class="pre">GaussianProfile.java</span></code>).</p>
+</section>
+<section id="imagej-viewers">
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">ImageJ Viewers</a><a class="headerlink" href="#imagej-viewers" title="Permalink to this heading"></a></h2>
+<p>These are plugins for the popular <a class="reference external" href="http://rsbweb.nih.gov/ij/">ImageJ</a>
+program that can be used to display 2-dimensional array data. Both of
+these plugins were originally written by Tim Madden from APS. Both
+support all NDArray data types and color modes, i.e. Mono, RGB1 (pixel
+interleave), RGB2 (row interleave) and RGB3 (plane interleave). The
+plugin directory also includes a plugin written elsewhere for reading
+and writing netCDF files, so ImageJ can be used to display images and
+image sequences (movies) saved with the NDFileNetCDF plugin.</p>
+<section id="epics-ad-viewer-java">
+<h3><a class="toc-backref" href="#id5" role="doc-backlink">EPICS_AD_Viewer.java</a><a class="headerlink" href="#epics-ad-viewer-java" title="Permalink to this heading"></a></h3>
+<p>This plugin uses EPICS Channel Access to display images via waveform
+records that the <a class="reference internal" href="../ADCore/NDPluginStdArrays.html"><span class="doc">NDPluginStdArrays</span></a> sends
+to EPICS.</p>
+<p>More information can be found in the <a class="reference internal" href="ImageJ_EPICS_AD_Viewer.html"><span class="doc">documentation</span></a>.</p>
+</section>
+<section id="epics-ntnda-viewer-java">
+<h3><a class="toc-backref" href="#id6" role="doc-backlink">EPICS_NTNDA_Viewer.java</a><a class="headerlink" href="#epics-ntnda-viewer-java" title="Permalink to this heading"></a></h3>
+<p>This plugin uses EPICS V4 pvAccess to display NTNDArrays that the
+<a class="reference internal" href="../ADCore/NDPluginPva.html"><span class="doc">NDPluginPva</span></a> sends to EPICS.</p>
+<p>The EPICS_NTNDA_Viewer has a number of significant advantages compared to
+the EPICS_AD_Viewer:</p>
+<ul class="simple">
+<li><p>The NTNDArray data is transmitted “atomically” over the network,
+rather than using separate PVs for the image data and the metadata
+(image dimensions, color mode, etc.)</p></li>
+<li><p>NTNDArrays and pvAccess support sending compressed arrays over the
+network. Beginning with ADViewers R1-3 the EPICS_NTNDA_Viewer can
+decompress the NTNDArrays and display them. This can significantly
+reduce the required network bandwith when the IOC and the viewer are
+running on different machines.</p></li>
+<li><p>When using Channel Access the data type of the waveform record is
+fixed at iocInit, and cannot be changed at runtime. This means, for
+example, that if the user might want to view both 8-bit images,
+16-bit images, and 64-bit double FFT images then the waveform record
+would need to be 64-bit double, which adds a factor of 8 network
+overhead when viewing 8-bit images. pvAccess changes the data type of
+the NTNDArrays dynamically at run-time, removing this restriction.</p></li>
+<li><p>Channel Access requires setting <code class="docutils literal notranslate"><span class="pre">EPICS_CA_MAX_ARRAY_BYTES</span></code>, which is a
+source of considerable confusion and frustration for users. pvAccess
+does not use <code class="docutils literal notranslate"><span class="pre">EPICS_CA_MAX_ARRAY_BYTES</span></code> and there is no restriction on
+the size of the NTNDArrays.</p></li>
+<li><p>The performance using pvAccess is significantly better than using
+Channel Access. NDPluginPva is 5-10 times faster than
+NDPluginStdArrays, and ImageJ can display 1.5-2 times more images/s
+with pvAccess than with Channel Access.</p></li>
+</ul>
+<p>More information can be found in the <a class="reference internal" href="ImageJ_EPICS_NTNDA_Viewer.html"><span class="doc">documentation</span></a>.</p>
+</section>
+</section>
+<section id="imagej-controller-epics-ad-controller-java">
+<h2><a class="toc-backref" href="#id7" role="doc-backlink">ImageJ Controller (EPICS_AD_Controller.java)</a><a class="headerlink" href="#imagej-controller-epics-ad-controller-java" title="Permalink to this heading"></a></h2>
+<p>This is an ImageJ plugin which can be used to graphically control the
+following:</p>
+<ul class="simple">
+<li><p>The readout region of the detector or camera.</p></li>
+<li><p>The size and position of an ROI (NDPluginROI).</p></li>
+<li><p>The size and position of an overlay (NDPluginOverlay).</p></li>
+</ul>
+<p>More information can be found in the <a class="reference internal" href="ImageJ_EPICS_AD_Controller.html"><span class="doc">documentation</span></a>.</p>
+</section>
+<section id="imagej-gaussian-profiler-gaussianprofiler-java">
+<span id="imagejgaussianprofiler"></span><h2><a class="toc-backref" href="#id8" role="doc-backlink">ImageJ Gaussian Profiler (GaussianProfiler.java)</a><a class="headerlink" href="#imagej-gaussian-profiler-gaussianprofiler-java" title="Permalink to this heading"></a></h2>
+<p>This is an ImageJ plugin which can be used to dynamically plot a line
+profile, fit the profile to a Gaussian peak, and print the fit
+parameters (centroid, amplitude, full-width half-maximum (FWHM), and
+background. It should be compiled in the same manner as <a class="reference internal" href="ImageJ_EPICS_AD_Viewer.html"><span class="doc">EPICS_AD_Viewer</span></a>.
+It is used by drawing a line or rectangle in ImageJ and
+then starting Plugins/EPICS_areaDetector/Gaussian Profiler.</p>
+<p>The following is the GaussianProfiler window plotting the profile of the
+peak shown above in the EPICS_AD_Controller image.</p>
+<figure class="align-center" id="id1">
+<img alt="../_images/ImageJ_GaussianProfiler.png" src="../_images/ImageJ_GaussianProfiler.png" />
+<figcaption>
+<p><span class="caption-text">ImageJ GaussianProfiler plotting a line through the peak
+shown above in the EPICS_AD_Controller image</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="python-viewer">
+<h2><a class="toc-backref" href="#id9" role="doc-backlink">Python Viewer</a><a class="headerlink" href="#python-viewer" title="Permalink to this heading"></a></h2>
+<p>There is a Python viewer in the ADViewers/Python directory. This viewer has the following features:</p>
+<ul class="simple">
+<li><p>Supports compressed NDArrays using any of the codecs in NDPluginCodec.</p></li>
+<li><p>Supports all NDArray data types and color modes.</p></li>
+<li><p>Allows zooming by defining the subregion with a mouse.</p></li>
+<li><p>Allows changing the window size.</p></li>
+<li><p>Allows changing the lower and upper display intensities with sliders.</p></li>
+<li><p>Supports pvAccess only, does not support Channel Access.</p></li>
+<li><p>Works with both the p4p and pvapy Python bindings for pvAccess.
+- p4p works on Windows, Linux, and Mac.
+- pvapy works only on Linux and Mac.</p></li>
+</ul>
+<p>More information can be found in the <a class="reference internal" href="PY_NTNDA_Viewer.html"><span class="doc">documentation</span></a>.</p>
+</section>
+<section id="idl-viewer">
+<h2><a class="toc-backref" href="#id10" role="doc-backlink">IDL Viewer</a><a class="headerlink" href="#idl-viewer" title="Permalink to this heading"></a></h2>
+<p>There is an IDL viewer that uses Channel Access.  It is obsolete and not currently
+being developed, but can be used as an example for those wanting to use IDL.</p>
+<p>More information can be found in the <a class="reference internal" href="IDL_Viewer.html"><span class="doc">documentation</span></a>.</p>
+</section>
+<section id="troubleshooting">
+<h2><a class="toc-backref" href="#id11" role="doc-backlink">Troubleshooting</a><a class="headerlink" href="#troubleshooting" title="Permalink to this heading"></a></h2>
+<p>If a viewer is not displaying new images as the detector
+collects them check the following:</p>
+<ul class="simple">
+<li><p>If other EPICS channel access clients (e.g. medm, caget) running on
+the same machine as the viewer <strong>cannot</strong> connect to the IOC then
+check the following:</p>
+<ul>
+<li><p>There may be a firewall blocking EPICS Channel Access or pvAccess either on
+the server (IOC) machine or the client (viewer) machine.</p></li>
+<li><p>For Channel Access viewers the environment variable EPICS_CA_ADDR_LIST may need to be set to
+allow the client to find the IOC if the IOC is not on the same
+subnet as the viewer or if other EPICS channel access settings do
+not have their default values.</p></li>
+</ul>
+</li>
+<li><p>If other EPICS channel access clients (e.g. medm, caget) running on
+the same machine as the viewer <strong>can</strong> connect to the IOC then check
+the following:</p>
+<ul>
+<li><p>The detector is actually collecting images, and the ArrayCallbacks
+PV is set to Enable.</p></li>
+<li><p>For Channel Access viewers the NDPluginStdArrays plugin (normally
+called image1:) has the EnableCallbacks PV set to Yes, and that
+the MinCallbackTime PV is not set too large.</p></li>
+<li><p>For pvAccess viewers the NDPluginPva plugin (normally
+called Pva1:) has the EnableCallbacks PV set to Yes, and that
+the MinCallbackTime PV is not set too large.</p></li>
+<li><p>For Channel Access viewers the environment variable
+EPICS_CA_MAX_ARRAY_BYTES is set to a value at least as large as
+the size of the arrays to be sent to the viewer. This environment
+variable must be set on the machine that the IOC is running on
+before the IOC is started. It must also be set on the machine that
+the Channel Access viewer is running on before ImageJ or IDL is
+started.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="feature-comparison">
+<h2><a class="toc-backref" href="#id12" role="doc-backlink">Feature comparison</a><a class="headerlink" href="#feature-comparison" title="Permalink to this heading"></a></h2>
+<p>The following table compares the features of the available viewers.</p>
+<table class="table-bordered table-striped table-hover docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head stub"></th>
+<th class="head"><p>ImageJ</p></th>
+<th class="head"><p>ADViewers / PY_NTNDA_Viewer</p></th>
+<th class="head"><p>testPython / PY_NTNDA_Viewer</p></th>
+<th class="head"><p>C2 Data Viewer</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><th class="stub"><p>NDArray data types</p></th>
+<td><p>All</p></td>
+<td><p>All</p></td>
+<td><p>All</p></td>
+<td><p>Int8, UInt8, Int6, UInt16</p></td>
+</tr>
+<tr class="row-odd"><th class="stub"><p>NDArray codecs</p></th>
+<td><p>All</p></td>
+<td><p>All</p></td>
+<td><p>All</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><th class="stub"><p>Color modes (Mono, RGB1, RGB2, RGB3)</p></th>
+<td><p>All</p></td>
+<td><p>All</p></td>
+<td><p>All</p></td>
+<td><p>Mono</p></td>
+</tr>
+<tr class="row-odd"><th class="stub"><p>Zoom image</p></th>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes (bugs)</p></td>
+<td><p>No</p></td>
+</tr>
+<tr class="row-even"><th class="stub"><p>Resize window</p></th>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-odd"><th class="stub"><p>Scale intensity with text widgets</p></th>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+<td><p>No</p></td>
+</tr>
+<tr class="row-even"><th class="stub"><p>Scale intensity with sliders</p></th>
+<td><p>Yes</p></td>
+<td><p>No</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-odd"><th class="stub"><p>Auto-scale intensity</p></th>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-even"><th class="stub"><p>Move window</p></th>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-odd"><th class="stub"><p>Windows OS</p></th>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+<td><p>No</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="performance-comparison">
+<h2><a class="toc-backref" href="#id13" role="doc-backlink">Performance comparison</a><a class="headerlink" href="#performance-comparison" title="Permalink to this heading"></a></h2>
+<p>The following table compares the performance of the available viewers.</p>
+<p>The tests were done under the following conditions:</p>
+<ul class="simple">
+<li><p>ADSimDetector running on the same machine as the viewer</p></li>
+<li><p>ADSimDetector generating 1024x1024 frames at 200 frames/s.  No compression enabled.</p></li>
+<li><p>Viewers were all configured to display the image full-size (e.g. 1024x1024 pixels).
+For ADViewers/P4P_NTNDA_Viewer and C2 Data Viewer this size was approximate, done by
+resizing the window until the image area was close to 1024x1024 pixels.</p></li>
+<li><p>testPython/P4P_NTNDA_Viewer was configured with Manual Scaling because this is how all of
+the other viewers are always configured, and it is needed in most cases to have a nice image display.</p></li>
+</ul>
+<table class="table-bordered table-striped table-hover docutils align-default">
+<colgroup>
+<col style="width: 40%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head stub"><p>Program, mode</p></th>
+<th class="head"><p>OS</p></th>
+<th class="head"><p>Display</p></th>
+<th class="head"><p>Frames/s</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><th class="stub" colspan="4"></th>
+</tr>
+<tr class="row-odd"><th class="stub"></th>
+<td colspan="3"><p><strong>1024x1024, UInt8, Mono</strong></p></td>
+</tr>
+<tr class="row-even"><th class="stub"><p>ImageJ</p></th>
+<td><p>Linux</p></td>
+<td><p>Local</p></td>
+<td><p>200</p></td>
+</tr>
+<tr class="row-odd"><th class="stub"><p>ImageJ</p></th>
+<td><p>Linux</p></td>
+<td><p>Remote X11</p></td>
+<td><p>200</p></td>
+</tr>
+<tr class="row-even"><th class="stub"><p>ImageJ</p></th>
+<td><p>Windows</p></td>
+<td><p>Local</p></td>
+<td><p>194</p></td>
+</tr>
+<tr class="row-odd"><th class="stub"><p>ADViewers/P4P_NTNDA_Viewer</p></th>
+<td><p>Linux</p></td>
+<td><p>Local</p></td>
+<td><p>40</p></td>
+</tr>
+<tr class="row-even"><th class="stub"><p>ADViewers/P4P_NTNDA_Viewer</p></th>
+<td><p>Linux</p></td>
+<td><p>Remote X11</p></td>
+<td><p>17</p></td>
+</tr>
+<tr class="row-odd"><th class="stub"><p>ADViewers/P4P_NTNDA_Viewer</p></th>
+<td><p>Windows</p></td>
+<td><p>Local</p></td>
+<td><p>23</p></td>
+</tr>
+<tr class="row-even"><th class="stub"><p>testPython/P4P_NTNDA_Viewer</p></th>
+<td><p>Linux</p></td>
+<td><p>Local</p></td>
+<td><p>92</p></td>
+</tr>
+<tr class="row-odd"><th class="stub"><p>testPython/P4P_NTNDA_Viewer</p></th>
+<td><p>Linux</p></td>
+<td><p>Remote X11</p></td>
+<td><p>22</p></td>
+</tr>
+<tr class="row-even"><th class="stub"><p>testPython/P4P_NTNDA_Viewer</p></th>
+<td><p>Windows</p></td>
+<td><p>Local</p></td>
+<td><p>20</p></td>
+</tr>
+<tr class="row-odd"><th class="stub"><p>C2 Data Viewer</p></th>
+<td><p>Linux</p></td>
+<td><p>Local</p></td>
+<td><p>105</p></td>
+</tr>
+<tr class="row-even"><th class="stub"><p>C2 Data Viewer</p></th>
+<td><p>Linux</p></td>
+<td><p>Remote X11</p></td>
+<td><p>102</p></td>
+</tr>
+<tr class="row-odd"><th class="stub"><p>C2 Data Viewer</p></th>
+<td><p>Windows</p></td>
+<td><p>Local</p></td>
+<td><p>N.A.</p></td>
+</tr>
+<tr class="row-even"><th class="stub" colspan="4"></th>
+</tr>
+<tr class="row-odd"><th class="stub"></th>
+<td colspan="3"><p><strong>1024x1024, UInt8, RGB1</strong></p></td>
+</tr>
+<tr class="row-even"><th class="stub"><p>ImageJ</p></th>
+<td><p>Linux</p></td>
+<td><p>Local</p></td>
+<td><p>190</p></td>
+</tr>
+<tr class="row-odd"><th class="stub"><p>ImageJ</p></th>
+<td><p>Linux</p></td>
+<td><p>Remote X11</p></td>
+<td><p>193</p></td>
+</tr>
+<tr class="row-even"><th class="stub"><p>ImageJ</p></th>
+<td><p>Windows</p></td>
+<td><p>Local</p></td>
+<td><p>68</p></td>
+</tr>
+<tr class="row-odd"><th class="stub"><p>ADViewers/P4P_NTNDA_Viewer</p></th>
+<td><p>Linux</p></td>
+<td><p>Local</p></td>
+<td><p>23</p></td>
+</tr>
+<tr class="row-even"><th class="stub"><p>ADViewers/P4P_NTNDA_Viewer</p></th>
+<td><p>Linux</p></td>
+<td><p>Remote X11</p></td>
+<td><p>17</p></td>
+</tr>
+<tr class="row-odd"><th class="stub"><p>ADViewers/P4P_NTNDA_Viewer</p></th>
+<td><p>Windows</p></td>
+<td><p>Local</p></td>
+<td><p>13</p></td>
+</tr>
+<tr class="row-even"><th class="stub"><p>testPython/P4P_NTNDA_Viewer</p></th>
+<td><p>Linux</p></td>
+<td><p>Local</p></td>
+<td><p>37</p></td>
+</tr>
+<tr class="row-odd"><th class="stub"><p>testPython/P4P_NTNDA_Viewer</p></th>
+<td><p>Linux</p></td>
+<td><p>Remote X11</p></td>
+<td><p>22</p></td>
+</tr>
+<tr class="row-even"><th class="stub"><p>testPython/P4P_NTNDA_Viewer</p></th>
+<td><p>Windows</p></td>
+<td><p>Local</p></td>
+<td><p>7</p></td>
+</tr>
+<tr class="row-odd"><th class="stub"><p>C2 Data Viewer</p></th>
+<td><p>Linux</p></td>
+<td><p>Local</p></td>
+<td><p>N.A</p></td>
+</tr>
+<tr class="row-even"><th class="stub"><p>C2 Data Viewer</p></th>
+<td><p>Linux</p></td>
+<td><p>Remote X11</p></td>
+<td><p>N.A.</p></td>
+</tr>
+<tr class="row-odd"><th class="stub"><p>C2 Data Viewer</p></th>
+<td><p>Windows</p></td>
+<td><p>Local</p></td>
+<td><p>N.A</p></td>
+</tr>
+<tr class="row-even"><th class="stub" colspan="4"></th>
+</tr>
+<tr class="row-odd"><th class="stub"></th>
+<td colspan="3"><p><strong>1024x1024, UInt16, Mono</strong></p></td>
+</tr>
+<tr class="row-even"><th class="stub"><p>ImageJ</p></th>
+<td><p>Linux</p></td>
+<td><p>Local</p></td>
+<td><p>150</p></td>
+</tr>
+<tr class="row-odd"><th class="stub"><p>ImageJ</p></th>
+<td><p>Linux</p></td>
+<td><p>Remote X11</p></td>
+<td><p>160</p></td>
+</tr>
+<tr class="row-even"><th class="stub"><p>ImageJ</p></th>
+<td><p>Windows</p></td>
+<td><p>Local</p></td>
+<td><p>68</p></td>
+</tr>
+<tr class="row-odd"><th class="stub"><p>ADViewers/P4P_NTNDA_Viewer</p></th>
+<td><p>Linux</p></td>
+<td><p>Local</p></td>
+<td><p>28</p></td>
+</tr>
+<tr class="row-even"><th class="stub"><p>ADViewers/P4P_NTNDA_Viewer</p></th>
+<td><p>Linux</p></td>
+<td><p>Remote X11</p></td>
+<td><p>17</p></td>
+</tr>
+<tr class="row-odd"><th class="stub"><p>ADViewers/P4P_NTNDA_Viewer</p></th>
+<td><p>Windows</p></td>
+<td><p>Local</p></td>
+<td><p>20</p></td>
+</tr>
+<tr class="row-even"><th class="stub"><p>testPython/P4P_NTNDA_Viewer</p></th>
+<td><p>Linux</p></td>
+<td><p>Local</p></td>
+<td><p>Fails, solid gray image</p></td>
+</tr>
+<tr class="row-odd"><th class="stub"><p>testPython/P4P_NTNDA_Viewer</p></th>
+<td><p>Linux</p></td>
+<td><p>Remote X11</p></td>
+<td><p>Fails, solid gray image</p></td>
+</tr>
+<tr class="row-even"><th class="stub"><p>testPython/P4P_NTNDA_Viewer</p></th>
+<td><p>Windows</p></td>
+<td><p>Local</p></td>
+<td><p>Incorrect image, peak shape is wrong</p></td>
+</tr>
+<tr class="row-odd"><th class="stub"><p>C2 Data Viewer</p></th>
+<td><p>Linux</p></td>
+<td><p>Local</p></td>
+<td><p>95</p></td>
+</tr>
+<tr class="row-even"><th class="stub"><p>C2 Data Viewer</p></th>
+<td><p>Linux</p></td>
+<td><p>Remote X11</p></td>
+<td><p>88</p></td>
+</tr>
+<tr class="row-odd"><th class="stub"><p>C2 Data Viewer</p></th>
+<td><p>Windows</p></td>
+<td><p>Local</p></td>
+<td><p>N.A.</p></td>
+</tr>
+<tr class="row-even"><th class="stub" colspan="4"></th>
+</tr>
+<tr class="row-odd"><th class="stub"></th>
+<td colspan="3"><p><strong>1024x1024, Float32, Mono</strong></p></td>
+</tr>
+<tr class="row-even"><th class="stub"><p>ImageJ</p></th>
+<td><p>Linux</p></td>
+<td><p>Local</p></td>
+<td><p>130</p></td>
+</tr>
+<tr class="row-odd"><th class="stub"><p>ImageJ</p></th>
+<td><p>Linux</p></td>
+<td><p>Remote X11</p></td>
+<td><p>150</p></td>
+</tr>
+<tr class="row-even"><th class="stub"><p>ImageJ</p></th>
+<td><p>Windows</p></td>
+<td><p>Local</p></td>
+<td><p>50</p></td>
+</tr>
+<tr class="row-odd"><th class="stub"><p>ADViewers/P4P_NTNDA_Viewer</p></th>
+<td><p>Linux</p></td>
+<td><p>Local</p></td>
+<td><p>23</p></td>
+</tr>
+<tr class="row-even"><th class="stub"><p>ADViewers/P4P_NTNDA_Viewer</p></th>
+<td><p>Linux</p></td>
+<td><p>Remote X11</p></td>
+<td><p>17</p></td>
+</tr>
+<tr class="row-odd"><th class="stub"><p>ADViewers/P4P_NTNDA_Viewer</p></th>
+<td><p>Windows</p></td>
+<td><p>Local</p></td>
+<td><p>12</p></td>
+</tr>
+<tr class="row-even"><th class="stub"><p>testPython/P4P_NTNDA_Viewer</p></th>
+<td><p>Linux</p></td>
+<td><p>Local</p></td>
+<td><p>Fails, solid gray image</p></td>
+</tr>
+<tr class="row-odd"><th class="stub"><p>testPython/P4P_NTNDA_Viewer</p></th>
+<td><p>Linux</p></td>
+<td><p>Remote X11</p></td>
+<td><p>Fails, solid gray image</p></td>
+</tr>
+<tr class="row-even"><th class="stub"><p>testPython/P4P_NTNDA_Viewer</p></th>
+<td><p>Windows</p></td>
+<td><p>Local</p></td>
+<td><p>Incorrect image, peak shape is wrong</p></td>
+</tr>
+<tr class="row-odd"><th class="stub"><p>C2 Data Viewer</p></th>
+<td><p>Linux</p></td>
+<td><p>Local</p></td>
+<td><p>N.A</p></td>
+</tr>
+<tr class="row-even"><th class="stub"><p>C2 Data Viewer</p></th>
+<td><p>Linux</p></td>
+<td><p>Remote X11</p></td>
+<td><p>N.A.</p></td>
+</tr>
+<tr class="row-odd"><th class="stub"><p>C2 Data Viewer</p></th>
+<td><p>Windows</p></td>
+<td><p>Local</p></td>
+<td><p>N.A.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../ADCore/medm.html" class="btn btn-neutral float-left" title="MEDM screens" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="IDL_Viewer.html" class="btn btn-neutral float-right" title="IDL Viewer" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Mark Rivers.
+      <span class="lastupdated">Last updated on 2023-March-12.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

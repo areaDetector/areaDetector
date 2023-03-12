@@ -1,0 +1,1169 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ADPilatus &mdash; areaDetector Support</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme_overrides.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="ADPixirad" href="../ADPixirad/ADPixirad.html" />
+    <link rel="prev" title="ADPICam" href="../ADPICam/PICamDoc.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            areaDetector
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../readme.html">Readme</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../user_guide.html">User Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/overview.html">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/arch.html">Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/asynPortDriver.html">asynPortDriver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/NDArray.html">NDArray</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../detector_drivers.html">Detector Drivers</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../ADCore/guidelines.html">Guidelines and rules for drivers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADCore/ADDriver.html">ADDriver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADAndor/andorDoc.html">ADAndor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADAndor3/ADAndorDoc.html">ADAndor3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADAravis/ADAravis.html">ADAravis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADCSimDetector/ADCSimDetectorDoc.html">ADCSimDetector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADDexela/ADDexela.html">ADDexela</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADEiger/eiger.html">ADEiger</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADFastCCD/index.html">ADFastCCD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADGenICam/ADGenICam.html">ADGenICam</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADLambda/ADLambda.html">ADLambda</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADLightField/ADLightField.html">ADLightField</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADmarCCD/marCCDDoc.html">ADmarCCD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADmar345/mar345Doc.html">ADmar345</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPerkinElmer/PerkinElmerDoc.html">ADPerkinElmer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPICam/PICamDoc.html">ADPICam</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">ADPilatus</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#implementation-of-standard-driver-parameters">Implementation of standard driver parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pilatus-specific-parameters">Pilatus specific parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#configuration">Configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#example-st-cmd-startup-file">Example st.cmd startup file</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#medm-screens">MEDM screens</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#spec-interface">SPEC interface</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#performance-measurements">Performance measurements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hardware-notes">Hardware notes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#restrictions">Restrictions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPixirad/ADPixirad.html">ADPixirad</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPointGrey/PointGreyDoc.html">ADPointGrey</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADProsilica/ADProsilica.html">ADProsilica</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPvCam/pvcamDoc.html">ADPvCam</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADQImaging/QImagingDoc.html">ADQImaging</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADRIXSCam/ADRIXSCam.html">ADRIXSCam</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADSimDetector/simDetector.html">ADSimDetector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADSpinnaker/ADSpinnaker.html">ADSpinnaker</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADVimba/ADVimba.html">ADVimba</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADURL/ADURL.html">ADURL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../NDDriverStdArrays/NDDriverStdArraysDoc.html">NDDriverStdArrays</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../pvaDriver/pvaDriver.html">pvaDriver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../specsAnalyser/index.html">specsAnalyser</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/plugins.html">areaDetector Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../additional_plugins.html">Additional plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/medm.html">MEDM screens</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADViewers/ad_viewers.html">areaDetector Viewers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../acknowledgements.html">Acknowledgements and licenses</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../install_guide.html">Install Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release.html">Top-level Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ADCore_release.html">ADCore Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ADSupport_release.html">ADSupport Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../doxygen.html">Source Code Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../detectors.html">Supported Detectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../legacy_versions.html">Legacy Versions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">areaDetector</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../user_guide.html">areaDetector Users Guide</a></li>
+          <li class="breadcrumb-item"><a href="../detector_drivers.html">Detector Drivers</a></li>
+      <li class="breadcrumb-item active">ADPilatus</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/ADPilatus/pilatusDoc.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="adpilatus">
+<h1><a class="toc-backref" href="#id2" role="doc-backlink">ADPilatus</a><a class="headerlink" href="#adpilatus" title="Permalink to this heading"></a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">author<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Mark Rivers (University of Chicago), John Hammonds, Brian Tieman (Argonne National Laboratory)</p>
+</dd>
+</dl>
+<nav class="contents" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#adpilatus" id="id2">ADPilatus</a></p>
+<ul>
+<li><p><a class="reference internal" href="#introduction" id="id3">Introduction</a></p></li>
+<li><p><a class="reference internal" href="#implementation-of-standard-driver-parameters" id="id4">Implementation of standard driver parameters</a></p></li>
+<li><p><a class="reference internal" href="#pilatus-specific-parameters" id="id5">Pilatus specific parameters</a></p></li>
+<li><p><a class="reference internal" href="#configuration" id="id6">Configuration</a></p></li>
+<li><p><a class="reference internal" href="#example-st-cmd-startup-file" id="id7">Example st.cmd startup file</a></p></li>
+<li><p><a class="reference internal" href="#medm-screens" id="id8">MEDM screens</a></p></li>
+<li><p><a class="reference internal" href="#spec-interface" id="id9">SPEC interface</a></p></li>
+<li><p><a class="reference internal" href="#performance-measurements" id="id10">Performance measurements</a></p></li>
+<li><p><a class="reference internal" href="#hardware-notes" id="id11">Hardware notes</a></p>
+<ul>
+<li><p><a class="reference internal" href="#trigger-pulses" id="id12">Trigger pulses</a></p></li>
+<li><p><a class="reference internal" href="#detector-voltage" id="id13">Detector Voltage</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#restrictions" id="id14">Restrictions</a></p></li>
+</ul>
+</li>
+</ul>
+</nav>
+<section id="introduction">
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">Introduction</a><a class="headerlink" href="#introduction" title="Permalink to this heading"></a></h2>
+<p>This is an <a class="reference internal" href="../index.html"><span class="doc">areaDetector</span></a> driver for the Pilatus pixel array
+detectors from <a class="reference external" href="http://www.dectris.com">Dectris</a>.</p>
+<p>The interface to the detector is via a TCP/IP socket interface to the
+<code class="docutils literal notranslate"><span class="pre">camserver</span></code> server that Dectris provides. The camserver program must
+be started before the areaDetector software is started, typically by
+running the <strong>camonly</strong> script provided by Dectris.</p>
+<p>The camserver program saves the data to disk as TIFF or CBF files. The
+areaDetector software reads these disk files in order to read the data,
+because camserver does not provide another mechanism to access the data.
+If camserver is saving TIFF files then the driver reads the
+TIFFImageDescription tag from the TIFF file. This is a long string that
+camserver writes to the file containing all of the detector settings,
+including threshold, energy, etc. The driver adds this information to
+the NDArray using an NDAttribute called TIFFImageDescription. The
+NDFileTIFF plugin in ADCore R2-6 was changed to write this complete
+attribute to the TIFFImageDescription tag in the new TIFF file. It will
+also be written by the NDFileNetCDF, NDFileHDF5, and NDFileNexus
+plugins. However these plugins are currently limited to 256 character
+string attributes, so some of the information will be lost because the
+string is longer than 256 characters.</p>
+<p>This driver inherits from <a class="reference internal" href="../ADCore/ADDriver.html"><span class="doc">ADDriver</span></a>.
+It implements nearly all of the parameters in
+<a class="reference external" href="../areaDetectorDoxygenHTML/asyn_n_d_array_driver_8h.html">asynNDArrayDriver.h</a>
+and in
+<a class="reference external" href="../areaDetectorDoxygenHTML/_a_d_driver_8h.html">ADArrayDriver.h</a>. It
+also implements a number of parameters that are specific to the
+Pilatus detectors. The <a class="reference external" href="../areaDetectorDoxygenHTML/classpilatus_detector.html">pilatusDetector class
+documentation</a>
+describes this class in detail.</p>
+</section>
+<section id="implementation-of-standard-driver-parameters">
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">Implementation of standard driver parameters</a><a class="headerlink" href="#implementation-of-standard-driver-parameters" title="Permalink to this heading"></a></h2>
+<p>The following table describes how the Pilatus driver implements some of
+the standard driver parameters.</p>
+<table class="table-bordered table-striped table-hover docutils align-default">
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 67%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head" colspan="3"><p><strong>Parameter Definitions in pilatusDetector.cpp and EPICS Record Definitions in pilatus.template</strong></p></th>
+</tr>
+<tr class="row-even"><th class="head"><p>Parameter index variable</p></th>
+<th class="head"><p>EPICS record name</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-odd"><td><p>ADTriggerMode</p></td>
+<td><p>$(P)$(R)TriggerMode</p></td>
+<td><p>The driver redefines the choices for the ADTriggerMode parameter (record $(P)$(R)TriggerMode) from ADDriver.h. The choices for the Pilatus are: <br>
+<code class="docutils literal notranslate"><span class="pre">Internal</span></code> (external signal not used)  <br>
+<code class="docutils literal notranslate"><span class="pre">External</span> <span class="pre">Enable</span></code> (count while external trigger line is high, readout on high to low transition) <br>
+<code class="docutils literal notranslate"><span class="pre">External</span> <span class="pre">Trigger</span></code> (begin acquisition sequence on high to low transition of external trigger line) <br>
+<code class="docutils literal notranslate"><span class="pre">Multiple</span> <span class="pre">External</span> <span class="pre">Trigger</span></code> (high to low transition on external signal triggers a single acquisition for the programmed exposure time) <br>
+<code class="docutils literal notranslate"><span class="pre">Alignment</span></code> (collect images as fast as exposure time and readout permit, images written to a temporary file) <br>
+The first 4 modes correspond directly to the camserver commands Exposure, ExtEnable, ExtTrigger, and ExtMTrigger respectively.
+Alignment mode uses the Exposure command as well, but continuously takes images into the same temporary file (alignment.tif).</p></td>
+</tr>
+<tr class="row-even"><td><p>ADAcquireTime</p></td>
+<td><p>$(P)$(R)AcquireTime</p></td>
+<td><p>Controls the acquisition time in all modes except External Enable. In External Enable mode the timing is controlled entirely by the external trigger line.
+However, even in ExternalEnable mode AcquireTime is used by camserver and by the driver to estimate how long the acquisition will take.
+Hardware timeouts will occur if the actual time to acquire differs significantly from the estimated time based on AcquireTime and AcquirePeriod.</p></td>
+</tr>
+<tr class="row-odd"><td><p>ADNumImages</p></td>
+<td><p>$(P)$(R)NumImages</p></td>
+<td><p>Controls the number of images to acquire. It applies in all trigger modes except Alignment.</p></td>
+</tr>
+<tr class="row-even"><td><p>ADAcquirePeriod</p></td>
+<td><p>$(P)$(R)AcquirePeriod</p></td>
+<td><p>Controls the exposure period in seconds in Internal or External Trigger modes when NumImages &gt;1.
+In External Enable mode the timing is controlled entirely by the external trigger line.
+However, even in ExternalEnable mode AcquirePeriod is used by camserver and by the driver to estimate how long the acquisition will take.
+Hardware timeouts will occur if the actual time to acquire differs significantly from the estimated time based on AcquireTime and AcquirePeriod.</p></td>
+</tr>
+<tr class="row-odd"><td><p>ADNumExposures</p></td>
+<td><p>$(P)$(R)NumExposures</p></td>
+<td><p>Controls the number of exposures per image. It is most useful in External Enable mode, but it can be set in any mode.</p></td>
+</tr>
+<tr class="row-even"><td><p>ADAcquire</p></td>
+<td><p>$(P)$(R)Acquire</p></td>
+<td><p>Controls the acquisition. Setting this to 1 starts image acquisition. The driver sets the record to 0 when acquisition is complete.
+This means an entire acquisition series if NImages &gt;1. Setting this to 0 aborts an acquisition.
+If the driver was currently acquiring imges then this record will cause the “Stop” and “K” (Kill) commands to be sent to camserver.</p></td>
+</tr>
+<tr class="row-odd"><td><p>NDFilePath</p></td>
+<td><p>$(P)$(R)FilePath</p></td>
+<td><p>Controls the path for saving images.
+It must be a valid path for camserver and for the areaDetector driver, which is normally running in an EPICS IOC.
+If camserver and the EPICS IOC are not running on the same machine then soft links will typically be used to make the paths look identical.</p></td>
+</tr>
+<tr class="row-even"><td><p>NDFileTemplate</p></td>
+<td><p>$(P)$(R)FileTemplate</p></td>
+<td><p>camserver uses the file extension to determine what format to save the files in.
+The areaDetector Pilatus driver only supports TIFF and CBF files, so the extension should be .tif or .cbf.
+When saving multiple images (NImages&gt;1) camserver has its own rules for creating the names of the individual files. The rules are as follows.
+The name constructed using the algorithm described for NDFileTemplate under File Saving Parameters is used as a basename.
+The following examples show the interpretation of the basename.</p>
+<blockquote>
+<div><p>Basename:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">test6</span><span class="o">.</span><span class="n">tif</span>           <span class="n">test6_00000</span><span class="o">.</span><span class="n">tif</span><span class="p">,</span>  <span class="n">test6_00001</span><span class="o">.</span><span class="n">tif</span><span class="p">,</span> <span class="o">...</span>
+<span class="n">test6_</span><span class="o">.</span><span class="n">tif</span>          <span class="n">test6_00000</span><span class="o">.</span><span class="n">tif</span><span class="p">,</span>  <span class="n">test6_00001</span><span class="o">.</span><span class="n">tif</span><span class="p">,</span> <span class="o">...</span>
+<span class="n">test6_014</span><span class="o">.</span><span class="n">tif</span>       <span class="n">test6_014</span><span class="o">.</span><span class="n">tif</span><span class="p">,</span>    <span class="n">test6_015</span><span class="o">.</span><span class="n">tif</span><span class="p">,</span> <span class="o">...</span>
+<span class="n">test6_0008</span><span class="o">.</span><span class="n">tif</span>      <span class="n">test6_0008</span><span class="o">.</span><span class="n">tif</span><span class="p">,</span>   <span class="n">test6_0009</span><span class="o">.</span><span class="n">tif</span><span class="p">,</span> <span class="o">...</span>
+</pre></div>
+</div>
+<p>The numbers following the last ‘_’ are taken as a format template, and as a start value. The minimum format is 3; there is no maximum; the default is 5. The format is also constrained by the requested number of images.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p>It is useful to load and enable an NDPluginStats plugin that gets its
+data from the Pilatus driver. The MaxValue_RBV PV for that plugin can be
+monitored to make sure that the 20-bit limit of 1,048,575 is not being
+approached in any pixel.</p>
+</section>
+<section id="pilatus-specific-parameters">
+<h2><a class="toc-backref" href="#id5" role="doc-backlink">Pilatus specific parameters</a><a class="headerlink" href="#pilatus-specific-parameters" title="Permalink to this heading"></a></h2>
+<p>The Pilatus driver implements the following parameters in addition to
+those in asynNDArrayDriver.h and ADDriver.h:. Note that to reduce the
+width of this table the parameter index variable names have been split
+into 2 lines, but these are just a single name, for example
+<code class="docutils literal notranslate"><span class="pre">PilatusDelayTime</span></code>.</p>
+<table class="table-bordered table-striped table-hover docutils align-default">
+<colgroup>
+<col style="width: 70%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head" colspan="4"><p><em>Parameter Definitions in pilatusDetector.cpp and EPICS Record Definitions in pilatus.template*</em></p></th>
+</tr>
+<tr class="row-even"><th class="head"><p>Description</p></th>
+<th class="head"><p>drvInfo string</p></th>
+<th class="head"><p>EPICS record name</p></th>
+<th class="head"><p>EPICS record type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-odd"><td><p>Delay in seconds between the external trigger and the start of image acquisition. It only applies in External Trigger mode</p></td>
+<td><p>DELAY_TIME</p></td>
+<td><p>$(P)$(R)DelayTime</p></td>
+<td><p>ao</p></td>
+</tr>
+<tr class="row-even"><td><p>Threshold energy in keV. camserver uses this value to set the discriminators in each pixel.
+It is typically set to the incident x-ray energy ($(P)$(R)Energy), but sometimes other values may be preferable.</p></td>
+<td><p>THRESHOLD</p></td>
+<td><p>$(P)$(R)ThresholdEnergy, $(P)$(R)ThresholdEnergy_RBV</p></td>
+<td><p>ao, ai</p></td>
+</tr>
+<tr class="row-odd"><td><p>Apply the threshold value.
+Setting the threshold can be a time consuming operation, so if ThresholdAutoApply is No then ThresholdApply must be processed to actually send the threshold to camserver.</p></td>
+<td><p>THRESHOLD_APPLY</p></td>
+<td><p>$(P)$(R)ThresholdApply</p></td>
+<td><p>busy</p></td>
+</tr>
+<tr class="row-even"><td><p>Apply the threshold value.
+Setting the threshold can be a time consuming operation, so if ThresholdAutoApply is No then ThresholdApply must be processed to actually send the threshold to camserver.</p></td>
+<td><p>THRESHOLD_APPLY</p></td>
+<td><p>$(P)$(R)ThresholdApply</p></td>
+<td><p>busy</p></td>
+</tr>
+<tr class="row-odd"><td><p>Automatically apply the threshold value whenever it changes.
+Setting the threshold can be a time consuming operation, so if ThresholdAutoApply is No then ThresholdApply must be processed to actually send the threshold to camserver.
+If it is Yes then the threshold value will be sent to camserver whenever it is changed.</p></td>
+<td><p>THRESHOLD_AUTO_APPLY</p></td>
+<td><p>$(P)$(R)ThresholdAutoApply, $(P)$(R)ThresholdAutoApply_RBV</p></td>
+<td><p>bo, bi</p></td>
+</tr>
+<tr class="row-even"><td><p>X-ray energy in keV. This is used by camserver to calculate the proper flat field corrrection.
+If Energy is 0 then the energy value sent to camserver is ThresholdEnergy*2.</p></td>
+<td><p>ENERGY</p></td>
+<td><p>$(P)$(R)Energy, $(P)$(R)Energy_RBV</p></td>
+<td><p>ao, ai</p></td>
+</tr>
+<tr class="row-odd"><td><p>The value that camserver should write to the data file for the gaps between pixels in the detector. Choices are -2, 0, and -1.</p></td>
+<td><p>GAP_FILL</p></td>
+<td><p>$(P)$(R)GapFill, $(P)$(R)GapFill_RBV</p></td>
+<td><p>mbbo, mbbi</p></td>
+</tr>
+<tr class="row-even"><td><dl class="simple">
+<dt>Gain menu. Controls the value of Vrf, which determines the shaping time and gain of the input amplifiers. The allowed values are: <br></dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Fast/Low</span></code> Fastest shaping time (~125ns) and lowest gain. <br></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Medium/Medium</span></code> Medium shaping time (~200 ns) and medium gain. <br></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Slow/High</span></code> Slow shaping time (~400 ns) and high gain. <br></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Slow/Ultrahigh</span></code> Slowest peaking time (? ns) and highest gain. <br></p></li>
+</ul>
+</dd>
+</dl>
+<p>This is only used on older Pilatus detectors, not the newer ones.</p>
+</td>
+<td><p>N/A</p></td>
+<td><p>$(P)$(R)GainMenu</p></td>
+<td><p>mbbo</p></td>
+</tr>
+<tr class="row-odd"><td><p>Flag to indicate when the Pilatus is ready to accept external trigger signals (0=not ready, 1=ready). This should be used by clients to indicate when it is OK to start sending trigger pulses to the Pilatus. If pulses are send before Armed=1 then the Pilatus may miss them, leading to DMA timeout errors from camserver</p></td>
+<td><p>ARMED</p></td>
+<td><p>$(P)$(R)Armed</p></td>
+<td><p>bi</p></td>
+</tr>
+<tr class="row-even"><td><p>Processing this record sends the “ResetModulePower delayTime” command to camserver.
+This cycles the high voltage and other detector supply voltages.
+This is particularly useful with the CdTe detectors when they have been exposed to a very strong signal.
+Cycling the power can erase the memory effects of oversaturation.
+The delayTime controls the amount of time to wait after turning off the power before turning it back on again.
+It is set by the ResetPowerTime record.</p></td>
+<td><p>RESET_POWER</p></td>
+<td><p>$(P)$(R)ResetPower</p></td>
+<td><p>bo</p></td>
+</tr>
+<tr class="row-odd"><td><p>This record controls the number of seconds to wait after turning off the power before turning it back on again when the ResetPower record is processed.</p></td>
+<td><p>RESET_POWER_TIME</p></td>
+<td><p>$(P)$(R)ResetPower, $(P)$(R)ResetPower_RBV</p></td>
+<td><p>bo, bi</p></td>
+</tr>
+<tr class="row-even"><td><p>Timeout in seconds when reading a TIFF or CBF file.
+It should be set to several seconds, because there can be delays for various reasons.
+One reason is that there is sometimes a delay between when an External Enable acquisition is started and when the first external pulse occurs.
+Another is that it can take some time for camserver processes to finish writing the files.</p></td>
+<td><p>IMAGE_FILE_TMOT</p></td>
+<td><p>$(P)$(R)ImageFileTmot</p></td>
+<td><p>ao</p></td>
+</tr>
+<tr class="row-odd"><td><p>Name of a file to be used to replace bad pixels.
+If this record does not point to a valid bad pixel file then no bad pixel mapping is performed.
+The bad pixel map is used before making the NDArray callbacks. It does not modify the data in the files that camserver writes.
+This is a simple ASCII file with the following format:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">badX1</span><span class="p">,</span><span class="n">badY1</span> <span class="n">replacementX1</span><span class="p">,</span><span class="n">replacementY1</span>
+<span class="n">badX2</span><span class="p">,</span><span class="n">badY2</span> <span class="n">replacementX2</span><span class="p">,</span><span class="n">replacementY2</span>
+<span class="o">...</span>
+</pre></div>
+</div>
+<p>The X and Y coordinates range from 0 to NXPixels-1 and NYPixels-1.
+Up to 100 bad pixels can be defined.
+The bad pixel mapping simply replaces the bad pixels with another pixel’s value.
+It does not do any averaging.
+It is felt that this is sufficient for the purpose for which this driver was written, namely fast on-line viewing of ROIs and image data.
+More sophisticated algorithms can be used for offline analysis of the image files themselves.
+The following is an example bad pixel file for a GSECARS detector:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">263</span><span class="p">,</span><span class="mi">3</span>   <span class="mi">262</span><span class="p">,</span><span class="mi">3</span>
+<span class="mi">264</span><span class="p">,</span><span class="mi">3</span>   <span class="mi">266</span><span class="p">,</span><span class="mi">3</span>
+<span class="mi">263</span><span class="p">,</span><span class="mi">3</span>   <span class="mi">266</span><span class="p">,</span><span class="mi">3</span>
+<span class="mi">300</span><span class="p">,</span><span class="mi">85</span>  <span class="mi">299</span><span class="p">,</span><span class="mi">85</span>
+<span class="mi">300</span><span class="p">,</span><span class="mi">86</span>  <span class="mi">299</span><span class="p">,</span><span class="mi">86</span>
+<span class="mi">471</span><span class="p">,</span><span class="mi">129</span> <span class="mi">472</span><span class="p">,</span><span class="mi">129</span>
+</pre></div>
+</div>
+</td>
+<td><p>BAD_PIXEL_FILE</p></td>
+<td><p>$(P)$(R)BadPixelFile</p></td>
+<td><p>waveform</p></td>
+</tr>
+<tr class="row-even"><td><p>The number of bad pixels defined in the bad pixel file. Useful for seeing if the bad pixel file was read correctly.</p></td>
+<td><p>NUM_BAD_PIXELS</p></td>
+<td><p>$(P)$(R)NumBadPixels</p></td>
+<td><p>longin</p></td>
+</tr>
+<tr class="row-odd"><td><p>Name of a file to be used to correct for the flat field.
+If this record does not point to a valid flat field file then no flat field correction is performed.
+The flat field file is simply a TIFF or CBF file collected by the Pilatus that is used to correct for spatial non-uniformity in the response of the detector.
+It should be collected with a spatially uniform intensity on the detector at roughly the same energy as the measurements being corrected.
+When the flat field file is read, the average pixel value (averageFlatField) is computed using all pixels with intensities &gt; PilatusMinFlatField.
+All pixels with intensity &lt;PilatusMinFlatField in the flat field are replaced with averageFlatField.
+When images are collected before the NDArray callbacks are performed the following per-pixel correction is applied:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ImageData</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span>
+<span class="p">(</span><span class="n">averageFlatField</span> <span class="o">*</span>
+<span class="n">ImageData</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="o">/</span><span class="n">flatField</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+</pre></div>
+</div>
+</td>
+<td><p>FLAT_FIELD_FILE</p></td>
+<td><p>$(P)$(R)FlatFieldFile</p></td>
+<td><p>waveform</p></td>
+</tr>
+<tr class="row-even"><td><p>The mimimum valid intensity in the flat field.
+This value must be set &gt; 0 to prevent divide by 0 errors.
+If the flat field was collected with some pixels having very low intensity then this value can be used to replace those pixels with the average response.</p></td>
+<td><p>MIN_FLAT_FIELD</p></td>
+<td><p>$(P)$(R)MinFlatField</p></td>
+<td><p>longout</p></td>
+</tr>
+<tr class="row-odd"><td><p>This record indicates if a valid flat field file has been read. 0=No, 1=Yes.</p></td>
+<td><p>FLAT_FIELD_VALID</p></td>
+<td><p>$(P)$(R)FlatFieldValid</p></td>
+<td><p>bi</p></td>
+</tr>
+<tr class="row-even"><td><p>MX wavelength to write to CBF and TIFF image header.</p></td>
+<td><p>WAVELENGTH</p></td>
+<td><p>$(P)$(R)Wavelength</p></td>
+<td><p>ao</p></td>
+</tr>
+<tr class="row-odd"><td><p>MX energy range low value to write to CBF and TIFF image header.</p></td>
+<td><p>ENERGY_LOW</p></td>
+<td><p>$(P)$(R)EnergyLow</p></td>
+<td><p>ao</p></td>
+</tr>
+<tr class="row-even"><td><p>MX energy range high value to write to CBF and TIFF image header.</p></td>
+<td><p>ENERGY_HIGH</p></td>
+<td><p>$(P)$(R)EnergyHigh</p></td>
+<td><p>ao</p></td>
+</tr>
+<tr class="row-odd"><td><p>MX detector distance to write to CBF and TIFF image header.</p></td>
+<td><p>DET_DIST</p></td>
+<td><p>$(P)$(R)DetDist</p></td>
+<td><p>ao</p></td>
+</tr>
+<tr class="row-even"><td><p>MX detector vertical offset to write to CBF and TIFF image header.</p></td>
+<td><p>DET_VOFFSET</p></td>
+<td><p>$(P)$(R)DetVOffset</p></td>
+<td><p>ao</p></td>
+</tr>
+<tr class="row-odd"><td><p>MX beam X to write to CBF and TIFF image header.</p></td>
+<td><p>BEAM_X</p></td>
+<td><p>$(P)$(R)BeamX</p></td>
+<td><p>ao</p></td>
+</tr>
+<tr class="row-even"><td><p>MX beam Y to write to CBF and TIFF image header.</p></td>
+<td><p>BEAM_Y</p></td>
+<td><p>$(P)$(R)BeamY</p></td>
+<td><p>ao</p></td>
+</tr>
+<tr class="row-odd"><td><p>MX flux to write to CBF and TIFF image header.</p></td>
+<td><p>FLUX</p></td>
+<td><p>$(P)$(R)Flux</p></td>
+<td><p>ao</p></td>
+</tr>
+<tr class="row-even"><td><p>MX filter transmission to write to CBF and TIFF image header.</p></td>
+<td><p>FILTER_TRANSM</p></td>
+<td><p>$(P)$(R)FilterTransm</p></td>
+<td><p>ao</p></td>
+</tr>
+<tr class="row-odd"><td><p>MX start angle to write to CBF and TIFF image header.
+When saving multiple images (ADNumImages&gt;1) camserver will automatically increment the field in the image header by PilatusAngleIncr for each image.</p></td>
+<td><p>START_ANGLE</p></td>
+<td><p>$(P)$(R)StartAngle</p></td>
+<td><p>ao</p></td>
+</tr>
+<tr class="row-even"><td><p>MX angle increment to write to CBF and TIFF image header.
+When saving multiple images (ADNumImages&gt;1) camserver will automatically increment the field corresponding to PilatusStartAngle
+in the image header by this value for each image.</p></td>
+<td><p>ANGLE_INCR</p></td>
+<td><p>$(P)$(R)AngleIncr</p></td>
+<td><p>ao</p></td>
+</tr>
+<tr class="row-odd"><td><p>MX detector 2theta to write to CBF and TIFF image header.</p></td>
+<td><p>DET_2THETA</p></td>
+<td><p>$(P)$(R)Det2theta</p></td>
+<td><p>ao</p></td>
+</tr>
+<tr class="row-even"><td><p>MX polarization to write to CBF and TIFF image header.</p></td>
+<td><p>POLARIZATION</p></td>
+<td><p>$(P)$(R)Polarization</p></td>
+<td><p>ao</p></td>
+</tr>
+<tr class="row-odd"><td><p>MX alpha to write to CBF and TIFF image header.</p></td>
+<td><p>ALPHA</p></td>
+<td><p>$(P)$(R)Alpha</p></td>
+<td><p>ao</p></td>
+</tr>
+<tr class="row-even"><td><p>MX kappa to write to CBF and TIFF image header.</p></td>
+<td><p>KAPPA</p></td>
+<td><p>$(P)$(R)Kappa</p></td>
+<td><p>ao</p></td>
+</tr>
+<tr class="row-odd"><td><p>MX phi to write to CBF and TIFF image header.</p></td>
+<td><p>PHI</p></td>
+<td><p>$(P)$(R)Phi</p></td>
+<td><p>ao</p></td>
+</tr>
+<tr class="row-even"><td><p>MX phi increment to write to CBF and TIFF image header</p></td>
+<td><p>PHI_INCR</p></td>
+<td><p>$(P)$(R)PhiIncr</p></td>
+<td><p>ao</p></td>
+</tr>
+<tr class="row-odd"><td><p>MX chi to write to CBF and TIFF image header.</p></td>
+<td><p>CHI</p></td>
+<td><p>$(P)$(R)Chi</p></td>
+<td><p>ao</p></td>
+</tr>
+<tr class="row-even"><td><p>MX chi increment to write to CBF and TIFF image header</p></td>
+<td><p>CHI_INCR</p></td>
+<td><p>$(P)$(R)ChiIncr</p></td>
+<td><p>ao</p></td>
+</tr>
+<tr class="row-odd"><td><p>MX omega to write to CBF and TIFF image header.</p></td>
+<td><p>OMEGA</p></td>
+<td><p>$(P)$(R)Omega</p></td>
+<td><p>ao</p></td>
+</tr>
+<tr class="row-even"><td><p>MX omega increment to write to CBF and TIFF image header</p></td>
+<td><p>OMEGA_INCR</p></td>
+<td><p>$(P)$(R)OmegaIncr</p></td>
+<td><p>ao</p></td>
+</tr>
+<tr class="row-odd"><td><p>MX oscillation axis text, up to 18 characters in length, to write to CBF and TIFF image header.</p></td>
+<td><p>OSCILL_AXIS</p></td>
+<td><p>$(P)$(R)OscillAxis</p></td>
+<td><p>stringout</p></td>
+</tr>
+<tr class="row-even"><td><p>MX number of oscillations to write to CBF and TIFF image header.</p></td>
+<td><p>NUM_OSCILL</p></td>
+<td><p>$(P)$(R)NumOscill</p></td>
+<td><p>longout</p></td>
+</tr>
+<tr class="row-odd"><td><p>Template file to be used to obtain all of the MX parameters above. Set the name of this file to “0” to disable the template file.</p></td>
+<td><p>CBFTEMPLATEFILE</p></td>
+<td><p>$(P)$(R)CbfTemplateFile</p></td>
+<td><p>waveform</p></td>
+</tr>
+<tr class="row-even"><td><p>Header string to write in the COMMENT field of the CBF file.</p></td>
+<td><p>HEADERSTRING</p></td>
+<td><p>$(P)$(R)HeaderString</p></td>
+<td><p>waveform</p></td>
+</tr>
+<tr class="row-odd"><td><p>Maximum possible count rate per pixel.</p></td>
+<td><p>PIXEL_CUTOFF</p></td>
+<td><p>$(P)$(R)PixelCutOff_RBV</p></td>
+<td><p>ai</p></td>
+</tr>
+<tr class="row-even"><td><p>Temperature readout 0.</p></td>
+<td><p>TH_TEMP_0</p></td>
+<td><p>$(P)$(R)Temp0_RBV</p></td>
+<td><p>ai</p></td>
+</tr>
+<tr class="row-odd"><td><p>Temperature readout 1.</p></td>
+<td><p>TH_TEMP_1</p></td>
+<td><p>$(P)$(R)Temp1_RBV</p></td>
+<td><p>ai</p></td>
+</tr>
+<tr class="row-even"><td><p>Temperature readout 2.</p></td>
+<td><p>TH_TEMP_2</p></td>
+<td><p>$(P)$(R)Temp2_RBV</p></td>
+<td><p>ai</p></td>
+</tr>
+<tr class="row-odd"><td><p>Humidity readout 0.</p></td>
+<td><p>TH_HUMID_0</p></td>
+<td><p>$(P)$(R)Humid0_RBV</p></td>
+<td><p>ai</p></td>
+</tr>
+<tr class="row-even"><td><p>Humidity readout 1.</p></td>
+<td><p>TH_HUMID_1</p></td>
+<td><p>$(P)$(R)Humid1_RBV</p></td>
+<td><p>ai</p></td>
+</tr>
+<tr class="row-odd"><td><p>Humidity readout 2.</p></td>
+<td><p>TH_HUMID_2</p></td>
+<td><p>$(P)$(R)Humid2_RBV</p></td>
+<td><p>ai</p></td>
+</tr>
+<tr class="row-even"><td><p>Version of TVX and camserver. This record is redundant with the SDKVersion_RBV record added in ADCore R2-6, which should be used instead.</p></td>
+<td><p>TVXVERSION</p></td>
+<td><p>$(P)$(R)TVXVersion_RBV</p></td>
+<td><p>stringin</p></td>
+</tr>
+<tr class="row-odd"><td><p>asyn record to control debugging communication with camserver.
+Setting the CNCT field in this record to <code class="docutils literal notranslate"><span class="pre">Disconnect</span></code> causes the drvAsynIPPort server to disconnect from camserver.
+This can be used to allow another program, such as TVX, to temporarily take control of camserver, without restarting the EPICS IOC.
+Set CNCT to <code class="docutils literal notranslate"><span class="pre">Connect</span></code> to reconnect the IOC to camserver, or simply process any record which communicates with camserver,
+because the driver will automatically reconnect.</p></td>
+<td><p>N/A</p></td>
+<td><p>$(P)$(R)CamserverAsyn</p></td>
+<td><p>asyn</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="configuration">
+<h2><a class="toc-backref" href="#id6" role="doc-backlink">Configuration</a><a class="headerlink" href="#configuration" title="Permalink to this heading"></a></h2>
+<p>The pilatusDetector driver is created with the pilatusDetectorConfig
+command, either from C/C++ or from the EPICS IOC shell.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span> <span class="n">pilatusDetectorConfig</span><span class="p">(</span><span class="n">const</span> <span class="n">char</span> <span class="o">*</span><span class="n">portName</span><span class="p">,</span> <span class="n">const</span> <span class="n">char</span> <span class="o">*</span><span class="n">camserverPort</span><span class="p">,</span>
+                          <span class="nb">int</span> <span class="n">maxSizeX</span><span class="p">,</span> <span class="nb">int</span> <span class="n">maxSizeY</span><span class="p">,</span>
+                          <span class="nb">int</span> <span class="n">maxBuffers</span><span class="p">,</span> <span class="n">size_t</span> <span class="n">maxMemory</span><span class="p">,</span>
+                          <span class="nb">int</span> <span class="n">priority</span><span class="p">,</span> <span class="nb">int</span> <span class="n">stackSize</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>For details on the meaning of the parameters to this function refer to
+the detailed documentation on the pilatusDetectorConfig function in the
+<a class="reference external" href="areaDetectorDoxygenHTML/pilatus_detector_8cpp.html">pilatusDetector.cpp documentation</a>
+and in the documentation for the constructor for the
+<a class="reference external" href="areaDetectorDoxygenHTML/classpilatus_detector.html">pilatusDetector class</a>.</p>
+</section>
+<section id="example-st-cmd-startup-file">
+<h2><a class="toc-backref" href="#id7" role="doc-backlink">Example st.cmd startup file</a><a class="headerlink" href="#example-st-cmd-startup-file" title="Permalink to this heading"></a></h2>
+<p>The following startup script is provided with ADPilatus.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&lt; envPaths
+errlogInit(20000)
+
+dbLoadDatabase(&quot;$(TOP)/dbd/pilatusDetectorApp.dbd&quot;)
+pilatusDetectorApp_registerRecordDeviceDriver(pdbbase) 
+
+# Prefix for all records
+epicsEnvSet(&quot;PREFIX&quot;, &quot;13PIL1:&quot;)
+# The port name for the detector
+epicsEnvSet(&quot;PORT&quot;,   &quot;PIL&quot;)
+# The queue size for all plugins
+epicsEnvSet(&quot;QSIZE&quot;,  &quot;20&quot;)
+# The maximim image width; used for row profiles in the NDPluginStats plugin
+epicsEnvSet(&quot;XSIZE&quot;,  &quot;487&quot;)
+# The maximim image height; used for column profiles in the NDPluginStats plugin
+epicsEnvSet(&quot;YSIZE&quot;,  &quot;195&quot;)
+# The maximum number of time seried points in the NDPluginStats plugin
+epicsEnvSet(&quot;NCHANS&quot;, &quot;2048&quot;)
+# The maximum number of frames buffered in the NDPluginCircularBuff plugin
+epicsEnvSet(&quot;CBUFFS&quot;, &quot;500&quot;)
+# The search path for database files
+epicsEnvSet(&quot;EPICS_DB_INCLUDE_PATH&quot;, &quot;$(ADCORE)/db&quot;)
+
+###
+# Create the asyn port to talk to the Pilatus on port 41234.
+drvAsynIPPortConfigure(&quot;camserver&quot;,&quot;gse-pilatus1:41234&quot;)
+# Uncomment the following to enable asynTrace on the camserver port
+#asynSetTraceIOMask(&quot;camserver&quot;,0,2)
+#asynSetTraceMask(&quot;camserver&quot;,0,9)
+# Set the input and output terminators.
+asynOctetSetInputEos(&quot;camserver&quot;, 0, &quot;\0x18&quot;)
+asynOctetSetOutputEos(&quot;camserver&quot;, 0, &quot;\n&quot;)
+
+pilatusDetectorConfig(&quot;$(PORT)&quot;, &quot;camserver&quot;, $(XSIZE), $(YSIZE), 0, 0)
+dbLoadRecords(&quot;$(ADPILATUS)/db/pilatus.template&quot;,&quot;P=$(PREFIX),R=cam1:,PORT=$(PORT),ADDR=0,TIMEOUT=1,CAMSERVER_PORT=camserver&quot;)
+
+# Create a standard arrays plugin
+NDStdArraysConfigure(&quot;Image1&quot;, 5, 0, &quot;$(PORT)&quot;, 0, 0)
+dbLoadRecords(&quot;$(ADCORE)/db/NDStdArrays.template&quot;, &quot;P=$(PREFIX),R=image1:,PORT=Image1,ADDR=0,TIMEOUT=1,NDARRAY_PORT=$(PORT),TYPE=Int32,FTVL=LONG,NELEMENTS=94965&quot;)
+
+# Load all other plugins using commonPlugins.cmd
+&lt; $(ADCORE)/iocBoot/commonPlugins.cmd
+set_requestfile_path(&quot;$(ADPILATUS)/pilatusApp/Db&quot;)
+
+# Uncomment to enable asynTrace on the driver port
+#asynSetTraceMask(&quot;$(PORT)&quot;,0,255)
+
+
+iocInit()
+
+# save things every thirty seconds
+create_monitor_set(&quot;auto_settings.req&quot;, 30,&quot;P=$(PREFIX)&quot;)
+</pre></div>
+</div>
+</section>
+<section id="medm-screens">
+<span id="id1"></span><h2><a class="toc-backref" href="#id8" role="doc-backlink">MEDM screens</a><a class="headerlink" href="#medm-screens" title="Permalink to this heading"></a></h2>
+<p>The following show the MEDM screens that are used to control the Pilatus
+detector. Note that the general purpose screen ADBase.adl can be used,
+but it exposes many controls that are not applicable to the Pilatus.</p>
+<p><code class="docutils literal notranslate"><span class="pre">pilatusDetector.adl</span></code> is the main screen used to control the Pilatus
+driver.</p>
+<figure class="align-center">
+<img alt="../_images/pilatusDetector.png" src="../_images/pilatusDetector.png" />
+</figure>
+<p><code class="docutils literal notranslate"><span class="pre">pilatusAncillary.adl</span></code> is the screen used to control define the
+metadata that will be written to the Pilatus data file.</p>
+<figure class="align-center">
+<img alt="../_images/pilatusAncillary.png" src="../_images/pilatusAncillary.png" />
+</figure>
+<p><code class="docutils literal notranslate"><span class="pre">NDROI4.adl</span></code> is used to define the ROIs. In this example there are 3
+valid ROIs defined. ROI 1 is the entire detector, ROI 2 is a 300x50
+rectangle starting at [100,60], and ROI 3 is a 50x30 rectangle starting
+at [220,70].</p>
+<figure class="align-center">
+<img alt="../_images/pilatusROI4.png" src="../_images/pilatusROI4.png" />
+</figure>
+<p><code class="docutils literal notranslate"><span class="pre">NDStats5.adl</span></code> is used to display the statistics in the ROIs defined
+above.</p>
+<figure class="align-center">
+<img alt="../_images/pilatusStats5.png" src="../_images/pilatusStats5.png" />
+</figure>
+<p><code class="docutils literal notranslate"><span class="pre">mca.adl</span> <span class="pre">or</span> <span class="pre">mca_small.adl</span></code> can be used to plot the net or total counts
+in an ROI when NImages&gt;1. In this example the plot is the net counts in
+ROI 1 as the diffractometer chi was scanned +- 1 degree with 1000 points
+at .02 seconds/point. This was done with the SPEC command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">lup</span> <span class="n">chi</span> <span class="o">-</span><span class="mi">1</span> <span class="mi">1</span> <span class="mi">1000</span> <span class="mf">.02</span>
+</pre></div>
+</div>
+<p>using trajectory scanning on a Newport kappa diffractometer. This was a
+compound motor scan with the Newport XPS putting out pulses every .02
+seconds. These pulses triggered the Pilatus in External Enable mode. The
+Pilatus driver read each TIFF file as it was created and updated this
+plot every 0.2 seconds. The total time to collect this scan with 1000
+images was 20.8 seconds.</p>
+<figure class="align-center">
+<img alt="../_images/pilatusMCA.png" src="../_images/pilatusMCA.png" />
+</figure>
+<p><code class="docutils literal notranslate"><span class="pre">scan_more.adl</span></code> is used to define a scan. In this example the sscan
+record is set up to scan the ThresholdEnergy PV and to collect the total
+counts in ROI2, which was defined to include the entire detector.</p>
+<figure class="align-center">
+<img alt="../_images/pilatusThresholdScanSetup.png" src="../_images/pilatusThresholdScanSetup.png" />
+</figure>
+<p><code class="docutils literal notranslate"><span class="pre">scanDetPlot.adl</span></code> is used to plot the results of a scan after it is
+complete. In this example the total counts in ROI 1 are plotted as a
+function of the ThresholdEnergy as it was scanned from 3000 to 10000 eV
+in 250 eV steps. The source was Fe55, and the cut-off is at 6 keV, as
+expected for the Mn Ka and Mn Kb x-rays that this source produces.</p>
+<figure class="align-center">
+<img alt="../_images/pilatusThresholdScanPlot.png" src="../_images/pilatusThresholdScanPlot.png" />
+</figure>
+<p><code class="docutils literal notranslate"><span class="pre">asynRecord.adl</span></code> is used to control the debugging information printed
+by the asyn TCP/IP driver for camserver (asynTraceIODriver).</p>
+<figure class="align-center">
+<img alt="../_images/pilatusAsyn.png" src="../_images/pilatusAsyn.png" />
+</figure>
+<p><code class="docutils literal notranslate"><span class="pre">asynOctet.adl</span></code> can be used to send any command to camserver and
+display the response. It can be loaded from the More menu in
+asynRecord.adl above.</p>
+<figure class="align-center">
+<img alt="../_images/pilatusAsynOctet.png" src="../_images/pilatusAsynOctet.png" />
+</figure>
+</section>
+<section id="spec-interface">
+<h2><a class="toc-backref" href="#id9" role="doc-backlink">SPEC interface</a><a class="headerlink" href="#spec-interface" title="Permalink to this heading"></a></h2>
+<p>At the GSECARS beamlines (13-ID-C and 13-BM-C) at the APS we use SPEC to
+control our Newport diffractometers. We have added and modified SPEC
+macros to use the pilatusDetector areaDetector driver to treat the
+Pilatus detector as a SPEC counter. This works in both traditional
+step-scanning mode, as well as in <a class="reference external" href="https://cars.uchicago.edu/software/epics/trajectoryScan.html">trajectory
+scanning</a>
+mode. Here are some snippets from the SPEC macros for the Pilatus. We
+can supply the source files on request.:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="c1"># need some more globals (kludge)</span>
+<span class="k">global</span>    <span class="n">PILATUS_ROI_PV</span>
+<span class="k">global</span>    <span class="n">PILATUS_ROI_ARRAY_PV</span>
+<span class="k">global</span>    <span class="n">PILATUS_ROI_ARRAY_START_PV</span>
+<span class="k">global</span>    <span class="n">PILATUS_ROI_ARRAY_NUSE_PV</span>
+<span class="k">global</span>    <span class="n">PILATUS_ROI_ARRAY_ACQ_PV</span>
+<span class="k">global</span>    <span class="n">PILATUS_IMGPATH_PV</span>
+<span class="k">global</span>    <span class="n">PILATUS_FNAME_PV</span>
+<span class="k">global</span>    <span class="n">PILATUS_FILENUMBER_PV</span>
+<span class="k">global</span>    <span class="n">PILATUS_FILEFORMAT_PV</span>
+<span class="k">global</span>    <span class="n">PILATUS_EXPSRTM_PV</span>
+<span class="k">global</span>    <span class="n">PILATUS_NFRAME_PV</span>
+<span class="k">global</span>    <span class="n">PILATUS_EXPPRD_PV</span>
+<span class="k">global</span>    <span class="n">PILATUS_NEXPFRM_PV</span>
+<span class="k">global</span>    <span class="n">PILATUS_ACQ_PV</span>
+<span class="k">global</span>    <span class="n">PILATUS_ARMED_PV</span>
+<span class="k">global</span>    <span class="n">PILATUS_ABORT_PV</span>
+<span class="k">global</span>    <span class="n">PILATUS_ACQMODE_PV</span>
+<span class="k">global</span>    <span class="n">PILATUS_READOUT_TIME</span>
+
+<span class="k">global</span>    <span class="n">PILATUS_ROI_0_MinX_PV</span>
+<span class="k">global</span>    <span class="n">PILATUS_ROI_0_SizeX_PV</span>
+<span class="k">global</span>    <span class="n">PILATUS_ROI_0_MinY_PV</span>
+<span class="k">global</span>    <span class="n">PILATUS_ROI_0_SizeY_PV</span>
+
+
+<span class="c1">###############################################################</span>
+<span class="k">def</span> <span class="nf">_setup_img</span> <span class="s1">&#39;{</span>
+<span class="o">...</span>
+     <span class="c1"># PILATUS_PREFIX detector name i.e. (GSE-PILATUS1:)</span>
+     <span class="k">if</span> <span class="p">(</span> <span class="n">PILATUS_PREFIX</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="n">PILATUS_PREFIX</span> <span class="o">=</span> <span class="s2">&quot;GSE-PILATUS1:&quot;</span>
+     <span class="n">PILATUS_PREFIX</span> <span class="o">=</span> <span class="n">getsval</span><span class="p">(</span><span class="s2">&quot;Enter PILATUS detector name i.e. GSE-PILATUS1:&quot;</span><span class="p">,</span><span class="n">PILATUS_PREFIX</span><span class="p">)</span>
+
+     <span class="c1"># PILATUS_DET_PREFIX is the pv used by areaDetector to identify a specific detector.</span>
+     <span class="c1"># When only one detector is used it is usally (cam1:)</span>
+     <span class="k">if</span> <span class="p">(</span> <span class="n">PILATUS_DET_PREFIX</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="n">PILATUS_DET_PREFIX</span> <span class="o">=</span> <span class="s2">&quot;cam1:&quot;</span>
+     <span class="n">PILATUS_DET_PREFIX</span> <span class="o">=</span> <span class="n">getsval</span><span class="p">(</span><span class="s2">&quot;Enter PILATUS specific detector name i.e. cam1:&quot;</span><span class="p">,</span><span class="n">PILATUS_DET_PREFIX</span><span class="p">)</span>
+
+     <span class="c1"># PILATUS_ROI_PREFIX is the pv used by areaDetector to identify a specific a ROI plugin.</span>
+     <span class="c1"># When only one ROI plugin is used it is usally (ROI1:)</span>
+     <span class="k">if</span> <span class="p">(</span> <span class="n">PILATUS_ROI_PREFIX</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="n">PILATUS_DET_PREFIX</span> <span class="o">=</span> <span class="s2">&quot;ROI1:&quot;</span>
+     <span class="n">PILATUS_ROI_PREFIX</span> <span class="o">=</span> <span class="n">getsval</span><span class="p">(</span><span class="s2">&quot;Enter PILATUS ROI plugin name i.e. ROI1:&quot;</span><span class="p">,</span><span class="n">PILATUS_ROI_PREFIX</span><span class="p">)</span>
+
+     <span class="k">if</span> <span class="p">(</span><span class="n">PILATUS_MOUNT</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="n">PILATUS_MOUNT</span> <span class="o">=</span> <span class="s2">&quot;cars5/Data&quot;</span>
+     <span class="n">PILATUS_MOUNT</span> <span class="o">=</span> <span class="n">getsval</span><span class="p">(</span><span class="s2">&quot;Enter mount point relative to camserver home directory&quot;</span><span class="p">,</span><span class="n">PILATUS_MOUNT</span><span class="p">)</span>
+     <span class="k">if</span> <span class="p">(</span><span class="n">PILATUS_SPEC_MOUNT</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="n">PILATUS_SPEC_MOUNT</span> <span class="o">=</span> <span class="s2">&quot;cars5/Data&quot;</span>
+     <span class="n">PILATUS_SPEC_MOUNT</span> <span class="o">=</span> <span class="n">getsval</span><span class="p">(</span><span class="s2">&quot;Enter mount point relative to spec home directory&quot;</span><span class="p">,</span><span class="n">PILATUS_SPEC_MOUNT</span><span class="p">)</span>
+<span class="o">...</span>
+     <span class="n">PILATUS_ROI_PV</span>             <span class="o">=</span> <span class="n">PILATUS_PREFIX</span> <span class="n">PILATUS_ROI_PREFIX</span> <span class="s2">&quot;0:Net_RBV&quot;</span>
+     <span class="n">PILATUS_ROI_ARRAY_PV</span>       <span class="o">=</span> <span class="n">PILATUS_PREFIX</span> <span class="n">PILATUS_ROI_PREFIX</span> <span class="s2">&quot;0:NetArray&quot;</span>
+     <span class="n">PILATUS_ROI_ARRAY_START_PV</span> <span class="o">=</span> <span class="n">PILATUS_PREFIX</span> <span class="n">PILATUS_ROI_PREFIX</span> <span class="s2">&quot;0:NetArrayEraseStart&quot;</span>
+     <span class="n">PILATUS_ROI_ARRAY_NUSE_PV</span>  <span class="o">=</span> <span class="n">PILATUS_PREFIX</span> <span class="n">PILATUS_ROI_PREFIX</span> <span class="s2">&quot;0:NetArray.NUSE&quot;</span>
+     <span class="n">PILATUS_ROI_ARRAY_ACQ_PV</span>   <span class="o">=</span> <span class="n">PILATUS_PREFIX</span> <span class="n">PILATUS_ROI_PREFIX</span> <span class="s2">&quot;0:NetArray.ACQG&quot;</span>
+     <span class="n">PILATUS_IMGPATH_PV</span>         <span class="o">=</span> <span class="n">PILATUS_PREFIX</span> <span class="n">PILATUS_DET_PREFIX</span> <span class="s2">&quot;FilePath&quot;</span>
+     <span class="n">PILATUS_FNAME_PV</span>           <span class="o">=</span> <span class="n">PILATUS_PREFIX</span> <span class="n">PILATUS_DET_PREFIX</span> <span class="s2">&quot;FileName&quot;</span>
+     <span class="n">PILATUS_FILENUMBER_PV</span>      <span class="o">=</span> <span class="n">PILATUS_PREFIX</span> <span class="n">PILATUS_DET_PREFIX</span> <span class="s2">&quot;FileNumber&quot;</span>
+     <span class="n">PILATUS_FILEFORMAT_PV</span>      <span class="o">=</span> <span class="n">PILATUS_PREFIX</span> <span class="n">PILATUS_DET_PREFIX</span> <span class="s2">&quot;FileTemplate&quot;</span>
+     <span class="n">PILATUS_EXPSRTM_PV</span>         <span class="o">=</span> <span class="n">PILATUS_PREFIX</span> <span class="n">PILATUS_DET_PREFIX</span> <span class="s2">&quot;AcquireTime&quot;</span>
+     <span class="n">PILATUS_NFRAME_PV</span>          <span class="o">=</span> <span class="n">PILATUS_PREFIX</span> <span class="n">PILATUS_DET_PREFIX</span> <span class="s2">&quot;NumImages&quot;</span>
+     <span class="n">PILATUS_EXPPRD_PV</span>          <span class="o">=</span> <span class="n">PILATUS_PREFIX</span> <span class="n">PILATUS_DET_PREFIX</span> <span class="s2">&quot;AcquirePeriod&quot;</span>
+     <span class="n">PILATUS_NEXPFRM_PV</span>         <span class="o">=</span> <span class="n">PILATUS_PREFIX</span> <span class="n">PILATUS_DET_PREFIX</span> <span class="s2">&quot;NumExposures&quot;</span>
+     <span class="n">PILATUS_ACQ_PV</span>             <span class="o">=</span> <span class="n">PILATUS_PREFIX</span> <span class="n">PILATUS_DET_PREFIX</span> <span class="s2">&quot;Acquire&quot;</span>
+     <span class="n">PILATUS_ARMED_PV</span>           <span class="o">=</span> <span class="n">PILATUS_PREFIX</span> <span class="n">PILATUS_DET_PREFIX</span> <span class="s2">&quot;Armed&quot;</span>
+     <span class="n">PILATUS_ABORT_PV</span>           <span class="o">=</span> <span class="n">PILATUS_PREFIX</span> <span class="n">PILATUS_DET_PREFIX</span> <span class="s2">&quot;Acquire&quot;</span>
+     <span class="n">PILATUS_ACQMODE_PV</span>         <span class="o">=</span> <span class="n">PILATUS_PREFIX</span> <span class="n">PILATUS_DET_PREFIX</span> <span class="s2">&quot;TriggerMode&quot;</span>
+     <span class="n">PILATUS_THRESHOLD_PV</span>       <span class="o">=</span> <span class="n">PILATUS_PREFIX</span> <span class="n">PILATUS_DET_PREFIX</span> <span class="s2">&quot;ThresholdEnergy&quot;</span>
+     <span class="n">PILATUS_ROI_0_MinX_PV</span>      <span class="o">=</span> <span class="n">PILATUS_PREFIX</span> <span class="n">PILATUS_ROI_PREFIX</span> <span class="s2">&quot;0:MinX&quot;</span>
+     <span class="n">PILATUS_ROI_0_SizeX_PV</span>     <span class="o">=</span> <span class="n">PILATUS_PREFIX</span> <span class="n">PILATUS_ROI_PREFIX</span> <span class="s2">&quot;0:SizeX&quot;</span>
+     <span class="n">PILATUS_ROI_0_MinY_PV</span>      <span class="o">=</span> <span class="n">PILATUS_PREFIX</span> <span class="n">PILATUS_ROI_PREFIX</span> <span class="s2">&quot;0:MinY&quot;</span>
+     <span class="n">PILATUS_ROI_0_SizeY_PV</span>     <span class="o">=</span> <span class="n">PILATUS_PREFIX</span> <span class="n">PILATUS_ROI_PREFIX</span> <span class="s2">&quot;0:SizeY&quot;</span>
+     <span class="n">PILATUS_ROI_0_BgdWidth_PV</span>  <span class="o">=</span> <span class="n">PILATUS_PREFIX</span> <span class="n">PILATUS_ROI_PREFIX</span> <span class="s2">&quot;0:BgdWidth&quot;</span>
+<span class="o">...</span>
+
+<span class="k">def</span> <span class="nf">epics_pilatus_count</span> <span class="s1">&#39;{</span>
+<span class="o">...</span>
+     <span class="c1"># Call macro that creates and set the Pilatus path and filename</span>
+     <span class="n">img_full_filename</span>
+
+     <span class="c1"># Setup exposure time, collection mode and number of frames</span>
+     <span class="n">epics_put</span><span class="p">(</span><span class="n">PILATUS_FILENUMBER_PV</span><span class="p">,</span><span class="n">NPTS</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+     <span class="n">epics_put</span><span class="p">(</span><span class="n">PILATUS_NFRAME_PV</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+     <span class="n">epics_put</span><span class="p">(</span><span class="n">PILATUS_ACQMODE_PV</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># Internal trigger</span>
+     <span class="n">epics_put</span><span class="p">(</span><span class="n">PILATUS_EXPSRTM_PV</span><span class="p">,</span><span class="n">cnt_time_val</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+     <span class="n">epics_put</span><span class="p">(</span><span class="n">PILATUS_NEXPFRM_PV</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="o">...</span>
+     <span class="c1"># hit the triggers</span>
+     <span class="n">epics_put</span><span class="p">(</span><span class="n">PILATUS_ACQ_PV</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+
+     <span class="n">epics_put</span><span class="p">(</span><span class="n">sc_cnt_pv</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+
+     <span class="c1"># wait for scaler and Pilatus AQG to finish</span>
+     <span class="n">status</span>     <span class="o">=</span> <span class="mi">1</span>
+     <span class="n">sc_done</span>    <span class="o">=</span> <span class="n">FALSE</span>
+     <span class="n">img_done</span>   <span class="o">=</span> <span class="n">FALSE</span>
+     <span class="n">data_done</span>  <span class="o">=</span> <span class="n">FALSE</span>
+     <span class="k">while</span><span class="p">(</span><span class="n">status</span><span class="p">){</span>
+         <span class="c1"># is the scalar done</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">epics_get</span><span class="p">(</span><span class="n">sc_cnt_pv</span><span class="p">)</span><span class="o">==</span><span class="s2">&quot;Done&quot;</span><span class="p">){</span>
+             <span class="n">sc_done</span> <span class="o">=</span> <span class="n">TRUE</span><span class="p">;</span>
+             <span class="c1">#p &quot;scaler done&quot;</span>
+        <span class="p">}</span>
+
+        <span class="c1"># is the pilatus done</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">epics_get</span><span class="p">(</span><span class="n">PILATUS_ACQ_PV</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;Done&quot;</span><span class="p">){</span>
+            <span class="n">img_done</span> <span class="o">=</span> <span class="n">TRUE</span><span class="p">;</span>
+            <span class="c1">#p &quot;image collection done&quot;</span>
+        <span class="p">}</span>
+
+        <span class="k">if</span><span class="p">(</span> <span class="p">(</span><span class="n">sc_done</span><span class="o">==</span><span class="n">TRUE</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">img_done</span><span class="o">==</span><span class="n">TRUE</span><span class="p">))</span> <span class="k">break</span><span class="p">;</span>
+        <span class="n">sleep</span><span class="p">(</span><span class="mf">0.01</span><span class="p">)</span>
+     <span class="p">}</span>
+
+
+     <span class="c1"># use the get_counts routine to read the scalers</span>
+     <span class="c1"># note get_counts also calls user_getcounts</span>
+     <span class="c1"># thats where the rois get read.</span>
+     <span class="n">get_counts</span>
+<span class="p">}</span><span class="s1">&#39;</span>
+
+
+<span class="k">def</span> <span class="nf">user_getcounts</span> <span class="s1">&#39;{</span>
+<span class="o">...</span>
+    <span class="c1"># using image_count routine</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span> <span class="n">EPICS_COUNT</span> <span class="o">==</span> <span class="mi">4</span> <span class="p">)</span> <span class="p">{</span>
+        <span class="n">S</span><span class="p">[</span><span class="n">iroi</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">S</span><span class="p">[</span><span class="n">iroi</span><span class="p">]</span> <span class="o">=</span> <span class="n">epics_get</span><span class="p">(</span><span class="n">PILATUS_ROI_PV</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="performance-measurements">
+<h2><a class="toc-backref" href="#id10" role="doc-backlink">Performance measurements</a><a class="headerlink" href="#performance-measurements" title="Permalink to this heading"></a></h2>
+<p>The following measurements were done to demonstrate the performance that
+can be obtained with the areaDetector Pilatus driver.</p>
+<ol class="arabic">
+<li><p>AcquireMode=Internal, NumImages=1000, AcquireTime=.005,
+AcquirePeriod=.01, NumExposures=1. The time to collect this series
+should be exactly 10.0 seconds. The actual time was measured using
+the EPICS camonitor program. It printed the time when acquisition was
+started (Acquire changed to Acquire=1) and when acquisition was
+complete (Acquire changed to Done=0). The time was 10.022 seconds.
+This includes the time for camserver to save all 1000 images to disk
+(366 MB), and for the driver to read each file, correct the bad
+pixels and flat field, compute the ROIs, and post the ROIs to EPICS.
+It also posted all of the images to EPICS. The total additional time
+was less than 0.03 seconds for all 1000 images.</p></li>
+<li><p>AcquireMode=Internal, NImages=1, ExposureTime=.01, NExposures=1. An
+EPICS sscan record was used to collect 1000 points. There were no
+positioner PVs (to eliminate motor overhead). The only detector
+trigger was the Pilatus Acquire PV. The only detector PV was
+ROI1:0:Total_RBV. In this mode camserver is being told to
+individually collect each file. If there were no overhead then time
+to collect this series should be exactly 10.0 seconds. The actual
+time measured using the EPICS camonitor program was 45.514 seconds.
+The overhead is thus 35.514 seconds, or 35 ms per point. In this
+single-frame mode the driver is thus able to collect &gt;20
+images/second. For comparison, another measurement was done using the
+same EPICS sscan record, but using a Joerger VSC16 scaler as the
+detector trigger and detector. The preset time was also .01 seconds.
+The elapsed time for a 1000 point scan was 16.068 seconds, so the
+overhead was 6.068 seconds, or 6 ms per point.</p></li>
+<li><p>AcquireMode=Ext. Enable, NImages=1000, NExposures=1. SPEC was used to
+collect 1000 points using <a class="reference external" href="https://cars.uchicago.edu/software/epics/trajectoryScan.html">trajectory
+scanning</a>
+mode with the Newport XPS motor controller. The following SPEC
+command was used::</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">lup</span> <span class="n">chi</span> <span class="o">-</span><span class="mi">1</span> <span class="mi">1</span> <span class="mi">1000</span> <span class="mf">.02</span>
+</pre></div>
+</div>
+<p>This tells SPEC to do a relative scan of the chi axis from -2 degrees
+to +2 degrees with 1000 points at .015 seconds/point. On our kappa
+diffractometer this entails a coordinated motion of the phi, kappa
+and omega axes. The EPICS trajectory scanning software downloads the
+non-linear trajectory that SPEC computes into the XPS controller,
+which executes it. As the motors are moving the XPS outputs
+synchronization pulses at the period of the collection time, .020
+seconds in this case. These pulses are used as the external trigger
+to the Pilatus. The time to execute this scan should be 20.0 seconds.
+The actual time was 20.8 seconds, measured using camonitor on the
+Acquire PV. Again, this includes the time for camserver to save all
+1000 images to disk (366 MB), and for the Pilatus driver to read each
+file, correct the bad pixels and flat field, compute the ROIs, and
+post the ROIs to EPICS. It also posted all of the images to EPICS.
+The total additional time was less than 0.8 seconds for all 1000
+images. As soon as the acquisition was complete SPEC plotted the net
+counts in the first ROI (containing the Bragg peak) as follows:</p>
+<figure class="align-center">
+<img alt="../_images/pilatusSPEC.png" src="../_images/pilatusSPEC.png" />
+</figure>
+<p>For comparison this identical scan was executed in traditional
+step-scanning mode, where the motors stopped at each point in the
+scan. The Pilatus was run in Internal mode with NumImages=1. The
+total time for the scan was 870 seconds (more than 14 minutes),
+compared to 20.8 seconds in trajectory mode. Most of this overhead is
+the settling time for the motors, with only a small fraction due to
+the Pilatus single-exposure mode. The trajectory scanning mode is
+thus more than 50 times faster to execute the identical SPEC scan.</p>
+</li>
+</ol>
+</section>
+<section id="hardware-notes">
+<h2><a class="toc-backref" href="#id11" role="doc-backlink">Hardware notes</a><a class="headerlink" href="#hardware-notes" title="Permalink to this heading"></a></h2>
+<section id="trigger-pulses">
+<h3><a class="toc-backref" href="#id12" role="doc-backlink">Trigger pulses</a><a class="headerlink" href="#trigger-pulses" title="Permalink to this heading"></a></h3>
+<p>The Pilatus supports 3 types of external triggering. In External Trigger
+mode (the camserver ExtTrigger command) the Pilatus uses the programmed
+values of AcquireTime, AcquirePeriod, NImages and NExposures. It waits
+for a single external trigger, then waits for Delay seconds and then
+collects the entire sequence. It is very similar to Internal mode with
+NImages&gt;1, except that it waits for a trigger to begin collecting the
+sequence.</p>
+<p>In External Enable mode (the camserver ExtEnable command) the Pilatus
+uses the external signal to control acquisition. Only NImages and
+NExposures are used, AcquireTime and AcquirePeriod are not used. When
+the signal is high the detector counts, and on the transition to low it
+begins its readout.</p>
+<p>In External MultiTrigger Mode (the camserver ExtMTrigger command) the
+Pilatus uses the programmed AcquireTime, in addition to NImages and
+NExposures. Each external trigger pulse causes the Pilatus to collect
+one image at the programmed exposure time. This mode works well with a
+trigger source like the Newport motor controllers or the SIS380x
+multichannel scaler, that put out a short trigger pulse for each image.
+One only needs to take care that the time between external trigger
+pulses is at least 4msec longer than the programmed exposure time, to
+allow time for the detector to read out before the next trigger pulse
+arrives.</p>
+<p>When using the External Enable mode, we use an inexpensive analog pulse
+generator to convert the trigger pulses from the MM4005 and XPS to a
+form suitable for External Enable mode with the Pilatus. This is the
+solution we have developed that seems to be reliable:</p>
+<ul class="simple">
+<li><p>The synchonization pulses from the Newport MM4005 or XPS controller
+are input into the external next pulse (channel advance, control
+signal 1) input of the SIS3801 multiscaler. This is the normal
+configuration used for MCS counting without the Pilatus in trajectory
+scanning mode.</p></li>
+<li><p>The Copy In Progress (CIP) output of the SIS3801 (control signal 5)
+is connected to the Trigger Input of a Tenma TGP110 10 MHz Pulse
+Generator. CIP will output a pulse whenever the SIS3801 does a
+channel advance, either in external mode with the motor controller
+pulse input, or in internal timed channel advance mode. The TGP100
+Pulse Generator is configured as follows:</p>
+<ul>
+<li><p>Trigger Input connected to CIP output of SIS3801.</p></li>
+<li><p>Triggered mode.</p></li>
+<li><p>Complement output.</p></li>
+<li><p>Pulse duration set with knobs to 3msec.</p></li>
+<li><p>TTL Output connected to the External Input of the Pilatus.</p></li>
+</ul>
+</li>
+<li><p>With this configuration the SIS3801 CIP output is normally at 5V, and
+outputs a 0V pulse 1 microsecond long. The trailing (rising) edge of
+that pulse triggers the TGP110. The TGP110 TTL output is also
+normally at 5V, and outputs a 0V pulse 3 milliseconds long each time
+the SIS3801 pulses. That output is connected to the Pilatus External
+Input. In External Enable mode when Pilatus External Input is high
+the Pilatus is counting. When the External Input is low the Pilatus
+reads out. The readout time is set via the knobs on the pulse
+generator to be 3 ms, which is close to the minimum time allowed on
+the Pilatus.</p></li>
+</ul>
+<p>The Tenma TGP110 seems to be currently called a Tenma 72-6860, and lists
+for about $350 new at <a class="reference external" href="http://www.newark.com">Newark</a>.</p>
+</section>
+<section id="detector-voltage">
+<h3><a class="toc-backref" href="#id13" role="doc-backlink">Detector Voltage</a><a class="headerlink" href="#detector-voltage" title="Permalink to this heading"></a></h3>
+<p>When we were initially testing the Pilatus in the lab, we had many
+errors in External Enable mode, where it did not seem to be seeing the
+external pulses. camserver would get DMA timeouts, and need to be
+restarted. Dectris said these were happening because the cables on our
+detector are longer than normal, and the voltage drop from the power
+supply to the detector was leading to marginal voltage values. They
+suggested shortening the cables or increasing the supply voltage
+slightly. When moving the detector to the hutch these problems initially
+went away. However, they then recurred, and we fixed the problem by
+increasing the power supply voltage from 4.4 to 4.7 volts at the
+detector.</p>
+<p>Dectris has since informed me that they have increased the power supply
+voltage on all new Pilatus systems, so this should no longer be an
+issue.</p>
+</section>
+</section>
+<section id="restrictions">
+<h2><a class="toc-backref" href="#id14" role="doc-backlink">Restrictions</a><a class="headerlink" href="#restrictions" title="Permalink to this heading"></a></h2>
+<p>The following are some current restrictions of the areaDetector Pilatus
+driver:</p>
+<ul class="simple">
+<li><p>Limited to TIFF or CBF file format. camserver can save files in other
+formats, but the driver can currently only read TIFF and CBF files.
+It uses the standard libtiff library to read the TIFF files, so it
+should work on big or little endian machines, and should work with
+uncompressed or compressed files. It has only been tested with
+uncompressed files on a little-endian machine. It uses the CBFlib
+library to read the CBF files.</p></li>
+<li><p>The EPICS IOC should be run on the same computer as camserver. This
+is not strictly necessary, and places a small additional load on the
+CPU and network on that computer. However, we have found that TIFF
+files are available to be read within 10ms after camserver says they
+have been written if the IOC is running on the same machine as
+camserver. This is true even if the files are being saved on a remote
+NFS or SMB file system. On the other hand, if the IOC and camserver
+are running on separate machines, then the filesystem can wait up to
+1 second after camserver says the TIFF file has been written before
+the IOC can read it. This is true even if the files are being written
+to the computer that the IOC is running on! This 1 second delay is
+often unacceptable for fast single-exposure scans, i.e. with
+NImages=1.</p></li>
+<li><p>The Pilatus driver keeps retrying to read each image file until the
+modification date of the image file is <em>after</em> the time that the
+acquisition was started. If it did not do this check then it could be
+reading and displaying old files that happen to have the same name as
+the current files being collected. This check requires that the
+computer that is running the soft IOC must have its clock well
+synchronized with the clock on the computer on which the files are
+being written (i.e. the computer generating the file modification
+time). If the clocks are not synchronized then the files may appear
+to be stale when they are not, and the driver will time out. The
+driver actually tolerates up to 10 second clock skew betweeen the
+computers but any more than this may lead to problems.</p></li>
+<li><p>Setting Acquire to 0 does not always stop acquisition immediately
+because camserver does not reliably implement the “K” command to stop
+an exposure sequence. In particular with NumImages&gt;1 camserver seems
+to often ignore the K command completely, even with exposure
+times/periods as long as 10 seconds. With NumImages=1 it does kill
+the exposure after a few seconds.</p></li>
+<li><p>The following items are hardcoded in the driver. They can be changed
+by compiling if necessary.</p>
+<ul>
+<li><p>MAX_MESSAGE_SIZE=256 The maximum size of message to/from
+camserver.</p></li>
+<li><p>MAX_FILENAME_LEN=256 The maximum size of a complete file name
+including path and extension.</p></li>
+<li><p>FILE_READ_DELAY=.01 seconds. The time between polling to see if
+the image file exists or if it is the expected size.</p></li>
+<li><p>MAX_BAD_PIXELS=100 The maximum number of bad pixels.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../ADPICam/PICamDoc.html" class="btn btn-neutral float-left" title="ADPICam" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../ADPixirad/ADPixirad.html" class="btn btn-neutral float-right" title="ADPixirad" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Mark Rivers.
+      <span class="lastupdated">Last updated on 2023-March-12.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

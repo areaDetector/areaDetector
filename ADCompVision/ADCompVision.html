@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ADCompVision Documentation &mdash; areaDetector Support</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme_overrides.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="ADCompVision area detector plugin Input/output manual/guide" href="ADCompVisionManual.html" />
+    <link rel="prev" title="Additional plugins" href="../additional_plugins.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            areaDetector
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../readme.html">Readme</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../user_guide.html">User Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/overview.html">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/arch.html">Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/asynPortDriver.html">asynPortDriver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/NDArray.html">NDArray</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../detector_drivers.html">Detector Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/plugins.html">areaDetector Plugins</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../additional_plugins.html">Additional plugins</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">ADCompVision Documentation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ADCompVisionManual.html">ADCompVision area detector plugin Input/output manual/guide</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#installing-the-plugin">Installing the plugin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#using-adcompvision">Using ADCompVision</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#issues-and-pull-requests">Issues and Pull Requests</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#important-links">Important Links</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPluginBar/ADPluginBar.html">ADPluginBar Documentation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/medm.html">MEDM screens</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADViewers/ad_viewers.html">areaDetector Viewers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../acknowledgements.html">Acknowledgements and licenses</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../install_guide.html">Install Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release.html">Top-level Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ADCore_release.html">ADCore Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ADSupport_release.html">ADSupport Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../doxygen.html">Source Code Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../detectors.html">Supported Detectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../legacy_versions.html">Legacy Versions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">areaDetector</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../user_guide.html">areaDetector Users Guide</a></li>
+          <li class="breadcrumb-item"><a href="../additional_plugins.html">Additional plugins</a></li>
+      <li class="breadcrumb-item active">ADCompVision Documentation</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/ADCompVision/ADCompVision.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="adcompvision-documentation">
+<h1><a class="toc-backref" href="#id1" role="doc-backlink">ADCompVision Documentation</a><a class="headerlink" href="#adcompvision-documentation" title="Permalink to this heading"></a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">Author<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Jakub Wlodek</p>
+</dd>
+<dt class="field-even">Corresp Author<span class="colon">:</span></dt>
+<dd class="field-even"><p>Kazimierz Gofron</p>
+</dd>
+<dt class="field-odd">Created<span class="colon">:</span></dt>
+<dd class="field-odd"><p>November 2018</p>
+</dd>
+<dt class="field-even">Last Updated<span class="colon">:</span></dt>
+<dd class="field-even"><p>June 2019</p>
+</dd>
+</dl>
+<nav class="contents" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#adcompvision-documentation" id="id1">ADCompVision Documentation</a></p>
+<ul>
+<li><p><a class="reference internal" href="#installing-the-plugin" id="id2">Installing the plugin</a></p></li>
+<li><p><a class="reference internal" href="#using-adcompvision" id="id3">Using ADCompVision</a></p>
+<ul>
+<li><p><a class="reference internal" href="#release-notes" id="id4">Release Notes</a></p></li>
+<li><p><a class="reference internal" href="#r1-2-5-march-2020" id="id5">R1-2 (5-March-2020)</a></p></li>
+<li><p><a class="reference internal" href="#r1-1-17-april-2019" id="id6">R1-1 (17-April-2019)</a></p></li>
+<li><p><a class="reference internal" href="#r1-0-14-january-2019" id="id7">R1-0 (14-January-2019)</a></p></li>
+<li><p><a class="reference internal" href="#usage-examples" id="id8">Usage Examples:</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#issues-and-pull-requests" id="id9">Issues and Pull Requests</a></p></li>
+<li><p><a class="reference internal" href="#important-links" id="id10">Important Links</a></p></li>
+</ul>
+</li>
+</ul>
+</nav>
+<div class="toctree-wrapper compound">
+</div>
+<section id="installing-the-plugin">
+<h2><a class="toc-backref" href="#id2" role="doc-backlink">Installing the plugin</a><a class="headerlink" href="#installing-the-plugin" title="Permalink to this heading"></a></h2>
+<p>The ADCompVision plugin depends on several external libraries. These
+include:</p>
+<ul class="simple">
+<li><p>Opencv: Can be built from source from
+<a class="reference external" href="https://github.com/opencv/opencv">github</a>. Otherwise install from
+package manager.</p></li>
+<li><p>EPICS, Area Detector, and their submodules, all of whuch can be found
+on github.</p></li>
+</ul>
+<p>Further installation instructions are located in the README.md file in
+the top level of
+<a class="reference external" href="https://github.com/epicsNSLS2-areaDetector/ADCompVision">this</a>
+repository.</p>
+</section>
+<hr class="docutils" />
+<section id="using-adcompvision">
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">Using ADCompVision</a><a class="headerlink" href="#using-adcompvision" title="Permalink to this heading"></a></h2>
+<p>This plugin allows for a multitude of Open Computer Vision functions. As
+a result, each function will use the input/output PVs differently.</p>
+<div class="line-block">
+<div class="line">To view how each function uses the inputs and outputs view the manual
+<a class="reference external" href="ADCompVisionManual.html">here.</a></div>
+<div class="line">In addition, selecting an option from the dropdown menu will populate
+the input and output descriptions for any that are used by the
+selected CV function.</div>
+</div>
+<p>The main CSS screen for the ADCompVision plugin looks as follows:</p>
+<p><a class="reference internal" href="../_images/MainCVScreen.png"><img alt="main" src="../_images/MainCVScreen.png" style="width: 800pt;" /></a></p>
+<p>To use the plugin, you must select one of the functions from the three
+function sets. The other 2 function sets must be set to ‘None’ Then,
+make sure that the image1 or pv1 plugin has its input port set to be the
+output port of ADCompVision (CV1). You should pass CV1 to whichever
+plugin you use to display your images. Then, open the main screen, and
+note that input and output descriptions are listed for each function.
+Enter valid input values for each of the required inputs. Next, start
+image acquisition and enable the plugin. You should see the processed
+image in image1 ArrayData. Some examples are shown below.</p>
+<p>When using non-8bit cameras, note that many of the CompVision functions
+supported here require the input image to be downconverted to 8 bit in
+order to work. To do this, select your camera’s actual bit depth in the
+bit depth selector. (NOT NDDataType). If your device is a 12 bit camera
+for example, select 12 bit in the menu, not 16 bit, even if the input
+has an NDDataType of NDUInt16.</p>
+<hr class="docutils" />
+<section id="release-notes">
+<h3><a class="toc-backref" href="#id4" role="doc-backlink">Release Notes</a><a class="headerlink" href="#release-notes" title="Permalink to this heading"></a></h3>
+</section>
+<section id="r1-2-5-march-2020">
+<h3><a class="toc-backref" href="#id5" role="doc-backlink">R1-2 (5-March-2020)</a><a class="headerlink" href="#r1-2-5-march-2020" title="Permalink to this heading"></a></h3>
+<ul class="simple">
+<li><p>Computer Vision functions implemented</p>
+<ul>
+<li><p>Video Record - allows for video recording with areaDetector</p></li>
+<li><p>Convert Format - Converts color format and Data type of input
+image.</p></li>
+</ul>
+</li>
+<li><p>Additional Feature changes</p>
+<ul>
+<li><p>Added filepath PV</p></li>
+<li><p>Added filepath exists PV</p></li>
+<li><p>Added opencv_video and opencv_videoio as library dependancies</p></li>
+<li><p>Added support for multithreading for certain functions</p></li>
+<li><p>New medm, edm, and adl screens (Courtesy of Mark Rivers)</p></li>
+<li><p>New rst documentation pages (Courtesy of Mark Rivers</p></li>
+</ul>
+</li>
+<li><p>Bug Fixes</p>
+<ul>
+<li><p>Edited mat2NDArray function to remove potential memory leak</p></li>
+<li><p>Comment + documentation updates</p></li>
+<li><p>Fixed bug where input pArray data would be placed into the Mat - which would result in data overwrite.</p></li>
+<li><p>Removed call that added unnecessary DataType attribute</p></li>
+<li><p>Changed <cite>doCallbacksGenericPointer</cite> to`endProcessCallbacks`</p></li>
+<li><p>Cleanup of <cite>mat2NDArray</cite> function</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="r1-1-17-april-2019">
+<h3><a class="toc-backref" href="#id6" role="doc-backlink">R1-1 (17-April-2019)</a><a class="headerlink" href="#r1-1-17-april-2019" title="Permalink to this heading"></a></h3>
+<ul class="simple">
+<li><p>Computer Vision functions implemented:</p>
+<ul>
+<li><p>Sharpening filter</p></li>
+<li><p>Image subtraction</p></li>
+<li><p>Image statistics</p></li>
+<li><p>Distance between objects</p></li>
+</ul>
+</li>
+<li><p>Additional Feature changes</p>
+<ul>
+<li><p>File saving temporarily removed due to crashing issues over ssh
+and additional dependency</p></li>
+<li><p>Camera bit depth selector added to play better with higher bit
+images</p></li>
+<li><p>Image scaling corrected to account for other bit depth images</p></li>
+<li><p>Minor screen updates to reflect feature changes</p></li>
+</ul>
+</li>
+<li><p>Bugs Fixed</p>
+<ul>
+<li><p>Bug where invalid bit depth could cause IOC to crash</p></li>
+<li><p>Bug where certain PV would cause error at IOC startup</p></li>
+<li><p>Fixed Image passthrough to work with any bit depth</p></li>
+<li><p>Fixed colorspace of color images passed through</p></li>
+<li><p>Removed code that caused certain compiler warnings - Cleaner
+compile</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="r1-0-14-january-2019">
+<h3><a class="toc-backref" href="#id7" role="doc-backlink">R1-0 (14-January-2019)</a><a class="headerlink" href="#r1-0-14-january-2019" title="Permalink to this heading"></a></h3>
+<ul class="simple">
+<li><p>Computer Vision functions implemented:</p>
+<ul>
+<li><p>Gaussian Blur</p></li>
+<li><p>Thresholding</p></li>
+<li><p>Laplacian Edge Detection</p></li>
+<li><p>Canny Edge Detection</p></li>
+<li><p>Centroid Detection</p></li>
+<li><p>User Definable Function</p></li>
+</ul>
+</li>
+<li><p>Additional Features added</p>
+<ul>
+<li><p>Processed image file saving. (This can work in tandem with
+NDPluginFile)</p></li>
+<li><p>Support for mono or RGB images</p></li>
+<li><p>Support for 8, 16, 32, and 64 bit images</p></li>
+<li><p>Flexible and modular function implementation system</p></li>
+<li><p>CSS User Interface screen</p></li>
+<li><p>Documentation</p></li>
+</ul>
+</li>
+<li><p>Known Limitations:</p>
+<ul>
+<li><p>No current support for performing operations accross multiple
+images. Required for several CV functions</p></li>
+<li><p>Conversion between PV and ADCV_Function is convoluted and should
+be reworked</p></li>
+</ul>
+</li>
+<li><p>Future Release Plans</p>
+<ul>
+<li><p>Expand list of supported functions</p>
+<ul>
+<li><p>Motion Vectors</p></li>
+<li><p>Object identification</p></li>
+<li><p>Image alignment</p></li>
+<li><p>More…</p></li>
+</ul>
+</li>
+<li><p>Perform tests with variety of cameras</p></li>
+<li><p>Performance improvements and bug fixes</p></li>
+<li><p>Expand file saving to allow for capture, stream, etc</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="usage-examples">
+<h3><a class="toc-backref" href="#id8" role="doc-backlink">Usage Examples:</a><a class="headerlink" href="#usage-examples" title="Permalink to this heading"></a></h3>
+<p><strong>Thresholding</strong></p>
+<p><a class="reference internal" href="../_images/threshold.png"><img alt="Thresholding" src="../_images/threshold.png" style="width: 1000pt;" /></a></p>
+<p>As of R1-0 ADCompVision supports Thresholding. Start by selecting it
+from the Vision Function 1 dropdown menu. Set the threshold value and
+max pixel value. The max pixel value will almost always be 255 on 8 bit
+images.</p>
+<p><strong>Laplacian Edge Detection</strong></p>
+<p><a class="reference internal" href="../_images/Laplacian.png"><img alt="Laplacian" src="../_images/Laplacian.png" style="width: 1000pt;" /></a></p>
+<p>As of R1-0 ADCompVision supports Laplacian based edge detection. Start
+by selecting it from the Vision Function 1 dropdown menu. Set the blur
+degree, kernel size, scale, and delta. Note that the blur degree and
+kernel size must be odd integers from 1 to 15 (3 usually works best).
+Tweak these parameters until an acceptable result is visible.</p>
+<p><strong>Canny edge detection</strong></p>
+<p><a class="reference internal" href="../_images/Canny2.png"><img alt="Canny" src="../_images/Canny2.png" style="width: 1000pt;" /></a></p>
+<p>As of R1-0 ADCompVision supports Canny based edge detection. Start by
+selecting it from the Vision Function 1 dropdown menu. Set the Threshold
+value, ratio, blur degree, and kernel size, note that the blur degree
+and kernel size must be odd integers from 1 to 15 (3 usually works
+best). Tweak these parameters until an acceptable result is visible.</p>
+<p><strong>Centroid identification</strong></p>
+<p><a class="reference internal" href="../_images/Centroid.png"><img alt="Centroid" src="../_images/Centroid.png" style="width: 1000pt;" /></a></p>
+<p>As of R1-0 ADCompVision supports centroid identification. To use this
+feature select it from the Function set 2 dropdown. Then, set the number
+of desired objects to find, the blur degree (3 or 5 is usually best), a
+threshold value, and an upper and lower pixel area threshold for the
+objects. Play around with these numbers until the desired objects are
+detected. The centroid centers are then outputted into the ‘Output’ PV
+values</p>
+<p><strong>Video Record</strong></p>
+<p><a class="reference internal" href="../_images/Video_Record.png"><img alt="Video Record" src="../_images/Video_Record.png" style="width: 800pt;" /></a></p>
+<p>As of R1-2, ADCompVision supports writing video recordings for
+areaDetector. Controls allow for setting an output framerate, color and
+mono video, 4 different encoding formats, and 2 file formats. To start a
+recording, input a valid file path, then enter valid options for
+framerate and other video modes. Finally simply enter a ‘1’ into the
+‘Start/Stop’ field to start recording, and a ‘0’ to stop recording. The
+video will be saved to the given file path and will be called
+CV_Output_Vid_$TIMESTAMP.avi or .mp4 depending on selection. Note
+that not all 4 encodings will be supported on each machine.</p>
+<p><strong>Distance Check</strong></p>
+<p><a class="reference internal" href="../_images/DistanceCheck.png"><img alt="Dist Check" src="../_images/DistanceCheck.png" style="width: 1000pt;" /></a></p>
+<p>As of R1-2, ADCompVision supports Distance Checking between two objects
+in an image. To use this feature, select it from Function set 3. Then
+enter a distance threshold in pixels, then a blur size (3 or 5 are
+usually best), a threshold value, select apply blur = yes (will give
+better results), and choose an object size threshold in pixels to avoid
+background noise. Tweak the threshold and size values until the two
+desired objects are detected, and then note that the output pvs print
+the pixel distance between them, and whether or not it is under the
+distance threshold input variable.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="issues-and-pull-requests">
+<h2><a class="toc-backref" href="#id9" role="doc-backlink">Issues and Pull Requests</a><a class="headerlink" href="#issues-and-pull-requests" title="Permalink to this heading"></a></h2>
+<p>If you wish to create an issue or pull request, please do so at the
+source fork on <a class="reference external" href="https://github.com/jwlodek/ADCompVision">github.</a></p>
+</section>
+<hr class="docutils" />
+<section id="important-links">
+<h2><a class="toc-backref" href="#id10" role="doc-backlink">Important Links</a><a class="headerlink" href="#important-links" title="Permalink to this heading"></a></h2>
+<div class="line-block">
+<div class="line"><a class="reference external" href="https://github.com/areaDetector">Area Detector on Github</a></div>
+<div class="line"><a class="reference external" href="https://github.com/epicsNSLS2-areaDetector">NSLS2 area detector reposiotries on
+Github</a></div>
+<div class="line"><a class="reference external" href="https://github.com/epicsNSLS2-areaDetector/ADCompVision">ADCompVision on
+Github</a></div>
+</div>
+<hr class="docutils" />
+<p>copyright: Brookhaven National Laboratory 2018-2019</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../additional_plugins.html" class="btn btn-neutral float-left" title="Additional plugins" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="ADCompVisionManual.html" class="btn btn-neutral float-right" title="ADCompVision area detector plugin Input/output manual/guide" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Mark Rivers.
+      <span class="lastupdated">Last updated on 2023-March-12.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ADDexela &mdash; areaDetector Support</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme_overrides.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Example st.cmd Startup File" href="st_cmd.html" />
+    <link rel="prev" title="ADCSimDetector" href="../ADCSimDetector/ADCSimDetectorDoc.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            areaDetector
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../readme.html">Readme</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../user_guide.html">User Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/overview.html">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/arch.html">Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/asynPortDriver.html">asynPortDriver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/NDArray.html">NDArray</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../detector_drivers.html">Detector Drivers</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../ADCore/guidelines.html">Guidelines and rules for drivers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADCore/ADDriver.html">ADDriver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADAndor/andorDoc.html">ADAndor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADAndor3/ADAndorDoc.html">ADAndor3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADAravis/ADAravis.html">ADAravis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADCSimDetector/ADCSimDetectorDoc.html">ADCSimDetector</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">ADDexela</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#implementation-of-standard-driver-parameters">Implementation of standard driver parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#dexela-specific-parameters">Dexela specific parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#unsupported-standard-driver-parameters">Unsupported standard driver parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#configuration">Configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#example-st-cmd-startup-file">Example st.cmd startup file</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#medm-screens">MEDM screens</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#performance-measurements">Performance measurements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#restrictions">Restrictions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../ADEiger/eiger.html">ADEiger</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADFastCCD/index.html">ADFastCCD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADGenICam/ADGenICam.html">ADGenICam</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADLambda/ADLambda.html">ADLambda</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADLightField/ADLightField.html">ADLightField</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADmarCCD/marCCDDoc.html">ADmarCCD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADmar345/mar345Doc.html">ADmar345</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPerkinElmer/PerkinElmerDoc.html">ADPerkinElmer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPICam/PICamDoc.html">ADPICam</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPilatus/pilatusDoc.html">ADPilatus</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPixirad/ADPixirad.html">ADPixirad</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPointGrey/PointGreyDoc.html">ADPointGrey</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADProsilica/ADProsilica.html">ADProsilica</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPvCam/pvcamDoc.html">ADPvCam</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADQImaging/QImagingDoc.html">ADQImaging</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADRIXSCam/ADRIXSCam.html">ADRIXSCam</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADSimDetector/simDetector.html">ADSimDetector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADSpinnaker/ADSpinnaker.html">ADSpinnaker</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADVimba/ADVimba.html">ADVimba</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADURL/ADURL.html">ADURL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../NDDriverStdArrays/NDDriverStdArraysDoc.html">NDDriverStdArrays</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../pvaDriver/pvaDriver.html">pvaDriver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../specsAnalyser/index.html">specsAnalyser</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/plugins.html">areaDetector Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../additional_plugins.html">Additional plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/medm.html">MEDM screens</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADViewers/ad_viewers.html">areaDetector Viewers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../acknowledgements.html">Acknowledgements and licenses</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../install_guide.html">Install Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release.html">Top-level Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ADCore_release.html">ADCore Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ADSupport_release.html">ADSupport Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../doxygen.html">Source Code Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../detectors.html">Supported Detectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../legacy_versions.html">Legacy Versions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">areaDetector</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../user_guide.html">areaDetector Users Guide</a></li>
+          <li class="breadcrumb-item"><a href="../detector_drivers.html">Detector Drivers</a></li>
+      <li class="breadcrumb-item active">ADDexela</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/ADDexela/ADDexela.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="addexela">
+<h1><a class="toc-backref" href="#id1" role="doc-backlink">ADDexela</a><a class="headerlink" href="#addexela" title="Permalink to this heading"></a></h1>
+<p>AreaDetector Dexela driver</p>
+<dl class="field-list simple">
+<dt class="field-odd">author<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Mark Rivers, University of Chicago</p>
+</dd>
+</dl>
+<nav class="contents" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#addexela" id="id1">ADDexela</a></p>
+<ul>
+<li><p><a class="reference internal" href="#introduction" id="id2">Introduction</a></p></li>
+<li><p><a class="reference internal" href="#implementation-of-standard-driver-parameters" id="id3">Implementation of standard driver parameters</a></p></li>
+<li><p><a class="reference internal" href="#dexela-specific-parameters" id="id4">Dexela specific parameters</a></p></li>
+<li><p><a class="reference internal" href="#unsupported-standard-driver-parameters" id="id5">Unsupported standard driver parameters</a></p></li>
+<li><p><a class="reference internal" href="#configuration" id="id6">Configuration</a></p></li>
+<li><p><a class="reference internal" href="#example-st-cmd-startup-file" id="id7">Example st.cmd startup file</a></p></li>
+<li><p><a class="reference internal" href="#medm-screens" id="id8">MEDM screens</a></p>
+<ul>
+<li><p><a class="reference internal" href="#dexela-adl" id="id9">Dexela.adl</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#performance-measurements" id="id10">Performance measurements</a></p></li>
+<li><p><a class="reference internal" href="#restrictions" id="id11">Restrictions</a></p></li>
+</ul>
+</li>
+</ul>
+</nav>
+<section id="introduction">
+<h2><a class="toc-backref" href="#id2" role="doc-backlink">Introduction</a><a class="headerlink" href="#introduction" title="Permalink to this heading"></a></h2>
+<p>This is an <a class="reference internal" href="../index.html"><span class="doc">areaDetector</span></a> driver for the flat-panel CMOS
+detectors from <a class="reference external" href="http://www.perkinelmer.com/imaging-components/detectors/dexela-cmos">Perkin Elmer</a>.</p>
+<p>The driver is based upon the Dexela library provided by Perkin Elmer.
+It only runs on Microsoft Windows computers. It supports both 32-bit
+and 64-bit versions of Windows.</p>
+<p>This driver has been tested with the following detectors</p>
+<ul class="simple">
+<li><p>Dexela 1512 with CameraLink frame grabber</p></li>
+</ul>
+<p>This driver inherits from <a class="reference internal" href="../ADCore/ADDriver.html"><span class="doc">ADDriver</span></a>. It implements many of the
+parameters in <a class="reference external" href="../areaDetectorDoxygenHTML/asyn_n_d_array_driver_8h.html">asynNDArrayDriver.h</a> and in <a class="reference external" href="../areaDetectorDoxygenHTML/_a_d_driver_8h.html">ADArrayDriver.h</a>. It
+also implements a number of parameters that are specific to the Dexela
+detectors. The <a class="reference external" href="../areaDetectorDoxygenHTML/class_dexela.html">Dexela class</a> documentation describes this class in
+detail.</p>
+</section>
+<section id="implementation-of-standard-driver-parameters">
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">Implementation of standard driver parameters</a><a class="headerlink" href="#implementation-of-standard-driver-parameters" title="Permalink to this heading"></a></h2>
+<p>The following table describes how the Dexela driver implements some of
+the standard driver parameters.</p>
+<table class="table-bordered table-striped table-hover docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 60%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head" colspan="3"><p><strong>Implementation of Parameters in asynNDArrayDriver.h and ADDriver.h, and EPICS Record</strong>
+<strong>Definitions in ADBase.template and NDFile.template</strong></p></th>
+</tr>
+<tr class="row-even"><th class="head"><p>Parameter index variable</p></th>
+<th class="head"><p>EPICS record name</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-odd"><td><p>ADNumImages</p></td>
+<td><p>$(P)$(R)NumImages</p></td>
+<td><p>Controls the number of images to acquire when ADImageMode is Multiple</p></td>
+</tr>
+<tr class="row-even"><td><p>ADAcquireTime</p></td>
+<td><p>$(P)$(R)AcquireTime, $(P)$(R)AcquireTime_RBV</p></td>
+<td><p>When using Internal Triggers, this parameter controls the period between trigger
+pulses which will also be equal to the exposure time.</p></td>
+</tr>
+<tr class="row-odd"><td><p>ADTriggerMode</p></td>
+<td><p>$(P)$(R)TriggerMode, $(P)$(R)TriggerMode_RBV</p></td>
+<td><p>Sets the trigger mode for the detector. Options are:</p>
+<dl class="simple">
+<dt>Int. Free Run</dt><dd><p>Internal trigger, frame rate limited by ADAcquireTime
+and readout time; ADAcquirePeriod is ignorred.</p>
+</dd>
+<dt>Int. Fixed Rate</dt><dd><p>Internal trigger, frame rate controlled by
+ADAcquirePeriod, which must be greater than both the ADAcquireTime and
+the readout time.</p>
+</dd>
+<dt>Int. Software</dt><dd><p>Software trigger per frame.</p>
+</dd>
+<dt>Ext. Edge Multi</dt><dd><p>One external negative edge trigger starts a
+sequence of multiple frames; the frame rate is determined by
+ADAcquirePeriod, which must be greater than ACAcquireTime plus the
+readout time.</p>
+</dd>
+<dt>Ext. Edge Single</dt><dd><p>One external negative edge trigger for a each
+single frame.</p>
+</dd>
+<dt>Ext. Bulb</dt><dd><p>External bulb trigger; high to expose, low to read out.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="dexela-specific-parameters">
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">Dexela specific parameters</a><a class="headerlink" href="#dexela-specific-parameters" title="Permalink to this heading"></a></h2>
+<p>The Dexela driver implements the following parameters in addition to
+those in asynNDArrayDriver.h and ADDriver.h.</p>
+<table class="table-bordered table-striped table-hover docutils align-default">
+<colgroup>
+<col style="width: 60%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head" colspan="3"><p><strong>Parameter Definitions in Dexela.h and EPICS Record Definitions in Dexela.template</strong></p></th>
+</tr>
+<tr class="row-even"><th class="head"><p>Description</p></th>
+<th class="head"><p>EPICS record name</p></th>
+<th class="head"><p>EPICS record type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-odd"><td><p>The detector binning mode. The standard BinX and BinY records are not used because
+the Dexela detectors only support (at most) binning values of 1, 2 and 4 independently
+for X and Y. Specific detectors may restrict the choices further. For example the
+Dexela 1512 only supports 1x1, 2x2, and 4x4 binning. i.e. not 1x2, 2x4, etc. The
+menu choices for this record are constructed by the driver at initialization based
+on the actual capabilities of the detector in use.</p></td>
+<td><p>$(P)$(R)DEXBinningMode, $(P)$(R)DEXBinningMode_RBV</p></td>
+<td><p>mbbo, mbbi</p></td>
+</tr>
+<tr class="row-even"><td><p>The detector full-well mode. The choices are “Low noise” and “High range”.</p></td>
+<td><p>$(P)$(R)DEXFullWellMode, $(P)$(R)DEXFullWellMode_RBV</p></td>
+<td><p>mbbo, mbbi</p></td>
+</tr>
+<tr class="row-odd"><td><p>The detector readout mode. The choices are “Continuous” and “Idle”. “Idle” disables
+continuous detector scrubbing, which allows prompt response to software or hardware
+triggers, at the expense of potentially larger dark current in the first few frames.</p></td>
+<td><p>$(P)$(R)DEXReadoutMode, $(P)$(R)DEXReadoutMode_RBV</p></td>
+<td><p>mbbo, mbbi</p></td>
+</tr>
+<tr class="row-even"><td><p>Trigger record for soft trigger mode</p></td>
+<td><p>$(P)$(R)DEXSoftwareTrigger</p></td>
+<td><p>bo</p></td>
+</tr>
+<tr class="row-odd"><td colspan="3"><p><strong>Corrections directory</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>Directory where offset, gain and defect map corrections files are stored</p></td>
+<td><p>$(P)$(R)DEXCorrectionsDir</p></td>
+<td><p>waveform</p></td>
+</tr>
+<tr class="row-odd"><td colspan="3"><p><strong>Offset corrections (also called dark current corrections)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>Number of frames to collect and average when collecting offset frames</p></td>
+<td><p>$(P)$(R)DEXNumOffsetFrames</p></td>
+<td><p>longout</p></td>
+</tr>
+<tr class="row-odd"><td><p>Current offset frame being collected when collecting offset frames</p></td>
+<td><p>$(P)$(R)DEXCurrentOffsetFrame</p></td>
+<td><p>longin</p></td>
+</tr>
+<tr class="row-even"><td><p>Acquire offset frames</p></td>
+<td><p>$(P)$(R)DEXAcquireOffset</p></td>
+<td><p>busy</p></td>
+</tr>
+<tr class="row-odd"><td><p>Set whether offset image is to be used. Choices are “Disable” (0) and “Enable” (1).</p></td>
+<td><p>$(P)$(R)DEXUseOffset</p></td>
+<td><p>mbbo</p></td>
+</tr>
+<tr class="row-even"><td><p>Report whether offset image has been collected and is available for use. Choices
+are “Not available” (0) and “Available” (1).</p></td>
+<td><p>$(P)$(R)DEXOffsetAvailable</p></td>
+<td><p>mbbi</p></td>
+</tr>
+<tr class="row-odd"><td><p>The name of the offset file to save or load. The CorrectionsDirectory will be used
+for the path.</p></td>
+<td><p>$(P)$(R)DEXOffsetFile</p></td>
+<td><p>waveform</p></td>
+</tr>
+<tr class="row-even"><td><p>Load offset corrections from a file for use</p></td>
+<td><p>$(P)$(R)DEXLoadOffsetFile</p></td>
+<td><p>longout</p></td>
+</tr>
+<tr class="row-odd"><td><p>Save offset corrections to a file</p></td>
+<td><p>$(P)$(R)DEXSaveOffsetFile</p></td>
+<td><p>longout</p></td>
+</tr>
+<tr class="row-even"><td><p>An offset that is added to the image when the offset correction is performed.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CorrectedImage</span> <span class="o">=</span> <span class="n">RawImage</span> <span class="o">-</span> <span class="n">OffsetImage</span> <span class="o">+</span> <span class="n">OffsetConstant</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>This constant should be used to prevent
+the CorrectedImage from having any negative pixel values, which would otherwise
+be clipped to 0.</p>
+</td>
+<td><p>$(P)$(R)DEXOffsetContant, $(P)$(R)DEXOffsetContant_RBV</p></td>
+<td><p>longout , longin</p></td>
+</tr>
+<tr class="row-odd"><td colspan="3"><p><strong>Gain corrections (also called flat field corrections)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>Number of frames to collect and average when collecting gain frames</p></td>
+<td><p>$(P)$(R)DEXNumGainFrames</p></td>
+<td><p>longout</p></td>
+</tr>
+<tr class="row-odd"><td><p>Current gain frame being collected when collecting gain frames</p></td>
+<td><p>$(P)$(R)DEXCurrentGainFrame</p></td>
+<td><p>longin</p></td>
+</tr>
+<tr class="row-even"><td><p>Acquire gain frames</p></td>
+<td><p>$(P)$(R)DEXAcquireGain</p></td>
+<td><p>busy</p></td>
+</tr>
+<tr class="row-odd"><td><p>Set whether gain image is to be used. Choices are “Disable” (0) and “Enable” (1).</p></td>
+<td><p>$(P)$(R)DEXUseGain</p></td>
+<td><p>mbbo</p></td>
+</tr>
+<tr class="row-even"><td><p>Report whether offset image has been collected and is available for use. Choices
+are “Not available” (0) and “Available” (1).</p></td>
+<td><p>$(P)$(R)DEXGainAvailable</p></td>
+<td><p>mbbi</p></td>
+</tr>
+<tr class="row-odd"><td><p>Load gain corrections from a file for use</p></td>
+<td><p>$(P)$(R)DEXLoadGainFile</p></td>
+<td><p>longout</p></td>
+</tr>
+<tr class="row-even"><td><p>Save gain corrections to a file</p></td>
+<td><p>$(P)$(R)DEXSaveGainFile</p></td>
+<td><p>longout</p></td>
+</tr>
+<tr class="row-odd"><td colspan="3"><p><strong>Defect map corrections (also called bad pixel corrections)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>Set whether defect map correction is to be used</p></td>
+<td><p>$(P)$(R)DEXUseDefectMap</p></td>
+<td><p>mbbo</p></td>
+</tr>
+<tr class="row-odd"><td><p>Report whether defect map is available for use</p></td>
+<td><p>$(P)$(R)DEXdefectMapAvailable</p></td>
+<td><p>mbbi</p></td>
+</tr>
+<tr class="row-even"><td><p>File name for defect map file</p></td>
+<td><p>$(P)$(R)DEXDefectMapFile</p></td>
+<td><p>waveform</p></td>
+</tr>
+<tr class="row-odd"><td><p>Load defect map from a file for use</p></td>
+<td><p>$(P)$(R)DEXLoadDefectMapFile</p></td>
+<td><p>longout</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="unsupported-standard-driver-parameters">
+<h2><a class="toc-backref" href="#id5" role="doc-backlink">Unsupported standard driver parameters</a><a class="headerlink" href="#unsupported-standard-driver-parameters" title="Permalink to this heading"></a></h2>
+<p>The Dexela driver does not support the following standard driver
+parameters because they are not supported in the Dexels library:</p>
+<ul class="simple">
+<li><p>Type/Color (NDDataType, NDColorMode)</p></li>
+<li><p>No Hardware shutter control</p></li>
+</ul>
+</section>
+<section id="configuration">
+<h2><a class="toc-backref" href="#id6" role="doc-backlink">Configuration</a><a class="headerlink" href="#configuration" title="Permalink to this heading"></a></h2>
+<p>The Dexel driver is created with the DexelaConfig command, either from
+C/C++ or from the EPICS IOC shell.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span> <span class="n">DexelaConfig</span><span class="p">(</span><span class="n">const</span> <span class="n">char</span> <span class="o">*</span><span class="n">portName</span><span class="p">,</span> <span class="nb">int</span> <span class="n">detIndex</span><span class="p">,</span>
+                      <span class="nb">int</span> <span class="n">maxBuffers</span><span class="p">,</span> <span class="n">size_t</span> <span class="n">maxMemory</span><span class="p">,</span>
+                      <span class="nb">int</span> <span class="n">priority</span><span class="p">,</span> <span class="nb">int</span> <span class="n">stackSize</span> <span class="p">)</span>
+</pre></div>
+</div>
+<p>For details on the meaning of the parameters to this function refer to
+the detailed documentation on the DexelaConfig function in the
+<a class="reference external" href="../areaDetectorDoxygenHTML/_dexela_8cpp.html">Dexela.cpp documentation</a> and in the documentation for the
+constructor for the <a class="reference external" href="../areaDetectorDoxygenHTML/class_dexela.html">Dexela class</a>.</p>
+</section>
+<section id="example-st-cmd-startup-file">
+<h2><a class="toc-backref" href="#id7" role="doc-backlink">Example st.cmd startup file</a><a class="headerlink" href="#example-st-cmd-startup-file" title="Permalink to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+</div>
+<p>There is an example IOC boot directory and startup script
+<a class="reference internal" href="st_cmd.html"><span class="doc">Example st.cmd Startup File</span></a> provided with areaDetector.</p>
+</section>
+<section id="medm-screens">
+<h2><a class="toc-backref" href="#id8" role="doc-backlink">MEDM screens</a><a class="headerlink" href="#medm-screens" title="Permalink to this heading"></a></h2>
+<p>The following show the MEDM screens that are used to control the
+Dexela detector. Note that the general purpose screen ADBase.adl can
+be used, but it exposes many controls that are not applicable to the
+Dexela, and lacks some fields that are important for the Dexela
+driver.</p>
+<p><cite>Dexela.adl</cite> is the main screen used to control the Dexela driver.</p>
+<section id="dexela-adl">
+<h3><a class="toc-backref" href="#id9" role="doc-backlink">Dexela.adl</a><a class="headerlink" href="#dexela-adl" title="Permalink to this heading"></a></h3>
+<img alt="../_images/Dexela.png" src="../_images/Dexela.png" />
+</section>
+</section>
+<section id="performance-measurements">
+<h2><a class="toc-backref" href="#id10" role="doc-backlink">Performance measurements</a><a class="headerlink" href="#performance-measurements" title="Permalink to this heading"></a></h2>
+<p>The following measurements were done to demonstrate the performance
+that can be obtained with the areaDetector Dexela driver.</p>
+<ul class="simple">
+<li><p>Dexela 1512 detector with the CameraLink PCI/E frame grabber</p>
+<ul>
+<li><p>Can stream data continuously to local disk at maximum unbinned
+(1536x1944) frame rate of 26 frames/s (149 MB/s) and 2x2 binned
+(773x972) at 70 frames/s (100 MB/s). These tests were done on a
+Windows 7 64-bit machine with 2 disk drives (SAS, 15K RPM, RAID 0).</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="restrictions">
+<h2><a class="toc-backref" href="#id11" role="doc-backlink">Restrictions</a><a class="headerlink" href="#restrictions" title="Permalink to this heading"></a></h2>
+<p>The following are some current restrictions of the Dexela driver:</p>
+<ul class="simple">
+<li><p>Does not currently support saving images to disk with the Dexela
+library except for corrections files.</p></li>
+<li><p>Single image mode is not working.</p></li>
+<li><p>There is a long delay (&gt;1 second) after setting Acquire=1 before
+collection actually starts.</p></li>
+<li><p>Gain correction is not tested because I don’t have a way to collect
+flat field images.</p></li>
+<li><p>Defect map correction is not tested because I don’t have a defect
+map file.</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../ADCSimDetector/ADCSimDetectorDoc.html" class="btn btn-neutral float-left" title="ADCSimDetector" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="st_cmd.html" class="btn btn-neutral float-right" title="Example st.cmd Startup File" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Mark Rivers.
+      <span class="lastupdated">Last updated on 2023-March-12.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

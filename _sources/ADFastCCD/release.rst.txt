@@ -1,0 +1,1 @@
+.. mdinclude:: ../../../ADFastCCD/RELEASE.md

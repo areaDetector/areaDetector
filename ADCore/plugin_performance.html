@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Performance example &mdash; areaDetector Support</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme_overrides.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="NDPluginAttrPlot" href="NDPluginAttrPlot.html" />
+    <link rel="prev" title="commonPlugins.cmd" href="common_plugins.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            areaDetector
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../readme.html">Readme</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../user_guide.html">User Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arch.html">Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="asynPortDriver.html">asynPortDriver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NDArray.html">NDArray</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../detector_drivers.html">Detector Drivers</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="plugins.html">areaDetector Plugins</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="plugin_overview.html">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginDriver.html">NDPluginDriver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="plugin_guidelines.html">Guidelines and rules for plugins</a></li>
+<li class="toctree-l3"><a class="reference internal" href="plugin_medm.html">Base class medm screens</a></li>
+<li class="toctree-l3"><a class="reference internal" href="common_plugins.html">commonPlugins.cmd</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Performance example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginAttrPlot.html">NDPluginAttrPlot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginAttribute.html">NDPluginAttribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginBadPixel.html">NDPluginBadPixel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginCircularBuff.html">NDPluginCircularBuff</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginCodec.html">NDPluginCodec</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginColorConvert.html">NDPluginColorConvert</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginFFT.html">NDPluginFFT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginFile.html">NDPluginFile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginGather.html">NDPluginGather</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginOverlay.html">NDPluginOverlay</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginProcess.html">NDPluginProcess</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginPva.html">NDPluginPva</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginROI.html">NDPluginROI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginROIStat.html">NDPluginROIStat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginScatter.html">NDPluginScatter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginStats.html">NDPluginStats</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginStdArrays.html">NDPluginStdArrays</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginTimeSeries.html">NDPluginTimeSeries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginTransform.html">NDPluginTransform</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NDPluginPos.html">NDPosPlugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ffmpegServer.html">ffmpegServer</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../additional_plugins.html">Additional plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="medm.html">MEDM screens</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADViewers/ad_viewers.html">areaDetector Viewers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../acknowledgements.html">Acknowledgements and licenses</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../install_guide.html">Install Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release.html">Top-level Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ADCore_release.html">ADCore Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ADSupport_release.html">ADSupport Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../doxygen.html">Source Code Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../detectors.html">Supported Detectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../legacy_versions.html">Legacy Versions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">areaDetector</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../user_guide.html">areaDetector Users Guide</a></li>
+          <li class="breadcrumb-item"><a href="plugins.html">areaDetector Plugins</a></li>
+      <li class="breadcrumb-item active">Performance example</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/ADCore/plugin_performance.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="performance-example">
+<h1>Performance example<a class="headerlink" href="#performance-example" title="Permalink to this heading"></a></h1>
+<p>The following example shows how increasing the number of threads from 1
+to 5 in the NDPluginStats statistics plugins allows it to keep up with
+the simDetector running at about 485 frames/s. It also demonstrates the
+effect of changing SortMode=Sorted and SortMode=Unsorted.</p>
+<p>The images were generated by simDetector generating 1024x1024 Float32
+images at about 485 frames/s as shown in the following 2 medm screens.</p>
+<img alt="../_images/NDPluginDriverExample_simDetector.png" class="align-center" src="../_images/NDPluginDriverExample_simDetector.png" />
+<p>The NDPluginStats plugin was configured to perform all of the statistics
+calculations (centroid, histogram, etc.) to maximize the time required
+to process each array, as shown in the following medm screen.</p>
+<img alt="../_images/NDPluginDriverExample_NDStats.png" class="align-center" src="../_images/NDPluginDriverExample_NDStats.png" />
+<p>The statistics plugin was first run with just one thread, as shown in
+the NDPluginBaseFull.adl screen. This screen can be opened with the More
+related display from the NDPluginBase.adl screen, which is embedded on
+the left hand side of all plugin medm screens. Note the following on
+this screen:</p>
+<ul class="simple">
+<li><p>The execution time is 8 ms.</p></li>
+<li><p>The frame rate is 120 frames/s, which is consistent with the
+execution time.</p></li>
+<li><p>The queue free size is 0, and the number of dropped frames is large
+because the plugin cannot keep up with the rate at which the
+simDetector is sending frames (485 frames/s).</p></li>
+<li><p>SortedMode=Sorted is selected. Because there is only 1 thread
+SortMode does not really matter, the order of the output NDArrays
+will be the same whether SortMode is Sorted or Unsorted.</p></li>
+</ul>
+<img alt="../_images/NDPluginDriverExample_StatsFull_1thread.png" class="align-center" src="../_images/NDPluginDriverExample_StatsFull_1thread.png" />
+<p>The following show the Linux “top” program when the plugin is running
+with 1 thread as above. Note that the STATS5_Plugin_1 thread is using
+almost 100% of a core. The simDetector is using about 58% of a core.</p>
+<img alt="../_images/NDPluginDriverExample_top_1thread.png" class="align-center" src="../_images/NDPluginDriverExample_top_1thread.png" />
+<p>The NumThreads PV in the statistics plugin was then changed from 1 to 3,
+as shown in the following NDPluginBaseFull.adl screen. Note the
+following:</p>
+<ul class="simple">
+<li><p>The execution time is still 8 ms.</p></li>
+<li><p>The frame rate is now 384 frames/s, which is just over 3 times the
+value with 1 thread above.</p></li>
+<li><p>The queue free size is 0, and the number of dropped frames is large
+because the plugin still cannot keep up with the rate at which the
+simDetector is sending frames (485 frames/s).</p></li>
+<li><p>SortedMode=Sorted is selected. Because there are now 3 threads
+SortMode does matter, because the 3 threads could be producing output
+NDArrays in the wrong order. However, the number of disordered frames
+is still large, because dropped input frames will lead to missing
+values of NDArray::uniqueId on the output arrays, which is counted in
+the Disordered arrays.</p></li>
+</ul>
+<img alt="../_images/NDPluginDriverExample_StatsFull_3thread.png" class="align-center" src="../_images/NDPluginDriverExample_StatsFull_3thread.png" />
+<p>The following show the Linux “top” program when the plugin is running
+with 3 threads as above. Note that there are now 3 STATS5_Plugin_N
+threads, each using almost 100% of a core.</p>
+<img alt="../_images/NDPluginDriverExample_top_3thread.png" class="align-center" src="../_images/NDPluginDriverExample_top_3thread.png" />
+<p>The NumThreads PV in the statistics plugin was then changed from 3 to 5,
+as shown in the following NDPluginBaseFull.adl screen. Note the
+following:</p>
+<ul class="simple">
+<li><p>The execution time is still about 8 ms.</p></li>
+<li><p>The frame rate is now 482 frames/s, which is just over 4 times the
+value with 1 thread above.</p></li>
+<li><p>The queue free size is 200, and the number of dropped frames is 0
+because the plugin can now keep up with the rate at which the
+simDetector is sending frames (482 frames/s).</p></li>
+<li><p>SortedMode=Sorted is selected. Because there are now 5 threads
+SortMode does matter, because the 5 threads could be producing output
+NDArrays in the wrong order. Now the number of disordered frames is
+0, because there are no dropped input frames and the SortSize (50)
+and SortTime (0.05 sec) are sufficient to allow the output frames to
+be sorted without dropping any output frames (DroppedOutputArrays=0).</p></li>
+</ul>
+<img alt="../_images/NDPluginDriverExample_StatsFull_5thread.png" class="align-center" src="../_images/NDPluginDriverExample_StatsFull_5thread.png" />
+<p>The following show the Linux “top” program when the plugin is running
+with 5 threads as above. Note that there are now 5 STATS5_Plugin_N
+threads, each using about 87% of a core.</p>
+<img alt="../_images/NDPluginDriverExample_top_5thread.png" class="align-center" src="../_images/NDPluginDriverExample_top_5thread.png" />
+<p>To test sorting of output NDArrays the simDetector was configured to
+generate 100 arrays in Multiple mode, and the NDFileNetCDF plugin was
+configured to save 100 arrays in Stream mode. The netCDF plugin received
+its NDArrays from the STATS5 plugin running with 5 threads as shown
+above. The test was done 2 times, once with SortMode=Sorted, and then
+with SortMode=Unsorted. The files are were then read into IDL, using the
+read_nd_netcdf.pro file that can be found in ADCore/Viewers/IDL.</p>
+<p>The following shows the output when reading the file that was written
+when SortMode=Sorted. attr[0].pvalue is the value of the UniqueId
+attribute for all 100 NDArrays. Note that the arrays are all in the
+correct UniqueId order.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">IDL</span><span class="o">&gt;</span> <span class="n">t</span> <span class="o">=</span> <span class="n">read_nd_netcdf</span><span class="p">(</span><span class="s1">&#39;thread_test_5_sorted_001.nc&#39;</span><span class="p">,</span> <span class="n">attr</span><span class="o">=</span><span class="n">attr</span><span class="p">)</span>
+<span class="n">IDL</span><span class="o">&gt;</span> <span class="n">u</span><span class="o">=*</span><span class="n">attr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">pvalue</span>
+<span class="n">IDL</span><span class="o">&gt;</span> <span class="nb">print</span><span class="p">,</span> <span class="n">u</span>
+      <span class="mi">479298</span>      <span class="mi">479299</span>      <span class="mi">479300</span>      <span class="mi">479301</span>      <span class="mi">479302</span>      <span class="mi">479303</span>      <span class="mi">479304</span>      <span class="mi">479305</span>      <span class="mi">479306</span>      <span class="mi">479307</span>
+      <span class="mi">479308</span>      <span class="mi">479309</span>      <span class="mi">479310</span>      <span class="mi">479311</span>      <span class="mi">479312</span>      <span class="mi">479313</span>      <span class="mi">479314</span>      <span class="mi">479315</span>      <span class="mi">479316</span>      <span class="mi">479317</span>
+      <span class="mi">479318</span>      <span class="mi">479319</span>      <span class="mi">479320</span>      <span class="mi">479321</span>      <span class="mi">479322</span>      <span class="mi">479323</span>      <span class="mi">479324</span>      <span class="mi">479325</span>      <span class="mi">479326</span>      <span class="mi">479327</span>
+      <span class="mi">479328</span>      <span class="mi">479329</span>      <span class="mi">479330</span>      <span class="mi">479331</span>      <span class="mi">479332</span>      <span class="mi">479333</span>      <span class="mi">479334</span>      <span class="mi">479335</span>      <span class="mi">479336</span>      <span class="mi">479337</span>
+      <span class="mi">479338</span>      <span class="mi">479339</span>      <span class="mi">479340</span>      <span class="mi">479341</span>      <span class="mi">479342</span>      <span class="mi">479343</span>      <span class="mi">479344</span>      <span class="mi">479345</span>      <span class="mi">479346</span>      <span class="mi">479347</span>
+      <span class="mi">479348</span>      <span class="mi">479349</span>      <span class="mi">479350</span>      <span class="mi">479351</span>      <span class="mi">479352</span>      <span class="mi">479353</span>      <span class="mi">479354</span>      <span class="mi">479355</span>      <span class="mi">479356</span>      <span class="mi">479357</span>
+      <span class="mi">479358</span>      <span class="mi">479359</span>      <span class="mi">479360</span>      <span class="mi">479361</span>      <span class="mi">479362</span>      <span class="mi">479363</span>      <span class="mi">479364</span>      <span class="mi">479365</span>      <span class="mi">479366</span>      <span class="mi">479367</span>
+      <span class="mi">479368</span>      <span class="mi">479369</span>      <span class="mi">479370</span>      <span class="mi">479371</span>      <span class="mi">479372</span>      <span class="mi">479373</span>      <span class="mi">479374</span>      <span class="mi">479375</span>      <span class="mi">479376</span>      <span class="mi">479377</span>
+      <span class="mi">479378</span>      <span class="mi">479379</span>      <span class="mi">479380</span>      <span class="mi">479381</span>      <span class="mi">479382</span>      <span class="mi">479383</span>      <span class="mi">479384</span>      <span class="mi">479385</span>      <span class="mi">479386</span>      <span class="mi">479387</span>
+      <span class="mi">479388</span>      <span class="mi">479389</span>      <span class="mi">479390</span>      <span class="mi">479391</span>      <span class="mi">479392</span>      <span class="mi">479393</span>      <span class="mi">479394</span>      <span class="mi">479395</span>      <span class="mi">479396</span>      <span class="mi">479397</span>
+</pre></div>
+</div>
+<p>The following shows the output when reading the file that was written
+when SortMode=Unsorted. Note that the arrays are not in the correct
+UniqueId order.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">IDL</span><span class="o">&gt;</span> <span class="n">t</span> <span class="o">=</span> <span class="n">read_nd_netcdf</span><span class="p">(</span><span class="s1">&#39;thread_test_5_unsorted_001.nc&#39;</span><span class="p">,</span> <span class="n">attr</span><span class="o">=</span><span class="n">attr</span><span class="p">)</span>
+<span class="n">IDL</span><span class="o">&gt;</span> <span class="n">u</span><span class="o">=*</span><span class="n">attr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">pvalue</span>
+<span class="n">IDL</span><span class="o">&gt;</span> <span class="nb">print</span><span class="p">,</span> <span class="n">u</span>
+      <span class="mi">479398</span>      <span class="mi">479399</span>      <span class="mi">479400</span>      <span class="mi">479401</span>      <span class="mi">479402</span>      <span class="mi">479403</span>      <span class="mi">479404</span>      <span class="mi">479405</span>      <span class="mi">479406</span>      <span class="mi">479407</span>
+      <span class="mi">479408</span>      <span class="mi">479409</span>      <span class="mi">479410</span>      <span class="mi">479411</span>      <span class="mi">479412</span>      <span class="mi">479414</span>      <span class="mi">479413</span>      <span class="mi">479415</span>      <span class="mi">479416</span>      <span class="mi">479417</span>
+      <span class="mi">479418</span>      <span class="mi">479419</span>      <span class="mi">479420</span>      <span class="mi">479421</span>      <span class="mi">479423</span>      <span class="mi">479422</span>      <span class="mi">479424</span>      <span class="mi">479425</span>      <span class="mi">479426</span>      <span class="mi">479427</span>
+      <span class="mi">479429</span>      <span class="mi">479428</span>      <span class="mi">479430</span>      <span class="mi">479432</span>      <span class="mi">479431</span>      <span class="mi">479435</span>      <span class="mi">479433</span>      <span class="mi">479434</span>      <span class="mi">479436</span>      <span class="mi">479437</span>
+      <span class="mi">479438</span>      <span class="mi">479440</span>      <span class="mi">479439</span>      <span class="mi">479441</span>      <span class="mi">479443</span>      <span class="mi">479442</span>      <span class="mi">479446</span>      <span class="mi">479445</span>      <span class="mi">479444</span>      <span class="mi">479447</span>
+      <span class="mi">479448</span>      <span class="mi">479449</span>      <span class="mi">479450</span>      <span class="mi">479452</span>      <span class="mi">479451</span>      <span class="mi">479453</span>      <span class="mi">479454</span>      <span class="mi">479456</span>      <span class="mi">479455</span>      <span class="mi">479457</span>
+      <span class="mi">479459</span>      <span class="mi">479458</span>      <span class="mi">479460</span>      <span class="mi">479461</span>      <span class="mi">479463</span>      <span class="mi">479462</span>      <span class="mi">479464</span>      <span class="mi">479465</span>      <span class="mi">479466</span>      <span class="mi">479467</span>
+      <span class="mi">479469</span>      <span class="mi">479468</span>      <span class="mi">479470</span>      <span class="mi">479471</span>      <span class="mi">479472</span>      <span class="mi">479473</span>      <span class="mi">479475</span>      <span class="mi">479474</span>      <span class="mi">479476</span>      <span class="mi">479477</span>
+      <span class="mi">479478</span>      <span class="mi">479479</span>      <span class="mi">479480</span>      <span class="mi">479481</span>      <span class="mi">479482</span>      <span class="mi">479483</span>      <span class="mi">479484</span>      <span class="mi">479485</span>      <span class="mi">479486</span>      <span class="mi">479487</span>
+      <span class="mi">479488</span>      <span class="mi">479489</span>      <span class="mi">479490</span>      <span class="mi">479491</span>      <span class="mi">479492</span>      <span class="mi">479493</span>      <span class="mi">479494</span>      <span class="mi">479495</span>      <span class="mi">479496</span>      <span class="mi">479497</span>
+</pre></div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="common_plugins.html" class="btn btn-neutral float-left" title="commonPlugins.cmd" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="NDPluginAttrPlot.html" class="btn btn-neutral float-right" title="NDPluginAttrPlot" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Mark Rivers.
+      <span class="lastupdated">Last updated on 2023-March-12.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

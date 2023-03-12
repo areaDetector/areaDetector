@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ADLambda &mdash; areaDetector Support</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme_overrides.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="ADLightField" href="../ADLightField/ADLightField.html" />
+    <link rel="prev" title="ADGenICam" href="../ADGenICam/ADGenICam.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            areaDetector
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../readme.html">Readme</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../user_guide.html">User Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/overview.html">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/arch.html">Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/asynPortDriver.html">asynPortDriver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/NDArray.html">NDArray</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../detector_drivers.html">Detector Drivers</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../ADCore/guidelines.html">Guidelines and rules for drivers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADCore/ADDriver.html">ADDriver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADAndor/andorDoc.html">ADAndor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADAndor3/ADAndorDoc.html">ADAndor3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADAravis/ADAravis.html">ADAravis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADCSimDetector/ADCSimDetectorDoc.html">ADCSimDetector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADDexela/ADDexela.html">ADDexela</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADEiger/eiger.html">ADEiger</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADFastCCD/index.html">ADFastCCD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADGenICam/ADGenICam.html">ADGenICam</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">ADLambda</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#table-of-contents">Table Of Contents</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#implementation-of-standard-driver-parameters">Implementation of standard driver parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#lambda-specific-parameters">Lambda specific parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#configuration">Configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#medm-screens">MEDM screens</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#performance-measurements">Performance measurements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hardware-notes">Hardware Notes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#restrictions">Restrictions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../ADLightField/ADLightField.html">ADLightField</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADmarCCD/marCCDDoc.html">ADmarCCD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADmar345/mar345Doc.html">ADmar345</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPerkinElmer/PerkinElmerDoc.html">ADPerkinElmer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPICam/PICamDoc.html">ADPICam</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPilatus/pilatusDoc.html">ADPilatus</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPixirad/ADPixirad.html">ADPixirad</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPointGrey/PointGreyDoc.html">ADPointGrey</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADProsilica/ADProsilica.html">ADProsilica</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPvCam/pvcamDoc.html">ADPvCam</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADQImaging/QImagingDoc.html">ADQImaging</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADRIXSCam/ADRIXSCam.html">ADRIXSCam</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADSimDetector/simDetector.html">ADSimDetector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADSpinnaker/ADSpinnaker.html">ADSpinnaker</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADVimba/ADVimba.html">ADVimba</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADURL/ADURL.html">ADURL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../NDDriverStdArrays/NDDriverStdArraysDoc.html">NDDriverStdArrays</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../pvaDriver/pvaDriver.html">pvaDriver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../specsAnalyser/index.html">specsAnalyser</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/plugins.html">areaDetector Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../additional_plugins.html">Additional plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/medm.html">MEDM screens</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADViewers/ad_viewers.html">areaDetector Viewers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../acknowledgements.html">Acknowledgements and licenses</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../install_guide.html">Install Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release.html">Top-level Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ADCore_release.html">ADCore Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ADSupport_release.html">ADSupport Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../doxygen.html">Source Code Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../detectors.html">Supported Detectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../legacy_versions.html">Legacy Versions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">areaDetector</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../user_guide.html">areaDetector Users Guide</a></li>
+          <li class="breadcrumb-item"><a href="../detector_drivers.html">Detector Drivers</a></li>
+      <li class="breadcrumb-item active">ADLambda</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/ADLambda/ADLambda.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="adlambda">
+<h1><a class="toc-backref" href="#id1" role="doc-backlink">ADLambda</a><a class="headerlink" href="#adlambda" title="Permalink to this heading"></a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">author<span class="colon">:</span></dt>
+<dd class="field-odd"><p>John Hammonds (Argonne National Laboratory)</p>
+</dd>
+</dl>
+<section id="table-of-contents">
+<h2><a class="toc-backref" href="#id2" role="doc-backlink">Table Of Contents</a><a class="headerlink" href="#table-of-contents" title="Permalink to this heading"></a></h2>
+<nav class="contents" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#adlambda" id="id1">ADLambda</a></p>
+<ul>
+<li><p><a class="reference internal" href="#table-of-contents" id="id2">Table Of Contents</a></p></li>
+<li><p><a class="reference internal" href="#introduction" id="id3">Introduction</a></p></li>
+<li><p><a class="reference internal" href="#implementation-of-standard-driver-parameters" id="id4">Implementation of standard driver parameters</a></p></li>
+<li><p><a class="reference internal" href="#lambda-specific-parameters" id="id5">Lambda specific parameters</a></p></li>
+<li><p><a class="reference internal" href="#configuration" id="id6">Configuration</a></p></li>
+<li><p><a class="reference internal" href="#medm-screens" id="id7">MEDM screens</a></p></li>
+<li><p><a class="reference internal" href="#performance-measurements" id="id8">Performance measurements</a></p></li>
+<li><p><a class="reference internal" href="#hardware-notes" id="id9">Hardware Notes</a></p></li>
+<li><p><a class="reference internal" href="#restrictions" id="id10">Restrictions</a></p></li>
+</ul>
+</li>
+</ul>
+</nav>
+</section>
+<section id="introduction">
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">Introduction</a><a class="headerlink" href="#introduction" title="Permalink to this heading"></a></h2>
+<p>This is an <a class="reference external" href="https://www.aps.anl.gov/epics">EPICS</a>
+<a class="reference external" href="https://cars.uchicago.edu/software/epics/areaDetector.html">areaDetector</a>
+driver for the Lambda detector from
+<a class="reference external" href="http://www.x-spectrum.de">X-spectrum</a></p>
+<p>The interface to the detector is provided by a TCP/UDP/IP socket
+interface to the detector. X-Spectrum provides a library to handle
+communications and acquisition in the camera. This driver provides an
+interface layer between the vendor library and EPICS areaDetector.</p>
+<p>The hardware interface between the camera and the controlling computer
+consists of</p>
+<ul class="simple">
+<li><p>A single 1GB copper network link used for command/control</p></li>
+<li><p>A pair of 10GB Fiber network links for sending image data</p></li>
+</ul>
+<p>This detector is capable of acquiring up to 2000 images/sec. It may be
+necessary, therefore, to adapt standard areaDetector plugins for faster
+collection to ensure processing of all images.</p>
+</section>
+<section id="implementation-of-standard-driver-parameters">
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">Implementation of standard driver parameters</a><a class="headerlink" href="#implementation-of-standard-driver-parameters" title="Permalink to this heading"></a></h2>
+<p>The following table describes how the Lambda driver implements some of
+the standard driver parameters.</p>
+<table class="table-bordered table-striped table-hover docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>EPICS record name</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>AcquireTime</p></td>
+<td><p>Controls the exposure time of the camera in seconds.</p></td>
+</tr>
+<tr class="row-odd"><td><p>AcquirePeriod</p></td>
+<td><p>NOT YET IMPLEMENTED IN FIRMWARE.  Controls the period
+between exposures in internal trigger mode.  Currently this
+feature is not supported by the camera firmware but this
+is a planned feature.  Once the firmware supports this feature,
+the software should support this.</p></td>
+</tr>
+<tr class="row-even"><td><p>TriggerMode</p></td>
+<td><p>Default descriptions are overloaded.  Allows four modes:</p>
+<ul class="simple">
+<li><p>Internal</p></li>
+<li><p>External_SequencePer - each external pulse runs an <strong>image
+sequence</strong> per pulse</p></li>
+<li><p>External_ImagePer - each external pulse runs an <strong>image</strong> per pulse</p></li>
+<li><p>Gating_Mode - Trigger an image that is active while the pulse is high</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Acquire</p></td>
+<td><p>Controls starting and stopping camera images.</p></td>
+</tr>
+<tr class="row-even"><td><p>NumImages</p></td>
+<td><p>In Multiple Image mode, this controls the number of images
+to be collected.</p></td>
+</tr>
+<tr class="row-odd"><td><p>ImageMode</p></td>
+<td><p>Sets selection of Single or multiple Images when acquire
+button is pressed.  Acquisition on the Lambda is controlled
+by setting a defined number of images.  “Continuous” has been
+removed from the options.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="lambda-specific-parameters">
+<h2><a class="toc-backref" href="#id5" role="doc-backlink">Lambda specific parameters</a><a class="headerlink" href="#lambda-specific-parameters" title="Permalink to this heading"></a></h2>
+<p>Parameter Definition in ADLambda.cpp and record definitions in ADLambda.template</p>
+<table class="table-bordered table-striped table-hover docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter index variable</p></th>
+<th class="head"><p>asyn interface</p></th>
+<th class="head"><p>Access</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>drvInfo string</p></th>
+<th class="head"><p>EPICS record name</p></th>
+<th class="head"><p>EPICS record type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>LAMBDA_ConfigFilePath</p></td>
+<td><p>asynOctet</p></td>
+<td><p>r/w</p></td>
+<td><p>Displays the full path to the detector’s configueationFile</p></td>
+<td><p>LAMBDA_CONFIG_FILE_PATH</p></td>
+<td><p>ConfigFilePath</p></td>
+<td><p>waveform</p></td>
+</tr>
+<tr class="row-odd"><td><p>LAMBDA_EnergyThreshold</p></td>
+<td><p>asynFloat64</p></td>
+<td><p>r/w</p></td>
+<td><p>Sets the minimum energy that should register a valid event.</p></td>
+<td><p>LAMBDA_ENERGY_THRESHOLD</p></td>
+<td><p>EnergyThreshold</p></td>
+<td><p>ao</p></td>
+</tr>
+<tr class="row-even"><td><p>LAMBDA_DecodedQueuePath</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r</p></td>
+<td><p>Displays how far into the decoded queue we have reached.</p></td>
+<td><p>LAMBDA_DECODED_QUEUE_DEPTH</p></td>
+<td><p>DecodedQueueDepth</p></td>
+<td><p>longin</p></td>
+</tr>
+<tr class="row-odd"><td><p>LAMBDA_BadFrameCounter</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r</p></td>
+<td><p>Counts the number of bad frames detected during decoding.
+images are sent as a number of packets, rotating over 4 network ports.
+If the packets for the next image are received on all 4 ports, before
+the finish of an image, then the frame is counted as a bad frame.</p></td>
+<td><p>LAMBDA_BAD_FRAME_COUNTER</p></td>
+<td><p>BadFrameCounter</p></td>
+<td><p>longin</p></td>
+</tr>
+<tr class="row-even"><td><p>LAMBDA_OperatingMode</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>Switches between 12 and 24 bit counting mode.  These are
+referenced in pulldown as</p>
+<ul class="simple">
+<li><p>ContinuousReadWrite - Switches to 12-bit mode and sets image
+data type to UInt16.</p></li>
+<li><p>TwentyFourBit - Switches to 24-bit mode also sets image
+data type to UInt32.</p></li>
+</ul>
+<p>Note that it is possible in each mode to choose any Integer data
+type</p>
+</td>
+<td><p>LAMBDA_OPERATING_MODE</p></td>
+<td><p>OperatingMode</p>
+<p>OperatingMode_RBV</p>
+</td>
+<td><p>mbbo</p>
+<p>mbbi</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>LAMBDA_DetectorState</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r</p></td>
+<td><p>Displays the current state of the image processing of the
+detector.</p>
+<ul class="simple">
+<li><p>ON - Normal idle state.</p></li>
+<li><p>DISABLE</p></li>
+<li><p>BUSY - Performing non-imaging task such as loading config file.</p></li>
+<li><p>FAULT</p></li>
+<li><p>RECEIVING_IMAGES - Detector is actively taking images
+and placing them in the raw buffer to be decoded.</p></li>
+<li><p>PROCSSING_IMAGES - The detector is finished collecting images
+and has placed the in the raw buffer to be decoded.  The decoding
+process is still working on reconstructing packets for images in
+the raw buffer and placing them in the decoded buffer</p></li>
+<li><p>FINISHED - All images have been received and decoded. The raw
+buffer is empty.  This signal will remain in this state until
+StopAcquisition is called.  Once StopAcquisition is called, then
+this signal will return to ON.</p></li>
+</ul>
+</td>
+<td><p>LAMBDA_DETECTOR_STATE</p></td>
+<td><p>LambdaState</p></td>
+<td><p>mbbi</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="configuration">
+<h2><a class="toc-backref" href="#id6" role="doc-backlink">Configuration</a><a class="headerlink" href="#configuration" title="Permalink to this heading"></a></h2>
+<p>The Lambda detector instance is created using the LambdaConfig command,
+either from C/C++ or from the EPICS IOC shell.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span> <span class="n">LambdaConfig</span><span class="p">(</span><span class="n">const</span> <span class="n">char</span> <span class="o">*</span><span class="n">portName</span><span class="p">,</span> <span class="n">const</span> <span class="n">char</span><span class="o">*</span> <span class="n">configPath</span><span class="p">,</span>
+        <span class="nb">int</span> <span class="n">maxBuffers</span><span class="p">,</span> <span class="n">size_t</span> <span class="n">maxMemory</span><span class="p">,</span>
+        <span class="nb">int</span> <span class="n">priority</span><span class="p">,</span> <span class="nb">int</span> <span class="n">stackSize</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>For details on the meaning of the parameters to this function refer to
+the documentation on the LambdaConfig function in the <a class="reference external" href="areaDetectorDoxygenHTML/ADLambda_8cpp.html">Lambda.cpp
+documentation</a></p>
+<p>and in the documentation for the constructor in the <a class="reference external" href="areaDetectorDoxygenHTML/class_ADLambda.html">ADLambda
+class</a>)</p>
+</section>
+<section id="medm-screens">
+<h2><a class="toc-backref" href="#id7" role="doc-backlink">MEDM screens</a><a class="headerlink" href="#medm-screens" title="Permalink to this heading"></a></h2>
+</section>
+<section id="performance-measurements">
+<h2><a class="toc-backref" href="#id8" role="doc-backlink">Performance measurements</a><a class="headerlink" href="#performance-measurements" title="Permalink to this heading"></a></h2>
+<p>The Lambda detector itself is rated at 2000 frames/sec. This rate has
+been achieved simply processing the detector images into NDArrays. We
+have been able to save up to 2000 images/sec for a period of time using
+a PipeWriterPlugin that writes to a Unix Pipe which feeds an external
+MPI program which compresses the image data and writes to a binary file
+with occasional bad frame errors. Sometimes the detector seems to
+persist giving bad frames once it gets started and the detector has to
+be reset. Sometimes we lose communication with the detector through the
+1GB command interface. When this happens we have to power down the
+detector for about 10 minutes before it will come on again.</p>
+</section>
+<section id="hardware-notes">
+<h2><a class="toc-backref" href="#id9" role="doc-backlink">Hardware Notes</a><a class="headerlink" href="#hardware-notes" title="Permalink to this heading"></a></h2>
+<p>This detector is capable of supporting a number of features which are
+not currently available in the detector driver &amp; firmware. These
+features will be added as they are made available by the vendor.</p>
+</section>
+<section id="restrictions">
+<h2><a class="toc-backref" href="#id10" role="doc-backlink">Restrictions</a><a class="headerlink" href="#restrictions" title="Permalink to this heading"></a></h2>
+<p>To be added later…</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../ADGenICam/ADGenICam.html" class="btn btn-neutral float-left" title="ADGenICam" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../ADLightField/ADLightField.html" class="btn btn-neutral float-right" title="ADLightField" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Mark Rivers.
+      <span class="lastupdated">Last updated on 2023-March-12.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

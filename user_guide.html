@@ -18,7 +18,7 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Detector Drivers" href="detector_drivers.html" />
+    <link rel="next" title="Overview" href="ADCore/overview.html" />
     <link rel="prev" title="areaDetector" href="readme.html" /> 
 </head>
 
@@ -44,8 +44,15 @@
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="readme.html">Readme</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">User Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ADCore/overview.html">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ADCore/arch.html">Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ADCore/asynPortDriver.html">asynPortDriver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ADCore/NDArray.html">NDArray</a></li>
 <li class="toctree-l2"><a class="reference internal" href="detector_drivers.html">Detector Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ADCore/plugins.html">areaDetector Plugins</a></li>
 <li class="toctree-l2"><a class="reference internal" href="additional_plugins.html">Additional plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ADCore/medm.html">MEDM screens</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ADViewers/ad_viewers.html">areaDetector Viewers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="acknowledgements.html">Acknowledgements and licenses</a></li>
 </ul>
 </li>
@@ -87,10 +94,99 @@
 <h1>areaDetector Users Guide<a class="headerlink" href="#areadetector-users-guide" title="Permalink to this heading"></a></h1>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="detector_drivers.html">Detector Drivers</a><ul class="simple">
+<li class="toctree-l1"><a class="reference internal" href="ADCore/overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ADCore/arch.html">Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ADCore/asynPortDriver.html">asynPortDriver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ADCore/NDArray.html">NDArray</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ADCore/NDArray.html#id1">NDArray</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ADCore/NDArray.html#ndarraypool">NDArrayPool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ADCore/NDArray.html#ndattribute">NDAttribute</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ADCore/NDArray.html#ndattributelist">NDAttributeList</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ADCore/NDArray.html#pvattribute">PVAttribute</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ADCore/NDArray.html#paramattribute">paramAttribute</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ADCore/NDArray.html#functattribute">functAttribute</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ADCore/NDArray.html#asynndarraydriver">asynNDArrayDriver</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="additional_plugins.html">Additional plugins</a><ul class="simple">
+<li class="toctree-l1"><a class="reference internal" href="detector_drivers.html">Detector Drivers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ADCore/guidelines.html">Guidelines and rules for drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ADCore/ADDriver.html">ADDriver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ADAndor/andorDoc.html">ADAndor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ADAndor3/ADAndorDoc.html">ADAndor3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ADAravis/ADAravis.html">ADAravis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ADCSimDetector/ADCSimDetectorDoc.html">ADCSimDetector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ADDexela/ADDexela.html">ADDexela</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ADEiger/eiger.html">ADEiger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ADFastCCD/index.html">ADFastCCD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ADGenICam/ADGenICam.html">ADGenICam</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ADLambda/ADLambda.html">ADLambda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ADLightField/ADLightField.html">ADLightField</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ADmarCCD/marCCDDoc.html">ADmarCCD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ADmar345/mar345Doc.html">ADmar345</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ADPerkinElmer/PerkinElmerDoc.html">ADPerkinElmer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ADPICam/PICamDoc.html">ADPICam</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ADPilatus/pilatusDoc.html">ADPilatus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ADPixirad/ADPixirad.html">ADPixirad</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ADPointGrey/PointGreyDoc.html">ADPointGrey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ADProsilica/ADProsilica.html">ADProsilica</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ADPvCam/pvcamDoc.html">ADPvCam</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ADQImaging/QImagingDoc.html">ADQImaging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ADRIXSCam/ADRIXSCam.html">ADRIXSCam</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ADSimDetector/simDetector.html">ADSimDetector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ADSpinnaker/ADSpinnaker.html">ADSpinnaker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ADVimba/ADVimba.html">ADVimba</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ADURL/ADURL.html">ADURL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NDDriverStdArrays/NDDriverStdArraysDoc.html">NDDriverStdArrays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pvaDriver/pvaDriver.html">pvaDriver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="specsAnalyser/index.html">specsAnalyser</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ADCore/plugins.html">areaDetector Plugins</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ADCore/plugin_overview.html">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ADCore/NDPluginDriver.html">NDPluginDriver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ADCore/plugin_guidelines.html">Guidelines and rules for plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ADCore/plugin_medm.html">Base class medm screens</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ADCore/common_plugins.html">commonPlugins.cmd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ADCore/plugin_performance.html">Performance example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ADCore/NDPluginAttrPlot.html">NDPluginAttrPlot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ADCore/NDPluginAttribute.html">NDPluginAttribute</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ADCore/NDPluginBadPixel.html">NDPluginBadPixel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ADCore/NDPluginCircularBuff.html">NDPluginCircularBuff</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ADCore/NDPluginCodec.html">NDPluginCodec</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ADCore/NDPluginColorConvert.html">NDPluginColorConvert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ADCore/NDPluginFFT.html">NDPluginFFT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ADCore/NDPluginFile.html">NDPluginFile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ADCore/NDPluginGather.html">NDPluginGather</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ADCore/NDPluginOverlay.html">NDPluginOverlay</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ADCore/NDPluginProcess.html">NDPluginProcess</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ADCore/NDPluginPva.html">NDPluginPva</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ADCore/NDPluginROI.html">NDPluginROI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ADCore/NDPluginROIStat.html">NDPluginROIStat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ADCore/NDPluginScatter.html">NDPluginScatter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ADCore/NDPluginStats.html">NDPluginStats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ADCore/NDPluginStdArrays.html">NDPluginStdArrays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ADCore/NDPluginTimeSeries.html">NDPluginTimeSeries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ADCore/NDPluginTransform.html">NDPluginTransform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ADCore/NDPluginPos.html">NDPosPlugin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ADCore/ffmpegServer.html">ffmpegServer</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="additional_plugins.html">Additional plugins</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ADCompVision/ADCompVision.html">ADCompVision Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ADPluginBar/ADPluginBar.html">ADPluginBar Documentation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ADCore/medm.html">MEDM screens</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ADViewers/ad_viewers.html">areaDetector Viewers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ADViewers/ad_viewers.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ADViewers/ad_viewers.html#imagej-viewers">ImageJ Viewers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ADViewers/ad_viewers.html#imagej-controller-epics-ad-controller-java">ImageJ Controller (EPICS_AD_Controller.java)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ADViewers/ad_viewers.html#imagej-gaussian-profiler-gaussianprofiler-java">ImageJ Gaussian Profiler (GaussianProfiler.java)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ADViewers/ad_viewers.html#python-viewer">Python Viewer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ADViewers/ad_viewers.html#idl-viewer">IDL Viewer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ADViewers/ad_viewers.html#troubleshooting">Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ADViewers/ad_viewers.html#feature-comparison">Feature comparison</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ADViewers/ad_viewers.html#performance-comparison">Performance comparison</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="acknowledgements.html">Acknowledgements and licenses</a></li>
@@ -103,7 +199,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="readme.html" class="btn btn-neutral float-left" title="areaDetector" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="detector_drivers.html" class="btn btn-neutral float-right" title="Detector Drivers" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="ADCore/overview.html" class="btn btn-neutral float-right" title="Overview" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
