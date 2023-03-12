@@ -48,22 +48,22 @@ EPICS Products Required for Building areaDetector
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 areaDetector requires `EPICS
-base <https://www.aps.anl.gov/epics/base/index.php>`__. R3.14.12.4 or
-higher, any 3.15 release should work.
+base <https://epics.anl.gov/base/index.php>`__. R3.14.12.4 or
+higher, any 3.15 or 7.0 release should work.
 
 areaDetector also requires
-`asyn <https://www.aps.anl.gov/epics/modules/soft/asyn/>`__. The most
+`asyn <https://epics.anl.gov/modules/soft/asyn/>`__. The most
 recent release of asyn is recommended.
 
 Each areaDetector detector module builds both a library and an EPICS IOC
 application. To build the library only EPICS base and asynDriver are
 required. To build the IOC application the
-`synApps <https://www.aps.anl.gov/bcda/synApps>`__ modules AUTOSAVE,
+`synApps <https://epics.anl.gov/bcda/synApps>`__ modules AUTOSAVE,
 BUSY, CALC, and SSCAN are required. If the CALC module is built with
 SNCSEQ support then SNCSEQ is also required. The most recent release of
 the synApps modules is recommended.
 
-The DEVIOCSTATS and ALIVE modules are optional.
+The DEVIOCSTATS, ALIVE and RECCASTER modules are optional.
 
 EPICS base, asyn and the synApps modules must be built before building
 areaDetector.
@@ -370,44 +370,42 @@ edited for site-specific configuration.
      pvaDriver
      ADPilatus, etc.
 
-RELEASE\* and CONFIG\* files
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Configuring areaDetector
+~~~~~~~~~~~~~~~~~~~~~~~~
 
-areaDetector RELEASE\* and CONFIG\* files are a little more complex than
-those in a typical EPICS module. This is because they are designed to
-meet the following requirements: 
+Configuring areaDetector is a little more complex than a typical EPICS module.
+This is because it must meet the following requirements:
 
-- If using the top-level areaDetector
-  repository then it is only necessary to edit the CONFIG\* and RELEASE\*
-  files in the ``areaDetector/configure`` directory, and not in each of the
-  submodules, of which there are now about 40. 
+- When using the top-level areaDetector repository it should only be necessary
+  to edit files in the ``areaDetector/configure`` directory, and to not change
+  anything in the submodules at all.
 - Allows building multiple
   architectures in the same tree, including Linux and Windows. This means
   that ``SUPPORT`` and ``EPICS_BASE`` may be defined differently for different
   architectures, since the path syntax is different for Linux and Windows.
-- Allows using the top-level
-  `synApps/support <https://github.com/epics-synApps/support>`__ and
-  `synApps/support/configure <https://github.com/epics-synApps/support/configure>`__
-  directories. If these are used then one can edit
-  ``synApps/support/configure/RELEASE`` to set the locations of ``EPICS_BASE`` and
-  the versions of asyn, calc, etc. Typing ``make release`` in the
-  top-level synApps/support directory will update the RELEASE\* files in
-  all modules defined in that ``RELEASE`` file, including those in
-  ``areaDetector/configure``. 
+- **NOTE: The synApps/support module will need updating to be able to configure areaDetector version 3-12 as described here:**
+  - Allows using the top-level
+   `synApps/support <https://github.com/epics-synApps/support>`__ and
+   `synApps/support/configure <https://github.com/epics-synApps/support/configure>`__
+   directories. If these are used then one can edit
+   ``synApps/support/configure/RELEASE`` to set the locations of ``EPICS_BASE`` and
+   the versions of asyn, calc, etc. Typing ``make release`` in the
+   top-level ``synApps/support`` directory will update the ``RELEASE*`` files in
+   all modules defined in that ``RELEASE`` file, including those in
+   ``areaDetector/configure``.
 - Allows using the Debian EPICS package for
   ``EPICS_BASE`` and the support modules (asyn, calc, etc.). It is also
   possible to use the Debian package for some of the modules, but use more
   recent versions of some modules (e.g. asyn) that are built from source.
 
 After all the required products have been installed and a release of
-areaDetector has been downloaded then do the following in the
-areaDetector/configure directory:
+areaDetector has been downloaded it must be configured. To configure it by hand
+do the following in the ``areaDetector/configure`` directory:
 
 ::
 
    cp EXAMPLE_RELEASE.local         RELEASE.local
-   cp EXAMPLE_RELEASE_LIBS.local    RELEASE_LIBS.local
-   cp EXAMPLE_RELEASE_PRODS.local   RELEASE_PRODS.local
+   cp EXAMPLE_SITE_MODULES.local    SITE_MODULES.local
    cp EXAMPLE_CONFIG_SITE.local     CONFIG_SITE.local
 
 On Windows you must do the following:
@@ -425,37 +423,69 @@ example:
    cp EXAMPLE_CONFIG_SITE.local.linux-x86_64            CONFIG_SITE.local.linux-x86_x64
    cp EXAMPLE_CONFIG_SITE.local.linux-x86.vxWorks-ppc32 CONFIG_SITE.local.linux-x86.vxWorks-ppc32
 
-You can copy all of the ``EXAMPLE_*`` files to the files actually used with
-the ``copyFromExample`` script in the ``areaDetector/configure`` directory. If
-you do this then be sure to edit the
-``CONFIG_SITE.local.$(EPICS_HOST_ARCH)`` for your ``EPICS_HOST_ARCH`` as well.
+You can copy all of the ``EXAMPLE_*`` files to the filenames actually used by
+running the ``copyFromExample`` script in the ``areaDetector/configure``
+directory. If you do this then be sure to examine and edit the
+``CONFIG_SITE.local.$(EPICS_HOST_ARCH)`` for your ``EPICS_HOST_ARCH`` to ensure
+that the settings there are appropriate for your system.
 For example ``CONFIG_SITE.local.linux-x86_64`` defines ``WITH_BOOST=YES`` and
 this may need to be changed if you do not have the boost-devel package
-installed. You can see your local modifications with the ``diffFromExample``
-script.
+installed. You can see your local modifications to these files by running the
+``diffFromExample`` script.
 
-Edit RELEASE_LIBS.local
-~~~~~~~~~~~~~~~~~~~~~~~
+Changes to dependent module configration files
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The definition for ``SUPPORT`` normally points to the directory where the
-areaDetector, asyn, and the synApps modules (autosave, busy, calc, etc.)
-are located.
+Versions of areaDetector up to 3-11 were configured using two different files
+``RELEASE_LIBS.local`` and ``RELEASE_PRODS.local`` to point to the dependent
+modules. The ``RELEASE.local`` file had a different purpose, which is now
+performed by the ``SITE_MODULES`` and/or ``SITE_MODULES.local`` files described
+below.
 
-The location of ASYN, AREA_DETECTOR and EPICS_BASE must be specified.
-asyn and areaDetector are normally placed in the SUPPORT directory
-defined in this file.
+From Version 3-12 on, all dependent support modules must be specified in the
+``RELEASE`` and/or ``RELEASE.local`` files, from which the build process will
+extract the paths to the dependent submodules.
 
-As described above ``RELEASE_LIBS.local.$(EPICS_HOST_ARCH)`` can be used if the
-ASYN version or path is different for a specific target architecture. This is
-usually not necessary even for building Linux and Windows in the same tree,
-because, as described below, only the definitions of ``SUPPORT`` and ``EPICS_BASE`` in the
-top-level ``$(AREA_DETECTOR)/../RELEASE.$(EPICS_HOST_ARCH).local``
+No changes should be needed for submodules to build with the new top-level
+module though.
+
+Edit RELEASE and/or RELEASE.local
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+As with other EPICS support modules (and unlike previous releases), the
+``RELEASE`` and/or ``RELEASE.local`` files provide pointers to the other
+support modules that areaDetector depends on, which the EPICS Build system uses
+to find the headers, definitions and libraries from those modules.
+
+Any variables set in the ``RELEASE.local`` file will overide the same variable
+set in the ``RELEASE`` file, and it is common practice to leave the ``RELEASE``
+file unmodified and create a ``RELEASE.local`` file (often by copying and
+editing the ``EXAMPLE_RELEASE.local`` file) to hold the site-specific
+settings.
+
+The definition for ``SUPPORT`` in this file normally points to the directory
+where the areaDetector, asyn, and the synApps modules (autosave, busy, calc,
+etc.) are located for convenience in defining their paths. The ``SUPPORT``
+variable is not actually required however if it isn't needed for those.
+
+The paths to the ``ASYN``, ``AREA_DETECTOR`` and ``EPICS_BASE`` modules must be
+specified here. The asyn and areaDetector modules are normally placed inside
+a ``SUPPORT`` directory as defined in this file.
+
+As described above additional files named ``RELEASE.$(EPICS_HOST_ARCH).local``
+can be created in the ``areaDetector/configure`` directory if the version or
+path to a support module is different on any other target architecture.
+This may not necessary even when building Linux and Windows in the same tree
+though, since only the definitions of ``SUPPORT`` and ``EPICS_BASE`` in the
+top-level ``$(AREA_DETECTOR)/../RELEASE.$(EPICS_HOST_ARCH).local`` file
 need to be changed for Windows.
 
-If WITH_PVA=YES is defined in CONFIG_SITE.local and EPICS_BASE version
-is prior to 7.0 then PVA must define the location of the EPICS PVA
-(formerly EPICS V4) libraries. Beginning with EPICS base 7.0 the PVA
-files are in EPICS base and PVA should not be defined.
+Note that ``$(AREA_DETECTOR)/../`` is typically the same as ``synApps/support``.
+
+If ``WITH_PVA=YES`` is defined in ``CONFIG_SITE.local`` and the EPICS version
+predates 7.0 then ``PVA`` must define the location of the EPICS PVA
+(formerly EPICS V4) libraries. Beginning with EPICS Base 7.0 the PVA
+files are in EPICS base and ``PVA`` should not be defined.
 
 If using Debian packages then the following must be done: 
 
@@ -474,30 +504,29 @@ If using Debian packages then the following must be done:
   for IPAC and SNCSEQ in ``asyn/configure/RELEASE``.
 
 
-Edit RELEASE_PRODS.local
-~~~~~~~~~~~~~~~~~~~~~~~~
+The variables ``AUTOSAVE``, ``BUSY``, ``CALC``, and ``SSCAN`` must be set.
+If the CALC module was built with SNCSEQ support then ``SNCSEQ`` must also
+be specified. If ``DEVIOCSTATS`` or ``ALIVE`` are defined here the IOC
+applications will be built with these modules as well.
 
-See the notes for ``RELEASE_LIBS.local`` above.
+Optionally create or edit RELEASE.$(EPICS_HOST_ARCH).local files
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The definitions for ``AUTOSAVE``, ``BUSY``, ``CALC``, and ``SSCAN`` must be specified.  
-If the CALC module is built with SNCSEQ support then SNCSEQ must also be specified. 
-If DEVIOCSTATS or ALIVE are defined in ``RELEASE_PRODS.local``
-then IOC applications will be built with these modules as well.
+Some installations build for multiple target architectures in a common
+directory tree on a file server, using different development machines. In
+this case the path to ``SUPPORT`` may be different for each architecture. For
+example on Linux SUPPORT might be ``/home/epics/epics/support``, while on a
+Windows machine the same copy of support might be found at the path
+``J:/epics/support``.
 
-Optionally create or edit $(AREA_DETECTOR)/../RELEASE.$(EPICS_HOST_ARCH).local
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+To implement this, the ``RELEASE.local`` would set the module paths relative to
+the ``SUPPORT`` variable, then each architecture would have its own
+``RELEASE.$(EPICS_HOST_ARCH).local`` file to set ``SUPPORT`` as appropriate.
 
-Some installations chose to build for multiple target architectures using
-different development machines in the same directory tree on a file server. In
-this case the path to SUPPORT may be different for each architecture. For
-example SUPPORT on Linux might be ``/home/epics/epics/support``, while on a
-Windows machine using the same copy of support the path might be
-``J:/epics/support``. In this case ``RELEASE_LIBS.local`` and ``RELEASE_PRODS.local``
-could specify the path for Linux while ``$(AREA_DETECTOR)/../RELEASE.windows-x64.local``
-could specify the path for the windows-x64 build host. RELEASE_LIBS.local or
-RELEASE_PRODS.local will be read first, and then 
-``$(AREA_DETECTOR)/../RELEASE.$(EPICS_HOST_ARCH).local`` if it exists.
-Note that ``$(AREA_DETECTOR)/../`` is typically the same as ``synApps/support``.
+When the build system reads the various RELEASE files it first looks at
+``configure/RELEASE``. At the bottom of that file are a set of ``-include``
+statements which first pull in ``$(AREA_DETECTOR)/../RELEASE.local`` and
+``$(AREA_DETECTOR)/../RELEASE.$(EPICS_HOST_ARCH).local`` if they exist, then .
 
 Edit CONFIG_SITE.local and optionally CONFIG_SITE.local.$(EPICS_HOST_ARCH)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -585,8 +614,8 @@ Thus if multiple architectures are being built in the same tree the
 settings can be different for each ``OS_CLASS``, ``EPICS_HOST_ARCH``, or
 ``EPICS_HOST_ARCH.T_A``.
 
-Edit RELEASE.local
-~~~~~~~~~~~~~~~~~~
+Edit SITE_MODULES.local
+~~~~~~~~~~~~~~~~~~~~~~~
 
 Uncomment the lines for the drivers that should be built. None of the
 detector drivers are included by default. Some detectors cannot be built
@@ -595,8 +624,8 @@ Windows systems with the Princeton Instruments WinView or WinSpec
 programs installed, and the Point Grey driver can currently only be
 built on Linux systems if the version of libc.so is 2.14 or greater.
 
-``RELEASE.local.$(EPICS_HOST_ARCH)`` can be used to build different drivers
-on different ``EPICS_HOST_ARCH`` builds in the same tree.
+The ``SITE_MODULES.$(EPICS_HOST_ARCH).local`` files can be used to build
+different drivers on different ``EPICS_HOST_ARCH`` builds in the same tree.
 
 make
 ~~~~
@@ -624,7 +653,7 @@ Copy ``EXAMPLE_commonPlugins.cmd`` to ``commonPlugins.cmd`` and
 Edit ``commonPlugins.cmd`` and ``commonPlugin_settings.req``. Change whether or
 not the lines for optional modules (e.g. DEVIOCSTATS, ALIVE) are
 commented out depending on whether these modules were defined in
-``RELEASE_PRODS.local``.
+``RELEASE.local``.
 
 Run SimDetector
 ~~~~~~~~~~~~~~~

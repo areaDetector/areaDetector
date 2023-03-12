@@ -1,59 +1,79 @@
-### Uncomment the lines for the detectors that should be built on all architectures.
-### Note that the detector Makefiles prevent building on completely unsupported architectures
-### such a ADPerkinElmer on Linux, etc. so those detectors can be uncommented in this file.
-### However, a local installation may want to further restrict what architectures a detector
-### is built for.  In that case comment out the driver in this file and add it to
-### RELEASE.local.$(EPICS_HOST_ARCH).
-###
+#RELEASE Location of external products
+# Run "gnumake clean uninstall install" in the application
+# top directory each time this file is changed.
 
-#ADADSC=$(AREA_DETECTOR)/ADADSC
-#ADANDOR=$(AREA_DETECTOR)/ADAndor
-#ADANDOR3=$(AREA_DETECTOR)/ADAndor3
-#ADARAVIS=$(AREA_DETECTOR)/ADAravis
-#ADBRUKER=$(AREA_DETECTOR)/ADBruker
-#ADCAMERALINK=$(AREA_DETECTOR)/ADCameraLink
-#ADCOMPVISION=$(AREA_DETECTOR)/ADCompVision
-#ADCSIMDETECTOR=$(AREA_DETECTOR)/ADCSimDetector
-#ADDEXELA=$(AREA_DETECTOR)/ADDexela
-#ADEIGER=$(AREA_DETECTOR)/ADEiger
-#ADFASTCCD=$(AREA_DETECTOR)/ADFastCCD
-#ADFIREWIREWIN=$(AREA_DETECTOR)/ADFireWireWin
-#ADGENICAM=$(AREA_DETECTOR)/ADGenICam
-#ADLAMBDA=$(AREA_DETECTOR)/ADLambda
-#ADLIGHTFIELD=$(AREA_DETECTOR)/ADLightField
-#ADMERLIN=$(AREA_DETECTOR)/ADMerlin
-#ADMMPAD=$(AREA_DETECTOR)/ADMMPAD
-#ADMYTHEN=$(AREA_DETECTOR)/ADMythen
-#ADPCO=$(AREA_DETECTOR)/ADPCO
-#ADPCOWIN=$(AREA_DETECTOR)/ADPcoWin
-#ADPICAM=$(AREA_DETECTOR)/ADPICam
-#ADPSL=$(AREA_DETECTOR)/ADPSL
-#ADPERKINELMER=$(AREA_DETECTOR)/ADPerkinElmer
-#ADPILATUS=$(AREA_DETECTOR)/ADPilatus
-#ADPIXIRAD=$(AREA_DETECTOR)/ADPixirad
-#ADPLUGINBAR=$(AREA_DETECTOR)/ADPluginBar
-#ADPLUGINEDGE=$(AREA_DETECTOR)/ADPluginEdge
-### ADPointGrey cannot be built on Linux systems without libc 2.14
-#ADPOINTGREY=$(AREA_DETECTOR)/ADPointGrey
-#ADPROSILICA=$(AREA_DETECTOR)/ADProsilica
-#ADPVCAM=$(AREA_DETECTOR)/ADPvCam
-#ADQIMAGING=$(AREA_DETECTOR)/ADQImaging
-### ADRoper cannot be built on Windows systems without WinView installed
-#ADROPER=$(AREA_DETECTOR)/ADRoper
-#ADSIMDETECTOR=$(AREA_DETECTOR)/ADSimDetector
-#ADSPINNAKER=$(AREA_DETECTOR)/ADSpinnaker
+# If using Debian packages then the following must be done:
+#  SUPPORT should be defined to be the root location of any modules which should NOT come from the Debian package.
+#  Any modules which should come from the Debian package should be commented out, except for EPICS_BASE.
+#  For example to use a newer version of asyn and areaDetector then define ASYN, AREA_DETECTOR, ADCORE,
+#  and ADSUPPORT here, but comment out AUTOSAVE, BUSY, etc.
+
+# If you don't want to install into $(TOP) then
+# define INSTALL_LOCATION_APP here
+#INSTALL_LOCATION_APP=<fullpathname>
+
+SUPPORT=/corvette/home/epics/devel
+
+# ASYN provides base classes
+ASYN=$(SUPPORT)/asyn-4-42
+
+AREA_DETECTOR=$(SUPPORT)/areaDetector-3-11
+
+# ADSupport is needed by ADCore plugins
 ADSUPPORT=$(AREA_DETECTOR)/ADSupport
-#ADURL=$(AREA_DETECTOR)/ADURL
-#ADVIMBA=$(AREA_DETECTOR)/ADVimba
-#ADMAR345=$(AREA_DETECTOR)/ADmar345
-#ADMARCCD=$(AREA_DETECTOR)/ADmarCCD
-#ADNED=$(AREA_DETECTOR)/ADnED
-#ARAVISGIGE=$(AREA_DETECTOR)/aravisGigE
-#FFMPEGSERVER=$(AREA_DETECTOR)/ffmpegServer
-#FFMPEGVIEWER=$(AREA_DETECTOR)/ffmpegViewer
-#FIREWIREDCAM=$(AREA_DETECTOR)/firewireDCAM
-#NDDRIVERSTDARRAYS=$(AREA_DETECTOR)/NDDriverStdArrays
-#PVADRIVER=$(AREA_DETECTOR)/pvaDriver
-#SPECSANALYSER=$(AREA_DETECTOR)/specsAnalyser
-#ADRIXSCAM=$(AREA_DETECTOR)/ADRIXSCam
--include $(TOP)/configure/RELEASE.local.$(EPICS_HOST_ARCH)
+
+# ADCORE provides base classes and plugins
+ADCORE=$(AREA_DETECTOR)/ADCore
+
+
+## Modules needed by IOCs
+
+# AUTOSAVE provides save_restore
+AUTOSAVE=$(SUPPORT)/autosave-5-10
+
+# BUSY provides the busy record
+BUSY=$(SUPPORT)/busy-1-7-2
+
+# CALC provides the sseq record for the reset in NDStats.template
+# and which is loaded into the example IOCs for general purpose use.
+# CALC also provides the scalcout record for SSCAN
+CALC=$(SUPPORT)/calc-3-7-3
+
+# SNCSEQ is needed if CALC was built with SNCSEQ support (see CALC/configure/RELEASE)
+SNCSEQ=$(SUPPORT)/seq-2-2-5
+
+# SSCAN is needed for scanning threshold on Pilatus and general scanning.
+# SSCAN also provides support needed for the swait record in CALC
+SSCAN=$(SUPPORT)/sscan-2-11-3
+
+
+## Optional modules
+
+# DEVIOCSTATS is used to monitor IOC resources
+#DEVIOCSTATS=$(SUPPORT)/devIocStats-3-1-16
+
+# ALIVE can send IOC status data to a central server
+#ALIVE=$(SUPPORT)/alive-1-0-1
+
+# ADPLUGINEDGE is an optional plugin
+#ADPLUGINEDGE=$(AREA_DETECTOR)/ADPluginEdge
+
+# RECCASTER is the client for recsync, used to communicate IOC information to a recceiver server
+#RECCASTER=$(SUPPORT)/recsync/client
+
+
+## PVA modules
+
+# If CONFIG_SITE.local defines WITH_PVA=YES and EPICS_BASE is prior to 7.0 then define the path here
+# If using EPICS_BASE 7.0 or later the PVA files are in base itself and no additional definitions are needed.
+#PVA=/corvette/usr/local/epics-devel/epicsV4/EPICS-CPP-4.6.0
+
+# For versions prior to EPICS base 7.0 use this
+#PVCOMMON=$(PVA)/pvCommonCPP
+#PVACCESS=$(PVA)/pvAccessCPP
+#PVDATA=$(PVA)/pvDataCPP
+#PVDATABASE=$(PVA)/pvDatabaseCPP
+#NORMATIVETYPES=$(PVA)/normativeTypesCPP
+
+# EPICS Base comes last
+EPICS_BASE=/corvette/usr/local/epics-devel/base-7.0.5
