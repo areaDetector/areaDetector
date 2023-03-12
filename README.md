@@ -26,9 +26,9 @@ All of the other submodules (ADProsilica, ADPilatus, etc.) contain drivers and E
 for specific detectors.
 
 Additional information:
-* [Documentation home](https://areadetector.github.io/master/index.html).
-* [Installation Guide](https://areadetector.github.io/master/install_guide.html)
-* [User Guide](https://areadetector.github.io/master/user_guide.html).
+* [Documentation home](https://areadetector.github.io/areaDetector/index.html).
+* [Installation Guide](https://areadetector.github.io/areaDetector/install_guide.html)
+* [User Guide](https://areadetector.github.io/areaDetector/user_guide.html).
 * [Release notes and links to source and binary releases](RELEASE.md).
 
 See the following documentation about the git submodule feature and how it can 
