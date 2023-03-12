@@ -52,7 +52,7 @@ there are only 2 EPICS dependencies in this code.
 #. `libCom <http://www.aps.anl.gov/epics/base/R3-14/12-docs/AppDevGuide/>`__.
    libCom from EPICS base provides operating-system independent
    functions for threads, mutexes, etc.
-#. `asyn <http://www.aps.anl.gov/epics/modules/soft/asyn/>`__. asyn is a
+#. `asyn <https://github.com/epics-modules/asyn>`__. asyn is a
    module that provides interthread messaging services, including
    queueing and callbacks.
 
