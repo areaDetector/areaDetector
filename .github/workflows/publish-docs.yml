@@ -44,7 +44,10 @@ jobs:
     - name: Build Docs
       run: |
         pip install m2r2 "pygments >=2.7.0" "sphinx_rtd_theme >=1.2.0" sphinx-multibuild linuxdoc
-        sphinx-build -ET docs/source docs/_build/html/
+        cd docs
+        make sphinx
+        cd -
+        #sphinx-build -ET docs/source docs/_build/html/
 
     - name: Install Doxygen
       run: sudo apt-get install doxygen graphviz -y
@@ -55,7 +58,7 @@ jobs:
       # So it will be published by Publish Jobs below
       run: |
         cd docs
-        doxygen
+        make doxygen
         cd -
         ls -l docs/_build/html
 
