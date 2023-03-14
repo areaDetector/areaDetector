@@ -1,0 +1,480 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="class_n_d_plugin_transform" kind="class" language="C++" prot="public">
+    <compoundname>NDPluginTransform</compoundname>
+    <basecompoundref refid="class_n_d_plugin_driver" prot="public" virt="non-virtual">NDPluginDriver</basecompoundref>
+    <includes refid="_n_d_plugin_transform_8h" local="no">NDPluginTransform.h</includes>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="class_n_d_plugin_transform_1a43437d564275587977bb53283fd2ac93" prot="protected" static="no" mutable="no">
+        <type>int</type>
+        <definition>int NDPluginTransform::NDPluginTransformType_</definition>
+        <argsstring></argsstring>
+        <name>NDPluginTransformType_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginTransform.h" line="23" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginTransform.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_n_d_plugin_transform_1a6764ab382d13d9d5404eff9b4c5341e4" prot="private" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t NDPluginTransform::userDims_[ND_ARRAY_MAX_DIMS]</definition>
+        <argsstring>[ND_ARRAY_MAX_DIMS]</argsstring>
+        <name>userDims_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginTransform.h" line="27" column="12" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginTransform.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_n_d_plugin_transform_1aeb9b90b6d60f9c8af15bf7ad82eebda9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>NDPluginTransform::NDPluginTransform</definition>
+        <argsstring>(const char *portName, int queueSize, int blockingCallbacks, const char *NDArrayPort, int NDArrayAddr, int maxBuffers, size_t maxMemory, int priority, int stackSize, int maxThreads=1)</argsstring>
+        <name>NDPluginTransform</name>
+        <param>
+          <type>const char *</type>
+          <declname>portName</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>queueSize</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>blockingCallbacks</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>NDArrayPort</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>NDArrayAddr</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>maxBuffers</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>maxMemory</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>priority</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>stackSize</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>maxThreads</declname>
+          <defval>1</defval>
+        </param>
+        <briefdescription>
+<para>Constructor for <ref refid="class_n_d_plugin_transform" kindref="compound">NDPluginTransform</ref>; most parameters are simply passed to <ref refid="class_n_d_plugin_driver_1a64f942bde94593fdb0b5ff5c677197d4" kindref="member">NDPluginDriver::NDPluginDriver</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>After calling the base class constructor this method sets reasonable default values for all of the Transform parameters. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">portName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of the asyn port driver to be created. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">queueSize</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of NDArrays that the input queue for this plugin can hold when NDPluginDriverBlockingCallbacks=0. Larger queues can decrease the number of dropped arrays, at the expense of more <ref refid="class_n_d_array" kindref="compound">NDArray</ref> buffers being allocated from the underlying driver&apos;s <ref refid="class_n_d_array_pool" kindref="compound">NDArrayPool</ref>. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">blockingCallbacks</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Initial setting for the NDPluginDriverBlockingCallbacks flag. 0=callbacks are queued and executed by the callback thread; 1 callbacks execute in the thread of the driver doing the callbacks. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">NDArrayPort</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of asyn port driver for initial source of <ref refid="class_n_d_array" kindref="compound">NDArray</ref> callbacks. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">NDArrayAddr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>asyn port driver address for initial source of <ref refid="class_n_d_array" kindref="compound">NDArray</ref> callbacks. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">maxBuffers</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The maximum number of <ref refid="class_n_d_array" kindref="compound">NDArray</ref> buffers that the <ref refid="class_n_d_array_pool" kindref="compound">NDArrayPool</ref> for this driver is allowed to allocate. Set this to 0 to allow an unlimited number of buffers. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">maxMemory</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The maximum amount of memory that the <ref refid="class_n_d_array_pool" kindref="compound">NDArrayPool</ref> for this driver is allowed to allocate. Set this to 0 to allow an unlimited amount of memory. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">priority</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The thread priority for the asyn port driver thread if ASYN_CANBLOCK is set in asynFlags. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">stackSize</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The stack size for the asyn port driver thread if ASYN_CANBLOCK is set in asynFlags. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">maxThreads</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The maximum number of threads this driver is allowed to use. If 0 then 1 will be used. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginTransform.h" line="15" column="5" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginTransform.cpp" bodystart="588" bodyend="617"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_d_plugin_transform_1a0e05a1e62bce96f7c56a3595a8248128" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void NDPluginTransform::processCallbacks</definition>
+        <argsstring>(NDArray *pArray)</argsstring>
+        <name>processCallbacks</name>
+        <reimplements refid="class_n_d_plugin_driver_1a75ed5528f584d90e4f789aef058661cd">processCallbacks</reimplements>
+        <param>
+          <type><ref refid="class_n_d_array" kindref="compound">NDArray</ref> *</type>
+          <declname>pArray</declname>
+        </param>
+        <briefdescription>
+<para>Callback function that is called by the <ref refid="class_n_d_array" kindref="compound">NDArray</ref> driver with new <ref refid="class_n_d_array" kindref="compound">NDArray</ref> data. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Grabs the current <ref refid="class_n_d_array" kindref="compound">NDArray</ref> and applies the selected transforms to the data. Apply the transforms in order. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pArray</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The <ref refid="class_n_d_array" kindref="compound">NDArray</ref> from the callback. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+<para>Create a pointer to a structure of type NDArrayInfo_t and use it to get information about the input array.</para>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginTransform.h" line="20" column="10" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginTransform.cpp" bodystart="479" bodyend="517"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_n_d_plugin_transform_1ad59d474ef3db6a144966ccd4c0181b64" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void NDPluginTransform::transformImage</definition>
+        <argsstring>(NDArray *inArray, NDArray *outArray, NDArrayInfo_t *arrayInfo)</argsstring>
+        <name>transformImage</name>
+        <param>
+          <type><ref refid="class_n_d_array" kindref="compound">NDArray</ref> *</type>
+          <declname>inArray</declname>
+        </param>
+        <param>
+          <type><ref refid="class_n_d_array" kindref="compound">NDArray</ref> *</type>
+          <declname>outArray</declname>
+        </param>
+        <param>
+          <type><ref refid="_n_d_array_8h_1a25da0f364d2f6a3b2369b647b38df24e" kindref="member">NDArrayInfo_t</ref> *</type>
+          <declname>arrayInfo</declname>
+        </param>
+        <briefdescription>
+<para>Transform the image according to the selected choice. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginTransform.h" line="28" column="10" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginTransform.cpp" bodystart="521" bodyend="565"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Perform transformations (rotations, flips) on NDArrays. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><linebreak/>
+ </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>NDPluginDriver</label>
+        <link refid="class_n_d_plugin_driver"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>epicsThreadRunable</label>
+      </node>
+      <node id="4">
+        <label>asynPortDriver</label>
+      </node>
+      <node id="3">
+        <label>asynNDArrayDriver</label>
+        <link refid="classasyn_n_d_array_driver"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>NDPluginTransform</label>
+        <link refid="class_n_d_plugin_transform"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>NDPluginDriver</label>
+        <link refid="class_n_d_plugin_driver"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+        <childnode refid="11" relation="public-inheritance">
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>pPrevInputArray_</edgelabel>
+        </childnode>
+      </node>
+      <node id="11">
+        <label>epicsThreadRunable</label>
+      </node>
+      <node id="8">
+        <label>NDDimension</label>
+        <link refid="struct_n_d_dimension"/>
+      </node>
+      <node id="4">
+        <label>asynPortDriver</label>
+      </node>
+      <node id="10">
+        <label>string</label>
+      </node>
+      <node id="9">
+        <label>Codec_t</label>
+        <link refid="struct_codec__t"/>
+        <childnode refid="10" relation="usage">
+          <edgelabel>name</edgelabel>
+        </childnode>
+      </node>
+      <node id="7">
+        <label>NDArray</label>
+        <link refid="class_n_d_array"/>
+        <childnode refid="5" relation="usage">
+          <edgelabel>pNDArrayPool</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>dims</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>pAttributeList</edgelabel>
+        </childnode>
+        <childnode refid="9" relation="usage">
+          <edgelabel>codec</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>pDriver</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>asynNDArrayDriver</label>
+        <link refid="classasyn_n_d_array_driver"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>pNDArrayPool</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>pAttributeList</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>pArrays</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>NDArrayPool</label>
+        <link refid="class_n_d_array_pool"/>
+      </node>
+      <node id="6">
+        <label>NDAttributeList</label>
+        <link refid="class_n_d_attribute_list"/>
+      </node>
+      <node id="1">
+        <label>NDPluginTransform</label>
+        <link refid="class_n_d_plugin_transform"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginTransform.h" line="13" column="1" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginTransform.h" bodystart="13" bodyend="29"/>
+    <listofallmembers>
+      <member refid="classasyn_n_d_array_driver_1aa06c19f650b4619a7bdbf3a79397c3d3" prot="protected" virt="non-virtual"><scope>NDPluginTransform</scope><name>ADAcquire</name></member>
+      <member refid="classasyn_n_d_array_driver_1aaeb5af71e22323b6a3d4f51be380bc7a" prot="protected" virt="non-virtual"><scope>NDPluginTransform</scope><name>ADAcquireBusy</name></member>
+      <member refid="classasyn_n_d_array_driver_1a4eadbf94d756dcf7b61d624f791fd516" prot="protected" virt="non-virtual"><scope>NDPluginTransform</scope><name>ADFirmwareVersion</name></member>
+      <member refid="classasyn_n_d_array_driver_1a2deb25acd798e9e0da6c52741a07b915" prot="protected" virt="non-virtual"><scope>NDPluginTransform</scope><name>ADManufacturer</name></member>
+      <member refid="classasyn_n_d_array_driver_1a4c15720b7002ec1ff9278058240d82da" prot="protected" virt="non-virtual"><scope>NDPluginTransform</scope><name>ADModel</name></member>
+      <member refid="classasyn_n_d_array_driver_1a89d5bd570163bd569bc6d2a2163da9c2" prot="protected" virt="non-virtual"><scope>NDPluginTransform</scope><name>ADSDKVersion</name></member>
+      <member refid="classasyn_n_d_array_driver_1aa4d910fd087c8eb02f3437b18b80bba1" prot="protected" virt="non-virtual"><scope>NDPluginTransform</scope><name>ADSerialNumber</name></member>
+      <member refid="classasyn_n_d_array_driver_1adb00dde7e1d46856e0bd4b586aff6bd2" prot="protected" virt="non-virtual"><scope>NDPluginTransform</scope><name>ADWaitForPlugins</name></member>
+      <member refid="classasyn_n_d_array_driver_1aaaccd27681be8d91d10246e1aad72034" prot="public" virt="non-virtual"><scope>NDPluginTransform</scope><name>asynNDArrayDriver</name></member>
+      <member refid="class_n_d_plugin_driver_1a1aef91c358b7b8bde97fc1a01eb7c00d" prot="protected" virt="virtual"><scope>NDPluginTransform</scope><name>beginProcessCallbacks</name></member>
+      <member refid="classasyn_n_d_array_driver_1aba7309da5e7c5571fc693b1998c9d236" prot="public" virt="virtual"><scope>NDPluginTransform</scope><name>checkPath</name></member>
+      <member refid="classasyn_n_d_array_driver_1aaca89f35ddf4c5a1c22374ff608593cd" prot="public" virt="virtual"><scope>NDPluginTransform</scope><name>checkPath</name></member>
+      <member refid="class_n_d_plugin_driver_1aff27b7526fff890c1a88c2da0297b92c" prot="protected" virt="virtual"><scope>NDPluginTransform</scope><name>connectToArrayPort</name></member>
+      <member refid="classasyn_n_d_array_driver_1a813f6c84e96329cd89653a3b0497f8a9" prot="public" virt="virtual"><scope>NDPluginTransform</scope><name>createFileName</name></member>
+      <member refid="classasyn_n_d_array_driver_1af5494c8e3b3f317e049a5c336d8065f4" prot="public" virt="virtual"><scope>NDPluginTransform</scope><name>createFileName</name></member>
+      <member refid="classasyn_n_d_array_driver_1a42b3686c9c08b14ba054dd005a30fa0d" prot="public" virt="virtual"><scope>NDPluginTransform</scope><name>createFilePath</name></member>
+      <member refid="classasyn_n_d_array_driver_1acc2afad33faf8e45d6f21e251133ed94" prot="public" virt="non-virtual"><scope>NDPluginTransform</scope><name>decrementQueuedArrayCount</name></member>
+      <member refid="class_n_d_plugin_driver_1aa511b82dd2d49966c199b1ed4f72101f" prot="public" virt="virtual"><scope>NDPluginTransform</scope><name>driverCallback</name></member>
+      <member refid="class_n_d_plugin_driver_1ad2a1210161a2f542f347482aa93f3797" prot="protected" virt="virtual"><scope>NDPluginTransform</scope><name>endProcessCallbacks</name></member>
+      <member refid="classasyn_n_d_array_driver_1a7492ba858d885e2ba226a1c7ef9dcf72" prot="public" virt="virtual"><scope>NDPluginTransform</scope><name>getAttributes</name></member>
+      <member refid="classasyn_n_d_array_driver_1a1a369bc9b605bba000f782c69429622b" prot="public" virt="non-virtual"><scope>NDPluginTransform</scope><name>getQueuedArrayCount</name></member>
+      <member refid="classasyn_n_d_array_driver_1ad55549fca656bc01cbe0e3c92e4d29e3" prot="public" virt="non-virtual"><scope>NDPluginTransform</scope><name>incrementQueuedArrayCount</name></member>
+      <member refid="classasyn_n_d_array_driver_1ad472f633149cd560959721e589d9ea54" prot="protected" virt="non-virtual"><scope>NDPluginTransform</scope><name>NDADCoreVersion</name></member>
+      <member refid="classasyn_n_d_array_driver_1af2354f73acece6ee2427f5069b16fdb5" prot="protected" virt="non-virtual"><scope>NDPluginTransform</scope><name>NDArrayCallbacks</name></member>
+      <member refid="classasyn_n_d_array_driver_1abec5f5fc9922549d745d7dc7f19243ea" prot="protected" virt="non-virtual"><scope>NDPluginTransform</scope><name>NDArrayCounter</name></member>
+      <member refid="classasyn_n_d_array_driver_1a2b2fe51fba9a6ee4146813eac0c47fd1" prot="protected" virt="non-virtual"><scope>NDPluginTransform</scope><name>NDArrayData</name></member>
+      <member refid="classasyn_n_d_array_driver_1abf6f05821c7d1a9ab6aef60c9374281e" prot="protected" virt="non-virtual"><scope>NDPluginTransform</scope><name>NDArraySize</name></member>
+      <member refid="classasyn_n_d_array_driver_1a79c89c00ea62734d82c89e09ea8aa47b" prot="protected" virt="non-virtual"><scope>NDPluginTransform</scope><name>NDArraySizeX</name></member>
+      <member refid="classasyn_n_d_array_driver_1a75753778fe16182d0771e924f05bde33" prot="protected" virt="non-virtual"><scope>NDPluginTransform</scope><name>NDArraySizeY</name></member>
+      <member refid="classasyn_n_d_array_driver_1a72fac0fbaa730672f9a3a6da8c1d1a97" prot="protected" virt="non-virtual"><scope>NDPluginTransform</scope><name>NDArraySizeZ</name></member>
+      <member refid="classasyn_n_d_array_driver_1a4fae01b5b72053b6ae11dcd37ff6aff0" prot="protected" virt="non-virtual"><scope>NDPluginTransform</scope><name>NDAttributesFile</name></member>
+      <member refid="classasyn_n_d_array_driver_1abba302aca48e561ee5b40794db9f0708" prot="protected" virt="non-virtual"><scope>NDPluginTransform</scope><name>NDAttributesMacros</name></member>
+      <member refid="classasyn_n_d_array_driver_1a0875da7319e3cc7f54212629208b1d95" prot="protected" virt="non-virtual"><scope>NDPluginTransform</scope><name>NDAttributesStatus</name></member>
+      <member refid="classasyn_n_d_array_driver_1a9966536066c350fc218d3d7cb4d66aaf" prot="protected" virt="non-virtual"><scope>NDPluginTransform</scope><name>NDAutoIncrement</name></member>
+      <member refid="classasyn_n_d_array_driver_1a73da5c2affb0342b82b470f96a068d1a" prot="protected" virt="non-virtual"><scope>NDPluginTransform</scope><name>NDAutoSave</name></member>
+      <member refid="classasyn_n_d_array_driver_1a6e584ca2489de3a5e3e9d4d4e00bb7c0" prot="protected" virt="non-virtual"><scope>NDPluginTransform</scope><name>NDBayerPattern</name></member>
+      <member refid="classasyn_n_d_array_driver_1a43641411ca31d630cbf30adab5e553b2" prot="protected" virt="non-virtual"><scope>NDPluginTransform</scope><name>NDCodec</name></member>
+      <member refid="classasyn_n_d_array_driver_1abf7b27064b0d69440f16feb1e19f6cf2" prot="protected" virt="non-virtual"><scope>NDPluginTransform</scope><name>NDColorMode</name></member>
+      <member refid="classasyn_n_d_array_driver_1a2a9b3db5995b201c2e153decfd79391e" prot="protected" virt="non-virtual"><scope>NDPluginTransform</scope><name>NDCompressedSize</name></member>
+      <member refid="classasyn_n_d_array_driver_1af71358738ff1dbe4c9185f105807f799" prot="protected" virt="non-virtual"><scope>NDPluginTransform</scope><name>NDDataType</name></member>
+      <member refid="classasyn_n_d_array_driver_1a23727b6252a78b74fc40868f15e656dc" prot="protected" virt="non-virtual"><scope>NDPluginTransform</scope><name>NDDimensions</name></member>
+      <member refid="classasyn_n_d_array_driver_1a2be0f672f139c59f942bedfd7d94ff0f" prot="protected" virt="non-virtual"><scope>NDPluginTransform</scope><name>NDDriverVersion</name></member>
+      <member refid="classasyn_n_d_array_driver_1a436f60f2a566a9be759c2dad9a9cbbaf" prot="protected" virt="non-virtual"><scope>NDPluginTransform</scope><name>NDEpicsTSNsec</name></member>
+      <member refid="classasyn_n_d_array_driver_1af9d5abcc0a9ef2a21abce8607fd7650e" prot="protected" virt="non-virtual"><scope>NDPluginTransform</scope><name>NDEpicsTSSec</name></member>
+      <member refid="classasyn_n_d_array_driver_1adc503aa2621ea29c553514b09784229a" prot="protected" virt="non-virtual"><scope>NDPluginTransform</scope><name>NDFileCapture</name></member>
+      <member refid="classasyn_n_d_array_driver_1a726ad8d1b09b0fc5e08e0561e9bc255f" prot="protected" virt="non-virtual"><scope>NDPluginTransform</scope><name>NDFileCreateDir</name></member>
+      <member refid="classasyn_n_d_array_driver_1a1ce29ba9f5d31b52628ae76129d15fa2" prot="protected" virt="non-virtual"><scope>NDPluginTransform</scope><name>NDFileDeleteDriverFile</name></member>
+      <member refid="classasyn_n_d_array_driver_1a8911e3455de6adbfcb21093da9ff0500" prot="protected" virt="non-virtual"><scope>NDPluginTransform</scope><name>NDFileFormat</name></member>
+      <member refid="classasyn_n_d_array_driver_1a8f5e5a7aae6848a12e55012273ab06c5" prot="protected" virt="non-virtual"><scope>NDPluginTransform</scope><name>NDFileLazyOpen</name></member>
+      <member refid="classasyn_n_d_array_driver_1a513d2b4cc04ba240f434394c715f733f" prot="protected" virt="non-virtual"><scope>NDPluginTransform</scope><name>NDFileName</name></member>
+      <member refid="classasyn_n_d_array_driver_1a6d7cf0fea0eba3eb69fe69a60b89b30c" prot="protected" virt="non-virtual"><scope>NDPluginTransform</scope><name>NDFileNumber</name></member>
+      <member refid="classasyn_n_d_array_driver_1abd42667177a6b0ea88888487511514cd" prot="protected" virt="non-virtual"><scope>NDPluginTransform</scope><name>NDFileNumCapture</name></member>
+      <member refid="classasyn_n_d_array_driver_1aa392d8dfaa3d659958deddf100d54aed" prot="protected" virt="non-virtual"><scope>NDPluginTransform</scope><name>NDFileNumCaptured</name></member>
+      <member refid="classasyn_n_d_array_driver_1ac511e9800761d6cb070d3540940b24c3" prot="protected" virt="non-virtual"><scope>NDPluginTransform</scope><name>NDFilePath</name></member>
+      <member refid="classasyn_n_d_array_driver_1a3cf47b7e4df08a87b0585c62509878bf" prot="protected" virt="non-virtual"><scope>NDPluginTransform</scope><name>NDFilePathExists</name></member>
+      <member refid="classasyn_n_d_array_driver_1a2db8828aac3ad3c3df409291395fcb4d" prot="protected" virt="non-virtual"><scope>NDPluginTransform</scope><name>NDFileTemplate</name></member>
+      <member refid="classasyn_n_d_array_driver_1a5523209bde8cdb69b0ea275628422e9f" prot="protected" virt="non-virtual"><scope>NDPluginTransform</scope><name>NDFileTempSuffix</name></member>
+      <member refid="classasyn_n_d_array_driver_1a392868002486b6c806c587ef3f73c320" prot="protected" virt="non-virtual"><scope>NDPluginTransform</scope><name>NDFileWriteMessage</name></member>
+      <member refid="classasyn_n_d_array_driver_1ae446f2d56cfb91299839a1a3fea72a62" prot="protected" virt="non-virtual"><scope>NDPluginTransform</scope><name>NDFileWriteMode</name></member>
+      <member refid="classasyn_n_d_array_driver_1ab5b4722576613c52894c55da7153a05f" prot="protected" virt="non-virtual"><scope>NDPluginTransform</scope><name>NDFileWriteStatus</name></member>
+      <member refid="classasyn_n_d_array_driver_1ad109404880a23929fc17dea1f09e0775" prot="protected" virt="non-virtual"><scope>NDPluginTransform</scope><name>NDFullFileName</name></member>
+      <member refid="classasyn_n_d_array_driver_1aa13dc824ba27681f894f8319f3f13a8c" prot="protected" virt="non-virtual"><scope>NDPluginTransform</scope><name>NDNDimensions</name></member>
+      <member refid="classasyn_n_d_array_driver_1aff0d6045cf18c21959a8c21228549ecd" prot="protected" virt="non-virtual"><scope>NDPluginTransform</scope><name>NDNumQueuedArrays</name></member>
+      <member refid="class_n_d_plugin_driver_1a64f942bde94593fdb0b5ff5c677197d4" prot="public" virt="non-virtual"><scope>NDPluginTransform</scope><name>NDPluginDriver</name></member>
+      <member refid="class_n_d_plugin_driver_1aded3fa83fce5860a43183c1441f3c1b8" prot="protected" virt="non-virtual"><scope>NDPluginTransform</scope><name>NDPluginDriverArrayAddr</name></member>
+      <member refid="class_n_d_plugin_driver_1af17c68cbdf44c2d0e5afe616cea59a33" prot="protected" virt="non-virtual"><scope>NDPluginTransform</scope><name>NDPluginDriverArrayPort</name></member>
+      <member refid="class_n_d_plugin_driver_1a5b8196a068729c124aea5e93acc18082" prot="protected" virt="non-virtual"><scope>NDPluginTransform</scope><name>NDPluginDriverBlockingCallbacks</name></member>
+      <member refid="class_n_d_plugin_driver_1acdc0e6ca61992ece1b16765935789d42" prot="protected" virt="non-virtual"><scope>NDPluginTransform</scope><name>NDPluginDriverDisorderedArrays</name></member>
+      <member refid="class_n_d_plugin_driver_1a181790b177900d66a9536764ac814915" prot="protected" virt="non-virtual"><scope>NDPluginTransform</scope><name>NDPluginDriverDroppedArrays</name></member>
+      <member refid="class_n_d_plugin_driver_1afe1c9c90e217f1eab41da7e41affa18b" prot="protected" virt="non-virtual"><scope>NDPluginTransform</scope><name>NDPluginDriverDroppedOutputArrays</name></member>
+      <member refid="class_n_d_plugin_driver_1a120cd6bb3fba2592ba8b5d0bafedaa63" prot="protected" virt="non-virtual"><scope>NDPluginTransform</scope><name>NDPluginDriverEnableCallbacks</name></member>
+      <member refid="class_n_d_plugin_driver_1afb29a9c55233ce7950e58c27a12e2000" prot="protected" virt="non-virtual"><scope>NDPluginTransform</scope><name>NDPluginDriverExecutionTime</name></member>
+      <member refid="class_n_d_plugin_driver_1a643775874259dd6ad39a93791a9fca65" prot="protected" virt="non-virtual"><scope>NDPluginTransform</scope><name>NDPluginDriverMaxByteRate</name></member>
+      <member refid="class_n_d_plugin_driver_1ab534ecf779c0903202e39584ee9a4d78" prot="protected" virt="non-virtual"><scope>NDPluginTransform</scope><name>NDPluginDriverMaxThreads</name></member>
+      <member refid="class_n_d_plugin_driver_1a451f714fdd397166f06c6185fe66c796" prot="protected" virt="non-virtual"><scope>NDPluginTransform</scope><name>NDPluginDriverMinCallbackTime</name></member>
+      <member refid="class_n_d_plugin_driver_1ab203222d4bbc658f83ae0a2d0e4d1751" prot="protected" virt="non-virtual"><scope>NDPluginTransform</scope><name>NDPluginDriverNumThreads</name></member>
+      <member refid="class_n_d_plugin_driver_1aee6432ed8a237cb0c622cdd3fe34cede" prot="protected" virt="non-virtual"><scope>NDPluginTransform</scope><name>NDPluginDriverPluginType</name></member>
+      <member refid="class_n_d_plugin_driver_1a212c8e1abc30af8fab372fc30da64217" prot="protected" virt="non-virtual"><scope>NDPluginTransform</scope><name>NDPluginDriverProcessPlugin</name></member>
+      <member refid="class_n_d_plugin_driver_1a7667b496159eb0104f1bbfbff73be21f" prot="protected" virt="non-virtual"><scope>NDPluginTransform</scope><name>NDPluginDriverQueueFree</name></member>
+      <member refid="class_n_d_plugin_driver_1a0f901287274bd6fe8880dcfddf2f41fe" prot="protected" virt="non-virtual"><scope>NDPluginTransform</scope><name>NDPluginDriverQueueSize</name></member>
+      <member refid="class_n_d_plugin_driver_1a0a586ae818b8728039ef5e5e2ef5fe60" prot="protected" virt="non-virtual"><scope>NDPluginTransform</scope><name>NDPluginDriverSortFree</name></member>
+      <member refid="class_n_d_plugin_driver_1ae95276d032904ecf950d3eb2dba1d475" prot="protected" virt="non-virtual"><scope>NDPluginTransform</scope><name>NDPluginDriverSortMode</name></member>
+      <member refid="class_n_d_plugin_driver_1a9c31a96a3e2e334ce1fe36cfd5781c11" prot="protected" virt="non-virtual"><scope>NDPluginTransform</scope><name>NDPluginDriverSortSize</name></member>
+      <member refid="class_n_d_plugin_driver_1adc03a67c19691e7d6f7f647c7bbb87ac" prot="protected" virt="non-virtual"><scope>NDPluginTransform</scope><name>NDPluginDriverSortTime</name></member>
+      <member refid="class_n_d_plugin_transform_1aeb9b90b6d60f9c8af15bf7ad82eebda9" prot="public" virt="non-virtual"><scope>NDPluginTransform</scope><name>NDPluginTransform</name></member>
+      <member refid="class_n_d_plugin_transform_1a43437d564275587977bb53283fd2ac93" prot="protected" virt="non-virtual"><scope>NDPluginTransform</scope><name>NDPluginTransformType_</name></member>
+      <member refid="classasyn_n_d_array_driver_1adf264650a61fe86c37dbc7a4e5c1fbd0" prot="protected" virt="non-virtual"><scope>NDPluginTransform</scope><name>NDPoolAllocBuffers</name></member>
+      <member refid="classasyn_n_d_array_driver_1af3cacda934695b472269d32ba2d94a86" prot="protected" virt="non-virtual"><scope>NDPluginTransform</scope><name>NDPoolEmptyFreeList</name></member>
+      <member refid="classasyn_n_d_array_driver_1a9514efd0d89337677ccb428b8b3ac518" prot="protected" virt="non-virtual"><scope>NDPluginTransform</scope><name>NDPoolFreeBuffers</name></member>
+      <member refid="classasyn_n_d_array_driver_1a5ab509aca13c1642449253f6ce6eca2c" prot="protected" virt="non-virtual"><scope>NDPluginTransform</scope><name>NDPoolMaxBuffers</name></member>
+      <member refid="classasyn_n_d_array_driver_1a7267d600284240edc0f0abe484dff2ee" prot="protected" virt="non-virtual"><scope>NDPluginTransform</scope><name>NDPoolMaxMemory</name></member>
+      <member refid="classasyn_n_d_array_driver_1a2a7b868b8d6c542fff28993e1c977e4b" prot="protected" virt="non-virtual"><scope>NDPluginTransform</scope><name>NDPoolUsedMemory</name></member>
+      <member refid="classasyn_n_d_array_driver_1acefc2096d9db2fd102542a957722ceef" prot="protected" virt="non-virtual"><scope>NDPluginTransform</scope><name>NDPortNameSelf</name></member>
+      <member refid="classasyn_n_d_array_driver_1acdf9d2f3575481f29544c56c9fe46c5c" prot="protected" virt="non-virtual"><scope>NDPluginTransform</scope><name>NDReadFile</name></member>
+      <member refid="classasyn_n_d_array_driver_1a9b5492ae014f21d0843658f19e955dc1" prot="protected" virt="non-virtual"><scope>NDPluginTransform</scope><name>NDTimeStamp</name></member>
+      <member refid="classasyn_n_d_array_driver_1a8d713b9cc045417a599c91aacc98b08b" prot="protected" virt="non-virtual"><scope>NDPluginTransform</scope><name>NDUniqueId</name></member>
+      <member refid="classasyn_n_d_array_driver_1a5d1ec3e763ea9aef2f3fd576611baeb5" prot="protected" virt="non-virtual"><scope>NDPluginTransform</scope><name>NDWriteFile</name></member>
+      <member refid="classasyn_n_d_array_driver_1a6f5685f9951f6b3b897e85425b59ad69" prot="protected" virt="non-virtual"><scope>NDPluginTransform</scope><name>pArrays</name></member>
+      <member refid="classasyn_n_d_array_driver_1a7bed3ca3a144124eb31053eeecc990e9" prot="protected" virt="non-virtual"><scope>NDPluginTransform</scope><name>pAttributeList</name></member>
+      <member refid="classasyn_n_d_array_driver_1ad3969854a37329ef4061cc560e9022dc" prot="public" virt="non-virtual"><scope>NDPluginTransform</scope><name>pNDArrayPool</name></member>
+      <member refid="class_n_d_plugin_driver_1ae671b38856ba882ce3aa534b127020e9" prot="protected" virt="non-virtual"><scope>NDPluginTransform</scope><name>pPrevInputArray_</name></member>
+      <member refid="class_n_d_plugin_transform_1a0e05a1e62bce96f7c56a3595a8248128" prot="public" virt="virtual"><scope>NDPluginTransform</scope><name>processCallbacks</name></member>
+      <member refid="classasyn_n_d_array_driver_1a5aeb82d51c34b79b77433e121722a141" prot="public" virt="virtual"><scope>NDPluginTransform</scope><name>readFloat64</name></member>
+      <member refid="classasyn_n_d_array_driver_1acac9d5044d62734723404ef7e53ee4e8" prot="public" virt="virtual"><scope>NDPluginTransform</scope><name>readGenericPointer</name></member>
+      <member refid="classasyn_n_d_array_driver_1a4c0e7e85f9f4a988614a273c035be813" prot="public" virt="virtual"><scope>NDPluginTransform</scope><name>readInt32</name></member>
+      <member refid="class_n_d_plugin_driver_1ae9f9e40e62e01e41af145586f53feafc" prot="public" virt="virtual"><scope>NDPluginTransform</scope><name>readInt32Array</name></member>
+      <member refid="classasyn_n_d_array_driver_1a1da351ae597074c829204945f700098b" prot="public" virt="virtual"><scope>NDPluginTransform</scope><name>readNDAttributesFile</name></member>
+      <member refid="classasyn_n_d_array_driver_1ac3f2d73a05eb54357ec3f052e1b000f2" prot="public" virt="virtual"><scope>NDPluginTransform</scope><name>report</name></member>
+      <member refid="class_n_d_plugin_driver_1a8aa70bf3081b461f617a8b9c7c9ddfb2" prot="public" virt="virtual"><scope>NDPluginTransform</scope><name>run</name></member>
+      <member refid="class_n_d_plugin_driver_1a2cd081ea1db6d65e02c3c9b951201cdc" prot="protected" virt="virtual"><scope>NDPluginTransform</scope><name>setArrayInterrupt</name></member>
+      <member refid="classasyn_n_d_array_driver_1abf87462bc5853f8e5a56db5e93acd956" prot="public" virt="virtual"><scope>NDPluginTransform</scope><name>setIntegerParam</name></member>
+      <member refid="classasyn_n_d_array_driver_1a3732469004adb2cd7eb5d5f047385915" prot="public" virt="virtual"><scope>NDPluginTransform</scope><name>setIntegerParam</name></member>
+      <member refid="class_n_d_plugin_driver_1ac7e03567ead074f29a3eab5c7d193801" prot="public" virt="non-virtual"><scope>NDPluginTransform</scope><name>sortingTask</name></member>
+      <member refid="class_n_d_plugin_driver_1a085bcf8d331f7dedac92af07c94b2d15" prot="public" virt="virtual"><scope>NDPluginTransform</scope><name>start</name></member>
+      <member refid="classasyn_n_d_array_driver_1aa52489ae8673348bf596faf63b94e85e" prot="protected" virt="non-virtual"><scope>NDPluginTransform</scope><name>threadPriority_</name></member>
+      <member refid="classasyn_n_d_array_driver_1a467b05b088bb8cf97e2fcad07a4a432f" prot="protected" virt="non-virtual"><scope>NDPluginTransform</scope><name>threadStackSize_</name></member>
+      <member refid="class_n_d_plugin_driver_1ae6b1a0c91170c2ef73546fcc4a78ac27" prot="protected" virt="non-virtual"><scope>NDPluginTransform</scope><name>throttled</name></member>
+      <member refid="class_n_d_plugin_transform_1ad59d474ef3db6a144966ccd4c0181b64" prot="private" virt="non-virtual"><scope>NDPluginTransform</scope><name>transformImage</name></member>
+      <member refid="classasyn_n_d_array_driver_1a688578d794900c0671da8dfaf771912b" prot="public" virt="non-virtual"><scope>NDPluginTransform</scope><name>updateQueuedArrayCount</name></member>
+      <member refid="class_n_d_plugin_transform_1a6764ab382d13d9d5404eff9b4c5341e4" prot="private" virt="non-virtual"><scope>NDPluginTransform</scope><name>userDims_</name></member>
+      <member refid="class_n_d_plugin_driver_1a0d9d826a638226234e48f4d4f41fc4c0" prot="public" virt="virtual"><scope>NDPluginTransform</scope><name>writeFloat64</name></member>
+      <member refid="classasyn_n_d_array_driver_1ad95feb77baff701f85641ef5fc3d5c65" prot="public" virt="virtual"><scope>NDPluginTransform</scope><name>writeGenericPointer</name></member>
+      <member refid="class_n_d_plugin_driver_1a5f60198f46fd7cd89c101dce9533f3aa" prot="public" virt="virtual"><scope>NDPluginTransform</scope><name>writeInt32</name></member>
+      <member refid="class_n_d_plugin_driver_1ae485392fd0a4db1f4fdee533582bae44" prot="public" virt="virtual"><scope>NDPluginTransform</scope><name>writeOctet</name></member>
+      <member refid="classasyn_n_d_array_driver_1ab392c48715c896b8f58c0456b7889723" prot="public" virt="virtual"><scope>NDPluginTransform</scope><name>~asynNDArrayDriver</name></member>
+      <member refid="class_n_d_plugin_driver_1a10f6dca6408ac46f59758df67b0513da" prot="public" virt="non-virtual"><scope>NDPluginTransform</scope><name>~NDPluginDriver</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

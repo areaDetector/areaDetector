@@ -1,0 +1,904 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="_n_d_plugin_attr_plot_8cpp" kind="file" language="C++">
+    <compoundname>NDPluginAttrPlot.cpp</compoundname>
+    <includes local="no">cmath</includes>
+    <includes local="no">stdexcept</includes>
+    <includes local="no">string</includes>
+    <includes local="no">vector</includes>
+    <includes local="no">iocsh.h</includes>
+    <includes local="no">initHooks.h</includes>
+    <includes local="no">epicsMath.h</includes>
+    <includes refid="_n_d_plugin_attr_plot_8h" local="yes">NDPluginAttrPlot.h</includes>
+    <includes refid="_circular_buffer_8h" local="yes">CircularBuffer.h</includes>
+    <includes local="no">epicsExport.h</includes>
+    <incdepgraph>
+      <node id="6">
+        <label>iocsh.h</label>
+      </node>
+      <node id="7">
+        <label>initHooks.h</label>
+      </node>
+      <node id="14">
+        <label>epicsTypes.h</label>
+      </node>
+      <node id="24">
+        <label>NDArray.h</label>
+        <link refid="_n_d_array_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>NDPluginAttrPlot.h</label>
+        <link refid="_n_d_plugin_attr_plot_8h"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="30">
+        <label>NDAttributeList.h</label>
+        <link refid="_n_d_attribute_list_8h"/>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+      </node>
+      <node id="21">
+        <label>epicsMutex.h</label>
+      </node>
+      <node id="2">
+        <label>cmath</label>
+      </node>
+      <node id="3">
+        <label>stdexcept</label>
+      </node>
+      <node id="19">
+        <label>epicsVersion.h</label>
+      </node>
+      <node id="4">
+        <label>string</label>
+      </node>
+      <node id="16">
+        <label>epicsThread.h</label>
+      </node>
+      <node id="33">
+        <label>epicsExport.h</label>
+      </node>
+      <node id="32">
+        <label>ADCoreVersion.h</label>
+        <link refid="_a_d_core_version_8h"/>
+      </node>
+      <node id="29">
+        <label>ADCoreAPI.h</label>
+        <link refid="_a_d_core_a_p_i_8h"/>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginAttrPlot.cpp</label>
+        <link refid="_n_d_plugin_attr_plot_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>asynNDArrayDriver.h</label>
+        <link refid="asyn_n_d_array_driver_8h"/>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>CircularBuffer.h</label>
+        <link refid="_circular_buffer_8h"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>vector</label>
+      </node>
+      <node id="25">
+        <label>ellLib.h</label>
+      </node>
+      <node id="26">
+        <label>NDAttribute.h</label>
+        <link refid="_n_d_attribute_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+      </node>
+      <node id="28">
+        <label>asynDriver.h</label>
+      </node>
+      <node id="12">
+        <label>NDPluginDriver.h</label>
+        <link refid="_n_d_plugin_driver_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+      <node id="31">
+        <label>Codec.h</label>
+        <link refid="_codec_8h"/>
+      </node>
+      <node id="17">
+        <label>epicsTime.h</label>
+      </node>
+      <node id="23">
+        <label>asynPortDriver.h</label>
+      </node>
+      <node id="18">
+        <label>NDPluginAPI.h</label>
+        <link refid="_n_d_plugin_a_p_i_8h"/>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>set</label>
+      </node>
+      <node id="15">
+        <label>epicsMessageQueue.h</label>
+      </node>
+      <node id="11">
+        <label>algorithm</label>
+      </node>
+      <node id="8">
+        <label>epicsMath.h</label>
+      </node>
+      <node id="27">
+        <label>stdio.h</label>
+      </node>
+      <node id="22">
+        <label>epicsEvent.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="_n_d_plugin_attr_plot_8cpp_1a28efa78ac965ddbcd13ac053957e3e84" prot="public" static="no" mutable="no">
+        <type><ref refid="class_n_d_plugin_attr_plot" kindref="compound">NDPluginAttrPlot</ref> *</type>
+        <definition>NDPluginAttrPlot* plugin</definition>
+        <argsstring></argsstring>
+        <name>plugin</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginAttrPlot.cpp" line="300" column="19" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginAttrPlot.cpp" bodystart="300" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_n_d_plugin_attr_plot_8cpp_1ab7f2c2bb529826ff314822ef32c38e85" prot="public" static="yes" mutable="no">
+        <type>const iocshArg</type>
+        <definition>const iocshArg portArg</definition>
+        <argsstring></argsstring>
+        <name>portArg</name>
+        <initializer>= {&quot;Port name&quot;, iocshArgString}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginAttrPlot.cpp" line="320" column="23" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginAttrPlot.cpp" bodystart="320" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_n_d_plugin_attr_plot_8cpp_1af5e1b938d8cf5f3e3d633c623732c31b" prot="public" static="yes" mutable="no">
+        <type>const iocshArg</type>
+        <definition>const iocshArg nAttributesArg</definition>
+        <argsstring></argsstring>
+        <name>nAttributesArg</name>
+        <initializer>= {&quot;Number of attributes&quot;, iocshArgInt}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginAttrPlot.cpp" line="321" column="23" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginAttrPlot.cpp" bodystart="321" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_n_d_plugin_attr_plot_8cpp_1a013c182e8d2315886080e136db2bcd44" prot="public" static="yes" mutable="no">
+        <type>const iocshArg</type>
+        <definition>const iocshArg cacheSizeArg</definition>
+        <argsstring></argsstring>
+        <name>cacheSizeArg</name>
+        <initializer>= {&quot;Cache size&quot;, iocshArgInt}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginAttrPlot.cpp" line="322" column="23" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginAttrPlot.cpp" bodystart="322" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_n_d_plugin_attr_plot_8cpp_1aa946cb247cd1ce4c61c2cfe3be8a0a52" prot="public" static="yes" mutable="no">
+        <type>const iocshArg</type>
+        <definition>const iocshArg nBlocksArg</definition>
+        <argsstring></argsstring>
+        <name>nBlocksArg</name>
+        <initializer>= {&quot;Number of array blocks&quot;, iocshArgInt}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginAttrPlot.cpp" line="323" column="23" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginAttrPlot.cpp" bodystart="323" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_n_d_plugin_attr_plot_8cpp_1a334a3407e6de788c18d64e430ef43880" prot="public" static="yes" mutable="no">
+        <type>const iocshArg</type>
+        <definition>const iocshArg inPortArg</definition>
+        <argsstring></argsstring>
+        <name>inPortArg</name>
+        <initializer>= {&quot;Input Port name&quot;, iocshArgString}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginAttrPlot.cpp" line="324" column="23" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginAttrPlot.cpp" bodystart="324" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_n_d_plugin_attr_plot_8cpp_1a6a5778db0584700edb68d276c0c89841" prot="public" static="yes" mutable="no">
+        <type>const iocshArg</type>
+        <definition>const iocshArg inAddrArg</definition>
+        <argsstring></argsstring>
+        <name>inAddrArg</name>
+        <initializer>= {&quot;Input address&quot;, iocshArgInt}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginAttrPlot.cpp" line="325" column="23" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginAttrPlot.cpp" bodystart="325" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_n_d_plugin_attr_plot_8cpp_1adf4204af1aff8f0d234b9353af7cc6da" prot="public" static="yes" mutable="no">
+        <type>const iocshArg</type>
+        <definition>const iocshArg queueSizeArg</definition>
+        <argsstring></argsstring>
+        <name>queueSizeArg</name>
+        <initializer>= {&quot;Queue size&quot;, iocshArgInt}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginAttrPlot.cpp" line="326" column="23" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginAttrPlot.cpp" bodystart="326" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_n_d_plugin_attr_plot_8cpp_1a9f601a89c92fa8d17db7442d46678b88" prot="public" static="yes" mutable="no">
+        <type>const iocshArg</type>
+        <definition>const iocshArg blockingCallbacksArg</definition>
+        <argsstring></argsstring>
+        <name>blockingCallbacksArg</name>
+        <initializer>=
+        {&quot;Uses blocking callbacks&quot;, iocshArgInt}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginAttrPlot.cpp" line="327" column="23" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginAttrPlot.cpp" bodystart="327" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_n_d_plugin_attr_plot_8cpp_1a2a979ac869d3a7e0fa2be42c57886cb5" prot="public" static="yes" mutable="no">
+        <type>const iocshArg</type>
+        <definition>const iocshArg priorityArg</definition>
+        <argsstring></argsstring>
+        <name>priorityArg</name>
+        <initializer>= {&quot;Thread priority&quot;, iocshArgInt}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginAttrPlot.cpp" line="329" column="23" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginAttrPlot.cpp" bodystart="329" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_n_d_plugin_attr_plot_8cpp_1a9fe88800c0c34435de667c96fc4b59b1" prot="public" static="yes" mutable="no">
+        <type>const iocshArg</type>
+        <definition>const iocshArg stackSizeArg</definition>
+        <argsstring></argsstring>
+        <name>stackSizeArg</name>
+        <initializer>= {&quot;Thread stack size&quot;, iocshArgInt}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginAttrPlot.cpp" line="330" column="23" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginAttrPlot.cpp" bodystart="330" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_n_d_plugin_attr_plot_8cpp_1a8b481ee09401552ac8ea2cb11da44192" prot="public" static="yes" mutable="no">
+        <type>const iocshArg *const</type>
+        <definition>const iocshArg* const NDAttrPlotArgs[]</definition>
+        <argsstring>[]</argsstring>
+        <name>NDAttrPlotArgs</name>
+        <initializer>= {&amp;portArg,
+                                                 &amp;nAttributesArg,
+                                                 &amp;cacheSizeArg,
+                                                 &amp;nBlocksArg,
+                                                 &amp;inPortArg,
+                                                 &amp;inAddrArg,
+                                                 &amp;queueSizeArg,
+                                                 &amp;blockingCallbacksArg,
+                                                 &amp;priorityArg,
+                                                 &amp;stackSizeArg}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginAttrPlot.cpp" line="332" column="30" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginAttrPlot.cpp" bodystart="332" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_n_d_plugin_attr_plot_8cpp_1a2aedaf2490a75f296fd98295aa19bea0" prot="public" static="yes" mutable="no">
+        <type>const iocshFuncDef</type>
+        <definition>const iocshFuncDef NDAttrPlotCallConfig</definition>
+        <argsstring></argsstring>
+        <name>NDAttrPlotCallConfig</name>
+        <initializer>=
+        {&quot;NDAttrPlotConfig&quot;, 10, NDAttrPlotArgs}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginAttrPlot.cpp" line="343" column="27" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginAttrPlot.cpp" bodystart="343" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_n_d_plugin_attr_plot_8cpp_1a6e0cecad6c2bcf20cb1ac5b6d2a0ca25" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void initHooks</definition>
+        <argsstring>(initHookState state)</argsstring>
+        <name>initHooks</name>
+        <param>
+          <type>initHookState</type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginAttrPlot.cpp" line="302" column="13" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginAttrPlot.cpp" bodystart="302" bodyend="306"/>
+      </memberdef>
+      <memberdef kind="function" id="_n_d_plugin_attr_plot_8cpp_1a87a3cfffaaed998f8f102327c6728c69" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int NDAttrPlotConfig</definition>
+        <argsstring>(const char *port, int n_attributes, int cache_size, int n_selected_blocks, const char *in_port, int in_addr, int queue_size, int blocking_callbacks, int priority, int stackSize)</argsstring>
+        <name>NDAttrPlotConfig</name>
+        <param>
+          <type>const char *</type>
+          <declname>port</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>n_attributes</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>cache_size</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>n_selected_blocks</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>in_port</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>in_addr</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>queue_size</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>blocking_callbacks</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>priority</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>stackSize</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginAttrPlot.cpp" line="308" column="5" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginAttrPlot.cpp" bodystart="308" bodyend="318"/>
+      </memberdef>
+      <memberdef kind="function" id="_n_d_plugin_attr_plot_8cpp_1a70d520745e84f0c73b510cb8ca9fe1f4" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void NDAttrPlotCallFunc</definition>
+        <argsstring>(const iocshArgBuf *args)</argsstring>
+        <name>NDAttrPlotCallFunc</name>
+        <param>
+          <type>const iocshArgBuf *</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginAttrPlot.cpp" line="346" column="13" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginAttrPlot.cpp" bodystart="346" bodyend="351"/>
+      </memberdef>
+      <memberdef kind="function" id="_n_d_plugin_attr_plot_8cpp_1a768570fe80e2636704abfda37db7f8c6" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void NDAttrPlotRegister</definition>
+        <argsstring>()</argsstring>
+        <name>NDAttrPlotRegister</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginAttrPlot.cpp" line="353" column="13" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginAttrPlot.cpp" bodystart="353" bodyend="355"/>
+      </memberdef>
+      <memberdef kind="function" id="_n_d_plugin_attr_plot_8cpp_1a44211754b805502617318eadb1655aa6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>epicsExportRegistrar</definition>
+        <argsstring>(NDAttrPlotRegister)</argsstring>
+        <name>epicsExportRegistrar</name>
+        <param>
+          <type>NDAttrPlotRegister</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginAttrPlot.cpp" line="357" column="1" declfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginAttrPlot.cpp" declline="357" declcolumn="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&lt;cmath&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdexcept&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iocsh.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;initHooks.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;epicsMath.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_n_d_plugin_attr_plot_8h" kindref="compound">NDPluginAttrPlot.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_circular_buffer_8h" kindref="compound">CircularBuffer.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;epicsExport.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><ref refid="class_expose_data_task_1a29114b07143cd8bb64db0af5c420beb9" kindref="member">ExposeDataTask::ExposeDataTask</ref>(<ref refid="class_n_d_plugin_attr_plot" kindref="compound">NDPluginAttrPlot</ref>&amp;<sp/><ref refid="_n_d_plugin_attr_plot_8cpp_1a28efa78ac965ddbcd13ac053957e3e84" kindref="member">plugin</ref>)</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/>plugin_(<ref refid="_n_d_plugin_attr_plot_8cpp_1a28efa78ac965ddbcd13ac053957e3e84" kindref="member">plugin</ref>),</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>stop_(false),</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>thread_(*this,<sp/></highlight><highlight class="stringliteral">&quot;dataExpose&quot;</highlight><highlight class="normal">,<sp/>epicsThreadGetStackSize(epicsThreadStackBig),</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>epicsThreadPriorityMedium)</highlight></codeline>
+<codeline lineno="20"><highlight class="normal">{<sp/>}</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_expose_data_task_1a5a0f129d138186870c4daeeef7697cce" kindref="member">ExposeDataTask::start</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>thread_.start();</highlight></codeline>
+<codeline lineno="24"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_expose_data_task_1a327bd9957511291ab31ac1413641031e" kindref="member">ExposeDataTask::run</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(!stop_)<sp/>{</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>plugin_.lock();</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>plugin_.callback_data();</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>plugin_.unlock();</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>epicsThreadSleep(<ref refid="_n_d_plugin_attr_plot_8h_1abf3f9b068e1dd69bba839d5e25a0054c" kindref="member">ND_ATTRPLOT_DATA_EXPOSURE_PERIOD</ref>);</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="33"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_expose_data_task_1a1c40f5178398dfc50d324d9e0f9d614f" kindref="member">ExposeDataTask::stop</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>stop_<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><ref refid="class_n_d_plugin_attr_plot_1a630a0f39eecb8e3514430e5708588d76" kindref="member">NDPluginAttrPlot::NDPluginAttrPlot</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>port,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n_attributes,</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>cache_size,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n_data_blocks,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>in_port,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>in_addr,</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>queue_size,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>blocking_callbacks,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>priority,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>stackSize)</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/><ref refid="class_n_d_plugin_driver" kindref="compound">NDPluginDriver</ref><sp/>(</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>port,<sp/><sp/></highlight><highlight class="comment">//<sp/>The<sp/>name<sp/>of<sp/>the<sp/>asyn<sp/>port<sp/>driver<sp/>to<sp/>be<sp/>created</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>queue_size,<sp/></highlight><highlight class="comment">//<sp/>The<sp/>number<sp/>of<sp/>NDArrays<sp/>that<sp/>the<sp/>input<sp/>queue</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>blocking_callbacks,<sp/></highlight><highlight class="comment">//<sp/>NDPluginDriverBlockingCallbacks<sp/>flag</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>in_port,<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Source<sp/>of<sp/>NDArray<sp/>callbacks<sp/>-<sp/>port</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>in_addr,<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Source<sp/>of<sp/>NDArray<sp/>callbacks<sp/>-<sp/>address</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::<ref refid="mar3xx__pck_8c_1ac39d9cef6a5e030ba8d9e11121054268" kindref="member">max</ref>(n_attributes,<sp/>n_data_blocks),<sp/></highlight><highlight class="comment">//<sp/>Max<sp/>number<sp/>of<sp/>addresses</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-1,<sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>The<sp/>maximum<sp/>number<sp/>of<sp/>NDArray<sp/>buffers<sp/>(-1<sp/>=<sp/>unlimited)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-1,<sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>The<sp/>maximum<sp/>amount<sp/>of<sp/>memory<sp/>(-1<sp/>=<sp/>unlimited)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>asynFloat64ArrayMask<sp/>|<sp/>asynGenericPointerMask<sp/>|<sp/>asynInt32Mask<sp/>|</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>asynFloat64Mask<sp/>|<sp/>asynOctetMask,<sp/></highlight><highlight class="comment">/*<sp/>Bit<sp/>mask<sp/>for<sp/>asyn</highlight></codeline>
+<codeline lineno="53"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>interfaces<sp/>that<sp/>this<sp/>driver<sp/>supports<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>asynFloat64ArrayMask<sp/>|<sp/>asynGenericPointerMask<sp/>|<sp/>asynInt32Mask<sp/>|</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>asynFloat64Mask<sp/>|<sp/>asynOctetMask,<sp/></highlight><highlight class="comment">/*<sp/>Bit<sp/>mask<sp/>the<sp/>asyn</highlight></codeline>
+<codeline lineno="56"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>interfaces<sp/>that<sp/>can<sp/>generate<sp/>callbacks<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ASYN_MULTIDEVICE,<sp/></highlight><highlight class="comment">//<sp/>Flags<sp/>when<sp/>creating<sp/>the<sp/>asyn<sp/>port<sp/>driver</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1,<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>The<sp/>autoConnect<sp/>flag<sp/>for<sp/>the<sp/>asyn<sp/>port<sp/>driver</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>priority,<sp/></highlight><highlight class="comment">//<sp/>The<sp/>thread<sp/>priority<sp/>for<sp/>the<sp/>asyn<sp/>port<sp/>driver<sp/>thread</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>stackSize,<sp/></highlight><highlight class="comment">//<sp/>The<sp/>stack<sp/>size<sp/>for<sp/>the<sp/>asyn<sp/>port<sp/>driver<sp/>thread</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1<sp/></highlight><highlight class="comment">//<sp/><sp/>Maximum<sp/>number<sp/>of<sp/>threads</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>),</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>state_(NDAttrPlot_InitState),</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>data_(),</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>uids_(cache_size),</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>n_attributes_(n_attributes),</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>attributes_(),</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>n_data_blocks_(n_data_blocks),</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>data_selections_(n_data_blocks,<sp/><ref refid="_n_d_plugin_attr_plot_8h_1a68402babc2c8b5d1ffcec7ed65507bff" kindref="member">ND_ATTRPLOT_NONE_INDEX</ref>),</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>expose_task_(*this)</highlight></codeline>
+<codeline lineno="71"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>data_.reserve(n_attributes_);</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref><sp/>=<sp/>0;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref><sp/>&lt;<sp/>n_attributes_;<sp/>++<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>data_.push_back(CB(cache_size));</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>createParam(<ref refid="_n_d_plugin_attr_plot_8h_1a972625cfd8b897560bc91bf591271a4d" kindref="member">NDAttrPlotDataString</ref>,<sp/>asynParamFloat64Array,<sp/>&amp;NDAttrPlotData);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>createParam(<ref refid="_n_d_plugin_attr_plot_8h_1a3a977547ea37a772ddc95693349ce991" kindref="member">NDAttrPlotDataLabelString</ref>,<sp/>asynParamOctet,</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;NDAttrPlotDataLabel);</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/>createParam(<ref refid="_n_d_plugin_attr_plot_8h_1ace2fc91265efa4c753f60599f7f4f2f0" kindref="member">NDAttrPlotDataSelectString</ref>,<sp/>asynParamInt32,</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;NDAttrPlotDataSelect);</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>createParam(<ref refid="_n_d_plugin_attr_plot_8h_1a5792664f6e7aa0a92b053acec77e3331" kindref="member">NDAttrPlotAttributeString</ref>,<sp/>asynParamOctet,</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;NDAttrPlotAttribute);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>createParam(<ref refid="_n_d_plugin_attr_plot_8h_1a20b77449d10b2eace184695e293ebf94" kindref="member">NDAttrPlotResetString</ref>,<sp/>asynParamInt32,<sp/>&amp;NDAttrPlotReset);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>createParam(<ref refid="_n_d_plugin_attr_plot_8h_1a2158102d79e614f83ef95315a1c3654c" kindref="member">NDAttrPlotNPtsString</ref>,<sp/>asynParamInt32,<sp/>&amp;NDAttrPlotNPts);</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/>setStringParam(NDPluginDriverPluginType,<sp/></highlight><highlight class="stringliteral">&quot;NDAttrPlot&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/>callParamCallbacks();</highlight></codeline>
+<codeline lineno="90"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_n_d_plugin_attr_plot_1abd1bd9f5280a98fc509e0a6f6effe299" kindref="member">NDPluginAttrPlot::start_expose</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/>expose_task_.<ref refid="class_expose_data_task_1a5a0f129d138186870c4daeeef7697cce" kindref="member">start</ref>();</highlight></codeline>
+<codeline lineno="94"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>NDPluginAttrPlot::callback_data()<sp/>{</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>size<sp/>=<sp/>uids_.<ref refid="class_circular_buffer_1a73d5df7a33d545554fffeaaf843f36d9" kindref="member">size</ref>();</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>cache_size<sp/>=<sp/>uids_.<ref refid="class_circular_buffer_1a3374634de7897fc5bfbd43e6b7c791e8" kindref="member">max_size</ref>();</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>*<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>tmp_arr<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">[cache_size];</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>n_copied;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref><sp/>=<sp/>0;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref><sp/>&lt;<sp/>n_data_blocks_;<sp/>++<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>selected<sp/>=<sp/>data_selections_[<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>];</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(selected<sp/>==<sp/><ref refid="_n_d_plugin_attr_plot_8h_1a992d3dfa1837a2e7f6b580c7bfeccfdd" kindref="member">ND_ATTRPLOT_UID_INDEX</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>n_copied<sp/>=<sp/>uids_.<ref refid="class_circular_buffer_1a8c0cdde6327814e18c6034b555a05fe3" kindref="member">copy_to_array</ref>(tmp_arr,<sp/>size);</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(selected<sp/>&gt;=<sp/>0<sp/>&amp;&amp;</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(selected)<sp/>&lt;<sp/>data_.size())<sp/>{</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>n_copied<sp/>=<sp/>data_[selected].copy_to_array(tmp_arr,</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>size);</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::fill(tmp_arr,<sp/>tmp_arr<sp/>+<sp/>size,<sp/>epicsNAN);</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>n_copied<sp/>=<sp/>size;</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>To<sp/>remove<sp/>visual<sp/>artifacts<sp/>on<sp/>EDM<sp/>plots<sp/>fill</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>the<sp/>remaining<sp/>arrays<sp/>with<sp/>the<sp/>last<sp/>point</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::fill(tmp_arr<sp/>+<sp/>n_copied,</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tmp_arr<sp/>+<sp/>cache_size,</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*(tmp_arr<sp/>+<sp/>n_copied<sp/>-<sp/>1));</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>doCallbacksFloat64Array(tmp_arr,<sp/>cache_size,<sp/><ref refid="class_n_d_plugin_attr_plot_1aad6c3cef403cb422463c689c1ffe5c45" kindref="member">NDAttrPlotData</ref>,<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>);</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">[]<sp/>tmp_arr;</highlight></codeline>
+<codeline lineno="124"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_n_d_plugin_attr_plot_1a020304d5151936f11d73e94f73e03006" kindref="member">NDPluginAttrPlot::processCallbacks</ref>(<ref refid="class_n_d_array" kindref="compound">NDArray</ref><sp/>*pArray)<sp/>{</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_n_d_attribute_list" kindref="compound">NDAttributeList</ref><sp/>attr_list;</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_n_d_plugin_driver_1a1aef91c358b7b8bde97fc1a01eb7c00d" kindref="member">NDPluginDriver::beginProcessCallbacks</ref>(pArray);</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/>pArray-&gt;<ref refid="class_n_d_array_1af5aad7b41118f465621cf045ed957469" kindref="member">pAttributeList</ref>-&gt;<ref refid="class_n_d_attribute_list_1a08c047f5f0953abd2aa1efdc1066a4ca" kindref="member">copy</ref>(&amp;attr_list);</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/>epicsInt32<sp/>uid;</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/>getIntegerParam(<ref refid="classasyn_n_d_array_driver_1a8d713b9cc045417a599c91aacc98b08b" kindref="member">NDUniqueId</ref>,<sp/>&amp;uid);</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(uids_.<ref refid="class_circular_buffer_1a73d5df7a33d545554fffeaaf843f36d9" kindref="member">size</ref>()<sp/>!=<sp/>0<sp/>&amp;&amp;<sp/>uid<sp/>&lt;=<sp/>uids_.<ref refid="class_circular_buffer_1a6fc291d1c642d97bfa892bdcbfa724c6" kindref="member">last</ref>())<sp/>{</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>reset_data();</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(state_<sp/>==<sp/>NDAttrPlot_InitState)<sp/>{</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rebuild_attributes(attr_list);</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>state_<sp/>=<sp/>NDAttrPlot_ActiveState;</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/>push_data(uid,<sp/>attr_list);</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classasyn_n_d_array_driver_1abf87462bc5853f8e5a56db5e93acd956" kindref="member">setIntegerParam</ref>(<ref refid="class_n_d_plugin_attr_plot_1ae87a24b980a8ddced9f8cc0f23626503" kindref="member">NDAttrPlotNPts</ref>,<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)uids_.<ref refid="class_circular_buffer_1a73d5df7a33d545554fffeaaf843f36d9" kindref="member">size</ref>());</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/>callParamCallbacks();</highlight></codeline>
+<codeline lineno="147"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>NDPluginAttrPlot::rebuild_attributes(<ref refid="class_n_d_attribute_list" kindref="compound">NDAttributeList</ref>&amp;<sp/>attr_list)<sp/>{</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::string&gt;<sp/>selections(n_data_blocks_);</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref><sp/>=<sp/>0;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref><sp/>&lt;<sp/>n_data_blocks_;<sp/>++<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>selection<sp/>=<sp/>data_selections_[<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>];</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(selection<sp/>==<sp/><ref refid="_n_d_plugin_attr_plot_8h_1a992d3dfa1837a2e7f6b580c7bfeccfdd" kindref="member">ND_ATTRPLOT_UID_INDEX</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>selections[<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>]<sp/>=<sp/><ref refid="_n_d_plugin_attr_plot_8h_1a6d268db4f66dd4fd48c64c6780237428" kindref="member">ND_ATTRPLOT_UID_LABEL</ref>;</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(selection<sp/>&gt;=<sp/>0<sp/>&amp;&amp;</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(selection)<sp/>&lt;<sp/>attributes_.size())<sp/>{</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>selections[<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>]<sp/>=<sp/>attributes_[selection];</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/>attributes_.clear();</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<ref refid="class_n_d_attribute" kindref="compound">NDAttribute</ref><sp/>*<sp/>attr<sp/>=<sp/>attr_list.<ref refid="class_n_d_attribute_list_1a42963179e3d97278f4323bdef78f37e5" kindref="member">next</ref>(NULL);</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>attr<sp/>!=<sp/>NULL<sp/>&amp;&amp;<sp/>attributes_.size()<sp/>&lt;=<sp/>n_attributes_;</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>attr<sp/>=<sp/>attr_list.<ref refid="class_n_d_attribute_list_1a42963179e3d97278f4323bdef78f37e5" kindref="member">next</ref>(attr))<sp/>{</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacehdf5_1abeed318faeb13380e1b4221bd4198bf1aea271040d7a5b8d9af9cbf6564d262d5" kindref="member">std::string</ref><sp/><ref refid="namespacemake_db_and_edl_1a2832407c256551abb325d5ee9e587443" kindref="member">name</ref>(attr-&gt;getName());</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_n_d_attribute_8h_1a8a795995acde8458f43ac9b01376ef07" kindref="member">NDAttrDataType_t</ref><sp/>type<sp/>=<sp/>attr-&gt;getDataType();</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>This<sp/>plugin<sp/>only<sp/>handles<sp/>numeric<sp/>types</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(type<sp/>==<sp/><ref refid="_n_d_attribute_8h_1a8a795995acde8458f43ac9b01376ef07a656f9ee56156acf1d758c604beb49399" kindref="member">NDAttrInt8</ref><sp/>||</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>type<sp/>==<sp/><ref refid="_n_d_attribute_8h_1a8a795995acde8458f43ac9b01376ef07a7e471a0be1156143dd1825fd8f225796" kindref="member">NDAttrUInt8</ref><sp/>||</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>type<sp/>==<sp/><ref refid="_n_d_attribute_8h_1a8a795995acde8458f43ac9b01376ef07ac17ccb85a91e112b482400f61a050c4f" kindref="member">NDAttrInt16</ref><sp/>||</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>type<sp/>==<sp/><ref refid="_n_d_attribute_8h_1a8a795995acde8458f43ac9b01376ef07a83b4704606f4633d12d3d74e095b4b04" kindref="member">NDAttrUInt16</ref><sp/>||</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>type<sp/>==<sp/><ref refid="_n_d_attribute_8h_1a8a795995acde8458f43ac9b01376ef07a52a96048ab842e5ee55012e5abd38088" kindref="member">NDAttrInt32</ref><sp/>||</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>type<sp/>==<sp/><ref refid="_n_d_attribute_8h_1a8a795995acde8458f43ac9b01376ef07a388ac2f41886b7e9d447ddedd393e362" kindref="member">NDAttrUInt32</ref><sp/>||</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>type<sp/>==<sp/><ref refid="_n_d_attribute_8h_1a8a795995acde8458f43ac9b01376ef07a1f865191065f93c08f90a0fc94b59649" kindref="member">NDAttrInt64</ref><sp/>||</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>type<sp/>==<sp/><ref refid="_n_d_attribute_8h_1a8a795995acde8458f43ac9b01376ef07a9767cd1b88fca0bceacb10f2c059551b" kindref="member">NDAttrUInt64</ref><sp/>||</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>type<sp/>==<sp/><ref refid="_n_d_attribute_8h_1a8a795995acde8458f43ac9b01376ef07a795c7a92dbcb59a608d78d5d0272c8d5" kindref="member">NDAttrFloat32</ref><sp/>||</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>type<sp/>==<sp/><ref refid="_n_d_attribute_8h_1a8a795995acde8458f43ac9b01376ef07a44ee1de8f62f1aca30ce498b093a5c8c" kindref="member">NDAttrFloat64</ref>)</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>attributes_.push_back(<ref refid="namespacemake_db_and_edl_1a2832407c256551abb325d5ee9e587443" kindref="member">name</ref>);</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"></highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/>std::sort(attributes_.begin(),<sp/>attributes_.end());</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"></highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref><sp/>=<sp/>0;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref><sp/>&lt;<sp/>n_data_blocks_;<sp/>++<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(selections[<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>]<sp/>==<sp/><ref refid="_n_d_plugin_attr_plot_8h_1a6d268db4f66dd4fd48c64c6780237428" kindref="member">ND_ATTRPLOT_UID_LABEL</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>data_selections_[<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>]<sp/>=<sp/><ref refid="_n_d_plugin_attr_plot_8h_1a992d3dfa1837a2e7f6b580c7bfeccfdd" kindref="member">ND_ATTRPLOT_UID_INDEX</ref>;</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::vector&lt;std::string&gt;::const_iterator<sp/>attr_it<sp/>=</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::find(attributes_.begin(),<sp/>attributes_.end(),</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>selections[<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>]);</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(attr_it<sp/>!=<sp/>attributes_.end())<sp/>{</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>data_selections_[<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>]<sp/>=<sp/>(int)(attr_it<sp/>-<sp/>attributes_.begin());</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>data_selections_[<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>]<sp/>=<sp/><ref refid="_n_d_plugin_attr_plot_8h_1a68402babc2c8b5d1ffcec7ed65507bff" kindref="member">ND_ATTRPLOT_NONE_INDEX</ref>;</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"></highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/>callback_attributes();</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/>callback_selected();</highlight></codeline>
+<codeline lineno="202"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"></highlight></codeline>
+<codeline lineno="204"><highlight class="normal"></highlight></codeline>
+<codeline lineno="205"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>NDPluginAttrPlot::reset_data()<sp/>{</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/>state_<sp/>=<sp/>NDAttrPlot_InitState;</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/>uids_.<ref refid="class_circular_buffer_1a26caa4ec94de2f342f32b6558ac697eb" kindref="member">clear</ref>();</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(std::vector&lt;CB&gt;::iterator<sp/>it<sp/>=<sp/>data_.begin();</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>it<sp/>!=<sp/>data_.end();<sp/>++it)<sp/>{</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>it-&gt;clear();</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="212"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"></highlight></codeline>
+<codeline lineno="214"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>NDPluginAttrPlot::callback_attributes()<sp/>{</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref><sp/>=<sp/>0;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref><sp/>&lt;<sp/>(int)n_attributes_;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>++)<sp/>{</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref><sp/>&lt;<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)attributes_.size())<sp/>{</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>setStringParam(<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>,<sp/><ref refid="class_n_d_plugin_attr_plot_1ada17bd16dc94ed486d7fd23010822ad2" kindref="member">NDAttrPlotAttribute</ref>,<sp/>attributes_[<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>].c_str());</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>setStringParam(<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>,<sp/><ref refid="class_n_d_plugin_attr_plot_1ada17bd16dc94ed486d7fd23010822ad2" kindref="member">NDAttrPlotAttribute</ref>,<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>callParamCallbacks(<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>);</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="223"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"></highlight></codeline>
+<codeline lineno="225"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>NDPluginAttrPlot::callback_selected()<sp/>{</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref><sp/>=<sp/>0;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref><sp/>&lt;<sp/>(int)n_data_blocks_;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>++)<sp/>{</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>selected<sp/>=<sp/>data_selections_[<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>];</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacehdf5_1abeed318faeb13380e1b4221bd4198bf1aea271040d7a5b8d9af9cbf6564d262d5" kindref="member">std::string</ref><sp/>attr<sp/>=<sp/><ref refid="_n_d_plugin_attr_plot_8h_1ad31259a3978ca6b8e3a66851be81da8c" kindref="member">ND_ATTRPLOT_NONE_LABEL</ref>;</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(selected<sp/>==<sp/><ref refid="_n_d_plugin_attr_plot_8h_1a992d3dfa1837a2e7f6b580c7bfeccfdd" kindref="member">ND_ATTRPLOT_UID_INDEX</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>attr<sp/>=<sp/><ref refid="_n_d_plugin_attr_plot_8h_1a6d268db4f66dd4fd48c64c6780237428" kindref="member">ND_ATTRPLOT_UID_LABEL</ref>;</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(selected<sp/>&gt;=<sp/>0<sp/>&amp;&amp;</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">size_t</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(selected)<sp/>&lt;<sp/>attributes_.size())<sp/>{</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>attr<sp/>=<sp/>attributes_[selected];</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>selected<sp/>=<sp/><ref refid="_n_d_plugin_attr_plot_8h_1a68402babc2c8b5d1ffcec7ed65507bff" kindref="member">ND_ATTRPLOT_NONE_INDEX</ref>;</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>setStringParam(<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>,<sp/><ref refid="class_n_d_plugin_attr_plot_1a5cccb390c69c652bfcbe3c15f5effa47" kindref="member">NDAttrPlotDataLabel</ref>,<sp/>attr.c_str());</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classasyn_n_d_array_driver_1abf87462bc5853f8e5a56db5e93acd956" kindref="member">setIntegerParam</ref>(<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>,<sp/><ref refid="class_n_d_plugin_attr_plot_1a03eeef95242cee37d53c8ff3cb7e9505" kindref="member">NDAttrPlotDataSelect</ref>,<sp/>selected);</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>callParamCallbacks(<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>);</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="241"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"></highlight></codeline>
+<codeline lineno="243"><highlight class="normal">asynStatus<sp/>NDPluginAttrPlot::push_data(epicsInt32<sp/>uid,<sp/><ref refid="class_n_d_attribute_list" kindref="compound">NDAttributeList</ref>&amp;<sp/>list)<sp/>{</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>length<sp/>=<sp/>attributes_.size();</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>*new_values<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">[length];</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/>std::fill(new_values,<sp/>new_values<sp/>+<sp/>length,<sp/>epicsNAN);</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"></highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Populate<sp/>the<sp/>new<sp/>values<sp/>with<sp/>values<sp/>from<sp/>the<sp/>attribute<sp/>list</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<ref refid="class_n_d_attribute" kindref="compound">NDAttribute</ref><sp/>*<sp/>attr<sp/>=<sp/>list.<ref refid="class_n_d_attribute_list_1a42963179e3d97278f4323bdef78f37e5" kindref="member">next</ref>(NULL);</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>attr<sp/>!=<sp/>NULL;<sp/>attr<sp/>=<sp/>list.<ref refid="class_n_d_attribute_list_1a42963179e3d97278f4323bdef78f37e5" kindref="member">next</ref>(attr))<sp/>{</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacehdf5_1abeed318faeb13380e1b4221bd4198bf1aea271040d7a5b8d9af9cbf6564d262d5" kindref="member">std::string</ref><sp/><ref refid="namespacemake_db_and_edl_1a2832407c256551abb325d5ee9e587443" kindref="member">name</ref>(attr-&gt;getName());</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::vector&lt;std::string&gt;::const_iterator<sp/>it<sp/>=<sp/>std::find(</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>attributes_.begin(),<sp/>attributes_.end(),<sp/><ref refid="namespacemake_db_and_edl_1a2832407c256551abb325d5ee9e587443" kindref="member">name</ref>);</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(it<sp/>!=<sp/>attributes_.end())<sp/>{</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ptrdiff_t<sp/>index<sp/>=<sp/>it<sp/>-<sp/>attributes_.begin();</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>attr-&gt;getValue(<ref refid="_n_d_attribute_8h_1a8a795995acde8458f43ac9b01376ef07a44ee1de8f62f1aca30ce498b093a5c8c" kindref="member">NDAttrFloat64</ref>,<sp/>&amp;new_values[index],<sp/>1);</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"></highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Push<sp/>the<sp/>new<sp/>values<sp/>to<sp/>the<sp/>data<sp/>block</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/>uids_.<ref refid="class_circular_buffer_1a70f509261399cce235f53058b35fc448" kindref="member">push_back</ref>(uid);</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref><sp/>=<sp/>0;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref><sp/>&lt;<sp/>length;<sp/>++<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>data_[<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>].push_back(new_values[<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>]);</highlight></codeline>
+<codeline lineno="264"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"></highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/>[]<sp/>new_values;</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>asynSuccess;</highlight></codeline>
+<codeline lineno="268"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="269"><highlight class="normal"></highlight></codeline>
+<codeline lineno="270"><highlight class="normal">asynStatus<sp/><ref refid="class_n_d_plugin_attr_plot_1ae81abd43eaaf77112a1aeba6cb34c833" kindref="member">NDPluginAttrPlot::writeInt32</ref>(asynUser<sp/>*<sp/>pasynUser,<sp/>epicsInt32<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>)</highlight></codeline>
+<codeline lineno="271"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="272"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>reason<sp/>=<sp/>pasynUser-&gt;reason;</highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>addr<sp/>=<sp/>-1;</highlight></codeline>
+<codeline lineno="274"><highlight class="normal"></highlight></codeline>
+<codeline lineno="275"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(getAddress(pasynUser,<sp/>&amp;addr)<sp/>!=<sp/>asynSuccess)<sp/>{</highlight></codeline>
+<codeline lineno="276"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>asynError;</highlight></codeline>
+<codeline lineno="277"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="278"><highlight class="normal"></highlight></codeline>
+<codeline lineno="279"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(reason<sp/>==<sp/><ref refid="class_n_d_plugin_attr_plot_1a03eeef95242cee37d53c8ff3cb7e9505" kindref="member">NDAttrPlotDataSelect</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="280"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(addr<sp/>&lt;<sp/>0<sp/>||<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(addr)<sp/>&gt;=<sp/>n_data_blocks_)<sp/>{</highlight></codeline>
+<codeline lineno="281"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>asynError;</highlight></codeline>
+<codeline lineno="282"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="283"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref><sp/>&gt;<sp/>0<sp/>&amp;&amp;<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(<ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>)<sp/>&gt;=<sp/>attributes_.size())<sp/>{</highlight></codeline>
+<codeline lineno="284"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>asynError;</highlight></codeline>
+<codeline lineno="285"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="286"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>data_selections_[addr]<sp/>=<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>;</highlight></codeline>
+<codeline lineno="287"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>callback_selected();</highlight></codeline>
+<codeline lineno="288"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>callback_data();</highlight></codeline>
+<codeline lineno="289"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>asynSuccess;</highlight></codeline>
+<codeline lineno="290"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(reason<sp/>==<sp/><ref refid="class_n_d_plugin_attr_plot_1a3861733116287ea874978504d3475543" kindref="member">NDAttrPlotReset</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="291"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>reset_data();</highlight></codeline>
+<codeline lineno="292"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>asynSuccess;</highlight></codeline>
+<codeline lineno="293"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="294"><highlight class="normal"></highlight></codeline>
+<codeline lineno="295"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="class_n_d_plugin_driver_1a5f60198f46fd7cd89c101dce9533f3aa" kindref="member">NDPluginDriver::writeInt32</ref>(pasynUser,<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>);</highlight></codeline>
+<codeline lineno="296"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="297"><highlight class="normal"></highlight></codeline>
+<codeline lineno="298"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="299"><highlight class="normal"></highlight></codeline>
+<codeline lineno="300"><highlight class="normal"><ref refid="class_n_d_plugin_attr_plot" kindref="compound">NDPluginAttrPlot</ref><sp/>*<sp/><ref refid="_n_d_plugin_attr_plot_8cpp_1a28efa78ac965ddbcd13ac053957e3e84" kindref="member">plugin</ref>;</highlight></codeline>
+<codeline lineno="301"><highlight class="normal"></highlight></codeline>
+<codeline lineno="302"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>initHooks(initHookState<sp/>state)<sp/>{</highlight></codeline>
+<codeline lineno="303"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(state<sp/>==<sp/>initHookAfterIocRunning)<sp/>{</highlight></codeline>
+<codeline lineno="304"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_n_d_plugin_attr_plot_8cpp_1a28efa78ac965ddbcd13ac053957e3e84" kindref="member">plugin</ref>-&gt;<ref refid="class_n_d_plugin_attr_plot_1abd1bd9f5280a98fc509e0a6f6effe299" kindref="member">start_expose</ref>();</highlight></codeline>
+<codeline lineno="305"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="306"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="307"><highlight class="normal"></highlight></codeline>
+<codeline lineno="308"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="_n_d_plugin_attr_plot_8cpp_1a87a3cfffaaed998f8f102327c6728c69" kindref="member">NDAttrPlotConfig</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>port,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n_attributes,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>cache_size,</highlight></codeline>
+<codeline lineno="309"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n_selected_blocks,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>in_port,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>in_addr,</highlight></codeline>
+<codeline lineno="310"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>queue_size,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>blocking_callbacks,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>priority,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>stackSize)<sp/>{</highlight></codeline>
+<codeline lineno="311"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_n_d_plugin_attr_plot_8cpp_1a28efa78ac965ddbcd13ac053957e3e84" kindref="member">plugin</ref><sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_n_d_plugin_attr_plot" kindref="compound">NDPluginAttrPlot</ref>(port,<sp/>n_attributes,<sp/>cache_size,</highlight></codeline>
+<codeline lineno="312"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>n_selected_blocks,<sp/>in_port,<sp/>in_addr,<sp/>queue_size,<sp/>blocking_callbacks,</highlight></codeline>
+<codeline lineno="313"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>priority,<sp/>stackSize);</highlight></codeline>
+<codeline lineno="314"><highlight class="normal"><sp/><sp/><sp/><sp/>initHookRegister(initHooks);</highlight></codeline>
+<codeline lineno="315"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_n_d_plugin_attr_plot_8cpp_1a28efa78ac965ddbcd13ac053957e3e84" kindref="member">plugin</ref>-&gt;<ref refid="class_n_d_plugin_driver_1a085bcf8d331f7dedac92af07c94b2d15" kindref="member">start</ref>();</highlight></codeline>
+<codeline lineno="316"><highlight class="normal"></highlight></codeline>
+<codeline lineno="317"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>asynSuccess;</highlight></codeline>
+<codeline lineno="318"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="319"><highlight class="normal"></highlight></codeline>
+<codeline lineno="320"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>iocshArg<sp/>portArg<sp/>=<sp/>{</highlight><highlight class="stringliteral">&quot;Port<sp/>name&quot;</highlight><highlight class="normal">,<sp/>iocshArgString};</highlight></codeline>
+<codeline lineno="321"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>iocshArg<sp/>nAttributesArg<sp/>=<sp/>{</highlight><highlight class="stringliteral">&quot;Number<sp/>of<sp/>attributes&quot;</highlight><highlight class="normal">,<sp/>iocshArgInt};</highlight></codeline>
+<codeline lineno="322"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>iocshArg<sp/>cacheSizeArg<sp/>=<sp/>{</highlight><highlight class="stringliteral">&quot;Cache<sp/>size&quot;</highlight><highlight class="normal">,<sp/>iocshArgInt};</highlight></codeline>
+<codeline lineno="323"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>iocshArg<sp/>nBlocksArg<sp/>=<sp/>{</highlight><highlight class="stringliteral">&quot;Number<sp/>of<sp/>array<sp/>blocks&quot;</highlight><highlight class="normal">,<sp/>iocshArgInt};</highlight></codeline>
+<codeline lineno="324"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>iocshArg<sp/>inPortArg<sp/>=<sp/>{</highlight><highlight class="stringliteral">&quot;Input<sp/>Port<sp/>name&quot;</highlight><highlight class="normal">,<sp/>iocshArgString};</highlight></codeline>
+<codeline lineno="325"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>iocshArg<sp/>inAddrArg<sp/>=<sp/>{</highlight><highlight class="stringliteral">&quot;Input<sp/>address&quot;</highlight><highlight class="normal">,<sp/>iocshArgInt};</highlight></codeline>
+<codeline lineno="326"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>iocshArg<sp/>queueSizeArg<sp/>=<sp/>{</highlight><highlight class="stringliteral">&quot;Queue<sp/>size&quot;</highlight><highlight class="normal">,<sp/>iocshArgInt};</highlight></codeline>
+<codeline lineno="327"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>iocshArg<sp/>blockingCallbacksArg<sp/>=</highlight></codeline>
+<codeline lineno="328"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;Uses<sp/>blocking<sp/>callbacks&quot;</highlight><highlight class="normal">,<sp/>iocshArgInt};</highlight></codeline>
+<codeline lineno="329"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>iocshArg<sp/>priorityArg<sp/>=<sp/>{</highlight><highlight class="stringliteral">&quot;Thread<sp/>priority&quot;</highlight><highlight class="normal">,<sp/>iocshArgInt};</highlight></codeline>
+<codeline lineno="330"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>iocshArg<sp/>stackSizeArg<sp/>=<sp/>{</highlight><highlight class="stringliteral">&quot;Thread<sp/>stack<sp/>size&quot;</highlight><highlight class="normal">,<sp/>iocshArgInt};</highlight></codeline>
+<codeline lineno="331"><highlight class="normal"></highlight></codeline>
+<codeline lineno="332"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>iocshArg<sp/>*<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>NDAttrPlotArgs[]<sp/>=<sp/>{&amp;portArg,</highlight></codeline>
+<codeline lineno="333"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;nAttributesArg,</highlight></codeline>
+<codeline lineno="334"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;cacheSizeArg,</highlight></codeline>
+<codeline lineno="335"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;nBlocksArg,</highlight></codeline>
+<codeline lineno="336"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;inPortArg,</highlight></codeline>
+<codeline lineno="337"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;inAddrArg,</highlight></codeline>
+<codeline lineno="338"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;queueSizeArg,</highlight></codeline>
+<codeline lineno="339"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;blockingCallbacksArg,</highlight></codeline>
+<codeline lineno="340"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;priorityArg,</highlight></codeline>
+<codeline lineno="341"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;stackSizeArg};</highlight></codeline>
+<codeline lineno="342"><highlight class="normal"></highlight></codeline>
+<codeline lineno="343"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>iocshFuncDef<sp/>NDAttrPlotCallConfig<sp/>=</highlight></codeline>
+<codeline lineno="344"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;NDAttrPlotConfig&quot;</highlight><highlight class="normal">,<sp/>10,<sp/>NDAttrPlotArgs};</highlight></codeline>
+<codeline lineno="345"><highlight class="normal"></highlight></codeline>
+<codeline lineno="346"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>NDAttrPlotCallFunc(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>iocshArgBuf<sp/>*<sp/><ref refid="namespacemake_adl_1a1d55f39db2066eab50e6f2b21abc00f1" kindref="member">args</ref>)</highlight></codeline>
+<codeline lineno="347"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="348"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_n_d_plugin_attr_plot_8cpp_1a87a3cfffaaed998f8f102327c6728c69" kindref="member">NDAttrPlotConfig</ref>(<ref refid="namespacemake_adl_1a1d55f39db2066eab50e6f2b21abc00f1" kindref="member">args</ref>[0].sval,<sp/><ref refid="namespacemake_adl_1a1d55f39db2066eab50e6f2b21abc00f1" kindref="member">args</ref>[1].ival,<sp/><ref refid="namespacemake_adl_1a1d55f39db2066eab50e6f2b21abc00f1" kindref="member">args</ref>[2].ival,<sp/><ref refid="namespacemake_adl_1a1d55f39db2066eab50e6f2b21abc00f1" kindref="member">args</ref>[3].ival,</highlight></codeline>
+<codeline lineno="349"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacemake_adl_1a1d55f39db2066eab50e6f2b21abc00f1" kindref="member">args</ref>[4].sval,<sp/><ref refid="namespacemake_adl_1a1d55f39db2066eab50e6f2b21abc00f1" kindref="member">args</ref>[5].ival,<sp/><ref refid="namespacemake_adl_1a1d55f39db2066eab50e6f2b21abc00f1" kindref="member">args</ref>[6].ival,<sp/><ref refid="namespacemake_adl_1a1d55f39db2066eab50e6f2b21abc00f1" kindref="member">args</ref>[7].ival,</highlight></codeline>
+<codeline lineno="350"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacemake_adl_1a1d55f39db2066eab50e6f2b21abc00f1" kindref="member">args</ref>[8].ival,<sp/><ref refid="namespacemake_adl_1a1d55f39db2066eab50e6f2b21abc00f1" kindref="member">args</ref>[9].ival);</highlight></codeline>
+<codeline lineno="351"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="352"><highlight class="normal"></highlight></codeline>
+<codeline lineno="353"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>NDAttrPlotRegister()<sp/>{</highlight></codeline>
+<codeline lineno="354"><highlight class="normal"><sp/><sp/><sp/><sp/>iocshRegister(&amp;NDAttrPlotCallConfig,<sp/>NDAttrPlotCallFunc);</highlight></codeline>
+<codeline lineno="355"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="356"><highlight class="normal"></highlight></codeline>
+<codeline lineno="357"><highlight class="normal"><ref refid="_n_d_plugin_attr_plot_8cpp_1a44211754b805502617318eadb1655aa6" kindref="member">epicsExportRegistrar</ref>(NDAttrPlotRegister);</highlight></codeline>
+<codeline lineno="358"><highlight class="normal"></highlight></codeline>
+<codeline lineno="359"><highlight class="normal">}<sp/></highlight><highlight class="comment">//extern<sp/>&quot;C&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="360"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginAttrPlot.cpp"/>
+  </compounddef>
+</doxygen>

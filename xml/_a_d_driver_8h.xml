@@ -1,0 +1,1487 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="_a_d_driver_8h" kind="file" language="C++">
+    <compoundname>ADDriver.h</compoundname>
+    <includes local="no">epicsTypes.h</includes>
+    <includes local="no">epicsMessageQueue.h</includes>
+    <includes local="no">epicsTime.h</includes>
+    <includes refid="asyn_n_d_array_driver_8h" local="yes">asynNDArrayDriver.h</includes>
+    <includedby refid="_a_d_driver_8cpp" local="yes">/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/ADDriver.cpp</includedby>
+    <includedby refid="adsc_8cpp" local="yes">/home/runner/work/areaDetector/areaDetector/ADADSC/adscApp/src/adsc.cpp</includedby>
+    <includedby refid="andor_c_c_d_8cpp" local="no">/home/runner/work/areaDetector/areaDetector/ADAndor/andorApp/src/andorCCD.cpp</includedby>
+    <includedby refid="andor_c_c_d_8h" local="yes">/home/runner/work/areaDetector/areaDetector/ADAndor/andorApp/src/andorCCD.h</includedby>
+    <includedby refid="andor3_8cpp" local="yes">/home/runner/work/areaDetector/areaDetector/ADAndor3/andor3App/src/andor3.cpp</includedby>
+    <includedby refid="_b_i_s_detector_8cpp" local="yes">/home/runner/work/areaDetector/areaDetector/ADBruker/brukerApp/src/BISDetector.cpp</includedby>
+    <includedby refid="_dexela_8cpp" local="yes">/home/runner/work/areaDetector/areaDetector/ADDexela/dexelaApp/src/Dexela.cpp</includedby>
+    <includedby refid="_dexela_8h" local="yes">/home/runner/work/areaDetector/areaDetector/ADDexela/dexelaApp/src/Dexela.h</includedby>
+    <includedby refid="eiger_detector_8cpp" local="yes">/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.cpp</includedby>
+    <includedby refid="eiger_param_8cpp" local="no">/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerParam.cpp</includedby>
+    <includedby refid="_fast_c_c_d_8h" local="yes">/home/runner/work/areaDetector/areaDetector/ADFastCCD/FastCCDApp/src/FastCCD.h</includedby>
+    <includedby refid="firewire_win_d_c_a_m_8cpp" local="no">/home/runner/work/areaDetector/areaDetector/ADFireWireWin/firewireWinApp/src/firewireWinDCAM.cpp</includedby>
+    <includedby refid="_a_d_gen_i_cam_8cpp" local="yes">/home/runner/work/areaDetector/areaDetector/ADGenICam/GenICamApp/src/ADGenICam.cpp</includedby>
+    <includedby refid="_a_d_gen_i_cam_8h" local="no">/home/runner/work/areaDetector/areaDetector/ADGenICam/GenICamApp/src/ADGenICam.h</includedby>
+    <includedby refid="_gen_i_cam_feature_8cpp" local="no">/home/runner/work/areaDetector/areaDetector/ADGenICam/GenICamApp/src/GenICamFeature.cpp</includedby>
+    <includedby refid="_a_d_lambda_8h" local="yes">/home/runner/work/areaDetector/areaDetector/ADLambda/LambdaApp/src/ADLambda.h</includedby>
+    <includedby refid="_light_field_8cpp" local="yes">/home/runner/work/areaDetector/areaDetector/ADLightField/lightFieldApp/src/LightField.cpp</includedby>
+    <includedby refid="merlin_detector_8cpp" local="yes">/home/runner/work/areaDetector/areaDetector/ADMerlin/merlinApp/src/merlinDetector.cpp</includedby>
+    <includedby refid="mpx_connection_8cpp" local="yes">/home/runner/work/areaDetector/areaDetector/ADMerlin/merlinApp/src/mpxConnection.cpp</includedby>
+    <includedby refid="mythen_8cpp" local="yes">/home/runner/work/areaDetector/areaDetector/ADMythen/mythenApp/src/mythen.cpp</includedby>
+    <includedby refid="pco_8cpp" local="yes">/home/runner/work/areaDetector/areaDetector/ADPCO/pcoApp/src/pco.cpp</includedby>
+    <includedby refid="_a_d_p_i_cam_8cpp" local="yes">/home/runner/work/areaDetector/areaDetector/ADPICam/PICamApp/src/ADPICam.cpp</includedby>
+    <includedby refid="_p_s_l_8cpp" local="yes">/home/runner/work/areaDetector/areaDetector/ADPSL/pslApp/src/PSL.cpp</includedby>
+    <includedby refid="_perkin_elmer_8cpp" local="yes">/home/runner/work/areaDetector/areaDetector/ADPerkinElmer/perkinElmerApp/src/PerkinElmer.cpp</includedby>
+    <includedby refid="_perkin_elmer_8h" local="yes">/home/runner/work/areaDetector/areaDetector/ADPerkinElmer/perkinElmerApp/src/PerkinElmer.h</includedby>
+    <includedby refid="_photon_i_i_8cpp" local="no">/home/runner/work/areaDetector/areaDetector/ADPhotonII/PhotonIIApp/src/PhotonII.cpp</includedby>
+    <includedby refid="_photon_i_i_8h" local="no">/home/runner/work/areaDetector/areaDetector/ADPhotonII/PhotonIIApp/src/PhotonII.h</includedby>
+    <includedby refid="pilatus_detector_8cpp" local="yes">/home/runner/work/areaDetector/areaDetector/ADPilatus/pilatusApp/src/pilatusDetector.cpp</includedby>
+    <includedby refid="pixirad_8cpp" local="yes">/home/runner/work/areaDetector/areaDetector/ADPixirad/pixiradApp/src/pixirad.cpp</includedby>
+    <includedby refid="point_grey_8cpp" local="yes">/home/runner/work/areaDetector/areaDetector/ADPointGrey/pointGreyApp/src/pointGrey.cpp</includedby>
+    <includedby refid="prosilica_8cpp" local="yes">/home/runner/work/areaDetector/areaDetector/ADProsilica/prosilicaApp/src/prosilica.cpp</includedby>
+    <includedby refid="pv_cam_src_8h" local="yes">/home/runner/work/areaDetector/areaDetector/ADPvCam/pvcamApp/src/pvCamSrc.h</includedby>
+    <includedby refid="_q_imaging_8h" local="yes">/home/runner/work/areaDetector/areaDetector/ADQImaging/Support/QImaging.h</includedby>
+    <includedby refid="rixscam_8cpp" local="yes">/home/runner/work/areaDetector/areaDetector/ADRIXSCam/rixscamApp/src/rixscam.cpp</includedby>
+    <includedby refid="rixscam_8h" local="yes">/home/runner/work/areaDetector/areaDetector/ADRIXSCam/rixscamApp/src/rixscam.h</includedby>
+    <includedby refid="roper_8cpp" local="yes">/home/runner/work/areaDetector/areaDetector/ADRoper/roperApp/src/roper.cpp</includedby>
+    <includedby refid="sim_detector_8cpp" local="yes">/home/runner/work/areaDetector/areaDetector/ADSimDetector/simDetectorApp/src/simDetector.cpp</includedby>
+    <includedby refid="sim_detector_8h" local="yes">/home/runner/work/areaDetector/areaDetector/ADSimDetector/simDetectorApp/src/simDetector.h</includedby>
+    <includedby refid="_u_r_l_driver_8cpp" local="yes">/home/runner/work/areaDetector/areaDetector/ADURL/urlApp/src/URLDriver.cpp</includedby>
+    <includedby refid="mar345_8cpp" local="yes">/home/runner/work/areaDetector/areaDetector/ADmar345/mar345App/src/mar345.cpp</includedby>
+    <includedby refid="mar_c_c_d_8cpp" local="yes">/home/runner/work/areaDetector/areaDetector/ADmarCCD/marCCDApp/src/marCCD.cpp</includedby>
+    <includedby refid="_a_dn_e_d_8h" local="yes">/home/runner/work/areaDetector/areaDetector/ADnED/ADnEDApp/src/ADnED.h</includedby>
+    <includedby refid="aravis_camera_8cpp" local="no">/home/runner/work/areaDetector/areaDetector/aravisGigE/aravisGigEApp/src/aravisCamera.cpp</includedby>
+    <includedby refid="firewire_d_c_a_m_8cpp" local="no">/home/runner/work/areaDetector/areaDetector/firewireDCAM/firewireDCAMApp/src/firewireDCAM.cpp</includedby>
+    <includedby refid="_n_d_driver_std_arrays_8cpp" local="yes">/home/runner/work/areaDetector/areaDetector/NDDriverStdArrays/NDDriverStdArraysApp/src/NDDriverStdArrays.cpp</includedby>
+    <includedby refid="_n_d_driver_std_arrays_8h" local="yes">/home/runner/work/areaDetector/areaDetector/NDDriverStdArrays/NDDriverStdArraysApp/src/NDDriverStdArrays.h</includedby>
+    <includedby refid="pva_driver_8cpp" local="no">/home/runner/work/areaDetector/areaDetector/pvaDriver/pvaDriverApp/src/pvaDriver.cpp</includedby>
+    <includedby refid="specs_analyser_8h" local="no">/home/runner/work/areaDetector/areaDetector/specsAnalyser/specsAnalyserApp/src/specsAnalyser.h</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>epicsTypes.h</label>
+      </node>
+      <node id="9">
+        <label>NDArray.h</label>
+        <link refid="_n_d_array_8h"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>NDAttributeList.h</label>
+        <link refid="_n_d_attribute_list_8h"/>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>epicsMutex.h</label>
+      </node>
+      <node id="17">
+        <label>epicsVersion.h</label>
+      </node>
+      <node id="13">
+        <label>string</label>
+      </node>
+      <node id="1">
+        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/ADDriver.h</label>
+        <link refid="_a_d_driver_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>ADCoreVersion.h</label>
+        <link refid="_a_d_core_version_8h"/>
+      </node>
+      <node id="16">
+        <label>ADCoreAPI.h</label>
+        <link refid="_a_d_core_a_p_i_8h"/>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>asynNDArrayDriver.h</label>
+        <link refid="asyn_n_d_array_driver_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>ellLib.h</label>
+      </node>
+      <node id="12">
+        <label>NDAttribute.h</label>
+        <link refid="_n_d_attribute_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>asynDriver.h</label>
+      </node>
+      <node id="19">
+        <label>Codec.h</label>
+        <link refid="_codec_8h"/>
+      </node>
+      <node id="4">
+        <label>epicsTime.h</label>
+      </node>
+      <node id="8">
+        <label>asynPortDriver.h</label>
+      </node>
+      <node id="10">
+        <label>set</label>
+      </node>
+      <node id="3">
+        <label>epicsMessageQueue.h</label>
+      </node>
+      <node id="14">
+        <label>stdio.h</label>
+      </node>
+      <node id="7">
+        <label>epicsEvent.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="39">
+        <label>/home/runner/work/areaDetector/areaDetector/ADPilatus/pilatusApp/src/pilatusDetector.cpp</label>
+        <link refid="pilatus_detector_8cpp"/>
+      </node>
+      <node id="4">
+        <label>/home/runner/work/areaDetector/areaDetector/ADAndor/andorApp/src/andorCCD.cpp</label>
+        <link refid="andor_c_c_d_8cpp"/>
+      </node>
+      <node id="49">
+        <label>/home/runner/work/areaDetector/areaDetector/ADRoper/roperApp/src/roper.cpp</label>
+        <link refid="roper_8cpp"/>
+      </node>
+      <node id="47">
+        <label>/home/runner/work/areaDetector/areaDetector/ADRIXSCam/rixscamApp/src/rixscam.cpp</label>
+        <link refid="rixscam_8cpp"/>
+      </node>
+      <node id="42">
+        <label>/home/runner/work/areaDetector/areaDetector/ADProsilica/prosilicaApp/src/prosilica.cpp</label>
+        <link refid="prosilica_8cpp"/>
+      </node>
+      <node id="31">
+        <label>/home/runner/work/areaDetector/areaDetector/ADMythen/mythenApp/src/mythen.cpp</label>
+        <link refid="mythen_8cpp"/>
+      </node>
+      <node id="16">
+        <label>/home/runner/work/areaDetector/areaDetector/ADGenICam/GenICamApp/src/ADGenICam.h</label>
+        <link refid="_a_d_gen_i_cam_8h"/>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+      </node>
+      <node id="37">
+        <label>/home/runner/work/areaDetector/areaDetector/ADPhotonII/PhotonIIApp/src/PhotonII.cpp</label>
+        <link refid="_photon_i_i_8cpp"/>
+      </node>
+      <node id="9">
+        <label>/home/runner/work/areaDetector/areaDetector/ADDexela/dexelaApp/src/Dexela.h</label>
+        <link refid="_dexela_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>/home/runner/work/areaDetector/areaDetector/ADSpinnaker/spinnakerApp/src/SPFeature.cpp</label>
+        <link refid="_s_p_feature_8cpp"/>
+      </node>
+      <node id="55">
+        <label>/home/runner/work/areaDetector/areaDetector/ADnED/ADnEDApp/src/ADnED.h</label>
+        <link refid="_a_dn_e_d_8h"/>
+        <childnode refid="56" relation="include">
+        </childnode>
+        <childnode refid="57" relation="include">
+        </childnode>
+        <childnode refid="58" relation="include">
+        </childnode>
+      </node>
+      <node id="21">
+        <label>/home/runner/work/areaDetector/areaDetector/ADVimba/vimbaApp/src/ADVimba.cpp</label>
+        <link refid="_a_d_vimba_8cpp"/>
+      </node>
+      <node id="14">
+        <label>/home/runner/work/areaDetector/areaDetector/ADFireWireWin/firewireWinApp/src/firewireWinDCAM.cpp</label>
+        <link refid="firewire_win_d_c_a_m_8cpp"/>
+      </node>
+      <node id="43">
+        <label>/home/runner/work/areaDetector/areaDetector/ADPvCam/pvcamApp/src/pvCamSrc.h</label>
+        <link refid="pv_cam_src_8h"/>
+        <childnode refid="44" relation="include">
+        </childnode>
+      </node>
+      <node id="57">
+        <label>/home/runner/work/areaDetector/areaDetector/ADnED/ADnEDApp/src/ADnEDTransform.cpp</label>
+        <link refid="_a_dn_e_d_transform_8cpp"/>
+      </node>
+      <node id="46">
+        <label>/home/runner/work/areaDetector/areaDetector/ADQImaging/App/src/QImaging.cpp</label>
+        <link refid="_q_imaging_8cpp"/>
+      </node>
+      <node id="26">
+        <label>/home/runner/work/areaDetector/areaDetector/ADLambda/LambdaApp/src/ADLambda.h</label>
+        <link refid="_a_d_lambda_8h"/>
+        <childnode refid="27" relation="include">
+        </childnode>
+      </node>
+      <node id="45">
+        <label>/home/runner/work/areaDetector/areaDetector/ADQImaging/Support/QImaging.h</label>
+        <link refid="_q_imaging_8h"/>
+        <childnode refid="46" relation="include">
+        </childnode>
+      </node>
+      <node id="65">
+        <label>/home/runner/work/areaDetector/areaDetector/specsAnalyser/specsAnalyserApp/src/specsAnalyser.cpp</label>
+        <link refid="specs_analyser_8cpp"/>
+      </node>
+      <node id="13">
+        <label>/home/runner/work/areaDetector/areaDetector/ADFastCCD/FastCCDApp/src/FastCCD.cpp</label>
+        <link refid="_fast_c_c_d_8cpp"/>
+      </node>
+      <node id="25">
+        <label>/home/runner/work/areaDetector/areaDetector/ADGenICam/GenICamApp/src/GenICamFeature.cpp</label>
+        <link refid="_gen_i_cam_feature_8cpp"/>
+      </node>
+      <node id="10">
+        <label>/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.cpp</label>
+        <link refid="eiger_detector_8cpp"/>
+      </node>
+      <node id="54">
+        <label>/home/runner/work/areaDetector/areaDetector/ADmarCCD/marCCDApp/src/marCCD.cpp</label>
+        <link refid="mar_c_c_d_8cpp"/>
+      </node>
+      <node id="15">
+        <label>/home/runner/work/areaDetector/areaDetector/ADGenICam/GenICamApp/src/ADGenICam.cpp</label>
+        <link refid="_a_d_gen_i_cam_8cpp"/>
+      </node>
+      <node id="1">
+        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/ADDriver.h</label>
+        <link refid="_a_d_driver_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="42" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+        <childnode refid="47" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
+        </childnode>
+        <childnode refid="49" relation="include">
+        </childnode>
+        <childnode refid="50" relation="include">
+        </childnode>
+        <childnode refid="51" relation="include">
+        </childnode>
+        <childnode refid="52" relation="include">
+        </childnode>
+        <childnode refid="53" relation="include">
+        </childnode>
+        <childnode refid="54" relation="include">
+        </childnode>
+        <childnode refid="55" relation="include">
+        </childnode>
+        <childnode refid="59" relation="include">
+        </childnode>
+        <childnode refid="60" relation="include">
+        </childnode>
+        <childnode refid="61" relation="include">
+        </childnode>
+        <childnode refid="62" relation="include">
+        </childnode>
+        <childnode refid="63" relation="include">
+        </childnode>
+        <childnode refid="64" relation="include">
+        </childnode>
+      </node>
+      <node id="30">
+        <label>/home/runner/work/areaDetector/areaDetector/ADMerlin/merlinApp/src/mpxConnection.cpp</label>
+        <link refid="mpx_connection_8cpp"/>
+      </node>
+      <node id="7">
+        <label>/home/runner/work/areaDetector/areaDetector/ADBruker/brukerApp/src/BISDetector.cpp</label>
+        <link refid="_b_i_s_detector_8cpp"/>
+      </node>
+      <node id="48">
+        <label>/home/runner/work/areaDetector/areaDetector/ADRIXSCam/rixscamApp/src/rixscam.h</label>
+        <link refid="rixscam_8h"/>
+        <childnode refid="47" relation="include">
+        </childnode>
+      </node>
+      <node id="29">
+        <label>/home/runner/work/areaDetector/areaDetector/ADMerlin/merlinApp/src/merlinDetector.cpp</label>
+        <link refid="merlin_detector_8cpp"/>
+      </node>
+      <node id="32">
+        <label>/home/runner/work/areaDetector/areaDetector/ADPCO/pcoApp/src/pco.cpp</label>
+        <link refid="pco_8cpp"/>
+      </node>
+      <node id="53">
+        <label>/home/runner/work/areaDetector/areaDetector/ADmar345/mar345App/src/mar345.cpp</label>
+        <link refid="mar345_8cpp"/>
+      </node>
+      <node id="33">
+        <label>/home/runner/work/areaDetector/areaDetector/ADPICam/PICamApp/src/ADPICam.cpp</label>
+        <link refid="_a_d_p_i_cam_8cpp"/>
+      </node>
+      <node id="40">
+        <label>/home/runner/work/areaDetector/areaDetector/ADPixirad/pixiradApp/src/pixirad.cpp</label>
+        <link refid="pixirad_8cpp"/>
+      </node>
+      <node id="19">
+        <label>/home/runner/work/areaDetector/areaDetector/ADSpinnaker/spinnakerApp/src/ADSpinnaker.h</label>
+        <link refid="_a_d_spinnaker_8h"/>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+      <node id="23">
+        <label>/home/runner/work/areaDetector/areaDetector/ADVimba/vimbaApp/src/VimbaFeature.h</label>
+        <link refid="_vimba_feature_8h"/>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+      </node>
+      <node id="36">
+        <label>/home/runner/work/areaDetector/areaDetector/ADPerkinElmer/perkinElmerApp/src/PerkinElmer.h</label>
+        <link refid="_perkin_elmer_8h"/>
+        <childnode refid="35" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>/home/runner/work/areaDetector/areaDetector/ADAravis/aravisApp/src/ADAravis.cpp</label>
+        <link refid="_a_d_aravis_8cpp"/>
+      </node>
+      <node id="35">
+        <label>/home/runner/work/areaDetector/areaDetector/ADPerkinElmer/perkinElmerApp/src/PerkinElmer.cpp</label>
+        <link refid="_perkin_elmer_8cpp"/>
+      </node>
+      <node id="64">
+        <label>/home/runner/work/areaDetector/areaDetector/specsAnalyser/specsAnalyserApp/src/specsAnalyser.h</label>
+        <link refid="specs_analyser_8h"/>
+        <childnode refid="65" relation="include">
+        </childnode>
+      </node>
+      <node id="22">
+        <label>/home/runner/work/areaDetector/areaDetector/ADVimba/vimbaApp/src/ADVimba.h</label>
+        <link refid="_a_d_vimba_8h"/>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+      </node>
+      <node id="24">
+        <label>/home/runner/work/areaDetector/areaDetector/ADVimba/vimbaApp/src/VimbaFeature.cpp</label>
+        <link refid="_vimba_feature_8cpp"/>
+      </node>
+      <node id="60">
+        <label>/home/runner/work/areaDetector/areaDetector/firewireDCAM/firewireDCAMApp/src/firewireDCAM.cpp</label>
+        <link refid="firewire_d_c_a_m_8cpp"/>
+      </node>
+      <node id="2">
+        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/ADDriver.cpp</label>
+        <link refid="_a_d_driver_8cpp"/>
+      </node>
+      <node id="52">
+        <label>/home/runner/work/areaDetector/areaDetector/ADURL/urlApp/src/URLDriver.cpp</label>
+        <link refid="_u_r_l_driver_8cpp"/>
+      </node>
+      <node id="51">
+        <label>/home/runner/work/areaDetector/areaDetector/ADSimDetector/simDetectorApp/src/simDetector.h</label>
+        <link refid="sim_detector_8h"/>
+        <childnode refid="50" relation="include">
+        </childnode>
+      </node>
+      <node id="41">
+        <label>/home/runner/work/areaDetector/areaDetector/ADPointGrey/pointGreyApp/src/pointGrey.cpp</label>
+        <link refid="point_grey_8cpp"/>
+      </node>
+      <node id="61">
+        <label>/home/runner/work/areaDetector/areaDetector/NDDriverStdArrays/NDDriverStdArraysApp/src/NDDriverStdArrays.cpp</label>
+        <link refid="_n_d_driver_std_arrays_8cpp"/>
+      </node>
+      <node id="38">
+        <label>/home/runner/work/areaDetector/areaDetector/ADPhotonII/PhotonIIApp/src/PhotonII.h</label>
+        <link refid="_photon_i_i_8h"/>
+        <childnode refid="37" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>/home/runner/work/areaDetector/areaDetector/ADAndor/andorApp/src/andorCCD.h</label>
+        <link refid="andor_c_c_d_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="63">
+        <label>/home/runner/work/areaDetector/areaDetector/pvaDriver/pvaDriverApp/src/pvaDriver.cpp</label>
+        <link refid="pva_driver_8cpp"/>
+      </node>
+      <node id="28">
+        <label>/home/runner/work/areaDetector/areaDetector/ADLightField/lightFieldApp/src/LightField.cpp</label>
+        <link refid="_light_field_8cpp"/>
+      </node>
+      <node id="44">
+        <label>/home/runner/work/areaDetector/areaDetector/ADPvCam/pvcamApp/src/pvCam.cpp</label>
+        <link refid="pv_cam_8cpp"/>
+      </node>
+      <node id="50">
+        <label>/home/runner/work/areaDetector/areaDetector/ADSimDetector/simDetectorApp/src/simDetector.cpp</label>
+        <link refid="sim_detector_8cpp"/>
+      </node>
+      <node id="6">
+        <label>/home/runner/work/areaDetector/areaDetector/ADAndor3/andor3App/src/andor3.cpp</label>
+        <link refid="andor3_8cpp"/>
+      </node>
+      <node id="8">
+        <label>/home/runner/work/areaDetector/areaDetector/ADDexela/dexelaApp/src/Dexela.cpp</label>
+        <link refid="_dexela_8cpp"/>
+      </node>
+      <node id="3">
+        <label>/home/runner/work/areaDetector/areaDetector/ADADSC/adscApp/src/adsc.cpp</label>
+        <link refid="adsc_8cpp"/>
+      </node>
+      <node id="27">
+        <label>/home/runner/work/areaDetector/areaDetector/ADLambda/LambdaApp/src/ADLambda.cpp</label>
+        <link refid="_a_d_lambda_8cpp"/>
+      </node>
+      <node id="58">
+        <label>/home/runner/work/areaDetector/areaDetector/ADnED/ADnEDApp/src/nEDChannel.cpp</label>
+        <link refid="n_e_d_channel_8cpp"/>
+      </node>
+      <node id="62">
+        <label>/home/runner/work/areaDetector/areaDetector/NDDriverStdArrays/NDDriverStdArraysApp/src/NDDriverStdArrays.h</label>
+        <link refid="_n_d_driver_std_arrays_8h"/>
+        <childnode refid="61" relation="include">
+        </childnode>
+      </node>
+      <node id="34">
+        <label>/home/runner/work/areaDetector/areaDetector/ADPSL/pslApp/src/PSL.cpp</label>
+        <link refid="_p_s_l_8cpp"/>
+      </node>
+      <node id="12">
+        <label>/home/runner/work/areaDetector/areaDetector/ADFastCCD/FastCCDApp/src/FastCCD.h</label>
+        <link refid="_fast_c_c_d_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="59">
+        <label>/home/runner/work/areaDetector/areaDetector/aravisGigE/aravisGigEApp/src/aravisCamera.cpp</label>
+        <link refid="aravis_camera_8cpp"/>
+      </node>
+      <node id="11">
+        <label>/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerParam.cpp</label>
+        <link refid="eiger_param_8cpp"/>
+      </node>
+      <node id="18">
+        <label>/home/runner/work/areaDetector/areaDetector/ADSpinnaker/spinnakerApp/src/ADSpinnaker.cpp</label>
+        <link refid="_a_d_spinnaker_8cpp"/>
+      </node>
+      <node id="56">
+        <label>/home/runner/work/areaDetector/areaDetector/ADnED/ADnEDApp/src/ADnED.cpp</label>
+        <link refid="_a_dn_e_d_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_a_d_driver" prot="public">ADDriver</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="_a_d_driver_8h_1a5f6fbe82b6adc9039d472e137fc8bff0" prot="public" static="no">
+        <name>AREA_DETECTOR_OK</name>
+        <initializer>0</initializer>
+        <briefdescription>
+<para>Success code; generally asyn status codes are used instead where possible. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/ADDriver.h" line="12" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/ADDriver.h" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_a_d_driver_8h_1a0d07637f0f4b7841b1c31a55cfe3aad7" prot="public" static="no">
+        <name>AREA_DETECTOR_ERROR</name>
+        <initializer>-1</initializer>
+        <briefdescription>
+<para>Failure code; generally asyn status codes are used instead where possible. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/ADDriver.h" line="14" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/ADDriver.h" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_a_d_driver_8h_1a2b8f83423110e6ab8fb14f9312b1dcae" prot="public" static="no">
+        <name>ADGainString</name>
+        <initializer>&quot;GAIN&quot;</initializer>
+        <briefdescription>
+<para>Strings defining parameters that affect the behaviour of the detector. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>These are the values passed to drvUserCreate. The driver will place in pasynUser-&gt;reason an integer to be used when the standard asyn interface methods are called. (asynFloat64, r/w) Gain </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/ADDriver.h" line="77" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/ADDriver.h" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_a_d_driver_8h_1a2866599e25156009182e26fd114ed46b" prot="public" static="no">
+        <name>ADBinXString</name>
+        <initializer>&quot;BIN_X&quot;</initializer>
+        <briefdescription>
+<para>(asynInt32, r/w) Binning in the X direction </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/ADDriver.h" line="80" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/ADDriver.h" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_a_d_driver_8h_1a0b9b4d0cc3fbd88fcd93da46a111c318" prot="public" static="no">
+        <name>ADBinYString</name>
+        <initializer>&quot;BIN_Y&quot;</initializer>
+        <briefdescription>
+<para>(asynInt32, r/w) Binning in the Y direction </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/ADDriver.h" line="81" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/ADDriver.h" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_a_d_driver_8h_1a3035937fcc01afa1da21ee81430abcd7" prot="public" static="no">
+        <name>ADMinXString</name>
+        <initializer>&quot;MIN_X&quot;</initializer>
+        <briefdescription>
+<para>(asynInt32, r/w) First pixel in the X direction; 0 is the first pixel on the detector </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/ADDriver.h" line="85" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/ADDriver.h" bodystart="85" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_a_d_driver_8h_1a7e686ba3b6f4cbe4e8989b0ada0e66b0" prot="public" static="no">
+        <name>ADMinYString</name>
+        <initializer>&quot;MIN_Y&quot;</initializer>
+        <briefdescription>
+<para>(asynInt32, r/w) First pixel in the Y direction; 0 is the first pixel on the detector </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/ADDriver.h" line="86" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/ADDriver.h" bodystart="86" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_a_d_driver_8h_1ab7b8adc696388562b57ff255271d4dd4" prot="public" static="no">
+        <name>ADSizeXString</name>
+        <initializer>&quot;SIZE_X&quot;</initializer>
+        <briefdescription>
+<para>(asynInt32, r/w) Size of the region to read in the X direction </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/ADDriver.h" line="87" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/ADDriver.h" bodystart="87" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_a_d_driver_8h_1adcd5a6683e158a9c18d91dfab56e290a" prot="public" static="no">
+        <name>ADSizeYString</name>
+        <initializer>&quot;SIZE_Y&quot;</initializer>
+        <briefdescription>
+<para>(asynInt32, r/w) Size of the region to read in the Y direction </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/ADDriver.h" line="88" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/ADDriver.h" bodystart="88" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_a_d_driver_8h_1a526e2042aae52f656464dc17da30ca06" prot="public" static="no">
+        <name>ADMaxSizeXString</name>
+        <initializer>&quot;MAX_SIZE_X&quot;</initializer>
+        <briefdescription>
+<para>(asynInt32, r/o) Maximum (sensor) size in the X direction </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/ADDriver.h" line="89" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/ADDriver.h" bodystart="89" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_a_d_driver_8h_1ab90d297304d9cea0459cacc4ce84a63f" prot="public" static="no">
+        <name>ADMaxSizeYString</name>
+        <initializer>&quot;MAX_SIZE_Y&quot;</initializer>
+        <briefdescription>
+<para>(asynInt32, r/o) Maximum (sensor) size in the Y direction </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/ADDriver.h" line="90" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/ADDriver.h" bodystart="90" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_a_d_driver_8h_1a790b1165172b8774960f2bfb66a4a00f" prot="public" static="no">
+        <name>ADReverseXString</name>
+        <initializer>&quot;REVERSE_X&quot;</initializer>
+        <briefdescription>
+<para>(asynInt32, r/w) Reverse image in the X direction (0=No, 1=Yes) </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/ADDriver.h" line="93" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/ADDriver.h" bodystart="93" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_a_d_driver_8h_1aa102b57d46728ac9cc0c39f1e85a2fce" prot="public" static="no">
+        <name>ADReverseYString</name>
+        <initializer>&quot;REVERSE_Y&quot;</initializer>
+        <briefdescription>
+<para>(asynInt32, r/w) Reverse image in the Y direction (0=No, 1=Yes) </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/ADDriver.h" line="94" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/ADDriver.h" bodystart="94" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_a_d_driver_8h_1a989cfb564a4bd0face15fea9cab3b9bf" prot="public" static="no">
+        <name>ADFrameTypeString</name>
+        <initializer>&quot;FRAME_TYPE&quot;</initializer>
+        <briefdescription>
+<para>(asynInt32, r/w) Frame type (ADFrameType_t) </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/ADDriver.h" line="97" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/ADDriver.h" bodystart="97" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_a_d_driver_8h_1a0fdcec88204b7f4deb44849bc82c546f" prot="public" static="no">
+        <name>ADImageModeString</name>
+        <initializer>&quot;IMAGE_MODE&quot;</initializer>
+        <briefdescription>
+<para>(asynInt32, r/w) Image mode (ADImageMode_t) </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/ADDriver.h" line="98" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/ADDriver.h" bodystart="98" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_a_d_driver_8h_1a59819f912195f6c381089fe99d65a717" prot="public" static="no">
+        <name>ADTriggerModeString</name>
+        <initializer>&quot;TRIGGER_MODE&quot;</initializer>
+        <briefdescription>
+<para>(asynInt32, r/w) Trigger mode (ADTriggerMode_t) </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/ADDriver.h" line="99" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/ADDriver.h" bodystart="99" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_a_d_driver_8h_1ab593bd67cdfe265c441478ed3d30eff2" prot="public" static="no">
+        <name>ADNumExposuresString</name>
+        <initializer>&quot;NEXPOSURES&quot;</initializer>
+        <briefdescription>
+<para>(asynInt32, r/w) Number of exposures per image to acquire </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/ADDriver.h" line="100" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/ADDriver.h" bodystart="100" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_a_d_driver_8h_1a5afd2d7690de3e0d2bb443eff1ac6541" prot="public" static="no">
+        <name>ADNumImagesString</name>
+        <initializer>&quot;NIMAGES&quot;</initializer>
+        <briefdescription>
+<para>(asynInt32, r/w) Number of images to acquire in one acquisition sequence </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/ADDriver.h" line="101" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/ADDriver.h" bodystart="101" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_a_d_driver_8h_1af07c81dfc00594d3ef655185fcb86b3a" prot="public" static="no">
+        <name>ADAcquireTimeString</name>
+        <initializer>&quot;ACQ_TIME&quot;</initializer>
+        <briefdescription>
+<para>(asynFloat64, r/w) Acquisition time per image </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/ADDriver.h" line="102" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/ADDriver.h" bodystart="102" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_a_d_driver_8h_1a4c92cd92372bb5d063925c726f293236" prot="public" static="no">
+        <name>ADAcquirePeriodString</name>
+        <initializer>&quot;ACQ_PERIOD&quot;</initializer>
+        <briefdescription>
+<para>(asynFloat64, r/w) Acquisition period between images </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/ADDriver.h" line="103" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/ADDriver.h" bodystart="103" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_a_d_driver_8h_1af47e42b53b3d39a3e058c230a8d8ec4e" prot="public" static="no">
+        <name>ADStatusString</name>
+        <initializer>&quot;STATUS&quot;</initializer>
+        <briefdescription>
+<para>(asynInt32, r/o) Acquisition status (ADStatus_t) </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/ADDriver.h" line="104" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/ADDriver.h" bodystart="104" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_a_d_driver_8h_1a8ac8d35ac9e432c0cb0c38ab8e97cead" prot="public" static="no">
+        <name>ADShutterControlString</name>
+        <initializer>&quot;SHUTTER_CONTROL&quot;</initializer>
+        <briefdescription>
+<para>(asynInt32, r/w) (ADShutterStatus_t) Open (1) or Close(0) shutter </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/ADDriver.h" line="107" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/ADDriver.h" bodystart="107" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_a_d_driver_8h_1a94904fbd0b4a82d005619282bc7412d5" prot="public" static="no">
+        <name>ADShutterControlEPICSString</name>
+        <initializer>&quot;SHUTTER_CONTROL_EPICS&quot;</initializer>
+        <briefdescription>
+<para>(asynInt32, r/o) (ADShutterStatus_t) Open (1) or Close(0) EPICS shutter </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/ADDriver.h" line="108" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/ADDriver.h" bodystart="108" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_a_d_driver_8h_1af246ef614262c6bdb31654dff9cceb41" prot="public" static="no">
+        <name>ADShutterStatusString</name>
+        <initializer>&quot;SHUTTER_STATUS&quot;</initializer>
+        <briefdescription>
+<para>(asynInt32, r/o) (ADShutterStatus_t) Shutter Open (1) or Closed(0) </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/ADDriver.h" line="109" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/ADDriver.h" bodystart="109" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_a_d_driver_8h_1ad854d8c1b607a631743ddc3ab1665240" prot="public" static="no">
+        <name>ADShutterModeString</name>
+        <initializer>&quot;SHUTTER_MODE&quot;</initializer>
+        <briefdescription>
+<para>(asynInt32, r/w) (ADShutterMode_t) Use EPICS or detector shutter </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/ADDriver.h" line="110" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/ADDriver.h" bodystart="110" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_a_d_driver_8h_1a9d254d17e9f4c66ebaf20d6a40a7d675" prot="public" static="no">
+        <name>ADShutterOpenDelayString</name>
+        <initializer>&quot;SHUTTER_OPEN_DELAY&quot;</initializer>
+        <briefdescription>
+<para>(asynFloat64, r/w) Time for shutter to open </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/ADDriver.h" line="111" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/ADDriver.h" bodystart="111" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_a_d_driver_8h_1af3ee486e1cd0642a4c85f6dfb395813c" prot="public" static="no">
+        <name>ADShutterCloseDelayString</name>
+        <initializer>&quot;SHUTTER_CLOSE_DELAY&quot;</initializer>
+        <briefdescription>
+<para>(asynFloat64, r/w) Time for shutter to close </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/ADDriver.h" line="112" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/ADDriver.h" bodystart="112" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_a_d_driver_8h_1a964d5cfccd6f3f114160ea1e38460650" prot="public" static="no">
+        <name>ADTemperatureString</name>
+        <initializer>&quot;TEMPERATURE&quot;</initializer>
+        <briefdescription>
+<para>(asynFloat64, r/w) Detector temperature </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/ADDriver.h" line="115" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/ADDriver.h" bodystart="115" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_a_d_driver_8h_1a17c506778d3163a6e1eac49da3612049" prot="public" static="no">
+        <name>ADTemperatureActualString</name>
+        <initializer>&quot;TEMPERATURE_ACTUAL&quot;</initializer>
+        <briefdescription>
+<para>(asynFloat64, r/o) Actual detector temperature </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/ADDriver.h" line="116" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/ADDriver.h" bodystart="116" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_a_d_driver_8h_1af525862432744665571caad0d2f43d2a" prot="public" static="no">
+        <name>ADNumImagesCounterString</name>
+        <initializer>&quot;NIMAGES_COUNTER&quot;</initializer>
+        <briefdescription>
+<para>(asynInt32, r/o) Number of images collected in current acquisition sequence </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/ADDriver.h" line="119" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/ADDriver.h" bodystart="119" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_a_d_driver_8h_1ae5047cc842f63deccc51c988f36ba2bd" prot="public" static="no">
+        <name>ADNumExposuresCounterString</name>
+        <initializer>&quot;NEXPOSURES_COUNTER&quot;</initializer>
+        <briefdescription>
+<para>(asynInt32, r/o) Number of exposures collected for current image </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/ADDriver.h" line="120" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/ADDriver.h" bodystart="120" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_a_d_driver_8h_1afaf522094a6890a543f1f55457730b3a" prot="public" static="no">
+        <name>ADTimeRemainingString</name>
+        <initializer>&quot;TIME_REMAINING&quot;</initializer>
+        <briefdescription>
+<para>(asynFloat64, r/o) Acquisition time remaining </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/ADDriver.h" line="121" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/ADDriver.h" bodystart="121" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_a_d_driver_8h_1a833257e0ac72d19abe95a2cf14fc838d" prot="public" static="no">
+        <name>ADReadStatusString</name>
+        <initializer>&quot;READ_STATUS&quot;</initializer>
+        <briefdescription>
+<para>(asynInt32, r/w) Write 1 to force a read of detector status </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/ADDriver.h" line="124" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/ADDriver.h" bodystart="124" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_a_d_driver_8h_1a42b5d212086e2be3f786f125ffce4784" prot="public" static="no">
+        <name>ADStatusMessageString</name>
+        <initializer>&quot;STATUS_MESSAGE&quot;</initializer>
+        <briefdescription>
+<para>(asynOctet, r/o) Status message </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/ADDriver.h" line="127" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/ADDriver.h" bodystart="127" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_a_d_driver_8h_1ac1e0e97ebb0a9574412ff59e79ec1f13" prot="public" static="no">
+        <name>ADStringToServerString</name>
+        <initializer>&quot;STRING_TO_SERVER&quot;</initializer>
+        <briefdescription>
+<para>(asynOctet, r/o) String sent to server for message-based drivers </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/ADDriver.h" line="128" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/ADDriver.h" bodystart="128" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_a_d_driver_8h_1a86b5cfeadfb38f59559b58319f31b132" prot="public" static="no">
+        <name>ADStringFromServerString</name>
+        <initializer>&quot;STRING_FROM_SERVER&quot;</initializer>
+        <briefdescription>
+<para>(asynOctet, r/o) String received from server for message-based drivers </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/ADDriver.h" line="129" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/ADDriver.h" bodystart="129" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_a_d_driver_8h_1a15cd8e3f4661f8056e16835d768b4b22" prot="public" static="no">
+        <name>FIRST_AD_PARAM</name>
+        <initializer>ADGain</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/ADDriver.h" line="148" column="13" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/ADDriver.h" bodystart="148" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="_a_d_driver_8h_1a065e0461e17a62a82ce735f862bf0dd6" prot="public" static="no" strong="no">
+        <type></type>
+        <name>ADShutterStatus_t</name>
+        <enumvalue id="_a_d_driver_8h_1a065e0461e17a62a82ce735f862bf0dd6a25c7dcb68d65ea39233ded363f0e386f" prot="public">
+          <name>ADShutterClosed</name>
+          <briefdescription>
+<para>Shutter closed. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_a_d_driver_8h_1a065e0461e17a62a82ce735f862bf0dd6adb5f0d97b4bf582001b59b3b347dec4a" prot="public">
+          <name>ADShutterOpen</name>
+          <briefdescription>
+<para>Shutter open. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enumeration of shutter status. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/ADDriver.h" line="17" column="1" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/ADDriver.h" bodystart="18" bodyend="21"/>
+      </memberdef>
+      <memberdef kind="enum" id="_a_d_driver_8h_1a868e24f439322d21ee513bf46217752e" prot="public" static="no" strong="no">
+        <type></type>
+        <name>ADShutterMode_t</name>
+        <enumvalue id="_a_d_driver_8h_1a868e24f439322d21ee513bf46217752ea66354d3fca8b901aca0a182981a6449b" prot="public">
+          <name>ADShutterModeNone</name>
+          <briefdescription>
+<para>Don&apos;t use shutter. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_a_d_driver_8h_1a868e24f439322d21ee513bf46217752ea696bd10b8e1a62a84d89bca71e881968" prot="public">
+          <name>ADShutterModeEPICS</name>
+          <briefdescription>
+<para>Shutter controlled by EPICS PVs. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_a_d_driver_8h_1a868e24f439322d21ee513bf46217752eab70358c946de057c3566e77733367941" prot="public">
+          <name>ADShutterModeDetector</name>
+          <briefdescription>
+<para>Shutter controlled directly by detector. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enumeration of shutter modes. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/ADDriver.h" line="24" column="1" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/ADDriver.h" bodystart="25" bodyend="29"/>
+      </memberdef>
+      <memberdef kind="enum" id="_a_d_driver_8h_1a69820e97c7282152e222297a6d36f72e" prot="public" static="no" strong="no">
+        <type></type>
+        <name>ADStatus_t</name>
+        <enumvalue id="_a_d_driver_8h_1a69820e97c7282152e222297a6d36f72eae5aabf2281b95d16f607f1a7b1c5a8bd" prot="public">
+          <name>ADStatusIdle</name>
+          <briefdescription>
+<para>Detector is idle. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_a_d_driver_8h_1a69820e97c7282152e222297a6d36f72ea197b4bb1a794d6799db204a5dec4fbd2" prot="public">
+          <name>ADStatusAcquire</name>
+          <briefdescription>
+<para>Detector is acquiring. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_a_d_driver_8h_1a69820e97c7282152e222297a6d36f72ea5003d693acdadfbc99a71af956993290" prot="public">
+          <name>ADStatusReadout</name>
+          <briefdescription>
+<para>Detector is reading out. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_a_d_driver_8h_1a69820e97c7282152e222297a6d36f72ea30c88d8101e782d15b6d61911e585049" prot="public">
+          <name>ADStatusCorrect</name>
+          <briefdescription>
+<para>Detector is correcting data. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_a_d_driver_8h_1a69820e97c7282152e222297a6d36f72eae72e73083c72926dc4e92fab07441586" prot="public">
+          <name>ADStatusSaving</name>
+          <briefdescription>
+<para>Detector is saving data. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_a_d_driver_8h_1a69820e97c7282152e222297a6d36f72eaa7a82915dd5a2bbab87f1ee1b606c335" prot="public">
+          <name>ADStatusAborting</name>
+          <briefdescription>
+<para>Detector is aborting an operation. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_a_d_driver_8h_1a69820e97c7282152e222297a6d36f72ea4f0778c31f69985dab4e84a0d9cb1cf2" prot="public">
+          <name>ADStatusError</name>
+          <briefdescription>
+<para>Detector has encountered an error. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_a_d_driver_8h_1a69820e97c7282152e222297a6d36f72eae5f0661ab013affe1ec15bf297bcf40f" prot="public">
+          <name>ADStatusWaiting</name>
+          <briefdescription>
+<para>Detector is waiting for something, typically for the acquire period to elapse. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_a_d_driver_8h_1a69820e97c7282152e222297a6d36f72eabbe057f254bf25b013b4ab2edbed0499" prot="public">
+          <name>ADStatusInitializing</name>
+          <briefdescription>
+<para>Detector is initializing, typically at startup. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_a_d_driver_8h_1a69820e97c7282152e222297a6d36f72eab9945ba7a9908754a27ef43f0467c921" prot="public">
+          <name>ADStatusDisconnected</name>
+          <briefdescription>
+<para>Detector is not connected. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_a_d_driver_8h_1a69820e97c7282152e222297a6d36f72eac174a17d7ad44cb4a19dd727258a582e" prot="public">
+          <name>ADStatusAborted</name>
+          <briefdescription>
+<para>Detector aquisition has been aborted. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enumeration of detector status. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/ADDriver.h" line="32" column="1" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/ADDriver.h" bodystart="33" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="enum" id="_a_d_driver_8h_1a4e304cb4683f0862cc3ca9b5fff213e2" prot="public" static="no" strong="no">
+        <type></type>
+        <name>ADImageMode_t</name>
+        <enumvalue id="_a_d_driver_8h_1a4e304cb4683f0862cc3ca9b5fff213e2a03aaf45614e5ce358814831296e3ca7a" prot="public">
+          <name>ADImageSingle</name>
+          <briefdescription>
+<para>Collect a single image per Acquire command. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_a_d_driver_8h_1a4e304cb4683f0862cc3ca9b5fff213e2adead2fd35be4d7d411f48c04d00d576c" prot="public">
+          <name>ADImageMultiple</name>
+          <briefdescription>
+<para>Collect ADNumImages images per Acquire command. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_a_d_driver_8h_1a4e304cb4683f0862cc3ca9b5fff213e2a09274bf54e26793fae63922fee5c603b" prot="public">
+          <name>ADImageContinuous</name>
+          <briefdescription>
+<para>Collect images continuously until Acquire is set to 0. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enumeration of image collection modes. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/ADDriver.h" line="48" column="1" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/ADDriver.h" bodystart="49" bodyend="53"/>
+      </memberdef>
+      <memberdef kind="enum" id="_a_d_driver_8h_1aa7545fdb2f7941e8d0259a64ccdacc72" prot="public" static="no" strong="no">
+        <type></type>
+        <name>ADFrameType_t</name>
+        <enumvalue id="_a_d_driver_8h_1aa7545fdb2f7941e8d0259a64ccdacc72a2848245f4d00941a1b8e7337262ea5b2" prot="public">
+          <name>ADFrameNormal</name>
+          <briefdescription>
+<para>Normal frame type. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_a_d_driver_8h_1aa7545fdb2f7941e8d0259a64ccdacc72a5df24d81f3e183d0c6baad479d1c4420" prot="public">
+          <name>ADFrameBackground</name>
+          <briefdescription>
+<para>Background frame type. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_a_d_driver_8h_1aa7545fdb2f7941e8d0259a64ccdacc72a5114177a0329da5e4576f565beb3f6e0" prot="public">
+          <name>ADFrameFlatField</name>
+          <briefdescription>
+<para>Flat field (no sample) frame type. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_a_d_driver_8h_1aa7545fdb2f7941e8d0259a64ccdacc72a00d4ab45ca244a493b4f420c42b34c1e" prot="public">
+          <name>ADFrameDoubleCorrelation</name>
+          <briefdescription>
+<para>Double correlation frame type, used to remove zingers. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/ADDriver.h" line="56" column="1" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/ADDriver.h" bodystart="57" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="enum" id="_a_d_driver_8h_1ab0b114b63ad5e0f7c44f370579916032" prot="public" static="no" strong="no">
+        <type></type>
+        <name>ADTriggerMode_t</name>
+        <enumvalue id="_a_d_driver_8h_1ab0b114b63ad5e0f7c44f370579916032a1399c613e20867100043cba7b3e6b50a" prot="public">
+          <name>ADTriggerInternal</name>
+          <briefdescription>
+<para>Internal trigger from detector. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_a_d_driver_8h_1ab0b114b63ad5e0f7c44f370579916032ad79ee2382d78d2f053edeeca35de428a" prot="public">
+          <name>ADTriggerExternal</name>
+          <briefdescription>
+<para>External trigger input. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/ADDriver.h" line="65" column="1" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/ADDriver.h" bodystart="66" bodyend="69"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>ADDriver_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ADDriver_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;epicsTypes.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;epicsMessageQueue.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;epicsTime.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="asyn_n_d_array_driver_8h" kindref="compound">asynNDArrayDriver.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12" refid="_a_d_driver_8h_1a5f6fbe82b6adc9039d472e137fc8bff0" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AREA_DETECTOR_OK<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14" refid="_a_d_driver_8h_1a0d07637f0f4b7841b1c31a55cfe3aad7" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AREA_DETECTOR_ERROR<sp/>-1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17" refid="_a_d_driver_8h_1a065e0461e17a62a82ce735f862bf0dd6" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="19" refid="_a_d_driver_8h_1a065e0461e17a62a82ce735f862bf0dd6a25c7dcb68d65ea39233ded363f0e386f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_a_d_driver_8h_1a065e0461e17a62a82ce735f862bf0dd6a25c7dcb68d65ea39233ded363f0e386f" kindref="member">ADShutterClosed</ref>,<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_a_d_driver_8h_1a065e0461e17a62a82ce735f862bf0dd6adb5f0d97b4bf582001b59b3b347dec4a" kindref="member">ADShutterOpen</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="21" refid="_a_d_driver_8h_1a065e0461e17a62a82ce735f862bf0dd6adb5f0d97b4bf582001b59b3b347dec4a" refkind="member"><highlight class="normal">}<sp/><ref refid="_a_d_driver_8h_1a065e0461e17a62a82ce735f862bf0dd6" kindref="member">ADShutterStatus_t</ref>;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24" refid="_a_d_driver_8h_1a868e24f439322d21ee513bf46217752e" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="26" refid="_a_d_driver_8h_1a868e24f439322d21ee513bf46217752ea66354d3fca8b901aca0a182981a6449b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_a_d_driver_8h_1a868e24f439322d21ee513bf46217752ea66354d3fca8b901aca0a182981a6449b" kindref="member">ADShutterModeNone</ref>,<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="27" refid="_a_d_driver_8h_1a868e24f439322d21ee513bf46217752ea696bd10b8e1a62a84d89bca71e881968" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_a_d_driver_8h_1a868e24f439322d21ee513bf46217752ea696bd10b8e1a62a84d89bca71e881968" kindref="member">ADShutterModeEPICS</ref>,<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_a_d_driver_8h_1a868e24f439322d21ee513bf46217752eab70358c946de057c3566e77733367941" kindref="member">ADShutterModeDetector</ref><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="29" refid="_a_d_driver_8h_1a868e24f439322d21ee513bf46217752eab70358c946de057c3566e77733367941" refkind="member"><highlight class="normal">}<sp/><ref refid="_a_d_driver_8h_1a868e24f439322d21ee513bf46217752e" kindref="member">ADShutterMode_t</ref>;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32" refid="_a_d_driver_8h_1a69820e97c7282152e222297a6d36f72e" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="34" refid="_a_d_driver_8h_1a69820e97c7282152e222297a6d36f72eae5aabf2281b95d16f607f1a7b1c5a8bd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_a_d_driver_8h_1a69820e97c7282152e222297a6d36f72eae5aabf2281b95d16f607f1a7b1c5a8bd" kindref="member">ADStatusIdle</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="35" refid="_a_d_driver_8h_1a69820e97c7282152e222297a6d36f72ea197b4bb1a794d6799db204a5dec4fbd2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_a_d_driver_8h_1a69820e97c7282152e222297a6d36f72ea197b4bb1a794d6799db204a5dec4fbd2" kindref="member">ADStatusAcquire</ref>,<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="36" refid="_a_d_driver_8h_1a69820e97c7282152e222297a6d36f72ea5003d693acdadfbc99a71af956993290" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_a_d_driver_8h_1a69820e97c7282152e222297a6d36f72ea5003d693acdadfbc99a71af956993290" kindref="member">ADStatusReadout</ref>,<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="37" refid="_a_d_driver_8h_1a69820e97c7282152e222297a6d36f72ea30c88d8101e782d15b6d61911e585049" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_a_d_driver_8h_1a69820e97c7282152e222297a6d36f72ea30c88d8101e782d15b6d61911e585049" kindref="member">ADStatusCorrect</ref>,<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="38" refid="_a_d_driver_8h_1a69820e97c7282152e222297a6d36f72eae72e73083c72926dc4e92fab07441586" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_a_d_driver_8h_1a69820e97c7282152e222297a6d36f72eae72e73083c72926dc4e92fab07441586" kindref="member">ADStatusSaving</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="39" refid="_a_d_driver_8h_1a69820e97c7282152e222297a6d36f72eaa7a82915dd5a2bbab87f1ee1b606c335" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_a_d_driver_8h_1a69820e97c7282152e222297a6d36f72eaa7a82915dd5a2bbab87f1ee1b606c335" kindref="member">ADStatusAborting</ref>,<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="40" refid="_a_d_driver_8h_1a69820e97c7282152e222297a6d36f72ea4f0778c31f69985dab4e84a0d9cb1cf2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_a_d_driver_8h_1a69820e97c7282152e222297a6d36f72ea4f0778c31f69985dab4e84a0d9cb1cf2" kindref="member">ADStatusError</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="41" refid="_a_d_driver_8h_1a69820e97c7282152e222297a6d36f72eae5f0661ab013affe1ec15bf297bcf40f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_a_d_driver_8h_1a69820e97c7282152e222297a6d36f72eae5f0661ab013affe1ec15bf297bcf40f" kindref="member">ADStatusWaiting</ref>,<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="42" refid="_a_d_driver_8h_1a69820e97c7282152e222297a6d36f72eabbe057f254bf25b013b4ab2edbed0499" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_a_d_driver_8h_1a69820e97c7282152e222297a6d36f72eabbe057f254bf25b013b4ab2edbed0499" kindref="member">ADStatusInitializing</ref>,<sp/></highlight></codeline>
+<codeline lineno="43" refid="_a_d_driver_8h_1a69820e97c7282152e222297a6d36f72eab9945ba7a9908754a27ef43f0467c921" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_a_d_driver_8h_1a69820e97c7282152e222297a6d36f72eab9945ba7a9908754a27ef43f0467c921" kindref="member">ADStatusDisconnected</ref>,<sp/></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_a_d_driver_8h_1a69820e97c7282152e222297a6d36f72eac174a17d7ad44cb4a19dd727258a582e" kindref="member">ADStatusAborted</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="45" refid="_a_d_driver_8h_1a69820e97c7282152e222297a6d36f72eac174a17d7ad44cb4a19dd727258a582e" refkind="member"><highlight class="normal">}<sp/><ref refid="_a_d_driver_8h_1a69820e97c7282152e222297a6d36f72e" kindref="member">ADStatus_t</ref>;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48" refid="_a_d_driver_8h_1a4e304cb4683f0862cc3ca9b5fff213e2" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="50" refid="_a_d_driver_8h_1a4e304cb4683f0862cc3ca9b5fff213e2a03aaf45614e5ce358814831296e3ca7a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_a_d_driver_8h_1a4e304cb4683f0862cc3ca9b5fff213e2a03aaf45614e5ce358814831296e3ca7a" kindref="member">ADImageSingle</ref>,<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="51" refid="_a_d_driver_8h_1a4e304cb4683f0862cc3ca9b5fff213e2adead2fd35be4d7d411f48c04d00d576c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_a_d_driver_8h_1a4e304cb4683f0862cc3ca9b5fff213e2adead2fd35be4d7d411f48c04d00d576c" kindref="member">ADImageMultiple</ref>,<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_a_d_driver_8h_1a4e304cb4683f0862cc3ca9b5fff213e2a09274bf54e26793fae63922fee5c603b" kindref="member">ADImageContinuous</ref><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="53" refid="_a_d_driver_8h_1a4e304cb4683f0862cc3ca9b5fff213e2a09274bf54e26793fae63922fee5c603b" refkind="member"><highlight class="normal">}<sp/><ref refid="_a_d_driver_8h_1a4e304cb4683f0862cc3ca9b5fff213e2" kindref="member">ADImageMode_t</ref>;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Enumeration<sp/>of<sp/>frame<sp/>types<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56" refid="_a_d_driver_8h_1aa7545fdb2f7941e8d0259a64ccdacc72" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="58" refid="_a_d_driver_8h_1aa7545fdb2f7941e8d0259a64ccdacc72a2848245f4d00941a1b8e7337262ea5b2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_a_d_driver_8h_1aa7545fdb2f7941e8d0259a64ccdacc72a2848245f4d00941a1b8e7337262ea5b2" kindref="member">ADFrameNormal</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="59" refid="_a_d_driver_8h_1aa7545fdb2f7941e8d0259a64ccdacc72a5df24d81f3e183d0c6baad479d1c4420" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_a_d_driver_8h_1aa7545fdb2f7941e8d0259a64ccdacc72a5df24d81f3e183d0c6baad479d1c4420" kindref="member">ADFrameBackground</ref>,<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="60" refid="_a_d_driver_8h_1aa7545fdb2f7941e8d0259a64ccdacc72a5114177a0329da5e4576f565beb3f6e0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_a_d_driver_8h_1aa7545fdb2f7941e8d0259a64ccdacc72a5114177a0329da5e4576f565beb3f6e0" kindref="member">ADFrameFlatField</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_a_d_driver_8h_1aa7545fdb2f7941e8d0259a64ccdacc72a00d4ab45ca244a493b4f420c42b34c1e" kindref="member">ADFrameDoubleCorrelation</ref><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="62" refid="_a_d_driver_8h_1aa7545fdb2f7941e8d0259a64ccdacc72a00d4ab45ca244a493b4f420c42b34c1e" refkind="member"><highlight class="normal">}<sp/><ref refid="_a_d_driver_8h_1aa7545fdb2f7941e8d0259a64ccdacc72" kindref="member">ADFrameType_t</ref>;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Enumeration<sp/>of<sp/>trigger<sp/>modes<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65" refid="_a_d_driver_8h_1ab0b114b63ad5e0f7c44f370579916032" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="67" refid="_a_d_driver_8h_1ab0b114b63ad5e0f7c44f370579916032a1399c613e20867100043cba7b3e6b50a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_a_d_driver_8h_1ab0b114b63ad5e0f7c44f370579916032a1399c613e20867100043cba7b3e6b50a" kindref="member">ADTriggerInternal</ref>,<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_a_d_driver_8h_1ab0b114b63ad5e0f7c44f370579916032ad79ee2382d78d2f053edeeca35de428a" kindref="member">ADTriggerExternal</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="69" refid="_a_d_driver_8h_1ab0b114b63ad5e0f7c44f370579916032ad79ee2382d78d2f053edeeca35de428a" refkind="member"><highlight class="normal">}<sp/><ref refid="_a_d_driver_8h_1ab0b114b63ad5e0f7c44f370579916032" kindref="member">ADTriggerMode_t</ref>;</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>String<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>asyn<sp/>interface<sp/><sp/>access<sp/><sp/><sp/>Description<sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77" refid="_a_d_driver_8h_1a2b8f83423110e6ab8fb14f9312b1dcae" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ADGainString<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;GAIN&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Parameters<sp/>that<sp/>control<sp/>the<sp/>detector<sp/>binning<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80" refid="_a_d_driver_8h_1a2866599e25156009182e26fd114ed46b" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ADBinXString<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;BIN_X&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="81" refid="_a_d_driver_8h_1a0b9b4d0cc3fbd88fcd93da46a111c318" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ADBinYString<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;BIN_Y&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Parameters<sp/>the<sp/>control<sp/>the<sp/>region<sp/>of<sp/>the<sp/>detector<sp/>to<sp/>be<sp/>read<sp/>out.</highlight></codeline>
+<codeline lineno="84"><highlight class="comment"><sp/><sp/><sp/><sp/>*<sp/>ADMinX,<sp/>ADMinY,<sp/>ADSizeX,<sp/>and<sp/>ADSizeY<sp/>are<sp/>in<sp/>unbinned<sp/>pixel<sp/>units<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85" refid="_a_d_driver_8h_1a3035937fcc01afa1da21ee81430abcd7" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ADMinXString<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;MIN_X&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="86" refid="_a_d_driver_8h_1a7e686ba3b6f4cbe4e8989b0ada0e66b0" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ADMinYString<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;MIN_Y&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="87" refid="_a_d_driver_8h_1ab7b8adc696388562b57ff255271d4dd4" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ADSizeXString<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;SIZE_X&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="88" refid="_a_d_driver_8h_1adcd5a6683e158a9c18d91dfab56e290a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ADSizeYString<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;SIZE_Y&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="89" refid="_a_d_driver_8h_1a526e2042aae52f656464dc17da30ca06" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ADMaxSizeXString<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;MAX_SIZE_X&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="90" refid="_a_d_driver_8h_1ab90d297304d9cea0459cacc4ce84a63f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ADMaxSizeYString<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;MAX_SIZE_Y&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Parameters<sp/>that<sp/>control<sp/>the<sp/>orientation<sp/>of<sp/>the<sp/>image<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93" refid="_a_d_driver_8h_1a790b1165172b8774960f2bfb66a4a00f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ADReverseXString<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;REVERSE_X&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="94" refid="_a_d_driver_8h_1aa102b57d46728ac9cc0c39f1e85a2fce" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ADReverseYString<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;REVERSE_Y&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Parameters<sp/>defining<sp/>the<sp/>acquisition<sp/>parameters.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97" refid="_a_d_driver_8h_1a989cfb564a4bd0face15fea9cab3b9bf" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ADFrameTypeString<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;FRAME_TYPE&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="98" refid="_a_d_driver_8h_1a0fdcec88204b7f4deb44849bc82c546f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ADImageModeString<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;IMAGE_MODE&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="99" refid="_a_d_driver_8h_1a59819f912195f6c381089fe99d65a717" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ADTriggerModeString<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;TRIGGER_MODE&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="100" refid="_a_d_driver_8h_1ab593bd67cdfe265c441478ed3d30eff2" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ADNumExposuresString<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;NEXPOSURES&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="101" refid="_a_d_driver_8h_1a5afd2d7690de3e0d2bb443eff1ac6541" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ADNumImagesString<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;NIMAGES&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="102" refid="_a_d_driver_8h_1af07c81dfc00594d3ef655185fcb86b3a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ADAcquireTimeString<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;ACQ_TIME&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="103" refid="_a_d_driver_8h_1a4c92cd92372bb5d063925c726f293236" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ADAcquirePeriodString<sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;ACQ_PERIOD&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="104" refid="_a_d_driver_8h_1af47e42b53b3d39a3e058c230a8d8ec4e" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ADStatusString<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;STATUS&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Shutter<sp/>parameters<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="107" refid="_a_d_driver_8h_1a8ac8d35ac9e432c0cb0c38ab8e97cead" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ADShutterControlString<sp/><sp/><sp/><sp/><sp/><sp/>&quot;SHUTTER_CONTROL&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="108" refid="_a_d_driver_8h_1a94904fbd0b4a82d005619282bc7412d5" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ADShutterControlEPICSString<sp/>&quot;SHUTTER_CONTROL_EPICS&quot;</highlight><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="109" refid="_a_d_driver_8h_1af246ef614262c6bdb31654dff9cceb41" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ADShutterStatusString<sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;SHUTTER_STATUS&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="110" refid="_a_d_driver_8h_1ad854d8c1b607a631743ddc3ab1665240" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ADShutterModeString<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;SHUTTER_MODE&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="111" refid="_a_d_driver_8h_1a9d254d17e9f4c66ebaf20d6a40a7d675" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ADShutterOpenDelayString<sp/><sp/><sp/><sp/>&quot;SHUTTER_OPEN_DELAY&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="112" refid="_a_d_driver_8h_1af3ee486e1cd0642a4c85f6dfb395813c" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ADShutterCloseDelayString<sp/><sp/><sp/>&quot;SHUTTER_CLOSE_DELAY&quot;</highlight><highlight class="normal"><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Temperature<sp/>parameters<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="115" refid="_a_d_driver_8h_1a964d5cfccd6f3f114160ea1e38460650" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ADTemperatureString<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;TEMPERATURE&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="116" refid="_a_d_driver_8h_1a17c506778d3163a6e1eac49da3612049" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ADTemperatureActualString<sp/><sp/><sp/>&quot;TEMPERATURE_ACTUAL&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Statistics<sp/>on<sp/>number<sp/>of<sp/>images<sp/>collected<sp/>and<sp/>the<sp/>image<sp/>rate<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="119" refid="_a_d_driver_8h_1af525862432744665571caad0d2f43d2a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ADNumImagesCounterString<sp/><sp/><sp/><sp/>&quot;NIMAGES_COUNTER&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="120" refid="_a_d_driver_8h_1ae5047cc842f63deccc51c988f36ba2bd" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ADNumExposuresCounterString<sp/>&quot;NEXPOSURES_COUNTER&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="121" refid="_a_d_driver_8h_1afaf522094a6890a543f1f55457730b3a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ADTimeRemainingString<sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;TIME_REMAINING&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Status<sp/>reading<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="124" refid="_a_d_driver_8h_1a833257e0ac72d19abe95a2cf14fc838d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ADReadStatusString<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;READ_STATUS&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Status<sp/>message<sp/>strings<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="127" refid="_a_d_driver_8h_1a42b5d212086e2be3f786f125ffce4784" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ADStatusMessageString<sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;STATUS_MESSAGE&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="128" refid="_a_d_driver_8h_1ac1e0e97ebb0a9574412ff59e79ec1f13" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ADStringToServerString<sp/><sp/><sp/><sp/><sp/><sp/>&quot;STRING_TO_SERVER&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="129" refid="_a_d_driver_8h_1a86b5cfeadfb38f59559b58319f31b132" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ADStringFromServerString<sp/><sp/><sp/><sp/>&quot;STRING_FROM_SERVER&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="132" refid="class_a_d_driver" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="_a_d_core_a_p_i_8h_1acf3621c1bc70e7a9296a61b713b80503" kindref="member">ADCORE_API</ref><sp/><ref refid="class_a_d_driver" kindref="compound">ADDriver</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classasyn_n_d_array_driver" kindref="compound">asynNDArrayDriver</ref><sp/>{</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>This<sp/>is<sp/>the<sp/>constructor<sp/>for<sp/>the<sp/>class.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_a_d_driver" kindref="compound">ADDriver</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*portName,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>maxAddr,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>numParams,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>maxBuffers,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>maxMemory,</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>interfaceMask,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>interruptMask,</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>asynFlags,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>autoConnect,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>priority,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>stackSize);</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>These<sp/>are<sp/>the<sp/>methods<sp/>that<sp/>we<sp/>override<sp/>from<sp/>asynPortDriver<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>asynStatus<sp/><ref refid="classasyn_n_d_array_driver_1a36610c94479e66123d75057595f39f70" kindref="member">writeInt32</ref>(asynUser<sp/>*pasynUser,<sp/>epicsInt32<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>);</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>asynStatus<sp/>connect(asynUser<sp/>*pasynUser);</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>These<sp/>are<sp/>the<sp/>methods<sp/>that<sp/>are<sp/>new<sp/>to<sp/>this<sp/>class<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>setShutter(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>open);</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="147" refid="class_a_d_driver_1af7a169a1ab5a9069c5d556bf5c7ac387" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_a_d_driver_1af7a169a1ab5a9069c5d556bf5c7ac387" kindref="member">ADGain</ref>;</highlight></codeline>
+<codeline lineno="148" refid="_a_d_driver_8h_1a15cd8e3f4661f8056e16835d768b4b22" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>FIRST_AD_PARAM<sp/>ADGain</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="149" refid="class_a_d_driver_1a11d483194e60669d11e0a4ff4bb919f3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_a_d_driver_1a11d483194e60669d11e0a4ff4bb919f3" kindref="member">ADBinX</ref>;</highlight></codeline>
+<codeline lineno="150" refid="class_a_d_driver_1a0001097ff0ab8b55e564057699655c83" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_a_d_driver_1a0001097ff0ab8b55e564057699655c83" kindref="member">ADBinY</ref>;</highlight></codeline>
+<codeline lineno="151" refid="class_a_d_driver_1a23f8a7537c0c221ed3c5a72af90e276e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_a_d_driver_1a23f8a7537c0c221ed3c5a72af90e276e" kindref="member">ADMinX</ref>;</highlight></codeline>
+<codeline lineno="152" refid="class_a_d_driver_1ae1b0c891ee0ecd596439b29e32e068e4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_a_d_driver_1ae1b0c891ee0ecd596439b29e32e068e4" kindref="member">ADMinY</ref>;</highlight></codeline>
+<codeline lineno="153" refid="class_a_d_driver_1a918ef4b3d80695f6872fd169b09b639a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_a_d_driver_1a918ef4b3d80695f6872fd169b09b639a" kindref="member">ADSizeX</ref>;</highlight></codeline>
+<codeline lineno="154" refid="class_a_d_driver_1a59ba3ba61b2b6f51dc9d88d81680b632" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_a_d_driver_1a59ba3ba61b2b6f51dc9d88d81680b632" kindref="member">ADSizeY</ref>;</highlight></codeline>
+<codeline lineno="155" refid="class_a_d_driver_1a535f4c7d03e30b1efe4f7dad854cfc3f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_a_d_driver_1a535f4c7d03e30b1efe4f7dad854cfc3f" kindref="member">ADMaxSizeX</ref>;</highlight></codeline>
+<codeline lineno="156" refid="class_a_d_driver_1a93caa26e32c3765ba19e1ac74a2f50cc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_a_d_driver_1a93caa26e32c3765ba19e1ac74a2f50cc" kindref="member">ADMaxSizeY</ref>;</highlight></codeline>
+<codeline lineno="157" refid="class_a_d_driver_1a52d579907f81c30b4b2df2dd0a3b4a3f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_a_d_driver_1a52d579907f81c30b4b2df2dd0a3b4a3f" kindref="member">ADReverseX</ref>;</highlight></codeline>
+<codeline lineno="158" refid="class_a_d_driver_1ad6b830a6234b468e3390839204d5a768" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_a_d_driver_1ad6b830a6234b468e3390839204d5a768" kindref="member">ADReverseY</ref>;</highlight></codeline>
+<codeline lineno="159" refid="class_a_d_driver_1ae246f999cf99d4e97594beb939f15f21" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_a_d_driver_1ae246f999cf99d4e97594beb939f15f21" kindref="member">ADFrameType</ref>;</highlight></codeline>
+<codeline lineno="160" refid="class_a_d_driver_1a7dcba273d750e726bb3f5e4b7a38f53a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_a_d_driver_1a7dcba273d750e726bb3f5e4b7a38f53a" kindref="member">ADImageMode</ref>;</highlight></codeline>
+<codeline lineno="161" refid="class_a_d_driver_1a25e11dff81ea84715fc8fe5ca290bacb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_a_d_driver_1a25e11dff81ea84715fc8fe5ca290bacb" kindref="member">ADNumExposures</ref>;</highlight></codeline>
+<codeline lineno="162" refid="class_a_d_driver_1a17625c89904128e0d5ecb935c475e4b7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_a_d_driver_1a17625c89904128e0d5ecb935c475e4b7" kindref="member">ADNumExposuresCounter</ref>;</highlight></codeline>
+<codeline lineno="163" refid="class_a_d_driver_1a46e8f2fa100c21f2f0689c415b441fb0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_a_d_driver_1a46e8f2fa100c21f2f0689c415b441fb0" kindref="member">ADNumImages</ref>;</highlight></codeline>
+<codeline lineno="164" refid="class_a_d_driver_1a8cdc9e9fbabaadaa3c87108aad2e2895" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_a_d_driver_1a8cdc9e9fbabaadaa3c87108aad2e2895" kindref="member">ADNumImagesCounter</ref>;</highlight></codeline>
+<codeline lineno="165" refid="class_a_d_driver_1a922005db3a5a52dd24e6706fdfe1a160" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_a_d_driver_1a922005db3a5a52dd24e6706fdfe1a160" kindref="member">ADAcquireTime</ref>;</highlight></codeline>
+<codeline lineno="166" refid="class_a_d_driver_1a8d5333aa86509cbd8f5fd824e79b2799" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_a_d_driver_1a8d5333aa86509cbd8f5fd824e79b2799" kindref="member">ADAcquirePeriod</ref>;</highlight></codeline>
+<codeline lineno="167" refid="class_a_d_driver_1a143d4816efe3d5e98f4e6656b0f1d539" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_a_d_driver_1a143d4816efe3d5e98f4e6656b0f1d539" kindref="member">ADTimeRemaining</ref>;</highlight></codeline>
+<codeline lineno="168" refid="class_a_d_driver_1a6a532aae0f51273450f4e897bf0aed1d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_a_d_driver_1a6a532aae0f51273450f4e897bf0aed1d" kindref="member">ADStatus</ref>;</highlight></codeline>
+<codeline lineno="169" refid="class_a_d_driver_1ae191abe1436e6dd02510fcbbac59dbc1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_a_d_driver_1ae191abe1436e6dd02510fcbbac59dbc1" kindref="member">ADTriggerMode</ref>;</highlight></codeline>
+<codeline lineno="170" refid="class_a_d_driver_1aba1af712aed9f9374e5fea5dfc8c1bbd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_a_d_driver_1aba1af712aed9f9374e5fea5dfc8c1bbd" kindref="member">ADShutterControl</ref>;</highlight></codeline>
+<codeline lineno="171" refid="class_a_d_driver_1aec7d41ff8a2b3059270450275160092f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_a_d_driver_1aec7d41ff8a2b3059270450275160092f" kindref="member">ADShutterControlEPICS</ref>;</highlight></codeline>
+<codeline lineno="172" refid="class_a_d_driver_1a13c7b3852b0a6662a701f8b0fd71eac2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_a_d_driver_1a13c7b3852b0a6662a701f8b0fd71eac2" kindref="member">ADShutterStatus</ref>;</highlight></codeline>
+<codeline lineno="173" refid="class_a_d_driver_1a3a1afea96c657c64ab8dea2ee54d1ace" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_a_d_driver_1a3a1afea96c657c64ab8dea2ee54d1ace" kindref="member">ADShutterMode</ref>;</highlight></codeline>
+<codeline lineno="174" refid="class_a_d_driver_1ac95c27f778d15963a1d9dd3a61c17d23" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_a_d_driver_1ac95c27f778d15963a1d9dd3a61c17d23" kindref="member">ADShutterOpenDelay</ref>;</highlight></codeline>
+<codeline lineno="175" refid="class_a_d_driver_1a4c4ffb55296fb91e113df88de960384a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_a_d_driver_1a4c4ffb55296fb91e113df88de960384a" kindref="member">ADShutterCloseDelay</ref>;</highlight></codeline>
+<codeline lineno="176" refid="class_a_d_driver_1aef042b68b6b77d7b39dfaeceaa097a38" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_a_d_driver_1aef042b68b6b77d7b39dfaeceaa097a38" kindref="member">ADTemperature</ref>;</highlight></codeline>
+<codeline lineno="177" refid="class_a_d_driver_1a625f815727135a2af747ae5086bf21d5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_a_d_driver_1a625f815727135a2af747ae5086bf21d5" kindref="member">ADTemperatureActual</ref>;</highlight></codeline>
+<codeline lineno="178" refid="class_a_d_driver_1adbd8c8af9cf7a17913f16ecd0252eaba" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_a_d_driver_1adbd8c8af9cf7a17913f16ecd0252eaba" kindref="member">ADReadStatus</ref>;</highlight></codeline>
+<codeline lineno="179" refid="class_a_d_driver_1af8ca049bdf54eede6611e50a284152bc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_a_d_driver_1af8ca049bdf54eede6611e50a284152bc" kindref="member">ADStatusMessage</ref>;</highlight></codeline>
+<codeline lineno="180" refid="class_a_d_driver_1a9f521abfc93c9ccba2b0e83acace6d0e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_a_d_driver_1a9f521abfc93c9ccba2b0e83acace6d0e" kindref="member">ADStringToServer</ref>;</highlight></codeline>
+<codeline lineno="181" refid="class_a_d_driver_1adb837da5ddf5ba868ea2dea316254c41" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_a_d_driver_1adb837da5ddf5ba868ea2dea316254c41" kindref="member">ADStringFromServer</ref>;</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="183" refid="class_a_d_driver_1ad387fa6e2e45c812ba82adba2cc74bd0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_a_d_driver_1ad387fa6e2e45c812ba82adba2cc74bd0" kindref="member">deviceIsReachable</ref>;</highlight></codeline>
+<codeline lineno="184"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"></highlight></codeline>
+<codeline lineno="186"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/ADDriver.h"/>
+  </compounddef>
+</doxygen>

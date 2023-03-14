@@ -1,0 +1,392 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="class_n_d_attribute_list" kind="class" language="C++" prot="public">
+    <compoundname>NDAttributeList</compoundname>
+    <includes refid="_n_d_attribute_list_8h" local="no">NDAttributeList.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_n_d_attribute_list_1aaa77bc2b08fd4a951607bf6a33a8f78a" prot="private" static="no" mutable="no">
+        <type>ELLLIST</type>
+        <definition>ELLLIST NDAttributeList::list_</definition>
+        <argsstring></argsstring>
+        <name>list_</name>
+        <briefdescription>
+<para>The EPICS ELLLIST <linebreak/>
+ </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/NDAttributeList.h" line="38" column="18" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/NDAttributeList.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_d_attribute_list_1a4756b2724633500538f491a163a502cc" prot="private" static="no" mutable="no">
+        <type>epicsMutexId</type>
+        <definition>epicsMutexId NDAttributeList::lock_</definition>
+        <argsstring></argsstring>
+        <name>lock_</name>
+        <briefdescription>
+<para>Mutex to protect the ELLLIST. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/NDAttributeList.h" line="39" column="18" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/NDAttributeList.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_n_d_attribute_list_1a4908d9e24a319d851da22ec4c442e8b9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>NDAttributeList::NDAttributeList</definition>
+        <argsstring>()</argsstring>
+        <name>NDAttributeList</name>
+        <briefdescription>
+<para><ref refid="_n_d_attribute_list_8cpp" kindref="compound">NDAttributeList.cpp</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Mark Rivers University of Chicago October 18, 2013 <ref refid="class_n_d_attribute_list" kindref="compound">NDAttributeList</ref> constructor </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/NDAttributeList.h" line="23" column="5" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/NDAttributeList.cpp" bodystart="15" bodyend="19"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_d_attribute_list_1a6f1aebd31b3b0a77839e7bc4a6e44a10" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>NDAttributeList::~NDAttributeList</definition>
+        <argsstring>()</argsstring>
+        <name>~NDAttributeList</name>
+        <briefdescription>
+<para><ref refid="class_n_d_attribute_list" kindref="compound">NDAttributeList</ref> destructor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/NDAttributeList.h" line="24" column="5" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/NDAttributeList.cpp" bodystart="23" bodyend="28"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_d_attribute_list_1aa86fbdd59e20b734b86b2464f470d752" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int NDAttributeList::add</definition>
+        <argsstring>(NDAttribute *pAttribute)</argsstring>
+        <name>add</name>
+        <param>
+          <type><ref refid="class_n_d_attribute" kindref="compound">NDAttribute</ref> *</type>
+          <declname>pAttribute</declname>
+        </param>
+        <briefdescription>
+<para>Adds an attribute to the list. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If an attribute of the same name already exists then the existing attribute is deleted and replaced with the new one. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pAttribute</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to the attribute to add. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/NDAttributeList.h" line="25" column="18" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/NDAttributeList.cpp" bodystart="35" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_d_attribute_list_1a602285035fa001d501ed37004b0640b4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_n_d_attribute" kindref="compound">NDAttribute</ref> *</type>
+        <definition>NDAttribute * NDAttributeList::add</definition>
+        <argsstring>(const char *pName, const char *pDescription=&quot;&quot;, NDAttrDataType_t dataType=NDAttrUndefined, void *pValue=NULL)</argsstring>
+        <name>add</name>
+        <param>
+          <type>const char *</type>
+          <declname>pName</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>pDescription</declname>
+          <defval>&quot;&quot;</defval>
+        </param>
+        <param>
+          <type><ref refid="_n_d_attribute_8h_1a8a795995acde8458f43ac9b01376ef07" kindref="member">NDAttrDataType_t</ref></type>
+          <declname>dataType</declname>
+          <defval><ref refid="_n_d_attribute_8h_1a8a795995acde8458f43ac9b01376ef07ad2b6b7a3754f8ab384256307a8b7b2ac" kindref="member">NDAttrUndefined</ref></defval>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>pValue</declname>
+          <defval>NULL</defval>
+        </param>
+        <briefdescription>
+<para>Adds an attribute to the list. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This is a convenience function for adding attributes to a list. It first searches the list to see if there is an existing attribute with the same name. If there is it just changes the properties of the existing attribute. If not, it creates a new attribute with the specified properties. IMPORTANT: This method is only capable of creating attributes of the <ref refid="class_n_d_attribute" kindref="compound">NDAttribute</ref> base class type, not derived class attributes. To add attributes of a derived class to a list the <ref refid="class_n_d_attribute_list_1aa86fbdd59e20b734b86b2464f470d752" kindref="member">NDAttributeList::add(NDAttribute*)</ref> method must be used. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of the attribute to be added. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">pDescription</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The description of the attribute. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">dataType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The data type of the attribute. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">pValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to the value for this attribute. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/NDAttributeList.h" line="26" column="17" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/NDAttributeList.cpp" bodystart="63" bodyend="78"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_d_attribute_list_1a99aa95cfbd0fe8430a1104e067a0fdaf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_n_d_attribute" kindref="compound">NDAttribute</ref> *</type>
+        <definition>NDAttribute * NDAttributeList::find</definition>
+        <argsstring>(const char *pName)</argsstring>
+        <name>find</name>
+        <param>
+          <type>const char *</type>
+          <declname>pName</declname>
+        </param>
+        <briefdescription>
+<para>Finds an attribute by name; the search is now case sensitive (R1-10) </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of the attribute to be found. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Returns a pointer to the attribute if found, NULL if not found. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/NDAttributeList.h" line="28" column="17" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/NDAttributeList.cpp" bodystart="86" bodyend="104"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_d_attribute_list_1a42963179e3d97278f4323bdef78f37e5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_n_d_attribute" kindref="compound">NDAttribute</ref> *</type>
+        <definition>NDAttribute * NDAttributeList::next</definition>
+        <argsstring>(NDAttribute *pAttribute)</argsstring>
+        <name>next</name>
+        <param>
+          <type><ref refid="class_n_d_attribute" kindref="compound">NDAttribute</ref> *</type>
+          <declname>pAttribute</declname>
+          <defname>pAttributeIn</defname>
+        </param>
+        <briefdescription>
+<para>Finds the next attribute in the linked list of attributes. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pAttributeIn</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to the previous attribute in the list; if NULL the first attribute in the list is returned. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Returns a pointer to the next attribute if there is one, NULL if there are no more attributes in the list. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/NDAttributeList.h" line="29" column="17" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/NDAttributeList.cpp" bodystart="111" bodyend="127"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_d_attribute_list_1a376aea3b9dd6ce0ae38dd75f31bbd665" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int NDAttributeList::count</definition>
+        <argsstring>()</argsstring>
+        <name>count</name>
+        <briefdescription>
+<para>Returns the total number of attributes in the list of attributes. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Returns the number of attributes. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/NDAttributeList.h" line="30" column="18" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/NDAttributeList.cpp" bodystart="131" bodyend="136"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_d_attribute_list_1aa7fc3f2e1c55eb6fce1e34d9ac34d7e3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int NDAttributeList::remove</definition>
+        <argsstring>(const char *pName)</argsstring>
+        <name>remove</name>
+        <param>
+          <type>const char *</type>
+          <declname>pName</declname>
+        </param>
+        <briefdescription>
+<para>Removes an attribute from the list. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of the attribute to be deleted. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Returns ND_SUCCESS if the attribute was found and deleted, ND_ERROR if the attribute was not found. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/NDAttributeList.h" line="31" column="18" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/NDAttributeList.cpp" bodystart="142" bodyend="158"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_d_attribute_list_1a3c3c77990423bd5ae85ad7b873e044e1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int NDAttributeList::clear</definition>
+        <argsstring>()</argsstring>
+        <name>clear</name>
+        <briefdescription>
+<para>Deletes all attributes from the list. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/NDAttributeList.h" line="32" column="18" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/NDAttributeList.cpp" bodystart="161" bodyend="177"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_d_attribute_list_1a08c047f5f0953abd2aa1efdc1066a4ca" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int NDAttributeList::copy</definition>
+        <argsstring>(NDAttributeList *pOut)</argsstring>
+        <name>copy</name>
+        <param>
+          <type><ref refid="class_n_d_attribute_list" kindref="compound">NDAttributeList</ref> *</type>
+          <declname>pOut</declname>
+          <defname>pListOut</defname>
+        </param>
+        <briefdescription>
+<para>Copies all attributes from one attribute list to another. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>It is efficient so that if the attribute already exists in the output list it just copies the properties, and memory allocation is minimized. The attributes are added to any existing attributes already present in the output list. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">pListOut</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to the output attribute list to copy to. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/NDAttributeList.h" line="33" column="18" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/NDAttributeList.cpp" bodystart="185" bodyend="205"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_d_attribute_list_1ac97f7e414a27842f394c5c2d10cd0461" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int NDAttributeList::updateValues</definition>
+        <argsstring>()</argsstring>
+        <name>updateValues</name>
+        <briefdescription>
+<para>Updates all attribute values in the list; calls <ref refid="class_n_d_attribute_1a003bf8127ab564a6c308231328da9a81" kindref="member">NDAttribute::updateValue()</ref> for each attribute in the list. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/NDAttributeList.h" line="34" column="18" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/NDAttributeList.cpp" bodystart="209" bodyend="224"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_d_attribute_list_1a159a6b286f3dd435392bbead7ccd6c3e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int NDAttributeList::report</definition>
+        <argsstring>(FILE *fp, int details)</argsstring>
+        <name>report</name>
+        <param>
+          <type>FILE *</type>
+          <declname>fp</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>details</declname>
+        </param>
+        <briefdescription>
+<para>Reports on the properties of the attribute list. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">fp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File pointer for the report output. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">details</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Level of report details desired; if &gt;10 calls <ref refid="class_n_d_attribute_1a9cbb80eb0e20786c64dbb562c589f1aa" kindref="member">NDAttribute::report()</ref> for each attribute. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/NDAttributeList.h" line="35" column="18" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/NDAttributeList.cpp" bodystart="230" bodyend="249"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><ref refid="_n_d_attribute_list_8h" kindref="compound">NDAttributeList.h</ref>. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Mark Rivers University of Chicago October 18, 2013 <ref refid="class_n_d_attribute_list" kindref="compound">NDAttributeList</ref> class; this is a linked list of attributes. </para>
+    </detaileddescription>
+    <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/NDAttributeList.h" line="21" column="1" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/NDAttributeList.h" bodystart="21" bodyend="40"/>
+    <listofallmembers>
+      <member refid="class_n_d_attribute_list_1aa86fbdd59e20b734b86b2464f470d752" prot="public" virt="non-virtual"><scope>NDAttributeList</scope><name>add</name></member>
+      <member refid="class_n_d_attribute_list_1a602285035fa001d501ed37004b0640b4" prot="public" virt="non-virtual"><scope>NDAttributeList</scope><name>add</name></member>
+      <member refid="class_n_d_attribute_list_1a3c3c77990423bd5ae85ad7b873e044e1" prot="public" virt="non-virtual"><scope>NDAttributeList</scope><name>clear</name></member>
+      <member refid="class_n_d_attribute_list_1a08c047f5f0953abd2aa1efdc1066a4ca" prot="public" virt="non-virtual"><scope>NDAttributeList</scope><name>copy</name></member>
+      <member refid="class_n_d_attribute_list_1a376aea3b9dd6ce0ae38dd75f31bbd665" prot="public" virt="non-virtual"><scope>NDAttributeList</scope><name>count</name></member>
+      <member refid="class_n_d_attribute_list_1a99aa95cfbd0fe8430a1104e067a0fdaf" prot="public" virt="non-virtual"><scope>NDAttributeList</scope><name>find</name></member>
+      <member refid="class_n_d_attribute_list_1aaa77bc2b08fd4a951607bf6a33a8f78a" prot="private" virt="non-virtual"><scope>NDAttributeList</scope><name>list_</name></member>
+      <member refid="class_n_d_attribute_list_1a4756b2724633500538f491a163a502cc" prot="private" virt="non-virtual"><scope>NDAttributeList</scope><name>lock_</name></member>
+      <member refid="class_n_d_attribute_list_1a4908d9e24a319d851da22ec4c442e8b9" prot="public" virt="non-virtual"><scope>NDAttributeList</scope><name>NDAttributeList</name></member>
+      <member refid="class_n_d_attribute_list_1a42963179e3d97278f4323bdef78f37e5" prot="public" virt="non-virtual"><scope>NDAttributeList</scope><name>next</name></member>
+      <member refid="class_n_d_attribute_list_1aa7fc3f2e1c55eb6fce1e34d9ac34d7e3" prot="public" virt="non-virtual"><scope>NDAttributeList</scope><name>remove</name></member>
+      <member refid="class_n_d_attribute_list_1a159a6b286f3dd435392bbead7ccd6c3e" prot="public" virt="non-virtual"><scope>NDAttributeList</scope><name>report</name></member>
+      <member refid="class_n_d_attribute_list_1ac97f7e414a27842f394c5c2d10cd0461" prot="public" virt="non-virtual"><scope>NDAttributeList</scope><name>updateValues</name></member>
+      <member refid="class_n_d_attribute_list_1a6f1aebd31b3b0a77839e7bc4a6e44a10" prot="public" virt="non-virtual"><scope>NDAttributeList</scope><name>~NDAttributeList</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

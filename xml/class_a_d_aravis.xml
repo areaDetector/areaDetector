@@ -1,0 +1,1089 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="class_a_d_aravis" kind="class" language="C++" prot="public">
+    <compoundname>ADAravis</compoundname>
+    <basecompoundref refid="class_a_d_gen_i_cam" prot="public" virt="non-virtual">ADGenICam</basecompoundref>
+    <basecompoundref prot="private" virt="non-virtual">epicsThreadRunable</basecompoundref>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_a_d_aravis_1a3f7dfc94fa0b5f6f2010827ade49de31" prot="public" static="no" mutable="no">
+        <type>epicsMessageQueueId</type>
+        <definition>epicsMessageQueueId ADAravis::msgQId</definition>
+        <argsstring></argsstring>
+        <name>msgQId</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADAravis/aravisApp/src/ADAravis.cpp" line="164" column="25" bodyfile="/home/runner/work/areaDetector/areaDetector/ADAravis/aravisApp/src/ADAravis.cpp" bodystart="164" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_d_aravis_1a82162866e1615ba215d56601a05937e6" prot="public" static="no" mutable="no">
+        <type>ArvCamera *</type>
+        <definition>ArvCamera* ADAravis::camera</definition>
+        <argsstring></argsstring>
+        <name>camera</name>
+        <briefdescription>
+<para>Used by epicsAtExit. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADAravis/aravisApp/src/ADAravis.cpp" line="168" column="15" bodyfile="/home/runner/work/areaDetector/areaDetector/ADAravis/aravisApp/src/ADAravis.cpp" bodystart="168" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_d_aravis_1a35fbab0d457d1d33e7ea607616152730" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int ADAravis::connectionValid</definition>
+        <argsstring></argsstring>
+        <name>connectionValid</name>
+        <briefdescription>
+<para>Used by connection lost callback. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADAravis/aravisApp/src/ADAravis.cpp" line="171" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADAravis/aravisApp/src/ADAravis.cpp" bodystart="171" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="class_a_d_aravis_1a555d226bc62bc9452f260f820e13bb56" prot="protected" static="no" mutable="no">
+        <type>int</type>
+        <definition>int ADAravis::AravisCompleted</definition>
+        <argsstring></argsstring>
+        <name>AravisCompleted</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADAravis/aravisApp/src/ADAravis.cpp" line="174" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADAravis/aravisApp/src/ADAravis.cpp" bodystart="174" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_d_aravis_1ae09451baf87c33e15cba16ed44a3957e" prot="protected" static="no" mutable="no">
+        <type>int</type>
+        <definition>int ADAravis::AravisFailures</definition>
+        <argsstring></argsstring>
+        <name>AravisFailures</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADAravis/aravisApp/src/ADAravis.cpp" line="176" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADAravis/aravisApp/src/ADAravis.cpp" bodystart="176" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_d_aravis_1a9338fe66e459b2949c68d75dd10c8e6b" prot="protected" static="no" mutable="no">
+        <type>int</type>
+        <definition>int ADAravis::AravisUnderruns</definition>
+        <argsstring></argsstring>
+        <name>AravisUnderruns</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADAravis/aravisApp/src/ADAravis.cpp" line="177" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADAravis/aravisApp/src/ADAravis.cpp" bodystart="177" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_d_aravis_1a89ef6403351faeff6ab85f9bc1214544" prot="protected" static="no" mutable="no">
+        <type>int</type>
+        <definition>int ADAravis::AravisFrameRetention</definition>
+        <argsstring></argsstring>
+        <name>AravisFrameRetention</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADAravis/aravisApp/src/ADAravis.cpp" line="178" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADAravis/aravisApp/src/ADAravis.cpp" bodystart="178" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_d_aravis_1a3bb22458c092920baacc495560a5915e" prot="protected" static="no" mutable="no">
+        <type>int</type>
+        <definition>int ADAravis::AravisMissingPkts</definition>
+        <argsstring></argsstring>
+        <name>AravisMissingPkts</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADAravis/aravisApp/src/ADAravis.cpp" line="179" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADAravis/aravisApp/src/ADAravis.cpp" bodystart="179" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_d_aravis_1ac552421ecf927f3c5d952f2d14f32e56" prot="protected" static="no" mutable="no">
+        <type>int</type>
+        <definition>int ADAravis::AravisPktResend</definition>
+        <argsstring></argsstring>
+        <name>AravisPktResend</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADAravis/aravisApp/src/ADAravis.cpp" line="180" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADAravis/aravisApp/src/ADAravis.cpp" bodystart="180" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_d_aravis_1a08032ff68cdd366c4da7512eeb13a9bc" prot="protected" static="no" mutable="no">
+        <type>int</type>
+        <definition>int ADAravis::AravisPktTimeout</definition>
+        <argsstring></argsstring>
+        <name>AravisPktTimeout</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADAravis/aravisApp/src/ADAravis.cpp" line="181" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADAravis/aravisApp/src/ADAravis.cpp" bodystart="181" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_d_aravis_1a77b8966242d5ba6989fbe59ba24fc105" prot="protected" static="no" mutable="no">
+        <type>int</type>
+        <definition>int ADAravis::AravisResentPkts</definition>
+        <argsstring></argsstring>
+        <name>AravisResentPkts</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADAravis/aravisApp/src/ADAravis.cpp" line="182" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADAravis/aravisApp/src/ADAravis.cpp" bodystart="182" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_d_aravis_1ae6109e9146a019a93bc4bee87421c4fa" prot="protected" static="no" mutable="no">
+        <type>int</type>
+        <definition>int ADAravis::AravisConvertPixelFormat</definition>
+        <argsstring></argsstring>
+        <name>AravisConvertPixelFormat</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADAravis/aravisApp/src/ADAravis.cpp" line="183" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADAravis/aravisApp/src/ADAravis.cpp" bodystart="183" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_d_aravis_1a1c35df08b3c8d25a3944cf084195a753" prot="protected" static="no" mutable="no">
+        <type>int</type>
+        <definition>int ADAravis::AravisShiftDir</definition>
+        <argsstring></argsstring>
+        <name>AravisShiftDir</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADAravis/aravisApp/src/ADAravis.cpp" line="184" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADAravis/aravisApp/src/ADAravis.cpp" bodystart="184" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_d_aravis_1a0b9d50f4b734550d741288b4ce263714" prot="protected" static="no" mutable="no">
+        <type>int</type>
+        <definition>int ADAravis::AravisShiftBits</definition>
+        <argsstring></argsstring>
+        <name>AravisShiftBits</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADAravis/aravisApp/src/ADAravis.cpp" line="185" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADAravis/aravisApp/src/ADAravis.cpp" bodystart="185" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_d_aravis_1acafb8f8d14f442d8a5dd7041f59b8be3" prot="protected" static="no" mutable="no">
+        <type>int</type>
+        <definition>int ADAravis::AravisConnection</definition>
+        <argsstring></argsstring>
+        <name>AravisConnection</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADAravis/aravisApp/src/ADAravis.cpp" line="186" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADAravis/aravisApp/src/ADAravis.cpp" bodystart="186" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_d_aravis_1a1e3e0024d26d5e5f134e1cf22011046b" prot="protected" static="no" mutable="no">
+        <type>int</type>
+        <definition>int ADAravis::AravisReset</definition>
+        <argsstring></argsstring>
+        <name>AravisReset</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADAravis/aravisApp/src/ADAravis.cpp" line="187" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADAravis/aravisApp/src/ADAravis.cpp" bodystart="187" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_a_d_aravis_1a5d6f8da43d1fea1af1fbb0aa4b09b380" prot="private" static="no" mutable="no">
+        <type>ArvStream *</type>
+        <definition>ArvStream* ADAravis::stream</definition>
+        <argsstring></argsstring>
+        <name>stream</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADAravis/aravisApp/src/ADAravis.cpp" line="199" column="15" bodyfile="/home/runner/work/areaDetector/areaDetector/ADAravis/aravisApp/src/ADAravis.cpp" bodystart="199" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_d_aravis_1a490b63b8207d4712772e58adce21a11f" prot="private" static="no" mutable="no">
+        <type>ArvDevice *</type>
+        <definition>ArvDevice* ADAravis::device</definition>
+        <argsstring></argsstring>
+        <name>device</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADAravis/aravisApp/src/ADAravis.cpp" line="200" column="15" bodyfile="/home/runner/work/areaDetector/areaDetector/ADAravis/aravisApp/src/ADAravis.cpp" bodystart="200" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_d_aravis_1a7fa29bd91b8d0e8ca632605441553575" prot="private" static="no" mutable="no">
+        <type>ArvGc *</type>
+        <definition>ArvGc* ADAravis::genicam</definition>
+        <argsstring></argsstring>
+        <name>genicam</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADAravis/aravisApp/src/ADAravis.cpp" line="201" column="11" bodyfile="/home/runner/work/areaDetector/areaDetector/ADAravis/aravisApp/src/ADAravis.cpp" bodystart="201" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_d_aravis_1a2439f2b309d7a559c79b757a5c74c62f" prot="private" static="no" mutable="no">
+        <type>char *</type>
+        <definition>char* ADAravis::cameraName</definition>
+        <argsstring></argsstring>
+        <name>cameraName</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADAravis/aravisApp/src/ADAravis.cpp" line="202" column="10" bodyfile="/home/runner/work/areaDetector/areaDetector/ADAravis/aravisApp/src/ADAravis.cpp" bodystart="202" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_d_aravis_1ae0dc12a0c4bc9a3d61e954ed7d11f10e" prot="private" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int ADAravis::featureIndex</definition>
+        <argsstring></argsstring>
+        <name>featureIndex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADAravis/aravisApp/src/ADAravis.cpp" line="203" column="18" bodyfile="/home/runner/work/areaDetector/areaDetector/ADAravis/aravisApp/src/ADAravis.cpp" bodystart="203" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_d_aravis_1a18f4e3ef938a30f8508a116fd2b3d02d" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int ADAravis::payload</definition>
+        <argsstring></argsstring>
+        <name>payload</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADAravis/aravisApp/src/ADAravis.cpp" line="204" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADAravis/aravisApp/src/ADAravis.cpp" bodystart="204" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_d_aravis_1a01343f366629a54dbc8e359180517545" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int ADAravis::mEnableCaching</definition>
+        <argsstring></argsstring>
+        <name>mEnableCaching</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADAravis/aravisApp/src/ADAravis.cpp" line="205" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADAravis/aravisApp/src/ADAravis.cpp" bodystart="205" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_d_aravis_1a44e3c3acc5f0db80db39bcdc2ebacfe0" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int ADAravis::nConsecutiveBadFrames</definition>
+        <argsstring></argsstring>
+        <name>nConsecutiveBadFrames</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADAravis/aravisApp/src/ADAravis.cpp" line="206" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADAravis/aravisApp/src/ADAravis.cpp" bodystart="206" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_d_aravis_1ab1596d7dc7396fd47901c0612778f4b7" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int ADAravis::nBadFramesPrior</definition>
+        <argsstring></argsstring>
+        <name>nBadFramesPrior</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADAravis/aravisApp/src/ADAravis.cpp" line="207" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADAravis/aravisApp/src/ADAravis.cpp" bodystart="207" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_d_aravis_1aaf46c9ebd5ebd6ef159230e2650605c4" prot="private" static="no" mutable="no">
+        <type>epicsThread</type>
+        <definition>epicsThread ADAravis::pollingLoop</definition>
+        <argsstring></argsstring>
+        <name>pollingLoop</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADAravis/aravisApp/src/ADAravis.cpp" line="208" column="17" bodyfile="/home/runner/work/areaDetector/areaDetector/ADAravis/aravisApp/src/ADAravis.cpp" bodystart="208" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_d_aravis_1a186c29afd1066d85b08fbddbcddf3fc5" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="classarv_feature" kindref="compound">arvFeature</ref> * &gt;</type>
+        <definition>std::vector&lt;arvFeature*&gt; ADAravis::featureList</definition>
+        <argsstring></argsstring>
+        <name>featureList</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADAravis/aravisApp/src/ADAravis.cpp" line="209" column="17" bodyfile="/home/runner/work/areaDetector/areaDetector/ADAravis/aravisApp/src/ADAravis.cpp" bodystart="209" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_a_d_aravis_1af553045d96a9ca578753c6246ac769a5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ADAravis::ADAravis</definition>
+        <argsstring>(const char *portName, const char *cameraName, int enableCaching, size_t maxMemory, int priority, int stackSize)</argsstring>
+        <name>ADAravis</name>
+        <param>
+          <type>const char *</type>
+          <declname>portName</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>cameraName</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>enableCaching</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>maxMemory</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>priority</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>stackSize</declname>
+        </param>
+        <briefdescription>
+<para>Constructor for <ref refid="class_a_d_aravis" kindref="compound">ADAravis</ref>; most parameters are simply passed to <ref refid="class_a_d_driver_1acc898497d3369c2f6f6ab1d83effdd25" kindref="member">ADDriver::ADDriver</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>After calling the base class constructor this method creates a thread to compute the GigE detector data, and sets reasonable default values for parameters defined in this class, <ref refid="classasyn_n_d_array_driver" kindref="compound">asynNDArrayDriver</ref> and <ref refid="class_a_d_driver" kindref="compound">ADDriver</ref>. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">portName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of the asyn port driver to be created. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">cameraName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of the camera, &lt;vendor&gt;-&lt;serial#&gt;, as returned by arv-show-devices </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">enableCaching</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Flag to enable (1) or disable (0) register caching in aravis. Performance is much better when caching is enable, but some cameras may not properly implement this. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">maxMemory</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The maximum amount of memory that the <ref refid="class_n_d_array_pool" kindref="compound">NDArrayPool</ref> for this driver is allowed to allocate. Set this to -1 to allow an unlimited amount of memory. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">priority</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The thread priority for the asyn port driver thread if ASYN_CANBLOCK is set in asynFlags. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">stackSize</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The stack size for the asyn port driver thread if ASYN_CANBLOCK is set in asynFlags. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADAravis/aravisApp/src/ADAravis.cpp" line="148" column="5" bodyfile="/home/runner/work/areaDetector/areaDetector/ADAravis/aravisApp/src/ADAravis.cpp" bodystart="311" bodyend="394"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_d_aravis_1ab3aace6e7a423f12be0713deb4409bac" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>asynStatus</type>
+        <definition>asynStatus ADAravis::writeInt32</definition>
+        <argsstring>(asynUser *pasynUser, epicsInt32 value)</argsstring>
+        <name>writeInt32</name>
+        <reimplements refid="class_a_d_gen_i_cam_1a220b32d05048adcc8cd128a99a230594">writeInt32</reimplements>
+        <param>
+          <type>asynUser *</type>
+          <declname>pasynUser</declname>
+        </param>
+        <param>
+          <type>epicsInt32</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Called when asyn clients call pasynInt32-&gt;write(). </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function performs actions for some parameters, including ADAcquire, ADColorMode, etc. For all parameters it sets the value in the parameter library and calls any registered callbacks.. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pasynUser</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pasynUser structure that encodes the reason and address. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Value to write. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADAravis/aravisApp/src/ADAravis.cpp" line="152" column="24" bodyfile="/home/runner/work/areaDetector/areaDetector/ADAravis/aravisApp/src/ADAravis.cpp" bodystart="558" bodyend="606"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_d_aravis_1a9d4a3a1e849cd4f72633daa1436ecc17" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="class_gen_i_cam_feature" kindref="compound">GenICamFeature</ref> *</type>
+        <definition>GenICamFeature * ADAravis::createFeature</definition>
+        <argsstring>(GenICamFeatureSet *set, std::string const &amp;asynName, asynParamType asynType, int asynIndex, std::string const &amp;featureName, GCFeatureType_t featureType)</argsstring>
+        <name>createFeature</name>
+        <reimplements refid="class_a_d_gen_i_cam_1a1989d94807c08ce3f12ee6e950cda256">createFeature</reimplements>
+        <param>
+          <type><ref refid="class_gen_i_cam_feature_set" kindref="compound">GenICamFeatureSet</ref> *</type>
+          <declname>set</declname>
+        </param>
+        <param>
+          <type>std::string const &amp;</type>
+          <declname>asynName</declname>
+        </param>
+        <param>
+          <type>asynParamType</type>
+          <declname>asynType</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>asynIndex</declname>
+        </param>
+        <param>
+          <type>std::string const &amp;</type>
+          <declname>featureName</declname>
+        </param>
+        <param>
+          <type><ref refid="_gen_i_cam_feature_8h_1a7e16ddb9db92703eb6dc8b3d6bfd5f05" kindref="member">GCFeatureType_t</ref></type>
+          <declname>featureType</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADAravis/aravisApp/src/ADAravis.cpp" line="153" column="28" bodyfile="/home/runner/work/areaDetector/areaDetector/ADAravis/aravisApp/src/ADAravis.cpp" bodystart="212" bodyend="218"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_d_aravis_1a406c3466598cee023c85cdc33c400416" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>asynStatus</type>
+        <definition>asynStatus ADAravis::startCapture</definition>
+        <argsstring>()</argsstring>
+        <name>startCapture</name>
+        <reimplements refid="class_a_d_gen_i_cam_1a8e279b1fd30c024a80fe6e3df02f11de">startCapture</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADAravis/aravisApp/src/ADAravis.cpp" line="156" column="24" bodyfile="/home/runner/work/areaDetector/areaDetector/ADAravis/aravisApp/src/ADAravis.cpp" bodystart="905" bodyend="940"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_d_aravis_1ab8242a3112e1133438eeda81e011831b" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>asynStatus</type>
+        <definition>asynStatus ADAravis::stopCapture</definition>
+        <argsstring>()</argsstring>
+        <name>stopCapture</name>
+        <reimplements refid="class_a_d_gen_i_cam_1a4ecd7f4a55e8d33f458af3df71938d2c">stopCapture</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADAravis/aravisApp/src/ADAravis.cpp" line="157" column="24" bodyfile="/home/runner/work/areaDetector/areaDetector/ADAravis/aravisApp/src/ADAravis.cpp" bodystart="897" bodyend="903"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_d_aravis_1aa149564669106db7b3456e6a9f05241d" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void ADAravis::report</definition>
+        <argsstring>(FILE *fp, int details)</argsstring>
+        <name>report</name>
+        <reimplements refid="classasyn_n_d_array_driver_1ac3f2d73a05eb54357ec3f052e1b000f2">report</reimplements>
+        <param>
+          <type>FILE *</type>
+          <declname>fp</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>details</declname>
+        </param>
+        <briefdescription>
+<para>Report status of the driver. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Prints details about the driver if details&gt;0. It then calls the <ref refid="classasyn_n_d_array_driver_1ac3f2d73a05eb54357ec3f052e1b000f2" kindref="member">ADDriver::report()</ref> method. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">fp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File pointed passed by caller where the output is written to. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">details</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If &gt;0 then driver details are printed. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADAravis/aravisApp/src/ADAravis.cpp" line="158" column="10" bodyfile="/home/runner/work/areaDetector/areaDetector/ADAravis/aravisApp/src/ADAravis.cpp" bodystart="614" bodyend="628"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_d_aravis_1a812301a52999ccc2d15f6b00407d8e90" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ADAravis::run</definition>
+        <argsstring>()</argsstring>
+        <name>run</name>
+        <briefdescription>
+<para>Check what event we have, and deal with new frames. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>this-&gt;camera exists, lock not taken </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADAravis/aravisApp/src/ADAravis.cpp" line="161" column="10" bodyfile="/home/runner/work/areaDetector/areaDetector/ADAravis/aravisApp/src/ADAravis.cpp" bodystart="662" bodyend="710"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_d_aravis_1a4614fe8e3d52280915791105533313b4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ADAravis::newBufferCallback</definition>
+        <argsstring>(ArvStream *stream)</argsstring>
+        <name>newBufferCallback</name>
+        <param>
+          <type>ArvStream *</type>
+          <declname>stream</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADAravis/aravisApp/src/ADAravis.cpp" line="165" column="10" bodyfile="/home/runner/work/areaDetector/areaDetector/ADAravis/aravisApp/src/ADAravis.cpp" bodystart="248" bodyend="281"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_a_d_aravis_1a52e02e747149312256385927a791e571" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>asynStatus</type>
+        <definition>asynStatus ADAravis::allocBuffer</definition>
+        <argsstring>()</argsstring>
+        <name>allocBuffer</name>
+        <briefdescription>
+<para>Allocate an <ref refid="class_n_d_array" kindref="compound">NDArray</ref> and prepare a buffer that is passed to the stream this-&gt;camera exists, lock taken. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADAravis/aravisApp/src/ADAravis.cpp" line="191" column="16" bodyfile="/home/runner/work/areaDetector/areaDetector/ADAravis/aravisApp/src/ADAravis.cpp" bodystart="633" bodyend="658"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_d_aravis_1a284a954c884b85d7867cf045630e289a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>asynStatus</type>
+        <definition>asynStatus ADAravis::processBuffer</definition>
+        <argsstring>(ArvBuffer *buffer)</argsstring>
+        <name>processBuffer</name>
+        <param>
+          <type>ArvBuffer *</type>
+          <declname>buffer</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADAravis/aravisApp/src/ADAravis.cpp" line="192" column="16" bodyfile="/home/runner/work/areaDetector/areaDetector/ADAravis/aravisApp/src/ADAravis.cpp" bodystart="712" bodyend="895"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_d_aravis_1a7d69fd18cf7771dd0e2bc9f66af7ca6e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>asynStatus</type>
+        <definition>asynStatus ADAravis::lookupColorMode</definition>
+        <argsstring>(ArvPixelFormat fmt, int *colorMode, int *dataType, int *bayerFormat)</argsstring>
+        <name>lookupColorMode</name>
+        <param>
+          <type>ArvPixelFormat</type>
+          <declname>fmt</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>colorMode</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>dataType</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>bayerFormat</declname>
+        </param>
+        <briefdescription>
+<para>Lookup a colorMode, dataType and bayerFormat from an ArvPixelFormat. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADAravis/aravisApp/src/ADAravis.cpp" line="193" column="16" bodyfile="/home/runner/work/areaDetector/areaDetector/ADAravis/aravisApp/src/ADAravis.cpp" bodystart="943" bodyend="957"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_d_aravis_1ac9a01fb301d51580a304759212c87ed5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>asynStatus</type>
+        <definition>asynStatus ADAravis::lookupPixelFormat</definition>
+        <argsstring>(int colorMode, int dataType, int bayerFormat, ArvPixelFormat *fmt)</argsstring>
+        <name>lookupPixelFormat</name>
+        <param>
+          <type>int</type>
+          <declname>colorMode</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>dataType</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>bayerFormat</declname>
+        </param>
+        <param>
+          <type>ArvPixelFormat *</type>
+          <declname>fmt</declname>
+        </param>
+        <briefdescription>
+<para>Lookup an ArvPixelFormat from a colorMode, dataType and bayerFormat. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADAravis/aravisApp/src/ADAravis.cpp" line="194" column="16" bodyfile="/home/runner/work/areaDetector/areaDetector/ADAravis/aravisApp/src/ADAravis.cpp" bodystart="960" bodyend="990"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_d_aravis_1aa54806945b22a8da684fe50220f1da2c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>asynStatus</type>
+        <definition>asynStatus ADAravis::connectToCamera</definition>
+        <argsstring>()</argsstring>
+        <name>connectToCamera</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADAravis/aravisApp/src/ADAravis.cpp" line="195" column="16" bodyfile="/home/runner/work/areaDetector/areaDetector/ADAravis/aravisApp/src/ADAravis.cpp" bodystart="502" bodyend="551"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_d_aravis_1ab89bf4d52a8e2ca815d556e891cd484e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>asynStatus</type>
+        <definition>asynStatus ADAravis::makeCameraObject</definition>
+        <argsstring>()</argsstring>
+        <name>makeCameraObject</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADAravis/aravisApp/src/ADAravis.cpp" line="196" column="16" bodyfile="/home/runner/work/areaDetector/areaDetector/ADAravis/aravisApp/src/ADAravis.cpp" bodystart="396" bodyend="444"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_d_aravis_1a89007ad523f083932279ee31e00c07e5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>asynStatus</type>
+        <definition>asynStatus ADAravis::makeStreamObject</definition>
+        <argsstring>()</argsstring>
+        <name>makeStreamObject</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADAravis/aravisApp/src/ADAravis.cpp" line="197" column="16" bodyfile="/home/runner/work/areaDetector/areaDetector/ADAravis/aravisApp/src/ADAravis.cpp" bodystart="446" bodyend="500"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Aravis GigE detector driver. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="6">
+        <label>epicsThreadRunable</label>
+      </node>
+      <node id="5">
+        <label>asynPortDriver</label>
+      </node>
+      <node id="4">
+        <label>asynNDArrayDriver</label>
+        <link refid="classasyn_n_d_array_driver"/>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>ADDriver</label>
+        <link refid="class_a_d_driver"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>ADAravis</label>
+        <link refid="class_a_d_aravis"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="6" relation="private-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>ADGenICam</label>
+        <link refid="class_a_d_gen_i_cam"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="13">
+        <label>epicsThreadRunable</label>
+      </node>
+      <node id="9">
+        <label>NDDimension</label>
+        <link refid="struct_n_d_dimension"/>
+      </node>
+      <node id="5">
+        <label>asynPortDriver</label>
+      </node>
+      <node id="11">
+        <label>string</label>
+      </node>
+      <node id="10">
+        <label>Codec_t</label>
+        <link refid="struct_codec__t"/>
+        <childnode refid="11" relation="usage">
+          <edgelabel>name</edgelabel>
+        </childnode>
+      </node>
+      <node id="8">
+        <label>NDArray</label>
+        <link refid="class_n_d_array"/>
+        <childnode refid="6" relation="usage">
+          <edgelabel>pNDArrayPool</edgelabel>
+        </childnode>
+        <childnode refid="9" relation="usage">
+          <edgelabel>dims</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>pAttributeList</edgelabel>
+        </childnode>
+        <childnode refid="10" relation="usage">
+          <edgelabel>codec</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>pDriver</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>asynNDArrayDriver</label>
+        <link refid="classasyn_n_d_array_driver"/>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>pNDArrayPool</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>pAttributeList</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>pArrays</edgelabel>
+        </childnode>
+      </node>
+      <node id="12">
+        <label>GenICamFeatureSet</label>
+        <link refid="class_gen_i_cam_feature_set"/>
+      </node>
+      <node id="6">
+        <label>NDArrayPool</label>
+        <link refid="class_n_d_array_pool"/>
+      </node>
+      <node id="3">
+        <label>ADDriver</label>
+        <link refid="class_a_d_driver"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>NDAttributeList</label>
+        <link refid="class_n_d_attribute_list"/>
+      </node>
+      <node id="1">
+        <label>ADAravis</label>
+        <link refid="class_a_d_aravis"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="13" relation="private-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>ADGenICam</label>
+        <link refid="class_a_d_gen_i_cam"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+        <childnode refid="12" relation="usage">
+          <edgelabel>mGCFeatureSet</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/runner/work/areaDetector/areaDetector/ADAravis/aravisApp/src/ADAravis.cpp" line="145" column="1" bodyfile="/home/runner/work/areaDetector/areaDetector/ADAravis/aravisApp/src/ADAravis.cpp" bodystart="145" bodyend="210"/>
+    <listofallmembers>
+      <member refid="classasyn_n_d_array_driver_1aa06c19f650b4619a7bdbf3a79397c3d3" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>ADAcquire</name></member>
+      <member refid="classasyn_n_d_array_driver_1aaeb5af71e22323b6a3d4f51be380bc7a" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>ADAcquireBusy</name></member>
+      <member refid="class_a_d_driver_1a8d5333aa86509cbd8f5fd824e79b2799" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>ADAcquirePeriod</name></member>
+      <member refid="class_a_d_driver_1a922005db3a5a52dd24e6706fdfe1a160" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>ADAcquireTime</name></member>
+      <member refid="class_a_d_aravis_1af553045d96a9ca578753c6246ac769a5" prot="public" virt="non-virtual"><scope>ADAravis</scope><name>ADAravis</name></member>
+      <member refid="class_a_d_driver_1a11d483194e60669d11e0a4ff4bb919f3" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>ADBinX</name></member>
+      <member refid="class_a_d_driver_1a0001097ff0ab8b55e564057699655c83" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>ADBinY</name></member>
+      <member refid="class_a_d_gen_i_cam_1a1f80552ba55c70d873589e66681399d9" prot="public" virt="virtual"><scope>ADAravis</scope><name>addADDriverFeatures</name></member>
+      <member refid="class_a_d_driver_1acc898497d3369c2f6f6ab1d83effdd25" prot="public" virt="non-virtual"><scope>ADAravis</scope><name>ADDriver</name></member>
+      <member refid="classasyn_n_d_array_driver_1a4eadbf94d756dcf7b61d624f791fd516" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>ADFirmwareVersion</name></member>
+      <member refid="class_a_d_driver_1ae246f999cf99d4e97594beb939f15f21" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>ADFrameType</name></member>
+      <member refid="class_a_d_driver_1af7a169a1ab5a9069c5d556bf5c7ac387" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>ADGain</name></member>
+      <member refid="class_a_d_gen_i_cam_1a11bf34b8a6493bfbf090852e2f82dd61" prot="public" virt="non-virtual"><scope>ADAravis</scope><name>ADGenICam</name></member>
+      <member refid="class_a_d_driver_1a7dcba273d750e726bb3f5e4b7a38f53a" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>ADImageMode</name></member>
+      <member refid="classasyn_n_d_array_driver_1a2deb25acd798e9e0da6c52741a07b915" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>ADManufacturer</name></member>
+      <member refid="class_a_d_driver_1a535f4c7d03e30b1efe4f7dad854cfc3f" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>ADMaxSizeX</name></member>
+      <member refid="class_a_d_driver_1a93caa26e32c3765ba19e1ac74a2f50cc" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>ADMaxSizeY</name></member>
+      <member refid="class_a_d_driver_1a23f8a7537c0c221ed3c5a72af90e276e" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>ADMinX</name></member>
+      <member refid="class_a_d_driver_1ae1b0c891ee0ecd596439b29e32e068e4" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>ADMinY</name></member>
+      <member refid="classasyn_n_d_array_driver_1a4c15720b7002ec1ff9278058240d82da" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>ADModel</name></member>
+      <member refid="class_a_d_driver_1a25e11dff81ea84715fc8fe5ca290bacb" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>ADNumExposures</name></member>
+      <member refid="class_a_d_driver_1a17625c89904128e0d5ecb935c475e4b7" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>ADNumExposuresCounter</name></member>
+      <member refid="class_a_d_driver_1a46e8f2fa100c21f2f0689c415b441fb0" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>ADNumImages</name></member>
+      <member refid="class_a_d_driver_1a8cdc9e9fbabaadaa3c87108aad2e2895" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>ADNumImagesCounter</name></member>
+      <member refid="class_a_d_driver_1adbd8c8af9cf7a17913f16ecd0252eaba" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>ADReadStatus</name></member>
+      <member refid="class_a_d_driver_1a52d579907f81c30b4b2df2dd0a3b4a3f" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>ADReverseX</name></member>
+      <member refid="class_a_d_driver_1ad6b830a6234b468e3390839204d5a768" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>ADReverseY</name></member>
+      <member refid="classasyn_n_d_array_driver_1a89d5bd570163bd569bc6d2a2163da9c2" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>ADSDKVersion</name></member>
+      <member refid="classasyn_n_d_array_driver_1aa4d910fd087c8eb02f3437b18b80bba1" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>ADSerialNumber</name></member>
+      <member refid="class_a_d_driver_1a4c4ffb55296fb91e113df88de960384a" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>ADShutterCloseDelay</name></member>
+      <member refid="class_a_d_driver_1aba1af712aed9f9374e5fea5dfc8c1bbd" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>ADShutterControl</name></member>
+      <member refid="class_a_d_driver_1aec7d41ff8a2b3059270450275160092f" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>ADShutterControlEPICS</name></member>
+      <member refid="class_a_d_driver_1a3a1afea96c657c64ab8dea2ee54d1ace" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>ADShutterMode</name></member>
+      <member refid="class_a_d_driver_1ac95c27f778d15963a1d9dd3a61c17d23" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>ADShutterOpenDelay</name></member>
+      <member refid="class_a_d_driver_1a13c7b3852b0a6662a701f8b0fd71eac2" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>ADShutterStatus</name></member>
+      <member refid="class_a_d_driver_1a918ef4b3d80695f6872fd169b09b639a" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>ADSizeX</name></member>
+      <member refid="class_a_d_driver_1a59ba3ba61b2b6f51dc9d88d81680b632" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>ADSizeY</name></member>
+      <member refid="class_a_d_driver_1a6a532aae0f51273450f4e897bf0aed1d" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>ADStatus</name></member>
+      <member refid="class_a_d_driver_1af8ca049bdf54eede6611e50a284152bc" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>ADStatusMessage</name></member>
+      <member refid="class_a_d_driver_1adb837da5ddf5ba868ea2dea316254c41" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>ADStringFromServer</name></member>
+      <member refid="class_a_d_driver_1a9f521abfc93c9ccba2b0e83acace6d0e" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>ADStringToServer</name></member>
+      <member refid="class_a_d_driver_1aef042b68b6b77d7b39dfaeceaa097a38" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>ADTemperature</name></member>
+      <member refid="class_a_d_driver_1a625f815727135a2af747ae5086bf21d5" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>ADTemperatureActual</name></member>
+      <member refid="class_a_d_driver_1a143d4816efe3d5e98f4e6656b0f1d539" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>ADTimeRemaining</name></member>
+      <member refid="class_a_d_driver_1ae191abe1436e6dd02510fcbbac59dbc1" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>ADTriggerMode</name></member>
+      <member refid="classasyn_n_d_array_driver_1adb00dde7e1d46856e0bd4b586aff6bd2" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>ADWaitForPlugins</name></member>
+      <member refid="class_a_d_aravis_1a52e02e747149312256385927a791e571" prot="private" virt="non-virtual"><scope>ADAravis</scope><name>allocBuffer</name></member>
+      <member refid="class_a_d_aravis_1a555d226bc62bc9452f260f820e13bb56" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>AravisCompleted</name></member>
+      <member refid="class_a_d_aravis_1acafb8f8d14f442d8a5dd7041f59b8be3" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>AravisConnection</name></member>
+      <member refid="class_a_d_aravis_1ae6109e9146a019a93bc4bee87421c4fa" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>AravisConvertPixelFormat</name></member>
+      <member refid="class_a_d_aravis_1ae09451baf87c33e15cba16ed44a3957e" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>AravisFailures</name></member>
+      <member refid="class_a_d_aravis_1a89ef6403351faeff6ab85f9bc1214544" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>AravisFrameRetention</name></member>
+      <member refid="class_a_d_aravis_1a3bb22458c092920baacc495560a5915e" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>AravisMissingPkts</name></member>
+      <member refid="class_a_d_aravis_1ac552421ecf927f3c5d952f2d14f32e56" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>AravisPktResend</name></member>
+      <member refid="class_a_d_aravis_1a08032ff68cdd366c4da7512eeb13a9bc" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>AravisPktTimeout</name></member>
+      <member refid="class_a_d_aravis_1a77b8966242d5ba6989fbe59ba24fc105" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>AravisResentPkts</name></member>
+      <member refid="class_a_d_aravis_1a1e3e0024d26d5e5f134e1cf22011046b" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>AravisReset</name></member>
+      <member refid="class_a_d_aravis_1a0b9d50f4b734550d741288b4ce263714" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>AravisShiftBits</name></member>
+      <member refid="class_a_d_aravis_1a1c35df08b3c8d25a3944cf084195a753" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>AravisShiftDir</name></member>
+      <member refid="class_a_d_aravis_1a9338fe66e459b2949c68d75dd10c8e6b" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>AravisUnderruns</name></member>
+      <member refid="classasyn_n_d_array_driver_1aaaccd27681be8d91d10246e1aad72034" prot="public" virt="non-virtual"><scope>ADAravis</scope><name>asynNDArrayDriver</name></member>
+      <member refid="class_a_d_aravis_1a82162866e1615ba215d56601a05937e6" prot="public" virt="non-virtual"><scope>ADAravis</scope><name>camera</name></member>
+      <member refid="class_a_d_aravis_1a2439f2b309d7a559c79b757a5c74c62f" prot="private" virt="non-virtual"><scope>ADAravis</scope><name>cameraName</name></member>
+      <member refid="classasyn_n_d_array_driver_1aba7309da5e7c5571fc693b1998c9d236" prot="public" virt="virtual"><scope>ADAravis</scope><name>checkPath</name></member>
+      <member refid="classasyn_n_d_array_driver_1aaca89f35ddf4c5a1c22374ff608593cd" prot="public" virt="virtual"><scope>ADAravis</scope><name>checkPath</name></member>
+      <member refid="class_a_d_driver_1a619dfbdc35605a104d2a07ea46f37b5f" prot="public" virt="virtual"><scope>ADAravis</scope><name>connect</name></member>
+      <member refid="class_a_d_aravis_1a35fbab0d457d1d33e7ea607616152730" prot="public" virt="non-virtual"><scope>ADAravis</scope><name>connectionValid</name></member>
+      <member refid="class_a_d_aravis_1aa54806945b22a8da684fe50220f1da2c" prot="private" virt="non-virtual"><scope>ADAravis</scope><name>connectToCamera</name></member>
+      <member refid="class_a_d_aravis_1a9d4a3a1e849cd4f72633daa1436ecc17" prot="public" virt="virtual"><scope>ADAravis</scope><name>createFeature</name></member>
+      <member refid="classasyn_n_d_array_driver_1a813f6c84e96329cd89653a3b0497f8a9" prot="public" virt="virtual"><scope>ADAravis</scope><name>createFileName</name></member>
+      <member refid="classasyn_n_d_array_driver_1af5494c8e3b3f317e049a5c336d8065f4" prot="public" virt="virtual"><scope>ADAravis</scope><name>createFileName</name></member>
+      <member refid="classasyn_n_d_array_driver_1a42b3686c9c08b14ba054dd005a30fa0d" prot="public" virt="virtual"><scope>ADAravis</scope><name>createFilePath</name></member>
+      <member refid="class_a_d_gen_i_cam_1af71a532743b9fca14a1793a326818e2f" prot="public" virt="virtual"><scope>ADAravis</scope><name>decompressMono12p</name></member>
+      <member refid="class_a_d_gen_i_cam_1a0f2fbbceb7ba3d967ad3ae97b5fb03dd" prot="public" virt="virtual"><scope>ADAravis</scope><name>decompressMono12Packed</name></member>
+      <member refid="classasyn_n_d_array_driver_1acc2afad33faf8e45d6f21e251133ed94" prot="public" virt="non-virtual"><scope>ADAravis</scope><name>decrementQueuedArrayCount</name></member>
+      <member refid="class_a_d_aravis_1a490b63b8207d4712772e58adce21a11f" prot="private" virt="non-virtual"><scope>ADAravis</scope><name>device</name></member>
+      <member refid="class_a_d_driver_1ad387fa6e2e45c812ba82adba2cc74bd0" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>deviceIsReachable</name></member>
+      <member refid="class_a_d_gen_i_cam_1aa8d56136631f5d133c3ebd6d26883fdb" prot="public" virt="virtual"><scope>ADAravis</scope><name>drvUserCreate</name></member>
+      <member refid="class_a_d_aravis_1ae0dc12a0c4bc9a3d61e954ed7d11f10e" prot="private" virt="non-virtual"><scope>ADAravis</scope><name>featureIndex</name></member>
+      <member refid="class_a_d_aravis_1a186c29afd1066d85b08fbddbcddf3fc5" prot="private" virt="non-virtual"><scope>ADAravis</scope><name>featureList</name></member>
+      <member refid="class_a_d_gen_i_cam_1a3bbded9c97b7f329e5304f16bad81736" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>GCExposureAuto</name></member>
+      <member refid="class_a_d_gen_i_cam_1a7eed1a02638268463efe6cd131a3fd95" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>GCExposureMode</name></member>
+      <member refid="class_a_d_gen_i_cam_1ae5e880ae91fff8958c40b8fec4391432" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>GCFrameRate</name></member>
+      <member refid="class_a_d_gen_i_cam_1a14c869f9d332c6048dc2d4d9f10db553" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>GCFrameRateEnable</name></member>
+      <member refid="class_a_d_gen_i_cam_1ad039e7d3a68fd23ba414d2d0d858728d" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>GCGainAuto</name></member>
+      <member refid="class_a_d_gen_i_cam_1a78ee18841dc5dc1786ddb2477b219e7f" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>GCPixelFormat</name></member>
+      <member refid="class_a_d_gen_i_cam_1a1c606399208510b2f758a2ead96d2d8d" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>GCTriggerOverlap</name></member>
+      <member refid="class_a_d_gen_i_cam_1ab9d2a39fa6fa273faae4a0a7e2a1b760" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>GCTriggerSoftware</name></member>
+      <member refid="class_a_d_gen_i_cam_1a69a8bd3ff7713aca89029e19fa3054f2" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>GCTriggerSource</name></member>
+      <member refid="class_a_d_aravis_1a7fa29bd91b8d0e8ca632605441553575" prot="private" virt="non-virtual"><scope>ADAravis</scope><name>genicam</name></member>
+      <member refid="classasyn_n_d_array_driver_1a7492ba858d885e2ba226a1c7ef9dcf72" prot="public" virt="virtual"><scope>ADAravis</scope><name>getAttributes</name></member>
+      <member refid="classasyn_n_d_array_driver_1a1a369bc9b605bba000f782c69429622b" prot="public" virt="non-virtual"><scope>ADAravis</scope><name>getQueuedArrayCount</name></member>
+      <member refid="classasyn_n_d_array_driver_1ad55549fca656bc01cbe0e3c92e4d29e3" prot="public" virt="non-virtual"><scope>ADAravis</scope><name>incrementQueuedArrayCount</name></member>
+      <member refid="class_a_d_aravis_1a7d69fd18cf7771dd0e2bc9f66af7ca6e" prot="private" virt="non-virtual"><scope>ADAravis</scope><name>lookupColorMode</name></member>
+      <member refid="class_a_d_aravis_1ac9a01fb301d51580a304759212c87ed5" prot="private" virt="non-virtual"><scope>ADAravis</scope><name>lookupPixelFormat</name></member>
+      <member refid="class_a_d_aravis_1ab89bf4d52a8e2ca815d556e891cd484e" prot="private" virt="non-virtual"><scope>ADAravis</scope><name>makeCameraObject</name></member>
+      <member refid="class_a_d_aravis_1a89007ad523f083932279ee31e00c07e5" prot="private" virt="non-virtual"><scope>ADAravis</scope><name>makeStreamObject</name></member>
+      <member refid="class_a_d_aravis_1a01343f366629a54dbc8e359180517545" prot="private" virt="non-virtual"><scope>ADAravis</scope><name>mEnableCaching</name></member>
+      <member refid="class_a_d_gen_i_cam_1a7432fa0ca83c23fc639c92ee9fe4b8e1" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>mGCFeatureSet</name></member>
+      <member refid="class_a_d_aravis_1a3f7dfc94fa0b5f6f2010827ade49de31" prot="public" virt="non-virtual"><scope>ADAravis</scope><name>msgQId</name></member>
+      <member refid="class_a_d_aravis_1ab1596d7dc7396fd47901c0612778f4b7" prot="private" virt="non-virtual"><scope>ADAravis</scope><name>nBadFramesPrior</name></member>
+      <member refid="class_a_d_aravis_1a44e3c3acc5f0db80db39bcdc2ebacfe0" prot="private" virt="non-virtual"><scope>ADAravis</scope><name>nConsecutiveBadFrames</name></member>
+      <member refid="classasyn_n_d_array_driver_1ad472f633149cd560959721e589d9ea54" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>NDADCoreVersion</name></member>
+      <member refid="classasyn_n_d_array_driver_1af2354f73acece6ee2427f5069b16fdb5" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>NDArrayCallbacks</name></member>
+      <member refid="classasyn_n_d_array_driver_1abec5f5fc9922549d745d7dc7f19243ea" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>NDArrayCounter</name></member>
+      <member refid="classasyn_n_d_array_driver_1a2b2fe51fba9a6ee4146813eac0c47fd1" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>NDArrayData</name></member>
+      <member refid="classasyn_n_d_array_driver_1abf6f05821c7d1a9ab6aef60c9374281e" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>NDArraySize</name></member>
+      <member refid="classasyn_n_d_array_driver_1a79c89c00ea62734d82c89e09ea8aa47b" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>NDArraySizeX</name></member>
+      <member refid="classasyn_n_d_array_driver_1a75753778fe16182d0771e924f05bde33" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>NDArraySizeY</name></member>
+      <member refid="classasyn_n_d_array_driver_1a72fac0fbaa730672f9a3a6da8c1d1a97" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>NDArraySizeZ</name></member>
+      <member refid="classasyn_n_d_array_driver_1a4fae01b5b72053b6ae11dcd37ff6aff0" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>NDAttributesFile</name></member>
+      <member refid="classasyn_n_d_array_driver_1abba302aca48e561ee5b40794db9f0708" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>NDAttributesMacros</name></member>
+      <member refid="classasyn_n_d_array_driver_1a0875da7319e3cc7f54212629208b1d95" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>NDAttributesStatus</name></member>
+      <member refid="classasyn_n_d_array_driver_1a9966536066c350fc218d3d7cb4d66aaf" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>NDAutoIncrement</name></member>
+      <member refid="classasyn_n_d_array_driver_1a73da5c2affb0342b82b470f96a068d1a" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>NDAutoSave</name></member>
+      <member refid="classasyn_n_d_array_driver_1a6e584ca2489de3a5e3e9d4d4e00bb7c0" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>NDBayerPattern</name></member>
+      <member refid="classasyn_n_d_array_driver_1a43641411ca31d630cbf30adab5e553b2" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>NDCodec</name></member>
+      <member refid="classasyn_n_d_array_driver_1abf7b27064b0d69440f16feb1e19f6cf2" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>NDColorMode</name></member>
+      <member refid="classasyn_n_d_array_driver_1a2a9b3db5995b201c2e153decfd79391e" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>NDCompressedSize</name></member>
+      <member refid="classasyn_n_d_array_driver_1af71358738ff1dbe4c9185f105807f799" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>NDDataType</name></member>
+      <member refid="classasyn_n_d_array_driver_1a23727b6252a78b74fc40868f15e656dc" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>NDDimensions</name></member>
+      <member refid="classasyn_n_d_array_driver_1a2be0f672f139c59f942bedfd7d94ff0f" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>NDDriverVersion</name></member>
+      <member refid="classasyn_n_d_array_driver_1a436f60f2a566a9be759c2dad9a9cbbaf" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>NDEpicsTSNsec</name></member>
+      <member refid="classasyn_n_d_array_driver_1af9d5abcc0a9ef2a21abce8607fd7650e" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>NDEpicsTSSec</name></member>
+      <member refid="classasyn_n_d_array_driver_1adc503aa2621ea29c553514b09784229a" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>NDFileCapture</name></member>
+      <member refid="classasyn_n_d_array_driver_1a726ad8d1b09b0fc5e08e0561e9bc255f" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>NDFileCreateDir</name></member>
+      <member refid="classasyn_n_d_array_driver_1a1ce29ba9f5d31b52628ae76129d15fa2" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>NDFileDeleteDriverFile</name></member>
+      <member refid="classasyn_n_d_array_driver_1a8911e3455de6adbfcb21093da9ff0500" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>NDFileFormat</name></member>
+      <member refid="classasyn_n_d_array_driver_1a8f5e5a7aae6848a12e55012273ab06c5" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>NDFileLazyOpen</name></member>
+      <member refid="classasyn_n_d_array_driver_1a513d2b4cc04ba240f434394c715f733f" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>NDFileName</name></member>
+      <member refid="classasyn_n_d_array_driver_1a6d7cf0fea0eba3eb69fe69a60b89b30c" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>NDFileNumber</name></member>
+      <member refid="classasyn_n_d_array_driver_1abd42667177a6b0ea88888487511514cd" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>NDFileNumCapture</name></member>
+      <member refid="classasyn_n_d_array_driver_1aa392d8dfaa3d659958deddf100d54aed" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>NDFileNumCaptured</name></member>
+      <member refid="classasyn_n_d_array_driver_1ac511e9800761d6cb070d3540940b24c3" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>NDFilePath</name></member>
+      <member refid="classasyn_n_d_array_driver_1a3cf47b7e4df08a87b0585c62509878bf" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>NDFilePathExists</name></member>
+      <member refid="classasyn_n_d_array_driver_1a2db8828aac3ad3c3df409291395fcb4d" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>NDFileTemplate</name></member>
+      <member refid="classasyn_n_d_array_driver_1a5523209bde8cdb69b0ea275628422e9f" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>NDFileTempSuffix</name></member>
+      <member refid="classasyn_n_d_array_driver_1a392868002486b6c806c587ef3f73c320" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>NDFileWriteMessage</name></member>
+      <member refid="classasyn_n_d_array_driver_1ae446f2d56cfb91299839a1a3fea72a62" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>NDFileWriteMode</name></member>
+      <member refid="classasyn_n_d_array_driver_1ab5b4722576613c52894c55da7153a05f" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>NDFileWriteStatus</name></member>
+      <member refid="classasyn_n_d_array_driver_1ad109404880a23929fc17dea1f09e0775" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>NDFullFileName</name></member>
+      <member refid="classasyn_n_d_array_driver_1aa13dc824ba27681f894f8319f3f13a8c" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>NDNDimensions</name></member>
+      <member refid="classasyn_n_d_array_driver_1aff0d6045cf18c21959a8c21228549ecd" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>NDNumQueuedArrays</name></member>
+      <member refid="classasyn_n_d_array_driver_1adf264650a61fe86c37dbc7a4e5c1fbd0" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>NDPoolAllocBuffers</name></member>
+      <member refid="classasyn_n_d_array_driver_1af3cacda934695b472269d32ba2d94a86" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>NDPoolEmptyFreeList</name></member>
+      <member refid="classasyn_n_d_array_driver_1a9514efd0d89337677ccb428b8b3ac518" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>NDPoolFreeBuffers</name></member>
+      <member refid="classasyn_n_d_array_driver_1a5ab509aca13c1642449253f6ce6eca2c" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>NDPoolMaxBuffers</name></member>
+      <member refid="classasyn_n_d_array_driver_1a7267d600284240edc0f0abe484dff2ee" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>NDPoolMaxMemory</name></member>
+      <member refid="classasyn_n_d_array_driver_1a2a7b868b8d6c542fff28993e1c977e4b" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>NDPoolUsedMemory</name></member>
+      <member refid="classasyn_n_d_array_driver_1acefc2096d9db2fd102542a957722ceef" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>NDPortNameSelf</name></member>
+      <member refid="classasyn_n_d_array_driver_1acdf9d2f3575481f29544c56c9fe46c5c" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>NDReadFile</name></member>
+      <member refid="classasyn_n_d_array_driver_1a9b5492ae014f21d0843658f19e955dc1" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>NDTimeStamp</name></member>
+      <member refid="classasyn_n_d_array_driver_1a8d713b9cc045417a599c91aacc98b08b" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>NDUniqueId</name></member>
+      <member refid="classasyn_n_d_array_driver_1a5d1ec3e763ea9aef2f3fd576611baeb5" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>NDWriteFile</name></member>
+      <member refid="class_a_d_aravis_1a4614fe8e3d52280915791105533313b4" prot="public" virt="non-virtual"><scope>ADAravis</scope><name>newBufferCallback</name></member>
+      <member refid="classasyn_n_d_array_driver_1a6f5685f9951f6b3b897e85425b59ad69" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>pArrays</name></member>
+      <member refid="classasyn_n_d_array_driver_1a7bed3ca3a144124eb31053eeecc990e9" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>pAttributeList</name></member>
+      <member refid="class_a_d_gen_i_cam_1a7489a9ce1d10c05d82ba6ea31fb842ad" prot="public" virt="virtual"><scope>ADAravis</scope><name>pauseAcquisition</name></member>
+      <member refid="class_a_d_aravis_1a18f4e3ef938a30f8508a116fd2b3d02d" prot="private" virt="non-virtual"><scope>ADAravis</scope><name>payload</name></member>
+      <member refid="classasyn_n_d_array_driver_1ad3969854a37329ef4061cc560e9022dc" prot="public" virt="non-virtual"><scope>ADAravis</scope><name>pNDArrayPool</name></member>
+      <member refid="class_a_d_aravis_1aaf46c9ebd5ebd6ef159230e2650605c4" prot="private" virt="non-virtual"><scope>ADAravis</scope><name>pollingLoop</name></member>
+      <member refid="class_a_d_aravis_1a284a954c884b85d7867cf045630e289a" prot="private" virt="non-virtual"><scope>ADAravis</scope><name>processBuffer</name></member>
+      <member refid="class_a_d_gen_i_cam_1a11a4df0393a7ef4f8d2c57323751f76f" prot="public" virt="virtual"><scope>ADAravis</scope><name>readEnum</name></member>
+      <member refid="classasyn_n_d_array_driver_1a5aeb82d51c34b79b77433e121722a141" prot="public" virt="virtual"><scope>ADAravis</scope><name>readFloat64</name></member>
+      <member refid="classasyn_n_d_array_driver_1acac9d5044d62734723404ef7e53ee4e8" prot="public" virt="virtual"><scope>ADAravis</scope><name>readGenericPointer</name></member>
+      <member refid="classasyn_n_d_array_driver_1a4c0e7e85f9f4a988614a273c035be813" prot="public" virt="virtual"><scope>ADAravis</scope><name>readInt32</name></member>
+      <member refid="classasyn_n_d_array_driver_1a1da351ae597074c829204945f700098b" prot="public" virt="virtual"><scope>ADAravis</scope><name>readNDAttributesFile</name></member>
+      <member refid="class_a_d_gen_i_cam_1ae5402c10191161fb0b345191fc23a6ed" prot="public" virt="virtual"><scope>ADAravis</scope><name>readStatus</name></member>
+      <member refid="class_a_d_aravis_1aa149564669106db7b3456e6a9f05241d" prot="public" virt="virtual"><scope>ADAravis</scope><name>report</name></member>
+      <member refid="class_a_d_gen_i_cam_1a45ada9c170dbbb222903ed829e7ca5f9" prot="public" virt="virtual"><scope>ADAravis</scope><name>resumeAcquisition</name></member>
+      <member refid="class_a_d_aravis_1a812301a52999ccc2d15f6b00407d8e90" prot="public" virt="non-virtual"><scope>ADAravis</scope><name>run</name></member>
+      <member refid="class_a_d_gen_i_cam_1ac910ccb7f16aa7c9873987a87ff26eca" prot="public" virt="virtual"><scope>ADAravis</scope><name>setImageParams</name></member>
+      <member refid="classasyn_n_d_array_driver_1abf87462bc5853f8e5a56db5e93acd956" prot="public" virt="virtual"><scope>ADAravis</scope><name>setIntegerParam</name></member>
+      <member refid="classasyn_n_d_array_driver_1a3732469004adb2cd7eb5d5f047385915" prot="public" virt="virtual"><scope>ADAravis</scope><name>setIntegerParam</name></member>
+      <member refid="class_a_d_driver_1ac05bfd5d3c6bc63910d6fbd4fb909d50" prot="public" virt="virtual"><scope>ADAravis</scope><name>setShutter</name></member>
+      <member refid="class_a_d_aravis_1a406c3466598cee023c85cdc33c400416" prot="public" virt="virtual"><scope>ADAravis</scope><name>startCapture</name></member>
+      <member refid="class_a_d_aravis_1ab8242a3112e1133438eeda81e011831b" prot="public" virt="virtual"><scope>ADAravis</scope><name>stopCapture</name></member>
+      <member refid="class_a_d_aravis_1a5d6f8da43d1fea1af1fbb0aa4b09b380" prot="private" virt="non-virtual"><scope>ADAravis</scope><name>stream</name></member>
+      <member refid="classasyn_n_d_array_driver_1aa52489ae8673348bf596faf63b94e85e" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>threadPriority_</name></member>
+      <member refid="classasyn_n_d_array_driver_1a467b05b088bb8cf97e2fcad07a4a432f" prot="protected" virt="non-virtual"><scope>ADAravis</scope><name>threadStackSize_</name></member>
+      <member refid="classasyn_n_d_array_driver_1a688578d794900c0671da8dfaf771912b" prot="public" virt="non-virtual"><scope>ADAravis</scope><name>updateQueuedArrayCount</name></member>
+      <member refid="class_a_d_gen_i_cam_1a28179f40898b70fdefb5d53487a0c382" prot="public" virt="virtual"><scope>ADAravis</scope><name>writeFloat64</name></member>
+      <member refid="classasyn_n_d_array_driver_1ad95feb77baff701f85641ef5fc3d5c65" prot="public" virt="virtual"><scope>ADAravis</scope><name>writeGenericPointer</name></member>
+      <member refid="class_a_d_aravis_1ab3aace6e7a423f12be0713deb4409bac" prot="public" virt="virtual"><scope>ADAravis</scope><name>writeInt32</name></member>
+      <member refid="class_a_d_gen_i_cam_1aff92509f337d6bce8781e0c885a4053b" prot="public" virt="virtual"><scope>ADAravis</scope><name>writeInt64</name></member>
+      <member refid="classasyn_n_d_array_driver_1a84d981f8995d984035bb9feff727d520" prot="public" virt="virtual"><scope>ADAravis</scope><name>writeOctet</name></member>
+      <member refid="classasyn_n_d_array_driver_1ab392c48715c896b8f58c0456b7889723" prot="public" virt="virtual"><scope>ADAravis</scope><name>~asynNDArrayDriver</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

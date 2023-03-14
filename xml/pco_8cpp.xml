@@ -1,0 +1,1416 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="pco_8cpp" kind="file" language="C++">
+    <compoundname>pco.cpp</compoundname>
+    <includes local="no">stddef.h</includes>
+    <includes local="no">stdlib.h</includes>
+    <includes local="no">math.h</includes>
+    <includes local="no">stdio.h</includes>
+    <includes local="no">errno.h</includes>
+    <includes local="no">string.h</includes>
+    <includes local="no">ctype.h</includes>
+    <includes local="no">fcntl.h</includes>
+    <includes local="no">sys/stat.h</includes>
+    <includes local="no">epicsTime.h</includes>
+    <includes local="no">epicsThread.h</includes>
+    <includes local="no">epicsEvent.h</includes>
+    <includes local="no">epicsTimer.h</includes>
+    <includes local="no">epicsMutex.h</includes>
+    <includes local="no">epicsStdlib.h</includes>
+    <includes local="no">epicsString.h</includes>
+    <includes local="no">epicsStdio.h</includes>
+    <includes local="no">cantProceed.h</includes>
+    <includes local="no">iocsh.h</includes>
+    <includes local="no">asynOctetSyncIO.h</includes>
+    <includes refid="_a_d_driver_8h" local="yes">ADDriver.h</includes>
+    <includes local="yes">grabberInterface.h</includes>
+    <includes local="yes">comportInterface.h</includes>
+    <includes local="yes">logfile.h</includes>
+    <includes local="yes">ccd_exception.h</includes>
+    <includes local="yes">coreco.h</includes>
+    <includes local="yes">stopWatch.h</includes>
+    <includes refid="pco__structures_8h" local="yes">pco_structures.h</includes>
+    <includes local="yes">ADCameralink.h</includes>
+    <includes local="no">epicsExport.h</includes>
+    <includes refid="pco_8h" local="yes">pco.h</includes>
+    <incdepgraph>
+      <node id="10">
+        <label>sys/stat.h</label>
+      </node>
+      <node id="20">
+        <label>iocsh.h</label>
+      </node>
+      <node id="23">
+        <label>epicsTypes.h</label>
+      </node>
+      <node id="27">
+        <label>NDArray.h</label>
+        <link refid="_n_d_array_8h"/>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+      </node>
+      <node id="47">
+        <label>pco.h</label>
+        <link refid="pco_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>cantProceed.h</label>
+      </node>
+      <node id="35">
+        <label>NDAttributeList.h</label>
+        <link refid="_n_d_attribute_list_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+      </node>
+      <node id="43">
+        <label>stopWatch.h</label>
+      </node>
+      <node id="45">
+        <label>ADCameralink.h</label>
+      </node>
+      <node id="3">
+        <label>stdlib.h</label>
+      </node>
+      <node id="15">
+        <label>epicsMutex.h</label>
+      </node>
+      <node id="6">
+        <label>errno.h</label>
+      </node>
+      <node id="9">
+        <label>fcntl.h</label>
+      </node>
+      <node id="34">
+        <label>epicsVersion.h</label>
+      </node>
+      <node id="31">
+        <label>string</label>
+      </node>
+      <node id="12">
+        <label>epicsThread.h</label>
+      </node>
+      <node id="2">
+        <label>stddef.h</label>
+      </node>
+      <node id="46">
+        <label>epicsExport.h</label>
+      </node>
+      <node id="16">
+        <label>epicsStdlib.h</label>
+      </node>
+      <node id="22">
+        <label>ADDriver.h</label>
+        <link refid="_a_d_driver_8h"/>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+      </node>
+      <node id="37">
+        <label>ADCoreVersion.h</label>
+        <link refid="_a_d_core_version_8h"/>
+      </node>
+      <node id="33">
+        <label>ADCoreAPI.h</label>
+        <link refid="_a_d_core_a_p_i_8h"/>
+        <childnode refid="34" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>/home/runner/work/areaDetector/areaDetector/ADPCO/pcoApp/src/pco.cpp</label>
+        <link refid="pco_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="42" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+        <childnode refid="46" relation="include">
+        </childnode>
+        <childnode refid="47" relation="include">
+        </childnode>
+      </node>
+      <node id="38">
+        <label>grabberInterface.h</label>
+      </node>
+      <node id="42">
+        <label>coreco.h</label>
+      </node>
+      <node id="25">
+        <label>asynNDArrayDriver.h</label>
+        <link refid="asyn_n_d_array_driver_8h"/>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>epicsString.h</label>
+      </node>
+      <node id="7">
+        <label>string.h</label>
+      </node>
+      <node id="29">
+        <label>ellLib.h</label>
+      </node>
+      <node id="41">
+        <label>ccd_exception.h</label>
+      </node>
+      <node id="14">
+        <label>epicsTimer.h</label>
+      </node>
+      <node id="30">
+        <label>NDAttribute.h</label>
+        <link refid="_n_d_attribute_8h"/>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+      </node>
+      <node id="32">
+        <label>asynDriver.h</label>
+      </node>
+      <node id="4">
+        <label>math.h</label>
+      </node>
+      <node id="8">
+        <label>ctype.h</label>
+      </node>
+      <node id="36">
+        <label>Codec.h</label>
+        <link refid="_codec_8h"/>
+      </node>
+      <node id="11">
+        <label>epicsTime.h</label>
+      </node>
+      <node id="26">
+        <label>asynPortDriver.h</label>
+      </node>
+      <node id="40">
+        <label>logfile.h</label>
+      </node>
+      <node id="18">
+        <label>epicsStdio.h</label>
+      </node>
+      <node id="28">
+        <label>set</label>
+      </node>
+      <node id="24">
+        <label>epicsMessageQueue.h</label>
+      </node>
+      <node id="5">
+        <label>stdio.h</label>
+      </node>
+      <node id="21">
+        <label>asynOctetSyncIO.h</label>
+      </node>
+      <node id="13">
+        <label>epicsEvent.h</label>
+      </node>
+      <node id="39">
+        <label>comportInterface.h</label>
+      </node>
+      <node id="44">
+        <label>pco_structures.h</label>
+        <link refid="pco__structures_8h"/>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="pco_8cpp_1acef427574920b7e14facf241e4a795e9" prot="public" static="no">
+        <name>_ADIOC_</name>
+        <briefdescription>
+<para><ref refid="pco_8cpp" kindref="compound">pco.cpp</ref> Area Detector Driver for PCO cameras that use Camera Link Inherite ADCameraLink to provide Image Grabbing functions. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>this class addes all the commands/control that is sent over serial port on CL grabber.</para>
+<para><simplesect kind="author"><para>tim madden </para>
+</simplesect>
+<simplesect kind="date"><para>2014 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADPCO/pcoApp/src/pco.cpp" line="40" column="10" bodyfile="/home/runner/work/areaDetector/areaDetector/ADPCO/pcoApp/src/pco.cpp" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="pco_8cpp_1aa93f0eb578d23995850d61f7d61c55c1" prot="public" static="no">
+        <name>FALSE</name>
+        <initializer>false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADPCO/pcoApp/src/pco.cpp" line="61" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADPCO/pcoApp/src/pco.cpp" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="pco_8cpp_1aa8cecfc5c5c054d2875c03e77b7be15d" prot="public" static="no">
+        <name>TRUE</name>
+        <initializer>true</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADPCO/pcoApp/src/pco.cpp" line="62" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADPCO/pcoApp/src/pco.cpp" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="pco_8cpp_1af0e94d13028051cd5339d204bfbb057d" prot="public" static="yes" mutable="no">
+        <type>const char *</type>
+        <definition>const char* driverName</definition>
+        <argsstring></argsstring>
+        <name>driverName</name>
+        <initializer>= &quot;pco&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADPCO/pcoApp/src/pco.cpp" line="68" column="19" bodyfile="/home/runner/work/areaDetector/areaDetector/ADPCO/pcoApp/src/pco.cpp" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="pco_8cpp_1a45cdc97ec9e45671271e987a12d29a97" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int pco_blocking</definition>
+        <argsstring></argsstring>
+        <name>pco_blocking</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+<para>debugging flags </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADPCO/pcoApp/src/pco.cpp" line="73" column="16" bodyfile="/home/runner/work/areaDetector/areaDetector/ADPCO/pcoApp/src/pco.cpp" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="pco_8cpp_1a99f866fb00b80ecbfbb5119ea177aaa5" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int pco_pr_mutex</definition>
+        <argsstring></argsstring>
+        <name>pco_pr_mutex</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADPCO/pcoApp/src/pco.cpp" line="74" column="16" bodyfile="/home/runner/work/areaDetector/areaDetector/ADPCO/pcoApp/src/pco.cpp" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="pco_8cpp_1af6ed329d893bfe4c61a5f967d0b086b3" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int pco_pr_mutex2</definition>
+        <argsstring></argsstring>
+        <name>pco_pr_mutex2</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADPCO/pcoApp/src/pco.cpp" line="75" column="16" bodyfile="/home/runner/work/areaDetector/areaDetector/ADPCO/pcoApp/src/pco.cpp" bodystart="75" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="pco_8cpp_1aa1c790438d1c5e9ec0ee006cadbf5d40" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void pcoTaskC</definition>
+        <argsstring>(void *drvPvt)</argsstring>
+        <name>pcoTaskC</name>
+        <param>
+          <type>void *</type>
+          <declname>drvPvt</declname>
+        </param>
+        <briefdescription>
+<para>runs on thread for seding and receiving serial port message. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>drvPvt</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to pco object, and <ref refid="class_a_d_driver" kindref="compound">ADDriver</ref>. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADPCO/pcoApp/src/pco.cpp" line="83" column="13" bodyfile="/home/runner/work/areaDetector/areaDetector/ADPCO/pcoApp/src/pco.cpp" bodystart="83" bodyend="87"/>
+      </memberdef>
+      <memberdef kind="function" id="pco_8cpp_1a52c33c04c67fe00a6728918f97237059" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void pcoTaskC2</definition>
+        <argsstring>(void *drvPvt)</argsstring>
+        <name>pcoTaskC2</name>
+        <param>
+          <type>void *</type>
+          <declname>drvPvt</declname>
+        </param>
+        <briefdescription>
+<para>deprecated </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADPCO/pcoApp/src/pco.cpp" line="93" column="13" bodyfile="/home/runner/work/areaDetector/areaDetector/ADPCO/pcoApp/src/pco.cpp" bodystart="93" bodyend="97"/>
+      </memberdef>
+      <memberdef kind="function" id="pco_8cpp_1a76af33a73cb052368863bb5ed8de1cb6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int PCOConfig</definition>
+        <argsstring>(const char *portName, const char *serverPort, int maxBuffers, size_t maxMemory, int priority, int stackSize)</argsstring>
+        <name>PCOConfig</name>
+        <param>
+          <type>const char *</type>
+          <declname>portName</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>serverPort</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>maxBuffers</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>maxMemory</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>priority</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>stackSize</declname>
+        </param>
+        <briefdescription>
+<para>Called in IOC shell to start PCO. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>drvSimDetector.h</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>portName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Cstring like &quot;PCOIOC&quot;, the asyn port name. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>serverPort</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>C string to the serial port asyn port driver. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>maxBuffers</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Max num NDArrays to create </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>maxMemory</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>max bytes of <ref refid="class_n_d_array" kindref="compound">NDArray</ref> space to create. 0 for infinite. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>priority</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>thread priority, 50 is typical value. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>stackSize</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Stack size for asynPortDriver, use 0. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADPCO/pcoApp/src/pco.cpp" line="208" column="16" bodyfile="/home/runner/work/areaDetector/areaDetector/ADPCO/pcoApp/src/pco.cpp" bodystart="208" bodyend="217"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stddef.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdlib.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;math.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;errno.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;ctype.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;fcntl.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;sys/stat.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;epicsTime.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;epicsThread.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;epicsEvent.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;epicsTimer.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;epicsMutex.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;epicsStdlib.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;epicsString.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;epicsStdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;epicsMutex.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cantProceed.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iocsh.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;asynOctetSyncIO.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>USEASYNSERIAL</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;asynShellCommands.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_a_d_driver_8h" kindref="compound">ADDriver.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>_ADIOC_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;grabberInterface.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;comportInterface.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;logfile.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;ccd_exception.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;coreco.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;stopWatch.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="pco__structures_8h" kindref="compound">pco_structures.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>USE_SISW</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;siswSerialPort.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>USE_SAP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;cl_com_port2.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;ADCameralink.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>_WIN32</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>FALSE<sp/>false</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TRUE<sp/>true</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;epicsExport.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="pco_8h" kindref="compound">pco.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*driverName<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;pco&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="pco_8cpp_1a45cdc97ec9e45671271e987a12d29a97" kindref="member">pco_blocking</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="pco_8cpp_1a99f866fb00b80ecbfbb5119ea177aaa5" kindref="member">pco_pr_mutex</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="pco_8cpp_1af6ed329d893bfe4c61a5f967d0b086b3" kindref="member">pco_pr_mutex2</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>pcoTaskC(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*drvPvt)<sp/>{</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><ref refid="classpco" kindref="compound">pco</ref><sp/>*pPvt<sp/>=<sp/>(<ref refid="classpco" kindref="compound">pco</ref><sp/>*)drvPvt;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/>pPvt-&gt;<ref refid="classpco_1afadcfbe3531ccdc49ae9d2bfc738ebfd" kindref="member">pcoTask</ref>();</highlight></codeline>
+<codeline lineno="87"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>pcoTaskC2(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*drvPvt)<sp/>{</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><ref refid="classpco" kindref="compound">pco</ref><sp/>*pPvt<sp/>=<sp/>(<ref refid="classpco" kindref="compound">pco</ref><sp/>*)drvPvt;</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/>pPvt-&gt;<ref refid="classpco_1a76fbafa0ef6d7f91f0b18233f5457875" kindref="member">pcoTask2</ref>();</highlight></codeline>
+<codeline lineno="97"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classpco_1afd908e96f640d95eae082bea648718ae" kindref="member">pco::setDebuggingMessage</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>level)<sp/>{<sp/><ref refid="classpco_1aaf5bf587359c1251ceef520fa5f65909" kindref="member">dbg_msg_level</ref><sp/>=<sp/>level;<sp/>}</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal">asynStatus<sp/><ref refid="classpco_1a022b2a07d121c27d01260d4717cad3f2" kindref="member">pco::writeInt32</ref>(asynUser<sp/>*pasynUser,<sp/>epicsInt32<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>=<sp/>pasynUser-&gt;reason;</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/>asynStatus<sp/>status<sp/>=<sp/>asynSuccess;</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>mesx[256];</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*mesx2;</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/>status<sp/>=<sp/>setIntegerParam(</highlight><highlight class="keyword">function</highlight><highlight class="normal">,<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>);</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/>getParamName(</highlight><highlight class="keyword">function</highlight><highlight class="normal">,<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**)&amp;mesx2);</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/>sprintf(mesx,<sp/></highlight><highlight class="stringliteral">&quot;pco::writeInt32,<sp/>param=%s,<sp/>value=%d&quot;</highlight><highlight class="normal">,<sp/>mesx2,<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>);</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/>lf.log(mesx);</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>==<sp/><ref refid="classpco_1ac3d04ef19535348aa36c40ced4b6dd2a" kindref="member">pco_kill_ioc</ref><sp/>&amp;&amp;<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref><sp/>==<sp/>1)<sp/>exit(0);</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><ref refid="classpco_1a8350497fdf28026cafba96645eddf5c3" kindref="member">is_cancel_dump</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>==<sp/><ref refid="classpco_1ae5b06344e305af1250442575a55126c7" kindref="member">pco_cancel_dump</ref>)<sp/><ref refid="classpco_1a8350497fdf28026cafba96645eddf5c3" kindref="member">is_cancel_dump</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>ret<sp/>if<sp/>we<sp/>actulayyl<sp/>updated<sp/>so<sp/>we<sp/>can<sp/>call<sp/>super<sp/>if<sp/>necessary</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><ref refid="classpco_1acdd383c75162aabb46229e1f67ff9331" kindref="member">updateParameters</ref>(pasynUser,<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>,<sp/>0,<sp/><ref refid="classpco_1aa9a85ae693a8c2cffd31c228f5e7b7daa2a6feef57062bcbc6794a0c9cef307e3" kindref="member">pco_paramint</ref>);</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>call<sp/>super<sp/>class<sp/>to<sp/>update<sp/>pawram</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>sizex,<sp/>and<sp/>sizey<sp/>change<sp/>its<sp/>value<sp/>because<sp/>of<sp/>camera<sp/>constrinsts,<sp/>so<sp/>dont</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>call<sp/>super</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((</highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>!=<sp/>ADSizeX)<sp/>&amp;&amp;<sp/>(</highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>!=<sp/>ADSizeY))<sp/>{</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/>ADCameralink::writeInt32(pasynUser,<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>);</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/>callParamCallbacks();</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/>status<sp/>=<sp/>asynSuccess;</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(status);</highlight></codeline>
+<codeline lineno="146"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal">asynStatus<sp/><ref refid="classpco_1a0d198880fcb71d93025059677e77a603" kindref="member">pco::writeFloat64</ref>(asynUser<sp/>*pasynUser,<sp/>epicsFloat64<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>=<sp/>pasynUser-&gt;reason;</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/>asynStatus<sp/>status<sp/>=<sp/>asynSuccess;</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/>status<sp/>=<sp/>setDoubleParam(</highlight><highlight class="keyword">function</highlight><highlight class="normal">,<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>);</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>mesx[256];</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*mesx2;</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"></highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/>getParamName(</highlight><highlight class="keyword">function</highlight><highlight class="normal">,<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**)&amp;mesx2);</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"></highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/>sprintf(mesx,<sp/></highlight><highlight class="stringliteral">&quot;pco::writeFloat64,<sp/>param=%s,<sp/>value=%f&quot;</highlight><highlight class="normal">,<sp/>mesx2,<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>);</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/>lf.log(mesx);</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"></highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>ret<sp/>if<sp/>we<sp/>actulayyl<sp/>updated<sp/>so<sp/>we<sp/>can<sp/>call<sp/>super<sp/>if<sp/>necessary</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><ref refid="classpco_1acdd383c75162aabb46229e1f67ff9331" kindref="member">updateParameters</ref>(pasynUser,<sp/>0,<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>,<sp/><ref refid="classpco_1aa9a85ae693a8c2cffd31c228f5e7b7daa56096e6d2114a548ba80379410be9ecb" kindref="member">pco_paramdoub</ref>);</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"></highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>call<sp/>super<sp/>class<sp/>to<sp/>update<sp/>pawram</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/>ADCameralink::writeFloat64(pasynUser,<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>);</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/>callParamCallbacks();</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"></highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(status);</highlight></codeline>
+<codeline lineno="177"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"></highlight></codeline>
+<codeline lineno="185"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classpco_1a2a094ab14ee3ee4c13b694622115f9e9" kindref="member">pco::report</ref>(FILE<sp/>*fp,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>details)<sp/>{</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/>fprintf(fp,<sp/></highlight><highlight class="stringliteral">&quot;PCO<sp/>detector<sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/>this-&gt;portName);</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(details<sp/>&gt;<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespacemake_adl_1a3c7364e67c0570681ac29158f738bff6" kindref="member">nx</ref>,<sp/>ny;</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/>getIntegerParam(ADSizeX,<sp/>&amp;<ref refid="namespacemake_adl_1a3c7364e67c0570681ac29158f738bff6" kindref="member">nx</ref>);</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/>getIntegerParam(ADSizeY,<sp/>&amp;ny);</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/>fprintf(fp,<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/>NX,<sp/>NY:<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>%d<sp/><sp/>%d\n&quot;</highlight><highlight class="normal">,<sp/><ref refid="namespacemake_adl_1a3c7364e67c0570681ac29158f738bff6" kindref="member">nx</ref>,<sp/>ny);</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Invoke<sp/>the<sp/>base<sp/>class<sp/>method<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><ref refid="classasyn_n_d_array_driver_1ac3f2d73a05eb54357ec3f052e1b000f2" kindref="member">ADDriver::report</ref>(fp,<sp/>details);</highlight></codeline>
+<codeline lineno="195"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"></highlight></codeline>
+<codeline lineno="208"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="pco_8cpp_1a76af33a73cb052368863bb5ed8de1cb6" kindref="member">PCOConfig</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*portName,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*serverPort,</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>maxBuffers,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>maxMemory,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>priority,</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>stackSize)<sp/>{</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>maxmemBytes;</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"></highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/>maxmemBytes<sp/>=<sp/>1024<sp/>*<sp/>1024<sp/>*<sp/>maxMemory;</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"></highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classpco" kindref="compound">pco</ref>(portName,<sp/>serverPort,<sp/>maxBuffers,<sp/>maxmemBytes,<sp/>priority,<sp/>stackSize);</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(asynSuccess);</highlight></codeline>
+<codeline lineno="217"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"></highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><ref refid="classpco_1a0af42b4d9eb451468fceace66a806589" kindref="member">pco::pco</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*portName,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*serverPort,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>maxBuffers,</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>maxMemory,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>priority,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>stackSize)</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"></highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/>ADCameralink(portName,<sp/>serverPort,<sp/><ref refid="pco_8h_1a39884853d4945bbfe156dc7e7dd2a0bb" kindref="member">NUM_pco_PARAMS</ref>,<sp/>maxBuffers,<sp/>maxMemory,</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>priority,<sp/>stackSize),</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>time1(),</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>time2(),</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>grab_delay(),</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>image_timer()<sp/>{</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>status;</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"></highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>mesg[256];</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"></highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>err;</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/>lf.log(</highlight><highlight class="stringliteral">&quot;PCO<sp/>construcitng&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"></highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>true<sp/>to<sp/>stop<sp/>dimax<sp/>mem<sp/>dump...</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/>is_cancel_dump<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"></highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/>sprintf(mesg,<sp/></highlight><highlight class="stringliteral">&quot;PCO<sp/>Compile<sp/>date<sp/>%s,<sp/>Time<sp/>%s&quot;</highlight><highlight class="normal">,<sp/>__DATE__,<sp/>__TIME__);</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><sp/><sp/>lf.log(mesg);</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"></highlight></codeline>
+<codeline lineno="264"><highlight class="normal"><sp/><sp/>strcpy(this-&gt;myServerPort,<sp/>serverPort);</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"></highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>enough<sp/>for<sp/>edge<sp/>dimax<sp/>and<sp/>thensome</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="267"><highlight class="normal"><sp/><sp/>temp_image<sp/>=<sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/>*)malloc(2560<sp/>*<sp/>2200<sp/>*<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">short</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="268"><highlight class="normal"></highlight></codeline>
+<codeline lineno="269"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;pco_dimax_nimgs_fudge&quot;</highlight><highlight class="normal">,<sp/>asynParamInt32,<sp/>&amp;pco_dimax_nimgs_fudge);</highlight></codeline>
+<codeline lineno="270"><highlight class="normal"></highlight></codeline>
+<codeline lineno="271"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;pco_conv_12to16&quot;</highlight><highlight class="normal">,<sp/>asynParamInt32,<sp/>&amp;pco_conv_12to16);</highlight></codeline>
+<codeline lineno="272"><highlight class="normal"></highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;pco_rollshut_mcfname&quot;</highlight><highlight class="normal">,<sp/>asynParamOctet,<sp/>&amp;pco_rollshut_mcfname);</highlight></codeline>
+<codeline lineno="274"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;pco_globshut_mcfname&quot;</highlight><highlight class="normal">,<sp/>asynParamOctet,<sp/>&amp;pco_globshut_mcfname);</highlight></codeline>
+<codeline lineno="275"><highlight class="normal"></highlight></codeline>
+<codeline lineno="276"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;pco_global_shutter&quot;</highlight><highlight class="normal">,<sp/>asynParamInt32,<sp/>&amp;pco_global_shutter);</highlight></codeline>
+<codeline lineno="277"><highlight class="normal"></highlight></codeline>
+<codeline lineno="278"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;pco_disable_descramble&quot;</highlight><highlight class="normal">,<sp/>asynParamInt32,</highlight></codeline>
+<codeline lineno="279"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;pco_disable_descramble);</highlight></codeline>
+<codeline lineno="280"><highlight class="normal"></highlight></codeline>
+<codeline lineno="281"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;pco_favor_dlytime&quot;</highlight><highlight class="normal">,<sp/>asynParamInt32,<sp/>&amp;pco_favor_dlytime);</highlight></codeline>
+<codeline lineno="282"><highlight class="normal"></highlight></codeline>
+<codeline lineno="283"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;pco_ready2acquire&quot;</highlight><highlight class="normal">,<sp/>asynParamInt32,<sp/>&amp;pco_ready2acquire);</highlight></codeline>
+<codeline lineno="284"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;pco_grab_waittime&quot;</highlight><highlight class="normal">,<sp/>asynParamFloat64,<sp/>&amp;pco_grab_waittime);</highlight></codeline>
+<codeline lineno="285"><highlight class="normal"></highlight></codeline>
+<codeline lineno="286"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;pco_dbg_serwrite&quot;</highlight><highlight class="normal">,<sp/>asynParamInt32,<sp/>&amp;pco_dbg_serwrite);</highlight></codeline>
+<codeline lineno="287"><highlight class="normal"></highlight></codeline>
+<codeline lineno="288"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;pco_dbg_serread&quot;</highlight><highlight class="normal">,<sp/>asynParamInt32,<sp/>&amp;pco_dbg_serread);</highlight></codeline>
+<codeline lineno="289"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;pco_dbg_serstr&quot;</highlight><highlight class="normal">,<sp/>asynParamOctet,<sp/>&amp;pco_dbg_serstr);</highlight></codeline>
+<codeline lineno="290"><highlight class="normal"></highlight></codeline>
+<codeline lineno="291"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;pco_do_camcontrol&quot;</highlight><highlight class="normal">,<sp/>asynParamInt32,<sp/>&amp;pco_do_camcontrol);</highlight></codeline>
+<codeline lineno="292"><highlight class="normal"></highlight></codeline>
+<codeline lineno="293"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;pco_dbg_serprint&quot;</highlight><highlight class="normal">,<sp/>asynParamInt32,<sp/>&amp;pco_dbg_serprint);</highlight></codeline>
+<codeline lineno="294"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;pco_cancel_dump&quot;</highlight><highlight class="normal">,<sp/>asynParamInt32,<sp/>&amp;pco_cancel_dump);</highlight></codeline>
+<codeline lineno="295"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>kB/sec</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="296"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;pco_dump_maxdatarate&quot;</highlight><highlight class="normal">,<sp/>asynParamInt32,<sp/>&amp;pco_dump_maxdatarate);</highlight></codeline>
+<codeline lineno="297"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;pco_frame_rate&quot;</highlight><highlight class="normal">,<sp/>asynParamFloat64,<sp/>&amp;pco_frame_rate);</highlight></codeline>
+<codeline lineno="298"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;pco_reconfig_grabber&quot;</highlight><highlight class="normal">,<sp/>asynParamInt32,<sp/>&amp;pco_reconfig_grabber);</highlight></codeline>
+<codeline lineno="299"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;pco_check_time&quot;</highlight><highlight class="normal">,<sp/>asynParamInt32,<sp/>&amp;pco_check_time);</highlight></codeline>
+<codeline lineno="300"><highlight class="normal"></highlight></codeline>
+<codeline lineno="301"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;pco_play_stop&quot;</highlight><highlight class="normal">,<sp/>asynParamInt32,<sp/>&amp;pco_play_stop);</highlight></codeline>
+<codeline lineno="302"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;pco_play_slow&quot;</highlight><highlight class="normal">,<sp/>asynParamInt32,<sp/>&amp;pco_play_slow);</highlight></codeline>
+<codeline lineno="303"><highlight class="normal"></highlight></codeline>
+<codeline lineno="304"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;pco_is_frame_rate_mode&quot;</highlight><highlight class="normal">,<sp/>asynParamInt32,</highlight></codeline>
+<codeline lineno="305"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;pco_is_frame_rate_mode);</highlight></codeline>
+<codeline lineno="306"><highlight class="normal"></highlight></codeline>
+<codeline lineno="307"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;pco_cdi_mode&quot;</highlight><highlight class="normal">,<sp/>asynParamInt32,<sp/>&amp;pco_cdi_mode);</highlight></codeline>
+<codeline lineno="308"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;pco_dnsu_mode&quot;</highlight><highlight class="normal">,<sp/>asynParamInt32,<sp/>&amp;pco_dnsu_mode);</highlight></codeline>
+<codeline lineno="309"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;pco_dnsu_init_mode&quot;</highlight><highlight class="normal">,<sp/>asynParamInt32,<sp/>&amp;pco_dnsu_init_mode);</highlight></codeline>
+<codeline lineno="310"><highlight class="normal"></highlight></codeline>
+<codeline lineno="311"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;pco_set_frame_rate&quot;</highlight><highlight class="normal">,<sp/>asynParamFloat64,<sp/>&amp;pco_set_frame_rate);</highlight></codeline>
+<codeline lineno="312"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;pco_delay_time&quot;</highlight><highlight class="normal">,<sp/>asynParamFloat64,<sp/>&amp;pco_delay_time);</highlight></codeline>
+<codeline lineno="313"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>set<sp/>callback<sp/>to<sp/>do<sp/>nothing<sp/>default....</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="314"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>putPtrParam(serial_callback,(const</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="315"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>void*);genCamController::defaultCallback);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="316"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;pco_baudrate&quot;</highlight><highlight class="normal">,<sp/>asynParamInt32,<sp/>&amp;pco_baudrate);</highlight></codeline>
+<codeline lineno="317"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;pco_trigger_mode&quot;</highlight><highlight class="normal">,<sp/>asynParamInt32,<sp/>&amp;pco_trigger_mode);</highlight></codeline>
+<codeline lineno="318"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;pco_force_check&quot;</highlight><highlight class="normal">,<sp/>asynParamInt32,<sp/>&amp;pco_force_check);</highlight></codeline>
+<codeline lineno="319"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;pco_camlink_pixfreq&quot;</highlight><highlight class="normal">,<sp/>asynParamInt32,<sp/>&amp;pco_camlink_pixfreq);</highlight></codeline>
+<codeline lineno="320"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;pco_cclines&quot;</highlight><highlight class="normal">,<sp/>asynParamInt32,<sp/>&amp;pco_cclines);</highlight></codeline>
+<codeline lineno="321"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;pco_camlink_pixperclk&quot;</highlight><highlight class="normal">,<sp/>asynParamInt32,<sp/>&amp;pco_camlink_pixperclk);</highlight></codeline>
+<codeline lineno="322"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;pco_camlink_cont&quot;</highlight><highlight class="normal">,<sp/>asynParamInt32,<sp/>&amp;pco_camlink_cont);</highlight></codeline>
+<codeline lineno="323"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;pco_reset_memory&quot;</highlight><highlight class="normal">,<sp/>asynParamInt32,<sp/>&amp;pco_reset_memory);</highlight></codeline>
+<codeline lineno="324"><highlight class="normal"></highlight></codeline>
+<codeline lineno="325"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;pco_force_trigger&quot;</highlight><highlight class="normal">,<sp/>asynParamInt32,<sp/>&amp;pco_force_trigger);</highlight></codeline>
+<codeline lineno="326"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;pco_dump_camera_memory&quot;</highlight><highlight class="normal">,<sp/>asynParamInt32,</highlight></codeline>
+<codeline lineno="327"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;pco_dump_camera_memory);</highlight></codeline>
+<codeline lineno="328"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;pco_imgs2dump&quot;</highlight><highlight class="normal">,<sp/>asynParamInt32,<sp/>&amp;pco_imgs2dump);</highlight></codeline>
+<codeline lineno="329"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;pco_memreq_cnt&quot;</highlight><highlight class="normal">,<sp/>asynParamInt32,<sp/>&amp;pco_memreq_cnt);</highlight></codeline>
+<codeline lineno="330"><highlight class="normal"></highlight></codeline>
+<codeline lineno="331"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;pco_live_view&quot;</highlight><highlight class="normal">,<sp/>asynParamInt32,<sp/>&amp;pco_live_view);</highlight></codeline>
+<codeline lineno="332"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;pco_dump_counter&quot;</highlight><highlight class="normal">,<sp/>asynParamInt32,<sp/>&amp;pco_dump_counter);</highlight></codeline>
+<codeline lineno="333"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;pco_dump_waitms&quot;</highlight><highlight class="normal">,<sp/>asynParamInt32,<sp/>&amp;pco_dump_waitms);</highlight></codeline>
+<codeline lineno="334"><highlight class="normal"></highlight></codeline>
+<codeline lineno="335"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;pco_health_error&quot;</highlight><highlight class="normal">,<sp/>asynParamInt32,<sp/>&amp;pco_health_error);</highlight></codeline>
+<codeline lineno="336"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;pco_health_warning&quot;</highlight><highlight class="normal">,<sp/>asynParamInt32,<sp/>&amp;pco_health_warning);</highlight></codeline>
+<codeline lineno="337"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;pco_health_status&quot;</highlight><highlight class="normal">,<sp/>asynParamInt32,<sp/>&amp;pco_health_status);</highlight></codeline>
+<codeline lineno="338"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;pco_check_time2&quot;</highlight><highlight class="normal">,<sp/>asynParamInt32,<sp/>&amp;pco_check_time2);</highlight></codeline>
+<codeline lineno="339"><highlight class="normal"></highlight></codeline>
+<codeline lineno="340"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;pco_reset_default_settings&quot;</highlight><highlight class="normal">,<sp/>asynParamInt32,</highlight></codeline>
+<codeline lineno="341"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;pco_reset_default_settings);</highlight></codeline>
+<codeline lineno="342"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;pco_init_selftest&quot;</highlight><highlight class="normal">,<sp/>asynParamInt32,<sp/>&amp;pco_init_selftest);</highlight></codeline>
+<codeline lineno="343"><highlight class="normal"></highlight></codeline>
+<codeline lineno="344"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;pco_sensor_format&quot;</highlight><highlight class="normal">,<sp/>asynParamInt32,<sp/>&amp;pco_sensor_format);</highlight></codeline>
+<codeline lineno="345"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;pco_pixelrate&quot;</highlight><highlight class="normal">,<sp/>asynParamInt32,<sp/>&amp;pco_pixelrate);</highlight></codeline>
+<codeline lineno="346"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;pco_doub_img_mode&quot;</highlight><highlight class="normal">,<sp/>asynParamInt32,<sp/>&amp;pco_doub_img_mode);</highlight></codeline>
+<codeline lineno="347"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;pco_adc_mode&quot;</highlight><highlight class="normal">,<sp/>asynParamInt32,<sp/>&amp;pco_adc_mode);</highlight></codeline>
+<codeline lineno="348"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;pco_temp_setpt&quot;</highlight><highlight class="normal">,<sp/>asynParamInt32,<sp/>&amp;pco_temp_setpt);</highlight></codeline>
+<codeline lineno="349"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;pco_offset_mode&quot;</highlight><highlight class="normal">,<sp/>asynParamInt32,<sp/>&amp;pco_offset_mode);</highlight></codeline>
+<codeline lineno="350"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;pco_noise_filt_mode&quot;</highlight><highlight class="normal">,<sp/>asynParamInt32,<sp/>&amp;pco_noise_filt_mode);</highlight></codeline>
+<codeline lineno="351"><highlight class="normal"></highlight></codeline>
+<codeline lineno="352"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;pco_exp_timebase&quot;</highlight><highlight class="normal">,<sp/>asynParamInt32,<sp/>&amp;pco_exp_timebase);</highlight></codeline>
+<codeline lineno="353"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;pco_dly_timebase&quot;</highlight><highlight class="normal">,<sp/>asynParamInt32,<sp/>&amp;pco_dly_timebase);</highlight></codeline>
+<codeline lineno="354"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;pco_fps_mode&quot;</highlight><highlight class="normal">,<sp/>asynParamInt32,<sp/>&amp;pco_fps_mode);</highlight></codeline>
+<codeline lineno="355"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;pco_busy&quot;</highlight><highlight class="normal">,<sp/>asynParamInt32,<sp/>&amp;pco_busy);</highlight></codeline>
+<codeline lineno="356"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;pco_exp_trig_stat&quot;</highlight><highlight class="normal">,<sp/>asynParamInt32,<sp/>&amp;pco_exp_trig_stat);</highlight></codeline>
+<codeline lineno="357"><highlight class="normal"></highlight></codeline>
+<codeline lineno="358"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;pco_camera_tot_ram_size&quot;</highlight><highlight class="normal">,<sp/>asynParamInt32,</highlight></codeline>
+<codeline lineno="359"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;pco_camera_tot_ram_size);</highlight></codeline>
+<codeline lineno="360"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;pco_camera_ram_npages&quot;</highlight><highlight class="normal">,<sp/>asynParamInt32,<sp/>&amp;pco_camera_ram_npages);</highlight></codeline>
+<codeline lineno="361"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;pco_camera_ram_page_size&quot;</highlight><highlight class="normal">,<sp/>asynParamInt32,</highlight></codeline>
+<codeline lineno="362"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;pco_camera_ram_page_size);</highlight></codeline>
+<codeline lineno="363"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;pco_camera_seg_size0&quot;</highlight><highlight class="normal">,<sp/>asynParamInt32,<sp/>&amp;pco_camera_seg_size0);</highlight></codeline>
+<codeline lineno="364"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;pco_camera_seg_size1&quot;</highlight><highlight class="normal">,<sp/>asynParamInt32,<sp/>&amp;pco_camera_seg_size1);</highlight></codeline>
+<codeline lineno="365"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;pco_camera_seg_size2&quot;</highlight><highlight class="normal">,<sp/>asynParamInt32,<sp/>&amp;pco_camera_seg_size2);</highlight></codeline>
+<codeline lineno="366"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;pco_camera_seg_size3&quot;</highlight><highlight class="normal">,<sp/>asynParamInt32,<sp/>&amp;pco_camera_seg_size3);</highlight></codeline>
+<codeline lineno="367"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;pco_clear_ram_seg&quot;</highlight><highlight class="normal">,<sp/>asynParamInt32,<sp/>&amp;pco_clear_ram_seg);</highlight></codeline>
+<codeline lineno="368"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;pco_active_seg&quot;</highlight><highlight class="normal">,<sp/>asynParamInt32,<sp/>&amp;pco_active_seg);</highlight></codeline>
+<codeline lineno="369"><highlight class="normal"></highlight></codeline>
+<codeline lineno="370"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;pco_storage_mode&quot;</highlight><highlight class="normal">,<sp/>asynParamInt32,<sp/>&amp;pco_storage_mode);</highlight></codeline>
+<codeline lineno="371"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;pco_rec_submode&quot;</highlight><highlight class="normal">,<sp/>asynParamInt32,<sp/>&amp;pco_rec_submode);</highlight></codeline>
+<codeline lineno="372"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;pco_rec_status&quot;</highlight><highlight class="normal">,<sp/>asynParamInt32,<sp/>&amp;pco_rec_status);</highlight></codeline>
+<codeline lineno="373"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;pco_acq_mode&quot;</highlight><highlight class="normal">,<sp/>asynParamInt32,<sp/>&amp;pco_acq_mode);</highlight></codeline>
+<codeline lineno="374"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;pco_acqen_sig_stat&quot;</highlight><highlight class="normal">,<sp/>asynParamInt32,<sp/>&amp;pco_acqen_sig_stat);</highlight></codeline>
+<codeline lineno="375"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;pco_timestamp_mode&quot;</highlight><highlight class="normal">,<sp/>asynParamInt32,<sp/>&amp;pco_timestamp_mode);</highlight></codeline>
+<codeline lineno="376"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;pco_arm_camera&quot;</highlight><highlight class="normal">,<sp/>asynParamInt32,<sp/>&amp;pco_arm_camera);</highlight></codeline>
+<codeline lineno="377"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;pco_rec_stop_event_mode&quot;</highlight><highlight class="normal">,<sp/>asynParamInt32,</highlight></codeline>
+<codeline lineno="378"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;pco_rec_stop_event_mode);</highlight></codeline>
+<codeline lineno="379"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;pco_rec_stop_event_nimgs&quot;</highlight><highlight class="normal">,<sp/>asynParamInt32,</highlight></codeline>
+<codeline lineno="380"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;pco_rec_stop_event_nimgs);</highlight></codeline>
+<codeline lineno="381"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;pco_stop_record&quot;</highlight><highlight class="normal">,<sp/>asynParamInt32,<sp/>&amp;pco_stop_record);</highlight></codeline>
+<codeline lineno="382"><highlight class="normal"></highlight></codeline>
+<codeline lineno="383"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;pco_read_which_seg&quot;</highlight><highlight class="normal">,<sp/>asynParamInt32,<sp/>&amp;pco_read_which_seg);</highlight></codeline>
+<codeline lineno="384"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;pco_read_st_img&quot;</highlight><highlight class="normal">,<sp/>asynParamInt32,<sp/>&amp;pco_read_st_img);</highlight></codeline>
+<codeline lineno="385"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;pco_read_end_img&quot;</highlight><highlight class="normal">,<sp/>asynParamInt32,<sp/>&amp;pco_read_end_img);</highlight></codeline>
+<codeline lineno="386"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;pco_do_read_imgs&quot;</highlight><highlight class="normal">,<sp/>asynParamInt32,<sp/>&amp;pco_do_read_imgs);</highlight></codeline>
+<codeline lineno="387"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;pco_req_img&quot;</highlight><highlight class="normal">,<sp/>asynParamInt32,<sp/>&amp;pco_req_img);</highlight></codeline>
+<codeline lineno="388"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;pco_rpt_img&quot;</highlight><highlight class="normal">,<sp/>asynParamInt32,<sp/>&amp;pco_rpt_img);</highlight></codeline>
+<codeline lineno="389"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;pco_cancel_img&quot;</highlight><highlight class="normal">,<sp/>asynParamInt32,<sp/>&amp;pco_cancel_img);</highlight></codeline>
+<codeline lineno="390"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;pco_bit_alignment&quot;</highlight><highlight class="normal">,<sp/>asynParamInt32,<sp/>&amp;pco_bit_alignment);</highlight></codeline>
+<codeline lineno="391"><highlight class="normal"></highlight></codeline>
+<codeline lineno="392"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;pco_num_imgs_seg0&quot;</highlight><highlight class="normal">,<sp/>asynParamInt32,<sp/>&amp;pco_num_imgs_seg0);</highlight></codeline>
+<codeline lineno="393"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;pco_max_imgs_seg0&quot;</highlight><highlight class="normal">,<sp/>asynParamInt32,<sp/>&amp;pco_max_imgs_seg0);</highlight></codeline>
+<codeline lineno="394"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;pco_num_imgs_seg1&quot;</highlight><highlight class="normal">,<sp/>asynParamInt32,<sp/>&amp;pco_num_imgs_seg1);</highlight></codeline>
+<codeline lineno="395"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;pco_max_imgs_seg1&quot;</highlight><highlight class="normal">,<sp/>asynParamInt32,<sp/>&amp;pco_max_imgs_seg1);</highlight></codeline>
+<codeline lineno="396"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;pco_num_imgs_seg2&quot;</highlight><highlight class="normal">,<sp/>asynParamInt32,<sp/>&amp;pco_num_imgs_seg2);</highlight></codeline>
+<codeline lineno="397"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;pco_max_imgs_seg2&quot;</highlight><highlight class="normal">,<sp/>asynParamInt32,<sp/>&amp;pco_max_imgs_seg2);</highlight></codeline>
+<codeline lineno="398"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;pco_num_imgs_seg3&quot;</highlight><highlight class="normal">,<sp/>asynParamInt32,<sp/>&amp;pco_num_imgs_seg3);</highlight></codeline>
+<codeline lineno="399"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;pco_max_imgs_seg3&quot;</highlight><highlight class="normal">,<sp/>asynParamInt32,<sp/>&amp;pco_max_imgs_seg3);</highlight></codeline>
+<codeline lineno="400"><highlight class="normal"></highlight></codeline>
+<codeline lineno="401"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;pco_ser_waitms&quot;</highlight><highlight class="normal">,<sp/>asynParamInt32,<sp/>&amp;pco_ser_waitms);</highlight></codeline>
+<codeline lineno="402"><highlight class="normal"></highlight></codeline>
+<codeline lineno="403"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;pco_hotpix_corr&quot;</highlight><highlight class="normal">,<sp/>asynParamInt32,<sp/>&amp;pco_hotpix_corr);</highlight></codeline>
+<codeline lineno="404"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;pco_1612_lookup&quot;</highlight><highlight class="normal">,<sp/>asynParamInt32,<sp/>&amp;pco_1612_lookup);</highlight></codeline>
+<codeline lineno="405"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;pco_edge_fastscan&quot;</highlight><highlight class="normal">,<sp/>asynParamInt32,<sp/>&amp;pco_edge_fastscan);</highlight></codeline>
+<codeline lineno="406"><highlight class="normal"></highlight></codeline>
+<codeline lineno="409"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;pco_is_running&quot;</highlight><highlight class="normal">,<sp/>asynParamInt32,<sp/>&amp;pco_is_running);</highlight></codeline>
+<codeline lineno="410"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>putPtrParam(log_file_ptr,<sp/>(void*);&amp;lf);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="411"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;pco_is_log&quot;</highlight><highlight class="normal">,<sp/>asynParamInt32,<sp/>&amp;pco_is_log);</highlight></codeline>
+<codeline lineno="412"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;pco_run_counter&quot;</highlight><highlight class="normal">,<sp/>asynParamInt32,<sp/>&amp;pco_run_counter);</highlight></codeline>
+<codeline lineno="413"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;w_sleep_ms&quot;</highlight><highlight class="normal">,<sp/>asynParamInt32,<sp/>&amp;pco_sleep_ms);</highlight></codeline>
+<codeline lineno="414"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;w_is_sleep&quot;</highlight><highlight class="normal">,<sp/>asynParamInt32,<sp/>&amp;pco_is_sleep);</highlight></codeline>
+<codeline lineno="415"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>putPtrParam(coreco_control_ptr,0);//<sp/>need<sp/>to<sp/>set<sp/>this<sp/>up<sp/>leter...</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="416"><highlight class="normal"></highlight></codeline>
+<codeline lineno="417"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;pco_comport_number&quot;</highlight><highlight class="normal">,<sp/>asynParamInt32,<sp/>&amp;pco_comport_number);</highlight></codeline>
+<codeline lineno="418"><highlight class="normal"></highlight></codeline>
+<codeline lineno="419"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;com_port_name&quot;</highlight><highlight class="normal">,<sp/>asynParamOctet,<sp/>&amp;com_port_name);</highlight></codeline>
+<codeline lineno="420"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;w_open_com&quot;</highlight><highlight class="normal">,<sp/>asynParamInt32,<sp/>&amp;open_com);</highlight></codeline>
+<codeline lineno="421"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;w_close_com&quot;</highlight><highlight class="normal">,<sp/>asynParamInt32,<sp/>&amp;close_com);</highlight></codeline>
+<codeline lineno="422"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;w_is_com_open&quot;</highlight><highlight class="normal">,<sp/>asynParamInt32,<sp/>&amp;is_com_open);</highlight></codeline>
+<codeline lineno="423"><highlight class="normal"></highlight></codeline>
+<codeline lineno="424"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;pco_setallparams&quot;</highlight><highlight class="normal">,<sp/>asynParamInt32,<sp/>&amp;pco_setallparams);</highlight></codeline>
+<codeline lineno="425"><highlight class="normal"></highlight></codeline>
+<codeline lineno="426"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;pco_descramble&quot;</highlight><highlight class="normal">,<sp/>asynParamInt32,<sp/>&amp;pco_descramble);</highlight></codeline>
+<codeline lineno="427"><highlight class="normal"></highlight></codeline>
+<codeline lineno="428"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;pco_which_camera&quot;</highlight><highlight class="normal">,<sp/>asynParamInt32,<sp/>&amp;pco_which_camera);</highlight></codeline>
+<codeline lineno="429"><highlight class="normal"></highlight></codeline>
+<codeline lineno="430"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;pco_array_counter&quot;</highlight><highlight class="normal">,<sp/>asynParamInt32,<sp/>&amp;pco_array_counter);</highlight></codeline>
+<codeline lineno="431"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;pco_test_pixels&quot;</highlight><highlight class="normal">,<sp/>asynParamInt32,<sp/>&amp;pco_test_pixels);</highlight></codeline>
+<codeline lineno="432"><highlight class="normal"></highlight></codeline>
+<codeline lineno="433"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;pco_image_rate&quot;</highlight><highlight class="normal">,<sp/>asynParamFloat64,<sp/>&amp;pco_image_rate);</highlight></codeline>
+<codeline lineno="434"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;pco_com_err_max&quot;</highlight><highlight class="normal">,<sp/>asynParamInt32,<sp/>&amp;pco_com_err_max);</highlight></codeline>
+<codeline lineno="435"><highlight class="normal"></highlight></codeline>
+<codeline lineno="436"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;pco_kill_ioc&quot;</highlight><highlight class="normal">,<sp/>asynParamInt32,<sp/>&amp;pco_kill_ioc);</highlight></codeline>
+<codeline lineno="437"><highlight class="normal"></highlight></codeline>
+<codeline lineno="438"><highlight class="normal"><sp/><sp/>createParam(</highlight><highlight class="stringliteral">&quot;pco_double_image_error&quot;</highlight><highlight class="normal">,<sp/>asynParamInt32,</highlight></codeline>
+<codeline lineno="439"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;pco_double_image_error);</highlight></codeline>
+<codeline lineno="440"><highlight class="normal"></highlight></codeline>
+<codeline lineno="446"><highlight class="normal"></highlight></codeline>
+<codeline lineno="447"><highlight class="normal"><sp/><sp/>setStringParam(pco_globshut_mcfname,<sp/></highlight><highlight class="stringliteral">&quot;D:/corecofiles/edgeGlobShutter.mcf&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="448"><highlight class="normal"></highlight></codeline>
+<codeline lineno="449"><highlight class="normal"><sp/><sp/>setStringParam(pco_rollshut_mcfname,<sp/></highlight><highlight class="stringliteral">&quot;D:/corecofiles/timmaddenedge.mcf&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="450"><highlight class="normal"></highlight></codeline>
+<codeline lineno="451"><highlight class="normal"><sp/><sp/>setIntegerParam(pco_dimax_nimgs_fudge,<sp/>1);</highlight></codeline>
+<codeline lineno="452"><highlight class="normal"></highlight></codeline>
+<codeline lineno="453"><highlight class="normal"><sp/><sp/>setIntegerParam(pco_conv_12to16,<sp/>0);</highlight></codeline>
+<codeline lineno="454"><highlight class="normal"></highlight></codeline>
+<codeline lineno="455"><highlight class="normal"><sp/><sp/>setIntegerParam(pco_global_shutter,<sp/>0);</highlight></codeline>
+<codeline lineno="456"><highlight class="normal"></highlight></codeline>
+<codeline lineno="457"><highlight class="normal"><sp/><sp/>setIntegerParam(pco_disable_descramble,<sp/>0);</highlight></codeline>
+<codeline lineno="458"><highlight class="normal"><sp/><sp/>setIntegerParam(pco_kill_ioc,<sp/>0);</highlight></codeline>
+<codeline lineno="459"><highlight class="normal"></highlight></codeline>
+<codeline lineno="460"><highlight class="normal"><sp/><sp/>setIntegerParam(pco_com_err_max,<sp/>2);</highlight></codeline>
+<codeline lineno="461"><highlight class="normal"></highlight></codeline>
+<codeline lineno="462"><highlight class="normal"><sp/><sp/>setDoubleParam(asynParamFloat64,<sp/>0.0);</highlight></codeline>
+<codeline lineno="463"><highlight class="normal"></highlight></codeline>
+<codeline lineno="464"><highlight class="normal"><sp/><sp/>setIntegerParam(pco_test_pixels,<sp/>0);</highlight></codeline>
+<codeline lineno="465"><highlight class="normal"></highlight></codeline>
+<codeline lineno="466"><highlight class="normal"><sp/><sp/>setIntegerParam(pco_test_pixels,<sp/>0);</highlight></codeline>
+<codeline lineno="467"><highlight class="normal"><sp/><sp/>setIntegerParam(pco_array_counter,<sp/>0);</highlight></codeline>
+<codeline lineno="468"><highlight class="normal"></highlight></codeline>
+<codeline lineno="469"><highlight class="normal"><sp/><sp/>setIntegerParam(pco_setallparams,<sp/>0);</highlight></codeline>
+<codeline lineno="470"><highlight class="normal"></highlight></codeline>
+<codeline lineno="471"><highlight class="normal"><sp/><sp/>setIntegerParam(pco_favor_dlytime,<sp/>0);</highlight></codeline>
+<codeline lineno="472"><highlight class="normal"></highlight></codeline>
+<codeline lineno="473"><highlight class="normal"><sp/><sp/>setIntegerParam(pco_ready2acquire,<sp/>0);</highlight></codeline>
+<codeline lineno="474"><highlight class="normal"><sp/><sp/>setDoubleParam(pco_grab_waittime,<sp/>5.0);</highlight></codeline>
+<codeline lineno="475"><highlight class="normal"></highlight></codeline>
+<codeline lineno="476"><highlight class="normal"><sp/><sp/>setIntegerParam(pco_dbg_serwrite,<sp/>0);</highlight></codeline>
+<codeline lineno="477"><highlight class="normal"></highlight></codeline>
+<codeline lineno="478"><highlight class="normal"><sp/><sp/>setIntegerParam(pco_dbg_serread,<sp/>0);</highlight></codeline>
+<codeline lineno="479"><highlight class="normal"><sp/><sp/>setStringParam(pco_dbg_serstr,<sp/></highlight><highlight class="stringliteral">&quot;00&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="480"><highlight class="normal"></highlight></codeline>
+<codeline lineno="481"><highlight class="normal"><sp/><sp/>setIntegerParam(pco_do_camcontrol,<sp/>1);</highlight></codeline>
+<codeline lineno="482"><highlight class="normal"></highlight></codeline>
+<codeline lineno="483"><highlight class="normal"><sp/><sp/>setIntegerParam(pco_dbg_serprint,<sp/>0);</highlight></codeline>
+<codeline lineno="484"><highlight class="normal"><sp/><sp/>setIntegerParam(pco_cancel_dump,<sp/>0);</highlight></codeline>
+<codeline lineno="485"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>kB/sec</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="486"><highlight class="normal"><sp/><sp/>setIntegerParam(pco_dump_maxdatarate,<sp/>50000);</highlight></codeline>
+<codeline lineno="487"><highlight class="normal"><sp/><sp/>setDoubleParam(pco_frame_rate,<sp/>0.0);</highlight></codeline>
+<codeline lineno="488"><highlight class="normal"><sp/><sp/>setIntegerParam(pco_reconfig_grabber,<sp/>0);</highlight></codeline>
+<codeline lineno="489"><highlight class="normal"><sp/><sp/>setIntegerParam(pco_check_time2,<sp/>5000);</highlight></codeline>
+<codeline lineno="490"><highlight class="normal"></highlight></codeline>
+<codeline lineno="491"><highlight class="normal"><sp/><sp/>setIntegerParam(pco_play_stop,<sp/>0);</highlight></codeline>
+<codeline lineno="492"><highlight class="normal"><sp/><sp/>setIntegerParam(pco_play_slow,<sp/>0);</highlight></codeline>
+<codeline lineno="493"><highlight class="normal"></highlight></codeline>
+<codeline lineno="494"><highlight class="normal"><sp/><sp/>setIntegerParam(pco_is_frame_rate_mode,<sp/>1);</highlight></codeline>
+<codeline lineno="495"><highlight class="normal"></highlight></codeline>
+<codeline lineno="496"><highlight class="normal"><sp/><sp/>setIntegerParam(pco_cdi_mode,<sp/>0);</highlight></codeline>
+<codeline lineno="497"><highlight class="normal"><sp/><sp/>setIntegerParam(pco_dnsu_mode,<sp/>0);</highlight></codeline>
+<codeline lineno="498"><highlight class="normal"><sp/><sp/>setIntegerParam(pco_dnsu_init_mode,<sp/>0);</highlight></codeline>
+<codeline lineno="499"><highlight class="normal"></highlight></codeline>
+<codeline lineno="500"><highlight class="normal"><sp/><sp/>setDoubleParam(pco_set_frame_rate,<sp/>1.0);</highlight></codeline>
+<codeline lineno="501"><highlight class="normal"><sp/><sp/>setDoubleParam(pco_delay_time,<sp/>0.0);</highlight></codeline>
+<codeline lineno="502"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>set<sp/>callback<sp/>to<sp/>do<sp/>nothing<sp/>default....</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="503"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>putPtrParam(serial_callback,(const</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="504"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>void*);genCamController::defaultCallback);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="505"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>callbackFunction<sp/>=<sp/>(int<sp/>(*);(callbackReasons<sp/>reason,</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="506"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>void*););getPtrParam(serial_callback);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="507"><highlight class="normal"><sp/><sp/>setIntegerParam(pco_baudrate,<sp/>9600);</highlight></codeline>
+<codeline lineno="508"><highlight class="normal"><sp/><sp/>setIntegerParam(pco_trigger_mode,<sp/>0);</highlight></codeline>
+<codeline lineno="509"><highlight class="normal"><sp/><sp/>setIntegerParam(pco_force_check,<sp/>0);</highlight></codeline>
+<codeline lineno="510"><highlight class="normal"><sp/><sp/>setIntegerParam(pco_camlink_pixfreq,<sp/>0);</highlight></codeline>
+<codeline lineno="511"><highlight class="normal"><sp/><sp/>setIntegerParam(pco_cclines,<sp/>0);</highlight></codeline>
+<codeline lineno="512"><highlight class="normal"><sp/><sp/>setIntegerParam(pco_camlink_pixperclk,<sp/>0);</highlight></codeline>
+<codeline lineno="513"><highlight class="normal"><sp/><sp/>setIntegerParam(pco_camlink_cont,<sp/>0);</highlight></codeline>
+<codeline lineno="514"><highlight class="normal"><sp/><sp/>setIntegerParam(pco_reset_memory,<sp/>0);</highlight></codeline>
+<codeline lineno="515"><highlight class="normal"></highlight></codeline>
+<codeline lineno="516"><highlight class="normal"><sp/><sp/>setIntegerParam(pco_force_trigger,<sp/>0);</highlight></codeline>
+<codeline lineno="517"><highlight class="normal"><sp/><sp/>setIntegerParam(pco_dump_camera_memory,<sp/>0);</highlight></codeline>
+<codeline lineno="518"><highlight class="normal"><sp/><sp/>setIntegerParam(pco_imgs2dump,<sp/>0);</highlight></codeline>
+<codeline lineno="519"><highlight class="normal"><sp/><sp/>setIntegerParam(pco_memreq_cnt,<sp/>0);</highlight></codeline>
+<codeline lineno="520"><highlight class="normal"></highlight></codeline>
+<codeline lineno="521"><highlight class="normal"><sp/><sp/>setIntegerParam(pco_live_view,<sp/>0);</highlight></codeline>
+<codeline lineno="522"><highlight class="normal"><sp/><sp/>setIntegerParam(pco_dump_counter,<sp/>0);</highlight></codeline>
+<codeline lineno="523"><highlight class="normal"><sp/><sp/>setIntegerParam(pco_dump_waitms,<sp/>50);</highlight></codeline>
+<codeline lineno="524"><highlight class="normal"></highlight></codeline>
+<codeline lineno="525"><highlight class="normal"><sp/><sp/>setIntegerParam(pco_health_error,<sp/>0);</highlight></codeline>
+<codeline lineno="526"><highlight class="normal"><sp/><sp/>setIntegerParam(pco_health_warning,<sp/>0);</highlight></codeline>
+<codeline lineno="527"><highlight class="normal"><sp/><sp/>setIntegerParam(pco_health_status,<sp/>0);</highlight></codeline>
+<codeline lineno="528"><highlight class="normal"><sp/><sp/>setIntegerParam(pco_check_time,<sp/>1000);</highlight></codeline>
+<codeline lineno="529"><highlight class="normal"></highlight></codeline>
+<codeline lineno="530"><highlight class="normal"><sp/><sp/>setIntegerParam(pco_reset_default_settings,<sp/>0);</highlight></codeline>
+<codeline lineno="531"><highlight class="normal"><sp/><sp/>setIntegerParam(pco_init_selftest,<sp/>0);</highlight></codeline>
+<codeline lineno="532"><highlight class="normal"></highlight></codeline>
+<codeline lineno="533"><highlight class="normal"><sp/><sp/>setIntegerParam(NDDataType,<sp/>3);</highlight></codeline>
+<codeline lineno="534"><highlight class="normal"></highlight></codeline>
+<codeline lineno="535"><highlight class="normal"><sp/><sp/>setIntegerParam(pco_sensor_format,<sp/>0);</highlight></codeline>
+<codeline lineno="536"><highlight class="normal"><sp/><sp/>setIntegerParam(pco_pixelrate,<sp/>0);</highlight></codeline>
+<codeline lineno="537"><highlight class="normal"><sp/><sp/>setIntegerParam(pco_doub_img_mode,<sp/>0);</highlight></codeline>
+<codeline lineno="538"><highlight class="normal"><sp/><sp/>setIntegerParam(pco_adc_mode,<sp/>0);</highlight></codeline>
+<codeline lineno="539"><highlight class="normal"><sp/><sp/>setIntegerParam(pco_temp_setpt,<sp/>0);</highlight></codeline>
+<codeline lineno="540"><highlight class="normal"><sp/><sp/>setIntegerParam(pco_offset_mode,<sp/>0);</highlight></codeline>
+<codeline lineno="541"><highlight class="normal"><sp/><sp/>setIntegerParam(pco_noise_filt_mode,<sp/>0);</highlight></codeline>
+<codeline lineno="542"><highlight class="normal"></highlight></codeline>
+<codeline lineno="543"><highlight class="normal"><sp/><sp/>setIntegerParam(pco_exp_timebase,<sp/>0);</highlight></codeline>
+<codeline lineno="544"><highlight class="normal"><sp/><sp/>setIntegerParam(pco_dly_timebase,<sp/>0);</highlight></codeline>
+<codeline lineno="545"><highlight class="normal"><sp/><sp/>setIntegerParam(pco_fps_mode,<sp/>0);</highlight></codeline>
+<codeline lineno="546"><highlight class="normal"><sp/><sp/>setIntegerParam(pco_busy,<sp/>0);</highlight></codeline>
+<codeline lineno="547"><highlight class="normal"><sp/><sp/>setIntegerParam(pco_exp_trig_stat,<sp/>0);</highlight></codeline>
+<codeline lineno="548"><highlight class="normal"></highlight></codeline>
+<codeline lineno="549"><highlight class="normal"><sp/><sp/>setIntegerParam(pco_camera_tot_ram_size,<sp/>0);</highlight></codeline>
+<codeline lineno="550"><highlight class="normal"><sp/><sp/>setIntegerParam(pco_camera_ram_npages,<sp/>0);</highlight></codeline>
+<codeline lineno="551"><highlight class="normal"><sp/><sp/>setIntegerParam(pco_camera_ram_page_size,<sp/>0);</highlight></codeline>
+<codeline lineno="552"><highlight class="normal"><sp/><sp/>setIntegerParam(pco_camera_seg_size0,<sp/>0);</highlight></codeline>
+<codeline lineno="553"><highlight class="normal"><sp/><sp/>setIntegerParam(pco_camera_seg_size1,<sp/>0);</highlight></codeline>
+<codeline lineno="554"><highlight class="normal"><sp/><sp/>setIntegerParam(pco_camera_seg_size2,<sp/>0);</highlight></codeline>
+<codeline lineno="555"><highlight class="normal"><sp/><sp/>setIntegerParam(pco_camera_seg_size3,<sp/>0);</highlight></codeline>
+<codeline lineno="556"><highlight class="normal"><sp/><sp/>setIntegerParam(pco_clear_ram_seg,<sp/>0);</highlight></codeline>
+<codeline lineno="557"><highlight class="normal"><sp/><sp/>setIntegerParam(pco_active_seg,<sp/>0);</highlight></codeline>
+<codeline lineno="558"><highlight class="normal"></highlight></codeline>
+<codeline lineno="559"><highlight class="normal"><sp/><sp/>setIntegerParam(pco_storage_mode,<sp/>0);</highlight></codeline>
+<codeline lineno="560"><highlight class="normal"><sp/><sp/>setIntegerParam(pco_rec_submode,<sp/>0);</highlight></codeline>
+<codeline lineno="561"><highlight class="normal"><sp/><sp/>setIntegerParam(pco_rec_status,<sp/>0);</highlight></codeline>
+<codeline lineno="562"><highlight class="normal"><sp/><sp/>setIntegerParam(pco_acq_mode,<sp/>0);</highlight></codeline>
+<codeline lineno="563"><highlight class="normal"><sp/><sp/>setIntegerParam(pco_acqen_sig_stat,<sp/>0);</highlight></codeline>
+<codeline lineno="564"><highlight class="normal"><sp/><sp/>setIntegerParam(pco_timestamp_mode,<sp/>0);</highlight></codeline>
+<codeline lineno="565"><highlight class="normal"><sp/><sp/>setIntegerParam(pco_arm_camera,<sp/>0);</highlight></codeline>
+<codeline lineno="566"><highlight class="normal"><sp/><sp/>setIntegerParam(pco_rec_stop_event_mode,<sp/>0);</highlight></codeline>
+<codeline lineno="567"><highlight class="normal"><sp/><sp/>setIntegerParam(pco_rec_stop_event_nimgs,<sp/>0);</highlight></codeline>
+<codeline lineno="568"><highlight class="normal"><sp/><sp/>setIntegerParam(pco_stop_record,<sp/>0);</highlight></codeline>
+<codeline lineno="569"><highlight class="normal"></highlight></codeline>
+<codeline lineno="570"><highlight class="normal"><sp/><sp/>setIntegerParam(pco_read_which_seg,<sp/>0);</highlight></codeline>
+<codeline lineno="571"><highlight class="normal"><sp/><sp/>setIntegerParam(pco_read_st_img,<sp/>0);</highlight></codeline>
+<codeline lineno="572"><highlight class="normal"><sp/><sp/>setIntegerParam(pco_read_end_img,<sp/>0);</highlight></codeline>
+<codeline lineno="573"><highlight class="normal"><sp/><sp/>setIntegerParam(pco_do_read_imgs,<sp/>0);</highlight></codeline>
+<codeline lineno="574"><highlight class="normal"><sp/><sp/>setIntegerParam(pco_req_img,<sp/>0);</highlight></codeline>
+<codeline lineno="575"><highlight class="normal"><sp/><sp/>setIntegerParam(pco_rpt_img,<sp/>0);</highlight></codeline>
+<codeline lineno="576"><highlight class="normal"><sp/><sp/>setIntegerParam(pco_cancel_img,<sp/>0);</highlight></codeline>
+<codeline lineno="577"><highlight class="normal"><sp/><sp/>setIntegerParam(pco_bit_alignment,<sp/>0);</highlight></codeline>
+<codeline lineno="578"><highlight class="normal"></highlight></codeline>
+<codeline lineno="579"><highlight class="normal"><sp/><sp/>setIntegerParam(pco_num_imgs_seg0,<sp/>0);</highlight></codeline>
+<codeline lineno="580"><highlight class="normal"><sp/><sp/>setIntegerParam(pco_max_imgs_seg0,<sp/>0);</highlight></codeline>
+<codeline lineno="581"><highlight class="normal"><sp/><sp/>setIntegerParam(pco_num_imgs_seg1,<sp/>0);</highlight></codeline>
+<codeline lineno="582"><highlight class="normal"><sp/><sp/>setIntegerParam(pco_max_imgs_seg1,<sp/>0);</highlight></codeline>
+<codeline lineno="583"><highlight class="normal"><sp/><sp/>setIntegerParam(pco_num_imgs_seg2,<sp/>0);</highlight></codeline>
+<codeline lineno="584"><highlight class="normal"><sp/><sp/>setIntegerParam(pco_max_imgs_seg2,<sp/>0);</highlight></codeline>
+<codeline lineno="585"><highlight class="normal"><sp/><sp/>setIntegerParam(pco_num_imgs_seg3,<sp/>0);</highlight></codeline>
+<codeline lineno="586"><highlight class="normal"><sp/><sp/>setIntegerParam(pco_max_imgs_seg3,<sp/>0);</highlight></codeline>
+<codeline lineno="587"><highlight class="normal"></highlight></codeline>
+<codeline lineno="588"><highlight class="normal"><sp/><sp/>setIntegerParam(pco_ser_waitms,<sp/>0);</highlight></codeline>
+<codeline lineno="589"><highlight class="normal"></highlight></codeline>
+<codeline lineno="590"><highlight class="normal"><sp/><sp/>setIntegerParam(pco_hotpix_corr,<sp/>0);</highlight></codeline>
+<codeline lineno="591"><highlight class="normal"><sp/><sp/>setIntegerParam(pco_1612_lookup,<sp/>0);</highlight></codeline>
+<codeline lineno="592"><highlight class="normal"><sp/><sp/>setIntegerParam(pco_edge_fastscan,<sp/>0);</highlight></codeline>
+<codeline lineno="593"><highlight class="normal"></highlight></codeline>
+<codeline lineno="596"><highlight class="normal"><sp/><sp/>setIntegerParam(pco_is_running,<sp/>1);</highlight></codeline>
+<codeline lineno="597"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>putPtrParam(log_file_ptr,<sp/>(void*);&amp;lf);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="598"><highlight class="normal"><sp/><sp/>setIntegerParam(pco_is_log,<sp/>1);</highlight></codeline>
+<codeline lineno="599"><highlight class="normal"><sp/><sp/>setIntegerParam(pco_run_counter,<sp/>0);</highlight></codeline>
+<codeline lineno="600"><highlight class="normal"><sp/><sp/>setIntegerParam(pco_sleep_ms,<sp/>10);</highlight></codeline>
+<codeline lineno="601"><highlight class="normal"><sp/><sp/>setIntegerParam(pco_is_sleep,<sp/>1);<sp/><sp/></highlight><highlight class="comment">//<sp/>sleep...</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="602"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>putPtrParam(coreco_control_ptr,0);//<sp/>need<sp/>to<sp/>set<sp/>this<sp/>up<sp/>leter...</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="603"><highlight class="normal"></highlight></codeline>
+<codeline lineno="604"><highlight class="normal"><sp/><sp/>setIntegerParam(pco_comport_number,<sp/>3);</highlight></codeline>
+<codeline lineno="605"><highlight class="normal"><sp/><sp/>sprintf(cpstr,<sp/></highlight><highlight class="stringliteral">&quot;COM%d&quot;</highlight><highlight class="normal">,<sp/>getIntParam(pco_comport_number));</highlight></codeline>
+<codeline lineno="606"><highlight class="normal"></highlight></codeline>
+<codeline lineno="607"><highlight class="normal"><sp/><sp/>setStringParam(com_port_name,<sp/>cpstr);</highlight></codeline>
+<codeline lineno="608"><highlight class="normal"><sp/><sp/>setIntegerParam(open_com,<sp/>0);</highlight></codeline>
+<codeline lineno="609"><highlight class="normal"><sp/><sp/>setIntegerParam(close_com,<sp/>0);</highlight></codeline>
+<codeline lineno="610"><highlight class="normal"><sp/><sp/>setIntegerParam(is_com_open,<sp/>0);</highlight></codeline>
+<codeline lineno="611"><highlight class="normal"></highlight></codeline>
+<codeline lineno="612"><highlight class="normal"><sp/><sp/>setIntegerParam(ADSizeX,<sp/>2560);</highlight></codeline>
+<codeline lineno="613"><highlight class="normal"><sp/><sp/>setIntegerParam(ADSizeY,<sp/>2160);</highlight></codeline>
+<codeline lineno="614"><highlight class="normal"><sp/><sp/>setStringParam(ADManufacturer,<sp/></highlight><highlight class="stringliteral">&quot;PCO-General&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="615"><highlight class="normal"><sp/><sp/>setStringParam(ADModel,<sp/></highlight><highlight class="stringliteral">&quot;PCO&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="616"><highlight class="normal"><sp/><sp/>setDoubleParam(ADGain,<sp/>1.0);</highlight></codeline>
+<codeline lineno="617"><highlight class="normal"><sp/><sp/>setIntegerParam(ADBinX,<sp/>1);</highlight></codeline>
+<codeline lineno="618"><highlight class="normal"><sp/><sp/>setIntegerParam(ADBinY,<sp/>1);</highlight></codeline>
+<codeline lineno="619"><highlight class="normal"><sp/><sp/>setIntegerParam(ADMinX,<sp/>1);</highlight></codeline>
+<codeline lineno="620"><highlight class="normal"><sp/><sp/>setIntegerParam(ADMinY,<sp/>1);</highlight></codeline>
+<codeline lineno="621"><highlight class="normal"><sp/><sp/>setIntegerParam(ADSizeX,<sp/>2560);</highlight></codeline>
+<codeline lineno="622"><highlight class="normal"><sp/><sp/>setIntegerParam(ADSizeY,<sp/>2160);</highlight></codeline>
+<codeline lineno="623"><highlight class="normal"><sp/><sp/>setIntegerParam(ADMaxSizeX,<sp/>2560);</highlight></codeline>
+<codeline lineno="624"><highlight class="normal"><sp/><sp/>setIntegerParam(ADMaxSizeY,<sp/>2160);</highlight></codeline>
+<codeline lineno="625"><highlight class="normal"></highlight></codeline>
+<codeline lineno="626"><highlight class="normal"><sp/><sp/>setIntegerParam(pco_descramble,<sp/>1);</highlight></codeline>
+<codeline lineno="627"><highlight class="normal"></highlight></codeline>
+<codeline lineno="628"><highlight class="normal"><sp/><sp/>setIntegerParam(pco_which_camera,<sp/>pco_undef);</highlight></codeline>
+<codeline lineno="629"><highlight class="normal"></highlight></codeline>
+<codeline lineno="630"><highlight class="normal"><sp/><sp/>setIntegerParam(ADAcquirePeriod,<sp/>1000000);</highlight></codeline>
+<codeline lineno="631"><highlight class="normal"></highlight></codeline>
+<codeline lineno="632"><highlight class="normal"></highlight></codeline>
+<codeline lineno="633"><highlight class="normal"><sp/><sp/>status<sp/>=<sp/>pasynOctetSyncIO-&gt;connect(serverPort,<sp/>0,<sp/>&amp;this-&gt;pasynUserSerial,</highlight></codeline>
+<codeline lineno="634"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*)NULL);</highlight></codeline>
+<codeline lineno="635"><highlight class="normal"></highlight></codeline>
+<codeline lineno="636"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(status<sp/>!=<sp/>asynSuccess)<sp/>{</highlight></codeline>
+<codeline lineno="637"><highlight class="normal"><sp/><sp/><sp/><sp/>asynPrint(this-&gt;pasynUserSelf,<sp/>ASYN_TRACE_ERROR,</highlight><highlight class="stringliteral">&quot;ERROR---Could<sp/>not<sp/>connect<sp/>to<sp/>serial<sp/>port<sp/>asyn<sp/>driver<sp/>%s\n&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="638"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>serverPort);</highlight></codeline>
+<codeline lineno="639"><highlight class="normal"><sp/><sp/><sp/><sp/>exit(-1);</highlight></codeline>
+<codeline lineno="640"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="641"><highlight class="normal"></highlight></codeline>
+<codeline lineno="642"><highlight class="normal"><sp/><sp/>setIntegerParam(ADStatus,<sp/><ref refid="_a_d_driver_8h_1a69820e97c7282152e222297a6d36f72eae5f0661ab013affe1ec15bf297bcf40f" kindref="member">ADStatusWaiting</ref>);</highlight></codeline>
+<codeline lineno="643"><highlight class="normal"></highlight></codeline>
+<codeline lineno="644"><highlight class="normal"><sp/><sp/>setIntegerParam(ADStatus,<sp/><ref refid="_a_d_driver_8h_1a69820e97c7282152e222297a6d36f72eae5aabf2281b95d16f607f1a7b1c5a8bd" kindref="member">ADStatusIdle</ref>);</highlight></codeline>
+<codeline lineno="645"><highlight class="normal"><sp/><sp/>setIntegerParam(open_com,<sp/>0);</highlight></codeline>
+<codeline lineno="646"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>force<sp/>baud<sp/>to<sp/>fastest<sp/>rate<sp/>at<sp/>startup</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="647"><highlight class="normal"><sp/><sp/>setIntegerParam(pco_baudrate,<sp/>115200);</highlight></codeline>
+<codeline lineno="648"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>force<sp/>largest<sp/>img<sp/>size<sp/>in<sp/>camera<sp/>and<sp/>grabber<sp/>at<sp/>startup</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="649"><highlight class="normal"><sp/><sp/>setIntegerParam(ADSizeX,<sp/>2560);</highlight></codeline>
+<codeline lineno="650"><highlight class="normal"><sp/><sp/>setIntegerParam(ADSizeY,<sp/>2160);</highlight></codeline>
+<codeline lineno="651"><highlight class="normal"></highlight></codeline>
+<codeline lineno="652"><highlight class="normal"><sp/><sp/>dbg_msg_level<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="653"><highlight class="normal"></highlight></codeline>
+<codeline lineno="654"><highlight class="normal"><sp/><sp/>com_error_counter<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="655"><highlight class="normal"><sp/><sp/>last_which_camera<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="656"><highlight class="normal"><sp/><sp/>is_enable_which_camera<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="657"><highlight class="normal"><sp/><sp/>is_allow_kill_acquire<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="658"><highlight class="normal"><sp/><sp/>is_reset_dump_counters<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="659"><highlight class="normal"><sp/><sp/>is_reset_memory<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="660"><highlight class="normal"></highlight></codeline>
+<codeline lineno="661"><highlight class="normal"><sp/><sp/>lastxsize<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="662"><highlight class="normal"><sp/><sp/>lastysize<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="663"><highlight class="normal"></highlight></codeline>
+<codeline lineno="664"><highlight class="normal"><sp/><sp/>status<sp/>=<sp/>(epicsThreadCreate(</highlight><highlight class="stringliteral">&quot;CameraLinkSerial&quot;</highlight><highlight class="normal">,<sp/>epicsThreadPriorityMedium,</highlight></codeline>
+<codeline lineno="665"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>epicsThreadGetStackSize(epicsThreadStackMedium),</highlight></codeline>
+<codeline lineno="666"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(EPICSTHREADFUNC)pcoTaskC,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">)<sp/>==<sp/>NULL);</highlight></codeline>
+<codeline lineno="667"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(status)<sp/>{</highlight></codeline>
+<codeline lineno="668"><highlight class="normal"><sp/><sp/><sp/><sp/>asynPrint(this-&gt;pasynUserSelf,<sp/>ASYN_TRACE_ERROR,</highlight><highlight class="stringliteral">&quot;pco<sp/>construct<sp/>epicsThreadCreate<sp/>failure<sp/>for<sp/>serial<sp/>port<sp/>task\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="669"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="670"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="671"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="672"><highlight class="normal"></highlight></codeline>
+<codeline lineno="680"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classpco_1a1e0c25ce1def3da5a38bd70b1fcfaf96" kindref="member">pco::processNewImage</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*img_ptr)<sp/>{</highlight></codeline>
+<codeline lineno="681"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>elapsed_time;</highlight></codeline>
+<codeline lineno="682"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/>*shrt_img;</highlight></codeline>
+<codeline lineno="683"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>xs;</highlight></codeline>
+<codeline lineno="684"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ys;</highlight></codeline>
+<codeline lineno="685"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>rowa;</highlight></codeline>
+<codeline lineno="686"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>rowb;</highlight></codeline>
+<codeline lineno="687"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>rows;</highlight></codeline>
+<codeline lineno="688"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>kx;</highlight></codeline>
+<codeline lineno="689"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*dst,<sp/>*src;</highlight></codeline>
+<codeline lineno="690"><highlight class="normal"></highlight></codeline>
+<codeline lineno="691"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/>diff;</highlight></codeline>
+<codeline lineno="692"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>diff_tot;</highlight></codeline>
+<codeline lineno="693"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>rowbytes;</highlight></codeline>
+<codeline lineno="694"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>attrval<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="695"><highlight class="normal"></highlight></codeline>
+<codeline lineno="696"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>mesgx[256];</highlight></codeline>
+<codeline lineno="697"><highlight class="normal"></highlight></codeline>
+<codeline lineno="698"><highlight class="normal"><sp/><sp/><ref refid="class_n_d_array" kindref="compound">NDArray</ref><sp/>*nimg<sp/>=<sp/>(<ref refid="class_n_d_array" kindref="compound">NDArray</ref><sp/>*)img_ptr;</highlight></codeline>
+<codeline lineno="699"><highlight class="normal"></highlight></codeline>
+<codeline lineno="700"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>add<sp/>attribute<sp/>here<sp/>...</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="701"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(getIntParam(ADFrameType)<sp/>==<sp/><ref refid="_a_d_driver_8h_1aa7545fdb2f7941e8d0259a64ccdacc72a2848245f4d00941a1b8e7337262ea5b2" kindref="member">ADFrameNormal</ref>)<sp/><sp/></highlight><highlight class="comment">//<sp/>normal</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="702"><highlight class="normal"><sp/><sp/><sp/><sp/>nimg-&gt;<ref refid="class_n_d_array_1af5aad7b41118f465621cf045ed957469" kindref="member">pAttributeList</ref>-&gt;<ref refid="class_n_d_attribute_list_1aa86fbdd59e20b734b86b2464f470d752" kindref="member">add</ref>(</highlight><highlight class="stringliteral">&quot;Data&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;Data<sp/>Attr&quot;</highlight><highlight class="normal">,<sp/><ref refid="_n_d_attribute_8h_1a8a795995acde8458f43ac9b01376ef07a52a96048ab842e5ee55012e5abd38088" kindref="member">NDAttrInt32</ref>,<sp/>&amp;attrval);</highlight></codeline>
+<codeline lineno="703"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(getIntParam(ADFrameType)<sp/>==<sp/><ref refid="_a_d_driver_8h_1aa7545fdb2f7941e8d0259a64ccdacc72a5df24d81f3e183d0c6baad479d1c4420" kindref="member">ADFrameBackground</ref>)<sp/><sp/></highlight><highlight class="comment">//<sp/>dark</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="704"><highlight class="normal"><sp/><sp/><sp/><sp/>nimg-&gt;<ref refid="class_n_d_array_1af5aad7b41118f465621cf045ed957469" kindref="member">pAttributeList</ref>-&gt;<ref refid="class_n_d_attribute_list_1aa86fbdd59e20b734b86b2464f470d752" kindref="member">add</ref>(</highlight><highlight class="stringliteral">&quot;Dark&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;Dark<sp/>Attr&quot;</highlight><highlight class="normal">,<sp/><ref refid="_n_d_attribute_8h_1a8a795995acde8458f43ac9b01376ef07a52a96048ab842e5ee55012e5abd38088" kindref="member">NDAttrInt32</ref>,<sp/>&amp;attrval);</highlight></codeline>
+<codeline lineno="705"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(getIntParam(ADFrameType)<sp/>==<sp/><ref refid="_a_d_driver_8h_1aa7545fdb2f7941e8d0259a64ccdacc72a5114177a0329da5e4576f565beb3f6e0" kindref="member">ADFrameFlatField</ref>)<sp/><sp/></highlight><highlight class="comment">//<sp/>white<sp/>flood</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="706"><highlight class="normal"><sp/><sp/><sp/><sp/>nimg-&gt;<ref refid="class_n_d_array_1af5aad7b41118f465621cf045ed957469" kindref="member">pAttributeList</ref>-&gt;<ref refid="class_n_d_attribute_list_1aa86fbdd59e20b734b86b2464f470d752" kindref="member">add</ref>(</highlight><highlight class="stringliteral">&quot;White&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;White<sp/>Attr&quot;</highlight><highlight class="normal">,<sp/><ref refid="_n_d_attribute_8h_1a8a795995acde8458f43ac9b01376ef07a52a96048ab842e5ee55012e5abd38088" kindref="member">NDAttrInt32</ref>,<sp/>&amp;attrval);</highlight></codeline>
+<codeline lineno="707"><highlight class="normal"></highlight></codeline>
+<codeline lineno="708"><highlight class="normal"><sp/><sp/>setIntegerParam(NDArrayCounter,<sp/>getIntParam(NDArrayCounter)<sp/>+<sp/>1);</highlight></codeline>
+<codeline lineno="709"><highlight class="normal"><sp/><sp/>setIntegerParam(<ref refid="classpco_1a9a0cb1ffd813cb61ed8a9e7eda38e87f" kindref="member">pco_array_counter</ref>,<sp/>getIntParam(<ref refid="classpco_1a9a0cb1ffd813cb61ed8a9e7eda38e87f" kindref="member">pco_array_counter</ref>)<sp/>+<sp/>1);</highlight></codeline>
+<codeline lineno="710"><highlight class="normal"></highlight></codeline>
+<codeline lineno="711"><highlight class="normal"><sp/><sp/>elapsed_time<sp/>=<sp/><ref refid="classpco_1a39a75dcab64478a3e2d4bce23ec7a748" kindref="member">image_timer</ref>.toc();</highlight></codeline>
+<codeline lineno="712"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(elapsed_time<sp/>&gt;<sp/>0.0)<sp/>setDoubleParam(<ref refid="classpco_1a0299f41185d9b0f5c11a38a0d9bcac08" kindref="member">pco_image_rate</ref>,<sp/>1.0<sp/>/<sp/>elapsed_time);</highlight></codeline>
+<codeline lineno="713"><highlight class="normal"></highlight></codeline>
+<codeline lineno="714"><highlight class="normal"><sp/><sp/><ref refid="classpco_1a39a75dcab64478a3e2d4bce23ec7a748" kindref="member">image_timer</ref>.tic();</highlight></codeline>
+<codeline lineno="715"><highlight class="normal"></highlight></codeline>
+<codeline lineno="716"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/>if<sp/>(getIntParam(pco_test_pixels)==1<sp/>&amp;&amp;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="717"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>getIntParam(pco_which_camera)==pco_dimax)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="718"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(getIntParam(<ref refid="classpco_1a8b8b2b81e31fc4d843fa1de39a9d9a0a" kindref="member">pco_test_pixels</ref>)<sp/>==<sp/>1)<sp/>{</highlight></codeline>
+<codeline lineno="719"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>start<sp/>1k<sp/>into<sp/>the<sp/>array.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="720"><highlight class="normal"></highlight></codeline>
+<codeline lineno="721"><highlight class="normal"><sp/><sp/><sp/><sp/>shrt_img<sp/>=<sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/>*)(nimg-&gt;<ref refid="class_n_d_array_1a9581f9d8f38225a2c2977bbed70fa2b8" kindref="member">pData</ref>);</highlight></codeline>
+<codeline lineno="722"><highlight class="normal"><sp/><sp/><sp/><sp/>shrt_img<sp/>+=<sp/>1024;</highlight></codeline>
+<codeline lineno="723"><highlight class="normal"><sp/><sp/><sp/><sp/>diff_tot<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="724"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(kx<sp/>=<sp/>0;<sp/>kx<sp/>&lt;<sp/>16;<sp/>kx++)<sp/>{</highlight></codeline>
+<codeline lineno="725"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>diff<sp/>=<sp/><ref refid="classpco_1ada12c07e4612eab368232bc86707d380" kindref="member">test_line</ref>[kx]<sp/>-<sp/>shrt_img[kx];</highlight></codeline>
+<codeline lineno="726"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>diff_tot<sp/>+=<sp/>(int)diff;</highlight></codeline>
+<codeline lineno="727"><highlight class="normal"></highlight></codeline>
+<codeline lineno="728"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>store<sp/>to<sp/>compare<sp/>with<sp/>next<sp/>img.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="729"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classpco_1ada12c07e4612eab368232bc86707d380" kindref="member">test_line</ref>[kx]<sp/>=<sp/>shrt_img[kx];</highlight></codeline>
+<codeline lineno="730"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="731"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(diff_tot<sp/>==<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="732"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>lf.log(</highlight><highlight class="stringliteral">&quot;WARNING:<sp/>2<sp/>images<sp/>have<sp/>same<sp/>data.<sp/>Read<sp/>in<sp/>same<sp/>img<sp/>twice?&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="733"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>setIntegerParam(<ref refid="classpco_1ac457d0db38405cc89d205a821b535383" kindref="member">pco_double_image_error</ref>,</highlight></codeline>
+<codeline lineno="734"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>getIntParam(<ref refid="classpco_1ac457d0db38405cc89d205a821b535383" kindref="member">pco_double_image_error</ref>)<sp/>+<sp/>1);</highlight></codeline>
+<codeline lineno="735"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="736"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="737"><highlight class="normal"></highlight></codeline>
+<codeline lineno="738"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>temp_image</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="739"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>img_ptr</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="740"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(getIntParam(<ref refid="classpco_1af27944d1d7327e5fcc7e5e91c67eb089" kindref="member">pco_disable_descramble</ref>)<sp/>==<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="741"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(getIntParam(<ref refid="classpco_1a6d70b54955b51daa7cddc2bb94f7363d" kindref="member">pco_which_camera</ref>)<sp/>==<sp/><ref refid="classpco_1ad5ed5b95e51b9aafba745f3d46ddee53abac74cafb917d1958aca8c15a6826783" kindref="member">pco_edge</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="742"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>xs<sp/>=<sp/>getIntParam(ADSizeX);</highlight></codeline>
+<codeline lineno="743"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>ys<sp/>=<sp/>getIntParam(ADSizeY);</highlight></codeline>
+<codeline lineno="744"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>rowa<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="745"><highlight class="normal"></highlight></codeline>
+<codeline lineno="746"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(xs<sp/>!=<sp/><ref refid="classpco_1a9c4572d32372d248929436631d505e05" kindref="member">lastxsize</ref><sp/>||<sp/>ys<sp/>!=<sp/><ref refid="classpco_1acfb18f51ab5b3c86148feda30d45351b" kindref="member">lastysize</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="747"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>asynPrint(this-&gt;pasynUserSelf,<sp/>ASYN_TRACEIO_DRIVER,</highlight><highlight class="stringliteral">&quot;pcoImgCam,<sp/>descramble,<sp/>img<sp/>size<sp/>changed:<sp/>%d<sp/>%d\n&quot;</highlight><highlight class="normal">,<sp/>xs,<sp/>ys);</highlight></codeline>
+<codeline lineno="748"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="749"><highlight class="normal"></highlight></codeline>
+<codeline lineno="750"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classpco_1a9c4572d32372d248929436631d505e05" kindref="member">lastxsize</ref><sp/>=<sp/>xs;</highlight></codeline>
+<codeline lineno="751"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classpco_1acfb18f51ab5b3c86148feda30d45351b" kindref="member">lastysize</ref><sp/>=<sp/>ys;</highlight></codeline>
+<codeline lineno="752"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>rowb<sp/>=<sp/>ys<sp/>-<sp/>1;</highlight></codeline>
+<codeline lineno="753"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>rows<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="754"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>shrt_img<sp/>=<sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/>*)nimg-&gt;<ref refid="class_n_d_array_1a9581f9d8f38225a2c2977bbed70fa2b8" kindref="member">pData</ref>;</highlight></codeline>
+<codeline lineno="755"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>rowbytes<sp/>=<sp/>xs<sp/>*<sp/>2;</highlight></codeline>
+<codeline lineno="756"><highlight class="normal"></highlight></codeline>
+<codeline lineno="757"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>if<sp/>(xs<sp/>&gt;<sp/>2560<sp/>||<sp/>xs<sp/>&lt;<sp/>0<sp/>||<sp/>ys<sp/>&gt;<sp/>2160<sp/>||<sp/>ys<sp/>&lt;<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="758"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>asynPrint(this-&gt;pasynUserSelf,<sp/>ASYN_TRACEIO_DRIVER,</highlight></codeline>
+<codeline lineno="759"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;ERROR:<sp/>PCOImgCam::processNewImage()<sp/>ADSIZEX<sp/>or<sp/>ADSizeY<sp/>Illegal\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="760"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="761"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="762"><highlight class="normal"></highlight></codeline>
+<codeline lineno="763"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(getIntParam(<ref refid="classpco_1a986254178fe9c0ed0e5e0fb5a011716e" kindref="member">pco_conv_12to16</ref>)<sp/>==<sp/>1)<sp/>{</highlight></codeline>
+<codeline lineno="764"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>this<sp/>means<sp/>that<sp/>we<sp/>have<sp/>12<sp/>bit<sp/>encoded<sp/>data<sp/>and<sp/>we<sp/>have<sp/>to<sp/>extract<sp/>to</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="765"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>16bit</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="766"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>lengh<sp/>of<sp/>line<sp/>in<sp/>ints<sp/>of<sp/>xs<sp/>pixels<sp/>for<sp/>12<sp/>bit<sp/>data.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="767"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>xs<sp/>is<sp/>in<sp/>words<sp/>of<sp/>12<sp/>bits.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="768"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>to<sp/>find<sp/>number<sp/>of<sp/>chars<sp/>in<sp/>same<sp/>amount<sp/>of<sp/>memory,<sp/>mult<sp/>by<sp/>1.5.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="769"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>to<sp/>find<sp/>number<sp/>of<sp/>ints,<sp/>we<sp/>then<sp/>divide<sp/>by<sp/>4.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="770"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>nibbles<sp/>=<sp/>(double)xs<sp/>*<sp/>3.0;</highlight></codeline>
+<codeline lineno="771"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>shorts_in<sp/>=<sp/>nibbles<sp/>/<sp/>4.0;</highlight></codeline>
+<codeline lineno="772"><highlight class="normal"></highlight></codeline>
+<codeline lineno="773"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((shorts_in<sp/>-<sp/>floor(shorts_in))<sp/>&gt;<sp/>0.0001)<sp/>{</highlight></codeline>
+<codeline lineno="774"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sprintf(mesgx,<sp/></highlight><highlight class="stringliteral">&quot;ERROR-<sp/>Decompression<sp/>shorts<sp/>in=<sp/>%f,<sp/><sp/><sp/>img<sp/>size=<sp/>%d&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="775"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>shorts_in,<sp/>xs);</highlight></codeline>
+<codeline lineno="776"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>lf.log(mesgx);</highlight></codeline>
+<codeline lineno="777"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="778"><highlight class="normal"></highlight></codeline>
+<codeline lineno="779"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>len_in<sp/>=<sp/>(int)floor(shorts_in);</highlight></codeline>
+<codeline lineno="780"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>len_out<sp/>=<sp/>xs;</highlight></codeline>
+<codeline lineno="781"><highlight class="normal"></highlight></codeline>
+<codeline lineno="782"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>so<sp/>3*32<sp/>bits<sp/>is<sp/>8<sp/>pixels</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="783"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>we<sp/>will<sp/>count<sp/>by<sp/>groups<sp/>of<sp/>3<sp/>ints<sp/>to<sp/>get<sp/>one<sp/>line.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="784"><highlight class="normal"></highlight></codeline>
+<codeline lineno="785"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/>*iptr<sp/>=<sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/>*)(nimg-&gt;<ref refid="class_n_d_array_1a9581f9d8f38225a2c2977bbed70fa2b8" kindref="member">pData</ref>);</highlight></codeline>
+<codeline lineno="786"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/>*optr<sp/>=<sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/>*)(<ref refid="classpco_1a6e663da022f20d97c122e4a91d46930b" kindref="member">temp_image</ref>);</highlight></codeline>
+<codeline lineno="787"><highlight class="normal"></highlight></codeline>
+<codeline lineno="788"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="789"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(rows<sp/>=<sp/>0;<sp/>rows<sp/>&lt;<sp/>ys;<sp/>rows++)<sp/>{</highlight></codeline>
+<codeline lineno="790"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>go<sp/>across<sp/>one<sp/>line.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="791"><highlight class="normal"></highlight></codeline>
+<codeline lineno="792"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>k<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="793"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>m<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="794"><highlight class="normal"></highlight></codeline>
+<codeline lineno="795"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(k<sp/>&lt;<sp/>len_in)<sp/>{</highlight></codeline>
+<codeline lineno="796"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>optr[m]<sp/>=<sp/>(iptr[k]<sp/>&amp;<sp/>0xfff0)<sp/>&gt;&gt;<sp/>4;</highlight></codeline>
+<codeline lineno="797"><highlight class="normal"></highlight></codeline>
+<codeline lineno="798"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m<sp/>=<sp/>m<sp/>+<sp/>1;</highlight></codeline>
+<codeline lineno="799"><highlight class="normal"></highlight></codeline>
+<codeline lineno="800"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>optr[m]<sp/>=<sp/>(iptr[k]<sp/>&amp;<sp/>0xf)<sp/>&lt;&lt;<sp/>8;</highlight></codeline>
+<codeline lineno="801"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>k<sp/>=<sp/>k<sp/>+<sp/>1;</highlight></codeline>
+<codeline lineno="802"><highlight class="normal"></highlight></codeline>
+<codeline lineno="803"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>optr[m]<sp/>=<sp/>optr[m]<sp/>+<sp/>((iptr[k]<sp/>&amp;<sp/>0xff00)<sp/>&gt;&gt;<sp/>8);</highlight></codeline>
+<codeline lineno="804"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m<sp/>=<sp/>m<sp/>+<sp/>1;</highlight></codeline>
+<codeline lineno="805"><highlight class="normal"></highlight></codeline>
+<codeline lineno="806"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>optr[m]<sp/>=<sp/>(iptr[k]<sp/>&amp;<sp/>0xff)<sp/>&lt;&lt;<sp/>4;</highlight></codeline>
+<codeline lineno="807"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>k<sp/>=<sp/>k<sp/>+<sp/>1;</highlight></codeline>
+<codeline lineno="808"><highlight class="normal"></highlight></codeline>
+<codeline lineno="809"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>optr[m]<sp/>=<sp/>optr[m]<sp/>+<sp/>((iptr[k]<sp/>&amp;<sp/>0xf000)<sp/>&gt;&gt;<sp/>12);</highlight></codeline>
+<codeline lineno="810"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m<sp/>=<sp/>m<sp/>+<sp/>1;</highlight></codeline>
+<codeline lineno="811"><highlight class="normal"></highlight></codeline>
+<codeline lineno="812"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>optr[m]<sp/>=<sp/>(iptr[k]<sp/>&amp;<sp/>0xfff);</highlight></codeline>
+<codeline lineno="813"><highlight class="normal"></highlight></codeline>
+<codeline lineno="814"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m<sp/>=<sp/>m<sp/>+<sp/>1;</highlight></codeline>
+<codeline lineno="815"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>k<sp/>=<sp/>k<sp/>+<sp/>1;</highlight></codeline>
+<codeline lineno="816"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="817"><highlight class="normal"></highlight></codeline>
+<codeline lineno="818"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>iptr<sp/>+=<sp/>k;</highlight></codeline>
+<codeline lineno="819"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>optr<sp/>+=<sp/>m;</highlight></codeline>
+<codeline lineno="820"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="821"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="822"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>if<sp/>no<sp/>12<sp/>to<sp/>16<sp/>bit<sp/>extraction,<sp/>then<sp/>copy<sp/>raw<sp/>to<sp/>temp<sp/>img</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="823"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>memcpy((</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*)<ref refid="classpco_1a6e663da022f20d97c122e4a91d46930b" kindref="member">temp_image</ref>,<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*)shrt_img,<sp/>xs<sp/>*<sp/>ys<sp/>*<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">short</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="824"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="825"><highlight class="normal"></highlight></codeline>
+<codeline lineno="826"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(getIntParam(<ref refid="classpco_1aead5f0b0ba98cb1ca99e942fdf66627d" kindref="member">pco_descramble</ref>)<sp/>==<sp/>1)<sp/>{</highlight></codeline>
+<codeline lineno="827"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>descramnle<sp/>from<sp/>temp<sp/>img<sp/>to<sp/>output<sp/>img,<sp/>called<sp/>shrt<sp/>image.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="828"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(rows<sp/>=<sp/>0;<sp/>rows<sp/>&lt;<sp/>ys;<sp/>rows<sp/>=<sp/>rows<sp/>+<sp/>2)<sp/>{</highlight></codeline>
+<codeline lineno="829"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>odds<sp/>rows<sp/>on<sp/>bottom<sp/>,<sp/>bottom<sp/>2<sp/>top.<sp/>we<sp/>are<sp/>calc<sp/>in<sp/>shorts...</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="830"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dst<sp/>=<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*)(shrt_img<sp/>+<sp/>rowb<sp/>*<sp/>xs);</highlight></codeline>
+<codeline lineno="831"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>src<sp/>=<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*)(<ref refid="classpco_1a6e663da022f20d97c122e4a91d46930b" kindref="member">temp_image</ref><sp/>+<sp/>(rows<sp/>+<sp/>1)<sp/>*<sp/>xs);</highlight></codeline>
+<codeline lineno="832"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>memcpy(dst,<sp/>src,<sp/>rowbytes);</highlight></codeline>
+<codeline lineno="833"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>even<sp/>rows<sp/>on<sp/>top,<sp/>top<sp/>2<sp/>bottom</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="834"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dst<sp/>=<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*)(shrt_img<sp/>+<sp/>rowa<sp/>*<sp/>xs);</highlight></codeline>
+<codeline lineno="835"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>src<sp/>=<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*)(<ref refid="classpco_1a6e663da022f20d97c122e4a91d46930b" kindref="member">temp_image</ref><sp/>+<sp/>(rows)*xs);</highlight></codeline>
+<codeline lineno="836"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>memcpy(dst,<sp/>src,<sp/>rowbytes);</highlight></codeline>
+<codeline lineno="837"><highlight class="normal"></highlight></codeline>
+<codeline lineno="838"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rowa++;</highlight></codeline>
+<codeline lineno="839"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rowb--;</highlight></codeline>
+<codeline lineno="840"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="841"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classpco_1a70fe6eaf4b979ff2382ab0b4e0e4abce" kindref="member">checkEdgeDescramble</ref>(nimg);</highlight></codeline>
+<codeline lineno="842"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="843"><highlight class="normal"></highlight></codeline>
+<codeline lineno="844"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/><sp/></highlight><highlight class="comment">//<sp/>if<sp/>edge</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="845"><highlight class="normal"></highlight></codeline>
+<codeline lineno="846"><highlight class="normal"><sp/><sp/>}<sp/><sp/></highlight><highlight class="comment">//<sp/>if<sp/>disable<sp/>descram</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="847"><highlight class="normal"></highlight></codeline>
+<codeline lineno="848"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>attrx<sp/>=<sp/>getIntParam(<ref refid="classpco_1aead5f0b0ba98cb1ca99e942fdf66627d" kindref="member">pco_descramble</ref>);</highlight></codeline>
+<codeline lineno="849"><highlight class="normal"><sp/><sp/>nimg-&gt;<ref refid="class_n_d_array_1af5aad7b41118f465621cf045ed957469" kindref="member">pAttributeList</ref>-&gt;<ref refid="class_n_d_attribute_list_1aa86fbdd59e20b734b86b2464f470d752" kindref="member">add</ref>(</highlight><highlight class="stringliteral">&quot;pco_descramble&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;pco_descramble&quot;</highlight><highlight class="normal">,<sp/><ref refid="_n_d_attribute_8h_1a8a795995acde8458f43ac9b01376ef07a52a96048ab842e5ee55012e5abd38088" kindref="member">NDAttrInt32</ref>,</highlight></codeline>
+<codeline lineno="850"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;attrx);</highlight></codeline>
+<codeline lineno="851"><highlight class="normal"><sp/><sp/>attrx<sp/>=<sp/>getIntParam(<ref refid="classpco_1a22beed1c7c972d0af72eb40e68d70591" kindref="member">pco_edge_fastscan</ref>);</highlight></codeline>
+<codeline lineno="852"><highlight class="normal"><sp/><sp/>nimg-&gt;<ref refid="class_n_d_array_1af5aad7b41118f465621cf045ed957469" kindref="member">pAttributeList</ref>-&gt;<ref refid="class_n_d_attribute_list_1aa86fbdd59e20b734b86b2464f470d752" kindref="member">add</ref>(</highlight><highlight class="stringliteral">&quot;pco_edge_fastscan&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;pco_edge_fastscan&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="853"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_n_d_attribute_8h_1a8a795995acde8458f43ac9b01376ef07a52a96048ab842e5ee55012e5abd38088" kindref="member">NDAttrInt32</ref>,<sp/>&amp;attrx);</highlight></codeline>
+<codeline lineno="854"><highlight class="normal"><sp/><sp/>attrx<sp/>=<sp/>getIntParam(<ref refid="classpco_1a986254178fe9c0ed0e5e0fb5a011716e" kindref="member">pco_conv_12to16</ref>);</highlight></codeline>
+<codeline lineno="855"><highlight class="normal"><sp/><sp/>nimg-&gt;<ref refid="class_n_d_array_1af5aad7b41118f465621cf045ed957469" kindref="member">pAttributeList</ref>-&gt;<ref refid="class_n_d_attribute_list_1aa86fbdd59e20b734b86b2464f470d752" kindref="member">add</ref>(</highlight><highlight class="stringliteral">&quot;pco_conv_12to16&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;pco_conv_12to16&quot;</highlight><highlight class="normal">,<sp/><ref refid="_n_d_attribute_8h_1a8a795995acde8458f43ac9b01376ef07a52a96048ab842e5ee55012e5abd38088" kindref="member">NDAttrInt32</ref>,</highlight></codeline>
+<codeline lineno="856"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;attrx);</highlight></codeline>
+<codeline lineno="857"><highlight class="normal"></highlight></codeline>
+<codeline lineno="858"><highlight class="normal"><sp/><sp/>attrx<sp/>=<sp/>getIntParam(<ref refid="classpco_1af27944d1d7327e5fcc7e5e91c67eb089" kindref="member">pco_disable_descramble</ref>);</highlight></codeline>
+<codeline lineno="859"><highlight class="normal"><sp/><sp/>nimg-&gt;<ref refid="class_n_d_array_1af5aad7b41118f465621cf045ed957469" kindref="member">pAttributeList</ref>-&gt;<ref refid="class_n_d_attribute_list_1aa86fbdd59e20b734b86b2464f470d752" kindref="member">add</ref>(</highlight><highlight class="stringliteral">&quot;pco_disable_descramble&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;pco_disable_descramble&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="860"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_n_d_attribute_8h_1a8a795995acde8458f43ac9b01376ef07a52a96048ab842e5ee55012e5abd38088" kindref="member">NDAttrInt32</ref>,<sp/>&amp;attrx);</highlight></codeline>
+<codeline lineno="861"><highlight class="normal"></highlight></codeline>
+<codeline lineno="862"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>shut<sp/>off<sp/>camera<sp/>if<sp/>ADAcquire<sp/>was<sp/>turned<sp/>off</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="863"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(getIntParam(<ref refid="classpco_1a6d70b54955b51daa7cddc2bb94f7363d" kindref="member">pco_which_camera</ref>)<sp/>==<sp/><ref refid="classpco_1ad5ed5b95e51b9aafba745f3d46ddee53abac74cafb917d1958aca8c15a6826783" kindref="member">pco_edge</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="864"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(getIntParam(ADAcquire)<sp/>==<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="865"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>asynPrint(this-&gt;pasynUserSelf,<sp/>ASYN_TRACEIO_DRIVER,</highlight><highlight class="stringliteral">&quot;Turning<sp/>off<sp/>camera,<sp/>\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="866"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>we<sp/>already<sp/>have<sp/>the<sp/>grabber<sp/>mutex--<sp/>we<sp/>may<sp/>interlock<sp/>if<sp/>we<sp/>atempt<sp/>to</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="867"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>get<sp/>both...</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="868"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>releaseGrabberMutex();</highlight></codeline>
+<codeline lineno="869"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>grabSerialMutex();</highlight></codeline>
+<codeline lineno="870"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classpco_1a7ef0e71681abc8a62d307bd78af45f1d" kindref="member">doHighLevelParams</ref>(ADAcquire);</highlight></codeline>
+<codeline lineno="871"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>may<sp/>be<sp/>lots<sp/>of<sp/>useless<sp/>frames<sp/>in<sp/>grabber<sp/>memory-<sp/>so<sp/>we<sp/>delete<sp/>them</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="872"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>the<sp/>frames<sp/>came<sp/>in<sp/>after<sp/>we<sp/>turned<sp/>off<sp/>grab<sp/>but<sp/>before<sp/>we<sp/>turned<sp/>off</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="873"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>camera</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="874"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>reconfigGrabber();</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="875"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>releaseSerialMutex();</highlight></codeline>
+<codeline lineno="876"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>grabGrabberMutex();</highlight></codeline>
+<codeline lineno="877"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="878"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="879"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="880"><highlight class="normal"></highlight></codeline>
+<codeline lineno="885"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classpco_1a705060c8ff07081b9ff1614e007fea0a" kindref="member">pco::keepHouse</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>{}</highlight></codeline>
+<codeline lineno="886"><highlight class="normal"></highlight></codeline>
+<codeline lineno="891"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classpco_1a6e12361c2615752db6f5e2716d94cbcf" kindref="member">pco::intFlEndian</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>in)<sp/>{</highlight></codeline>
+<codeline lineno="892"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>a[4];</highlight></codeline>
+<codeline lineno="893"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>b[4];</highlight></codeline>
+<codeline lineno="894"><highlight class="normal"></highlight></codeline>
+<codeline lineno="895"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>*aptr<sp/>=<sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>*)a;</highlight></codeline>
+<codeline lineno="896"><highlight class="normal"></highlight></codeline>
+<codeline lineno="897"><highlight class="normal"><sp/><sp/>*aptr<sp/>=<sp/>in;</highlight></codeline>
+<codeline lineno="898"><highlight class="normal"></highlight></codeline>
+<codeline lineno="899"><highlight class="normal"><sp/><sp/>b[0]<sp/>=<sp/>a[3];</highlight></codeline>
+<codeline lineno="900"><highlight class="normal"><sp/><sp/>b[1]<sp/>=<sp/>a[2];</highlight></codeline>
+<codeline lineno="901"><highlight class="normal"><sp/><sp/>b[2]<sp/>=<sp/>a[3];</highlight></codeline>
+<codeline lineno="902"><highlight class="normal"><sp/><sp/>b[3]<sp/>=<sp/>a[0];</highlight></codeline>
+<codeline lineno="903"><highlight class="normal"></highlight></codeline>
+<codeline lineno="904"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>*bptr<sp/>=<sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>*)b;</highlight></codeline>
+<codeline lineno="905"><highlight class="normal"></highlight></codeline>
+<codeline lineno="906"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ans<sp/>=<sp/>*bptr;</highlight></codeline>
+<codeline lineno="907"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(ans);</highlight></codeline>
+<codeline lineno="908"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="909"><highlight class="normal"></highlight></codeline>
+<codeline lineno="915"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classpco_1a70fe6eaf4b979ff2382ab0b4e0e4abce" kindref="member">pco::checkEdgeDescramble</ref>(<ref refid="class_n_d_array" kindref="compound">NDArray</ref><sp/>*img_ptr)<sp/>{</highlight></codeline>
+<codeline lineno="916"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>elapsed_time;</highlight></codeline>
+<codeline lineno="917"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/>*shrt_img;</highlight></codeline>
+<codeline lineno="918"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>xs;</highlight></codeline>
+<codeline lineno="919"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ys;</highlight></codeline>
+<codeline lineno="920"><highlight class="normal"></highlight></codeline>
+<codeline lineno="921"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>kx;</highlight></codeline>
+<codeline lineno="922"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*dst,<sp/>*src;</highlight></codeline>
+<codeline lineno="923"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dftsum;</highlight></codeline>
+<codeline lineno="924"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>sign;</highlight></codeline>
+<codeline lineno="925"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>pixval;</highlight></codeline>
+<codeline lineno="926"><highlight class="normal"></highlight></codeline>
+<codeline lineno="927"><highlight class="normal"><sp/><sp/>sign<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="928"><highlight class="normal"></highlight></codeline>
+<codeline lineno="929"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/>diff;</highlight></codeline>
+<codeline lineno="930"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>diff_tot;</highlight></codeline>
+<codeline lineno="931"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>rowbytes;</highlight></codeline>
+<codeline lineno="932"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>musum;</highlight></codeline>
+<codeline lineno="933"><highlight class="normal"></highlight></codeline>
+<codeline lineno="934"><highlight class="normal"><sp/><sp/>xs<sp/>=<sp/>getIntParam(ADSizeX);</highlight></codeline>
+<codeline lineno="935"><highlight class="normal"><sp/><sp/>ys<sp/>=<sp/>getIntParam(ADSizeY);</highlight></codeline>
+<codeline lineno="936"><highlight class="normal"></highlight></codeline>
+<codeline lineno="937"><highlight class="normal"><sp/><sp/>shrt_img<sp/>=<sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/>*)img_ptr-&gt;<ref refid="class_n_d_array_1a9581f9d8f38225a2c2977bbed70fa2b8" kindref="member">pData</ref>;</highlight></codeline>
+<codeline lineno="938"><highlight class="normal"><sp/><sp/>shrt_img<sp/>+=<sp/>1024;</highlight></codeline>
+<codeline lineno="939"><highlight class="normal"><sp/><sp/>dftsum<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="940"><highlight class="normal"><sp/><sp/>musum<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="941"><highlight class="normal"></highlight></codeline>
+<codeline lineno="942"><highlight class="normal"><sp/><sp/>for<sp/>(kx<sp/>=<sp/>0;<sp/>kx<sp/>&lt;<sp/>16;<sp/>kx++)<sp/>{</highlight></codeline>
+<codeline lineno="943"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>take<sp/>a<sp/>vertiacl<sp/>line<sp/>down<sp/>image<sp/>of<sp/>len<sp/>16.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="944"><highlight class="normal"><sp/><sp/><sp/><sp/>pixval<sp/>=<sp/>(int)shrt_img[kx<sp/>*<sp/>xs];</highlight></codeline>
+<codeline lineno="945"><highlight class="normal"></highlight></codeline>
+<codeline lineno="946"><highlight class="normal"><sp/><sp/><sp/><sp/>musum<sp/>+=<sp/>pixval;</highlight></codeline>
+<codeline lineno="947"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="948"><highlight class="normal"><sp/><sp/>musum<sp/>=<sp/>musum<sp/>/<sp/>16;</highlight></codeline>
+<codeline lineno="949"><highlight class="normal"></highlight></codeline>
+<codeline lineno="950"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(kx<sp/>=<sp/>0;<sp/>kx<sp/>&lt;<sp/>16;<sp/>kx++)<sp/>{</highlight></codeline>
+<codeline lineno="951"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>take<sp/>a<sp/>vertiacl<sp/>line<sp/>down<sp/>image<sp/>of<sp/>len<sp/>16.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="952"><highlight class="normal"><sp/><sp/><sp/><sp/>pixval<sp/>=<sp/>(int)shrt_img[kx<sp/>*<sp/>xs];</highlight></codeline>
+<codeline lineno="953"><highlight class="normal"><sp/><sp/><sp/><sp/>pixval<sp/>=<sp/>pixval<sp/>-<sp/>musum;</highlight></codeline>
+<codeline lineno="954"><highlight class="normal"><sp/><sp/><sp/><sp/>dftsum<sp/>+=<sp/>sign<sp/>*<sp/>pixval;</highlight></codeline>
+<codeline lineno="955"><highlight class="normal"><sp/><sp/><sp/><sp/>sign<sp/>=<sp/>-1<sp/>*<sp/>sign;</highlight></codeline>
+<codeline lineno="956"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="957"><highlight class="normal"></highlight></codeline>
+<codeline lineno="958"><highlight class="normal"><sp/><sp/>dftsum<sp/>=<sp/>dftsum<sp/>/<sp/>16;</highlight></codeline>
+<codeline lineno="959"><highlight class="normal"><sp/><sp/>dftsum<sp/>=<sp/><ref refid="mar3xx__pck_8c_1a3aa069ac3980707dae1e0530f50d59e4" kindref="member">abs</ref>(dftsum);</highlight></codeline>
+<codeline lineno="960"><highlight class="normal"></highlight></codeline>
+<codeline lineno="961"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(dftsum<sp/>&gt;<sp/>600)<sp/>{</highlight></codeline>
+<codeline lineno="962"><highlight class="normal"><sp/><sp/><sp/><sp/>asynPrint(this-&gt;pasynUserSelf,<sp/>ASYN_TRACEIO_DRIVER,</highlight><highlight class="stringliteral">&quot;Probable<sp/>descrambling<sp/>error\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="963"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="964"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="/home/runner/work/areaDetector/areaDetector/ADPCO/pcoApp/src/pco.cpp"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,720 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="class_n_d_array_pool" kind="class" language="C++" prot="public">
+    <compoundname>NDArrayPool</compoundname>
+    <includes refid="_n_d_array_8h" local="no">NDArray.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_n_d_array_pool_1a1fc65df4b95823ce1f3f7acb65a82989" prot="private" static="no" mutable="no">
+        <type>std::multiset&lt; <ref refid="classfree_list_element" kindref="compound">freeListElement</ref> &gt;</type>
+        <definition>std::multiset&lt;freeListElement&gt; NDArrayPool::freeList_</definition>
+        <argsstring></argsstring>
+        <name>freeList_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/NDArray.h" line="196" column="19" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/NDArray.h" bodystart="196" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_d_array_pool_1aa2dd32cffce07891389c5de9f381c370" prot="private" static="no" mutable="no">
+        <type>epicsMutexId</type>
+        <definition>epicsMutexId NDArrayPool::listLock_</definition>
+        <argsstring></argsstring>
+        <name>listLock_</name>
+        <briefdescription>
+<para>Mutex to protect the free list. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/NDArray.h" line="197" column="18" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/NDArray.h" bodystart="197" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_d_array_pool_1a70fce35bce5ad703a1edf3f919dba622" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int NDArrayPool::numBuffers_</definition>
+        <argsstring></argsstring>
+        <name>numBuffers_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/NDArray.h" line="198" column="18" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/NDArray.h" bodystart="198" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_d_array_pool_1a1d882c95fcb9647ee7d1b2aabd65dc26" prot="private" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t NDArrayPool::maxMemory_</definition>
+        <argsstring></argsstring>
+        <name>maxMemory_</name>
+        <briefdescription>
+<para>Maximum bytes of memory this object is allowed to allocate; -1=unlimited. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/NDArray.h" line="199" column="18" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/NDArray.h" bodystart="199" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_d_array_pool_1a9ac68a150c1103c75e22ec5ca1e7c775" prot="private" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t NDArrayPool::memorySize_</definition>
+        <argsstring></argsstring>
+        <name>memorySize_</name>
+        <briefdescription>
+<para>Number of bytes of memory this object has currently allocated. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/NDArray.h" line="200" column="18" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/NDArray.h" bodystart="200" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_d_array_pool_1a3923f41c3789a5e3b642e84ad202d50b" prot="private" static="no" mutable="no">
+        <type>class <ref refid="classasyn_n_d_array_driver" kindref="compound">asynNDArrayDriver</ref> *</type>
+        <definition>class asynNDArrayDriver* NDArrayPool::pDriver_</definition>
+        <argsstring></argsstring>
+        <name>pDriver_</name>
+        <briefdescription>
+<para>The <ref refid="classasyn_n_d_array_driver" kindref="compound">asynNDArrayDriver</ref> that created this object. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/NDArray.h" line="201" column="28" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/NDArray.h" bodystart="201" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_n_d_array_pool_1a407b2f4065de9e043a266f42cf2a4dae" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>NDArrayPool::NDArrayPool</definition>
+        <argsstring>(class asynNDArrayDriver *pDriver, size_t maxMemory)</argsstring>
+        <name>NDArrayPool</name>
+        <param>
+          <type>class <ref refid="classasyn_n_d_array_driver" kindref="compound">asynNDArrayDriver</ref> *</type>
+          <declname>pDriver</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>maxMemory</declname>
+        </param>
+        <briefdescription>
+<para><ref refid="class_n_d_array_pool" kindref="compound">NDArrayPool</ref> constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pDriver</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the <ref refid="classasyn_n_d_array_driver" kindref="compound">asynNDArrayDriver</ref> that created this object. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">maxMemory</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Maxiumum number of bytes of memory the the pool is allowed to use, summed over all of the <ref refid="class_n_d_array" kindref="compound">NDArray</ref> objects; 0=unlimited. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/NDArray.h" line="165" column="5" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/NDArrayPool.cpp" bodystart="50" bodyend="54"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_d_array_pool_1aace2bf8820770351af3c408b4a92345b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type></type>
+        <definition>virtual NDArrayPool::~NDArrayPool</definition>
+        <argsstring>()</argsstring>
+        <name>~NDArrayPool</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/NDArray.h" line="166" column="13" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/NDArray.h" bodystart="166" bodyend="166"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_d_array_pool_1a26b4360694655c4af6c853c2f3d2ce5e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_n_d_array" kindref="compound">NDArray</ref> *</type>
+        <definition>NDArray * NDArrayPool::alloc</definition>
+        <argsstring>(int ndims, size_t *dims, NDDataType_t dataType, size_t dataSize, void *pData)</argsstring>
+        <name>alloc</name>
+        <param>
+          <type>int</type>
+          <declname>ndims</declname>
+        </param>
+        <param>
+          <type>size_t *</type>
+          <declname>dims</declname>
+        </param>
+        <param>
+          <type><ref refid="_n_d_attribute_8h_1a34b835bcabc3b7f546f4b25c5767cb16" kindref="member">NDDataType_t</ref></type>
+          <declname>dataType</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>dataSize</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>pData</declname>
+        </param>
+        <briefdescription>
+<para>Allocates a new <ref refid="class_n_d_array" kindref="compound">NDArray</ref> object; the first 3 arguments are required. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">ndims</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of dimensions in the <ref refid="class_n_d_array" kindref="compound">NDArray</ref>. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">dims</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array of dimensions, whose size must be at least ndims. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">dataType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Data type of the <ref refid="class_n_d_array" kindref="compound">NDArray</ref> data. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">dataSize</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of bytes to allocate for the array data; if 0 then <ref refid="class_n_d_array_pool_1a26b4360694655c4af6c853c2f3d2ce5e" kindref="member">alloc()</ref> will compute the size required from ndims, dims, and dataType. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">pData</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to a data buffer; if NULL then alloc will allocate a new array buffer; if not NULL then it is assumed to point to a valid buffer.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+If pData is not NULL then dataSize must contain the actual number of bytes in the existing array, and this array must be large enough to hold the array data. <ref refid="class_n_d_array_pool_1a26b4360694655c4af6c853c2f3d2ce5e" kindref="member">alloc()</ref> searches its free list to find a free <ref refid="class_n_d_array" kindref="compound">NDArray</ref> buffer. If is cannot find one then it will allocate a new one and add it to the free list. If allocating the memory required for this <ref refid="class_n_d_array" kindref="compound">NDArray</ref> would cause the cumulative memory allocated for the pool to exceed maxMemory then an error will be returned. <ref refid="class_n_d_array_pool_1a26b4360694655c4af6c853c2f3d2ce5e" kindref="member">alloc()</ref> sets the reference count for the returned <ref refid="class_n_d_array" kindref="compound">NDArray</ref> to 1. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/NDArray.h" line="167" column="17" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/NDArrayPool.cpp" bodystart="108" bodyend="215"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_d_array_pool_1a90dd764706fddbf69cde2fc498d4af9e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_n_d_array" kindref="compound">NDArray</ref> *</type>
+        <definition>NDArray * NDArrayPool::copy</definition>
+        <argsstring>(NDArray *pIn, NDArray *pOut, bool copyData, bool copyDimensions=true, bool copyDataType=true)</argsstring>
+        <name>copy</name>
+        <param>
+          <type><ref refid="class_n_d_array" kindref="compound">NDArray</ref> *</type>
+          <declname>pIn</declname>
+        </param>
+        <param>
+          <type><ref refid="class_n_d_array" kindref="compound">NDArray</ref> *</type>
+          <declname>pOut</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>copyData</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>copyDimensions</declname>
+          <defval>true</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>copyDataType</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+<para>This method makes a copy of an <ref refid="class_n_d_array" kindref="compound">NDArray</ref> object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pIn</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The input array to be copied. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">pOut</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The output array that will be copied to; can be NULL or a pointer to an existing <ref refid="class_n_d_array" kindref="compound">NDArray</ref>. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">copyData</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If this flag is true then everything including the array data is copied; if 0 then everything except the data (including attributes) is copied. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">copyDimensions</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If this flag is true then the dimensions are copied even if pOut is not NULL; default=true. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">copyDataType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If this flag is true then the dataType is copied even if pOut is not NULL; default=true. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Returns a pointer to the output array.</para>
+</simplesect>
+If pOut is NULL then it is first allocated. If the output array object already exists (pOut!=NULL) then it must have sufficient memory allocated to it to hold the data. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/NDArray.h" line="168" column="17" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/NDArrayPool.cpp" bodystart="230" bodyend="265"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_d_array_pool_1a232bb59397c1dcaeb7f79f49977b7fca" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int NDArrayPool::reserve</definition>
+        <argsstring>(NDArray *pArray)</argsstring>
+        <name>reserve</name>
+        <param>
+          <type><ref refid="class_n_d_array" kindref="compound">NDArray</ref> *</type>
+          <declname>pArray</declname>
+        </param>
+        <briefdescription>
+<para>This method increases the reference count for the <ref refid="class_n_d_array" kindref="compound">NDArray</ref> object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pArray</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The array on which to increase the reference count.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+Plugins must call <ref refid="class_n_d_array_pool_1a232bb59397c1dcaeb7f79f49977b7fca" kindref="member">reserve()</ref> when an <ref refid="class_n_d_array" kindref="compound">NDArray</ref> is placed on a queue for later processing. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/NDArray.h" line="170" column="18" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/NDArrayPool.cpp" bodystart="273" bodyend="298"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_d_array_pool_1a6c693c97791d2a39a6129e6cf4f72393" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int NDArrayPool::release</definition>
+        <argsstring>(NDArray *pArray)</argsstring>
+        <name>release</name>
+        <param>
+          <type><ref refid="class_n_d_array" kindref="compound">NDArray</ref> *</type>
+          <declname>pArray</declname>
+        </param>
+        <briefdescription>
+<para>This method decreases the reference count for the <ref refid="class_n_d_array" kindref="compound">NDArray</ref> object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pArray</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The array on which to decrease the reference count.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+When the reference count reaches 0 the <ref refid="class_n_d_array" kindref="compound">NDArray</ref> is placed back in the free list. Plugins must call <ref refid="class_n_d_array_pool_1a6c693c97791d2a39a6129e6cf4f72393" kindref="member">release()</ref> when an <ref refid="class_n_d_array" kindref="compound">NDArray</ref> is removed from the queue and processing on it is complete. Drivers must call <ref refid="class_n_d_array_pool_1a6c693c97791d2a39a6129e6cf4f72393" kindref="member">release()</ref> after calling all plugins. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/NDArray.h" line="171" column="18" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/NDArrayPool.cpp" bodystart="308" bodyend="337"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_d_array_pool_1ade048931af82929ee2d0a33fcc5c5fea" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int NDArrayPool::convert</definition>
+        <argsstring>(NDArray *pIn, NDArray **ppOut, NDDataType_t dataTypeOut, NDDimension_t *outDims)</argsstring>
+        <name>convert</name>
+        <param>
+          <type><ref refid="class_n_d_array" kindref="compound">NDArray</ref> *</type>
+          <declname>pIn</declname>
+        </param>
+        <param>
+          <type><ref refid="class_n_d_array" kindref="compound">NDArray</ref> **</type>
+          <declname>ppOut</declname>
+        </param>
+        <param>
+          <type><ref refid="_n_d_attribute_8h_1a34b835bcabc3b7f546f4b25c5767cb16" kindref="member">NDDataType_t</ref></type>
+          <declname>dataTypeOut</declname>
+        </param>
+        <param>
+          <type><ref refid="_n_d_array_8h_1a8c874e905fbe79f7544501ec154954c0" kindref="member">NDDimension_t</ref> *</type>
+          <declname>outDims</declname>
+          <defname>dimsOut</defname>
+        </param>
+        <briefdescription>
+<para>Creates a new output <ref refid="class_n_d_array" kindref="compound">NDArray</ref> from an input <ref refid="class_n_d_array" kindref="compound">NDArray</ref>, performing conversion operations. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The conversion can change the data type if dataTypeOut is different from pIn-&gt;dataType. It can also change the dimensions. outDims may have different values of size, binning, offset and reverse for each of its dimensions from input array dimensions (pIn-&gt;dims). <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pIn</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The input array, source of the conversion. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">ppOut</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The output array, result of the conversion. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">dataTypeOut</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The data type of the output array. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">dimsOut</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The dimensions of the output array. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/NDArray.h" line="172" column="18" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/NDArrayPool.cpp" bodystart="563" bodyend="698"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_d_array_pool_1a7fb32abb015e2a77e7a2838a1e77d55c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int NDArrayPool::convert</definition>
+        <argsstring>(NDArray *pIn, NDArray **ppOut, NDDataType_t dataTypeOut)</argsstring>
+        <name>convert</name>
+        <param>
+          <type><ref refid="class_n_d_array" kindref="compound">NDArray</ref> *</type>
+          <declname>pIn</declname>
+        </param>
+        <param>
+          <type><ref refid="class_n_d_array" kindref="compound">NDArray</ref> **</type>
+          <declname>ppOut</declname>
+        </param>
+        <param>
+          <type><ref refid="_n_d_attribute_8h_1a34b835bcabc3b7f546f4b25c5767cb16" kindref="member">NDDataType_t</ref></type>
+          <declname>dataTypeOut</declname>
+        </param>
+        <briefdescription>
+<para>Creates a new output <ref refid="class_n_d_array" kindref="compound">NDArray</ref> from an input <ref refid="class_n_d_array" kindref="compound">NDArray</ref>, performing conversion operations. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This form of the function is for changing the data type only, not the dimensions, which are preserved. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pIn</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The input array, source of the conversion. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">ppOut</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The output array, result of the conversion. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">dataTypeOut</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The data type of the output array. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/NDArray.h" line="176" column="18" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/NDArrayPool.cpp" bodystart="535" bodyend="550"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_d_array_pool_1a3b5ad3c3c7dae275cd00e2a0a8261d42" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int NDArrayPool::report</definition>
+        <argsstring>(FILE *fp, int details)</argsstring>
+        <name>report</name>
+        <param>
+          <type>FILE *</type>
+          <declname>fp</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>details</declname>
+        </param>
+        <briefdescription>
+<para>Reports on the free list size and other properties of the <ref refid="class_n_d_array_pool" kindref="compound">NDArrayPool</ref> object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">fp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File pointer for the report output. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">details</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Level of report details desired; does nothing at present. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/NDArray.h" line="179" column="18" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/NDArrayPool.cpp" bodystart="749" bodyend="776"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_d_array_pool_1ad521528dc3b6da9efc54a5da50cf64bc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int NDArrayPool::getNumBuffers</definition>
+        <argsstring>()</argsstring>
+        <name>getNumBuffers</name>
+        <briefdescription>
+<para>Returns number of buffers this object has currently allocated. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/NDArray.h" line="180" column="18" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/NDArrayPool.cpp" bodystart="701" bodyend="704"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_d_array_pool_1a42a4d9076f0edb26ede46b3a3d6f6cb6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t NDArrayPool::getMaxMemory</definition>
+        <argsstring>()</argsstring>
+        <name>getMaxMemory</name>
+        <briefdescription>
+<para>Returns maximum bytes of memory this object is allowed to allocate; 0=unlimited. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/NDArray.h" line="181" column="18" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/NDArrayPool.cpp" bodystart="707" bodyend="710"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_d_array_pool_1acda1f9b45f518f66e1550d0cddcbded3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t NDArrayPool::getMemorySize</definition>
+        <argsstring>()</argsstring>
+        <name>getMemorySize</name>
+        <briefdescription>
+<para>Returns mumber of bytes of memory this object has currently allocated. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/NDArray.h" line="182" column="18" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/NDArrayPool.cpp" bodystart="713" bodyend="716"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_d_array_pool_1a0aeb5485c5952894d44fe738817e2157" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int NDArrayPool::getNumFree</definition>
+        <argsstring>()</argsstring>
+        <name>getNumFree</name>
+        <briefdescription>
+<para>Returns number of <ref refid="class_n_d_array" kindref="compound">NDArray</ref> objects in the free list. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/NDArray.h" line="183" column="18" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/NDArrayPool.cpp" bodystart="719" bodyend="725"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_d_array_pool_1a291e7945949896cbced71383b9e4472a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void NDArrayPool::emptyFreeList</definition>
+        <argsstring>()</argsstring>
+        <name>emptyFreeList</name>
+        <briefdescription>
+<para>Deletes all of the NDArrays in the free list. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/NDArray.h" line="184" column="18" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/NDArrayPool.cpp" bodystart="728" bodyend="742"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="class_n_d_array_pool_1ac7f9c86c15a5a45da9b6d609e782d23b" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="class_n_d_array" kindref="compound">NDArray</ref> *</type>
+        <definition>NDArray * NDArrayPool::createArray</definition>
+        <argsstring>()</argsstring>
+        <name>createArray</name>
+        <briefdescription>
+<para>The following methods should be implemented by a pool class that manages objects derived from the <ref refid="class_n_d_array" kindref="compound">NDArray</ref> class. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Create new <ref refid="class_n_d_array" kindref="compound">NDArray</ref> object.</para>
+<para>This method should be overriden by a pool class that manages objects that derive from <ref refid="class_n_d_array" kindref="compound">NDArray</ref> class. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/NDArray.h" line="190" column="21" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/NDArrayPool.cpp" bodystart="60" bodyend="63"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_d_array_pool_1af524d8046b71d97814e5c4ba2c82ee0d" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void NDArrayPool::onAllocateArray</definition>
+        <argsstring>(NDArray *pArray)</argsstring>
+        <name>onAllocateArray</name>
+        <param>
+          <type><ref refid="class_n_d_array" kindref="compound">NDArray</ref> *</type>
+          <declname>pArray</declname>
+        </param>
+        <briefdescription>
+<para>Hook for pool classes that manage objects derived from <ref refid="class_n_d_array" kindref="compound">NDArray</ref> class. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This hook is called after new array has been allocated. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pArray</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the allocated <ref refid="class_n_d_array" kindref="compound">NDArray</ref> object </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/NDArray.h" line="191" column="18" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/NDArrayPool.cpp" bodystart="69" bodyend="71"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_d_array_pool_1a10e11c9e1a75667a1ae57b2963fab49c" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void NDArrayPool::onReserveArray</definition>
+        <argsstring>(NDArray *pArray)</argsstring>
+        <name>onReserveArray</name>
+        <param>
+          <type><ref refid="class_n_d_array" kindref="compound">NDArray</ref> *</type>
+          <declname>pArray</declname>
+        </param>
+        <briefdescription>
+<para>Hook for pool classes that manage objects derived from <ref refid="class_n_d_array" kindref="compound">NDArray</ref> class. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This hook is called after array has been reserved. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pArray</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the reserved <ref refid="class_n_d_array" kindref="compound">NDArray</ref> object </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/NDArray.h" line="192" column="18" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/NDArrayPool.cpp" bodystart="77" bodyend="79"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_d_array_pool_1a9e4ed81d209b0b89776f54f51a7fead4" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void NDArrayPool::onReleaseArray</definition>
+        <argsstring>(NDArray *pArray)</argsstring>
+        <name>onReleaseArray</name>
+        <param>
+          <type><ref refid="class_n_d_array" kindref="compound">NDArray</ref> *</type>
+          <declname>pArray</declname>
+        </param>
+        <briefdescription>
+<para>Hook for pool classes that manage objects derived from <ref refid="class_n_d_array" kindref="compound">NDArray</ref> class. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This hook is called after array has been released. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pArray</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the released <ref refid="class_n_d_array" kindref="compound">NDArray</ref> object </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/NDArray.h" line="193" column="18" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/NDArrayPool.cpp" bodystart="85" bodyend="87"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>The <ref refid="class_n_d_array_pool" kindref="compound">NDArrayPool</ref> class manages a free list (pool) of <ref refid="class_n_d_array" kindref="compound">NDArray</ref> objects. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Drivers allocate <ref refid="class_n_d_array" kindref="compound">NDArray</ref> objects from the pool, and pass these objects to plugins. Plugins increase the reference count on the object when they place the object on their queue, and decrease the reference count when they are done processing the array. When the reference count reaches 0 again the <ref refid="class_n_d_array" kindref="compound">NDArray</ref> object is placed back on the free list. This mechanism minimizes the copying of array data in plugins. </para>
+    </detaileddescription>
+    <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/NDArray.h" line="163" column="1" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/NDArray.h" bodystart="163" bodyend="202"/>
+    <listofallmembers>
+      <member refid="class_n_d_array_pool_1a26b4360694655c4af6c853c2f3d2ce5e" prot="public" virt="non-virtual"><scope>NDArrayPool</scope><name>alloc</name></member>
+      <member refid="class_n_d_array_pool_1ade048931af82929ee2d0a33fcc5c5fea" prot="public" virt="non-virtual"><scope>NDArrayPool</scope><name>convert</name></member>
+      <member refid="class_n_d_array_pool_1a7fb32abb015e2a77e7a2838a1e77d55c" prot="public" virt="non-virtual"><scope>NDArrayPool</scope><name>convert</name></member>
+      <member refid="class_n_d_array_pool_1a90dd764706fddbf69cde2fc498d4af9e" prot="public" virt="non-virtual"><scope>NDArrayPool</scope><name>copy</name></member>
+      <member refid="class_n_d_array_pool_1ac7f9c86c15a5a45da9b6d609e782d23b" prot="protected" virt="virtual"><scope>NDArrayPool</scope><name>createArray</name></member>
+      <member refid="class_n_d_array_pool_1a291e7945949896cbced71383b9e4472a" prot="public" virt="non-virtual"><scope>NDArrayPool</scope><name>emptyFreeList</name></member>
+      <member refid="class_n_d_array_pool_1a1fc65df4b95823ce1f3f7acb65a82989" prot="private" virt="non-virtual"><scope>NDArrayPool</scope><name>freeList_</name></member>
+      <member refid="class_n_d_array_pool_1a42a4d9076f0edb26ede46b3a3d6f6cb6" prot="public" virt="non-virtual"><scope>NDArrayPool</scope><name>getMaxMemory</name></member>
+      <member refid="class_n_d_array_pool_1acda1f9b45f518f66e1550d0cddcbded3" prot="public" virt="non-virtual"><scope>NDArrayPool</scope><name>getMemorySize</name></member>
+      <member refid="class_n_d_array_pool_1ad521528dc3b6da9efc54a5da50cf64bc" prot="public" virt="non-virtual"><scope>NDArrayPool</scope><name>getNumBuffers</name></member>
+      <member refid="class_n_d_array_pool_1a0aeb5485c5952894d44fe738817e2157" prot="public" virt="non-virtual"><scope>NDArrayPool</scope><name>getNumFree</name></member>
+      <member refid="class_n_d_array_pool_1aa2dd32cffce07891389c5de9f381c370" prot="private" virt="non-virtual"><scope>NDArrayPool</scope><name>listLock_</name></member>
+      <member refid="class_n_d_array_pool_1a1d882c95fcb9647ee7d1b2aabd65dc26" prot="private" virt="non-virtual"><scope>NDArrayPool</scope><name>maxMemory_</name></member>
+      <member refid="class_n_d_array_pool_1a9ac68a150c1103c75e22ec5ca1e7c775" prot="private" virt="non-virtual"><scope>NDArrayPool</scope><name>memorySize_</name></member>
+      <member refid="class_n_d_array_pool_1a407b2f4065de9e043a266f42cf2a4dae" prot="public" virt="non-virtual"><scope>NDArrayPool</scope><name>NDArrayPool</name></member>
+      <member refid="class_n_d_array_pool_1a70fce35bce5ad703a1edf3f919dba622" prot="private" virt="non-virtual"><scope>NDArrayPool</scope><name>numBuffers_</name></member>
+      <member refid="class_n_d_array_pool_1af524d8046b71d97814e5c4ba2c82ee0d" prot="protected" virt="virtual"><scope>NDArrayPool</scope><name>onAllocateArray</name></member>
+      <member refid="class_n_d_array_pool_1a9e4ed81d209b0b89776f54f51a7fead4" prot="protected" virt="virtual"><scope>NDArrayPool</scope><name>onReleaseArray</name></member>
+      <member refid="class_n_d_array_pool_1a10e11c9e1a75667a1ae57b2963fab49c" prot="protected" virt="virtual"><scope>NDArrayPool</scope><name>onReserveArray</name></member>
+      <member refid="class_n_d_array_pool_1a3923f41c3789a5e3b642e84ad202d50b" prot="private" virt="non-virtual"><scope>NDArrayPool</scope><name>pDriver_</name></member>
+      <member refid="class_n_d_array_pool_1a6c693c97791d2a39a6129e6cf4f72393" prot="public" virt="non-virtual"><scope>NDArrayPool</scope><name>release</name></member>
+      <member refid="class_n_d_array_pool_1a3b5ad3c3c7dae275cd00e2a0a8261d42" prot="public" virt="non-virtual"><scope>NDArrayPool</scope><name>report</name></member>
+      <member refid="class_n_d_array_pool_1a232bb59397c1dcaeb7f79f49977b7fca" prot="public" virt="non-virtual"><scope>NDArrayPool</scope><name>reserve</name></member>
+      <member refid="class_n_d_array_pool_1aace2bf8820770351af3c408b4a92345b" prot="public" virt="virtual"><scope>NDArrayPool</scope><name>~NDArrayPool</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

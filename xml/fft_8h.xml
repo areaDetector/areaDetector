@@ -1,0 +1,112 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="fft_8h" kind="file" language="C++">
+    <compoundname>fft.h</compoundname>
+    <includedby refid="fft_8c" local="yes">/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/fft.c</includedby>
+    <includedby refid="_n_d_plugin_f_f_t_8cpp" local="yes">/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginFFT.cpp</includedby>
+    <invincdepgraph>
+      <node id="2">
+        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/fft.c</label>
+        <link refid="fft_8c"/>
+      </node>
+      <node id="1">
+        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/fft.h</label>
+        <link refid="fft_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginFFT.cpp</label>
+        <link refid="_n_d_plugin_f_f_t_8cpp"/>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="fft_8h_1af8fbdc158ca7a4c5c0547f0cfa6994bb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void fft_1D</definition>
+        <argsstring>(double data[], unsigned long nn, int isign)</argsstring>
+        <name>fft_1D</name>
+        <param>
+          <type>double</type>
+          <declname>data</declname>
+          <array>[]</array>
+        </param>
+        <param>
+          <type>unsigned long</type>
+          <declname>nn</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>isign</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/fft.h" line="13" column="6" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/fft.c" bodystart="13" bodyend="61" declfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/fft.h" declline="13" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="fft_8h_1a32b08af213a19d655dbac8197989a5c4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void fft_ND</definition>
+        <argsstring>(double data[], unsigned long nn[], int ndim, int isign)</argsstring>
+        <name>fft_ND</name>
+        <param>
+          <type>double</type>
+          <declname>data</declname>
+          <array>[]</array>
+        </param>
+        <param>
+          <type>unsigned long</type>
+          <declname>nn</declname>
+          <array>[]</array>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ndim</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>isign</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/fft.h" line="14" column="6" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/fft.c" bodystart="63" bodyend="132" declfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/fft.h" declline="14" declcolumn="6"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*<sp/>fft.h</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Mark<sp/>Rivers</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>February<sp/>27,<sp/>2016</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>FFT_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>FFT_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="fft_8h_1af8fbdc158ca7a4c5c0547f0cfa6994bb" kindref="member">fft_1D</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>data[],<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>nn,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>isign);</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="fft_8h_1a32b08af213a19d655dbac8197989a5c4" kindref="member">fft_ND</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>data[],<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>nn[],<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ndim,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>isign);</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/><sp/></highlight><highlight class="comment">/*<sp/>FFT_H<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/fft.h"/>
+  </compounddef>
+</doxygen>

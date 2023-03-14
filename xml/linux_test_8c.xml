@@ -1,0 +1,121 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="linux_test_8c" kind="file" language="C++">
+    <compoundname>linuxTest.c</compoundname>
+    <includes local="no">stdio.h</includes>
+    <includes local="no">stdlib.h</includes>
+    <includes local="no">time.h</includes>
+    <includes local="yes">atmcdLXd.h</includes>
+    <incdepgraph>
+      <node id="3">
+        <label>stdlib.h</label>
+      </node>
+      <node id="1">
+        <label>/home/runner/work/areaDetector/areaDetector/ADAndor/andorApp/src/linuxTest.c</label>
+        <link refid="linux_test_8c"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>time.h</label>
+      </node>
+      <node id="5">
+        <label>atmcdLXd.h</label>
+      </node>
+      <node id="2">
+        <label>stdio.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="linux_test_8c_1aab495acadd31c5ed58cccfeeb40ed16d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void checkStatus</definition>
+        <argsstring>(int status)</argsstring>
+        <name>checkStatus</name>
+        <param>
+          <type>int</type>
+          <declname>status</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADAndor/andorApp/src/linuxTest.c" line="10" column="6" bodyfile="/home/runner/work/areaDetector/areaDetector/ADAndor/andorApp/src/linuxTest.c" bodystart="10" bodyend="15"/>
+      </memberdef>
+      <memberdef kind="function" id="linux_test_8c_1a0ddf1224851353fc92bfbff6f499fa97" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int main</definition>
+        <argsstring>(int argc, char *argv[])</argsstring>
+        <name>main</name>
+        <param>
+          <type>int</type>
+          <declname>argc</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>argv</declname>
+          <array>[]</array>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADAndor/andorApp/src/linuxTest.c" line="17" column="5" bodyfile="/home/runner/work/areaDetector/areaDetector/ADAndor/andorApp/src/linuxTest.c" bodystart="17" bodyend="37"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&lt;stdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdlib.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;time.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>_WIN32</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;ATMCD32D.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;atmcdLXd.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="linux_test_8c_1aab495acadd31c5ed58cccfeeb40ed16d" kindref="member">checkStatus</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>status)</highlight></codeline>
+<codeline lineno="11"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(status<sp/>==<sp/>DRV_SUCCESS)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;checkStatus<sp/>error=%d<sp/>exiting!\n&quot;</highlight><highlight class="normal">,<sp/>status);</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/>exit(-1);</highlight></codeline>
+<codeline lineno="15"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="linux_test_8c_1a0ddf1224851353fc92bfbff6f499fa97" kindref="member">main</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>argc,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*argv[])</highlight></codeline>
+<codeline lineno="18"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>minX=0,<sp/>minY=0,<sp/>binX=1,<sp/>binY=1,<sp/>sizeX,<sp/>sizeY;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>model[256];</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>temperature;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>status;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><ref refid="linux_test_8c_1aab495acadd31c5ed58cccfeeb40ed16d" kindref="member">checkStatus</ref>(Initialize(</highlight><highlight class="stringliteral">&quot;/usr/local/etc/andor&quot;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;Intialize(/usr/local/etc/andor)<sp/>OK\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><ref refid="linux_test_8c_1aab495acadd31c5ed58cccfeeb40ed16d" kindref="member">checkStatus</ref>(GetDetector(&amp;sizeX,<sp/>&amp;sizeY));</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;GetDetector()<sp/>OK,<sp/>sizeX=%d,<sp/>sizeY=%d\n&quot;</highlight><highlight class="normal">,<sp/>sizeX,<sp/>sizeY);</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><ref refid="linux_test_8c_1aab495acadd31c5ed58cccfeeb40ed16d" kindref="member">checkStatus</ref>(GetHeadModel(model));</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;GetHeadModel()<sp/>OK,<sp/>model=%s\n&quot;</highlight><highlight class="normal">,<sp/>model);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><ref refid="linux_test_8c_1aab495acadd31c5ed58cccfeeb40ed16d" kindref="member">checkStatus</ref>(SetReadMode(4));</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;SetReadMode(4)<sp/>OK\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><ref refid="linux_test_8c_1aab495acadd31c5ed58cccfeeb40ed16d" kindref="member">checkStatus</ref>(SetImage(binX,<sp/>binY,<sp/>minX+1,<sp/>minX+sizeX,<sp/>minY+1,<sp/>minY+sizeY));</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;SetImage<sp/>OK\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/>status<sp/>=<sp/>GetTemperatureF(&amp;temperature);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;GetTemperature<sp/>OK,<sp/>temperature=%f,<sp/>status=%d\n&quot;</highlight><highlight class="normal">,<sp/>temperature,<sp/>status);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="/home/runner/work/areaDetector/areaDetector/ADAndor/andorApp/src/linuxTest.c"/>
+  </compounddef>
+</doxygen>

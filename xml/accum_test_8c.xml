@@ -1,0 +1,155 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="accum_test_8c" kind="file" language="C++">
+    <compoundname>accumTest.c</compoundname>
+    <includes local="no">stdio.h</includes>
+    <includes local="no">stdlib.h</includes>
+    <includes local="no">time.h</includes>
+    <includes local="yes">atmcdLXd.h</includes>
+    <incdepgraph>
+      <node id="3">
+        <label>stdlib.h</label>
+      </node>
+      <node id="1">
+        <label>/home/runner/work/areaDetector/areaDetector/ADAndor/andorApp/src/accumTest.c</label>
+        <link refid="accum_test_8c"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>time.h</label>
+      </node>
+      <node id="5">
+        <label>atmcdLXd.h</label>
+      </node>
+      <node id="2">
+        <label>stdio.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="accum_test_8c_1aab495acadd31c5ed58cccfeeb40ed16d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void checkStatus</definition>
+        <argsstring>(int status)</argsstring>
+        <name>checkStatus</name>
+        <param>
+          <type>int</type>
+          <declname>status</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADAndor/andorApp/src/accumTest.c" line="10" column="6" bodyfile="/home/runner/work/areaDetector/areaDetector/ADAndor/andorApp/src/accumTest.c" bodystart="10" bodyend="15"/>
+      </memberdef>
+      <memberdef kind="function" id="accum_test_8c_1a0ddf1224851353fc92bfbff6f499fa97" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int main</definition>
+        <argsstring>(int argc, char *argv[])</argsstring>
+        <name>main</name>
+        <param>
+          <type>int</type>
+          <declname>argc</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>argv</declname>
+          <array>[]</array>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADAndor/andorApp/src/accumTest.c" line="17" column="5" bodyfile="/home/runner/work/areaDetector/areaDetector/ADAndor/andorApp/src/accumTest.c" bodystart="17" bodyend="71"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&lt;stdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdlib.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;time.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>_WIN32</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;ATMCD32D.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;atmcdLXd.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="accum_test_8c_1aab495acadd31c5ed58cccfeeb40ed16d" kindref="member">checkStatus</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>status)</highlight></codeline>
+<codeline lineno="11"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(status<sp/>==<sp/>DRV_SUCCESS)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;checkStatus<sp/>error=%d<sp/>exiting!\n&quot;</highlight><highlight class="normal">,<sp/>status);</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/>exit(-1);</highlight></codeline>
+<codeline lineno="15"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="accum_test_8c_1a0ddf1224851353fc92bfbff6f499fa97" kindref="member">main</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>argc,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*argv[])</highlight></codeline>
+<codeline lineno="18"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>adcChannel=1,<sp/>minX=0,<sp/>minY=0,<sp/>binX=1,<sp/>binY=1,<sp/>sizeX=1024,<sp/>sizeY=1024;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>triggerMode=0,<sp/>numExposures=2,<sp/>numImages=3;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>mAcquireTime=0.1f,<sp/>mAccumulatePeriod=1.0f,<sp/>mAcquirePeriod=4.0f;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>acquireTimeAct,<sp/>accumulatePeriodAct,<sp/>acquirePeriodAct;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>AAKinetics=3,<sp/>ATInternal=0;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/>time_t<sp/>startTime,<sp/>endTime;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>acquireStatus;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><ref refid="accum_test_8c_1aab495acadd31c5ed58cccfeeb40ed16d" kindref="member">checkStatus</ref>(Initialize(</highlight><highlight class="stringliteral">&quot;/usr/local/etc/andor&quot;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;SetTriggerMode(%d)\n&quot;</highlight><highlight class="normal">,<sp/>triggerMode);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><ref refid="accum_test_8c_1aab495acadd31c5ed58cccfeeb40ed16d" kindref="member">checkStatus</ref>(SetTriggerMode(ATInternal));</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;SetADChannel(%d)\n&quot;</highlight><highlight class="normal">,<sp/>adcChannel);</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><ref refid="accum_test_8c_1aab495acadd31c5ed58cccfeeb40ed16d" kindref="member">checkStatus</ref>(SetADChannel(adcChannel));</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//Set<sp/>fastest<sp/>HS<sp/>speed.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;SetHSSpeed(0,<sp/>0)\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><ref refid="accum_test_8c_1aab495acadd31c5ed58cccfeeb40ed16d" kindref="member">checkStatus</ref>(SetHSSpeed(0,<sp/>0));</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;SetImage(%d,%d,%d,%d,%d,%d)\n&quot;</highlight><highlight class="normal">,<sp/></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>binX,<sp/>binY,<sp/>minX+1,<sp/>minX+sizeX,<sp/>minY+1,<sp/>minY+sizeY);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><ref refid="accum_test_8c_1aab495acadd31c5ed58cccfeeb40ed16d" kindref="member">checkStatus</ref>(SetImage(binX,<sp/>binY,<sp/>minX+1,<sp/>minX+sizeX,<sp/>minY+1,<sp/>minY+sizeY));</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;SetExposureTime(%f)\n&quot;</highlight><highlight class="normal">,<sp/>mAcquireTime);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><ref refid="accum_test_8c_1aab495acadd31c5ed58cccfeeb40ed16d" kindref="member">checkStatus</ref>(SetExposureTime(mAcquireTime));</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;SetAcquisitionMode(AAKinetics)\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><ref refid="accum_test_8c_1aab495acadd31c5ed58cccfeeb40ed16d" kindref="member">checkStatus</ref>(SetAcquisitionMode(AAKinetics));</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;SetNumberAccumulations(%d)\n&quot;</highlight><highlight class="normal">,<sp/>numExposures);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><ref refid="accum_test_8c_1aab495acadd31c5ed58cccfeeb40ed16d" kindref="member">checkStatus</ref>(SetNumberAccumulations(numExposures));</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;SetAccumulationCycleTime(%f)\n&quot;</highlight><highlight class="normal">,<sp/>mAccumulatePeriod);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><ref refid="accum_test_8c_1aab495acadd31c5ed58cccfeeb40ed16d" kindref="member">checkStatus</ref>(SetAccumulationCycleTime(mAccumulatePeriod));</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;SetNumberKinetics(%d)\n&quot;</highlight><highlight class="normal">,<sp/>numImages);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><ref refid="accum_test_8c_1aab495acadd31c5ed58cccfeeb40ed16d" kindref="member">checkStatus</ref>(SetNumberKinetics(numImages));</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;SetKineticCycleTime(%f)\n&quot;</highlight><highlight class="normal">,<sp/>mAcquirePeriod);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><ref refid="accum_test_8c_1aab495acadd31c5ed58cccfeeb40ed16d" kindref="member">checkStatus</ref>(SetKineticCycleTime(mAcquirePeriod));</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><ref refid="accum_test_8c_1aab495acadd31c5ed58cccfeeb40ed16d" kindref="member">checkStatus</ref>(GetAcquisitionTimings(&amp;acquireTimeAct,<sp/>&amp;accumulatePeriodAct,<sp/>&amp;acquirePeriodAct));</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;GetAcquisitionTimings(exposure=%f,<sp/>accumulate=%f,<sp/>kinetic=%f)\n&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>acquireTimeAct,<sp/>accumulatePeriodAct,<sp/>acquirePeriodAct);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/>time(&amp;startTime);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;StartAcquisition()\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><ref refid="accum_test_8c_1aab495acadd31c5ed58cccfeeb40ed16d" kindref="member">checkStatus</ref>(StartAcquisition());</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(1)<sp/>{</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;GetStatus()\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="accum_test_8c_1aab495acadd31c5ed58cccfeeb40ed16d" kindref="member">checkStatus</ref>(GetStatus(&amp;acquireStatus));</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(acquireStatus<sp/>!=<sp/>DRV_ACQUIRING)<sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;WaitForAcquisition()\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="accum_test_8c_1aab495acadd31c5ed58cccfeeb40ed16d" kindref="member">checkStatus</ref>(WaitForAcquisition());</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>time(&amp;endTime);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;Time<sp/>since<sp/>start=%f\n&quot;</highlight><highlight class="normal">,<sp/>difftime(endTime,<sp/>startTime));</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="/home/runner/work/areaDetector/areaDetector/ADAndor/andorApp/src/accumTest.c"/>
+  </compounddef>
+</doxygen>

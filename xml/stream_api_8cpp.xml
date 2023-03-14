@@ -1,0 +1,639 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="stream_api_8cpp" kind="file" language="C++">
+    <compoundname>streamApi.cpp</compoundname>
+    <includes refid="stream_api_8h" local="yes">streamApi.h</includes>
+    <includes local="no">stdexcept</includes>
+    <includes local="no">stdlib.h</includes>
+    <includes local="no">epicsStdio.h</includes>
+    <includes local="no">epicsString.h</includes>
+    <includes local="no">frozen.h</includes>
+    <includes local="no">zmq.h</includes>
+    <includes local="no">string.h</includes>
+    <includes local="no">lz4.h</includes>
+    <includes local="no">bitshuffle.h</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/streamApi.cpp</label>
+        <link refid="stream_api_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>lz4.h</label>
+      </node>
+      <node id="8">
+        <label>zmq.h</label>
+      </node>
+      <node id="3">
+        <label>stdlib.h</label>
+      </node>
+      <node id="4">
+        <label>stdexcept</label>
+      </node>
+      <node id="7">
+        <label>frozen.h</label>
+      </node>
+      <node id="11">
+        <label>bitshuffle.h</label>
+      </node>
+      <node id="6">
+        <label>epicsString.h</label>
+      </node>
+      <node id="9">
+        <label>string.h</label>
+      </node>
+      <node id="5">
+        <label>epicsStdio.h</label>
+      </node>
+      <node id="2">
+        <label>streamApi.h</label>
+        <link refid="stream_api_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="stream_api_8cpp_1a2f1ae599e19d53b7acd88c73b9e86541" prot="public" static="no">
+        <name>ZMQ_PORT</name>
+        <initializer>9999</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/streamApi.cpp" line="13" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/streamApi.cpp" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="stream_api_8cpp_1aca4700927c96ce973bf96ecb802910ba" prot="public" static="no">
+        <name>MAX_JSON_TOKENS</name>
+        <initializer>512</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/streamApi.cpp" line="14" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/streamApi.cpp" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="stream_api_8cpp_1ad8de19b57a26747fb7ef015e2a678b45" prot="public" static="no">
+        <name>ERR_PREFIX</name>
+        <initializer>&quot;StreamApi&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/streamApi.cpp" line="16" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/streamApi.cpp" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="stream_api_8cpp_1a351b8552521f29df22aa336bb28e2180" prot="public" static="no">
+        <name>ERR</name>
+        <param><defname>msg</defname></param>
+        <initializer>fprintf(stderr, <ref refid="stream_api_8cpp_1ad8de19b57a26747fb7ef015e2a678b45" kindref="member">ERR_PREFIX</ref> &quot;::%s: %s\n&quot;, functionName, msg)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/streamApi.cpp" line="17" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/streamApi.cpp" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="stream_api_8cpp_1a02586085698a967f28309aa3d54b43a3" prot="public" static="no">
+        <name>ERR_ARGS</name>
+        <param><defname>fmt</defname></param>
+        <param><defname>...</defname></param>
+        <initializer>        fprintf(stderr, <ref refid="stream_api_8cpp_1ad8de19b57a26747fb7ef015e2a678b45" kindref="member">ERR_PREFIX</ref> &quot;::%s: &quot; fmt &quot;\n&quot;, \
+        functionName, __VA_ARGS__)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/streamApi.cpp" line="19" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/streamApi.cpp" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="stream_api_8cpp_1a7334c79c19c00059f6df3f3678ca88d8" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>static int readToken</definition>
+        <argsstring>(struct json_token *tokens, const char *name, size_t *value)</argsstring>
+        <name>readToken</name>
+        <param>
+          <type>struct json_token *</type>
+          <declname>tokens</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>size_t *</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/streamApi.cpp" line="24" column="12" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/streamApi.cpp" bodystart="24" bodyend="42"/>
+      </memberdef>
+      <memberdef kind="function" id="stream_api_8cpp_1a1b0359a7eb1c751c3ee5e579623f8867" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>static int readToken</definition>
+        <argsstring>(struct json_token *tokens, const char *name, char *value, size_t size)</argsstring>
+        <name>readToken</name>
+        <param>
+          <type>struct json_token *</type>
+          <declname>tokens</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>value</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/streamApi.cpp" line="44" column="12" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/streamApi.cpp" bodystart="44" bodyend="64"/>
+      </memberdef>
+      <memberdef kind="function" id="stream_api_8cpp_1a989546ceea21c6105909bee2390e3e13" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>static int readToken</definition>
+        <argsstring>(struct json_token *tokens, const char *name, size_t *values, size_t size)</argsstring>
+        <name>readToken</name>
+        <param>
+          <type>struct json_token *</type>
+          <declname>tokens</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>size_t *</type>
+          <declname>values</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/streamApi.cpp" line="66" column="12" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/streamApi.cpp" bodystart="66" bodyend="93"/>
+      </memberdef>
+      <memberdef kind="function" id="stream_api_8cpp_1af1c9417e3435eb348e11b22330baf3bd" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>static int readToken</definition>
+        <argsstring>(struct json_token *tokens, const char *name, string &amp;value)</argsstring>
+        <name>readToken</name>
+        <param>
+          <type>struct json_token *</type>
+          <declname>tokens</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>string &amp;</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/streamApi.cpp" line="95" column="12" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/streamApi.cpp" bodystart="95" bodyend="108"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="stream_api_8h" kindref="compound">streamApi.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdexcept&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdlib.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;epicsStdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;epicsString.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;frozen.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;zmq.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;lz4.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;bitshuffle.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ZMQ_PORT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>9999</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MAX_JSON_TOKENS<sp/>512</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ERR_PREFIX<sp/><sp/>&quot;StreamApi&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ERR(msg)<sp/>fprintf(stderr,<sp/>ERR_PREFIX<sp/>&quot;::%s:<sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/>functionName,<sp/>msg)</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ERR_ARGS(fmt,...)<sp/>fprintf(stderr,<sp/>ERR_PREFIX<sp/>&quot;::%s:<sp/>&quot;</highlight><highlight class="normal"><sp/>fmt<sp/>&quot;\n&quot;,<sp/>\</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>functionName,<sp/>__VA_ARGS__)</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/><ref refid="namespacehdf5_1abeed318faeb13380e1b4221bd4198bf1aea271040d7a5b8d9af9cbf6564d262d5" kindref="member">std::string</ref>;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>readToken<sp/>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>json_token<sp/>*tokens,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="namespacemake_db_and_edl_1a2832407c256551abb325d5ee9e587443" kindref="member">name</ref>,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>*<ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>)</highlight></codeline>
+<codeline lineno="25"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*functionName<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;readToken&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">json_token<sp/>*t<sp/>=<sp/>find_json_token(tokens,<sp/><ref refid="namespacemake_db_and_edl_1a2832407c256551abb325d5ee9e587443" kindref="member">name</ref>);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!t)</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="stream_api_8cpp_1a02586085698a967f28309aa3d54b43a3" kindref="member">ERR_ARGS</ref>(</highlight><highlight class="stringliteral">&quot;unable<sp/>to<sp/>find<sp/>&apos;%s&apos;<sp/>token&quot;</highlight><highlight class="normal">,<sp/><ref refid="namespacemake_db_and_edl_1a2832407c256551abb325d5ee9e587443" kindref="member">name</ref>);</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="stream_api_8h_1a2d05e4c8303106d1425a9efa4ff1fb69a939db9f16cb937a74d2173143d503d14" kindref="member">STREAM_ERROR</ref>;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(sscanf(t-&gt;ptr,<sp/></highlight><highlight class="stringliteral">&quot;%lu&quot;</highlight><highlight class="normal">,<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>)<sp/>!=<sp/>1)</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="stream_api_8cpp_1a02586085698a967f28309aa3d54b43a3" kindref="member">ERR_ARGS</ref>(</highlight><highlight class="stringliteral">&quot;unable<sp/>to<sp/>parse<sp/>&apos;%s&apos;<sp/>token&quot;</highlight><highlight class="normal">,<sp/><ref refid="namespacemake_db_and_edl_1a2832407c256551abb325d5ee9e587443" kindref="member">name</ref>);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="stream_api_8h_1a2d05e4c8303106d1425a9efa4ff1fb69a939db9f16cb937a74d2173143d503d14" kindref="member">STREAM_ERROR</ref>;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="stream_api_8h_1a2d05e4c8303106d1425a9efa4ff1fb69a7286620d00da9549f767d5c060c47be0" kindref="member">STREAM_SUCCESS</ref>;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>readToken<sp/>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>json_token<sp/>*tokens,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="namespacemake_db_and_edl_1a2832407c256551abb325d5ee9e587443" kindref="member">name</ref>,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>size)</highlight></codeline>
+<codeline lineno="45"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*functionName<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;readToken&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">json_token<sp/>*t<sp/>=<sp/>find_json_token(tokens,<sp/><ref refid="namespacemake_db_and_edl_1a2832407c256551abb325d5ee9e587443" kindref="member">name</ref>);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!t)</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="stream_api_8cpp_1a02586085698a967f28309aa3d54b43a3" kindref="member">ERR_ARGS</ref>(</highlight><highlight class="stringliteral">&quot;unable<sp/>to<sp/>find<sp/>&apos;%s&apos;<sp/>token&quot;</highlight><highlight class="normal">,<sp/><ref refid="namespacemake_db_and_edl_1a2832407c256551abb325d5ee9e587443" kindref="member">name</ref>);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="stream_api_8h_1a2d05e4c8303106d1425a9efa4ff1fb69a939db9f16cb937a74d2173143d503d14" kindref="member">STREAM_ERROR</ref>;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(size<sp/>&lt;<sp/>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">)t-&gt;len)</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="stream_api_8cpp_1a02586085698a967f28309aa3d54b43a3" kindref="member">ERR_ARGS</ref>(</highlight><highlight class="stringliteral">&quot;destination<sp/>buffer<sp/>for<sp/>&apos;%s&apos;<sp/>not<sp/>big<sp/>enough&quot;</highlight><highlight class="normal">,<sp/><ref refid="namespacemake_db_and_edl_1a2832407c256551abb325d5ee9e587443" kindref="member">name</ref>);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="stream_api_8h_1a2d05e4c8303106d1425a9efa4ff1fb69a939db9f16cb937a74d2173143d503d14" kindref="member">STREAM_ERROR</ref>;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>memcpy(<ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>,<sp/>t-&gt;ptr,<sp/>t-&gt;len);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="stream_api_8h_1a2d05e4c8303106d1425a9efa4ff1fb69a7286620d00da9549f767d5c060c47be0" kindref="member">STREAM_SUCCESS</ref>;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>readToken<sp/>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>json_token<sp/>*tokens,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="namespacemake_db_and_edl_1a2832407c256551abb325d5ee9e587443" kindref="member">name</ref>,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>*values,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>size)</highlight></codeline>
+<codeline lineno="67"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*functionName<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;readToken&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">json_token<sp/>*t<sp/>=<sp/>find_json_token(tokens,<sp/><ref refid="namespacemake_db_and_edl_1a2832407c256551abb325d5ee9e587443" kindref="member">name</ref>);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!t)</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="stream_api_8cpp_1a02586085698a967f28309aa3d54b43a3" kindref="member">ERR_ARGS</ref>(</highlight><highlight class="stringliteral">&quot;unable<sp/>to<sp/>find<sp/>&apos;%s&apos;<sp/>token&quot;</highlight><highlight class="normal">,<sp/><ref refid="namespacemake_db_and_edl_1a2832407c256551abb325d5ee9e587443" kindref="member">name</ref>);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="stream_api_8h_1a2d05e4c8303106d1425a9efa4ff1fb69a939db9f16cb937a74d2173143d503d14" kindref="member">STREAM_ERROR</ref>;</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(size<sp/>&lt;<sp/>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">)t-&gt;num_desc)</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="stream_api_8cpp_1a02586085698a967f28309aa3d54b43a3" kindref="member">ERR_ARGS</ref>(</highlight><highlight class="stringliteral">&quot;destination<sp/>buffer<sp/>for<sp/>&apos;%s&apos;<sp/>not<sp/>big<sp/>enough&quot;</highlight><highlight class="normal">,<sp/><ref refid="namespacemake_db_and_edl_1a2832407c256551abb325d5ee9e587443" kindref="member">name</ref>);</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="stream_api_8h_1a2d05e4c8303106d1425a9efa4ff1fb69a939db9f16cb937a74d2173143d503d14" kindref="member">STREAM_ERROR</ref>;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref><sp/>=<sp/>0;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref><sp/>&lt;<sp/>(size_t)t-&gt;num_desc;<sp/>++<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>)</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(sscanf((t+<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>+1)-&gt;ptr,<sp/></highlight><highlight class="stringliteral">&quot;%lu&quot;</highlight><highlight class="normal">,<sp/>values+<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>)<sp/>!=<sp/>1)</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="stream_api_8cpp_1a02586085698a967f28309aa3d54b43a3" kindref="member">ERR_ARGS</ref>(</highlight><highlight class="stringliteral">&quot;unable<sp/>to<sp/>parse<sp/>&apos;%s[%lu]&apos;<sp/>token&quot;</highlight><highlight class="normal">,<sp/><ref refid="namespacemake_db_and_edl_1a2832407c256551abb325d5ee9e587443" kindref="member">name</ref>,<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>);</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="stream_api_8h_1a2d05e4c8303106d1425a9efa4ff1fb69a939db9f16cb937a74d2173143d503d14" kindref="member">STREAM_ERROR</ref>;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="stream_api_8h_1a2d05e4c8303106d1425a9efa4ff1fb69a7286620d00da9549f767d5c060c47be0" kindref="member">STREAM_SUCCESS</ref>;</highlight></codeline>
+<codeline lineno="93"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>readToken<sp/>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>json_token<sp/>*tokens,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="namespacemake_db_and_edl_1a2832407c256551abb325d5ee9e587443" kindref="member">name</ref>,<sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>&amp;<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>)</highlight></codeline>
+<codeline lineno="96"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*functionName<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;readToken&lt;string&gt;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">json_token<sp/>*t<sp/>=<sp/>find_json_token(tokens,<sp/><ref refid="namespacemake_db_and_edl_1a2832407c256551abb325d5ee9e587443" kindref="member">name</ref>);</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!t)</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="stream_api_8cpp_1a02586085698a967f28309aa3d54b43a3" kindref="member">ERR_ARGS</ref>(</highlight><highlight class="stringliteral">&quot;unable<sp/>to<sp/>find<sp/>&apos;%s&apos;<sp/>token&quot;</highlight><highlight class="normal">,<sp/><ref refid="namespacemake_db_and_edl_1a2832407c256551abb325d5ee9e587443" kindref="member">name</ref>);</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="stream_api_8h_1a2d05e4c8303106d1425a9efa4ff1fb69a939db9f16cb937a74d2173143d503d14" kindref="member">STREAM_ERROR</ref>;</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref><sp/>=<sp/><ref refid="namespacehdf5_1abeed318faeb13380e1b4221bd4198bf1aea271040d7a5b8d9af9cbf6564d262d5" kindref="member">string</ref>(t-&gt;ptr,<sp/>t-&gt;len);</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="stream_api_8h_1a2d05e4c8303106d1425a9efa4ff1fb69a7286620d00da9549f767d5c060c47be0" kindref="member">STREAM_SUCCESS</ref>;</highlight></codeline>
+<codeline lineno="108"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>StreamAPI::poll<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>timeout)</highlight></codeline>
+<codeline lineno="111"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*functionName<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;poll&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/>zmq_pollitem_t<sp/>item<sp/>=<sp/>{};</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/>item.socket<sp/>=<sp/>mSock;</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/>item.events<sp/>=<sp/>ZMQ_POLLIN;</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>rc<sp/>=<sp/>zmq_poll(&amp;item,<sp/>1,<sp/>timeout*1000);</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(rc<sp/>&lt;<sp/>0)</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="stream_api_8cpp_1a351b8552521f29df22aa336bb28e2180" kindref="member">ERR</ref>(</highlight><highlight class="stringliteral">&quot;failed<sp/>to<sp/>poll<sp/>socket&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="stream_api_8h_1a2d05e4c8303106d1425a9efa4ff1fb69a939db9f16cb937a74d2173143d503d14" kindref="member">STREAM_ERROR</ref>;</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>rc<sp/>?<sp/><ref refid="stream_api_8h_1a2d05e4c8303106d1425a9efa4ff1fb69a7286620d00da9549f767d5c060c47be0" kindref="member">STREAM_SUCCESS</ref><sp/>:<sp/><ref refid="stream_api_8h_1a2d05e4c8303106d1425a9efa4ff1fb69ab2fcccf86b42738805e2ed631d7566d0" kindref="member">STREAM_TIMEOUT</ref>;</highlight></codeline>
+<codeline lineno="125"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><ref refid="class_stream_a_p_i_1ae9a7ff7b17c1ae8114794f636e47ebe4" kindref="member">StreamAPI::StreamAPI</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*hostname)<sp/>:<sp/>mHostname(epicsStrDup(hostname))</highlight></codeline>
+<codeline lineno="128"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!(mCtx<sp/>=<sp/>zmq_ctx_new()))</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/>std::runtime_error(</highlight><highlight class="stringliteral">&quot;unable<sp/>to<sp/>create<sp/>zmq<sp/>context&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!(mSock<sp/>=<sp/>zmq_socket(mCtx,<sp/>ZMQ_PULL)))</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/>std::runtime_error(</highlight><highlight class="stringliteral">&quot;unable<sp/>to<sp/>create<sp/>zmq<sp/>socket&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>addr[512];</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>n;</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/>n<sp/>=<sp/>epicsSnprintf(addr,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(addr),<sp/></highlight><highlight class="stringliteral">&quot;tcp://%s:%d&quot;</highlight><highlight class="normal">,<sp/>mHostname,<sp/><ref refid="stream_api_8cpp_1a2f1ae599e19d53b7acd88c73b9e86541" kindref="member">ZMQ_PORT</ref>);</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(n<sp/>&gt;=<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(addr))</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/>std::runtime_error(</highlight><highlight class="stringliteral">&quot;address<sp/>is<sp/>too<sp/>long&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/>zmq_connect(mSock,<sp/>addr);</highlight></codeline>
+<codeline lineno="142"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><ref refid="class_stream_a_p_i_1a221b41076c1d20623f26c30e5da8e3c4" kindref="member">StreamAPI::~StreamAPI</ref><sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="145"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/>zmq_close(mSock);</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/>zmq_ctx_destroy(mCtx);</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/>free(mHostname);</highlight></codeline>
+<codeline lineno="149"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_stream_a_p_i_1af1544d01763c4aab4763e05f705c297f" kindref="member">StreamAPI::getHeader</ref><sp/>(<ref refid="structstream__header__t" kindref="compound">stream_header_t</ref><sp/>*header,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>timeout)</highlight></codeline>
+<codeline lineno="152"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*functionName<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;getHeader&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>err<sp/>=<sp/><ref refid="stream_api_8h_1a2d05e4c8303106d1425a9efa4ff1fb69a7286620d00da9549f767d5c060c47be0" kindref="member">STREAM_SUCCESS</ref>;</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(timeout<sp/>&amp;&amp;<sp/>(err<sp/>=<sp/>poll(timeout)))</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>err;</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/>zmq_msg_t<sp/>header_msg;</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/>zmq_msg_init(&amp;header_msg);</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/>zmq_msg_recv(&amp;header_msg,<sp/>mSock,<sp/>0);</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"></highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(header)</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>htype,<sp/>headerDetail;</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>skip<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>size<sp/>=<sp/>zmq_msg_size(&amp;header_msg);</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*data<sp/>=<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*)<sp/>zmq_msg_data(&amp;header_msg);</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"></highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">json_token<sp/>tokens[<ref refid="stream_api_8cpp_1aca4700927c96ce973bf96ecb802910ba" kindref="member">MAX_JSON_TOKENS</ref>];</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"></highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(parse_json(data,<sp/>size,<sp/>tokens,<sp/><ref refid="stream_api_8cpp_1aca4700927c96ce973bf96ecb802910ba" kindref="member">MAX_JSON_TOKENS</ref>)<sp/>&lt;<sp/>0)</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="stream_api_8cpp_1a02586085698a967f28309aa3d54b43a3" kindref="member">ERR_ARGS</ref>(</highlight><highlight class="stringliteral">&quot;failed<sp/>to<sp/>parse<sp/>JSON,<sp/>data=%s&quot;</highlight><highlight class="normal">,<sp/>data);</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>err<sp/>=<sp/><ref refid="stream_api_8h_1a2d05e4c8303106d1425a9efa4ff1fb69a939db9f16cb937a74d2173143d503d14" kindref="member">STREAM_ERROR</ref>;</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">goto</highlight><highlight class="normal"><sp/>exit;</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"></highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">((err<sp/>=<sp/>readToken(tokens,<sp/></highlight><highlight class="stringliteral">&quot;htype&quot;</highlight><highlight class="normal">,<sp/>htype)))</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">goto</highlight><highlight class="normal"><sp/>exit;</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"></highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>expectedHType(</highlight><highlight class="stringliteral">&quot;dheader&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(htype.compare(0,<sp/>expectedHType.length(),<sp/>expectedHType))</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="stream_api_8cpp_1a02586085698a967f28309aa3d54b43a3" kindref="member">ERR_ARGS</ref>(</highlight><highlight class="stringliteral">&quot;wrong<sp/>header<sp/>type,<sp/>htype=%s&quot;</highlight><highlight class="normal">,<sp/>htype.c_str());</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>err<sp/>=<sp/><ref refid="stream_api_8h_1a2d05e4c8303106d1425a9efa4ff1fb69ab762f1f6f06eb71dfe066e0621eb8f36" kindref="member">STREAM_WRONG_HTYPE</ref>;</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">goto</highlight><highlight class="normal"><sp/>exit;</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"></highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">((err<sp/>=<sp/>readToken(tokens,<sp/></highlight><highlight class="stringliteral">&quot;series&quot;</highlight><highlight class="normal">,<sp/>&amp;header-&gt;<ref refid="structstream__header__t_1a1bf201340efe35dfa07333da61e30cf9" kindref="member">series</ref>)))</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">goto</highlight><highlight class="normal"><sp/>exit;</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"></highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">((err<sp/>=<sp/>readToken(tokens,<sp/></highlight><highlight class="stringliteral">&quot;header_detail&quot;</highlight><highlight class="normal">,<sp/>headerDetail)))</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">goto</highlight><highlight class="normal"><sp/>exit;</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"></highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(headerDetail<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;basic&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>skip<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(headerDetail<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;all&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>skip<sp/>=<sp/>7;</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"></highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref><sp/>=<sp/>0;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref><sp/>&lt;<sp/>skip;<sp/>++<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>)</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_stream_a_p_i_1af1544d01763c4aab4763e05f705c297f" kindref="member">getHeader</ref>(NULL,<sp/>timeout);</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"></highlight></codeline>
+<codeline lineno="205"><highlight class="normal">exit:</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/>zmq_msg_close(&amp;header_msg);</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>err;</highlight></codeline>
+<codeline lineno="208"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"></highlight></codeline>
+<codeline lineno="210"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_stream_a_p_i_1a275da62cd5e7cd6a572966deb9d0b08d" kindref="member">StreamAPI::getFrame</ref><sp/>(<ref refid="structstream__frame" kindref="compound">stream_frame_t</ref><sp/>*frame,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>timeout)</highlight></codeline>
+<codeline lineno="211"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*functionName<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;getFrame&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>err<sp/>=<sp/><ref refid="stream_api_8h_1a2d05e4c8303106d1425a9efa4ff1fb69a7286620d00da9549f767d5c060c47be0" kindref="member">STREAM_SUCCESS</ref>;</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"></highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(timeout<sp/>&amp;&amp;<sp/>(err<sp/>=<sp/>poll(timeout)))</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>err;</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"></highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/>zmq_msg_t<sp/>header,<sp/>shape,<sp/>timestamp;</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"></highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Get<sp/>Header</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/>zmq_msg_init(&amp;header);</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/>zmq_msg_recv(&amp;header,<sp/>mSock,<sp/>0);</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"></highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(frame)</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">json_token<sp/>tokens[<ref refid="stream_api_8cpp_1aca4700927c96ce973bf96ecb802910ba" kindref="member">MAX_JSON_TOKENS</ref>];</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>size<sp/>=<sp/>zmq_msg_size(&amp;header);</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*data<sp/>=<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*)<sp/>zmq_msg_data(&amp;header);</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"></highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(parse_json(data,<sp/>size,<sp/>tokens,<sp/><ref refid="stream_api_8cpp_1aca4700927c96ce973bf96ecb802910ba" kindref="member">MAX_JSON_TOKENS</ref>)<sp/>&lt;<sp/>0)</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="stream_api_8cpp_1a351b8552521f29df22aa336bb28e2180" kindref="member">ERR</ref>(</highlight><highlight class="stringliteral">&quot;failed<sp/>to<sp/>parse<sp/>image<sp/>header<sp/>JSON&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>err<sp/>=<sp/><ref refid="stream_api_8h_1a2d05e4c8303106d1425a9efa4ff1fb69a939db9f16cb937a74d2173143d503d14" kindref="member">STREAM_ERROR</ref>;</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">goto</highlight><highlight class="normal"><sp/>closeHeader;</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"></highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>htype[64]<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>err<sp/>=<sp/>readToken(tokens,<sp/></highlight><highlight class="stringliteral">&quot;htype&quot;</highlight><highlight class="normal">,<sp/><sp/>htype,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(htype));</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"></highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!strncmp(htype,<sp/></highlight><highlight class="stringliteral">&quot;dseries_end&quot;</highlight><highlight class="normal">,<sp/>11))</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>frame-&gt;<ref refid="structstream__frame_1a56de6090a15f971a67bf3b105a7a0b2f" kindref="member">end</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">goto</highlight><highlight class="normal"><sp/>closeHeader;</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>err<sp/>|=<sp/>readToken(tokens,<sp/></highlight><highlight class="stringliteral">&quot;series&quot;</highlight><highlight class="normal">,<sp/>&amp;frame-&gt;<ref refid="structstream__frame_1a1820fb2722186e355aabb3c8e6553204" kindref="member">series</ref>);</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>err<sp/>|=<sp/>readToken(tokens,<sp/></highlight><highlight class="stringliteral">&quot;frame&quot;</highlight><highlight class="normal">,<sp/><sp/>&amp;frame-&gt;<ref refid="structstream__frame_1a3dccf2fd5c32e48714d8182119ffb065" kindref="member">frame</ref>);</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"></highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(err)</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="stream_api_8cpp_1a351b8552521f29df22aa336bb28e2180" kindref="member">ERR</ref>(</highlight><highlight class="stringliteral">&quot;failed<sp/>to<sp/>read<sp/>token<sp/>from<sp/>header<sp/>message&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">goto</highlight><highlight class="normal"><sp/>closeHeader;</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"></highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Get<sp/>Shape</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/>zmq_msg_init(&amp;shape);</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/>zmq_msg_recv(&amp;shape,<sp/>mSock,<sp/>0);</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"></highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(frame)</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="264"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">json_token<sp/>tokens[<ref refid="stream_api_8cpp_1aca4700927c96ce973bf96ecb802910ba" kindref="member">MAX_JSON_TOKENS</ref>];</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>size<sp/>=<sp/>zmq_msg_size(&amp;shape);</highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*data<sp/>=<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*)<sp/>zmq_msg_data(&amp;shape);</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"></highlight></codeline>
+<codeline lineno="268"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(parse_json(data,<sp/>size,<sp/>tokens,<sp/><ref refid="stream_api_8cpp_1aca4700927c96ce973bf96ecb802910ba" kindref="member">MAX_JSON_TOKENS</ref>)<sp/>&lt;<sp/>0)</highlight></codeline>
+<codeline lineno="269"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="270"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="stream_api_8cpp_1a351b8552521f29df22aa336bb28e2180" kindref="member">ERR</ref>(</highlight><highlight class="stringliteral">&quot;failed<sp/>to<sp/>parse<sp/>image<sp/>shape<sp/>JSON&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="271"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>err<sp/>=<sp/><ref refid="stream_api_8h_1a2d05e4c8303106d1425a9efa4ff1fb69a939db9f16cb937a74d2173143d503d14" kindref="member">STREAM_ERROR</ref>;</highlight></codeline>
+<codeline lineno="272"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">goto</highlight><highlight class="normal"><sp/>closeShape;</highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="274"><highlight class="normal"></highlight></codeline>
+<codeline lineno="275"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>dataType[8]<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="276"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>err<sp/>|=<sp/>readToken(tokens,<sp/></highlight><highlight class="stringliteral">&quot;shape&quot;</highlight><highlight class="normal">,<sp/><sp/><sp/><sp/>frame-&gt;<ref refid="structstream__frame_1a91dc06471c5f5f90376934a3d8b7beb2" kindref="member">shape</ref>,<sp/>3);</highlight></codeline>
+<codeline lineno="277"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>err<sp/>|=<sp/>readToken(tokens,<sp/></highlight><highlight class="stringliteral">&quot;type&quot;</highlight><highlight class="normal">,<sp/><sp/><sp/><sp/><sp/>dataType,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(dataType));</highlight></codeline>
+<codeline lineno="278"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>err<sp/>|=<sp/>readToken(tokens,<sp/></highlight><highlight class="stringliteral">&quot;encoding&quot;</highlight><highlight class="normal">,<sp/>frame-&gt;<ref refid="structstream__frame_1ae01dffe6ddd72098543d284444080539" kindref="member">encoding</ref>,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(frame-&gt;<ref refid="structstream__frame_1ae01dffe6ddd72098543d284444080539" kindref="member">encoding</ref>));</highlight></codeline>
+<codeline lineno="279"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>err<sp/>|=<sp/>readToken(tokens,<sp/></highlight><highlight class="stringliteral">&quot;size&quot;</highlight><highlight class="normal">,<sp/><sp/><sp/><sp/><sp/>&amp;frame-&gt;<ref refid="structstream__frame_1a4643e401984ff522767f37fa4db86113" kindref="member">compressedSize</ref>);</highlight></codeline>
+<codeline lineno="280"><highlight class="normal"></highlight></codeline>
+<codeline lineno="281"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(err)</highlight></codeline>
+<codeline lineno="282"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="283"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="stream_api_8cpp_1a351b8552521f29df22aa336bb28e2180" kindref="member">ERR</ref>(</highlight><highlight class="stringliteral">&quot;failed<sp/>to<sp/>read<sp/>token<sp/>from<sp/>shape<sp/>message&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="284"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">goto</highlight><highlight class="normal"><sp/>closeShape;</highlight></codeline>
+<codeline lineno="285"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="286"><highlight class="normal"></highlight></codeline>
+<codeline lineno="287"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Calculate<sp/>uncompressed<sp/>size</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="288"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>frame-&gt;<ref refid="structstream__frame_1ae8471acc5d2d33d441a261ff928e9c9f" kindref="member">uncompressedSize</ref><sp/>=<sp/>frame-&gt;<ref refid="structstream__frame_1a91dc06471c5f5f90376934a3d8b7beb2" kindref="member">shape</ref>[0]*frame-&gt;<ref refid="structstream__frame_1a91dc06471c5f5f90376934a3d8b7beb2" kindref="member">shape</ref>[1];</highlight></codeline>
+<codeline lineno="289"><highlight class="normal"></highlight></codeline>
+<codeline lineno="290"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!strncmp(dataType,<sp/></highlight><highlight class="stringliteral">&quot;uint32&quot;</highlight><highlight class="normal">,<sp/>6))</highlight></codeline>
+<codeline lineno="291"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="292"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>frame-&gt;<ref refid="structstream__frame_1aff75c17af0310f069f160f4344e71f5e" kindref="member">type</ref><sp/>=<sp/><ref refid="structstream__frame_1aca1774c8a8ce98fa6e729072f766e8c8ac3bca264d9aa653cf95dda8aaaba554a" kindref="member">stream_frame_t::UINT32</ref>;</highlight></codeline>
+<codeline lineno="293"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>frame-&gt;<ref refid="structstream__frame_1ae8471acc5d2d33d441a261ff928e9c9f" kindref="member">uncompressedSize</ref><sp/>*=<sp/>4;</highlight></codeline>
+<codeline lineno="294"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="295"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!strncmp(dataType,<sp/></highlight><highlight class="stringliteral">&quot;uint16&quot;</highlight><highlight class="normal">,<sp/>6))</highlight></codeline>
+<codeline lineno="296"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="297"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>frame-&gt;<ref refid="structstream__frame_1aff75c17af0310f069f160f4344e71f5e" kindref="member">type</ref><sp/>=<sp/><ref refid="structstream__frame_1aca1774c8a8ce98fa6e729072f766e8c8a30d93f6019a5994d0c84767f7bf79156" kindref="member">stream_frame_t::UINT16</ref>;</highlight></codeline>
+<codeline lineno="298"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>frame-&gt;<ref refid="structstream__frame_1ae8471acc5d2d33d441a261ff928e9c9f" kindref="member">uncompressedSize</ref><sp/>*=<sp/>2;</highlight></codeline>
+<codeline lineno="299"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="300"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!strncmp(dataType,<sp/></highlight><highlight class="stringliteral">&quot;uint8&quot;</highlight><highlight class="normal">,<sp/>5))</highlight></codeline>
+<codeline lineno="301"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="302"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>frame-&gt;<ref refid="structstream__frame_1aff75c17af0310f069f160f4344e71f5e" kindref="member">type</ref><sp/>=<sp/><ref refid="structstream__frame_1aca1774c8a8ce98fa6e729072f766e8c8aea266a65c573d124cf8668945309aa54" kindref="member">stream_frame_t::UINT8</ref>;</highlight></codeline>
+<codeline lineno="303"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>frame-&gt;<ref refid="structstream__frame_1ae8471acc5d2d33d441a261ff928e9c9f" kindref="member">uncompressedSize</ref><sp/>*=<sp/>1;</highlight></codeline>
+<codeline lineno="304"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="305"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="306"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="307"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>frame-&gt;<ref refid="structstream__frame_1aff75c17af0310f069f160f4344e71f5e" kindref="member">type</ref><sp/>=<sp/><ref refid="structstream__frame_1aca1774c8a8ce98fa6e729072f766e8c8ac3bca264d9aa653cf95dda8aaaba554a" kindref="member">stream_frame_t::UINT32</ref>;</highlight></codeline>
+<codeline lineno="308"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>frame-&gt;<ref refid="structstream__frame_1ae8471acc5d2d33d441a261ff928e9c9f" kindref="member">uncompressedSize</ref><sp/>*=<sp/>4;</highlight></codeline>
+<codeline lineno="309"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="stream_api_8cpp_1a02586085698a967f28309aa3d54b43a3" kindref="member">ERR_ARGS</ref>(</highlight><highlight class="stringliteral">&quot;unknown<sp/>dataType<sp/>%s&quot;</highlight><highlight class="normal">,<sp/>dataType);</highlight></codeline>
+<codeline lineno="310"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>err<sp/>=<sp/><ref refid="stream_api_8h_1a2d05e4c8303106d1425a9efa4ff1fb69a939db9f16cb937a74d2173143d503d14" kindref="member">STREAM_ERROR</ref>;</highlight></codeline>
+<codeline lineno="311"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">goto</highlight><highlight class="normal"><sp/>closeShape;</highlight></codeline>
+<codeline lineno="312"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="313"><highlight class="normal"></highlight></codeline>
+<codeline lineno="314"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>frame-&gt;<ref refid="structstream__frame_1a269b2ffbd3ac61e673e35893a76dc55b" kindref="member">data</ref><sp/>=<sp/>malloc(frame-&gt;<ref refid="structstream__frame_1a4643e401984ff522767f37fa4db86113" kindref="member">compressedSize</ref>);</highlight></codeline>
+<codeline lineno="315"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!frame-&gt;<ref refid="structstream__frame_1a269b2ffbd3ac61e673e35893a76dc55b" kindref="member">data</ref>)</highlight></codeline>
+<codeline lineno="316"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="317"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="stream_api_8cpp_1a351b8552521f29df22aa336bb28e2180" kindref="member">ERR</ref>(</highlight><highlight class="stringliteral">&quot;failed<sp/>to<sp/>allocate<sp/>data&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="318"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>err<sp/>=<sp/><ref refid="stream_api_8h_1a2d05e4c8303106d1425a9efa4ff1fb69a939db9f16cb937a74d2173143d503d14" kindref="member">STREAM_ERROR</ref>;</highlight></codeline>
+<codeline lineno="319"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">goto</highlight><highlight class="normal"><sp/>closeShape;</highlight></codeline>
+<codeline lineno="320"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="321"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="322"><highlight class="normal"></highlight></codeline>
+<codeline lineno="323"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Get<sp/>frame<sp/>data</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="324"><highlight class="normal"><sp/><sp/><sp/><sp/>zmq_recv(mSock,<sp/>frame-&gt;<ref refid="structstream__frame_1a269b2ffbd3ac61e673e35893a76dc55b" kindref="member">data</ref>,<sp/>frame-&gt;<ref refid="structstream__frame_1a4643e401984ff522767f37fa4db86113" kindref="member">compressedSize</ref>,<sp/>0);</highlight></codeline>
+<codeline lineno="325"><highlight class="normal"></highlight></codeline>
+<codeline lineno="326"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Get<sp/>timestamp</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="327"><highlight class="normal"><sp/><sp/><sp/><sp/>zmq_msg_init(&amp;timestamp);</highlight></codeline>
+<codeline lineno="328"><highlight class="normal"><sp/><sp/><sp/><sp/>zmq_msg_recv(&amp;timestamp,<sp/>mSock,<sp/>0);</highlight></codeline>
+<codeline lineno="329"><highlight class="normal"></highlight></codeline>
+<codeline lineno="330"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Deallocate<sp/>everything</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="331"><highlight class="normal"><sp/><sp/><sp/><sp/>zmq_msg_close(&amp;timestamp);</highlight></codeline>
+<codeline lineno="332"><highlight class="normal"></highlight></codeline>
+<codeline lineno="333"><highlight class="normal">closeShape:</highlight></codeline>
+<codeline lineno="334"><highlight class="normal"><sp/><sp/><sp/><sp/>zmq_msg_close(&amp;shape);</highlight></codeline>
+<codeline lineno="335"><highlight class="normal"></highlight></codeline>
+<codeline lineno="336"><highlight class="normal">closeHeader:</highlight></codeline>
+<codeline lineno="337"><highlight class="normal"><sp/><sp/><sp/><sp/>zmq_msg_close(&amp;header);</highlight></codeline>
+<codeline lineno="338"><highlight class="normal"></highlight></codeline>
+<codeline lineno="339"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>err;</highlight></codeline>
+<codeline lineno="340"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="341"><highlight class="normal"></highlight></codeline>
+<codeline lineno="342"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_stream_a_p_i_1af89f41843077a1208690b4ba7b833716" kindref="member">StreamAPI::uncompress</ref><sp/>(<ref refid="structstream__frame" kindref="compound">stream_frame_t</ref><sp/>*frame,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*dest)</highlight></codeline>
+<codeline lineno="343"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="344"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*functionName<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;uncompress&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="345"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*pInput<sp/>=<sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*)frame-&gt;<ref refid="structstream__frame_1a269b2ffbd3ac61e673e35893a76dc55b" kindref="member">data</ref>;</highlight></codeline>
+<codeline lineno="346"><highlight class="normal"></highlight></codeline>
+<codeline lineno="347"><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(strcmp(frame-&gt;<ref refid="structstream__frame_1ae01dffe6ddd72098543d284444080539" kindref="member">encoding</ref>,<sp/></highlight><highlight class="stringliteral">&quot;&lt;&quot;</highlight><highlight class="normal">)<sp/>==<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="348"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>memcpy(dest,<sp/>pInput,<sp/>frame-&gt;<ref refid="structstream__frame_1ae8471acc5d2d33d441a261ff928e9c9f" kindref="member">uncompressedSize</ref>);</highlight></codeline>
+<codeline lineno="349"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight></codeline>
+<codeline lineno="350"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(strcmp(frame-&gt;<ref refid="structstream__frame_1ae01dffe6ddd72098543d284444080539" kindref="member">encoding</ref>,<sp/></highlight><highlight class="stringliteral">&quot;lz4&lt;&quot;</highlight><highlight class="normal">)<sp/>==<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="351"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>result<sp/>=<sp/>LZ4_decompress_fast(pInput,<sp/>dest,<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)frame-&gt;<ref refid="structstream__frame_1ae8471acc5d2d33d441a261ff928e9c9f" kindref="member">uncompressedSize</ref>);</highlight></codeline>
+<codeline lineno="352"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(result<sp/>&lt;<sp/>0)</highlight></codeline>
+<codeline lineno="353"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="354"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="stream_api_8cpp_1a02586085698a967f28309aa3d54b43a3" kindref="member">ERR_ARGS</ref>(</highlight><highlight class="stringliteral">&quot;LZ4_decompress<sp/>failed,<sp/>result=%d\n&quot;</highlight><highlight class="normal">,<sp/>result);</highlight></codeline>
+<codeline lineno="355"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="stream_api_8h_1a2d05e4c8303106d1425a9efa4ff1fb69a939db9f16cb937a74d2173143d503d14" kindref="member">STREAM_ERROR</ref>;<sp/></highlight></codeline>
+<codeline lineno="356"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="357"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight></codeline>
+<codeline lineno="358"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((strcmp(frame-&gt;<ref refid="structstream__frame_1ae01dffe6ddd72098543d284444080539" kindref="member">encoding</ref>,<sp/></highlight><highlight class="stringliteral">&quot;bs32-lz4&lt;&quot;</highlight><highlight class="normal">)<sp/>==<sp/>0)<sp/>||</highlight></codeline>
+<codeline lineno="359"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(strcmp(frame-&gt;<ref refid="structstream__frame_1ae01dffe6ddd72098543d284444080539" kindref="member">encoding</ref>,<sp/></highlight><highlight class="stringliteral">&quot;bs16-lz4&lt;&quot;</highlight><highlight class="normal">)<sp/>==<sp/>0)<sp/>||</highlight></codeline>
+<codeline lineno="360"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(strcmp(frame-&gt;<ref refid="structstream__frame_1ae01dffe6ddd72098543d284444080539" kindref="member">encoding</ref>,<sp/></highlight><highlight class="stringliteral">&quot;bs8-lz4&lt;&quot;</highlight><highlight class="normal">)<sp/>==<sp/>0))<sp/>{</highlight></codeline>
+<codeline lineno="361"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pInput<sp/>+=<sp/>12;<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>compressed<sp/>sdata<sp/>is<sp/>12<sp/>bytes<sp/>into<sp/>buffer</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="362"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>elemSize;</highlight></codeline>
+<codeline lineno="363"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal"><sp/>(frame-&gt;<ref refid="structstream__frame_1aff75c17af0310f069f160f4344e71f5e" kindref="member">type</ref>)<sp/></highlight></codeline>
+<codeline lineno="364"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="365"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="structstream__frame_1aca1774c8a8ce98fa6e729072f766e8c8ac3bca264d9aa653cf95dda8aaaba554a" kindref="member">stream_frame_t::UINT32</ref>:<sp/>elemSize=4;<sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="366"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="structstream__frame_1aca1774c8a8ce98fa6e729072f766e8c8a30d93f6019a5994d0c84767f7bf79156" kindref="member">stream_frame_t::UINT16</ref>:<sp/>elemSize=2;<sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="367"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="structstream__frame_1aca1774c8a8ce98fa6e729072f766e8c8aea266a65c573d124cf8668945309aa54" kindref="member">stream_frame_t::UINT8</ref>:<sp/><sp/>elemSize=1;<sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="368"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="369"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="stream_api_8cpp_1a02586085698a967f28309aa3d54b43a3" kindref="member">ERR_ARGS</ref>(</highlight><highlight class="stringliteral">&quot;unknown<sp/>frame<sp/>type=%d&quot;</highlight><highlight class="normal">,<sp/>frame-&gt;<ref refid="structstream__frame_1aff75c17af0310f069f160f4344e71f5e" kindref="member">type</ref>);</highlight></codeline>
+<codeline lineno="370"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="stream_api_8h_1a2d05e4c8303106d1425a9efa4ff1fb69a939db9f16cb937a74d2173143d503d14" kindref="member">STREAM_ERROR</ref>;</highlight></codeline>
+<codeline lineno="371"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="372"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>numElements<sp/>=<sp/>frame-&gt;<ref refid="structstream__frame_1ae8471acc5d2d33d441a261ff928e9c9f" kindref="member">uncompressedSize</ref>/elemSize;</highlight></codeline>
+<codeline lineno="373"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>result<sp/>=<sp/>bshuf_decompress_lz4(pInput,<sp/>dest,<sp/>numElements,<sp/>elemSize,<sp/>0);</highlight></codeline>
+<codeline lineno="374"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(result<sp/>&lt;<sp/>0)</highlight></codeline>
+<codeline lineno="375"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="376"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="stream_api_8cpp_1a02586085698a967f28309aa3d54b43a3" kindref="member">ERR_ARGS</ref>(</highlight><highlight class="stringliteral">&quot;bshuf_decompress_lz4<sp/>failed,<sp/>result=%d&quot;</highlight><highlight class="normal">,<sp/>result);</highlight></codeline>
+<codeline lineno="377"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="stream_api_8h_1a2d05e4c8303106d1425a9efa4ff1fb69a939db9f16cb937a74d2173143d503d14" kindref="member">STREAM_ERROR</ref>;</highlight></codeline>
+<codeline lineno="378"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="379"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="380"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="381"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="stream_api_8cpp_1a02586085698a967f28309aa3d54b43a3" kindref="member">ERR_ARGS</ref>(</highlight><highlight class="stringliteral">&quot;Unknown<sp/>encoding=%s&quot;</highlight><highlight class="normal">,<sp/>frame-&gt;<ref refid="structstream__frame_1ae01dffe6ddd72098543d284444080539" kindref="member">encoding</ref>);</highlight></codeline>
+<codeline lineno="382"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="stream_api_8h_1a2d05e4c8303106d1425a9efa4ff1fb69a939db9f16cb937a74d2173143d503d14" kindref="member">STREAM_ERROR</ref>;</highlight></codeline>
+<codeline lineno="383"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="384"><highlight class="normal"></highlight></codeline>
+<codeline lineno="385"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="stream_api_8h_1a2d05e4c8303106d1425a9efa4ff1fb69a7286620d00da9549f767d5c060c47be0" kindref="member">STREAM_SUCCESS</ref>;</highlight></codeline>
+<codeline lineno="386"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/streamApi.cpp"/>
+  </compounddef>
+</doxygen>

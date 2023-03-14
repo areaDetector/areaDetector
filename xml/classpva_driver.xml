@@ -1,0 +1,768 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classpva_driver" kind="class" language="C++" prot="public">
+    <compoundname>pvaDriver</compoundname>
+    <basecompoundref refid="class_a_d_driver" prot="public" virt="non-virtual">ADDriver</basecompoundref>
+    <basecompoundref prot="public" virt="virtual">epics::pvAccess::ChannelRequester</basecompoundref>
+    <basecompoundref prot="public" virt="virtual">epics::pvData::MonitorRequester</basecompoundref>
+    <includes refid="pva_driver_8h" local="no">pvaDriver.h</includes>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classpva_driver_1acabe6af627e8091c36cadde4facde46b" prot="protected" static="no" mutable="no">
+        <type>int</type>
+        <definition>int pvaDriver::PVAOverrunCounter</definition>
+        <argsstring></argsstring>
+        <name>PVAOverrunCounter</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/pvaDriver/pvaDriverApp/src/pvaDriver.h" line="34" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/pvaDriver/pvaDriverApp/src/pvaDriver.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpva_driver_1afd8d5350b9d3055d78853cd2378d9b6d" prot="protected" static="no" mutable="no">
+        <type>int</type>
+        <definition>int pvaDriver::PVAPvName</definition>
+        <argsstring></argsstring>
+        <name>PVAPvName</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/pvaDriver/pvaDriverApp/src/pvaDriver.h" line="36" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/pvaDriver/pvaDriverApp/src/pvaDriver.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpva_driver_1a6d781e7b39bf6bf960a163f8626ede95" prot="protected" static="no" mutable="no">
+        <type>int</type>
+        <definition>int pvaDriver::PVAPvConnectionStatus</definition>
+        <argsstring></argsstring>
+        <name>PVAPvConnectionStatus</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/pvaDriver/pvaDriverApp/src/pvaDriver.h" line="37" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/pvaDriver/pvaDriverApp/src/pvaDriver.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classpva_driver_1ad1ab268ac2ccca1a35e87b8df1bb1876" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string pvaDriver::m_pvName</definition>
+        <argsstring></argsstring>
+        <name>m_pvName</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/pvaDriver/pvaDriverApp/src/pvaDriver.h" line="41" column="17" bodyfile="/home/runner/work/areaDetector/areaDetector/pvaDriver/pvaDriverApp/src/pvaDriver.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpva_driver_1a7c340a9baf84b7899c91caf831cfed9c" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string pvaDriver::m_request</definition>
+        <argsstring></argsstring>
+        <name>m_request</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/pvaDriver/pvaDriverApp/src/pvaDriver.h" line="42" column="17" bodyfile="/home/runner/work/areaDetector/areaDetector/pvaDriver/pvaDriverApp/src/pvaDriver.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpva_driver_1aef5a22c560d6aa0ceaf36e8361b13d3a" prot="private" static="no" mutable="no">
+        <type>short</type>
+        <definition>short pvaDriver::m_priority</definition>
+        <argsstring></argsstring>
+        <name>m_priority</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/pvaDriver/pvaDriverApp/src/pvaDriver.h" line="43" column="11" bodyfile="/home/runner/work/areaDetector/areaDetector/pvaDriver/pvaDriverApp/src/pvaDriver.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpva_driver_1a823ec98da008c007595fdc96d8cb02de" prot="private" static="no" mutable="no">
+        <type><ref refid="pva_driver_8h_1a2087cab05b5c41a707018200e33eca3d" kindref="member">ChannelProviderPtr</ref></type>
+        <definition>ChannelProviderPtr pvaDriver::m_provider</definition>
+        <argsstring></argsstring>
+        <name>m_provider</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/pvaDriver/pvaDriverApp/src/pvaDriver.h" line="44" column="24" bodyfile="/home/runner/work/areaDetector/areaDetector/pvaDriver/pvaDriverApp/src/pvaDriver.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpva_driver_1a7bbc6ea3b83f071e57cb5bac71249df2" prot="private" static="no" mutable="no">
+        <type><ref refid="pva_driver_8h_1ab46079387bb91e1e1a5b9e956867e8e2" kindref="member">ChannelPtr</ref></type>
+        <definition>ChannelPtr pvaDriver::m_channel</definition>
+        <argsstring></argsstring>
+        <name>m_channel</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/pvaDriver/pvaDriverApp/src/pvaDriver.h" line="45" column="16" bodyfile="/home/runner/work/areaDetector/areaDetector/pvaDriver/pvaDriverApp/src/pvaDriver.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpva_driver_1a3c3151451d822f5bd17e9949e088bbf6" prot="private" static="no" mutable="no">
+        <type>epics::pvData::PVStructurePtr</type>
+        <definition>epics::pvData::PVStructurePtr pvaDriver::m_pvRequest</definition>
+        <argsstring></argsstring>
+        <name>m_pvRequest</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/pvaDriver/pvaDriverApp/src/pvaDriver.h" line="46" column="35" bodyfile="/home/runner/work/areaDetector/areaDetector/pvaDriver/pvaDriverApp/src/pvaDriver.h" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpva_driver_1af94e9841826ac0b7b5ba1aac57e5a63f" prot="private" static="no" mutable="no">
+        <type>epics::pvData::MonitorPtr</type>
+        <definition>epics::pvData::MonitorPtr pvaDriver::m_monitor</definition>
+        <argsstring></argsstring>
+        <name>m_monitor</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/pvaDriver/pvaDriverApp/src/pvaDriver.h" line="47" column="31" bodyfile="/home/runner/work/areaDetector/areaDetector/pvaDriver/pvaDriverApp/src/pvaDriver.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpva_driver_1a96bf037f13b3c0d2ec9352d2bfb34e3b" prot="private" static="no" mutable="no">
+        <type><ref refid="pva_driver_8h_1a3b55b13077c4d7074a21de8f14f31ea8" kindref="member">pvaDriverPtr</ref></type>
+        <definition>pvaDriverPtr pvaDriver::m_thisPtr</definition>
+        <argsstring></argsstring>
+        <name>m_thisPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/pvaDriver/pvaDriverApp/src/pvaDriver.h" line="48" column="18" bodyfile="/home/runner/work/areaDetector/areaDetector/pvaDriver/pvaDriverApp/src/pvaDriver.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classpva_driver_1ab7416008cb69cb33162f14b0e1d32a39" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>pvaDriver::pvaDriver</definition>
+        <argsstring>(const char *portName, const char *pvName, int maxBuffers, size_t maxMemory, int priority, int stackSize)</argsstring>
+        <name>pvaDriver</name>
+        <param>
+          <type>const char *</type>
+          <declname>portName</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>pvName</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>maxBuffers</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>maxMemory</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>priority</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>stackSize</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/pvaDriver/pvaDriverApp/src/pvaDriver.h" line="25" column="5" bodyfile="/home/runner/work/areaDetector/areaDetector/pvaDriver/pvaDriverApp/src/pvaDriver.cpp" bodystart="55" bodyend="118"/>
+      </memberdef>
+      <memberdef kind="function" id="classpva_driver_1a938817235f675201bb30e6c3043b1ad6" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>asynStatus</type>
+        <definition>asynStatus pvaDriver::writeInt32</definition>
+        <argsstring>(asynUser *pasynUser, epicsInt32 value)</argsstring>
+        <name>writeInt32</name>
+        <reimplements refid="class_a_d_driver_1abef6916bb90d032a1aeb6894adef12a6">writeInt32</reimplements>
+        <param>
+          <type>asynUser *</type>
+          <declname>pasynUser</declname>
+        </param>
+        <param>
+          <type>epicsInt32</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Called when asyn clients call pasynInt32-&gt;write(). </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function performs actions for some parameters. For all parameters it sets the value in the parameter library and calls any registered callbacks.. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pasynUser</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pasynUser structure that encodes the reason and address. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Value to write. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/pvaDriver/pvaDriverApp/src/pvaDriver.h" line="29" column="16" bodyfile="/home/runner/work/areaDetector/areaDetector/pvaDriver/pvaDriverApp/src/pvaDriver.cpp" bodystart="364" bodyend="402"/>
+      </memberdef>
+      <memberdef kind="function" id="classpva_driver_1a0fb9f492ba15efbc7cc5bd20b970cf2c" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>asynStatus</type>
+        <definition>asynStatus pvaDriver::writeOctet</definition>
+        <argsstring>(asynUser *pasynUser, const char *value, size_t nChars, size_t *nActual)</argsstring>
+        <name>writeOctet</name>
+        <reimplements refid="classasyn_n_d_array_driver_1a84d981f8995d984035bb9feff727d520">writeOctet</reimplements>
+        <param>
+          <type>asynUser *</type>
+          <declname>pasynUser</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>value</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>nChars</declname>
+        </param>
+        <param>
+          <type>size_t *</type>
+          <declname>nActual</declname>
+        </param>
+        <briefdescription>
+<para>Called when asyn clients call pasynOctet-&gt;write(). </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function performs actions for some parameters, including AttributesFile. For all parameters it sets the value in the parameter library and calls any registered callbacks.. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pasynUser</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pasynUser structure that encodes the reason and address. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Address of the string to write. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">nChars</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of characters to write. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">nActual</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of characters actually written. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/pvaDriver/pvaDriverApp/src/pvaDriver.h" line="30" column="16" bodyfile="/home/runner/work/areaDetector/areaDetector/pvaDriver/pvaDriverApp/src/pvaDriver.cpp" bodystart="411" bodyend="444"/>
+      </memberdef>
+      <memberdef kind="function" id="classpva_driver_1a20eaee0e74983d68f025030a350ff5ce" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void pvaDriver::report</definition>
+        <argsstring>(FILE *fp, int details)</argsstring>
+        <name>report</name>
+        <reimplements refid="classasyn_n_d_array_driver_1ac3f2d73a05eb54357ec3f052e1b000f2">report</reimplements>
+        <param>
+          <type>FILE *</type>
+          <declname>fp</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>details</declname>
+        </param>
+        <briefdescription>
+<para>Report status of the driver. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This method calls the report function in the asynPortDriver base class. It then calls the <ref refid="class_n_d_array_pool_1a3b5ad3c3c7dae275cd00e2a0a8261d42" kindref="member">NDArrayPool::report()</ref> method if details &gt;5. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">fp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File pointed passed by caller where the output is written to. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">details</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If &gt;5 then <ref refid="class_n_d_array_pool_1a3b5ad3c3c7dae275cd00e2a0a8261d42" kindref="member">NDArrayPool::report</ref> and <ref refid="class_n_d_attribute_list_1a159a6b286f3dd435392bbead7ccd6c3e" kindref="member">NDAttributeList::report</ref> are both called. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/pvaDriver/pvaDriverApp/src/pvaDriver.h" line="31" column="18" bodyfile="/home/runner/work/areaDetector/areaDetector/pvaDriver/pvaDriverApp/src/pvaDriver.cpp" bodystart="446" bodyend="453"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classpva_driver_1a3d3b08c0f777392bdc9794e4f6cdae2b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>asynStatus</type>
+        <definition>asynStatus pvaDriver::connectPv</definition>
+        <argsstring>(std::string const &amp;pvName)</argsstring>
+        <name>connectPv</name>
+        <param>
+          <type>std::string const &amp;</type>
+          <declname>pvName</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/pvaDriver/pvaDriverApp/src/pvaDriver.h" line="49" column="16" bodyfile="/home/runner/work/areaDetector/areaDetector/pvaDriver/pvaDriverApp/src/pvaDriver.cpp" bodystart="120" bodyend="146"/>
+      </memberdef>
+      <memberdef kind="function" id="classpva_driver_1aacf7a7909ebfaf6b3a8895120e274b0e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>string pvaDriver::getRequesterName</definition>
+        <argsstring>(void)</argsstring>
+        <name>getRequesterName</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/pvaDriver/pvaDriverApp/src/pvaDriver.h" line="52" column="17" bodyfile="/home/runner/work/areaDetector/areaDetector/pvaDriver/pvaDriverApp/src/pvaDriver.cpp" bodystart="148" bodyend="151"/>
+      </memberdef>
+      <memberdef kind="function" id="classpva_driver_1a29edcc59967c7b99aa5c658d85a8d88f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void pvaDriver::message</definition>
+        <argsstring>(std::string const &amp;message, epics::pvData::MessageType messageType)</argsstring>
+        <name>message</name>
+        <param>
+          <type>std::string const &amp;</type>
+          <declname>message</declname>
+        </param>
+        <param>
+          <type>epics::pvData::MessageType</type>
+          <declname>messageType</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/pvaDriver/pvaDriverApp/src/pvaDriver.h" line="53" column="10" bodyfile="/home/runner/work/areaDetector/areaDetector/pvaDriver/pvaDriverApp/src/pvaDriver.cpp" bodystart="153" bodyend="159"/>
+      </memberdef>
+      <memberdef kind="function" id="classpva_driver_1ac70164c41cf05a4f07af503b909f687f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void pvaDriver::channelCreated</definition>
+        <argsstring>(const epics::pvData::Status &amp;status, ChannelPtr const &amp;channel)</argsstring>
+        <name>channelCreated</name>
+        <param>
+          <type>const epics::pvData::Status &amp;</type>
+          <declname>status</declname>
+        </param>
+        <param>
+          <type><ref refid="pva_driver_8h_1ab46079387bb91e1e1a5b9e956867e8e2" kindref="member">ChannelPtr</ref> const &amp;</type>
+          <declname>channel</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/pvaDriver/pvaDriverApp/src/pvaDriver.h" line="57" column="10" bodyfile="/home/runner/work/areaDetector/areaDetector/pvaDriver/pvaDriverApp/src/pvaDriver.cpp" bodystart="161" bodyend="167"/>
+      </memberdef>
+      <memberdef kind="function" id="classpva_driver_1ac15d365d24a7d8ee1ae57c13b55de8f8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void pvaDriver::channelStateChange</definition>
+        <argsstring>(ChannelPtr const &amp;channel, epics::pvAccess::Channel::ConnectionState state)</argsstring>
+        <name>channelStateChange</name>
+        <param>
+          <type><ref refid="pva_driver_8h_1ab46079387bb91e1e1a5b9e956867e8e2" kindref="member">ChannelPtr</ref> const &amp;</type>
+          <declname>channel</declname>
+        </param>
+        <param>
+          <type><ref refid="pxrd2__interface__misc_8h_1acdd867d72142510ce53521a63a062f9b" kindref="member">epics::pvAccess::Channel::ConnectionState</ref></type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/pvaDriver/pvaDriverApp/src/pvaDriver.h" line="59" column="10" bodyfile="/home/runner/work/areaDetector/areaDetector/pvaDriver/pvaDriverApp/src/pvaDriver.cpp" bodystart="169" bodyend="182"/>
+      </memberdef>
+      <memberdef kind="function" id="classpva_driver_1a79b6d301056070e8c404721a660b87bf" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void pvaDriver::monitorConnect</definition>
+        <argsstring>(epics::pvData::Status const &amp;status, epics::pvData::MonitorPtr const &amp;monitor, epics::pvData::StructureConstPtr const &amp;structure)</argsstring>
+        <name>monitorConnect</name>
+        <param>
+          <type>epics::pvData::Status const &amp;</type>
+          <declname>status</declname>
+        </param>
+        <param>
+          <type>epics::pvData::MonitorPtr const &amp;</type>
+          <declname>monitor</declname>
+        </param>
+        <param>
+          <type>epics::pvData::StructureConstPtr const &amp;</type>
+          <declname>structure</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/pvaDriver/pvaDriverApp/src/pvaDriver.h" line="63" column="10" bodyfile="/home/runner/work/areaDetector/areaDetector/pvaDriver/pvaDriverApp/src/pvaDriver.cpp" bodystart="191" bodyend="212"/>
+      </memberdef>
+      <memberdef kind="function" id="classpva_driver_1af2ea3b50f2f362362d6ddc89958541ff" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void pvaDriver::monitorEvent</definition>
+        <argsstring>(epics::pvData::MonitorPtr const &amp;monitor)</argsstring>
+        <name>monitorEvent</name>
+        <param>
+          <type>epics::pvData::MonitorPtr const &amp;</type>
+          <declname>monitor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/pvaDriver/pvaDriverApp/src/pvaDriver.h" line="66" column="10" bodyfile="/home/runner/work/areaDetector/areaDetector/pvaDriver/pvaDriverApp/src/pvaDriver.cpp" bodystart="214" bodyend="357"/>
+      </memberdef>
+      <memberdef kind="function" id="classpva_driver_1a2944b3e1534d9048154937fdb744d70e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void pvaDriver::unlisten</definition>
+        <argsstring>(epics::pvData::MonitorPtr const &amp;monitor)</argsstring>
+        <name>unlisten</name>
+        <param>
+          <type>epics::pvData::MonitorPtr const &amp;</type>
+          <declname>monitor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/pvaDriver/pvaDriverApp/src/pvaDriver.h" line="67" column="10" bodyfile="/home/runner/work/areaDetector/areaDetector/pvaDriver/pvaDriverApp/src/pvaDriver.cpp" bodystart="184" bodyend="189"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>pvaDriver</label>
+        <link refid="classpva_driver"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+        <childnode refid="6" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>epics::pvData::MonitorRequester</label>
+      </node>
+      <node id="4">
+        <label>asynPortDriver</label>
+      </node>
+      <node id="3">
+        <label>asynNDArrayDriver</label>
+        <link refid="classasyn_n_d_array_driver"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>ADDriver</label>
+        <link refid="class_a_d_driver"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>epics::pvAccess::ChannelRequester</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>pvaDriver</label>
+        <link refid="classpva_driver"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="11" relation="public-inheritance">
+        </childnode>
+        <childnode refid="12" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>epics::pvData::MonitorRequester</label>
+      </node>
+      <node id="8">
+        <label>NDDimension</label>
+        <link refid="struct_n_d_dimension"/>
+      </node>
+      <node id="4">
+        <label>asynPortDriver</label>
+      </node>
+      <node id="10">
+        <label>string</label>
+      </node>
+      <node id="9">
+        <label>Codec_t</label>
+        <link refid="struct_codec__t"/>
+        <childnode refid="10" relation="usage">
+          <edgelabel>name</edgelabel>
+        </childnode>
+      </node>
+      <node id="7">
+        <label>NDArray</label>
+        <link refid="class_n_d_array"/>
+        <childnode refid="5" relation="usage">
+          <edgelabel>pNDArrayPool</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>dims</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>pAttributeList</edgelabel>
+        </childnode>
+        <childnode refid="9" relation="usage">
+          <edgelabel>codec</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>pDriver</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>asynNDArrayDriver</label>
+        <link refid="classasyn_n_d_array_driver"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>pNDArrayPool</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>pAttributeList</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>pArrays</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>NDArrayPool</label>
+        <link refid="class_n_d_array_pool"/>
+      </node>
+      <node id="2">
+        <label>ADDriver</label>
+        <link refid="class_a_d_driver"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>NDAttributeList</label>
+        <link refid="class_n_d_attribute_list"/>
+      </node>
+      <node id="11">
+        <label>epics::pvAccess::ChannelRequester</label>
+      </node>
+    </collaborationgraph>
+    <location file="/home/runner/work/areaDetector/areaDetector/pvaDriver/pvaDriverApp/src/pvaDriver.h" line="19" column="1" bodyfile="/home/runner/work/areaDetector/areaDetector/pvaDriver/pvaDriverApp/src/pvaDriver.h" bodystart="22" bodyend="68"/>
+    <listofallmembers>
+      <member refid="classasyn_n_d_array_driver_1aa06c19f650b4619a7bdbf3a79397c3d3" prot="protected" virt="non-virtual"><scope>pvaDriver</scope><name>ADAcquire</name></member>
+      <member refid="classasyn_n_d_array_driver_1aaeb5af71e22323b6a3d4f51be380bc7a" prot="protected" virt="non-virtual"><scope>pvaDriver</scope><name>ADAcquireBusy</name></member>
+      <member refid="class_a_d_driver_1a8d5333aa86509cbd8f5fd824e79b2799" prot="protected" virt="non-virtual"><scope>pvaDriver</scope><name>ADAcquirePeriod</name></member>
+      <member refid="class_a_d_driver_1a922005db3a5a52dd24e6706fdfe1a160" prot="protected" virt="non-virtual"><scope>pvaDriver</scope><name>ADAcquireTime</name></member>
+      <member refid="class_a_d_driver_1a11d483194e60669d11e0a4ff4bb919f3" prot="protected" virt="non-virtual"><scope>pvaDriver</scope><name>ADBinX</name></member>
+      <member refid="class_a_d_driver_1a0001097ff0ab8b55e564057699655c83" prot="protected" virt="non-virtual"><scope>pvaDriver</scope><name>ADBinY</name></member>
+      <member refid="class_a_d_driver_1acc898497d3369c2f6f6ab1d83effdd25" prot="public" virt="non-virtual"><scope>pvaDriver</scope><name>ADDriver</name></member>
+      <member refid="classasyn_n_d_array_driver_1a4eadbf94d756dcf7b61d624f791fd516" prot="protected" virt="non-virtual"><scope>pvaDriver</scope><name>ADFirmwareVersion</name></member>
+      <member refid="class_a_d_driver_1ae246f999cf99d4e97594beb939f15f21" prot="protected" virt="non-virtual"><scope>pvaDriver</scope><name>ADFrameType</name></member>
+      <member refid="class_a_d_driver_1af7a169a1ab5a9069c5d556bf5c7ac387" prot="protected" virt="non-virtual"><scope>pvaDriver</scope><name>ADGain</name></member>
+      <member refid="class_a_d_driver_1a7dcba273d750e726bb3f5e4b7a38f53a" prot="protected" virt="non-virtual"><scope>pvaDriver</scope><name>ADImageMode</name></member>
+      <member refid="classasyn_n_d_array_driver_1a2deb25acd798e9e0da6c52741a07b915" prot="protected" virt="non-virtual"><scope>pvaDriver</scope><name>ADManufacturer</name></member>
+      <member refid="class_a_d_driver_1a535f4c7d03e30b1efe4f7dad854cfc3f" prot="protected" virt="non-virtual"><scope>pvaDriver</scope><name>ADMaxSizeX</name></member>
+      <member refid="class_a_d_driver_1a93caa26e32c3765ba19e1ac74a2f50cc" prot="protected" virt="non-virtual"><scope>pvaDriver</scope><name>ADMaxSizeY</name></member>
+      <member refid="class_a_d_driver_1a23f8a7537c0c221ed3c5a72af90e276e" prot="protected" virt="non-virtual"><scope>pvaDriver</scope><name>ADMinX</name></member>
+      <member refid="class_a_d_driver_1ae1b0c891ee0ecd596439b29e32e068e4" prot="protected" virt="non-virtual"><scope>pvaDriver</scope><name>ADMinY</name></member>
+      <member refid="classasyn_n_d_array_driver_1a4c15720b7002ec1ff9278058240d82da" prot="protected" virt="non-virtual"><scope>pvaDriver</scope><name>ADModel</name></member>
+      <member refid="class_a_d_driver_1a25e11dff81ea84715fc8fe5ca290bacb" prot="protected" virt="non-virtual"><scope>pvaDriver</scope><name>ADNumExposures</name></member>
+      <member refid="class_a_d_driver_1a17625c89904128e0d5ecb935c475e4b7" prot="protected" virt="non-virtual"><scope>pvaDriver</scope><name>ADNumExposuresCounter</name></member>
+      <member refid="class_a_d_driver_1a46e8f2fa100c21f2f0689c415b441fb0" prot="protected" virt="non-virtual"><scope>pvaDriver</scope><name>ADNumImages</name></member>
+      <member refid="class_a_d_driver_1a8cdc9e9fbabaadaa3c87108aad2e2895" prot="protected" virt="non-virtual"><scope>pvaDriver</scope><name>ADNumImagesCounter</name></member>
+      <member refid="class_a_d_driver_1adbd8c8af9cf7a17913f16ecd0252eaba" prot="protected" virt="non-virtual"><scope>pvaDriver</scope><name>ADReadStatus</name></member>
+      <member refid="class_a_d_driver_1a52d579907f81c30b4b2df2dd0a3b4a3f" prot="protected" virt="non-virtual"><scope>pvaDriver</scope><name>ADReverseX</name></member>
+      <member refid="class_a_d_driver_1ad6b830a6234b468e3390839204d5a768" prot="protected" virt="non-virtual"><scope>pvaDriver</scope><name>ADReverseY</name></member>
+      <member refid="classasyn_n_d_array_driver_1a89d5bd570163bd569bc6d2a2163da9c2" prot="protected" virt="non-virtual"><scope>pvaDriver</scope><name>ADSDKVersion</name></member>
+      <member refid="classasyn_n_d_array_driver_1aa4d910fd087c8eb02f3437b18b80bba1" prot="protected" virt="non-virtual"><scope>pvaDriver</scope><name>ADSerialNumber</name></member>
+      <member refid="class_a_d_driver_1a4c4ffb55296fb91e113df88de960384a" prot="protected" virt="non-virtual"><scope>pvaDriver</scope><name>ADShutterCloseDelay</name></member>
+      <member refid="class_a_d_driver_1aba1af712aed9f9374e5fea5dfc8c1bbd" prot="protected" virt="non-virtual"><scope>pvaDriver</scope><name>ADShutterControl</name></member>
+      <member refid="class_a_d_driver_1aec7d41ff8a2b3059270450275160092f" prot="protected" virt="non-virtual"><scope>pvaDriver</scope><name>ADShutterControlEPICS</name></member>
+      <member refid="class_a_d_driver_1a3a1afea96c657c64ab8dea2ee54d1ace" prot="protected" virt="non-virtual"><scope>pvaDriver</scope><name>ADShutterMode</name></member>
+      <member refid="class_a_d_driver_1ac95c27f778d15963a1d9dd3a61c17d23" prot="protected" virt="non-virtual"><scope>pvaDriver</scope><name>ADShutterOpenDelay</name></member>
+      <member refid="class_a_d_driver_1a13c7b3852b0a6662a701f8b0fd71eac2" prot="protected" virt="non-virtual"><scope>pvaDriver</scope><name>ADShutterStatus</name></member>
+      <member refid="class_a_d_driver_1a918ef4b3d80695f6872fd169b09b639a" prot="protected" virt="non-virtual"><scope>pvaDriver</scope><name>ADSizeX</name></member>
+      <member refid="class_a_d_driver_1a59ba3ba61b2b6f51dc9d88d81680b632" prot="protected" virt="non-virtual"><scope>pvaDriver</scope><name>ADSizeY</name></member>
+      <member refid="class_a_d_driver_1a6a532aae0f51273450f4e897bf0aed1d" prot="protected" virt="non-virtual"><scope>pvaDriver</scope><name>ADStatus</name></member>
+      <member refid="class_a_d_driver_1af8ca049bdf54eede6611e50a284152bc" prot="protected" virt="non-virtual"><scope>pvaDriver</scope><name>ADStatusMessage</name></member>
+      <member refid="class_a_d_driver_1adb837da5ddf5ba868ea2dea316254c41" prot="protected" virt="non-virtual"><scope>pvaDriver</scope><name>ADStringFromServer</name></member>
+      <member refid="class_a_d_driver_1a9f521abfc93c9ccba2b0e83acace6d0e" prot="protected" virt="non-virtual"><scope>pvaDriver</scope><name>ADStringToServer</name></member>
+      <member refid="class_a_d_driver_1aef042b68b6b77d7b39dfaeceaa097a38" prot="protected" virt="non-virtual"><scope>pvaDriver</scope><name>ADTemperature</name></member>
+      <member refid="class_a_d_driver_1a625f815727135a2af747ae5086bf21d5" prot="protected" virt="non-virtual"><scope>pvaDriver</scope><name>ADTemperatureActual</name></member>
+      <member refid="class_a_d_driver_1a143d4816efe3d5e98f4e6656b0f1d539" prot="protected" virt="non-virtual"><scope>pvaDriver</scope><name>ADTimeRemaining</name></member>
+      <member refid="class_a_d_driver_1ae191abe1436e6dd02510fcbbac59dbc1" prot="protected" virt="non-virtual"><scope>pvaDriver</scope><name>ADTriggerMode</name></member>
+      <member refid="classasyn_n_d_array_driver_1adb00dde7e1d46856e0bd4b586aff6bd2" prot="protected" virt="non-virtual"><scope>pvaDriver</scope><name>ADWaitForPlugins</name></member>
+      <member refid="classasyn_n_d_array_driver_1aaaccd27681be8d91d10246e1aad72034" prot="public" virt="non-virtual"><scope>pvaDriver</scope><name>asynNDArrayDriver</name></member>
+      <member refid="classpva_driver_1ac70164c41cf05a4f07af503b909f687f" prot="private" virt="non-virtual"><scope>pvaDriver</scope><name>channelCreated</name></member>
+      <member refid="classpva_driver_1ac15d365d24a7d8ee1ae57c13b55de8f8" prot="private" virt="non-virtual"><scope>pvaDriver</scope><name>channelStateChange</name></member>
+      <member refid="classasyn_n_d_array_driver_1aba7309da5e7c5571fc693b1998c9d236" prot="public" virt="virtual"><scope>pvaDriver</scope><name>checkPath</name></member>
+      <member refid="classasyn_n_d_array_driver_1aaca89f35ddf4c5a1c22374ff608593cd" prot="public" virt="virtual"><scope>pvaDriver</scope><name>checkPath</name></member>
+      <member refid="class_a_d_driver_1a619dfbdc35605a104d2a07ea46f37b5f" prot="public" virt="virtual"><scope>pvaDriver</scope><name>connect</name></member>
+      <member refid="classpva_driver_1a3d3b08c0f777392bdc9794e4f6cdae2b" prot="private" virt="non-virtual"><scope>pvaDriver</scope><name>connectPv</name></member>
+      <member refid="classasyn_n_d_array_driver_1a813f6c84e96329cd89653a3b0497f8a9" prot="public" virt="virtual"><scope>pvaDriver</scope><name>createFileName</name></member>
+      <member refid="classasyn_n_d_array_driver_1af5494c8e3b3f317e049a5c336d8065f4" prot="public" virt="virtual"><scope>pvaDriver</scope><name>createFileName</name></member>
+      <member refid="classasyn_n_d_array_driver_1a42b3686c9c08b14ba054dd005a30fa0d" prot="public" virt="virtual"><scope>pvaDriver</scope><name>createFilePath</name></member>
+      <member refid="classasyn_n_d_array_driver_1acc2afad33faf8e45d6f21e251133ed94" prot="public" virt="non-virtual"><scope>pvaDriver</scope><name>decrementQueuedArrayCount</name></member>
+      <member refid="class_a_d_driver_1ad387fa6e2e45c812ba82adba2cc74bd0" prot="protected" virt="non-virtual"><scope>pvaDriver</scope><name>deviceIsReachable</name></member>
+      <member refid="classasyn_n_d_array_driver_1a7492ba858d885e2ba226a1c7ef9dcf72" prot="public" virt="virtual"><scope>pvaDriver</scope><name>getAttributes</name></member>
+      <member refid="classasyn_n_d_array_driver_1a1a369bc9b605bba000f782c69429622b" prot="public" virt="non-virtual"><scope>pvaDriver</scope><name>getQueuedArrayCount</name></member>
+      <member refid="classpva_driver_1aacf7a7909ebfaf6b3a8895120e274b0e" prot="private" virt="non-virtual"><scope>pvaDriver</scope><name>getRequesterName</name></member>
+      <member refid="classasyn_n_d_array_driver_1ad55549fca656bc01cbe0e3c92e4d29e3" prot="public" virt="non-virtual"><scope>pvaDriver</scope><name>incrementQueuedArrayCount</name></member>
+      <member refid="classpva_driver_1a7bbc6ea3b83f071e57cb5bac71249df2" prot="private" virt="non-virtual"><scope>pvaDriver</scope><name>m_channel</name></member>
+      <member refid="classpva_driver_1af94e9841826ac0b7b5ba1aac57e5a63f" prot="private" virt="non-virtual"><scope>pvaDriver</scope><name>m_monitor</name></member>
+      <member refid="classpva_driver_1aef5a22c560d6aa0ceaf36e8361b13d3a" prot="private" virt="non-virtual"><scope>pvaDriver</scope><name>m_priority</name></member>
+      <member refid="classpva_driver_1a823ec98da008c007595fdc96d8cb02de" prot="private" virt="non-virtual"><scope>pvaDriver</scope><name>m_provider</name></member>
+      <member refid="classpva_driver_1ad1ab268ac2ccca1a35e87b8df1bb1876" prot="private" virt="non-virtual"><scope>pvaDriver</scope><name>m_pvName</name></member>
+      <member refid="classpva_driver_1a3c3151451d822f5bd17e9949e088bbf6" prot="private" virt="non-virtual"><scope>pvaDriver</scope><name>m_pvRequest</name></member>
+      <member refid="classpva_driver_1a7c340a9baf84b7899c91caf831cfed9c" prot="private" virt="non-virtual"><scope>pvaDriver</scope><name>m_request</name></member>
+      <member refid="classpva_driver_1a96bf037f13b3c0d2ec9352d2bfb34e3b" prot="private" virt="non-virtual"><scope>pvaDriver</scope><name>m_thisPtr</name></member>
+      <member refid="classpva_driver_1a29edcc59967c7b99aa5c658d85a8d88f" prot="private" virt="non-virtual"><scope>pvaDriver</scope><name>message</name></member>
+      <member refid="classpva_driver_1a79b6d301056070e8c404721a660b87bf" prot="private" virt="non-virtual"><scope>pvaDriver</scope><name>monitorConnect</name></member>
+      <member refid="classpva_driver_1af2ea3b50f2f362362d6ddc89958541ff" prot="private" virt="non-virtual"><scope>pvaDriver</scope><name>monitorEvent</name></member>
+      <member refid="classasyn_n_d_array_driver_1ad472f633149cd560959721e589d9ea54" prot="protected" virt="non-virtual"><scope>pvaDriver</scope><name>NDADCoreVersion</name></member>
+      <member refid="classasyn_n_d_array_driver_1af2354f73acece6ee2427f5069b16fdb5" prot="protected" virt="non-virtual"><scope>pvaDriver</scope><name>NDArrayCallbacks</name></member>
+      <member refid="classasyn_n_d_array_driver_1abec5f5fc9922549d745d7dc7f19243ea" prot="protected" virt="non-virtual"><scope>pvaDriver</scope><name>NDArrayCounter</name></member>
+      <member refid="classasyn_n_d_array_driver_1a2b2fe51fba9a6ee4146813eac0c47fd1" prot="protected" virt="non-virtual"><scope>pvaDriver</scope><name>NDArrayData</name></member>
+      <member refid="classasyn_n_d_array_driver_1abf6f05821c7d1a9ab6aef60c9374281e" prot="protected" virt="non-virtual"><scope>pvaDriver</scope><name>NDArraySize</name></member>
+      <member refid="classasyn_n_d_array_driver_1a79c89c00ea62734d82c89e09ea8aa47b" prot="protected" virt="non-virtual"><scope>pvaDriver</scope><name>NDArraySizeX</name></member>
+      <member refid="classasyn_n_d_array_driver_1a75753778fe16182d0771e924f05bde33" prot="protected" virt="non-virtual"><scope>pvaDriver</scope><name>NDArraySizeY</name></member>
+      <member refid="classasyn_n_d_array_driver_1a72fac0fbaa730672f9a3a6da8c1d1a97" prot="protected" virt="non-virtual"><scope>pvaDriver</scope><name>NDArraySizeZ</name></member>
+      <member refid="classasyn_n_d_array_driver_1a4fae01b5b72053b6ae11dcd37ff6aff0" prot="protected" virt="non-virtual"><scope>pvaDriver</scope><name>NDAttributesFile</name></member>
+      <member refid="classasyn_n_d_array_driver_1abba302aca48e561ee5b40794db9f0708" prot="protected" virt="non-virtual"><scope>pvaDriver</scope><name>NDAttributesMacros</name></member>
+      <member refid="classasyn_n_d_array_driver_1a0875da7319e3cc7f54212629208b1d95" prot="protected" virt="non-virtual"><scope>pvaDriver</scope><name>NDAttributesStatus</name></member>
+      <member refid="classasyn_n_d_array_driver_1a9966536066c350fc218d3d7cb4d66aaf" prot="protected" virt="non-virtual"><scope>pvaDriver</scope><name>NDAutoIncrement</name></member>
+      <member refid="classasyn_n_d_array_driver_1a73da5c2affb0342b82b470f96a068d1a" prot="protected" virt="non-virtual"><scope>pvaDriver</scope><name>NDAutoSave</name></member>
+      <member refid="classasyn_n_d_array_driver_1a6e584ca2489de3a5e3e9d4d4e00bb7c0" prot="protected" virt="non-virtual"><scope>pvaDriver</scope><name>NDBayerPattern</name></member>
+      <member refid="classasyn_n_d_array_driver_1a43641411ca31d630cbf30adab5e553b2" prot="protected" virt="non-virtual"><scope>pvaDriver</scope><name>NDCodec</name></member>
+      <member refid="classasyn_n_d_array_driver_1abf7b27064b0d69440f16feb1e19f6cf2" prot="protected" virt="non-virtual"><scope>pvaDriver</scope><name>NDColorMode</name></member>
+      <member refid="classasyn_n_d_array_driver_1a2a9b3db5995b201c2e153decfd79391e" prot="protected" virt="non-virtual"><scope>pvaDriver</scope><name>NDCompressedSize</name></member>
+      <member refid="classasyn_n_d_array_driver_1af71358738ff1dbe4c9185f105807f799" prot="protected" virt="non-virtual"><scope>pvaDriver</scope><name>NDDataType</name></member>
+      <member refid="classasyn_n_d_array_driver_1a23727b6252a78b74fc40868f15e656dc" prot="protected" virt="non-virtual"><scope>pvaDriver</scope><name>NDDimensions</name></member>
+      <member refid="classasyn_n_d_array_driver_1a2be0f672f139c59f942bedfd7d94ff0f" prot="protected" virt="non-virtual"><scope>pvaDriver</scope><name>NDDriverVersion</name></member>
+      <member refid="classasyn_n_d_array_driver_1a436f60f2a566a9be759c2dad9a9cbbaf" prot="protected" virt="non-virtual"><scope>pvaDriver</scope><name>NDEpicsTSNsec</name></member>
+      <member refid="classasyn_n_d_array_driver_1af9d5abcc0a9ef2a21abce8607fd7650e" prot="protected" virt="non-virtual"><scope>pvaDriver</scope><name>NDEpicsTSSec</name></member>
+      <member refid="classasyn_n_d_array_driver_1adc503aa2621ea29c553514b09784229a" prot="protected" virt="non-virtual"><scope>pvaDriver</scope><name>NDFileCapture</name></member>
+      <member refid="classasyn_n_d_array_driver_1a726ad8d1b09b0fc5e08e0561e9bc255f" prot="protected" virt="non-virtual"><scope>pvaDriver</scope><name>NDFileCreateDir</name></member>
+      <member refid="classasyn_n_d_array_driver_1a1ce29ba9f5d31b52628ae76129d15fa2" prot="protected" virt="non-virtual"><scope>pvaDriver</scope><name>NDFileDeleteDriverFile</name></member>
+      <member refid="classasyn_n_d_array_driver_1a8911e3455de6adbfcb21093da9ff0500" prot="protected" virt="non-virtual"><scope>pvaDriver</scope><name>NDFileFormat</name></member>
+      <member refid="classasyn_n_d_array_driver_1a8f5e5a7aae6848a12e55012273ab06c5" prot="protected" virt="non-virtual"><scope>pvaDriver</scope><name>NDFileLazyOpen</name></member>
+      <member refid="classasyn_n_d_array_driver_1a513d2b4cc04ba240f434394c715f733f" prot="protected" virt="non-virtual"><scope>pvaDriver</scope><name>NDFileName</name></member>
+      <member refid="classasyn_n_d_array_driver_1a6d7cf0fea0eba3eb69fe69a60b89b30c" prot="protected" virt="non-virtual"><scope>pvaDriver</scope><name>NDFileNumber</name></member>
+      <member refid="classasyn_n_d_array_driver_1abd42667177a6b0ea88888487511514cd" prot="protected" virt="non-virtual"><scope>pvaDriver</scope><name>NDFileNumCapture</name></member>
+      <member refid="classasyn_n_d_array_driver_1aa392d8dfaa3d659958deddf100d54aed" prot="protected" virt="non-virtual"><scope>pvaDriver</scope><name>NDFileNumCaptured</name></member>
+      <member refid="classasyn_n_d_array_driver_1ac511e9800761d6cb070d3540940b24c3" prot="protected" virt="non-virtual"><scope>pvaDriver</scope><name>NDFilePath</name></member>
+      <member refid="classasyn_n_d_array_driver_1a3cf47b7e4df08a87b0585c62509878bf" prot="protected" virt="non-virtual"><scope>pvaDriver</scope><name>NDFilePathExists</name></member>
+      <member refid="classasyn_n_d_array_driver_1a2db8828aac3ad3c3df409291395fcb4d" prot="protected" virt="non-virtual"><scope>pvaDriver</scope><name>NDFileTemplate</name></member>
+      <member refid="classasyn_n_d_array_driver_1a5523209bde8cdb69b0ea275628422e9f" prot="protected" virt="non-virtual"><scope>pvaDriver</scope><name>NDFileTempSuffix</name></member>
+      <member refid="classasyn_n_d_array_driver_1a392868002486b6c806c587ef3f73c320" prot="protected" virt="non-virtual"><scope>pvaDriver</scope><name>NDFileWriteMessage</name></member>
+      <member refid="classasyn_n_d_array_driver_1ae446f2d56cfb91299839a1a3fea72a62" prot="protected" virt="non-virtual"><scope>pvaDriver</scope><name>NDFileWriteMode</name></member>
+      <member refid="classasyn_n_d_array_driver_1ab5b4722576613c52894c55da7153a05f" prot="protected" virt="non-virtual"><scope>pvaDriver</scope><name>NDFileWriteStatus</name></member>
+      <member refid="classasyn_n_d_array_driver_1ad109404880a23929fc17dea1f09e0775" prot="protected" virt="non-virtual"><scope>pvaDriver</scope><name>NDFullFileName</name></member>
+      <member refid="classasyn_n_d_array_driver_1aa13dc824ba27681f894f8319f3f13a8c" prot="protected" virt="non-virtual"><scope>pvaDriver</scope><name>NDNDimensions</name></member>
+      <member refid="classasyn_n_d_array_driver_1aff0d6045cf18c21959a8c21228549ecd" prot="protected" virt="non-virtual"><scope>pvaDriver</scope><name>NDNumQueuedArrays</name></member>
+      <member refid="classasyn_n_d_array_driver_1adf264650a61fe86c37dbc7a4e5c1fbd0" prot="protected" virt="non-virtual"><scope>pvaDriver</scope><name>NDPoolAllocBuffers</name></member>
+      <member refid="classasyn_n_d_array_driver_1af3cacda934695b472269d32ba2d94a86" prot="protected" virt="non-virtual"><scope>pvaDriver</scope><name>NDPoolEmptyFreeList</name></member>
+      <member refid="classasyn_n_d_array_driver_1a9514efd0d89337677ccb428b8b3ac518" prot="protected" virt="non-virtual"><scope>pvaDriver</scope><name>NDPoolFreeBuffers</name></member>
+      <member refid="classasyn_n_d_array_driver_1a5ab509aca13c1642449253f6ce6eca2c" prot="protected" virt="non-virtual"><scope>pvaDriver</scope><name>NDPoolMaxBuffers</name></member>
+      <member refid="classasyn_n_d_array_driver_1a7267d600284240edc0f0abe484dff2ee" prot="protected" virt="non-virtual"><scope>pvaDriver</scope><name>NDPoolMaxMemory</name></member>
+      <member refid="classasyn_n_d_array_driver_1a2a7b868b8d6c542fff28993e1c977e4b" prot="protected" virt="non-virtual"><scope>pvaDriver</scope><name>NDPoolUsedMemory</name></member>
+      <member refid="classasyn_n_d_array_driver_1acefc2096d9db2fd102542a957722ceef" prot="protected" virt="non-virtual"><scope>pvaDriver</scope><name>NDPortNameSelf</name></member>
+      <member refid="classasyn_n_d_array_driver_1acdf9d2f3575481f29544c56c9fe46c5c" prot="protected" virt="non-virtual"><scope>pvaDriver</scope><name>NDReadFile</name></member>
+      <member refid="classasyn_n_d_array_driver_1a9b5492ae014f21d0843658f19e955dc1" prot="protected" virt="non-virtual"><scope>pvaDriver</scope><name>NDTimeStamp</name></member>
+      <member refid="classasyn_n_d_array_driver_1a8d713b9cc045417a599c91aacc98b08b" prot="protected" virt="non-virtual"><scope>pvaDriver</scope><name>NDUniqueId</name></member>
+      <member refid="classasyn_n_d_array_driver_1a5d1ec3e763ea9aef2f3fd576611baeb5" prot="protected" virt="non-virtual"><scope>pvaDriver</scope><name>NDWriteFile</name></member>
+      <member refid="classasyn_n_d_array_driver_1a6f5685f9951f6b3b897e85425b59ad69" prot="protected" virt="non-virtual"><scope>pvaDriver</scope><name>pArrays</name></member>
+      <member refid="classasyn_n_d_array_driver_1a7bed3ca3a144124eb31053eeecc990e9" prot="protected" virt="non-virtual"><scope>pvaDriver</scope><name>pAttributeList</name></member>
+      <member refid="classasyn_n_d_array_driver_1ad3969854a37329ef4061cc560e9022dc" prot="public" virt="non-virtual"><scope>pvaDriver</scope><name>pNDArrayPool</name></member>
+      <member refid="classpva_driver_1ab7416008cb69cb33162f14b0e1d32a39" prot="public" virt="non-virtual"><scope>pvaDriver</scope><name>pvaDriver</name></member>
+      <member refid="classpva_driver_1acabe6af627e8091c36cadde4facde46b" prot="protected" virt="non-virtual"><scope>pvaDriver</scope><name>PVAOverrunCounter</name></member>
+      <member refid="classpva_driver_1a6d781e7b39bf6bf960a163f8626ede95" prot="protected" virt="non-virtual"><scope>pvaDriver</scope><name>PVAPvConnectionStatus</name></member>
+      <member refid="classpva_driver_1afd8d5350b9d3055d78853cd2378d9b6d" prot="protected" virt="non-virtual"><scope>pvaDriver</scope><name>PVAPvName</name></member>
+      <member refid="classasyn_n_d_array_driver_1a5aeb82d51c34b79b77433e121722a141" prot="public" virt="virtual"><scope>pvaDriver</scope><name>readFloat64</name></member>
+      <member refid="classasyn_n_d_array_driver_1acac9d5044d62734723404ef7e53ee4e8" prot="public" virt="virtual"><scope>pvaDriver</scope><name>readGenericPointer</name></member>
+      <member refid="classasyn_n_d_array_driver_1a4c0e7e85f9f4a988614a273c035be813" prot="public" virt="virtual"><scope>pvaDriver</scope><name>readInt32</name></member>
+      <member refid="classasyn_n_d_array_driver_1a1da351ae597074c829204945f700098b" prot="public" virt="virtual"><scope>pvaDriver</scope><name>readNDAttributesFile</name></member>
+      <member refid="classpva_driver_1a20eaee0e74983d68f025030a350ff5ce" prot="public" virt="virtual"><scope>pvaDriver</scope><name>report</name></member>
+      <member refid="classasyn_n_d_array_driver_1abf87462bc5853f8e5a56db5e93acd956" prot="public" virt="virtual"><scope>pvaDriver</scope><name>setIntegerParam</name></member>
+      <member refid="classasyn_n_d_array_driver_1a3732469004adb2cd7eb5d5f047385915" prot="public" virt="virtual"><scope>pvaDriver</scope><name>setIntegerParam</name></member>
+      <member refid="class_a_d_driver_1ac05bfd5d3c6bc63910d6fbd4fb909d50" prot="public" virt="virtual"><scope>pvaDriver</scope><name>setShutter</name></member>
+      <member refid="classasyn_n_d_array_driver_1aa52489ae8673348bf596faf63b94e85e" prot="protected" virt="non-virtual"><scope>pvaDriver</scope><name>threadPriority_</name></member>
+      <member refid="classasyn_n_d_array_driver_1a467b05b088bb8cf97e2fcad07a4a432f" prot="protected" virt="non-virtual"><scope>pvaDriver</scope><name>threadStackSize_</name></member>
+      <member refid="classpva_driver_1a2944b3e1534d9048154937fdb744d70e" prot="private" virt="non-virtual"><scope>pvaDriver</scope><name>unlisten</name></member>
+      <member refid="classasyn_n_d_array_driver_1a688578d794900c0671da8dfaf771912b" prot="public" virt="non-virtual"><scope>pvaDriver</scope><name>updateQueuedArrayCount</name></member>
+      <member refid="classasyn_n_d_array_driver_1ad95feb77baff701f85641ef5fc3d5c65" prot="public" virt="virtual"><scope>pvaDriver</scope><name>writeGenericPointer</name></member>
+      <member refid="classpva_driver_1a938817235f675201bb30e6c3043b1ad6" prot="public" virt="virtual"><scope>pvaDriver</scope><name>writeInt32</name></member>
+      <member refid="classpva_driver_1a0fb9f492ba15efbc7cc5bd20b970cf2c" prot="public" virt="virtual"><scope>pvaDriver</scope><name>writeOctet</name></member>
+      <member refid="classasyn_n_d_array_driver_1ab392c48715c896b8f58c0456b7889723" prot="public" virt="virtual"><scope>pvaDriver</scope><name>~asynNDArrayDriver</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

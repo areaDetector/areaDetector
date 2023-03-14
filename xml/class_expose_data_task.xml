@@ -1,0 +1,161 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="class_expose_data_task" kind="class" language="C++" prot="public">
+    <compoundname>ExposeDataTask</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">epicsThreadRunable</basecompoundref>
+    <includes refid="_n_d_plugin_attr_plot_8h" local="no">NDPluginAttrPlot.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_expose_data_task_1af178394adda754bea75f7e000c414c3a" prot="private" static="no" mutable="no">
+        <type><ref refid="class_n_d_plugin_attr_plot" kindref="compound">NDPluginAttrPlot</ref> &amp;</type>
+        <definition>NDPluginAttrPlot&amp; ExposeDataTask::plugin_</definition>
+        <argsstring></argsstring>
+        <name>plugin_</name>
+        <briefdescription>
+<para>Plugin that the task acts on. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginAttrPlot.h" line="72" column="22" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginAttrPlot.h" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_expose_data_task_1a244ab21773827361b057a47efbc77b36" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool ExposeDataTask::stop_</definition>
+        <argsstring></argsstring>
+        <name>stop_</name>
+        <briefdescription>
+<para>Stop flag that is used to stop the task. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginAttrPlot.h" line="75" column="10" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginAttrPlot.h" bodystart="75" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_expose_data_task_1a684d8c649dba1215cad2aaa5b26640d6" prot="private" static="no" mutable="no">
+        <type>epicsThread</type>
+        <definition>epicsThread ExposeDataTask::thread_</definition>
+        <argsstring></argsstring>
+        <name>thread_</name>
+        <briefdescription>
+<para>Thread running the task. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginAttrPlot.h" line="78" column="17" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginAttrPlot.h" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_expose_data_task_1a29114b07143cd8bb64db0af5c420beb9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ExposeDataTask::ExposeDataTask</definition>
+        <argsstring>(NDPluginAttrPlot &amp;plugin)</argsstring>
+        <name>ExposeDataTask</name>
+        <param>
+          <type><ref refid="class_n_d_plugin_attr_plot" kindref="compound">NDPluginAttrPlot</ref> &amp;</type>
+          <declname>plugin</declname>
+        </param>
+        <briefdescription>
+<para>Constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>plugin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Reference to the plugin. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginAttrPlot.h" line="53" column="5" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginAttrPlot.cpp" bodystart="15" bodyend="20"/>
+      </memberdef>
+      <memberdef kind="function" id="class_expose_data_task_1a327bd9957511291ab31ac1413641031e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ExposeDataTask::run</definition>
+        <argsstring>()</argsstring>
+        <name>run</name>
+        <briefdescription>
+<para>Periodically runs the data exposure on the plugin. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginAttrPlot.h" line="58" column="10" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginAttrPlot.cpp" bodystart="26" bodyend="33"/>
+      </memberdef>
+      <memberdef kind="function" id="class_expose_data_task_1a5a0f129d138186870c4daeeef7697cce" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ExposeDataTask::start</definition>
+        <argsstring>()</argsstring>
+        <name>start</name>
+        <briefdescription>
+<para>Start the internal thread of the task. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginAttrPlot.h" line="63" column="10" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginAttrPlot.cpp" bodystart="22" bodyend="24"/>
+      </memberdef>
+      <memberdef kind="function" id="class_expose_data_task_1a1c40f5178398dfc50d324d9e0f9d614f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ExposeDataTask::stop</definition>
+        <argsstring>()</argsstring>
+        <name>stop</name>
+        <briefdescription>
+<para>Stop the internal thread of the task. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginAttrPlot.h" line="68" column="10" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginAttrPlot.cpp" bodystart="35" bodyend="37"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>A task that periodically executes the data exposure method of the plugin. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>epicsThreadRunable</label>
+      </node>
+      <node id="1">
+        <label>ExposeDataTask</label>
+        <link refid="class_expose_data_task"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>epicsThreadRunable</label>
+      </node>
+      <node id="1">
+        <label>ExposeDataTask</label>
+        <link refid="class_expose_data_task"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginAttrPlot.h" line="45" column="1" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginAttrPlot.h" bodystart="46" bodyend="79"/>
+    <listofallmembers>
+      <member refid="class_expose_data_task_1a29114b07143cd8bb64db0af5c420beb9" prot="public" virt="non-virtual"><scope>ExposeDataTask</scope><name>ExposeDataTask</name></member>
+      <member refid="class_expose_data_task_1af178394adda754bea75f7e000c414c3a" prot="private" virt="non-virtual"><scope>ExposeDataTask</scope><name>plugin_</name></member>
+      <member refid="class_expose_data_task_1a327bd9957511291ab31ac1413641031e" prot="public" virt="non-virtual"><scope>ExposeDataTask</scope><name>run</name></member>
+      <member refid="class_expose_data_task_1a5a0f129d138186870c4daeeef7697cce" prot="public" virt="non-virtual"><scope>ExposeDataTask</scope><name>start</name></member>
+      <member refid="class_expose_data_task_1a1c40f5178398dfc50d324d9e0f9d614f" prot="public" virt="non-virtual"><scope>ExposeDataTask</scope><name>stop</name></member>
+      <member refid="class_expose_data_task_1a244ab21773827361b057a47efbc77b36" prot="private" virt="non-virtual"><scope>ExposeDataTask</scope><name>stop_</name></member>
+      <member refid="class_expose_data_task_1a684d8c649dba1215cad2aaa5b26640d6" prot="private" virt="non-virtual"><scope>ExposeDataTask</scope><name>thread_</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
