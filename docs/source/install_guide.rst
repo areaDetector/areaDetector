@@ -24,7 +24,7 @@ This guide provides instructions for:
    reader has already installed an EPICS development environment, and
    has built `EPICS base <https://www.aps.anl.gov/epics/base>`__, the
    `EPICS asyn
-   module <https://www.aps.anl.gov/epics/modules/soft/asyn>`__, and the
+   module <https://github.com/epics-modules/asyn>`__, and the
    required `EPICS synApps
    modules <https://www.aps.anl.gov/bcda/synApps>`__.
 
@@ -52,7 +52,7 @@ base <https://www.aps.anl.gov/epics/base/index.php>`__. R3.14.12.4 or
 higher, any 3.15 release should work.
 
 areaDetector also requires
-`asyn <https://www.aps.anl.gov/epics/modules/soft/asyn/>`__. The most
+`asyn <https://github.com/epics-modules/asyn>`__. The most
 recent release of asyn is recommended.
 
 Each areaDetector detector module builds both a library and an EPICS IOC
