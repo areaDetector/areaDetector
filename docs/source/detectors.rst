@@ -165,6 +165,11 @@ documentation, and pre-built binaries.
     - :doc:`ADPvCam/pvcamDoc`                                                     
     - `Release Notes <https://github.com/areaDetector/ADPvCam/blob/master/RELEASE.md>`__            
     - `Pre-built binaries <https://cars.uchicago.edu/software/pub/ADPvCam>`__          
+  * - `ADPylon <https://github.com/areaDetector/ADPylon>`__
+    - Driver for Basler cameras
+    - :doc:`ADPylon/ADPylon`
+    - `Release Notes <https://github.com/areaDetector/ADPylon/blob/master/RELEASE.md>`__
+    - N.A.
   * - `ADQImaging <https://github.com/areaDetector/ADQImaging>`__               
     - Driver for QImaging detectors                                                                       
     - :doc:`ADQImaging/QImagingDoc`                                             
