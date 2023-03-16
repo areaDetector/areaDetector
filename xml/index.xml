@@ -903,6 +903,38 @@
     <member refid="class_a_d_p_i_cam_1ad527741cb2e306e9ab57ba723b5cebe4" kind="function"><name>piWriteInt32RangeType</name></member>
     <member refid="class_a_d_p_i_cam_1a01054f4956ae4ed10d689d37da247f6c" kind="function"><name>piWriteFloat64RangeType</name></member>
   </compound>
+  <compound refid="class_a_d_pylon" kind="class"><name>ADPylon</name>
+    <member refid="class_a_d_pylon_1a7a6bd7a0e14aa8ecd983a2d3ca4a84c4" kind="variable"><name>PYLONConvertPixelFormat</name></member>
+    <member refid="class_a_d_pylon_1a8dc4b8db86d1430383fb56a1370cbbdd" kind="variable"><name>PYLONTimeStampMode</name></member>
+    <member refid="class_a_d_pylon_1ae8127d27f72e388e52e8583b52e47df2" kind="variable"><name>PYLONUniqueIdMode</name></member>
+    <member refid="class_a_d_pylon_1a136499a4d457117d281551376f98d028" kind="variable"><name>cameraId_</name></member>
+    <member refid="class_a_d_pylon_1a63d59fc9f60a6c75b363e1c07a176133" kind="variable"><name>camera_</name></member>
+    <member refid="class_a_d_pylon_1ac10c97cc5ebadbff7d62920b95ca4db8" kind="variable"><name>exiting_</name></member>
+    <member refid="class_a_d_pylon_1a9a6e5cfc2d91cbb7483832effd162582" kind="variable"><name>acquiring_</name></member>
+    <member refid="class_a_d_pylon_1a2ffc738d47c8894c429a1783067e6a30" kind="variable"><name>startEventId_</name></member>
+    <member refid="class_a_d_pylon_1a66cf109c03ae641acba449e70f03329e" kind="variable"><name>newFrameEventId_</name></member>
+    <member refid="class_a_d_pylon_1ab917a6ac5b2982552e2ab255f6b1a3d2" kind="variable"><name>uniqueId_</name></member>
+    <member refid="class_a_d_pylon_1a0b58d9c82a42395ed94bfd8bda47a4f0" kind="variable"><name>TLStatisticsFeatureNames_</name></member>
+    <member refid="class_a_d_pylon_1af9df20c9213da960a6abfeb67cc13713" kind="function"><name>ADPylon</name></member>
+    <member refid="class_a_d_pylon_1ace2474a62d9b3918de94fab432b1654d" kind="function"><name>report</name></member>
+    <member refid="class_a_d_pylon_1a5771133b2027b907d26e97068b28d17c" kind="function"><name>createFeature</name></member>
+    <member refid="class_a_d_pylon_1a792e89d193b67d82bc97f3f8a3439c36" kind="function"><name>startCapture</name></member>
+    <member refid="class_a_d_pylon_1ae3729d1917a60826b621975586a4d7f5" kind="function"><name>stopCapture</name></member>
+    <member refid="class_a_d_pylon_1afbbcda7f41dd900172c2fcf710496287" kind="function"><name>imageGrabTask</name></member>
+    <member refid="class_a_d_pylon_1a34418a96fd8a051cdb8c3c469a38b14f" kind="function"><name>processFrame</name></member>
+    <member refid="class_a_d_pylon_1a1458eef3361d9723b28edb261947916f" kind="function"><name>cameraDisconnected</name></member>
+    <member refid="class_a_d_pylon_1a4cf8c259818e4a0f628edddda44d8c28" kind="function"><name>connectCamera</name></member>
+  </compound>
+  <compound refid="class_a_d_pylon_configuration_event_handler" kind="class"><name>ADPylonConfigurationEventHandler</name>
+    <member refid="class_a_d_pylon_configuration_event_handler_1acd906d2ad7f793934bb534167ae9c6bc" kind="variable"><name>driver_</name></member>
+    <member refid="class_a_d_pylon_configuration_event_handler_1a240fc70788a34c96731f63c9f2c2fcc8" kind="function"><name>ADPylonConfigurationEventHandler</name></member>
+    <member refid="class_a_d_pylon_configuration_event_handler_1a14b858e2f5e42543cd0d40a5df083add" kind="function"><name>OnCameraDeviceRemoved</name></member>
+  </compound>
+  <compound refid="class_a_d_pylon_image_event_handler" kind="class"><name>ADPylonImageEventHandler</name>
+    <member refid="class_a_d_pylon_image_event_handler_1a0cf339840e6c2879b71557f013ba88fb" kind="variable"><name>driver_</name></member>
+    <member refid="class_a_d_pylon_image_event_handler_1a46786406824c1057847dc4b7a0f8ea32" kind="function"><name>ADPylonImageEventHandler</name></member>
+    <member refid="class_a_d_pylon_image_event_handler_1aad0118a5f573a778fd6d96aaee1cb2ff" kind="function"><name>OnImageGrabbed</name></member>
+  </compound>
   <compound refid="classadsc" kind="class"><name>adsc</name>
     <member refid="classadsc_1a955e3647e49c2be5062465d13c7971ce" kind="variable"><name>AdscReadCondition</name></member>
     <member refid="classadsc_1a9d3a15ecb80329cfd44aff4b8647d394" kind="variable"><name>AdscState</name></member>
@@ -5314,6 +5346,35 @@
     <member refid="classpv_cam_1adacbaed4c087ec1a1e4b8731648a34df" kind="function"><name>initializeDetector</name></member>
     <member refid="classpv_cam_1afd38f3f9e33f73cf80e912e4efb981b1" kind="function"><name>getAcquireStatus</name></member>
   </compound>
+  <compound refid="class_pylon_feature" kind="class"><name>PylonFeature</name>
+    <member refid="class_pylon_feature_1a2e37efb86209f82df2eec19ef8b0d663" kind="variable"><name>mAsynUser</name></member>
+    <member refid="class_pylon_feature_1a1da76d64b2babc6fac336fea38fac7be" kind="variable"><name>mFeaturePtr</name></member>
+    <member refid="class_pylon_feature_1a6358c8ff3cc01fea099b5bc6f4ebcf97" kind="variable"><name>mIsImplemented</name></member>
+    <member refid="class_pylon_feature_1abf53bacebd38a31d0ec4c27f19ec319d" kind="function"><name>PylonFeature</name></member>
+    <member refid="class_pylon_feature_1aa99c19a7d128b8572320b6b58bbbfed5" kind="function"><name>isImplemented</name></member>
+    <member refid="class_pylon_feature_1ac2efae6b69a3b43c36bf62a6b786f9ab" kind="function"><name>isAvailable</name></member>
+    <member refid="class_pylon_feature_1ab76f83bea621c8590ca27f559eee32c8" kind="function"><name>isReadable</name></member>
+    <member refid="class_pylon_feature_1a416baf51bf78216f7d770ea56ad687ab" kind="function"><name>isWritable</name></member>
+    <member refid="class_pylon_feature_1a262f2827561daeb8c04fc0d529dbe7ee" kind="function"><name>readInteger</name></member>
+    <member refid="class_pylon_feature_1afd0ca2e47fbf1a4a980b67ad23bd912d" kind="function"><name>readIntegerMin</name></member>
+    <member refid="class_pylon_feature_1a589e4b8b308422852a6ef5d5299df409" kind="function"><name>readIntegerMax</name></member>
+    <member refid="class_pylon_feature_1a5539fe4b2265dfad2bf5bd1da5896c43" kind="function"><name>readIncrement</name></member>
+    <member refid="class_pylon_feature_1aeea784e45ef145e46e2f5608b27ec493" kind="function"><name>writeInteger</name></member>
+    <member refid="class_pylon_feature_1a25b059253ed5276379143d8f0ffd749b" kind="function"><name>readBoolean</name></member>
+    <member refid="class_pylon_feature_1acb9ad2b632311900efe8f11b6d272992" kind="function"><name>writeBoolean</name></member>
+    <member refid="class_pylon_feature_1a3daf9acc36e2572745171a1dd8b8f5c4" kind="function"><name>readDouble</name></member>
+    <member refid="class_pylon_feature_1af872bd560afb4773e62651669839cdc5" kind="function"><name>readDoubleMin</name></member>
+    <member refid="class_pylon_feature_1a2c7f065e7c90a57798e2f10793b1b579" kind="function"><name>readDoubleMax</name></member>
+    <member refid="class_pylon_feature_1a121adde2afb3848f9e93f87fe9223ce9" kind="function"><name>writeDouble</name></member>
+    <member refid="class_pylon_feature_1aa5954d796807892af3a2169357b4f207" kind="function"><name>readEnumIndex</name></member>
+    <member refid="class_pylon_feature_1ab1026db851fa6b1c92c0ebac7223eda0" kind="function"><name>writeEnumIndex</name></member>
+    <member refid="class_pylon_feature_1a9df42388121bd9407acb43e514b4d458" kind="function"><name>readEnumString</name></member>
+    <member refid="class_pylon_feature_1a61666f09ee45568662a71afb60cf32cb" kind="function"><name>writeEnumString</name></member>
+    <member refid="class_pylon_feature_1a466178a774e7b1886b4faa1ba4cb9932" kind="function"><name>readEnumChoices</name></member>
+    <member refid="class_pylon_feature_1a7ca95979b803e37ca7470ad160594246" kind="function"><name>readString</name></member>
+    <member refid="class_pylon_feature_1a784ce9746bc90cd63eacfabc8907b04f" kind="function"><name>writeString</name></member>
+    <member refid="class_pylon_feature_1a78e53f32c0b5b6142126af0381024561" kind="function"><name>writeCommand</name></member>
+  </compound>
   <compound refid="class_q_image" kind="class"><name>QImage</name>
     <member refid="class_q_image_1a869da6047636a7322b5975c8a9599ae2" kind="variable"><name>qMaxBitDepthRBV</name></member>
     <member refid="class_q_image_1ae62cfd5680c0650cb128f5da62346fc8" kind="variable"><name>qSerialNumberRBV</name></member>
@@ -6458,6 +6519,8 @@
   <compound refid="namespace_princeton_instruments_1_1_light_field_1_1_add_ins" kind="namespace"><name>PrincetonInstruments::LightField::AddIns</name>
   </compound>
   <compound refid="namespace_princeton_instruments_1_1_light_field_1_1_automation" kind="namespace"><name>PrincetonInstruments::LightField::Automation</name>
+  </compound>
+  <compound refid="namespace_pylon" kind="namespace"><name>Pylon</name>
   </compound>
   <compound refid="namespace_spinnaker" kind="namespace"><name>Spinnaker</name>
   </compound>
@@ -11492,6 +11555,47 @@
     <member refid="pv_cam_src_8h_1aac813bcd55e0db7e4e6000fb9564b6a8" kind="define"><name>NUM_PVCAM_PARAMS</name></member>
     <member refid="pv_cam_src_8h_1af0e94d13028051cd5339d204bfbb057d" kind="variable"><name>driverName</name></member>
   </compound>
+  <compound refid="_a_d_pylon_8cpp" kind="file"><name>ADPylon.cpp</name>
+    <member refid="_a_d_pylon_8cpp_1ae578001fe043b4cca7a0edd801cfe9c4" kind="define"><name>DRIVER_VERSION</name></member>
+    <member refid="_a_d_pylon_8cpp_1a09d8a9e616d09d45e8f4c3ad80849872" kind="define"><name>DRIVER_REVISION</name></member>
+    <member refid="_a_d_pylon_8cpp_1a00a7ebec19bc60e5ee0344109af2fd82" kind="define"><name>DRIVER_MODIFICATION</name></member>
+    <member refid="_a_d_pylon_8cpp_1ab7564e7b612126097bd7ddc57bd429c9" kind="enum"><name>PYLONPixelConvert_t</name></member>
+    <member refid="_a_d_pylon_8cpp_1ab7564e7b612126097bd7ddc57bd429c9a0deea858eed2dd3168bde631c4e7334e" kind="enumvalue"><name>PYLONPixelConvertNone</name></member>
+    <member refid="_a_d_pylon_8cpp_1ab7564e7b612126097bd7ddc57bd429c9a06865631736c53afa1c6e8c3dc43bb5e" kind="enumvalue"><name>PYLONPixelConvertMono8</name></member>
+    <member refid="_a_d_pylon_8cpp_1ab7564e7b612126097bd7ddc57bd429c9a4d23925b9da7bb834cb0b3dafe94c4a5" kind="enumvalue"><name>PYLONPixelConvertMono16</name></member>
+    <member refid="_a_d_pylon_8cpp_1ab7564e7b612126097bd7ddc57bd429c9a8ad5cdb1eef3796c545fe0f1b3ca0cba" kind="enumvalue"><name>PYLONPixelConvertRGB8</name></member>
+    <member refid="_a_d_pylon_8cpp_1ab7564e7b612126097bd7ddc57bd429c9ac4940b1fe0b91d68c6477aafc01ff435" kind="enumvalue"><name>PYLONPixelConvertRGB16</name></member>
+    <member refid="_a_d_pylon_8cpp_1a9b2dcc29b96ca7fe5a7829a3d3a5cdee" kind="enum"><name>PYLONTimeStamp_t</name></member>
+    <member refid="_a_d_pylon_8cpp_1a9b2dcc29b96ca7fe5a7829a3d3a5cdeea475496f506c5a8e359073df849517415" kind="enumvalue"><name>TimeStampCamera</name></member>
+    <member refid="_a_d_pylon_8cpp_1a9b2dcc29b96ca7fe5a7829a3d3a5cdeea5df3f40dae41b5c850670597ca891180" kind="enumvalue"><name>TimeStampEPICS</name></member>
+    <member refid="_a_d_pylon_8cpp_1a08b855b16f8edd3d937f058c7a57020a" kind="enum"><name>PYLONUniqueId_t</name></member>
+    <member refid="_a_d_pylon_8cpp_1a08b855b16f8edd3d937f058c7a57020aa85fc0825cfae5473f57086d82784d803" kind="enumvalue"><name>UniqueIdCamera</name></member>
+    <member refid="_a_d_pylon_8cpp_1a08b855b16f8edd3d937f058c7a57020aaef645d3b44a6294ff7d93c58903d6624" kind="enumvalue"><name>UniqueIdDriver</name></member>
+    <member refid="_a_d_pylon_8cpp_1af0e94d13028051cd5339d204bfbb057d" kind="variable"><name>driverName</name></member>
+    <member refid="_a_d_pylon_8cpp_1a5b3cb40f99ecdaa383a0189445b38fbf" kind="variable"><name>configArg0</name></member>
+    <member refid="_a_d_pylon_8cpp_1a12e03f733e7768280d0205a2d8adeaab" kind="variable"><name>configArg1</name></member>
+    <member refid="_a_d_pylon_8cpp_1ac0dc159931b84391cb7c0fed1fa7986f" kind="variable"><name>configArg2</name></member>
+    <member refid="_a_d_pylon_8cpp_1ace59dfd97294c541e5bef057cdb513e7" kind="variable"><name>configArg3</name></member>
+    <member refid="_a_d_pylon_8cpp_1a340f9b3d99922a0aa2c3b150f5a34cd1" kind="variable"><name>configArg4</name></member>
+    <member refid="_a_d_pylon_8cpp_1a552430c6092c73bc46cfa4a702f43ea6" kind="variable"><name>configArgs</name></member>
+    <member refid="_a_d_pylon_8cpp_1a47dc9fcaeec992ba1fda890d3eaae919" kind="variable"><name>configADPylon</name></member>
+    <member refid="_a_d_pylon_8cpp_1a791d64b5b37e83f34c70889234f8cf37" kind="function"><name>ADPylonConfig</name></member>
+    <member refid="_a_d_pylon_8cpp_1afc6ff0618bd23a64f62bdaa8662716b0" kind="function"><name>imageGrabTaskC</name></member>
+    <member refid="_a_d_pylon_8cpp_1ad770aee80665342b5803974f683424bc" kind="function"><name>configCallFunc</name></member>
+    <member refid="_a_d_pylon_8cpp_1a8a8e93bfd645ed6189d47a8fdad69ab2" kind="function"><name>ADPylonRegister</name></member>
+    <member refid="_a_d_pylon_8cpp_1ae718d210284e9b16804a859c9c49c73b" kind="function"><name>epicsExportRegistrar</name></member>
+  </compound>
+  <compound refid="_a_d_pylon_8h" kind="file"><name>ADPylon.h</name>
+    <member refid="_a_d_pylon_8h_1aa178ae928e8fd6b54efa268d032fecbf" kind="define"><name>PYLONConvertPixelFormatString</name></member>
+    <member refid="_a_d_pylon_8h_1a7e4ca3dbc0fe748205372692c08b8214" kind="define"><name>PYLONTimeStampModeString</name></member>
+    <member refid="_a_d_pylon_8h_1ab27b8903289c7ec40bc38fe7a2b935f2" kind="define"><name>PYLONUniqueIdModeString</name></member>
+    <member refid="_a_d_pylon_8h_1a0f6503c945b0c9d01e9b4057366c370a" kind="define"><name>FIRST_PYLON_PARAM</name></member>
+  </compound>
+  <compound refid="_pylon_feature_8cpp" kind="file"><name>PylonFeature.cpp</name>
+    <member refid="_pylon_feature_8cpp_1af0e94d13028051cd5339d204bfbb057d" kind="variable"><name>driverName</name></member>
+  </compound>
+  <compound refid="_pylon_feature_8h" kind="file"><name>PylonFeature.h</name>
+  </compound>
   <compound refid="_q_imaging_8cpp" kind="file"><name>QImaging.cpp</name>
     <member refid="_q_imaging_8cpp_1aa9d297d1aa97e1a5e82f918401aba925" kind="define"><name>MAX_ENUM_STATES</name></member>
     <member refid="_q_imaging_8cpp_1a56c8a2b8a9324bd8e388c1cdde8e8973" kind="define"><name>ADImageSingleFast</name></member>
@@ -12388,6 +12492,8 @@
   </compound>
   <compound refid="dir_e335e5b20777d65a800ccdcf0e3185a5" kind="dir"><name>/home/runner/work/areaDetector/areaDetector/ADPvCam</name>
   </compound>
+  <compound refid="dir_c1a0f74aa09704f7527dbc3f8740d3b5" kind="dir"><name>/home/runner/work/areaDetector/areaDetector/ADPylon</name>
+  </compound>
   <compound refid="dir_e11ee65e8f65c093b0eaecb9081b4472" kind="dir"><name>/home/runner/work/areaDetector/areaDetector/ADQImaging</name>
   </compound>
   <compound refid="dir_8ef2f6490ebea0ce09660214905bade2" kind="dir"><name>/home/runner/work/areaDetector/areaDetector/ADRIXSCam</name>
@@ -12492,6 +12598,8 @@
   </compound>
   <compound refid="dir_05e3e72e2b4eda68537975dc174acb7e" kind="dir"><name>/home/runner/work/areaDetector/areaDetector/ADPvCam/pvcamApp</name>
   </compound>
+  <compound refid="dir_0a5de5f1575a27607d305fc58b3d6d97" kind="dir"><name>/home/runner/work/areaDetector/areaDetector/ADPylon/pylonApp</name>
+  </compound>
   <compound refid="dir_06a77c71e4606f1c85c8c2ec635852b2" kind="dir"><name>/home/runner/work/areaDetector/areaDetector/ADRIXSCam/rixscamApp</name>
   </compound>
   <compound refid="dir_0ca38b862c8d126262e5c29e251cfea2" kind="dir"><name>/home/runner/work/areaDetector/areaDetector/ADRoper/roperApp</name>
@@ -12507,6 +12615,8 @@
   <compound refid="dir_cef0541201fc137c0b4af99902c4c498" kind="dir"><name>/home/runner/work/areaDetector/areaDetector/ADSpinnaker/spinnakerApp</name>
   </compound>
   <compound refid="dir_fb323a3ced923649d3c66c7f4fbbdf22" kind="dir"><name>/home/runner/work/areaDetector/areaDetector/ffmpegServer/ffmpegServerApp/src</name>
+  </compound>
+  <compound refid="dir_e663941c6ab5720a20ac00a83fbe8638" kind="dir"><name>/home/runner/work/areaDetector/areaDetector/ADProsilica/prosilicaApp/src</name>
   </compound>
   <compound refid="dir_e87c018e77e330de2f1778d90f841286" kind="dir"><name>/home/runner/work/areaDetector/areaDetector/ADGenICam/GenICamApp/src</name>
   </compound>
@@ -12546,29 +12656,31 @@
   </compound>
   <compound refid="dir_b0cc045448edd6e0a57f91cc0b12a96e" kind="dir"><name>/home/runner/work/areaDetector/areaDetector/specsAnalyser/specsAnalyserApp/src</name>
   </compound>
-  <compound refid="dir_3ebc2fc483128cb96fd25d955b1390c0" kind="dir"><name>/home/runner/work/areaDetector/areaDetector/ADLambda/LambdaApp/src</name>
+  <compound refid="dir_a5ff17fc9db728be49ea4c5e1c75dacc" kind="dir"><name>/home/runner/work/areaDetector/areaDetector/ADQImaging/App/src</name>
+  </compound>
+  <compound refid="dir_01a6cb4e0f5fdf6325b0153bad26eb17" kind="dir"><name>/home/runner/work/areaDetector/areaDetector/ADPointGrey/pointGreyApp/src</name>
   </compound>
   <compound refid="dir_ae563796a7958c7cf2e56509c35aaae9" kind="dir"><name>/home/runner/work/areaDetector/areaDetector/ADPixirad/pixiradApp/src</name>
   </compound>
-  <compound refid="dir_e663941c6ab5720a20ac00a83fbe8638" kind="dir"><name>/home/runner/work/areaDetector/areaDetector/ADProsilica/prosilicaApp/src</name>
+  <compound refid="dir_d2f3b5e6f7b9d9463c0531f79cba84de" kind="dir"><name>/home/runner/work/areaDetector/areaDetector/ADPSL/pslApp/src</name>
   </compound>
   <compound refid="dir_facde773c1e63ba7a251b3e9a82a73fb" kind="dir"><name>/home/runner/work/areaDetector/areaDetector/ADPilatus/pilatusApp/src</name>
   </compound>
   <compound refid="dir_f187fba518cd758a24f94232c974db1a" kind="dir"><name>/home/runner/work/areaDetector/areaDetector/ADPICam/PICamApp/src</name>
   </compound>
-  <compound refid="dir_d2f3b5e6f7b9d9463c0531f79cba84de" kind="dir"><name>/home/runner/work/areaDetector/areaDetector/ADPSL/pslApp/src</name>
+  <compound refid="dir_1ae7df7d278e47bb4811e437f3fda96f" kind="dir"><name>/home/runner/work/areaDetector/areaDetector/ADPvCam/pvcamApp/src</name>
   </compound>
   <compound refid="dir_74cab7bdb3ac07764984a7ef62ebce19" kind="dir"><name>/home/runner/work/areaDetector/areaDetector/ADPhotonII/PhotonIIApp/src</name>
   </compound>
   <compound refid="dir_5dc96f2d4806733d3f2c4e49de45cb3f" kind="dir"><name>/home/runner/work/areaDetector/areaDetector/ADPerkinElmer/perkinElmerApp/src</name>
   </compound>
-  <compound refid="dir_1ae7df7d278e47bb4811e437f3fda96f" kind="dir"><name>/home/runner/work/areaDetector/areaDetector/ADPvCam/pvcamApp/src</name>
+  <compound refid="dir_81868b387e2c3385937bf2bfe2e8dad8" kind="dir"><name>/home/runner/work/areaDetector/areaDetector/ADPylon/pylonApp/src</name>
   </compound>
   <compound refid="dir_115187c12b9cae6880d7ddce0c377962" kind="dir"><name>/home/runner/work/areaDetector/areaDetector/ADPCO/pcoApp/src</name>
   </compound>
   <compound refid="dir_443145f5444eb1ede24d363589a96f62" kind="dir"><name>/home/runner/work/areaDetector/areaDetector/ADnED/ADnEDApp/src</name>
   </compound>
-  <compound refid="dir_a5ff17fc9db728be49ea4c5e1c75dacc" kind="dir"><name>/home/runner/work/areaDetector/areaDetector/ADQImaging/App/src</name>
+  <compound refid="dir_3ebc2fc483128cb96fd25d955b1390c0" kind="dir"><name>/home/runner/work/areaDetector/areaDetector/ADLambda/LambdaApp/src</name>
   </compound>
   <compound refid="dir_6eb1bdce595ad2fb92e9b75f03a13a4b" kind="dir"><name>/home/runner/work/areaDetector/areaDetector/ADMythen/mythenApp/src</name>
   </compound>
@@ -12585,8 +12697,6 @@
   <compound refid="dir_d6ac52c82ef906a33d7bb6d6700d637d" kind="dir"><name>/home/runner/work/areaDetector/areaDetector/ADLightField/lightFieldApp/src</name>
   </compound>
   <compound refid="dir_7b466efc4ad328573f3f501467612676" kind="dir"><name>/home/runner/work/areaDetector/areaDetector/ADSimDetector/simDetectorApp/src</name>
-  </compound>
-  <compound refid="dir_01a6cb4e0f5fdf6325b0153bad26eb17" kind="dir"><name>/home/runner/work/areaDetector/areaDetector/ADPointGrey/pointGreyApp/src</name>
   </compound>
   <compound refid="dir_3a63b62580a65e03043cf5c4e76db498" kind="dir"><name>/home/runner/work/areaDetector/areaDetector/ADQImaging/Support</name>
   </compound>

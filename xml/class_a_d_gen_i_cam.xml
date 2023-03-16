@@ -4,6 +4,7 @@
     <compoundname>ADGenICam</compoundname>
     <basecompoundref refid="class_a_d_driver" prot="public" virt="non-virtual">ADDriver</basecompoundref>
     <derivedcompoundref refid="class_a_d_aravis" prot="public" virt="non-virtual">ADAravis</derivedcompoundref>
+    <derivedcompoundref refid="class_a_d_pylon" prot="public" virt="non-virtual">ADPylon</derivedcompoundref>
     <derivedcompoundref refid="class_a_d_spinnaker" prot="public" virt="non-virtual">ADSpinnaker</derivedcompoundref>
     <derivedcompoundref refid="class_a_d_vimba" prot="public" virt="non-virtual">ADVimba</derivedcompoundref>
     <includes refid="_a_d_gen_i_cam_8h" local="no">ADGenICam.h</includes>
@@ -415,6 +416,7 @@ Takes action if the function code requires it. </para>
         <argsstring>(FILE *fp, int details)</argsstring>
         <name>report</name>
         <reimplements refid="classasyn_n_d_array_driver_1ac3f2d73a05eb54357ec3f052e1b000f2">report</reimplements>
+        <reimplementedby refid="class_a_d_pylon_1ace2474a62d9b3918de94fab432b1654d">report</reimplementedby>
         <reimplementedby refid="class_a_d_spinnaker_1a10ee13de89989f8262bc23e141b8efc8">report</reimplementedby>
         <reimplementedby refid="class_a_d_vimba_1ac297bd96397e205d27dc78480f8260ce">report</reimplementedby>
         <param>
@@ -667,6 +669,7 @@ Takes action if the function code requires it. </para>
         <argsstring>(GenICamFeatureSet *set, std::string const &amp;asynName, asynParamType asynType, int asynIndex, std::string const &amp;featureName, GCFeatureType_t featureType)=0</argsstring>
         <name>createFeature</name>
         <reimplementedby refid="class_a_d_aravis_1a9d4a3a1e849cd4f72633daa1436ecc17">createFeature</reimplementedby>
+        <reimplementedby refid="class_a_d_pylon_1a5771133b2027b907d26e97068b28d17c">createFeature</reimplementedby>
         <reimplementedby refid="class_a_d_spinnaker_1aab1fc231e184c00fbf20681af8831b4d">createFeature</reimplementedby>
         <reimplementedby refid="class_a_d_vimba_1a17c5f19228b984b5f4351f892cc64b8a">createFeature</reimplementedby>
         <param>
@@ -720,6 +723,7 @@ Takes action if the function code requires it. </para>
         <argsstring>()=0</argsstring>
         <name>startCapture</name>
         <reimplementedby refid="class_a_d_aravis_1a406c3466598cee023c85cdc33c400416">startCapture</reimplementedby>
+        <reimplementedby refid="class_a_d_pylon_1a792e89d193b67d82bc97f3f8a3439c36">startCapture</reimplementedby>
         <reimplementedby refid="class_a_d_spinnaker_1a5d442adb176d1f49b63cccb3df4081ee">startCapture</reimplementedby>
         <reimplementedby refid="class_a_d_vimba_1aafda90bd5982b72d3d8756fbeaaf494b">startCapture</reimplementedby>
         <briefdescription>
@@ -736,6 +740,7 @@ Takes action if the function code requires it. </para>
         <argsstring>()=0</argsstring>
         <name>stopCapture</name>
         <reimplementedby refid="class_a_d_aravis_1ab8242a3112e1133438eeda81e011831b">stopCapture</reimplementedby>
+        <reimplementedby refid="class_a_d_pylon_1ae3729d1917a60826b621975586a4d7f5">stopCapture</reimplementedby>
         <reimplementedby refid="class_a_d_spinnaker_1aba6221c401b9e483ca11f50ddbed87cc">stopCapture</reimplementedby>
         <reimplementedby refid="class_a_d_vimba_1a023373adeaca292de12532e339711d0c">stopCapture</reimplementedby>
         <briefdescription>
@@ -783,13 +788,13 @@ Takes action if the function code requires it. </para>
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="6">
+      <node id="7">
         <label>ADSpinnaker</label>
         <link refid="class_a_d_spinnaker"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="7">
+      <node id="8">
         <label>ADVimba</label>
         <link refid="class_a_d_vimba"/>
         <childnode refid="1" relation="public-inheritance">
@@ -797,6 +802,12 @@ Takes action if the function code requires it. </para>
       </node>
       <node id="4">
         <label>asynPortDriver</label>
+      </node>
+      <node id="6">
+        <label>ADPylon</label>
+        <link refid="class_a_d_pylon"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
       </node>
       <node id="3">
         <label>asynNDArrayDriver</label>

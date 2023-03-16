@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ADPylon &mdash; areaDetector Support</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme_overrides.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="ADQImaging" href="../ADQImaging/QImagingDoc.html" />
+    <link rel="prev" title="ADPvCam" href="../ADPvCam/pvcamDoc.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            areaDetector
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../readme.html">Readme</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../user_guide.html">User Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/overview.html">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/arch.html">Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/asynPortDriver.html">asynPortDriver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/NDArray.html">NDArray</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../detector_drivers.html">Detector Drivers</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../ADCore/guidelines.html">Guidelines and rules for drivers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADCore/ADDriver.html">ADDriver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADAndor/andorDoc.html">ADAndor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADAndor3/ADAndorDoc.html">ADAndor3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADAravis/ADAravis.html">ADAravis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADCSimDetector/ADCSimDetectorDoc.html">ADCSimDetector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADDexela/ADDexela.html">ADDexela</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADEiger/eiger.html">ADEiger</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADFastCCD/index.html">ADFastCCD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADGenICam/ADGenICam.html">ADGenICam</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADLambda/ADLambda.html">ADLambda</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADLightField/ADLightField.html">ADLightField</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADmarCCD/marCCDDoc.html">ADmarCCD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADmar345/mar345Doc.html">ADmar345</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPerkinElmer/PerkinElmerDoc.html">ADPerkinElmer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPICam/PICamDoc.html">ADPICam</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPilatus/pilatusDoc.html">ADPilatus</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPixirad/ADPixirad.html">ADPixirad</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPointGrey/PointGreyDoc.html">ADPointGrey</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADProsilica/ADProsilica.html">ADProsilica</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPvCam/pvcamDoc.html">ADPvCam</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">ADPylon</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#adpylon-driver">ADPylon driver</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ioc-startup-script">IOC startup script</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#medm-screens">MEDM screens</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../ADQImaging/QImagingDoc.html">ADQImaging</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADRIXSCam/ADRIXSCam.html">ADRIXSCam</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADSimDetector/simDetector.html">ADSimDetector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADSpinnaker/ADSpinnaker.html">ADSpinnaker</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADVimba/ADVimba.html">ADVimba</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADURL/ADURL.html">ADURL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../NDDriverStdArrays/NDDriverStdArraysDoc.html">NDDriverStdArrays</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../pvaDriver/pvaDriver.html">pvaDriver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../specsAnalyser/index.html">specsAnalyser</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/plugins.html">areaDetector Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../additional_plugins.html">Additional plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/medm.html">MEDM screens</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADViewers/ad_viewers.html">areaDetector Viewers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../acknowledgements.html">Acknowledgements and licenses</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../install_guide.html">Install Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release.html">Top-level Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ADCore_release.html">ADCore Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ADSupport_release.html">ADSupport Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../doxygen.html">Source Code Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../detectors.html">Supported Detectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../legacy_versions.html">Legacy Versions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">areaDetector</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../user_guide.html">areaDetector Users Guide</a></li>
+          <li class="breadcrumb-item"><a href="../detector_drivers.html">Detector Drivers</a></li>
+      <li class="breadcrumb-item active">ADPylon</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/ADPylon/ADPylon.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="adpylon">
+<h1><a class="toc-backref" href="#id2" role="doc-backlink">ADPylon</a><a class="headerlink" href="#adpylon" title="Permalink to this heading"></a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">author<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Xiaoqiang Wang, Paul Scherrer Institute</p>
+</dd>
+</dl>
+<nav class="contents" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#adpylon" id="id2">ADPylon</a></p>
+<ul>
+<li><p><a class="reference internal" href="#overview" id="id3">Overview</a></p></li>
+<li><p><a class="reference internal" href="#adpylon-driver" id="id4">ADPylon driver</a></p></li>
+<li><p><a class="reference internal" href="#ioc-startup-script" id="id5">IOC startup script</a></p></li>
+<li><p><a class="reference internal" href="#medm-screens" id="id6">MEDM screens</a></p></li>
+</ul>
+</li>
+</ul>
+</nav>
+<section id="overview">
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">Overview</a><a class="headerlink" href="#overview" title="Permalink to this heading"></a></h2>
+<p>This is an <a class="reference internal" href="../index.html"><span class="doc">areaDetector</span></a> driver for <a class="reference external" href="https://www.emva.org/standards-technology/genicam">GenICam</a> cameras using the <a class="reference external" href="https://www.baslerweb.com/en/products/basler-pylon-camera-software-suite/pylon-sdks">Pylon</a> library.</p>
+<p><a class="reference external" href="https://www.emva.org/standards-technology/genicam">GenICam</a> is a Generic Interface for Cameras from the European Machine Vision Association (EMVA).</p>
+<p>ADPylon is derived from the base class <a class="reference external" href="https://github.com/areaDetector/ADGenICam">ADGenICam</a>, which handles many of the details of
+mapping <a class="reference external" href="https://www.emva.org/standards-technology/genicam">GenICam</a> features to EPICS records.</p>
+<p><a class="reference external" href="../areaDetectorDoxygenHTML/class_a_d_pylon.html">ADPylon class</a> describes this class in detail.</p>
+<p>As it name implies, <a class="reference external" href="https://github.com/areaDetector/ADPylon">ADPylon</a> uses the Basler <a class="reference external" href="https://www.baslerweb.com/en/products/basler-pylon-camera-software-suite/pylon-sdks">Pylon</a> library. It runs on Windows, and on many Linux with
+glibc 2.27+ and gcc 5.1+ (e.g. Ubuntu 18, RHEL 8. Debian 10).
+The header files and Windows import libraries are include, so it is ready to build for Windows.
+Because of the sheer size of the Linux libraries, they are not included. To build, unpacked the Linux
+SDK to <code class="docutils literal notranslate"><span class="pre">/opt/pylon</span></code>, and define this in the areaDetector top level <code class="docutils literal notranslate"><span class="pre">CONFIG_SITE.local</span></code> file,:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">WITH_PYLON</span> <span class="o">=</span> <span class="n">YES</span>
+<span class="n">PYLON_INCLUDE</span> <span class="o">=</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">pylon</span><span class="o">/</span><span class="n">include</span>
+<span class="n">PYLON_LIB</span> <span class="o">=</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">pylon</span><span class="o">/</span><span class="n">lib</span>
+</pre></div>
+</div>
+<p>Prior to using ADPylon with a specific camera model, the XML file must be read from the camera using the arv-tool utility,
+as described in the
+<a class="reference internal" href="../ADGenICam/ADGenICam.html#adgenicam-download-xml"><span class="std std-ref">ADGenICam documentation</span></a>.</p>
+<p>The EPICS database file and OPI screens must then be generated by running the Python programs as described in the
+<a class="reference internal" href="../ADGenICam/ADGenICam.html#adgenicam-python-scripts"><span class="std std-ref">ADGenICam documentation</span></a>.</p>
+<p>The <a class="reference external" href="https://www.baslerweb.com/en/products/basler-pylon-camera-software-suite/pylon-sdks">Pylon</a> SDK must be downloaded and installed on the machine prior to running the IOC because it installs
+the necessary drivers.</p>
+</section>
+<section id="adpylon-driver">
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">ADPylon driver</a><a class="headerlink" href="#adpylon-driver" title="Permalink to this heading"></a></h2>
+<p>ADPylon inherits from <a class="reference internal" href="../ADGenICam/ADGenICam.html"><span class="doc">ADGenICam</span></a>.  It adds the following parameters and EPICS records that are
+specific to ADPylon.</p>
+<table class="table-bordered table-striped table-hover docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>EPICS record names</p></th>
+<th class="head"><p>Record types</p></th>
+<th class="head"><p>drvInfo string</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>TimeStampMode, TimeStampMode_RBV</p></td>
+<td><p>bo, bi</p></td>
+<td><p>PYLON_TIME_STAMP_MODE</p></td>
+<td><p>Controls whether the TimeStamp attribute comes from the camera internal time stamp or from the EPICS time.
+Choices are Camera (0), and EPICS (1).</p></td>
+</tr>
+<tr class="row-odd"><td><p>UniqueIdMode, UniqueIdMode_RBV</p></td>
+<td><p>bo, bi</p></td>
+<td><p>PYLON_UNIQUE_ID_MODE</p></td>
+<td><p>Controls whether the UniqueId attribute comes from the camera internal value or from the driver.
+Choices are Camera (0), and Driver (1).</p></td>
+</tr>
+<tr class="row-even"><td><p>ConvertPixelFormat, ConvertPixelFormat_RBV</p></td>
+<td><p>mbbo, mbbi</p></td>
+<td><p>PYLON_CONVERT_PIXEL_FORMAT</p></td>
+<td><p>Controls conversion of the pixel format read from the camera to a different format.  For example this can be used
+to convert BayerRG8 to RGB8, which allows the camera to send 8-bit Bayer color data over the bus and then convert to 24-bit
+RGB on the host computer, reducing the required bandwidth by a factor of 3 and increasing the frame rate.</p></td>
+</tr>
+<tr class="row-odd"><td><p>GC_StatBufferReceived_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>GC_I_Statistic_Total_Buffer_Count</p></td>
+<td><p>Number of frames delivered since acquisition was started.</p></td>
+</tr>
+<tr class="row-even"><td><p>GC_I_StatBufferFailed_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>GC_I_Statistic_Failed_Buffer_Count</p></td>
+<td><p>Number of buffers with at least one failed packet.</p></td>
+</tr>
+<tr class="row-odd"><td><p>GC_StatBufferUnderrun_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>GC_I_Statistic_Buffer_Underrun_Count</p></td>
+<td><p>Number of frames lost because there were no buffers in the queue.</p></td>
+</tr>
+<tr class="row-even"><td><p>GC_StatPacketReceived_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>GC_I_Statistic_Total_Packet_Count</p></td>
+<td><p>Number of packets received.</p></td>
+</tr>
+<tr class="row-odd"><td><p>GC_StatPacketFailed_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>GC_I_Statistic_Failed_Packet_Count</p></td>
+<td><p>Number of failed packets.</p></td>
+</tr>
+<tr class="row-even"><td><p>GC_StatPacketRequested_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>GC_I_Statistic_Resend_Request_Count</p></td>
+<td><p>Number of packets requested by packet resend commands.</p></td>
+</tr>
+<tr class="row-odd"><td><p>GC_StatPacketResent_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>GC_I_Statistic_Resend_Packet_Count</p></td>
+<td><p>Number of emitted packet resend commands sent.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="ioc-startup-script">
+<h2><a class="toc-backref" href="#id5" role="doc-backlink">IOC startup script</a><a class="headerlink" href="#ioc-startup-script" title="Permalink to this heading"></a></h2>
+<p>The command to configure an ADPylon camera in the startup script is:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ADPylonConfig</span><span class="p">(</span><span class="n">const</span> <span class="n">char</span> <span class="o">*</span><span class="n">portName</span><span class="p">,</span> <span class="n">const</span> <span class="n">char</span> <span class="o">*</span><span class="n">cameraId</span><span class="p">,</span>
+                  <span class="n">size_t</span> <span class="n">maxMemory</span><span class="p">,</span> <span class="nb">int</span> <span class="n">priority</span><span class="p">,</span> <span class="nb">int</span> <span class="n">stackSize</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">portName</span></code> is the name for the ADPylon port driver</p>
+<p><code class="docutils literal notranslate"><span class="pre">cameraId</span></code> is the either the serial number of the camera or the camera index number in the system. The serial number is normally printed on the camera,
+and it is also the last part of the camera name returned by arv-tool, for example for <code class="docutils literal notranslate"><span class="pre">&quot;Basler-23524298&quot;</span></code>, it would be 23524298.
+If cameraId is less than 1000 it is assumed to be the system index number, if 1000 or greater it is assumed to be a serial number.</p>
+<p><code class="docutils literal notranslate"><span class="pre">maxMemory</span></code> is the maximum amount of memory the NDArrayPool is allowed to allocate.  0 means unlimited.</p>
+<p><code class="docutils literal notranslate"><span class="pre">priority</span></code> is the priority of the port thread.  0 means medium priority.</p>
+<p><code class="docutils literal notranslate"><span class="pre">stackSize</span></code> is the stack size.  0 means medium size.</p>
+</section>
+<section id="medm-screens">
+<h2><a class="toc-backref" href="#id6" role="doc-backlink">MEDM screens</a><a class="headerlink" href="#medm-screens" title="Permalink to this heading"></a></h2>
+<p>The following is the MEDM screen ADPylon.adl when controlling a Basler acA1300-200uc camera.
+ADPylon.adl is very similar to ADGenICam.adl, with a few additional widgets for the PVs that are
+specific to ADPylon.</p>
+<figure class="align-center">
+<img alt="../_images/ADPylon.png" src="../_images/ADPylon.png" />
+</figure>
+<p>The following are the MEDM screens Basler_acA1300_200uc-features_[1-4].adl when controlling an acA1300-200uc USB3 camera.
+These screens were autogenerated by the Python script in <a class="reference internal" href="../ADGenICam/ADGenICam.html"><span class="doc">ADGenICam</span></a>, and are specific to this camera model.
+They are loaded from the “Camera-specific features” related display widget in the above screen.</p>
+<figure class="align-center">
+<img alt="../_images/ADPylon_features1.png" src="../_images/ADPylon_features1.png" />
+</figure>
+<figure class="align-center">
+<img alt="../_images/ADPylon_features2.png" src="../_images/ADPylon_features2.png" />
+</figure>
+<figure class="align-center">
+<img alt="../_images/ADPylon_features3.png" src="../_images/ADPylon_features3.png" />
+</figure>
+<figure class="align-center">
+<img alt="../_images/ADPylon_features4.png" src="../_images/ADPylon_features4.png" />
+</figure>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../ADPvCam/pvcamDoc.html" class="btn btn-neutral float-left" title="ADPvCam" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../ADQImaging/QImagingDoc.html" class="btn btn-neutral float-right" title="ADQImaging" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Mark Rivers.
+      <span class="lastupdated">Last updated on 2023-March-16.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
