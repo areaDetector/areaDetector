@@ -905,25 +905,41 @@
   </compound>
   <compound refid="class_a_d_pylon" kind="class"><name>ADPylon</name>
     <member refid="class_a_d_pylon_1a7a6bd7a0e14aa8ecd983a2d3ca4a84c4" kind="variable"><name>PYLONConvertPixelFormat</name></member>
+    <member refid="class_a_d_pylon_1a61cbf0e572e8ad99349b401b632151ea" kind="variable"><name>PYLONConvertBitAlignment</name></member>
+    <member refid="class_a_d_pylon_1a428932ce37582f6dc6810a07ad73f36f" kind="variable"><name>PYLONConvertShiftBits</name></member>
     <member refid="class_a_d_pylon_1a8dc4b8db86d1430383fb56a1370cbbdd" kind="variable"><name>PYLONTimeStampMode</name></member>
     <member refid="class_a_d_pylon_1ae8127d27f72e388e52e8583b52e47df2" kind="variable"><name>PYLONUniqueIdMode</name></member>
     <member refid="class_a_d_pylon_1a136499a4d457117d281551376f98d028" kind="variable"><name>cameraId_</name></member>
     <member refid="class_a_d_pylon_1a63d59fc9f60a6c75b363e1c07a176133" kind="variable"><name>camera_</name></member>
+    <member refid="class_a_d_pylon_1ab97794adf62f6ba345941a4adb38abf4" kind="variable"><name>decompressor_</name></member>
     <member refid="class_a_d_pylon_1ac10c97cc5ebadbff7d62920b95ca4db8" kind="variable"><name>exiting_</name></member>
     <member refid="class_a_d_pylon_1a9a6e5cfc2d91cbb7483832effd162582" kind="variable"><name>acquiring_</name></member>
     <member refid="class_a_d_pylon_1a2ffc738d47c8894c429a1783067e6a30" kind="variable"><name>startEventId_</name></member>
     <member refid="class_a_d_pylon_1a66cf109c03ae641acba449e70f03329e" kind="variable"><name>newFrameEventId_</name></member>
     <member refid="class_a_d_pylon_1ab917a6ac5b2982552e2ab255f6b1a3d2" kind="variable"><name>uniqueId_</name></member>
     <member refid="class_a_d_pylon_1a0b58d9c82a42395ed94bfd8bda47a4f0" kind="variable"><name>TLStatisticsFeatureNames_</name></member>
+    <member refid="class_a_d_pylon_1af29553b64aba05707b204de239841659" kind="variable"><name>featureList_</name></member>
+    <member refid="class_a_d_pylon_1a8ec7916566fc9962aabac60934b37d0c" kind="variable"><name>eventList_</name></member>
+    <member refid="class_a_d_pylon_1a76b4084a23e85bb2e4d6dbd4181a6965" kind="variable"><name>pCameraEventHandler_</name></member>
     <member refid="class_a_d_pylon_1af9df20c9213da960a6abfeb67cc13713" kind="function"><name>ADPylon</name></member>
+    <member refid="class_a_d_pylon_1a9673c67d48ee837b6b0e7485a75b7b15" kind="function"><name>readEnum</name></member>
     <member refid="class_a_d_pylon_1ace2474a62d9b3918de94fab432b1654d" kind="function"><name>report</name></member>
     <member refid="class_a_d_pylon_1a5771133b2027b907d26e97068b28d17c" kind="function"><name>createFeature</name></member>
     <member refid="class_a_d_pylon_1a792e89d193b67d82bc97f3f8a3439c36" kind="function"><name>startCapture</name></member>
     <member refid="class_a_d_pylon_1ae3729d1917a60826b621975586a4d7f5" kind="function"><name>stopCapture</name></member>
+    <member refid="class_a_d_pylon_1a85080583913dc8df1e06f36512e82e40" kind="function"><name>connect</name></member>
     <member refid="class_a_d_pylon_1afbbcda7f41dd900172c2fcf710496287" kind="function"><name>imageGrabTask</name></member>
+    <member refid="class_a_d_pylon_1a147da7837d2f8faf8893935f02fb9f3c" kind="function"><name>shutdown</name></member>
     <member refid="class_a_d_pylon_1a34418a96fd8a051cdb8c3c469a38b14f" kind="function"><name>processFrame</name></member>
     <member refid="class_a_d_pylon_1a1458eef3361d9723b28edb261947916f" kind="function"><name>cameraDisconnected</name></member>
+    <member refid="class_a_d_pylon_1afecb4563237c0851cb2018599c989ae0" kind="function"><name>readEventData</name></member>
+    <member refid="class_a_d_pylon_1a558e31486455216d79d779fabfe8f387" kind="function"><name>extractChunkData</name></member>
     <member refid="class_a_d_pylon_1a4cf8c259818e4a0f628edddda44d8c28" kind="function"><name>connectCamera</name></member>
+  </compound>
+  <compound refid="class_a_d_pylon_camera_event_handler" kind="class"><name>ADPylonCameraEventHandler</name>
+    <member refid="class_a_d_pylon_camera_event_handler_1a9cede5e6ba8776275ec40d4287417664" kind="variable"><name>driver_</name></member>
+    <member refid="class_a_d_pylon_camera_event_handler_1a95de09cfeaa6de6a92790ed0dded9372" kind="function"><name>ADPylonCameraEventHandler</name></member>
+    <member refid="class_a_d_pylon_camera_event_handler_1a6b071401782844b727ead639de6902b6" kind="function"><name>OnCameraEvent</name></member>
   </compound>
   <compound refid="class_a_d_pylon_configuration_event_handler" kind="class"><name>ADPylonConfigurationEventHandler</name>
     <member refid="class_a_d_pylon_configuration_event_handler_1acd906d2ad7f793934bb534167ae9c6bc" kind="variable"><name>driver_</name></member>
@@ -3927,9 +3943,11 @@
     <member refid="class_n_d_plugin_process_1a2410621e87f3d6e13f69f4170cf1c3f4" kind="variable"><name>NDPluginProcessAutoOffsetScale</name></member>
     <member refid="class_n_d_plugin_process_1ad965bfe7543f33c61811671249cf1f71" kind="variable"><name>NDPluginProcessScale</name></member>
     <member refid="class_n_d_plugin_process_1a4b3f4351172aea6916ccdb90d7715933" kind="variable"><name>NDPluginProcessOffset</name></member>
-    <member refid="class_n_d_plugin_process_1a8d77594f20d051483695e08fddfa8ce7" kind="variable"><name>NDPluginProcessLowClip</name></member>
+    <member refid="class_n_d_plugin_process_1a1a84882154a7adbf0832b5a411da919f" kind="variable"><name>NDPluginProcessLowClipThresh</name></member>
+    <member refid="class_n_d_plugin_process_1a96a4640084bece539622a133e812a623" kind="variable"><name>NDPluginProcessLowClipValue</name></member>
     <member refid="class_n_d_plugin_process_1a17bac57e5f7ae16dfcf62a0006b7d9b9" kind="variable"><name>NDPluginProcessEnableLowClip</name></member>
-    <member refid="class_n_d_plugin_process_1abd5d7664e32cca81e8041440e331d313" kind="variable"><name>NDPluginProcessHighClip</name></member>
+    <member refid="class_n_d_plugin_process_1a92e2972a18b800e83f66cc0783b06d94" kind="variable"><name>NDPluginProcessHighClipThresh</name></member>
+    <member refid="class_n_d_plugin_process_1a038f2cf981ebdcd1daaac61b78d3fcc8" kind="variable"><name>NDPluginProcessHighClipValue</name></member>
     <member refid="class_n_d_plugin_process_1a432ad2782a6b446d6bf238412d2e4c7b" kind="variable"><name>NDPluginProcessEnableHighClip</name></member>
     <member refid="class_n_d_plugin_process_1abd8c168c713bfa4f2d90a76589b6ccfd" kind="variable"><name>NDPluginProcessEnableFilter</name></member>
     <member refid="class_n_d_plugin_process_1aca982decff78a4fd750a3968c750c52d" kind="variable"><name>NDPluginProcessResetFilter</name></member>
@@ -5355,6 +5373,7 @@
     <member refid="class_pylon_feature_1a1da76d64b2babc6fac336fea38fac7be" kind="variable"><name>mFeaturePtr</name></member>
     <member refid="class_pylon_feature_1a6358c8ff3cc01fea099b5bc6f4ebcf97" kind="variable"><name>mIsImplemented</name></member>
     <member refid="class_pylon_feature_1abf53bacebd38a31d0ec4c27f19ec319d" kind="function"><name>PylonFeature</name></member>
+    <member refid="class_pylon_feature_1a013d3318f96a84ab242c162966714545" kind="function"><name>initialize</name></member>
     <member refid="class_pylon_feature_1aa99c19a7d128b8572320b6b58bbbfed5" kind="function"><name>isImplemented</name></member>
     <member refid="class_pylon_feature_1ac2efae6b69a3b43c36bf62a6b786f9ab" kind="function"><name>isAvailable</name></member>
     <member refid="class_pylon_feature_1ab76f83bea621c8590ca27f559eee32c8" kind="function"><name>isReadable</name></member>
@@ -8203,9 +8222,11 @@
     <member refid="_n_d_plugin_process_8h_1acc364ba6c1a5a49bf611ded95e6f0142" kind="define"><name>NDPluginProcessAutoOffsetScaleString</name></member>
     <member refid="_n_d_plugin_process_8h_1a2bc7f18c745c5f5a54bc9469889a1feb" kind="define"><name>NDPluginProcessScaleString</name></member>
     <member refid="_n_d_plugin_process_8h_1ab4ed45feae7f1482e33d6e2753b19482" kind="define"><name>NDPluginProcessOffsetString</name></member>
-    <member refid="_n_d_plugin_process_8h_1a28707980d56daa533ff00f61d6795df5" kind="define"><name>NDPluginProcessLowClipString</name></member>
+    <member refid="_n_d_plugin_process_8h_1a0a46120401c8154bcdd328207db00e9f" kind="define"><name>NDPluginProcessLowClipThreshString</name></member>
+    <member refid="_n_d_plugin_process_8h_1a928cdbc02700a65a5fe300467d44336b" kind="define"><name>NDPluginProcessLowClipValueString</name></member>
     <member refid="_n_d_plugin_process_8h_1ae5edf1bebd2761249770c62dff9c78dc" kind="define"><name>NDPluginProcessEnableLowClipString</name></member>
-    <member refid="_n_d_plugin_process_8h_1a79c719f1338d0071bfeda2b1fc3a7ca4" kind="define"><name>NDPluginProcessHighClipString</name></member>
+    <member refid="_n_d_plugin_process_8h_1ad33121310dfd9cc4c77e41a1e28fe57f" kind="define"><name>NDPluginProcessHighClipThreshString</name></member>
+    <member refid="_n_d_plugin_process_8h_1af2397fab7ef9193abb194b7725c198d6" kind="define"><name>NDPluginProcessHighClipValueString</name></member>
     <member refid="_n_d_plugin_process_8h_1a9c772374425621d92278c2fb5d71a7ed" kind="define"><name>NDPluginProcessEnableHighClipString</name></member>
     <member refid="_n_d_plugin_process_8h_1a008d54deef5ecf8529e1f8cdf55630fb" kind="define"><name>NDPluginProcessEnableFilterString</name></member>
     <member refid="_n_d_plugin_process_8h_1ad580a24e0a738c370536646c84b40a4c" kind="define"><name>NDPluginProcessResetFilterString</name></member>
@@ -11576,6 +11597,11 @@
     <member refid="_a_d_pylon_8cpp_1a08b855b16f8edd3d937f058c7a57020aa85fc0825cfae5473f57086d82784d803" kind="enumvalue"><name>UniqueIdCamera</name></member>
     <member refid="_a_d_pylon_8cpp_1a08b855b16f8edd3d937f058c7a57020aaef645d3b44a6294ff7d93c58903d6624" kind="enumvalue"><name>UniqueIdDriver</name></member>
     <member refid="_a_d_pylon_8cpp_1af0e94d13028051cd5339d204bfbb057d" kind="variable"><name>driverName</name></member>
+    <member refid="_a_d_pylon_8cpp_1ac89a06716b106a4e29cea2972ae94fed" kind="variable"><name>fmt</name></member>
+    <member refid="_a_d_pylon_8cpp_1a3c447dc29e8a7c4be4fda5f438b28904" kind="variable"><name>colorMode</name></member>
+    <member refid="_a_d_pylon_8cpp_1a048925b4357a1b4d6015c2113e05ce9f" kind="variable"><name>dataType</name></member>
+    <member refid="_a_d_pylon_8cpp_1ad9d146b03dbf0bed289f260de75ee03a" kind="variable"><name>bayerFormat</name></member>
+    <member refid="_a_d_pylon_8cpp_1aded9f4ed84cfd61c30f0874e6e81ef94" kind="variable"><name>pix_lookup</name></member>
     <member refid="_a_d_pylon_8cpp_1a5b3cb40f99ecdaa383a0189445b38fbf" kind="variable"><name>configArg0</name></member>
     <member refid="_a_d_pylon_8cpp_1a12e03f733e7768280d0205a2d8adeaab" kind="variable"><name>configArg1</name></member>
     <member refid="_a_d_pylon_8cpp_1ac0dc159931b84391cb7c0fed1fa7986f" kind="variable"><name>configArg2</name></member>
@@ -11585,6 +11611,7 @@
     <member refid="_a_d_pylon_8cpp_1a47dc9fcaeec992ba1fda890d3eaae919" kind="variable"><name>configADPylon</name></member>
     <member refid="_a_d_pylon_8cpp_1a791d64b5b37e83f34c70889234f8cf37" kind="function"><name>ADPylonConfig</name></member>
     <member refid="_a_d_pylon_8cpp_1afc6ff0618bd23a64f62bdaa8662716b0" kind="function"><name>imageGrabTaskC</name></member>
+    <member refid="_a_d_pylon_8cpp_1a9c25eb49d597bc637bc57db7bfbf0285" kind="function"><name>c_shutdown</name></member>
     <member refid="_a_d_pylon_8cpp_1ad770aee80665342b5803974f683424bc" kind="function"><name>configCallFunc</name></member>
     <member refid="_a_d_pylon_8cpp_1a8a8e93bfd645ed6189d47a8fdad69ab2" kind="function"><name>ADPylonRegister</name></member>
     <member refid="_a_d_pylon_8cpp_1ae718d210284e9b16804a859c9c49c73b" kind="function"><name>epicsExportRegistrar</name></member>
@@ -12101,7 +12128,7 @@
     <member refid="nullhttpd_8h_1a7e535fdc4fc85c1f88b9e044dbc21f52" kind="variable"><name>Crypt</name></member>
     <member refid="nullhttpd_8h_1a0edc6eef7aa70a3ed92ef98306054d1a" kind="variable"><name>Global</name></member>
     <member refid="nullhttpd_8h_1a41e1fee0d3cdacac20b7bf9bb56b8e55" kind="variable"><name>SQL</name></member>
-    <member refid="nullhttpd_8h_1a8647ffb0a4bb7469f9b9d5fe64b36783" kind="variable"><name>Lock</name></member>
+    <member refid="nullhttpd_8h_1af59c8ee0015ac5f3a81bfde224a3b9d7" kind="variable"><name>Lock</name></member>
     <member refid="nullhttpd_8h_1a71770dad1bccb2ffa25dfdcb12cb40bd" kind="variable"><name>program_name</name></member>
     <member refid="nullhttpd_8h_1ac72f0ddb88146ec79385cf0a0bdb3f27" kind="variable"><name>config</name></member>
     <member refid="nullhttpd_8h_1a525d7eccda3aaf37a79ce3854365b295" kind="variable"><name>conn</name></member>

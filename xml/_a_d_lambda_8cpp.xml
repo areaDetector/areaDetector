@@ -574,7 +574,7 @@
 <codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/>asynPrint(pasynUserSelf,<sp/>ASYN_TRACE_FLOW,</highlight></codeline>
 <codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;%s:%s<sp/>Enter\n&quot;</highlight><highlight class="normal">,<sp/><ref refid="class_a_d_lambda_1a99ce6b087b1085f5feb5adc3f928d74e" kindref="member">driverName</ref>,<sp/>__FUNCTION__);</highlight></codeline>
 <codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>status<sp/>=<sp/>asynSuccess;</highlight></codeline>
-<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dataType;</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="_a_d_pylon_8cpp_1a048925b4357a1b4d6015c2113e05ce9f" kindref="member">dataType</ref>;</highlight></codeline>
 <codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classasyn_n_d_array_driver_1abf87462bc5853f8e5a56db5e93acd956" kindref="member">setIntegerParam</ref>(<ref refid="class_a_d_driver_1a8cdc9e9fbabaadaa3c87108aad2e2895" kindref="member">ADNumImagesCounter</ref>,<sp/>0);</highlight></codeline>
 <codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classasyn_n_d_array_driver_1abf87462bc5853f8e5a56db5e93acd956" kindref="member">setIntegerParam</ref>(<ref refid="class_a_d_lambda_1a1dd37faa49ea724a978d18d96c503137" kindref="member">LAMBDA_BadFrameCounter</ref>,<sp/>0);</highlight></codeline>
@@ -582,8 +582,8 @@
 <codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/>lambdaInstance-&gt;GetImageFormat(sizeX,<sp/>sizeY,<sp/>imageDepth);</highlight></codeline>
 <codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/>imageDims[0]<sp/>=<sp/>sizeX;</highlight></codeline>
 <codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/>imageDims[1]<sp/>=<sp/>sizeY;</highlight></codeline>
-<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/>getIntegerParam(<ref refid="classasyn_n_d_array_driver_1af71358738ff1dbe4c9185f105807f799" kindref="member">NDDataType</ref>,<sp/>&amp;dataType);</highlight></codeline>
-<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/>imageDataType<sp/>=<sp/>(<ref refid="_n_d_attribute_8h_1a34b835bcabc3b7f546f4b25c5767cb16" kindref="member">NDDataType_t</ref>)dataType;</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/>getIntegerParam(<ref refid="classasyn_n_d_array_driver_1af71358738ff1dbe4c9185f105807f799" kindref="member">NDDataType</ref>,<sp/>&amp;<ref refid="_a_d_pylon_8cpp_1a048925b4357a1b4d6015c2113e05ce9f" kindref="member">dataType</ref>);</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/>imageDataType<sp/>=<sp/>(<ref refid="_n_d_attribute_8h_1a34b835bcabc3b7f546f4b25c5767cb16" kindref="member">NDDataType_t</ref>)<ref refid="_a_d_pylon_8cpp_1a048925b4357a1b4d6015c2113e05ce9f" kindref="member">dataType</ref>;</highlight></codeline>
 <codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/>acquiringData<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/>acquiredImages<sp/>=<sp/>0;</highlight></codeline>
 <codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/>lambdaInstance-&gt;StartImaging();</highlight></codeline>

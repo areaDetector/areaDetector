@@ -230,13 +230,21 @@ are just a single name, for example ``NDPluginProcessSaveBackground``.
     - ENABLE_LOW_CLIP
     - $(P)$(R)EnableLowClip, $(P)$(R)EnableLowClip_RBV
     - bo, bi
-  * - NDPluginProcess, LowClip
+  * - NDPluginProcess, LowClipThresh
     - asynFloat64
     - r/w
-    - The minimum allowed value for this array. If EnableLowClip=1, then all values in
-      the array less than LowClip will be replaced by LowClip.
-    - LOW_CLIP
-    - $(P)$(R)LowClip, $(P)$(R)LowClip_RBV
+    - The low clipping threshold. If EnableLowClip=1, then all values in
+      the array less than LowClipThresh will be replaced by LowClipValue.
+    - LOW_CLIP_THRESH
+    - $(P)$(R)LowClipThresh, $(P)$(R)LowClipThresh_RBV
+    - ao, ai
+  * - NDPluginProcess, LowClipValue
+    - asynFloat64
+    - r/w
+    - The low clipping replacement value. If EnableLowClip=1, then all values in
+      the array less than LowClipThresh will be replaced by LowClipValue.
+    - LOW_CLIP_VALUE
+    - $(P)$(R)LowClipValue, $(P)$(R)LowClipValue_RBV
     - ao, ai
   * - NDPluginProcess, EnableHighClip
     - asynInt32
@@ -246,13 +254,21 @@ are just a single name, for example ``NDPluginProcessSaveBackground``.
     - ENABLE_HIGH_CLIP
     - $(P)$(R)EnableHighClip, $(P)$(R)EnableHighClip_RBV
     - bo, bi
-  * - NDPluginProcess, HighClip
+  * - NDPluginProcess, HighClipThresh
     - asynFloat64
     - r/w
-    - The maximum allowed value for this array. If EnableHighClip=1, then all values in
-      the array greater than HighClip will be replaced by HighClip.
-    - HIGH_CLIP
-    - $(P)$(R)HighClip, $(P)$(R)HighClip_RBV
+    - The high clipping threshold. If EnableHighClip=1, then all values in
+      the array greater than HighClipThresh will be replaced by HighClipValue.
+    - HIGH_CLIP_THRESH
+    - $(P)$(R)HighClipThresh, $(P)$(R)HighClipThresh_RBV
+    - ao, ai
+  * - NDPluginProcess, HighClipValue
+    - asynFloat64
+    - r/w
+    - The high clipping replacement value. If EnableHighClip=1, then all values in
+      the array greater than HighClipThresh will be replaced by HighClipValue.
+    - HIGH_CLIP_VALUE
+    - $(P)$(R)HighClipValue, $(P)$(R)HighClipValue_RBV
     - ao, ai
   * - NDPluginProcess, DataType
     - asynInt32
@@ -620,14 +636,13 @@ Screen shots
 
 The following is the MEDM screen that provides access to the parameters
 in ``NDPluginDriver.h`` and ``NDPluginProcess.h`` through records in
-``NDPluginBase.template`` and ``NDProcess.template``. In this example the input
-image is first offset by -4 and scaled by 35. That result is then
-clipped to a minimum of 0 and a maximum of 255. The image is then run
-through a recursive averaging filter with N=100.
+``NDPluginBase.template`` and ``NDProcess.template``.
+In this example the image is low clipped with a threshold of 300 and a
+replacement value of 0, and high-clipped with a threshold of 1000 and a
+replacement value of 0.
 
 .. image:: NDProcess.png
     :align: center
-
 
 The following is the MEDM screen for reading a background image or
 flatfield image from a TIFF file. It is a stripped-down version of the
@@ -638,9 +653,13 @@ components to construct the full filename.
     :align: center
 
 
+In another test the input image is first offset by -4 and scaled by 35. 
+That result is then clipped to a minimum of 0 and a maximum of 255. 
+The image is then run through a recursive averaging filter with N=100.
+
 Image collected with 30 microsecond exposure time, so it is very noisy.
 This is the image output from the NDPlugProcess plugin with Offset and
-Scale as shown above, but with the recursive filter disabled.
+Scale as listed above, but with the recursive filter disabled.
 
 .. image:: NDProcess_unfiltered.jpg
     :align: center
@@ -656,7 +675,7 @@ background.
 
 Same image collected with 30 microsecond exposure time. This is the
 image output from the NDPlugProcess plugin with Offset and Scale as
-shown above, with the recursive filter enabled. Note the dramatic
+listed above, with the recursive filter enabled. Note the dramatic
 improvement in signal to noise.
 
 .. image:: NDProcess_filtered.jpg

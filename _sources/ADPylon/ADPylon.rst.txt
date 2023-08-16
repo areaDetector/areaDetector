@@ -75,6 +75,17 @@ specific to ADPylon.
      - Controls conversion of the pixel format read from the camera to a different format.  For example this can be used
        to convert BayerRG8 to RGB8, which allows the camera to send 8-bit Bayer color data over the bus and then convert to 24-bit
        RGB on the host computer, reducing the required bandwidth by a factor of 3 and increasing the frame rate.
+   * - ConvertBitAlign, ConvertBitAlign_RBV
+     - mbbo/mbbi
+     - PYLON_CONVERT_BIT_ALIGN
+     - Sets the alignment of the bits in the target pixel type if the target bit depth is greater than the source bit depth, e.g., if you are converting from a 12-bit to a 16-bit format.
+       Choices are [0:"LSB", 1:"MSB"].
+       LSB means alignment with the least significant bit. e.g. 12-bit data is not left-shifted, so bits 12-15 are 0.
+       MSB means alignment with the most significant bit. e.g. 12-bit data is left-shifted by 4 bits, so bits 0-3 are 0.
+   * - ConvertShiftBits, ConvertShiftBits_RBV
+     - longout/longin
+     - PYLON_CONVERT_SHIFT_BITS
+     - Controls how many bits are shifted left (positive) or right (negative) additionally for mono. The range is between -16 and 16.
    * - GC_StatBufferReceived_RBV
      - longin
      - GC_I_Statistic_Total_Buffer_Count
@@ -103,6 +114,8 @@ specific to ADPylon.
      - longin
      - GC_I_Statistic_Resend_Packet_Count
      - Number of emitted packet resend commands sent.
+
+If `Chunk data <https://docs.baslerweb.com/data-chunks>`_ is enabled, they are extracted as NDArray attributes. If camera specific EPICS records are loaded, they are also set to EPICS records.
 
 IOC startup script
 ------------------
