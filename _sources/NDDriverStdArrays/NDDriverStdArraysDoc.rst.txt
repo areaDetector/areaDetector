@@ -39,12 +39,12 @@ viewers like ImageJ.
 
 This driver inherits from `ADDriver <areaDetectorDoc.html#ADDriver>`__.
 It implements many of the parameters in
-`asynNDArrayDriver.h <areaDetectorDoxygenHTML/asyn_n_d_array_driver_8h.html>`__
+`asynNDArrayDriver.h <../areaDetectorDoxygenHTML/asyn_n_d_array_driver_8h.html>`__
 and in
-`ADArrayDriver.h <areaDetectorDoxygenHTML/_a_d_driver_8h.html>`__. It
+`ADArrayDriver.h <../areaDetectorDoxygenHTML/_a_d_driver_8h.html>`__. It
 also implements a number of parameters that are specific to this driver.
 The `NDDriverStdArrays class
-documentation <areaDetectorDoxygenHTML/class_n_d_driver_std_arrays.html>`__
+documentation <../areaDetectorDoxygenHTML/class_n_d_driver_std_arrays.html>`__
 describes this class in detail.
 
 The driver receives 1-D arrays, normally from an EPICS waveform record.

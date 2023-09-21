@@ -11,11 +11,11 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -138,14 +138,14 @@
            <div itemprop="articleBody">
              
   <section id="adlambda">
-<h1><a class="toc-backref" href="#id1" role="doc-backlink">ADLambda</a><a class="headerlink" href="#adlambda" title="Permalink to this heading"></a></h1>
+<h1><a class="toc-backref" href="#id1" role="doc-backlink">ADLambda</a><a class="headerlink" href="#adlambda" title="Link to this heading"></a></h1>
 <dl class="field-list simple">
 <dt class="field-odd">author<span class="colon">:</span></dt>
 <dd class="field-odd"><p>John Hammonds (Argonne National Laboratory)</p>
 </dd>
 </dl>
 <section id="table-of-contents">
-<h2><a class="toc-backref" href="#id2" role="doc-backlink">Table Of Contents</a><a class="headerlink" href="#table-of-contents" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id2" role="doc-backlink">Table Of Contents</a><a class="headerlink" href="#table-of-contents" title="Link to this heading"></a></h2>
 <nav class="contents" id="contents">
 <p class="topic-title">Contents</p>
 <ul class="simple">
@@ -166,7 +166,7 @@
 </nav>
 </section>
 <section id="introduction">
-<h2><a class="toc-backref" href="#id3" role="doc-backlink">Introduction</a><a class="headerlink" href="#introduction" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">Introduction</a><a class="headerlink" href="#introduction" title="Link to this heading"></a></h2>
 <p>This is an <a class="reference external" href="https://www.aps.anl.gov/epics">EPICS</a>
 <a class="reference external" href="https://cars.uchicago.edu/software/epics/areaDetector.html">areaDetector</a>
 driver for the Lambda detector from
@@ -186,7 +186,7 @@ necessary, therefore, to adapt standard areaDetector plugins for faster
 collection to ensure processing of all images.</p>
 </section>
 <section id="implementation-of-standard-driver-parameters">
-<h2><a class="toc-backref" href="#id4" role="doc-backlink">Implementation of standard driver parameters</a><a class="headerlink" href="#implementation-of-standard-driver-parameters" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">Implementation of standard driver parameters</a><a class="headerlink" href="#implementation-of-standard-driver-parameters" title="Link to this heading"></a></h2>
 <p>The following table describes how the Lambda driver implements some of
 the standard driver parameters.</p>
 <table class="table-bordered table-striped table-hover docutils align-default">
@@ -234,7 +234,7 @@ removed from the options.</p></td>
 </table>
 </section>
 <section id="lambda-specific-parameters">
-<h2><a class="toc-backref" href="#id5" role="doc-backlink">Lambda specific parameters</a><a class="headerlink" href="#lambda-specific-parameters" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id5" role="doc-backlink">Lambda specific parameters</a><a class="headerlink" href="#lambda-specific-parameters" title="Link to this heading"></a></h2>
 <p>Parameter Definition in ADLambda.cpp and record definitions in ADLambda.template</p>
 <table class="table-bordered table-striped table-hover docutils align-default">
 <thead>
@@ -335,7 +335,7 @@ this signal will return to ON.</p></li>
 </table>
 </section>
 <section id="configuration">
-<h2><a class="toc-backref" href="#id6" role="doc-backlink">Configuration</a><a class="headerlink" href="#configuration" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id6" role="doc-backlink">Configuration</a><a class="headerlink" href="#configuration" title="Link to this heading"></a></h2>
 <p>The Lambda detector instance is created using the LambdaConfig command,
 either from C/C++ or from the EPICS IOC shell.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span> <span class="n">LambdaConfig</span><span class="p">(</span><span class="n">const</span> <span class="n">char</span> <span class="o">*</span><span class="n">portName</span><span class="p">,</span> <span class="n">const</span> <span class="n">char</span><span class="o">*</span> <span class="n">configPath</span><span class="p">,</span>
@@ -344,16 +344,16 @@ either from C/C++ or from the EPICS IOC shell.</p>
 </pre></div>
 </div>
 <p>For details on the meaning of the parameters to this function refer to
-the documentation on the LambdaConfig function in the <a class="reference external" href="areaDetectorDoxygenHTML/ADLambda_8cpp.html">Lambda.cpp
+the documentation on the LambdaConfig function in the <a class="reference external" href="../areaDetectorDoxygenHTML/ADLambda_8cpp.html">Lambda.cpp
 documentation</a></p>
-<p>and in the documentation for the constructor in the <a class="reference external" href="areaDetectorDoxygenHTML/class_ADLambda.html">ADLambda
+<p>and in the documentation for the constructor in the <a class="reference external" href="../areaDetectorDoxygenHTML/class_ADLambda.html">ADLambda
 class</a>)</p>
 </section>
 <section id="medm-screens">
-<h2><a class="toc-backref" href="#id7" role="doc-backlink">MEDM screens</a><a class="headerlink" href="#medm-screens" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id7" role="doc-backlink">MEDM screens</a><a class="headerlink" href="#medm-screens" title="Link to this heading"></a></h2>
 </section>
 <section id="performance-measurements">
-<h2><a class="toc-backref" href="#id8" role="doc-backlink">Performance measurements</a><a class="headerlink" href="#performance-measurements" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id8" role="doc-backlink">Performance measurements</a><a class="headerlink" href="#performance-measurements" title="Link to this heading"></a></h2>
 <p>The Lambda detector itself is rated at 2000 frames/sec. This rate has
 been achieved simply processing the detector images into NDArrays. We
 have been able to save up to 2000 images/sec for a period of time using
@@ -366,13 +366,13 @@ be reset. Sometimes we lose communication with the detector through the
 detector for about 10 minutes before it will come on again.</p>
 </section>
 <section id="hardware-notes">
-<h2><a class="toc-backref" href="#id9" role="doc-backlink">Hardware Notes</a><a class="headerlink" href="#hardware-notes" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id9" role="doc-backlink">Hardware Notes</a><a class="headerlink" href="#hardware-notes" title="Link to this heading"></a></h2>
 <p>This detector is capable of supporting a number of features which are
 not currently available in the detector driver &amp; firmware. These
 features will be added as they are made available by the vendor.</p>
 </section>
 <section id="restrictions">
-<h2><a class="toc-backref" href="#id10" role="doc-backlink">Restrictions</a><a class="headerlink" href="#restrictions" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id10" role="doc-backlink">Restrictions</a><a class="headerlink" href="#restrictions" title="Link to this heading"></a></h2>
 <p>To be added later…</p>
 </section>
 </section>
@@ -389,7 +389,7 @@ features will be added as they are made available by the vendor.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, Mark Rivers.
-      <span class="lastupdated">Last updated on 2023-August-16.
+      <span class="lastupdated">Last updated on 2023-September-21.
       </span></p>
   </div>
 

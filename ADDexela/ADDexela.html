@@ -11,11 +11,11 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -138,7 +138,7 @@
            <div itemprop="articleBody">
              
   <section id="addexela">
-<h1><a class="toc-backref" href="#id1" role="doc-backlink">ADDexela</a><a class="headerlink" href="#addexela" title="Permalink to this heading"></a></h1>
+<h1><a class="toc-backref" href="#id1" role="doc-backlink">ADDexela</a><a class="headerlink" href="#addexela" title="Link to this heading"></a></h1>
 <p>AreaDetector Dexela driver</p>
 <dl class="field-list simple">
 <dt class="field-odd">author<span class="colon">:</span></dt>
@@ -168,7 +168,7 @@
 </ul>
 </nav>
 <section id="introduction">
-<h2><a class="toc-backref" href="#id2" role="doc-backlink">Introduction</a><a class="headerlink" href="#introduction" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id2" role="doc-backlink">Introduction</a><a class="headerlink" href="#introduction" title="Link to this heading"></a></h2>
 <p>This is an <a class="reference internal" href="../index.html"><span class="doc">areaDetector</span></a> driver for the flat-panel CMOS
 detectors from <a class="reference external" href="http://www.perkinelmer.com/imaging-components/detectors/dexela-cmos">Perkin Elmer</a>.</p>
 <p>The driver is based upon the Dexela library provided by Perkin Elmer.
@@ -185,7 +185,7 @@ detectors. The <a class="reference external" href="../areaDetectorDoxygenHTML/cl
 detail.</p>
 </section>
 <section id="implementation-of-standard-driver-parameters">
-<h2><a class="toc-backref" href="#id3" role="doc-backlink">Implementation of standard driver parameters</a><a class="headerlink" href="#implementation-of-standard-driver-parameters" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">Implementation of standard driver parameters</a><a class="headerlink" href="#implementation-of-standard-driver-parameters" title="Link to this heading"></a></h2>
 <p>The following table describes how the Dexela driver implements some of
 the standard driver parameters.</p>
 <table class="table-bordered table-striped table-hover docutils align-default">
@@ -243,7 +243,7 @@ single frame.</p>
 </table>
 </section>
 <section id="dexela-specific-parameters">
-<h2><a class="toc-backref" href="#id4" role="doc-backlink">Dexela specific parameters</a><a class="headerlink" href="#dexela-specific-parameters" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">Dexela specific parameters</a><a class="headerlink" href="#dexela-specific-parameters" title="Link to this heading"></a></h2>
 <p>The Dexela driver implements the following parameters in addition to
 those in asynNDArrayDriver.h and ADDriver.h.</p>
 <table class="table-bordered table-striped table-hover docutils align-default">
@@ -390,7 +390,7 @@ are “Not available” (0) and “Available” (1).</p></td>
 </table>
 </section>
 <section id="unsupported-standard-driver-parameters">
-<h2><a class="toc-backref" href="#id5" role="doc-backlink">Unsupported standard driver parameters</a><a class="headerlink" href="#unsupported-standard-driver-parameters" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id5" role="doc-backlink">Unsupported standard driver parameters</a><a class="headerlink" href="#unsupported-standard-driver-parameters" title="Link to this heading"></a></h2>
 <p>The Dexela driver does not support the following standard driver
 parameters because they are not supported in the Dexels library:</p>
 <ul class="simple">
@@ -399,7 +399,7 @@ parameters because they are not supported in the Dexels library:</p>
 </ul>
 </section>
 <section id="configuration">
-<h2><a class="toc-backref" href="#id6" role="doc-backlink">Configuration</a><a class="headerlink" href="#configuration" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id6" role="doc-backlink">Configuration</a><a class="headerlink" href="#configuration" title="Link to this heading"></a></h2>
 <p>The Dexel driver is created with the DexelaConfig command, either from
 C/C++ or from the EPICS IOC shell.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span> <span class="n">DexelaConfig</span><span class="p">(</span><span class="n">const</span> <span class="n">char</span> <span class="o">*</span><span class="n">portName</span><span class="p">,</span> <span class="nb">int</span> <span class="n">detIndex</span><span class="p">,</span>
@@ -413,14 +413,14 @@ the detailed documentation on the DexelaConfig function in the
 constructor for the <a class="reference external" href="../areaDetectorDoxygenHTML/class_dexela.html">Dexela class</a>.</p>
 </section>
 <section id="example-st-cmd-startup-file">
-<h2><a class="toc-backref" href="#id7" role="doc-backlink">Example st.cmd startup file</a><a class="headerlink" href="#example-st-cmd-startup-file" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id7" role="doc-backlink">Example st.cmd startup file</a><a class="headerlink" href="#example-st-cmd-startup-file" title="Link to this heading"></a></h2>
 <div class="toctree-wrapper compound">
 </div>
 <p>There is an example IOC boot directory and startup script
 <a class="reference internal" href="st_cmd.html"><span class="doc">Example st.cmd Startup File</span></a> provided with areaDetector.</p>
 </section>
 <section id="medm-screens">
-<h2><a class="toc-backref" href="#id8" role="doc-backlink">MEDM screens</a><a class="headerlink" href="#medm-screens" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id8" role="doc-backlink">MEDM screens</a><a class="headerlink" href="#medm-screens" title="Link to this heading"></a></h2>
 <p>The following show the MEDM screens that are used to control the
 Dexela detector. Note that the general purpose screen ADBase.adl can
 be used, but it exposes many controls that are not applicable to the
@@ -428,12 +428,12 @@ Dexela, and lacks some fields that are important for the Dexela
 driver.</p>
 <p><cite>Dexela.adl</cite> is the main screen used to control the Dexela driver.</p>
 <section id="dexela-adl">
-<h3><a class="toc-backref" href="#id9" role="doc-backlink">Dexela.adl</a><a class="headerlink" href="#dexela-adl" title="Permalink to this heading"></a></h3>
+<h3><a class="toc-backref" href="#id9" role="doc-backlink">Dexela.adl</a><a class="headerlink" href="#dexela-adl" title="Link to this heading"></a></h3>
 <img alt="../_images/Dexela.png" src="../_images/Dexela.png" />
 </section>
 </section>
 <section id="performance-measurements">
-<h2><a class="toc-backref" href="#id10" role="doc-backlink">Performance measurements</a><a class="headerlink" href="#performance-measurements" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id10" role="doc-backlink">Performance measurements</a><a class="headerlink" href="#performance-measurements" title="Link to this heading"></a></h2>
 <p>The following measurements were done to demonstrate the performance
 that can be obtained with the areaDetector Dexela driver.</p>
 <ul class="simple">
@@ -448,7 +448,7 @@ Windows 7 64-bit machine with 2 disk drives (SAS, 15K RPM, RAID 0).</p></li>
 </ul>
 </section>
 <section id="restrictions">
-<h2><a class="toc-backref" href="#id11" role="doc-backlink">Restrictions</a><a class="headerlink" href="#restrictions" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id11" role="doc-backlink">Restrictions</a><a class="headerlink" href="#restrictions" title="Link to this heading"></a></h2>
 <p>The following are some current restrictions of the Dexela driver:</p>
 <ul class="simple">
 <li><p>Does not currently support saving images to disk with the Dexela
@@ -476,7 +476,7 @@ map file.</p></li>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, Mark Rivers.
-      <span class="lastupdated">Last updated on 2023-August-16.
+      <span class="lastupdated">Last updated on 2023-September-21.
       </span></p>
   </div>
 

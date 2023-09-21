@@ -33,7 +33,7 @@ This driver inherits from
 `asynNDArrayDriver <areaDetectorDoc.html#asynNDArrayDriver>`__. It also
 implements a number parameters that are specific to the ADC simulation
 detector. The `ADCSimDetector class
-documentation <areaDetectorDoxygenHTML/class_a_d_c_sim_detector.html>`__
+documentation <../areaDetectorDoxygenHTML/class_a_d_c_sim_detector.html>`__
 describes this class in detail.
 
 Simulation driver specific parameters
@@ -169,9 +169,9 @@ The simDetector-specific fields in this command are:
 For details on the meaning of the other parameters to this function
 refer to the detailed documentation on the simDetectorConfig function in
 the `ADCSimDetector.cpp
-documentation <areaDetectorDoxygenHTML/_a_d_c_sim_detector_8cpp.html>`__
+documentation <../areaDetectorDoxygenHTML/_a_d_c_sim_detector_8cpp.html>`__
 and in the documentation for the constructor for the `ADCSimDetector
-class <areaDetectorDoxygenHTML/class_a_d_c_sim_detector.html>`__.
+class <../areaDetectorDoxygenHTML/class_a_d_c_sim_detector.html>`__.
 
 There an example IOC boot directory and startup script
 (`iocBoot/iocADCSimDetector/st.cmd) <ADCSimdetector_st_cmd.html>`__

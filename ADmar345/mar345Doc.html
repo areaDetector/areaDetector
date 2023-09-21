@@ -11,11 +11,11 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -139,7 +139,7 @@
            <div itemprop="articleBody">
              
   <section id="admar345">
-<h1><a class="toc-backref" href="#id1" role="doc-backlink">ADmar345</a><a class="headerlink" href="#admar345" title="Permalink to this heading"></a></h1>
+<h1><a class="toc-backref" href="#id1" role="doc-backlink">ADmar345</a><a class="headerlink" href="#admar345" title="Link to this heading"></a></h1>
 <dl class="field-list simple">
 <dt class="field-odd">author<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Mark Rivers, University of Chicago</p>
@@ -165,11 +165,11 @@
 </ul>
 </nav>
 <section id="overview">
-<h2><a class="toc-backref" href="#id2" role="doc-backlink">Overview</a><a class="headerlink" href="#overview" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id2" role="doc-backlink">Overview</a><a class="headerlink" href="#overview" title="Link to this heading"></a></h2>
 <p>This is an <a class="reference internal" href="../index.html"><span class="doc">areaDetector</span></a> driver for the <a class="reference external" href="https://marxperts.com">marXperts</a> mar345 detector.</p>
 </section>
 <section id="introduction">
-<h2><a class="toc-backref" href="#id3" role="doc-backlink">Introduction</a><a class="headerlink" href="#introduction" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">Introduction</a><a class="headerlink" href="#introduction" title="Link to this heading"></a></h2>
 <p>The interface to the detector is via a TCP/IP socket interface to the
 <strong>mar345dtb</strong> program that <a class="reference external" href="https://marxperts.com">marXperts</a> provides. The mar345dtb program
 must be started before the areaDetector software is started.</p>
@@ -197,7 +197,7 @@ mar345 detector. The <a class="reference external" href="../areaDetectorDoxygenH
 documentation</a> describes this class in detail.</p>
 </section>
 <section id="implementation-of-standard-driver-parameters">
-<h2><a class="toc-backref" href="#id4" role="doc-backlink">Implementation of standard driver parameters</a><a class="headerlink" href="#implementation-of-standard-driver-parameters" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">Implementation of standard driver parameters</a><a class="headerlink" href="#implementation-of-standard-driver-parameters" title="Link to this heading"></a></h2>
 <p>The following table describes how the mar345 driver implements some of
 the standard driver parameters.</p>
 <table class="table-bordered table-striped table-hover docutils align-default">
@@ -280,7 +280,7 @@ Changing Mode, Aborting, Error, and Waiting.</p></td>
 </table>
 </section>
 <section id="mar345-specific-parameters">
-<h2><a class="toc-backref" href="#id5" role="doc-backlink">mar345 specific parameters</a><a class="headerlink" href="#mar345-specific-parameters" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id5" role="doc-backlink">mar345 specific parameters</a><a class="headerlink" href="#mar345-specific-parameters" title="Link to this heading"></a></h2>
 <p>The mar345 driver implements the following parameters in addition to
 those in asynNDArrayDriver.h and ADDriver.h. Note that to reduce the
 width of this table the parameter index variable names have been split
@@ -355,7 +355,7 @@ cannot be aborted, so the driver must wait for the current command to complete.<
 </table>
 </section>
 <section id="unsupported-standard-driver-parameters">
-<h2><a class="toc-backref" href="#id6" role="doc-backlink">Unsupported standard driver parameters</a><a class="headerlink" href="#unsupported-standard-driver-parameters" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id6" role="doc-backlink">Unsupported standard driver parameters</a><a class="headerlink" href="#unsupported-standard-driver-parameters" title="Link to this heading"></a></h2>
 <p>The mar345 driver does not support the following standard driver
 parameters because they are not supported in the mar345dtb program:</p>
 <ul class="simple">
@@ -373,7 +373,7 @@ NDNumCapture, NDNumCaptured)</p></li>
 </ul>
 </section>
 <section id="configuration">
-<h2><a class="toc-backref" href="#id7" role="doc-backlink">Configuration</a><a class="headerlink" href="#configuration" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id7" role="doc-backlink">Configuration</a><a class="headerlink" href="#configuration" title="Link to this heading"></a></h2>
 <p>The mar345 driver is created with the mar345Config command, either from
 C/C++ or from the EPICS IOC shell.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span> <span class="n">mar345Config</span><span class="p">(</span><span class="n">const</span> <span class="n">char</span> <span class="o">*</span><span class="n">portName</span><span class="p">,</span> <span class="n">const</span> <span class="n">char</span> <span class="o">*</span><span class="n">serverPort</span><span class="p">,</span>
@@ -388,7 +388,7 @@ in the documentation for the constructor for the
 <a class="reference external" href="../areaDetectorDoxygenHTML/classmar345.html">mar345 class</a>.</p>
 </section>
 <section id="example-st-cmd-startup-file">
-<h2><a class="toc-backref" href="#id8" role="doc-backlink">Example st.cmd startup file</a><a class="headerlink" href="#example-st-cmd-startup-file" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id8" role="doc-backlink">Example st.cmd startup file</a><a class="headerlink" href="#example-st-cmd-startup-file" title="Link to this heading"></a></h2>
 <div class="toctree-wrapper compound">
 </div>
 <p>There is an example IOC boot directory and startup script
@@ -396,7 +396,7 @@ in the documentation for the constructor for the
 areaDetector.</p>
 </section>
 <section id="medm-screens">
-<h2><a class="toc-backref" href="#id9" role="doc-backlink">MEDM screens</a><a class="headerlink" href="#medm-screens" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id9" role="doc-backlink">MEDM screens</a><a class="headerlink" href="#medm-screens" title="Link to this heading"></a></h2>
 <p>The following show the MEDM screens that are used to control the mar345
 detector. Note that the general purpose screen ADBase.adl can be used,
 but it exposes many controls that are not applicable to the mar345, and
@@ -407,7 +407,7 @@ lacks some fields that are important for the mar345.</p>
 </figure>
 </section>
 <section id="performance-measurements">
-<h2><a class="toc-backref" href="#id10" role="doc-backlink">Performance measurements</a><a class="headerlink" href="#performance-measurements" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id10" role="doc-backlink">Performance measurements</a><a class="headerlink" href="#performance-measurements" title="Link to this heading"></a></h2>
 <p>The mar345 is definitely not a fast detector! The following measurements
 show the time to perform various erase and scan operations. Note that
 because the mar345 file format is compressed the file sizes are
@@ -491,7 +491,7 @@ typically much less than the image sizes listed.</p>
 </table>
 </section>
 <section id="restrictions">
-<h2><a class="toc-backref" href="#id11" role="doc-backlink">Restrictions</a><a class="headerlink" href="#restrictions" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id11" role="doc-backlink">Restrictions</a><a class="headerlink" href="#restrictions" title="Link to this heading"></a></h2>
 <p>The following are some current restrictions of the mar345 driver:</p>
 <ul class="simple">
 <li><p>The areaDetector driver can in principle be run on machines other
@@ -524,7 +524,7 @@ scan command to complete.</p></li>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, Mark Rivers.
-      <span class="lastupdated">Last updated on 2023-August-16.
+      <span class="lastupdated">Last updated on 2023-September-21.
       </span></p>
   </div>
 

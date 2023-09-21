@@ -244,6 +244,7 @@ var menudata={children:[
 {text:"c",url:"globals_type.html#index_c"},
 {text:"e",url:"globals_type.html#index_e"},
 {text:"g",url:"globals_type.html#index_g"},
+{text:"l",url:"globals_type.html#index_l"},
 {text:"n",url:"globals_type.html#index_n"},
 {text:"p",url:"globals_type.html#index_p"},
 {text:"r",url:"globals_type.html#index_r"},

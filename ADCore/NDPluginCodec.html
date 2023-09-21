@@ -11,11 +11,11 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -133,7 +133,7 @@
            <div itemprop="articleBody">
              
   <section id="ndplugincodec">
-<h1><a class="toc-backref" href="#id4" role="doc-backlink">NDPluginCodec</a><a class="headerlink" href="#ndplugincodec" title="Permalink to this heading"></a></h1>
+<h1><a class="toc-backref" href="#id4" role="doc-backlink">NDPluginCodec</a><a class="headerlink" href="#ndplugincodec" title="Link to this heading"></a></h1>
 <dl class="field-list simple">
 <dt class="field-odd">author<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Bruno Martins, Facility for Rare Isotope Beams
@@ -163,24 +163,24 @@ and Mark Rivers, University of Chicago</p>
 </ul>
 </nav>
 <section id="overview">
-<h2><a class="toc-backref" href="#id5" role="doc-backlink">Overview</a><a class="headerlink" href="#overview" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id5" role="doc-backlink">Overview</a><a class="headerlink" href="#overview" title="Link to this heading"></a></h2>
 <p>NDPluginCodec is a tool for compressing and decomppressing NDArray data
 according to a user selectable codec. Compression information is stored
 in the <code class="docutils literal notranslate"><span class="pre">codec</span></code> and <code class="docutils literal notranslate"><span class="pre">compressionSize</span></code> fields of the NDArray.</p>
 </section>
 <section id="compressed-ndarray-semantics">
-<h2><a class="toc-backref" href="#id6" role="doc-backlink">Compressed NDArray Semantics</a><a class="headerlink" href="#compressed-ndarray-semantics" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id6" role="doc-backlink">Compressed NDArray Semantics</a><a class="headerlink" href="#compressed-ndarray-semantics" title="Link to this heading"></a></h2>
 <p>The new NDArray field <code class="docutils literal notranslate"><span class="pre">codec</span></code> is used to indicate if an NDArray holds
 compressed or uncompressed data.</p>
 <section id="uncompressed-ndarrays">
-<h3><a class="toc-backref" href="#id7" role="doc-backlink">Uncompressed NDArrays</a><a class="headerlink" href="#uncompressed-ndarrays" title="Permalink to this heading"></a></h3>
+<h3><a class="toc-backref" href="#id7" role="doc-backlink">Uncompressed NDArrays</a><a class="headerlink" href="#uncompressed-ndarrays" title="Link to this heading"></a></h3>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">codec</span></code> is empty (<code class="docutils literal notranslate"><span class="pre">codec.empty()==true</span></code>).</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">compressedSize</span></code> is equal to <code class="docutils literal notranslate"><span class="pre">dataSize</span></code>.</p></li>
 </ul>
 </section>
 <section id="compressed-ndarrays">
-<h3><a class="toc-backref" href="#id8" role="doc-backlink">Compressed NDArrays</a><a class="headerlink" href="#compressed-ndarrays" title="Permalink to this heading"></a></h3>
+<h3><a class="toc-backref" href="#id8" role="doc-backlink">Compressed NDArrays</a><a class="headerlink" href="#compressed-ndarrays" title="Link to this heading"></a></h3>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">codec.name</span></code> holds the name of the codec that was used to compress the
 data. This plugin currently supports four codecs: “jpeg”, “blosc”, “lz4”, and “bzlz4”.</p></li>
@@ -195,7 +195,7 @@ will be used for decompression.</p></li>
 </section>
 </section>
 <section id="compression">
-<h2><a class="toc-backref" href="#id9" role="doc-backlink">Compression</a><a class="headerlink" href="#compression" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id9" role="doc-backlink">Compression</a><a class="headerlink" href="#compression" title="Link to this heading"></a></h2>
 <p>To compress the data, the Mode parameter must be set to Compress. Also,
 the parameter Compressor must be set to something other than None. After
 the compression is done, the CompFactor parameter will be updated with
@@ -255,13 +255,13 @@ NDPluginDriver’s <code class="docutils literal notranslate"><span class="pre">
 NDPluginPva, and NDFileHDF5 are able to handle compressed NDArrays.</p>
 </section>
 <section id="decompression">
-<h2><a class="toc-backref" href="#id10" role="doc-backlink">Decompression</a><a class="headerlink" href="#decompression" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id10" role="doc-backlink">Decompression</a><a class="headerlink" href="#decompression" title="Link to this heading"></a></h2>
 <p>If Mode is set to Decompress, decompression happens automatically and
 transparently if the codec is supported. No other parameter needs to be
 set for the decompression to work.</p>
 </section>
 <section id="parameters">
-<h2><a class="toc-backref" href="#id11" role="doc-backlink">Parameters</a><a class="headerlink" href="#parameters" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id11" role="doc-backlink">Parameters</a><a class="headerlink" href="#parameters" title="Link to this heading"></a></h2>
 <p>NDPluginCodec inherits from NDPluginDriver. The <a class="reference external" href="../areaDetectorDoxygenHTML/class_n_d_plugin_codec.html">NDPluginCodec class
 documentation</a>
 describes this class in detail.</p>
@@ -405,7 +405,7 @@ Byte Shuffle <br></p></td>
 </table>
 </section>
 <section id="configuration">
-<h2><a class="toc-backref" href="#id12" role="doc-backlink">Configuration</a><a class="headerlink" href="#configuration" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id12" role="doc-backlink">Configuration</a><a class="headerlink" href="#configuration" title="Link to this heading"></a></h2>
 <p>The NDPluginCodec plugin is created with the following command, either
 from C/C++ or from the EPICS IOC shell.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span> <span class="n">NDCodecConfigure</span><span class="p">(</span><span class="n">const</span> <span class="n">char</span> <span class="o">*</span><span class="n">portName</span><span class="p">,</span> <span class="nb">int</span> <span class="n">queueSize</span><span class="p">,</span> <span class="nb">int</span> <span class="n">blockingCallbacks</span><span class="p">,</span>
@@ -422,19 +422,19 @@ and in the documentation for the constructor for the <a class="reference externa
 class</a>.</p>
 </section>
 <section id="screen-shots">
-<h2><a class="toc-backref" href="#id13" role="doc-backlink">Screen shots</a><a class="headerlink" href="#screen-shots" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id13" role="doc-backlink">Screen shots</a><a class="headerlink" href="#screen-shots" title="Link to this heading"></a></h2>
 <p>The following is the MEDM screen that provides access to the parameters
 in NDPluginDriver.h and NDPluginCodec.h through records in
 NDPluginBase.template and NDCodec.template.</p>
 <figure class="align-center" id="id1">
 <img alt="../_images/NDCodec.png" src="../_images/NDCodec.png" />
 <figcaption>
-<p><span class="caption-text">NDCodec.adl</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+<p><span class="caption-text">NDCodec.adl</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 </section>
 <section id="performance">
-<h2><a class="toc-backref" href="#id14" role="doc-backlink">Performance</a><a class="headerlink" href="#performance" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id14" role="doc-backlink">Performance</a><a class="headerlink" href="#performance" title="Link to this heading"></a></h2>
 <p>The following screens show the performance that can be achieved with
 NDPluginCodec. For this test the simDetector driver was generating
 1024x1024 UInt32 arrays at ~1280 arrays/s. These were compressed using
@@ -450,13 +450,13 @@ of ~5.0 GB/s, or about 5 times the capacity of 10 Gbit Ethernet.</p>
 <figure class="align-center" id="id2">
 <img alt="../_images/NDCodec_Performance.png" src="../_images/NDCodec_Performance.png" />
 <figcaption>
-<p><span class="caption-text">NDCodec performance with ~1280 32-bit frames/s</span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
+<p><span class="caption-text">NDCodec performance with ~1280 32-bit frames/s</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <figure class="align-center" id="id3">
 <img alt="../_images/NDCodec_Performance_More.png" src="../_images/NDCodec_Performance_More.png" />
 <figcaption>
-<p><span class="caption-text">NDPluginBaseFull.adl showing that NumThreads was set to 2</span><a class="headerlink" href="#id3" title="Permalink to this image"></a></p>
+<p><span class="caption-text">NDPluginBaseFull.adl showing that NumThreads was set to 2</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 </section>
@@ -474,7 +474,7 @@ of ~5.0 GB/s, or about 5 times the capacity of 10 Gbit Ethernet.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, Mark Rivers.
-      <span class="lastupdated">Last updated on 2023-August-16.
+      <span class="lastupdated">Last updated on 2023-September-21.
       </span></p>
   </div>
 

@@ -9,6 +9,10 @@
     <member refid="struct_a_c_q___p_r_o_p_1a0a5790cc227ce589b16e8b9bbfc010a7" kind="variable"><name>slot_id</name></member>
     <member refid="struct_a_c_q___p_r_o_p_1ac283ad30fda6c25b9ca460f87a9c6124" kind="variable"><name>decode</name></member>
   </compound>
+  <compound refid="structacquire__data" kind="struct"><name>acquire_data</name>
+    <member refid="structacquire__data_1a8363f3243d4661b590a8e4dd717e67bd" kind="variable"><name>driver</name></member>
+    <member refid="structacquire__data_1a089af7232cb58b92b9b1da3267f2d468" kind="variable"><name>receiver</name></member>
+  </compound>
   <compound refid="structacquisition__t" kind="struct"><name>acquisition_t</name>
     <member refid="structacquisition__t_1a4d23a8f6e6a9b69b53712dd9d558ee4f" kind="variable"><name>pattern</name></member>
     <member refid="structacquisition__t_1a58cbc04303c9a75be68b1fb4bc6428c1" kind="variable"><name>sequenceId</name></member>
@@ -163,50 +167,55 @@
   </compound>
   <compound refid="class_a_d_lambda" kind="class"><name>ADLambda</name>
     <member refid="class_a_d_lambda_1a99ce6b087b1085f5feb5adc3f928d74e" kind="variable"><name>driverName</name></member>
-    <member refid="class_a_d_lambda_1a62a9b42cc7d68bb401c7ccf9b1db9354" kind="variable"><name>TWELVE_BIT</name></member>
-    <member refid="class_a_d_lambda_1af2cdfa7f63608726dbbda737ebd8e8d5" kind="variable"><name>TWENTY_FOUR_BIT</name></member>
-    <member refid="class_a_d_lambda_1a1e5b0d1f54459adbeb2b98b2d18d195f" kind="variable"><name>LAMBDA_VersionNumber</name></member>
     <member refid="class_a_d_lambda_1a091601e7cbb0da051fa51e8762d9c79c" kind="variable"><name>LAMBDA_ConfigFilePath</name></member>
+    <member refid="class_a_d_lambda_1a11e4ac5288bcfbdb010cfee9411d9429" kind="variable"><name>LAMBDA_DecoderDetected</name></member>
     <member refid="class_a_d_lambda_1a8b9041616880e03d2b9635409a710269" kind="variable"><name>LAMBDA_EnergyThreshold</name></member>
+    <member refid="class_a_d_lambda_1a8a729aa535960123bacf32414f9a3d1f" kind="variable"><name>LAMBDA_DualThreshold</name></member>
     <member refid="class_a_d_lambda_1a9ee7e6f2d35ae0f3f241c63e2b9dcfc6" kind="variable"><name>LAMBDA_DecodedQueueDepth</name></member>
     <member refid="class_a_d_lambda_1af74f2473a424ea66871a3e5e97e05826" kind="variable"><name>LAMBDA_OperatingMode</name></member>
-    <member refid="class_a_d_lambda_1a4e8ab2f5adfc5f7c1b89aae9d0f91ad5" kind="variable"><name>LAMBDA_DetectorState</name></member>
+    <member refid="class_a_d_lambda_1a5e3b2abf1a3338058afb7fc84337c334" kind="variable"><name>LAMBDA_DualMode</name></member>
+    <member refid="class_a_d_lambda_1ab8822032c5fab5f74284abc288d3a709" kind="variable"><name>LAMBDA_ChargeSumming</name></member>
+    <member refid="class_a_d_lambda_1ace561eb074fb8f6cd685d0e558402887" kind="variable"><name>LAMBDA_GatingEnable</name></member>
     <member refid="class_a_d_lambda_1a1dd37faa49ea724a978d18d96c503137" kind="variable"><name>LAMBDA_BadFrameCounter</name></member>
     <member refid="class_a_d_lambda_1a66fc459ad189fc77f57ae038bd93d9c4" kind="variable"><name>LAMBDA_BadImage</name></member>
-    <member refid="class_a_d_lambda_1ae6760d124a850a7eae6f89e141c4002e" kind="variable"><name>imageThreadKeepAlive</name></member>
-    <member refid="class_a_d_lambda_1a840e025935f143b0081dc6fe0f885ab9" kind="variable"><name>lambdaInstance</name></member>
-    <member refid="class_a_d_lambda_1a7ee002dfba67d3d3983232efaf58779d" kind="variable"><name>acquiredImages</name></member>
-    <member refid="class_a_d_lambda_1aac5d95e4295f36d9b3ab5fde907abcbd" kind="variable"><name>imageHeight</name></member>
-    <member refid="class_a_d_lambda_1af13e34b01770cd68194d2a100c16c3c4" kind="variable"><name>imageWidth</name></member>
-    <member refid="class_a_d_lambda_1a4525be99648dc0023363660fb7c65a35" kind="variable"><name>imageDepth</name></member>
-    <member refid="class_a_d_lambda_1a39f47cc7d818c440dc8db777e5468f27" kind="variable"><name>queueDepth</name></member>
-    <member refid="class_a_d_lambda_1af3b819c12935bfe483857be2977c0c7c" kind="variable"><name>acquiringData</name></member>
-    <member refid="class_a_d_lambda_1aadc5e4b1eaa7357055c72c27c7c2270c" kind="variable"><name>frameNumbersRead</name></member>
-    <member refid="class_a_d_lambda_1ac9727733eb4c04db35558be713ad12e7" kind="variable"><name>totalLossFramesRead</name></member>
-    <member refid="class_a_d_lambda_1ad6d9595aee2004f942250923519b4fa4" kind="variable"><name>latestImageNumberRead</name></member>
-    <member refid="class_a_d_lambda_1a4a6230f7e2b2c53a7dbf45d0efa617c7" kind="variable"><name>imageDims</name></member>
-    <member refid="class_a_d_lambda_1a3eea312736b8bf879d05be0dc658b5ae" kind="variable"><name>configFileName</name></member>
+    <member refid="class_a_d_lambda_1a5fdd23d0275c57719c87cd1d028368df" kind="variable"><name>LAMBDA_ReadoutThreads</name></member>
+    <member refid="class_a_d_lambda_1a400a949137fac7c615f86f612b43a3f7" kind="variable"><name>LAMBDA_StitchedWidth</name></member>
+    <member refid="class_a_d_lambda_1af9096ff1513cb2d064417088ac9ec1b8" kind="variable"><name>LAMBDA_StitchedHeight</name></member>
+    <member refid="class_a_d_lambda_1af5444421fb6399d52ebd1f30bffede0c" kind="variable"><name>connected</name></member>
+    <member refid="class_a_d_lambda_1a2569ddb3fb65eeb3a83628d1d71bfd30" kind="variable"><name>hasDecoder</name></member>
+    <member refid="class_a_d_lambda_1ab85b0476fdca7e13b88838c5278cc931" kind="variable"><name>fake</name></member>
+    <member refid="class_a_d_lambda_1aa547f97fcac96ab0ab74698d6e29002b" kind="variable"><name>sys</name></member>
+    <member refid="class_a_d_lambda_1a8cbe6c5a11c241ff34fd4a83a3414fd9" kind="variable"><name>det</name></member>
+    <member refid="class_a_d_lambda_1ae92bc3da90fddcd8cd3f9a6049a5d745" kind="variable"><name>inputs</name></member>
+    <member refid="class_a_d_lambda_1a5f2b1fa41c7884e268bd262af2e05f3f" kind="variable"><name>frames</name></member>
+    <member refid="class_a_d_lambda_1a03f93f4ae98a04ab227e46fde0058185" kind="variable"><name>export_queue</name></member>
+    <member refid="class_a_d_lambda_1af254350b861bc7cc92ae8dc0fe3342ce" kind="variable"><name>startAcquireEvent</name></member>
+    <member refid="class_a_d_lambda_1a83590c9af33ce991aba31863ca0f2f17" kind="variable"><name>stopAcquireEvent</name></member>
+    <member refid="class_a_d_lambda_1aedeeed6a538b56dfeb24842ee28e3118" kind="variable"><name>threadFinishEvents</name></member>
+    <member refid="class_a_d_lambda_1aabca859dfced6192be2564abe7353342" kind="variable"><name>dequeLock</name></member>
+    <member refid="class_a_d_lambda_1a728bbc2c4713689bb6f4bb22eca0f6d8" kind="variable"><name>configFileName</name></member>
     <member refid="class_a_d_lambda_1a8d1f8dc049e747d35fd163c08c5e348f" kind="variable"><name>pImage</name></member>
-    <member refid="class_a_d_lambda_1a098278e2f0fd96b8641daab993b3a668" kind="variable"><name>imageDataType</name></member>
-    <member refid="class_a_d_lambda_1ab1a44a6a50b8dcf582b58ae393d2655e" kind="function"><name>ADLambda</name></member>
+    <member refid="class_a_d_lambda_1a6950cfc3c8cf305e9847ac99130e1ca6" kind="function"><name>ADLambda</name></member>
     <member refid="class_a_d_lambda_1acb209577ebd621f178458dbfd793cb0f" kind="function"><name>~ADLambda</name></member>
-    <member refid="class_a_d_lambda_1a459f183979d1e78c2a857c40de977479" kind="function"><name>disconnect</name></member>
-    <member refid="class_a_d_lambda_1a31afe8992eae62eaae84f1eb0320c2f2" kind="function"><name>connect</name></member>
-    <member refid="class_a_d_lambda_1a67472e741ac73ebccd943239ae395d51" kind="function"><name>createImageHandlerThread</name></member>
-    <member refid="class_a_d_lambda_1a1bcf450f2a5bcc720a0bb2b3197b799e" kind="function"><name>killImageHandlerThread</name></member>
-    <member refid="class_a_d_lambda_1ae179fd179bfc9444e8888e7d168fc54e" kind="function"><name>getImageDepth</name></member>
-    <member refid="class_a_d_lambda_1ae5aa63a95e460f517d64ffa62c97eef9" kind="function"><name>getDecodedImageShort</name></member>
-    <member refid="class_a_d_lambda_1a121eeb96b9a2ad52ea24b623ea33c530" kind="function"><name>getDecodedImageInt</name></member>
-    <member refid="class_a_d_lambda_1ae29aadbf8ac54bfc37f8d8448b8dce61" kind="function"><name>handleNewImageTask</name></member>
+    <member refid="class_a_d_lambda_1ae161dd8d1d8e25cc72ac617e48fa64e7" kind="function"><name>disconnect</name></member>
+    <member refid="class_a_d_lambda_1a498f06095d84ade1a04c132ff7736463" kind="function"><name>connect</name></member>
+    <member refid="class_a_d_lambda_1a197f8803a5966047bd6a1a52649f0264" kind="function"><name>waitAcquireThread</name></member>
+    <member refid="class_a_d_lambda_1a4e42531e9cc9c44e1b33ba85955d5561" kind="function"><name>tryConnect</name></member>
+    <member refid="class_a_d_lambda_1ad9780aa98434ee9628499147bcaf0c31" kind="function"><name>acquireThread</name></member>
+    <member refid="class_a_d_lambda_1a96a52230e256f120df414261bb9b8420" kind="function"><name>acquireDecoderThread</name></member>
+    <member refid="class_a_d_lambda_1adb8fa00e7c0829d30690a57fcbb6af9f" kind="function"><name>exportThread</name></member>
     <member refid="class_a_d_lambda_1a165f9372f162630f5f916fc1d569afb8" kind="function"><name>report</name></member>
-    <member refid="class_a_d_lambda_1a5ad60a71ffb5de9e6cda4181e39aac8f" kind="function"><name>readInt32</name></member>
-    <member refid="class_a_d_lambda_1ab41cfb41c8f482ea8f0200e5ce690281" kind="function"><name>writeFloat64</name></member>
     <member refid="class_a_d_lambda_1a4f652225af17f8946d97fb89ff347f4b" kind="function"><name>writeInt32</name></member>
-    <member refid="class_a_d_lambda_1a87881a6ec6118093de73ad623206d6d9" kind="function"><name>writeOctet</name></member>
-    <member refid="class_a_d_lambda_1a48ce741b114827effab6b3e92375358c" kind="function"><name>readOctet</name></member>
-    <member refid="class_a_d_lambda_1a361350df5bbcbbd195b0dbe4eed4e821" kind="function"><name>acquireStart</name></member>
-    <member refid="class_a_d_lambda_1a4cb07157c4483418fa3a94a85e120029" kind="function"><name>acquireStop</name></member>
-    <member refid="class_a_d_lambda_1a925e66b7f0dcc609337b7717529fac53" kind="function"><name>initializeDetector</name></member>
+    <member refid="class_a_d_lambda_1ad3c6e9e846e35a759617d08dac01ee9e" kind="function"><name>setSizes</name></member>
+    <member refid="class_a_d_lambda_1ae1d4e7a47f0ad79f32e1037c3ffb172a" kind="function"><name>incrementValue</name></member>
+    <member refid="class_a_d_lambda_1aaf90ce33d5860a9fb46da757f066ee39" kind="function"><name>decrementValue</name></member>
+    <member refid="class_a_d_lambda_1acd56c5e23cc00202f7dc6f81d950533c" kind="function"><name>readParameters</name></member>
+    <member refid="class_a_d_lambda_1af3af26862045e906ca8da6f2ab460a23" kind="function"><name>sendParameters</name></member>
+    <member refid="class_a_d_lambda_1a627cb8886f77455ec89be3ce7da2c556" kind="function"><name>writeDepth</name></member>
+    <member refid="class_a_d_lambda_1a7d07e1cc6b3fbb714ea80fb0ca49ea15" kind="function"><name>tryStartAcquire</name></member>
+    <member refid="class_a_d_lambda_1a074ec1e71f3c09488445d6ba940fab6b" kind="function"><name>tryStopAcquire</name></member>
+    <member refid="class_a_d_lambda_1aeb1078ba9fb127593f2bc57b9a9bf1e0" kind="function"><name>spawnAcquireThread</name></member>
+    <member refid="class_a_d_lambda_1a88835f28fc17c69c4e8e2ee6dcdb8612" kind="function"><name>spawnAcquireDecoderThread</name></member>
   </compound>
   <compound refid="class_a_dn_e_d" kind="class"><name>ADnED</name>
     <member refid="class_a_dn_e_d_1a9365b6b778734e234aadcbd47b7c7bbb" kind="variable"><name>s_ADNED_MAX_STRING_SIZE</name></member>
@@ -6361,8 +6370,6 @@
   <compound refid="namespace_a_v_t_1_1_vmb_a_p_i_1_1_examples" kind="namespace"><name>AVT::VmbAPI::Examples</name>
     <member refid="namespace_a_v_t_1_1_vmb_a_p_i_1_1_examples_1a856928f3059662eafee6a2f70a1c5544" kind="function"><name>PrintCameraInfo</name></member>
   </compound>
-  <compound refid="namespace_det_common_n_s" kind="namespace"><name>DetCommonNS</name>
-  </compound>
   <compound refid="namespaceepics" kind="namespace"><name>epics</name>
   </compound>
   <compound refid="namespaceepics_1_1nt" kind="namespace"><name>epics::nt</name>
@@ -9265,29 +9272,39 @@
     <member refid="_a_d_lambda_8cpp_1a55b392db05d803f946291ae077b15410" kind="variable"><name>LambdaConfigArg1</name></member>
     <member refid="_a_d_lambda_8cpp_1ad323993a2cb008f6a4341aa87f99f8ff" kind="variable"><name>LambdaConfigArg2</name></member>
     <member refid="_a_d_lambda_8cpp_1a1c046374bea42d7fc128214c4e961949" kind="variable"><name>LambdaConfigArg3</name></member>
-    <member refid="_a_d_lambda_8cpp_1ace0644ebc91fe0c2efdb5e7c5296f1cf" kind="variable"><name>LambdaConfigArg4</name></member>
-    <member refid="_a_d_lambda_8cpp_1a94f0e1b106f4659a179ac4d653e2ea2d" kind="variable"><name>LambdaConfigArg5</name></member>
     <member refid="_a_d_lambda_8cpp_1ab104fc644a8aedf25b31133d40ef81f1" kind="variable"><name>LambdaConfigArgs</name></member>
     <member refid="_a_d_lambda_8cpp_1a04fb60d4f3df370ae6f4382ea9b800f1" kind="variable"><name>configLambda</name></member>
-    <member refid="_a_d_lambda_8cpp_1acf0334dc2b89161b0fbfafed179a95fe" kind="function"><name>lambdaHandleNewImageTaskC</name></member>
-    <member refid="_a_d_lambda_8cpp_1a401cf6635ca83f9d3095b091aa15bad1" kind="function"><name>LambdaConfig</name></member>
-    <member refid="_a_d_lambda_8cpp_1a4c5f905a072b4f954415995f2d3643ef" kind="function"><name>exitCallbackC</name></member>
+    <member refid="_a_d_lambda_8cpp_1a2a3647f08e4d9eb085954f3e8189702f" kind="function"><name>acquire_thread_callback</name></member>
+    <member refid="_a_d_lambda_8cpp_1a3282f05f98a752b05a3f787355a5cdc5" kind="function"><name>export_thread_callback</name></member>
+    <member refid="_a_d_lambda_8cpp_1adea644fb609fc71327dbe4f519b0cee8" kind="function"><name>receiver_acquire_callback</name></member>
+    <member refid="_a_d_lambda_8cpp_1a072dbcac86e6f91ffc8db2e836d72c66" kind="function"><name>LambdaConfig</name></member>
     <member refid="_a_d_lambda_8cpp_1ad63d6195ea7a5e6f07f7775cd5854873" kind="function"><name>configLambdaCallFunc</name></member>
     <member refid="_a_d_lambda_8cpp_1a91551e7602eb0ae46b72b5c90829238b" kind="function"><name>LambdaRegister</name></member>
     <member refid="_a_d_lambda_8cpp_1a40edeb3aa9c5e65e404ad831697624f4" kind="function"><name>epicsExportRegistrar</name></member>
   </compound>
   <compound refid="_a_d_lambda_8h" kind="file"><name>ADLambda.h</name>
     <member refid="_a_d_lambda_8h_1a169761aa7b605c18bd81fdd1f66f3bf1" kind="define"><name>LAMBDA_FIRST_PARAM</name></member>
-    <member refid="_a_d_lambda_8h_1ac8c438df4d1b49a6cace598016e5beb3" kind="define"><name>LAMBDA_LAST_PARAM</name></member>
-    <member refid="_a_d_lambda_8h_1a249813cb80dcc9a8f9fefc63f32c82ef" kind="define"><name>LAMBDA_VersionNumberString</name></member>
     <member refid="_a_d_lambda_8h_1a77d39053bd494399ef6a7ff02bfbfcc9" kind="define"><name>LAMBDA_ConfigFilePathString</name></member>
+    <member refid="_a_d_lambda_8h_1af698cdbc559bf7e8a3b073a15933ba47" kind="define"><name>LAMBDA_DecoderDetectedString</name></member>
     <member refid="_a_d_lambda_8h_1a724a7b024258f05c8cd992148964fa9b" kind="define"><name>LAMBDA_EnergyThresholdString</name></member>
+    <member refid="_a_d_lambda_8h_1a1d752782b8fad29eec0a02ea6af7b7c9" kind="define"><name>LAMBDA_DualThresholdString</name></member>
     <member refid="_a_d_lambda_8h_1a9dbb0b6e3d59043b39b28a3e3b0c9aaa" kind="define"><name>LAMBDA_DecodedQueueDepthString</name></member>
     <member refid="_a_d_lambda_8h_1ab2e63546bdbaa47ff2e9eb9ef3b785d5" kind="define"><name>LAMBDA_OperatingModeString</name></member>
-    <member refid="_a_d_lambda_8h_1aa1565498ba6aa98241e2793c6cf56e37" kind="define"><name>LAMBDA_DetectorStateString</name></member>
+    <member refid="_a_d_lambda_8h_1a150daddc3b63ca239350f97370a2661f" kind="define"><name>LAMBDA_DualModeString</name></member>
+    <member refid="_a_d_lambda_8h_1a1d1d956489167e543327d0ccf658e5d9" kind="define"><name>LAMBDA_ChargeSummingString</name></member>
+    <member refid="_a_d_lambda_8h_1a3e68fd57ff1249a3c6f4c1528704c32b" kind="define"><name>LAMBDA_GatingEnableString</name></member>
     <member refid="_a_d_lambda_8h_1a54c22f0f88cf62fde8db863cb816e9b1" kind="define"><name>LAMBDA_BadFrameCounterString</name></member>
     <member refid="_a_d_lambda_8h_1a01bdd6423c1bec810548fac8b5479fe5" kind="define"><name>LAMBDA_BadImageString</name></member>
-    <member refid="_a_d_lambda_8h_1a68c8737c0d52bb3818d62d93bbf706a5" kind="define"><name>NUM_LAMBDA_PARAMS</name></member>
+    <member refid="_a_d_lambda_8h_1ae93d12c4bf1aaaf8dcbb5b1935fa315c" kind="define"><name>LAMBDA_ReadoutThreadsString</name></member>
+    <member refid="_a_d_lambda_8h_1a634d0ebd99d6042cd673494f4db0809d" kind="define"><name>LAMBDA_StitchWidthString</name></member>
+    <member refid="_a_d_lambda_8h_1ab08cc5e4d5b3d79d868665a4b5beb196" kind="define"><name>LAMBDA_StitchHeightString</name></member>
+    <member refid="_a_d_lambda_8h_1a8f74045056811164fadc69864af063e3" kind="typedef"><name>lambda_input</name></member>
+    <member refid="_a_d_lambda_8h_1a31514a9ded1fdc28fda28361a89c4ef9" kind="variable"><name>ONE_BIT</name></member>
+    <member refid="_a_d_lambda_8h_1ae328e2696fed337822f4ce094f959b74" kind="variable"><name>SIX_BIT</name></member>
+    <member refid="_a_d_lambda_8h_1af346fdefd542c8c36dc8b83bb099c21f" kind="variable"><name>TWELVE_BIT</name></member>
+    <member refid="_a_d_lambda_8h_1ada775cb137d28516ca96e990932545d8" kind="variable"><name>TWENTY_FOUR_BIT</name></member>
+    <member refid="_a_d_lambda_8h_1a982f82def3142c7995baec185f54bf4f" kind="variable"><name>ONE_BILLION</name></member>
+    <member refid="_a_d_lambda_8h_1a8238331f6ef31220593dd74611d28972" kind="variable"><name>SHORT_TIME</name></member>
   </compound>
   <compound refid="_l_f_test1_8cpp" kind="file"><name>LFTest1.cpp</name>
     <member refid="_l_f_test1_8cpp_1a6b76d01859ec85807c5cf61bd6a32a3e" kind="variable"><name>acquisitionComplete</name></member>

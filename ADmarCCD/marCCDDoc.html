@@ -11,11 +11,11 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -138,7 +138,7 @@
            <div itemprop="articleBody">
              
   <section id="admarccd">
-<h1><a class="toc-backref" href="#id1" role="doc-backlink">ADmarCCD</a><a class="headerlink" href="#admarccd" title="Permalink to this heading"></a></h1>
+<h1><a class="toc-backref" href="#id1" role="doc-backlink">ADmarCCD</a><a class="headerlink" href="#admarccd" title="Link to this heading"></a></h1>
 <dl class="field-list simple">
 <dt class="field-odd">author<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Mark Rivers, University of Chicago</p>
@@ -163,7 +163,7 @@
 </ul>
 </nav>
 <section id="overview">
-<h2><a class="toc-backref" href="#id2" role="doc-backlink">Overview</a><a class="headerlink" href="#overview" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id2" role="doc-backlink">Overview</a><a class="headerlink" href="#overview" title="Link to this heading"></a></h2>
 <p>This is an <a class="reference internal" href="../index.html"><span class="doc">areaDetector</span></a> driver for <a class="reference external" href="https://www.mar-usa.com">Rayonix</a> marCCD detectors.</p>
 <p>The interface to the detector is via a TCP/IP socket interface to the
 <code class="docutils literal notranslate"><span class="pre">marccd\_server\_socket</span></code> server that Rayonix provides. The
@@ -205,7 +205,7 @@ documentation</a>
 describes this class in detail.</p>
 </section>
 <section id="implementation-of-standard-driver-parameters">
-<h2><a class="toc-backref" href="#id3" role="doc-backlink">Implementation of standard driver parameters</a><a class="headerlink" href="#implementation-of-standard-driver-parameters" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">Implementation of standard driver parameters</a><a class="headerlink" href="#implementation-of-standard-driver-parameters" title="Link to this heading"></a></h2>
 <p>The following table describes how the MarCCD driver implements some of
 the standard driver parameters.</p>
 <table class="table-bordered table-striped table-hover docutils align-default">
@@ -294,7 +294,7 @@ detector. The MaxValue_RBV PV can be monitored to make sure that the
 16-bit limit of 65,535 is not being approached in any pixel.</p>
 </section>
 <section id="marccd-specific-parameters">
-<h2><a class="toc-backref" href="#id4" role="doc-backlink">MarCCD specific parameters</a><a class="headerlink" href="#marccd-specific-parameters" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">MarCCD specific parameters</a><a class="headerlink" href="#marccd-specific-parameters" title="Link to this heading"></a></h2>
 <p>The MarCCD driver implements the following parameters in addition to
 those in asynNDArrayDriver.h and ADDriver.h. Note that to reduce the
 width of this table the parameter index variable names have been split
@@ -558,7 +558,7 @@ any configuration file that gets loaded can be used.</p></td>
 </table>
 </section>
 <section id="unsupported-standard-driver-parameters">
-<h2><a class="toc-backref" href="#id5" role="doc-backlink">Unsupported standard driver parameters</a><a class="headerlink" href="#unsupported-standard-driver-parameters" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id5" role="doc-backlink">Unsupported standard driver parameters</a><a class="headerlink" href="#unsupported-standard-driver-parameters" title="Link to this heading"></a></h2>
 <p>The MarCCD driver does not support the following standard driver
 parameters because they are not supported in the marccd program:</p>
 <ul class="simple">
@@ -573,7 +573,7 @@ NDNumCapture, NDNumCaptured)</p></li>
 </ul>
 </section>
 <section id="configuration">
-<h2><a class="toc-backref" href="#id6" role="doc-backlink">Configuration</a><a class="headerlink" href="#configuration" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id6" role="doc-backlink">Configuration</a><a class="headerlink" href="#configuration" title="Link to this heading"></a></h2>
 <p>The marCCD driver is created with the marCCDConfig command, either from
 C/C++ or from the EPICS IOC shell.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span> <span class="n">marCCDConfig</span><span class="p">(</span><span class="n">const</span> <span class="n">char</span> <span class="o">*</span><span class="n">portName</span><span class="p">,</span> <span class="n">const</span> <span class="n">char</span> <span class="o">*</span><span class="n">serverPort</span><span class="p">,</span>
@@ -588,7 +588,7 @@ in the documentation for the constructor for the
 <a class="reference external" href="../areaDetectorDoxygenHTML/classmar_c_c_d.html">marCCD class</a>.</p>
 </section>
 <section id="example-st-cmd-startup-file">
-<h2><a class="toc-backref" href="#id7" role="doc-backlink">Example st.cmd startup file</a><a class="headerlink" href="#example-st-cmd-startup-file" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id7" role="doc-backlink">Example st.cmd startup file</a><a class="headerlink" href="#example-st-cmd-startup-file" title="Link to this heading"></a></h2>
 <div class="toctree-wrapper compound">
 </div>
 <p>There is an example IOC boot directory and startup script
@@ -596,7 +596,7 @@ in the documentation for the constructor for the
 areaDetector.</p>
 </section>
 <section id="medm-screens">
-<h2><a class="toc-backref" href="#id8" role="doc-backlink">MEDM screens</a><a class="headerlink" href="#medm-screens" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id8" role="doc-backlink">MEDM screens</a><a class="headerlink" href="#medm-screens" title="Link to this heading"></a></h2>
 <p>The following show the MEDM screens that are used to control the MarCCD
 detector. Note that the general purpose screen ADBase.adl can be used,
 but it exposes many controls that are not applicable to the MarCCD, and
@@ -624,7 +624,7 @@ asynRecord.adl above.</p>
 </figure>
 </section>
 <section id="performance-measurements">
-<h2><a class="toc-backref" href="#id9" role="doc-backlink">Performance measurements</a><a class="headerlink" href="#performance-measurements" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id9" role="doc-backlink">Performance measurements</a><a class="headerlink" href="#performance-measurements" title="Link to this heading"></a></h2>
 <p>The following measurements were done to demonstrate the performance that
 can be obtained with the areaDetector MarCCD driver. These measurements
 were made with a MAR-165 CCD. The EPICS IOC was running on the same
@@ -692,7 +692,7 @@ Linux machine as the marccd program. The acquisition time was 1 second.</p>
 </table>
 </section>
 <section id="restrictions">
-<h2><a class="toc-backref" href="#id10" role="doc-backlink">Restrictions</a><a class="headerlink" href="#restrictions" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id10" role="doc-backlink">Restrictions</a><a class="headerlink" href="#restrictions" title="Link to this heading"></a></h2>
 <p>The following are some current restrictions of the MarCCD driver:</p>
 <ul class="simple">
 <li><p>The marccd program can save files in many different formats, with
@@ -744,7 +744,7 @@ marccd_socket_server status to see when a task has completed.</p></li>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, Mark Rivers.
-      <span class="lastupdated">Last updated on 2023-August-16.
+      <span class="lastupdated">Last updated on 2023-September-21.
       </span></p>
   </div>
 

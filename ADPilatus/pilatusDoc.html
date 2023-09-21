@@ -11,11 +11,11 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -139,7 +139,7 @@
            <div itemprop="articleBody">
              
   <section id="adpilatus">
-<h1><a class="toc-backref" href="#id2" role="doc-backlink">ADPilatus</a><a class="headerlink" href="#adpilatus" title="Permalink to this heading"></a></h1>
+<h1><a class="toc-backref" href="#id2" role="doc-backlink">ADPilatus</a><a class="headerlink" href="#adpilatus" title="Link to this heading"></a></h1>
 <dl class="field-list simple">
 <dt class="field-odd">author<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Mark Rivers (University of Chicago), John Hammonds, Brian Tieman (Argonne National Laboratory)</p>
@@ -170,7 +170,7 @@
 </ul>
 </nav>
 <section id="introduction">
-<h2><a class="toc-backref" href="#id3" role="doc-backlink">Introduction</a><a class="headerlink" href="#introduction" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">Introduction</a><a class="headerlink" href="#introduction" title="Link to this heading"></a></h2>
 <p>This is an <a class="reference internal" href="../index.html"><span class="doc">areaDetector</span></a> driver for the Pilatus pixel array
 detectors from <a class="reference external" href="http://www.dectris.com">Dectris</a>.</p>
 <p>The interface to the detector is via a TCP/IP socket interface to the
@@ -202,7 +202,7 @@ documentation</a>
 describes this class in detail.</p>
 </section>
 <section id="implementation-of-standard-driver-parameters">
-<h2><a class="toc-backref" href="#id4" role="doc-backlink">Implementation of standard driver parameters</a><a class="headerlink" href="#implementation-of-standard-driver-parameters" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">Implementation of standard driver parameters</a><a class="headerlink" href="#implementation-of-standard-driver-parameters" title="Link to this heading"></a></h2>
 <p>The following table describes how the Pilatus driver implements some of
 the standard driver parameters.</p>
 <table class="table-bordered table-striped table-hover docutils align-default">
@@ -291,7 +291,7 @@ monitored to make sure that the 20-bit limit of 1,048,575 is not being
 approached in any pixel.</p>
 </section>
 <section id="pilatus-specific-parameters">
-<h2><a class="toc-backref" href="#id5" role="doc-backlink">Pilatus specific parameters</a><a class="headerlink" href="#pilatus-specific-parameters" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id5" role="doc-backlink">Pilatus specific parameters</a><a class="headerlink" href="#pilatus-specific-parameters" title="Link to this heading"></a></h2>
 <p>The Pilatus driver implements the following parameters in addition to
 those in asynNDArrayDriver.h and ADDriver.h:. Note that to reduce the
 width of this table the parameter index variable names have been split
@@ -642,7 +642,7 @@ because the driver will automatically reconnect.</p></td>
 </table>
 </section>
 <section id="configuration">
-<h2><a class="toc-backref" href="#id6" role="doc-backlink">Configuration</a><a class="headerlink" href="#configuration" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id6" role="doc-backlink">Configuration</a><a class="headerlink" href="#configuration" title="Link to this heading"></a></h2>
 <p>The pilatusDetector driver is created with the pilatusDetectorConfig
 command, either from C/C++ or from the EPICS IOC shell.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span> <span class="n">pilatusDetectorConfig</span><span class="p">(</span><span class="n">const</span> <span class="n">char</span> <span class="o">*</span><span class="n">portName</span><span class="p">,</span> <span class="n">const</span> <span class="n">char</span> <span class="o">*</span><span class="n">camserverPort</span><span class="p">,</span>
@@ -653,12 +653,12 @@ command, either from C/C++ or from the EPICS IOC shell.</p>
 </div>
 <p>For details on the meaning of the parameters to this function refer to
 the detailed documentation on the pilatusDetectorConfig function in the
-<a class="reference external" href="areaDetectorDoxygenHTML/pilatus_detector_8cpp.html">pilatusDetector.cpp documentation</a>
+<a class="reference external" href="../areaDetectorDoxygenHTML/pilatus_detector_8cpp.html">pilatusDetector.cpp documentation</a>
 and in the documentation for the constructor for the
-<a class="reference external" href="areaDetectorDoxygenHTML/classpilatus_detector.html">pilatusDetector class</a>.</p>
+<a class="reference external" href="../areaDetectorDoxygenHTML/classpilatus_detector.html">pilatusDetector class</a>.</p>
 </section>
 <section id="example-st-cmd-startup-file">
-<h2><a class="toc-backref" href="#id7" role="doc-backlink">Example st.cmd startup file</a><a class="headerlink" href="#example-st-cmd-startup-file" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id7" role="doc-backlink">Example st.cmd startup file</a><a class="headerlink" href="#example-st-cmd-startup-file" title="Link to this heading"></a></h2>
 <p>The following startup script is provided with ADPilatus.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&lt; envPaths
 errlogInit(20000)
@@ -716,7 +716,7 @@ create_monitor_set(&quot;auto_settings.req&quot;, 30,&quot;P=$(PREFIX)&quot;)
 </div>
 </section>
 <section id="medm-screens">
-<span id="id1"></span><h2><a class="toc-backref" href="#id8" role="doc-backlink">MEDM screens</a><a class="headerlink" href="#medm-screens" title="Permalink to this heading"></a></h2>
+<span id="id1"></span><h2><a class="toc-backref" href="#id8" role="doc-backlink">MEDM screens</a><a class="headerlink" href="#medm-screens" title="Link to this heading"></a></h2>
 <p>The following show the MEDM screens that are used to control the Pilatus
 detector. Note that the general purpose screen ADBase.adl can be used,
 but it exposes many controls that are not applicable to the Pilatus.</p>
@@ -785,7 +785,7 @@ asynRecord.adl above.</p>
 </figure>
 </section>
 <section id="spec-interface">
-<h2><a class="toc-backref" href="#id9" role="doc-backlink">SPEC interface</a><a class="headerlink" href="#spec-interface" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id9" role="doc-backlink">SPEC interface</a><a class="headerlink" href="#spec-interface" title="Link to this heading"></a></h2>
 <p>At the GSECARS beamlines (13-ID-C and 13-BM-C) at the APS we use SPEC to
 control our Newport diffractometers. We have added and modified SPEC
 macros to use the pilatusDetector areaDetector driver to treat the
@@ -925,7 +925,7 @@ can supply the source files on request.:</p>
 </div>
 </section>
 <section id="performance-measurements">
-<h2><a class="toc-backref" href="#id10" role="doc-backlink">Performance measurements</a><a class="headerlink" href="#performance-measurements" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id10" role="doc-backlink">Performance measurements</a><a class="headerlink" href="#performance-measurements" title="Link to this heading"></a></h2>
 <p>The following measurements were done to demonstrate the performance that
 can be obtained with the areaDetector Pilatus driver.</p>
 <ol class="arabic">
@@ -995,9 +995,9 @@ thus more than 50 times faster to execute the identical SPEC scan.</p>
 </ol>
 </section>
 <section id="hardware-notes">
-<h2><a class="toc-backref" href="#id11" role="doc-backlink">Hardware notes</a><a class="headerlink" href="#hardware-notes" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id11" role="doc-backlink">Hardware notes</a><a class="headerlink" href="#hardware-notes" title="Link to this heading"></a></h2>
 <section id="trigger-pulses">
-<h3><a class="toc-backref" href="#id12" role="doc-backlink">Trigger pulses</a><a class="headerlink" href="#trigger-pulses" title="Permalink to this heading"></a></h3>
+<h3><a class="toc-backref" href="#id12" role="doc-backlink">Trigger pulses</a><a class="headerlink" href="#trigger-pulses" title="Link to this heading"></a></h3>
 <p>The Pilatus supports 3 types of external triggering. In External Trigger
 mode (the camserver ExtTrigger command) the Pilatus uses the programmed
 values of AcquireTime, AcquirePeriod, NImages and NExposures. It waits
@@ -1059,7 +1059,7 @@ the Pilatus.</p></li>
 for about $350 new at <a class="reference external" href="http://www.newark.com">Newark</a>.</p>
 </section>
 <section id="detector-voltage">
-<h3><a class="toc-backref" href="#id13" role="doc-backlink">Detector Voltage</a><a class="headerlink" href="#detector-voltage" title="Permalink to this heading"></a></h3>
+<h3><a class="toc-backref" href="#id13" role="doc-backlink">Detector Voltage</a><a class="headerlink" href="#detector-voltage" title="Link to this heading"></a></h3>
 <p>When we were initially testing the Pilatus in the lab, we had many
 errors in External Enable mode, where it did not seem to be seeing the
 external pulses. camserver would get DMA timeouts, and need to be
@@ -1077,7 +1077,7 @@ issue.</p>
 </section>
 </section>
 <section id="restrictions">
-<h2><a class="toc-backref" href="#id14" role="doc-backlink">Restrictions</a><a class="headerlink" href="#restrictions" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id14" role="doc-backlink">Restrictions</a><a class="headerlink" href="#restrictions" title="Link to this heading"></a></h2>
 <p>The following are some current restrictions of the areaDetector Pilatus
 driver:</p>
 <ul class="simple">
@@ -1147,7 +1147,7 @@ the image file exists or if it is the expected size.</p></li>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, Mark Rivers.
-      <span class="lastupdated">Last updated on 2023-August-16.
+      <span class="lastupdated">Last updated on 2023-September-21.
       </span></p>
   </div>
 

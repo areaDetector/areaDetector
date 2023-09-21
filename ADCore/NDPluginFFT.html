@@ -11,11 +11,11 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -128,7 +128,7 @@
            <div itemprop="articleBody">
              
   <section id="ndpluginfft">
-<h1><a class="toc-backref" href="#id12" role="doc-backlink">NDPluginFFT</a><a class="headerlink" href="#ndpluginfft" title="Permalink to this heading"></a></h1>
+<h1><a class="toc-backref" href="#id12" role="doc-backlink">NDPluginFFT</a><a class="headerlink" href="#ndpluginfft" title="Link to this heading"></a></h1>
 <dl class="field-list simple">
 <dt class="field-odd">author<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Mark Rivers, University of Chicago</p>
@@ -147,7 +147,7 @@
 </ul>
 </nav>
 <section id="overview">
-<h2><a class="toc-backref" href="#id13" role="doc-backlink">Overview</a><a class="headerlink" href="#overview" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id13" role="doc-backlink">Overview</a><a class="headerlink" href="#overview" title="Link to this heading"></a></h2>
 <p>This plugin computes 1-D or 2-D Fast Fourier Transforms (FFTs). It
 exports 1-D or 2-D NDArrays containing the absolute value of the FFT. It
 creates 1-D waveform records of the input, and the real, imaginary, and
@@ -355,7 +355,7 @@ first row of the FFT.</p></td>
 </table>
 </section>
 <section id="configuration">
-<h2><a class="toc-backref" href="#id14" role="doc-backlink">Configuration</a><a class="headerlink" href="#configuration" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id14" role="doc-backlink">Configuration</a><a class="headerlink" href="#configuration" title="Link to this heading"></a></h2>
 <p>The NDPluginFFT plugin is created with the NDFFTConfigure function,
 either from C/C++ or from the EPICS IOC shell.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">NDFFTConfigure</span><span class="p">(</span><span class="n">const</span> <span class="n">char</span> <span class="o">*</span><span class="n">portName</span><span class="p">,</span> <span class="nb">int</span> <span class="n">queueSize</span><span class="p">,</span> <span class="nb">int</span> <span class="n">blockingCallbacks</span><span class="p">,</span>
@@ -370,7 +370,7 @@ either from C/C++ or from the EPICS IOC shell.</p>
 </div>
 </section>
 <section id="screen-shots">
-<h2><a class="toc-backref" href="#id15" role="doc-backlink">Screen shots</a><a class="headerlink" href="#screen-shots" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id15" role="doc-backlink">Screen shots</a><a class="headerlink" href="#screen-shots" title="Link to this heading"></a></h2>
 <p>The following MEDM screen provides access to the parameters in
 <code class="docutils literal notranslate"><span class="pre">NDPluginDriver.h</span></code> and <code class="docutils literal notranslate"><span class="pre">NDPluginFFT.h</span></code> through records in
 <code class="docutils literal notranslate"><span class="pre">NDPluginBase.template</span></code>, and <code class="docutils literal notranslate"><span class="pre">NDTimeSeries.template</span></code>.</p>
@@ -384,21 +384,21 @@ time-series are produced using the ADCSimDetector driver in ADExample.</p>
 <figure class="align-center" id="id1">
 <img alt="../_images/NDFFTTimeSeriesPlot.png" src="../_images/NDFFTTimeSeriesPlot.png" />
 <figcaption>
-<p><span class="caption-text">Time-series plot. This is the Sawtooth waveform with 10 Hz frequency.</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+<p><span class="caption-text">Time-series plot. This is the Sawtooth waveform with 10 Hz frequency.</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <figure class="align-center" id="id2">
 <img alt="../_images/NDFFTPlotAbsValue.png" src="../_images/NDFFTPlotAbsValue.png" />
 <figcaption>
 <p><span class="caption-text">Absolute value of FFT. Note that the FFT of a sawtooth has
-the 10 Hz fundamental frequency plus all even and odd harmonics.</span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
+the 10 Hz fundamental frequency plus all even and odd harmonics.</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <figure class="align-center" id="id3">
 <img alt="../_images/NDFFTTimeSeriesPlotNoisy.png" src="../_images/NDFFTTimeSeriesPlotNoisy.png" />
 <figcaption>
 <p><span class="caption-text">Time-series plot. This is the Sawtooth waveform with 10 Hz
-frequency with addition of noise.</span><a class="headerlink" href="#id3" title="Permalink to this image"></a></p>
+frequency with addition of noise.</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <figure class="align-center" id="id4">
@@ -406,7 +406,7 @@ frequency with addition of noise.</span><a class="headerlink" href="#id3" title=
 <figcaption>
 <p><span class="caption-text">Absolute value of FFT of noisy waveform above with
 <code class="docutils literal notranslate"><span class="pre">NumAverage=1</span></code> (no averaging). Only the first peak in the power
-spectrum is clearly visible.</span><a class="headerlink" href="#id4" title="Permalink to this image"></a></p>
+spectrum is clearly visible.</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <figure class="align-center" id="id5">
@@ -414,7 +414,7 @@ spectrum is clearly visible.</span><a class="headerlink" href="#id4" title="Perm
 <figcaption>
 <p><span class="caption-text">Absolute value of FFT of noisy waveform above with
 NumAverage=100. The first 7 peaks in the power spectrum are now
-clearly visible.</span><a class="headerlink" href="#id5" title="Permalink to this image"></a></p>
+clearly visible.</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <figure class="align-center" id="id6">
@@ -422,7 +422,7 @@ clearly visible.</span><a class="headerlink" href="#id5" title="Permalink to thi
 <figcaption>
 <p><span class="caption-text">Combined plot with time-series, FFT absolute value, FFT
 real, and FFT imaginary. This is the sin(x)*cos(x) waveform, with the
-sine frequency=20 Hz and the cosine frequency=1 Hz.</span><a class="headerlink" href="#id6" title="Permalink to this image"></a></p>
+sine frequency=20 Hz and the cosine frequency=1 Hz.</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p>The following MEDM screens show the real-space images and 2-D FFT plots
@@ -433,33 +433,33 @@ settings show in the screen shot below.</p>
 <img alt="../_images/NDFFTSimDetectorSetup.png" src="../_images/NDFFTSimDetectorSetup.png" />
 <figcaption>
 <p><span class="caption-text">Setup screen for the simDetector driver showing the values
-that were used to generate the images and FFTs shown below.</span><a class="headerlink" href="#id7" title="Permalink to this image"></a></p>
+that were used to generate the images and FFTs shown below.</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <figure class="align-center" id="id8">
 <img alt="../_images/NDFFTPeaksImage.png" src="../_images/NDFFTPeaksImage.png" />
 <figcaption>
 <p><span class="caption-text">Real space image. This is generated using the Peaks mode in
-the simDetector driver.</span><a class="headerlink" href="#id8" title="Permalink to this image"></a></p>
+the simDetector driver.</span><a class="headerlink" href="#id8" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <figure class="align-center" id="id9">
 <img alt="../_images/NDFFTPeaksAbsVal.png" src="../_images/NDFFTPeaksAbsVal.png" />
 <figcaption>
-<p><span class="caption-text">2-D FFT absolute value of the above image.</span><a class="headerlink" href="#id9" title="Permalink to this image"></a></p>
+<p><span class="caption-text">2-D FFT absolute value of the above image.</span><a class="headerlink" href="#id9" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <figure class="align-center" id="id10">
 <img alt="../_images/NDFFTSineImage.png" src="../_images/NDFFTSineImage.png" />
 <figcaption>
 <p><span class="caption-text">Real space image. This is generated using the Sine mode in
-the simDetector driver.</span><a class="headerlink" href="#id10" title="Permalink to this image"></a></p>
+the simDetector driver.</span><a class="headerlink" href="#id10" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <figure class="align-center" id="id11">
 <img alt="../_images/NDFFTSineAbsVal.png" src="../_images/NDFFTSineAbsVal.png" />
 <figcaption>
-<p><span class="caption-text">2-D FFT absolute value of the above image.</span><a class="headerlink" href="#id11" title="Permalink to this image"></a></p>
+<p><span class="caption-text">2-D FFT absolute value of the above image.</span><a class="headerlink" href="#id11" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p>Note in the above image that the two X freqencies are 2 and 50 Hz, which
@@ -487,7 +487,7 @@ then used to view the EPICS waveform record from the NDStdArrays plugin.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, Mark Rivers.
-      <span class="lastupdated">Last updated on 2023-August-16.
+      <span class="lastupdated">Last updated on 2023-September-21.
       </span></p>
   </div>
 

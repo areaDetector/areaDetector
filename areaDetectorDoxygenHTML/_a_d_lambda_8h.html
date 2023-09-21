@@ -46,13 +46,18 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
-<a href="#namespaces">Namespaces</a> &#124;
-<a href="#define-members">Macros</a>  </div>
+<a href="#define-members">Macros</a> &#124;
+<a href="#typedef-members">Typedefs</a>  </div>
   <div class="headertitle">
 <div class="title">ADLambda.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;epicsString.h&gt;</code><br />
+<div class="textblock"><code>#include &lt;libxsp.h&gt;</code><br />
+<code>#include &lt;string&gt;</code><br />
+<code>#include &lt;map&gt;</code><br />
+<code>#include &lt;deque&gt;</code><br />
+<code>#include &lt;variant&gt;</code><br />
+<code>#include &lt;epicsString.h&gt;</code><br />
 <code>#include &lt;epicsEvent.h&gt;</code><br />
 <code>#include &lt;epicsThread.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="_a_d_driver_8h_source.html">ADDriver.h</a>&quot;</code><br />
@@ -64,37 +69,46 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_d_lambda.html">ADLambda</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class to wrap Lambda detector library provided by X-Spectrum.  <a href="class_a_d_lambda.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
-Namespaces</h2></td></tr>
-<tr class="memitem:namespace_det_common_n_s"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_det_common_n_s.html">DetCommonNS</a></td></tr>
-<tr class="memdesc:namespace_det_common_n_s"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copyright (c) 2015, UChicago Argonne, LLC See LICENSE file. <br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structacquire__data.html">acquire_data</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a169761aa7b605c18bd81fdd1f66f3bf1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_d_lambda_8h.html#a169761aa7b605c18bd81fdd1f66f3bf1">LAMBDA_FIRST_PARAM</a>&#160;&#160;&#160;LAMBDA_VersionNumber</td></tr>
+<tr class="memitem:a169761aa7b605c18bd81fdd1f66f3bf1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_d_lambda_8h.html#a169761aa7b605c18bd81fdd1f66f3bf1">LAMBDA_FIRST_PARAM</a>&#160;&#160;&#160;LAMBDA_ConfigFilePath</td></tr>
 <tr class="separator:a169761aa7b605c18bd81fdd1f66f3bf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac8c438df4d1b49a6cace598016e5beb3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_d_lambda_8h.html#ac8c438df4d1b49a6cace598016e5beb3">LAMBDA_LAST_PARAM</a>&#160;&#160;&#160;LAMBDA_BadImage</td></tr>
-<tr class="separator:ac8c438df4d1b49a6cace598016e5beb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a249813cb80dcc9a8f9fefc63f32c82ef"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_d_lambda_8h.html#a249813cb80dcc9a8f9fefc63f32c82ef">LAMBDA_VersionNumberString</a>&#160;&#160;&#160;&quot;LAMBDA_VERSION_NUMBER&quot;</td></tr>
-<tr class="separator:a249813cb80dcc9a8f9fefc63f32c82ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a77d39053bd494399ef6a7ff02bfbfcc9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_d_lambda_8h.html#a77d39053bd494399ef6a7ff02bfbfcc9">LAMBDA_ConfigFilePathString</a>&#160;&#160;&#160;&quot;LAMBDA_CONFIG_FILE_PATH&quot;</td></tr>
 <tr class="separator:a77d39053bd494399ef6a7ff02bfbfcc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af698cdbc559bf7e8a3b073a15933ba47"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_d_lambda_8h.html#af698cdbc559bf7e8a3b073a15933ba47">LAMBDA_DecoderDetectedString</a>&#160;&#160;&#160;&quot;LAMBDA_DECODER_DETECTED&quot;</td></tr>
+<tr class="separator:af698cdbc559bf7e8a3b073a15933ba47"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a724a7b024258f05c8cd992148964fa9b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_d_lambda_8h.html#a724a7b024258f05c8cd992148964fa9b">LAMBDA_EnergyThresholdString</a>&#160;&#160;&#160;&quot;LAMBDA_ENERGY_THRESHOLD&quot;</td></tr>
 <tr class="separator:a724a7b024258f05c8cd992148964fa9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d752782b8fad29eec0a02ea6af7b7c9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_d_lambda_8h.html#a1d752782b8fad29eec0a02ea6af7b7c9">LAMBDA_DualThresholdString</a>&#160;&#160;&#160;&quot;LAMBDA_DUAL_THRESHOLD&quot;</td></tr>
+<tr class="separator:a1d752782b8fad29eec0a02ea6af7b7c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9dbb0b6e3d59043b39b28a3e3b0c9aaa"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_d_lambda_8h.html#a9dbb0b6e3d59043b39b28a3e3b0c9aaa">LAMBDA_DecodedQueueDepthString</a>&#160;&#160;&#160;&quot;LAMBDA_DECODED_QUEUE_DEPTH&quot;</td></tr>
 <tr class="separator:a9dbb0b6e3d59043b39b28a3e3b0c9aaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab2e63546bdbaa47ff2e9eb9ef3b785d5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_d_lambda_8h.html#ab2e63546bdbaa47ff2e9eb9ef3b785d5">LAMBDA_OperatingModeString</a>&#160;&#160;&#160;&quot;LAMBDA_OPERATING_MODE&quot;</td></tr>
 <tr class="separator:ab2e63546bdbaa47ff2e9eb9ef3b785d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa1565498ba6aa98241e2793c6cf56e37"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_d_lambda_8h.html#aa1565498ba6aa98241e2793c6cf56e37">LAMBDA_DetectorStateString</a>&#160;&#160;&#160;&quot;LAMBDA_DETECTOR_STATE&quot;</td></tr>
-<tr class="separator:aa1565498ba6aa98241e2793c6cf56e37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a150daddc3b63ca239350f97370a2661f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_d_lambda_8h.html#a150daddc3b63ca239350f97370a2661f">LAMBDA_DualModeString</a>&#160;&#160;&#160;&quot;LAMBDA_DUAL_MODE&quot;</td></tr>
+<tr class="separator:a150daddc3b63ca239350f97370a2661f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d1d956489167e543327d0ccf658e5d9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_d_lambda_8h.html#a1d1d956489167e543327d0ccf658e5d9">LAMBDA_ChargeSummingString</a>&#160;&#160;&#160;&quot;LAMBDA_CHARGE_SUMMING&quot;</td></tr>
+<tr class="separator:a1d1d956489167e543327d0ccf658e5d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e68fd57ff1249a3c6f4c1528704c32b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_d_lambda_8h.html#a3e68fd57ff1249a3c6f4c1528704c32b">LAMBDA_GatingEnableString</a>&#160;&#160;&#160;&quot;LAMBDA_GATING_ENABLE&quot;</td></tr>
+<tr class="separator:a3e68fd57ff1249a3c6f4c1528704c32b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a54c22f0f88cf62fde8db863cb816e9b1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_d_lambda_8h.html#a54c22f0f88cf62fde8db863cb816e9b1">LAMBDA_BadFrameCounterString</a>&#160;&#160;&#160;&quot;LAMBDA_BAD_FRAME_COUNTER&quot;</td></tr>
 <tr class="separator:a54c22f0f88cf62fde8db863cb816e9b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a01bdd6423c1bec810548fac8b5479fe5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_d_lambda_8h.html#a01bdd6423c1bec810548fac8b5479fe5">LAMBDA_BadImageString</a>&#160;&#160;&#160;&quot;LAMBDA_BAD_IMAGE&quot;</td></tr>
 <tr class="separator:a01bdd6423c1bec810548fac8b5479fe5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a68c8737c0d52bb3818d62d93bbf706a5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_d_lambda_8h.html#a68c8737c0d52bb3818d62d93bbf706a5">NUM_LAMBDA_PARAMS</a>&#160;&#160;&#160;((int)(&amp;<a class="el" href="_a_d_lambda_8h.html#ac8c438df4d1b49a6cace598016e5beb3">LAMBDA_LAST_PARAM</a> - &amp;<a class="el" href="_a_d_lambda_8h.html#a169761aa7b605c18bd81fdd1f66f3bf1">LAMBDA_FIRST_PARAM</a> + 1))</td></tr>
-<tr class="separator:a68c8737c0d52bb3818d62d93bbf706a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae93d12c4bf1aaaf8dcbb5b1935fa315c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_d_lambda_8h.html#ae93d12c4bf1aaaf8dcbb5b1935fa315c">LAMBDA_ReadoutThreadsString</a>&#160;&#160;&#160;&quot;LAMBDA_NUM_READOUT_THREADS&quot;</td></tr>
+<tr class="separator:ae93d12c4bf1aaaf8dcbb5b1935fa315c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a634d0ebd99d6042cd673494f4db0809d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_d_lambda_8h.html#a634d0ebd99d6042cd673494f4db0809d">LAMBDA_StitchWidthString</a>&#160;&#160;&#160;&quot;LAMBDA_STITCHED_WIDTH&quot;</td></tr>
+<tr class="separator:a634d0ebd99d6042cd673494f4db0809d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab08cc5e4d5b3d79d868665a4b5beb196"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_d_lambda_8h.html#ab08cc5e4d5b3d79d868665a4b5beb196">LAMBDA_StitchHeightString</a>&#160;&#160;&#160;&quot;LAMBDA_STITCHED_HEIGHT&quot;</td></tr>
+<tr class="separator:ab08cc5e4d5b3d79d868665a4b5beb196"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:a8f74045056811164fadc69864af063e3"><td class="memItemLeft" align="right" valign="top">typedef std::variant&lt; std::shared_ptr&lt; xsp::lambda::Receiver &gt;, std::shared_ptr&lt; xsp::PostDecoder &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_d_lambda_8h.html#a8f74045056811164fadc69864af063e3">lambda_input</a></td></tr>
+<tr class="separator:a8f74045056811164fadc69864af063e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a54c22f0f88cf62fde8db863cb816e9b1"></a>
@@ -119,6 +133,20 @@ Macros</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">#define LAMBDA_BadImageString&#160;&#160;&#160;&quot;LAMBDA_BAD_IMAGE&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1d1d956489167e543327d0ccf658e5d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d1d956489167e543327d0ccf658e5d9">&#9670;&nbsp;</a></span>LAMBDA_ChargeSummingString</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LAMBDA_ChargeSummingString&#160;&#160;&#160;&quot;LAMBDA_CHARGE_SUMMING&quot;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -153,14 +181,42 @@ Macros</h2></td></tr>
 
 </div>
 </div>
-<a id="aa1565498ba6aa98241e2793c6cf56e37"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa1565498ba6aa98241e2793c6cf56e37">&#9670;&nbsp;</a></span>LAMBDA_DetectorStateString</h2>
+<a id="af698cdbc559bf7e8a3b073a15933ba47"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af698cdbc559bf7e8a3b073a15933ba47">&#9670;&nbsp;</a></span>LAMBDA_DecoderDetectedString</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define LAMBDA_DetectorStateString&#160;&#160;&#160;&quot;LAMBDA_DETECTOR_STATE&quot;</td>
+          <td class="memname">#define LAMBDA_DecoderDetectedString&#160;&#160;&#160;&quot;LAMBDA_DECODER_DETECTED&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a150daddc3b63ca239350f97370a2661f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a150daddc3b63ca239350f97370a2661f">&#9670;&nbsp;</a></span>LAMBDA_DualModeString</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LAMBDA_DualModeString&#160;&#160;&#160;&quot;LAMBDA_DUAL_MODE&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1d752782b8fad29eec0a02ea6af7b7c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d752782b8fad29eec0a02ea6af7b7c9">&#9670;&nbsp;</a></span>LAMBDA_DualThresholdString</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LAMBDA_DualThresholdString&#160;&#160;&#160;&quot;LAMBDA_DUAL_THRESHOLD&quot;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -188,21 +244,21 @@ Macros</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define LAMBDA_FIRST_PARAM&#160;&#160;&#160;LAMBDA_VersionNumber</td>
+          <td class="memname">#define LAMBDA_FIRST_PARAM&#160;&#160;&#160;LAMBDA_ConfigFilePath</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="ac8c438df4d1b49a6cace598016e5beb3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac8c438df4d1b49a6cace598016e5beb3">&#9670;&nbsp;</a></span>LAMBDA_LAST_PARAM</h2>
+<a id="a3e68fd57ff1249a3c6f4c1528704c32b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e68fd57ff1249a3c6f4c1528704c32b">&#9670;&nbsp;</a></span>LAMBDA_GatingEnableString</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define LAMBDA_LAST_PARAM&#160;&#160;&#160;LAMBDA_BadImage</td>
+          <td class="memname">#define LAMBDA_GatingEnableString&#160;&#160;&#160;&quot;LAMBDA_GATING_ENABLE&quot;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -223,28 +279,57 @@ Macros</h2></td></tr>
 
 </div>
 </div>
-<a id="a249813cb80dcc9a8f9fefc63f32c82ef"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a249813cb80dcc9a8f9fefc63f32c82ef">&#9670;&nbsp;</a></span>LAMBDA_VersionNumberString</h2>
+<a id="ae93d12c4bf1aaaf8dcbb5b1935fa315c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae93d12c4bf1aaaf8dcbb5b1935fa315c">&#9670;&nbsp;</a></span>LAMBDA_ReadoutThreadsString</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define LAMBDA_VersionNumberString&#160;&#160;&#160;&quot;LAMBDA_VERSION_NUMBER&quot;</td>
+          <td class="memname">#define LAMBDA_ReadoutThreadsString&#160;&#160;&#160;&quot;LAMBDA_NUM_READOUT_THREADS&quot;</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="a68c8737c0d52bb3818d62d93bbf706a5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a68c8737c0d52bb3818d62d93bbf706a5">&#9670;&nbsp;</a></span>NUM_LAMBDA_PARAMS</h2>
+<a id="ab08cc5e4d5b3d79d868665a4b5beb196"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab08cc5e4d5b3d79d868665a4b5beb196">&#9670;&nbsp;</a></span>LAMBDA_StitchHeightString</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define NUM_LAMBDA_PARAMS&#160;&#160;&#160;((int)(&amp;<a class="el" href="_a_d_lambda_8h.html#ac8c438df4d1b49a6cace598016e5beb3">LAMBDA_LAST_PARAM</a> - &amp;<a class="el" href="_a_d_lambda_8h.html#a169761aa7b605c18bd81fdd1f66f3bf1">LAMBDA_FIRST_PARAM</a> + 1))</td>
+          <td class="memname">#define LAMBDA_StitchHeightString&#160;&#160;&#160;&quot;LAMBDA_STITCHED_HEIGHT&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a634d0ebd99d6042cd673494f4db0809d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a634d0ebd99d6042cd673494f4db0809d">&#9670;&nbsp;</a></span>LAMBDA_StitchWidthString</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LAMBDA_StitchWidthString&#160;&#160;&#160;&quot;LAMBDA_STITCHED_WIDTH&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Typedef Documentation</h2>
+<a id="a8f74045056811164fadc69864af063e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f74045056811164fadc69864af063e3">&#9670;&nbsp;</a></span>lambda_input</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef std::variant&lt;std::shared_ptr&lt;xsp::lambda::Receiver&gt;, std::shared_ptr&lt;xsp::PostDecoder&gt; &gt; <a class="el" href="_a_d_lambda_8h.html#a8f74045056811164fadc69864af063e3">lambda_input</a></td>
         </tr>
       </table>
 </div><div class="memdoc">

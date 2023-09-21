@@ -31,12 +31,12 @@ ADD ADDTIONAL INTRODUCTORY TEXT HERE.
 
 This driver inherits from `ADDriver <areaDetectorDoc.html#ADDriver>`__.
 It implements many of the parameters in
-`asynNDArrayDriver.h <areaDetectorDoxygenHTML/asyn_n_d_array_driver_8h.html>`__
+`asynNDArrayDriver.h <../areaDetectorDoxygenHTML/asyn_n_d_array_driver_8h.html>`__
 and in
-`ADArrayDriver.h <areaDetectorDoxygenHTML/_a_d_driver_8h.html>`__. It
+`ADArrayDriver.h <../areaDetectorDoxygenHTML/_a_d_driver_8h.html>`__. It
 also implements a number of parameters that are specific to the Roper
 detectors. The `pvCam class
-documentation <areaDetectorDoxygenHTML/classpv_cam.html>`__ describes
+documentation <../areaDetectorDoxygenHTML/classpv_cam.html>`__ describes
 this class in detail.
 
 Implementation of standard driver parameters
@@ -427,9 +427,9 @@ C/C++ or from the EPICS IOC shell.
 
 For details on the meaning of the parameters to this function refer to
 the detailed documentation on the pvCamConfig function in the `pvCam.cpp
-documentation <areaDetectorDoxygenHTML/pv_cam_8cpp.html>`__ and in the
+documentation <../areaDetectorDoxygenHTML/pv_cam_8cpp.html>`__ and in the
 documentation for the constructor for the `pvCam
-class <areaDetectorDoxygenHTML/classpv_cam.html>`__.
+class <../areaDetectorDoxygenHTML/classpv_cam.html>`__.
 
 There an example IOC boot directory and startup script
 (`iocBoot/iocPVCam/st.cmd) <pvcam_st_cmd.html>`__ provided with

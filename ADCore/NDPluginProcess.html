@@ -11,11 +11,11 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -128,7 +128,7 @@
            <div itemprop="articleBody">
              
   <section id="ndpluginprocess">
-<h1><a class="toc-backref" href="#id1" role="doc-backlink">NDPluginProcess</a><a class="headerlink" href="#ndpluginprocess" title="Permalink to this heading"></a></h1>
+<h1><a class="toc-backref" href="#id1" role="doc-backlink">NDPluginProcess</a><a class="headerlink" href="#ndpluginprocess" title="Link to this heading"></a></h1>
 <dl class="field-list simple">
 <dt class="field-odd">author<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Mark Rivers, University of Chicago</p>
@@ -161,7 +161,7 @@
 </ul>
 </nav>
 <section id="overview">
-<h2><a class="toc-backref" href="#id2" role="doc-backlink">Overview</a><a class="headerlink" href="#overview" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id2" role="doc-backlink">Overview</a><a class="headerlink" href="#overview" title="Link to this heading"></a></h2>
 <p>NDPluginProcess performs arithmetic processing on NDArray data. It
 performs the following operations in the order listed. Each of these
 operations can be individually enabled and disabled.</p>
@@ -655,7 +655,7 @@ of NumFiltered is used in the filter equations, as explained below.</p></td>
 </tbody>
 </table>
 <section id="recursive-filter-implementation">
-<h3><a class="toc-backref" href="#id3" role="doc-backlink">Recursive filter implementation</a><a class="headerlink" href="#recursive-filter-implementation" title="Permalink to this heading"></a></h3>
+<h3><a class="toc-backref" href="#id3" role="doc-backlink">Recursive filter implementation</a><a class="headerlink" href="#recursive-filter-implementation" title="Link to this heading"></a></h3>
 <p>The recursive filter performs filtering in the time (not spatial)
 domain. It is implemented in a fairly general manner, so that a variety
 of filters can be implemented. These include integrating filters and
@@ -684,7 +684,7 @@ are:</p>
 </div>
 </section>
 <section id="predefined-filters">
-<h3><a class="toc-backref" href="#id4" role="doc-backlink">Predefined filters</a><a class="headerlink" href="#predefined-filters" title="Permalink to this heading"></a></h3>
+<h3><a class="toc-backref" href="#id4" role="doc-backlink">Predefined filters</a><a class="headerlink" href="#predefined-filters" title="Link to this heading"></a></h3>
 <p>The NDProcess.template database implements the following predefined
 filters using the <code class="docutils literal notranslate"><span class="pre">$(P)$(R)FilterType</span></code> record. The implementation of these
 predefined filter types is done entirely in the database, not in the
@@ -703,7 +703,7 @@ at iocInit, so that any customized filter coefficients will be
 preserved, and will not be replaced by the defaults for that filter
 type.</p>
 <section id="recursive-average">
-<h4><a class="toc-backref" href="#id5" role="doc-backlink">Recursive Average</a><a class="headerlink" href="#recursive-average" title="Permalink to this heading"></a></h4>
+<h4><a class="toc-backref" href="#id5" role="doc-backlink">Recursive Average</a><a class="headerlink" href="#recursive-average" title="Link to this heading"></a></h4>
 <p>The recursive average filter does input array averaging. It is defined
 as:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">O</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="n">F</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="n">N</span><span class="p">)</span><span class="o">*</span><span class="n">F</span><span class="p">[</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="o">/</span><span class="n">N</span><span class="o">*</span><span class="n">I</span><span class="p">[</span><span class="n">n</span><span class="p">]</span>
@@ -722,7 +722,7 @@ more fully use the dynamic range of the output data type. The averaged
 signal will then better use the dynamic range of the output data type.</p>
 </section>
 <section id="average">
-<h4><a class="toc-backref" href="#id6" role="doc-backlink">Average</a><a class="headerlink" href="#average" title="Permalink to this heading"></a></h4>
+<h4><a class="toc-backref" href="#id6" role="doc-backlink">Average</a><a class="headerlink" href="#average" title="Link to this heading"></a></h4>
 <p>The average filter does input array averaging. It is defined as:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">O</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="n">F</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="n">F</span><span class="p">[</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="o">/</span><span class="n">N</span><span class="o">*</span><span class="n">I</span><span class="p">[</span><span class="n">n</span><span class="p">]</span>
 </pre></div>
@@ -736,7 +736,7 @@ when NumFiltered=NumFilter. If ArrayCallbacks is “Array N only” then
 callbacks will be done only with the final averaged value.</p>
 </section>
 <section id="sum">
-<h4><a class="toc-backref" href="#id7" role="doc-backlink">Sum</a><a class="headerlink" href="#sum" title="Permalink to this heading"></a></h4>
+<h4><a class="toc-backref" href="#id7" role="doc-backlink">Sum</a><a class="headerlink" href="#sum" title="Link to this heading"></a></h4>
 <p>The sum filter does input array summing. It is defined as:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">O</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="n">F</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="n">F</span><span class="p">[</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">I</span><span class="p">[</span><span class="n">n</span><span class="p">]</span>
 </pre></div>
@@ -749,7 +749,7 @@ will be reset when NumFiltered=NumFilter. If ArrayCallbacks is “Array N
 only” then callbacks will be done only with the final summed value.</p>
 </section>
 <section id="difference">
-<h4><a class="toc-backref" href="#id8" role="doc-backlink">Difference</a><a class="headerlink" href="#difference" title="Permalink to this heading"></a></h4>
+<h4><a class="toc-backref" href="#id8" role="doc-backlink">Difference</a><a class="headerlink" href="#difference" title="Link to this heading"></a></h4>
 <p>The difference filter computes the difference between frame N and frame
 N-1. It is defined as:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">O</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="n">F</span><span class="p">[</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">I</span><span class="p">[</span><span class="n">n</span><span class="p">]</span>
@@ -767,7 +767,7 @@ although this will not increase the dynamic range of the result, only
 the absolute range.</p>
 </section>
 <section id="recursive-average-difference">
-<h4><a class="toc-backref" href="#id9" role="doc-backlink">Recursive Average Difference</a><a class="headerlink" href="#recursive-average-difference" title="Permalink to this heading"></a></h4>
+<h4><a class="toc-backref" href="#id9" role="doc-backlink">Recursive Average Difference</a><a class="headerlink" href="#recursive-average-difference" title="Link to this heading"></a></h4>
 <p>This filter computes the difference between frame N and the recursive
 average of previous frames. It is a combination of the Difference and
 Recursive Average filters described above. The new filter is a recursive
@@ -780,7 +780,7 @@ that recursive average. It is defined as:</p>
 <p>N is again the characteristic number of arrays in the average.</p>
 </section>
 <section id="copy-to-filter">
-<h4><a class="toc-backref" href="#id10" role="doc-backlink">Copy to Filter</a><a class="headerlink" href="#copy-to-filter" title="Permalink to this heading"></a></h4>
+<h4><a class="toc-backref" href="#id10" role="doc-backlink">Copy to Filter</a><a class="headerlink" href="#copy-to-filter" title="Link to this heading"></a></h4>
 <p>This filter simply copies the input array to the filter array and the
 output array. It is defined as:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">O</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="n">F</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="n">I</span><span class="p">[</span><span class="n">n</span><span class="p">]</span>
@@ -792,7 +792,7 @@ which is then subsequently used for some other filter type.</p>
 </section>
 </section>
 <section id="configuration">
-<h2><a class="toc-backref" href="#id11" role="doc-backlink">Configuration</a><a class="headerlink" href="#configuration" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id11" role="doc-backlink">Configuration</a><a class="headerlink" href="#configuration" title="Link to this heading"></a></h2>
 <p>The NDPluginProcess plugin is created with the NDProcessConfigure
 command, either from C/C++ or from the EPICS IOC shell.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">NDProcessConfigure</span><span class="p">(</span><span class="n">const</span> <span class="n">char</span> <span class="o">*</span><span class="n">portName</span><span class="p">,</span> <span class="nb">int</span> <span class="n">queueSize</span><span class="p">,</span> <span class="nb">int</span> <span class="n">blockingCallbacks</span><span class="p">,</span>
@@ -809,7 +809,7 @@ and in the documentation for the constructor for the <a class="reference externa
 class</a>.</p>
 </section>
 <section id="screen-shots">
-<h2><a class="toc-backref" href="#id12" role="doc-backlink">Screen shots</a><a class="headerlink" href="#screen-shots" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id12" role="doc-backlink">Screen shots</a><a class="headerlink" href="#screen-shots" title="Link to this heading"></a></h2>
 <p>The following is the MEDM screen that provides access to the parameters
 in <code class="docutils literal notranslate"><span class="pre">NDPluginDriver.h</span></code> and <code class="docutils literal notranslate"><span class="pre">NDPluginProcess.h</span></code> through records in
 <code class="docutils literal notranslate"><span class="pre">NDPluginBase.template</span></code> and <code class="docutils literal notranslate"><span class="pre">NDProcess.template</span></code>.
@@ -859,7 +859,7 @@ significantly.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, Mark Rivers.
-      <span class="lastupdated">Last updated on 2023-August-16.
+      <span class="lastupdated">Last updated on 2023-September-21.
       </span></p>
   </div>
 

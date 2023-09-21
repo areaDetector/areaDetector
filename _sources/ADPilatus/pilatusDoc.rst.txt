@@ -427,9 +427,9 @@ command, either from C/C++ or from the EPICS IOC shell.
 
 For details on the meaning of the parameters to this function refer to
 the detailed documentation on the pilatusDetectorConfig function in the
-`pilatusDetector.cpp documentation <areaDetectorDoxygenHTML/pilatus_detector_8cpp.html>`__
+`pilatusDetector.cpp documentation <../areaDetectorDoxygenHTML/pilatus_detector_8cpp.html>`__
 and in the documentation for the constructor for the 
-`pilatusDetector class <areaDetectorDoxygenHTML/classpilatus_detector.html>`__.
+`pilatusDetector class <../areaDetectorDoxygenHTML/classpilatus_detector.html>`__.
 
 Example st.cmd startup file
 ---------------------------

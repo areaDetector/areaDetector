@@ -11,11 +11,11 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -139,7 +139,7 @@
            <div itemprop="articleBody">
              
   <section id="adperkinelmer">
-<h1><a class="toc-backref" href="#id1" role="doc-backlink">ADPerkinElmer</a><a class="headerlink" href="#adperkinelmer" title="Permalink to this heading"></a></h1>
+<h1><a class="toc-backref" href="#id1" role="doc-backlink">ADPerkinElmer</a><a class="headerlink" href="#adperkinelmer" title="Link to this heading"></a></h1>
 <dl class="field-list simple">
 <dt class="field-odd">author<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Mark Rivers (University of Chicago), John Hammonds, Brian Tieman (Argonne National Laboratory)</p>
@@ -172,7 +172,7 @@
 </ul>
 </nav>
 <section id="introduction">
-<h2><a class="toc-backref" href="#id2" role="doc-backlink">Introduction</a><a class="headerlink" href="#introduction" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id2" role="doc-backlink">Introduction</a><a class="headerlink" href="#introduction" title="Link to this heading"></a></h2>
 <p>This is an <a class="reference internal" href="../index.html"><span class="doc">areaDetector</span></a> driver for the flat-panel amorphous
 silicon detectors from
 <a class="reference external" href="https://www.vareximaging.com/products/security-industrial/security-industrial-flat-panel-detectors">Varex Imaging (previously Perkin Elmer)</a>.</p>
@@ -198,7 +198,7 @@ documentation</a>
 describes this class in detail.</p>
 </section>
 <section id="implementation-of-standard-driver-parameters">
-<h2><a class="toc-backref" href="#id3" role="doc-backlink">Implementation of standard driver parameters</a><a class="headerlink" href="#implementation-of-standard-driver-parameters" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">Implementation of standard driver parameters</a><a class="headerlink" href="#implementation-of-standard-driver-parameters" title="Link to this heading"></a></h2>
 <p>The following table describes how the PerkinElmer driver implements some
 of the standard driver parameters.</p>
 <table class="table-bordered table-striped table-hover docutils align-default">
@@ -257,7 +257,7 @@ than the 5 second maximum allowed in Internal trigger mode, etc.</p></li>
 </table>
 </section>
 <section id="perkinelmer-specific-parameters">
-<h2><a class="toc-backref" href="#id4" role="doc-backlink">PerkinElmer specific parameters</a><a class="headerlink" href="#perkinelmer-specific-parameters" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">PerkinElmer specific parameters</a><a class="headerlink" href="#perkinelmer-specific-parameters" title="Link to this heading"></a></h2>
 <p>The PerkinElmer driver implements the following parameters in addition
 to those in asynNDArrayDriver.h and ADDriver.h.</p>
 <table class="table-bordered table-striped table-hover docutils align-default">
@@ -492,7 +492,7 @@ if PESkipFrames=1.</p></td>
 </table>
 </section>
 <section id="unsupported-standard-driver-parameters">
-<h2><a class="toc-backref" href="#id5" role="doc-backlink">Unsupported standard driver parameters</a><a class="headerlink" href="#unsupported-standard-driver-parameters" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id5" role="doc-backlink">Unsupported standard driver parameters</a><a class="headerlink" href="#unsupported-standard-driver-parameters" title="Link to this heading"></a></h2>
 <p>The PerkinElmer driver does not support the following standard driver
 parameters because they are not supported in the PerkinElmer library:</p>
 <ul class="simple">
@@ -503,7 +503,7 @@ parameters because they are not supported in the PerkinElmer library:</p>
 </ul>
 </section>
 <section id="synchronization-and-triggering">
-<span id="refname"></span><h2><a class="toc-backref" href="#id6" role="doc-backlink">Synchronization and triggering</a><a class="headerlink" href="#synchronization-and-triggering" title="Permalink to this heading"></a></h2>
+<span id="refname"></span><h2><a class="toc-backref" href="#id6" role="doc-backlink">Synchronization and triggering</a><a class="headerlink" href="#synchronization-and-triggering" title="Link to this heading"></a></h2>
 <p>The Perkin Elmer detectors support a number of acquisition modes which
 are controlled by the TriggerMode, SyncMode, and AcquireTime records.
 This is a simplified discussion, and the reader should consult the <a class="reference external" href="1000952_Manual_XIS_Rev7.pdf">XIS
@@ -543,13 +543,13 @@ FrameSync= <code class="docutils literal notranslate"><span class="pre">DDD</spa
 (~0.1-0.2 seconds), but ensures that the exposure is started after
 Acquire is set to 1.</p>
 <section id="triggermode-free-running">
-<h3><a class="toc-backref" href="#id7" role="doc-backlink">TriggerMode=Free Running</a><a class="headerlink" href="#triggermode-free-running" title="Permalink to this heading"></a></h3>
+<h3><a class="toc-backref" href="#id7" role="doc-backlink">TriggerMode=Free Running</a><a class="headerlink" href="#triggermode-free-running" title="Link to this heading"></a></h3>
 <p>In this mode the AcquireTime is ignored, and the detector runs at the
 maximum possible frame rate and a fixed minimum exposure time. SyncMode
 should be set to Framewise in this mode.</p>
 </section>
 <section id="triggermode-internal">
-<h3><a class="toc-backref" href="#id8" role="doc-backlink">TriggerMode=Internal</a><a class="headerlink" href="#triggermode-internal" title="Permalink to this heading"></a></h3>
+<h3><a class="toc-backref" href="#id8" role="doc-backlink">TriggerMode=Internal</a><a class="headerlink" href="#triggermode-internal" title="Link to this heading"></a></h3>
 <p>In this mode the behavior depends on the setting of SyncMode.</p>
 <ul class="simple">
 <li><p>If SyncMode= <code class="docutils literal notranslate"><span class="pre">Framewise</span></code> then the detector hardware is constantly
@@ -585,7 +585,7 @@ SyncMode= <code class="docutils literal notranslate"><span class="pre">Framewise
 </ul>
 </section>
 <section id="triggermode-external">
-<h3><a class="toc-backref" href="#id9" role="doc-backlink">TriggerMode=External</a><a class="headerlink" href="#triggermode-external" title="Permalink to this heading"></a></h3>
+<h3><a class="toc-backref" href="#id9" role="doc-backlink">TriggerMode=External</a><a class="headerlink" href="#triggermode-external" title="Link to this heading"></a></h3>
 <p>In this mode the behavior also depends on the setting of SyncMode.</p>
 <ul class="simple">
 <li><p>If SyncMode= <code class="docutils literal notranslate"><span class="pre">Framewise</span></code> then the detector hardware is constantly
@@ -620,7 +620,7 @@ TriggerMode= <code class="docutils literal notranslate"><span class="pre">Intern
 </ul>
 </section>
 <section id="triggermode-soft-trigger">
-<h3><a class="toc-backref" href="#id10" role="doc-backlink">TriggerMode=Soft Trigger</a><a class="headerlink" href="#triggermode-soft-trigger" title="Permalink to this heading"></a></h3>
+<h3><a class="toc-backref" href="#id10" role="doc-backlink">TriggerMode=Soft Trigger</a><a class="headerlink" href="#triggermode-soft-trigger" title="Link to this heading"></a></h3>
 <p>In this mode the behavior also depends on the setting of SyncMode.</p>
 <ul class="simple">
 <li><p>If SyncMode= <code class="docutils literal notranslate"><span class="pre">Framewise</span></code> then the detector hardware is constantly
@@ -657,7 +657,7 @@ TriggerMode= <code class="docutils literal notranslate"><span class="pre">Intern
 </section>
 </section>
 <section id="configuration">
-<h2><a class="toc-backref" href="#id11" role="doc-backlink">Configuration</a><a class="headerlink" href="#configuration" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id11" role="doc-backlink">Configuration</a><a class="headerlink" href="#configuration" title="Link to this heading"></a></h2>
 <p>The PerkinElmer driver is created with the perkinElmerConfig command,
 either from C/C++ or from the EPICS IOC shell.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span> <span class="n">PerkinElmerConfig</span><span class="p">(</span><span class="n">const</span> <span class="n">char</span> <span class="o">*</span><span class="n">portName</span><span class="p">,</span> <span class="nb">int</span> <span class="n">IDType</span><span class="p">,</span> <span class="n">const</span> <span class="n">char</span><span class="o">*</span> <span class="n">IDValue</span><span class="p">,</span>
@@ -673,7 +673,7 @@ in the documentation for the constructor for the <a class="reference external" h
 class</a>.</p>
 </section>
 <section id="example-st-cmd-startup-file">
-<h2><a class="toc-backref" href="#id12" role="doc-backlink">Example st.cmd startup file</a><a class="headerlink" href="#example-st-cmd-startup-file" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id12" role="doc-backlink">Example st.cmd startup file</a><a class="headerlink" href="#example-st-cmd-startup-file" title="Link to this heading"></a></h2>
 <p>The following startup script is provided with ADPerkinElmer.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>errlogInit(20000)
 
@@ -746,7 +746,7 @@ create_monitor_set(&quot;auto_settings.req&quot;, 30, &quot;P=$(PREFIX)&quot;)
 </div>
 </section>
 <section id="medm-screens">
-<h2><a class="toc-backref" href="#id13" role="doc-backlink">MEDM screens</a><a class="headerlink" href="#medm-screens" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id13" role="doc-backlink">MEDM screens</a><a class="headerlink" href="#medm-screens" title="Link to this heading"></a></h2>
 <p>The following show the MEDM screens that are used to control the
 PerkinElmer detector. Note that the general purpose screen ADBase.adl
 can be used, but it exposes many controls that are not applicable to the
@@ -759,7 +759,7 @@ driver.</p>
 </figure>
 </section>
 <section id="performance-measurements">
-<h2><a class="toc-backref" href="#id14" role="doc-backlink">Performance measurements</a><a class="headerlink" href="#performance-measurements" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id14" role="doc-backlink">Performance measurements</a><a class="headerlink" href="#performance-measurements" title="Link to this heading"></a></h2>
 <p>The following measurements were done to demonstrate the performance that
 can be obtained with the areaDetector PerkinElmer driver.</p>
 <ul class="simple">
@@ -782,7 +782,7 @@ drive.</p></li>
 </ul>
 </section>
 <section id="restrictions">
-<h2><a class="toc-backref" href="#id15" role="doc-backlink">Restrictions</a><a class="headerlink" href="#restrictions" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id15" role="doc-backlink">Restrictions</a><a class="headerlink" href="#restrictions" title="Link to this heading"></a></h2>
 <p>The following are some current restrictions of the PerkinElmer driver:</p>
 <ul class="simple">
 <li><p>Prior to R2-4 the driver only supported a single frame-grabber or
@@ -804,7 +804,7 @@ R2-4.</p></li>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, Mark Rivers.
-      <span class="lastupdated">Last updated on 2023-August-16.
+      <span class="lastupdated">Last updated on 2023-September-21.
       </span></p>
   </div>
 

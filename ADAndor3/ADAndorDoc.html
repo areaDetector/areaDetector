@@ -11,11 +11,11 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -138,14 +138,14 @@
            <div itemprop="articleBody">
              
   <section id="adandor3">
-<h1><a class="toc-backref" href="#id1" role="doc-backlink">ADAndor3</a><a class="headerlink" href="#adandor3" title="Permalink to this heading"></a></h1>
+<h1><a class="toc-backref" href="#id1" role="doc-backlink">ADAndor3</a><a class="headerlink" href="#adandor3" title="Link to this heading"></a></h1>
 <dl class="field-list simple">
 <dt class="field-odd">author<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Mark Rivers (University of Chicago), Phillip Sorensen (Cornell University)</p>
 </dd>
 </dl>
 <section id="table-of-contents">
-<h2><a class="toc-backref" href="#id2" role="doc-backlink">Table of Contents</a><a class="headerlink" href="#table-of-contents" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id2" role="doc-backlink">Table of Contents</a><a class="headerlink" href="#table-of-contents" title="Link to this heading"></a></h2>
 <nav class="contents" id="contents">
 <p class="topic-title">Contents</p>
 <ul class="simple">
@@ -166,7 +166,7 @@
 </nav>
 </section>
 <section id="introduction">
-<h2><a class="toc-backref" href="#id3" role="doc-backlink">Introduction</a><a class="headerlink" href="#introduction" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">Introduction</a><a class="headerlink" href="#introduction" title="Link to this heading"></a></h2>
 <p>This is an <a class="reference external" href="http://www.aps.anl.gov/epics">EPICS</a>
 <a class="reference external" href="areaDetector.html">areaDetector</a> driver for CMOS detectors from
 <a class="reference external" href="http://www.andor.com">Andor Technology</a>. It has been tested on the
@@ -192,11 +192,11 @@ combination).</p></li>
 </ul>
 <p>This driver inherits from <a class="reference external" href="areaDetectorDoc.html#ADDriver">ADDriver</a>.
 It implements many of the parameters in
-<a class="reference external" href="areaDetectorDoxygenHTML/asyn_n_d_array_driver_8h.html">asynNDArrayDriver.h</a>
+<a class="reference external" href="../areaDetectorDoxygenHTML/asyn_n_d_array_driver_8h.html">asynNDArrayDriver.h</a>
 and in
-<a class="reference external" href="areaDetectorDoxygenHTML/_a_d_driver_8h.html">ADArrayDriver.h</a>. It
+<a class="reference external" href="../areaDetectorDoxygenHTML/_a_d_driver_8h.html">ADArrayDriver.h</a>. It
 also implements a number of parameters that are specific to the Andor
-detectors. The <a class="reference external" href="areaDetectorDoxygenHTML/classandor3.html">andor3 class
+detectors. The <a class="reference external" href="../areaDetectorDoxygenHTML/classandor3.html">andor3 class
 documentation</a> describes
 this class in detail.</p>
 <p>This document does not attempt to explain the meaning of the
@@ -256,7 +256,7 @@ files /usr/local/lib/libatusb*. These files sometime interfere with
 Bitflow based cameras on Linux (per Andor).</p>
 </section>
 <section id="implementation-of-standard-driver-parameters">
-<h2><a class="toc-backref" href="#id4" role="doc-backlink">Implementation of standard driver parameters</a><a class="headerlink" href="#implementation-of-standard-driver-parameters" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">Implementation of standard driver parameters</a><a class="headerlink" href="#implementation-of-standard-driver-parameters" title="Link to this heading"></a></h2>
 <p>The following table describes how the Andor driver implements some of
 the standard driver parameters.</p>
 <table class="table-bordered table-striped table-hover docutils align-default">
@@ -329,7 +329,7 @@ multiple accumulations (NumExposures &amp;gt; 1) could cause 16-bit overflow.</p
 </table>
 </section>
 <section id="andor-specific-parameters">
-<h2><a class="toc-backref" href="#id5" role="doc-backlink">Andor specific parameters</a><a class="headerlink" href="#andor-specific-parameters" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id5" role="doc-backlink">Andor specific parameters</a><a class="headerlink" href="#andor-specific-parameters" title="Link to this heading"></a></h2>
 <table class="table-bordered table-striped table-hover docutils align-default">
 <colgroup>
 <col style="width: 8%" />
@@ -589,17 +589,17 @@ certain preset values are allowed. Choices for the Neo are:
 those in asynNDArrayDriver.h and ADDriver.h.</p>
 </section>
 <section id="unsupported-standard-driver-parameters">
-<h2><a class="toc-backref" href="#id6" role="doc-backlink">Unsupported standard driver parameters</a><a class="headerlink" href="#unsupported-standard-driver-parameters" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id6" role="doc-backlink">Unsupported standard driver parameters</a><a class="headerlink" href="#unsupported-standard-driver-parameters" title="Link to this heading"></a></h2>
 <p>ColorMode, ReverseX, and ReverseY are currently not supported.</p>
 </section>
 <section id="usage">
-<h2><a class="toc-backref" href="#id7" role="doc-backlink">Usage</a><a class="headerlink" href="#usage" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id7" role="doc-backlink">Usage</a><a class="headerlink" href="#usage" title="Link to this heading"></a></h2>
 <p>If any of the parameters set are out of range the driver will set them
 to the minimum or maximum allowed value for that parameter. The _RBV
 value will indicate the actual value in effect.</p>
 </section>
 <section id="configuration">
-<h2><a class="toc-backref" href="#id8" role="doc-backlink">Configuration</a><a class="headerlink" href="#configuration" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id8" role="doc-backlink">Configuration</a><a class="headerlink" href="#configuration" title="Link to this heading"></a></h2>
 <p>The Andor3 driver is created with the andor3Config command, either from
 C/C++ or from the EPICS IOC shell.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span> <span class="n">andor3Config</span><span class="p">(</span><span class="n">const</span> <span class="n">char</span> <span class="o">*</span><span class="n">portName</span><span class="p">,</span> <span class="nb">int</span> <span class="n">cameraId</span><span class="p">,</span>
@@ -609,8 +609,8 @@ C/C++ or from the EPICS IOC shell.</p>
 </div>
 <p>For details on the meaning of the parameters to this function refer to
 the detailed documentation on the andor3Config function in the
-<a class="reference external" href="areaDetectorDoxygenHTML/andor3_8cpp.html">andor3.cpp documentation</a>
-and in the documentation for the constructor for the <a class="reference external" href="areaDetectorDoxygenHTML/classandor3.html">andor3
+<a class="reference external" href="../areaDetectorDoxygenHTML/andor3_8cpp.html">andor3.cpp documentation</a>
+and in the documentation for the constructor for the <a class="reference external" href="../areaDetectorDoxygenHTML/classandor3.html">andor3
 class</a>. The maxFrames
 parameter controls the number of frame buffers the driver queues to the
 SDK when acquiring data. The default value is 10. Increasing this number
@@ -623,7 +623,7 @@ operating close to the maximum interface transfer rate (=TransferRate).</p>
 areaDetector.</p>
 </section>
 <section id="medm-screen">
-<h2><a class="toc-backref" href="#id9" role="doc-backlink">MEDM screen</a><a class="headerlink" href="#medm-screen" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id9" role="doc-backlink">MEDM screen</a><a class="headerlink" href="#medm-screen" title="Link to this heading"></a></h2>
 <p>The following shows the MEDM screen that is used to control the Andor
 detector. Note that the general purpose screen ADBase.adl can be used,
 but it exposes a few controls that are not applicable to the Andor, and
@@ -635,7 +635,7 @@ lacks some fields that are important for the Andor.</p>
 </div>
 </section>
 <section id="restrictions">
-<h2><a class="toc-backref" href="#id10" role="doc-backlink">Restrictions</a><a class="headerlink" href="#restrictions" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id10" role="doc-backlink">Restrictions</a><a class="headerlink" href="#restrictions" title="Link to this heading"></a></h2>
 <p>There is currently no way to query the driver to know how much memory
 remains in the on-board RAM. When the RAM fills up the camera stops
 acquiring images.</p>
@@ -654,7 +654,7 @@ acquiring images.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, Mark Rivers.
-      <span class="lastupdated">Last updated on 2023-August-16.
+      <span class="lastupdated">Last updated on 2023-September-21.
       </span></p>
   </div>
 

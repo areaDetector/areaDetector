@@ -11,11 +11,11 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -135,7 +135,7 @@
            <div itemprop="articleBody">
              
   <section id="ndfilehdf5">
-<h1><a class="toc-backref" href="#id2" role="doc-backlink">NDFileHDF5</a><a class="headerlink" href="#ndfilehdf5" title="Permalink to this heading"></a></h1>
+<h1><a class="toc-backref" href="#id2" role="doc-backlink">NDFileHDF5</a><a class="headerlink" href="#ndfilehdf5" title="Link to this heading"></a></h1>
 <dl class="field-list simple">
 <dt class="field-odd">authors<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Ulrik Pedersen (Diamond Light Source), Arthur Glowacki
@@ -172,7 +172,7 @@ Mark Rivers (University of Chicago)</p>
 </ul>
 </nav>
 <section id="overview">
-<h2><a class="toc-backref" href="#id3" role="doc-backlink">Overview</a><a class="headerlink" href="#overview" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">Overview</a><a class="headerlink" href="#overview" title="Link to this heading"></a></h2>
 <p>NDFileHDF5 inherits from NDPluginFile. This plugin uses the HDF5
 libraries to store data. HDF5 file format is a self-describing binary
 format supported by the <a class="reference external" href="http://www.hdfgroup.org/HDF5">hdfgroup</a>.</p>
@@ -197,12 +197,12 @@ and in the documentation for the constructor for the <a class="reference externa
 class</a>.</p>
 </section>
 <section id="file-structure-layout">
-<h2><a class="toc-backref" href="#id4" role="doc-backlink">File Structure Layout</a><a class="headerlink" href="#file-structure-layout" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">File Structure Layout</a><a class="headerlink" href="#file-structure-layout" title="Link to this heading"></a></h2>
 <p>The HDF5 files comprises a hierachial data structure, similar to a file
 system structure with directories (groups) and files (datasets)
 [<a class="reference external" href="http://www.hdfgroup.org/HDF5/Tutor/fileorg.html">ref</a>]</p>
 <section id="xml-defined-file-structure-layout">
-<h3><a class="toc-backref" href="#id5" role="doc-backlink">XML Defined File Structure Layout</a><a class="headerlink" href="#xml-defined-file-structure-layout" title="Permalink to this heading"></a></h3>
+<h3><a class="toc-backref" href="#id5" role="doc-backlink">XML Defined File Structure Layout</a><a class="headerlink" href="#xml-defined-file-structure-layout" title="Link to this heading"></a></h3>
 <p>It is possible to define the layout of the data structures in an XML
 definition file. The XML file allow defining the location of HDF5
 Groups, Datasets and Attributes based on detector data (NDArrays),
@@ -369,7 +369,7 @@ with the ‘xmllint’ command to validate a user’s XML definition:</p>
 </div>
 </section>
 <section id="default-file-structure-layout">
-<h3><a class="toc-backref" href="#id6" role="doc-backlink">Default File Structure Layout</a><a class="headerlink" href="#default-file-structure-layout" title="Permalink to this heading"></a></h3>
+<h3><a class="toc-backref" href="#id6" role="doc-backlink">Default File Structure Layout</a><a class="headerlink" href="#default-file-structure-layout" title="Link to this heading"></a></h3>
 <p>If no XML Layout Definition file is loaded, the plugin will revert to
 using its default file structure layout. The default layout is
 compatible with the plugin’s original, hard-code layout. This layout is
@@ -388,7 +388,7 @@ is Nexus compatible, as well as conforming to some other desired layout.</p>
 </section>
 </section>
 <section id="ndarray-attributes">
-<h2><a class="toc-backref" href="#id7" role="doc-backlink">NDArray attributes</a><a class="headerlink" href="#ndarray-attributes" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id7" role="doc-backlink">NDArray attributes</a><a class="headerlink" href="#ndarray-attributes" title="Link to this heading"></a></h2>
 <p>The attributes from NDArrays are stored in the HDF5 files. The list of
 attributes is loaded when a file is opened so XML attributes files
 should not be reloaded while writing a file in stream mode.</p>
@@ -435,7 +435,7 @@ validate the syntax of the
 </div>
 </section>
 <section id="default-tree-structure">
-<h2><a class="toc-backref" href="#id8" role="doc-backlink">Default tree structure</a><a class="headerlink" href="#default-tree-structure" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id8" role="doc-backlink">Default tree structure</a><a class="headerlink" href="#default-tree-structure" title="Link to this heading"></a></h2>
 <p>The group/dataset structure of the HDF5 files, generated by this plugin:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">entry</span>                   <span class="o">&lt;--</span> <span class="n">NX_class</span><span class="o">=</span><span class="n">NXentry</span>
 <span class="o">|</span>
@@ -463,7 +463,7 @@ validate the syntax of the
 </div>
 </section>
 <section id="hdf5-file-viewers">
-<h2><a class="toc-backref" href="#id9" role="doc-backlink">HDF5 File Viewers</a><a class="headerlink" href="#hdf5-file-viewers" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id9" role="doc-backlink">HDF5 File Viewers</a><a class="headerlink" href="#hdf5-file-viewers" title="Link to this heading"></a></h2>
 <p>Note that if the Single Writer Multiple Reader (SWMR) feature is
 disabled then it is not possible to do a live “monitoring” of a file
 which is being written by another process. The file writers mentioned in
@@ -500,7 +500,7 @@ The metadata (in HDF known as “attributes”) for that dataset indicate
 </figure>
 </section>
 <section id="multiple-dimensions">
-<h2><a class="toc-backref" href="#id10" role="doc-backlink">Multiple Dimensions</a><a class="headerlink" href="#multiple-dimensions" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id10" role="doc-backlink">Multiple Dimensions</a><a class="headerlink" href="#multiple-dimensions" title="Link to this heading"></a></h2>
 <p>Both areaDetector and the HDF5 file format supports multidimensional
 datasets. The dimensions from the NDArray are preserved when writing to
 the HDF5 file. In multi-frame files (plugin in Stream or Capture mode)
@@ -549,7 +549,7 @@ the order is: {5th, 4th, 3rd, Y, X, Nth frame, width, height}</p></li>
 </ul>
 </section>
 <section id="chunking">
-<h2><a class="toc-backref" href="#id11" role="doc-backlink">Chunking</a><a class="headerlink" href="#chunking" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id11" role="doc-backlink">Chunking</a><a class="headerlink" href="#chunking" title="Link to this heading"></a></h2>
 <p>This plugin uses HDF5 chunking to store the raw image data. The chunk
 size (the size of each I/O block) can be either automatically configured
 (ChunkSizeAuto=Yes) or user-configured (ChunkSizeAuto=No). If automatically
@@ -570,7 +570,7 @@ HDF5</a></p></li>
 </ul>
 </section>
 <section id="compression">
-<h2><a class="toc-backref" href="#id12" role="doc-backlink">Compression</a><a class="headerlink" href="#compression" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id12" role="doc-backlink">Compression</a><a class="headerlink" href="#compression" title="Link to this heading"></a></h2>
 <p>The HDF5 library supports a number of compression algorithms. When using
 HDF5 libraries to write and read files the with standard HDF5 compressions
 (N-bit, szip, and libz) it only need to be switched on when writing and HDF5 enabled applications
@@ -620,7 +620,7 @@ and offset in the word is user configurable.</p></li>
 </ul>
 </section>
 <section id="single-writer-multiple-reader-swmr">
-<h2><a class="toc-backref" href="#id13" role="doc-backlink">Single Writer Multiple Reader (SWMR)</a><a class="headerlink" href="#single-writer-multiple-reader-swmr" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id13" role="doc-backlink">Single Writer Multiple Reader (SWMR)</a><a class="headerlink" href="#single-writer-multiple-reader-swmr" title="Link to this heading"></a></h2>
 <p>From version 1-10 of the HDF5 library, reader applications shall be able
 to access the file whilst it is being written. The plugin has been
 updated to support the additional SWMR feature when writing a file. The
@@ -636,7 +636,7 @@ readers to open the file (the file has been placed into SWMR mode).
 Data can be flushed to disk on demand using the FlushNow command.</p>
 </section>
 <section id="storing-attributes-with-dataset-dimensions">
-<h2><a class="toc-backref" href="#id14" role="doc-backlink">Storing Attributes with Dataset Dimensions</a><a class="headerlink" href="#storing-attributes-with-dataset-dimensions" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id14" role="doc-backlink">Storing Attributes with Dataset Dimensions</a><a class="headerlink" href="#storing-attributes-with-dataset-dimensions" title="Link to this heading"></a></h2>
 <div class="line-block">
 <div class="line">The plugin has the option of storing all NDAttribute datasets as a
 single array of data values, or else these NDAttribute datasets can be
@@ -655,7 +655,7 @@ have the dimensions of 5x4x3.</p></li>
 </ul>
 </section>
 <section id="selective-positional-placement-of-individual-frames">
-<h2><a class="toc-backref" href="#id15" role="doc-backlink">Selective Positional Placement of Individual Frames</a><a class="headerlink" href="#selective-positional-placement-of-individual-frames" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id15" role="doc-backlink">Selective Positional Placement of Individual Frames</a><a class="headerlink" href="#selective-positional-placement-of-individual-frames" title="Link to this heading"></a></h2>
 <p>The plugin can now store frames at specified positions within a dataset.
 Each individual dimension index can be specified with NDAttributes that
 are attached to the frame. The names of the NDAttributes that will be
@@ -672,7 +672,7 @@ PositionMode parameter to “On” and can be used with or without SWMR mode
 enabled.</p>
 </section>
 <section id="writing-index-datasets">
-<h2><a class="toc-backref" href="#id16" role="doc-backlink">Writing Index Datasets</a><a class="headerlink" href="#writing-index-datasets" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id16" role="doc-backlink">Writing Index Datasets</a><a class="headerlink" href="#writing-index-datasets" title="Link to this heading"></a></h2>
 <p>The plugin will write out an index dataset for an extra dimension
 multidimensional dataset if requested. This writing out of index values
 can only take place when running in selective positional placement mode
@@ -696,7 +696,7 @@ containing the values (0, 1). If the Y index parameter is set to y then
 a 1D dataset will be produced containing the values (0, 1, 2).</p>
 </section>
 <section id="parameters-and-records">
-<h2><a class="toc-backref" href="#id17" role="doc-backlink">Parameters and Records</a><a class="headerlink" href="#parameters-and-records" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id17" role="doc-backlink">Parameters and Records</a><a class="headerlink" href="#parameters-and-records" title="Link to this heading"></a></h2>
 <table class="table-bordered table-striped table-hover docutils align-default">
 <colgroup>
 <col style="width: 5%" />
@@ -1232,11 +1232,11 @@ datasets, one flush for each dataset.</p></td>
 </table>
 </section>
 <section id="screenshots">
-<h2><a class="toc-backref" href="#id18" role="doc-backlink">Screenshots</a><a class="headerlink" href="#screenshots" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id18" role="doc-backlink">Screenshots</a><a class="headerlink" href="#screenshots" title="Link to this heading"></a></h2>
 <figure class="align-center" id="id1">
 <img alt="../_images/NDFileHDF5.png" src="../_images/NDFileHDF5.png" />
 <figcaption>
-<p><span class="caption-text">NDFileHDF5.adl</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+<p><span class="caption-text">NDFileHDF5.adl</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 </section>
@@ -1254,7 +1254,7 @@ datasets, one flush for each dataset.</p></td>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, Mark Rivers.
-      <span class="lastupdated">Last updated on 2023-August-16.
+      <span class="lastupdated">Last updated on 2023-September-21.
       </span></p>
   </div>
 

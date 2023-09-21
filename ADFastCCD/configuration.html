@@ -11,11 +11,11 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -133,9 +133,9 @@
            <div itemprop="articleBody">
              
   <section id="configuration">
-<h1>Configuration<a class="headerlink" href="#configuration" title="Permalink to this heading"></a></h1>
+<h1>Configuration<a class="headerlink" href="#configuration" title="Link to this heading"></a></h1>
 <section id="ioc-shell">
-<h2>IOC Shell<a class="headerlink" href="#ioc-shell" title="Permalink to this heading"></a></h2>
+<h2>IOC Shell<a class="headerlink" href="#ioc-shell" title="Link to this heading"></a></h2>
 <p>The FastCCD driver is created with the FastCCDConfig command, either
 from C/C++ or from the EPICS IOC shell.</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">FastCCDConfig</span><span class="p">(</span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">portName</span><span class="p">,</span>
@@ -163,7 +163,7 @@ and in the documentation for the constructor for the <a class="reference externa
 class</a>.</p>
 </section>
 <section id="setting-the-image-size">
-<h2>Setting the image size<a class="headerlink" href="#setting-the-image-size" title="Permalink to this heading"></a></h2>
+<h2>Setting the image size<a class="headerlink" href="#setting-the-image-size" title="Link to this heading"></a></h2>
 <p>Due to the multicolum nature of the FastCCD, setting the image size is
 not trivial. This is due to the nature of the image descrambling and if
 overscan is used on each supercolumn. For this reason the image size is
@@ -186,7 +186,7 @@ have some overscan]</p></li>
 </ul>
 </section>
 <section id="auto-configuration-of-the-fastccd">
-<h2>Auto Configuration of the FastCCD<a class="headerlink" href="#auto-configuration-of-the-fastccd" title="Permalink to this heading"></a></h2>
+<h2>Auto Configuration of the FastCCD<a class="headerlink" href="#auto-configuration-of-the-fastccd" title="Link to this heading"></a></h2>
 <p>The FastCCD can be configured by using the built in <em>firmware</em> and
 settings in the <a class="reference external" href="https://github.com/NSLS-II/libcin">libcin driver</a>.
 This is controled by the PVs defined in the section <em>FastCCD Auto
@@ -205,7 +205,7 @@ writing 1 to the PV <code class="docutils literal notranslate"><span class="pre"
 the camera head to be powered. This is out of the scope of this driver.</p>
 </section>
 <section id="connection-management">
-<h2>Connection management<a class="headerlink" href="#connection-management" title="Permalink to this heading"></a></h2>
+<h2>Connection management<a class="headerlink" href="#connection-management" title="Link to this heading"></a></h2>
 <p>As the FastCCD <em>CIN</em> only uses UDP sockets, there is no permanent
 connection, the driver relies on being able to read such parameters as
 the serial nnumber of the software to be able to confirm that
@@ -225,7 +225,7 @@ commuincation with the driver is occuring.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, Mark Rivers.
-      <span class="lastupdated">Last updated on 2023-August-16.
+      <span class="lastupdated">Last updated on 2023-September-21.
       </span></p>
   </div>
 

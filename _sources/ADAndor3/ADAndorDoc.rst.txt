@@ -37,12 +37,12 @@ Andor sCMOS cameras:
 
 This driver inherits from `ADDriver <areaDetectorDoc.html#ADDriver>`__.
 It implements many of the parameters in
-`asynNDArrayDriver.h <areaDetectorDoxygenHTML/asyn_n_d_array_driver_8h.html>`__
+`asynNDArrayDriver.h <../areaDetectorDoxygenHTML/asyn_n_d_array_driver_8h.html>`__
 and in
-`ADArrayDriver.h <areaDetectorDoxygenHTML/_a_d_driver_8h.html>`__. It
+`ADArrayDriver.h <../areaDetectorDoxygenHTML/_a_d_driver_8h.html>`__. It
 also implements a number of parameters that are specific to the Andor
 detectors. The `andor3 class
-documentation <areaDetectorDoxygenHTML/classandor3.html>`__ describes
+documentation <../areaDetectorDoxygenHTML/classandor3.html>`__ describes
 this class in detail.
 
 This document does not attempt to explain the meaning of the
@@ -415,9 +415,9 @@ C/C++ or from the EPICS IOC shell.
 
 For details on the meaning of the parameters to this function refer to
 the detailed documentation on the andor3Config function in the
-`andor3.cpp documentation <areaDetectorDoxygenHTML/andor3_8cpp.html>`__
+`andor3.cpp documentation <../areaDetectorDoxygenHTML/andor3_8cpp.html>`__
 and in the documentation for the constructor for the `andor3
-class <areaDetectorDoxygenHTML/classandor3.html>`__. The maxFrames
+class <../areaDetectorDoxygenHTML/classandor3.html>`__. The maxFrames
 parameter controls the number of frame buffers the driver queues to the
 SDK when acquiring data. The default value is 10. Increasing this number
 will allow the SDK to transfer images from the camera at the full

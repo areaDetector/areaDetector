@@ -1067,27 +1067,28 @@
 <codeline lineno="924"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>Set<sp/>autoconnect<sp/>to<sp/>1.<sp/><sp/>priority<sp/>and<sp/>stacksize<sp/>can<sp/>be<sp/>0,<sp/>which<sp/>will<sp/>use<sp/>defaults.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="925"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/><ref refid="class_n_d_plugin_driver" kindref="compound">NDPluginDriver</ref>(portName,<sp/>queueSize,<sp/>blockingCallbacks,</highlight></codeline>
 <codeline lineno="926"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>NDArrayPort,<sp/>NDArrayAddr,<sp/>maxAddr,<sp/>maxBuffers,<sp/>maxMemory,</highlight></codeline>
-<codeline lineno="927"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>asynGenericPointerMask,<sp/>asynGenericPointerMask,</highlight></codeline>
-<codeline lineno="928"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>asynFlags,<sp/>autoConnect,<sp/>priority,<sp/>stackSize,<sp/>maxThreads,<sp/>compressionAware),</highlight></codeline>
-<codeline lineno="929"><highlight class="normal"><sp/><sp/><sp/><sp/>pCapture(NULL)</highlight></codeline>
-<codeline lineno="930"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="931"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//static<sp/>const<sp/>char<sp/>*functionName<sp/>=<sp/>&quot;NDPluginFile&quot;;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="932"><highlight class="normal"></highlight></codeline>
-<codeline lineno="933"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;ndArrayInfoInit<sp/>=<sp/>NULL;</highlight></codeline>
-<codeline lineno="934"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;lazyOpen<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="935"><highlight class="normal"></highlight></codeline>
-<codeline lineno="936"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;useAttrFilePrefix<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="937"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;fileMutexId<sp/>=<sp/>epicsMutexCreate();</highlight></codeline>
-<codeline lineno="938"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Set<sp/>the<sp/>plugin<sp/>type<sp/>string<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="939"><highlight class="normal"><sp/><sp/><sp/><sp/>setStringParam(NDPluginDriverPluginType,<sp/></highlight><highlight class="stringliteral">&quot;NDPluginFile&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="940"><highlight class="normal"></highlight></codeline>
-<codeline lineno="941"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Disable<sp/>ArrayCallbacks.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="942"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>This<sp/>plugin<sp/>currently<sp/>does<sp/>not<sp/>do<sp/>array<sp/>callbacks,<sp/>so<sp/>make<sp/>the<sp/>setting<sp/>reflect<sp/>the<sp/>behavior</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="943"><highlight class="normal"><sp/><sp/><sp/><sp/>setIntegerParam(NDArrayCallbacks,<sp/>0);</highlight></codeline>
-<codeline lineno="944"><highlight class="normal"></highlight></codeline>
-<codeline lineno="945"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Try<sp/>to<sp/>connect<sp/>to<sp/>the<sp/>NDArray<sp/>port<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="946"><highlight class="normal"><sp/><sp/><sp/><sp/>connectToArrayPort();</highlight></codeline>
-<codeline lineno="947"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="927"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>interfaceMask<sp/>|<sp/>asynGenericPointerMask,</highlight></codeline>
+<codeline lineno="928"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>interruptMask<sp/>|<sp/>asynGenericPointerMask,</highlight></codeline>
+<codeline lineno="929"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>asynFlags,<sp/>autoConnect,<sp/>priority,<sp/>stackSize,<sp/>maxThreads,<sp/>compressionAware),</highlight></codeline>
+<codeline lineno="930"><highlight class="normal"><sp/><sp/><sp/><sp/>pCapture(NULL)</highlight></codeline>
+<codeline lineno="931"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="932"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//static<sp/>const<sp/>char<sp/>*functionName<sp/>=<sp/>&quot;NDPluginFile&quot;;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="933"><highlight class="normal"></highlight></codeline>
+<codeline lineno="934"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;ndArrayInfoInit<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="935"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;lazyOpen<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="936"><highlight class="normal"></highlight></codeline>
+<codeline lineno="937"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;useAttrFilePrefix<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="938"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;fileMutexId<sp/>=<sp/>epicsMutexCreate();</highlight></codeline>
+<codeline lineno="939"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Set<sp/>the<sp/>plugin<sp/>type<sp/>string<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="940"><highlight class="normal"><sp/><sp/><sp/><sp/>setStringParam(NDPluginDriverPluginType,<sp/></highlight><highlight class="stringliteral">&quot;NDPluginFile&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="941"><highlight class="normal"></highlight></codeline>
+<codeline lineno="942"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Disable<sp/>ArrayCallbacks.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="943"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>This<sp/>plugin<sp/>currently<sp/>does<sp/>not<sp/>do<sp/>array<sp/>callbacks,<sp/>so<sp/>make<sp/>the<sp/>setting<sp/>reflect<sp/>the<sp/>behavior</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="944"><highlight class="normal"><sp/><sp/><sp/><sp/>setIntegerParam(NDArrayCallbacks,<sp/>0);</highlight></codeline>
+<codeline lineno="945"><highlight class="normal"></highlight></codeline>
+<codeline lineno="946"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Try<sp/>to<sp/>connect<sp/>to<sp/>the<sp/>NDArray<sp/>port<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="947"><highlight class="normal"><sp/><sp/><sp/><sp/>connectToArrayPort();</highlight></codeline>
+<codeline lineno="948"><highlight class="normal">}</highlight></codeline>
     </programlisting>
     <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginFile.cpp"/>
   </compounddef>

@@ -11,11 +11,11 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -128,7 +128,7 @@
            <div itemprop="articleBody">
              
   <section id="ndpluginbadpixel">
-<h1><a class="toc-backref" href="#id1" role="doc-backlink">NDPluginBadPixel</a><a class="headerlink" href="#ndpluginbadpixel" title="Permalink to this heading"></a></h1>
+<h1><a class="toc-backref" href="#id1" role="doc-backlink">NDPluginBadPixel</a><a class="headerlink" href="#ndpluginbadpixel" title="Link to this heading"></a></h1>
 <dl class="field-list simple">
 <dt class="field-odd">author<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Mark Rivers, University of Chicago</p>
@@ -147,7 +147,7 @@
 </ul>
 </nav>
 <section id="overview">
-<h2><a class="toc-backref" href="#id2" role="doc-backlink">Overview</a><a class="headerlink" href="#overview" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id2" role="doc-backlink">Overview</a><a class="headerlink" href="#overview" title="Link to this heading"></a></h2>
 <p>This plugin replaces bad pixels in an NDArray. It supports 3 different
 replacement mechanisms:</p>
 <ul class="simple">
@@ -277,7 +277,7 @@ For example:</p>
 </table>
 </section>
 <section id="configuration">
-<h2><a class="toc-backref" href="#id3" role="doc-backlink">Configuration</a><a class="headerlink" href="#configuration" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">Configuration</a><a class="headerlink" href="#configuration" title="Link to this heading"></a></h2>
 <p>The NDPluginBadPixel plugin is created with the <code class="docutils literal notranslate"><span class="pre">NDBadPixelConfigure</span></code> command,
 either from C/C++ or from the EPICS IOC shell.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">NDBadPixelConfigure</span> <span class="p">(</span><span class="n">const</span> <span class="n">char</span> <span class="o">*</span><span class="n">portName</span><span class="p">,</span> <span class="nb">int</span> <span class="n">queueSize</span><span class="p">,</span> <span class="nb">int</span> <span class="n">blockingCallbacks</span><span class="p">,</span>
@@ -296,7 +296,7 @@ base class screen is the name of the JSON bad pixel file.</p>
 <img alt="../_images/NDBadPixel.png" class="align-center" src="../_images/NDBadPixel.png" />
 </section>
 <section id="restrictions">
-<h2><a class="toc-backref" href="#id4" role="doc-backlink">Restrictions</a><a class="headerlink" href="#restrictions" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">Restrictions</a><a class="headerlink" href="#restrictions" title="Link to this heading"></a></h2>
 <p>The plugin does not handle reading out the detector in the reverse directions in X or Y because
 the NDArray does not currently contain enough information to calculate the original pixel
 coordinates.  If image reversal is desired then NDPluginTransform can be used after
@@ -318,7 +318,7 @@ This could be added in the future.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, Mark Rivers.
-      <span class="lastupdated">Last updated on 2023-August-16.
+      <span class="lastupdated">Last updated on 2023-September-21.
       </span></p>
   </div>
 

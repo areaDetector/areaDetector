@@ -31,9 +31,9 @@ QImaging cameras:
 
 This driver inherits from `ADDriver <areaDetectorDoc.html#ADDriver>`__.
 It implements many of the parameters in
-`asynNDArrayDriver.h <areaDetectorDoxygenHTML/asyn_n_d_array_driver_8h.html>`__
+`asynNDArrayDriver.h <../areaDetectorDoxygenHTML/asyn_n_d_array_driver_8h.html>`__
 and in
-`ADArrayDriver.h <areaDetectorDoxygenHTML/_a_d_driver_8h.html>`__. It
+`ADArrayDriver.h <../areaDetectorDoxygenHTML/_a_d_driver_8h.html>`__. It
 also implements a number of parameters that are specific to the QImaging
 detectors.
 

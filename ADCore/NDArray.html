@@ -11,11 +11,11 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -103,9 +103,9 @@
            <div itemprop="articleBody">
              
   <section id="ndarray">
-<h1>NDArray<a class="headerlink" href="#ndarray" title="Permalink to this heading"></a></h1>
+<h1>NDArray<a class="headerlink" href="#ndarray" title="Link to this heading"></a></h1>
 <section id="id1">
-<h2>NDArray<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h2>
+<h2>NDArray<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
 <p>The NDArray (N-Dimensional array) is the class that is used for passing
 detector data from drivers to plugins. An NDArray is a general purpose
 class for handling array data. An NDArray object is self-describing,
@@ -122,7 +122,7 @@ documentation</a>describes
 this class in detail.</p>
 </section>
 <section id="ndarraypool">
-<h2>NDArrayPool<a class="headerlink" href="#ndarraypool" title="Permalink to this heading"></a></h2>
+<h2>NDArrayPool<a class="headerlink" href="#ndarraypool" title="Link to this heading"></a></h2>
 <p>The NDArrayPool class manages a free list (pool) of NDArray objects.
 Drivers allocate NDArray objects from the pool, and pass these objects
 to plugins. Plugins increase the reference count on the object when they
@@ -134,7 +134,7 @@ documentation</a>describes
 this class in detail.</p>
 </section>
 <section id="ndattribute">
-<h2>NDAttribute<a class="headerlink" href="#ndattribute" title="Permalink to this heading"></a></h2>
+<h2>NDAttribute<a class="headerlink" href="#ndattribute" title="Link to this heading"></a></h2>
 <p>The NDAttribute is a class for linking metadata to an NDArray. An
 NDattribute has a name, description, data type, value, source type and
 source information. Attributes are identified by their names, which are
@@ -218,7 +218,7 @@ documentation</a>
 describes this class in detail.</p>
 </section>
 <section id="ndattributelist">
-<h2>NDAttributeList<a class="headerlink" href="#ndattributelist" title="Permalink to this heading"></a></h2>
+<h2>NDAttributeList<a class="headerlink" href="#ndattributelist" title="Link to this heading"></a></h2>
 <p>The NDAttributeList implements a linked list of NDAttribute objects.
 NDArray objects contain an NDAttributeList which is how attributes are
 associated with an NDArray. There are methods to add, delete and search
@@ -251,7 +251,7 @@ documentation</a>
 describes this class in detail.</p>
 </section>
 <section id="pvattribute">
-<h2>PVAttribute<a class="headerlink" href="#pvattribute" title="Permalink to this heading"></a></h2>
+<h2>PVAttribute<a class="headerlink" href="#pvattribute" title="Link to this heading"></a></h2>
 <p>The PVAttribute class is derived from NDAttribute. It obtains its value
 by monitor callbacks from an EPICS PV, and is thus used to associate
 current the value of any EPICS PV with an NDArray. The <a class="reference external" href="../areaDetectorDoxygenHTML/class_p_v_attribute.html">PVAttribute
@@ -260,7 +260,7 @@ documentation</a>
 describes this class in detail.</p>
 </section>
 <section id="paramattribute">
-<h2>paramAttribute<a class="headerlink" href="#paramattribute" title="Permalink to this heading"></a></h2>
+<h2>paramAttribute<a class="headerlink" href="#paramattribute" title="Link to this heading"></a></h2>
 <p>The paramAttribute class is derived from NDAttribute. It obtains its
 value from the current value of a driver or plugin parameter. The
 paramAttribute class is typically used when it is important to have the
@@ -271,7 +271,7 @@ documentation</a>
 describes this class in detail.</p>
 </section>
 <section id="functattribute">
-<h2>functAttribute<a class="headerlink" href="#functattribute" title="Permalink to this heading"></a></h2>
+<h2>functAttribute<a class="headerlink" href="#functattribute" title="Link to this heading"></a></h2>
 <p>The functAttribute class is derived from NDAttribute. It obtains its
 value from a user-written C++ function. The functAttribute class is thus
 very general, and can be used to add almost any information to an
@@ -281,7 +281,7 @@ documentation</a>
 describes this class in detail.</p>
 </section>
 <section id="asynndarraydriver">
-<h2>asynNDArrayDriver<a class="headerlink" href="#asynndarraydriver" title="Permalink to this heading"></a></h2>
+<h2>asynNDArrayDriver<a class="headerlink" href="#asynndarraydriver" title="Link to this heading"></a></h2>
 <p>asynNDArrayDriver inherits from asynPortDriver. It implements the
 asynGenericPointer functions for NDArray objects. This is the class from
 which both plugins and area detector drivers are indirectly derived. The
@@ -1011,7 +1011,7 @@ be opened.</p></td>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, Mark Rivers.
-      <span class="lastupdated">Last updated on 2023-August-16.
+      <span class="lastupdated">Last updated on 2023-September-21.
       </span></p>
   </div>
 

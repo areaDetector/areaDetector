@@ -11,11 +11,11 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -142,7 +142,7 @@
            <div itemprop="articleBody">
              
   <section id="adpointgrey">
-<h1><a class="toc-backref" href="#id1" role="doc-backlink">ADPointGrey</a><a class="headerlink" href="#adpointgrey" title="Permalink to this heading"></a></h1>
+<h1><a class="toc-backref" href="#id1" role="doc-backlink">ADPointGrey</a><a class="headerlink" href="#adpointgrey" title="Link to this heading"></a></h1>
 <dl class="field-list simple">
 <dt class="field-odd">author<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Mark Rivers, University of Chicago</p>
@@ -171,7 +171,7 @@
 </ul>
 </nav>
 <section id="introduction">
-<h2><a class="toc-backref" href="#id2" role="doc-backlink">Introduction</a><a class="headerlink" href="#introduction" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id2" role="doc-backlink">Introduction</a><a class="headerlink" href="#introduction" title="Link to this heading"></a></h2>
 <p>This is an <a class="reference internal" href="../index.html"><span class="doc">areaDetector</span></a> driver for cameras from <a class="reference external" href="http://www.ptgrey.com">Point
 Grey</a>. These include IEEE 1394 Firewire DCAM,
 GigE, USB 2.0, and USB 3.0 cameras. The driver should work with any
@@ -213,7 +213,7 @@ facilitates writing a driver that works with all of the Point Grey
 cameras.</p>
 </section>
 <section id="camera-firmware">
-<h2><a class="toc-backref" href="#id3" role="doc-backlink">Camera firmware</a><a class="headerlink" href="#camera-firmware" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">Camera firmware</a><a class="headerlink" href="#camera-firmware" title="Link to this heading"></a></h2>
 <p>Point Grey frequently updates the available firmware for each camera to
 add features and fix bugs. However, they are not very good about putting
 the link to the latest firmware on their Web site. They claim this is
@@ -227,7 +227,7 @@ particular camera, and if so to provide access to it. They normally do
 this by sending a link to a Dropbox folder.</p>
 </section>
 <section id="video-modes">
-<h2><a class="toc-backref" href="#id4" role="doc-backlink">Video modes</a><a class="headerlink" href="#video-modes" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">Video modes</a><a class="headerlink" href="#video-modes" title="Link to this heading"></a></h2>
 <p>The DCAM specification defines standard video formats, and a set of
 video modes for each video format. Point Grey combines the video format
 and video mode into a single quantity they call VideoMode. The following
@@ -330,7 +330,7 @@ existing camera supports more than 16 video modes.</p>
 </table>
 </section>
 <section id="format7-modes">
-<h2><a class="toc-backref" href="#id5" role="doc-backlink">Format7 modes</a><a class="headerlink" href="#format7-modes" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id5" role="doc-backlink">Format7 modes</a><a class="headerlink" href="#format7-modes" title="Link to this heading"></a></h2>
 <p>When the video mode is Format7 then there is an available selection of
 Format7 modes. These modes are not defined in the IIDC/DCAM standard,
 but are specific to each vendor and camera. Typically Format7 mode 0 is
@@ -344,7 +344,7 @@ strings are of the form “Format7 mode # (NYxNY)”, for example “0
 a camera with 1920 x 1200 pixels.</p>
 </section>
 <section id="pixel-formats">
-<h2><a class="toc-backref" href="#id6" role="doc-backlink">Pixel formats</a><a class="headerlink" href="#pixel-formats" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id6" role="doc-backlink">Pixel formats</a><a class="headerlink" href="#pixel-formats" title="Link to this heading"></a></h2>
 <p>When the video mode is Format7 then there is an available selection of
 PixelFormats. The available PixelFormats depend on the selected Format7
 mode. Selection of a PixelFormat is done with the EPICS PixelFormat
@@ -427,7 +427,7 @@ supported on a particular camera with a specific Format7 mode.</p>
 </table>
 </section>
 <section id="frame-rates">
-<h2><a class="toc-backref" href="#id7" role="doc-backlink">Frame rates</a><a class="headerlink" href="#frame-rates" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id7" role="doc-backlink">Frame rates</a><a class="headerlink" href="#frame-rates" title="Link to this heading"></a></h2>
 <p>The following tables lists the standard IIDC/DCAM frame rates for video
 modes other than Format7. Selecting a video mode (other than Format7)
 defines the choice of available standard frame rates. Selecting a
@@ -487,7 +487,7 @@ controlled solely by the FrameRate property.</p>
 </table>
 </section>
 <section id="properties">
-<h2><a class="toc-backref" href="#id8" role="doc-backlink">Properties</a><a class="headerlink" href="#properties" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id8" role="doc-backlink">Properties</a><a class="headerlink" href="#properties" title="Link to this heading"></a></h2>
 <p>The DCAM specification defines a number of standard features, which
 control things such as the brightness, white balance, shutter time, etc.
 For each feature the standard defines control in both device units
@@ -590,7 +590,7 @@ Properties.</p>
 </table>
 </section>
 <section id="gige-properties">
-<h2><a class="toc-backref" href="#id9" role="doc-backlink">GigE Properties</a><a class="headerlink" href="#gige-properties" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id9" role="doc-backlink">GigE Properties</a><a class="headerlink" href="#gige-properties" title="Link to this heading"></a></h2>
 <p>Point Grey supports 4 properties that are specific to GigE cameras.</p>
 <table class="table-bordered table-striped table-hover docutils align-default">
 <thead>
@@ -623,7 +623,7 @@ Properties.</p>
 </table>
 </section>
 <section id="standard-areadetector-parameters">
-<h2><a class="toc-backref" href="#id10" role="doc-backlink">Standard areaDetector parameters</a><a class="headerlink" href="#standard-areadetector-parameters" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id10" role="doc-backlink">Standard areaDetector parameters</a><a class="headerlink" href="#standard-areadetector-parameters" title="Link to this heading"></a></h2>
 <p>The following table describes how the Point Grey driver implements some
 of the standard driver parameters.</p>
 <table class="table-bordered table-striped table-hover docutils align-default">
@@ -704,7 +704,7 @@ of the GAIN property. The units are dB.</p></td>
 </table>
 </section>
 <section id="point-grey-specific-driver-parameters">
-<h2><a class="toc-backref" href="#id11" role="doc-backlink">Point Grey specific driver parameters</a><a class="headerlink" href="#point-grey-specific-driver-parameters" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id11" role="doc-backlink">Point Grey specific driver parameters</a><a class="headerlink" href="#point-grey-specific-driver-parameters" title="Link to this heading"></a></h2>
 <p>The Point Grey driver implements the following parameters in addition to
 those in asynNDArrayDriver.h and ADDriver.h. The database file is
 pointGrey.template for all records except the property records, which
@@ -1266,7 +1266,7 @@ time acquisition is started.</p></td>
 </table>
 </section>
 <section id="configuration">
-<h2><a class="toc-backref" href="#id12" role="doc-backlink">Configuration</a><a class="headerlink" href="#configuration" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id12" role="doc-backlink">Configuration</a><a class="headerlink" href="#configuration" title="Link to this heading"></a></h2>
 <p>The Point Grey driver is created with the pointGreyConfig command,
 either from C/C++ or from the EPICS IOC shell.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pointGreyConfig</span><span class="p">(</span><span class="n">const</span> <span class="n">char</span> <span class="o">*</span><span class="n">portName</span><span class="p">,</span> <span class="n">const</span> <span class="n">char</span><span class="o">*</span> <span class="n">cameraId</span><span class="p">,</span> <span class="nb">int</span> <span class="n">traceMask</span><span class="p">,</span> <span class="nb">int</span> <span class="n">memoryChannel</span><span class="p">,</span>
@@ -1301,7 +1301,7 @@ settings to save/restore values at startup anyway, this is not a serious
 limitation.</p>
 </section>
 <section id="example-st-cmd-startup-file">
-<h2><a class="toc-backref" href="#id13" role="doc-backlink">Example st.cmd startup file</a><a class="headerlink" href="#example-st-cmd-startup-file" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id13" role="doc-backlink">Example st.cmd startup file</a><a class="headerlink" href="#example-st-cmd-startup-file" title="Link to this heading"></a></h2>
 <p>The following startup script is provided with ADPointGrey.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&lt; envPaths
 errlogInit(20000)
@@ -1407,7 +1407,7 @@ dbpf(&quot;$(PREFIX)cam1:AcquireTime.PROC&quot;, &quot;1&quot;)
 </div>
 </section>
 <section id="medm-screens">
-<h2><a class="toc-backref" href="#id14" role="doc-backlink">MEDM screens</a><a class="headerlink" href="#medm-screens" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id14" role="doc-backlink">MEDM screens</a><a class="headerlink" href="#medm-screens" title="Link to this heading"></a></h2>
 <p>The following show the MEDM screens that are used to control the Point
 Grey cameras.</p>
 <p><code class="docutils literal notranslate"><span class="pre">pointGrey.adl</span></code> is the main screen used to control Point Grey cameras.</p>
@@ -1467,7 +1467,7 @@ close and re-open that main screen as well.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, Mark Rivers.
-      <span class="lastupdated">Last updated on 2023-August-16.
+      <span class="lastupdated">Last updated on 2023-September-21.
       </span></p>
   </div>
 

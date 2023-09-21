@@ -2,53 +2,67 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
   <compounddef id="_a_d_lambda_8h" kind="file" language="C++">
     <compoundname>ADLambda.h</compoundname>
+    <includes local="no">libxsp.h</includes>
+    <includes local="no">string</includes>
+    <includes local="no">map</includes>
+    <includes local="no">deque</includes>
+    <includes local="no">variant</includes>
     <includes local="no">epicsString.h</includes>
     <includes local="no">epicsEvent.h</includes>
     <includes local="no">epicsThread.h</includes>
     <includes refid="_a_d_driver_8h" local="yes">ADDriver.h</includes>
     <includedby refid="_a_d_lambda_8cpp" local="yes">/home/runner/work/areaDetector/areaDetector/ADLambda/LambdaApp/src/ADLambda.cpp</includedby>
     <incdepgraph>
-      <node id="6">
+      <node id="2">
+        <label>libxsp.h</label>
+      </node>
+      <node id="11">
         <label>epicsTypes.h</label>
       </node>
-      <node id="12">
+      <node id="17">
         <label>NDArray.h</label>
         <link refid="_n_d_array_8h"/>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
         <childnode refid="13" relation="include">
         </childnode>
-        <childnode refid="10" relation="include">
+        <childnode refid="19" relation="include">
         </childnode>
-        <childnode refid="8" relation="include">
+        <childnode refid="20" relation="include">
         </childnode>
-        <childnode refid="14" relation="include">
+        <childnode refid="25" relation="include">
         </childnode>
-        <childnode refid="15" relation="include">
-        </childnode>
-        <childnode refid="21" relation="include">
-        </childnode>
-        <childnode refid="22" relation="include">
+        <childnode refid="26" relation="include">
         </childnode>
       </node>
-      <node id="21">
+      <node id="25">
         <label>NDAttributeList.h</label>
         <link refid="_n_d_attribute_list_8h"/>
-        <childnode refid="17" relation="include">
+        <childnode refid="21" relation="include">
         </childnode>
-        <childnode refid="14" relation="include">
-        </childnode>
-        <childnode refid="10" relation="include">
+        <childnode refid="19" relation="include">
         </childnode>
         <childnode refid="15" relation="include">
         </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
       </node>
-      <node id="10">
+      <node id="6">
+        <label>variant</label>
+      </node>
+      <node id="15">
         <label>epicsMutex.h</label>
       </node>
-      <node id="20">
+      <node id="24">
         <label>epicsVersion.h</label>
       </node>
-      <node id="16">
+      <node id="3">
         <label>string</label>
+      </node>
+      <node id="4">
+        <label>map</label>
       </node>
       <node id="1">
         <label>/home/runner/work/areaDetector/areaDetector/ADLambda/LambdaApp/src/ADLambda.h</label>
@@ -61,13 +75,6 @@
         </childnode>
         <childnode refid="5" relation="include">
         </childnode>
-      </node>
-      <node id="4">
-        <label>epicsThread.h</label>
-      </node>
-      <node id="5">
-        <label>ADDriver.h</label>
-        <link refid="_a_d_driver_8h"/>
         <childnode refid="6" relation="include">
         </childnode>
         <childnode refid="7" relation="include">
@@ -76,76 +83,96 @@
         </childnode>
         <childnode refid="9" relation="include">
         </childnode>
-      </node>
-      <node id="23">
-        <label>ADCoreVersion.h</label>
-        <link refid="_a_d_core_version_8h"/>
-      </node>
-      <node id="19">
-        <label>ADCoreAPI.h</label>
-        <link refid="_a_d_core_a_p_i_8h"/>
-        <childnode refid="20" relation="include">
+        <childnode refid="10" relation="include">
         </childnode>
       </node>
       <node id="9">
-        <label>asynNDArrayDriver.h</label>
-        <link refid="asyn_n_d_array_driver_8h"/>
-        <childnode refid="10" relation="include">
-        </childnode>
-        <childnode refid="3" relation="include">
-        </childnode>
+        <label>epicsThread.h</label>
+      </node>
+      <node id="10">
+        <label>ADDriver.h</label>
+        <link refid="_a_d_driver_8h"/>
         <childnode refid="11" relation="include">
         </childnode>
         <childnode refid="12" relation="include">
         </childnode>
-        <childnode refid="23" relation="include">
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
         </childnode>
       </node>
-      <node id="2">
-        <label>epicsString.h</label>
+      <node id="27">
+        <label>ADCoreVersion.h</label>
+        <link refid="_a_d_core_version_8h"/>
+      </node>
+      <node id="23">
+        <label>ADCoreAPI.h</label>
+        <link refid="_a_d_core_a_p_i_8h"/>
+        <childnode refid="24" relation="include">
+        </childnode>
       </node>
       <node id="14">
-        <label>ellLib.h</label>
-      </node>
-      <node id="15">
-        <label>NDAttribute.h</label>
-        <link refid="_n_d_attribute_8h"/>
+        <label>asynNDArrayDriver.h</label>
+        <link refid="asyn_n_d_array_driver_8h"/>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
         <childnode refid="16" relation="include">
         </childnode>
         <childnode refid="17" relation="include">
         </childnode>
-        <childnode refid="14" relation="include">
+        <childnode refid="27" relation="include">
         </childnode>
-        <childnode refid="6" relation="include">
+      </node>
+      <node id="7">
+        <label>epicsString.h</label>
+      </node>
+      <node id="19">
+        <label>ellLib.h</label>
+      </node>
+      <node id="20">
+        <label>NDAttribute.h</label>
+        <link refid="_n_d_attribute_8h"/>
+        <childnode refid="3" relation="include">
         </childnode>
-        <childnode refid="18" relation="include">
+        <childnode refid="21" relation="include">
         </childnode>
         <childnode refid="19" relation="include">
         </childnode>
-      </node>
-      <node id="18">
-        <label>asynDriver.h</label>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
       </node>
       <node id="22">
+        <label>asynDriver.h</label>
+      </node>
+      <node id="5">
+        <label>deque</label>
+      </node>
+      <node id="26">
         <label>Codec.h</label>
         <link refid="_codec_8h"/>
       </node>
-      <node id="8">
+      <node id="13">
         <label>epicsTime.h</label>
       </node>
-      <node id="11">
+      <node id="16">
         <label>asynPortDriver.h</label>
       </node>
-      <node id="13">
+      <node id="18">
         <label>set</label>
       </node>
-      <node id="7">
+      <node id="12">
         <label>epicsMessageQueue.h</label>
       </node>
-      <node id="17">
+      <node id="21">
         <label>stdio.h</label>
       </node>
-      <node id="3">
+      <node id="8">
         <label>epicsEvent.h</label>
       </node>
     </incdepgraph>
@@ -162,40 +189,18 @@
       </node>
     </invincdepgraph>
     <innerclass refid="class_a_d_lambda" prot="public">ADLambda</innerclass>
-    <innernamespace refid="namespace_det_common_n_s">DetCommonNS</innernamespace>
+    <innerclass refid="structacquire__data" prot="public">acquire_data</innerclass>
       <sectiondef kind="define">
       <memberdef kind="define" id="_a_d_lambda_8h_1a169761aa7b605c18bd81fdd1f66f3bf1" prot="public" static="no">
         <name>LAMBDA_FIRST_PARAM</name>
-        <initializer>LAMBDA_VersionNumber</initializer>
+        <initializer>LAMBDA_ConfigFilePath</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/areaDetector/areaDetector/ADLambda/LambdaApp/src/ADLambda.h" line="57" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADLambda/LambdaApp/src/ADLambda.h" bodystart="57" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="define" id="_a_d_lambda_8h_1ac8c438df4d1b49a6cace598016e5beb3" prot="public" static="no">
-        <name>LAMBDA_LAST_PARAM</name>
-        <initializer>LAMBDA_BadImage</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/areaDetector/areaDetector/ADLambda/LambdaApp/src/ADLambda.h" line="66" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADLambda/LambdaApp/src/ADLambda.h" bodystart="66" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="define" id="_a_d_lambda_8h_1a249813cb80dcc9a8f9fefc63f32c82ef" prot="public" static="no">
-        <name>LAMBDA_VersionNumberString</name>
-        <initializer>&quot;LAMBDA_VERSION_NUMBER&quot;</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/areaDetector/areaDetector/ADLambda/LambdaApp/src/ADLambda.h" line="89" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADLambda/LambdaApp/src/ADLambda.h" bodystart="89" bodyend="-1"/>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADLambda/LambdaApp/src/ADLambda.h" line="63" column="13" bodyfile="/home/runner/work/areaDetector/areaDetector/ADLambda/LambdaApp/src/ADLambda.h" bodystart="63" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="_a_d_lambda_8h_1a77d39053bd494399ef6a7ff02bfbfcc9" prot="public" static="no">
         <name>LAMBDA_ConfigFilePathString</name>
@@ -206,7 +211,18 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/areaDetector/areaDetector/ADLambda/LambdaApp/src/ADLambda.h" line="90" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADLambda/LambdaApp/src/ADLambda.h" bodystart="90" bodyend="-1"/>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADLambda/LambdaApp/src/ADLambda.h" line="121" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADLambda/LambdaApp/src/ADLambda.h" bodystart="121" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_a_d_lambda_8h_1af698cdbc559bf7e8a3b073a15933ba47" prot="public" static="no">
+        <name>LAMBDA_DecoderDetectedString</name>
+        <initializer>&quot;LAMBDA_DECODER_DETECTED&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADLambda/LambdaApp/src/ADLambda.h" line="122" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADLambda/LambdaApp/src/ADLambda.h" bodystart="122" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="_a_d_lambda_8h_1a724a7b024258f05c8cd992148964fa9b" prot="public" static="no">
         <name>LAMBDA_EnergyThresholdString</name>
@@ -217,7 +233,18 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/areaDetector/areaDetector/ADLambda/LambdaApp/src/ADLambda.h" line="91" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADLambda/LambdaApp/src/ADLambda.h" bodystart="91" bodyend="-1"/>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADLambda/LambdaApp/src/ADLambda.h" line="123" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADLambda/LambdaApp/src/ADLambda.h" bodystart="123" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_a_d_lambda_8h_1a1d752782b8fad29eec0a02ea6af7b7c9" prot="public" static="no">
+        <name>LAMBDA_DualThresholdString</name>
+        <initializer>&quot;LAMBDA_DUAL_THRESHOLD&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADLambda/LambdaApp/src/ADLambda.h" line="124" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADLambda/LambdaApp/src/ADLambda.h" bodystart="124" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="_a_d_lambda_8h_1a9dbb0b6e3d59043b39b28a3e3b0c9aaa" prot="public" static="no">
         <name>LAMBDA_DecodedQueueDepthString</name>
@@ -228,7 +255,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/areaDetector/areaDetector/ADLambda/LambdaApp/src/ADLambda.h" line="92" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADLambda/LambdaApp/src/ADLambda.h" bodystart="92" bodyend="-1"/>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADLambda/LambdaApp/src/ADLambda.h" line="125" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADLambda/LambdaApp/src/ADLambda.h" bodystart="125" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="_a_d_lambda_8h_1ab2e63546bdbaa47ff2e9eb9ef3b785d5" prot="public" static="no">
         <name>LAMBDA_OperatingModeString</name>
@@ -239,18 +266,40 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/areaDetector/areaDetector/ADLambda/LambdaApp/src/ADLambda.h" line="93" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADLambda/LambdaApp/src/ADLambda.h" bodystart="93" bodyend="-1"/>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADLambda/LambdaApp/src/ADLambda.h" line="126" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADLambda/LambdaApp/src/ADLambda.h" bodystart="126" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="define" id="_a_d_lambda_8h_1aa1565498ba6aa98241e2793c6cf56e37" prot="public" static="no">
-        <name>LAMBDA_DetectorStateString</name>
-        <initializer>&quot;LAMBDA_DETECTOR_STATE&quot;</initializer>
+      <memberdef kind="define" id="_a_d_lambda_8h_1a150daddc3b63ca239350f97370a2661f" prot="public" static="no">
+        <name>LAMBDA_DualModeString</name>
+        <initializer>&quot;LAMBDA_DUAL_MODE&quot;</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/areaDetector/areaDetector/ADLambda/LambdaApp/src/ADLambda.h" line="94" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADLambda/LambdaApp/src/ADLambda.h" bodystart="94" bodyend="-1"/>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADLambda/LambdaApp/src/ADLambda.h" line="127" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADLambda/LambdaApp/src/ADLambda.h" bodystart="127" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_a_d_lambda_8h_1a1d1d956489167e543327d0ccf658e5d9" prot="public" static="no">
+        <name>LAMBDA_ChargeSummingString</name>
+        <initializer>&quot;LAMBDA_CHARGE_SUMMING&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADLambda/LambdaApp/src/ADLambda.h" line="128" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADLambda/LambdaApp/src/ADLambda.h" bodystart="128" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_a_d_lambda_8h_1a3e68fd57ff1249a3c6f4c1528704c32b" prot="public" static="no">
+        <name>LAMBDA_GatingEnableString</name>
+        <initializer>&quot;LAMBDA_GATING_ENABLE&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADLambda/LambdaApp/src/ADLambda.h" line="129" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADLambda/LambdaApp/src/ADLambda.h" bodystart="129" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="_a_d_lambda_8h_1a54c22f0f88cf62fde8db863cb816e9b1" prot="public" static="no">
         <name>LAMBDA_BadFrameCounterString</name>
@@ -261,7 +310,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/areaDetector/areaDetector/ADLambda/LambdaApp/src/ADLambda.h" line="95" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADLambda/LambdaApp/src/ADLambda.h" bodystart="95" bodyend="-1"/>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADLambda/LambdaApp/src/ADLambda.h" line="130" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADLambda/LambdaApp/src/ADLambda.h" bodystart="130" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="_a_d_lambda_8h_1a01bdd6423c1bec810548fac8b5479fe5" prot="public" static="no">
         <name>LAMBDA_BadImageString</name>
@@ -272,18 +321,142 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/areaDetector/areaDetector/ADLambda/LambdaApp/src/ADLambda.h" line="96" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADLambda/LambdaApp/src/ADLambda.h" bodystart="96" bodyend="-1"/>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADLambda/LambdaApp/src/ADLambda.h" line="131" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADLambda/LambdaApp/src/ADLambda.h" bodystart="131" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="define" id="_a_d_lambda_8h_1a68c8737c0d52bb3818d62d93bbf706a5" prot="public" static="no">
-        <name>NUM_LAMBDA_PARAMS</name>
-        <initializer>((int)(&amp;<ref refid="_a_d_lambda_8h_1ac8c438df4d1b49a6cace598016e5beb3" kindref="member">LAMBDA_LAST_PARAM</ref> - &amp;<ref refid="_a_d_lambda_8h_1a169761aa7b605c18bd81fdd1f66f3bf1" kindref="member">LAMBDA_FIRST_PARAM</ref> + 1))</initializer>
+      <memberdef kind="define" id="_a_d_lambda_8h_1ae93d12c4bf1aaaf8dcbb5b1935fa315c" prot="public" static="no">
+        <name>LAMBDA_ReadoutThreadsString</name>
+        <initializer>&quot;LAMBDA_NUM_READOUT_THREADS&quot;</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/areaDetector/areaDetector/ADLambda/LambdaApp/src/ADLambda.h" line="99" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADLambda/LambdaApp/src/ADLambda.h" bodystart="99" bodyend="-1"/>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADLambda/LambdaApp/src/ADLambda.h" line="132" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADLambda/LambdaApp/src/ADLambda.h" bodystart="132" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_a_d_lambda_8h_1a634d0ebd99d6042cd673494f4db0809d" prot="public" static="no">
+        <name>LAMBDA_StitchWidthString</name>
+        <initializer>&quot;LAMBDA_STITCHED_WIDTH&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADLambda/LambdaApp/src/ADLambda.h" line="133" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADLambda/LambdaApp/src/ADLambda.h" bodystart="133" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_a_d_lambda_8h_1ab08cc5e4d5b3d79d868665a4b5beb196" prot="public" static="no">
+        <name>LAMBDA_StitchHeightString</name>
+        <initializer>&quot;LAMBDA_STITCHED_HEIGHT&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADLambda/LambdaApp/src/ADLambda.h" line="134" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADLambda/LambdaApp/src/ADLambda.h" bodystart="134" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="_a_d_lambda_8h_1a8f74045056811164fadc69864af063e3" prot="public" static="no">
+        <type>std::variant&lt; std::shared_ptr&lt; xsp::lambda::Receiver &gt;, std::shared_ptr&lt; xsp::PostDecoder &gt; &gt;</type>
+        <definition>typedef std::variant&lt;std::shared_ptr&lt;xsp::lambda::Receiver&gt;, std::shared_ptr&lt;xsp::PostDecoder&gt; &gt; lambda_input</definition>
+        <argsstring></argsstring>
+        <name>lambda_input</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADLambda/LambdaApp/src/ADLambda.h" line="35" column="22" bodyfile="/home/runner/work/areaDetector/areaDetector/ADLambda/LambdaApp/src/ADLambda.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="_a_d_lambda_8h_1a31514a9ded1fdc28fda28361a89c4ef9" prot="public" static="yes" mutable="no">
+        <type>const int</type>
+        <definition>const int ONE_BIT</definition>
+        <argsstring></argsstring>
+        <name>ONE_BIT</name>
+        <initializer>= 1</initializer>
+        <briefdescription>
+<para>Copyright (c) 2015, UChicago Argonne, LLC See LICENSE file. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADLambda/LambdaApp/src/ADLambda.h" line="26" column="18" bodyfile="/home/runner/work/areaDetector/areaDetector/ADLambda/LambdaApp/src/ADLambda.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_a_d_lambda_8h_1ae328e2696fed337822f4ce094f959b74" prot="public" static="yes" mutable="no">
+        <type>const int</type>
+        <definition>const int SIX_BIT</definition>
+        <argsstring></argsstring>
+        <name>SIX_BIT</name>
+        <initializer>= 6</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADLambda/LambdaApp/src/ADLambda.h" line="27" column="18" bodyfile="/home/runner/work/areaDetector/areaDetector/ADLambda/LambdaApp/src/ADLambda.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_a_d_lambda_8h_1af346fdefd542c8c36dc8b83bb099c21f" prot="public" static="yes" mutable="no">
+        <type>const int</type>
+        <definition>const int TWELVE_BIT</definition>
+        <argsstring></argsstring>
+        <name>TWELVE_BIT</name>
+        <initializer>= 12</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADLambda/LambdaApp/src/ADLambda.h" line="28" column="18" bodyfile="/home/runner/work/areaDetector/areaDetector/ADLambda/LambdaApp/src/ADLambda.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_a_d_lambda_8h_1ada775cb137d28516ca96e990932545d8" prot="public" static="yes" mutable="no">
+        <type>const int</type>
+        <definition>const int TWENTY_FOUR_BIT</definition>
+        <argsstring></argsstring>
+        <name>TWENTY_FOUR_BIT</name>
+        <initializer>= 24</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADLambda/LambdaApp/src/ADLambda.h" line="29" column="18" bodyfile="/home/runner/work/areaDetector/areaDetector/ADLambda/LambdaApp/src/ADLambda.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_a_d_lambda_8h_1a982f82def3142c7995baec185f54bf4f" prot="public" static="yes" mutable="no">
+        <type>const double</type>
+        <definition>const double ONE_BILLION</definition>
+        <argsstring></argsstring>
+        <name>ONE_BILLION</name>
+        <initializer>= 1.E9</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADLambda/LambdaApp/src/ADLambda.h" line="31" column="21" bodyfile="/home/runner/work/areaDetector/areaDetector/ADLambda/LambdaApp/src/ADLambda.h" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_a_d_lambda_8h_1a8238331f6ef31220593dd74611d28972" prot="public" static="yes" mutable="no">
+        <type>const double</type>
+        <definition>const double SHORT_TIME</definition>
+        <argsstring></argsstring>
+        <name>SHORT_TIME</name>
+        <initializer>= 0.000025</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADLambda/LambdaApp/src/ADLambda.h" line="33" column="21" bodyfile="/home/runner/work/areaDetector/areaDetector/ADLambda/LambdaApp/src/ADLambda.h" bodystart="33" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -300,92 +473,128 @@
 <codeline lineno="10"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>ADLAMBDA_H</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ADLAMBDA_H</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="13"><highlight class="normal"></highlight></codeline>
-<codeline lineno="14" refid="namespace_det_common_n_s" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_det_common_n_s" kindref="compound">DetCommonNS</ref><sp/>{</highlight></codeline>
-<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">LambdaSysImpl;</highlight></codeline>
-<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">LambdaInterface;}</highlight></codeline>
-<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_det_common_n_s" kindref="compound">DetCommonNS</ref>;</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;libxsp.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;map&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;deque&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;variant&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="18"><highlight class="normal"></highlight></codeline>
-<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;epicsString.h&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;epicsEvent.h&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;epicsThread.h&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="22"><highlight class="normal"></highlight></codeline>
-<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_a_d_driver_8h" kindref="compound">ADDriver.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="24"><highlight class="normal"></highlight></codeline>
-<codeline lineno="28" refid="class_a_d_lambda" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">epicsShareClass<sp/><ref refid="class_a_d_lambda" kindref="compound">ADLambda</ref>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_a_d_driver" kindref="compound">ADDriver</ref><sp/>{</highlight></codeline>
-<codeline lineno="29"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="30" refid="class_a_d_lambda_1a99ce6b087b1085f5feb5adc3f928d74e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="class_a_d_lambda_1a99ce6b087b1085f5feb5adc3f928d74e" kindref="member">driverName</ref>;</highlight></codeline>
-<codeline lineno="31" refid="class_a_d_lambda_1a62a9b42cc7d68bb401c7ccf9b1db9354" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_a_d_lambda_1a62a9b42cc7d68bb401c7ccf9b1db9354" kindref="member">TWELVE_BIT</ref>,<sp/>TWENTY_FOUR_BIT;</highlight></codeline>
-<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_a_d_lambda" kindref="compound">ADLambda</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*portName,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*configPath,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>maxBuffers,</highlight></codeline>
-<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>maxMemory,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>priority,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>stackSize);</highlight></codeline>
-<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>~<ref refid="class_a_d_lambda" kindref="compound">ADLambda</ref>();</highlight></codeline>
-<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>asynStatus<sp/>disconnect(asynUser*<sp/>paasynUser);</highlight></codeline>
-<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>asynStatus<sp/>connect(asynUser*<sp/>pasynUser);</highlight></codeline>
-<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>asynStatus<sp/>createImageHandlerThread();</highlight></codeline>
-<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>killImageHandlerThread();</highlight></codeline>
-<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>getImageDepth();</highlight></codeline>
-<codeline lineno="40"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/>int<sp/>getQueueDepth();</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal">*<sp/>getDecodedImageShort(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal">&amp;<sp/>lFrameNo,<sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal">&amp;<sp/>shErrCode);</highlight></codeline>
-<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>getDecodedImageInt(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal">&amp;<sp/>lFrameNo,<sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal">&amp;<sp/>shErrCode);</highlight></codeline>
-<codeline lineno="43"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/>void<sp/>getImageFormat(int&amp;<sp/>nX,<sp/>int&amp;<sp/>nY,<sp/>int&amp;<sp/>nImgDepth);</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>handleNewImageTask(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>report(FILE<sp/>*fp,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>details);</highlight></codeline>
-<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>asynStatus<sp/><sp/>readInt32<sp/>(asynUser<sp/>*pasynUser,<sp/>epicsInt32<sp/>*<ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>);</highlight></codeline>
-<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>asynStatus<sp/>writeFloat64(asynUser<sp/>*pasynUser,<sp/>epicsFloat64<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>);</highlight></codeline>
-<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>asynStatus<sp/>writeInt32(asynUser<sp/>*pasynUser,<sp/>epicsInt32<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>);</highlight></codeline>
-<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>asynStatus<sp/>writeOctet(asynUser<sp/>*pasynUser,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>,</highlight></codeline>
-<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>nChars,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>*nActual);</highlight></codeline>
-<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>asynStatus<sp/><sp/>readOctet<sp/>(asynUser<sp/>*pasynUser,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>,<sp/></highlight></codeline>
-<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>maxChars,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>*nActual,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>*eomReason);</highlight></codeline>
-<codeline lineno="53"><highlight class="normal"></highlight></codeline>
-<codeline lineno="54"><highlight class="normal"></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>int<sp/>reference<sp/>to<sp/>parameters</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="56" refid="class_a_d_lambda_1a1e5b0d1f54459adbeb2b98b2d18d195f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_a_d_lambda_1a1e5b0d1f54459adbeb2b98b2d18d195f" kindref="member">LAMBDA_VersionNumber</ref>;</highlight></codeline>
-<codeline lineno="57" refid="_a_d_lambda_8h_1a169761aa7b605c18bd81fdd1f66f3bf1" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LAMBDA_FIRST_PARAM<sp/>LAMBDA_VersionNumber</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;epicsString.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;epicsEvent.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;epicsThread.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_a_d_driver_8h" kindref="compound">ADDriver.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ONE_BIT<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>SIX_BIT<sp/>=<sp/>6;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>TWELVE_BIT<sp/>=<sp/>12;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>TWENTY_FOUR_BIT<sp/>=<sp/>24;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ONE_BILLION<sp/>=<sp/>1.E9;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>SHORT_TIME<sp/>=<sp/>0.000025;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35" refid="_a_d_lambda_8h_1a8f74045056811164fadc69864af063e3" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>std::variant&lt;std::shared_ptr&lt;xsp::lambda::Receiver&gt;,<sp/>std::shared_ptr&lt;xsp::PostDecoder&gt;<sp/>&gt;<sp/><ref refid="_a_d_lambda_8h_1a8f74045056811164fadc69864af063e3" kindref="member">lambda_input</ref>;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40" refid="class_a_d_lambda" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">epicsShareClass<sp/><ref refid="class_a_d_lambda" kindref="compound">ADLambda</ref>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_a_d_driver" kindref="compound">ADDriver</ref><sp/></highlight></codeline>
+<codeline lineno="41"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="43" refid="class_a_d_lambda_1a99ce6b087b1085f5feb5adc3f928d74e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="class_a_d_lambda_1a99ce6b087b1085f5feb5adc3f928d74e" kindref="member">driverName</ref>;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_a_d_lambda" kindref="compound">ADLambda</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*portName,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*configPath,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>numModules,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fake);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>~<ref refid="class_a_d_lambda" kindref="compound">ADLambda</ref>();</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>asynStatus<sp/>disconnect();</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>asynStatus<sp/><ref refid="class_a_d_driver_1a619dfbdc35605a104d2a07ea46f37b5f" kindref="member">connect</ref>();</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>waitAcquireThread();</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>tryConnect();</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>acquireThread(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>receiver);</highlight></codeline>
+<codeline lineno="54" refid="class_a_d_lambda_1a96a52230e256f120df414261bb9b8420" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_a_d_lambda_1a96a52230e256f120df414261bb9b8420" kindref="member">acquireDecoderThread</ref>();</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>exportThread();</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classasyn_n_d_array_driver_1ac3f2d73a05eb54357ec3f052e1b000f2" kindref="member">report</ref>(FILE<sp/>*fp,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>details);</highlight></codeline>
 <codeline lineno="58"><highlight class="normal"></highlight></codeline>
-<codeline lineno="59" refid="class_a_d_lambda_1a091601e7cbb0da051fa51e8762d9c79c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_a_d_lambda_1a091601e7cbb0da051fa51e8762d9c79c" kindref="member">LAMBDA_ConfigFilePath</ref>;</highlight></codeline>
-<codeline lineno="60" refid="class_a_d_lambda_1a8b9041616880e03d2b9635409a710269" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_a_d_lambda_1a8b9041616880e03d2b9635409a710269" kindref="member">LAMBDA_EnergyThreshold</ref>;</highlight></codeline>
-<codeline lineno="61" refid="class_a_d_lambda_1a9ee7e6f2d35ae0f3f241c63e2b9dcfc6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_a_d_lambda_1a9ee7e6f2d35ae0f3f241c63e2b9dcfc6" kindref="member">LAMBDA_DecodedQueueDepth</ref>;</highlight></codeline>
-<codeline lineno="62" refid="class_a_d_lambda_1af74f2473a424ea66871a3e5e97e05826" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_a_d_lambda_1af74f2473a424ea66871a3e5e97e05826" kindref="member">LAMBDA_OperatingMode</ref>;</highlight></codeline>
-<codeline lineno="63" refid="class_a_d_lambda_1a4e8ab2f5adfc5f7c1b89aae9d0f91ad5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_a_d_lambda_1a4e8ab2f5adfc5f7c1b89aae9d0f91ad5" kindref="member">LAMBDA_DetectorState</ref>;</highlight></codeline>
-<codeline lineno="64" refid="class_a_d_lambda_1a1dd37faa49ea724a978d18d96c503137" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_a_d_lambda_1a1dd37faa49ea724a978d18d96c503137" kindref="member">LAMBDA_BadFrameCounter</ref>;</highlight></codeline>
-<codeline lineno="65" refid="class_a_d_lambda_1a66fc459ad189fc77f57ae038bd93d9c4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_a_d_lambda_1a66fc459ad189fc77f57ae038bd93d9c4" kindref="member">LAMBDA_BadImage</ref>;</highlight></codeline>
-<codeline lineno="66" refid="_a_d_lambda_8h_1ac8c438df4d1b49a6cace598016e5beb3" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LAMBDA_LAST_PARAM<sp/>LAMBDA_BadImage</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="67"><highlight class="normal"></highlight></codeline>
-<codeline lineno="68"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>imageThreadKeepAlive;</highlight></codeline>
-<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>asynStatus<sp/>acquireStart();</highlight></codeline>
-<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>asynStatus<sp/>acquireStop();</highlight></codeline>
-<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>asynStatus<sp/>initializeDetector();</highlight></codeline>
-<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>LambdaSysImpl*<sp/>lambdaInstance;</highlight></codeline>
-<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>acquiredImages;</highlight></codeline>
-<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>imageHeight;</highlight></codeline>
-<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>imageWidth;</highlight></codeline>
-<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>imageDepth;</highlight></codeline>
-<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>queueDepth;</highlight></codeline>
-<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>acquiringData;</highlight></codeline>
-<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>frameNumbersRead;</highlight></codeline>
-<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>totalLossFramesRead;</highlight></codeline>
-<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>latestImageNumberRead;</highlight></codeline>
-<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>imageDims[2];</highlight></codeline>
-<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>configFileName[256];</highlight></codeline>
-<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_n_d_array" kindref="compound">NDArray</ref><sp/>*pImage;</highlight></codeline>
-<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_n_d_attribute_8h_1a34b835bcabc3b7f546f4b25c5767cb16" kindref="member">NDDataType_t</ref><sp/>imageDataType;</highlight></codeline>
-<codeline lineno="87"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>asynStatus<sp/><ref refid="class_a_d_driver_1abef6916bb90d032a1aeb6894adef12a6" kindref="member">writeInt32</ref>(asynUser<sp/>*pasynUser,<sp/>epicsInt32<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="62" refid="class_a_d_lambda_1a091601e7cbb0da051fa51e8762d9c79c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_a_d_lambda_1a091601e7cbb0da051fa51e8762d9c79c" kindref="member">LAMBDA_ConfigFilePath</ref>;</highlight></codeline>
+<codeline lineno="63" refid="_a_d_lambda_8h_1a169761aa7b605c18bd81fdd1f66f3bf1" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>LAMBDA_FIRST_PARAM<sp/>LAMBDA_ConfigFilePath</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64" refid="class_a_d_lambda_1a11e4ac5288bcfbdb010cfee9411d9429" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_a_d_lambda_1a11e4ac5288bcfbdb010cfee9411d9429" kindref="member">LAMBDA_DecoderDetected</ref>;</highlight></codeline>
+<codeline lineno="65" refid="class_a_d_lambda_1a8b9041616880e03d2b9635409a710269" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_a_d_lambda_1a8b9041616880e03d2b9635409a710269" kindref="member">LAMBDA_EnergyThreshold</ref>;</highlight></codeline>
+<codeline lineno="66" refid="class_a_d_lambda_1a8a729aa535960123bacf32414f9a3d1f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_a_d_lambda_1a8a729aa535960123bacf32414f9a3d1f" kindref="member">LAMBDA_DualThreshold</ref>;</highlight></codeline>
+<codeline lineno="67" refid="class_a_d_lambda_1a9ee7e6f2d35ae0f3f241c63e2b9dcfc6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_a_d_lambda_1a9ee7e6f2d35ae0f3f241c63e2b9dcfc6" kindref="member">LAMBDA_DecodedQueueDepth</ref>;</highlight></codeline>
+<codeline lineno="68" refid="class_a_d_lambda_1af74f2473a424ea66871a3e5e97e05826" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_a_d_lambda_1af74f2473a424ea66871a3e5e97e05826" kindref="member">LAMBDA_OperatingMode</ref>;</highlight></codeline>
+<codeline lineno="69" refid="class_a_d_lambda_1a5e3b2abf1a3338058afb7fc84337c334" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_a_d_lambda_1a5e3b2abf1a3338058afb7fc84337c334" kindref="member">LAMBDA_DualMode</ref>;</highlight></codeline>
+<codeline lineno="70" refid="class_a_d_lambda_1ab8822032c5fab5f74284abc288d3a709" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_a_d_lambda_1ab8822032c5fab5f74284abc288d3a709" kindref="member">LAMBDA_ChargeSumming</ref>;</highlight></codeline>
+<codeline lineno="71" refid="class_a_d_lambda_1ace561eb074fb8f6cd685d0e558402887" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_a_d_lambda_1ace561eb074fb8f6cd685d0e558402887" kindref="member">LAMBDA_GatingEnable</ref>;</highlight></codeline>
+<codeline lineno="72" refid="class_a_d_lambda_1a1dd37faa49ea724a978d18d96c503137" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_a_d_lambda_1a1dd37faa49ea724a978d18d96c503137" kindref="member">LAMBDA_BadFrameCounter</ref>;</highlight></codeline>
+<codeline lineno="73" refid="class_a_d_lambda_1a66fc459ad189fc77f57ae038bd93d9c4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_a_d_lambda_1a66fc459ad189fc77f57ae038bd93d9c4" kindref="member">LAMBDA_BadImage</ref>;</highlight></codeline>
+<codeline lineno="74" refid="class_a_d_lambda_1a5fdd23d0275c57719c87cd1d028368df" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_a_d_lambda_1a5fdd23d0275c57719c87cd1d028368df" kindref="member">LAMBDA_ReadoutThreads</ref>;</highlight></codeline>
+<codeline lineno="75" refid="class_a_d_lambda_1a400a949137fac7c615f86f612b43a3f7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_a_d_lambda_1a400a949137fac7c615f86f612b43a3f7" kindref="member">LAMBDA_StitchedWidth</ref>;</highlight></codeline>
+<codeline lineno="76" refid="class_a_d_lambda_1af9096ff1513cb2d064417088ac9ec1b8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_a_d_lambda_1af9096ff1513cb2d064417088ac9ec1b8" kindref="member">LAMBDA_StitchedHeight</ref>;</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>connected<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>hasDecoder<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>setSizes();</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>incrementValue(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>param);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>decrementValue(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>param);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>readParameters();</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>sendParameters();</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>writeDepth(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>depth);</highlight></codeline>
 <codeline lineno="88"><highlight class="normal"></highlight></codeline>
-<codeline lineno="89" refid="_a_d_lambda_8h_1a249813cb80dcc9a8f9fefc63f32c82ef" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LAMBDA_VersionNumberString<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;LAMBDA_VERSION_NUMBER&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="90" refid="_a_d_lambda_8h_1a77d39053bd494399ef6a7ff02bfbfcc9" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LAMBDA_ConfigFilePathString<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;LAMBDA_CONFIG_FILE_PATH&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="91" refid="_a_d_lambda_8h_1a724a7b024258f05c8cd992148964fa9b" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LAMBDA_EnergyThresholdString<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;LAMBDA_ENERGY_THRESHOLD&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="92" refid="_a_d_lambda_8h_1a9dbb0b6e3d59043b39b28a3e3b0c9aaa" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LAMBDA_DecodedQueueDepthString<sp/><sp/><sp/><sp/><sp/><sp/>&quot;LAMBDA_DECODED_QUEUE_DEPTH&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="93" refid="_a_d_lambda_8h_1ab2e63546bdbaa47ff2e9eb9ef3b785d5" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LAMBDA_OperatingModeString<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;LAMBDA_OPERATING_MODE&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="94" refid="_a_d_lambda_8h_1aa1565498ba6aa98241e2793c6cf56e37" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LAMBDA_DetectorStateString<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;LAMBDA_DETECTOR_STATE&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="95" refid="_a_d_lambda_8h_1a54c22f0f88cf62fde8db863cb816e9b1" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LAMBDA_BadFrameCounterString<sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;LAMBDA_BAD_FRAME_COUNTER&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="96" refid="_a_d_lambda_8h_1a01bdd6423c1bec810548fac8b5479fe5" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LAMBDA_BadImageString<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;LAMBDA_BAD_IMAGE&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="97"><highlight class="normal"></highlight></codeline>
-<codeline lineno="98"><highlight class="normal"></highlight></codeline>
-<codeline lineno="99" refid="_a_d_lambda_8h_1a68c8737c0d52bb3818d62d93bbf706a5" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>NUM_LAMBDA_PARAMS<sp/>((int)(&amp;LAMBDA_LAST_PARAM<sp/>-<sp/>&amp;LAMBDA_FIRST_PARAM<sp/>+<sp/>1))</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="100"><highlight class="normal"></highlight></codeline>
-<codeline lineno="101"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>tryStartAcquire();</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>tryStopAcquire();</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fake;</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>spawnAcquireThread(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>receiver);</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>spawnAcquireDecoderThread();</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::unique_ptr&lt;xsp::System&gt;<sp/>sys;</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::shared_ptr&lt;xsp::lambda::Detector&gt;<sp/>det;</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::vector&lt;<sp/>lambda_input<sp/>&gt;<sp/>inputs;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::map&lt;int,<sp/>NDArray*&gt;<sp/>frames;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::deque&lt;NDArray*&gt;<sp/>export_queue;</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>epicsEvent*<sp/>startAcquireEvent;</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>epicsEvent*<sp/>stopAcquireEvent;</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>epicsEvent**<sp/>threadFinishEvents;</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>epicsMutex*<sp/>dequeLock;</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacehdf5_1abeed318faeb13380e1b4221bd4198bf1aea271040d7a5b8d9af9cbf6564d262d5" kindref="member">std::string</ref><sp/>configFileName;</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_n_d_array" kindref="compound">NDArray</ref><sp/>*pImage<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="112"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight></codeline>
+<codeline lineno="114" refid="structacquire__data" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="116" refid="structacquire__data_1a8363f3243d4661b590a8e4dd717e67bd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_a_d_lambda" kindref="compound">ADLambda</ref>*<sp/><ref refid="structacquire__data_1a8363f3243d4661b590a8e4dd717e67bd" kindref="member">driver</ref>;</highlight></codeline>
+<codeline lineno="117" refid="structacquire__data_1a089af7232cb58b92b9b1da3267f2d468" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="structacquire__data_1a089af7232cb58b92b9b1da3267f2d468" kindref="member">receiver</ref>;</highlight></codeline>
+<codeline lineno="118"><highlight class="normal">}<sp/><ref refid="structacquire__data" kindref="compound">acquire_data</ref>;</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121" refid="_a_d_lambda_8h_1a77d39053bd494399ef6a7ff02bfbfcc9" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LAMBDA_ConfigFilePathString<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;LAMBDA_CONFIG_FILE_PATH&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="122" refid="_a_d_lambda_8h_1af698cdbc559bf7e8a3b073a15933ba47" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LAMBDA_DecoderDetectedString<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;LAMBDA_DECODER_DETECTED&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="123" refid="_a_d_lambda_8h_1a724a7b024258f05c8cd992148964fa9b" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LAMBDA_EnergyThresholdString<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;LAMBDA_ENERGY_THRESHOLD&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="124" refid="_a_d_lambda_8h_1a1d752782b8fad29eec0a02ea6af7b7c9" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LAMBDA_DualThresholdString<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;LAMBDA_DUAL_THRESHOLD&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="125" refid="_a_d_lambda_8h_1a9dbb0b6e3d59043b39b28a3e3b0c9aaa" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LAMBDA_DecodedQueueDepthString<sp/><sp/><sp/><sp/><sp/><sp/>&quot;LAMBDA_DECODED_QUEUE_DEPTH&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="126" refid="_a_d_lambda_8h_1ab2e63546bdbaa47ff2e9eb9ef3b785d5" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LAMBDA_OperatingModeString<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;LAMBDA_OPERATING_MODE&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="127" refid="_a_d_lambda_8h_1a150daddc3b63ca239350f97370a2661f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LAMBDA_DualModeString<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;LAMBDA_DUAL_MODE&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="128" refid="_a_d_lambda_8h_1a1d1d956489167e543327d0ccf658e5d9" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LAMBDA_ChargeSummingString<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;LAMBDA_CHARGE_SUMMING&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="129" refid="_a_d_lambda_8h_1a3e68fd57ff1249a3c6f4c1528704c32b" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LAMBDA_GatingEnableString<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;LAMBDA_GATING_ENABLE&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="130" refid="_a_d_lambda_8h_1a54c22f0f88cf62fde8db863cb816e9b1" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LAMBDA_BadFrameCounterString<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;LAMBDA_BAD_FRAME_COUNTER&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="131" refid="_a_d_lambda_8h_1a01bdd6423c1bec810548fac8b5479fe5" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LAMBDA_BadImageString<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;LAMBDA_BAD_IMAGE&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="132" refid="_a_d_lambda_8h_1ae93d12c4bf1aaaf8dcbb5b1935fa315c" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LAMBDA_ReadoutThreadsString<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;LAMBDA_NUM_READOUT_THREADS&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="133" refid="_a_d_lambda_8h_1a634d0ebd99d6042cd673494f4db0809d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LAMBDA_StitchWidthString<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;LAMBDA_STITCHED_WIDTH&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="134" refid="_a_d_lambda_8h_1ab08cc5e4d5b3d79d868665a4b5beb196" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LAMBDA_StitchHeightString<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;LAMBDA_STITCHED_HEIGHT&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
     </programlisting>
     <location file="/home/runner/work/areaDetector/areaDetector/ADLambda/LambdaApp/src/ADLambda.h"/>
   </compounddef>

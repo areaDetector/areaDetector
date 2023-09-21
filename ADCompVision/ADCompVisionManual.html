@@ -11,11 +11,11 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -106,7 +106,7 @@
            <div itemprop="articleBody">
              
   <section id="adcompvision-area-detector-plugin-input-output-manual-guide">
-<h1><a class="toc-backref" href="#id1" role="doc-backlink">ADCompVision area detector plugin Input/output manual/guide</a><a class="headerlink" href="#adcompvision-area-detector-plugin-input-output-manual-guide" title="Permalink to this heading"></a></h1>
+<h1><a class="toc-backref" href="#id1" role="doc-backlink">ADCompVision area detector plugin Input/output manual/guide</a><a class="headerlink" href="#adcompvision-area-detector-plugin-input-output-manual-guide" title="Link to this heading"></a></h1>
 <dl class="field-list simple">
 <dt class="field-odd">author<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Jakub Wlodek, Brookhaven National Laboratory</p>
@@ -151,12 +151,12 @@
 </ul>
 </nav>
 <section id="introduction">
-<h2><a class="toc-backref" href="#id2" role="doc-backlink">Introduction</a><a class="headerlink" href="#introduction" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id2" role="doc-backlink">Introduction</a><a class="headerlink" href="#introduction" title="Link to this heading"></a></h2>
 <p>This is a manual that documents the input and output types of each
 WRAPPER function supported by ADCompVision</p>
 </section>
 <section id="wrapper-function-inputs-outputs">
-<h2><a class="toc-backref" href="#id3" role="doc-backlink">Wrapper function inputs/outputs</a><a class="headerlink" href="#wrapper-function-inputs-outputs" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">Wrapper function inputs/outputs</a><a class="headerlink" href="#wrapper-function-inputs-outputs" title="Link to this heading"></a></h2>
 <p>Below is a table that details the inputs and outputs used by each
 function, along with descriptions for each function</p>
 <table border="1" cellpadding="2" cellspacing="2" style="text-align: left">
@@ -349,21 +349,21 @@ function, along with descriptions for each function</p>
 </tbody>
 </table></section>
 <section id="function-descriptions">
-<h2><a class="toc-backref" href="#id4" role="doc-backlink">Function descriptions</a><a class="headerlink" href="#function-descriptions" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">Function descriptions</a><a class="headerlink" href="#function-descriptions" title="Link to this heading"></a></h2>
 <section id="gaussianblur">
-<h3><a class="toc-backref" href="#id5" role="doc-backlink">GaussianBlur</a><a class="headerlink" href="#gaussianblur" title="Permalink to this heading"></a></h3>
+<h3><a class="toc-backref" href="#id5" role="doc-backlink">GaussianBlur</a><a class="headerlink" href="#gaussianblur" title="Link to this heading"></a></h3>
 <p>Blurs image based on a gaussian kernel. A gaussian kernel is simply a
 matrix of a set size that fills Gaussian properties.</p>
 </section>
 <section id="thresholdimage">
-<h3><a class="toc-backref" href="#id6" role="doc-backlink">ThresholdImage</a><a class="headerlink" href="#thresholdimage" title="Permalink to this heading"></a></h3>
+<h3><a class="toc-backref" href="#id6" role="doc-backlink">ThresholdImage</a><a class="headerlink" href="#thresholdimage" title="Link to this heading"></a></h3>
 <p>Function that thresholds an image based on a certain pixel value. First,
 the image is converted to grayscale. RGB images cannot be thresholded.
 For each pixel, if the grayscale value is larger than the threshold, set
 it to white, otherwise set it to black. Creates a binary image</p>
 </section>
 <section id="laplacianedgedetector">
-<h3><a class="toc-backref" href="#id7" role="doc-backlink">LaplacianEdgeDetector</a><a class="headerlink" href="#laplacianedgedetector" title="Permalink to this heading"></a></h3>
+<h3><a class="toc-backref" href="#id7" role="doc-backlink">LaplacianEdgeDetector</a><a class="headerlink" href="#laplacianedgedetector" title="Link to this heading"></a></h3>
 <p>Function for laplacian-based edge detection. First, the image is
 converted to grayscale if it is not already. Next, the image is blurred
 using a gaussian kernel to emphasize edges. Then a laplacian kernel runs
@@ -371,11 +371,11 @@ over the images assigning a ‘sharpness’ value to each pixel. The
 sharpest values are hard edges from black to white.</p>
 </section>
 <section id="sharpen">
-<h3><a class="toc-backref" href="#id8" role="doc-backlink">Sharpen</a><a class="headerlink" href="#sharpen" title="Permalink to this heading"></a></h3>
+<h3><a class="toc-backref" href="#id8" role="doc-backlink">Sharpen</a><a class="headerlink" href="#sharpen" title="Link to this heading"></a></h3>
 <p>Sharpens image by sutracting Laplacian from blurred image</p>
 </section>
 <section id="cannyedgedetector">
-<h3><a class="toc-backref" href="#id9" role="doc-backlink">CannyEdgeDetector</a><a class="headerlink" href="#cannyedgedetector" title="Permalink to this heading"></a></h3>
+<h3><a class="toc-backref" href="#id9" role="doc-backlink">CannyEdgeDetector</a><a class="headerlink" href="#cannyedgedetector" title="Link to this heading"></a></h3>
 <p>Function for canny-based edge detection. First, we ensure that the image
 is grayscale. Then, the image is blurred, so that only strong edges
 remain. Then, a threshold is applied to the image in order to further
@@ -388,25 +388,25 @@ The horizontal and vertical size and center give you the spacing between
 these min and max values and their midpoint.</p>
 </section>
 <section id="subtractconsecutiveimages">
-<h3><a class="toc-backref" href="#id10" role="doc-backlink">SubtractConsecutiveImages</a><a class="headerlink" href="#subtractconsecutiveimages" title="Permalink to this heading"></a></h3>
+<h3><a class="toc-backref" href="#id10" role="doc-backlink">SubtractConsecutiveImages</a><a class="headerlink" href="#subtractconsecutiveimages" title="Link to this heading"></a></h3>
 <p>Function that allows the user to take consecutive images recieved from
 area detector and subtract them in pairs. Reads first image into memory,
 then waits for second one, when it receives the second one, subtract
 them.</p>
 </section>
 <section id="computeimagestats">
-<h3><a class="toc-backref" href="#id11" role="doc-backlink">ComputeImageStats</a><a class="headerlink" href="#computeimagestats" title="Permalink to this heading"></a></h3>
+<h3><a class="toc-backref" href="#id11" role="doc-backlink">ComputeImageStats</a><a class="headerlink" href="#computeimagestats" title="Link to this heading"></a></h3>
 <p>OpenCV accelerated computation of Image statistics</p>
 </section>
 <section id="videorecord">
-<h3><a class="toc-backref" href="#id12" role="doc-backlink">VideoRecord</a><a class="headerlink" href="#videorecord" title="Permalink to this heading"></a></h3>
+<h3><a class="toc-backref" href="#id12" role="doc-backlink">VideoRecord</a><a class="headerlink" href="#videorecord" title="Link to this heading"></a></h3>
 <p>This function uses the opencv_video and opencv_videoio libraries for writing a video from areaDetector cameras.
 A valid file path is required. Output video framerate should be set to the camera framerate if a real time video
 is desired. Supported encodings are: H264, MPEG, DIVX, and LAGS. Not all encodings will be present on each machine,
 thus some experimentation may be required. The output video will $FILEPATH/CV_Output_Vid_$DATETIME.mp4</p>
 </section>
 <section id="findobjectcentroids">
-<h3><a class="toc-backref" href="#id13" role="doc-backlink">FindObjectCentroids</a><a class="headerlink" href="#findobjectcentroids" title="Permalink to this heading"></a></h3>
+<h3><a class="toc-backref" href="#id13" role="doc-backlink">FindObjectCentroids</a><a class="headerlink" href="#findobjectcentroids" title="Link to this heading"></a></h3>
 <p>Function for finding centroids of objects in an image. Useful for
 alignment of objects First, blur the object based on a certain blur
 degree (kernel size). Then threshold the image based on a certain
@@ -419,32 +419,32 @@ the entire size of the image. Any contour with area &gt; upper threshold is
 removed, and any lower than lower threshold</p>
 </section>
 <section id="movementvectors-testing">
-<h3><a class="toc-backref" href="#id14" role="doc-backlink">MovementVectors (Testing)</a><a class="headerlink" href="#movementvectors-testing" title="Permalink to this heading"></a></h3>
+<h3><a class="toc-backref" href="#id14" role="doc-backlink">MovementVectors (Testing)</a><a class="headerlink" href="#movementvectors-testing" title="Link to this heading"></a></h3>
 <p>Function that does feature detection on images a set number of frames
 apart, and attempts to calculate the movement vector for the calculated
 key points. It uses ORB feature detection and vector flow NOT YET
 IMPLEMENTED/TESTED</p>
 </section>
 <section id="objectidentification-testing">
-<h3><a class="toc-backref" href="#id15" role="doc-backlink">ObjectIdentification (Testing)</a><a class="headerlink" href="#objectidentification-testing" title="Permalink to this heading"></a></h3>
+<h3><a class="toc-backref" href="#id15" role="doc-backlink">ObjectIdentification (Testing)</a><a class="headerlink" href="#objectidentification-testing" title="Link to this heading"></a></h3>
 <p>Function that detects contours in an image and returns information
 regarding said contours NOT YET IMPLEMENTED/TESTED</p>
 </section>
 <section id="userfunction">
-<h3><a class="toc-backref" href="#id16" role="doc-backlink">UserFunction</a><a class="headerlink" href="#userfunction" title="Permalink to this heading"></a></h3>
+<h3><a class="toc-backref" href="#id16" role="doc-backlink">UserFunction</a><a class="headerlink" href="#userfunction" title="Link to this heading"></a></h3>
 <p>This is an unimplemented wrapper function that has already been added to
 the PV database in order to simplify creating user defined functions.
 Simply implement this function and its description function, and then
 select ‘User Function’ in function set 3.</p>
 </section>
 <section id="distancebetweencontours">
-<h3><a class="toc-backref" href="#id17" role="doc-backlink">Distancebetweencontours</a><a class="headerlink" href="#distancebetweencontours" title="Permalink to this heading"></a></h3>
+<h3><a class="toc-backref" href="#id17" role="doc-backlink">Distancebetweencontours</a><a class="headerlink" href="#distancebetweencontours" title="Link to this heading"></a></h3>
 <p>Function that computes bounding boxes between the two largest computed
 contours in the image, checks the distance between them and sends an
 alarm if they are within a distance threshold.</p>
 </section>
 <section id="convertimageformat">
-<h3><a class="toc-backref" href="#id18" role="doc-backlink">ConvertImageFormat</a><a class="headerlink" href="#convertimageformat" title="Permalink to this heading"></a></h3>
+<h3><a class="toc-backref" href="#id18" role="doc-backlink">ConvertImageFormat</a><a class="headerlink" href="#convertimageformat" title="Link to this heading"></a></h3>
 <p>Converts the format of the image to a different one for use with other AD Plugins. This is useful for
 cameras that only support one format but a different one is required, ex. ADPluginDmtx needs 8bit rgb image, so
 grayscale camera needs to be converted.</p>
@@ -464,7 +464,7 @@ grayscale camera needs to be converted.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, Mark Rivers.
-      <span class="lastupdated">Last updated on 2023-August-16.
+      <span class="lastupdated">Last updated on 2023-September-21.
       </span></p>
   </div>
 
