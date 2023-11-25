@@ -104,8 +104,11 @@ file extraction must be done once on Linux.
 
 aravis 0.7.x and higher use the meson_ and ninja_ build systems, rather than the autoconf and gnumake 
 systems used in previous versions.
- 
-The following shows the steps to build and install aravis 0.8.1 on a Centos 7 machine running as root::
+
+It is a good idea to install the latest stable release of aravis.
+The minimum version currently required for ADAravis is 0.8.3.
+
+The following shows the steps to build and install aravis 0.8.13 on a Centos 7 machine running as root::
 
   yum install ninja-build
   yum install meson
@@ -123,7 +126,7 @@ The following shows the steps to build and install aravis 0.8.1 on a Centos 7 ma
   cd /usr/local
   git clone https://github.com/AravisProject/aravis
   cd aravis/
-  git checkout ARAVIS_0_8_1
+  git checkout ARAVIS_0_8_13
   meson build
   cd build
   ninja-build

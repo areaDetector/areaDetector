@@ -1165,15 +1165,19 @@
     <member refid="classandor3_1a48ac82aa9a1930aa24ea0eb944074a6e" kind="variable"><name>Andor3PreAmpGain</name></member>
     <member refid="classandor3_1a66cd38819336940ddbf3f9543542bf00" kind="variable"><name>Andor3NoiseFilter</name></member>
     <member refid="classandor3_1a1434a1dfe01e132549ac44458427dd8c" kind="variable"><name>Andor3FanSpeed</name></member>
+    <member refid="classandor3_1ab9ca5febc2cd2b5e0d8b134ced7f90ee" kind="variable"><name>Andor3GateMode</name></member>
+    <member refid="classandor3_1a128e75d6abeb629d4fb72f12c5499da2" kind="variable"><name>Andor3InsertionDelay</name></member>
+    <member refid="classandor3_1ac382d07d8026e98a73590790827018a5" kind="variable"><name>Andor3MCPGain</name></member>
+    <member refid="classandor3_1a4e456eb629d1dbac9d0068a323931e12" kind="variable"><name>Andor3MCPIntelligate</name></member>
     <member refid="classandor3_1a5ca4c25c38e96b8e588f1927718d9b42" kind="variable"><name>featureInfo_</name></member>
     <member refid="classandor3_1ae01635a5547ff597f8072a841da3dd19" kind="variable"><name>handle_</name></member>
-    <member refid="classandor3_1a95dc64cb2531c7f44f85f6f2685cba0b" kind="variable"><name>id_</name></member>
+    <member refid="classandor3_1a868f07f738d6bc0284a742b4cc0485f7" kind="variable"><name>serialNum_</name></member>
     <member refid="classandor3_1a69b5049d89b8caa9e236964142596d7d" kind="variable"><name>maxFrames_</name></member>
     <member refid="classandor3_1ad771dce3926f4c6fa96a39e882d6998e" kind="variable"><name>drvBuffers_</name></member>
     <member refid="classandor3_1a50139426fc2166d1c7a74f615fe1bfa0" kind="variable"><name>imageSize_</name></member>
     <member refid="classandor3_1ad5edd4ba9fe99a8dad82060b1f03d12c" kind="variable"><name>exiting_</name></member>
     <member refid="classandor3_1a63dce8a08b3b531e1b86981d7476a452" kind="variable"><name>startEvent_</name></member>
-    <member refid="classandor3_1a94933726d87bc4fa6ebe941e80b7716a" kind="function"><name>andor3</name></member>
+    <member refid="classandor3_1a489f7d7ca54d17de76faffb2d1378faa" kind="function"><name>andor3</name></member>
     <member refid="classandor3_1acc819f60024228a83956bea8997c0c62" kind="function"><name>writeInt32</name></member>
     <member refid="classandor3_1ade9f014944df00e4779a2d74cddf0f98" kind="function"><name>writeFloat64</name></member>
     <member refid="classandor3_1abbf1ef4a68ced5572e4988d24cadf6ca" kind="function"><name>readEnum</name></member>
@@ -1454,6 +1458,7 @@
     <member refid="classasyn_n_d_array_driver_1a392868002486b6c806c587ef3f73c320" kind="variable"><name>NDFileWriteMessage</name></member>
     <member refid="classasyn_n_d_array_driver_1abd42667177a6b0ea88888487511514cd" kind="variable"><name>NDFileNumCapture</name></member>
     <member refid="classasyn_n_d_array_driver_1aa392d8dfaa3d659958deddf100d54aed" kind="variable"><name>NDFileNumCaptured</name></member>
+    <member refid="classasyn_n_d_array_driver_1aea93433ae4832940b7cb47173396c050" kind="variable"><name>NDFileFreeCapture</name></member>
     <member refid="classasyn_n_d_array_driver_1adc503aa2621ea29c553514b09784229a" kind="variable"><name>NDFileCapture</name></member>
     <member refid="classasyn_n_d_array_driver_1a1ce29ba9f5d31b52628ae76129d15fa2" kind="variable"><name>NDFileDeleteDriverFile</name></member>
     <member refid="classasyn_n_d_array_driver_1a8f5e5a7aae6848a12e55012273ab06c5" kind="variable"><name>NDFileLazyOpen</name></member>
@@ -1500,6 +1505,7 @@
     <member refid="classasyn_n_d_array_driver_1af5494c8e3b3f317e049a5c336d8065f4" kind="function"><name>createFileName</name></member>
     <member refid="classasyn_n_d_array_driver_1a1da351ae597074c829204945f700098b" kind="function"><name>readNDAttributesFile</name></member>
     <member refid="classasyn_n_d_array_driver_1a7492ba858d885e2ba226a1c7ef9dcf72" kind="function"><name>getAttributes</name></member>
+    <member refid="classasyn_n_d_array_driver_1aae633d40e7b086edf7e1e8998b6e9a01" kind="function"><name>updateTimeStamps</name></member>
     <member refid="classasyn_n_d_array_driver_1ad55549fca656bc01cbe0e3c92e4d29e3" kind="function"><name>incrementQueuedArrayCount</name></member>
     <member refid="classasyn_n_d_array_driver_1acc2afad33faf8e45d6f21e251133ed94" kind="function"><name>decrementQueuedArrayCount</name></member>
     <member refid="classasyn_n_d_array_driver_1a1a369bc9b605bba000f782c69429622b" kind="function"><name>getQueuedArrayCount</name></member>
@@ -3843,7 +3849,7 @@
   </compound>
   <compound refid="class_n_d_plugin_file" kind="class"><name>NDPluginFile</name>
     <member refid="class_n_d_plugin_file_1a6255a7fdddc16d94aab10c7a828cc0eb" kind="variable"><name>supportsMultipleArrays</name></member>
-    <member refid="class_n_d_plugin_file_1acafe0cd0f20aae4084f85283211e9021" kind="variable"><name>pCapture</name></member>
+    <member refid="class_n_d_plugin_file_1a65427458fd4c888fbbab48d2422e3795" kind="variable"><name>pCapture</name></member>
     <member refid="class_n_d_plugin_file_1ad6a0af1e0c6d93cadded927c705817a6" kind="variable"><name>fileMutexId</name></member>
     <member refid="class_n_d_plugin_file_1a9d2383f296314898008b9678c706d1e5" kind="variable"><name>useAttrFilePrefix</name></member>
     <member refid="class_n_d_plugin_file_1a33f97096c59a300c6a96bb330e74fbbf" kind="variable"><name>lazyOpen</name></member>
@@ -3861,7 +3867,7 @@
     <member refid="class_n_d_plugin_file_1a493583a960959a17f4d421e4923c52d7" kind="function"><name>writeFileBase</name></member>
     <member refid="class_n_d_plugin_file_1a5501eb02d6c2fe083b4565999e133a20" kind="function"><name>closeFileBase</name></member>
     <member refid="class_n_d_plugin_file_1a11d8077abb04cad65f997043bc0d57eb" kind="function"><name>doCapture</name></member>
-    <member refid="class_n_d_plugin_file_1a93f9e30c61f815c5df5ec8b2baa72048" kind="function"><name>freeCaptureBuffer</name></member>
+    <member refid="class_n_d_plugin_file_1ab2ffdad85d40c08b5c046301484f41e1" kind="function"><name>freeCaptureBuffer</name></member>
     <member refid="class_n_d_plugin_file_1aaf68715682c427c24232547abd4cf639" kind="function"><name>attrFileCloseCheck</name></member>
     <member refid="class_n_d_plugin_file_1ad46aaf898900550c5ff7989da42c3526" kind="function"><name>attrFileNameCheck</name></member>
     <member refid="class_n_d_plugin_file_1a6902731eb37b201cbcf4aa551a57d714" kind="function"><name>attrFileNameSet</name></member>
@@ -6813,6 +6819,10 @@
     <member refid="andor3_8cpp_1a5c0adc65f5bc2cd49275f0e0fcb36ed0" kind="define"><name>Andor3PreAmpGainString</name></member>
     <member refid="andor3_8cpp_1a92fe81c60780588ee34c6ba4ef84c180" kind="define"><name>Andor3NoiseFilterString</name></member>
     <member refid="andor3_8cpp_1a1e0ea25449f7214d49a7f6619d9a235b" kind="define"><name>Andor3FanSpeedString</name></member>
+    <member refid="andor3_8cpp_1ae3f4f6558daa8bc6e0daa0069ec6f4c8" kind="define"><name>Andor3GateModeString</name></member>
+    <member refid="andor3_8cpp_1a08fd57816844993764aa79dff254acfd" kind="define"><name>Andor3InsertionDelayString</name></member>
+    <member refid="andor3_8cpp_1a86d0f7854407019234d006b59c714a4c" kind="define"><name>Andor3MCPGainString</name></member>
+    <member refid="andor3_8cpp_1a612bd7c2c44b4afcef7db6e42036378f" kind="define"><name>Andor3MCPIntelligateString</name></member>
     <member refid="andor3_8cpp_1a0f6567206fed041631f904224006d295" kind="enum"><name>Andor3FeatureType</name></member>
     <member refid="andor3_8cpp_1a0f6567206fed041631f904224006d295a1a0b213a6a42d95fbdce57ad96d5c6f6" kind="enumvalue"><name>ATint</name></member>
     <member refid="andor3_8cpp_1a0f6567206fed041631f904224006d295a96927278dc992c911b5b2dd8a010543e" kind="enumvalue"><name>ATfloat</name></member>
@@ -6835,7 +6845,7 @@
     <member refid="andor3_8cpp_1a3b8271ef06cd9f98b19cbb95e0a52a9e" kind="function"><name>c_imagetask</name></member>
     <member refid="andor3_8cpp_1a5d822f80906426efd4860107f561b799" kind="function"><name>c_temptask</name></member>
     <member refid="andor3_8cpp_1a1685e62ba5db9156374fb10ed0b9f50f" kind="function"><name>c_getfeature</name></member>
-    <member refid="andor3_8cpp_1ad9f4a92dc07d75e2a9653961d05adff0" kind="function"><name>andor3Config</name></member>
+    <member refid="andor3_8cpp_1a6fec43a9c5aa5e6153de9f8feea27eb6" kind="function"><name>andor3Config</name></member>
     <member refid="andor3_8cpp_1a5da8792f1f4442ea2d424f16dbcc0fe8" kind="function"><name>configAndor3CallFunc</name></member>
     <member refid="andor3_8cpp_1adea921c255c5fc5307c3835b27189bc2" kind="function"><name>andor3Register</name></member>
     <member refid="andor3_8cpp_1a4ae604a2860a1cd91931c31936ccf0f1" kind="function"><name>epicsExportRegistrar</name></member>
@@ -7075,6 +7085,7 @@
     <member refid="asyn_n_d_array_driver_8h_1a090e04d9f2c1d5283651ba627bf2f9b3" kind="define"><name>NDFileWriteMessageString</name></member>
     <member refid="asyn_n_d_array_driver_8h_1adae6ba70749730ff2d31063d3a3fbd3f" kind="define"><name>NDFileNumCaptureString</name></member>
     <member refid="asyn_n_d_array_driver_8h_1ac875b8fcc1d1e623a80f43bb7187ea1a" kind="define"><name>NDFileNumCapturedString</name></member>
+    <member refid="asyn_n_d_array_driver_8h_1a336d9081ad782b898e688000981260f4" kind="define"><name>NDFileFreeCaptureString</name></member>
     <member refid="asyn_n_d_array_driver_8h_1aa0be830235a5bb4d48c0c1c2df35fe77" kind="define"><name>NDFileCaptureString</name></member>
     <member refid="asyn_n_d_array_driver_8h_1a4a42f68a0b380247cc2b4c04d45fa6e4" kind="define"><name>NDFileDeleteDriverFileString</name></member>
     <member refid="asyn_n_d_array_driver_8h_1ad15941369e0b56680c16dba2abac14e8" kind="define"><name>NDFileLazyOpenString</name></member>

@@ -189,6 +189,7 @@ combination).</p></li>
 <li><p>Binning and Area Of Interest (AOI) readout</p></li>
 <li><p>Set and monitor the camera temperature</p></li>
 <li><p>Set the camera fan speed.</p></li>
+<li><p>Gating and Image Intensifier settings</p></li>
 </ul>
 <p>This driver inherits from <a class="reference external" href="areaDetectorDoc.html#ADDriver">ADDriver</a>.
 It implements many of the parameters in
@@ -583,6 +584,50 @@ certain preset values are allowed. Choices for the Neo are:
 <td><p>A3Binning, A3Binning_RBV</p></td>
 <td><p>mbbo, mbbi</p></td>
 </tr>
+<tr class="row-even"><td colspan="7"><p><strong>Gating and Image Intensifier Control</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>Andor3GateMode</p></td>
+<td><p>asynInt32</p></td>
+<td><p>R/W</p></td>
+<td><p>Selects the photocathode gating mode. Choices for the iStar are:
+<br> 0 = CWOn <br>
+1 = CWOff <br>
+2 = FireOnly <br>
+3 = GateOnly <br>
+4 = FireAndGate <br>
+5 = DDG <br></p></td>
+<td><p>A3_GATE_MODE</p></td>
+<td><p>GateMode, GateMode_RBV</p></td>
+<td><p>mbbo, mbbi</p></td>
+</tr>
+<tr class="row-even"><td><p>Andor3InsertionDelay</p></td>
+<td><p>asynInt32</p></td>
+<td><p>R/W</p></td>
+<td><p>Configures the duration of the gate insertion delay. Choices for the iStar are:
+<br> 0 = Normal <br>
+1 = Fast <br>
+Fast mode is not available in CW gate modes.</p></td>
+<td><p>A3_INSERTION_DELAY</p></td>
+<td><p>InsertionDelay, InsertionDelay_RBV</p></td>
+<td><p>mbbo, mbbi</p></td>
+</tr>
+<tr class="row-odd"><td><p>Andor3MCPGain</p></td>
+<td><p>asynInt32</p></td>
+<td><p>R/W</p></td>
+<td><p>Controls the voltage applied across the microchannel plate. Range for the iStar is 0-4095.</p></td>
+<td><p>A3_MCP_GAIN</p></td>
+<td><p>MCPGain, MCPGain_RBV</p></td>
+<td><p>longout, longin</p></td>
+</tr>
+<tr class="row-even"><td><p>Andor3MCPIntelligate</p></td>
+<td><p>asynInt32</p></td>
+<td><p>R/W</p></td>
+<td><p>Enables or disables the MCP Intelligate mode. Only available when Normal
+insertion delay is selected. Choices are 0 (Off) and 1 (On).</p></td>
+<td><p>A3_MCP_INTELLIGATE</p></td>
+<td><p>MCPIntelligate, MCPIntelligate_RBV</p></td>
+<td><p>bo, bi</p></td>
+</tr>
 </tbody>
 </table>
 <p>The Andor driver implements the following parameters in addition to
@@ -602,7 +647,7 @@ value will indicate the actual value in effect.</p>
 <h2><a class="toc-backref" href="#id8" role="doc-backlink">Configuration</a><a class="headerlink" href="#configuration" title="Link to this heading"></a></h2>
 <p>The Andor3 driver is created with the andor3Config command, either from
 C/C++ or from the EPICS IOC shell.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span> <span class="n">andor3Config</span><span class="p">(</span><span class="n">const</span> <span class="n">char</span> <span class="o">*</span><span class="n">portName</span><span class="p">,</span> <span class="nb">int</span> <span class="n">cameraId</span><span class="p">,</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span> <span class="n">andor3Config</span><span class="p">(</span><span class="n">const</span> <span class="n">char</span> <span class="o">*</span><span class="n">portName</span><span class="p">,</span> <span class="n">const</span> <span class="n">char</span> <span class="o">*</span><span class="n">cameraSerial</span><span class="p">,</span>
                 <span class="nb">int</span> <span class="n">maxBuffers</span><span class="p">,</span> <span class="n">size_t</span> <span class="n">maxMemory</span><span class="p">,</span>
                 <span class="nb">int</span> <span class="n">priority</span><span class="p">,</span> <span class="nb">int</span> <span class="n">stackSize</span><span class="p">,</span> <span class="nb">int</span> <span class="n">maxFrames</span><span class="p">)</span>
 </pre></div>
@@ -654,7 +699,7 @@ acquiring images.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, Mark Rivers.
-      <span class="lastupdated">Last updated on 2023-September-21.
+      <span class="lastupdated">Last updated on 2023-November-25.
       </span></p>
   </div>
 

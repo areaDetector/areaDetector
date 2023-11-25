@@ -34,6 +34,7 @@ Andor sCMOS cameras:
 -  Binning and Area Of Interest (AOI) readout
 -  Set and monitor the camera temperature
 -  Set the camera fan speed.
+-  Gating and Image Intensifier settings
 
 This driver inherits from `ADDriver <areaDetectorDoc.html#ADDriver>`__.
 It implements many of the parameters in
@@ -384,6 +385,45 @@ Andor specific parameters
     - A3_BINNING
     - A3Binning, A3Binning_RBV
     - mbbo, mbbi
+  * - **Gating and Image Intensifier Control**
+  * - Andor3GateMode
+    - asynInt32
+    - R/W
+    - Selects the photocathode gating mode. Choices for the iStar are:
+      |br| 0 = CWOn |br|
+      1 = CWOff |br|
+      2 = FireOnly |br|
+      3 = GateOnly |br|
+      4 = FireAndGate |br|
+      5 = DDG |br|
+    - A3_GATE_MODE
+    - GateMode, GateMode_RBV
+    - mbbo, mbbi
+  * - Andor3InsertionDelay
+    - asynInt32
+    - R/W
+    - Configures the duration of the gate insertion delay. Choices for the iStar are:
+      |br| 0 = Normal |br|
+      1 = Fast |br|
+      Fast mode is not available in CW gate modes.
+    - A3_INSERTION_DELAY
+    - InsertionDelay, InsertionDelay_RBV
+    - mbbo, mbbi
+  * - Andor3MCPGain
+    - asynInt32
+    - R/W
+    - Controls the voltage applied across the microchannel plate. Range for the iStar is 0-4095.
+    - A3_MCP_GAIN
+    - MCPGain, MCPGain_RBV
+    - longout, longin
+  * - Andor3MCPIntelligate
+    - asynInt32
+    - R/W
+    - Enables or disables the MCP Intelligate mode. Only available when Normal
+      insertion delay is selected. Choices are 0 (Off) and 1 (On).
+    - A3_MCP_INTELLIGATE
+    - MCPIntelligate, MCPIntelligate_RBV
+    - bo, bi
 
 The Andor driver implements the following parameters in addition to
 those in asynNDArrayDriver.h and ADDriver.h.
@@ -408,7 +448,7 @@ C/C++ or from the EPICS IOC shell.
 
 ::
 
-   int andor3Config(const char *portName, int cameraId,
+   int andor3Config(const char *portName, const char *cameraSerial,
                    int maxBuffers, size_t maxMemory,
                    int priority, int stackSize, int maxFrames)
      

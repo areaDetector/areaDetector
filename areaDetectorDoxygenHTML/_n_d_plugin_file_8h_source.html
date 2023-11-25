@@ -95,14 +95,14 @@ $(function() {
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    asynStatus writeFileBase();</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    asynStatus closeFileBase();</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    asynStatus doCapture(<span class="keywordtype">int</span> capture);</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordtype">void</span>       freeCaptureBuffer(<span class="keywordtype">int</span> numCapture);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordtype">void</span>       freeCaptureBuffer();</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    asynStatus attrFileCloseCheck();</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    asynStatus attrFileNameCheck();</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    asynStatus attrFileNameSet();</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordtype">bool</span> attrIsProcessingRequired(<a class="code" href="class_n_d_attribute_list.html">NDAttributeList</a>* pAttrList);</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordtype">void</span> registerInitFrameInfo(<a class="code" href="class_n_d_array.html">NDArray</a> *pArray); </div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordtype">bool</span> isFrameValid(<a class="code" href="class_n_d_array.html">NDArray</a> *pArray); </div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <a class="code" href="class_n_d_array.html">NDArray</a> **pCapture;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    std::vector&lt;NDArray*&gt; pCapture;</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    epicsMutexId fileMutexId;</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordtype">bool</span> useAttrFilePrefix;</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordtype">bool</span> lazyOpen;</div>

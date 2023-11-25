@@ -51,6 +51,8 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">ADSupport Release Notes</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#r1-10-may-26-2021"><strong>R1-10 (May 26, 2021)</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#r1-9-1-march-26-2021"><strong>R1-9-1 (March 26, 2021)</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#r1-9-august-8-2019"><strong>R1-9 (August 8, 2019)</strong></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#r1-8-may-24-2019"><strong>R1-8 (May 24, 2019)</strong></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#r1-7-april-12-2019"><strong>R1-7 (April 12, 2019)</strong></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#r1-6-december-3-2018"><strong>R1-6 (December 3, 2018)</strong></a></li>
@@ -105,7 +107,7 @@ files respectively, in the configure/ directory of the appropriate release of th
 </section>
 <section id="r1-10-may-26-2021">
 <h2><strong>R1-10 (May 26, 2021)</strong><a class="headerlink" href="#r1-10-may-26-2021" title="Link to this heading"></a></h2>
-<ul>
+<ul class="simple">
 <li><p>Changed the support for reading MJPEG streams in GraphicsMagickSrc and xml2Src.
 In R1-5 nanohttp.c and nanohppt.h in xml2Src were changed to support MJPEG streams.
 This had the undesired side-effect of being incompatible with the standard version
@@ -116,14 +118,20 @@ These files are used to build a new library, nanohttp_stream.
 nanohhtp.c and nanohttp.h were reverted to their original versions.</p></li>
 <li><p>Changed GraphicsMagickSrc/coders/url.c to use these new functions and the new library
 for MJPEG streaming.</p></li>
-<li><p>This release now works with XML2_EXTERNAL=YES and WITH_GRAPHICSMAGICK=YES.</p>
-<p>## <strong>R1-9-1 (March 26, 2021)</strong></p>
-</li>
+<li><p>This release now works with XML2_EXTERNAL=YES and WITH_GRAPHICSMAGICK=YES.</p></li>
+</ul>
+</section>
+<section id="r1-9-1-march-26-2021">
+<h2><strong>R1-9-1 (March 26, 2021)</strong><a class="headerlink" href="#r1-9-1-march-26-2021" title="Link to this heading"></a></h2>
+<ul class="simple">
 <li><p>Fixed compilation errors with EPICS base 7.0.5 which changed the use of undefined functions
 from being a warning to being an error.  There were a few files in GraphicsMagick that were missing
-the required header files.  There was also one file in the HDF5 support for vxWorks with this problem.</p>
-<p>## <strong>R1-9 (August 8, 2019)</strong></p>
-</li>
+the required header files.  There was also one file in the HDF5 support for vxWorks with this problem.</p></li>
+</ul>
+</section>
+<section id="r1-9-august-8-2019">
+<h2><strong>R1-9 (August 8, 2019)</strong><a class="headerlink" href="#r1-9-august-8-2019" title="Link to this heading"></a></h2>
+<ul class="simple">
 <li><p>Fixed memory allocation functions used in the blosc, lz4, bslz4, and JPEG HDF5 filters.
 In R1-8 it was consistently using H5allocate_memory() and H5free_memory, rather than malloc() and free().
 This prevented crashes when the compressors were called by NDFileHDF5.
@@ -323,7 +331,7 @@ this branch, but must be aware that it is not officially supported.</p></li>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, Mark Rivers.
-      <span class="lastupdated">Last updated on 2023-September-21.
+      <span class="lastupdated">Last updated on 2023-November-25.
       </span></p>
   </div>
 
