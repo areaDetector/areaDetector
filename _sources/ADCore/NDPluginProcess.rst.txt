@@ -14,8 +14,8 @@ operations can be individually enabled and disabled.
 
 - Subtracts a background array which has been previously acquired.
 - Divides by a flat field array which has been previously acquired, and
-- then multiplies by a flat field scale factor.
-- Multiplies by a scale factor and adds an offset.
+  then multiplies by a flat field scale factor.
+- Adds an offset and then multiplies by a scale factor.
 - Clips to a maximum specified value.
 - Clips to a minimum specified value.
 - Applies a recursive digital filter.
@@ -186,9 +186,9 @@ are just a single name, for example ``NDPluginProcessSaveBackground``.
   * - NDPluginProcess, EnableOffsetScale
     - asynInt32
     - r/w
-    - Flag indicating whether the array should be multiplied by Scale and then summed
-      with Offset when processing the array. The processing step consists of:
-      , Array = Array * Scale + Offset
+    - Flag indicating whether the array should be summed with an Offset and then multiplied
+      by Scale when processing the array. The processing step consists of:
+      Array = (Array + Offset) * Scale
     - ENABLE_OFFSET_SCALE
     - $(P)$(R)EnableOffsetScale, $(P)$(R)EnableOffsetScale_RBV
     - bo, bi
@@ -197,8 +197,8 @@ are just a single name, for example ``NDPluginProcessSaveBackground``.
     - r/w
     - Processing this record will enable Offset and Scale calculations, and set the Offset=-min(Array)
       and Scale=MaxScale/(max(Array)-min(Array)), where MaxScale is the maximum value
-      of the output data type. The output array will thus be scaled to completely fill
-      the range of the output data type. Note that the calculation of the offset and scale
+      of the output data type. The output array will thus be scaled to go from zero
+      to the maximum value of the output data type. Note that the calculation of the offset and scale
       factors is only done once when this record is processed, and these values are used
       for subsequent array callbacks, i.e. it does not autoscale on each array callback.
       Thanks to Tom Cobb for this addition.
