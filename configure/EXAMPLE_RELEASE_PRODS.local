@@ -15,9 +15,9 @@
 SUPPORT=/corvette/home/epics/devel
 
 # ASYN is needed for base classes 
-ASYN=$(SUPPORT)/asyn-4-42
+ASYN=$(SUPPORT)/asyn-4-43
 
-AREA_DETECTOR=$(SUPPORT)/areaDetector-3-12-1
+AREA_DETECTOR=$(SUPPORT)/areaDetector-3-13
 
 # ADSupport is needed by ADCore plugins
 ADSUPPORT=$(AREA_DETECTOR)/ADSupport
@@ -26,22 +26,22 @@ ADSUPPORT=$(AREA_DETECTOR)/ADSupport
 ADCORE=$(AREA_DETECTOR)/ADCore
 
 #AUTOSAVE is needed for save_restore
-AUTOSAVE=$(SUPPORT)/autosave-5-10
+AUTOSAVE=$(SUPPORT)/autosave-5-10-2
 
 # BUSY is needed for busy record
-BUSY=$(SUPPORT)/busy-1-7-2
+BUSY=$(SUPPORT)/busy-1-7-3
 
 # CALC is needed for the sseq record that is used for the reset in NDStats.template
 # and which is loaded into the example IOCs for general purpose use.
 # CALC is also needed for scalcout record that SSCAN uses
-CALC=$(SUPPORT)/calc-3-7-3
+CALC=$(SUPPORT)/calc-3-7-4
 
 # SNCSEQ is needed if CALC was built with SNCSEQ support (see CALC/configure/RELEASE)
 SNCSEQ=$(SUPPORT)/seq-2-2-5
 
 # SSCAN is needed for scanning threshold on Pilatus and general scanning.
 # SSCAN also provides support needed for the swait record in CALC
-SSCAN=$(SUPPORT)/sscan-2-11-3
+SSCAN=$(SUPPORT)/sscan-2-11-5
 
 # Optional modules
 
@@ -57,7 +57,7 @@ DEVIOCSTATS=$(SUPPORT)/devIocStats-3-1-16
 # RECCASTER is the client for recsync, used to communicate IOC information to a recceiver server
 #RECCASTER=$(SUPPORT)/recsync/client
 
-EPICS_BASE=/corvette/usr/local/epics-devel/base-7.0.5
+EPICS_BASE=/corvette/usr/local/epics-devel/base-7.0.7
 
 # If CONFIG_SITE.local defines WITH_PVA=YES and EPICS_BASE is prior to 7.0 then define the path here
 # If using EPICS_BASE 7.0 or later the PVA files are in base itself and no additional definitions are needed.
