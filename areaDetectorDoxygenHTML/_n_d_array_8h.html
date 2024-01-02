@@ -48,7 +48,8 @@ $(function() {
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#define-members">Macros</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
-<a href="#enum-members">Enumerations</a>  </div>
+<a href="#enum-members">Enumerations</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">NDArray.h File Reference</div>  </div>
 </div><!--header-->
@@ -88,6 +89,10 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
+<tr class="memitem:af2603c40a08c8ece79213fe4e2b0301f"><td class="memItemLeft" align="right" valign="top">typedef void *(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_n_d_array_8h.html#af2603c40a08c8ece79213fe4e2b0301f">MallocFunc_t</a>) (size_t size)</td></tr>
+<tr class="separator:af2603c40a08c8ece79213fe4e2b0301f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2fc1a061fb319b27099bf13ef3799be"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_n_d_array_8h.html#aa2fc1a061fb319b27099bf13ef3799be">FreeFunc_t</a>) (void *ptr)</td></tr>
+<tr class="separator:aa2fc1a061fb319b27099bf13ef3799be"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8c874e905fbe79f7544501ec154954c0"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="struct_n_d_dimension.html">NDDimension</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_n_d_array_8h.html#a8c874e905fbe79f7544501ec154954c0">NDDimension_t</a></td></tr>
 <tr class="memdesc:a8c874e905fbe79f7544501ec154954c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure defining a dimension of an <a class="el" href="class_n_d_array.html" title="N-dimensional array class; each array has a set of dimensions, a data type, pointer to data,...">NDArray</a>.  <a href="_n_d_array_8h.html#a8c874e905fbe79f7544501ec154954c0">More...</a><br /></td></tr>
 <tr class="separator:a8c874e905fbe79f7544501ec154954c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -118,6 +123,13 @@ Enumerations</h2></td></tr>
  }</td></tr>
 <tr class="memdesc:aefadd5bb1ebc94497d2dbc600e3e663f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumeration of Bayer patterns for <a class="el" href="class_n_d_array.html" title="N-dimensional array class; each array has a set of dimensions, a data type, pointer to data,...">NDArray</a> attribute "bayerPattern".  <a href="_n_d_array_8h.html#aefadd5bb1ebc94497d2dbc600e3e663f">More...</a><br /></td></tr>
 <tr class="separator:aefadd5bb1ebc94497d2dbc600e3e663f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:ac2a588e22b7e9bdca023c969a2cb7a39"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_n_d_array_8h.html#af2603c40a08c8ece79213fe4e2b0301f">MallocFunc_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_n_d_array_8h.html#ac2a588e22b7e9bdca023c969a2cb7a39">defaultFrameMalloc</a></td></tr>
+<tr class="separator:ac2a588e22b7e9bdca023c969a2cb7a39"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5265822d2e260e3cc0d04bb4669e952"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_n_d_array_8h.html#aa2fc1a061fb319b27099bf13ef3799be">FreeFunc_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_n_d_array_8h.html#ae5265822d2e260e3cc0d04bb4669e952">defaultFrameFree</a></td></tr>
+<tr class="separator:ae5265822d2e260e3cc0d04bb4669e952"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="ac4d72230192b5a071cf82e445b44ad2e"></a>
@@ -139,6 +151,34 @@ Enumerations</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Typedef Documentation</h2>
+<a id="aa2fc1a061fb319b27099bf13ef3799be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2fc1a061fb319b27099bf13ef3799be">&#9670;&nbsp;</a></span>FreeFunc_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef void(* FreeFunc_t) (void *ptr)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af2603c40a08c8ece79213fe4e2b0301f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af2603c40a08c8ece79213fe4e2b0301f">&#9670;&nbsp;</a></span>MallocFunc_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef void*(* MallocFunc_t) (size_t size)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a25da0f364d2f6a3b2369b647b38df24e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a25da0f364d2f6a3b2369b647b38df24e">&#9670;&nbsp;</a></span>NDArrayInfo_t</h2>
 
@@ -232,6 +272,51 @@ Enumerations</h2></td></tr>
 <tr><td class="fieldname"><a id="a158fa3df51916c6942849dccdc7c5812aec4cac3bdcc357023c64b2097c080d46"></a>NDColorModeYUV411&#160;</td><td class="fielddoc"><p>YUV image, 6 bytes encodes 4 RGB pixels. </p>
 </td></tr>
 </table>
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="ae5265822d2e260e3cc0d04bb4669e952"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5265822d2e260e3cc0d04bb4669e952">&#9670;&nbsp;</a></span>defaultFrameFree</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_n_d_array_8h.html#aa2fc1a061fb319b27099bf13ef3799be">FreeFunc_t</a> defaultFrameFree</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac2a588e22b7e9bdca023c969a2cb7a39"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2a588e22b7e9bdca023c969a2cb7a39">&#9670;&nbsp;</a></span>defaultFrameMalloc</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_n_d_array_8h.html#af2603c40a08c8ece79213fe4e2b0301f">MallocFunc_t</a> defaultFrameMalloc</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>

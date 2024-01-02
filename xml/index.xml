@@ -3135,6 +3135,9 @@
     <member refid="class_n_d_array_pool_1acda1f9b45f518f66e1550d0cddcbded3" kind="function"><name>getMemorySize</name></member>
     <member refid="class_n_d_array_pool_1a0aeb5485c5952894d44fe738817e2157" kind="function"><name>getNumFree</name></member>
     <member refid="class_n_d_array_pool_1a291e7945949896cbced71383b9e4472a" kind="function"><name>emptyFreeList</name></member>
+    <member refid="class_n_d_array_pool_1a111911280690eef4aae1f227169a86b2" kind="function"><name>frameMalloc</name></member>
+    <member refid="class_n_d_array_pool_1ab88075b4a8906b035b1433b63d04a981" kind="function"><name>frameFree</name></member>
+    <member refid="class_n_d_array_pool_1af081017ba2ce24501772517eaa0f43f1" kind="function"><name>setDefaultFrameMemoryFunctions</name></member>
     <member refid="class_n_d_array_pool_1ac7f9c86c15a5a45da9b6d609e782d23b" kind="function"><name>createArray</name></member>
     <member refid="class_n_d_array_pool_1af524d8046b71d97814e5c4ba2c82ee0d" kind="function"><name>onAllocateArray</name></member>
     <member refid="class_n_d_array_pool_1a10e11c9e1a75667a1ae57b2963fab49c" kind="function"><name>onReserveArray</name></member>
@@ -7175,12 +7178,18 @@
     <member refid="_n_d_array_8h_1aefadd5bb1ebc94497d2dbc600e3e663fad04244872c6e55c139fdcf50392341a5" kind="enumvalue"><name>NDBayerGBRG</name></member>
     <member refid="_n_d_array_8h_1aefadd5bb1ebc94497d2dbc600e3e663faa01682bca4660479164770f3e9f84cd7" kind="enumvalue"><name>NDBayerGRBG</name></member>
     <member refid="_n_d_array_8h_1aefadd5bb1ebc94497d2dbc600e3e663fa69a5acc9550bf1f7033c5493f3044ddf" kind="enumvalue"><name>NDBayerBGGR</name></member>
+    <member refid="_n_d_array_8h_1af2603c40a08c8ece79213fe4e2b0301f" kind="typedef"><name>MallocFunc_t</name></member>
+    <member refid="_n_d_array_8h_1aa2fc1a061fb319b27099bf13ef3799be" kind="typedef"><name>FreeFunc_t</name></member>
     <member refid="_n_d_array_8h_1a8c874e905fbe79f7544501ec154954c0" kind="typedef"><name>NDDimension_t</name></member>
     <member refid="_n_d_array_8h_1a25da0f364d2f6a3b2369b647b38df24e" kind="typedef"><name>NDArrayInfo_t</name></member>
+    <member refid="_n_d_array_8h_1ac2a588e22b7e9bdca023c969a2cb7a39" kind="variable"><name>defaultFrameMalloc</name></member>
+    <member refid="_n_d_array_8h_1ae5265822d2e260e3cc0d04bb4669e952" kind="variable"><name>defaultFrameFree</name></member>
   </compound>
   <compound refid="_n_d_array_pool_8cpp" kind="file"><name>NDArrayPool.cpp</name>
     <member refid="_n_d_array_pool_8cpp_1a7a7dcf7af9e163268830474c0997b652" kind="define"><name>THRESHOLD_SIZE_RATIO</name></member>
     <member refid="_n_d_array_pool_8cpp_1af0e94d13028051cd5339d204bfbb057d" kind="variable"><name>driverName</name></member>
+    <member refid="_n_d_array_pool_8cpp_1ac2a588e22b7e9bdca023c969a2cb7a39" kind="variable"><name>defaultFrameMalloc</name></member>
+    <member refid="_n_d_array_pool_8cpp_1ae5265822d2e260e3cc0d04bb4669e952" kind="variable"><name>defaultFrameFree</name></member>
     <member refid="_n_d_array_pool_8cpp_1ae31a4d65bb70b64fc8abccd14b66e55b" kind="variable"><name>eraseNDAttributes</name></member>
     <member refid="_n_d_array_pool_8cpp_1aa268383536f7398e9557062f819617c2" kind="function"><name>epicsExportAddress</name></member>
     <member refid="_n_d_array_pool_8cpp_1a6609a65a84952f63c501f8b9162c0c8b" kind="function"><name>convertType</name></member>
@@ -7224,6 +7233,7 @@
     <member refid="_n_d_attribute_8h_1a9f7184b8fbaae0823a57b493ef50080eab8cc7e6f174d6384fd43cf8252f67da6" kind="enumvalue"><name>NDAttrSourceParam</name></member>
     <member refid="_n_d_attribute_8h_1a9f7184b8fbaae0823a57b493ef50080eaf2b322d22b470b237204feff8ae4ce7d" kind="enumvalue"><name>NDAttrSourceEPICSPV</name></member>
     <member refid="_n_d_attribute_8h_1a9f7184b8fbaae0823a57b493ef50080eace505bbcd2de8e044a09b47be3bb7798" kind="enumvalue"><name>NDAttrSourceFunct</name></member>
+    <member refid="_n_d_attribute_8h_1a9f7184b8fbaae0823a57b493ef50080ea7b277d69266e577a5b1320acde07929c" kind="enumvalue"><name>NDAttrSourceConst</name></member>
     <member refid="_n_d_attribute_8h_1a9f7184b8fbaae0823a57b493ef50080ea036e5bf37d77e0387c59ae4c77cefa01" kind="enumvalue"><name>NDAttrSourceUndefined</name></member>
     <member refid="_n_d_attribute_8h_1a0b6a45ea7909199a94eb9761d1bfea62" kind="typedef"><name>NDAttributeListNode</name></member>
   </compound>

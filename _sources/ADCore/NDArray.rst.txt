@@ -177,6 +177,11 @@ demonstates how to write such functions. The `functAttribute class
 documentation <../areaDetectorDoxygenHTML/classfunct_attribute.html>`__
 describes this class in detail.
 
+constAttribute
+--------------
+
+This type of attribute obtains its value directly from the "source" value in the XML file.
+
 asynNDArrayDriver
 -----------------
 
@@ -770,6 +775,13 @@ loading ADBase.template.
     - NUM_CAPTURED
     - $(P)$(R)NumCaptured_RBV
     - longin
+  * - NDFileFreeCapture
+    - asynInt32
+    - r/w
+    - Release all of the NDArrays in the capture buffer to the free pool.
+    - FREE_CAPTURE
+    - $(P)$(R)FreeCapture
+    - bo
   * - NDFileDeleteDriverFile
     - asynInt32
     - r/w

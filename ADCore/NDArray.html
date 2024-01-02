@@ -58,6 +58,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#pvattribute">PVAttribute</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#paramattribute">paramAttribute</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#functattribute">functAttribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#constattribute">constAttribute</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#asynndarraydriver">asynNDArrayDriver</a></li>
 </ul>
 </li>
@@ -281,6 +282,10 @@ NDArray. ADCore contains example code, myAttributeFunctions.cpp that
 demonstates how to write such functions. The <a class="reference external" href="../areaDetectorDoxygenHTML/classfunct_attribute.html">functAttribute class
 documentation</a>
 describes this class in detail.</p>
+</section>
+<section id="constattribute">
+<h2>constAttribute<a class="headerlink" href="#constattribute" title="Link to this heading"></a></h2>
+<p>This type of attribute obtains its value directly from the “source” value in the XML file.</p>
 </section>
 <section id="asynndarraydriver">
 <h2>asynNDArrayDriver<a class="headerlink" href="#asynndarraydriver" title="Link to this heading"></a></h2>
@@ -944,7 +949,15 @@ write operation resulted in an error.</p></td>
 <td><p>$(P)$(R)NumCaptured_RBV</p></td>
 <td><p>longin</p></td>
 </tr>
-<tr class="row-odd"><td><p>NDFileDeleteDriverFile</p></td>
+<tr class="row-odd"><td><p>NDFileFreeCapture</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>Release all of the NDArrays in the capture buffer to the free pool.</p></td>
+<td><p>FREE_CAPTURE</p></td>
+<td><p>$(P)$(R)FreeCapture</p></td>
+<td><p>bo</p></td>
+</tr>
+<tr class="row-even"><td><p>NDFileDeleteDriverFile</p></td>
 <td><p>asynInt32</p></td>
 <td><p>r/w</p></td>
 <td><p>Flag to enable deleting original driver file after a plugin has re-written the file
@@ -956,7 +969,7 @@ the original file.</p></td>
 <td><p>$(P)$(R)DeleteDriverFile, $(P)$(R)DeleteDriverFile_RBV</p></td>
 <td><p>bo, bi</p></td>
 </tr>
-<tr class="row-even"><td><p>NDFileLazyOpen</p></td>
+<tr class="row-odd"><td><p>NDFileLazyOpen</p></td>
 <td><p>asynInt32</p></td>
 <td><p>r/w</p></td>
 <td><p>Flag to defer the creation of a new file until the first NDArray to write has been
@@ -970,7 +983,7 @@ and only in “Stream” mode.</p></td>
 <td><p>$(P)$(R)LazyOpen, $(P)$(R)LazyOpen_RBV</p></td>
 <td><p>bo, bi</p></td>
 </tr>
-<tr class="row-odd"><td><p>NDFileCreateDir</p></td>
+<tr class="row-even"><td><p>NDFileCreateDir</p></td>
 <td><p>asynInt32</p></td>
 <td><p>r/w</p></td>
 <td><p>This parameter is used to automatically create directories if they don’t exist.
@@ -984,7 +997,7 @@ and 2 will not create a directory in the root directory).</p></td>
 <td><p>$(P)$(R)CreateDirectory, $(P)$(R)CreateDirectory_RBV</p></td>
 <td><p>longout, longin</p></td>
 </tr>
-<tr class="row-even"><td><p>NDFileTempSuffix</p></td>
+<tr class="row-odd"><td><p>NDFileTempSuffix</p></td>
 <td><p>asynOctet</p></td>
 <td><p>r/w</p></td>
 <td><p>If this string is non-null, the file is opened with this suffix temporarily appended
@@ -1013,7 +1026,7 @@ be opened.</p></td>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, Mark Rivers.
-      <span class="lastupdated">Last updated on 2023-December-21.
+      <span class="lastupdated">Last updated on 2024-January-02.
       </span></p>
   </div>
 
