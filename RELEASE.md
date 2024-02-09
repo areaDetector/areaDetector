@@ -29,6 +29,11 @@ Versions
 Each submodule contains detailed release notes for each release of that submodule.  The release notes below
 only provide a short summary of the most significant items from the submodules.
 
+### R3-13 (February 9, 2024)
+
+* ADCore R3-13
+* ADSpinnaker R3-5
+
 ### R3-12-1 (January 22, 2022)
 
 * ADCore R3-12, R3-12-1
