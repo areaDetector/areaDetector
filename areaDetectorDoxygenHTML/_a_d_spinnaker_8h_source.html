@@ -147,27 +147,28 @@ $(function() {
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    asynStatus disconnectCamera();</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keywordtype">void</span> imageEventCallback(ImagePtr pImage);</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keywordtype">void</span> reportNode(FILE *fp, INodeMap *pNodeMap, gcstring <a class="code" href="namespacemake_adl.html#ad7b803e2e744640af777e973c317f5b2">nodeName</a>, <span class="keywordtype">int</span> level);</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="comment">/* Data */</span></div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keywordtype">int</span> cameraId_;</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    </div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    INodeMap *pNodeMap_;    </div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    INodeMap *pTLStreamNodeMap_;    </div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    SystemPtr system_;</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    CameraList camList_;</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    CameraPtr pCamera_;</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keywordtype">int</span> numSPBuffers_;</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    ImageEventHandler *pImageEventHandler_;</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="keywordtype">int</span> exiting_;</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    epicsEventId startEventId_;</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    epicsMessageQueue *pCallbackMsgQ_;</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <a class="code" href="class_n_d_array.html">NDArray</a> *pRaw_;</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="keywordtype">int</span> uniqueId_;</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;};</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keywordtype">void</span> updateStreamStat(<span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code" href="namespacemake_adl.html#ad7b803e2e744640af777e973c317f5b2">nodeName</a>, <span class="keywordtype">int</span> param);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="comment">/* Data */</span></div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordtype">int</span> cameraId_;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    </div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    INodeMap *pNodeMap_;    </div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    INodeMap *pTLStreamNodeMap_;    </div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    SystemPtr system_;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    CameraList camList_;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    CameraPtr pCamera_;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="keywordtype">int</span> numSPBuffers_;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    ImageEventHandler *pImageEventHandler_;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keywordtype">int</span> exiting_;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    epicsEventId startEventId_;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    epicsMessageQueue *pCallbackMsgQ_;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <a class="code" href="class_n_d_array.html">NDArray</a> *pRaw_;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="keywordtype">int</span> uniqueId_;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;};</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
 <div class="ttc" id="a_a_d_gen_i_cam_8h_html"><div class="ttname"><a href="_a_d_gen_i_cam_8h.html">ADGenICam.h</a></div></div>
 <div class="ttc" id="a_gen_i_cam_feature_8h_html_a7e16ddb9db92703eb6dc8b3d6bfd5f05"><div class="ttname"><a href="_gen_i_cam_feature_8h.html#a7e16ddb9db92703eb6dc8b3d6bfd5f05">GCFeatureType_t</a></div><div class="ttdeci">GCFeatureType_t</div><div class="ttdef"><b>Definition:</b> GenICamFeature.h:13</div></div>
 <div class="ttc" id="aclass_a_d_gen_i_cam_html"><div class="ttname"><a href="class_a_d_gen_i_cam.html">ADGenICam</a></div><div class="ttdef"><b>Definition:</b> ADGenICam.h:25</div></div>

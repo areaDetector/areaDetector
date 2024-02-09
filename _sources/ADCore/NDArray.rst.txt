@@ -536,6 +536,9 @@ loading ADBase.template.
     - The name of an XML file defining the NDAttributes to be added to each NDArray by
       this driver or plugin. The format of the XML file is described in the documentation
       for `asynNDArrayDriver::readNDAttributesFile() <../areaDetectorDoxygenHTML/classasyn_n_d_array_driver.html>`__ 
+      It is also possible for this parameter to directly contain the XML content, rather than the name of the
+      file with the XML content.  
+      The software interprets the content as XML rather than a file name if it contains the string "\<Attributes\>".
     - ND_ATTRIBUTES_FILE
     - $(P)$(R)NDAttributesFile
     - waveform

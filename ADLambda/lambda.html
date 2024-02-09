@@ -223,11 +223,75 @@ Most records are in ADLambda.template, but there is a single record listed in La
 loaded for each module that makes up the full detector.</p>
 <section id="detector-status">
 <h3><a class="toc-backref" href="#id7" role="doc-backlink">Detector Status</a><a class="headerlink" href="#detector-status" title="Link to this heading"></a></h3>
+<table class="table-bordered table-striped table-hover docutils align-default">
+<colgroup>
+<col style="width: 77.8%" />
+<col style="width: 11.1%" />
+<col style="width: 11.1%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Description</p></th>
+<th class="head"><p>EPICS record name</p></th>
+<th class="head"><p>EPICS record type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Bad Frame Counter
+The number of frames recorded as invalid by the detector during the last acquisition</p></td>
+<td><p>BadFrameCounter, BadFrameCounter_RBV</p></td>
+<td><p>ao, ai</p></td>
+</tr>
+<tr class="row-odd"><td><p>Readout Threads
+The current number of threads aquiring from modules</p></td>
+<td><p>ReadoutThreads</p></td>
+<td><p>ai</p></td>
+</tr>
+</tbody>
+</table>
 </section>
-<section class="table-bordered table-striped table-hover" id="acquisition-setup">
+<section id="acquisition-setup">
 <h3><a class="toc-backref" href="#id8" role="doc-backlink">Acquisition Setup</a><a class="headerlink" href="#acquisition-setup" title="Link to this heading"></a></h3>
+<table class="table-bordered table-striped table-hover docutils align-default">
+<colgroup>
+<col style="width: 77.8%" />
+<col style="width: 11.1%" />
+<col style="width: 11.1%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Description</p></th>
+<th class="head"><p>EPICS record name</p></th>
+<th class="head"><p>EPICS record type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Dual Threshold Mode, determines whether the detector will use the dual threshold mode.
+In dual threshold mode, the DualThreshold parameter is an upper threshold and the
+detector will combine the low threshold and high threshold images into a single
+NDArray frame, the high threshold image being below the low threshold image in the
+Y dimension.</p></td>
+<td><p>DualMode, DualMode_RBV</p></td>
+<td><p>mbbo, mbbi</p></td>
+</tr>
+<tr class="row-odd"><td><p>Energy threshold for the acquisition. This is the low energy threshold.</p></td>
+<td><p>EnergyThreshold, EnergyThreshold_RBV</p></td>
+<td><p>ao, ai</p></td>
+</tr>
+<tr class="row-even"><td><p>Energy threshold 2 for the acquisition. This is the high energy threshold.</p></td>
+<td><p>DualThreshold, DualThreshold_RBV</p></td>
+<td><p>ao, ai</p></td>
+</tr>
+<tr class="row-odd"><td><p>Charge Summing Mode, determines whether the detector will use charge summing</p></td>
+<td><p>ChargeSumming, ChargeSumming_RBV</p></td>
+<td><p>mbbo, mbbi</p></td>
+</tr>
+<tr class="row-even"><td><p>Gating Mode, determines whether gating is switched on or off</p></td>
+<td><p>GatingMode, GatingMode_RBV</p></td>
+<td><p>mbbo, mbbi</p></td>
+</tr>
+</tbody>
+</table>
 </section>
-<section class="table-bordered table-striped table-hover" id="trigger-setup">
+<section id="trigger-setup">
 <h3><a class="toc-backref" href="#id9" role="doc-backlink">Trigger Setup</a><a class="headerlink" href="#trigger-setup" title="Link to this heading"></a></h3>
 <table class="table-bordered table-striped table-hover docutils align-default">
 <colgroup>
@@ -287,7 +351,7 @@ and lacks many PVs that are important for the Lambda.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, Mark Rivers.
-      <span class="lastupdated">Last updated on 2024-January-02.
+      <span class="lastupdated">Last updated on 2024-February-09.
       </span></p>
   </div>
 

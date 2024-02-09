@@ -1,6 +1,6 @@
-=======
+========
 ADLambda
-=======
+========
 
 :author: John Hammonds, Keenan Lang, Mark Rivers
 
@@ -108,7 +108,7 @@ ADBase.template and NDFile.template
     - Not Used
 
 Lambda specific parameters
--------------------------
+--------------------------
 
 The Lambda driver implements the following parameters in addition to those in asynNDArrayDriver.h and ADDriver.h.
 Most records are in ADLambda.template, but there is a single record listed in LambdaModule.template which should be
@@ -131,8 +131,8 @@ Detector Status
     - ao, ai
   * - Readout Threads
       The current number of threads aquiring from modules
-	- ReadoutThreads
-	- ai
+    - ReadoutThreads
+    - ai
 
 Acquisition Setup
 ~~~~~~~~~~~~~~~~~
@@ -146,11 +146,11 @@ Acquisition Setup
     - EPICS record type
   * - Dual Threshold Mode, determines whether the detector will use the dual threshold mode.
       In dual threshold mode, the DualThreshold parameter is an upper threshold and the
-	  detector will combine the low threshold and high threshold images into a single
-	  NDArray frame, the high threshold image being below the low threshold image in the 
-	  Y dimension.
-	- DualMode, DualMode_RBV
-	- mbbo, mbbi
+      detector will combine the low threshold and high threshold images into a single
+      NDArray frame, the high threshold image being below the low threshold image in the 
+      Y dimension.
+    - DualMode, DualMode_RBV
+    - mbbo, mbbi
   * - Energy threshold for the acquisition. This is the low energy threshold.
     - EnergyThreshold, EnergyThreshold_RBV
     - ao, ai
@@ -159,10 +159,10 @@ Acquisition Setup
     - ao, ai
   * - Charge Summing Mode, determines whether the detector will use charge summing
     - ChargeSumming, ChargeSumming_RBV
-	- mbbo, mbbi
+    - mbbo, mbbi
   * - Gating Mode, determines whether gating is switched on or off
     - GatingMode, GatingMode_RBV
-	- mbbo, mbbi
+    - mbbo, mbbi
 
 Trigger Setup
 ~~~~~~~~~~~~~

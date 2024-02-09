@@ -51,7 +51,7 @@
 <li class="toctree-l1"><a class="reference internal" href="release.html">Top-level Release Notes</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">ADCore Release Notes</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#r3-13-january-xxx-2024"><strong>R3-13 (January XXX, 2024)</strong></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#r3-13-february-9-2024"><strong>R3-13 (February 9, 2024)</strong></a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#ndarraypool">NDArrayPool</a></li>
 </ul>
 </li>
@@ -367,16 +367,18 @@ the EXAMPLE_RELEASE_PATHS.local, EXAMPLE_RELEASE_LIBS.local, and EXAMPLE_RELEASE
 files respectively, in the configure/ directory of the appropriate release of the
 <a class="reference external" href="https://github.com/areaDetector/areaDetector">top-level areaDetector</a> repository.</p>
 </section>
-<section id="r3-13-january-xxx-2024">
-<h2><strong>R3-13 (January XXX, 2024)</strong><a class="headerlink" href="#r3-13-january-xxx-2024" title="Link to this heading"></a></h2>
+<section id="r3-13-february-9-2024">
+<h2><strong>R3-13 (February 9, 2024)</strong><a class="headerlink" href="#r3-13-february-9-2024" title="Link to this heading"></a></h2>
 <section id="ndarraypool">
 <h3>NDArrayPool<a class="headerlink" href="#ndarraypool" title="Link to this heading"></a></h3>
 <ul class="simple">
-<li><p>Provide a mechanism to override the default memory allocator for NDArrays.</p></li>
-<li><p>Thanks to Emilio PJ on Github for this.
+<li><p>Provide a mechanism to override the default memory allocator for NDArrays.
+Thanks to Emilio PJ on Github for this.
 ### asynNDArrayDriver</p></li>
 <li><p>Added UpdateTimeStamps method.</p></li>
-<li><p>Added NDFileFreeCapture parameter to manually free the capture buffer.
+<li><p>Added NDFileFreeCapture parameter to manually free the capture buffer.</p></li>
+<li><p>Allow the filename in readNDAttributes file to be an XML string rather than a file name.
+This allows Channel Access clients to write the XML directly. Thanks to Marcell Nagy for this.
 ### NDAttribute</p></li>
 <li><p>Added support for attribute type CONST, where the value is the “source” value specified in the XML file.
 Thanks to Keenan Lang for this.
@@ -397,14 +399,10 @@ Previously these were always the same value.</p>
 <li><p>LowClip has been renamed to LowClipThresh.</p></li>
 <li><p>HighClip has been renamed to HighClipThresh.</p></li>
 <li><p>LowClipValue and HighClipValue have been added.</p></li>
-<li><p><strong>This change is not backwards compatible, the value of Low/HighClipValue must now be specified.</strong></p></li>
+<li><p><strong>This change is not backwards compatible, the value of Low/HighClipValue must now be specified.</strong>
+### commonDriverMakefile, commonLibraryMakefile</p></li>
 </ul>
 </li>
-<li><p>Fixed typos in commonDriverMakefile and commonLibraryMakefile for the NeXus library.</p></li>
-<li><p>Set the plugin type string in NDFileNexus.</p></li>
-<li><p>Fixed typo in arguments to constructor in NDPluginBadPixel.</p></li>
-<li><p>Improved paths for databases and autosave in iocBoot/EXAMPLE_commonPlugins.cmd.
-### commonDriverMakefile, commonLibraryMakefile</p></li>
 <li><p>Fix error in upper/lower case of NeXus_DIR.</p></li>
 <li><p>Fix error with nanohttp_stream library.
 ### Continuous integration</p></li>
@@ -2806,7 +2804,7 @@ is the quotient of the two numbers, which is not what is desired.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, Mark Rivers.
-      <span class="lastupdated">Last updated on 2024-January-02.
+      <span class="lastupdated">Last updated on 2024-February-09.
       </span></p>
   </div>
 
