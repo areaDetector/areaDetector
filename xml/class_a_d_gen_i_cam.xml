@@ -4,6 +4,7 @@
     <compoundname>ADGenICam</compoundname>
     <basecompoundref refid="class_a_d_driver" prot="public" virt="non-virtual">ADDriver</basecompoundref>
     <derivedcompoundref refid="class_a_d_aravis" prot="public" virt="non-virtual">ADAravis</derivedcompoundref>
+    <derivedcompoundref refid="class_a_d_euresys" prot="public" virt="non-virtual">ADEuresys</derivedcompoundref>
     <derivedcompoundref refid="class_a_d_pylon" prot="public" virt="non-virtual">ADPylon</derivedcompoundref>
     <derivedcompoundref refid="class_a_d_spinnaker" prot="public" virt="non-virtual">ADSpinnaker</derivedcompoundref>
     <derivedcompoundref refid="class_a_d_vimba" prot="public" virt="non-virtual">ADVimba</derivedcompoundref>
@@ -253,6 +254,7 @@
         <name>writeInt32</name>
         <reimplements refid="class_a_d_driver_1abef6916bb90d032a1aeb6894adef12a6">writeInt32</reimplements>
         <reimplementedby refid="class_a_d_aravis_1ab3aace6e7a423f12be0713deb4409bac">writeInt32</reimplementedby>
+        <reimplementedby refid="class_a_d_euresys_1a149534415c3aea22d5d9a46f8ce081ae">writeInt32</reimplementedby>
         <param>
           <type>asynUser *</type>
           <declname>pasynUser</declname>
@@ -489,6 +491,7 @@ Takes action if the function code requires it. </para>
         <definition>asynStatus ADGenICam::readStatus</definition>
         <argsstring>()</argsstring>
         <name>readStatus</name>
+        <reimplementedby refid="class_a_d_euresys_1a055a0a85d3dfcfd2795a1dfebd75f7cd">readStatus</reimplementedby>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -670,6 +673,7 @@ Takes action if the function code requires it. </para>
         <argsstring>(GenICamFeatureSet *set, std::string const &amp;asynName, asynParamType asynType, int asynIndex, std::string const &amp;featureName, GCFeatureType_t featureType)=0</argsstring>
         <name>createFeature</name>
         <reimplementedby refid="class_a_d_aravis_1a9d4a3a1e849cd4f72633daa1436ecc17">createFeature</reimplementedby>
+        <reimplementedby refid="class_a_d_euresys_1a23880750845af5bbb9ba00ed1d838fcf">createFeature</reimplementedby>
         <reimplementedby refid="class_a_d_pylon_1a5771133b2027b907d26e97068b28d17c">createFeature</reimplementedby>
         <reimplementedby refid="class_a_d_spinnaker_1aab1fc231e184c00fbf20681af8831b4d">createFeature</reimplementedby>
         <reimplementedby refid="class_a_d_vimba_1a17c5f19228b984b5f4351f892cc64b8a">createFeature</reimplementedby>
@@ -724,6 +728,7 @@ Takes action if the function code requires it. </para>
         <argsstring>()=0</argsstring>
         <name>startCapture</name>
         <reimplementedby refid="class_a_d_aravis_1a406c3466598cee023c85cdc33c400416">startCapture</reimplementedby>
+        <reimplementedby refid="class_a_d_euresys_1a2ed030c690a0f9ea3c650fee1655c4d8">startCapture</reimplementedby>
         <reimplementedby refid="class_a_d_pylon_1a792e89d193b67d82bc97f3f8a3439c36">startCapture</reimplementedby>
         <reimplementedby refid="class_a_d_spinnaker_1a5d442adb176d1f49b63cccb3df4081ee">startCapture</reimplementedby>
         <reimplementedby refid="class_a_d_vimba_1aafda90bd5982b72d3d8756fbeaaf494b">startCapture</reimplementedby>
@@ -741,6 +746,7 @@ Takes action if the function code requires it. </para>
         <argsstring>()=0</argsstring>
         <name>stopCapture</name>
         <reimplementedby refid="class_a_d_aravis_1ab8242a3112e1133438eeda81e011831b">stopCapture</reimplementedby>
+        <reimplementedby refid="class_a_d_euresys_1ad49560de2dbe0015022697f5b056283f">stopCapture</reimplementedby>
         <reimplementedby refid="class_a_d_pylon_1ae3729d1917a60826b621975586a4d7f5">stopCapture</reimplementedby>
         <reimplementedby refid="class_a_d_spinnaker_1aba6221c401b9e483ca11f50ddbed87cc">stopCapture</reimplementedby>
         <reimplementedby refid="class_a_d_vimba_1a023373adeaca292de12532e339711d0c">stopCapture</reimplementedby>
@@ -789,13 +795,13 @@ Takes action if the function code requires it. </para>
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="7">
+      <node id="8">
         <label>ADSpinnaker</label>
         <link refid="class_a_d_spinnaker"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="8">
+      <node id="9">
         <label>ADVimba</label>
         <link refid="class_a_d_vimba"/>
         <childnode refid="1" relation="public-inheritance">
@@ -804,7 +810,7 @@ Takes action if the function code requires it. </para>
       <node id="4">
         <label>asynPortDriver</label>
       </node>
-      <node id="6">
+      <node id="7">
         <label>ADPylon</label>
         <link refid="class_a_d_pylon"/>
         <childnode refid="1" relation="public-inheritance">
@@ -820,6 +826,12 @@ Takes action if the function code requires it. </para>
         <label>ADDriver</label>
         <link refid="class_a_d_driver"/>
         <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>ADEuresys</label>
+        <link refid="class_a_d_euresys"/>
+        <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
       <node id="5">

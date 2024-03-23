@@ -12,6 +12,7 @@ Detector Drivers
     ADCSimDetector/ADCSimDetectorDoc
     ADDexela/ADDexela
     ADEiger/eiger
+    ADEuresys/ADEuresys
     ADFastCCD/index
     ADGenICam/ADGenICam
     ADLambda/ADLambda
