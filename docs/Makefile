@@ -9,6 +9,7 @@ DOCS_PATHS += -i ../ADCSimDetector/docs
 DOCS_PATHS += -i ../ADCompVision/docs
 DOCS_PATHS += -i ../ADDexela/docs
 DOCS_PATHS += -i ../ADEiger/docs
+DOCS_PATHS += -i ../ADEuresys/docs
 DOCS_PATHS += -i ../ADFastCCD/docs
 DOCS_PATHS += -i ../ADGenICam/docs
 DOCS_PATHS += -i ../ADLambda/docs
