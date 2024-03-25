@@ -51,6 +51,10 @@
 <li class="toctree-l1"><a class="reference internal" href="release.html">Top-level Release Notes</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">ADCore Release Notes</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#r3-14-april-xxx-2024"><strong>R3-14 (April XXX, 2024)</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#asynndarraydriver-and-ndpluginbase-template">asynNDArrayDriver and NDPluginBase.template</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#r3-13-february-9-2024"><strong>R3-13 (February 9, 2024)</strong></a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#ndarraypool">NDArrayPool</a></li>
 </ul>
@@ -366,6 +370,53 @@ in the areaDetector releases available via links at
 the EXAMPLE_RELEASE_PATHS.local, EXAMPLE_RELEASE_LIBS.local, and EXAMPLE_RELEASE_PRODS.local
 files respectively, in the configure/ directory of the appropriate release of the
 <a class="reference external" href="https://github.com/areaDetector/areaDetector">top-level areaDetector</a> repository.</p>
+</section>
+<section id="r3-14-april-xxx-2024">
+<h2><strong>R3-14 (April XXX, 2024)</strong><a class="headerlink" href="#r3-14-april-xxx-2024" title="Link to this heading"></a></h2>
+<section id="asynndarraydriver-and-ndpluginbase-template">
+<h3>asynNDArrayDriver and NDPluginBase.template<a class="headerlink" href="#asynndarraydriver-and-ndpluginbase-template" title="Link to this heading"></a></h3>
+<ul>
+<li><p>Added support for pre-allocating NDArrays.<span class="raw-html-m2r"><br></span>
+This is useful for preventing dropped frames on high-speed cameras because of the finite
+time required for the operating system to allocate memory.
+If a camera is acquiring at high speed and NDArrays are allocated on demand to fill
+plugin buffers during acquisition then the driver can drop frames during an initial acquisition.
+By pre-allocating frames into the NDArrayPool free list this problem can be avoided.
+There are 2 new records in NDArrayBase.template.</p>
+<ul class="simple">
+<li><p>NumPreAllocBuffers  The number of buffer to pre-allocate.</p></li>
+<li><p>PreAllocBuffers  Processing this record does the pre-allocation.</p></li>
+</ul>
+<p>The pre-allocation operation can be time-consuming if a large amount of memory (e.g. 128 GB)
+is being allocated.
+The PoolUsedBuffers, PoolAllocBuffers and PoolUsedMem records are updated during
+this process so the progress is visible on the detector OPI screen in the Buffers sub-screen.
+PreAllocBuffers is a busy record so clients can determine when the process is complete
+by using ca_put_callback.</p>
+</li>
+<li><p>Changed how the NDArrayPool statistics records (PoolAllocBuffers, etc.) are scanned.
+They were previously only periodically scanned, with PoolUsedMem scanning periodically
+and the other records processing via FLNK fields.<span class="raw-html-m2r"><br></span>
+This has changed so that a new record, PoolPollStats is periodically scanned,
+and the other records are I/O Intr scanned.<span class="raw-html-m2r"><br></span>
+This allows these records to be updated during the pre-allocation operation described above.
+PoolPollStats causes callbacks for the I/O Intr scanned records in asynNDArrayDriver.
+### NDPluginFile</p></li>
+<li><p>Improved the feedback on progress when saving a file in Capture mode.
+Previously the only indication that the file saving was in progress was the
+status of the WriteFile_RBV PV.  There was no indication of how many arrays
+remained to be written to the file, or how many arrays/second were being written.
+This was changed to add the following progress indicators:</p>
+<ul class="simple">
+<li><p>ExecutionTime_RBV is updated with the time to write each array.</p></li>
+<li><p>ArrayCounter_RBV is incrementd as each array is written.</p></li>
+<li><p>ArrayRate_RBV is updated, so the number of frames/s being written is visible.</p></li>
+<li><p>NumCaptured_RBV counts down from NumCaptured to 0, so the number
+of remaining frames is visible.</p></li>
+</ul>
+</li>
+</ul>
+</section>
 </section>
 <section id="r3-13-february-9-2024">
 <h2><strong>R3-13 (February 9, 2024)</strong><a class="headerlink" href="#r3-13-february-9-2024" title="Link to this heading"></a></h2>

@@ -564,7 +564,7 @@ loading ADBase.template.
   * -
     -
     -
-    - **Array pool status**
+    - **Array pool control and status**
   * - NDPoolMaxMemory
     - asynFloat64
     - r/o
@@ -575,8 +575,7 @@ loading ADBase.template.
   * - NDPoolUsedMemory
     - asynFloat64
     - r/o
-    - The number of NDArrayPool memory bytes currently allocated. The SCAN rate of this
-      record controls the scanning of all of the dynamic NDArrayPool status records.
+    - The number of NDArrayPool memory bytes currently allocated.
     - POOL_USED_MEMORY
     - $(P)$(R)PoolUsedMem
     - ai
@@ -602,6 +601,40 @@ loading ADBase.template.
     - N.A.
     - $(P)$(R)PoolUsedBuffers
     - calc
+  * - NDPoolPollStats
+    - asynInt32
+    - r/o
+    - Processing this record reads the NDArrayPool statistics records described above.
+      This record is typically periodically scanned to update the statistics on the OPI display.
+    - POOL_POLL_STATS
+    - $(P)$(R)PoolPollStats
+    - bo
+  * - NDPoolNumPreAllocBuffers
+    - asynInt32
+    - r/w
+    - The number of buffers to pre-allocate in the NDArrayPool when the PreAllocBuffers
+      record is processed.
+      Pre-allocation reduces the system overhead when allocating NDArrays, and is useful
+      for preventing the driver from dropping frames on fast detectors and large queue sizes
+      during an initial acquisition.
+      This total memory pre-allocated will be limited by PoolMaxMem.  
+      The value of this record must be set with caution, because too large a value could
+      use all memory on the system, resulting serious performance degradation.
+    - POOL_NUM_PRE_ALLOC_BUFFERS
+    - $(P)$(R)NumPreAllocBuffers
+    - longout
+  * - NDPoolPreAllocBuffers
+    - asynInt32
+    - r/w
+    - Processing this record pre-allocates NumPreAllocBuffers NDArrays in the NDArrayPool.
+      The allocation processing can require some time to execute.
+      The NDArrayPool statistics records described above are updated as each NDArray is
+      allocated, which provides feedback on OPI displays for the progress of the operation.
+      This is a busy record, so clients can use ca_put_callback to determine when the
+      operation is complete.
+    - POOL_PRE_ALLOC_BUFFERS
+    - $(P)$(R)PreAllocBuffers
+    - busy
   * - NDPoolEmptyFreeList
     - asynInt32
     - r/w
