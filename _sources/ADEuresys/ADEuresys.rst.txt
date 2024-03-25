@@ -63,6 +63,7 @@ mapping GenICam_ features to EPICS records.
 `ADEuresys class`_ describes this class in detail.
 
 ADEuresys_ uses the Euresys EGrabber_ SDK. It runs on most versions of Windows and Linux.
+The driver is identical on Windows and Linux, there is no OS-specific code in the driver.
 
 ADEuresys_ currently only supports CoaXPress frame grabbers.  
 EGrabber_ also supports their CameraLink frame grabbers and GigE cameras.
@@ -186,6 +187,56 @@ multiple cameras from one computer.
 ``priority`` is the priority of the port thread.  0 means medium priority.
 
 ``stackSize`` is the stack size.  0 means medium size.
+
+Cameras Tested
+--------------
+ADEuresys_ has been tested with 3 very different cameras, shown in the following table.
+
+.. cssclass:: table-bordered table-striped table-hover
+.. list-table::
+   :header-rows: 1
+   :widths: auto
+
+   * - Model
+     - Miktron EoSens 2.0MCX12 
+     - Adimec Q-12A
+     - VisionWorks VNP604
+   * - Pixel dimensions
+     - 1920 x 1080 
+     - 4096 x 3072
+     - 14192 x 10640
+   * - MegaPixels
+     - 2.1 
+     - 12.6
+     - 151.0
+   * - CXP version
+     - CXP-12 X4
+     - CXP-6 X4
+     - CXP-6 X4
+   * - Frames/s, Mono8
+     - 2247
+     - 187
+     - 6.5
+   * - GBytes/s. Mono8
+     - 4.66
+     - 2.35
+     - 1.0
+   * - Frames/s, Mono10
+     - 1798
+     - 152
+     - ?
+   * - GBytes/s. Mono10
+     - 7.46
+     - 3.83
+     - ?
+   * - Frames/s, Mono12
+     - N.A
+     - N.A
+     - ?
+   * - GBytes/s. Mono12
+     - N.A
+     - N.A
+     - ?
 
 MEDM screens
 ------------

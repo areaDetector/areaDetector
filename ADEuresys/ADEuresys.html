@@ -64,6 +64,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#overview">Overview</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#adeuresys-driver">ADEuresys driver</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ioc-startup-script">IOC startup script</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cameras-tested">Cameras Tested</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#medm-screens">MEDM screens</a></li>
 </ul>
 </li>
@@ -150,7 +151,8 @@
 <li><p><a class="reference internal" href="#overview" id="id3">Overview</a></p></li>
 <li><p><a class="reference internal" href="#adeuresys-driver" id="id4">ADEuresys driver</a></p></li>
 <li><p><a class="reference internal" href="#ioc-startup-script" id="id5">IOC startup script</a></p></li>
-<li><p><a class="reference internal" href="#medm-screens" id="id6">MEDM screens</a></p></li>
+<li><p><a class="reference internal" href="#cameras-tested" id="id6">Cameras Tested</a></p></li>
+<li><p><a class="reference internal" href="#medm-screens" id="id7">MEDM screens</a></p></li>
 </ul>
 </li>
 </ul>
@@ -204,7 +206,8 @@ European Machine Vision Association (EMVA).</p>
 <p>ADEuresys is derived from the base class <a class="reference external" href="https://github.com/areaDetector/ADGenICam">ADGenICam</a>, which handles many of the details of
 mapping <a class="reference external" href="https://www.emva.org/standards-technology/genicam">GenICam</a> features to EPICS records.
 <a class="reference external" href="../areaDetectorDoxygenHTML/class_a_d_euresys.html">ADEuresys class</a> describes this class in detail.</p>
-<p><a class="reference external" href="https://github.com/areaDetector/ADEuresys">ADEuresys</a> uses the Euresys <a class="reference external" href="https://www.euresys.com/en/Products/Machine-Vision-Software/eGrabber">EGrabber</a> SDK. It runs on most versions of Windows and Linux.</p>
+<p><a class="reference external" href="https://github.com/areaDetector/ADEuresys">ADEuresys</a> uses the Euresys <a class="reference external" href="https://www.euresys.com/en/Products/Machine-Vision-Software/eGrabber">EGrabber</a> SDK. It runs on most versions of Windows and Linux.
+The driver is identical on Windows and Linux, there is no OS-specific code in the driver.</p>
 <p><a class="reference external" href="https://github.com/areaDetector/ADEuresys">ADEuresys</a> currently only supports CoaXPress frame grabbers.
 <a class="reference external" href="https://www.euresys.com/en/Products/Machine-Vision-Software/eGrabber">EGrabber</a> also supports their CameraLink frame grabbers and GigE cameras.
 Support for these could be added in the future, either as part of ADEuresys, or as a separate areaDetector driver.</p>
@@ -331,8 +334,68 @@ multiple cameras from one computer.</p>
 <p><code class="docutils literal notranslate"><span class="pre">priority</span></code> is the priority of the port thread.  0 means medium priority.</p>
 <p><code class="docutils literal notranslate"><span class="pre">stackSize</span></code> is the stack size.  0 means medium size.</p>
 </section>
+<section id="cameras-tested">
+<h2><a class="toc-backref" href="#id6" role="doc-backlink">Cameras Tested</a><a class="headerlink" href="#cameras-tested" title="Link to this heading"></a></h2>
+<p><a class="reference external" href="https://github.com/areaDetector/ADEuresys">ADEuresys</a> has been tested with 3 very different cameras, shown in the following table.</p>
+<table class="table-bordered table-striped table-hover docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Model</p></th>
+<th class="head"><p>Miktron EoSens 2.0MCX12</p></th>
+<th class="head"><p>Adimec Q-12A</p></th>
+<th class="head"><p>VisionWorks VNP604</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Pixel dimensions</p></td>
+<td><p>1920 x 1080</p></td>
+<td><p>4096 x 3072</p></td>
+<td><p>14192 x 10640</p></td>
+</tr>
+<tr class="row-odd"><td><p>MegaPixels</p></td>
+<td><p>2.1</p></td>
+<td><p>12.6</p></td>
+<td><p>151.0</p></td>
+</tr>
+<tr class="row-even"><td><p>CXP version</p></td>
+<td><p>CXP-12 X4</p></td>
+<td><p>CXP-6 X4</p></td>
+<td><p>CXP-6 X4</p></td>
+</tr>
+<tr class="row-odd"><td><p>Frames/s, Mono8</p></td>
+<td><p>2247</p></td>
+<td><p>187</p></td>
+<td><p>6.5</p></td>
+</tr>
+<tr class="row-even"><td><p>GBytes/s. Mono8</p></td>
+<td><p>4.66</p></td>
+<td><p>2.35</p></td>
+<td><p>1.0</p></td>
+</tr>
+<tr class="row-odd"><td><p>Frames/s, Mono10</p></td>
+<td><p>1798</p></td>
+<td><p>152</p></td>
+<td><p>?</p></td>
+</tr>
+<tr class="row-even"><td><p>GBytes/s. Mono10</p></td>
+<td><p>7.46</p></td>
+<td><p>3.83</p></td>
+<td><p>?</p></td>
+</tr>
+<tr class="row-odd"><td><p>Frames/s, Mono12</p></td>
+<td><p>N.A</p></td>
+<td><p>N.A</p></td>
+<td><p>?</p></td>
+</tr>
+<tr class="row-even"><td><p>GBytes/s. Mono12</p></td>
+<td><p>N.A</p></td>
+<td><p>N.A</p></td>
+<td><p>?</p></td>
+</tr>
+</tbody>
+</table>
+</section>
 <section id="medm-screens">
-<h2><a class="toc-backref" href="#id6" role="doc-backlink">MEDM screens</a><a class="headerlink" href="#medm-screens" title="Link to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id7" role="doc-backlink">MEDM screens</a><a class="headerlink" href="#medm-screens" title="Link to this heading"></a></h2>
 <p>The following is the MEDM screen ADEuresys.adl when controlling a Miktron EoSens 2.0MCX12 camera.
 ADEuresys.adl is very similar to ADGenICam.adl, with a few additional widgets for the PVs that are
 specific to ADEuresys.</p>
@@ -364,7 +427,7 @@ They are loaded from the “Camera-specific features” related display widget i
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, Mark Rivers.
-      <span class="lastupdated">Last updated on 2024-March-23.
+      <span class="lastupdated">Last updated on 2024-March-25.
       </span></p>
   </div>
 
