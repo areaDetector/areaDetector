@@ -65,6 +65,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#adeuresys-driver">ADEuresys driver</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ioc-startup-script">IOC startup script</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#cameras-tested">Cameras Tested</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#file-saving-benchmarks">File saving benchmarks</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#medm-screens">MEDM screens</a></li>
 </ul>
 </li>
@@ -137,7 +138,7 @@
            <div itemprop="articleBody">
              
   <section id="adeuresys">
-<h1><a class="toc-backref" href="#id2" role="doc-backlink">ADEuresys</a><a class="headerlink" href="#adeuresys" title="Link to this heading"></a></h1>
+<h1><a class="toc-backref" href="#id5" role="doc-backlink">ADEuresys</a><a class="headerlink" href="#adeuresys" title="Link to this heading"></a></h1>
 <dl class="field-list simple">
 <dt class="field-odd">author<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Mark Rivers, University of Chicago</p>
@@ -146,19 +147,20 @@
 <nav class="contents" id="contents">
 <p class="topic-title">Contents</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="#adeuresys" id="id2">ADEuresys</a></p>
+<li><p><a class="reference internal" href="#adeuresys" id="id5">ADEuresys</a></p>
 <ul>
-<li><p><a class="reference internal" href="#overview" id="id3">Overview</a></p></li>
-<li><p><a class="reference internal" href="#adeuresys-driver" id="id4">ADEuresys driver</a></p></li>
-<li><p><a class="reference internal" href="#ioc-startup-script" id="id5">IOC startup script</a></p></li>
-<li><p><a class="reference internal" href="#cameras-tested" id="id6">Cameras Tested</a></p></li>
-<li><p><a class="reference internal" href="#medm-screens" id="id7">MEDM screens</a></p></li>
+<li><p><a class="reference internal" href="#overview" id="id6">Overview</a></p></li>
+<li><p><a class="reference internal" href="#adeuresys-driver" id="id7">ADEuresys driver</a></p></li>
+<li><p><a class="reference internal" href="#ioc-startup-script" id="id8">IOC startup script</a></p></li>
+<li><p><a class="reference internal" href="#cameras-tested" id="id9">Cameras Tested</a></p></li>
+<li><p><a class="reference internal" href="#file-saving-benchmarks" id="id10">File saving benchmarks</a></p></li>
+<li><p><a class="reference internal" href="#medm-screens" id="id11">MEDM screens</a></p></li>
 </ul>
 </li>
 </ul>
 </nav>
 <section id="overview">
-<h2><a class="toc-backref" href="#id3" role="doc-backlink">Overview</a><a class="headerlink" href="#overview" title="Link to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id6" role="doc-backlink">Overview</a><a class="headerlink" href="#overview" title="Link to this heading"></a></h2>
 <p>This is an <a class="reference internal" href="../index.html"><span class="doc">areaDetector</span></a> driver for <a class="reference external" href="https://www.coaxpress.com">CoaXPress</a> cameras using the <a class="reference external" href="https://www.euresys.com/en/Homepage">Euresys</a> CoaxLink frame grabbers and <a class="reference external" href="https://www.euresys.com/en/Products/Machine-Vision-Software/eGrabber">EGrabber</a> SDK.</p>
 <p>CoaXPress is a high-speed camera interface using one or more parallel coaxial cables between the camera and a frame grabber
 in a computer.  The following table shows the speeds and cable length limits for different standard CoaXPress bit rates.</p>
@@ -230,7 +232,7 @@ by running the Python programs as described in the
 <a class="reference internal" href="../ADGenICam/ADGenICam.html#adgenicam-python-scripts"><span class="std std-ref">ADGenICam documentation</span></a>.</p>
 </section>
 <section id="adeuresys-driver">
-<h2><a class="toc-backref" href="#id4" role="doc-backlink">ADEuresys driver</a><a class="headerlink" href="#adeuresys-driver" title="Link to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id7" role="doc-backlink">ADEuresys driver</a><a class="headerlink" href="#adeuresys-driver" title="Link to this heading"></a></h2>
 <p>ADEuresys inherits from <a class="reference internal" href="../ADGenICam/ADGenICam.html"><span class="doc">ADGenICam</span></a>.  It adds the following parameters and EPICS records that are
 specific to ADEuresys.</p>
 <table class="table-bordered table-striped table-hover docutils align-default">
@@ -318,7 +320,7 @@ in the frame callback function.  This is included in ProcessTotalTime.</p></td>
 </table>
 </section>
 <section id="ioc-startup-script">
-<h2><a class="toc-backref" href="#id5" role="doc-backlink">IOC startup script</a><a class="headerlink" href="#ioc-startup-script" title="Link to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id8" role="doc-backlink">IOC startup script</a><a class="headerlink" href="#ioc-startup-script" title="Link to this heading"></a></h2>
 <p>The command to configure an ADEuresys camera in the startup script is:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ADEuresysConfig</span><span class="p">(</span><span class="n">const</span> <span class="n">char</span> <span class="o">*</span><span class="n">portName</span><span class="p">,</span> <span class="n">const</span> <span class="n">char</span> <span class="o">*</span><span class="n">cameraId</span><span class="p">,</span> <span class="nb">int</span> <span class="n">numEGBuffers</span><span class="p">,</span>
                 <span class="n">size_t</span> <span class="n">maxMemory</span><span class="p">,</span> <span class="nb">int</span> <span class="n">priority</span><span class="p">,</span> <span class="nb">int</span> <span class="n">stackSize</span><span class="p">)</span>
@@ -335,7 +337,7 @@ multiple cameras from one computer.</p>
 <p><code class="docutils literal notranslate"><span class="pre">stackSize</span></code> is the stack size.  0 means medium size.</p>
 </section>
 <section id="cameras-tested">
-<h2><a class="toc-backref" href="#id6" role="doc-backlink">Cameras Tested</a><a class="headerlink" href="#cameras-tested" title="Link to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id9" role="doc-backlink">Cameras Tested</a><a class="headerlink" href="#cameras-tested" title="Link to this heading"></a></h2>
 <p><a class="reference external" href="https://github.com/areaDetector/ADEuresys">ADEuresys</a> has been tested with 3 very different cameras, shown in the following table.</p>
 <table class="table-bordered table-striped table-hover docutils align-default">
 <thead>
@@ -374,28 +376,288 @@ multiple cameras from one computer.</p>
 <tr class="row-odd"><td><p>Frames/s, Mono10</p></td>
 <td><p>1798</p></td>
 <td><p>152</p></td>
-<td><p>?</p></td>
+<td><p>6.2</p></td>
 </tr>
 <tr class="row-even"><td><p>GBytes/s. Mono10</p></td>
 <td><p>7.46</p></td>
 <td><p>3.83</p></td>
-<td><p>?</p></td>
+<td><p>2.0</p></td>
 </tr>
 <tr class="row-odd"><td><p>Frames/s, Mono12</p></td>
 <td><p>N.A</p></td>
 <td><p>N.A</p></td>
-<td><p>?</p></td>
+<td><p>6.2</p></td>
 </tr>
 <tr class="row-even"><td><p>GBytes/s. Mono12</p></td>
 <td><p>N.A</p></td>
 <td><p>N.A</p></td>
-<td><p>?</p></td>
+<td><p>2.0</p></td>
 </tr>
 </tbody>
 </table>
+<p>The ADEuresys driver can collect the images from these cameras at the full specified frame rates
+in the table above, with one exception.  The Mikrotron camera in 10-bit mode has a maximum
+from rate of 1798 frames/s.  However, ADEuresys only receives 1668 frames/s on Linux and
+1703 frames/s on Windows.  Need to contact Euresys to understand this difference.</p>
+</section>
+<section id="file-saving-benchmarks">
+<h2><a class="toc-backref" href="#id10" role="doc-backlink">File saving benchmarks</a><a class="headerlink" href="#file-saving-benchmarks" title="Link to this heading"></a></h2>
+<p>The following table shows the results of writing data to disk with the NDFileHDF5 plugin.
+These tests were done on a computer with the following specifications:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Model: Dell Precision 5860</p></li>
+<li><p>Processor: Intel Xeon w5-2445, 3100 MHz</p></li>
+<li><p>RAM: 256GB</p></li>
+<li><p>Disk: 1 TB MVMe in M.2 slot on motherboard</p></li>
+<li><p>OS: Windows 10 and CentOS 9 Stream, dual boot</p></li>
+<li><p>CoaXPress card: Euresys CoaxLink CXP-12</p></li>
+</ul>
+</div></blockquote>
+<p>The tests were done in both Mono8, and Mono10 or Mono12 modes.
+In Mono8 mode the NDArrays are UInt8.  In Mono10 or Mono12 modes the NDArrays are UInt16.
+The same tests were done on Windows 10 and CentOS 9 Stream.</p>
+<p>In each mode tests were done with the HDF5 plugin in both Stream mode and Capture mode.</p>
+<p>In Stream mode the HDF5 files are written to disk as they are being collected.
+The camera frame rate was adjusted to the value that led to no dropped frames
+when saving the specified number of frames, while using a 2000 frame queue.</p>
+<p>In Capture mode the specified number of frames were saved into the capture buffer
+at the full frame rate for that mode.
+The HDF5 file was then written to disk after the capture was complete,
+and the total time to write the file was measured.
+This allows calculating the file saving frame rate and data rate.</p>
+<table class="table-bordered table-striped table-hover docutils align-default" id="id2">
+<caption><span class="caption-text"><strong>Mikroton camera (Mono8=50,000 frames, Mono10=30,000 frames)</strong></span><a class="headerlink" href="#id2" title="Link to this table"></a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Format</p></th>
+<th class="head"><p>OS</p></th>
+<th class="head"><p>Camera frames/s</p></th>
+<th class="head"><p>File mode</p></th>
+<th class="head"><p>File frames/s</p></th>
+<th class="head"><p>GB/s</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Mono8</p></td>
+<td><p>Linux</p></td>
+<td><p>2247</p></td>
+<td><p>Stream</p></td>
+<td><p>1400</p></td>
+<td><p>2.90</p></td>
+</tr>
+<tr class="row-odd"><td><p>Mono8</p></td>
+<td><p>Windows</p></td>
+<td><p>2247</p></td>
+<td><p>Stream</p></td>
+<td><p>1700</p></td>
+<td><p>3.53</p></td>
+</tr>
+<tr class="row-even"><td><p>Mono8</p></td>
+<td><p>Linux</p></td>
+<td><p>2247</p></td>
+<td><p>Capture</p></td>
+<td><p>1429</p></td>
+<td><p>2.96</p></td>
+</tr>
+<tr class="row-odd"><td><p>Mono8</p></td>
+<td><p>Windows</p></td>
+<td><p>2247</p></td>
+<td><p>Capture</p></td>
+<td><p>1786</p></td>
+<td><p>3.70</p></td>
+</tr>
+<tr class="row-even"><td><p>Mono10</p></td>
+<td><p>Linux</p></td>
+<td><p>1668</p></td>
+<td><p>Stream</p></td>
+<td><p>650</p></td>
+<td><p>2.70</p></td>
+</tr>
+<tr class="row-odd"><td><p>Mono10</p></td>
+<td><p>Windows</p></td>
+<td><p>1703</p></td>
+<td><p>Stream</p></td>
+<td><p>800</p></td>
+<td><p>3.32</p></td>
+</tr>
+<tr class="row-even"><td><p>Mono10</p></td>
+<td><p>Linux</p></td>
+<td><p>1668</p></td>
+<td><p>Capture</p></td>
+<td><p>666</p></td>
+<td><p>2.76</p></td>
+</tr>
+<tr class="row-odd"><td><p>Mono10</p></td>
+<td><p>Windows</p></td>
+<td><p>1703</p></td>
+<td><p>Capture</p></td>
+<td><p>909</p></td>
+<td><p>3.77</p></td>
+</tr>
+</tbody>
+</table>
+<table class="table-bordered table-striped table-hover docutils align-default" id="id3">
+<caption><span class="caption-text"><strong>Adimec camera (Mono8=10,000 frames, Mono10=10,000 frames)</strong></span><a class="headerlink" href="#id3" title="Link to this table"></a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Format</p></th>
+<th class="head"><p>OS</p></th>
+<th class="head"><p>Camera frames/s</p></th>
+<th class="head"><p>File mode</p></th>
+<th class="head"><p>File frames/s</p></th>
+<th class="head"><p>GB/s</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Mono8</p></td>
+<td><p>Linux</p></td>
+<td><p>187</p></td>
+<td><p>Stream</p></td>
+<td><p>187</p></td>
+<td><p>2.35</p></td>
+</tr>
+<tr class="row-odd"><td><p>Mono8</p></td>
+<td><p>Windows</p></td>
+<td><p>187</p></td>
+<td><p>Stream</p></td>
+<td><p>187</p></td>
+<td><p>2.35</p></td>
+</tr>
+<tr class="row-even"><td><p>Mono8</p></td>
+<td><p>Linux</p></td>
+<td><p>187</p></td>
+<td><p>Capture</p></td>
+<td><p>286</p></td>
+<td><p>3.60</p></td>
+</tr>
+<tr class="row-odd"><td><p>Mono8</p></td>
+<td><p>Windows</p></td>
+<td><p>187</p></td>
+<td><p>Capture</p></td>
+<td><p>312</p></td>
+<td><p>3.93</p></td>
+</tr>
+<tr class="row-even"><td><p>Mono10</p></td>
+<td><p>Linux</p></td>
+<td><p>152</p></td>
+<td><p>Stream</p></td>
+<td><p>90</p></td>
+<td><p>2.27</p></td>
+</tr>
+<tr class="row-odd"><td><p>Mono10</p></td>
+<td><p>Windows</p></td>
+<td><p>152</p></td>
+<td><p>Stream</p></td>
+<td><p>90</p></td>
+<td><p>2.27</p></td>
+</tr>
+<tr class="row-even"><td><p>Mono10</p></td>
+<td><p>Linux</p></td>
+<td><p>152</p></td>
+<td><p>Capture</p></td>
+<td><p>92</p></td>
+<td><p>2.32</p></td>
+</tr>
+<tr class="row-odd"><td><p>Mono10</p></td>
+<td><p>Windows</p></td>
+<td><p>152</p></td>
+<td><p>Capture</p></td>
+<td><p>84</p></td>
+<td><p>2.11</p></td>
+</tr>
+</tbody>
+</table>
+<table class="table-bordered table-striped table-hover docutils align-default" id="id4">
+<caption><span class="caption-text"><strong>ViewWorks camera (Mono8=1,000 frames, Mono12=500 frames)</strong></span><a class="headerlink" href="#id4" title="Link to this table"></a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Format</p></th>
+<th class="head"><p>OS</p></th>
+<th class="head"><p>Camera frames/s</p></th>
+<th class="head"><p>File mode</p></th>
+<th class="head"><p>File frames/s</p></th>
+<th class="head"><p>GB/s</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Mono8</p></td>
+<td><p>Linux</p></td>
+<td><p>6.2</p></td>
+<td><p>Stream</p></td>
+<td><p>6.2</p></td>
+<td><p>0.94</p></td>
+</tr>
+<tr class="row-odd"><td><p>Mono8</p></td>
+<td><p>Windows</p></td>
+<td><p>6.2</p></td>
+<td><p>Stream</p></td>
+<td><p>6.2</p></td>
+<td><p>0.94</p></td>
+</tr>
+<tr class="row-even"><td><p>Mono8</p></td>
+<td><p>Linux</p></td>
+<td><p>6.2</p></td>
+<td><p>Capture</p></td>
+<td><p>16.7</p></td>
+<td><p>2.52</p></td>
+</tr>
+<tr class="row-odd"><td><p>Mono8</p></td>
+<td><p>Windows</p></td>
+<td><p>6.2</p></td>
+<td><p>Capture</p></td>
+<td><p>9.7</p></td>
+<td><p>1.46</p></td>
+</tr>
+<tr class="row-even"><td><p>Mono12</p></td>
+<td><p>Linux</p></td>
+<td><p>6.2</p></td>
+<td><p>Stream</p></td>
+<td><p>6.2</p></td>
+<td><p>1.87</p></td>
+</tr>
+<tr class="row-odd"><td><p>Mono12</p></td>
+<td><p>Windows</p></td>
+<td><p>6.2</p></td>
+<td><p>Stream</p></td>
+<td><p>5.0</p></td>
+<td><p>1.51</p></td>
+</tr>
+<tr class="row-even"><td><p>Mono12</p></td>
+<td><p>Linux</p></td>
+<td><p>6.2</p></td>
+<td><p>Capture</p></td>
+<td><p>8.8</p></td>
+<td><p>2.66</p></td>
+</tr>
+<tr class="row-odd"><td><p>Mono12</p></td>
+<td><p>Windows</p></td>
+<td><p>6.2</p></td>
+<td><p>Capture</p></td>
+<td><p>3.7</p></td>
+<td><p>1.11</p></td>
+</tr>
+</tbody>
+</table>
+<p>I tried three schemes to see if I could increase the file saving rate to keep up with the Mikrotron camera.</p>
+<p>The first was to load 2 NDFileHDF5 plugins, and use NDPluginScatter to send every other frame to each
+plugin.  If file rate was limited by CPU load on the HDF5 plugin this should improve performance.
+I found that this did not help at all, each plugin ran at 50% of the frame rate of a single HDF5 plugin.
+I believe this indicates that the rate is limited by a global mutex in the HDF5 library, since neither
+plugin was CPU bound, and I don’t think they were limited by the NVMe disk write rate.</p>
+<p>The second scheme was to create 2 pvaDriver IOCs on the same computer.  Each of these runs an HDF5
+file writer.  The ADEuresys IOC loads 2 NDPluginPva plugins, each connected to one of the
+pvaDriver IOCs.  NDPluginScatter on the ADEuresys IOC sends every other frame to each NDPluginPva.
+This did not work because the PVA links could not keep up.  I also found that the PVA links dropped
+frames even at 100 frames/s.  This needs to be investigated, because PVA should not be dropping frames
+under low loads.</p>
+<p>The third scheme was to write a new file plugin called NDFileJRaw.  This plugin uses a simple raw format,
+using the low-level OS-specific calls to write the NDArrays.  The “J” in JRaw indicates a future plan
+to put JSON metadata in the file to indicate the data format and size, and possibly to store NDAttributes.
+I found that writing files with JRaw, both in Stream mode and Capture mode, did not result in a
+statistically significant improvement over HDF5.  In some cases it was faster, but in some it was
+slower.  The results are in the benchmarks.txt file in the docs/ADEuresys directory.  For brevity
+I have not included them in the table above.</p>
 </section>
 <section id="medm-screens">
-<h2><a class="toc-backref" href="#id7" role="doc-backlink">MEDM screens</a><a class="headerlink" href="#medm-screens" title="Link to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id11" role="doc-backlink">MEDM screens</a><a class="headerlink" href="#medm-screens" title="Link to this heading"></a></h2>
 <p>The following is the MEDM screen ADEuresys.adl when controlling a Miktron EoSens 2.0MCX12 camera.
 ADEuresys.adl is very similar to ADGenICam.adl, with a few additional widgets for the PVs that are
 specific to ADEuresys.</p>
@@ -403,7 +665,7 @@ specific to ADEuresys.</p>
 <figure class="align-center">
 <img alt="../_images/ADEuresys_Mikrotron.png" src="../_images/ADEuresys_Mikrotron.png" />
 </figure>
-<p>The following are the camera-specfic features MEDM screens for the Miktrotron camera.
+<p>The following are the camera-specfic features MEDM screens for the Mikrotron camera.
 These screens were autogenerated by the Python script in <a class="reference internal" href="../ADGenICam/ADGenICam.html"><span class="doc">ADGenICam</span></a>, and are specific to this camera model.
 They are loaded from the “Camera-specific features” related display widget in the above screen.</p>
 <figure class="align-center">
@@ -427,7 +689,7 @@ They are loaded from the “Camera-specific features” related display widget i
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, Mark Rivers.
-      <span class="lastupdated">Last updated on 2024-March-25.
+      <span class="lastupdated">Last updated on 2024-March-28.
       </span></p>
   </div>
 
