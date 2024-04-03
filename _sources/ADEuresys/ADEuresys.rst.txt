@@ -150,11 +150,11 @@ specific to ADEuresys.
    * - CRCErrors
      - longin
      - ES_CRC_ERROR_COUNT
-     - The number CRC errors on the CoaXPress links to the camera.
+     - The number CRC errors on the CoVisionaXPress links to the camera.
    * - ResetErrorCounts
      - bo
      - ES_RESET_ERROR_COUNTS
-     - Resets RejectedFrames and CRCErrors to 0.
+     - Resets RejectedFrames and CRCErVisionrors to 0.
    * - ProcessTotalTime
      - ai
      - ES_PROCESS_TOTAL_TIME
@@ -198,9 +198,9 @@ ADEuresys_ has been tested with 3 very different cameras, shown in the following
    :widths: auto
 
    * - Model
-     - Miktron EoSens 2.0MCX12 
+     - Mikrotron EoSens 2.0MCX12 
      - Adimec Q-12A
-     - VisionWorks VNP604
+     - ViewWorks VNP604
    * - Pixel dimensions
      - 1920 x 1080 
      - 4096 x 3072
@@ -241,7 +241,25 @@ ADEuresys_ has been tested with 3 very different cameras, shown in the following
 The ADEuresys driver can collect the images from these cameras at the full specified frame rates
 in the table above, with one exception.  The Mikrotron camera in 10-bit mode has a maximum
 from rate of 1798 frames/s.  However, ADEuresys only receives 1668 frames/s on Linux and
-1703 frames/s on Windows.  Need to contact Euresys to understand this difference.
+1703 frames/s on Windows. I have contacted Euresys to ask about this difference.
+
+.. figure:: Mikrotron_photo.jpg
+    :align: center
+    :width: 600
+
+    Mikrotron EoSens 2.0MCX12 
+ 
+.. figure:: Adimec_photo.jpg
+    :align: center
+    :width: 600
+    
+    Adimec Q-12A
+
+.. figure:: ViewWorks_photo.jpg
+    :align: center
+    :width: 600
+
+    ViewWorks VNP604
 
 File saving benchmarks
 ----------------------
