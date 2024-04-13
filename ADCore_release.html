@@ -376,7 +376,7 @@ files respectively, in the configure/ directory of the appropriate release of th
 <section id="asynndarraydriver-and-ndpluginbase-template">
 <h3>asynNDArrayDriver and NDPluginBase.template<a class="headerlink" href="#asynndarraydriver-and-ndpluginbase-template" title="Link to this heading"></a></h3>
 <ul>
-<li><p>Added support for pre-allocating NDArrays.<span class="raw-html-m2r"><br></span>
+<li><p>Added support for pre-allocating NDArrays.
 This is useful for preventing dropped frames on high-speed cameras because of the finite
 time required for the operating system to allocate memory.
 If a camera is acquiring at high speed and NDArrays are allocated on demand to fill
@@ -392,13 +392,22 @@ is being allocated.
 The PoolUsedBuffers, PoolAllocBuffers and PoolUsedMem records are updated during
 this process so the progress is visible on the detector OPI screen in the Buffers sub-screen.
 PreAllocBuffers is a busy record so clients can determine when the process is complete
-by using ca_put_callback.</p>
+by using ca_put_callback.
+This feature requires the following:</p>
+<ul class="simple">
+<li><p>The driver must have collected at least one frame using the current dimensions
+and data type.</p></li>
+<li><p>The driver must store the most recent NDArray in this-&gt;pArrays[0].
+Most drivers already do this, but some will need to be updated to implement this.</p></li>
+</ul>
+<p>If either of these conditions are not met then there will be an error message saying
+“ERROR, must collect an array to get dimensions first”.</p>
 </li>
 <li><p>Changed how the NDArrayPool statistics records (PoolAllocBuffers, etc.) are scanned.
 They were previously only periodically scanned, with PoolUsedMem scanning periodically
-and the other records processing via FLNK fields.<span class="raw-html-m2r"><br></span>
+and the other records processing via FLNK fields.
 This has changed so that a new record, PoolPollStats is periodically scanned,
-and the other records are I/O Intr scanned.<span class="raw-html-m2r"><br></span>
+and the other records are I/O Intr scanned.
 This allows these records to be updated during the pre-allocation operation described above.
 PoolPollStats causes callbacks for the I/O Intr scanned records in asynNDArrayDriver.
 ### NDPluginFile</p></li>
@@ -409,7 +418,7 @@ remained to be written to the file, or how many arrays/second were being written
 This was changed to add the following progress indicators:</p>
 <ul class="simple">
 <li><p>ExecutionTime_RBV is updated with the time to write each array.</p></li>
-<li><p>ArrayCounter_RBV is incrementd as each array is written.</p></li>
+<li><p>ArrayCounter_RBV is incremented as each array is written.</p></li>
 <li><p>ArrayRate_RBV is updated, so the number of frames/s being written is visible.</p></li>
 <li><p>NumCaptured_RBV counts down from NumCaptured to 0, so the number
 of remaining frames is visible.</p></li>
@@ -2855,7 +2864,7 @@ is the quotient of the two numbers, which is not what is desired.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, Mark Rivers.
-      <span class="lastupdated">Last updated on 2024-April-03.
+      <span class="lastupdated">Last updated on 2024-April-13.
       </span></p>
   </div>
 

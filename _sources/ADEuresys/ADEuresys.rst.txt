@@ -239,9 +239,11 @@ ADEuresys_ has been tested with 3 very different cameras, shown in the following
      - 2.0
 
 The ADEuresys driver can collect the images from these cameras at the full specified frame rates
-in the table above, with one exception.  The Mikrotron camera in 10-bit mode has a maximum
-from rate of 1798 frames/s.  However, ADEuresys only receives 1668 frames/s on Linux and
-1703 frames/s on Windows. I have contacted Euresys to ask about this difference.
+in the table above, with one exception.
+The Mikrotron camera in 10-bit mode has a maximum from rate of 1798 frames/s.  
+However, ADEuresys only receives 1668 frames/s on Linux and 1703 frames/s on Windows. 
+This is due to limitations on the PCIe transfer speeds of the frame grabber when expanding the
+10-bit frames to 16-bit.
 
 .. figure:: Mikrotron_photo.jpg
     :align: center
