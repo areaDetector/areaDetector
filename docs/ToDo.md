@@ -30,6 +30,7 @@ ADPvCAM | Raw .html needs additional information and conversion to .rst | Medium
 ADQImaging | Raw .html needs conversion to .rst | Medium
 ADRIXSCam| .rst file has no content | High
 ADRoper | Raw .html needs conversion to .rst | Low (no longer in use?)
+ADTimePix3| Needs link to docs in README.md | High, easy
 ADUVC| Needs link to docs in README.md | High, easy
 ADmar345| README.md needs link to .rst version | High, easy
 ADnED| Only documentation is README.md | Medium

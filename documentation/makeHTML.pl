@@ -54,6 +54,7 @@ use File::Path;
           "./ADRoper/documentation",
           "./ADSimDetector/documentation",
           "./ADSpinnaker/documentation",
+          "./ADTimePix3/documentation",
           "./ADURL/documentation",
           "./ADViewers/documentation",
           "./ADmar345/documentation",

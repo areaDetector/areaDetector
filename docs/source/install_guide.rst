@@ -538,8 +538,8 @@ in EPICS_BASE.
    -  XML2 is required for ADCore
    -  HDF5 is required for the NDFileHDF5 and NDFileNexus plugins
    -  NEXUS is required for the NDFileNexus plugin
-   -  GRAPHICSMAGICK is required for the NDFileMagick plugin and the
-      ADURL driver
+   -  GRAPHICSMAGICK is required for the NDFileMagick plugin the
+      ADURL driver, and ADTimePix3 driver
    -  OPENCV is required for the ADPluginEdge plugin
 
 For each library XXX (XXX=TIFF, NETCDF, etc.) there are 4 Makefile
