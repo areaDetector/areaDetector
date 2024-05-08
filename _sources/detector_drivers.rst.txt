@@ -31,6 +31,7 @@ Detector Drivers
     ADRIXSCam/ADRIXSCam
     ADSimDetector/simDetector
     ADSpinnaker/ADSpinnaker
+    ADTimePix3/ADTimePix3
     ADVimba/ADVimba
     ADURL/ADURL
     NDDriverStdArrays/NDDriverStdArraysDoc

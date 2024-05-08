@@ -901,7 +901,7 @@
 <codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;cin.h&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_fast_c_c_d_8h" kindref="compound">FastCCD.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="25"><highlight class="normal"></highlight></codeline>
-<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*driverName<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;FastCCD&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="_a_d_time_pix_8cpp_1af0e94d13028051cd5339d204bfbb057d" kindref="member">driverName</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;FastCCD&quot;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="27"><highlight class="normal"></highlight></codeline>
 <codeline lineno="28"><highlight class="normal">asynStatus<sp/><ref refid="class_fast_c_c_d_1ada3ac79155e235327a752a688496ce6e" kindref="member">FastCCD::connect</ref>(asynUser<sp/>*pasynUser){</highlight></codeline>
 <codeline lineno="29"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>connectCamera();</highlight></codeline>
@@ -1120,7 +1120,7 @@
 <codeline lineno="242"><highlight class="normal"><sp/></highlight></codeline>
 <codeline lineno="243"><highlight class="normal"><sp/><sp/>asynPrint(this-&gt;pasynUserSelf,<sp/>ASYN_TRACEIO_DRIVER,</highlight></codeline>
 <codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;%s:%s:<sp/>frameId=%d\n&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>driverName,<sp/>functionName,<sp/>frame-&gt;number);</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_a_d_time_pix_8cpp_1af0e94d13028051cd5339d204bfbb057d" kindref="member">driverName</ref>,<sp/>functionName,<sp/>frame-&gt;number);</highlight></codeline>
 <codeline lineno="246"><highlight class="normal"></highlight></codeline>
 <codeline lineno="247"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Release<sp/>the<sp/>frame<sp/>as<sp/>we<sp/>are<sp/>done<sp/>with<sp/>it!</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="248"><highlight class="normal"><sp/><sp/><ref refid="class_fast_c_c_d_1a1ed1060dcb5fc7eefc7882b2ec4184e3" kindref="member">pImage</ref>-&gt;<ref refid="class_n_d_array_1a0c4c61ea4d44ce97db979d24305c996e" kindref="member">release</ref>();</highlight></codeline>
@@ -1357,7 +1357,7 @@
 <codeline lineno="495"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!this-&gt;statusEvent)<sp/>{</highlight></codeline>
 <codeline lineno="496"><highlight class="normal"><sp/><sp/><sp/><sp/>asynPrint(pasynUserSelf,<sp/>ASYN_TRACE_ERROR,</highlight></codeline>
 <codeline lineno="497"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;%s:%s:<sp/>Failed<sp/>to<sp/>create<sp/>event<sp/>for<sp/>status<sp/>task.\n&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline lineno="498"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>driverName,<sp/>functionName);</highlight></codeline>
+<codeline lineno="498"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_a_d_time_pix_8cpp_1af0e94d13028051cd5339d204bfbb057d" kindref="member">driverName</ref>,<sp/>functionName);</highlight></codeline>
 <codeline lineno="499"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="500"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
 <codeline lineno="501"><highlight class="normal"></highlight></codeline>
@@ -1365,7 +1365,7 @@
 <codeline lineno="503"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!this-&gt;dataStatsEvent)<sp/>{</highlight></codeline>
 <codeline lineno="504"><highlight class="normal"><sp/><sp/><sp/><sp/>asynPrint(pasynUserSelf,<sp/>ASYN_TRACE_ERROR,</highlight></codeline>
 <codeline lineno="505"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;%s:%s:<sp/>Failed<sp/>to<sp/>create<sp/>event<sp/>for<sp/>data<sp/>stats<sp/>task.\n&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline lineno="506"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>driverName,<sp/>functionName);</highlight></codeline>
+<codeline lineno="506"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_a_d_time_pix_8cpp_1af0e94d13028051cd5339d204bfbb057d" kindref="member">driverName</ref>,<sp/>functionName);</highlight></codeline>
 <codeline lineno="507"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="508"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
 <codeline lineno="509"><highlight class="normal"></highlight></codeline>
@@ -1374,7 +1374,7 @@
 <codeline lineno="512"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!this-&gt;detectorWaitEvent)<sp/>{</highlight></codeline>
 <codeline lineno="513"><highlight class="normal"><sp/><sp/><sp/><sp/>asynPrint(pasynUserSelf,<sp/>ASYN_TRACE_ERROR,</highlight></codeline>
 <codeline lineno="514"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;%s:%s:<sp/>Failed<sp/>to<sp/>create<sp/>event<sp/>for<sp/>detector<sp/>wait<sp/>task.\n&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline lineno="515"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>driverName,<sp/>functionName);</highlight></codeline>
+<codeline lineno="515"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_a_d_time_pix_8cpp_1af0e94d13028051cd5339d204bfbb057d" kindref="member">driverName</ref>,<sp/>functionName);</highlight></codeline>
 <codeline lineno="516"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="517"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
 <codeline lineno="518"><highlight class="normal"></highlight></codeline>
@@ -1507,7 +1507,7 @@
 <codeline lineno="645"><highlight class="normal"><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">catch</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespacehdf5_1abeed318faeb13380e1b4221bd4198bf1aea271040d7a5b8d9af9cbf6564d262d5" kindref="member">std::string</ref><sp/>&amp;e)<sp/>{</highlight></codeline>
 <codeline lineno="646"><highlight class="normal"><sp/><sp/><sp/><sp/>asynPrint(pasynUserSelf,<sp/>ASYN_TRACE_ERROR,</highlight></codeline>
 <codeline lineno="647"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;%s:%s:<sp/>%s\n&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline lineno="648"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>driverName,<sp/>functionName,<sp/>e.c_str());</highlight></codeline>
+<codeline lineno="648"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_a_d_time_pix_8cpp_1af0e94d13028051cd5339d204bfbb057d" kindref="member">driverName</ref>,<sp/>functionName,<sp/>e.c_str());</highlight></codeline>
 <codeline lineno="649"><highlight class="normal"><sp/><sp/><sp/><sp/>setStringParam(ADStatusMessage,<sp/></highlight><highlight class="stringliteral">&quot;Camera<sp/>failed<sp/>to<sp/>connect&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="650"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="651"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
@@ -1531,7 +1531,7 @@
 <codeline lineno="669"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(status)<sp/>{</highlight></codeline>
 <codeline lineno="670"><highlight class="normal"><sp/><sp/><sp/><sp/>asynPrint(pasynUserSelf,<sp/>ASYN_TRACE_ERROR,</highlight></codeline>
 <codeline lineno="671"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;%s:%s:<sp/>Failed<sp/>to<sp/>create<sp/>status<sp/>task.\n&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline lineno="672"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>driverName,<sp/>functionName);</highlight></codeline>
+<codeline lineno="672"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_a_d_time_pix_8cpp_1af0e94d13028051cd5339d204bfbb057d" kindref="member">driverName</ref>,<sp/>functionName);</highlight></codeline>
 <codeline lineno="673"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="674"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
 <codeline lineno="675"><highlight class="normal"></highlight></codeline>
@@ -1544,7 +1544,7 @@
 <codeline lineno="682"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(status)<sp/>{</highlight></codeline>
 <codeline lineno="683"><highlight class="normal"><sp/><sp/><sp/><sp/>asynPrint(pasynUserSelf,<sp/>ASYN_TRACE_ERROR,</highlight></codeline>
 <codeline lineno="684"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;%s:%s:<sp/>Failed<sp/>to<sp/>create<sp/>data<sp/>stats<sp/>task.\n&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline lineno="685"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>driverName,<sp/>functionName);</highlight></codeline>
+<codeline lineno="685"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_a_d_time_pix_8cpp_1af0e94d13028051cd5339d204bfbb057d" kindref="member">driverName</ref>,<sp/>functionName);</highlight></codeline>
 <codeline lineno="686"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="687"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
 <codeline lineno="688"><highlight class="normal"></highlight></codeline>
@@ -1557,7 +1557,7 @@
 <codeline lineno="695"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(status)<sp/>{</highlight></codeline>
 <codeline lineno="696"><highlight class="normal"><sp/><sp/><sp/><sp/>asynPrint(pasynUserSelf,<sp/>ASYN_TRACE_ERROR,</highlight></codeline>
 <codeline lineno="697"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;%s:%s:<sp/>Failed<sp/>to<sp/>create<sp/>data<sp/>stats<sp/>task.\n&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline lineno="698"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>driverName,<sp/>functionName);</highlight></codeline>
+<codeline lineno="698"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_a_d_time_pix_8cpp_1af0e94d13028051cd5339d204bfbb057d" kindref="member">driverName</ref>,<sp/>functionName);</highlight></codeline>
 <codeline lineno="699"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="700"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
 <codeline lineno="701"><highlight class="normal">}</highlight></codeline>
@@ -1574,7 +1574,7 @@
 <codeline lineno="715"><highlight class="normal"><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">catch</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespacehdf5_1abeed318faeb13380e1b4221bd4198bf1aea271040d7a5b8d9af9cbf6564d262d5" kindref="member">std::string</ref><sp/>&amp;e)<sp/>{</highlight></codeline>
 <codeline lineno="716"><highlight class="normal"><sp/><sp/><sp/><sp/>asynPrint(pasynUserSelf,<sp/>ASYN_TRACE_ERROR,</highlight></codeline>
 <codeline lineno="717"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;%s:%s:<sp/>%s\n&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline lineno="718"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>driverName,<sp/>functionName,<sp/>e.c_str());</highlight></codeline>
+<codeline lineno="718"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_a_d_time_pix_8cpp_1af0e94d13028051cd5339d204bfbb057d" kindref="member">driverName</ref>,<sp/>functionName,<sp/>e.c_str());</highlight></codeline>
 <codeline lineno="719"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
 <codeline lineno="720"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="721"><highlight class="normal"></highlight></codeline>
@@ -1684,7 +1684,7 @@
 <codeline lineno="834"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">catch</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespacehdf5_1abeed318faeb13380e1b4221bd4198bf1aea271040d7a5b8d9af9cbf6564d262d5" kindref="member">std::string</ref><sp/>&amp;e)<sp/>{</highlight></codeline>
 <codeline lineno="835"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>asynPrint(pasynUserSelf,<sp/>ASYN_TRACE_ERROR,</highlight></codeline>
 <codeline lineno="836"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;%s:%s:<sp/>%s\n&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline lineno="837"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>driverName,<sp/>functionName,<sp/>e.c_str());</highlight></codeline>
+<codeline lineno="837"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_a_d_time_pix_8cpp_1af0e94d13028051cd5339d204bfbb057d" kindref="member">driverName</ref>,<sp/>functionName,<sp/>e.c_str());</highlight></codeline>
 <codeline lineno="838"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="839"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
 <codeline lineno="840"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Call<sp/>the<sp/>base<sp/>class<sp/>method</highlight><highlight class="normal"></highlight></codeline>
@@ -1746,11 +1746,11 @@
 <codeline lineno="896"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(status){</highlight></codeline>
 <codeline lineno="897"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>asynPrint(pasynUser,<sp/>ASYN_TRACE_ERROR,</highlight></codeline>
 <codeline lineno="898"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;%s:%s:<sp/>error,<sp/>status=%d<sp/>function=%d,<sp/>value=%f\n&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline lineno="899"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>driverName,<sp/>functionName,<sp/>status,<sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal">,<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>);</highlight></codeline>
+<codeline lineno="899"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_a_d_time_pix_8cpp_1af0e94d13028051cd5339d204bfbb057d" kindref="member">driverName</ref>,<sp/>functionName,<sp/>status,<sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal">,<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>);</highlight></codeline>
 <codeline lineno="900"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
 <codeline lineno="901"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>asynPrint(pasynUser,<sp/>ASYN_TRACEIO_DRIVER,</highlight></codeline>
 <codeline lineno="902"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;%s:%s:<sp/>function=%d,<sp/>value=%f\n&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline lineno="903"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>driverName,<sp/>functionName,<sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal">,<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>);</highlight></codeline>
+<codeline lineno="903"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_a_d_time_pix_8cpp_1af0e94d13028051cd5339d204bfbb057d" kindref="member">driverName</ref>,<sp/>functionName,<sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal">,<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>);</highlight></codeline>
 <codeline lineno="904"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="905"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>status;</highlight></codeline>
 <codeline lineno="906"><highlight class="normal"></highlight></codeline>
@@ -2124,11 +2124,11 @@
 <codeline lineno="1279"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(status)<sp/>{</highlight></codeline>
 <codeline lineno="1280"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>asynPrint(pasynUser,<sp/>ASYN_TRACE_ERROR,</highlight></codeline>
 <codeline lineno="1281"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;%s:%s:<sp/>error,<sp/>status=%d<sp/>function=%d,<sp/>value=%d\n&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline lineno="1282"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>driverName,<sp/>functionName,<sp/>status,<sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal">,<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>);</highlight></codeline>
+<codeline lineno="1282"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_a_d_time_pix_8cpp_1af0e94d13028051cd5339d204bfbb057d" kindref="member">driverName</ref>,<sp/>functionName,<sp/>status,<sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal">,<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>);</highlight></codeline>
 <codeline lineno="1283"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
 <codeline lineno="1284"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>asynPrint(pasynUser,<sp/>ASYN_TRACEIO_DRIVER,</highlight></codeline>
 <codeline lineno="1285"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;%s:%s:<sp/>function=%d,<sp/>value=%d\n&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline lineno="1286"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>driverName,<sp/>functionName,<sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal">,<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>);</highlight></codeline>
+<codeline lineno="1286"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_a_d_time_pix_8cpp_1af0e94d13028051cd5339d204bfbb057d" kindref="member">driverName</ref>,<sp/>functionName,<sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal">,<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>);</highlight></codeline>
 <codeline lineno="1287"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="1288"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1289"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Do<sp/>callbacks<sp/>so<sp/>higher<sp/>layers<sp/>see<sp/>any<sp/>changes<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
@@ -2169,11 +2169,11 @@
 <codeline lineno="1324"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(status)<sp/>{</highlight></codeline>
 <codeline lineno="1325"><highlight class="normal"><sp/><sp/><sp/><sp/>asynPrint(pasynUser,<sp/>ASYN_TRACE_ERROR,</highlight></codeline>
 <codeline lineno="1326"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;%s:%s:<sp/>error,<sp/>status=%d<sp/>function=%d,<sp/>value=%s\n&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline lineno="1327"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>driverName,<sp/>functionName,<sp/>status,<sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal">,<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>);</highlight></codeline>
+<codeline lineno="1327"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_a_d_time_pix_8cpp_1af0e94d13028051cd5339d204bfbb057d" kindref="member">driverName</ref>,<sp/>functionName,<sp/>status,<sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal">,<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>);</highlight></codeline>
 <codeline lineno="1328"><highlight class="normal"><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
 <codeline lineno="1329"><highlight class="normal"><sp/><sp/><sp/><sp/>asynPrint(pasynUser,<sp/>ASYN_TRACEIO_DRIVER,</highlight></codeline>
 <codeline lineno="1330"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;%s:%s:<sp/>function=%d,<sp/>value=%s\n&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline lineno="1331"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>driverName,<sp/>functionName,<sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal">,<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>);</highlight></codeline>
+<codeline lineno="1331"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_a_d_time_pix_8cpp_1af0e94d13028051cd5339d204bfbb057d" kindref="member">driverName</ref>,<sp/>functionName,<sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal">,<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>);</highlight></codeline>
 <codeline lineno="1332"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
 <codeline lineno="1333"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1334"><highlight class="normal"></highlight></codeline>
@@ -2207,7 +2207,7 @@
 <codeline lineno="1362"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(status<sp/>==<sp/>epicsEventWaitOK)<sp/>{</highlight></codeline>
 <codeline lineno="1363"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>asynPrint(pasynUserSelf,<sp/>ASYN_TRACE_FLOW,</highlight></codeline>
 <codeline lineno="1364"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;%s:%s:<sp/>Got<sp/>status<sp/>event\n&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline lineno="1365"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>driverName,<sp/>functionName);</highlight></codeline>
+<codeline lineno="1365"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_a_d_time_pix_8cpp_1af0e94d13028051cd5339d204bfbb057d" kindref="member">driverName</ref>,<sp/>functionName);</highlight></codeline>
 <codeline lineno="1366"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="1367"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1368"><highlight class="normal"><sp/><sp/><sp/><sp/>cin_data_stats_t<sp/>stats;</highlight></codeline>
@@ -2625,7 +2625,7 @@
 <codeline lineno="1783"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(status<sp/>==<sp/>epicsEventWaitOK)<sp/>{</highlight></codeline>
 <codeline lineno="1784"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>asynPrint(pasynUserSelf,<sp/>ASYN_TRACE_FLOW,</highlight></codeline>
 <codeline lineno="1785"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;%s:%s:<sp/>Got<sp/>status<sp/>event\n&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline lineno="1786"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>driverName,<sp/>functionName);</highlight></codeline>
+<codeline lineno="1786"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_a_d_time_pix_8cpp_1af0e94d13028051cd5339d204bfbb057d" kindref="member">driverName</ref>,<sp/>functionName);</highlight></codeline>
 <codeline lineno="1787"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="1788"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1789"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Update<sp/>the<sp/>ticktock</highlight><highlight class="normal"></highlight></codeline>
@@ -2677,7 +2677,7 @@
 <codeline lineno="1835"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(status<sp/>==<sp/>epicsEventWaitOK)<sp/>{</highlight></codeline>
 <codeline lineno="1836"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>asynPrint(pasynUserSelf,<sp/>ASYN_TRACE_FLOW,</highlight></codeline>
 <codeline lineno="1837"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;%s:%s:<sp/>Got<sp/>status<sp/>event\n&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline lineno="1838"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>driverName,<sp/>functionName);</highlight></codeline>
+<codeline lineno="1838"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_a_d_time_pix_8cpp_1af0e94d13028051cd5339d204bfbb057d" kindref="member">driverName</ref>,<sp/>functionName);</highlight></codeline>
 <codeline lineno="1839"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="1840"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1841"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>_p;</highlight></codeline>

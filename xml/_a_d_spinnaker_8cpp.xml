@@ -786,7 +786,7 @@
 <codeline lineno="44"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DRIVER_REVISION<sp/><sp/><sp/><sp/><sp/>5</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="45"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DRIVER_MODIFICATION<sp/>0</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="46"><highlight class="normal"></highlight></codeline>
-<codeline lineno="47"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*driverName<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;ADSpinnaker&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="_a_d_time_pix_8cpp_1af0e94d13028051cd5339d204bfbb057d" kindref="member">driverName</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;ADSpinnaker&quot;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="48"><highlight class="normal"></highlight></codeline>
 <codeline lineno="49"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Size<sp/>of<sp/>message<sp/>queue<sp/>for<sp/>callback<sp/>function</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="50"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CALLBACK_MESSAGE_QUEUE_SIZE<sp/>100</highlight><highlight class="normal"></highlight></codeline>
@@ -853,7 +853,7 @@
 <codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(status)<sp/>{</highlight></codeline>
 <codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>asynPrint(pasynUserSelf,<sp/>ASYN_TRACE_ERROR,</highlight></codeline>
 <codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;%s:%s:<sp/><sp/>camera<sp/>connection<sp/>failed<sp/>(%d)\n&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>driverName,<sp/>functionName,<sp/>status);</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_a_d_time_pix_8cpp_1af0e94d13028051cd5339d204bfbb057d" kindref="member">driverName</ref>,<sp/>functionName,<sp/>status);</highlight></codeline>
 <codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Call<sp/>report()<sp/>to<sp/>get<sp/>a<sp/>list<sp/>of<sp/>available<sp/>cameras</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>report(<ref refid="namespacemake_adl_1a3f4a3faa9267f79b85de3e74ef54d173" kindref="member">stdout</ref>,<sp/>1);</highlight></codeline>
 <codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
@@ -926,7 +926,7 @@
 <codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">catch</highlight><highlight class="normal"><sp/>(Spinnaker::Exception<sp/>&amp;e)<sp/>{</highlight></codeline>
 <codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>asynPrint(pasynUserSelf,<sp/>ASYN_TRACE_ERROR,<sp/></highlight></codeline>
 <codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;%s::%s<sp/>exception<sp/>%s\n&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>driverName,<sp/>functionName,<sp/>e.what());</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_a_d_time_pix_8cpp_1af0e94d13028051cd5339d204bfbb057d" kindref="member">driverName</ref>,<sp/>functionName,<sp/>e.what());</highlight></codeline>
 <codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/>unlock();</highlight></codeline>
 <codeline lineno="211"><highlight class="normal">}</highlight></codeline>
@@ -956,12 +956,12 @@
 <codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>asynPrint(pasynUserSelf,<sp/>ASYN_TRACE_WARNING,</highlight></codeline>
 <codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;%s::%s<sp/>called<sp/>camList_.GetSize,<sp/>camList_=%p,<sp/>numCameras=%d\n&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>driverName,<sp/>functionName,<sp/>&amp;camList_,<sp/>numCameras);</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_a_d_time_pix_8cpp_1af0e94d13028051cd5339d204bfbb057d" kindref="member">driverName</ref>,<sp/>functionName,<sp/>&amp;camList_,<sp/>numCameras);</highlight></codeline>
 <codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(numCameras<sp/>&lt;=<sp/>0)<sp/>{</highlight></codeline>
 <codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>asynPrint(pasynUserSelf,<sp/>ASYN_TRACE_ERROR,<sp/></highlight></codeline>
 <codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;%s:%s:<sp/>no<sp/>cameras<sp/>found\n&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>driverName,<sp/>functionName);</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_a_d_time_pix_8cpp_1af0e94d13028051cd5339d204bfbb057d" kindref="member">driverName</ref>,<sp/>functionName);</highlight></codeline>
 <codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Clear<sp/>camera<sp/>list<sp/>before<sp/>releasing<sp/>system</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>camList_.Clear();</highlight></codeline>
@@ -971,12 +971,12 @@
 <codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(cameraId_<sp/>&lt;<sp/>1000)<sp/>{</highlight></codeline>
 <codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>asynPrint(pasynUserSelf,<sp/>ASYN_TRACE_WARNING,</highlight></codeline>
 <codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;%s::%s<sp/>calling<sp/>camList_.GetByIndex,<sp/>camList_=%p\n&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>driverName,<sp/>functionName,<sp/>&amp;camList_);</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_a_d_time_pix_8cpp_1af0e94d13028051cd5339d204bfbb057d" kindref="member">driverName</ref>,<sp/>functionName,<sp/>&amp;camList_);</highlight></codeline>
 <codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pCamera_<sp/>=<sp/>camList_.GetByIndex(cameraId_);</highlight></codeline>
 <codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{<sp/></highlight></codeline>
 <codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>asynPrint(pasynUserSelf,<sp/>ASYN_TRACE_WARNING,</highlight></codeline>
 <codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;%s::%s<sp/>calling<sp/>camList_.GetBySerial,<sp/>camList_=%p,<sp/>cameraId_=%d\n&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>driverName,<sp/>functionName,<sp/>&amp;camList_,<sp/>cameraId_);</highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_a_d_time_pix_8cpp_1af0e94d13028051cd5339d204bfbb057d" kindref="member">driverName</ref>,<sp/>functionName,<sp/>&amp;camList_,<sp/>cameraId_);</highlight></codeline>
 <codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>tempString[100];</highlight></codeline>
 <codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sprintf(tempString,<sp/></highlight><highlight class="stringliteral">&quot;%d&quot;</highlight><highlight class="normal">,<sp/>cameraId_);</highlight></codeline>
 <codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacehdf5_1abeed318faeb13380e1b4221bd4198bf1aea271040d7a5b8d9af9cbf6564d262d5" kindref="member">std::string</ref><sp/>tempStdString(tempString);</highlight></codeline>
@@ -1007,7 +1007,7 @@
 <codeline lineno="286"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">catch</highlight><highlight class="normal"><sp/>(Spinnaker::Exception<sp/>&amp;e)<sp/>{</highlight></codeline>
 <codeline lineno="287"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>asynPrint(pasynUserSelf,<sp/>ASYN_TRACE_ERROR,<sp/></highlight></codeline>
 <codeline lineno="288"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;%s::%s<sp/>exception<sp/>%s\n&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline lineno="289"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>driverName,<sp/>functionName,<sp/>e.what());</highlight></codeline>
+<codeline lineno="289"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_a_d_time_pix_8cpp_1af0e94d13028051cd5339d204bfbb057d" kindref="member">driverName</ref>,<sp/>functionName,<sp/>e.what());</highlight></codeline>
 <codeline lineno="290"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>asynError;</highlight></codeline>
 <codeline lineno="291"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="292"><highlight class="normal"></highlight></codeline>
@@ -1020,7 +1020,7 @@
 <codeline lineno="299"><highlight class="normal"><sp/><sp/><sp/><sp/>epicsSnprintf(tempString,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(tempString),<sp/></highlight><highlight class="stringliteral">&quot;%d.%d.%d.%d&quot;</highlight><highlight class="normal">,<sp/>version.major,<sp/>version.minor,<sp/>version.type,<sp/>version.build);</highlight></codeline>
 <codeline lineno="300"><highlight class="normal"><sp/><sp/><sp/><sp/>asynPrint(pasynUserSelf,<sp/>ASYN_TRACE_WARNING,</highlight></codeline>
 <codeline lineno="301"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;%s::%s<sp/>called<sp/>System::GetLibraryVersion,<sp/>version=%s\n&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline lineno="302"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>driverName,<sp/>functionName,<sp/>tempString);</highlight></codeline>
+<codeline lineno="302"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_a_d_time_pix_8cpp_1af0e94d13028051cd5339d204bfbb057d" kindref="member">driverName</ref>,<sp/>functionName,<sp/>tempString);</highlight></codeline>
 <codeline lineno="303"><highlight class="normal"><sp/><sp/><sp/><sp/>setStringParam(<ref refid="classasyn_n_d_array_driver_1a89d5bd570163bd569bc6d2a2163da9c2" kindref="member">ADSDKVersion</ref>,<sp/>tempString);</highlight></codeline>
 <codeline lineno="304"><highlight class="normal"></highlight></codeline>
 <codeline lineno="305"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
@@ -1056,7 +1056,7 @@
 <codeline lineno="335"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">catch</highlight><highlight class="normal"><sp/>(Spinnaker::Exception<sp/>&amp;e)<sp/>{</highlight></codeline>
 <codeline lineno="336"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>asynPrint(pasynUserSelf,<sp/>ASYN_TRACE_ERROR,<sp/></highlight></codeline>
 <codeline lineno="337"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;%s::%s<sp/>exception<sp/>%s\n&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline lineno="338"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>driverName,<sp/>functionName,<sp/>e.what());</highlight></codeline>
+<codeline lineno="338"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_a_d_time_pix_8cpp_1af0e94d13028051cd5339d204bfbb057d" kindref="member">driverName</ref>,<sp/>functionName,<sp/>e.what());</highlight></codeline>
 <codeline lineno="339"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="340"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="341"><highlight class="normal"></highlight></codeline>
@@ -1085,14 +1085,14 @@
 <codeline lineno="368"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>has<sp/>started<sp/>and<sp/>we<sp/>can<sp/>start<sp/>asking<sp/>for<sp/>image<sp/>buffers...</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="369"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>asynPrint(pasynUserSelf,<sp/>ASYN_TRACE_FLOW,</highlight></codeline>
 <codeline lineno="370"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;%s::%s<sp/>waiting<sp/>for<sp/>acquire<sp/>to<sp/>start\n&quot;</highlight><highlight class="normal">,<sp/></highlight></codeline>
-<codeline lineno="371"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>driverName,<sp/>functionName);</highlight></codeline>
+<codeline lineno="371"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_a_d_time_pix_8cpp_1af0e94d13028051cd5339d204bfbb057d" kindref="member">driverName</ref>,<sp/>functionName);</highlight></codeline>
 <codeline lineno="372"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Release<sp/>the<sp/>lock<sp/>while<sp/>we<sp/>wait<sp/>for<sp/>an<sp/>event<sp/>that<sp/>says<sp/>acquire<sp/>has<sp/>started,<sp/>then<sp/>lock<sp/>again</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="373"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>unlock();</highlight></codeline>
 <codeline lineno="374"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>epicsEventWait(startEventId_);</highlight></codeline>
 <codeline lineno="375"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>lock();</highlight></codeline>
 <codeline lineno="376"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>asynPrint(pasynUserSelf,<sp/>ASYN_TRACE_FLOW,</highlight></codeline>
 <codeline lineno="377"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;%s::%s<sp/>started!\n&quot;</highlight><highlight class="normal">,<sp/></highlight></codeline>
-<codeline lineno="378"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>driverName,<sp/>functionName);</highlight></codeline>
+<codeline lineno="378"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_a_d_time_pix_8cpp_1af0e94d13028051cd5339d204bfbb057d" kindref="member">driverName</ref>,<sp/>functionName);</highlight></codeline>
 <codeline lineno="379"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classasyn_n_d_array_driver_1abf87462bc5853f8e5a56db5e93acd956" kindref="member">setIntegerParam</ref>(<ref refid="class_a_d_driver_1a8cdc9e9fbabaadaa3c87108aad2e2895" kindref="member">ADNumImagesCounter</ref>,<sp/>0);</highlight></codeline>
 <codeline lineno="380"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classasyn_n_d_array_driver_1abf87462bc5853f8e5a56db5e93acd956" kindref="member">setIntegerParam</ref>(<ref refid="classasyn_n_d_array_driver_1aa06c19f650b4619a7bdbf3a79397c3d3" kindref="member">ADAcquire</ref>,<sp/>1);</highlight></codeline>
 <codeline lineno="381"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
@@ -1196,7 +1196,7 @@
 <codeline lineno="479"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(recvSize<sp/>!=<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(imagePtrAddr))<sp/>{</highlight></codeline>
 <codeline lineno="480"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>asynPrint(pasynUserSelf,<sp/>ASYN_TRACE_ERROR,</highlight></codeline>
 <codeline lineno="481"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;%s::%s<sp/>error<sp/>receiving<sp/>from<sp/>message<sp/>queue\n&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline lineno="482"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>driverName,<sp/>functionName);</highlight></codeline>
+<codeline lineno="482"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_a_d_time_pix_8cpp_1af0e94d13028051cd5339d204bfbb057d" kindref="member">driverName</ref>,<sp/>functionName);</highlight></codeline>
 <codeline lineno="483"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>asynError;</highlight></codeline>
 <codeline lineno="484"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="485"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>We<sp/>are<sp/>sent<sp/>a<sp/>null<sp/>pointer<sp/>to<sp/>flag<sp/>acquisition<sp/>complete<sp/>so<sp/>return</highlight><highlight class="normal"></highlight></codeline>
@@ -1210,14 +1210,14 @@
 <codeline lineno="493"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(imageStatus<sp/>!=<sp/>SPINNAKER_IMAGE_STATUS_NO_ERROR)<sp/>{</highlight></codeline>
 <codeline lineno="494"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>asynPrint(pasynUserSelf,<sp/>ASYN_TRACE_ERROR,</highlight></codeline>
 <codeline lineno="495"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;%s::%s<sp/>error<sp/>GetImageStatus<sp/><sp/>%d,<sp/>description:<sp/><sp/>%s\n&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline lineno="496"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>driverName,<sp/>functionName,<sp/>imageStatus,<sp/>Image::GetImageStatusDescription(imageStatus));</highlight></codeline>
+<codeline lineno="496"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_a_d_time_pix_8cpp_1af0e94d13028051cd5339d204bfbb057d" kindref="member">driverName</ref>,<sp/>functionName,<sp/>imageStatus,<sp/>Image::GetImageStatusDescription(imageStatus));</highlight></codeline>
 <codeline lineno="497"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pImage-&gt;Release();</highlight></codeline>
 <codeline lineno="498"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>asynError;</highlight></codeline>
 <codeline lineno="499"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight></codeline>
 <codeline lineno="500"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(pImage-&gt;IsIncomplete())<sp/>{</highlight></codeline>
 <codeline lineno="501"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>asynPrint(pasynUserSelf,<sp/>ASYN_TRACE_ERROR,</highlight></codeline>
 <codeline lineno="502"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;%s::%s<sp/>error<sp/>image<sp/>is<sp/>incomplete\n&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline lineno="503"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>driverName,<sp/>functionName);</highlight></codeline>
+<codeline lineno="503"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_a_d_time_pix_8cpp_1af0e94d13028051cd5339d204bfbb057d" kindref="member">driverName</ref>,<sp/>functionName);</highlight></codeline>
 <codeline lineno="504"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pImage-&gt;Release();</highlight></codeline>
 <codeline lineno="505"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>asynError;</highlight></codeline>
 <codeline lineno="506"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
@@ -1229,7 +1229,7 @@
 <codeline lineno="512"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!acquiring)<sp/>{</highlight></codeline>
 <codeline lineno="513"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>asynPrint(pasynUserSelf,<sp/>ASYN_TRACE_ERROR,</highlight></codeline>
 <codeline lineno="514"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;%s::%s<sp/>received<sp/>image<sp/>after<sp/>acquisition<sp/>stopped,<sp/>ignoring\n&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline lineno="515"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>driverName,<sp/>functionName);</highlight></codeline>
+<codeline lineno="515"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_a_d_time_pix_8cpp_1af0e94d13028051cd5339d204bfbb057d" kindref="member">driverName</ref>,<sp/>functionName);</highlight></codeline>
 <codeline lineno="516"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>asynError;</highlight></codeline>
 <codeline lineno="517"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="518"><highlight class="normal"></highlight></codeline>
@@ -1262,7 +1262,7 @@
 <codeline lineno="545"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">:</highlight></codeline>
 <codeline lineno="546"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>asynPrint(pasynUserSelf,<sp/>ASYN_TRACE_ERROR,</highlight></codeline>
 <codeline lineno="547"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;%s::%s<sp/>Error:<sp/>Unknown<sp/>pixel<sp/>conversion<sp/>format<sp/>%d\n&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline lineno="548"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>driverName,<sp/>functionName,<sp/>convertPixelFormat);</highlight></codeline>
+<codeline lineno="548"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_a_d_time_pix_8cpp_1af0e94d13028051cd5339d204bfbb057d" kindref="member">driverName</ref>,<sp/>functionName,<sp/>convertPixelFormat);</highlight></codeline>
 <codeline lineno="549"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>convertedFormat<sp/>=<sp/>PixelFormat_Mono8;</highlight></codeline>
 <codeline lineno="550"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="551"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
@@ -1282,7 +1282,7 @@
 <codeline lineno="565"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">catch</highlight><highlight class="normal"><sp/>(Spinnaker::Exception<sp/>&amp;e)<sp/>{</highlight></codeline>
 <codeline lineno="566"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>asynPrint(pasynUserSelf,<sp/>ASYN_TRACE_ERROR,<sp/></highlight></codeline>
 <codeline lineno="567"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;%s::%s<sp/>pixel<sp/>format<sp/>conversion<sp/>exception<sp/>%s\n&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline lineno="568"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>driverName,<sp/>functionName,<sp/>e.what());</highlight></codeline>
+<codeline lineno="568"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_a_d_time_pix_8cpp_1af0e94d13028051cd5339d204bfbb057d" kindref="member">driverName</ref>,<sp/>functionName,<sp/>e.what());</highlight></codeline>
 <codeline lineno="569"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="570"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>lock();</highlight></codeline>
 <codeline lineno="571"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
@@ -1328,7 +1328,7 @@
 <codeline lineno="611"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">:</highlight></codeline>
 <codeline lineno="612"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>asynPrint(pasynUserSelf,<sp/>ASYN_TRACE_ERROR,</highlight></codeline>
 <codeline lineno="613"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;%s:%s:<sp/>unsupported<sp/>pixel<sp/>format=0x%x\n&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline lineno="614"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>driverName,<sp/>functionName,<sp/>pixelFormat);</highlight></codeline>
+<codeline lineno="614"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_a_d_time_pix_8cpp_1af0e94d13028051cd5339d204bfbb057d" kindref="member">driverName</ref>,<sp/>functionName,<sp/>pixelFormat);</highlight></codeline>
 <codeline lineno="615"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>asynError;</highlight></codeline>
 <codeline lineno="616"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="617"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
@@ -1351,7 +1351,7 @@
 <codeline lineno="634"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(dataSize<sp/>&gt;<sp/>dataSizePG)<sp/>{</highlight></codeline>
 <codeline lineno="635"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>asynPrint(pasynUserSelf,<sp/>ASYN_TRACE_ERROR,</highlight></codeline>
 <codeline lineno="636"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;%s:%s:<sp/>data<sp/>size<sp/>mismatch:<sp/>calculated=%lu,<sp/>reported=%lu\n&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline lineno="637"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>driverName,<sp/>functionName,<sp/>(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal">)dataSize,<sp/>(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal">)dataSizePG);</highlight></codeline>
+<codeline lineno="637"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_a_d_time_pix_8cpp_1af0e94d13028051cd5339d204bfbb057d" kindref="member">driverName</ref>,<sp/>functionName,<sp/>(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal">)dataSize,<sp/>(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal">)dataSizePG);</highlight></codeline>
 <codeline lineno="638"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//return<sp/>asynError;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="639"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="640"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classasyn_n_d_array_driver_1abf87462bc5853f8e5a56db5e93acd956" kindref="member">setIntegerParam</ref>(<ref refid="classasyn_n_d_array_driver_1a79c89c00ea62734d82c89e09ea8aa47b" kindref="member">NDArraySizeX</ref>,<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)nCols);</highlight></codeline>
@@ -1371,7 +1371,7 @@
 <codeline lineno="654"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>callParamCallbacks();</highlight></codeline>
 <codeline lineno="655"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>asynPrint(pasynUserSelf,<sp/>ASYN_TRACE_ERROR,<sp/></highlight></codeline>
 <codeline lineno="656"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;%s::%s<sp/>[%s]<sp/>ERROR:<sp/>Serious<sp/>problem:<sp/>not<sp/>enough<sp/>buffers<sp/>left!<sp/>Aborting<sp/>acquisition!\n&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline lineno="657"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>driverName,<sp/>functionName,<sp/>portName);</highlight></codeline>
+<codeline lineno="657"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_a_d_time_pix_8cpp_1af0e94d13028051cd5339d204bfbb057d" kindref="member">driverName</ref>,<sp/>functionName,<sp/>portName);</highlight></codeline>
 <codeline lineno="658"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classasyn_n_d_array_driver_1abf87462bc5853f8e5a56db5e93acd956" kindref="member">setIntegerParam</ref>(<ref refid="classasyn_n_d_array_driver_1aa06c19f650b4619a7bdbf3a79397c3d3" kindref="member">ADAcquire</ref>,<sp/>0);</highlight></codeline>
 <codeline lineno="659"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">(asynError);</highlight></codeline>
 <codeline lineno="660"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
@@ -1383,7 +1383,7 @@
 <codeline lineno="666"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
 <codeline lineno="667"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>asynPrint(pasynUserSelf,<sp/>ASYN_TRACE_ERROR,<sp/></highlight></codeline>
 <codeline lineno="668"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;%s::%s<sp/>[%s]<sp/>ERROR:<sp/>pData<sp/>is<sp/>NULL!\n&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline lineno="669"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>driverName,<sp/>functionName,<sp/>portName);</highlight></codeline>
+<codeline lineno="669"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_a_d_time_pix_8cpp_1af0e94d13028051cd5339d204bfbb057d" kindref="member">driverName</ref>,<sp/>functionName,<sp/>portName);</highlight></codeline>
 <codeline lineno="670"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>asynError;</highlight></codeline>
 <codeline lineno="671"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="672"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
@@ -1403,7 +1403,7 @@
 <codeline lineno="686"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(timeStamp<sp/>==<sp/>0)<sp/>{</highlight></codeline>
 <codeline lineno="687"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>asynPrint(pasynUserSelf,<sp/>ASYN_TRACE_WARNING,</highlight></codeline>
 <codeline lineno="688"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;%s::%s<sp/>pImage-&gt;GetTimeStamp()<sp/>returned<sp/>0\n&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline lineno="689"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>driverName,<sp/>functionName);</highlight></codeline>
+<codeline lineno="689"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_a_d_time_pix_8cpp_1af0e94d13028051cd5339d204bfbb057d" kindref="member">driverName</ref>,<sp/>functionName);</highlight></codeline>
 <codeline lineno="690"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="691"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pRaw_-&gt;<ref refid="class_n_d_array_1ac449943846ba4c5c18aa1ca5559470c2" kindref="member">timeStamp</ref><sp/>=<sp/>timeStamp<sp/>/<sp/>1e9;</highlight></codeline>
 <codeline lineno="692"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
@@ -1419,7 +1419,7 @@
 <codeline lineno="702"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">catch</highlight><highlight class="normal"><sp/>(Spinnaker::Exception<sp/>&amp;e)<sp/>{</highlight></codeline>
 <codeline lineno="703"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>asynPrint(pasynUserSelf,<sp/>ASYN_TRACE_ERROR,<sp/></highlight></codeline>
 <codeline lineno="704"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;%s::%s<sp/>pImage-&gt;Release()<sp/>exception<sp/>%s\n&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline lineno="705"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>driverName,<sp/>functionName,<sp/>e.what());</highlight></codeline>
+<codeline lineno="705"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_a_d_time_pix_8cpp_1af0e94d13028051cd5339d204bfbb057d" kindref="member">driverName</ref>,<sp/>functionName,<sp/>e.what());</highlight></codeline>
 <codeline lineno="706"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="707"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Get<sp/>any<sp/>attributes<sp/>that<sp/>have<sp/>been<sp/>defined<sp/>for<sp/>this<sp/>driver<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="708"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classasyn_n_d_array_driver_1a7492ba858d885e2ba226a1c7ef9dcf72" kindref="member">getAttributes</ref>(pRaw_-&gt;<ref refid="class_n_d_array_1af5aad7b41118f465621cf045ed957469" kindref="member">pAttributeList</ref>);</highlight></codeline>
@@ -1434,7 +1434,7 @@
 <codeline lineno="717"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">catch</highlight><highlight class="normal"><sp/>(Spinnaker::Exception<sp/>&amp;e)<sp/>{</highlight></codeline>
 <codeline lineno="718"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>asynPrint(pasynUserSelf,<sp/>ASYN_TRACE_ERROR,<sp/></highlight></codeline>
 <codeline lineno="719"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;%s::%s<sp/>exception<sp/>%s\n&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline lineno="720"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>driverName,<sp/>functionName,<sp/>e.what());</highlight></codeline>
+<codeline lineno="720"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_a_d_time_pix_8cpp_1af0e94d13028051cd5339d204bfbb057d" kindref="member">driverName</ref>,<sp/>functionName,<sp/>e.what());</highlight></codeline>
 <codeline lineno="721"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>asynError;</highlight></codeline>
 <codeline lineno="722"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="723"><highlight class="normal">}</highlight></codeline>
@@ -1467,7 +1467,7 @@
 <codeline lineno="750"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">catch</highlight><highlight class="normal"><sp/>(Spinnaker::Exception<sp/>&amp;e)<sp/>{</highlight></codeline>
 <codeline lineno="751"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>asynPrint(pasynUserSelf,<sp/>ASYN_TRACE_ERROR,<sp/></highlight></codeline>
 <codeline lineno="752"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;%s::%s<sp/>exception<sp/>%s\n&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline lineno="753"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>driverName,<sp/>functionName,<sp/>e.what());</highlight></codeline>
+<codeline lineno="753"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_a_d_time_pix_8cpp_1af0e94d13028051cd5339d204bfbb057d" kindref="member">driverName</ref>,<sp/>functionName,<sp/>e.what());</highlight></codeline>
 <codeline lineno="754"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>asynError;</highlight></codeline>
 <codeline lineno="755"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="756"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>asynSuccess;</highlight></codeline>
@@ -1488,7 +1488,7 @@
 <codeline lineno="771"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(e.GetError()<sp/>!=<sp/>SPINNAKER_ERR_NOT_INITIALIZED)<sp/>{</highlight></codeline>
 <codeline lineno="772"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>asynPrint(pasynUserSelf,<sp/>ASYN_TRACE_ERROR,<sp/></highlight></codeline>
 <codeline lineno="773"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;%s::%s<sp/>exception<sp/>%s\n&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline lineno="774"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>driverName,<sp/>functionName,<sp/>e.what());</highlight></codeline>
+<codeline lineno="774"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_a_d_time_pix_8cpp_1af0e94d13028051cd5339d204bfbb057d" kindref="member">driverName</ref>,<sp/>functionName,<sp/>e.what());</highlight></codeline>
 <codeline lineno="775"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="776"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="777"><highlight class="normal"></highlight></codeline>
@@ -1500,7 +1500,7 @@
 <codeline lineno="783"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(pCallbackMsgQ_-&gt;send(&amp;dummy,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(dummy))<sp/>!=<sp/>0)<sp/>{</highlight></codeline>
 <codeline lineno="784"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>asynPrint(pasynUserSelf,<sp/>ASYN_TRACE_ERROR,<sp/></highlight></codeline>
 <codeline lineno="785"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;%s::%s<sp/>error<sp/>calling<sp/>pCallbackMsgQ_-&gt;send()\n&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline lineno="786"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>driverName,<sp/>functionName);</highlight></codeline>
+<codeline lineno="786"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_a_d_time_pix_8cpp_1af0e94d13028051cd5339d204bfbb057d" kindref="member">driverName</ref>,<sp/>functionName);</highlight></codeline>
 <codeline lineno="787"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="788"><highlight class="normal"></highlight></codeline>
 <codeline lineno="789"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Need<sp/>to<sp/>wait<sp/>for<sp/>the<sp/>imageGrabTask<sp/>to<sp/>set<sp/>the<sp/>status<sp/>to<sp/>idle</highlight><highlight class="normal"></highlight></codeline>
@@ -1592,7 +1592,7 @@
 <codeline lineno="881"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">catch</highlight><highlight class="normal"><sp/>(Spinnaker::Exception<sp/>&amp;e)<sp/>{</highlight></codeline>
 <codeline lineno="882"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>asynPrint(pasynUserSelf,<sp/>ASYN_TRACE_ERROR,<sp/></highlight></codeline>
 <codeline lineno="883"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;%s::%s<sp/>exception<sp/>%s\n&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline lineno="884"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>driverName,<sp/>functionName,<sp/>e.what());</highlight></codeline>
+<codeline lineno="884"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_a_d_time_pix_8cpp_1af0e94d13028051cd5339d204bfbb057d" kindref="member">driverName</ref>,<sp/>functionName,<sp/>e.what());</highlight></codeline>
 <codeline lineno="885"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="886"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="887"><highlight class="normal"><sp/><sp/><sp/><sp/>fprintf(fp,<sp/></highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
