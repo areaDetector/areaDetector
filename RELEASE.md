@@ -26,13 +26,55 @@ the EXAMPLE_RELEASE_LIBS.local, and EXAMPLE_RELEASE_PRODS.local files respective
 Versions
 --------
 
-Each submodule contains detailed release notes for each release of that submodule.  The release notes below
-only provide a short summary of the most significant items from the submodules.
+Each submodule contains detailed release notes for each release of that
+submodule. The release notes below only provide a list of the submodules
+changed, with proper link to their corresponding release notes or change set
+(when no release note is available).
 
 ### R3-13 (February 9, 2024)
 
-* ADCore R3-13
-* ADSpinnaker R3-5
+#### Module releases
+
+* [ADAravis](https://github.com/areaDetector/ADAravis/compare/1455cc46565e2c49ce12d29370ad6253f7e344c0..53bbf86ad1f21d925027396e1730cb0859a8e6a2) [R2-3](https://github.com/areaDetector/ADAravis/blob/master/RELEASE.md#r2-3)
+* [ADCore](https://github.com/areaDetector/ADCore/compare/98f1a82e34d5cc3b5094c0ab102eb30d30b5be16..22d7871cb095a291712e07864d3549c775221b8d) [R3-13](https://github.com/areaDetector/ADCore/blob/master/RELEASE.md#r3-13)
+* [ADEiger](https://github.com/areaDetector/ADEiger/compare/011daeef70ba38be951409b366767298a87545d3..f525fc9d7646cd08cf893d821f2b6eac4cff59d3) [R3-3 R3-4](https://github.com/areaDetector/ADEiger/blob/master/RELEASE.md#r3-4)
+* [ADGenICam](https://github.com/areaDetector/ADGenICam/compare/2b6392dcb9e1789ffe626748a1ffeb3fd7680cff..008ae188a7dd03d9aec996b1273593693cc2dc86) [R1-9](https://github.com/areaDetector/ADGenICam/blob/master/RELEASE.md#r1-9)
+* [ADPcoWin](https://github.com/areaDetector/ADPcoWin/compare/26d054e0b45c26b0bc6ec6280d4ee6b1c9d5d068..415ff98729edd4466f92edc24564ade5bf337fdd) [R6-0](https://github.com/areaDetector/ADPcoWin/blob/master/RELEASE.md#r6-0)
+* [ADSpinnaker](https://github.com/areaDetector/ADSpinnaker/compare/384703a63d384cd7b451ad8511c62e205eaefb8e..39a6931dfecc73ff855120d75e45e3f7e22e542c) [R3-4 R3-5](https://github.com/areaDetector/ADSpinnaker/blob/master/RELEASE.md#r3-5)
+* [ADVimba](https://github.com/areaDetector/ADVimba/compare/a8a8bdd27149f7b8b8d73a4ea8397c0e25cf5bb0..f7f376fb18a5a2ae2194c966774cd7f0aa241945) [R1-4](https://github.com/areaDetector/ADVimba/blob/master/RELEASE.md#r1-4)
+
+#### Modules with untagged updates
+
+* [ADAndor](https://github.com/areaDetector/ADAndor/compare/6f3a1f440dd558ebfe77750829bc10c9a540d285..5a2f546858a57c94b212cc65c759e8a1ee93aff1)
+* [ADAndor3](https://github.com/areaDetector/ADAndor3/compare/6030b0b8452158f13e5ed483518608788c862c1e..5121d0c442912ee0bf359f6f57f1a3a9d90a0b4e)
+* [ADCSimDetector](https://github.com/areaDetector/ADCSimDetector/compare/6d7891e29743f9550ff711b80c329242b8592aee..c514cc353436be8fe4ebf3158244434f49febdfa)
+* [ADCompVision](https://github.com/areaDetector/ADCompVision/compare/6293b75fc24ac7a739e83d0fd681bce987535022..95b292b7a3fee4023501ec3f2e52987a0a1d9b65)
+* [ADDexela](https://github.com/areaDetector/ADDexela/compare/3c3d6553d0b8323fb99bd4cca2dfe7db417d704d..073665f9d1f4c84187eda4e9cdec04b086d002ae)
+* [ADFastCCD](https://github.com/areaDetector/ADFastCCD/compare/5c9076104bbcc4b23c97e64223179eb0c9ab1977..22c258a623721056bb2abee29a4aa3f6b9e69596)
+* [ADLambda](https://github.com/areaDetector/ADLambda/compare/eba876cf8a3debf131e78ffae914efeafc4240d1..720eacf8743aa1b3c3cf953fa764c3d16ae4a258)
+* [ADLightField](https://github.com/areaDetector/ADLightField/compare/49f7d3a034db83fd69644b52a768c2e1f0ca6ad6..3383118260b82d95255f303d673e04d4de0123c9)
+* [ADPICam](https://github.com/areaDetector/ADPICam/compare/9836d85828964c12c58dc4ae5d4b7c1e436def57..4b237492ea35c81083a0c2ef2a63b2c38add0230)
+* [ADPerkinElmer](https://github.com/areaDetector/ADPerkinElmer/compare/b2cefbebab74c254a03f18041d06015db291b19b..dedde58ce1a8a4d27d8e8c819b3239aa793d8020)
+* [ADPilatus](https://github.com/areaDetector/ADPilatus/compare/968cacda9e492b8440a529065eaf49630192b52b..5a649ceb3392b581a19c005db6584fde73ab6ded)
+* [ADPixirad](https://github.com/areaDetector/ADPixirad/compare/8eb939ef6a748e7db34a9a302bd2b96a02276cb5..ea3dc75bd2fe11d5d47e63f838177f97b1fe7a85)
+* [ADPointGrey](https://github.com/areaDetector/ADPointGrey/compare/08d3cf4d1954ac80f311e576133a55dc92fe6167..e23ecf6d04ef41af9bc1562a5483fde8f348acc0)
+* [ADProsilica](https://github.com/areaDetector/ADProsilica/compare/49e330b7389f653642ff5e82db1038438a346945..f3a1b1f962a018087808083fb3feb37dfc7ba326)
+* [ADPvCam](https://github.com/areaDetector/ADPvCam/compare/bd1388a4b756caf96099ac6146f1cac300482570..965a48571cbfb3c7bb9f77e03404ffadc0fa0746)
+* [ADQImaging](https://github.com/areaDetector/ADQImaging/compare/9c12e5181192b9b3cd4ed9af73a9047bbf17fb7c..173b16c9e47e6b4eb967caae7ed8790167ff5fca)
+* [ADRIXSCam](https://github.com/areaDetector/ADRIXSCam/compare/9d313b7131375bc7945123a30674a7520b66a148..0fa1fdb26efc15fbbfc393859d20e49d04b353c7)
+* [ADSimDetector](https://github.com/areaDetector/ADSimDetector/compare/e6c4a708f4825199632e362b3ec77f5aa5e4f49e..4f43aa1fb0d1327beae446be9179da0b5d147127)
+* [ADSupport](https://github.com/areaDetector/ADSupport/compare/3bbe4ff0496210519cf3edcf00cb7443f09ba043..62b91c1154a74a1fb532d831a6ec029bb311b8f7)
+* [ADURL](https://github.com/areaDetector/ADURL/compare/485eff9ae576e0f73afd369c3a7ca40a8faa6867..f164693726974104847535d15b622e8f050fbe8c)
+* [ADViewers](https://github.com/areaDetector/ADViewers/compare/78cb7127d655685d9f4f2c83f0d83c7e5b758d58..88109f38fd96890bc859ba09cfa77a8ddbac3a5f)
+* [ADmar345](https://github.com/areaDetector/ADmar345/compare/3fd2a5a28ca72c2d76fbf4bd894c7e1cb01434ae..6cca372d2e3f95b292ee68ce438880961e4ddb02)
+* [ADmarCCD](https://github.com/areaDetector/ADmarCCD/compare/8f62ac5442ef532a0b8aa0616163d5ff9794577a..78b0654f600bb35dc037182c2935c8e007a91325)
+* [NDDriverStdArrays](https://github.com/areaDetector/NDDriverStdArrays/compare/ac42ed71e3b41095c4641d7dfdf2b40b57758046..e21b2f2f74feb217a0e67ba8f8fc4bfd7efe58e0)
+* [ffmpegServer](https://github.com/areaDetector/ffmpegServer/compare/9fe0d46b49572c229b20d5cd6054fd6fb3cb419f..b9885ddba015163b618ba84e5589c9564209f862)
+* [pvaDriver](https://github.com/areaDetector/pvaDriver/compare/1f51a940ac37f62d140eea8efcd4af00c361d9dc..95219181dda0989ce366f29df32e67bfa1fb82c2)
+
+#### New modules
+
+* [ADPylon](https://github.com/areaDetector/ADPylon/compare/41585bc6f84470810bb6be1883ea883c73f494bb..0421ef930c599ae78f026aab2a104c8d542af544)
 
 ### R3-12-1 (January 22, 2022)
 
