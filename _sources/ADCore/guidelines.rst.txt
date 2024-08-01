@@ -38,7 +38,4 @@ The following are guidelines and rules for writing areaDetector drivers
    -  Call asynNDArrayDriver::getAttributes to attach any attributes
       defined for this driver to the current array.
    -  Call doCallbacksGenericPointer() so that registered clients can
-      get the values of the new arrays. Drivers must release their mutex
-      by calling this->unlock() before they call
-      doCallbacksGenericPointer(), or a deadlock can occur if the plugin
-      makes a call to one of the driver functions.
+      get the values of the new arrays.

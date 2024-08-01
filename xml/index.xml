@@ -189,6 +189,7 @@
     <member refid="class_a_d_gen_i_cam_1ac910ccb7f16aa7c9873987a87ff26eca" kind="function"><name>setImageParams</name></member>
     <member refid="class_a_d_gen_i_cam_1a7489a9ce1d10c05d82ba6ea31fb842ad" kind="function"><name>pauseAcquisition</name></member>
     <member refid="class_a_d_gen_i_cam_1a45ada9c170dbbb222903ed829e7ca5f9" kind="function"><name>resumeAcquisition</name></member>
+    <member refid="class_a_d_gen_i_cam_1a04dd986e8845e9c100cd44b30d1dc9c1" kind="function"><name>showFeature</name></member>
     <member refid="class_a_d_gen_i_cam_1af71a532743b9fca14a1793a326818e2f" kind="function"><name>decompressMono12p</name></member>
     <member refid="class_a_d_gen_i_cam_1a0f2fbbceb7ba3d967ad3ae97b5fb03dd" kind="function"><name>decompressMono12Packed</name></member>
     <member refid="class_a_d_gen_i_cam_1a1989d94807c08ce3f12ee6e950cda256" kind="function"><name>createFeature</name></member>
@@ -1449,6 +1450,7 @@
     <member refid="class_a_d_vimba_1a3d798ca4cfb10d0fda38f77f42e610fc" kind="function"><name>imageGrabTask</name></member>
     <member refid="class_a_d_vimba_1a4003443ca1b3a76ef1edb2a9bfa407d9" kind="function"><name>shutdown</name></member>
     <member refid="class_a_d_vimba_1ace1af0831d9c70142630dc458998193f" kind="function"><name>getCamera</name></member>
+    <member refid="class_a_d_vimba_1a1c1556707d3e3ce79e35dc0c83e45d83" kind="function"><name>connectionCallback</name></member>
     <member refid="class_a_d_vimba_1a67f949aae6f3d022fd5e17f840fd94ae" kind="function"><name>processFrame</name></member>
     <member refid="class_a_d_vimba_1abd8990a0ea16cb7a85bcb1f8744f2287" kind="function"><name>checkError</name></member>
     <member refid="class_a_d_vimba_1aafda90bd5982b72d3d8756fbeaaf494b" kind="function"><name>startCapture</name></member>
@@ -1456,8 +1458,13 @@
     <member refid="class_a_d_vimba_1a5a5156108c65d1a2d48573ce3550c0ca" kind="function"><name>connectCamera</name></member>
     <member refid="class_a_d_vimba_1aa1a1331beb477714beca463a1b0723a3" kind="function"><name>disconnectCamera</name></member>
   </compound>
+  <compound refid="class_a_d_vimba_camera_list_observer" kind="class"><name>ADVimbaCameraListObserver</name>
+    <member refid="class_a_d_vimba_camera_list_observer_1ae133ffc41676070afb8a1561ab546c67" kind="variable"><name>pVimba_</name></member>
+    <member refid="class_a_d_vimba_camera_list_observer_1ae4426ee5ec379d84cfb99228819ddf07" kind="function"><name>ADVimbaCameraListObserver</name></member>
+    <member refid="class_a_d_vimba_camera_list_observer_1a164278be6cae1375f515aa5be0a78f88" kind="function"><name>~ADVimbaCameraListObserver</name></member>
+    <member refid="class_a_d_vimba_camera_list_observer_1a414e6b2edc6b2b07d725e5e8f9db75c2" kind="function"><name>CameraListChanged</name></member>
+  </compound>
   <compound refid="class_a_d_vimba_frame_observer" kind="class"><name>ADVimbaFrameObserver</name>
-    <member refid="class_a_d_vimba_frame_observer_1a570e497cf45067ccb81aca90ff4519e0" kind="variable"><name>pCamera_</name></member>
     <member refid="class_a_d_vimba_frame_observer_1a0ce9bfe7e69677c6e5942f1444189427" kind="variable"><name>pVimba_</name></member>
     <member refid="class_a_d_vimba_frame_observer_1afc2db366eac21be6c90160ed14aaead1" kind="function"><name>ADVimbaFrameObserver</name></member>
     <member refid="class_a_d_vimba_frame_observer_1a6e82e59ba09f7a533ee19462f7fba948" kind="function"><name>~ADVimbaFrameObserver</name></member>
@@ -9566,6 +9573,14 @@
   </compound>
   <compound refid="_a_d_gen_i_cam_8cpp" kind="file"><name>ADGenICam.cpp</name>
     <member refid="_a_d_gen_i_cam_8cpp_1af0e94d13028051cd5339d204bfbb057d" kind="variable"><name>driverName</name></member>
+    <member refid="_a_d_gen_i_cam_8cpp_1ab1a9269ada2ba901605eb4675f7b4971" kind="variable"><name>arg0</name></member>
+    <member refid="_a_d_gen_i_cam_8cpp_1a043b09258b60fb27c53805182d5482fb" kind="variable"><name>arg1</name></member>
+    <member refid="_a_d_gen_i_cam_8cpp_1a00bfd56512bbf7967b33e858ddde313f" kind="variable"><name>args</name></member>
+    <member refid="_a_d_gen_i_cam_8cpp_1a03433e35bbafc307cc3796853d7af58a" kind="variable"><name>showFeature</name></member>
+    <member refid="_a_d_gen_i_cam_8cpp_1ae9cefff4cb48256af2245fa858cde2c0" kind="function"><name>genicamShowFeature</name></member>
+    <member refid="_a_d_gen_i_cam_8cpp_1adefae499fce3388649576273330db915" kind="function"><name>genicamShowFeatureCallFunc</name></member>
+    <member refid="_a_d_gen_i_cam_8cpp_1a75b7930491ace829244ea0c4d9a141d5" kind="function"><name>ADGenICamRegister</name></member>
+    <member refid="_a_d_gen_i_cam_8cpp_1a51adc0eb8b8a227b6c2dfc3db64aafc2" kind="function"><name>epicsExportRegistrar</name></member>
   </compound>
   <compound refid="_a_d_gen_i_cam_8h" kind="file"><name>ADGenICam.h</name>
     <member refid="_a_d_gen_i_cam_8h_1a4cdeddb1874345069fcb1fa0e02ac489" kind="define"><name>GCFrameRateString</name></member>

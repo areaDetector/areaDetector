@@ -67,74 +67,62 @@ $(function() {
 <div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="_a_d_vimba_8h.html#af619eb803db2beec7ace50bf736491dc">   17</a></span>&#160;<span class="preprocessor">#define VMBTimeStampModeString       &quot;VMB_TIME_STAMP_MODE&quot;</span>        <span class="comment">// asynParamInt32, R/O</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="_a_d_vimba_8h.html#ad60fdf7c52a378116552513ffaabbf60">   18</a></span>&#160;<span class="preprocessor">#define VMBUniqueIdModeString        &quot;VMB_UNIQUE_ID_MODE&quot;</span>         <span class="comment">// asynParamInt32, R/O</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="class_a_d_vimba_frame_observer.html">   20</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_a_d_vimba_frame_observer.html">ADVimbaFrameObserver</a> : <span class="keyword">virtual</span> <span class="keyword">public</span> IFrameObserver {</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="class_a_d_vimba_frame_observer.html">ADVimbaFrameObserver</a>(CameraPtr pCamera, <span class="keyword">class</span> <a class="code" href="class_a_d_vimba.html">ADVimba</a> *pVimba);</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    ~<a class="code" href="class_a_d_vimba_frame_observer.html">ADVimbaFrameObserver</a>();</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> FrameReceived(<span class="keyword">const</span> FramePtr pFrame);</div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="class_a_d_vimba_frame_observer.html#a570e497cf45067ccb81aca90ff4519e0">   25</a></span>&#160;    CameraPtr <a class="code" href="class_a_d_vimba_frame_observer.html#a570e497cf45067ccb81aca90ff4519e0">pCamera_</a>;</div>
-<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="class_a_d_vimba_frame_observer.html#a0ce9bfe7e69677c6e5942f1444189427">   26</a></span>&#160;    <span class="keyword">class </span><a class="code" href="class_a_d_vimba.html">ADVimba</a> *<a class="code" href="class_a_d_vimba_frame_observer.html#a0ce9bfe7e69677c6e5942f1444189427">pVimba_</a>;  </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;};</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="class_a_d_vimba.html">   23</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_a_d_vimba.html">ADVimba</a> : <span class="keyword">public</span> <a class="code" href="class_a_d_gen_i_cam.html">ADGenICam</a></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;{</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <a class="code" href="class_a_d_vimba.html">ADVimba</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *portName, <span class="keyword">const</span> <span class="keywordtype">char</span> *cameraId,</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            <span class="keywordtype">size_t</span> maxMemory, <span class="keywordtype">int</span> priority, <span class="keywordtype">int</span> stackSize);</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="class_a_d_vimba.html">   32</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_a_d_vimba.html">ADVimba</a> : <span class="keyword">public</span> <a class="code" href="class_a_d_gen_i_cam.html">ADGenICam</a></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;{</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <a class="code" href="class_a_d_vimba.html">ADVimba</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *portName, <span class="keyword">const</span> <span class="keywordtype">char</span> *cameraId,</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            <span class="keywordtype">size_t</span> maxMemory, <span class="keywordtype">int</span> priority, <span class="keywordtype">int</span> stackSize);</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="comment">// virtual methods to override from ADGenICam</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="comment">//virtual asynStatus writeInt32( asynUser *pasynUser, epicsInt32 value);</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="comment">//virtual asynStatus writeFloat64( asynUser *pasynUser, epicsFloat64 value);</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keyword">virtual</span> asynStatus readEnum(asynUser *pasynUser, <span class="keywordtype">char</span> *strings[], <span class="keywordtype">int</span> values[], <span class="keywordtype">int</span> severities[], </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                                <span class="keywordtype">size_t</span> nElements, <span class="keywordtype">size_t</span> *nIn);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">void</span> report(FILE *fp, <span class="keywordtype">int</span> details);</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="class_gen_i_cam_feature.html">GenICamFeature</a> *createFeature(<a class="code" href="class_gen_i_cam_feature_set.html">GenICamFeatureSet</a> *set, </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                                          <a class="code" href="namespacehdf5.html#abeed318faeb13380e1b4221bd4198bf1aea271040d7a5b8d9af9cbf6564d262d5">std::string</a> <span class="keyword">const</span> &amp; asynName, asynParamType asynType, <span class="keywordtype">int</span> asynIndex,</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                                          <a class="code" href="namespacehdf5.html#abeed318faeb13380e1b4221bd4198bf1aea271040d7a5b8d9af9cbf6564d262d5">std::string</a> <span class="keyword">const</span> &amp; featureName, <a class="code" href="_gen_i_cam_feature_8h.html#a7e16ddb9db92703eb6dc8b3d6bfd5f05">GCFeatureType_t</a> featureType);</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordtype">void</span> imageGrabTask();</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordtype">void</span> shutdown();</div>
-<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="class_a_d_vimba.html#ace1af0831d9c70142630dc458998193f">   51</a></span>&#160;    CameraPtr <a class="code" href="class_a_d_vimba.html#ace1af0831d9c70142630dc458998193f">getCamera</a>();</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    asynStatus processFrame(FramePtr pFrame);</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keyword">inline</span> asynStatus checkError(VmbErrorType error, <span class="keyword">const</span> <span class="keywordtype">char</span> *functionName, <span class="keyword">const</span> <span class="keywordtype">char</span> *message);</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordtype">int</span> VMBConvertPixelFormat;</div>
-<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="_a_d_vimba_8h.html#a71e64bd5305558759f5dc1e3e5438992">   57</a></span>&#160;<span class="preprocessor">#define FIRST_VMB_PARAM VMBConvertPixelFormat;</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordtype">int</span> VMBTimeStampMode;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordtype">int</span> VMBUniqueIdMode;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="comment">/* Local methods to this class */</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    asynStatus startCapture();</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    asynStatus stopCapture();</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    asynStatus connectCamera();</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    asynStatus disconnectCamera();</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span> *cameraId_;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    CameraPtr pCamera_;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    VimbaSystem &amp; system_;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="comment">// virtual methods to override from ADGenICam</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="comment">//virtual asynStatus writeInt32( asynUser *pasynUser, epicsInt32 value);</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="comment">//virtual asynStatus writeFloat64( asynUser *pasynUser, epicsFloat64 value);</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keyword">virtual</span> asynStatus readEnum(asynUser *pasynUser, <span class="keywordtype">char</span> *strings[], <span class="keywordtype">int</span> values[], <span class="keywordtype">int</span> severities[], </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                                <span class="keywordtype">size_t</span> nElements, <span class="keywordtype">size_t</span> *nIn);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordtype">void</span> report(FILE *fp, <span class="keywordtype">int</span> details);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="class_gen_i_cam_feature.html">GenICamFeature</a> *createFeature(<a class="code" href="class_gen_i_cam_feature_set.html">GenICamFeatureSet</a> *set, </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                                          <a class="code" href="namespacehdf5.html#abeed318faeb13380e1b4221bd4198bf1aea271040d7a5b8d9af9cbf6564d262d5">std::string</a> <span class="keyword">const</span> &amp; asynName, asynParamType asynType, <span class="keywordtype">int</span> asynIndex,</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                                          <a class="code" href="namespacehdf5.html#abeed318faeb13380e1b4221bd4198bf1aea271040d7a5b8d9af9cbf6564d262d5">std::string</a> <span class="keyword">const</span> &amp; featureName, <a class="code" href="_gen_i_cam_feature_8h.html#a7e16ddb9db92703eb6dc8b3d6bfd5f05">GCFeatureType_t</a> featureType);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordtype">void</span> imageGrabTask();</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordtype">void</span> shutdown();</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    CameraPtr getCamera();</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">void</span> connectionCallback(UpdateTriggerType reason);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    asynStatus processFrame(FramePtr pFrame);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keyword">inline</span> asynStatus checkError(VmbErrorType error, <span class="keyword">const</span> <span class="keywordtype">char</span> *functionName, <span class="keyword">const</span> <span class="keywordtype">char</span> *message);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordtype">int</span> VMBConvertPixelFormat;</div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="_a_d_vimba_8h.html#a71e64bd5305558759f5dc1e3e5438992">   49</a></span>&#160;<span class="preprocessor">#define FIRST_VMB_PARAM VMBConvertPixelFormat;</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordtype">int</span> VMBTimeStampMode;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordtype">int</span> VMBUniqueIdMode;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="comment">/* Local methods to this class */</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    asynStatus startCapture();</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    asynStatus stopCapture();</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    asynStatus connectCamera();</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    asynStatus disconnectCamera();</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span> *cameraId_;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    CameraPtr pCamera_;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    VimbaSystem &amp; system_;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordtype">bool</span> exiting_;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordtype">bool</span> acquiring_;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    epicsEventId startEventId_;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    epicsEventId newFrameEventId_;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordtype">int</span> uniqueId_;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    std::vector&lt;string&gt; TLStatisticsFeatureNames_;</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordtype">bool</span> exiting_;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordtype">bool</span> acquiring_;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    epicsEventId startEventId_;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    epicsEventId newFrameEventId_;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordtype">int</span> uniqueId_;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    </div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    std::vector&lt;string&gt; TLStatisticsFeatureNames_;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;};</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;};</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
 <div class="ttc" id="a_a_d_gen_i_cam_8h_html"><div class="ttname"><a href="_a_d_gen_i_cam_8h.html">ADGenICam.h</a></div></div>
 <div class="ttc" id="a_gen_i_cam_feature_8h_html_a7e16ddb9db92703eb6dc8b3d6bfd5f05"><div class="ttname"><a href="_gen_i_cam_feature_8h.html#a7e16ddb9db92703eb6dc8b3d6bfd5f05">GCFeatureType_t</a></div><div class="ttdeci">GCFeatureType_t</div><div class="ttdef"><b>Definition:</b> GenICamFeature.h:13</div></div>
 <div class="ttc" id="a_vimba_feature_8h_html"><div class="ttname"><a href="_vimba_feature_8h.html">VimbaFeature.h</a></div></div>
 <div class="ttc" id="aclass_a_d_gen_i_cam_html"><div class="ttname"><a href="class_a_d_gen_i_cam.html">ADGenICam</a></div><div class="ttdef"><b>Definition:</b> ADGenICam.h:25</div></div>
-<div class="ttc" id="aclass_a_d_vimba_frame_observer_html"><div class="ttname"><a href="class_a_d_vimba_frame_observer.html">ADVimbaFrameObserver</a></div><div class="ttdef"><b>Definition:</b> ADVimba.h:20</div></div>
-<div class="ttc" id="aclass_a_d_vimba_frame_observer_html_a0ce9bfe7e69677c6e5942f1444189427"><div class="ttname"><a href="class_a_d_vimba_frame_observer.html#a0ce9bfe7e69677c6e5942f1444189427">ADVimbaFrameObserver::pVimba_</a></div><div class="ttdeci">class ADVimba * pVimba_</div><div class="ttdef"><b>Definition:</b> ADVimba.h:26</div></div>
-<div class="ttc" id="aclass_a_d_vimba_frame_observer_html_a570e497cf45067ccb81aca90ff4519e0"><div class="ttname"><a href="class_a_d_vimba_frame_observer.html#a570e497cf45067ccb81aca90ff4519e0">ADVimbaFrameObserver::pCamera_</a></div><div class="ttdeci">CameraPtr pCamera_</div><div class="ttdef"><b>Definition:</b> ADVimba.h:25</div></div>
-<div class="ttc" id="aclass_a_d_vimba_html"><div class="ttname"><a href="class_a_d_vimba.html">ADVimba</a></div><div class="ttdoc">Main driver class inherited from areaDetectors ADGenICam class.</div><div class="ttdef"><b>Definition:</b> ADVimba.h:33</div></div>
-<div class="ttc" id="aclass_a_d_vimba_html_ace1af0831d9c70142630dc458998193f"><div class="ttname"><a href="class_a_d_vimba.html#ace1af0831d9c70142630dc458998193f">ADVimba::getCamera</a></div><div class="ttdeci">CameraPtr getCamera()</div></div>
+<div class="ttc" id="aclass_a_d_vimba_html"><div class="ttname"><a href="class_a_d_vimba.html">ADVimba</a></div><div class="ttdoc">Main driver class inherited from areaDetectors ADGenICam class.</div><div class="ttdef"><b>Definition:</b> ADVimba.h:24</div></div>
 <div class="ttc" id="aclass_gen_i_cam_feature_html"><div class="ttname"><a href="class_gen_i_cam_feature.html">GenICamFeature</a></div><div class="ttdef"><b>Definition:</b> GenICamFeature.h:41</div></div>
 <div class="ttc" id="aclass_gen_i_cam_feature_set_html"><div class="ttname"><a href="class_gen_i_cam_feature_set.html">GenICamFeatureSet</a></div><div class="ttdef"><b>Definition:</b> GenICamFeature.h:123</div></div>
 <div class="ttc" id="anamespace_a_v_t_1_1_vmb_a_p_i_html"><div class="ttname"><a href="namespace_a_v_t_1_1_vmb_a_p_i.html">AVT::VmbAPI</a></div><div class="ttdef"><b>Definition:</b> ListCameras.cpp:41</div></div>
