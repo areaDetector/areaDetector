@@ -109,7 +109,7 @@ following table.
     - longout, longin
   * - asynInt32
     - r/w
-    - Selects whether the plugin outputs NDArrays in the order in which they arrive (Unsorted=1)
+    - Selects whether the plugin outputs NDArrays in the order in which they arrive (Unsorted=0)
       or sorted by UniqueId (Sorted=1).
     - SORT_MODE
     - $(P)$(R)SortMode, $(P)$(R)SortMode_RBV

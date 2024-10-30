@@ -93,7 +93,9 @@ tables.
       ROISTAT_TS_CURRENT_POINT. Used to restart collection after a Stop operation. |br|
       **Stop**: Stops times-series data collection. Performs callbacks on all time-series
       waveform records. |br|
-      **Read**: Performs callbacks on all time-series waveform records, updating the values.
+      **Read**: Performs callbacks on all time-series waveform records, updating the values. |br|
+      **Erase**: Clears all time-series arrays, sets ROISTAT_TS_CURRENT_POINT=0, and performs 
+      callbacks on all time-series waveform records.
     - ROISTAT_TS_CONTROL
     - $(P)$(R)TSControl
     - mbbo

@@ -20,8 +20,6 @@ The FFT algorithm used requires that the input array dimensions be a
 power of 2. The plugin will pad the array to the next larger power of 2
 if the input array does not meet this requirement.
 
-.. todo:: Fix links
-
 The `ADCSimDetector <ADCSimDetectorDoc.html>`__ application simulates an
 8-channel ADC with different waveforms. This application is useful for
 testing and demonstrating the NDPluginFFT plugin with 1-D NDArray input.
