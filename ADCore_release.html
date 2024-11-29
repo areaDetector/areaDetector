@@ -49,7 +49,7 @@
 <li class="toctree-l1"><a class="reference internal" href="release.html">Top-level Release Notes</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">ADCore Release Notes</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#r3-14-april-xxx-2024"><strong>R3-14 (April XXX, 2024)</strong></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#r3-14-november-xxx-2024"><strong>R3-14 (November XXX, 2024)</strong></a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#asynndarraydriver-and-ndpluginbase-template">asynNDArrayDriver and NDPluginBase.template</a></li>
 </ul>
 </li>
@@ -361,7 +361,7 @@
 <a class="reference external" href="https://github.com/areaDetector/ADCore">https://github.com/areaDetector/ADCore</a>.</p>
 <p>Tagged source code and pre-built binary releases prior to R2-0 are included
 in the areaDetector releases available via links at
-<a class="reference external" href="https://cars.uchicago.edu/software/epics/areaDetector.html">https://cars.uchicago.edu/software/epics/areaDetector.html</a>.</p>
+<a class="reference external" href="https://areadetector.github.io/areaDetector/legacy_versions.html">https://areadetector.github.io/areaDetector/legacy_versions.html</a>.</p>
 <p>Tagged source code releases from R2-0 onward can be obtained at
 <a class="reference external" href="https://github.com/areaDetector/ADCore/releases">https://github.com/areaDetector/ADCore/releases</a>.</p>
 <p>The versions of EPICS base, asyn, and other synApps modules used for each release can be obtained from
@@ -369,8 +369,8 @@ the EXAMPLE_RELEASE_PATHS.local, EXAMPLE_RELEASE_LIBS.local, and EXAMPLE_RELEASE
 files respectively, in the configure/ directory of the appropriate release of the
 <a class="reference external" href="https://github.com/areaDetector/areaDetector">top-level areaDetector</a> repository.</p>
 </section>
-<section id="r3-14-april-xxx-2024">
-<h2><strong>R3-14 (April XXX, 2024)</strong><a class="headerlink" href="#r3-14-april-xxx-2024" title="Link to this heading"></a></h2>
+<section id="r3-14-november-xxx-2024">
+<h2><strong>R3-14 (November XXX, 2024)</strong><a class="headerlink" href="#r3-14-november-xxx-2024" title="Link to this heading"></a></h2>
 <section id="asynndarraydriver-and-ndpluginbase-template">
 <h3>asynNDArrayDriver and NDPluginBase.template<a class="headerlink" href="#asynndarraydriver-and-ndpluginbase-template" title="Link to this heading"></a></h3>
 <ul>
@@ -419,9 +419,19 @@ This was changed to add the following progress indicators:</p>
 <li><p>ArrayCounter_RBV is incremented as each array is written.</p></li>
 <li><p>ArrayRate_RBV is updated, so the number of frames/s being written is visible.</p></li>
 <li><p>NumCaptured_RBV counts down from NumCaptured to 0, so the number
-of remaining frames is visible.</p></li>
+of remaining frames is visible.
+### NDFileTIFF</p></li>
 </ul>
 </li>
+<li><p>Fixed a bug introduced in R3-8.<span class="raw-html-m2r"><br></span>
+Integer attributes smaller than Int64 might not be correctly written to the file.
+### NDPluginROIStat</p></li>
+<li><p>Added the ability to clear the time series data without starting a new acquisition.
+### myAttributeFunctions.cpp</p></li>
+<li><p>Added code to create NDAttributes of all numeric data types.</p></li>
+<li><p>These were used to test the fix to NDFileTIFF, and can be generally useful.
+### Documentation</p></li>
+<li><p>Removed the documentation/ directory, which was obsolete.</p></li>
 </ul>
 </section>
 </section>
@@ -2862,7 +2872,7 @@ is the quotient of the two numbers, which is not what is desired.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, Mark Rivers.
-      <span class="lastupdated">Last updated on 2024-October-30.
+      <span class="lastupdated">Last updated on 2024-November-29.
       </span></p>
   </div>
 

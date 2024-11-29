@@ -74,8 +74,8 @@ $(function() {
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            <span class="keywordtype">size_t</span> maxMemory, <span class="keywordtype">int</span> priority, <span class="keywordtype">int</span> stackSize);</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="comment">// virtual methods to override from ADGenICam</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="comment">//virtual asynStatus writeInt32( asynUser *pasynUser, epicsInt32 value);</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="comment">//virtual asynStatus writeFloat64( asynUser *pasynUser, epicsFloat64 value);</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keyword">virtual</span> asynStatus connect(asynUser* pasynUser);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keyword">virtual</span> asynStatus disconnect(asynUser* pasynUser);</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keyword">virtual</span> asynStatus readEnum(asynUser *pasynUser, <span class="keywordtype">char</span> *strings[], <span class="keywordtype">int</span> values[], <span class="keywordtype">int</span> severities[], </div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                                <span class="keywordtype">size_t</span> nElements, <span class="keywordtype">size_t</span> *nIn);</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordtype">void</span> report(FILE *fp, <span class="keywordtype">int</span> details);</div>
@@ -101,7 +101,7 @@ $(function() {
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    asynStatus stopCapture();</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    asynStatus connectCamera();</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    asynStatus disconnectCamera();</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    asynStatus adjustPacketSize();</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span> *cameraId_;</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    CameraPtr pCamera_;</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    VimbaSystem &amp; system_;</div>

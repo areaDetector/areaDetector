@@ -9,7 +9,7 @@ ADPylon
 .. _GenICam:      https://www.emva.org/standards-technology/genicam
 .. _ADGenICam:    https://github.com/areaDetector/ADGenICam
 .. _ADPylon:      https://github.com/areaDetector/ADPylon
-.. _Pylon:        https://www.baslerweb.com/en/products/basler-pylon-camera-software-suite/pylon-sdks
+.. _Pylon:        https://www.baslerweb.com/en/software/pylon/sdk/
 .. _ADPylon class: ../areaDetectorDoxygenHTML/class_a_d_pylon.html
 
 Overview

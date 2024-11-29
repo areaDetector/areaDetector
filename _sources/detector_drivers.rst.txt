@@ -15,6 +15,7 @@ Detector Drivers
     ADEuresys/ADEuresys
     ADFastCCD/index
     ADGenICam/ADGenICam
+    ADHamamatsuDCAM/ADHamamatsuDCAM
     ADLambda/ADLambda
     ADLightField/ADLightField
     ADmarCCD/marCCDDoc

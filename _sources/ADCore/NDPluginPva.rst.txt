@@ -10,7 +10,7 @@ Overview
 This plugin converts NDArray data produced by asynNDArrayDrivers into
 the EPICSv4 normative type NTNDArray. An embedded EPICSv4 server is
 created to serve the new NTNDArray structure as an EPICSv4 PV. A
-`description <http://epics-pvdata.sourceforge.net/alpha/normativeTypes/normativeTypesNDArray.html>`__
+`description <https://docs.epics-controls.org/en/latest/pv-access/Normative-Types-Specification.html#ntndarray>`__
 of the structure of the NTNDArray normative type is available.
 
 NDPluginPva defines the following parameters.

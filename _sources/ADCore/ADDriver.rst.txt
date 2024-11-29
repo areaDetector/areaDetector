@@ -323,14 +323,14 @@ possible.
   * - ADShutterOpenDelay 
     - asynFloat64 
     - r/w 
-    - Time required for the shutter to actually open (ADShutterStatus_t) 
+    - Time required for the shutter to actually open 
     - SHUTTER_OPEN_DELAY 
     - $(P)$(R)ShutterOpenDelay, $(P)$(R)ShutterOpenDelay_RBV 
     - ao, ai 
   * - ADShutterCloseDelay 
     - asynFloat64 
     - r/w 
-    - Time required for the shutter to actually close (ADShutterStatus_t) 
+    - Time required for the shutter to actually close 
     - SHUTTER_CLOSE_DELAY 
     - $(P)$(R)ShutterCloseDelay, $(P)$(R)ShutterCloseDelay_RBV 
     - ao, ai 

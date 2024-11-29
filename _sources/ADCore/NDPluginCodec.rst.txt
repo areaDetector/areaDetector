@@ -161,7 +161,7 @@ following table.
     - r/w
     - Compression factor.
     - COMP_FACTOR
-    - $(P)$(R)CompFactor
+    - $(P)$(R)CompFactor_RBV
     - ai
   * -
     -

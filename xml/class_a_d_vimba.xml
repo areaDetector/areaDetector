@@ -237,7 +237,53 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/areaDetector/areaDetector/ADVimba/vimbaApp/src/ADVimba.h" line="26" column="5" bodyfile="/home/runner/work/areaDetector/areaDetector/ADVimba/vimbaApp/src/ADVimba.cpp" bodystart="145" bodyend="221"/>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADVimba/vimbaApp/src/ADVimba.h" line="26" column="5" bodyfile="/home/runner/work/areaDetector/areaDetector/ADVimba/vimbaApp/src/ADVimba.cpp" bodystart="145" bodyend="224"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_d_vimba_1ac71508a1f103acfbd04d33137b18549b" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>asynStatus</type>
+        <definition>asynStatus ADVimba::connect</definition>
+        <argsstring>(asynUser *pasynUser)</argsstring>
+        <name>connect</name>
+        <reimplements refid="class_a_d_driver_1a619dfbdc35605a104d2a07ea46f37b5f">connect</reimplements>
+        <param>
+          <type>asynUser *</type>
+          <declname>pasynUser</declname>
+        </param>
+        <briefdescription>
+<para>Connects driver to device; This method is called when the driver&apos;s pasynCommon-&gt;<ref refid="class_a_d_vimba_1ac71508a1f103acfbd04d33137b18549b" kindref="member">connect()</ref> function is called. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>It uses the class variable deviceIsReachable to determine whether to call asynPortDriver::connect(), which in turn calls pasynManager::exceptionConnect() to signal that the driver is connected to the underlying hardware. Derived classes can override this method if they need to handle <ref refid="class_a_d_vimba_1ac71508a1f103acfbd04d33137b18549b" kindref="member">connect()</ref> calls in a more complex way. For example, with a network camera that can be temporarily unreachable the driver could attempt to connect to the camera each time that <ref refid="class_a_d_vimba_1ac71508a1f103acfbd04d33137b18549b" kindref="member">connect()</ref> is called. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pasynUser</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The pasynUser structure which contains information about the port and address </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADVimba/vimbaApp/src/ADVimba.h" line="30" column="24" bodyfile="/home/runner/work/areaDetector/areaDetector/ADVimba/vimbaApp/src/ADVimba.cpp" bodystart="238" bodyend="241"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_d_vimba_1ab3401c1234074fceab5910098967731f" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>asynStatus</type>
+        <definition>asynStatus ADVimba::disconnect</definition>
+        <argsstring>(asynUser *pasynUser)</argsstring>
+        <name>disconnect</name>
+        <param>
+          <type>asynUser *</type>
+          <declname>pasynUser</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADVimba/vimbaApp/src/ADVimba.h" line="31" column="24" bodyfile="/home/runner/work/areaDetector/areaDetector/ADVimba/vimbaApp/src/ADVimba.cpp" bodystart="245" bodyend="248"/>
       </memberdef>
       <memberdef kind="function" id="class_a_d_vimba_1afdc27f413f3ef9e4f381e76484cd5c1b" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>asynStatus</type>
@@ -278,7 +324,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/areaDetector/areaDetector/ADVimba/vimbaApp/src/ADVimba.h" line="32" column="24" bodyfile="/home/runner/work/areaDetector/areaDetector/ADVimba/vimbaApp/src/ADVimba.cpp" bodystart="618" bodyend="630"/>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADVimba/vimbaApp/src/ADVimba.h" line="32" column="24" bodyfile="/home/runner/work/areaDetector/areaDetector/ADVimba/vimbaApp/src/ADVimba.cpp" bodystart="657" bodyend="669"/>
       </memberdef>
       <memberdef kind="function" id="class_a_d_vimba_1ac297bd96397e205d27dc78480f8260ce" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -319,7 +365,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/areaDetector/areaDetector/ADVimba/vimbaApp/src/ADVimba.h" line="34" column="10" bodyfile="/home/runner/work/areaDetector/areaDetector/ADVimba/vimbaApp/src/ADVimba.cpp" bodystart="675" bodyend="707"/>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADVimba/vimbaApp/src/ADVimba.h" line="34" column="10" bodyfile="/home/runner/work/areaDetector/areaDetector/ADVimba/vimbaApp/src/ADVimba.cpp" bodystart="714" bodyend="746"/>
       </memberdef>
       <memberdef kind="function" id="class_a_d_vimba_1a17c5f19228b984b5f4351f892cc64b8a" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type><ref refid="class_gen_i_cam_feature" kindref="compound">GenICamFeature</ref> *</type>
@@ -358,7 +404,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/areaDetector/areaDetector/ADVimba/vimbaApp/src/ADVimba.h" line="35" column="28" bodyfile="/home/runner/work/areaDetector/areaDetector/ADVimba/vimbaApp/src/ADVimba.cpp" bodystart="246" bodyend="250"/>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADVimba/vimbaApp/src/ADVimba.h" line="35" column="28" bodyfile="/home/runner/work/areaDetector/areaDetector/ADVimba/vimbaApp/src/ADVimba.cpp" bodystart="261" bodyend="265"/>
       </memberdef>
       <memberdef kind="function" id="class_a_d_vimba_1a3d798ca4cfb10d0fda38f77f42e610fc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -372,7 +418,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/areaDetector/areaDetector/ADVimba/vimbaApp/src/ADVimba.h" line="40" column="10" bodyfile="/home/runner/work/areaDetector/areaDetector/ADVimba/vimbaApp/src/ADVimba.cpp" bodystart="305" bodyend="360"/>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADVimba/vimbaApp/src/ADVimba.h" line="40" column="10" bodyfile="/home/runner/work/areaDetector/areaDetector/ADVimba/vimbaApp/src/ADVimba.cpp" bodystart="344" bodyend="399"/>
       </memberdef>
       <memberdef kind="function" id="class_a_d_vimba_1a4003443ca1b3a76ef1edb2a9bfa407d9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -385,7 +431,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/areaDetector/areaDetector/ADVimba/vimbaApp/src/ADVimba.h" line="41" column="10" bodyfile="/home/runner/work/areaDetector/areaDetector/ADVimba/vimbaApp/src/ADVimba.cpp" bodystart="235" bodyend="244"/>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADVimba/vimbaApp/src/ADVimba.h" line="41" column="10" bodyfile="/home/runner/work/areaDetector/areaDetector/ADVimba/vimbaApp/src/ADVimba.cpp" bodystart="250" bodyend="259"/>
       </memberdef>
       <memberdef kind="function" id="class_a_d_vimba_1ace1af0831d9c70142630dc458998193f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>CameraPtr</type>
@@ -398,7 +444,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/areaDetector/areaDetector/ADVimba/vimbaApp/src/ADVimba.h" line="42" column="15" bodyfile="/home/runner/work/areaDetector/areaDetector/ADVimba/vimbaApp/src/ADVimba.cpp" bodystart="252" bodyend="254"/>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADVimba/vimbaApp/src/ADVimba.h" line="42" column="15" bodyfile="/home/runner/work/areaDetector/areaDetector/ADVimba/vimbaApp/src/ADVimba.cpp" bodystart="267" bodyend="269"/>
       </memberdef>
       <memberdef kind="function" id="class_a_d_vimba_1a1c1556707d3e3ce79e35dc0c83e45d83" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -415,7 +461,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/areaDetector/areaDetector/ADVimba/vimbaApp/src/ADVimba.h" line="43" column="10" bodyfile="/home/runner/work/areaDetector/areaDetector/ADVimba/vimbaApp/src/ADVimba.cpp" bodystart="281" bodyend="299"/>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADVimba/vimbaApp/src/ADVimba.h" line="43" column="10" bodyfile="/home/runner/work/areaDetector/areaDetector/ADVimba/vimbaApp/src/ADVimba.cpp" bodystart="320" bodyend="338"/>
       </memberdef>
       <memberdef kind="function" id="class_a_d_vimba_1a67f949aae6f3d022fd5e17f840fd94ae" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>asynStatus</type>
@@ -432,7 +478,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/areaDetector/areaDetector/ADVimba/vimbaApp/src/ADVimba.h" line="44" column="16" bodyfile="/home/runner/work/areaDetector/areaDetector/ADVimba/vimbaApp/src/ADVimba.cpp" bodystart="362" bodyend="616"/>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADVimba/vimbaApp/src/ADVimba.h" line="44" column="16" bodyfile="/home/runner/work/areaDetector/areaDetector/ADVimba/vimbaApp/src/ADVimba.cpp" bodystart="401" bodyend="655"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-func">
@@ -459,7 +505,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/areaDetector/areaDetector/ADVimba/vimbaApp/src/ADVimba.h" line="47" column="23" bodyfile="/home/runner/work/areaDetector/areaDetector/ADVimba/vimbaApp/src/ADVimba.cpp" bodystart="223" bodyend="232"/>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADVimba/vimbaApp/src/ADVimba.h" line="47" column="23" bodyfile="/home/runner/work/areaDetector/areaDetector/ADVimba/vimbaApp/src/ADVimba.cpp" bodystart="226" bodyend="235"/>
       </memberdef>
       <memberdef kind="function" id="class_a_d_vimba_1aafda90bd5982b72d3d8756fbeaaf494b" prot="private" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>asynStatus</type>
@@ -473,7 +519,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/areaDetector/areaDetector/ADVimba/vimbaApp/src/ADVimba.h" line="54" column="16" bodyfile="/home/runner/work/areaDetector/areaDetector/ADVimba/vimbaApp/src/ADVimba.cpp" bodystart="632" bodyend="646"/>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADVimba/vimbaApp/src/ADVimba.h" line="54" column="16" bodyfile="/home/runner/work/areaDetector/areaDetector/ADVimba/vimbaApp/src/ADVimba.cpp" bodystart="671" bodyend="685"/>
       </memberdef>
       <memberdef kind="function" id="class_a_d_vimba_1a023373adeaca292de12532e339711d0c" prot="private" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>asynStatus</type>
@@ -487,7 +533,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/areaDetector/areaDetector/ADVimba/vimbaApp/src/ADVimba.h" line="55" column="16" bodyfile="/home/runner/work/areaDetector/areaDetector/ADVimba/vimbaApp/src/ADVimba.cpp" bodystart="649" bodyend="672"/>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADVimba/vimbaApp/src/ADVimba.h" line="55" column="16" bodyfile="/home/runner/work/areaDetector/areaDetector/ADVimba/vimbaApp/src/ADVimba.cpp" bodystart="688" bodyend="711"/>
       </memberdef>
       <memberdef kind="function" id="class_a_d_vimba_1a5a5156108c65d1a2d48573ce3550c0ca" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>asynStatus</type>
@@ -500,7 +546,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/areaDetector/areaDetector/ADVimba/vimbaApp/src/ADVimba.h" line="56" column="16" bodyfile="/home/runner/work/areaDetector/areaDetector/ADVimba/vimbaApp/src/ADVimba.cpp" bodystart="256" bodyend="279"/>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADVimba/vimbaApp/src/ADVimba.h" line="56" column="16" bodyfile="/home/runner/work/areaDetector/areaDetector/ADVimba/vimbaApp/src/ADVimba.cpp" bodystart="271" bodyend="285"/>
       </memberdef>
       <memberdef kind="function" id="class_a_d_vimba_1aa1a1331beb477714beca463a1b0723a3" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>asynStatus</type>
@@ -513,7 +559,20 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/areaDetector/areaDetector/ADVimba/vimbaApp/src/ADVimba.h" line="57" column="16"/>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADVimba/vimbaApp/src/ADVimba.h" line="57" column="16" bodyfile="/home/runner/work/areaDetector/areaDetector/ADVimba/vimbaApp/src/ADVimba.cpp" bodystart="287" bodyend="300"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_d_vimba_1a83866e05e286f5b80b5c82e04c0f4eab" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>asynStatus</type>
+        <definition>asynStatus ADVimba::adjustPacketSize</definition>
+        <argsstring>()</argsstring>
+        <name>adjustPacketSize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADVimba/vimbaApp/src/ADVimba.h" line="58" column="16" bodyfile="/home/runner/work/areaDetector/areaDetector/ADVimba/vimbaApp/src/ADVimba.cpp" bodystart="303" bodyend="318"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -653,6 +712,7 @@
       <member refid="class_a_d_driver_1af7a169a1ab5a9069c5d556bf5c7ac387" prot="protected" virt="non-virtual"><scope>ADVimba</scope><name>ADGain</name></member>
       <member refid="class_a_d_gen_i_cam_1a11bf34b8a6493bfbf090852e2f82dd61" prot="public" virt="non-virtual"><scope>ADVimba</scope><name>ADGenICam</name></member>
       <member refid="class_a_d_driver_1a7dcba273d750e726bb3f5e4b7a38f53a" prot="protected" virt="non-virtual"><scope>ADVimba</scope><name>ADImageMode</name></member>
+      <member refid="class_a_d_vimba_1a83866e05e286f5b80b5c82e04c0f4eab" prot="private" virt="non-virtual"><scope>ADVimba</scope><name>adjustPacketSize</name></member>
       <member refid="classasyn_n_d_array_driver_1a2deb25acd798e9e0da6c52741a07b915" prot="protected" virt="non-virtual"><scope>ADVimba</scope><name>ADManufacturer</name></member>
       <member refid="class_a_d_driver_1a535f4c7d03e30b1efe4f7dad854cfc3f" prot="protected" virt="non-virtual"><scope>ADVimba</scope><name>ADMaxSizeX</name></member>
       <member refid="class_a_d_driver_1a93caa26e32c3765ba19e1ac74a2f50cc" prot="protected" virt="non-virtual"><scope>ADVimba</scope><name>ADMaxSizeY</name></member>
@@ -691,7 +751,7 @@
       <member refid="class_a_d_vimba_1abd8990a0ea16cb7a85bcb1f8744f2287" prot="private" virt="non-virtual"><scope>ADVimba</scope><name>checkError</name></member>
       <member refid="classasyn_n_d_array_driver_1aba7309da5e7c5571fc693b1998c9d236" prot="public" virt="virtual"><scope>ADVimba</scope><name>checkPath</name></member>
       <member refid="classasyn_n_d_array_driver_1aaca89f35ddf4c5a1c22374ff608593cd" prot="public" virt="virtual"><scope>ADVimba</scope><name>checkPath</name></member>
-      <member refid="class_a_d_driver_1a619dfbdc35605a104d2a07ea46f37b5f" prot="public" virt="virtual"><scope>ADVimba</scope><name>connect</name></member>
+      <member refid="class_a_d_vimba_1ac71508a1f103acfbd04d33137b18549b" prot="public" virt="virtual"><scope>ADVimba</scope><name>connect</name></member>
       <member refid="class_a_d_vimba_1a5a5156108c65d1a2d48573ce3550c0ca" prot="private" virt="non-virtual"><scope>ADVimba</scope><name>connectCamera</name></member>
       <member refid="class_a_d_vimba_1a1c1556707d3e3ce79e35dc0c83e45d83" prot="public" virt="non-virtual"><scope>ADVimba</scope><name>connectionCallback</name></member>
       <member refid="class_a_d_vimba_1a17c5f19228b984b5f4351f892cc64b8a" prot="public" virt="virtual"><scope>ADVimba</scope><name>createFeature</name></member>
@@ -702,6 +762,7 @@
       <member refid="class_a_d_gen_i_cam_1a0f2fbbceb7ba3d967ad3ae97b5fb03dd" prot="public" virt="virtual"><scope>ADVimba</scope><name>decompressMono12Packed</name></member>
       <member refid="classasyn_n_d_array_driver_1acc2afad33faf8e45d6f21e251133ed94" prot="public" virt="non-virtual"><scope>ADVimba</scope><name>decrementQueuedArrayCount</name></member>
       <member refid="class_a_d_driver_1ad387fa6e2e45c812ba82adba2cc74bd0" prot="protected" virt="non-virtual"><scope>ADVimba</scope><name>deviceIsReachable</name></member>
+      <member refid="class_a_d_vimba_1ab3401c1234074fceab5910098967731f" prot="public" virt="virtual"><scope>ADVimba</scope><name>disconnect</name></member>
       <member refid="class_a_d_vimba_1aa1a1331beb477714beca463a1b0723a3" prot="private" virt="non-virtual"><scope>ADVimba</scope><name>disconnectCamera</name></member>
       <member refid="class_a_d_gen_i_cam_1aa8d56136631f5d133c3ebd6d26883fdb" prot="public" virt="virtual"><scope>ADVimba</scope><name>drvUserCreate</name></member>
       <member refid="class_a_d_vimba_1a311341957e18ab30255b4967ee4af499" prot="private" virt="non-virtual"><scope>ADVimba</scope><name>exiting_</name></member>

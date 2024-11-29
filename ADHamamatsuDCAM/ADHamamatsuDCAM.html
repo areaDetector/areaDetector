@@ -1,0 +1,336 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ADHamamatsuDCAM &mdash; areaDetector Support</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme_overrides.css?v=254ed751" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="ADLambda" href="../ADLambda/ADLambda.html" />
+    <link rel="prev" title="ADGenICam" href="../ADGenICam/ADGenICam.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            areaDetector
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../readme.html">Readme</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../user_guide.html">User Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/overview.html">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/arch.html">Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/asynPortDriver.html">asynPortDriver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/NDArray.html">NDArray</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../detector_drivers.html">Detector Drivers</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../ADCore/guidelines.html">Guidelines and rules for drivers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADCore/ADDriver.html">ADDriver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADAndor/andorDoc.html">ADAndor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADAndor3/ADAndorDoc.html">ADAndor3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADAravis/ADAravis.html">ADAravis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADCSimDetector/ADCSimDetectorDoc.html">ADCSimDetector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADDexela/ADDexela.html">ADDexela</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADEiger/eiger.html">ADEiger</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADEuresys/ADEuresys.html">ADEuresys</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADFastCCD/index.html">ADFastCCD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADGenICam/ADGenICam.html">ADGenICam</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">ADHamamatsuDCAM</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#installation">Installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#adhamamatsudcam-driver">ADHamamatsuDCAM driver</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ioc-startup-script">IOC startup script</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#medm-screen">MEDM screen</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#issues">Issues</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../ADLambda/ADLambda.html">ADLambda</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADLightField/ADLightField.html">ADLightField</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADmarCCD/marCCDDoc.html">ADmarCCD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADmar345/mar345Doc.html">ADmar345</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPerkinElmer/PerkinElmerDoc.html">ADPerkinElmer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPICam/PICamDoc.html">ADPICam</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPilatus/pilatusDoc.html">ADPilatus</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPixirad/ADPixirad.html">ADPixirad</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPointGrey/PointGreyDoc.html">ADPointGrey</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADProsilica/ADProsilica.html">ADProsilica</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPvCam/pvcamDoc.html">ADPvCam</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPylon/ADPylon.html">ADPylon</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADQImaging/QImagingDoc.html">ADQImaging</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADRIXSCam/ADRIXSCam.html">ADRIXSCam</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADSimDetector/simDetector.html">ADSimDetector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADSpinnaker/ADSpinnaker.html">ADSpinnaker</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADTimePix3/ADTimePix3.html">ADTimePix3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADVimba/ADVimba.html">ADVimba</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADURL/ADURL.html">ADURL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../NDDriverStdArrays/NDDriverStdArraysDoc.html">NDDriverStdArrays</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../pvaDriver/pvaDriver.html">pvaDriver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../specsAnalyser/index.html">specsAnalyser</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/plugins.html">areaDetector Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../additional_plugins.html">Additional plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/medm.html">MEDM screens</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADViewers/ad_viewers.html">areaDetector Viewers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../acknowledgements.html">Acknowledgements and licenses</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../install_guide.html">Install Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release.html">Top-level Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ADCore_release.html">ADCore Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ADSupport_release.html">ADSupport Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../doxygen.html">Source Code Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../detectors.html">Supported Detectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../legacy_versions.html">Legacy Versions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">areaDetector</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../user_guide.html">areaDetector Users Guide</a></li>
+          <li class="breadcrumb-item"><a href="../detector_drivers.html">Detector Drivers</a></li>
+      <li class="breadcrumb-item active">ADHamamatsuDCAM</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/ADHamamatsuDCAM/ADHamamatsuDCAM.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="adhamamatsudcam">
+<h1><a class="toc-backref" href="#id2" role="doc-backlink">ADHamamatsuDCAM</a><a class="headerlink" href="#adhamamatsudcam" title="Link to this heading"></a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">author<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Hamamatsu Phtonics K.K. and Mark Rivers, University of Chicago</p>
+</dd>
+</dl>
+<nav class="contents" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#adhamamatsudcam" id="id2">ADHamamatsuDCAM</a></p>
+<ul>
+<li><p><a class="reference internal" href="#overview" id="id3">Overview</a></p></li>
+<li><p><a class="reference internal" href="#installation" id="id4">Installation</a></p></li>
+<li><p><a class="reference internal" href="#adhamamatsudcam-driver" id="id5">ADHamamatsuDCAM driver</a></p></li>
+<li><p><a class="reference internal" href="#ioc-startup-script" id="id6">IOC startup script</a></p></li>
+<li><p><a class="reference internal" href="#medm-screen" id="id7">MEDM screen</a></p></li>
+<li><p><a class="reference internal" href="#issues" id="id8">Issues</a></p></li>
+</ul>
+</li>
+</ul>
+</nav>
+<section id="overview">
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">Overview</a><a class="headerlink" href="#overview" title="Link to this heading"></a></h2>
+<p>This is an <a class="reference internal" href="../index.html"><span class="doc">areaDetector</span></a> driver for <a class="reference external" href="https://www.hamamatsu.com/us/en/product/cameras.html">Hamamatsu</a> cameras using the <a class="reference external" href="https://www.hamamatsu.com/us/en/product/cameras/software/driver-software.html">DCAM</a> library.
+It runs on Windows, and on some versions of Linux.</p>
+<p><a class="reference external" href="../areaDetectorDoxygenHTML/classhamamatsu.html">hamamatsu class</a> describes this class in detail.</p>
+</section>
+<section id="installation">
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">Installation</a><a class="headerlink" href="#installation" title="Link to this heading"></a></h2>
+<p>Prior to building <a class="reference external" href="https://github.com/areaDetector/ADHamamatsuDCAM">ADHamamatsuDCAM</a> the <a class="reference external" href="https://www.hamamatsu.com/us/en/product/cameras/software/driver-software.html">DCAM</a> software must be downloaded.
+This consists of 2 packages:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>DCAM-API, which contains the required Windows or Linux drivers.</p></li>
+<li><p>DCAM-SDK4, which contains the SDK library that <a class="reference external" href="https://github.com/areaDetector/ADHamamatsuDCAM">ADHamamatsuDCAM</a> calls.</p></li>
+</ul>
+</div></blockquote>
+<p>DCAM-API on Linux is officially supported on Ubuntu 22.04 LTS and Debian 11.
+The Active Silicon CoaXPress driver does not build on RHEL 9/CentOS 9.
+The driver fails to compile, because g++ 11.5 is stricter than the g++ on supported OS versions.
+Hopefully this will be fixed in the future.</p>
+<p>DCAM-SDK4 is downloaded as a .zip file for Windows, and a tar.gz file for Linux.
+These do not contain an installer, so there is no standard location for the dcamsdk4 directory,
+the user must chose a location.
+The <a class="reference external" href="https://github.com/areaDetector/ADHamamatsuDCAM">ADHamamatsuDCAM</a> driver needs to find these files when compiling.
+This is done by defining the path to dcamsdk4 in these files:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ADHamamatsuDCAM/configure/CONFIG_SITE.$(EPICS_HOST_ARCH).Common
+ADHamamatsuDCAM/iocs/hamamatsuIOC/configure/CONFIG_SITE.$(EPICS_HOST_ARCH).Common
+</pre></div>
+</div>
+<p>Examples are provided in the distribution.</p>
+<p>On Windows the file dcamsdk4/samples/cpp/misc/config4.h needs to be edited to comment out #pragma lines as shown here:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/*</span>
+<span class="c1">#if defined(_WIN64)</span>
+<span class="c1">#pragma comment(lib,&quot;../../../lib/win64/dcamapi.lib&quot;)</span>
+<span class="c1">#elif defined(WIN32)</span>
+<span class="c1">#pragma comment(lib,&quot;../../../lib/win32/dcamapi.lib&quot;)</span>
+<span class="c1">#endif</span>
+<span class="o">*/</span>
+</pre></div>
+</div>
+</section>
+<section id="adhamamatsudcam-driver">
+<h2><a class="toc-backref" href="#id5" role="doc-backlink">ADHamamatsuDCAM driver</a><a class="headerlink" href="#adhamamatsudcam-driver" title="Link to this heading"></a></h2>
+<p>ADHamamatsuDCAM inherits from <a class="reference internal" href="../ADCore/ADDriver.html"><span class="doc">ADDriver</span></a>.  It adds the following parameters and EPICS records that are
+specific to ADHamamatsuDCAM.</p>
+<table class="table-bordered table-striped table-hover docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>EPICS record names</p></th>
+<th class="head"><p>Record types</p></th>
+<th class="head"><p>drvInfo string</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>HamaRegionReset</p></td>
+<td><p>bo</p></td>
+<td><p>HamaRegionReset</p></td>
+<td><p>Resets the readout region to full chip</p></td>
+</tr>
+<tr class="row-odd"><td><p>HamaTriggerSource, HamaTriggerSource_RBV”</p></td>
+<td><p>mbbo, mbbo</p></td>
+<td><p>HamaTriggerSource</p></td>
+<td><p>Trigger source.  Choices are “Internal” (0), “External” (1), and “Software” (2)</p></td>
+</tr>
+<tr class="row-even"><td><p>HamaTriggerMode, HamaTriggerMode_RBV”</p></td>
+<td><p>mbbo, mbbo</p></td>
+<td><p>HamaTriggerMode</p></td>
+<td><p>Trigger mode.  Choices are “Normal” (0), and “Start” (1)</p></td>
+</tr>
+<tr class="row-odd"><td><p>HamaTriggerActive, HamaTriggerActive_RBV”</p></td>
+<td><p>mbbo, mbbo</p></td>
+<td><p>HamaTriggerActive</p></td>
+<td><p>Trigger source.  Choices are “Edge” (0), “Level” (1), and “Syncreadout” (2)</p></td>
+</tr>
+<tr class="row-even"><td><p>HamaTriggerPolarity, HamaTriggerPolarity_RBV”</p></td>
+<td><p>mbbo, mbbo</p></td>
+<td><p>HamaTriggerPolarity</p></td>
+<td><p>Trigger mode.  Choices are “Negative” (0), and “Positive” (1)</p></td>
+</tr>
+<tr class="row-odd"><td><p>HamaFireTrigger</p></td>
+<td><p>bo</p></td>
+<td><p>HamaFireTrigger</p></td>
+<td><p>Fires the trigger in Software mode</p></td>
+</tr>
+<tr class="row-even"><td><p>HamaTriggerTimes, HamaTriggerTimes_RBV</p></td>
+<td><p>longout, longin</p></td>
+<td><p>HamaTriggerTimes</p></td>
+<td><p>Number of triggers</p></td>
+</tr>
+<tr class="row-odd"><td><p>HamaTriggerDelay, HamaTriggerDelay_RBV</p></td>
+<td><p>ao, ai</p></td>
+<td><p>HamaTriggerDelay</p></td>
+<td><p>Trigger delay time</p></td>
+</tr>
+<tr class="row-even"><td><p>HamaSensorCoolerStatus_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>HamaSensorCoolerStatus</p></td>
+<td><p>Cooler status</p></td>
+</tr>
+<tr class="row-odd"><td><p>HamaReadoutSpeed, HamaReadoutSpeed_RBV”</p></td>
+<td><p>mbbo, mbbo</p></td>
+<td><p>HamaReadoutSpeed</p></td>
+<td><p>Readout speed.  Choices are “Slowest” (0), and “Fastest” (1)</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="ioc-startup-script">
+<h2><a class="toc-backref" href="#id6" role="doc-backlink">IOC startup script</a><a class="headerlink" href="#ioc-startup-script" title="Link to this heading"></a></h2>
+<p>The command to configure an ADHamamatsuDCAM camera in the startup script is:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">hamamatsuConfig</span><span class="p">(</span><span class="n">const</span> <span class="n">char</span> <span class="o">*</span><span class="n">portName</span><span class="p">,</span> <span class="n">const</span> <span class="n">char</span> <span class="o">*</span><span class="n">cameraId</span><span class="p">,</span>
+                <span class="n">size_t</span> <span class="n">maxMemory</span><span class="p">,</span> <span class="nb">int</span> <span class="n">priority</span><span class="p">,</span> <span class="nb">int</span> <span class="n">stackSize</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">portName</span></code> is the name for the ADHamamatsuDCAM port driver</p>
+<p><code class="docutils literal notranslate"><span class="pre">cameraId</span></code> is index of the camera in the available camera list.</p>
+<p><code class="docutils literal notranslate"><span class="pre">maxMemory</span></code> is the maximum amount of memory the NDArrayPool is allowed to allocate.  0 means unlimited.</p>
+<p><code class="docutils literal notranslate"><span class="pre">priority</span></code> is the priority of the port thread.  0 means medium priority.</p>
+<p><code class="docutils literal notranslate"><span class="pre">stackSize</span></code> is the stack size.  0 means medium size.</p>
+</section>
+<section id="medm-screen">
+<h2><a class="toc-backref" href="#id7" role="doc-backlink">MEDM screen</a><a class="headerlink" href="#medm-screen" title="Link to this heading"></a></h2>
+<p>The following is the MEDM screen ADHamamatsuDCAM.adl when controlling an Orca Fire camera.</p>
+<p>Note that each frame is 20.0 MB, and it is collecting 115 frames/s, which is 2.3 GB/s.</p>
+<figure class="align-center">
+<img alt="../_images/ADHamamatsuDCAM.png" src="../_images/ADHamamatsuDCAM.png" />
+</figure>
+</section>
+<section id="issues">
+<h2><a class="toc-backref" href="#id8" role="doc-backlink">Issues</a><a class="headerlink" href="#issues" title="Link to this heading"></a></h2>
+<p>The following issues have been identified:</p>
+<ul class="simple">
+<li><p>AcquirePeriod is not implemented.  It should be if possible.</p></li>
+<li><p>Is color mode needed, i.e. does DCAM support any color cameras?</p></li>
+<li><p>The driver is not setting the ArraySize PVs</p></li>
+<li><p>Hardware triggering needs to be tested</p></li>
+<li><p>RHEL 9 should be supported if possible.</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../ADGenICam/ADGenICam.html" class="btn btn-neutral float-left" title="ADGenICam" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../ADLambda/ADLambda.html" class="btn btn-neutral float-right" title="ADLambda" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Mark Rivers.
+      <span class="lastupdated">Last updated on 2024-November-29.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -69,6 +69,11 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a8110b207f0ec0cff39572408a735fa11"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_d_vimba.html#a8110b207f0ec0cff39572408a735fa11">ADVimba</a> (const char *portName, const char *cameraId, size_t maxMemory, int priority, int stackSize)</td></tr>
 <tr class="memdesc:a8110b207f0ec0cff39572408a735fa11"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for the <a class="el" href="class_a_d_vimba.html" title="Main driver class inherited from areaDetectors ADGenICam class.">ADVimba</a> class.  <a href="class_a_d_vimba.html#a8110b207f0ec0cff39572408a735fa11">More...</a><br /></td></tr>
 <tr class="separator:a8110b207f0ec0cff39572408a735fa11"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac71508a1f103acfbd04d33137b18549b"><td class="memItemLeft" align="right" valign="top">virtual asynStatus&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_d_vimba.html#ac71508a1f103acfbd04d33137b18549b">connect</a> (asynUser *pasynUser)</td></tr>
+<tr class="memdesc:ac71508a1f103acfbd04d33137b18549b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Connects driver to device; This method is called when the driver's pasynCommon-&gt;<a class="el" href="class_a_d_vimba.html#ac71508a1f103acfbd04d33137b18549b" title="Connects driver to device; This method is called when the driver&#39;s pasynCommon-&gt;connect() function is...">connect()</a> function is called.  <a href="class_a_d_vimba.html#ac71508a1f103acfbd04d33137b18549b">More...</a><br /></td></tr>
+<tr class="separator:ac71508a1f103acfbd04d33137b18549b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3401c1234074fceab5910098967731f"><td class="memItemLeft" align="right" valign="top">virtual asynStatus&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_d_vimba.html#ab3401c1234074fceab5910098967731f">disconnect</a> (asynUser *pasynUser)</td></tr>
+<tr class="separator:ab3401c1234074fceab5910098967731f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afdc27f413f3ef9e4f381e76484cd5c1b"><td class="memItemLeft" align="right" valign="top">virtual asynStatus&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_d_vimba.html#afdc27f413f3ef9e4f381e76484cd5c1b">readEnum</a> (asynUser *pasynUser, char *strings[], int values[], int severities[], size_t nElements, size_t *nIn)</td></tr>
 <tr class="separator:afdc27f413f3ef9e4f381e76484cd5c1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac297bd96397e205d27dc78480f8260ce"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_d_vimba.html#ac297bd96397e205d27dc78480f8260ce">report</a> (FILE *fp, int details)</td></tr>
@@ -125,9 +130,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:acc898497d3369c2f6f6ab1d83effdd25 inherit pub_methods_class_a_d_driver"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_d_driver.html#acc898497d3369c2f6f6ab1d83effdd25">ADDriver</a> (const char *portName, int maxAddr, int numParams, int maxBuffers, size_t maxMemory, int interfaceMask, int interruptMask, int asynFlags, int autoConnect, int priority, int stackSize)</td></tr>
 <tr class="memdesc:acc898497d3369c2f6f6ab1d83effdd25 inherit pub_methods_class_a_d_driver"><td class="mdescLeft">&#160;</td><td class="mdescRight">All of the arguments are simply passed to the constructor for the <a class="el" href="classasyn_n_d_array_driver.html" title="This is the class from which NDArray drivers are derived; implements the asynGenericPointer functions...">asynNDArrayDriver</a> base class, except numParams.  <a href="class_a_d_driver.html#acc898497d3369c2f6f6ab1d83effdd25">More...</a><br /></td></tr>
 <tr class="separator:acc898497d3369c2f6f6ab1d83effdd25 inherit pub_methods_class_a_d_driver"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a619dfbdc35605a104d2a07ea46f37b5f inherit pub_methods_class_a_d_driver"><td class="memItemLeft" align="right" valign="top">virtual asynStatus&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_d_driver.html#a619dfbdc35605a104d2a07ea46f37b5f">connect</a> (asynUser *pasynUser)</td></tr>
-<tr class="memdesc:a619dfbdc35605a104d2a07ea46f37b5f inherit pub_methods_class_a_d_driver"><td class="mdescLeft">&#160;</td><td class="mdescRight">Connects driver to device; This method is called when the driver's pasynCommon-&gt;<a class="el" href="class_a_d_driver.html#a619dfbdc35605a104d2a07ea46f37b5f" title="Connects driver to device; This method is called when the driver&#39;s pasynCommon-&gt;connect() function is...">connect()</a> function is called.  <a href="class_a_d_driver.html#a619dfbdc35605a104d2a07ea46f37b5f">More...</a><br /></td></tr>
-<tr class="separator:a619dfbdc35605a104d2a07ea46f37b5f inherit pub_methods_class_a_d_driver"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac05bfd5d3c6bc63910d6fbd4fb909d50 inherit pub_methods_class_a_d_driver"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_d_driver.html#ac05bfd5d3c6bc63910d6fbd4fb909d50">setShutter</a> (int open)</td></tr>
 <tr class="memdesc:ac05bfd5d3c6bc63910d6fbd4fb909d50 inherit pub_methods_class_a_d_driver"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the shutter position.  <a href="class_a_d_driver.html#ac05bfd5d3c6bc63910d6fbd4fb909d50">More...</a><br /></td></tr>
 <tr class="separator:ac05bfd5d3c6bc63910d6fbd4fb909d50 inherit pub_methods_class_a_d_driver"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -485,6 +487,42 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="ac71508a1f103acfbd04d33137b18549b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac71508a1f103acfbd04d33137b18549b">&#9670;&nbsp;</a></span>connect()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">asynStatus ADVimba::connect </td>
+          <td>(</td>
+          <td class="paramtype">asynUser *&#160;</td>
+          <td class="paramname"><em>pasynUser</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Connects driver to device; This method is called when the driver's pasynCommon-&gt;<a class="el" href="class_a_d_vimba.html#ac71508a1f103acfbd04d33137b18549b" title="Connects driver to device; This method is called when the driver&#39;s pasynCommon-&gt;connect() function is...">connect()</a> function is called. </p>
+<p>It uses the class variable deviceIsReachable to determine whether to call asynPortDriver::connect(), which in turn calls pasynManager::exceptionConnect() to signal that the driver is connected to the underlying hardware. Derived classes can override this method if they need to handle <a class="el" href="class_a_d_vimba.html#ac71508a1f103acfbd04d33137b18549b" title="Connects driver to device; This method is called when the driver&#39;s pasynCommon-&gt;connect() function is...">connect()</a> calls in a more complex way. For example, with a network camera that can be temporarily unreachable the driver could attempt to connect to the camera each time that <a class="el" href="class_a_d_vimba.html#ac71508a1f103acfbd04d33137b18549b" title="Connects driver to device; This method is called when the driver&#39;s pasynCommon-&gt;connect() function is...">connect()</a> is called. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">pasynUser</td><td>The pasynUser structure which contains information about the port and address </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Reimplemented from <a class="el" href="class_a_d_driver.html#a619dfbdc35605a104d2a07ea46f37b5f">ADDriver</a>.</p>
+
+</div>
+</div>
 <a id="a1c1556707d3e3ce79e35dc0c83e45d83"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1c1556707d3e3ce79e35dc0c83e45d83">&#9670;&nbsp;</a></span>connectionCallback()</h2>
 
@@ -564,6 +602,32 @@ Additional Inherited Members</h2></td></tr>
 <p>These should be private but are called from C callback functions, must be public. </p>
 
 <p>Implements <a class="el" href="class_a_d_gen_i_cam.html#a1989d94807c08ce3f12ee6e950cda256">ADGenICam</a>.</p>
+
+</div>
+</div>
+<a id="ab3401c1234074fceab5910098967731f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3401c1234074fceab5910098967731f">&#9670;&nbsp;</a></span>disconnect()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">asynStatus ADVimba::disconnect </td>
+          <td>(</td>
+          <td class="paramtype">asynUser *&#160;</td>
+          <td class="paramname"><em>pasynUser</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>

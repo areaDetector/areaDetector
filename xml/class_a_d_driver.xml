@@ -27,6 +27,7 @@
     <derivedcompoundref refid="classandor3" prot="public" virt="non-virtual">andor3</derivedcompoundref>
     <derivedcompoundref refid="classaravis_camera" prot="public" virt="non-virtual">aravisCamera</derivedcompoundref>
     <derivedcompoundref refid="classeiger_detector" prot="public" virt="non-virtual">eigerDetector</derivedcompoundref>
+    <derivedcompoundref refid="classhamamatsu" prot="public" virt="non-virtual">hamamatsu</derivedcompoundref>
     <derivedcompoundref refid="classmar345" prot="public" virt="non-virtual">mar345</derivedcompoundref>
     <derivedcompoundref refid="classmar_c_c_d" prot="public" virt="non-virtual">marCCD</derivedcompoundref>
     <derivedcompoundref refid="classmerlin_detector" prot="public" virt="non-virtual">merlinDetector</derivedcompoundref>
@@ -574,6 +575,7 @@
         <reimplementedby refid="class_fast_c_c_d_1a4b7962e6e1a518a2d6fa2d765f065ad9">writeInt32</reimplementedby>
         <reimplementedby refid="class_firewire_win_d_c_a_m_1a1c71cb95c9fa18de662886fc3c832817">writeInt32</reimplementedby>
         <reimplementedby refid="class_a_d_gen_i_cam_1a220b32d05048adcc8cd128a99a230594">writeInt32</reimplementedby>
+        <reimplementedby refid="classhamamatsu_1a8020a57bfddb535cd4caca8c74220e14">writeInt32</reimplementedby>
         <reimplementedby refid="class_a_d_lambda_1a4f652225af17f8946d97fb89ff347f4b">writeInt32</reimplementedby>
         <reimplementedby refid="class_light_field_1a2029218a3bd3f067722c59dc71b43d5a">writeInt32</reimplementedby>
         <reimplementedby refid="classmar345_1a9598e5cb1c7ed89f422a3c52eac64d5d">writeInt32</reimplementedby>
@@ -644,6 +646,7 @@ Takes action if the function code requires it. Currently only ADShutterControl r
         <reimplementedby refid="class_fast_c_c_d_1ada3ac79155e235327a752a688496ce6e">connect</reimplementedby>
         <reimplementedby refid="classprosilica_1ac804033995122e01664a5b1323a25b7c">connect</reimplementedby>
         <reimplementedby refid="class_a_d_pylon_1a85080583913dc8df1e06f36512e82e40">connect</reimplementedby>
+        <reimplementedby refid="class_a_d_vimba_1ac71508a1f103acfbd04d33137b18549b">connect</reimplementedby>
         <param>
           <type>asynUser *</type>
           <declname>pasynUser</declname>
@@ -673,6 +676,7 @@ Takes action if the function code requires it. Currently only ADShutterControl r
         <argsstring>(int open)</argsstring>
         <name>setShutter</name>
         <reimplementedby refid="class_b_i_s_detector_1ae4e8564275d3712132b27b8f65fa9eee">setShutter</reimplementedby>
+        <reimplementedby refid="classhamamatsu_1a4f94561d49c9fe4465dde7904e284fbf">setShutter</reimplementedby>
         <reimplementedby refid="class_light_field_1a9e94d60f4d5db5111bb5eae2d7e5a013">setShutter</reimplementedby>
         <reimplementedby refid="classmar345_1a44aad372cb630ffcc98d7d55deb13a32">setShutter</reimplementedby>
         <reimplementedby refid="classmar_c_c_d_1ae12919e188d1fad07a64405c69795e74">setShutter</reimplementedby>
@@ -733,7 +737,7 @@ Takes action if the function code requires it. Currently only ADShutterControl r
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="41">
+      <node id="42">
         <label>pvaDriver</label>
         <link refid="classpva_driver"/>
         <childnode refid="1" relation="public-inheritance">
@@ -757,25 +761,25 @@ Takes action if the function code requires it. Currently only ADShutterControl r
         <childnode refid="4" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="35">
+      <node id="36">
         <label>merlinDetector</label>
         <link refid="classmerlin_detector"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="33">
+      <node id="34">
         <label>mar345</label>
         <link refid="classmar345"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="42">
+      <node id="43">
         <label>roper</label>
         <link refid="classroper"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="39">
+      <node id="40">
         <label>pointGrey</label>
         <link refid="classpoint_grey"/>
         <childnode refid="1" relation="public-inheritance">
@@ -796,7 +800,7 @@ Takes action if the function code requires it. Currently only ADShutterControl r
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="38">
+      <node id="39">
         <label>pixirad</label>
         <link refid="classpixirad"/>
         <childnode refid="1" relation="public-inheritance">
@@ -826,7 +830,7 @@ Takes action if the function code requires it. Currently only ADShutterControl r
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="36">
+      <node id="37">
         <label>mythen</label>
         <link refid="classmythen"/>
         <childnode refid="1" relation="public-inheritance">
@@ -838,7 +842,7 @@ Takes action if the function code requires it. Currently only ADShutterControl r
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="37">
+      <node id="38">
         <label>pilatusDetector</label>
         <link refid="classpilatus_detector"/>
         <childnode refid="1" relation="public-inheritance">
@@ -856,13 +860,19 @@ Takes action if the function code requires it. Currently only ADShutterControl r
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="43">
+      <node id="33">
+        <label>hamamatsu</label>
+        <link refid="classhamamatsu"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="44">
         <label>simDetector</label>
         <link refid="classsim_detector"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="34">
+      <node id="35">
         <label>marCCD</label>
         <link refid="classmar_c_c_d"/>
         <childnode refid="1" relation="public-inheritance">
@@ -874,7 +884,7 @@ Takes action if the function code requires it. Currently only ADShutterControl r
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="44">
+      <node id="45">
         <label>xcamCamera</label>
         <link refid="classxcam_camera"/>
         <childnode refid="1" relation="public-inheritance">
@@ -964,7 +974,7 @@ Takes action if the function code requires it. Currently only ADShutterControl r
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="40">
+      <node id="41">
         <label>prosilica</label>
         <link refid="classprosilica"/>
         <childnode refid="1" relation="public-inheritance">
