@@ -12,6 +12,7 @@ DOCS_PATHS += -i ../ADEiger/docs
 DOCS_PATHS += -i ../ADEuresys/docs
 DOCS_PATHS += -i ../ADFastCCD/docs
 DOCS_PATHS += -i ../ADGenICam/docs
+DOCS_PATHS += -i ../ADHamamatsuDCAM/docs
 DOCS_PATHS += -i ../ADLambda/docs
 DOCS_PATHS += -i ../ADLightField/docs
 DOCS_PATHS += -i ../ADmarCCD/docs
