@@ -29,6 +29,12 @@ Versions
 Each submodule contains detailed release notes for each release of that submodule.  The release notes below
 only provide a short summary of the most significant items from the submodules.
 
+### R3-14 (December 1, 2024)
+
+* ADCore R3-14
+* ADVimba R1-5
+* ADHamamatsuDCAM New, untagged
+
 ### R3-13 (February 9, 2024)
 
 * ADCore R3-13
