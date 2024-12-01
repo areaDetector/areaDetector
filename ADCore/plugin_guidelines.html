@@ -168,9 +168,10 @@ Obviously they must not access memory locations that other threads
 could modify during this time, so they should only access local
 variables, not class variables (which includes the parameter
 library).</p></li>
-<li><p>If plugins generate new or modified NDArrays then they must call
-<code class="docutils literal notranslate"><span class="pre">NDPluginDriver::doNDArrayCallbacks()</span></code> so that registered clients can
-get the values of the new arrays.</p></li>
+<li><p>Plugins will generally call <code class="docutils literal notranslate"><span class="pre">NDPluginDriver::beginProcessCallbacks()</span></code>
+near the beginning of their <code class="docutils literal notranslate"><span class="pre">processCallbacks()</span></code> method, and will call
+<code class="docutils literal notranslate"><span class="pre">NDPluginDriver::endProcessCallbacks()</span></code> near the end of their
+<code class="docutils literal notranslate"><span class="pre">processCallbacks()</span></code> function.</p></li>
 </ul>
 </section>
 
@@ -186,7 +187,7 @@ get the values of the new arrays.</p></li>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, Mark Rivers.
-      <span class="lastupdated">Last updated on 2024-November-29.
+      <span class="lastupdated">Last updated on 2024-December-01.
       </span></p>
   </div>
 

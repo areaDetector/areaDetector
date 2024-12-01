@@ -18,8 +18,6 @@ Overview
 This is an :doc:`../index` driver for Hamamatsu_ cameras using the DCAM_ library.
 It runs on Windows, and on some versions of Linux.  
 
-`hamamatsu class`_ describes this class in detail.
-
 Installation
 ------------
 Prior to building ADHamamatsuDCAM_ the DCAM_ software must be downloaded. 
@@ -111,12 +109,14 @@ specific to ADHamamatsuDCAM.
      - HamaReadoutSpeed
      - Readout speed.  Choices are "Slowest" (0), and "Fastest" (1)
 
+`hamamatsu class`_ describes this class in detail.
+
 IOC startup script
 ------------------
 The command to configure an ADHamamatsuDCAM camera in the startup script is::
 
-  hamamatsuConfig(const char *portName, const char *cameraId,
-                  size_t maxMemory, int priority, int stackSize)
+  hamamatsuConfig(const char *portName, int cameraId,
+                  int maxMemory, int priority, int stackSize)
 
 ``portName`` is the name for the ADHamamatsuDCAM port driver
 

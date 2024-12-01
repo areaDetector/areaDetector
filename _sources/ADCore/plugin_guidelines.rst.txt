@@ -45,6 +45,7 @@ The following are guidelines and rules for writing plugins
    could modify during this time, so they should only access local
    variables, not class variables (which includes the parameter
    library).
--  If plugins generate new or modified NDArrays then they must call
-   ``NDPluginDriver::doNDArrayCallbacks()`` so that registered clients can
-   get the values of the new arrays.
+-  Plugins will generally call ``NDPluginDriver::beginProcessCallbacks()``
+   near the beginning of their ``processCallbacks()`` method, and will call
+   ``NDPluginDriver::endProcessCallbacks()`` near the end of their
+   ``processCallbacks()`` function.
