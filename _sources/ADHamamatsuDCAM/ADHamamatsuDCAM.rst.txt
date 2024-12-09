@@ -2,7 +2,7 @@
 ADHamamatsuDCAM
 ======================================
 
-:author: Hamamatsu Phtonics K.K. and Mark Rivers, University of Chicago
+:author: Hamamatsu Corporation and Mark Rivers, University of Chicago
 
 .. contents:: Contents
 
@@ -27,9 +27,6 @@ This consists of 2 packages:
   - DCAM-SDK4, which contains the SDK library that ADHamamatsuDCAM_ calls.
 
 DCAM-API on Linux is officially supported on Ubuntu 22.04 LTS and Debian 11.
-The Active Silicon CoaXPress driver does not build on RHEL 9/CentOS 9.
-The driver fails to compile, because g++ 11.5 is stricter than the g++ on supported OS versions.
-Hopefully this will be fixed in the future.
 
 DCAM-SDK4 is downloaded as a .zip file for Windows, and a tar.gz file for Linux.
 These do not contain an installer, so there is no standard location for the dcamsdk4 directory,
@@ -83,11 +80,11 @@ specific to ADHamamatsuDCAM.
    * - HamaTriggerActive, HamaTriggerActive_RBV"
      - mbbo, mbbo
      - HamaTriggerActive
-     - Trigger source.  Choices are "Edge" (0), "Level" (1), and "Syncreadout" (2)
+     - Trigger active.  Choices are "Edge" (0), "Level" (1), and "Syncreadout" (2)
    * - HamaTriggerPolarity, HamaTriggerPolarity_RBV"
      - mbbo, mbbo
      - HamaTriggerPolarity
-     - Trigger mode.  Choices are "Negative" (0), and "Positive" (1)
+     - Trigger polarity.  Choices are "Negative" (0), and "Positive" (1)
    * - HamaFireTrigger
      - bo
      - HamaFireTrigger
@@ -142,7 +139,6 @@ Issues
 The following issues have been identified:
 
 - AcquirePeriod is not implemented.  It should be if possible.
-- Is color mode needed, i.e. does DCAM support any color cameras?
 - The driver is not setting the ArraySize PVs
-- Hardware triggering needs to be tested
+- Hardware triggering only collects N-1 images when sent N triggers when HamaTriggerActive=Syncreadout
 - RHEL 9 should be supported if possible.

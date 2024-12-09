@@ -141,7 +141,7 @@
 <h1><a class="toc-backref" href="#id2" role="doc-backlink">ADHamamatsuDCAM</a><a class="headerlink" href="#adhamamatsudcam" title="Link to this heading"></a></h1>
 <dl class="field-list simple">
 <dt class="field-odd">author<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Hamamatsu Phtonics K.K. and Mark Rivers, University of Chicago</p>
+<dd class="field-odd"><p>Hamamatsu Corporation and Mark Rivers, University of Chicago</p>
 </dd>
 </dl>
 <nav class="contents" id="contents">
@@ -174,10 +174,7 @@ This consists of 2 packages:</p>
 <li><p>DCAM-SDK4, which contains the SDK library that <a class="reference external" href="https://github.com/areaDetector/ADHamamatsuDCAM">ADHamamatsuDCAM</a> calls.</p></li>
 </ul>
 </div></blockquote>
-<p>DCAM-API on Linux is officially supported on Ubuntu 22.04 LTS and Debian 11.
-The Active Silicon CoaXPress driver does not build on RHEL 9/CentOS 9.
-The driver fails to compile, because g++ 11.5 is stricter than the g++ on supported OS versions.
-Hopefully this will be fixed in the future.</p>
+<p>DCAM-API on Linux is officially supported on Ubuntu 22.04 LTS and Debian 11.</p>
 <p>DCAM-SDK4 is downloaded as a .zip file for Windows, and a tar.gz file for Linux.
 These do not contain an installer, so there is no standard location for the dcamsdk4 directory,
 the user must chose a location.
@@ -230,12 +227,12 @@ specific to ADHamamatsuDCAM.</p>
 <tr class="row-odd"><td><p>HamaTriggerActive, HamaTriggerActive_RBV”</p></td>
 <td><p>mbbo, mbbo</p></td>
 <td><p>HamaTriggerActive</p></td>
-<td><p>Trigger source.  Choices are “Edge” (0), “Level” (1), and “Syncreadout” (2)</p></td>
+<td><p>Trigger active.  Choices are “Edge” (0), “Level” (1), and “Syncreadout” (2)</p></td>
 </tr>
 <tr class="row-even"><td><p>HamaTriggerPolarity, HamaTriggerPolarity_RBV”</p></td>
 <td><p>mbbo, mbbo</p></td>
 <td><p>HamaTriggerPolarity</p></td>
-<td><p>Trigger mode.  Choices are “Negative” (0), and “Positive” (1)</p></td>
+<td><p>Trigger polarity.  Choices are “Negative” (0), and “Positive” (1)</p></td>
 </tr>
 <tr class="row-odd"><td><p>HamaFireTrigger</p></td>
 <td><p>bo</p></td>
@@ -292,9 +289,8 @@ specific to ADHamamatsuDCAM.</p>
 <p>The following issues have been identified:</p>
 <ul class="simple">
 <li><p>AcquirePeriod is not implemented.  It should be if possible.</p></li>
-<li><p>Is color mode needed, i.e. does DCAM support any color cameras?</p></li>
 <li><p>The driver is not setting the ArraySize PVs</p></li>
-<li><p>Hardware triggering needs to be tested</p></li>
+<li><p>Hardware triggering only collects N-1 images when sent N triggers when HamaTriggerActive=Syncreadout</p></li>
 <li><p>RHEL 9 should be supported if possible.</p></li>
 </ul>
 </section>
@@ -312,7 +308,7 @@ specific to ADHamamatsuDCAM.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, Mark Rivers.
-      <span class="lastupdated">Last updated on 2024-December-01.
+      <span class="lastupdated">Last updated on 2024-December-09.
       </span></p>
   </div>
 
