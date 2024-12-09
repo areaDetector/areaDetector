@@ -288,9 +288,13 @@ specific to ADHamamatsuDCAM.</p>
 <h2><a class="toc-backref" href="#id8" role="doc-backlink">Issues</a><a class="headerlink" href="#issues" title="Link to this heading"></a></h2>
 <p>The following issues have been identified:</p>
 <ul class="simple">
-<li><p>AcquirePeriod is not implemented.  It should be if possible.</p></li>
-<li><p>The driver is not setting the ArraySize PVs</p></li>
+<li><p>Manually stopping acquisition frequently leads to timeout errors and requires restarting the IOC</p></li>
 <li><p>Hardware triggering only collects N-1 images when sent N triggers when HamaTriggerActive=Syncreadout</p></li>
+<li><p>The driver is not setting the ArraySize PVs</p></li>
+<li><p>Color support should be removed from the medm screen.</p></li>
+<li><p>Data types other than UInt16 and UInt8 should be removed from the menu</p></li>
+<li><p>Data type UInt8 does not seem to work, the data are still UInt16.</p></li>
+<li><p>AcquirePeriod is not implemented.  It should be if possible.</p></li>
 <li><p>RHEL 9 should be supported if possible.</p></li>
 </ul>
 </section>
