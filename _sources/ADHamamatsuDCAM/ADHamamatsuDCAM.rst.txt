@@ -138,11 +138,9 @@ Issues
 ------
 The following issues have been identified:
 
-- Manually stopping acquisition frequently leads to timeout errors and requires restarting the IOC
-- Hardware triggering only collects N-1 images when sent N triggers when HamaTriggerActive=Syncreadout
 - The driver is not setting the ArraySize PVs
 - Color support should be removed from the medm screen.
 - Data types other than UInt16 and UInt8 should be removed from the menu
 - Data type UInt8 does not seem to work, the data are still UInt16.
-- AcquirePeriod is not implemented.  It should be if possible.
+- AcquirePeriod is not implemented because the Orca Fire does not support it.
 - RHEL 9 should be supported if possible.
