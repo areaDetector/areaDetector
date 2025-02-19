@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="_n_d_attribute_8cpp" kind="file" language="C++">
     <compoundname>NDAttribute.cpp</compoundname>
     <includes local="no">string</includes>
@@ -7,29 +7,23 @@
     <includes local="no">string.h</includes>
     <includes refid="_n_d_attribute_8h" local="yes">NDAttribute.h</includes>
     <incdepgraph>
-      <node id="8">
-        <label>epicsTypes.h</label>
-      </node>
-      <node id="3">
-        <label>stdlib.h</label>
-      </node>
-      <node id="11">
-        <label>epicsVersion.h</label>
-      </node>
-      <node id="2">
-        <label>string</label>
-      </node>
       <node id="10">
         <label>ADCoreAPI.h</label>
         <link refid="_a_d_core_a_p_i_8h"/>
         <childnode refid="11" relation="include">
         </childnode>
       </node>
-      <node id="4">
-        <label>string.h</label>
-      </node>
-      <node id="7">
-        <label>ellLib.h</label>
+      <node id="1">
+        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/NDAttribute.cpp</label>
+        <link refid="_n_d_attribute_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
       </node>
       <node id="5">
         <label>NDAttribute.h</label>
@@ -47,26 +41,32 @@
         <childnode refid="10" relation="include">
         </childnode>
       </node>
-      <node id="1">
-        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/NDAttribute.cpp</label>
-        <link refid="_n_d_attribute_8cpp"/>
-        <childnode refid="2" relation="include">
-        </childnode>
-        <childnode refid="3" relation="include">
-        </childnode>
-        <childnode refid="4" relation="include">
-        </childnode>
-        <childnode refid="5" relation="include">
-        </childnode>
-      </node>
       <node id="9">
         <label>asynDriver.h</label>
+      </node>
+      <node id="7">
+        <label>ellLib.h</label>
+      </node>
+      <node id="8">
+        <label>epicsTypes.h</label>
+      </node>
+      <node id="11">
+        <label>epicsVersion.h</label>
       </node>
       <node id="6">
         <label>stdio.h</label>
       </node>
+      <node id="3">
+        <label>stdlib.h</label>
+      </node>
+      <node id="2">
+        <label>string</label>
+      </node>
+      <node id="4">
+        <label>string.h</label>
+      </node>
     </incdepgraph>
-      <sectiondef kind="var">
+    <sectiondef kind="var">
       <memberdef kind="variable" id="_n_d_attribute_8cpp_1a84b3bf382031cc5ba7077e391b7bf516" prot="public" static="yes" mutable="no">
         <type>const char *</type>
         <definition>const char* NDAttrSourceStrings[]</definition>
@@ -87,9 +87,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/NDAttribute.cpp" line="16" column="19" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/NDAttribute.cpp" bodystart="16" bodyend="-1"/>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/NDAttribute.cpp" line="16" column="19" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/NDAttribute.cpp" bodystart="16" bodyend="22"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
@@ -181,7 +181,7 @@
 <codeline lineno="110"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*pValue;</highlight></codeline>
 <codeline lineno="111"><highlight class="normal"></highlight></codeline>
 <codeline lineno="112"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!pOut)</highlight></codeline>
-<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/>pOut<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_n_d_attribute_1a2149d8125448ccfe29e74879b8334b89" kindref="member">NDAttribute</ref>(*</highlight><highlight class="keyword">this</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/>pOut<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_n_d_attribute" kindref="compound">NDAttribute</ref>(*</highlight><highlight class="keyword">this</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="114"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
 <codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(this-&gt;dataType_<sp/>==<sp/><ref refid="_n_d_attribute_8h_1a8a795995acde8458f43ac9b01376ef07a5d41bd9ecc9dc999c488965442f7502a" kindref="member">NDAttrString</ref>)<sp/>pValue<sp/>=<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*)this-&gt;string_.c_str();</highlight></codeline>
 <codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>pValue<sp/>=<sp/>&amp;this-&gt;value_;</highlight></codeline>
@@ -288,7 +288,7 @@
 <codeline lineno="233"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="_n_d_attribute_8h_1a0bcdf5b219c47403272d8eb586395733" kindref="member">ND_SUCCESS</ref>;</highlight></codeline>
 <codeline lineno="234"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="235"><highlight class="normal"></highlight></codeline>
-<codeline lineno="238"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_n_d_attribute_1ab617001ab581ddff4dd8806279a7bcdf" kindref="member">NDAttribute::setValue</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespacehdf5_1abeed318faeb13380e1b4221bd4198bf1aea271040d7a5b8d9af9cbf6564d262d5" kindref="member">std::string</ref>&amp;<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>)</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_n_d_attribute_1ab617001ab581ddff4dd8806279a7bcdf" kindref="member">NDAttribute::setValue</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>value)</highlight></codeline>
 <codeline lineno="239"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="240"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Data<sp/>type<sp/>must<sp/>be<sp/>string<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="241"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(dataType_<sp/>==<sp/><ref refid="_n_d_attribute_8h_1a8a795995acde8458f43ac9b01376ef07a5d41bd9ecc9dc999c488965442f7502a" kindref="member">NDAttrString</ref>)<sp/>{</highlight></codeline>
@@ -430,7 +430,7 @@
 <codeline lineno="388"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="_n_d_attribute_8h_1a0bcdf5b219c47403272d8eb586395733" kindref="member">ND_SUCCESS</ref><sp/>;</highlight></codeline>
 <codeline lineno="389"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="390"><highlight class="normal"></highlight></codeline>
-<codeline lineno="395"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_n_d_attribute_1a732db4dc92aa8585089bac924335a9bd" kindref="member">NDAttribute::getValue</ref>(<ref refid="namespacehdf5_1abeed318faeb13380e1b4221bd4198bf1aea271040d7a5b8d9af9cbf6564d262d5" kindref="member">std::string</ref>&amp;<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>)</highlight></codeline>
+<codeline lineno="395"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_n_d_attribute_1a732db4dc92aa8585089bac924335a9bd" kindref="member">NDAttribute::getValue</ref>(std::string&amp;<sp/>value)</highlight></codeline>
 <codeline lineno="396"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="397"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal"><sp/>(this-&gt;dataType_)<sp/>{</highlight></codeline>
 <codeline lineno="398"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="_n_d_attribute_8h_1a8a795995acde8458f43ac9b01376ef07a5d41bd9ecc9dc999c488965442f7502a" kindref="member">NDAttrString</ref>:</highlight></codeline>

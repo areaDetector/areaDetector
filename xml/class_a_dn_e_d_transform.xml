@@ -1,15 +1,16 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="class_a_dn_e_d_transform" kind="class" language="C++" prot="public">
     <compoundname>ADnEDTransform</compoundname>
     <basecompoundref refid="class_a_dn_e_d_transform_base" prot="public" virt="non-virtual">ADnEDTransformBase</basecompoundref>
     <includes refid="_a_dn_e_d_transform_8h" local="no">ADnEDTransform.h</includes>
-      <sectiondef kind="public-func">
+    <sectiondef kind="public-func">
       <memberdef kind="function" id="class_a_dn_e_d_transform_1a983598b51eb7c1e38cd36c7efe8764d4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>ADnEDTransform::ADnEDTransform</definition>
         <argsstring>()</argsstring>
         <name>ADnEDTransform</name>
+        <qualifiedname>ADnEDTransform::ADnEDTransform</qualifiedname>
         <briefdescription>
 <para>Constructor. </para>
         </briefdescription>
@@ -26,6 +27,7 @@
         <definition>ADnEDTransform::~ADnEDTransform</definition>
         <argsstring>()</argsstring>
         <name>~ADnEDTransform</name>
+        <qualifiedname>ADnEDTransform::~ADnEDTransform</qualifiedname>
         <briefdescription>
 <para>Destructor. </para>
         </briefdescription>
@@ -42,6 +44,7 @@
         <definition>epicsFloat64 ADnEDTransform::calculate</definition>
         <argsstring>(epicsUInt32 type, epicsUInt32 pixelID, epicsUInt32 tof) const</argsstring>
         <name>calculate</name>
+        <qualifiedname>ADnEDTransform::calculate</qualifiedname>
         <reimplements refid="class_a_dn_e_d_transform_base_1a5408c9bb026b902610d14b97fb700d17">calculate</reimplements>
         <param>
           <type>epicsUInt32</type>
@@ -74,13 +77,14 @@
         </inbodydescription>
         <location file="/home/runner/work/areaDetector/areaDetector/ADnED/ADnEDApp/src/ADnEDTransform.h" line="41" column="16" bodyfile="/home/runner/work/areaDetector/areaDetector/ADnED/ADnEDApp/src/ADnEDTransform.cpp" bodystart="57" bodyend="77"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="private-func">
+    </sectiondef>
+    <sectiondef kind="private-func">
       <memberdef kind="function" id="class_a_dn_e_d_transform_1a3dd46749d8db414096c66059782c4dab" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>epicsFloat64</type>
         <definition>epicsFloat64 ADnEDTransform::calc_dspace_static</definition>
         <argsstring>(epicsUInt32 pixelID, epicsUInt32 tof) const</argsstring>
         <name>calc_dspace_static</name>
+        <qualifiedname>ADnEDTransform::calc_dspace_static</qualifiedname>
         <param>
           <type>epicsUInt32</type>
           <declname>pixelID</declname>
@@ -103,6 +107,7 @@
         <definition>epicsFloat64 ADnEDTransform::calc_dspace_dynamic</definition>
         <argsstring>(epicsUInt32 pixelID, epicsUInt32 tof) const</argsstring>
         <name>calc_dspace_dynamic</name>
+        <qualifiedname>ADnEDTransform::calc_dspace_dynamic</qualifiedname>
         <param>
           <type>epicsUInt32</type>
           <declname>pixelID</declname>
@@ -125,6 +130,7 @@
         <definition>epicsFloat64 ADnEDTransform::calc_deltaE</definition>
         <argsstring>(epicsUInt32 pixelID, epicsUInt32 tof) const</argsstring>
         <name>calc_deltaE</name>
+        <qualifiedname>ADnEDTransform::calc_deltaE</qualifiedname>
         <param>
           <type>epicsUInt32</type>
           <declname>pixelID</declname>
@@ -143,7 +149,7 @@
         </inbodydescription>
         <location file="/home/runner/work/areaDetector/areaDetector/ADnED/ADnEDApp/src/ADnEDTransform.h" line="47" column="16" bodyfile="/home/runner/work/areaDetector/areaDetector/ADnED/ADnEDApp/src/ADnEDTransform.cpp" bodystart="121" bodyend="178"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
 <para>Library of functions to use for transforming the time of flight value into another parameter (for example dspace). </para>
     </briefdescription>
@@ -159,27 +165,27 @@
 </para>
     </detaileddescription>
     <inheritancegraph>
-      <node id="2">
-        <label>ADnEDTransformBase</label>
-        <link refid="class_a_dn_e_d_transform_base"/>
-      </node>
       <node id="1">
         <label>ADnEDTransform</label>
         <link refid="class_a_dn_e_d_transform"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
+      </node>
+      <node id="2">
+        <label>ADnEDTransformBase</label>
+        <link refid="class_a_dn_e_d_transform_base"/>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="2">
-        <label>ADnEDTransformBase</label>
-        <link refid="class_a_dn_e_d_transform_base"/>
-      </node>
       <node id="1">
         <label>ADnEDTransform</label>
         <link refid="class_a_dn_e_d_transform"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
+      </node>
+      <node id="2">
+        <label>ADnEDTransformBase</label>
+        <link refid="class_a_dn_e_d_transform_base"/>
       </node>
     </collaborationgraph>
     <location file="/home/runner/work/areaDetector/areaDetector/ADnED/ADnEDApp/src/ADnEDTransform.h" line="33" column="1" bodyfile="/home/runner/work/areaDetector/areaDetector/ADnED/ADnEDApp/src/ADnEDTransform.h" bodystart="33" bodyend="49"/>

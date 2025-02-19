@@ -1,13 +1,14 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="structcam_list__t" kind="struct" language="C++" prot="public">
     <compoundname>camList_t</compoundname>
-      <sectiondef kind="public-attrib">
+    <sectiondef kind="public-attrib">
       <memberdef kind="variable" id="structcam_list__t_1aaf365edbcc7d2329ca527f231d95ccfd" prot="public" static="no" mutable="no">
         <type>ELLNODE</type>
         <definition>ELLNODE camList_t::node</definition>
         <argsstring></argsstring>
         <name>node</name>
+        <qualifiedname>camList_t::node</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -21,6 +22,7 @@
         <definition>FirewireDCAM* camList_t::fdc</definition>
         <argsstring></argsstring>
         <name>fdc</name>
+        <qualifiedname>camList_t::fdc</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -34,6 +36,7 @@
         <definition>dc1394camera_t* camList_t::cam</definition>
         <argsstring></argsstring>
         <name>cam</name>
+        <qualifiedname>camList_t::cam</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -42,21 +45,17 @@
         </inbodydescription>
         <location file="/home/runner/work/areaDetector/areaDetector/firewireDCAM/firewireDCAMApp/src/firewireDCAM.cpp" line="150" column="16" bodyfile="/home/runner/work/areaDetector/areaDetector/firewireDCAM/firewireDCAMApp/src/firewireDCAM.cpp" bodystart="150" bodyend="-1"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="9">
-        <label>NDDimension</label>
-        <link refid="struct_n_d_dimension"/>
-      </node>
-      <node id="5">
-        <label>asynPortDriver</label>
-      </node>
-      <node id="11">
-        <label>string</label>
+      <node id="3">
+        <label>ADDriver</label>
+        <link refid="class_a_d_driver"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
       </node>
       <node id="10">
         <label>Codec_t</label>
@@ -65,24 +64,45 @@
           <edgelabel>name</edgelabel>
         </childnode>
       </node>
-      <node id="8">
+      <node id="2">
+        <label>FirewireDCAM</label>
+        <link refid="class_firewire_d_c_a_m"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>pRaw</edgelabel>
+        </childnode>
+      </node>
+      <node id="7">
         <label>NDArray</label>
         <link refid="class_n_d_array"/>
         <childnode refid="6" relation="usage">
           <edgelabel>pNDArrayPool</edgelabel>
         </childnode>
-        <childnode refid="9" relation="usage">
+        <childnode refid="4" relation="usage">
+          <edgelabel>pDriver</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
           <edgelabel>dims</edgelabel>
         </childnode>
-        <childnode refid="7" relation="usage">
+        <childnode refid="9" relation="usage">
           <edgelabel>pAttributeList</edgelabel>
         </childnode>
         <childnode refid="10" relation="usage">
           <edgelabel>codec</edgelabel>
         </childnode>
-        <childnode refid="4" relation="usage">
-          <edgelabel>pDriver</edgelabel>
-        </childnode>
+      </node>
+      <node id="6">
+        <label>NDArrayPool</label>
+        <link refid="class_n_d_array_pool"/>
+      </node>
+      <node id="9">
+        <label>NDAttributeList</label>
+        <link refid="class_n_d_attribute_list"/>
+      </node>
+      <node id="8">
+        <label>NDDimension</label>
+        <link refid="struct_n_d_dimension"/>
       </node>
       <node id="4">
         <label>asynNDArrayDriver</label>
@@ -93,34 +113,14 @@
           <edgelabel>pNDArrayPool</edgelabel>
         </childnode>
         <childnode refid="7" relation="usage">
-          <edgelabel>pAttributeList</edgelabel>
-        </childnode>
-        <childnode refid="8" relation="usage">
           <edgelabel>pArrays</edgelabel>
         </childnode>
-      </node>
-      <node id="6">
-        <label>NDArrayPool</label>
-        <link refid="class_n_d_array_pool"/>
-      </node>
-      <node id="3">
-        <label>ADDriver</label>
-        <link refid="class_a_d_driver"/>
-        <childnode refid="4" relation="public-inheritance">
+        <childnode refid="9" relation="usage">
+          <edgelabel>pAttributeList</edgelabel>
         </childnode>
       </node>
-      <node id="7">
-        <label>NDAttributeList</label>
-        <link refid="class_n_d_attribute_list"/>
-      </node>
-      <node id="2">
-        <label>FirewireDCAM</label>
-        <link refid="class_firewire_d_c_a_m"/>
-        <childnode refid="3" relation="public-inheritance">
-        </childnode>
-        <childnode refid="8" relation="usage">
-          <edgelabel>pRaw</edgelabel>
-        </childnode>
+      <node id="5">
+        <label>asynPortDriver</label>
       </node>
       <node id="1">
         <label>camList_t</label>
@@ -128,6 +128,9 @@
         <childnode refid="2" relation="usage">
           <edgelabel>fdc</edgelabel>
         </childnode>
+      </node>
+      <node id="11">
+        <label>string</label>
       </node>
     </collaborationgraph>
     <location file="/home/runner/work/areaDetector/areaDetector/firewireDCAM/firewireDCAMApp/src/firewireDCAM.cpp" line="147" column="1" bodyfile="/home/runner/work/areaDetector/areaDetector/firewireDCAM/firewireDCAMApp/src/firewireDCAM.cpp" bodystart="147" bodyend="151"/>

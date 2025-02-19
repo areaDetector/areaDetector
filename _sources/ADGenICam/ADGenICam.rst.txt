@@ -729,7 +729,7 @@ Linux USB and GigE System Settings
 In order to run GigE and USB-3 cameras at their full frame rates on Linux it is necessary to change some
 of the default Linux system settings.
 
-For GigE cameras the default values of the net.core.rmem_max and net.core.rmem_default are typically much to low
+For GigE cameras the default values of the net.core.rmem_max and net.core.rmem_default are typically much too low
 (~200 KB) for optimal performance of GigE and 10 GigE cameras.  These should be increased to 8 MB.  To set the
 values immediately execute the following commands as root::
 

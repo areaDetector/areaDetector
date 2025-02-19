@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="rate_test_8cpp" kind="file" language="C++">
     <compoundname>rateTest.cpp</compoundname>
     <includes local="yes">atcore.h</includes>
@@ -7,15 +7,6 @@
     <includes local="no">stdlib.h</includes>
     <includes local="no">time.h</includes>
     <incdepgraph>
-      <node id="4">
-        <label>stdlib.h</label>
-      </node>
-      <node id="5">
-        <label>time.h</label>
-      </node>
-      <node id="3">
-        <label>iostream</label>
-      </node>
       <node id="1">
         <label>/home/runner/work/areaDetector/areaDetector/ADAndor3/andor3App/src/rateTest.cpp</label>
         <link refid="rate_test_8cpp"/>
@@ -31,8 +22,17 @@
       <node id="2">
         <label>atcore.h</label>
       </node>
+      <node id="3">
+        <label>iostream</label>
+      </node>
+      <node id="4">
+        <label>stdlib.h</label>
+      </node>
+      <node id="5">
+        <label>time.h</label>
+      </node>
     </incdepgraph>
-      <sectiondef kind="define">
+    <sectiondef kind="define">
       <memberdef kind="define" id="rate_test_8cpp_1aca34d8a3d1d7af9c1ba5e1e9ba22c4cd" prot="public" static="no">
         <name>EXTRACTLOWPACKED</name>
         <param><defname>SourcePtr</defname></param>
@@ -68,8 +68,8 @@
         </inbodydescription>
         <location file="/home/runner/work/areaDetector/areaDetector/ADAndor3/andor3App/src/rateTest.cpp" line="11" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADAndor3/andor3App/src/rateTest.cpp" bodystart="11" bodyend="-1"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="func">
+    </sectiondef>
+    <sectiondef kind="func">
       <memberdef kind="function" id="rate_test_8cpp_1a0ddf1224851353fc92bfbff6f499fa97" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
         <definition>int main</definition>
@@ -92,7 +92,7 @@
         </inbodydescription>
         <location file="/home/runner/work/areaDetector/areaDetector/ADAndor3/andor3App/src/rateTest.cpp" line="13" column="5" bodyfile="/home/runner/work/areaDetector/areaDetector/ADAndor3/andor3App/src/rateTest.cpp" bodystart="13" bodyend="147"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
@@ -110,7 +110,7 @@
 <codeline lineno="10"><highlight class="normal"></highlight></codeline>
 <codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>NUM_BUFFERS<sp/>10</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="12"><highlight class="normal"></highlight></codeline>
-<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="rate_test_8cpp_1a0ddf1224851353fc92bfbff6f499fa97" kindref="member">main</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>argc,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>argv[])</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="listdevices_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4" kindref="member">main</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>argc,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>argv[])</highlight></codeline>
 <codeline lineno="14"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="15"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i_retCode;</highlight></codeline>
 <codeline lineno="16"><highlight class="normal"><sp/><sp/>AT_64<sp/>iNumberDevices<sp/>=<sp/>0;</highlight></codeline>
@@ -208,14 +208,14 @@
 <codeline lineno="108"><highlight class="normal"></highlight></codeline>
 <codeline lineno="109"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Allocate<sp/>and<sp/>queue<sp/>buffers</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="110"><highlight class="normal"><sp/><sp/>buffers<sp/>=<sp/>(AT_U8<sp/>**)calloc(<ref refid="rate_test_8cpp_1aac028f4c15ac7f78a44be5db76cfbec7" kindref="member">NUM_BUFFERS</ref>,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(AT_U8<sp/>*));</highlight></codeline>
-<codeline lineno="111"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>=0;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>&lt;<ref refid="rate_test_8cpp_1aac028f4c15ac7f78a44be5db76cfbec7" kindref="member">NUM_BUFFERS</ref>;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>++)<sp/>{</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(i=0;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>&lt;<ref refid="rate_test_8cpp_1aac028f4c15ac7f78a44be5db76cfbec7" kindref="member">NUM_BUFFERS</ref>;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>++)<sp/>{</highlight></codeline>
 <codeline lineno="112"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#ifdef<sp/>_WIN32</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>buffers[<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>]<sp/>=<sp/>(AT_U8*)_aligned_malloc(bufferSize,<sp/>8);</highlight></codeline>
 <codeline lineno="114"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#else</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>allocate<sp/>8<sp/>byte<sp/>aligned<sp/>buffer<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>posix_memalign((</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>**)&amp;buffers[<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>],<sp/>8,<sp/>bufferSize);</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>posix_memalign((</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>**)&amp;buffers[i],<sp/>8,<sp/>bufferSize);</highlight></codeline>
 <codeline lineno="117"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/>i_retCode<sp/>=<sp/>AT_QueueBuffer(Hndl,<sp/>buffers[<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>],<sp/>bufferSize);</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/>i_retCode<sp/>=<sp/>AT_QueueBuffer(Hndl,<sp/>buffers[i],<sp/>bufferSize);</highlight></codeline>
 <codeline lineno="119"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
 <codeline lineno="120"><highlight class="normal"></highlight></codeline>
 <codeline lineno="121"><highlight class="normal"><sp/><sp/>i_retCode<sp/>=<sp/>AT_GetFloat(Hndl,<sp/>L</highlight><highlight class="stringliteral">&quot;MaxInterfaceTransferRate&quot;</highlight><highlight class="normal">,<sp/>&amp;transferRate);</highlight></codeline>
@@ -227,7 +227,7 @@
 <codeline lineno="127"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//Start<sp/>the<sp/>Acquisition<sp/>running</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="128"><highlight class="normal"><sp/><sp/>AT_Command(Hndl,<sp/>L</highlight><highlight class="stringliteral">&quot;Acquisition<sp/>Start&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="129"><highlight class="normal"></highlight></codeline>
-<codeline lineno="130"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>=0;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>&lt;numFrames;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>++)<sp/>{</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(i=0;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>&lt;numFrames;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>++)<sp/>{</highlight></codeline>
 <codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/>i_retCode<sp/>=<sp/>AT_WaitBuffer(Hndl,<sp/>&amp;image,<sp/><sp/>&amp;bufferSize,<sp/>2000);</highlight></codeline>
 <codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/>tEnd<sp/>=<sp/>time(NULL);</highlight></codeline>
 <codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>

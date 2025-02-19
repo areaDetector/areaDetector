@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="_n_d_array_8cpp" kind="file" language="C++">
     <compoundname>NDArray.cpp</compoundname>
     <includes local="no">string.h</includes>
@@ -10,56 +10,15 @@
     <includes local="no">cantProceed.h</includes>
     <includes refid="_n_d_array_8h" local="yes">NDArray.h</includes>
     <incdepgraph>
-      <node id="6">
-        <label>epicsTypes.h</label>
-      </node>
-      <node id="8">
-        <label>NDArray.h</label>
-        <link refid="_n_d_array_8h"/>
-        <childnode refid="9" relation="include">
-        </childnode>
-        <childnode refid="10" relation="include">
-        </childnode>
-        <childnode refid="11" relation="include">
-        </childnode>
-        <childnode refid="4" relation="include">
-        </childnode>
-        <childnode refid="12" relation="include">
-        </childnode>
-        <childnode refid="17" relation="include">
-        </childnode>
-        <childnode refid="18" relation="include">
-        </childnode>
-      </node>
-      <node id="7">
-        <label>cantProceed.h</label>
-      </node>
-      <node id="17">
-        <label>NDAttributeList.h</label>
-        <link refid="_n_d_attribute_list_8h"/>
-        <childnode refid="3" relation="include">
-        </childnode>
-        <childnode refid="4" relation="include">
-        </childnode>
-        <childnode refid="10" relation="include">
-        </childnode>
-        <childnode refid="12" relation="include">
-        </childnode>
-      </node>
-      <node id="10">
-        <label>epicsMutex.h</label>
-      </node>
-      <node id="16">
-        <label>epicsVersion.h</label>
-      </node>
-      <node id="13">
-        <label>string</label>
-      </node>
       <node id="15">
         <label>ADCoreAPI.h</label>
         <link refid="_a_d_core_a_p_i_8h"/>
         <childnode refid="16" relation="include">
         </childnode>
+      </node>
+      <node id="18">
+        <label>Codec.h</label>
+        <link refid="_codec_8h"/>
       </node>
       <node id="1">
         <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/NDArray.cpp</label>
@@ -79,14 +38,23 @@
         <childnode refid="8" relation="include">
         </childnode>
       </node>
-      <node id="2">
-        <label>string.h</label>
-      </node>
-      <node id="5">
-        <label>vector</label>
-      </node>
-      <node id="4">
-        <label>ellLib.h</label>
+      <node id="8">
+        <label>NDArray.h</label>
+        <link refid="_n_d_array_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
       </node>
       <node id="12">
         <label>NDAttribute.h</label>
@@ -104,21 +72,53 @@
         <childnode refid="15" relation="include">
         </childnode>
       </node>
+      <node id="17">
+        <label>NDAttributeList.h</label>
+        <link refid="_n_d_attribute_list_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
       <node id="14">
         <label>asynDriver.h</label>
       </node>
-      <node id="18">
-        <label>Codec.h</label>
-        <link refid="_codec_8h"/>
+      <node id="7">
+        <label>cantProceed.h</label>
+      </node>
+      <node id="4">
+        <label>ellLib.h</label>
+      </node>
+      <node id="10">
+        <label>epicsMutex.h</label>
       </node>
       <node id="11">
         <label>epicsTime.h</label>
+      </node>
+      <node id="6">
+        <label>epicsTypes.h</label>
+      </node>
+      <node id="16">
+        <label>epicsVersion.h</label>
       </node>
       <node id="9">
         <label>set</label>
       </node>
       <node id="3">
         <label>stdio.h</label>
+      </node>
+      <node id="13">
+        <label>string</label>
+      </node>
+      <node id="2">
+        <label>string.h</label>
+      </node>
+      <node id="5">
+        <label>vector</label>
       </node>
     </incdepgraph>
     <briefdescription>
@@ -173,7 +173,7 @@
 <codeline lineno="47"><highlight class="normal"><sp/><sp/>this-&gt;referenceCount<sp/>=<sp/>1;</highlight></codeline>
 <codeline lineno="48"><highlight class="normal"></highlight></codeline>
 <codeline lineno="49"><highlight class="normal"><sp/><sp/>memset(this-&gt;dims,<sp/>0,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(this-&gt;dims));</highlight></codeline>
-<codeline lineno="50"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>=0;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>&lt;ndims<sp/>&amp;&amp;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>&lt;<ref refid="_n_d_array_8h_1ac4d72230192b5a071cf82e445b44ad2e" kindref="member">ND_ARRAY_MAX_DIMS</ref>;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>++)<sp/>{</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i=0;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>&lt;ndims<sp/>&amp;&amp;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>&lt;<ref refid="_n_d_array_8h_1ac4d72230192b5a071cf82e445b44ad2e" kindref="member">ND_ARRAY_MAX_DIMS</ref>;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>++)<sp/>{</highlight></codeline>
 <codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;dims[<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>].size<sp/>=<sp/>dims[<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>];</highlight></codeline>
 <codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;dims[<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>].offset<sp/>=<sp/>0;</highlight></codeline>
 <codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;dims[<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>].binning<sp/>=<sp/>1;</highlight></codeline>
@@ -244,7 +244,7 @@
 <codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="122"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
 <codeline lineno="123"><highlight class="normal"><sp/><sp/>pInfo-&gt;<ref refid="struct_n_d_array_info_1a60783541b9eda5a6222e5cdad797c387" kindref="member">nElements</ref><sp/>=<sp/>1;</highlight></codeline>
-<codeline lineno="124"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>=0;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>&lt;<ref refid="class_n_d_array_1a4769c6ebb8275710a58bd88dba086b71" kindref="member">ndims</ref>;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>++)<sp/>pInfo-&gt;<ref refid="struct_n_d_array_info_1a60783541b9eda5a6222e5cdad797c387" kindref="member">nElements</ref><sp/>*=<sp/><ref refid="class_n_d_array_1a71e5be2b11008face8dc6c5be19f71f1" kindref="member">dims</ref>[<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>];</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i=0;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>&lt;<ref refid="class_n_d_array_1a4769c6ebb8275710a58bd88dba086b71" kindref="member">ndims</ref>;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>++)<sp/>pInfo-&gt;<ref refid="struct_n_d_array_info_1a60783541b9eda5a6222e5cdad797c387" kindref="member">nElements</ref><sp/>*=<sp/><ref refid="class_n_d_array_1a71e5be2b11008face8dc6c5be19f71f1" kindref="member">dims</ref>[i];</highlight></codeline>
 <codeline lineno="125"><highlight class="normal"><sp/><sp/>pInfo-&gt;<ref refid="struct_n_d_array_info_1af8f050c2c099f07311a39cc544693d00" kindref="member">totalBytes</ref><sp/>=<sp/>pInfo-&gt;<ref refid="struct_n_d_array_info_1a60783541b9eda5a6222e5cdad797c387" kindref="member">nElements</ref><sp/>*<sp/>pInfo-&gt;<ref refid="struct_n_d_array_info_1afe782c95c5f00ec3efb4492cd6d3a851" kindref="member">bytesPerElement</ref>;</highlight></codeline>
 <codeline lineno="126"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="_n_d_attribute_8h_1a0bcdf5b219c47403272d8eb586395733" kindref="member">ND_SUCCESS</ref>;</highlight></codeline>
 <codeline lineno="127"><highlight class="normal">}</highlight></codeline>
@@ -253,7 +253,7 @@
 <codeline lineno="133"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>;</highlight></codeline>
 <codeline lineno="134"><highlight class="normal"><sp/><sp/><ref refid="class_n_d_attribute" kindref="compound">NDAttribute</ref><sp/>*pAttribute;</highlight></codeline>
 <codeline lineno="135"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>*dims_t<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">[this-&gt;<ref refid="class_n_d_array_1a4769c6ebb8275710a58bd88dba086b71" kindref="member">ndims</ref>];</highlight></codeline>
-<codeline lineno="136"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(i=0;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>&lt;this-&gt;<ref refid="class_n_d_array_1a4769c6ebb8275710a58bd88dba086b71" kindref="member">ndims</ref>;<sp/>i++)<sp/>dims_t[<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>]<sp/>=<sp/>this-&gt;dims[<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>].size;</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(i=0;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>&lt;this-&gt;<ref refid="class_n_d_array_1a4769c6ebb8275710a58bd88dba086b71" kindref="member">ndims</ref>;<sp/>i++)<sp/>dims_t[i]<sp/>=<sp/>this-&gt;dims[i].size;</highlight></codeline>
 <codeline lineno="137"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>status<sp/>=<sp/><ref refid="class_n_d_array_1a5718bab75d602846892e604cf04b4c56" kindref="member">NDArray::computeArrayInfo</ref>(this-&gt;ndims,<sp/>dims_t,<sp/>this-&gt;dataType,<sp/>pInfo);</highlight></codeline>
 <codeline lineno="138"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">[]<sp/>dims_t;</highlight></codeline>
 <codeline lineno="139"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(status<sp/>!=<sp/><ref refid="_n_d_attribute_8h_1a0bcdf5b219c47403272d8eb586395733" kindref="member">ND_SUCCESS</ref>)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>status;</highlight></codeline>

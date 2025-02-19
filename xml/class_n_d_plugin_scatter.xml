@@ -1,15 +1,16 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="class_n_d_plugin_scatter" kind="class" language="C++" prot="public">
     <compoundname>NDPluginScatter</compoundname>
     <basecompoundref refid="class_n_d_plugin_driver" prot="public" virt="non-virtual">NDPluginDriver</basecompoundref>
     <includes refid="_n_d_plugin_scatter_8h" local="no">NDPluginScatter.h</includes>
-      <sectiondef kind="protected-attrib">
+    <sectiondef kind="protected-attrib">
       <memberdef kind="variable" id="class_n_d_plugin_scatter_1a05f53e72056c3efab0e987b9b7e4c71d" prot="protected" static="no" mutable="no">
         <type>int</type>
         <definition>int NDPluginScatter::NDPluginScatterMethod</definition>
         <argsstring></argsstring>
         <name>NDPluginScatterMethod</name>
+        <qualifiedname>NDPluginScatter::NDPluginScatterMethod</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -18,13 +19,14 @@
         </inbodydescription>
         <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginScatter.h" line="20" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginScatter.h" bodystart="20" bodyend="-1"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="private-attrib">
+    </sectiondef>
+    <sectiondef kind="private-attrib">
       <memberdef kind="variable" id="class_n_d_plugin_scatter_1ad864a29e0e733921e5d97a705bf0d2eb" prot="private" static="no" mutable="no">
         <type>int</type>
         <definition>int NDPluginScatter::nextClient_</definition>
         <argsstring></argsstring>
         <name>nextClient_</name>
+        <qualifiedname>NDPluginScatter::nextClient_</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -33,13 +35,14 @@
         </inbodydescription>
         <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginScatter.h" line="24" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginScatter.h" bodystart="24" bodyend="-1"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="public-func">
+    </sectiondef>
+    <sectiondef kind="public-func">
       <memberdef kind="function" id="class_n_d_plugin_scatter_1a5a2dfc5944c8fe356c6a83908dcc83c7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>NDPluginScatter::NDPluginScatter</definition>
         <argsstring>(const char *portName, int queueSize, int blockingCallbacks, const char *NDArrayPort, int NDArrayAddr, int maxBuffers, size_t maxMemory, int priority, int stackSize)</argsstring>
         <name>NDPluginScatter</name>
+        <qualifiedname>NDPluginScatter::NDPluginScatter</qualifiedname>
         <param>
           <type>const char *</type>
           <declname>portName</declname>
@@ -164,6 +167,7 @@
         <definition>void NDPluginScatter::processCallbacks</definition>
         <argsstring>(NDArray *pArray)</argsstring>
         <name>processCallbacks</name>
+        <qualifiedname>NDPluginScatter::processCallbacks</qualifiedname>
         <reimplements refid="class_n_d_plugin_driver_1a75ed5528f584d90e4f789aef058661cd">processCallbacks</reimplements>
         <param>
           <type><ref refid="class_n_d_array" kindref="compound">NDArray</ref> *</type>
@@ -187,13 +191,14 @@
         </inbodydescription>
         <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginScatter.h" line="17" column="10" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginScatter.cpp" bodystart="23" bodyend="53"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="private-func">
+    </sectiondef>
+    <sectiondef kind="private-func">
       <memberdef kind="function" id="class_n_d_plugin_scatter_1ae091c8b7be1177afec4283529bf6e9f1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>asynStatus</type>
         <definition>asynStatus NDPluginScatter::doNDArrayCallbacks</definition>
         <argsstring>(NDArray *pArray, int reason, int addr)</argsstring>
         <name>doNDArrayCallbacks</name>
+        <qualifiedname>NDPluginScatter::doNDArrayCallbacks</qualifiedname>
         <param>
           <type><ref refid="class_n_d_array" kindref="compound">NDArray</ref> *</type>
           <declname>pArray</declname>
@@ -242,7 +247,7 @@
         </inbodydescription>
         <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginScatter.h" line="25" column="16" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginScatter.cpp" bodystart="59" bodyend="90"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
 <para>A plugin that does callbacks in round-robin fashion rather than passing every <ref refid="class_n_d_array" kindref="compound">NDArray</ref> to every callback client <linebreak/>
  </para>
@@ -258,12 +263,6 @@
         <childnode refid="5" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="5">
-        <label>epicsThreadRunable</label>
-      </node>
-      <node id="4">
-        <label>asynPortDriver</label>
-      </node>
       <node id="1">
         <label>NDPluginScatter</label>
         <link refid="class_n_d_plugin_scatter"/>
@@ -276,32 +275,14 @@
         <childnode refid="4" relation="public-inheritance">
         </childnode>
       </node>
-    </inheritancegraph>
-    <collaborationgraph>
-      <node id="2">
-        <label>NDPluginDriver</label>
-        <link refid="class_n_d_plugin_driver"/>
-        <childnode refid="3" relation="public-inheritance">
-        </childnode>
-        <childnode refid="11" relation="public-inheritance">
-        </childnode>
-        <childnode refid="7" relation="usage">
-          <edgelabel>pPrevInputArray_</edgelabel>
-        </childnode>
-      </node>
-      <node id="11">
-        <label>epicsThreadRunable</label>
-      </node>
-      <node id="8">
-        <label>NDDimension</label>
-        <link refid="struct_n_d_dimension"/>
-      </node>
       <node id="4">
         <label>asynPortDriver</label>
       </node>
-      <node id="10">
-        <label>string</label>
+      <node id="5">
+        <label>epicsThreadRunable</label>
       </node>
+    </inheritancegraph>
+    <collaborationgraph>
       <node id="9">
         <label>Codec_t</label>
         <link refid="struct_codec__t"/>
@@ -309,23 +290,46 @@
           <edgelabel>name</edgelabel>
         </childnode>
       </node>
-      <node id="7">
+      <node id="6">
         <label>NDArray</label>
         <link refid="class_n_d_array"/>
         <childnode refid="5" relation="usage">
           <edgelabel>pNDArrayPool</edgelabel>
         </childnode>
-        <childnode refid="8" relation="usage">
+        <childnode refid="3" relation="usage">
+          <edgelabel>pDriver</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
           <edgelabel>dims</edgelabel>
         </childnode>
-        <childnode refid="6" relation="usage">
+        <childnode refid="8" relation="usage">
           <edgelabel>pAttributeList</edgelabel>
         </childnode>
         <childnode refid="9" relation="usage">
           <edgelabel>codec</edgelabel>
         </childnode>
-        <childnode refid="3" relation="usage">
-          <edgelabel>pDriver</edgelabel>
+      </node>
+      <node id="5">
+        <label>NDArrayPool</label>
+        <link refid="class_n_d_array_pool"/>
+      </node>
+      <node id="8">
+        <label>NDAttributeList</label>
+        <link refid="class_n_d_attribute_list"/>
+      </node>
+      <node id="7">
+        <label>NDDimension</label>
+        <link refid="struct_n_d_dimension"/>
+      </node>
+      <node id="2">
+        <label>NDPluginDriver</label>
+        <link refid="class_n_d_plugin_driver"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+        <childnode refid="11" relation="public-inheritance">
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>pPrevInputArray_</edgelabel>
         </childnode>
       </node>
       <node id="1">
@@ -343,19 +347,20 @@
           <edgelabel>pNDArrayPool</edgelabel>
         </childnode>
         <childnode refid="6" relation="usage">
-          <edgelabel>pAttributeList</edgelabel>
-        </childnode>
-        <childnode refid="7" relation="usage">
           <edgelabel>pArrays</edgelabel>
         </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>pAttributeList</edgelabel>
+        </childnode>
       </node>
-      <node id="5">
-        <label>NDArrayPool</label>
-        <link refid="class_n_d_array_pool"/>
+      <node id="4">
+        <label>asynPortDriver</label>
       </node>
-      <node id="6">
-        <label>NDAttributeList</label>
-        <link refid="class_n_d_attribute_list"/>
+      <node id="11">
+        <label>epicsThreadRunable</label>
+      </node>
+      <node id="10">
+        <label>string</label>
       </node>
     </collaborationgraph>
     <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginScatter.h" line="10" column="1" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginScatter.h" bodystart="10" bodyend="26"/>

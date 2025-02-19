@@ -1,8 +1,9 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="class_read_only_parameter" kind="class" language="C++" prot="public">
     <compoundname>ReadOnlyParameter</compoundname>
     <basecompoundref refid="class_parameter_base" prot="public" virt="non-virtual">ParameterBase</basecompoundref>
+    <derivedcompoundref refid="class_parameter" prot="public" virt="non-virtual">Parameter&lt; epicsInt32 &gt;</derivedcompoundref>
     <derivedcompoundref refid="class_parameter" prot="public" virt="non-virtual">Parameter&lt; epicsFloat64 &gt;</derivedcompoundref>
     <derivedcompoundref refid="class_parameter" prot="public" virt="non-virtual">Parameter&lt; T &gt;</derivedcompoundref>
     <includes refid="rixscam_8h" local="no">rixscam.h</includes>
@@ -11,12 +12,13 @@
         <type>typename T</type>
       </param>
     </templateparamlist>
-      <sectiondef kind="protected-attrib">
+    <sectiondef kind="protected-attrib">
       <memberdef kind="variable" id="class_read_only_parameter_1a05796688e4c51e9990b5599155f90611" prot="protected" static="no" mutable="no">
         <type>T</type>
         <definition>T ReadOnlyParameter&lt; T &gt;::_value</definition>
         <argsstring></argsstring>
         <name>_value</name>
+        <qualifiedname>ReadOnlyParameter::_value</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -30,6 +32,7 @@
         <definition>int ReadOnlyParameter&lt; T &gt;::_parameterIndex</definition>
         <argsstring></argsstring>
         <name>_parameterIndex</name>
+        <qualifiedname>ReadOnlyParameter::_parameterIndex</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -43,6 +46,7 @@
         <definition>const int ReadOnlyParameter&lt; T &gt;::_internalIndex</definition>
         <argsstring></argsstring>
         <name>_internalIndex</name>
+        <qualifiedname>ReadOnlyParameter::_internalIndex</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -56,6 +60,7 @@
         <definition>const T ReadOnlyParameter&lt; T &gt;::_scale</definition>
         <argsstring></argsstring>
         <name>_scale</name>
+        <qualifiedname>ReadOnlyParameter::_scale</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -64,13 +69,14 @@
         </inbodydescription>
         <location file="/home/runner/work/areaDetector/areaDetector/ADRIXSCam/rixscamApp/src/rixscam.h" line="174" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADRIXSCam/rixscamApp/src/rixscam.h" bodystart="174" bodyend="-1"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="public-func">
+    </sectiondef>
+    <sectiondef kind="public-func">
       <memberdef kind="function" id="class_read_only_parameter_1a269680abc3b8736d2d93d043b0c31998" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
         <definition>ReadOnlyParameter&lt; T &gt;::ReadOnlyParameter</definition>
         <argsstring>(const std::string &amp;name, const short internalIndex, const T &amp;defaultValue, const T &amp;scale)</argsstring>
         <name>ReadOnlyParameter</name>
+        <qualifiedname>ReadOnlyParameter::ReadOnlyParameter</qualifiedname>
         <param>
           <type>const std::string &amp;</type>
           <declname>name</declname>
@@ -100,6 +106,7 @@
         <definition>ReadOnlyParameter&lt; T &gt;::ReadOnlyParameter</definition>
         <argsstring>(const std::string &amp;name, const short internalIndex, const T &amp;defaultValue)</argsstring>
         <name>ReadOnlyParameter</name>
+        <qualifiedname>ReadOnlyParameter::ReadOnlyParameter</qualifiedname>
         <param>
           <type>const std::string &amp;</type>
           <declname>name</declname>
@@ -125,6 +132,7 @@
         <definition>ReadOnlyParameter&lt; T &gt;::ReadOnlyParameter</definition>
         <argsstring>(const std::string &amp;name, const short internalIndex)</argsstring>
         <name>ReadOnlyParameter</name>
+        <qualifiedname>ReadOnlyParameter::ReadOnlyParameter</qualifiedname>
         <param>
           <type>const std::string &amp;</type>
           <declname>name</declname>
@@ -146,6 +154,7 @@
         <definition>virtual asynStatus ReadOnlyParameter&lt; T &gt;::Initialize</definition>
         <argsstring>(asynPortDriver &amp;driver)</argsstring>
         <name>Initialize</name>
+        <qualifiedname>ReadOnlyParameter::Initialize</qualifiedname>
         <reimplements refid="class_parameter_base_1a6b42c9d51638e2c70d33da47d0b1ab11">Initialize</reimplements>
         <param>
           <type>asynPortDriver &amp;</type>
@@ -164,6 +173,7 @@
         <definition>virtual T ReadOnlyParameter&lt; T &gt;::Value</definition>
         <argsstring>(asynPortDriver &amp;driver)</argsstring>
         <name>Value</name>
+        <qualifiedname>ReadOnlyParameter::Value</qualifiedname>
         <reimplementedby refid="class_parameter_1a085073fd4be62e5f2a4ffe905365db24">Value</reimplementedby>
         <reimplementedby refid="class_parameter_1a085073fd4be62e5f2a4ffe905365db24">Value</reimplementedby>
         <reimplementedby refid="class_parameter_1a085073fd4be62e5f2a4ffe905365db24">Value</reimplementedby>
@@ -184,6 +194,7 @@
         <definition>virtual asynStatus ReadOnlyParameter&lt; T &gt;::SetValue</definition>
         <argsstring>(asynPortDriver &amp;driver, T newValue)</argsstring>
         <name>SetValue</name>
+        <qualifiedname>ReadOnlyParameter::SetValue</qualifiedname>
         <param>
           <type>asynPortDriver &amp;</type>
           <declname>driver</declname>
@@ -205,6 +216,7 @@
         <definition>virtual int ReadOnlyParameter&lt; T &gt;::ScaledValue</definition>
         <argsstring>(asynPortDriver &amp;driver)</argsstring>
         <name>ScaledValue</name>
+        <qualifiedname>ReadOnlyParameter::ScaledValue</qualifiedname>
         <param>
           <type>asynPortDriver &amp;</type>
           <declname>driver</declname>
@@ -222,6 +234,7 @@
         <definition>virtual bool ReadOnlyParameter&lt; T &gt;::SetValueAtMinimum</definition>
         <argsstring>(asynPortDriver &amp;driver, T minimumValue)</argsstring>
         <name>SetValueAtMinimum</name>
+        <qualifiedname>ReadOnlyParameter::SetValueAtMinimum</qualifiedname>
         <param>
           <type>asynPortDriver &amp;</type>
           <declname>driver</declname>
@@ -243,6 +256,7 @@
         <definition>virtual asynStatus ReadOnlyParameter&lt; T &gt;::SetScaledValue</definition>
         <argsstring>(asynPortDriver &amp;driver, int newValue)</argsstring>
         <name>SetScaledValue</name>
+        <qualifiedname>ReadOnlyParameter::SetScaledValue</qualifiedname>
         <param>
           <type>asynPortDriver &amp;</type>
           <declname>driver</declname>
@@ -264,6 +278,7 @@
         <definition>virtual bool ReadOnlyParameter&lt; T &gt;::Normalize</definition>
         <argsstring>(asynPortDriver &amp;driver)</argsstring>
         <name>Normalize</name>
+        <qualifiedname>ReadOnlyParameter::Normalize</qualifiedname>
         <param>
           <type>asynPortDriver &amp;</type>
           <declname>driver</declname>
@@ -281,6 +296,7 @@
         <definition>virtual bool ReadOnlyParameter&lt; T &gt;::HasParameterIndex</definition>
         <argsstring>(int indexToMatch) const</argsstring>
         <name>HasParameterIndex</name>
+        <qualifiedname>ReadOnlyParameter::HasParameterIndex</qualifiedname>
         <param>
           <type>int</type>
           <declname>indexToMatch</declname>
@@ -298,6 +314,7 @@
         <definition>virtual short ReadOnlyParameter&lt; T &gt;::InternalIndex</definition>
         <argsstring>() const</argsstring>
         <name>InternalIndex</name>
+        <qualifiedname>ReadOnlyParameter::InternalIndex</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -306,13 +323,14 @@
         </inbodydescription>
         <location file="/home/runner/work/areaDetector/areaDetector/ADRIXSCam/rixscamApp/src/rixscam.h" line="160" column="15" bodyfile="/home/runner/work/areaDetector/areaDetector/ADRIXSCam/rixscamApp/src/rixscam.h" bodystart="160" bodyend="163"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="protected-func">
+    </sectiondef>
+    <sectiondef kind="protected-func">
       <memberdef kind="function" id="class_read_only_parameter_1a99809d5bca0211c7a39a31a62d1478b5" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="virtual">
         <type>asynStatus</type>
         <definition>virtual asynStatus ReadOnlyParameter&lt; T &gt;::Create</definition>
         <argsstring>(asynPortDriver &amp;driver, const std::string &amp;name, int &amp;parameterIndex)</argsstring>
         <name>Create</name>
+        <qualifiedname>ReadOnlyParameter::Create</qualifiedname>
         <param>
           <type>asynPortDriver &amp;</type>
           <declname>driver</declname>
@@ -333,70 +351,51 @@
         </inbodydescription>
         <location file="/home/runner/work/areaDetector/areaDetector/ADRIXSCam/rixscamApp/src/rixscam.h" line="166" column="20" bodyfile="/home/runner/work/areaDetector/areaDetector/ADRIXSCam/rixscamApp/src/rixscam.h" bodystart="166" bodyend="169"/>
       </memberdef>
-      <memberdef kind="function" id="class_read_only_parameter_1a044a499560552409c9acbd4226a0d289" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>asynStatus</type>
-        <definition>asynStatus ReadOnlyParameter&lt; epicsFloat64 &gt;::Create</definition>
-        <argsstring>(asynPortDriver &amp;driver, const std::string &amp;name, int &amp;parameterIndex)</argsstring>
-        <name>Create</name>
-        <param>
-          <type>asynPortDriver &amp;</type>
-          <declname>driver</declname>
-        </param>
-        <param>
-          <type>const std::string &amp;</type>
-          <declname>name</declname>
-        </param>
-        <param>
-          <type>int &amp;</type>
-          <declname>parameterIndex</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/areaDetector/areaDetector/ADRIXSCam/rixscamApp/src/rixscam.h" line="183" column="40" bodyfile="/home/runner/work/areaDetector/areaDetector/ADRIXSCam/rixscamApp/src/rixscam.h" bodystart="183" bodyend="186"/>
-      </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="1">
-        <label>ReadOnlyParameter&lt; T &gt;</label>
-        <link refid="class_read_only_parameter"/>
-        <childnode refid="2" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="4">
+      <node id="5">
         <label>Parameter&lt; T &gt;</label>
         <link refid="class_parameter"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="2">
-        <label>ParameterBase</label>
-        <link refid="class_parameter_base"/>
-      </node>
-      <node id="3">
+      <node id="4">
         <label>Parameter&lt; epicsFloat64 &gt;</label>
         <link refid="class_parameter"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-    </inheritancegraph>
-    <collaborationgraph>
+      <node id="3">
+        <label>Parameter&lt; epicsInt32 &gt;</label>
+        <link refid="class_parameter"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>ParameterBase</label>
+        <link refid="class_parameter_base"/>
+      </node>
       <node id="1">
         <label>ReadOnlyParameter&lt; T &gt;</label>
         <link refid="class_read_only_parameter"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
+    </inheritancegraph>
+    <collaborationgraph>
       <node id="2">
         <label>ParameterBase</label>
         <link refid="class_parameter_base"/>
+      </node>
+      <node id="1">
+        <label>ReadOnlyParameter&lt; T &gt;</label>
+        <link refid="class_read_only_parameter"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
       </node>
     </collaborationgraph>
     <location file="/home/runner/work/areaDetector/areaDetector/ADRIXSCam/rixscamApp/src/rixscam.h" line="56" column="1" bodyfile="/home/runner/work/areaDetector/areaDetector/ADRIXSCam/rixscamApp/src/rixscam.h" bodystart="57" bodyend="175"/>
@@ -407,7 +406,6 @@
       <member refid="class_read_only_parameter_1a5427b5421ec85d7544604bd4ffb608d3" prot="protected" virt="non-virtual"><scope>ReadOnlyParameter</scope><name>_scale</name></member>
       <member refid="class_read_only_parameter_1a05796688e4c51e9990b5599155f90611" prot="protected" virt="non-virtual"><scope>ReadOnlyParameter</scope><name>_value</name></member>
       <member refid="class_read_only_parameter_1a99809d5bca0211c7a39a31a62d1478b5" prot="protected" virt="virtual"><scope>ReadOnlyParameter</scope><name>Create</name></member>
-      <member refid="class_read_only_parameter_1a044a499560552409c9acbd4226a0d289" prot="protected" virt="non-virtual"><scope>ReadOnlyParameter</scope><name>Create</name></member>
       <member refid="class_parameter_base_1a636d6f29870d0098d40b26c6ecba0f70" prot="protected" virt="non-virtual"><scope>ReadOnlyParameter</scope><name>GetParameter</name></member>
       <member refid="class_parameter_base_1a4231bea23b8a736771fcb55d09bfa9d3" prot="protected" virt="non-virtual"><scope>ReadOnlyParameter</scope><name>GetParameter</name></member>
       <member refid="class_read_only_parameter_1a746bfb09439365fba6969d571ab2e43f" prot="public" virt="virtual"><scope>ReadOnlyParameter</scope><name>HasParameterIndex</name></member>

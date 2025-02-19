@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="class_multi_parameter" kind="class" language="C++" prot="public">
     <compoundname>MultiParameter</compoundname>
     <basecompoundref refid="class_parameter_base" prot="public" virt="non-virtual">ParameterBase</basecompoundref>
@@ -14,12 +14,13 @@
         <type>typename T</type>
       </param>
     </templateparamlist>
-      <sectiondef kind="protected-attrib">
+    <sectiondef kind="protected-attrib">
       <memberdef kind="variable" id="class_multi_parameter_1afed5c0fa8142cde5371ea2efee351e03" prot="protected" static="no" mutable="no">
         <type>const short</type>
         <definition>const short MultiParameter&lt; valueCount, T &gt;::_internalIndex</definition>
         <argsstring></argsstring>
         <name>_internalIndex</name>
+        <qualifiedname>MultiParameter::_internalIndex</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -33,6 +34,7 @@
         <definition>const T MultiParameter&lt; valueCount, T &gt;::_defaultValue</definition>
         <argsstring></argsstring>
         <name>_defaultValue</name>
+        <qualifiedname>MultiParameter::_defaultValue</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -46,6 +48,7 @@
         <definition>const T MultiParameter&lt; valueCount, T &gt;::_minValue</definition>
         <argsstring></argsstring>
         <name>_minValue</name>
+        <qualifiedname>MultiParameter::_minValue</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -59,6 +62,7 @@
         <definition>const T MultiParameter&lt; valueCount, T &gt;::_maxValue</definition>
         <argsstring></argsstring>
         <name>_maxValue</name>
+        <qualifiedname>MultiParameter::_maxValue</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -72,6 +76,7 @@
         <definition>std::vector&lt;Parameter&lt;T&gt; &gt; MultiParameter&lt; valueCount, T &gt;::_parameters</definition>
         <argsstring></argsstring>
         <name>_parameters</name>
+        <qualifiedname>MultiParameter::_parameters</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -80,13 +85,14 @@
         </inbodydescription>
         <location file="/home/runner/work/areaDetector/areaDetector/ADRIXSCam/rixscamApp/src/rixscam.h" line="327" column="13" bodyfile="/home/runner/work/areaDetector/areaDetector/ADRIXSCam/rixscamApp/src/rixscam.h" bodystart="327" bodyend="-1"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="public-func">
+    </sectiondef>
+    <sectiondef kind="public-func">
       <memberdef kind="function" id="class_multi_parameter_1a7d2f3b5b412f0a7455cb4f6aa5b129ec" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
         <definition>MultiParameter&lt; valueCount, T &gt;::MultiParameter</definition>
         <argsstring>(const std::string &amp;rootName, const short internalIndex, const T &amp;minimumValue, const T &amp;maximumValue, const T &amp;defaultValue, const T &amp;scale)</argsstring>
         <name>MultiParameter</name>
+        <qualifiedname>MultiParameter::MultiParameter</qualifiedname>
         <param>
           <type>const std::string &amp;</type>
           <declname>rootName</declname>
@@ -124,6 +130,7 @@
         <definition>asynStatus MultiParameter&lt; valueCount, T &gt;::Initialize</definition>
         <argsstring>(asynPortDriver &amp;driver)</argsstring>
         <name>Initialize</name>
+        <qualifiedname>MultiParameter::Initialize</qualifiedname>
         <reimplements refid="class_parameter_base_1a6b42c9d51638e2c70d33da47d0b1ab11">Initialize</reimplements>
         <param>
           <type>asynPortDriver &amp;</type>
@@ -142,6 +149,7 @@
         <definition>T MultiParameter&lt; valueCount, T &gt;::Value</definition>
         <argsstring>(asynPortDriver &amp;driver, size_t index)</argsstring>
         <name>Value</name>
+        <qualifiedname>MultiParameter::Value</qualifiedname>
         <param>
           <type>asynPortDriver &amp;</type>
           <declname>driver</declname>
@@ -163,6 +171,7 @@
         <definition>int MultiParameter&lt; valueCount, T &gt;::ScaledValue</definition>
         <argsstring>(asynPortDriver &amp;driver, size_t index)</argsstring>
         <name>ScaledValue</name>
+        <qualifiedname>MultiParameter::ScaledValue</qualifiedname>
         <param>
           <type>asynPortDriver &amp;</type>
           <declname>driver</declname>
@@ -184,6 +193,7 @@
         <definition>asynStatus MultiParameter&lt; valueCount, T &gt;::SetValue</definition>
         <argsstring>(asynPortDriver &amp;driver, size_t index, T newValue)</argsstring>
         <name>SetValue</name>
+        <qualifiedname>MultiParameter::SetValue</qualifiedname>
         <param>
           <type>asynPortDriver &amp;</type>
           <declname>driver</declname>
@@ -209,6 +219,7 @@
         <definition>bool MultiParameter&lt; valueCount, T &gt;::SetValueAtMinimum</definition>
         <argsstring>(asynPortDriver &amp;driver, size_t index, T minimumValue)</argsstring>
         <name>SetValueAtMinimum</name>
+        <qualifiedname>MultiParameter::SetValueAtMinimum</qualifiedname>
         <param>
           <type>asynPortDriver &amp;</type>
           <declname>driver</declname>
@@ -234,6 +245,7 @@
         <definition>asynStatus MultiParameter&lt; valueCount, T &gt;::SetScaledValue</definition>
         <argsstring>(asynPortDriver &amp;driver, size_t index, int newValue)</argsstring>
         <name>SetScaledValue</name>
+        <qualifiedname>MultiParameter::SetScaledValue</qualifiedname>
         <param>
           <type>asynPortDriver &amp;</type>
           <declname>driver</declname>
@@ -259,6 +271,7 @@
         <definition>bool MultiParameter&lt; valueCount, T &gt;::Normalize</definition>
         <argsstring>(asynPortDriver &amp;driver, size_t index)</argsstring>
         <name>Normalize</name>
+        <qualifiedname>MultiParameter::Normalize</qualifiedname>
         <param>
           <type>asynPortDriver &amp;</type>
           <declname>driver</declname>
@@ -280,6 +293,7 @@
         <definition>bool MultiParameter&lt; valueCount, T &gt;::HasParameterIndex</definition>
         <argsstring>(int indexToMatch) const</argsstring>
         <name>HasParameterIndex</name>
+        <qualifiedname>MultiParameter::HasParameterIndex</qualifiedname>
         <param>
           <type>int</type>
           <declname>indexToMatch</declname>
@@ -297,6 +311,7 @@
         <definition>short MultiParameter&lt; valueCount, T &gt;::InternalIndex</definition>
         <argsstring>(size_t index, short indexStep)</argsstring>
         <name>InternalIndex</name>
+        <qualifiedname>MultiParameter::InternalIndex</qualifiedname>
         <param>
           <type>size_t</type>
           <declname>index</declname>
@@ -313,33 +328,33 @@
         </inbodydescription>
         <location file="/home/runner/work/areaDetector/areaDetector/ADRIXSCam/rixscamApp/src/rixscam.h" line="317" column="7" bodyfile="/home/runner/work/areaDetector/areaDetector/ADRIXSCam/rixscamApp/src/rixscam.h" bodystart="317" bodyend="320"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="2">
-        <label>ParameterBase</label>
-        <link refid="class_parameter_base"/>
-      </node>
       <node id="1">
         <label>MultiParameter&lt; valueCount, T &gt;</label>
         <link refid="class_multi_parameter"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
+      </node>
+      <node id="2">
+        <label>ParameterBase</label>
+        <link refid="class_parameter_base"/>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="2">
-        <label>ParameterBase</label>
-        <link refid="class_parameter_base"/>
-      </node>
       <node id="1">
         <label>MultiParameter&lt; valueCount, T &gt;</label>
         <link refid="class_multi_parameter"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
+      </node>
+      <node id="2">
+        <label>ParameterBase</label>
+        <link refid="class_parameter_base"/>
       </node>
     </collaborationgraph>
     <location file="/home/runner/work/areaDetector/areaDetector/ADRIXSCam/rixscamApp/src/rixscam.h" line="239" column="1" bodyfile="/home/runner/work/areaDetector/areaDetector/ADRIXSCam/rixscamApp/src/rixscam.h" bodystart="240" bodyend="328"/>

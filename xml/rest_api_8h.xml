@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="rest_api_8h" kind="file" language="C++">
     <compoundname>restApi.h</compoundname>
     <includes local="no">string</includes>
@@ -10,15 +10,6 @@
     <includedby refid="eiger_param_8h" local="yes">/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerParam.h</includedby>
     <includedby refid="rest_api_8cpp" local="yes">/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/restApi.cpp</includedby>
     <incdepgraph>
-      <node id="4">
-        <label>osiSock.h</label>
-      </node>
-      <node id="3">
-        <label>epicsMutex.h</label>
-      </node>
-      <node id="2">
-        <label>string</label>
-      </node>
       <node id="1">
         <label>/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/restApi.h</label>
         <link refid="rest_api_8h"/>
@@ -29,8 +20,31 @@
         <childnode refid="4" relation="include">
         </childnode>
       </node>
+      <node id="3">
+        <label>epicsMutex.h</label>
+      </node>
+      <node id="4">
+        <label>osiSock.h</label>
+      </node>
+      <node id="2">
+        <label>string</label>
+      </node>
     </incdepgraph>
     <invincdepgraph>
+      <node id="2">
+        <label>/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.cpp</label>
+        <link refid="eiger_detector_8cpp"/>
+      </node>
+      <node id="3">
+        <label>/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h</label>
+        <link refid="eiger_detector_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerParam.cpp</label>
+        <link refid="eiger_param_8cpp"/>
+      </node>
       <node id="4">
         <label>/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerParam.h</label>
         <link refid="eiger_param_8h"/>
@@ -38,6 +52,10 @@
         </childnode>
         <childnode refid="5" relation="include">
         </childnode>
+      </node>
+      <node id="6">
+        <label>/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/restApi.cpp</label>
+        <link refid="rest_api_8cpp"/>
       </node>
       <node id="1">
         <label>/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/restApi.h</label>
@@ -51,27 +69,9 @@
         <childnode refid="6" relation="include">
         </childnode>
       </node>
-      <node id="2">
-        <label>/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.cpp</label>
-        <link refid="eiger_detector_8cpp"/>
-      </node>
-      <node id="3">
-        <label>/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h</label>
-        <link refid="eiger_detector_8h"/>
-        <childnode refid="2" relation="include">
-        </childnode>
-      </node>
-      <node id="6">
-        <label>/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/restApi.cpp</label>
-        <link refid="rest_api_8cpp"/>
-      </node>
-      <node id="5">
-        <label>/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerParam.cpp</label>
-        <link refid="eiger_param_8cpp"/>
-      </node>
     </invincdepgraph>
     <innerclass refid="class_rest_a_p_i" prot="public">RestAPI</innerclass>
-      <sectiondef kind="define">
+    <sectiondef kind="define">
       <memberdef kind="define" id="rest_api_8h_1aad2dd72565852b91c809cd4685833b17" prot="public" static="no">
         <name>DEFAULT_TIMEOUT</name>
         <initializer>20</initializer>
@@ -105,8 +105,8 @@
         </inbodydescription>
         <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/restApi.h" line="11" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/restApi.h" bodystart="11" bodyend="-1"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="enum">
+    </sectiondef>
+    <sectiondef kind="enum">
       <memberdef kind="enum" id="rest_api_8h_1afd90a56eecf857322c679f314656bb22" prot="public" static="no" strong="no">
         <type></type>
         <name>eigerAPIVersion_t</name>
@@ -248,8 +248,8 @@
         </inbodydescription>
         <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/restApi.h" line="19" column="1" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/restApi.h" bodystart="20" bodyend="37"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="typedef">
+    </sectiondef>
+    <sectiondef kind="typedef">
       <memberdef kind="typedef" id="rest_api_8h_1a367edad9ab2aa35c679c908173b6ebc2" prot="public" static="no">
         <type>struct <ref refid="structrequest" kindref="compound">request</ref></type>
         <definition>typedef struct request request_t</definition>
@@ -261,7 +261,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/restApi.h" line="1" column="0" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/restApi.h" bodystart="40" bodyend="-1"/>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/restApi.h" line="40" column="22" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/restApi.h" bodystart="40" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="rest_api_8h_1ae28817caa5cb8b1eef6c0d3e00529692" prot="public" static="no">
         <type>struct <ref refid="structresponse" kindref="compound">response</ref></type>
@@ -274,7 +274,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/restApi.h" line="1" column="0" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/restApi.h" bodystart="41" bodyend="-1"/>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/restApi.h" line="41" column="23" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/restApi.h" bodystart="41" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="rest_api_8h_1a6a9dbb91c569af562f6119bb7b960cbb" prot="public" static="no">
         <type>struct <ref refid="structsocket" kindref="compound">socket</ref></type>
@@ -287,15 +287,15 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/restApi.h" line="1" column="0" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/restApi.h" bodystart="42" bodyend="-1"/>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/restApi.h" line="42" column="21" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/restApi.h" bodystart="42" bodyend="-1"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
     <programlisting>
-<codeline lineno="1" refid="rest_api_8h_1a367edad9ab2aa35c679c908173b6ebc2" refkind="member"><highlight class="preprocessor">#ifndef<sp/>REST_API_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>REST_API_H</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>REST_API_H</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="3"><highlight class="normal"></highlight></codeline>
 <codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
@@ -334,19 +334,19 @@
 <codeline lineno="37"><highlight class="normal">}<sp/><ref refid="rest_api_8h_1a14c3ad6f5fa82ee5ff47981398d0e13c" kindref="member">sys_t</ref>;</highlight></codeline>
 <codeline lineno="38"><highlight class="normal"></highlight></codeline>
 <codeline lineno="39"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Forward<sp/>declarations</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="40"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structrequest" kindref="compound">request</ref><sp/><sp/><ref refid="structrequest" kindref="compound">request_t</ref>;</highlight></codeline>
-<codeline lineno="41"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structresponse" kindref="compound">response</ref><sp/><ref refid="structresponse" kindref="compound">response_t</ref>;</highlight></codeline>
-<codeline lineno="42"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structsocket" kindref="compound">socket</ref><sp/><sp/><sp/><ref refid="structsocket" kindref="compound">socket_t</ref>;</highlight></codeline>
+<codeline lineno="40" refid="rest_api_8h_1a367edad9ab2aa35c679c908173b6ebc2" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structrequest" kindref="compound">request</ref><sp/><sp/><ref refid="structrequest" kindref="compound">request_t</ref>;</highlight></codeline>
+<codeline lineno="41" refid="rest_api_8h_1ae28817caa5cb8b1eef6c0d3e00529692" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structresponse" kindref="compound">response</ref><sp/><ref refid="structresponse" kindref="compound">response_t</ref>;</highlight></codeline>
+<codeline lineno="42" refid="rest_api_8h_1a6a9dbb91c569af562f6119bb7b960cbb" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structsocket" kindref="compound">socket</ref><sp/><sp/><sp/><ref refid="structsocket" kindref="compound">socket_t</ref>;</highlight></codeline>
 <codeline lineno="43"><highlight class="normal"></highlight></codeline>
 <codeline lineno="44" refid="class_rest_a_p_i" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_rest_a_p_i" kindref="compound">RestAPI</ref></highlight></codeline>
 <codeline lineno="45"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="46"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacehdf5_1abeed318faeb13380e1b4221bd4198bf1aea271040d7a5b8d9af9cbf6564d262d5" kindref="member">std::string</ref><sp/>mHostname;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>mHostname;</highlight></codeline>
 <codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>mPort;</highlight></codeline>
 <codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">sockaddr_in<sp/>mAddress;</highlight></codeline>
 <codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>mNumSockets;</highlight></codeline>
 <codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structsocket" kindref="compound">socket_t</ref><sp/>*mSockets;</highlight></codeline>
-<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacehdf5_1abeed318faeb13380e1b4221bd4198bf1aea271040d7a5b8d9af9cbf6564d262d5" kindref="member">std::string</ref><sp/>mSysStr[<ref refid="rest_api_8h_1a14c3ad6f5fa82ee5ff47981398d0e13ca69d0630a4d1e3d547807db45c2ae59bf" kindref="member">SSCount</ref>];</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>mSysStr[<ref refid="rest_api_8h_1a14c3ad6f5fa82ee5ff47981398d0e13ca69d0630a4d1e3d547807db45c2ae59bf" kindref="member">SSCount</ref>];</highlight></codeline>
 <codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="rest_api_8h_1afd90a56eecf857322c679f314656bb22" kindref="member">eigerAPIVersion_t</ref><sp/>mAPIVersion;</highlight></codeline>
 <codeline lineno="54"><highlight class="normal"></highlight></codeline>
 <codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>connect<sp/>(<ref refid="structsocket" kindref="compound">socket_t</ref><sp/>*s);</highlight></codeline>
@@ -354,16 +354,16 @@
 <codeline lineno="57"><highlight class="normal"></highlight></codeline>
 <codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>doRequest<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structrequest" kindref="compound">request_t</ref><sp/>*<ref refid="structrequest" kindref="compound">request</ref>,<sp/><ref refid="structresponse" kindref="compound">response_t</ref><sp/>*<ref refid="structresponse" kindref="compound">response</ref>,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>timeout<sp/>=<sp/><ref refid="rest_api_8h_1aad2dd72565852b91c809cd4685833b17" kindref="member">DEFAULT_TIMEOUT</ref>);</highlight></codeline>
 <codeline lineno="59"><highlight class="normal"></highlight></codeline>
-<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>getBlob<sp/>(<ref refid="rest_api_8h_1a14c3ad6f5fa82ee5ff47981398d0e13c" kindref="member">sys_t</ref><sp/>sys,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="namespacemake_db_and_edl_1a2832407c256551abb325d5ee9e587443" kindref="member">name</ref>,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**<ref refid="udp__client__pixirad__single_8cpp_1ac8ed9b9edf72a0bbde1ba01f0c67ef73" kindref="member">buf</ref>,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>*bufSize,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*accept);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>getBlob<sp/>(<ref refid="rest_api_8h_1a14c3ad6f5fa82ee5ff47981398d0e13c" kindref="member">sys_t</ref><sp/>sys,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*name,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**<ref refid="udp__client__pixirad__single_8cpp_1ac8ed9b9edf72a0bbde1ba01f0c67ef73" kindref="member">buf</ref>,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>*bufSize,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*accept);</highlight></codeline>
 <codeline lineno="61"><highlight class="normal"></highlight></codeline>
 <codeline lineno="62"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
 <codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_rest_a_p_i_1a8273915057ec140617e5280369429390" kindref="member">buildMasterName</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*pattern,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>seqId,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="udp__client__pixirad__single_8cpp_1ac8ed9b9edf72a0bbde1ba01f0c67ef73" kindref="member">buf</ref>,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>bufSize);</highlight></codeline>
 <codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_rest_a_p_i_1ac143d147cbc5e05934cdccdf8fe3b31f" kindref="member">buildDataName</ref><sp/><sp/><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*pattern,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>seqId,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="udp__client__pixirad__single_8cpp_1ac8ed9b9edf72a0bbde1ba01f0c67ef73" kindref="member">buf</ref>,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>bufSize);</highlight></codeline>
 <codeline lineno="65"><highlight class="normal"></highlight></codeline>
-<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_rest_a_p_i_1a6e5355fe38f7a44019d965b3298af46d" kindref="member">RestAPI</ref><sp/>(<ref refid="namespacehdf5_1abeed318faeb13380e1b4221bd4198bf1aea271040d7a5b8d9af9cbf6564d262d5" kindref="member">std::string</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>&amp;<sp/>hostname,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>port=80,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>numSockets=5);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_rest_a_p_i" kindref="compound">RestAPI</ref><sp/>(std::string<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>&amp;<sp/>hostname,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>port=80,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>numSockets=5);</highlight></codeline>
 <codeline lineno="67"><highlight class="normal"></highlight></codeline>
-<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_rest_a_p_i_1a3da99109327f64267436315484b69af5" kindref="member">get</ref><sp/>(<ref refid="rest_api_8h_1a14c3ad6f5fa82ee5ff47981398d0e13c" kindref="member">sys_t</ref><sp/>sys,<sp/><ref refid="namespacehdf5_1abeed318faeb13380e1b4221bd4198bf1aea271040d7a5b8d9af9cbf6564d262d5" kindref="member">std::string</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>&amp;<sp/>param,<sp/><ref refid="namespacehdf5_1abeed318faeb13380e1b4221bd4198bf1aea271040d7a5b8d9af9cbf6564d262d5" kindref="member">std::string</ref><sp/>&amp;<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>timeout<sp/>=<sp/><ref refid="rest_api_8h_1aad2dd72565852b91c809cd4685833b17" kindref="member">DEFAULT_TIMEOUT</ref>);</highlight></codeline>
-<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_rest_a_p_i_1a7bc501cee9faad708dd1bd16c874bf81" kindref="member">put</ref><sp/>(<ref refid="rest_api_8h_1a14c3ad6f5fa82ee5ff47981398d0e13c" kindref="member">sys_t</ref><sp/>sys,<sp/><ref refid="namespacehdf5_1abeed318faeb13380e1b4221bd4198bf1aea271040d7a5b8d9af9cbf6564d262d5" kindref="member">std::string</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>&amp;<sp/>param,<sp/><ref refid="namespacehdf5_1abeed318faeb13380e1b4221bd4198bf1aea271040d7a5b8d9af9cbf6564d262d5" kindref="member">std::string</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>&amp;<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">,<sp/><ref refid="namespacehdf5_1abeed318faeb13380e1b4221bd4198bf1aea271040d7a5b8d9af9cbf6564d262d5" kindref="member">std::string</ref><sp/>*<sp/>reply<sp/>=<sp/>NULL,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>timeout<sp/>=<sp/><ref refid="rest_api_8h_1aad2dd72565852b91c809cd4685833b17" kindref="member">DEFAULT_TIMEOUT</ref>);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_rest_a_p_i_1a3da99109327f64267436315484b69af5" kindref="member">get</ref><sp/>(<ref refid="rest_api_8h_1a14c3ad6f5fa82ee5ff47981398d0e13c" kindref="member">sys_t</ref><sp/>sys,<sp/>std::string<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>&amp;<sp/>param,<sp/>std::string<sp/>&amp;<sp/>value,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>timeout<sp/>=<sp/><ref refid="rest_api_8h_1aad2dd72565852b91c809cd4685833b17" kindref="member">DEFAULT_TIMEOUT</ref>);</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_rest_a_p_i_1a7bc501cee9faad708dd1bd16c874bf81" kindref="member">put</ref><sp/>(<ref refid="rest_api_8h_1a14c3ad6f5fa82ee5ff47981398d0e13c" kindref="member">sys_t</ref><sp/>sys,<sp/>std::string<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>&amp;<sp/>param,<sp/>std::string<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>&amp;<sp/>value<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">,<sp/>std::string<sp/>*<sp/>reply<sp/>=<sp/>NULL,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>timeout<sp/>=<sp/><ref refid="rest_api_8h_1aad2dd72565852b91c809cd4685833b17" kindref="member">DEFAULT_TIMEOUT</ref>);</highlight></codeline>
 <codeline lineno="70"><highlight class="normal"></highlight></codeline>
 <codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_rest_a_p_i_1a91d3c97d44fdcf7990e2daefc663af62" kindref="member">initialize</ref><sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_rest_a_p_i_1ae825bb94222ca1f0863359625d07af84" kindref="member">arm</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>*sequenceId);</highlight></codeline>

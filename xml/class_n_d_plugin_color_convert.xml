@@ -1,15 +1,16 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="class_n_d_plugin_color_convert" kind="class" language="C++" prot="public">
     <compoundname>NDPluginColorConvert</compoundname>
     <basecompoundref refid="class_n_d_plugin_driver" prot="public" virt="non-virtual">NDPluginDriver</basecompoundref>
     <includes refid="_n_d_plugin_color_convert_8h" local="no">NDPluginColorConvert.h</includes>
-      <sectiondef kind="protected-attrib">
+    <sectiondef kind="protected-attrib">
       <memberdef kind="variable" id="class_n_d_plugin_color_convert_1af1d8c946560602a65ca2cb2bc2bbc231" prot="protected" static="no" mutable="no">
         <type>int</type>
         <definition>int NDPluginColorConvert::NDPluginColorConvertColorModeOut</definition>
         <argsstring></argsstring>
         <name>NDPluginColorConvertColorModeOut</name>
+        <qualifiedname>NDPluginColorConvert::NDPluginColorConvertColorModeOut</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -23,6 +24,7 @@
         <definition>int NDPluginColorConvert::NDPluginColorConvertFalseColor</definition>
         <argsstring></argsstring>
         <name>NDPluginColorConvertFalseColor</name>
+        <qualifiedname>NDPluginColorConvert::NDPluginColorConvertFalseColor</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -31,13 +33,14 @@
         </inbodydescription>
         <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginColorConvert.h" line="39" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginColorConvert.h" bodystart="39" bodyend="-1"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="public-func">
+    </sectiondef>
+    <sectiondef kind="public-func">
       <memberdef kind="function" id="class_n_d_plugin_color_convert_1a42a9450512a4f1cdaadc9f4d24d0e43e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>NDPluginColorConvert::NDPluginColorConvert</definition>
         <argsstring>(const char *portName, int queueSize, int blockingCallbacks, const char *NDArrayPort, int NDArrayAddr, int maxBuffers, size_t maxMemory, int priority, int stackSize, int maxThreads)</argsstring>
         <name>NDPluginColorConvert</name>
+        <qualifiedname>NDPluginColorConvert::NDPluginColorConvert</qualifiedname>
         <param>
           <type>const char *</type>
           <declname>portName</declname>
@@ -174,6 +177,7 @@
         <definition>void NDPluginColorConvert::processCallbacks</definition>
         <argsstring>(NDArray *pArray)</argsstring>
         <name>processCallbacks</name>
+        <qualifiedname>NDPluginColorConvert::processCallbacks</qualifiedname>
         <reimplements refid="class_n_d_plugin_driver_1a75ed5528f584d90e4f789aef058661cd">processCallbacks</reimplements>
         <param>
           <type><ref refid="class_n_d_array" kindref="compound">NDArray</ref> *</type>
@@ -198,8 +202,8 @@
         </inbodydescription>
         <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginColorConvert.h" line="34" column="10" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginColorConvert.cpp" bodystart="607" bodyend="663"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="private-func">
+    </sectiondef>
+    <sectiondef kind="private-func">
       <memberdef kind="function" id="class_n_d_plugin_color_convert_1ae5958561b06229fe2f4a6803673389f9" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
@@ -210,6 +214,7 @@
         <definition>void NDPluginColorConvert::convertColor</definition>
         <argsstring>(NDArray *pArray)</argsstring>
         <name>convertColor</name>
+        <qualifiedname>NDPluginColorConvert::convertColor</qualifiedname>
         <param>
           <type><ref refid="class_n_d_array" kindref="compound">NDArray</ref> *</type>
           <declname>pArray</declname>
@@ -222,7 +227,7 @@
         </inbodydescription>
         <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginColorConvert.h" line="43" column="22" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginColorConvert.cpp" bodystart="28" bodyend="596"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
 <para>Convert NDArrays from one NDColorMode to another. </para>
     </briefdescription>
@@ -250,6 +255,12 @@
 It also applies a false color map if requested for 8 bit data If the conversion required by the input color mode and output color mode are not in this supported list then the <ref refid="class_n_d_array" kindref="compound">NDArray</ref> is passed on without conversion. </para>
     </detaileddescription>
     <inheritancegraph>
+      <node id="1">
+        <label>NDPluginColorConvert</label>
+        <link refid="class_n_d_plugin_color_convert"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
       <node id="2">
         <label>NDPluginDriver</label>
         <link refid="class_n_d_plugin_driver"/>
@@ -258,50 +269,20 @@ It also applies a false color map if requested for 8 bit data If the conversion 
         <childnode refid="5" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="5">
-        <label>epicsThreadRunable</label>
-      </node>
-      <node id="4">
-        <label>asynPortDriver</label>
-      </node>
       <node id="3">
         <label>asynNDArrayDriver</label>
         <link refid="classasyn_n_d_array_driver"/>
         <childnode refid="4" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="1">
-        <label>NDPluginColorConvert</label>
-        <link refid="class_n_d_plugin_color_convert"/>
-        <childnode refid="2" relation="public-inheritance">
-        </childnode>
-      </node>
-    </inheritancegraph>
-    <collaborationgraph>
-      <node id="2">
-        <label>NDPluginDriver</label>
-        <link refid="class_n_d_plugin_driver"/>
-        <childnode refid="3" relation="public-inheritance">
-        </childnode>
-        <childnode refid="11" relation="public-inheritance">
-        </childnode>
-        <childnode refid="7" relation="usage">
-          <edgelabel>pPrevInputArray_</edgelabel>
-        </childnode>
-      </node>
-      <node id="11">
-        <label>epicsThreadRunable</label>
-      </node>
-      <node id="8">
-        <label>NDDimension</label>
-        <link refid="struct_n_d_dimension"/>
-      </node>
       <node id="4">
         <label>asynPortDriver</label>
       </node>
-      <node id="10">
-        <label>string</label>
+      <node id="5">
+        <label>epicsThreadRunable</label>
       </node>
+    </inheritancegraph>
+    <collaborationgraph>
       <node id="9">
         <label>Codec_t</label>
         <link refid="struct_codec__t"/>
@@ -309,23 +290,52 @@ It also applies a false color map if requested for 8 bit data If the conversion 
           <edgelabel>name</edgelabel>
         </childnode>
       </node>
-      <node id="7">
+      <node id="6">
         <label>NDArray</label>
         <link refid="class_n_d_array"/>
         <childnode refid="5" relation="usage">
           <edgelabel>pNDArrayPool</edgelabel>
         </childnode>
-        <childnode refid="8" relation="usage">
+        <childnode refid="3" relation="usage">
+          <edgelabel>pDriver</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
           <edgelabel>dims</edgelabel>
         </childnode>
-        <childnode refid="6" relation="usage">
+        <childnode refid="8" relation="usage">
           <edgelabel>pAttributeList</edgelabel>
         </childnode>
         <childnode refid="9" relation="usage">
           <edgelabel>codec</edgelabel>
         </childnode>
-        <childnode refid="3" relation="usage">
-          <edgelabel>pDriver</edgelabel>
+      </node>
+      <node id="5">
+        <label>NDArrayPool</label>
+        <link refid="class_n_d_array_pool"/>
+      </node>
+      <node id="8">
+        <label>NDAttributeList</label>
+        <link refid="class_n_d_attribute_list"/>
+      </node>
+      <node id="7">
+        <label>NDDimension</label>
+        <link refid="struct_n_d_dimension"/>
+      </node>
+      <node id="1">
+        <label>NDPluginColorConvert</label>
+        <link refid="class_n_d_plugin_color_convert"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>NDPluginDriver</label>
+        <link refid="class_n_d_plugin_driver"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+        <childnode refid="11" relation="public-inheritance">
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>pPrevInputArray_</edgelabel>
         </childnode>
       </node>
       <node id="3">
@@ -337,25 +347,20 @@ It also applies a false color map if requested for 8 bit data If the conversion 
           <edgelabel>pNDArrayPool</edgelabel>
         </childnode>
         <childnode refid="6" relation="usage">
-          <edgelabel>pAttributeList</edgelabel>
-        </childnode>
-        <childnode refid="7" relation="usage">
           <edgelabel>pArrays</edgelabel>
         </childnode>
-      </node>
-      <node id="5">
-        <label>NDArrayPool</label>
-        <link refid="class_n_d_array_pool"/>
-      </node>
-      <node id="6">
-        <label>NDAttributeList</label>
-        <link refid="class_n_d_attribute_list"/>
-      </node>
-      <node id="1">
-        <label>NDPluginColorConvert</label>
-        <link refid="class_n_d_plugin_color_convert"/>
-        <childnode refid="2" relation="public-inheritance">
+        <childnode refid="8" relation="usage">
+          <edgelabel>pAttributeList</edgelabel>
         </childnode>
+      </node>
+      <node id="4">
+        <label>asynPortDriver</label>
+      </node>
+      <node id="11">
+        <label>epicsThreadRunable</label>
+      </node>
+      <node id="10">
+        <label>string</label>
       </node>
     </collaborationgraph>
     <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginColorConvert.h" line="26" column="1" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginColorConvert.h" bodystart="26" bodyend="44"/>

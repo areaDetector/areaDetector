@@ -1,14 +1,15 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="class_n_d_array" kind="class" language="C++" prot="public">
     <compoundname>NDArray</compoundname>
     <includes refid="_n_d_array_8h" local="no">NDArray.h</includes>
-      <sectiondef kind="friend">
+    <sectiondef kind="friend">
       <memberdef kind="friend" id="class_n_d_array_1adfac9d4f004e2e54904f8cbbfe5e6a85" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>class</type>
         <definition>friend class NDArrayPool</definition>
         <argsstring></argsstring>
         <name>NDArrayPool</name>
+        <qualifiedname>NDArray::NDArrayPool</qualifiedname>
         <param>
           <type><ref refid="class_n_d_array_pool" kindref="compound">NDArrayPool</ref></type>
         </param>
@@ -18,15 +19,16 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/NDArray.h" line="112" column="5" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/NDArray.h" bodystart="112" bodyend="-1"/>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/NDArray.h" line="112" column="18" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/NDArray.h" bodystart="112" bodyend="-1"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="private-attrib">
+    </sectiondef>
+    <sectiondef kind="private-attrib">
       <memberdef kind="variable" id="class_n_d_array_1a2daba55597e83c60ad959be8574aa9e2" prot="private" static="no" mutable="no">
         <type>ELLNODE</type>
         <definition>ELLNODE NDArray::node</definition>
         <argsstring></argsstring>
         <name>node</name>
+        <qualifiedname>NDArray::node</qualifiedname>
         <briefdescription>
 <para>This must come first because ELLNODE must have the same address as <ref refid="class_n_d_array" kindref="compound">NDArray</ref> object. </para>
         </briefdescription>
@@ -41,6 +43,7 @@
         <definition>int NDArray::referenceCount</definition>
         <argsstring></argsstring>
         <name>referenceCount</name>
+        <qualifiedname>NDArray::referenceCount</qualifiedname>
         <briefdescription>
 <para>Reference count for this <ref refid="class_n_d_array" kindref="compound">NDArray</ref>=number of clients who are using it. </para>
         </briefdescription>
@@ -50,13 +53,14 @@
         </inbodydescription>
         <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/NDArray.h" line="116" column="18" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/NDArray.h" bodystart="116" bodyend="-1"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="public-attrib">
+    </sectiondef>
+    <sectiondef kind="public-attrib">
       <memberdef kind="variable" id="class_n_d_array_1af28e9acabc447f97ced043a158f63ce3" prot="public" static="no" mutable="no">
         <type>class <ref refid="class_n_d_array_pool" kindref="compound">NDArrayPool</ref> *</type>
         <definition>class NDArrayPool* NDArray::pNDArrayPool</definition>
         <argsstring></argsstring>
         <name>pNDArrayPool</name>
+        <qualifiedname>NDArray::pNDArrayPool</qualifiedname>
         <briefdescription>
 <para>The <ref refid="class_n_d_array_pool" kindref="compound">NDArrayPool</ref> object that created this array. </para>
         </briefdescription>
@@ -71,6 +75,7 @@
         <definition>class asynNDArrayDriver* NDArray::pDriver</definition>
         <argsstring></argsstring>
         <name>pDriver</name>
+        <qualifiedname>NDArray::pDriver</qualifiedname>
         <briefdescription>
 <para>The <ref refid="classasyn_n_d_array_driver" kindref="compound">asynNDArrayDriver</ref> that created this array. </para>
         </briefdescription>
@@ -85,6 +90,7 @@
         <definition>int NDArray::uniqueId</definition>
         <argsstring></argsstring>
         <name>uniqueId</name>
+        <qualifiedname>NDArray::uniqueId</qualifiedname>
         <briefdescription>
 <para>A number that must be unique for all NDArrays produced by a driver after is has started. </para>
         </briefdescription>
@@ -99,6 +105,7 @@
         <definition>double NDArray::timeStamp</definition>
         <argsstring></argsstring>
         <name>timeStamp</name>
+        <qualifiedname>NDArray::timeStamp</qualifiedname>
         <briefdescription>
 <para>The time stamp in seconds for this array; seconds since EPICS epoch (00:00:00 UTC, January 1, 1990) is recommended, but some drivers may use a different start time. </para>
         </briefdescription>
@@ -113,6 +120,7 @@
         <definition>epicsTimeStamp NDArray::epicsTS</definition>
         <argsstring></argsstring>
         <name>epicsTS</name>
+        <qualifiedname>NDArray::epicsTS</qualifiedname>
         <briefdescription>
 <para>The epicsTimeStamp; this is set with pasynManager-&gt;updateTimeStamp(), and can come from a user-defined timestamp source. </para>
         </briefdescription>
@@ -127,6 +135,7 @@
         <definition>int NDArray::ndims</definition>
         <argsstring></argsstring>
         <name>ndims</name>
+        <qualifiedname>NDArray::ndims</qualifiedname>
         <briefdescription>
 <para>The number of dimensions in this array; minimum=1. </para>
         </briefdescription>
@@ -141,6 +150,7 @@
         <definition>NDDimension_t NDArray::dims[ND_ARRAY_MAX_DIMS]</definition>
         <argsstring>[ND_ARRAY_MAX_DIMS]</argsstring>
         <name>dims</name>
+        <qualifiedname>NDArray::dims</qualifiedname>
         <briefdescription>
 <para>Array of dimension sizes for this array; first ndims values are meaningful. </para>
         </briefdescription>
@@ -155,6 +165,7 @@
         <definition>NDDataType_t NDArray::dataType</definition>
         <argsstring></argsstring>
         <name>dataType</name>
+        <qualifiedname>NDArray::dataType</qualifiedname>
         <briefdescription>
 <para>Data type for this array. </para>
         </briefdescription>
@@ -169,6 +180,7 @@
         <definition>size_t NDArray::dataSize</definition>
         <argsstring></argsstring>
         <name>dataSize</name>
+        <qualifiedname>NDArray::dataSize</qualifiedname>
         <briefdescription>
 <para>Data size for this array; actual amount of memory allocated for *pData, may be more than required to hold the array. </para>
         </briefdescription>
@@ -183,6 +195,7 @@
         <definition>void* NDArray::pData</definition>
         <argsstring></argsstring>
         <name>pData</name>
+        <qualifiedname>NDArray::pData</qualifiedname>
         <briefdescription>
 <para>Pointer to the array data. </para>
         </briefdescription>
@@ -198,6 +211,7 @@
         <definition>NDAttributeList* NDArray::pAttributeList</definition>
         <argsstring></argsstring>
         <name>pAttributeList</name>
+        <qualifiedname>NDArray::pAttributeList</qualifiedname>
         <briefdescription>
 <para>Linked list of attributes. </para>
         </briefdescription>
@@ -212,6 +226,7 @@
         <definition>Codec_t NDArray::codec</definition>
         <argsstring></argsstring>
         <name>codec</name>
+        <qualifiedname>NDArray::codec</qualifiedname>
         <briefdescription>
 <para>Definition of codec used to compress the data. </para>
         </briefdescription>
@@ -226,6 +241,7 @@
         <definition>size_t NDArray::compressedSize</definition>
         <argsstring></argsstring>
         <name>compressedSize</name>
+        <qualifiedname>NDArray::compressedSize</qualifiedname>
         <briefdescription>
 <para>Size of the compressed data. </para>
         </briefdescription>
@@ -236,13 +252,14 @@
         </inbodydescription>
         <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/NDArray.h" line="136" column="12" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/NDArray.h" bodystart="136" bodyend="-1"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="public-func">
+    </sectiondef>
+    <sectiondef kind="public-func">
       <memberdef kind="function" id="class_n_d_array_1ae2d0afd2af5b6b3b3e87f06f91ae0539" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>NDArray::NDArray</definition>
         <argsstring>()</argsstring>
         <name>NDArray</name>
+        <qualifiedname>NDArray::NDArray</qualifiedname>
         <briefdescription>
 <para><ref refid="class_n_d_array" kindref="compound">NDArray</ref> constructor, no parameters. </para>
         </briefdescription>
@@ -258,6 +275,7 @@
         <definition>NDArray::NDArray</definition>
         <argsstring>(int ndims, size_t *dims, NDDataType_t dataType, size_t dataSize, void *pData)</argsstring>
         <name>NDArray</name>
+        <qualifiedname>NDArray::NDArray</qualifiedname>
         <param>
           <type>int</type>
           <declname>ndims</declname>
@@ -291,6 +309,7 @@
         <definition>NDArray::~NDArray</definition>
         <argsstring>()</argsstring>
         <name>~NDArray</name>
+        <qualifiedname>NDArray::~NDArray</qualifiedname>
         <briefdescription>
 <para><ref refid="class_n_d_array" kindref="compound">NDArray</ref> destructor Frees the data array, deletes all attributes, frees the attribute list and destroys the mutex. </para>
         </briefdescription>
@@ -305,6 +324,7 @@
         <definition>int NDArray::initDimension</definition>
         <argsstring>(NDDimension_t *pDimension, size_t size)</argsstring>
         <name>initDimension</name>
+        <qualifiedname>NDArray::initDimension</qualifiedname>
         <param>
           <type><ref refid="_n_d_array_8h_1a8c874e905fbe79f7544501ec154954c0" kindref="member">NDDimension_t</ref> *</type>
           <declname>pDimension</declname>
@@ -345,6 +365,7 @@
         <definition>int NDArray::getInfo</definition>
         <argsstring>(NDArrayInfo_t *pInfo)</argsstring>
         <name>getInfo</name>
+        <qualifiedname>NDArray::getInfo</qualifiedname>
         <param>
           <type><ref refid="_n_d_array_8h_1a25da0f364d2f6a3b2369b647b38df24e" kindref="member">NDArrayInfo_t</ref> *</type>
           <declname>pInfo</declname>
@@ -373,6 +394,7 @@
         <definition>int NDArray::reserve</definition>
         <argsstring>()</argsstring>
         <name>reserve</name>
+        <qualifiedname>NDArray::reserve</qualifiedname>
         <briefdescription>
 <para>Calls <ref refid="class_n_d_array_pool_1a232bb59397c1dcaeb7f79f49977b7fca" kindref="member">NDArrayPool::reserve()</ref> for this <ref refid="class_n_d_array" kindref="compound">NDArray</ref> object; increases the reference count for this array. </para>
         </briefdescription>
@@ -387,6 +409,7 @@
         <definition>int NDArray::release</definition>
         <argsstring>()</argsstring>
         <name>release</name>
+        <qualifiedname>NDArray::release</qualifiedname>
         <briefdescription>
 <para>Calls <ref refid="class_n_d_array_pool_1a6c693c97791d2a39a6129e6cf4f72393" kindref="member">NDArrayPool::release()</ref> for this object; decreases the reference count for this array. </para>
         </briefdescription>
@@ -401,6 +424,7 @@
         <definition>int NDArray::getReferenceCount</definition>
         <argsstring>() const</argsstring>
         <name>getReferenceCount</name>
+        <qualifiedname>NDArray::getReferenceCount</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -414,6 +438,7 @@
         <definition>int NDArray::report</definition>
         <argsstring>(FILE *fp, int details)</argsstring>
         <name>report</name>
+        <qualifiedname>NDArray::report</qualifiedname>
         <param>
           <type>FILE *</type>
           <declname>fp</declname>
@@ -449,13 +474,14 @@
         </inbodydescription>
         <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/NDArray.h" line="111" column="18" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/NDArray.cpp" bodystart="245" bodyend="265"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="public-static-func">
+    </sectiondef>
+    <sectiondef kind="public-static-func">
       <memberdef kind="function" id="class_n_d_array_1a5718bab75d602846892e604cf04b4c56" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
         <definition>int NDArray::computeArrayInfo</definition>
         <argsstring>(int ndims, size_t *dims, NDDataType_t dataType, NDArrayInfo *pInfo)</argsstring>
         <name>computeArrayInfo</name>
+        <qualifiedname>NDArray::computeArrayInfo</qualifiedname>
         <param>
           <type>int</type>
           <declname>ndims</declname>
@@ -481,7 +507,7 @@
         </inbodydescription>
         <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/NDArray.h" line="106" column="18" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/NDArray.cpp" bodystart="86" bodyend="127"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
 <para>N-dimensional array class; each array has a set of dimensions, a data type, pointer to data, and optional attributes. </para>
     </briefdescription>
@@ -489,20 +515,10 @@
 <para>An <ref refid="class_n_d_array" kindref="compound">NDArray</ref> also has a uniqueId and timeStamp that to identify it. <ref refid="class_n_d_array" kindref="compound">NDArray</ref> objects can be allocated by an <ref refid="class_n_d_array_pool" kindref="compound">NDArrayPool</ref> object, which maintains a free list of NDArrays for efficient memory management. </para>
     </detaileddescription>
     <collaborationgraph>
-      <node id="3">
-        <label>NDDimension</label>
-        <link refid="struct_n_d_dimension"/>
-      </node>
-      <node id="8">
-        <label>asynPortDriver</label>
-      </node>
-      <node id="6">
-        <label>string</label>
-      </node>
-      <node id="5">
+      <node id="7">
         <label>Codec_t</label>
         <link refid="struct_codec__t"/>
-        <childnode refid="6" relation="usage">
+        <childnode refid="8" relation="usage">
           <edgelabel>name</edgelabel>
         </childnode>
       </node>
@@ -513,40 +529,50 @@
           <edgelabel>pNDArrayPool</edgelabel>
         </childnode>
         <childnode refid="3" relation="usage">
-          <edgelabel>dims</edgelabel>
-        </childnode>
-        <childnode refid="4" relation="usage">
-          <edgelabel>pAttributeList</edgelabel>
-        </childnode>
-        <childnode refid="5" relation="usage">
-          <edgelabel>codec</edgelabel>
-        </childnode>
-        <childnode refid="7" relation="usage">
           <edgelabel>pDriver</edgelabel>
         </childnode>
-      </node>
-      <node id="7">
-        <label>asynNDArrayDriver</label>
-        <link refid="classasyn_n_d_array_driver"/>
-        <childnode refid="8" relation="public-inheritance">
+        <childnode refid="6" relation="usage">
+          <edgelabel>dims</edgelabel>
         </childnode>
-        <childnode refid="2" relation="usage">
-          <edgelabel>pNDArrayPool</edgelabel>
-        </childnode>
-        <childnode refid="4" relation="usage">
+        <childnode refid="5" relation="usage">
           <edgelabel>pAttributeList</edgelabel>
         </childnode>
-        <childnode refid="1" relation="usage">
-          <edgelabel>pArrays</edgelabel>
+        <childnode refid="7" relation="usage">
+          <edgelabel>codec</edgelabel>
         </childnode>
       </node>
       <node id="2">
         <label>NDArrayPool</label>
         <link refid="class_n_d_array_pool"/>
       </node>
-      <node id="4">
+      <node id="5">
         <label>NDAttributeList</label>
         <link refid="class_n_d_attribute_list"/>
+      </node>
+      <node id="6">
+        <label>NDDimension</label>
+        <link refid="struct_n_d_dimension"/>
+      </node>
+      <node id="3">
+        <label>asynNDArrayDriver</label>
+        <link refid="classasyn_n_d_array_driver"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+        <childnode refid="2" relation="usage">
+          <edgelabel>pNDArrayPool</edgelabel>
+        </childnode>
+        <childnode refid="1" relation="usage">
+          <edgelabel>pArrays</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>pAttributeList</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>asynPortDriver</label>
+      </node>
+      <node id="8">
+        <label>string</label>
       </node>
     </collaborationgraph>
     <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/NDArray.h" line="99" column="1" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/NDArray.h" bodystart="99" bodyend="137"/>

@@ -1,16 +1,17 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="class_n_d_plugin_pva" kind="class" language="C++" prot="public">
     <compoundname>NDPluginPva</compoundname>
     <basecompoundref refid="class_n_d_plugin_driver" prot="public" virt="non-virtual">NDPluginDriver</basecompoundref>
     <basecompoundref prot="public" virt="non-virtual">std::tr1::enable_shared_from_this&lt; NDPluginPva &gt;</basecompoundref>
     <includes refid="_n_d_plugin_pva_8h" local="no">NDPluginPva.h</includes>
-      <sectiondef kind="protected-attrib">
+    <sectiondef kind="protected-attrib">
       <memberdef kind="variable" id="class_n_d_plugin_pva_1a5773585629d5c815a41df8691bfafc3d" prot="protected" static="no" mutable="no">
         <type>int</type>
         <definition>int NDPluginPva::NDPluginPvaPvName</definition>
         <argsstring></argsstring>
         <name>NDPluginPvaPvName</name>
+        <qualifiedname>NDPluginPva::NDPluginPvaPvName</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -19,13 +20,14 @@
         </inbodydescription>
         <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginPva.h" line="31" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginPva.h" bodystart="31" bodyend="-1"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="private-attrib">
+    </sectiondef>
+    <sectiondef kind="private-attrib">
       <memberdef kind="variable" id="class_n_d_plugin_pva_1aed5be1d7111ee678bcfb0cbb4147a54b" prot="private" static="no" mutable="no">
         <type><ref refid="_n_d_plugin_pva_8h_1acd87133ff0e032f572de7ac8b8ab7834" kindref="member">NTNDArrayRecordPtr</ref></type>
         <definition>NTNDArrayRecordPtr NDPluginPva::m_record</definition>
         <argsstring></argsstring>
         <name>m_record</name>
+        <qualifiedname>NDPluginPva::m_record</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -34,13 +36,14 @@
         </inbodydescription>
         <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginPva.h" line="34" column="24" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginPva.h" bodystart="34" bodyend="-1"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="public-func">
+    </sectiondef>
+    <sectiondef kind="public-func">
       <memberdef kind="function" id="class_n_d_plugin_pva_1a1914bf8321355a10a3fe23d70e382606" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>NDPluginPva::POINTER_DEFINITIONS</definition>
         <argsstring>(NDPluginPva)</argsstring>
         <name>POINTER_DEFINITIONS</name>
+        <qualifiedname>NDPluginPva::POINTER_DEFINITIONS</qualifiedname>
         <param>
           <type><ref refid="class_n_d_plugin_pva" kindref="compound">NDPluginPva</ref></type>
         </param>
@@ -57,6 +60,7 @@
         <definition>NDPluginPva::NDPluginPva</definition>
         <argsstring>(const char *portName, int queueSize, int blockingCallbacks, const char *NDArrayPort, int NDArrayAddr, const char *pvName, int maxBuffers, size_t maxMemory, int priority, int stackSize)</argsstring>
         <name>NDPluginPva</name>
+        <qualifiedname>NDPluginPva::NDPluginPva</qualifiedname>
         <param>
           <type>const char *</type>
           <declname>portName</declname>
@@ -193,6 +197,7 @@
         <definition>void NDPluginPva::processCallbacks</definition>
         <argsstring>(NDArray *pArray)</argsstring>
         <name>processCallbacks</name>
+        <qualifiedname>NDPluginPva::processCallbacks</qualifiedname>
         <reimplements refid="class_n_d_plugin_driver_1a75ed5528f584d90e4f789aef058661cd">processCallbacks</reimplements>
         <param>
           <type><ref refid="class_n_d_array" kindref="compound">NDArray</ref> *</type>
@@ -217,7 +222,7 @@
         </inbodydescription>
         <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginPva.h" line="28" column="10" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginPva.cpp" bodystart="92" bodyend="123"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
 <para>Converts <ref refid="class_n_d_array" kindref="compound">NDArray</ref> callback data into EPICS V4 NTNDArray data and exposes it as an EPICS V4 PV <linebreak/>
  </para>
@@ -233,12 +238,6 @@
         <childnode refid="5" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="5">
-        <label>epicsThreadRunable</label>
-      </node>
-      <node id="6">
-        <label>std::tr1::enable_shared_from_this&lt; NDPluginPva &gt;</label>
-      </node>
       <node id="1">
         <label>NDPluginPva</label>
         <link refid="class_n_d_plugin_pva"/>
@@ -247,17 +246,61 @@
         <childnode refid="6" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="4">
-        <label>asynPortDriver</label>
-      </node>
       <node id="3">
         <label>asynNDArrayDriver</label>
         <link refid="classasyn_n_d_array_driver"/>
         <childnode refid="4" relation="public-inheritance">
         </childnode>
       </node>
+      <node id="4">
+        <label>asynPortDriver</label>
+      </node>
+      <node id="5">
+        <label>epicsThreadRunable</label>
+      </node>
+      <node id="6">
+        <label>std::tr1::enable_shared_from_this&lt; NDPluginPva &gt;</label>
+      </node>
     </inheritancegraph>
     <collaborationgraph>
+      <node id="9">
+        <label>Codec_t</label>
+        <link refid="struct_codec__t"/>
+        <childnode refid="10" relation="usage">
+          <edgelabel>name</edgelabel>
+        </childnode>
+      </node>
+      <node id="6">
+        <label>NDArray</label>
+        <link refid="class_n_d_array"/>
+        <childnode refid="5" relation="usage">
+          <edgelabel>pNDArrayPool</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>pDriver</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>dims</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>pAttributeList</edgelabel>
+        </childnode>
+        <childnode refid="9" relation="usage">
+          <edgelabel>codec</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>NDArrayPool</label>
+        <link refid="class_n_d_array_pool"/>
+      </node>
+      <node id="8">
+        <label>NDAttributeList</label>
+        <link refid="class_n_d_attribute_list"/>
+      </node>
+      <node id="7">
+        <label>NDDimension</label>
+        <link refid="struct_n_d_dimension"/>
+      </node>
       <node id="2">
         <label>NDPluginDriver</label>
         <link refid="class_n_d_plugin_driver"/>
@@ -265,19 +308,9 @@
         </childnode>
         <childnode refid="11" relation="public-inheritance">
         </childnode>
-        <childnode refid="7" relation="usage">
+        <childnode refid="6" relation="usage">
           <edgelabel>pPrevInputArray_</edgelabel>
         </childnode>
-      </node>
-      <node id="11">
-        <label>epicsThreadRunable</label>
-      </node>
-      <node id="8">
-        <label>NDDimension</label>
-        <link refid="struct_n_d_dimension"/>
-      </node>
-      <node id="12">
-        <label>std::tr1::enable_shared_from_this&lt; NDPluginPva &gt;</label>
       </node>
       <node id="1">
         <label>NDPluginPva</label>
@@ -287,38 +320,6 @@
         <childnode refid="12" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="4">
-        <label>asynPortDriver</label>
-      </node>
-      <node id="10">
-        <label>string</label>
-      </node>
-      <node id="9">
-        <label>Codec_t</label>
-        <link refid="struct_codec__t"/>
-        <childnode refid="10" relation="usage">
-          <edgelabel>name</edgelabel>
-        </childnode>
-      </node>
-      <node id="7">
-        <label>NDArray</label>
-        <link refid="class_n_d_array"/>
-        <childnode refid="5" relation="usage">
-          <edgelabel>pNDArrayPool</edgelabel>
-        </childnode>
-        <childnode refid="8" relation="usage">
-          <edgelabel>dims</edgelabel>
-        </childnode>
-        <childnode refid="6" relation="usage">
-          <edgelabel>pAttributeList</edgelabel>
-        </childnode>
-        <childnode refid="9" relation="usage">
-          <edgelabel>codec</edgelabel>
-        </childnode>
-        <childnode refid="3" relation="usage">
-          <edgelabel>pDriver</edgelabel>
-        </childnode>
-      </node>
       <node id="3">
         <label>asynNDArrayDriver</label>
         <link refid="classasyn_n_d_array_driver"/>
@@ -328,19 +329,23 @@
           <edgelabel>pNDArrayPool</edgelabel>
         </childnode>
         <childnode refid="6" relation="usage">
-          <edgelabel>pAttributeList</edgelabel>
-        </childnode>
-        <childnode refid="7" relation="usage">
           <edgelabel>pArrays</edgelabel>
         </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>pAttributeList</edgelabel>
+        </childnode>
       </node>
-      <node id="5">
-        <label>NDArrayPool</label>
-        <link refid="class_n_d_array_pool"/>
+      <node id="4">
+        <label>asynPortDriver</label>
       </node>
-      <node id="6">
-        <label>NDAttributeList</label>
-        <link refid="class_n_d_attribute_list"/>
+      <node id="11">
+        <label>epicsThreadRunable</label>
+      </node>
+      <node id="10">
+        <label>string</label>
+      </node>
+      <node id="12">
+        <label>std::tr1::enable_shared_from_this&lt; NDPluginPva &gt;</label>
       </node>
     </collaborationgraph>
     <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginPva.h" line="18" column="1" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginPva.h" bodystart="20" bodyend="35"/>

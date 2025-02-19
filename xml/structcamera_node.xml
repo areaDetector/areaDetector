@@ -1,13 +1,14 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="structcamera_node" kind="struct" language="C++" prot="public">
     <compoundname>cameraNode</compoundname>
-      <sectiondef kind="public-attrib">
+    <sectiondef kind="public-attrib">
       <memberdef kind="variable" id="structcamera_node_1a7456d4c8526c4c74b5439a4e1d6d7050" prot="public" static="no" mutable="no">
         <type>ELLNODE</type>
         <definition>ELLNODE cameraNode::node</definition>
         <argsstring></argsstring>
         <name>node</name>
+        <qualifiedname>cameraNode::node</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -21,6 +22,7 @@
         <definition>prosilica* cameraNode::pCamera</definition>
         <argsstring></argsstring>
         <name>pCamera</name>
+        <qualifiedname>cameraNode::pCamera</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -29,21 +31,17 @@
         </inbodydescription>
         <location file="/home/runner/work/areaDetector/areaDetector/ADProsilica/prosilicaApp/src/prosilica.cpp" line="157" column="15" bodyfile="/home/runner/work/areaDetector/areaDetector/ADProsilica/prosilicaApp/src/prosilica.cpp" bodystart="157" bodyend="-1"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="9">
-        <label>NDDimension</label>
-        <link refid="struct_n_d_dimension"/>
-      </node>
-      <node id="5">
-        <label>asynPortDriver</label>
-      </node>
-      <node id="11">
-        <label>string</label>
+      <node id="3">
+        <label>ADDriver</label>
+        <link refid="class_a_d_driver"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
       </node>
       <node id="10">
         <label>Codec_t</label>
@@ -52,24 +50,36 @@
           <edgelabel>name</edgelabel>
         </childnode>
       </node>
-      <node id="8">
+      <node id="7">
         <label>NDArray</label>
         <link refid="class_n_d_array"/>
         <childnode refid="6" relation="usage">
           <edgelabel>pNDArrayPool</edgelabel>
         </childnode>
-        <childnode refid="9" relation="usage">
+        <childnode refid="4" relation="usage">
+          <edgelabel>pDriver</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
           <edgelabel>dims</edgelabel>
         </childnode>
-        <childnode refid="7" relation="usage">
+        <childnode refid="9" relation="usage">
           <edgelabel>pAttributeList</edgelabel>
         </childnode>
         <childnode refid="10" relation="usage">
           <edgelabel>codec</edgelabel>
         </childnode>
-        <childnode refid="4" relation="usage">
-          <edgelabel>pDriver</edgelabel>
-        </childnode>
+      </node>
+      <node id="6">
+        <label>NDArrayPool</label>
+        <link refid="class_n_d_array_pool"/>
+      </node>
+      <node id="9">
+        <label>NDAttributeList</label>
+        <link refid="class_n_d_attribute_list"/>
+      </node>
+      <node id="8">
+        <label>NDDimension</label>
+        <link refid="struct_n_d_dimension"/>
       </node>
       <node id="4">
         <label>asynNDArrayDriver</label>
@@ -80,15 +90,14 @@
           <edgelabel>pNDArrayPool</edgelabel>
         </childnode>
         <childnode refid="7" relation="usage">
-          <edgelabel>pAttributeList</edgelabel>
-        </childnode>
-        <childnode refid="8" relation="usage">
           <edgelabel>pArrays</edgelabel>
         </childnode>
+        <childnode refid="9" relation="usage">
+          <edgelabel>pAttributeList</edgelabel>
+        </childnode>
       </node>
-      <node id="6">
-        <label>NDArrayPool</label>
-        <link refid="class_n_d_array_pool"/>
+      <node id="5">
+        <label>asynPortDriver</label>
       </node>
       <node id="1">
         <label>cameraNode</label>
@@ -97,21 +106,14 @@
           <edgelabel>pCamera</edgelabel>
         </childnode>
       </node>
-      <node id="3">
-        <label>ADDriver</label>
-        <link refid="class_a_d_driver"/>
-        <childnode refid="4" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="7">
-        <label>NDAttributeList</label>
-        <link refid="class_n_d_attribute_list"/>
-      </node>
       <node id="2">
         <label>prosilica</label>
         <link refid="classprosilica"/>
         <childnode refid="3" relation="public-inheritance">
         </childnode>
+      </node>
+      <node id="11">
+        <label>string</label>
       </node>
     </collaborationgraph>
     <location file="/home/runner/work/areaDetector/areaDetector/ADProsilica/prosilicaApp/src/prosilica.cpp" line="155" column="1" bodyfile="/home/runner/work/areaDetector/areaDetector/ADProsilica/prosilicaApp/src/prosilica.cpp" bodystart="155" bodyend="158"/>

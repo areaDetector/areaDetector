@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="stream_api_8h" kind="file" language="C++">
     <compoundname>streamApi.h</compoundname>
     <includes local="no">stdlib.h</includes>
@@ -7,21 +7,17 @@
     <includedby refid="eiger_detector_8h" local="yes">/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h</includedby>
     <includedby refid="stream_api_8cpp" local="yes">/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/streamApi.cpp</includedby>
     <incdepgraph>
-      <node id="2">
-        <label>stdlib.h</label>
-      </node>
       <node id="1">
         <label>/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/streamApi.h</label>
         <link refid="stream_api_8h"/>
         <childnode refid="2" relation="include">
         </childnode>
       </node>
+      <node id="2">
+        <label>stdlib.h</label>
+      </node>
     </incdepgraph>
     <invincdepgraph>
-      <node id="4">
-        <label>/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/streamApi.cpp</label>
-        <link refid="stream_api_8cpp"/>
-      </node>
       <node id="2">
         <label>/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.cpp</label>
         <link refid="eiger_detector_8cpp"/>
@@ -31,6 +27,10 @@
         <link refid="eiger_detector_8h"/>
         <childnode refid="2" relation="include">
         </childnode>
+      </node>
+      <node id="4">
+        <label>/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/streamApi.cpp</label>
+        <link refid="stream_api_8cpp"/>
       </node>
       <node id="1">
         <label>/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/streamApi.h</label>
@@ -46,7 +46,7 @@
     <innerclass refid="structstream__header__t" prot="public">stream_header_t</innerclass>
     <innerclass refid="structstream__frame" prot="public">stream_frame</innerclass>
     <innerclass refid="class_stream_a_p_i" prot="public">StreamAPI</innerclass>
-      <sectiondef kind="enum">
+    <sectiondef kind="enum">
       <memberdef kind="enum" id="stream_api_8h_1a2d05e4c8303106d1425a9efa4ff1fb69" prot="public" static="no" strong="no">
         <type></type>
         <name>stream_err</name>
@@ -86,8 +86,8 @@
         </inbodydescription>
         <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/streamApi.h" line="6" column="1" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/streamApi.h" bodystart="7" bodyend="12"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="typedef">
+    </sectiondef>
+    <sectiondef kind="typedef">
       <memberdef kind="typedef" id="stream_api_8h_1ada67d1da8cd5167b36ef4e9e2298ef0d" prot="public" static="no">
         <type>struct <ref refid="structstream__frame" kindref="compound">stream_frame</ref></type>
         <definition>typedef struct stream_frame stream_frame_t</definition>
@@ -101,7 +101,7 @@
         </inbodydescription>
         <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/streamApi.h" line="30" column="15"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
@@ -147,7 +147,7 @@
 <codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>poll<sp/><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>timeout);<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>timeout<sp/>in<sp/>seconds</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="39"><highlight class="normal"></highlight></codeline>
 <codeline lineno="40"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_stream_a_p_i_1ae9a7ff7b17c1ae8114794f636e47ebe4" kindref="member">StreamAPI</ref><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*hostname);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_stream_a_p_i" kindref="compound">StreamAPI</ref><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*hostname);</highlight></codeline>
 <codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_stream_a_p_i_1a221b41076c1d20623f26c30e5da8e3c4" kindref="member">~StreamAPI</ref><sp/><sp/><sp/><sp/><sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_stream_a_p_i_1af1544d01763c4aab4763e05f705c297f" kindref="member">getHeader</ref><sp/><sp/>(<ref refid="structstream__header__t" kindref="compound">stream_header_t</ref><sp/>*header,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>timeout<sp/>=<sp/>0);</highlight></codeline>
 <codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_stream_a_p_i_1a275da62cd5e7cd6a572966deb9d0b08d" kindref="member">getFrame</ref><sp/><sp/><sp/>(<ref refid="structstream__frame" kindref="compound">stream_frame_t</ref><sp/><sp/>*frame,<sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>timeout<sp/>=<sp/>0);</highlight></codeline>

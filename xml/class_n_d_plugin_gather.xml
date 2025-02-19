@@ -1,15 +1,16 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="class_n_d_plugin_gather" kind="class" language="C++" prot="public">
     <compoundname>NDPluginGather</compoundname>
     <basecompoundref refid="class_n_d_plugin_driver" prot="public" virt="non-virtual">NDPluginDriver</basecompoundref>
     <includes refid="_n_d_plugin_gather_8h" local="no">NDPluginGather.h</includes>
-      <sectiondef kind="private-attrib">
+    <sectiondef kind="private-attrib">
       <memberdef kind="variable" id="class_n_d_plugin_gather_1a30aee54f13e1066e5ba71279047d57f1" prot="private" static="no" mutable="no">
         <type>int</type>
         <definition>int NDPluginGather::maxPorts_</definition>
         <argsstring></argsstring>
         <name>maxPorts_</name>
+        <qualifiedname>NDPluginGather::maxPorts_</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -23,6 +24,7 @@
         <definition>NDGatherNDArraySource_t* NDPluginGather::NDArraySrc_</definition>
         <argsstring></argsstring>
         <name>NDArraySrc_</name>
+        <qualifiedname>NDPluginGather::NDArraySrc_</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -31,13 +33,14 @@
         </inbodydescription>
         <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginGather.h" line="33" column="29" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginGather.h" bodystart="33" bodyend="-1"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="public-func">
+    </sectiondef>
+    <sectiondef kind="public-func">
       <memberdef kind="function" id="class_n_d_plugin_gather_1af22df064fd9a5387ac37715c536d1336" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>NDPluginGather::NDPluginGather</definition>
         <argsstring>(const char *portName, int queueSize, int blockingCallbacks, int maxPorts, int maxBuffers, size_t maxMemory, int priority, int stackSize)</argsstring>
         <name>NDPluginGather</name>
+        <qualifiedname>NDPluginGather::NDPluginGather</qualifiedname>
         <param>
           <type>const char *</type>
           <declname>portName</declname>
@@ -145,13 +148,14 @@
         </inbodydescription>
         <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginGather.h" line="19" column="5" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginGather.cpp" bodystart="39" bodyend="67"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="protected-func">
+    </sectiondef>
+    <sectiondef kind="protected-func">
       <memberdef kind="function" id="class_n_d_plugin_gather_1ad738e74d3b326740b735ed640efba772" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
         <definition>void NDPluginGather::processCallbacks</definition>
         <argsstring>(NDArray *pArray)</argsstring>
         <name>processCallbacks</name>
+        <qualifiedname>NDPluginGather::processCallbacks</qualifiedname>
         <reimplements refid="class_n_d_plugin_driver_1a75ed5528f584d90e4f789aef058661cd">processCallbacks</reimplements>
         <param>
           <type><ref refid="class_n_d_array" kindref="compound">NDArray</ref> *</type>
@@ -180,6 +184,7 @@
         <definition>asynStatus NDPluginGather::connectToArrayPort</definition>
         <argsstring>(void)</argsstring>
         <name>connectToArrayPort</name>
+        <qualifiedname>NDPluginGather::connectToArrayPort</qualifiedname>
         <reimplements refid="class_n_d_plugin_driver_1aff27b7526fff890c1a88c2da0297b92c">connectToArrayPort</reimplements>
         <param>
           <type>void</type>
@@ -198,6 +203,7 @@
         <definition>asynStatus NDPluginGather::setArrayInterrupt</definition>
         <argsstring>(int connect)</argsstring>
         <name>setArrayInterrupt</name>
+        <qualifiedname>NDPluginGather::setArrayInterrupt</qualifiedname>
         <reimplements refid="class_n_d_plugin_driver_1a2cd081ea1db6d65e02c3c9b951201cdc">setArrayInterrupt</reimplements>
         <param>
           <type>int</type>
@@ -223,7 +229,7 @@
         </inbodydescription>
         <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginGather.h" line="28" column="24" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginGather.cpp" bodystart="97" bodyend="129"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
 <para>A plugin that subscribes to callbacks from multiple ports, not just a single port <linebreak/>
  </para>
@@ -239,11 +245,11 @@
         <childnode refid="5" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="5">
-        <label>epicsThreadRunable</label>
-      </node>
-      <node id="4">
-        <label>asynPortDriver</label>
+      <node id="1">
+        <label>NDPluginGather</label>
+        <link refid="class_n_d_plugin_gather"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
       </node>
       <node id="3">
         <label>asynNDArrayDriver</label>
@@ -251,38 +257,14 @@
         <childnode refid="4" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="1">
-        <label>NDPluginGather</label>
-        <link refid="class_n_d_plugin_gather"/>
-        <childnode refid="2" relation="public-inheritance">
-        </childnode>
-      </node>
-    </inheritancegraph>
-    <collaborationgraph>
-      <node id="2">
-        <label>NDPluginDriver</label>
-        <link refid="class_n_d_plugin_driver"/>
-        <childnode refid="3" relation="public-inheritance">
-        </childnode>
-        <childnode refid="11" relation="public-inheritance">
-        </childnode>
-        <childnode refid="7" relation="usage">
-          <edgelabel>pPrevInputArray_</edgelabel>
-        </childnode>
-      </node>
-      <node id="11">
-        <label>epicsThreadRunable</label>
-      </node>
-      <node id="8">
-        <label>NDDimension</label>
-        <link refid="struct_n_d_dimension"/>
-      </node>
       <node id="4">
         <label>asynPortDriver</label>
       </node>
-      <node id="10">
-        <label>string</label>
+      <node id="5">
+        <label>epicsThreadRunable</label>
       </node>
+    </inheritancegraph>
+    <collaborationgraph>
       <node id="9">
         <label>Codec_t</label>
         <link refid="struct_codec__t"/>
@@ -290,23 +272,52 @@
           <edgelabel>name</edgelabel>
         </childnode>
       </node>
-      <node id="7">
+      <node id="6">
         <label>NDArray</label>
         <link refid="class_n_d_array"/>
         <childnode refid="5" relation="usage">
           <edgelabel>pNDArrayPool</edgelabel>
         </childnode>
-        <childnode refid="8" relation="usage">
+        <childnode refid="3" relation="usage">
+          <edgelabel>pDriver</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
           <edgelabel>dims</edgelabel>
         </childnode>
-        <childnode refid="6" relation="usage">
+        <childnode refid="8" relation="usage">
           <edgelabel>pAttributeList</edgelabel>
         </childnode>
         <childnode refid="9" relation="usage">
           <edgelabel>codec</edgelabel>
         </childnode>
-        <childnode refid="3" relation="usage">
-          <edgelabel>pDriver</edgelabel>
+      </node>
+      <node id="5">
+        <label>NDArrayPool</label>
+        <link refid="class_n_d_array_pool"/>
+      </node>
+      <node id="8">
+        <label>NDAttributeList</label>
+        <link refid="class_n_d_attribute_list"/>
+      </node>
+      <node id="7">
+        <label>NDDimension</label>
+        <link refid="struct_n_d_dimension"/>
+      </node>
+      <node id="2">
+        <label>NDPluginDriver</label>
+        <link refid="class_n_d_plugin_driver"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+        <childnode refid="11" relation="public-inheritance">
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>pPrevInputArray_</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>NDPluginGather</label>
+        <link refid="class_n_d_plugin_gather"/>
+        <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
       <node id="3">
@@ -318,25 +329,20 @@
           <edgelabel>pNDArrayPool</edgelabel>
         </childnode>
         <childnode refid="6" relation="usage">
-          <edgelabel>pAttributeList</edgelabel>
-        </childnode>
-        <childnode refid="7" relation="usage">
           <edgelabel>pArrays</edgelabel>
         </childnode>
-      </node>
-      <node id="5">
-        <label>NDArrayPool</label>
-        <link refid="class_n_d_array_pool"/>
-      </node>
-      <node id="1">
-        <label>NDPluginGather</label>
-        <link refid="class_n_d_plugin_gather"/>
-        <childnode refid="2" relation="public-inheritance">
+        <childnode refid="8" relation="usage">
+          <edgelabel>pAttributeList</edgelabel>
         </childnode>
       </node>
-      <node id="6">
-        <label>NDAttributeList</label>
-        <link refid="class_n_d_attribute_list"/>
+      <node id="4">
+        <label>asynPortDriver</label>
+      </node>
+      <node id="11">
+        <label>epicsThreadRunable</label>
+      </node>
+      <node id="10">
+        <label>string</label>
       </node>
     </collaborationgraph>
     <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginGather.h" line="17" column="1" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginGather.h" bodystart="17" bodyend="34"/>

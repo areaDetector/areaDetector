@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="_n_d_plugin_pva_8cpp" kind="file" language="C++">
     <compoundname>NDPluginPva.cpp</compoundname>
     <includes local="no">stdlib.h</includes>
@@ -13,11 +13,19 @@
     <includes refid="_n_d_plugin_pva_8h" local="yes">NDPluginPva.h</includes>
     <includes local="no">epicsExport.h</includes>
     <incdepgraph>
-      <node id="8">
-        <label>iocsh.h</label>
+      <node id="21">
+        <label>ADCoreAPI.h</label>
+        <link refid="_a_d_core_a_p_i_8h"/>
+        <childnode refid="22" relation="include">
+        </childnode>
       </node>
-      <node id="19">
-        <label>epicsTypes.h</label>
+      <node id="34">
+        <label>ADCoreVersion.h</label>
+        <link refid="_a_d_core_version_8h"/>
+      </node>
+      <node id="24">
+        <label>Codec.h</label>
+        <link refid="_codec_8h"/>
       </node>
       <node id="12">
         <label>NDArray.h</label>
@@ -37,18 +45,20 @@
         <childnode refid="24" relation="include">
         </childnode>
       </node>
-      <node id="26">
-        <label>NDPluginPva.h</label>
-        <link refid="_n_d_plugin_pva_8h"/>
-        <childnode refid="27" relation="include">
+      <node id="17">
+        <label>NDAttribute.h</label>
+        <link refid="_n_d_attribute_8h"/>
+        <childnode refid="18" relation="include">
         </childnode>
-        <childnode refid="35" relation="include">
+        <childnode refid="4" relation="include">
         </childnode>
-        <childnode refid="36" relation="include">
+        <childnode refid="16" relation="include">
         </childnode>
-        <childnode refid="37" relation="include">
+        <childnode refid="19" relation="include">
         </childnode>
-        <childnode refid="38" relation="include">
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
         </childnode>
       </node>
       <node id="23">
@@ -63,38 +73,58 @@
         <childnode refid="17" relation="include">
         </childnode>
       </node>
-      <node id="2">
-        <label>stdlib.h</label>
+      <node id="31">
+        <label>asynNDArrayDriver.h</label>
+        <link refid="asyn_n_d_array_driver_8h"/>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
       </node>
-      <node id="14">
-        <label>epicsMutex.h</label>
+      <node id="9">
+        <label>ntndArrayConverter.h</label>
+        <link refid="ntnd_array_converter_8h"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
       </node>
-      <node id="35">
-        <label>pv/serverContext.h</label>
+      <node id="11">
+        <label>ntndArrayConverterAPI.h</label>
+        <link refid="ntnd_array_converter_a_p_i_8h"/>
       </node>
-      <node id="22">
-        <label>epicsVersion.h</label>
-      </node>
-      <node id="18">
-        <label>string</label>
-      </node>
-      <node id="29">
-        <label>epicsThread.h</label>
-      </node>
-      <node id="39">
-        <label>epicsExport.h</label>
-      </node>
-      <node id="34">
-        <label>ADCoreVersion.h</label>
-        <link refid="_a_d_core_version_8h"/>
-      </node>
-      <node id="5">
-        <label>pv/pvDatabase.h</label>
-      </node>
-      <node id="21">
-        <label>ADCoreAPI.h</label>
-        <link refid="_a_d_core_a_p_i_8h"/>
+      <node id="30">
+        <label>NDPluginAPI.h</label>
+        <link refid="_n_d_plugin_a_p_i_8h"/>
         <childnode refid="22" relation="include">
+        </childnode>
+      </node>
+      <node id="27">
+        <label>NDPluginDriver.h</label>
+        <link refid="_n_d_plugin_driver_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
         </childnode>
       </node>
       <node id="1">
@@ -121,26 +151,91 @@
         <childnode refid="39" relation="include">
         </childnode>
       </node>
-      <node id="11">
-        <label>ntndArrayConverterAPI.h</label>
-        <link refid="ntnd_array_converter_a_p_i_8h"/>
+      <node id="26">
+        <label>NDPluginPva.h</label>
+        <link refid="_n_d_plugin_pva_8h"/>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
       </node>
-      <node id="31">
-        <label>asynNDArrayDriver.h</label>
-        <link refid="asyn_n_d_array_driver_8h"/>
-        <childnode refid="14" relation="include">
-        </childnode>
-        <childnode refid="32" relation="include">
-        </childnode>
-        <childnode refid="33" relation="include">
-        </childnode>
-        <childnode refid="12" relation="include">
-        </childnode>
-        <childnode refid="34" relation="include">
-        </childnode>
+      <node id="20">
+        <label>asynDriver.h</label>
+      </node>
+      <node id="33">
+        <label>asynPortDriver.h</label>
+      </node>
+      <node id="16">
+        <label>ellLib.h</label>
+      </node>
+      <node id="32">
+        <label>epicsEvent.h</label>
+      </node>
+      <node id="39">
+        <label>epicsExport.h</label>
+      </node>
+      <node id="28">
+        <label>epicsMessageQueue.h</label>
+      </node>
+      <node id="14">
+        <label>epicsMutex.h</label>
+      </node>
+      <node id="29">
+        <label>epicsThread.h</label>
+      </node>
+      <node id="15">
+        <label>epicsTime.h</label>
+      </node>
+      <node id="19">
+        <label>epicsTypes.h</label>
+      </node>
+      <node id="22">
+        <label>epicsVersion.h</label>
+      </node>
+      <node id="8">
+        <label>iocsh.h</label>
+      </node>
+      <node id="10">
+        <label>math.h</label>
       </node>
       <node id="7">
         <label>pv/channelProviderLocal.h</label>
+      </node>
+      <node id="36">
+        <label>pv/lock.h</label>
+      </node>
+      <node id="6">
+        <label>pv/nt.h</label>
+      </node>
+      <node id="25">
+        <label>pv/ntndarray.h</label>
+      </node>
+      <node id="37">
+        <label>pv/pvData.h</label>
+      </node>
+      <node id="5">
+        <label>pv/pvDatabase.h</label>
+      </node>
+      <node id="35">
+        <label>pv/serverContext.h</label>
+      </node>
+      <node id="13">
+        <label>set</label>
+      </node>
+      <node id="4">
+        <label>stdio.h</label>
+      </node>
+      <node id="2">
+        <label>stdlib.h</label>
+      </node>
+      <node id="18">
+        <label>string</label>
       </node>
       <node id="3">
         <label>string.h</label>
@@ -148,107 +243,12 @@
       <node id="38">
         <label>vector</label>
       </node>
-      <node id="37">
-        <label>pv/pvData.h</label>
-      </node>
-      <node id="16">
-        <label>ellLib.h</label>
-      </node>
-      <node id="36">
-        <label>pv/lock.h</label>
-      </node>
-      <node id="17">
-        <label>NDAttribute.h</label>
-        <link refid="_n_d_attribute_8h"/>
-        <childnode refid="18" relation="include">
-        </childnode>
-        <childnode refid="4" relation="include">
-        </childnode>
-        <childnode refid="16" relation="include">
-        </childnode>
-        <childnode refid="19" relation="include">
-        </childnode>
-        <childnode refid="20" relation="include">
-        </childnode>
-        <childnode refid="21" relation="include">
-        </childnode>
-      </node>
-      <node id="20">
-        <label>asynDriver.h</label>
-      </node>
-      <node id="10">
-        <label>math.h</label>
-      </node>
-      <node id="27">
-        <label>NDPluginDriver.h</label>
-        <link refid="_n_d_plugin_driver_8h"/>
-        <childnode refid="13" relation="include">
-        </childnode>
-        <childnode refid="19" relation="include">
-        </childnode>
-        <childnode refid="28" relation="include">
-        </childnode>
-        <childnode refid="29" relation="include">
-        </childnode>
-        <childnode refid="15" relation="include">
-        </childnode>
-        <childnode refid="30" relation="include">
-        </childnode>
-        <childnode refid="31" relation="include">
-        </childnode>
-      </node>
-      <node id="24">
-        <label>Codec.h</label>
-        <link refid="_codec_8h"/>
-      </node>
-      <node id="6">
-        <label>pv/nt.h</label>
-      </node>
-      <node id="15">
-        <label>epicsTime.h</label>
-      </node>
-      <node id="33">
-        <label>asynPortDriver.h</label>
-      </node>
-      <node id="30">
-        <label>NDPluginAPI.h</label>
-        <link refid="_n_d_plugin_a_p_i_8h"/>
-        <childnode refid="22" relation="include">
-        </childnode>
-      </node>
-      <node id="25">
-        <label>pv/ntndarray.h</label>
-      </node>
-      <node id="13">
-        <label>set</label>
-      </node>
-      <node id="9">
-        <label>ntndArrayConverter.h</label>
-        <link refid="ntnd_array_converter_8h"/>
-        <childnode refid="10" relation="include">
-        </childnode>
-        <childnode refid="11" relation="include">
-        </childnode>
-        <childnode refid="12" relation="include">
-        </childnode>
-        <childnode refid="25" relation="include">
-        </childnode>
-      </node>
-      <node id="28">
-        <label>epicsMessageQueue.h</label>
-      </node>
-      <node id="4">
-        <label>stdio.h</label>
-      </node>
-      <node id="32">
-        <label>epicsEvent.h</label>
-      </node>
     </incdepgraph>
     <innerclass refid="class_n_t_n_d_array_record" prot="public">NTNDArrayRecord</innerclass>
     <innernamespace refid="namespaceepics_1_1pv_access">epics::pvAccess</innernamespace>
     <innernamespace refid="namespaceepics_1_1pv_database">epics::pvDatabase</innernamespace>
     <innernamespace refid="namespaceepics_1_1nt">epics::nt</innernamespace>
-      <sectiondef kind="var">
+    <sectiondef kind="var">
       <memberdef kind="variable" id="_n_d_plugin_pva_8cpp_1af0e94d13028051cd5339d204bfbb057d" prot="public" static="yes" mutable="no">
         <type>const char *</type>
         <definition>const char* driverName</definition>
@@ -275,7 +275,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginPva.cpp" line="192" column="23" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginPva.cpp" bodystart="192" bodyend="-1"/>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginPva.cpp" line="192" column="23" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginPva.cpp" bodystart="192" bodyend="192"/>
       </memberdef>
       <memberdef kind="variable" id="_n_d_plugin_pva_8cpp_1a85f312f39f3c368a5fa10d1039dc40b2" prot="public" static="yes" mutable="no">
         <type>const iocshArg</type>
@@ -289,7 +289,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginPva.cpp" line="193" column="23" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginPva.cpp" bodystart="193" bodyend="-1"/>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginPva.cpp" line="193" column="23" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginPva.cpp" bodystart="193" bodyend="193"/>
       </memberdef>
       <memberdef kind="variable" id="_n_d_plugin_pva_8cpp_1a645a7d7d0d71a7522373e2af4008b520" prot="public" static="yes" mutable="no">
         <type>const iocshArg</type>
@@ -303,7 +303,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginPva.cpp" line="194" column="23" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginPva.cpp" bodystart="194" bodyend="-1"/>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginPva.cpp" line="194" column="23" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginPva.cpp" bodystart="194" bodyend="194"/>
       </memberdef>
       <memberdef kind="variable" id="_n_d_plugin_pva_8cpp_1aaa425474fd6655fa6347e1933b29038a" prot="public" static="yes" mutable="no">
         <type>const iocshArg</type>
@@ -317,7 +317,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginPva.cpp" line="195" column="23" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginPva.cpp" bodystart="195" bodyend="-1"/>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginPva.cpp" line="195" column="23" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginPva.cpp" bodystart="195" bodyend="195"/>
       </memberdef>
       <memberdef kind="variable" id="_n_d_plugin_pva_8cpp_1a945c4d0bc0e2bc869aeaf5c6a815368a" prot="public" static="yes" mutable="no">
         <type>const iocshArg</type>
@@ -331,7 +331,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginPva.cpp" line="196" column="23" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginPva.cpp" bodystart="196" bodyend="-1"/>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginPva.cpp" line="196" column="23" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginPva.cpp" bodystart="196" bodyend="196"/>
       </memberdef>
       <memberdef kind="variable" id="_n_d_plugin_pva_8cpp_1ac7e214be38a3b3bface5e0370ae97db0" prot="public" static="yes" mutable="no">
         <type>const iocshArg</type>
@@ -345,7 +345,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginPva.cpp" line="197" column="23" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginPva.cpp" bodystart="197" bodyend="-1"/>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginPva.cpp" line="197" column="23" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginPva.cpp" bodystart="197" bodyend="197"/>
       </memberdef>
       <memberdef kind="variable" id="_n_d_plugin_pva_8cpp_1a43397205694aec859f3b5cb14a85edc3" prot="public" static="yes" mutable="no">
         <type>const iocshArg</type>
@@ -359,7 +359,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginPva.cpp" line="198" column="23" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginPva.cpp" bodystart="198" bodyend="-1"/>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginPva.cpp" line="198" column="23" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginPva.cpp" bodystart="198" bodyend="198"/>
       </memberdef>
       <memberdef kind="variable" id="_n_d_plugin_pva_8cpp_1a36049b095d9ed1f56a41821a2c8fc661" prot="public" static="yes" mutable="no">
         <type>const iocshArg</type>
@@ -373,7 +373,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginPva.cpp" line="199" column="23" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginPva.cpp" bodystart="199" bodyend="-1"/>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginPva.cpp" line="199" column="23" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginPva.cpp" bodystart="199" bodyend="199"/>
       </memberdef>
       <memberdef kind="variable" id="_n_d_plugin_pva_8cpp_1a62a0c5258a2c1049720be5c31729f76d" prot="public" static="yes" mutable="no">
         <type>const iocshArg</type>
@@ -387,7 +387,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginPva.cpp" line="200" column="23" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginPva.cpp" bodystart="200" bodyend="-1"/>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginPva.cpp" line="200" column="23" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginPva.cpp" bodystart="200" bodyend="200"/>
       </memberdef>
       <memberdef kind="variable" id="_n_d_plugin_pva_8cpp_1a310f7847b682c968669300db5550d9fa" prot="public" static="yes" mutable="no">
         <type>const iocshArg</type>
@@ -401,7 +401,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginPva.cpp" line="201" column="23" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginPva.cpp" bodystart="201" bodyend="-1"/>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginPva.cpp" line="201" column="23" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginPva.cpp" bodystart="201" bodyend="201"/>
       </memberdef>
       <memberdef kind="variable" id="_n_d_plugin_pva_8cpp_1ac0d7f455ac7138e5bcb473b630294718" prot="public" static="yes" mutable="no">
         <type>const iocshArg *const</type>
@@ -424,7 +424,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginPva.cpp" line="202" column="30" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginPva.cpp" bodystart="202" bodyend="-1"/>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginPva.cpp" line="202" column="30" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginPva.cpp" bodystart="202" bodyend="211"/>
       </memberdef>
       <memberdef kind="variable" id="_n_d_plugin_pva_8cpp_1a469a3ecf9fff33f8f388acddffc8db6a" prot="public" static="yes" mutable="no">
         <type>const iocshFuncDef</type>
@@ -438,10 +438,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginPva.cpp" line="212" column="27" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginPva.cpp" bodystart="212" bodyend="-1"/>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginPva.cpp" line="212" column="27" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginPva.cpp" bodystart="212" bodyend="212"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="func">
+    </sectiondef>
+    <sectiondef kind="func">
       <memberdef kind="function" id="_n_d_plugin_pva_8cpp_1a79385f93be4a19b22ccba0bd8ccf18ae" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
         <definition>int NDPvaConfigure</definition>
@@ -544,7 +544,7 @@
         </inbodydescription>
         <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginPva.cpp" line="227" column="1" declfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginPva.cpp" declline="227" declcolumn="1"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
@@ -566,7 +566,7 @@
 <codeline lineno="14"><highlight class="normal"></highlight></codeline>
 <codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;epicsExport.h&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="16"><highlight class="normal"></highlight></codeline>
-<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="_a_d_time_pix_8cpp_1af0e94d13028051cd5339d204bfbb057d" kindref="member">driverName</ref>=</highlight><highlight class="stringliteral">&quot;NDPluginPva&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*driverName=</highlight><highlight class="stringliteral">&quot;NDPluginPva&quot;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="18"><highlight class="normal"></highlight></codeline>
 <codeline lineno="19"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceepics" kindref="compound">epics</ref>;</highlight></codeline>
 <codeline lineno="20"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceepics_1_1pv_data" kindref="compound">epics::pvData</ref>;</highlight></codeline>
@@ -580,8 +580,8 @@
 <codeline lineno="28"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="29"><highlight class="normal"></highlight></codeline>
 <codeline lineno="30"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_n_t_n_d_array_record" kindref="compound">NTNDArrayRecord</ref>(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>&amp;<sp/><ref refid="namespacemake_db_and_edl_1a2832407c256551abb325d5ee9e587443" kindref="member">name</ref>,<sp/>PVStructurePtr<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>&amp;<sp/>pvStructure)</highlight></codeline>
-<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>:PVRecord(<ref refid="namespacemake_db_and_edl_1a2832407c256551abb325d5ee9e587443" kindref="member">name</ref>,<sp/>pvStructure)<sp/>{}</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_n_t_n_d_array_record" kindref="compound">NTNDArrayRecord</ref>(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>&amp;<sp/>name,<sp/>PVStructurePtr<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>&amp;<sp/>pvStructure)</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>:PVRecord(name,<sp/>pvStructure)<sp/>{}</highlight></codeline>
 <codeline lineno="33"><highlight class="normal"></highlight></codeline>
 <codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>NTNDArrayPtr<sp/>m_ntndArray;</highlight></codeline>
 <codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="ntnd_array_converter_8h_1a72a31c7a33ef6e2074ee6276b1c19e9b" kindref="member">NTNDArrayConverterPtr</ref><sp/>m_converter;</highlight></codeline>
@@ -589,19 +589,19 @@
 <codeline lineno="37"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
 <codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>POINTER_DEFINITIONS(<ref refid="class_n_t_n_d_array_record" kindref="compound">NTNDArrayRecord</ref>);</highlight></codeline>
 <codeline lineno="39"><highlight class="normal"></highlight></codeline>
-<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>~<ref refid="class_n_t_n_d_array_record" kindref="compound">NTNDArrayRecord</ref><sp/>()<sp/>{}</highlight></codeline>
-<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="_n_d_plugin_pva_8h_1acd87133ff0e032f572de7ac8b8ab7834" kindref="member">NTNDArrayRecordPtr</ref><sp/>create<sp/>(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>&amp;<sp/><ref refid="namespacemake_db_and_edl_1a2832407c256551abb325d5ee9e587443" kindref="member">name</ref>);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="class_n_t_n_d_array_record" kindref="compound">~NTNDArrayRecord</ref><sp/>()<sp/>{}</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="_n_d_plugin_pva_8h_1acd87133ff0e032f572de7ac8b8ab7834" kindref="member">NTNDArrayRecordPtr</ref><sp/>create<sp/>(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>&amp;<sp/>name);</highlight></codeline>
 <codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="nullhttpd_8h_1afd49f8a781f4f13c93b4348dfdc4507d" kindref="member">init</ref><sp/>();</highlight></codeline>
 <codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>process<sp/>()<sp/>{}</highlight></codeline>
 <codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>update<sp/>(<ref refid="class_n_d_array" kindref="compound">NDArray</ref><sp/>*pArray);</highlight></codeline>
 <codeline lineno="45"><highlight class="normal">};</highlight></codeline>
 <codeline lineno="46"><highlight class="normal"></highlight></codeline>
-<codeline lineno="47"><highlight class="normal"><ref refid="_n_d_plugin_pva_8h_1acd87133ff0e032f572de7ac8b8ab7834" kindref="member">NTNDArrayRecordPtr</ref><sp/><ref refid="class_n_t_n_d_array_record_1a9219e20725dc309c15b412164f14ef0f" kindref="member">NTNDArrayRecord::create</ref><sp/>(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>&amp;<sp/><ref refid="namespacemake_db_and_edl_1a2832407c256551abb325d5ee9e587443" kindref="member">name</ref>)</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><ref refid="_n_d_plugin_pva_8h_1acd87133ff0e032f572de7ac8b8ab7834" kindref="member">NTNDArrayRecordPtr</ref><sp/><ref refid="class_n_t_n_d_array_record_1a9219e20725dc309c15b412164f14ef0f" kindref="member">NTNDArrayRecord::create</ref><sp/>(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>&amp;<sp/>name)</highlight></codeline>
 <codeline lineno="48"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>NTNDArrayBuilderPtr<sp/>builder<sp/>=<sp/>NTNDArray::createBuilder();</highlight></codeline>
 <codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>builder-&gt;addDescriptor()-&gt;addTimeStamp()-&gt;addAlarm()-&gt;addDisplay();</highlight></codeline>
 <codeline lineno="51"><highlight class="normal"></highlight></codeline>
-<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_n_d_plugin_pva_8h_1acd87133ff0e032f572de7ac8b8ab7834" kindref="member">NTNDArrayRecordPtr</ref><sp/>pvRecord(</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_n_t_n_d_array_record" kindref="compound">NTNDArrayRecord</ref>(<ref refid="namespacemake_db_and_edl_1a2832407c256551abb325d5ee9e587443" kindref="member">name</ref>,</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_n_d_plugin_pva_8h_1acd87133ff0e032f572de7ac8b8ab7834" kindref="member">NTNDArrayRecordPtr</ref><sp/>pvRecord(</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_n_t_n_d_array_record" kindref="compound">NTNDArrayRecord</ref>(name,</highlight></codeline>
 <codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>builder-&gt;createPVStructure()));</highlight></codeline>
 <codeline lineno="54"><highlight class="normal"></highlight></codeline>
 <codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!pvRecord-&gt;init())</highlight></codeline>
@@ -645,19 +645,19 @@
 <codeline lineno="97"><highlight class="normal"></highlight></codeline>
 <codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Most<sp/>plugins<sp/>can<sp/>rely<sp/>on<sp/>endProcessCallbacks()<sp/>to<sp/>check<sp/>for<sp/>throttling,<sp/>but<sp/>this<sp/>one<sp/>cannot</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>because<sp/>the<sp/>output<sp/>is<sp/>not<sp/>an<sp/>NDArray<sp/>but<sp/>a<sp/>pvAccess<sp/>server.<sp/><sp/>Need<sp/>to<sp/>check<sp/>here.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(throttled(pArray))<sp/>{</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="class_n_d_plugin_driver_1ae6b1a0c91170c2ef73546fcc4a78ac27" kindref="member">throttled</ref>(pArray))<sp/>{</highlight></codeline>
 <codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>droppedOutputArrays;</highlight></codeline>
 <codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>arrayCounter;</highlight></codeline>
-<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>getIntegerParam(NDPluginDriverDroppedOutputArrays,<sp/>&amp;droppedOutputArrays);</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>getIntegerParam(<ref refid="class_n_d_plugin_driver_1afe1c9c90e217f1eab41da7e41affa18b" kindref="member">NDPluginDriverDroppedOutputArrays</ref>,<sp/>&amp;droppedOutputArrays);</highlight></codeline>
 <codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>asynPrint(pasynUserSelf,<sp/>ASYN_TRACE_WARNING,</highlight></codeline>
 <codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;%s::%s<sp/>maximum<sp/>byte<sp/>rate<sp/>exceeded,<sp/>dropped<sp/>array<sp/>uniqueId=%d\n&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_a_d_time_pix_8cpp_1af0e94d13028051cd5339d204bfbb057d" kindref="member">driverName</ref>,<sp/>functionName,<sp/>pArray-&gt;<ref refid="class_n_d_array_1a62f165653bd0099f31b3d276bdb81d3c" kindref="member">uniqueId</ref>);</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>driverName,<sp/>functionName,<sp/>pArray-&gt;<ref refid="class_n_d_array_1a62f165653bd0099f31b3d276bdb81d3c" kindref="member">uniqueId</ref>);</highlight></codeline>
 <codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>droppedOutputArrays++;</highlight></codeline>
-<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>setIntegerParam(NDPluginDriverDroppedOutputArrays,<sp/>droppedOutputArrays);</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classasyn_n_d_array_driver_1abf87462bc5853f8e5a56db5e93acd956" kindref="member">setIntegerParam</ref>(<ref refid="class_n_d_plugin_driver_1afe1c9c90e217f1eab41da7e41affa18b" kindref="member">NDPluginDriverDroppedOutputArrays</ref>,<sp/>droppedOutputArrays);</highlight></codeline>
 <codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Since<sp/>this<sp/>plugin<sp/>has<sp/>done<sp/>no<sp/>useful<sp/>work<sp/>we<sp/>also<sp/>decrement<sp/>ArrayCounter</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>getIntegerParam(NDArrayCounter,<sp/>&amp;arrayCounter);</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>getIntegerParam(<ref refid="classasyn_n_d_array_driver_1abec5f5fc9922549d745d7dc7f19243ea" kindref="member">NDArrayCounter</ref>,<sp/>&amp;arrayCounter);</highlight></codeline>
 <codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>arrayCounter--;</highlight></codeline>
-<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>setIntegerParam(NDArrayCounter,<sp/>arrayCounter);</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classasyn_n_d_array_driver_1abf87462bc5853f8e5a56db5e93acd956" kindref="member">setIntegerParam</ref>(<ref refid="classasyn_n_d_array_driver_1abec5f5fc9922549d745d7dc7f19243ea" kindref="member">NDArrayCounter</ref>,<sp/>arrayCounter);</highlight></codeline>
 <codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
 <codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;unlock();<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Function<sp/>called<sp/>with<sp/>the<sp/>lock<sp/>taken</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_record-&gt;update(pArray);</highlight></codeline>

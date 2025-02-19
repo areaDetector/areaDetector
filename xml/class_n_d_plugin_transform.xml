@@ -1,15 +1,16 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="class_n_d_plugin_transform" kind="class" language="C++" prot="public">
     <compoundname>NDPluginTransform</compoundname>
     <basecompoundref refid="class_n_d_plugin_driver" prot="public" virt="non-virtual">NDPluginDriver</basecompoundref>
     <includes refid="_n_d_plugin_transform_8h" local="no">NDPluginTransform.h</includes>
-      <sectiondef kind="protected-attrib">
+    <sectiondef kind="protected-attrib">
       <memberdef kind="variable" id="class_n_d_plugin_transform_1a43437d564275587977bb53283fd2ac93" prot="protected" static="no" mutable="no">
         <type>int</type>
         <definition>int NDPluginTransform::NDPluginTransformType_</definition>
         <argsstring></argsstring>
         <name>NDPluginTransformType_</name>
+        <qualifiedname>NDPluginTransform::NDPluginTransformType_</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -18,13 +19,14 @@
         </inbodydescription>
         <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginTransform.h" line="23" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginTransform.h" bodystart="23" bodyend="-1"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="private-attrib">
+    </sectiondef>
+    <sectiondef kind="private-attrib">
       <memberdef kind="variable" id="class_n_d_plugin_transform_1a6764ab382d13d9d5404eff9b4c5341e4" prot="private" static="no" mutable="no">
         <type>size_t</type>
         <definition>size_t NDPluginTransform::userDims_[ND_ARRAY_MAX_DIMS]</definition>
         <argsstring>[ND_ARRAY_MAX_DIMS]</argsstring>
         <name>userDims_</name>
+        <qualifiedname>NDPluginTransform::userDims_</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -33,13 +35,14 @@
         </inbodydescription>
         <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginTransform.h" line="27" column="12" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginTransform.h" bodystart="27" bodyend="-1"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="public-func">
+    </sectiondef>
+    <sectiondef kind="public-func">
       <memberdef kind="function" id="class_n_d_plugin_transform_1aeb9b90b6d60f9c8af15bf7ad82eebda9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>NDPluginTransform::NDPluginTransform</definition>
         <argsstring>(const char *portName, int queueSize, int blockingCallbacks, const char *NDArrayPort, int NDArrayAddr, int maxBuffers, size_t maxMemory, int priority, int stackSize, int maxThreads=1)</argsstring>
         <name>NDPluginTransform</name>
+        <qualifiedname>NDPluginTransform::NDPluginTransform</qualifiedname>
         <param>
           <type>const char *</type>
           <declname>portName</declname>
@@ -177,6 +180,7 @@
         <definition>void NDPluginTransform::processCallbacks</definition>
         <argsstring>(NDArray *pArray)</argsstring>
         <name>processCallbacks</name>
+        <qualifiedname>NDPluginTransform::processCallbacks</qualifiedname>
         <reimplements refid="class_n_d_plugin_driver_1a75ed5528f584d90e4f789aef058661cd">processCallbacks</reimplements>
         <param>
           <type><ref refid="class_n_d_array" kindref="compound">NDArray</ref> *</type>
@@ -202,13 +206,14 @@
         </inbodydescription>
         <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginTransform.h" line="20" column="10" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginTransform.cpp" bodystart="479" bodyend="517"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="private-func">
+    </sectiondef>
+    <sectiondef kind="private-func">
       <memberdef kind="function" id="class_n_d_plugin_transform_1ad59d474ef3db6a144966ccd4c0181b64" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void NDPluginTransform::transformImage</definition>
         <argsstring>(NDArray *inArray, NDArray *outArray, NDArrayInfo_t *arrayInfo)</argsstring>
         <name>transformImage</name>
+        <qualifiedname>NDPluginTransform::transformImage</qualifiedname>
         <param>
           <type><ref refid="class_n_d_array" kindref="compound">NDArray</ref> *</type>
           <declname>inArray</declname>
@@ -230,7 +235,7 @@
         </inbodydescription>
         <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginTransform.h" line="28" column="10" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginTransform.cpp" bodystart="521" bodyend="565"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
 <para>Perform transformations (rotations, flips) on NDArrays. </para>
     </briefdescription>
@@ -247,11 +252,11 @@
         <childnode refid="5" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="5">
-        <label>epicsThreadRunable</label>
-      </node>
-      <node id="4">
-        <label>asynPortDriver</label>
+      <node id="1">
+        <label>NDPluginTransform</label>
+        <link refid="class_n_d_plugin_transform"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
       </node>
       <node id="3">
         <label>asynNDArrayDriver</label>
@@ -259,38 +264,14 @@
         <childnode refid="4" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="1">
-        <label>NDPluginTransform</label>
-        <link refid="class_n_d_plugin_transform"/>
-        <childnode refid="2" relation="public-inheritance">
-        </childnode>
-      </node>
-    </inheritancegraph>
-    <collaborationgraph>
-      <node id="2">
-        <label>NDPluginDriver</label>
-        <link refid="class_n_d_plugin_driver"/>
-        <childnode refid="3" relation="public-inheritance">
-        </childnode>
-        <childnode refid="11" relation="public-inheritance">
-        </childnode>
-        <childnode refid="7" relation="usage">
-          <edgelabel>pPrevInputArray_</edgelabel>
-        </childnode>
-      </node>
-      <node id="11">
-        <label>epicsThreadRunable</label>
-      </node>
-      <node id="8">
-        <label>NDDimension</label>
-        <link refid="struct_n_d_dimension"/>
-      </node>
       <node id="4">
         <label>asynPortDriver</label>
       </node>
-      <node id="10">
-        <label>string</label>
+      <node id="5">
+        <label>epicsThreadRunable</label>
       </node>
+    </inheritancegraph>
+    <collaborationgraph>
       <node id="9">
         <label>Codec_t</label>
         <link refid="struct_codec__t"/>
@@ -298,23 +279,52 @@
           <edgelabel>name</edgelabel>
         </childnode>
       </node>
-      <node id="7">
+      <node id="6">
         <label>NDArray</label>
         <link refid="class_n_d_array"/>
         <childnode refid="5" relation="usage">
           <edgelabel>pNDArrayPool</edgelabel>
         </childnode>
-        <childnode refid="8" relation="usage">
+        <childnode refid="3" relation="usage">
+          <edgelabel>pDriver</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
           <edgelabel>dims</edgelabel>
         </childnode>
-        <childnode refid="6" relation="usage">
+        <childnode refid="8" relation="usage">
           <edgelabel>pAttributeList</edgelabel>
         </childnode>
         <childnode refid="9" relation="usage">
           <edgelabel>codec</edgelabel>
         </childnode>
-        <childnode refid="3" relation="usage">
-          <edgelabel>pDriver</edgelabel>
+      </node>
+      <node id="5">
+        <label>NDArrayPool</label>
+        <link refid="class_n_d_array_pool"/>
+      </node>
+      <node id="8">
+        <label>NDAttributeList</label>
+        <link refid="class_n_d_attribute_list"/>
+      </node>
+      <node id="7">
+        <label>NDDimension</label>
+        <link refid="struct_n_d_dimension"/>
+      </node>
+      <node id="2">
+        <label>NDPluginDriver</label>
+        <link refid="class_n_d_plugin_driver"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+        <childnode refid="11" relation="public-inheritance">
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>pPrevInputArray_</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>NDPluginTransform</label>
+        <link refid="class_n_d_plugin_transform"/>
+        <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
       <node id="3">
@@ -326,25 +336,20 @@
           <edgelabel>pNDArrayPool</edgelabel>
         </childnode>
         <childnode refid="6" relation="usage">
-          <edgelabel>pAttributeList</edgelabel>
-        </childnode>
-        <childnode refid="7" relation="usage">
           <edgelabel>pArrays</edgelabel>
         </childnode>
-      </node>
-      <node id="5">
-        <label>NDArrayPool</label>
-        <link refid="class_n_d_array_pool"/>
-      </node>
-      <node id="6">
-        <label>NDAttributeList</label>
-        <link refid="class_n_d_attribute_list"/>
-      </node>
-      <node id="1">
-        <label>NDPluginTransform</label>
-        <link refid="class_n_d_plugin_transform"/>
-        <childnode refid="2" relation="public-inheritance">
+        <childnode refid="8" relation="usage">
+          <edgelabel>pAttributeList</edgelabel>
         </childnode>
+      </node>
+      <node id="4">
+        <label>asynPortDriver</label>
+      </node>
+      <node id="11">
+        <label>epicsThreadRunable</label>
+      </node>
+      <node id="10">
+        <label>string</label>
       </node>
     </collaborationgraph>
     <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginTransform.h" line="13" column="1" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginTransform.h" bodystart="13" bodyend="29"/>

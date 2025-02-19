@@ -1,18 +1,20 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="class_parameter_base" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>ParameterBase</compoundname>
     <derivedcompoundref refid="class_multi_parameter" prot="public" virt="non-virtual">MultiParameter&lt; _ccdCountMax, epicsFloat64 &gt;</derivedcompoundref>
     <derivedcompoundref refid="class_read_only_parameter" prot="public" virt="non-virtual">ReadOnlyParameter&lt; epicsInt32 &gt;</derivedcompoundref>
+    <derivedcompoundref refid="class_read_only_parameter" prot="public" virt="non-virtual">ReadOnlyParameter&lt; epicsFloat64 &gt;</derivedcompoundref>
     <derivedcompoundref refid="class_multi_parameter" prot="public" virt="non-virtual">MultiParameter&lt; valueCount, T &gt;</derivedcompoundref>
     <derivedcompoundref refid="class_read_only_parameter" prot="public" virt="non-virtual">ReadOnlyParameter&lt; T &gt;</derivedcompoundref>
     <includes refid="rixscam_8h" local="no">rixscam.h</includes>
-      <sectiondef kind="protected-attrib">
+    <sectiondef kind="protected-attrib">
       <memberdef kind="variable" id="class_parameter_base_1ab97e7d37cfc5230773ef4ac82e766a07" prot="protected" static="no" mutable="no">
         <type>const std::string</type>
         <definition>const std::string ParameterBase::_name</definition>
         <argsstring></argsstring>
         <name>_name</name>
+        <qualifiedname>ParameterBase::_name</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -21,13 +23,15 @@
         </inbodydescription>
         <location file="/home/runner/work/areaDetector/areaDetector/ADRIXSCam/rixscamApp/src/rixscam.h" line="49" column="19" bodyfile="/home/runner/work/areaDetector/areaDetector/ADRIXSCam/rixscamApp/src/rixscam.h" bodystart="49" bodyend="-1"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="public-func">
+    </sectiondef>
+    <sectiondef kind="public-func">
       <memberdef kind="function" id="class_parameter_base_1a6b42c9d51638e2c70d33da47d0b1ab11" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type>asynStatus</type>
         <definition>virtual asynStatus ParameterBase::Initialize</definition>
         <argsstring>(asynPortDriver &amp;driver)=0</argsstring>
         <name>Initialize</name>
+        <qualifiedname>ParameterBase::Initialize</qualifiedname>
+        <reimplementedby refid="class_read_only_parameter_1a221b4d5008452216acbef71e6d911e84">Initialize</reimplementedby>
         <reimplementedby refid="class_read_only_parameter_1a221b4d5008452216acbef71e6d911e84">Initialize</reimplementedby>
         <reimplementedby refid="class_read_only_parameter_1a221b4d5008452216acbef71e6d911e84">Initialize</reimplementedby>
         <reimplementedby refid="class_multi_parameter_1a6793da3c212c9169579394a6bf14d5ff">Initialize</reimplementedby>
@@ -44,13 +48,14 @@
         </inbodydescription>
         <location file="/home/runner/work/areaDetector/areaDetector/ADRIXSCam/rixscamApp/src/rixscam.h" line="22" column="20"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="protected-func">
+    </sectiondef>
+    <sectiondef kind="protected-func">
       <memberdef kind="function" id="class_parameter_base_1a15d9d92d22ffa82846b30d8b59018085" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
         <definition>ParameterBase::ParameterBase</definition>
         <argsstring>(const std::string &amp;name)</argsstring>
         <name>ParameterBase</name>
+        <qualifiedname>ParameterBase::ParameterBase</qualifiedname>
         <param>
           <type>const std::string &amp;</type>
           <declname>name</declname>
@@ -68,6 +73,7 @@
         <definition>asynStatus ParameterBase::SetParameter</definition>
         <argsstring>(asynPortDriver &amp;driver, const int parameterIndex, const epicsInt32 value)</argsstring>
         <name>SetParameter</name>
+        <qualifiedname>ParameterBase::SetParameter</qualifiedname>
         <param>
           <type>asynPortDriver &amp;</type>
           <declname>driver</declname>
@@ -93,6 +99,7 @@
         <definition>asynStatus ParameterBase::SetParameter</definition>
         <argsstring>(asynPortDriver &amp;driver, const int parameterIndex, const epicsFloat64 value)</argsstring>
         <name>SetParameter</name>
+        <qualifiedname>ParameterBase::SetParameter</qualifiedname>
         <param>
           <type>asynPortDriver &amp;</type>
           <declname>driver</declname>
@@ -118,6 +125,7 @@
         <definition>asynStatus ParameterBase::GetParameter</definition>
         <argsstring>(asynPortDriver &amp;driver, const int parameterIndex, epicsInt32 &amp;value)</argsstring>
         <name>GetParameter</name>
+        <qualifiedname>ParameterBase::GetParameter</qualifiedname>
         <param>
           <type>asynPortDriver &amp;</type>
           <declname>driver</declname>
@@ -143,6 +151,7 @@
         <definition>asynStatus ParameterBase::GetParameter</definition>
         <argsstring>(asynPortDriver &amp;driver, const int parameterIndex, epicsFloat64 &amp;value)</argsstring>
         <name>GetParameter</name>
+        <qualifiedname>ParameterBase::GetParameter</qualifiedname>
         <param>
           <type>asynPortDriver &amp;</type>
           <declname>driver</declname>
@@ -163,33 +172,15 @@
         </inbodydescription>
         <location file="/home/runner/work/areaDetector/areaDetector/ADRIXSCam/rixscamApp/src/rixscam.h" line="44" column="12" bodyfile="/home/runner/work/areaDetector/areaDetector/ADRIXSCam/rixscamApp/src/rixscam.h" bodystart="44" bodyend="47"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="6">
-        <label>ReadOnlyParameter&lt; T &gt;</label>
-        <link refid="class_read_only_parameter"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="4">
-        <label>Parameter&lt; epicsInt32 &gt;</label>
-        <link refid="class_parameter"/>
-        <childnode refid="3" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="8">
-        <label>Parameter&lt; T &gt;</label>
-        <link refid="class_parameter"/>
-        <childnode refid="6" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="3">
-        <label>ReadOnlyParameter&lt; epicsInt32 &gt;</label>
-        <link refid="class_read_only_parameter"/>
+      <node id="5">
+        <label>MultiParameter&lt; valueCount, T &gt;</label>
+        <link refid="class_multi_parameter"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
@@ -199,19 +190,43 @@
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="1">
-        <label>ParameterBase</label>
-        <link refid="class_parameter_base"/>
+      <node id="9">
+        <label>Parameter&lt; T &gt;</label>
+        <link refid="class_parameter"/>
+        <childnode refid="6" relation="public-inheritance">
+        </childnode>
       </node>
-      <node id="7">
+      <node id="8">
         <label>Parameter&lt; epicsFloat64 &gt;</label>
         <link refid="class_parameter"/>
         <childnode refid="6" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="5">
-        <label>MultiParameter&lt; valueCount, T &gt;</label>
-        <link refid="class_multi_parameter"/>
+      <node id="7">
+        <label>Parameter&lt; epicsInt32 &gt;</label>
+        <link refid="class_parameter"/>
+        <childnode refid="6" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>ParameterBase</label>
+        <link refid="class_parameter_base"/>
+      </node>
+      <node id="6">
+        <label>ReadOnlyParameter&lt; T &gt;</label>
+        <link refid="class_read_only_parameter"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>ReadOnlyParameter&lt; epicsFloat64 &gt;</label>
+        <link refid="class_read_only_parameter"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>ReadOnlyParameter&lt; epicsInt32 &gt;</label>
+        <link refid="class_read_only_parameter"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>

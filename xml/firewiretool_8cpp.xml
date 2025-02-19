@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="firewiretool_8cpp" kind="file" language="C++">
     <compoundname>firewiretool.cpp</compoundname>
     <includes local="no">stddef.h</includes>
@@ -10,24 +10,6 @@
     <includes local="no">ellLib.h</includes>
     <includes local="no">dc1394/dc1394.h</includes>
     <incdepgraph>
-      <node id="3">
-        <label>stdlib.h</label>
-      </node>
-      <node id="2">
-        <label>stddef.h</label>
-      </node>
-      <node id="4">
-        <label>string.h</label>
-      </node>
-      <node id="8">
-        <label>dc1394/dc1394.h</label>
-      </node>
-      <node id="7">
-        <label>ellLib.h</label>
-      </node>
-      <node id="6">
-        <label>getopt.h</label>
-      </node>
       <node id="1">
         <label>/home/runner/work/areaDetector/areaDetector/firewireDCAM/firewireDCAMApp/src/firewiretool.cpp</label>
         <link refid="firewiretool_8cpp"/>
@@ -46,15 +28,33 @@
         <childnode refid="8" relation="include">
         </childnode>
       </node>
+      <node id="8">
+        <label>dc1394/dc1394.h</label>
+      </node>
+      <node id="7">
+        <label>ellLib.h</label>
+      </node>
+      <node id="6">
+        <label>getopt.h</label>
+      </node>
+      <node id="2">
+        <label>stddef.h</label>
+      </node>
       <node id="5">
         <label>stdio.h</label>
+      </node>
+      <node id="3">
+        <label>stdlib.h</label>
+      </node>
+      <node id="4">
+        <label>string.h</label>
       </node>
     </incdepgraph>
     <innerclass refid="structdc1394__color_code_string__t" prot="public">dc1394_colorCodeString_t</innerclass>
     <innerclass refid="structcam_linked_list" prot="public">camLinkedList</innerclass>
     <innerclass refid="structfwtooloptions__t" prot="public">fwtooloptions_t</innerclass>
     <innerclass refid="structcam_node__t" prot="public">camNode_t</innerclass>
-      <sectiondef kind="define">
+    <sectiondef kind="define">
       <memberdef kind="define" id="firewiretool_8cpp_1af340b0f4452aaf752fff2a5f5120b3b7" prot="public" static="no">
         <name>FDC_DC1394_NUM_BUFFERS</name>
         <initializer>5</initializer>
@@ -84,10 +84,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/areaDetector/areaDetector/firewireDCAM/firewireDCAMApp/src/firewiretool.cpp" line="22" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/firewireDCAM/firewireDCAMApp/src/firewiretool.cpp" bodystart="22" bodyend="-1"/>
+        <location file="/home/runner/work/areaDetector/areaDetector/firewireDCAM/firewireDCAMApp/src/firewiretool.cpp" line="22" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/firewireDCAM/firewireDCAMApp/src/firewiretool.cpp" bodystart="22" bodyend="29"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="typedef">
+    </sectiondef>
+    <sectiondef kind="typedef">
       <memberdef kind="typedef" id="firewiretool_8cpp_1acb9d624b7d3c482d2712399845bb9559" prot="public" static="no">
         <type>struct <ref refid="structcam_linked_list" kindref="compound">camLinkedList</ref></type>
         <definition>typedef struct camLinkedList camListItem_t</definition>
@@ -99,7 +99,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/areaDetector/areaDetector/firewireDCAM/firewireDCAMApp/src/firewiretool.cpp" line="35" column="33" bodyfile="/home/runner/work/areaDetector/areaDetector/firewireDCAM/firewireDCAMApp/src/firewiretool.cpp" bodystart="53" bodyend="-1"/>
+        <location file="/home/runner/work/areaDetector/areaDetector/firewireDCAM/firewireDCAMApp/src/firewiretool.cpp" line="53" column="28" bodyfile="/home/runner/work/areaDetector/areaDetector/firewireDCAM/firewireDCAMApp/src/firewiretool.cpp" bodystart="53" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="firewiretool_8cpp_1afb68e1b6c3a3a8a2fbb6288bf6569689" prot="public" static="no">
         <type>struct <ref refid="structcam_node__t" kindref="compound">camNode_t</ref></type>
@@ -114,8 +114,8 @@
         </inbodydescription>
         <location file="/home/runner/work/areaDetector/areaDetector/firewireDCAM/firewireDCAMApp/src/firewiretool.cpp" line="258" column="10"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="var">
+    </sectiondef>
+    <sectiondef kind="var">
       <memberdef kind="variable" id="firewiretool_8cpp_1ae7880f5d03ee3d5e8178951523c90de9" prot="public" static="yes" mutable="no">
         <type><ref refid="structdc1394__color_code_string__t" kindref="compound">dc1394_colorCodeString_t</ref></type>
         <definition>dc1394_colorCodeString_t colorCodeString_lut[]</definition>
@@ -140,7 +140,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/areaDetector/areaDetector/firewireDCAM/firewireDCAMApp/src/firewiretool.cpp" line="35" column="33" bodyfile="/home/runner/work/areaDetector/areaDetector/firewireDCAM/firewireDCAMApp/src/firewiretool.cpp" bodystart="35" bodyend="-1"/>
+        <location file="/home/runner/work/areaDetector/areaDetector/firewireDCAM/firewireDCAMApp/src/firewiretool.cpp" line="35" column="33" bodyfile="/home/runner/work/areaDetector/areaDetector/firewireDCAM/firewireDCAMApp/src/firewiretool.cpp" bodystart="35" bodyend="47"/>
       </memberdef>
       <memberdef kind="variable" id="firewiretool_8cpp_1a94965649155359a4c4eb047af782bf22" prot="public" static="yes" mutable="no">
         <type>struct option</type>
@@ -161,7 +161,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/areaDetector/areaDetector/firewireDCAM/firewireDCAMApp/src/firewiretool.cpp" line="35" column="33" bodyfile="/home/runner/work/areaDetector/areaDetector/firewireDCAM/firewireDCAMApp/src/firewiretool.cpp" bodystart="55" bodyend="-1"/>
+        <location file="/home/runner/work/areaDetector/areaDetector/firewireDCAM/firewireDCAMApp/src/firewiretool.cpp" line="55" column="20" bodyfile="/home/runner/work/areaDetector/areaDetector/firewireDCAM/firewireDCAMApp/src/firewiretool.cpp" bodystart="55" bodyend="62"/>
       </memberdef>
       <memberdef kind="variable" id="firewiretool_8cpp_1aeca65747d7a92a326067969e7fb06bcd" prot="public" static="yes" mutable="no">
         <type>struct <ref refid="structfwtooloptions__t" kindref="compound">fwtooloptions_t</ref></type>
@@ -175,10 +175,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/areaDetector/areaDetector/firewireDCAM/firewireDCAMApp/src/firewiretool.cpp" line="35" column="33" bodyfile="/home/runner/work/areaDetector/areaDetector/firewireDCAM/firewireDCAMApp/src/firewiretool.cpp" bodystart="70" bodyend="-1"/>
+        <location file="/home/runner/work/areaDetector/areaDetector/firewireDCAM/firewireDCAMApp/src/firewiretool.cpp" line="70" column="29" bodyfile="/home/runner/work/areaDetector/areaDetector/firewireDCAM/firewireDCAMApp/src/firewiretool.cpp" bodystart="70" bodyend="70"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="func">
+    </sectiondef>
+    <sectiondef kind="func">
       <memberdef kind="function" id="firewiretool_8cpp_1a0325d02535e8d07d6cb2b4145e41eb55" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void parseOptions</definition>
@@ -341,7 +341,7 @@
         </inbodydescription>
         <location file="/home/runner/work/areaDetector/areaDetector/firewireDCAM/firewireDCAMApp/src/firewiretool.cpp" line="131" column="5" bodyfile="/home/runner/work/areaDetector/areaDetector/firewireDCAM/firewireDCAMApp/src/firewiretool.cpp" bodystart="131" bodyend="221"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
@@ -364,16 +364,16 @@
 <codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;ellLib.h&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="16"><highlight class="normal"></highlight></codeline>
 <codeline lineno="17"><highlight class="normal"></highlight></codeline>
-<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dc1394/dc1394.h&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>FDC_DC1394_NUM_BUFFERS<sp/>5</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dc1394/dc1394.h&gt;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>FDC_DC1394_NUM_BUFFERS<sp/>5</highlight></codeline>
 <codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ERR(errCode)<sp/>\</highlight></codeline>
 <codeline lineno="23"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>do<sp/>{<sp/>\</highlight></codeline>
 <codeline lineno="24"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>int<sp/>__err__<sp/>=<sp/>(errCode);<sp/>\</highlight></codeline>
 <codeline lineno="25"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if<sp/>(__err__<sp/>!=<sp/>0)<sp/>\</highlight></codeline>
 <codeline lineno="26"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fprintf(stderr,<sp/>\</highlight></codeline>
-<codeline lineno="27"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;ERROR<sp/>[%s:%d]:<sp/>dc1394<sp/>code:<sp/>%d\n&quot;</highlight><highlight class="normal">,<sp/>\</highlight></codeline>
-<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__FILE__,<sp/>__LINE__,<sp/>__err__);<sp/>\</highlight></codeline>
-<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/>while<sp/>(0)</highlight></codeline>
+<codeline lineno="27"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;ERROR<sp/>[%s:%d]:<sp/>dc1394<sp/>code:<sp/>%d\n&quot;,<sp/>\</highlight></codeline>
+<codeline lineno="28"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__FILE__,<sp/>__LINE__,<sp/>__err__);<sp/>\</highlight></codeline>
+<codeline lineno="29"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>}<sp/>while<sp/>(0)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="30"><highlight class="normal"></highlight></codeline>
 <codeline lineno="31" refid="structdc1394__color_code_string__t" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
 <codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>dc1394color_coding_t<sp/>code;</highlight></codeline>
@@ -475,7 +475,7 @@
 <codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="129"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="130"><highlight class="normal"></highlight></codeline>
-<codeline lineno="131"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="firewiretool_8cpp_1a0ddf1224851353fc92bfbff6f499fa97" kindref="member">main</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>argc,</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*argv[])</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="listdevices_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4" kindref="member">main</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>argc,</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*argv[])</highlight></codeline>
 <codeline lineno="132"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="133"><highlight class="normal"></highlight></codeline>
 <codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/>dc1394_t<sp/>*<sp/>bus;</highlight></codeline>
@@ -549,7 +549,7 @@
 <codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tmpcams<sp/>=<sp/>&amp;cam;</highlight></codeline>
 <codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="204"><highlight class="normal"></highlight></codeline>
-<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>=0;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>&lt;nReports;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>++)</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(i=0;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>&lt;nReports;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>++)</highlight></codeline>
 <codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tmpcam<sp/>=<sp/>*(tmpcams+<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>);</highlight></codeline>
 <codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//ERR(<sp/>dc1394_camera_print_info(tmpcam,<sp/>stdout)<sp/>);</highlight><highlight class="normal"></highlight></codeline>
@@ -574,16 +574,16 @@
 <codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>node,<sp/>generation;</highlight></codeline>
 <codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>tblWidth<sp/>=<sp/>89;</highlight></codeline>
 <codeline lineno="229"><highlight class="normal"></highlight></codeline>
-<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>=0;<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>&lt;tblWidth;<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>++)<sp/>printf(</highlight><highlight class="stringliteral">&quot;_&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(i=0;<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>&lt;tblWidth;<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>++)<sp/>printf(</highlight><highlight class="stringliteral">&quot;_&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(<sp/></highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;%19s<sp/>|%19s<sp/>|%25s<sp/>|%8s<sp/>|%8s<sp/>|\n&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;GUID&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;Vendor&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;Model&quot;</highlight><highlight class="normal">,</highlight><highlight class="stringliteral">&quot;Node&quot;</highlight><highlight class="normal">,</highlight><highlight class="stringliteral">&quot;Gen.&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>=0;<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>&lt;tblWidth;<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>++)<sp/>printf(</highlight><highlight class="stringliteral">&quot;_&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(i=0;<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>&lt;tblWidth;<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>++)<sp/>printf(</highlight><highlight class="stringliteral">&quot;_&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(<sp/></highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="235"><highlight class="normal"></highlight></codeline>
 <codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>run<sp/>through<sp/>all<sp/>the<sp/>identified<sp/>cameras<sp/>and<sp/>allocate<sp/>them</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref><sp/>=<sp/>0;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref><sp/>&lt;<sp/>list-&gt;num;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>++)</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(i<sp/>=<sp/>0;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref><sp/>&lt;<sp/>list-&gt;num;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>++)</highlight></codeline>
 <codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>camera<sp/>=<sp/>dc1394_camera_new(bus,<sp/>list-&gt;ids[<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>].guid);</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>camera<sp/>=<sp/>dc1394_camera_new(bus,<sp/>list-&gt;ids[i].guid);</highlight></codeline>
 <codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(camera<sp/>!=<sp/>NULL)</highlight></codeline>
 <codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="firewiretool_8cpp_1a8e4a40e78c4cea6bb2d980f67b777b2d" kindref="member">ERR</ref>(<sp/>dc1394_camera_get_node(camera,<sp/>&amp;node,<sp/>&amp;generation)<sp/>);</highlight></codeline>
@@ -594,7 +594,7 @@
 <codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cnt++;</highlight></codeline>
 <codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>=0;<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>&lt;tblWidth;<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>++)<sp/>printf(</highlight><highlight class="stringliteral">&quot;_&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(i=0;<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>&lt;tblWidth;<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>++)<sp/>printf(</highlight><highlight class="stringliteral">&quot;_&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(<sp/></highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>cnt;</highlight></codeline>
 <codeline lineno="253"><highlight class="normal">}</highlight></codeline>
@@ -627,10 +627,10 @@
 <codeline lineno="280"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>which<sp/>bus<sp/>the<sp/>camera<sp/>is<sp/>located<sp/>on.</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="281"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>For<sp/>each<sp/>specific<sp/>&apos;generation&apos;<sp/>we<sp/>add<sp/>the<sp/>camera<sp/>handle<sp/>to<sp/>a<sp/>list<sp/>which</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="282"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>we<sp/>can<sp/>later<sp/>use<sp/>to<sp/>reset<sp/>each<sp/>bus.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="283"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>=0;<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>&lt;list-&gt;num;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>++)</highlight></codeline>
+<codeline lineno="283"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(i=0;<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>&lt;list-&gt;num;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>++)</highlight></codeline>
 <codeline lineno="284"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="285"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fflush(<ref refid="namespacemake_adl_1a3f4a3faa9267f79b85de3e74ef54d173" kindref="member">stdout</ref>);</highlight></codeline>
-<codeline lineno="286"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cam<sp/>=<sp/>dc1394_camera_new<sp/>(d,<sp/>list-&gt;ids[<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>].guid);</highlight></codeline>
+<codeline lineno="285"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fflush(stdout);</highlight></codeline>
+<codeline lineno="286"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cam<sp/>=<sp/>dc1394_camera_new<sp/>(d,<sp/>list-&gt;ids[i].guid);</highlight></codeline>
 <codeline lineno="287"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="firewiretool_8cpp_1a8e4a40e78c4cea6bb2d980f67b777b2d" kindref="member">ERR</ref>(<sp/>dc1394_camera_get_node(cam,<sp/>&amp;node,<sp/>&amp;generation)<sp/>);</highlight></codeline>
 <codeline lineno="288"><highlight class="normal"></highlight></codeline>
 <codeline lineno="289"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Run<sp/>through<sp/>the<sp/>collected<sp/>list<sp/>of<sp/>cameras<sp/>and<sp/>check<sp/>if<sp/>anyone</highlight><highlight class="normal"></highlight></codeline>
@@ -652,7 +652,7 @@
 <codeline lineno="305"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>we<sp/>want<sp/>to<sp/>use<sp/>for<sp/>resetting<sp/>busses.</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="306"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Else<sp/>free<sp/>up<sp/>the<sp/>camera<sp/>handle<sp/>as<sp/>we<sp/>won&apos;t<sp/>use<sp/>it<sp/>until<sp/>we<sp/>instantiate</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="307"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>our<sp/>driver<sp/>plugin.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="308"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(newBus==1<sp/>||<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>==0)</highlight></codeline>
+<codeline lineno="308"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(newBus==1<sp/>||<sp/>i==0)</highlight></codeline>
 <codeline lineno="309"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="310"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>camListItem<sp/>=<sp/>(<ref refid="structcam_node__t" kindref="compound">camNode_t</ref>*)calloc(1,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="structcam_node__t" kindref="compound">camNode_t</ref>));</highlight></codeline>
 <codeline lineno="311"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>camListItem-&gt;<ref refid="structcam_node__t_1ab8d737a29e5c28faeb1c2fdb2ac1c840" kindref="member">cam</ref><sp/>=<sp/>cam;</highlight></codeline>
@@ -674,7 +674,7 @@
 <codeline lineno="327"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">(camListItem<sp/>!=<sp/>NULL)</highlight></codeline>
 <codeline lineno="328"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="329"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;Resetting<sp/>bus:<sp/>%3d<sp/>using<sp/>cam:<sp/>0x%16.16lX...<sp/>&quot;</highlight><highlight class="normal">,<sp/>camListItem-&gt;<ref refid="structcam_node__t_1a07b37fd5f3fd406c0b4256f73edefc4e" kindref="member">generation</ref>,<sp/>camListItem-&gt;<ref refid="structcam_node__t_1ab8d737a29e5c28faeb1c2fdb2ac1c840" kindref="member">cam</ref>-&gt;guid);</highlight></codeline>
-<codeline lineno="330"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fflush(<ref refid="namespacemake_adl_1a3f4a3faa9267f79b85de3e74ef54d173" kindref="member">stdout</ref>);</highlight></codeline>
+<codeline lineno="330"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fflush(stdout);</highlight></codeline>
 <codeline lineno="331"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="firewiretool_8cpp_1a8e4a40e78c4cea6bb2d980f67b777b2d" kindref="member">ERR</ref>(<sp/>dc1394_reset_bus(camListItem-&gt;<ref refid="structcam_node__t_1ab8d737a29e5c28faeb1c2fdb2ac1c840" kindref="member">cam</ref>)<sp/>);</highlight></codeline>
 <codeline lineno="332"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;Done\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="333"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dc1394_camera_free(camListItem-&gt;<ref refid="structcam_node__t_1ab8d737a29e5c28faeb1c2fdb2ac1c840" kindref="member">cam</ref>);</highlight></codeline>
@@ -708,9 +708,9 @@
 <codeline lineno="361"><highlight class="normal"></highlight></codeline>
 <codeline lineno="362"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>run<sp/>through<sp/>all<sp/>the<sp/>identified<sp/>cameras<sp/>on<sp/>the<sp/>bus<sp/>and<sp/>check<sp/>if<sp/>the</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="363"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>ID<sp/>matches<sp/>the<sp/>requested<sp/>one</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="364"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref><sp/>=<sp/>0;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref><sp/>&lt;<sp/>ncams;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>++)</highlight></codeline>
+<codeline lineno="364"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(i<sp/>=<sp/>0;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref><sp/>&lt;<sp/>ncams;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>++)</highlight></codeline>
 <codeline lineno="365"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="366"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(cams[<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>]-&gt;guid<sp/>==<sp/>iguid)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>cams[<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>];</highlight></codeline>
+<codeline lineno="366"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(cams[i]-&gt;guid<sp/>==<sp/>iguid)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>cams[<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>];</highlight></codeline>
 <codeline lineno="367"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="368"><highlight class="normal"></highlight></codeline>
 <codeline lineno="369"><highlight class="normal"><sp/><sp/><sp/><sp/>fprintf(stderr,<sp/></highlight><highlight class="stringliteral">&quot;Could<sp/>not<sp/>find<sp/>requested<sp/>camera:<sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/>guid);</highlight></codeline>
@@ -734,7 +734,7 @@
 <codeline lineno="387"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="firewiretool_8cpp_1a8e4a40e78c4cea6bb2d980f67b777b2d" kindref="member">ERR</ref>(<sp/>dc1394_video_get_supported_modes(cam,<sp/>&amp;video_modes)<sp/>);</highlight></codeline>
 <codeline lineno="388"><highlight class="normal"></highlight></codeline>
 <codeline lineno="389"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\n<sp/><sp/><sp/><sp/>Supported<sp/>modes<sp/>for<sp/>camera:<sp/>0x%16.16lX<sp/>%20s\n&quot;</highlight><highlight class="normal">,<sp/>cam-&gt;guid,<sp/>cam-&gt;model);</highlight></codeline>
-<codeline lineno="390"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>=0;<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>&lt;tblWidth;<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>++)<sp/>printf(</highlight><highlight class="stringliteral">&quot;_&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="390"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(i=0;<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>&lt;tblWidth;<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>++)<sp/>printf(</highlight><highlight class="stringliteral">&quot;_&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="391"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(<sp/></highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="392"><highlight class="normal"></highlight></codeline>
 <codeline lineno="393"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;%5s<sp/>|&quot;</highlight><highlight class="normal">,</highlight><highlight class="stringliteral">&quot;mode&quot;</highlight><highlight class="normal">);</highlight></codeline>
@@ -742,9 +742,9 @@
 <codeline lineno="395"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;<sp/>scalable<sp/>|&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="396"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;<sp/>%15s<sp/>|&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;color<sp/>coding<sp/>(id)&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="397"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;<sp/>%-33s<sp/>|\n&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;framerates<sp/>(fps)&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="398"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>=0;<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>&lt;tblWidth;<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>++)<sp/>printf(</highlight><highlight class="stringliteral">&quot;_&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="398"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(i=0;<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>&lt;tblWidth;<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>++)<sp/>printf(</highlight><highlight class="stringliteral">&quot;_&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="399"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(<sp/></highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="400"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>=0;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>&lt;video_modes.num;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>++)</highlight></codeline>
+<codeline lineno="400"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(i=0;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>&lt;video_modes.num;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>++)</highlight></codeline>
 <codeline lineno="401"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="402"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mode<sp/>=<sp/>video_modes.modes[<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>];</highlight></codeline>
 <codeline lineno="403"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="firewiretool_8cpp_1a8e4a40e78c4cea6bb2d980f67b777b2d" kindref="member">ERR</ref>(<sp/>dc1394_get_image_size_from_video_mode(cam,<sp/>mode,<sp/>&amp;width,<sp/>&amp;height)<sp/>);</highlight></codeline>
@@ -782,7 +782,7 @@
 <codeline lineno="435"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;|\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="436"><highlight class="normal"></highlight></codeline>
 <codeline lineno="437"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="438"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>=0;<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>&lt;tblWidth;<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>++)<sp/>printf(</highlight><highlight class="stringliteral">&quot;_&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="438"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(i=0;<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>&lt;tblWidth;<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>++)<sp/>printf(</highlight><highlight class="stringliteral">&quot;_&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="439"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(<sp/></highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="440"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="441"><highlight class="normal"></highlight></codeline>
@@ -798,8 +798,8 @@
 <codeline lineno="451"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="452"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>;</highlight></codeline>
 <codeline lineno="453"><highlight class="normal"></highlight></codeline>
-<codeline lineno="454"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>=0;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>&lt;DC1394_COLOR_CODING_NUM;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>++)</highlight></codeline>
-<codeline lineno="455"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(colorCodeString_lut[<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>].code<sp/>==<sp/>code)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>colorCodeString_lut[<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>].<ref refid="structdc1394__color_code_string__t_1a5b162663e414e2e750f3dd357b874ee3" kindref="member">colorCodeStr</ref>;</highlight></codeline>
+<codeline lineno="454"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(i=0;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>&lt;DC1394_COLOR_CODING_NUM;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>++)</highlight></codeline>
+<codeline lineno="455"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(colorCodeString_lut[i].code<sp/>==<sp/>code)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>colorCodeString_lut[<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>].<ref refid="structdc1394__color_code_string__t_1a5b162663e414e2e750f3dd357b874ee3" kindref="member">colorCodeStr</ref>;</highlight></codeline>
 <codeline lineno="456"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="457"><highlight class="normal">}</highlight></codeline>
     </programlisting>

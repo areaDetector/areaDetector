@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="_n_d_plugin_driver_8h" kind="file" language="C++">
     <compoundname>NDPluginDriver.h</compoundname>
     <includes local="no">set</includes>
@@ -9,8 +9,8 @@
     <includes local="no">epicsTime.h</includes>
     <includes refid="_n_d_plugin_a_p_i_8h" local="no">NDPluginAPI.h</includes>
     <includes refid="asyn_n_d_array_driver_8h" local="yes">asynNDArrayDriver.h</includes>
-    <includedby refid="_n_d_plugin_attribute_8h" local="yes">/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginAttribute.h</includedby>
     <includedby refid="_n_d_plugin_attr_plot_8h" local="no">/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginAttrPlot.h</includedby>
+    <includedby refid="_n_d_plugin_attribute_8h" local="yes">/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginAttribute.h</includedby>
     <includedby refid="_n_d_plugin_bad_pixel_8h" local="yes">/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginBadPixel.h</includedby>
     <includedby refid="_n_d_plugin_circular_buff_8h" local="yes">/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginCircularBuff.h</includedby>
     <includedby refid="_n_d_plugin_codec_8h" local="yes">/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginCodec.h</includedby>
@@ -39,8 +39,19 @@
     <includedby refid="_a_dn_e_d_plugin_mask_8h" local="yes">/home/runner/work/areaDetector/areaDetector/ADnED/ADnEDApp/src/ADnEDPluginMask.h</includedby>
     <includedby refid="ffmpeg_server_8h" local="yes">/home/runner/work/areaDetector/areaDetector/ffmpegServer/ffmpegServerApp/src/ffmpegServer.h</includedby>
     <incdepgraph>
-      <node id="3">
-        <label>epicsTypes.h</label>
+      <node id="19">
+        <label>ADCoreAPI.h</label>
+        <link refid="_a_d_core_a_p_i_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="22">
+        <label>ADCoreVersion.h</label>
+        <link refid="_a_d_core_version_8h"/>
+      </node>
+      <node id="21">
+        <label>Codec.h</label>
+        <link refid="_codec_8h"/>
       </node>
       <node id="13">
         <label>NDArray.h</label>
@@ -60,57 +71,6 @@
         <childnode refid="21" relation="include">
         </childnode>
       </node>
-      <node id="20">
-        <label>NDAttributeList.h</label>
-        <link refid="_n_d_attribute_list_8h"/>
-        <childnode refid="17" relation="include">
-        </childnode>
-        <childnode refid="14" relation="include">
-        </childnode>
-        <childnode refid="10" relation="include">
-        </childnode>
-        <childnode refid="15" relation="include">
-        </childnode>
-      </node>
-      <node id="10">
-        <label>epicsMutex.h</label>
-      </node>
-      <node id="8">
-        <label>epicsVersion.h</label>
-      </node>
-      <node id="16">
-        <label>string</label>
-      </node>
-      <node id="5">
-        <label>epicsThread.h</label>
-      </node>
-      <node id="22">
-        <label>ADCoreVersion.h</label>
-        <link refid="_a_d_core_version_8h"/>
-      </node>
-      <node id="19">
-        <label>ADCoreAPI.h</label>
-        <link refid="_a_d_core_a_p_i_8h"/>
-        <childnode refid="8" relation="include">
-        </childnode>
-      </node>
-      <node id="9">
-        <label>asynNDArrayDriver.h</label>
-        <link refid="asyn_n_d_array_driver_8h"/>
-        <childnode refid="10" relation="include">
-        </childnode>
-        <childnode refid="11" relation="include">
-        </childnode>
-        <childnode refid="12" relation="include">
-        </childnode>
-        <childnode refid="13" relation="include">
-        </childnode>
-        <childnode refid="22" relation="include">
-        </childnode>
-      </node>
-      <node id="14">
-        <label>ellLib.h</label>
-      </node>
       <node id="15">
         <label>NDAttribute.h</label>
         <link refid="_n_d_attribute_8h"/>
@@ -127,8 +87,37 @@
         <childnode refid="19" relation="include">
         </childnode>
       </node>
-      <node id="18">
-        <label>asynDriver.h</label>
+      <node id="20">
+        <label>NDAttributeList.h</label>
+        <link refid="_n_d_attribute_list_8h"/>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>asynNDArrayDriver.h</label>
+        <link refid="asyn_n_d_array_driver_8h"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>NDPluginAPI.h</label>
+        <link refid="_n_d_plugin_a_p_i_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
       </node>
       <node id="1">
         <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginDriver.h</label>
@@ -148,181 +137,60 @@
         <childnode refid="9" relation="include">
         </childnode>
       </node>
-      <node id="21">
-        <label>Codec.h</label>
-        <link refid="_codec_8h"/>
-      </node>
-      <node id="6">
-        <label>epicsTime.h</label>
+      <node id="18">
+        <label>asynDriver.h</label>
       </node>
       <node id="12">
         <label>asynPortDriver.h</label>
       </node>
-      <node id="7">
-        <label>NDPluginAPI.h</label>
-        <link refid="_n_d_plugin_a_p_i_8h"/>
-        <childnode refid="8" relation="include">
-        </childnode>
-      </node>
-      <node id="2">
-        <label>set</label>
-      </node>
-      <node id="4">
-        <label>epicsMessageQueue.h</label>
-      </node>
-      <node id="17">
-        <label>stdio.h</label>
+      <node id="14">
+        <label>ellLib.h</label>
       </node>
       <node id="11">
         <label>epicsEvent.h</label>
       </node>
+      <node id="4">
+        <label>epicsMessageQueue.h</label>
+      </node>
+      <node id="10">
+        <label>epicsMutex.h</label>
+      </node>
+      <node id="5">
+        <label>epicsThread.h</label>
+      </node>
+      <node id="6">
+        <label>epicsTime.h</label>
+      </node>
+      <node id="3">
+        <label>epicsTypes.h</label>
+      </node>
+      <node id="8">
+        <label>epicsVersion.h</label>
+      </node>
+      <node id="2">
+        <label>set</label>
+      </node>
+      <node id="17">
+        <label>stdio.h</label>
+      </node>
+      <node id="16">
+        <label>string</label>
+      </node>
     </incdepgraph>
     <invincdepgraph>
-      <node id="52">
-        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginScatter.cpp</label>
-        <link refid="_n_d_plugin_scatter_8cpp"/>
-      </node>
-      <node id="29">
-        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDFileNexus.cpp</label>
-        <link refid="_n_d_file_nexus_8cpp"/>
-      </node>
-      <node id="56">
-        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginStdArrays.h</label>
-        <link refid="_n_d_plugin_std_arrays_8h"/>
-        <childnode refid="57" relation="include">
-        </childnode>
-      </node>
-      <node id="70">
-        <label>/home/runner/work/areaDetector/areaDetector/ADnED/ADnEDApp/src/ADnEDPluginMask.h</label>
-        <link refid="_a_dn_e_d_plugin_mask_8h"/>
-        <childnode refid="69" relation="include">
-        </childnode>
-      </node>
-      <node id="35">
-        <label>/home/runner/work/areaDetector/areaDetector/ADPCO/pcoApp/src/pcoEdgePlugin.cpp</label>
-        <link refid="pco_edge_plugin_8cpp"/>
-      </node>
       <node id="19">
         <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5.cpp</label>
         <link refid="_n_d_file_h_d_f5_8cpp"/>
       </node>
-      <node id="49">
-        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginROIStat.h</label>
-        <link refid="_n_d_plugin_r_o_i_stat_8h"/>
-        <childnode refid="50" relation="include">
+      <node id="18">
+        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5.h</label>
+        <link refid="_n_d_file_h_d_f5_8h"/>
+        <childnode refid="19" relation="include">
         </childnode>
-      </node>
-      <node id="4">
-        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginAttrPlot.h</label>
-        <link refid="_n_d_plugin_attr_plot_8h"/>
-        <childnode refid="5" relation="include">
-        </childnode>
-      </node>
-      <node id="67">
-        <label>/home/runner/work/areaDetector/areaDetector/ADnED/ADnEDApp/src/ADnEDPixelROI.h</label>
-        <link refid="_a_dn_e_d_pixel_r_o_i_8h"/>
-        <childnode refid="68" relation="include">
-        </childnode>
-      </node>
-      <node id="34">
-        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginFile.cpp</label>
-        <link refid="_n_d_plugin_file_8cpp"/>
-      </node>
-      <node id="14">
-        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginDriver.cpp</label>
-        <link refid="_n_d_plugin_driver_8cpp"/>
-      </node>
-      <node id="64">
-        <label>/home/runner/work/areaDetector/areaDetector/ADMythen/mythenApp/src/mythen.cpp</label>
-        <link refid="mythen_8cpp"/>
-      </node>
-      <node id="55">
-        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/test_forward_reference.cpp</label>
-        <link refid="test__forward__reference_8cpp"/>
-      </node>
-      <node id="28">
-        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDFileNexus.h</label>
-        <link refid="_n_d_file_nexus_8h"/>
-        <childnode refid="29" relation="include">
-        </childnode>
-      </node>
-      <node id="33">
-        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDFileTIFF.cpp</label>
-        <link refid="_n_d_file_t_i_f_f_8cpp"/>
-      </node>
-      <node id="36">
-        <label>/home/runner/work/areaDetector/areaDetector/ADPCO/pcoApp/src/pcoEdgePlugin.h</label>
-        <link refid="pco_edge_plugin_8h"/>
-        <childnode refid="35" relation="include">
-        </childnode>
-      </node>
-      <node id="45">
-        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginPva.h</label>
-        <link refid="_n_d_plugin_pva_8h"/>
-        <childnode refid="46" relation="include">
-        </childnode>
-      </node>
-      <node id="44">
-        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginProcess.cpp</label>
-        <link refid="_n_d_plugin_process_8cpp"/>
-      </node>
-      <node id="13">
-        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginColorConvert.h</label>
-        <link refid="_n_d_plugin_color_convert_8h"/>
-        <childnode refid="12" relation="include">
-        </childnode>
-      </node>
-      <node id="66">
-        <label>/home/runner/work/areaDetector/areaDetector/ADPluginEdge/edgeApp/edgeSrc/NDPluginEdge.cpp</label>
-        <link refid="_n_d_plugin_edge_8cpp"/>
       </node>
       <node id="21">
         <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5Dataset.cpp</label>
         <link refid="_n_d_file_h_d_f5_dataset_8cpp"/>
-      </node>
-      <node id="58">
-        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginTimeSeries.h</label>
-        <link refid="_n_d_plugin_time_series_8h"/>
-        <childnode refid="59" relation="include">
-        </childnode>
-      </node>
-      <node id="6">
-        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginBadPixel.h</label>
-        <link refid="_n_d_plugin_bad_pixel_8h"/>
-        <childnode refid="7" relation="include">
-        </childnode>
-      </node>
-      <node id="41">
-        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginOverlay.h</label>
-        <link refid="_n_d_plugin_overlay_8h"/>
-        <childnode refid="42" relation="include">
-        </childnode>
-      </node>
-      <node id="57">
-        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginStdArrays.cpp</label>
-        <link refid="_n_d_plugin_std_arrays_8cpp"/>
-      </node>
-      <node id="10">
-        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginCodec.h</label>
-        <link refid="_n_d_plugin_codec_8h"/>
-        <childnode refid="11" relation="include">
-        </childnode>
-      </node>
-      <node id="24">
-        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDFileMagick.h</label>
-        <link refid="_n_d_file_magick_8h"/>
-        <childnode refid="25" relation="include">
-        </childnode>
-      </node>
-      <node id="27">
-        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDFileNetCDF.h</label>
-        <link refid="_n_d_file_net_c_d_f_8h"/>
-        <childnode refid="26" relation="include">
-        </childnode>
-      </node>
-      <node id="42">
-        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginOverlay.cpp</label>
-        <link refid="_n_d_plugin_overlay_8cpp"/>
       </node>
       <node id="20">
         <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5Dataset.h</label>
@@ -332,125 +200,9 @@
         <childnode refid="21" relation="include">
         </childnode>
       </node>
-      <node id="72">
-        <label>/home/runner/work/areaDetector/areaDetector/ffmpegServer/ffmpegServerApp/src/ffmpegServer.cpp</label>
-        <link refid="ffmpeg_server_8cpp"/>
-      </node>
-      <node id="39">
-        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginGather.h</label>
-        <link refid="_n_d_plugin_gather_8h"/>
-        <childnode refid="40" relation="include">
-        </childnode>
-      </node>
-      <node id="65">
-        <label>/home/runner/work/areaDetector/areaDetector/ADPluginEdge/edgeApp/edgeSrc/NDPluginEdge.h</label>
-        <link refid="_n_d_plugin_edge_8h"/>
-        <childnode refid="66" relation="include">
-        </childnode>
-      </node>
-      <node id="48">
-        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginROI.h</label>
-        <link refid="_n_d_plugin_r_o_i_8h"/>
-        <childnode refid="47" relation="include">
-        </childnode>
-      </node>
       <node id="22">
         <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDFileJPEG.cpp</label>
         <link refid="_n_d_file_j_p_e_g_8cpp"/>
-      </node>
-      <node id="5">
-        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginAttrPlot.cpp</label>
-        <link refid="_n_d_plugin_attr_plot_8cpp"/>
-      </node>
-      <node id="46">
-        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginPva.cpp</label>
-        <link refid="_n_d_plugin_pva_8cpp"/>
-      </node>
-      <node id="30">
-        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDFileNull.h</label>
-        <link refid="_n_d_file_null_8h"/>
-        <childnode refid="31" relation="include">
-        </childnode>
-      </node>
-      <node id="37">
-        <label>/home/runner/work/areaDetector/areaDetector/ffmpegServer/ffmpegServerApp/src/ffmpegFile.h</label>
-        <link refid="ffmpeg_file_8h"/>
-        <childnode refid="38" relation="include">
-        </childnode>
-      </node>
-      <node id="9">
-        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginCircularBuff.cpp</label>
-        <link refid="_n_d_plugin_circular_buff_8cpp"/>
-      </node>
-      <node id="32">
-        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDFileTIFF.h</label>
-        <link refid="_n_d_file_t_i_f_f_8h"/>
-        <childnode refid="33" relation="include">
-        </childnode>
-      </node>
-      <node id="68">
-        <label>/home/runner/work/areaDetector/areaDetector/ADnED/ADnEDApp/src/ADnEDPixelROI.cpp</label>
-        <link refid="_a_dn_e_d_pixel_r_o_i_8cpp"/>
-      </node>
-      <node id="59">
-        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginTimeSeries.cpp</label>
-        <link refid="_n_d_plugin_time_series_8cpp"/>
-      </node>
-      <node id="71">
-        <label>/home/runner/work/areaDetector/areaDetector/ffmpegServer/ffmpegServerApp/src/ffmpegServer.h</label>
-        <link refid="ffmpeg_server_8h"/>
-        <childnode refid="72" relation="include">
-        </childnode>
-      </node>
-      <node id="51">
-        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginScatter.h</label>
-        <link refid="_n_d_plugin_scatter_8h"/>
-        <childnode refid="52" relation="include">
-        </childnode>
-      </node>
-      <node id="38">
-        <label>/home/runner/work/areaDetector/areaDetector/ffmpegServer/ffmpegServerApp/src/ffmpegFile.cpp</label>
-        <link refid="ffmpeg_file_8cpp"/>
-      </node>
-      <node id="54">
-        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginStats.cpp</label>
-        <link refid="_n_d_plugin_stats_8cpp"/>
-      </node>
-      <node id="18">
-        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5.h</label>
-        <link refid="_n_d_file_h_d_f5_8h"/>
-        <childnode refid="19" relation="include">
-        </childnode>
-      </node>
-      <node id="12">
-        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginColorConvert.cpp</label>
-        <link refid="_n_d_plugin_color_convert_8cpp"/>
-      </node>
-      <node id="2">
-        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginAttribute.h</label>
-        <link refid="_n_d_plugin_attribute_8h"/>
-        <childnode refid="3" relation="include">
-        </childnode>
-      </node>
-      <node id="26">
-        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDFileNetCDF.cpp</label>
-        <link refid="_n_d_file_net_c_d_f_8cpp"/>
-      </node>
-      <node id="60">
-        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginTransform.h</label>
-        <link refid="_n_d_plugin_transform_8h"/>
-        <childnode refid="61" relation="include">
-        </childnode>
-      </node>
-      <node id="15">
-        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginFFT.h</label>
-        <link refid="_n_d_plugin_f_f_t_8h"/>
-        <childnode refid="16" relation="include">
-        </childnode>
-      </node>
-      <node id="61">
-        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginTransform.cpp</label>
-        <link refid="_n_d_plugin_transform_8cpp"/>
       </node>
       <node id="23">
         <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDFileJPEG.h</label>
@@ -458,15 +210,119 @@
         <childnode refid="22" relation="include">
         </childnode>
       </node>
+      <node id="25">
+        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDFileMagick.cpp</label>
+        <link refid="_n_d_file_magick_8cpp"/>
+      </node>
+      <node id="24">
+        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDFileMagick.h</label>
+        <link refid="_n_d_file_magick_8h"/>
+        <childnode refid="25" relation="include">
+        </childnode>
+      </node>
+      <node id="26">
+        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDFileNetCDF.cpp</label>
+        <link refid="_n_d_file_net_c_d_f_8cpp"/>
+      </node>
+      <node id="27">
+        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDFileNetCDF.h</label>
+        <link refid="_n_d_file_net_c_d_f_8h"/>
+        <childnode refid="26" relation="include">
+        </childnode>
+      </node>
+      <node id="29">
+        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDFileNexus.cpp</label>
+        <link refid="_n_d_file_nexus_8cpp"/>
+      </node>
+      <node id="28">
+        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDFileNexus.h</label>
+        <link refid="_n_d_file_nexus_8h"/>
+        <childnode refid="29" relation="include">
+        </childnode>
+      </node>
+      <node id="31">
+        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDFileNull.cpp</label>
+        <link refid="_n_d_file_null_8cpp"/>
+      </node>
+      <node id="30">
+        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDFileNull.h</label>
+        <link refid="_n_d_file_null_8h"/>
+        <childnode refid="31" relation="include">
+        </childnode>
+      </node>
+      <node id="33">
+        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDFileTIFF.cpp</label>
+        <link refid="_n_d_file_t_i_f_f_8cpp"/>
+      </node>
+      <node id="32">
+        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDFileTIFF.h</label>
+        <link refid="_n_d_file_t_i_f_f_8h"/>
+        <childnode refid="33" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginAttrPlot.cpp</label>
+        <link refid="_n_d_plugin_attr_plot_8cpp"/>
+      </node>
+      <node id="2">
+        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginAttrPlot.h</label>
+        <link refid="_n_d_plugin_attr_plot_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginAttribute.cpp</label>
+        <link refid="_n_d_plugin_attribute_8cpp"/>
+      </node>
+      <node id="4">
+        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginAttribute.h</label>
+        <link refid="_n_d_plugin_attribute_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginBadPixel.cpp</label>
+        <link refid="_n_d_plugin_bad_pixel_8cpp"/>
+      </node>
+      <node id="6">
+        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginBadPixel.h</label>
+        <link refid="_n_d_plugin_bad_pixel_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginCircularBuff.cpp</label>
+        <link refid="_n_d_plugin_circular_buff_8cpp"/>
+      </node>
       <node id="8">
         <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginCircularBuff.h</label>
         <link refid="_n_d_plugin_circular_buff_8h"/>
         <childnode refid="9" relation="include">
         </childnode>
       </node>
-      <node id="47">
-        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginROI.cpp</label>
-        <link refid="_n_d_plugin_r_o_i_8cpp"/>
+      <node id="11">
+        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginCodec.cpp</label>
+        <link refid="_n_d_plugin_codec_8cpp"/>
+      </node>
+      <node id="10">
+        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginCodec.h</label>
+        <link refid="_n_d_plugin_codec_8h"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginColorConvert.cpp</label>
+        <link refid="_n_d_plugin_color_convert_8cpp"/>
+      </node>
+      <node id="13">
+        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginColorConvert.h</label>
+        <link refid="_n_d_plugin_color_convert_8h"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginDriver.cpp</label>
+        <link refid="_n_d_plugin_driver_8cpp"/>
       </node>
       <node id="1">
         <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginDriver.h</label>
@@ -530,27 +386,19 @@
         <childnode refid="71" relation="include">
         </childnode>
       </node>
-      <node id="40">
-        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginGather.cpp</label>
-        <link refid="_n_d_plugin_gather_8cpp"/>
-      </node>
-      <node id="62">
-        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPosPlugin.h</label>
-        <link refid="_n_d_pos_plugin_8h"/>
-        <childnode refid="63" relation="include">
-        </childnode>
-      </node>
-      <node id="53">
-        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginStats.h</label>
-        <link refid="_n_d_plugin_stats_8h"/>
-        <childnode refid="54" relation="include">
-        </childnode>
-        <childnode refid="55" relation="include">
-        </childnode>
-      </node>
       <node id="16">
         <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginFFT.cpp</label>
         <link refid="_n_d_plugin_f_f_t_8cpp"/>
+      </node>
+      <node id="15">
+        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginFFT.h</label>
+        <link refid="_n_d_plugin_f_f_t_8h"/>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="34">
+        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginFile.cpp</label>
+        <link refid="_n_d_plugin_file_8cpp"/>
       </node>
       <node id="17">
         <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginFile.h</label>
@@ -584,48 +432,200 @@
         <childnode refid="37" relation="include">
         </childnode>
       </node>
+      <node id="40">
+        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginGather.cpp</label>
+        <link refid="_n_d_plugin_gather_8cpp"/>
+      </node>
+      <node id="39">
+        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginGather.h</label>
+        <link refid="_n_d_plugin_gather_8h"/>
+        <childnode refid="40" relation="include">
+        </childnode>
+      </node>
+      <node id="42">
+        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginOverlay.cpp</label>
+        <link refid="_n_d_plugin_overlay_8cpp"/>
+      </node>
+      <node id="41">
+        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginOverlay.h</label>
+        <link refid="_n_d_plugin_overlay_8h"/>
+        <childnode refid="42" relation="include">
+        </childnode>
+      </node>
+      <node id="44">
+        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginProcess.cpp</label>
+        <link refid="_n_d_plugin_process_8cpp"/>
+      </node>
       <node id="43">
         <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginProcess.h</label>
         <link refid="_n_d_plugin_process_8h"/>
         <childnode refid="44" relation="include">
         </childnode>
       </node>
-      <node id="25">
-        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDFileMagick.cpp</label>
-        <link refid="_n_d_file_magick_8cpp"/>
+      <node id="46">
+        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginPva.cpp</label>
+        <link refid="_n_d_plugin_pva_8cpp"/>
       </node>
-      <node id="7">
-        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginBadPixel.cpp</label>
-        <link refid="_n_d_plugin_bad_pixel_8cpp"/>
+      <node id="45">
+        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginPva.h</label>
+        <link refid="_n_d_plugin_pva_8h"/>
+        <childnode refid="46" relation="include">
+        </childnode>
       </node>
-      <node id="3">
-        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginAttribute.cpp</label>
-        <link refid="_n_d_plugin_attribute_8cpp"/>
+      <node id="47">
+        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginROI.cpp</label>
+        <link refid="_n_d_plugin_r_o_i_8cpp"/>
       </node>
-      <node id="63">
-        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPosPlugin.cpp</label>
-        <link refid="_n_d_pos_plugin_8cpp"/>
-      </node>
-      <node id="11">
-        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginCodec.cpp</label>
-        <link refid="_n_d_plugin_codec_8cpp"/>
-      </node>
-      <node id="69">
-        <label>/home/runner/work/areaDetector/areaDetector/ADnED/ADnEDApp/src/ADnEDPluginMask.cpp</label>
-        <link refid="_a_dn_e_d_plugin_mask_8cpp"/>
+      <node id="48">
+        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginROI.h</label>
+        <link refid="_n_d_plugin_r_o_i_8h"/>
+        <childnode refid="47" relation="include">
+        </childnode>
       </node>
       <node id="50">
         <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginROIStat.cpp</label>
         <link refid="_n_d_plugin_r_o_i_stat_8cpp"/>
       </node>
-      <node id="31">
-        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDFileNull.cpp</label>
-        <link refid="_n_d_file_null_8cpp"/>
+      <node id="49">
+        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginROIStat.h</label>
+        <link refid="_n_d_plugin_r_o_i_stat_8h"/>
+        <childnode refid="50" relation="include">
+        </childnode>
+      </node>
+      <node id="52">
+        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginScatter.cpp</label>
+        <link refid="_n_d_plugin_scatter_8cpp"/>
+      </node>
+      <node id="51">
+        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginScatter.h</label>
+        <link refid="_n_d_plugin_scatter_8h"/>
+        <childnode refid="52" relation="include">
+        </childnode>
+      </node>
+      <node id="54">
+        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginStats.cpp</label>
+        <link refid="_n_d_plugin_stats_8cpp"/>
+      </node>
+      <node id="53">
+        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginStats.h</label>
+        <link refid="_n_d_plugin_stats_8h"/>
+        <childnode refid="54" relation="include">
+        </childnode>
+        <childnode refid="55" relation="include">
+        </childnode>
+      </node>
+      <node id="57">
+        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginStdArrays.cpp</label>
+        <link refid="_n_d_plugin_std_arrays_8cpp"/>
+      </node>
+      <node id="56">
+        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginStdArrays.h</label>
+        <link refid="_n_d_plugin_std_arrays_8h"/>
+        <childnode refid="57" relation="include">
+        </childnode>
+      </node>
+      <node id="59">
+        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginTimeSeries.cpp</label>
+        <link refid="_n_d_plugin_time_series_8cpp"/>
+      </node>
+      <node id="58">
+        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginTimeSeries.h</label>
+        <link refid="_n_d_plugin_time_series_8h"/>
+        <childnode refid="59" relation="include">
+        </childnode>
+      </node>
+      <node id="61">
+        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginTransform.cpp</label>
+        <link refid="_n_d_plugin_transform_8cpp"/>
+      </node>
+      <node id="60">
+        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginTransform.h</label>
+        <link refid="_n_d_plugin_transform_8h"/>
+        <childnode refid="61" relation="include">
+        </childnode>
+      </node>
+      <node id="63">
+        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPosPlugin.cpp</label>
+        <link refid="_n_d_pos_plugin_8cpp"/>
+      </node>
+      <node id="62">
+        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPosPlugin.h</label>
+        <link refid="_n_d_pos_plugin_8h"/>
+        <childnode refid="63" relation="include">
+        </childnode>
+      </node>
+      <node id="55">
+        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/test_forward_reference.cpp</label>
+        <link refid="test__forward__reference_8cpp"/>
+      </node>
+      <node id="64">
+        <label>/home/runner/work/areaDetector/areaDetector/ADMythen/mythenApp/src/mythen.cpp</label>
+        <link refid="mythen_8cpp"/>
+      </node>
+      <node id="35">
+        <label>/home/runner/work/areaDetector/areaDetector/ADPCO/pcoApp/src/pcoEdgePlugin.cpp</label>
+        <link refid="pco_edge_plugin_8cpp"/>
+      </node>
+      <node id="36">
+        <label>/home/runner/work/areaDetector/areaDetector/ADPCO/pcoApp/src/pcoEdgePlugin.h</label>
+        <link refid="pco_edge_plugin_8h"/>
+        <childnode refid="35" relation="include">
+        </childnode>
+      </node>
+      <node id="66">
+        <label>/home/runner/work/areaDetector/areaDetector/ADPluginEdge/edgeApp/edgeSrc/NDPluginEdge.cpp</label>
+        <link refid="_n_d_plugin_edge_8cpp"/>
+      </node>
+      <node id="65">
+        <label>/home/runner/work/areaDetector/areaDetector/ADPluginEdge/edgeApp/edgeSrc/NDPluginEdge.h</label>
+        <link refid="_n_d_plugin_edge_8h"/>
+        <childnode refid="66" relation="include">
+        </childnode>
+      </node>
+      <node id="68">
+        <label>/home/runner/work/areaDetector/areaDetector/ADnED/ADnEDApp/src/ADnEDPixelROI.cpp</label>
+        <link refid="_a_dn_e_d_pixel_r_o_i_8cpp"/>
+      </node>
+      <node id="67">
+        <label>/home/runner/work/areaDetector/areaDetector/ADnED/ADnEDApp/src/ADnEDPixelROI.h</label>
+        <link refid="_a_dn_e_d_pixel_r_o_i_8h"/>
+        <childnode refid="68" relation="include">
+        </childnode>
+      </node>
+      <node id="69">
+        <label>/home/runner/work/areaDetector/areaDetector/ADnED/ADnEDApp/src/ADnEDPluginMask.cpp</label>
+        <link refid="_a_dn_e_d_plugin_mask_8cpp"/>
+      </node>
+      <node id="70">
+        <label>/home/runner/work/areaDetector/areaDetector/ADnED/ADnEDApp/src/ADnEDPluginMask.h</label>
+        <link refid="_a_dn_e_d_plugin_mask_8h"/>
+        <childnode refid="69" relation="include">
+        </childnode>
+      </node>
+      <node id="38">
+        <label>/home/runner/work/areaDetector/areaDetector/ffmpegServer/ffmpegServerApp/src/ffmpegFile.cpp</label>
+        <link refid="ffmpeg_file_8cpp"/>
+      </node>
+      <node id="37">
+        <label>/home/runner/work/areaDetector/areaDetector/ffmpegServer/ffmpegServerApp/src/ffmpegFile.h</label>
+        <link refid="ffmpeg_file_8h"/>
+        <childnode refid="38" relation="include">
+        </childnode>
+      </node>
+      <node id="72">
+        <label>/home/runner/work/areaDetector/areaDetector/ffmpegServer/ffmpegServerApp/src/ffmpegServer.cpp</label>
+        <link refid="ffmpeg_server_8cpp"/>
+      </node>
+      <node id="71">
+        <label>/home/runner/work/areaDetector/areaDetector/ffmpegServer/ffmpegServerApp/src/ffmpegServer.h</label>
+        <link refid="ffmpeg_server_8h"/>
+        <childnode refid="72" relation="include">
+        </childnode>
       </node>
     </invincdepgraph>
     <innerclass refid="classsorted_list_element" prot="public">sortedListElement</innerclass>
     <innerclass refid="class_n_d_plugin_driver" prot="public">NDPluginDriver</innerclass>
-      <sectiondef kind="define">
+    <sectiondef kind="define">
       <memberdef kind="define" id="_n_d_plugin_driver_8h_1a770feb716e23dc3bd237cc33d2d4a355" prot="public" static="no">
         <name>NDPluginDriverArrayPortString</name>
         <initializer>&quot;NDARRAY_PORT&quot;</initializer>
@@ -877,7 +877,7 @@
         </inbodydescription>
         <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginDriver.h" line="89" column="13" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginDriver.h" bodystart="89" bodyend="-1"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
@@ -909,7 +909,7 @@
 <codeline lineno="24"><highlight class="normal"></highlight></codeline>
 <codeline lineno="25" refid="classsorted_list_element" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classsorted_list_element" kindref="compound">sortedListElement</ref><sp/>{</highlight></codeline>
 <codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classsorted_list_element_1aaf85bb7c4a6fdc6de5fa4d25720b51ac" kindref="member">sortedListElement</ref>(<ref refid="class_n_d_array" kindref="compound">NDArray</ref><sp/>*pArray,<sp/>epicsTimeStamp<sp/>time);</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classsorted_list_element" kindref="compound">sortedListElement</ref>(<ref refid="class_n_d_array" kindref="compound">NDArray</ref><sp/>*pArray,<sp/>epicsTimeStamp<sp/>time);</highlight></codeline>
 <codeline lineno="28" refid="classsorted_list_element_1abc207f6d129b907f976e4937f8340fa8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">friend</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classsorted_list_element_1abc207f6d129b907f976e4937f8340fa8" kindref="member">operator&lt;</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classsorted_list_element" kindref="compound">sortedListElement</ref>&amp;<sp/>lhs,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classsorted_list_element" kindref="compound">sortedListElement</ref>&amp;<sp/>rhs)<sp/>{</highlight></codeline>
 <codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(lhs.<ref refid="classsorted_list_element_1ab97e0e61d4b942d4894fb042414f0f49" kindref="member">pArray_</ref>-&gt;<ref refid="class_n_d_array_1a62f165653bd0099f31b3d276bdb81d3c" kindref="member">uniqueId</ref><sp/>&lt;<sp/>rhs.<ref refid="classsorted_list_element_1ab97e0e61d4b942d4894fb042414f0f49" kindref="member">pArray_</ref>-&gt;<ref refid="class_n_d_array_1a62f165653bd0099f31b3d276bdb81d3c" kindref="member">uniqueId</ref>);</highlight></codeline>
 <codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
@@ -917,26 +917,26 @@
 <codeline lineno="32" refid="classsorted_list_element_1af76b2bc8aa34954c89b325e8144467db" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>epicsTimeStamp<sp/><ref refid="classsorted_list_element_1af76b2bc8aa34954c89b325e8144467db" kindref="member">insertionTime_</ref>;</highlight></codeline>
 <codeline lineno="33"><highlight class="normal">};</highlight></codeline>
 <codeline lineno="34"><highlight class="normal"></highlight></codeline>
-<codeline lineno="35" refid="_n_d_plugin_driver_8h_1a770feb716e23dc3bd237cc33d2d4a355" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>NDPluginDriverArrayPortString<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;NDARRAY_PORT&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="36" refid="_n_d_plugin_driver_8h_1ab5945aa78082c762aeae689d8bcdc1a5" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>NDPluginDriverArrayAddrString<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;NDARRAY_ADDR&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="37" refid="_n_d_plugin_driver_8h_1a70c202d616c23a23f155ce51087ada53" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>NDPluginDriverPluginTypeString<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;PLUGIN_TYPE&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="38" refid="_n_d_plugin_driver_8h_1a94edc8f10860a51004146db7b1c38ead" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>NDPluginDriverDroppedArraysString<sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;DROPPED_ARRAYS&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="39" refid="_n_d_plugin_driver_8h_1a9523524f406e2f3f97605704afb27483" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>NDPluginDriverQueueSizeString<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;QUEUE_SIZE&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="40" refid="_n_d_plugin_driver_8h_1af84323c248a577de2b702c778beef895" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>NDPluginDriverQueueFreeString<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;QUEUE_FREE&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="41" refid="_n_d_plugin_driver_8h_1aaf8546f0144452244c7ab7385fae0364" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>NDPluginDriverMaxThreadsString<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;MAX_THREADS&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="42" refid="_n_d_plugin_driver_8h_1ace14323aaf8131f69c20416c065a942f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>NDPluginDriverNumThreadsString<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;NUM_THREADS&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="43" refid="_n_d_plugin_driver_8h_1afd69a76fa295478334a41d594c87b96a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>NDPluginDriverSortModeString<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;SORT_MODE&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="44" refid="_n_d_plugin_driver_8h_1a593c167b431839400f7195365db2feca" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>NDPluginDriverSortTimeString<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;SORT_TIME&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="45" refid="_n_d_plugin_driver_8h_1a68362e7ef54ab8f6c0ccb3a188cf5ef8" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>NDPluginDriverSortSizeString<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;SORT_SIZE&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="46" refid="_n_d_plugin_driver_8h_1a805ce93eef3e9e7edf31a2a381176262" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>NDPluginDriverSortFreeString<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;SORT_FREE&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="47" refid="_n_d_plugin_driver_8h_1aeef3660736c74471860f169fa740a534" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>NDPluginDriverDisorderedArraysString<sp/><sp/><sp/><sp/>&quot;DISORDERED_ARRAYS&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="48" refid="_n_d_plugin_driver_8h_1adecab8f85fdd61db5268693cdc72f09e" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>NDPluginDriverDroppedOutputArraysString<sp/>&quot;DROPPED_OUTPUT_ARRAYS&quot;</highlight><highlight class="normal"><sp/></highlight></codeline>
-<codeline lineno="49" refid="_n_d_plugin_driver_8h_1a9e617ee2628d82486739fdb377907af2" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>NDPluginDriverEnableCallbacksString<sp/><sp/><sp/><sp/><sp/>&quot;ENABLE_CALLBACKS&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="50" refid="_n_d_plugin_driver_8h_1a24c342442972d2fdb5d8390a41857e88" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>NDPluginDriverBlockingCallbacksString<sp/><sp/><sp/>&quot;BLOCKING_CALLBACKS&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="51" refid="_n_d_plugin_driver_8h_1aafdea33e82074a735e385124de98e75c" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>NDPluginDriverProcessPluginString<sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;PROCESS_PLUGIN&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="52" refid="_n_d_plugin_driver_8h_1a7be9008376704f59d37743668ab25def" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>NDPluginDriverExecutionTimeString<sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;EXECUTION_TIME&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="53"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>NDPluginDriverMinCallbackTimeString<sp/><sp/><sp/><sp/><sp/>&quot;MIN_CALLBACK_TIME&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="55" refid="_n_d_plugin_driver_8h_1a465aff3c08cecc9a5eb09c057057cbb0" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>NDPluginDriverMaxByteRateString<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;MAX_BYTE_RATE&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="35" refid="_n_d_plugin_driver_8h_1a770feb716e23dc3bd237cc33d2d4a355" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>NDPluginDriverArrayPortString<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;NDARRAY_PORT&quot;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36" refid="_n_d_plugin_driver_8h_1ab5945aa78082c762aeae689d8bcdc1a5" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>NDPluginDriverArrayAddrString<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;NDARRAY_ADDR&quot;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37" refid="_n_d_plugin_driver_8h_1a70c202d616c23a23f155ce51087ada53" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>NDPluginDriverPluginTypeString<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;PLUGIN_TYPE&quot;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38" refid="_n_d_plugin_driver_8h_1a94edc8f10860a51004146db7b1c38ead" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>NDPluginDriverDroppedArraysString<sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;DROPPED_ARRAYS&quot;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39" refid="_n_d_plugin_driver_8h_1a9523524f406e2f3f97605704afb27483" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>NDPluginDriverQueueSizeString<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;QUEUE_SIZE&quot;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40" refid="_n_d_plugin_driver_8h_1af84323c248a577de2b702c778beef895" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>NDPluginDriverQueueFreeString<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;QUEUE_FREE&quot;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41" refid="_n_d_plugin_driver_8h_1aaf8546f0144452244c7ab7385fae0364" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>NDPluginDriverMaxThreadsString<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;MAX_THREADS&quot;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42" refid="_n_d_plugin_driver_8h_1ace14323aaf8131f69c20416c065a942f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>NDPluginDriverNumThreadsString<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;NUM_THREADS&quot;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43" refid="_n_d_plugin_driver_8h_1afd69a76fa295478334a41d594c87b96a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>NDPluginDriverSortModeString<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;SORT_MODE&quot;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44" refid="_n_d_plugin_driver_8h_1a593c167b431839400f7195365db2feca" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>NDPluginDriverSortTimeString<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;SORT_TIME&quot;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45" refid="_n_d_plugin_driver_8h_1a68362e7ef54ab8f6c0ccb3a188cf5ef8" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>NDPluginDriverSortSizeString<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;SORT_SIZE&quot;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46" refid="_n_d_plugin_driver_8h_1a805ce93eef3e9e7edf31a2a381176262" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>NDPluginDriverSortFreeString<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;SORT_FREE&quot;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47" refid="_n_d_plugin_driver_8h_1aeef3660736c74471860f169fa740a534" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>NDPluginDriverDisorderedArraysString<sp/><sp/><sp/><sp/>&quot;DISORDERED_ARRAYS&quot;<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48" refid="_n_d_plugin_driver_8h_1adecab8f85fdd61db5268693cdc72f09e" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>NDPluginDriverDroppedOutputArraysString<sp/>&quot;DROPPED_OUTPUT_ARRAYS&quot;<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49" refid="_n_d_plugin_driver_8h_1a9e617ee2628d82486739fdb377907af2" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>NDPluginDriverEnableCallbacksString<sp/><sp/><sp/><sp/><sp/>&quot;ENABLE_CALLBACKS&quot;<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50" refid="_n_d_plugin_driver_8h_1a24c342442972d2fdb5d8390a41857e88" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>NDPluginDriverBlockingCallbacksString<sp/><sp/><sp/>&quot;BLOCKING_CALLBACKS&quot;<sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51" refid="_n_d_plugin_driver_8h_1aafdea33e82074a735e385124de98e75c" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>NDPluginDriverProcessPluginString<sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;PROCESS_PLUGIN&quot;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52" refid="_n_d_plugin_driver_8h_1a7be9008376704f59d37743668ab25def" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>NDPluginDriverExecutionTimeString<sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;EXECUTION_TIME&quot;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>NDPluginDriverMinCallbackTimeString<sp/><sp/><sp/><sp/><sp/>&quot;MIN_CALLBACK_TIME&quot;<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55" refid="_n_d_plugin_driver_8h_1a465aff3c08cecc9a5eb09c057057cbb0" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>NDPluginDriverMaxByteRateString<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;MAX_BYTE_RATE&quot;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="57" refid="class_n_d_plugin_driver" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="_n_d_plugin_a_p_i_8h_1a02c41946c40d115c88db54fcbb3e58d7" kindref="member">NDPLUGIN_API</ref><sp/><ref refid="class_n_d_plugin_driver" kindref="compound">NDPluginDriver</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classasyn_n_d_array_driver" kindref="compound">asynNDArrayDriver</ref>,<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>epicsThreadRunable<sp/>{</highlight></codeline>
 <codeline lineno="58"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
 <codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_n_d_plugin_driver" kindref="compound">NDPluginDriver</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*portName,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>queueSize,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>blockingCallbacks,</highlight></codeline>
@@ -944,14 +944,14 @@
 <codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>maxBuffers,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>maxMemory,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>interfaceMask,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>interruptMask,</highlight></codeline>
 <codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>asynFlags,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>autoConnect,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>priority,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>stackSize,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>maxThreads,</highlight></codeline>
 <codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>compressionAware<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>~<ref refid="class_n_d_plugin_driver" kindref="compound">NDPluginDriver</ref>();</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_n_d_plugin_driver" kindref="compound">~NDPluginDriver</ref>();</highlight></codeline>
 <codeline lineno="65"><highlight class="normal"></highlight></codeline>
 <codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>These<sp/>are<sp/>the<sp/>methods<sp/>that<sp/>we<sp/>override<sp/>from<sp/>asynNDArrayDriver<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>asynStatus<sp/><ref refid="classasyn_n_d_array_driver_1a36610c94479e66123d75057595f39f70" kindref="member">writeInt32</ref>(asynUser<sp/>*pasynUser,<sp/>epicsInt32<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>);</highlight></codeline>
-<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>asynStatus<sp/>writeFloat64(asynUser<sp/>*pasynUser,<sp/>epicsFloat64<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>);</highlight></codeline>
-<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>asynStatus<sp/><ref refid="classasyn_n_d_array_driver_1a84d981f8995d984035bb9feff727d520" kindref="member">writeOctet</ref>(asynUser<sp/>*pasynUser,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>maxChars,</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>asynStatus<sp/><ref refid="classasyn_n_d_array_driver_1a36610c94479e66123d75057595f39f70" kindref="member">writeInt32</ref>(asynUser<sp/>*pasynUser,<sp/>epicsInt32<sp/>value);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>asynStatus<sp/>writeFloat64(asynUser<sp/>*pasynUser,<sp/>epicsFloat64<sp/>value);</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>asynStatus<sp/><ref refid="classasyn_n_d_array_driver_1a84d981f8995d984035bb9feff727d520" kindref="member">writeOctet</ref>(asynUser<sp/>*pasynUser,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*value,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>maxChars,</highlight></codeline>
 <codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>*nActual);</highlight></codeline>
-<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>asynStatus<sp/>readInt32Array(asynUser<sp/>*pasynUser,<sp/>epicsInt32<sp/>*<ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>,</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>asynStatus<sp/>readInt32Array(asynUser<sp/>*pasynUser,<sp/>epicsInt32<sp/>*value,</highlight></codeline>
 <codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>nElements,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>*nIn);</highlight></codeline>
 <codeline lineno="73"><highlight class="normal"></highlight></codeline>
 <codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>These<sp/>are<sp/>the<sp/>methods<sp/>that<sp/>are<sp/>new<sp/>to<sp/>this<sp/>class<sp/>*/</highlight><highlight class="normal"></highlight></codeline>

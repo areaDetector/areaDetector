@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="mpx_connection_8h" kind="file" language="C++">
     <compoundname>mpxConnection.h</compoundname>
     <includes refid="merlin__low_8h" local="yes">merlin_low.h</includes>
@@ -23,13 +23,13 @@
       </node>
     </incdepgraph>
     <invincdepgraph>
-      <node id="3">
-        <label>/home/runner/work/areaDetector/areaDetector/ADMerlin/merlinApp/src/mpxConnection.cpp</label>
-        <link refid="mpx_connection_8cpp"/>
-      </node>
       <node id="2">
         <label>/home/runner/work/areaDetector/areaDetector/ADMerlin/merlinApp/src/merlinDetector.cpp</label>
         <link refid="merlin_detector_8cpp"/>
+      </node>
+      <node id="3">
+        <label>/home/runner/work/areaDetector/areaDetector/ADMerlin/merlinApp/src/mpxConnection.cpp</label>
+        <link refid="mpx_connection_8cpp"/>
       </node>
       <node id="1">
         <label>/home/runner/work/areaDetector/areaDetector/ADMerlin/merlinApp/src/mpxConnection.h</label>
@@ -41,7 +41,7 @@
       </node>
     </invincdepgraph>
     <innerclass refid="classmpx_connection" prot="public">mpxConnection</innerclass>
-      <sectiondef kind="define">
+    <sectiondef kind="define">
       <memberdef kind="define" id="mpx_connection_8h_1a77bc38e70fd68179e740327d6b1ae79b" prot="public" static="no">
         <name>ASYN_TRACE_MPX</name>
         <initializer>0x0100</initializer>
@@ -64,8 +64,8 @@
         </inbodydescription>
         <location file="/home/runner/work/areaDetector/areaDetector/ADMerlin/merlinApp/src/mpxConnection.h" line="5" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADMerlin/merlinApp/src/mpxConnection.h" bodystart="5" bodyend="-1"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="enum">
+    </sectiondef>
+    <sectiondef kind="enum">
       <memberdef kind="enum" id="mpx_connection_8h_1a089896eba0054394ad214279710424f6" prot="public" static="no" strong="no">
         <type></type>
         <name>merlinDataHeader</name>
@@ -106,7 +106,7 @@
         </inbodydescription>
         <location file="/home/runner/work/areaDetector/areaDetector/ADMerlin/merlinApp/src/mpxConnection.h" line="10" column="1" bodyfile="/home/runner/work/areaDetector/areaDetector/ADMerlin/merlinApp/src/mpxConnection.h" bodystart="11" bodyend="16"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
@@ -143,12 +143,12 @@
 <codeline lineno="30"><highlight class="normal"></highlight></codeline>
 <codeline lineno="31"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
 <codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Constructor</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classmpx_connection_1ac471913dce7cf1cdcf34950ef744992d" kindref="member">mpxConnection</ref>(asynUser*<sp/>parentUser,<sp/>asynUser*<sp/>tcpUser,</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classmpx_connection" kindref="compound">mpxConnection</ref>(asynUser*<sp/>parentUser,<sp/>asynUser*<sp/>tcpUser,</highlight></codeline>
 <codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classmerlin_detector" kindref="compound">merlinDetector</ref>*<sp/>parentObj);</highlight></codeline>
 <codeline lineno="35"><highlight class="normal"></highlight></codeline>
 <codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>The<sp/>labview<sp/>communication<sp/>primitives<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>asynStatus<sp/><ref refid="classmpx_connection_1a9df6d77379b4ae22003cb6415239e023" kindref="member">mpxGet</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>valueId,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>timeout);</highlight></codeline>
-<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>asynStatus<sp/><ref refid="classmpx_connection_1aca31405e6fa783dfcac657f8512dc05e" kindref="member">mpxSet</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>valueId,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>timeout);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>asynStatus<sp/><ref refid="classmpx_connection_1aca31405e6fa783dfcac657f8512dc05e" kindref="member">mpxSet</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>valueId,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>value,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>timeout);</highlight></codeline>
 <codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>asynStatus<sp/><ref refid="classmpx_connection_1ad66a5030c1ae046828eb120a6353e129" kindref="member">mpxCommand</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>commandId,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>timeout);</highlight></codeline>
 <codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>asynStatus<sp/><ref refid="classmpx_connection_1aaf5223917f0ef4224bb4069a2c2db048" kindref="member">mpxWrite</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>timeout);</highlight></codeline>
 <codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>asynStatus<sp/><ref refid="classmpx_connection_1abb9d3d7864b26e7e0bd3da4e3e423c0e" kindref="member">mpxReadCmd</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>cmdType,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>cmdName,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>timeout);</highlight></codeline>

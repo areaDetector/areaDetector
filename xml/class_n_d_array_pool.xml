@@ -1,14 +1,15 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="class_n_d_array_pool" kind="class" language="C++" prot="public">
     <compoundname>NDArrayPool</compoundname>
     <includes refid="_n_d_array_8h" local="no">NDArray.h</includes>
-      <sectiondef kind="private-attrib">
+    <sectiondef kind="private-attrib">
       <memberdef kind="variable" id="class_n_d_array_pool_1a1fc65df4b95823ce1f3f7acb65a82989" prot="private" static="no" mutable="no">
         <type>std::multiset&lt; <ref refid="classfree_list_element" kindref="compound">freeListElement</ref> &gt;</type>
         <definition>std::multiset&lt;freeListElement&gt; NDArrayPool::freeList_</definition>
         <argsstring></argsstring>
         <name>freeList_</name>
+        <qualifiedname>NDArrayPool::freeList_</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -22,6 +23,7 @@
         <definition>epicsMutexId NDArrayPool::listLock_</definition>
         <argsstring></argsstring>
         <name>listLock_</name>
+        <qualifiedname>NDArrayPool::listLock_</qualifiedname>
         <briefdescription>
 <para>Mutex to protect the free list. </para>
         </briefdescription>
@@ -36,6 +38,7 @@
         <definition>int NDArrayPool::numBuffers_</definition>
         <argsstring></argsstring>
         <name>numBuffers_</name>
+        <qualifiedname>NDArrayPool::numBuffers_</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -49,6 +52,7 @@
         <definition>size_t NDArrayPool::maxMemory_</definition>
         <argsstring></argsstring>
         <name>maxMemory_</name>
+        <qualifiedname>NDArrayPool::maxMemory_</qualifiedname>
         <briefdescription>
 <para>Maximum bytes of memory this object is allowed to allocate; -1=unlimited. </para>
         </briefdescription>
@@ -63,6 +67,7 @@
         <definition>size_t NDArrayPool::memorySize_</definition>
         <argsstring></argsstring>
         <name>memorySize_</name>
+        <qualifiedname>NDArrayPool::memorySize_</qualifiedname>
         <briefdescription>
 <para>Number of bytes of memory this object has currently allocated. </para>
         </briefdescription>
@@ -77,6 +82,7 @@
         <definition>class asynNDArrayDriver* NDArrayPool::pDriver_</definition>
         <argsstring></argsstring>
         <name>pDriver_</name>
+        <qualifiedname>NDArrayPool::pDriver_</qualifiedname>
         <briefdescription>
 <para>The <ref refid="classasyn_n_d_array_driver" kindref="compound">asynNDArrayDriver</ref> that created this object. </para>
         </briefdescription>
@@ -86,13 +92,14 @@
         </inbodydescription>
         <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/NDArray.h" line="210" column="28" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/NDArray.h" bodystart="210" bodyend="-1"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="public-func">
+    </sectiondef>
+    <sectiondef kind="public-func">
       <memberdef kind="function" id="class_n_d_array_pool_1a407b2f4065de9e043a266f42cf2a4dae" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>NDArrayPool::NDArrayPool</definition>
         <argsstring>(class asynNDArrayDriver *pDriver, size_t maxMemory)</argsstring>
         <name>NDArrayPool</name>
+        <qualifiedname>NDArrayPool::NDArrayPool</qualifiedname>
         <param>
           <type>class <ref refid="classasyn_n_d_array_driver" kindref="compound">asynNDArrayDriver</ref> *</type>
           <declname>pDriver</declname>
@@ -133,6 +140,7 @@
         <definition>virtual NDArrayPool::~NDArrayPool</definition>
         <argsstring>()</argsstring>
         <name>~NDArrayPool</name>
+        <qualifiedname>NDArrayPool::~NDArrayPool</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -146,6 +154,7 @@
         <definition>NDArray * NDArrayPool::alloc</definition>
         <argsstring>(int ndims, size_t *dims, NDDataType_t dataType, size_t dataSize, void *pData)</argsstring>
         <name>alloc</name>
+        <qualifiedname>NDArrayPool::alloc</qualifiedname>
         <param>
           <type>int</type>
           <declname>ndims</declname>
@@ -222,6 +231,7 @@ If pData is not NULL then dataSize must contain the actual number of bytes in th
         <definition>NDArray * NDArrayPool::copy</definition>
         <argsstring>(NDArray *pIn, NDArray *pOut, bool copyData, bool copyDimensions=true, bool copyDataType=true)</argsstring>
         <name>copy</name>
+        <qualifiedname>NDArrayPool::copy</qualifiedname>
         <param>
           <type><ref refid="class_n_d_array" kindref="compound">NDArray</ref> *</type>
           <declname>pIn</declname>
@@ -302,6 +312,7 @@ If pOut is NULL then it is first allocated. If the output array object already e
         <definition>int NDArrayPool::reserve</definition>
         <argsstring>(NDArray *pArray)</argsstring>
         <name>reserve</name>
+        <qualifiedname>NDArrayPool::reserve</qualifiedname>
         <param>
           <type><ref refid="class_n_d_array" kindref="compound">NDArray</ref> *</type>
           <declname>pArray</declname>
@@ -330,6 +341,7 @@ Plugins must call <ref refid="class_n_d_array_pool_1a232bb59397c1dcaeb7f79f49977
         <definition>int NDArrayPool::release</definition>
         <argsstring>(NDArray *pArray)</argsstring>
         <name>release</name>
+        <qualifiedname>NDArrayPool::release</qualifiedname>
         <param>
           <type><ref refid="class_n_d_array" kindref="compound">NDArray</ref> *</type>
           <declname>pArray</declname>
@@ -358,6 +370,7 @@ When the reference count reaches 0 the <ref refid="class_n_d_array" kindref="com
         <definition>int NDArrayPool::convert</definition>
         <argsstring>(NDArray *pIn, NDArray **ppOut, NDDataType_t dataTypeOut, NDDimension_t *outDims)</argsstring>
         <name>convert</name>
+        <qualifiedname>NDArrayPool::convert</qualifiedname>
         <param>
           <type><ref refid="class_n_d_array" kindref="compound">NDArray</ref> *</type>
           <declname>pIn</declname>
@@ -423,6 +436,7 @@ When the reference count reaches 0 the <ref refid="class_n_d_array" kindref="com
         <definition>int NDArrayPool::convert</definition>
         <argsstring>(NDArray *pIn, NDArray **ppOut, NDDataType_t dataTypeOut)</argsstring>
         <name>convert</name>
+        <qualifiedname>NDArrayPool::convert</qualifiedname>
         <param>
           <type><ref refid="class_n_d_array" kindref="compound">NDArray</ref> *</type>
           <declname>pIn</declname>
@@ -475,6 +489,7 @@ When the reference count reaches 0 the <ref refid="class_n_d_array" kindref="com
         <definition>int NDArrayPool::report</definition>
         <argsstring>(FILE *fp, int details)</argsstring>
         <name>report</name>
+        <qualifiedname>NDArrayPool::report</qualifiedname>
         <param>
           <type>FILE *</type>
           <declname>fp</declname>
@@ -515,6 +530,7 @@ When the reference count reaches 0 the <ref refid="class_n_d_array" kindref="com
         <definition>int NDArrayPool::getNumBuffers</definition>
         <argsstring>()</argsstring>
         <name>getNumBuffers</name>
+        <qualifiedname>NDArrayPool::getNumBuffers</qualifiedname>
         <briefdescription>
 <para>Returns number of buffers this object has currently allocated. </para>
         </briefdescription>
@@ -529,6 +545,7 @@ When the reference count reaches 0 the <ref refid="class_n_d_array" kindref="com
         <definition>size_t NDArrayPool::getMaxMemory</definition>
         <argsstring>()</argsstring>
         <name>getMaxMemory</name>
+        <qualifiedname>NDArrayPool::getMaxMemory</qualifiedname>
         <briefdescription>
 <para>Returns maximum bytes of memory this object is allowed to allocate; 0=unlimited. </para>
         </briefdescription>
@@ -543,6 +560,7 @@ When the reference count reaches 0 the <ref refid="class_n_d_array" kindref="com
         <definition>size_t NDArrayPool::getMemorySize</definition>
         <argsstring>()</argsstring>
         <name>getMemorySize</name>
+        <qualifiedname>NDArrayPool::getMemorySize</qualifiedname>
         <briefdescription>
 <para>Returns mumber of bytes of memory this object has currently allocated. </para>
         </briefdescription>
@@ -557,6 +575,7 @@ When the reference count reaches 0 the <ref refid="class_n_d_array" kindref="com
         <definition>int NDArrayPool::getNumFree</definition>
         <argsstring>()</argsstring>
         <name>getNumFree</name>
+        <qualifiedname>NDArrayPool::getNumFree</qualifiedname>
         <briefdescription>
 <para>Returns number of <ref refid="class_n_d_array" kindref="compound">NDArray</ref> objects in the free list. </para>
         </briefdescription>
@@ -571,6 +590,7 @@ When the reference count reaches 0 the <ref refid="class_n_d_array" kindref="com
         <definition>void NDArrayPool::emptyFreeList</definition>
         <argsstring>()</argsstring>
         <name>emptyFreeList</name>
+        <qualifiedname>NDArrayPool::emptyFreeList</qualifiedname>
         <briefdescription>
 <para>Deletes all of the NDArrays in the free list. </para>
         </briefdescription>
@@ -585,6 +605,7 @@ When the reference count reaches 0 the <ref refid="class_n_d_array" kindref="com
         <definition>void * NDArrayPool::frameMalloc</definition>
         <argsstring>(size_t size)</argsstring>
         <name>frameMalloc</name>
+        <qualifiedname>NDArrayPool::frameMalloc</qualifiedname>
         <param>
           <type>size_t</type>
           <declname>size</declname>
@@ -613,6 +634,7 @@ When the reference count reaches 0 the <ref refid="class_n_d_array" kindref="com
         <definition>void NDArrayPool::frameFree</definition>
         <argsstring>(void *ptr)</argsstring>
         <name>frameFree</name>
+        <qualifiedname>NDArrayPool::frameFree</qualifiedname>
         <param>
           <type>void *</type>
           <declname>ptr</declname>
@@ -636,15 +658,16 @@ When the reference count reaches 0 the <ref refid="class_n_d_array" kindref="com
         </inbodydescription>
         <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/NDArray.h" line="193" column="18" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/NDArrayPool.cpp" bodystart="90" bodyend="93"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="public-static-func">
+    </sectiondef>
+    <sectiondef kind="public-static-func">
       <memberdef kind="function" id="class_n_d_array_pool_1af081017ba2ce24501772517eaa0f43f1" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void NDArrayPool::setDefaultFrameMemoryFunctions</definition>
         <argsstring>(MallocFunc_t newMalloc, FreeFunc_t newFree)</argsstring>
         <name>setDefaultFrameMemoryFunctions</name>
+        <qualifiedname>NDArrayPool::setDefaultFrameMemoryFunctions</qualifiedname>
         <param>
-          <type><ref refid="_n_d_array_8h_1af2603c40a08c8ece79213fe4e2b0301f" kindref="member">MallocFunc_t</ref></type>
+          <type><ref refid="_n_d_array_8h_1aad05a32f37371e9f3373985aaf16e14e" kindref="member">MallocFunc_t</ref></type>
           <declname>newMalloc</declname>
         </param>
         <param>
@@ -678,13 +701,14 @@ When the reference count reaches 0 the <ref refid="class_n_d_array" kindref="com
         </inbodydescription>
         <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/NDArray.h" line="190" column="18" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/NDArrayPool.cpp" bodystart="66" bodyend="74"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="protected-func">
+    </sectiondef>
+    <sectiondef kind="protected-func">
       <memberdef kind="function" id="class_n_d_array_pool_1ac7f9c86c15a5a45da9b6d609e782d23b" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type><ref refid="class_n_d_array" kindref="compound">NDArray</ref> *</type>
         <definition>NDArray * NDArrayPool::createArray</definition>
         <argsstring>()</argsstring>
         <name>createArray</name>
+        <qualifiedname>NDArrayPool::createArray</qualifiedname>
         <briefdescription>
 <para>The following methods should be implemented by a pool class that manages objects derived from the <ref refid="class_n_d_array" kindref="compound">NDArray</ref> class. </para>
         </briefdescription>
@@ -701,6 +725,7 @@ When the reference count reaches 0 the <ref refid="class_n_d_array" kindref="com
         <definition>void NDArrayPool::onAllocateArray</definition>
         <argsstring>(NDArray *pArray)</argsstring>
         <name>onAllocateArray</name>
+        <qualifiedname>NDArrayPool::onAllocateArray</qualifiedname>
         <param>
           <type><ref refid="class_n_d_array" kindref="compound">NDArray</ref> *</type>
           <declname>pArray</declname>
@@ -729,6 +754,7 @@ When the reference count reaches 0 the <ref refid="class_n_d_array" kindref="com
         <definition>void NDArrayPool::onReserveArray</definition>
         <argsstring>(NDArray *pArray)</argsstring>
         <name>onReserveArray</name>
+        <qualifiedname>NDArrayPool::onReserveArray</qualifiedname>
         <param>
           <type><ref refid="class_n_d_array" kindref="compound">NDArray</ref> *</type>
           <declname>pArray</declname>
@@ -757,6 +783,7 @@ When the reference count reaches 0 the <ref refid="class_n_d_array" kindref="com
         <definition>void NDArrayPool::onReleaseArray</definition>
         <argsstring>(NDArray *pArray)</argsstring>
         <name>onReleaseArray</name>
+        <qualifiedname>NDArrayPool::onReleaseArray</qualifiedname>
         <param>
           <type><ref refid="class_n_d_array" kindref="compound">NDArray</ref> *</type>
           <declname>pArray</declname>
@@ -780,7 +807,7 @@ When the reference count reaches 0 the <ref refid="class_n_d_array" kindref="com
         </inbodydescription>
         <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/NDArray.h" line="202" column="18" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/NDArrayPool.cpp" bodystart="124" bodyend="126"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
 <para>The <ref refid="class_n_d_array_pool" kindref="compound">NDArrayPool</ref> class manages a free list (pool) of <ref refid="class_n_d_array" kindref="compound">NDArray</ref> objects. </para>
     </briefdescription>

@@ -1,14 +1,15 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="classsorted_list_element" kind="class" language="C++" prot="public">
     <compoundname>sortedListElement</compoundname>
     <includes refid="_n_d_plugin_driver_8h" local="no">NDPluginDriver.h</includes>
-      <sectiondef kind="public-attrib">
+    <sectiondef kind="public-attrib">
       <memberdef kind="variable" id="classsorted_list_element_1ab97e0e61d4b942d4894fb042414f0f49" prot="public" static="no" mutable="no">
         <type><ref refid="class_n_d_array" kindref="compound">NDArray</ref> *</type>
         <definition>NDArray* sortedListElement::pArray_</definition>
         <argsstring></argsstring>
         <name>pArray_</name>
+        <qualifiedname>sortedListElement::pArray_</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -22,6 +23,7 @@
         <definition>epicsTimeStamp sortedListElement::insertionTime_</definition>
         <argsstring></argsstring>
         <name>insertionTime_</name>
+        <qualifiedname>sortedListElement::insertionTime_</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -30,13 +32,14 @@
         </inbodydescription>
         <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginDriver.h" line="32" column="24" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginDriver.h" bodystart="32" bodyend="-1"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="public-func">
+    </sectiondef>
+    <sectiondef kind="public-func">
       <memberdef kind="function" id="classsorted_list_element_1aaf85bb7c4a6fdc6de5fa4d25720b51ac" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>sortedListElement::sortedListElement</definition>
         <argsstring>(NDArray *pArray, epicsTimeStamp time)</argsstring>
         <name>sortedListElement</name>
+        <qualifiedname>sortedListElement::sortedListElement</qualifiedname>
         <param>
           <type><ref refid="class_n_d_array" kindref="compound">NDArray</ref> *</type>
           <declname>pArray</declname>
@@ -53,13 +56,14 @@
         </inbodydescription>
         <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginDriver.h" line="27" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginDriver.cpp" bodystart="46" bodyend="47"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="friend">
+    </sectiondef>
+    <sectiondef kind="friend">
       <memberdef kind="friend" id="classsorted_list_element_1abc207f6d129b907f976e4937f8340fa8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
         <definition>bool operator&lt;</definition>
         <argsstring>(const sortedListElement &amp;lhs, const sortedListElement &amp;rhs)</argsstring>
         <name>operator&lt;</name>
+        <qualifiedname>sortedListElement::operator&lt;</qualifiedname>
         <param>
           <type>const <ref refid="classsorted_list_element" kindref="compound">sortedListElement</ref> &amp;</type>
           <declname>lhs</declname>
@@ -76,26 +80,16 @@
         </inbodydescription>
         <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginDriver.h" line="28" column="16" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginDriver.h" bodystart="28" bodyend="30"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="4">
-        <label>NDDimension</label>
-        <link refid="struct_n_d_dimension"/>
-      </node>
-      <node id="9">
-        <label>asynPortDriver</label>
-      </node>
-      <node id="7">
-        <label>string</label>
-      </node>
-      <node id="6">
+      <node id="8">
         <label>Codec_t</label>
         <link refid="struct_codec__t"/>
-        <childnode refid="7" relation="usage">
+        <childnode refid="9" relation="usage">
           <edgelabel>name</edgelabel>
         </childnode>
       </node>
@@ -106,36 +100,47 @@
           <edgelabel>pNDArrayPool</edgelabel>
         </childnode>
         <childnode refid="4" relation="usage">
-          <edgelabel>dims</edgelabel>
-        </childnode>
-        <childnode refid="5" relation="usage">
-          <edgelabel>pAttributeList</edgelabel>
-        </childnode>
-        <childnode refid="6" relation="usage">
-          <edgelabel>codec</edgelabel>
-        </childnode>
-        <childnode refid="8" relation="usage">
           <edgelabel>pDriver</edgelabel>
         </childnode>
-      </node>
-      <node id="8">
-        <label>asynNDArrayDriver</label>
-        <link refid="classasyn_n_d_array_driver"/>
-        <childnode refid="9" relation="public-inheritance">
+        <childnode refid="7" relation="usage">
+          <edgelabel>dims</edgelabel>
         </childnode>
-        <childnode refid="3" relation="usage">
-          <edgelabel>pNDArrayPool</edgelabel>
-        </childnode>
-        <childnode refid="5" relation="usage">
+        <childnode refid="6" relation="usage">
           <edgelabel>pAttributeList</edgelabel>
         </childnode>
-        <childnode refid="2" relation="usage">
-          <edgelabel>pArrays</edgelabel>
+        <childnode refid="8" relation="usage">
+          <edgelabel>codec</edgelabel>
         </childnode>
       </node>
       <node id="3">
         <label>NDArrayPool</label>
         <link refid="class_n_d_array_pool"/>
+      </node>
+      <node id="6">
+        <label>NDAttributeList</label>
+        <link refid="class_n_d_attribute_list"/>
+      </node>
+      <node id="7">
+        <label>NDDimension</label>
+        <link refid="struct_n_d_dimension"/>
+      </node>
+      <node id="4">
+        <label>asynNDArrayDriver</label>
+        <link refid="classasyn_n_d_array_driver"/>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>pNDArrayPool</edgelabel>
+        </childnode>
+        <childnode refid="2" relation="usage">
+          <edgelabel>pArrays</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>pAttributeList</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>asynPortDriver</label>
       </node>
       <node id="1">
         <label>sortedListElement</label>
@@ -144,9 +149,8 @@
           <edgelabel>pArray_</edgelabel>
         </childnode>
       </node>
-      <node id="5">
-        <label>NDAttributeList</label>
-        <link refid="class_n_d_attribute_list"/>
+      <node id="9">
+        <label>string</label>
       </node>
     </collaborationgraph>
     <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginDriver.h" line="25" column="1" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginDriver.h" bodystart="25" bodyend="33"/>

@@ -32,8 +32,8 @@ ADAravis_ is based heavily on the older aravisGigE_ driver which has been part o
 ADAravis_ differs from aravisGigE_ by using the ADGenICam_ base class to significantly reduce the amount of code.
 Many of the ideas in ADGenICam_ were borrowed from aravisGigE_.
 
-As it name implies, ADAravis_ uses the aravis_ library.  It runs on most Linux systems, and can control any GenICam_ camera.
-It cannot be used on Windows because aravis_ because aravis does not support it.
+As its name implies, ADAravis_ uses the aravis_ library.  It runs on most Linux systems, and can control any GenICam_ camera.
+It cannot be used on Windows because aravis_ does not support it.
 
 The aravis_ package must be built before building ADAravis.  Instructions for doing this can be found in the 
 :ref:`ADGenICam installing aravis <ADGenICam_installing_aravis>` documentation.

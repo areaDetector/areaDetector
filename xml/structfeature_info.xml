@@ -1,13 +1,14 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="structfeature_info" kind="struct" language="C++" prot="public">
     <compoundname>featureInfo</compoundname>
-      <sectiondef kind="public-attrib">
+    <sectiondef kind="public-attrib">
       <memberdef kind="variable" id="structfeature_info_1ab9c16745760ca8a930495ba486b60e1f" prot="public" static="no" mutable="no">
         <type>class <ref refid="classandor3" kindref="compound">andor3</ref> *</type>
         <definition>class andor3* featureInfo::camera</definition>
         <argsstring></argsstring>
         <name>camera</name>
+        <qualifiedname>featureInfo::camera</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -21,6 +22,7 @@
         <definition>Andor3FeatureType featureInfo::type</definition>
         <argsstring></argsstring>
         <name>type</name>
+        <qualifiedname>featureInfo::type</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -34,6 +36,7 @@
         <definition>int featureInfo::paramIndex</definition>
         <argsstring></argsstring>
         <name>paramIndex</name>
+        <qualifiedname>featureInfo::paramIndex</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -47,6 +50,7 @@
         <definition>AT_BOOL featureInfo::isImplemented</definition>
         <argsstring></argsstring>
         <name>isImplemented</name>
+        <qualifiedname>featureInfo::isImplemented</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -60,6 +64,7 @@
         <definition>AT_WC featureInfo::featureNameWC[MAX_FEATURE_NAME_LEN]</definition>
         <argsstring>[MAX_FEATURE_NAME_LEN]</argsstring>
         <name>featureNameWC</name>
+        <qualifiedname>featureInfo::featureNameWC</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -73,6 +78,7 @@
         <definition>char featureInfo::featureNameMBS[MAX_FEATURE_NAME_LEN]</definition>
         <argsstring>[MAX_FEATURE_NAME_LEN]</argsstring>
         <name>featureNameMBS</name>
+        <qualifiedname>featureInfo::featureNameMBS</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -86,6 +92,7 @@
         <definition>bool featureInfo::exists</definition>
         <argsstring></argsstring>
         <name>exists</name>
+        <qualifiedname>featureInfo::exists</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -94,34 +101,17 @@
         </inbodydescription>
         <location file="/home/runner/work/areaDetector/areaDetector/ADAndor3/andor3App/src/andor3.cpp" line="70" column="21" bodyfile="/home/runner/work/areaDetector/areaDetector/ADAndor3/andor3App/src/andor3.cpp" bodystart="70" bodyend="-1"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="9">
-        <label>NDDimension</label>
-        <link refid="struct_n_d_dimension"/>
-      </node>
-      <node id="1">
-        <label>featureInfo</label>
-        <link refid="structfeature_info"/>
-        <childnode refid="2" relation="usage">
-          <edgelabel>camera</edgelabel>
+      <node id="3">
+        <label>ADDriver</label>
+        <link refid="class_a_d_driver"/>
+        <childnode refid="4" relation="public-inheritance">
         </childnode>
-      </node>
-      <node id="5">
-        <label>asynPortDriver</label>
-      </node>
-      <node id="2">
-        <label>andor3</label>
-        <link refid="classandor3"/>
-        <childnode refid="3" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="11">
-        <label>string</label>
       </node>
       <node id="10">
         <label>Codec_t</label>
@@ -130,23 +120,41 @@
           <edgelabel>name</edgelabel>
         </childnode>
       </node>
-      <node id="8">
+      <node id="7">
         <label>NDArray</label>
         <link refid="class_n_d_array"/>
         <childnode refid="6" relation="usage">
           <edgelabel>pNDArrayPool</edgelabel>
         </childnode>
-        <childnode refid="9" relation="usage">
+        <childnode refid="4" relation="usage">
+          <edgelabel>pDriver</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
           <edgelabel>dims</edgelabel>
         </childnode>
-        <childnode refid="7" relation="usage">
+        <childnode refid="9" relation="usage">
           <edgelabel>pAttributeList</edgelabel>
         </childnode>
         <childnode refid="10" relation="usage">
           <edgelabel>codec</edgelabel>
         </childnode>
-        <childnode refid="4" relation="usage">
-          <edgelabel>pDriver</edgelabel>
+      </node>
+      <node id="6">
+        <label>NDArrayPool</label>
+        <link refid="class_n_d_array_pool"/>
+      </node>
+      <node id="9">
+        <label>NDAttributeList</label>
+        <link refid="class_n_d_attribute_list"/>
+      </node>
+      <node id="8">
+        <label>NDDimension</label>
+        <link refid="struct_n_d_dimension"/>
+      </node>
+      <node id="2">
+        <label>andor3</label>
+        <link refid="classandor3"/>
+        <childnode refid="3" relation="public-inheritance">
         </childnode>
       </node>
       <node id="4">
@@ -158,25 +166,24 @@
           <edgelabel>pNDArrayPool</edgelabel>
         </childnode>
         <childnode refid="7" relation="usage">
-          <edgelabel>pAttributeList</edgelabel>
-        </childnode>
-        <childnode refid="8" relation="usage">
           <edgelabel>pArrays</edgelabel>
         </childnode>
-      </node>
-      <node id="6">
-        <label>NDArrayPool</label>
-        <link refid="class_n_d_array_pool"/>
-      </node>
-      <node id="3">
-        <label>ADDriver</label>
-        <link refid="class_a_d_driver"/>
-        <childnode refid="4" relation="public-inheritance">
+        <childnode refid="9" relation="usage">
+          <edgelabel>pAttributeList</edgelabel>
         </childnode>
       </node>
-      <node id="7">
-        <label>NDAttributeList</label>
-        <link refid="class_n_d_attribute_list"/>
+      <node id="5">
+        <label>asynPortDriver</label>
+      </node>
+      <node id="1">
+        <label>featureInfo</label>
+        <link refid="structfeature_info"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>camera</edgelabel>
+        </childnode>
+      </node>
+      <node id="11">
+        <label>string</label>
       </node>
     </collaborationgraph>
     <location file="/home/runner/work/areaDetector/areaDetector/ADAndor3/andor3App/src/andor3.cpp" line="63" column="1" bodyfile="/home/runner/work/areaDetector/areaDetector/ADAndor3/andor3App/src/andor3.cpp" bodystart="63" bodyend="71"/>

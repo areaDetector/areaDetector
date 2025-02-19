@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="_n_d_plugin_time_series_8cpp" kind="file" language="C++">
     <compoundname>NDPluginTimeSeries.cpp</compoundname>
     <includes local="no">stdlib.h</includes>
@@ -8,11 +8,19 @@
     <includes refid="_n_d_plugin_time_series_8h" local="yes">NDPluginTimeSeries.h</includes>
     <includes local="no">epicsExport.h</includes>
     <incdepgraph>
-      <node id="4">
-        <label>iocsh.h</label>
+      <node id="24">
+        <label>ADCoreAPI.h</label>
+        <link refid="_a_d_core_a_p_i_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
       </node>
-      <node id="9">
-        <label>epicsTypes.h</label>
+      <node id="27">
+        <label>ADCoreVersion.h</label>
+        <link refid="_a_d_core_version_8h"/>
+      </node>
+      <node id="26">
+        <label>Codec.h</label>
+        <link refid="_codec_8h"/>
       </node>
       <node id="18">
         <label>NDArray.h</label>
@@ -32,88 +40,6 @@
         <childnode refid="26" relation="include">
         </childnode>
       </node>
-      <node id="25">
-        <label>NDAttributeList.h</label>
-        <link refid="_n_d_attribute_list_8h"/>
-        <childnode refid="22" relation="include">
-        </childnode>
-        <childnode refid="19" relation="include">
-        </childnode>
-        <childnode refid="15" relation="include">
-        </childnode>
-        <childnode refid="20" relation="include">
-        </childnode>
-      </node>
-      <node id="2">
-        <label>stdlib.h</label>
-      </node>
-      <node id="15">
-        <label>epicsMutex.h</label>
-      </node>
-      <node id="5">
-        <label>NDPluginTimeSeries.h</label>
-        <link refid="_n_d_plugin_time_series_8h"/>
-        <childnode refid="6" relation="include">
-        </childnode>
-        <childnode refid="7" relation="include">
-        </childnode>
-      </node>
-      <node id="13">
-        <label>epicsVersion.h</label>
-      </node>
-      <node id="21">
-        <label>string</label>
-      </node>
-      <node id="11">
-        <label>epicsThread.h</label>
-      </node>
-      <node id="28">
-        <label>epicsExport.h</label>
-      </node>
-      <node id="27">
-        <label>ADCoreVersion.h</label>
-        <link refid="_a_d_core_version_8h"/>
-      </node>
-      <node id="24">
-        <label>ADCoreAPI.h</label>
-        <link refid="_a_d_core_a_p_i_8h"/>
-        <childnode refid="13" relation="include">
-        </childnode>
-      </node>
-      <node id="14">
-        <label>asynNDArrayDriver.h</label>
-        <link refid="asyn_n_d_array_driver_8h"/>
-        <childnode refid="15" relation="include">
-        </childnode>
-        <childnode refid="16" relation="include">
-        </childnode>
-        <childnode refid="17" relation="include">
-        </childnode>
-        <childnode refid="18" relation="include">
-        </childnode>
-        <childnode refid="27" relation="include">
-        </childnode>
-      </node>
-      <node id="3">
-        <label>string.h</label>
-      </node>
-      <node id="1">
-        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginTimeSeries.cpp</label>
-        <link refid="_n_d_plugin_time_series_8cpp"/>
-        <childnode refid="2" relation="include">
-        </childnode>
-        <childnode refid="3" relation="include">
-        </childnode>
-        <childnode refid="4" relation="include">
-        </childnode>
-        <childnode refid="5" relation="include">
-        </childnode>
-        <childnode refid="28" relation="include">
-        </childnode>
-      </node>
-      <node id="19">
-        <label>ellLib.h</label>
-      </node>
       <node id="20">
         <label>NDAttribute.h</label>
         <link refid="_n_d_attribute_8h"/>
@@ -130,8 +56,37 @@
         <childnode refid="24" relation="include">
         </childnode>
       </node>
-      <node id="23">
-        <label>asynDriver.h</label>
+      <node id="25">
+        <label>NDAttributeList.h</label>
+        <link refid="_n_d_attribute_list_8h"/>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>asynNDArrayDriver.h</label>
+        <link refid="asyn_n_d_array_driver_8h"/>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>NDPluginAPI.h</label>
+        <link refid="_n_d_plugin_a_p_i_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
       </node>
       <node id="7">
         <label>NDPluginDriver.h</label>
@@ -151,36 +106,81 @@
         <childnode refid="14" relation="include">
         </childnode>
       </node>
-      <node id="26">
-        <label>Codec.h</label>
-        <link refid="_codec_8h"/>
+      <node id="1">
+        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginTimeSeries.cpp</label>
+        <link refid="_n_d_plugin_time_series_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
       </node>
-      <node id="6">
-        <label>epicsTime.h</label>
+      <node id="5">
+        <label>NDPluginTimeSeries.h</label>
+        <link refid="_n_d_plugin_time_series_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="23">
+        <label>asynDriver.h</label>
       </node>
       <node id="17">
         <label>asynPortDriver.h</label>
       </node>
-      <node id="12">
-        <label>NDPluginAPI.h</label>
-        <link refid="_n_d_plugin_a_p_i_8h"/>
-        <childnode refid="13" relation="include">
-        </childnode>
-      </node>
-      <node id="8">
-        <label>set</label>
-      </node>
-      <node id="10">
-        <label>epicsMessageQueue.h</label>
-      </node>
-      <node id="22">
-        <label>stdio.h</label>
+      <node id="19">
+        <label>ellLib.h</label>
       </node>
       <node id="16">
         <label>epicsEvent.h</label>
       </node>
+      <node id="28">
+        <label>epicsExport.h</label>
+      </node>
+      <node id="10">
+        <label>epicsMessageQueue.h</label>
+      </node>
+      <node id="15">
+        <label>epicsMutex.h</label>
+      </node>
+      <node id="11">
+        <label>epicsThread.h</label>
+      </node>
+      <node id="6">
+        <label>epicsTime.h</label>
+      </node>
+      <node id="9">
+        <label>epicsTypes.h</label>
+      </node>
+      <node id="13">
+        <label>epicsVersion.h</label>
+      </node>
+      <node id="4">
+        <label>iocsh.h</label>
+      </node>
+      <node id="8">
+        <label>set</label>
+      </node>
+      <node id="22">
+        <label>stdio.h</label>
+      </node>
+      <node id="2">
+        <label>stdlib.h</label>
+      </node>
+      <node id="21">
+        <label>string</label>
+      </node>
+      <node id="3">
+        <label>string.h</label>
+      </node>
     </incdepgraph>
-      <sectiondef kind="define">
+    <sectiondef kind="define">
       <memberdef kind="define" id="_n_d_plugin_time_series_8cpp_1a96ffc35d728f7c0747171b09be5021ec" prot="public" static="no">
         <name>DEFAULT_NUM_TSPOINTS</name>
         <initializer>2048</initializer>
@@ -199,11 +199,11 @@
         </inbodydescription>
         <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginTimeSeries.cpp" line="19" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginTimeSeries.cpp" bodystart="19" bodyend="-1"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="enum">
+    </sectiondef>
+    <sectiondef kind="enum">
       <memberdef kind="enum" id="_n_d_plugin_time_series_8cpp_1a06fc87d81c62e9abb8790b6e5713c55b" prot="public" static="no" strong="no">
         <type></type>
-        <name>@0</name>
+        <name></name>
         <enumvalue id="_n_d_plugin_time_series_8cpp_1a06fc87d81c62e9abb8790b6e5713c55baae134f53e3d76e5d7fbdc542ea786bda" prot="public">
           <name>TSAcquireModeFixed</name>
           <briefdescription>
@@ -226,8 +226,8 @@
         </inbodydescription>
         <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginTimeSeries.cpp" line="21" column="1" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginTimeSeries.cpp" bodystart="21" bodyend="24"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="var">
+    </sectiondef>
+    <sectiondef kind="var">
       <memberdef kind="variable" id="_n_d_plugin_time_series_8cpp_1a13021e744179110a6114bf84e9d47f32" prot="public" static="yes" mutable="no">
         <type>const iocshArg</type>
         <definition>const iocshArg initArg0</definition>
@@ -240,7 +240,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginTimeSeries.cpp" line="549" column="23" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginTimeSeries.cpp" bodystart="549" bodyend="-1"/>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginTimeSeries.cpp" line="549" column="23" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginTimeSeries.cpp" bodystart="549" bodyend="549"/>
       </memberdef>
       <memberdef kind="variable" id="_n_d_plugin_time_series_8cpp_1a85f312f39f3c368a5fa10d1039dc40b2" prot="public" static="yes" mutable="no">
         <type>const iocshArg</type>
@@ -254,7 +254,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginTimeSeries.cpp" line="550" column="23" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginTimeSeries.cpp" bodystart="550" bodyend="-1"/>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginTimeSeries.cpp" line="550" column="23" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginTimeSeries.cpp" bodystart="550" bodyend="550"/>
       </memberdef>
       <memberdef kind="variable" id="_n_d_plugin_time_series_8cpp_1a645a7d7d0d71a7522373e2af4008b520" prot="public" static="yes" mutable="no">
         <type>const iocshArg</type>
@@ -268,7 +268,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginTimeSeries.cpp" line="551" column="23" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginTimeSeries.cpp" bodystart="551" bodyend="-1"/>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginTimeSeries.cpp" line="551" column="23" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginTimeSeries.cpp" bodystart="551" bodyend="551"/>
       </memberdef>
       <memberdef kind="variable" id="_n_d_plugin_time_series_8cpp_1aaa425474fd6655fa6347e1933b29038a" prot="public" static="yes" mutable="no">
         <type>const iocshArg</type>
@@ -282,7 +282,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginTimeSeries.cpp" line="552" column="23" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginTimeSeries.cpp" bodystart="552" bodyend="-1"/>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginTimeSeries.cpp" line="552" column="23" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginTimeSeries.cpp" bodystart="552" bodyend="552"/>
       </memberdef>
       <memberdef kind="variable" id="_n_d_plugin_time_series_8cpp_1a945c4d0bc0e2bc869aeaf5c6a815368a" prot="public" static="yes" mutable="no">
         <type>const iocshArg</type>
@@ -296,7 +296,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginTimeSeries.cpp" line="553" column="23" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginTimeSeries.cpp" bodystart="553" bodyend="-1"/>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginTimeSeries.cpp" line="553" column="23" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginTimeSeries.cpp" bodystart="553" bodyend="553"/>
       </memberdef>
       <memberdef kind="variable" id="_n_d_plugin_time_series_8cpp_1ac7e214be38a3b3bface5e0370ae97db0" prot="public" static="yes" mutable="no">
         <type>const iocshArg</type>
@@ -310,7 +310,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginTimeSeries.cpp" line="554" column="23" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginTimeSeries.cpp" bodystart="554" bodyend="-1"/>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginTimeSeries.cpp" line="554" column="23" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginTimeSeries.cpp" bodystart="554" bodyend="554"/>
       </memberdef>
       <memberdef kind="variable" id="_n_d_plugin_time_series_8cpp_1a43397205694aec859f3b5cb14a85edc3" prot="public" static="yes" mutable="no">
         <type>const iocshArg</type>
@@ -324,7 +324,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginTimeSeries.cpp" line="555" column="23" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginTimeSeries.cpp" bodystart="555" bodyend="-1"/>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginTimeSeries.cpp" line="555" column="23" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginTimeSeries.cpp" bodystart="555" bodyend="555"/>
       </memberdef>
       <memberdef kind="variable" id="_n_d_plugin_time_series_8cpp_1a36049b095d9ed1f56a41821a2c8fc661" prot="public" static="yes" mutable="no">
         <type>const iocshArg</type>
@@ -338,7 +338,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginTimeSeries.cpp" line="556" column="23" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginTimeSeries.cpp" bodystart="556" bodyend="-1"/>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginTimeSeries.cpp" line="556" column="23" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginTimeSeries.cpp" bodystart="556" bodyend="556"/>
       </memberdef>
       <memberdef kind="variable" id="_n_d_plugin_time_series_8cpp_1a62a0c5258a2c1049720be5c31729f76d" prot="public" static="yes" mutable="no">
         <type>const iocshArg</type>
@@ -352,7 +352,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginTimeSeries.cpp" line="557" column="23" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginTimeSeries.cpp" bodystart="557" bodyend="-1"/>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginTimeSeries.cpp" line="557" column="23" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginTimeSeries.cpp" bodystart="557" bodyend="557"/>
       </memberdef>
       <memberdef kind="variable" id="_n_d_plugin_time_series_8cpp_1a310f7847b682c968669300db5550d9fa" prot="public" static="yes" mutable="no">
         <type>const iocshArg</type>
@@ -366,7 +366,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginTimeSeries.cpp" line="558" column="23" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginTimeSeries.cpp" bodystart="558" bodyend="-1"/>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginTimeSeries.cpp" line="558" column="23" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginTimeSeries.cpp" bodystart="558" bodyend="558"/>
       </memberdef>
       <memberdef kind="variable" id="_n_d_plugin_time_series_8cpp_1ac0d7f455ac7138e5bcb473b630294718" prot="public" static="yes" mutable="no">
         <type>const iocshArg *const</type>
@@ -389,7 +389,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginTimeSeries.cpp" line="559" column="30" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginTimeSeries.cpp" bodystart="559" bodyend="-1"/>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginTimeSeries.cpp" line="559" column="30" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginTimeSeries.cpp" bodystart="559" bodyend="568"/>
       </memberdef>
       <memberdef kind="variable" id="_n_d_plugin_time_series_8cpp_1a469a3ecf9fff33f8f388acddffc8db6a" prot="public" static="yes" mutable="no">
         <type>const iocshFuncDef</type>
@@ -403,10 +403,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginTimeSeries.cpp" line="569" column="27" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginTimeSeries.cpp" bodystart="569" bodyend="-1"/>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginTimeSeries.cpp" line="569" column="27" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginTimeSeries.cpp" bodystart="569" bodyend="569"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="func">
+    </sectiondef>
+    <sectiondef kind="func">
       <memberdef kind="function" id="_n_d_plugin_time_series_8cpp_1a2c863b0ed07da95884c823f7b2f1108e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
         <definition>int NDTimeSeriesConfigure</definition>
@@ -510,7 +510,7 @@
         </inbodydescription>
         <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginTimeSeries.cpp" line="584" column="1" declfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginTimeSeries.cpp" declline="584" declcolumn="1"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
@@ -642,7 +642,7 @@
 <codeline lineno="150"><highlight class="normal"></highlight></codeline>
 <codeline lineno="151"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(timeAxis_)<sp/>free(timeAxis_);</highlight></codeline>
 <codeline lineno="152"><highlight class="normal"><sp/><sp/>timeAxis_<sp/>=<sp/>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>*)calloc(numTimePoints_,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal">));</highlight></codeline>
-<codeline lineno="153"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>=0;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>&lt;numTimePoints_;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>++)<sp/>{</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(i=0;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>&lt;numTimePoints_;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>++)<sp/>{</highlight></codeline>
 <codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(acquireMode_<sp/>==<sp/><ref refid="_n_d_plugin_time_series_8cpp_1a06fc87d81c62e9abb8790b6e5713c55baae134f53e3d76e5d7fbdc542ea786bda" kindref="member">TSAcquireModeFixed</ref>)<sp/>{</highlight></codeline>
 <codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>timeAxis_[<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>]<sp/>=<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>*averagingTimeActual_;</highlight></codeline>
 <codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
@@ -664,9 +664,9 @@
 <codeline lineno="177"><highlight class="normal"><sp/><sp/>epicsTimeStamp<sp/>timeNow;</highlight></codeline>
 <codeline lineno="178"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>elapsedTime;</highlight></codeline>
 <codeline lineno="179"><highlight class="normal"></highlight></codeline>
-<codeline lineno="180"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(pArray-&gt;<ref refid="class_n_d_array_1a4769c6ebb8275710a58bd88dba086b71" kindref="member">ndims</ref><sp/>==<sp/>2)<sp/>numTimes<sp/>=<sp/>(int)pArray-&gt;<ref refid="class_n_d_array_1a71e5be2b11008face8dc6c5be19f71f1" kindref="member">dims</ref>[1].<ref refid="struct_n_d_dimension_1af32ef14ab526ed14d195875fc688f027" kindref="member">size</ref>;</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(pArray-&gt;ndims<sp/>==<sp/>2)<sp/>numTimes<sp/>=<sp/>(int)pArray-&gt;dims[1].size;</highlight></codeline>
 <codeline lineno="181"><highlight class="normal"></highlight></codeline>
-<codeline lineno="182"><highlight class="normal"><sp/><sp/>for<sp/>(<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>=0;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>&lt;numTimes;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>++)<sp/>{</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(i=0;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>&lt;numTimes;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>++)<sp/>{</highlight></codeline>
 <codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/>pIn<sp/>=<sp/>pData<sp/>+<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>*numSignalsIn_;</highlight></codeline>
 <codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(signal=0;<sp/>signal&lt;numSignals_;<sp/>signal++)<sp/>{</highlight></codeline>
 <codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>averageStore_[signal]<sp/>+=<sp/>(epicsFloat64)*pIn++;</highlight></codeline>
@@ -679,7 +679,7 @@
 <codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>averageStore_[signal]<sp/>=<sp/>0;</highlight></codeline>
 <codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/>numAveraged_<sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/>timeStamp_[currentTimePoint_]<sp/>=<sp/>pArray-&gt;<ref refid="class_n_d_array_1ac449943846ba4c5c18aa1ca5559470c2" kindref="member">timeStamp</ref>;</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/>timeStamp_[currentTimePoint_]<sp/>=<sp/>pArray-&gt;timeStamp;</highlight></codeline>
 <codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/>currentTimePoint_++;</highlight></codeline>
 <codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(currentTimePoint_<sp/>&gt;=<sp/>numTimePoints_)<sp/>{</highlight></codeline>
 <codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(acquireMode_<sp/>==<sp/><ref refid="_n_d_plugin_time_series_8cpp_1a06fc87d81c62e9abb8790b6e5713c55baae134f53e3d76e5d7fbdc542ea786bda" kindref="member">TSAcquireModeFixed</ref>)<sp/>{</highlight></codeline>
@@ -751,7 +751,7 @@
 <codeline lineno="269"><highlight class="normal"><sp/><sp/>epicsType<sp/>*timeCircular<sp/>=<sp/>(epicsType<sp/>*)pTimeCircular_-&gt;<ref refid="class_n_d_array_1a9581f9d8f38225a2c2977bbed70fa2b8" kindref="member">pData</ref>;</highlight></codeline>
 <codeline lineno="270"><highlight class="normal"></highlight></codeline>
 <codeline lineno="271"><highlight class="normal"></highlight></codeline>
-<codeline lineno="272"><highlight class="normal"><sp/><sp/>if<sp/>(acquireMode_<sp/>==<sp/><ref refid="_n_d_plugin_time_series_8cpp_1a06fc87d81c62e9abb8790b6e5713c55baae134f53e3d76e5d7fbdc542ea786bda" kindref="member">TSAcquireModeFixed</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="272"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(acquireMode_<sp/>==<sp/><ref refid="_n_d_plugin_time_series_8cpp_1a06fc87d81c62e9abb8790b6e5713c55baae134f53e3d76e5d7fbdc542ea786bda" kindref="member">TSAcquireModeFixed</ref>)<sp/>{</highlight></codeline>
 <codeline lineno="273"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(signal=0;<sp/>signal&lt;numSignals_;<sp/>signal++)<sp/>{</highlight></codeline>
 <codeline lineno="274"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(timeOut=0;<sp/>timeOut&lt;currentTimePoint_;<sp/>timeOut++)<sp/>{</highlight></codeline>
 <codeline lineno="275"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>signalData_[timeOut]<sp/>=<sp/>(double)timeCircular[signal*numTimePoints_<sp/>+<sp/>timeOut];</highlight></codeline>
@@ -848,7 +848,7 @@
 <codeline lineno="370"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Now<sp/>do<sp/>NDArray<sp/>callbacks<sp/>on<sp/>1-D<sp/>arrays<sp/>for<sp/>each<sp/>signal</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="371"><highlight class="normal"><sp/><sp/><sp/><sp/>numCopy<sp/>=<sp/>(int)pArrayOut-&gt;<ref refid="class_n_d_array_1a71e5be2b11008face8dc6c5be19f71f1" kindref="member">dims</ref>[0].<ref refid="struct_n_d_dimension_1af32ef14ab526ed14d195875fc688f027" kindref="member">size</ref>;</highlight></codeline>
 <codeline lineno="372"><highlight class="normal"><sp/><sp/><sp/><sp/>dims[0]<sp/>=<sp/>numCopy;</highlight></codeline>
-<codeline lineno="373"><highlight class="normal"><sp/><sp/><sp/><sp/>for<sp/>(signal=0;<sp/>signal&lt;numSignals_;<sp/>signal++)<sp/>{</highlight></codeline>
+<codeline lineno="373"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(signal=0;<sp/>signal&lt;numSignals_;<sp/>signal++)<sp/>{</highlight></codeline>
 <codeline lineno="374"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_n_d_array" kindref="compound">NDArray</ref><sp/>*pArray<sp/>=<sp/><ref refid="classasyn_n_d_array_driver_1ad3969854a37329ef4061cc560e9022dc" kindref="member">pNDArrayPool</ref>-&gt;<ref refid="class_n_d_array_pool_1a26b4360694655c4af6c853c2f3d2ce5e" kindref="member">alloc</ref>(1,<sp/>dims,<sp/>pArrayOut-&gt;<ref refid="class_n_d_array_1ad3757e8e6a87bc8a5889f60a3d0cdb59" kindref="member">dataType</ref>,<sp/>0,<sp/>0);</highlight></codeline>
 <codeline lineno="375"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>src<sp/>=<sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*)pArrayOut-&gt;<ref refid="class_n_d_array_1a9581f9d8f38225a2c2977bbed70fa2b8" kindref="member">pData</ref><sp/>+<sp/>(signal<sp/>*<sp/>numTimePoints_)*dataSize_;</highlight></codeline>
 <codeline lineno="376"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>dst<sp/>=<sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*)pArray-&gt;<ref refid="class_n_d_array_1a9581f9d8f38225a2c2977bbed70fa2b8" kindref="member">pData</ref>;</highlight></codeline>
@@ -889,7 +889,7 @@
 <codeline lineno="416"><highlight class="normal"><sp/><sp/><sp/><sp/>dataType_<sp/><sp/><sp/>=<sp/>pArray-&gt;<ref refid="class_n_d_array_1ad3757e8e6a87bc8a5889f60a3d0cdb59" kindref="member">dataType</ref>;</highlight></codeline>
 <codeline lineno="417"><highlight class="normal"><sp/><sp/><sp/><sp/>numSignalsIn_<sp/>=<sp/>(int)pArray-&gt;<ref refid="class_n_d_array_1a71e5be2b11008face8dc6c5be19f71f1" kindref="member">dims</ref>[0].<ref refid="struct_n_d_dimension_1af32ef14ab526ed14d195875fc688f027" kindref="member">size</ref>;</highlight></codeline>
 <codeline lineno="418"><highlight class="normal"><sp/><sp/><sp/><sp/>numSignals_<sp/>=<sp/>numSignalsIn_;</highlight></codeline>
-<codeline lineno="419"><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(numSignals_<sp/>&gt;<sp/>maxSignals_)<sp/>numSignals_<sp/>=<sp/>maxSignals_;</highlight></codeline>
+<codeline lineno="419"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(numSignals_<sp/>&gt;<sp/>maxSignals_)<sp/>numSignals_<sp/>=<sp/>maxSignals_;</highlight></codeline>
 <codeline lineno="420"><highlight class="normal"><sp/><sp/><sp/><sp/>pArray-&gt;<ref refid="class_n_d_array_1a47af97c0e2b8255d756207908f6b470d" kindref="member">getInfo</ref>(&amp;arrayInfo);</highlight></codeline>
 <codeline lineno="421"><highlight class="normal"><sp/><sp/><sp/><sp/>dataSize_<sp/>=<sp/>arrayInfo.<ref refid="struct_n_d_array_info_1afe782c95c5f00ec3efb4492cd6d3a851" kindref="member">bytesPerElement</ref>;</highlight></codeline>
 <codeline lineno="422"><highlight class="normal"><sp/><sp/><sp/><sp/>allocateArrays();</highlight></codeline>
@@ -904,9 +904,9 @@
 <codeline lineno="431"><highlight class="normal"><sp/><sp/>callParamCallbacks();</highlight></codeline>
 <codeline lineno="432"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="433"><highlight class="normal"></highlight></codeline>
-<codeline lineno="441"><highlight class="normal">asynStatus<sp/><ref refid="class_n_d_plugin_time_series_1a1343c7d60ca49fd0dbd6636fd802ec8a" kindref="member">NDPluginTimeSeries::writeInt32</ref>(asynUser<sp/>*pasynUser,<sp/>epicsInt32<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>)</highlight></codeline>
+<codeline lineno="441"><highlight class="normal">asynStatus<sp/><ref refid="class_n_d_plugin_time_series_1a1343c7d60ca49fd0dbd6636fd802ec8a" kindref="member">NDPluginTimeSeries::writeInt32</ref>(asynUser<sp/>*pasynUser,<sp/>epicsInt32<sp/>value)</highlight></codeline>
 <codeline lineno="442"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="443"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>=<sp/>pasynUser-&gt;reason;</highlight></codeline>
+<codeline lineno="443"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>function<sp/>=<sp/>pasynUser-&gt;reason;</highlight></codeline>
 <codeline lineno="444"><highlight class="normal"><sp/><sp/>asynStatus<sp/>status<sp/>=<sp/>asynSuccess;</highlight></codeline>
 <codeline lineno="445"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>stat<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="446"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>signal<sp/>=<sp/>0;</highlight></codeline>
@@ -918,25 +918,25 @@
 <codeline lineno="452"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
 <codeline lineno="453"><highlight class="normal"></highlight></codeline>
 <codeline lineno="454"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Set<sp/>parameter<sp/>and<sp/>readback<sp/>in<sp/>parameter<sp/>library<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="455"><highlight class="normal"><sp/><sp/>stat<sp/>=<sp/>(<ref refid="classasyn_n_d_array_driver_1abf87462bc5853f8e5a56db5e93acd956" kindref="member">setIntegerParam</ref>(signal,<sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal">,<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>)<sp/>==<sp/>asynSuccess)<sp/>&amp;&amp;<sp/>stat;</highlight></codeline>
+<codeline lineno="455"><highlight class="normal"><sp/><sp/>stat<sp/>=<sp/>(<ref refid="classasyn_n_d_array_driver_1abf87462bc5853f8e5a56db5e93acd956" kindref="member">setIntegerParam</ref>(signal,<sp/>function,<sp/>value)<sp/>==<sp/>asynSuccess)<sp/>&amp;&amp;<sp/>stat;</highlight></codeline>
 <codeline lineno="456"><highlight class="normal"></highlight></codeline>
-<codeline lineno="457"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>==<sp/><ref refid="class_n_d_plugin_time_series_1a6607752aefd84d149e25d2653a63043d" kindref="member">P_TSNumPoints</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="457"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(function<sp/>==<sp/><ref refid="class_n_d_plugin_time_series_1a6607752aefd84d149e25d2653a63043d" kindref="member">P_TSNumPoints</ref>)<sp/>{</highlight></codeline>
 <codeline lineno="458"><highlight class="normal"><sp/><sp/><sp/><sp/>allocateArrays();</highlight></codeline>
-<codeline lineno="459"><highlight class="normal"><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>==<sp/><ref refid="class_n_d_plugin_time_series_1a38f5fe349654974ab866c4d60489f822" kindref="member">P_TSAcquireMode</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="459"><highlight class="normal"><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(function<sp/>==<sp/><ref refid="class_n_d_plugin_time_series_1a38f5fe349654974ab866c4d60489f822" kindref="member">P_TSAcquireMode</ref>)<sp/>{</highlight></codeline>
 <codeline lineno="460"><highlight class="normal"><sp/><sp/><sp/><sp/>acquireMode_<sp/>=<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>;</highlight></codeline>
 <codeline lineno="461"><highlight class="normal"><sp/><sp/><sp/><sp/>acquireReset();</highlight></codeline>
 <codeline lineno="462"><highlight class="normal"><sp/><sp/><sp/><sp/>createAxisArray();</highlight></codeline>
-<codeline lineno="463"><highlight class="normal"><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>==<sp/><ref refid="class_n_d_plugin_time_series_1aae4bd340eb15d11133d60b12bb269f01" kindref="member">P_TSAcquire</ref>)<sp/>{</highlight></codeline>
-<codeline lineno="464"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="463"><highlight class="normal"><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(function<sp/>==<sp/><ref refid="class_n_d_plugin_time_series_1aae4bd340eb15d11133d60b12bb269f01" kindref="member">P_TSAcquire</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="464"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(value)<sp/>{</highlight></codeline>
 <codeline lineno="465"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>acquireReset();</highlight></codeline>
 <codeline lineno="466"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="467"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
 <codeline lineno="468"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>doTimeSeriesCallbacks();</highlight></codeline>
 <codeline lineno="469"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="470"><highlight class="normal"><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>==<sp/><ref refid="class_n_d_plugin_time_series_1aeabb59e295827bbef9d4449010e6c32e" kindref="member">P_TSRead</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="470"><highlight class="normal"><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(function<sp/>==<sp/><ref refid="class_n_d_plugin_time_series_1aeabb59e295827bbef9d4449010e6c32e" kindref="member">P_TSRead</ref>)<sp/>{</highlight></codeline>
 <codeline lineno="471"><highlight class="normal"><sp/><sp/><sp/><sp/>doTimeSeriesCallbacks();</highlight></codeline>
-<codeline lineno="472"><highlight class="normal"><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>&lt;<sp/><ref refid="_n_d_plugin_time_series_8h_1a9b9c01e9e53b1e86f99376351f0dfc1a" kindref="member">FIRST_NDPLUGIN_TIME_SERIES_PARAM</ref>)<sp/>{</highlight></codeline>
-<codeline lineno="473"><highlight class="normal"><sp/><sp/><sp/><sp/>stat<sp/>=<sp/>(<ref refid="class_n_d_plugin_driver_1a5f60198f46fd7cd89c101dce9533f3aa" kindref="member">NDPluginDriver::writeInt32</ref>(pasynUser,<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>)<sp/>==<sp/>asynSuccess)<sp/>&amp;&amp;<sp/>stat;</highlight></codeline>
+<codeline lineno="472"><highlight class="normal"><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(function<sp/>&lt;<sp/><ref refid="_n_d_plugin_time_series_8h_1a9b9c01e9e53b1e86f99376351f0dfc1a" kindref="member">FIRST_NDPLUGIN_TIME_SERIES_PARAM</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="473"><highlight class="normal"><sp/><sp/><sp/><sp/>stat<sp/>=<sp/>(<ref refid="class_n_d_plugin_driver_1a5f60198f46fd7cd89c101dce9533f3aa" kindref="member">NDPluginDriver::writeInt32</ref>(pasynUser,<sp/>value)<sp/>==<sp/>asynSuccess)<sp/>&amp;&amp;<sp/>stat;</highlight></codeline>
 <codeline lineno="474"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
 <codeline lineno="475"><highlight class="normal"></highlight></codeline>
 <codeline lineno="476"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Do<sp/>callbacks<sp/>so<sp/>higher<sp/>layers<sp/>see<sp/>any<sp/>changes<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
@@ -946,20 +946,20 @@
 <codeline lineno="480"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!stat)<sp/>{</highlight></codeline>
 <codeline lineno="481"><highlight class="normal"><sp/><sp/><sp/><sp/>epicsSnprintf(pasynUser-&gt;errorMessage,<sp/>pasynUser-&gt;errorMessageSize,</highlight></codeline>
 <codeline lineno="482"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;%s:<sp/>status=%d,<sp/>function=%d,<sp/>value=%d&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline lineno="483"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>functionName,<sp/>status,<sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal">,<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>);</highlight></codeline>
+<codeline lineno="483"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>functionName,<sp/>status,<sp/>function,<sp/>value);</highlight></codeline>
 <codeline lineno="484"><highlight class="normal"><sp/><sp/><sp/><sp/>status<sp/>=<sp/>asynError;</highlight></codeline>
 <codeline lineno="485"><highlight class="normal"><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
 <codeline lineno="486"><highlight class="normal"><sp/><sp/><sp/><sp/>asynPrint(pasynUser,<sp/>ASYN_TRACEIO_DRIVER,</highlight></codeline>
 <codeline lineno="487"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;%s:<sp/>function=%d,<sp/>signal=%d,<sp/>value=%d\n&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline lineno="488"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>functionName,<sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal">,<sp/>signal,<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>);</highlight></codeline>
+<codeline lineno="488"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>functionName,<sp/>function,<sp/>signal,<sp/>value);</highlight></codeline>
 <codeline lineno="489"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
 <codeline lineno="490"><highlight class="normal"></highlight></codeline>
 <codeline lineno="491"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>status;</highlight></codeline>
 <codeline lineno="492"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="493"><highlight class="normal"></highlight></codeline>
-<codeline lineno="494"><highlight class="normal">asynStatus<sp/><ref refid="class_n_d_plugin_time_series_1a1e5aa73cb3f0cbc660556e364002fcc9" kindref="member">NDPluginTimeSeries::writeFloat64</ref>(asynUser<sp/>*pasynUser,<sp/>epicsFloat64<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>)</highlight></codeline>
+<codeline lineno="494"><highlight class="normal">asynStatus<sp/><ref refid="class_n_d_plugin_time_series_1a1e5aa73cb3f0cbc660556e364002fcc9" kindref="member">NDPluginTimeSeries::writeFloat64</ref>(asynUser<sp/>*pasynUser,<sp/>epicsFloat64<sp/>value)</highlight></codeline>
 <codeline lineno="495"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="496"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>=<sp/>pasynUser-&gt;reason;</highlight></codeline>
+<codeline lineno="496"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>function<sp/>=<sp/>pasynUser-&gt;reason;</highlight></codeline>
 <codeline lineno="497"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>signal;</highlight></codeline>
 <codeline lineno="498"><highlight class="normal"><sp/><sp/>asynStatus<sp/>status=asynSuccess;</highlight></codeline>
 <codeline lineno="499"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>stat<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
@@ -971,15 +971,15 @@
 <codeline lineno="505"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
 <codeline lineno="506"><highlight class="normal"></highlight></codeline>
 <codeline lineno="507"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Set<sp/>the<sp/>parameter<sp/>in<sp/>the<sp/>parameter<sp/>library.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="508"><highlight class="normal"><sp/><sp/>stat<sp/>=<sp/>(setDoubleParam(signal,<sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal">,<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>)<sp/>==<sp/>asynSuccess)<sp/>&amp;&amp;<sp/>stat;</highlight></codeline>
-<codeline lineno="509"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>==<sp/><ref refid="class_n_d_plugin_time_series_1a97eee91335050a69667bc6f8408586ab" kindref="member">P_TSTimePerPoint</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="508"><highlight class="normal"><sp/><sp/>stat<sp/>=<sp/>(setDoubleParam(signal,<sp/>function,<sp/>value)<sp/>==<sp/>asynSuccess)<sp/>&amp;&amp;<sp/>stat;</highlight></codeline>
+<codeline lineno="509"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(function<sp/>==<sp/><ref refid="class_n_d_plugin_time_series_1a97eee91335050a69667bc6f8408586ab" kindref="member">P_TSTimePerPoint</ref>)<sp/>{</highlight></codeline>
 <codeline lineno="510"><highlight class="normal"><sp/><sp/><sp/><sp/>timePerPoint_<sp/>=<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>;</highlight></codeline>
 <codeline lineno="511"><highlight class="normal"><sp/><sp/><sp/><sp/>computeNumAverage();</highlight></codeline>
-<codeline lineno="512"><highlight class="normal"><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>==<sp/><ref refid="class_n_d_plugin_time_series_1aa3bd2bad326e2b166797154b41d5b6fa" kindref="member">P_TSAveragingTime</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="512"><highlight class="normal"><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(function<sp/>==<sp/><ref refid="class_n_d_plugin_time_series_1aa3bd2bad326e2b166797154b41d5b6fa" kindref="member">P_TSAveragingTime</ref>)<sp/>{</highlight></codeline>
 <codeline lineno="513"><highlight class="normal"><sp/><sp/><sp/><sp/>averagingTimeRequested_<sp/>=<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>;</highlight></codeline>
 <codeline lineno="514"><highlight class="normal"><sp/><sp/><sp/><sp/>computeNumAverage();</highlight></codeline>
-<codeline lineno="515"><highlight class="normal"><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>&lt;<sp/><ref refid="_n_d_plugin_time_series_8h_1a9b9c01e9e53b1e86f99376351f0dfc1a" kindref="member">FIRST_NDPLUGIN_TIME_SERIES_PARAM</ref>)<sp/>{</highlight></codeline>
-<codeline lineno="516"><highlight class="normal"><sp/><sp/><sp/><sp/>stat<sp/>=<sp/>(<ref refid="class_n_d_plugin_driver_1a0d9d826a638226234e48f4d4f41fc4c0" kindref="member">NDPluginDriver::writeFloat64</ref>(pasynUser,<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>)<sp/>==<sp/>asynSuccess)<sp/>&amp;&amp;<sp/>stat;</highlight></codeline>
+<codeline lineno="515"><highlight class="normal"><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(function<sp/>&lt;<sp/><ref refid="_n_d_plugin_time_series_8h_1a9b9c01e9e53b1e86f99376351f0dfc1a" kindref="member">FIRST_NDPLUGIN_TIME_SERIES_PARAM</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="516"><highlight class="normal"><sp/><sp/><sp/><sp/>stat<sp/>=<sp/>(<ref refid="class_n_d_plugin_driver_1a0d9d826a638226234e48f4d4f41fc4c0" kindref="member">NDPluginDriver::writeFloat64</ref>(pasynUser,<sp/>value)<sp/>==<sp/>asynSuccess)<sp/>&amp;&amp;<sp/>stat;</highlight></codeline>
 <codeline lineno="517"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
 <codeline lineno="518"><highlight class="normal"></highlight></codeline>
 <codeline lineno="519"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Do<sp/>callbacks<sp/>so<sp/>higher<sp/>layers<sp/>see<sp/>any<sp/>changes<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
@@ -989,12 +989,12 @@
 <codeline lineno="523"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!stat)<sp/>{</highlight></codeline>
 <codeline lineno="524"><highlight class="normal"><sp/><sp/><sp/><sp/>epicsSnprintf(pasynUser-&gt;errorMessage,<sp/>pasynUser-&gt;errorMessageSize,</highlight></codeline>
 <codeline lineno="525"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;%s:<sp/>status=%d,<sp/>function=%d,<sp/>value=%f&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline lineno="526"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>functionName,<sp/>status,<sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal">,<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>);</highlight></codeline>
+<codeline lineno="526"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>functionName,<sp/>status,<sp/>function,<sp/>value);</highlight></codeline>
 <codeline lineno="527"><highlight class="normal"><sp/><sp/><sp/><sp/>status<sp/>=<sp/>asynError;</highlight></codeline>
 <codeline lineno="528"><highlight class="normal"><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
 <codeline lineno="529"><highlight class="normal"><sp/><sp/><sp/><sp/>asynPrint(pasynUser,<sp/>ASYN_TRACEIO_DRIVER,</highlight></codeline>
 <codeline lineno="530"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;%s:<sp/>function=%d,<sp/>signal=%d,<sp/>value=%f\n&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline lineno="531"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>functionName,<sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal">,<sp/>signal,<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>);</highlight></codeline>
+<codeline lineno="531"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>functionName,<sp/>function,<sp/>signal,<sp/>value);</highlight></codeline>
 <codeline lineno="532"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
 <codeline lineno="533"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">(status);</highlight></codeline>
 <codeline lineno="534"><highlight class="normal">}</highlight></codeline>

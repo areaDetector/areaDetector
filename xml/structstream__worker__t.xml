@@ -1,13 +1,14 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="structstream__worker__t" kind="struct" language="C++" prot="public">
     <compoundname>stream_worker_t</compoundname>
-      <sectiondef kind="public-attrib">
+    <sectiondef kind="public-attrib">
       <memberdef kind="variable" id="structstream__worker__t_1aaba58af297f6a5d543f98c30b64fc6b1" prot="public" static="no" mutable="no">
         <type>size_t</type>
         <definition>size_t stream_worker_t::id</definition>
         <argsstring></argsstring>
         <name>id</name>
+        <qualifiedname>stream_worker_t::id</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -21,6 +22,7 @@
         <definition>eigerDetector* stream_worker_t::detector</definition>
         <argsstring></argsstring>
         <name>detector</name>
+        <qualifiedname>stream_worker_t::detector</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -34,6 +36,7 @@
         <definition>epicsMessageQueue* stream_worker_t::jobQueue</definition>
         <argsstring></argsstring>
         <name>jobQueue</name>
+        <qualifiedname>stream_worker_t::jobQueue</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -47,6 +50,7 @@
         <definition>epicsMessageQueue * stream_worker_t::doneQueue</definition>
         <argsstring></argsstring>
         <name>doneQueue</name>
+        <qualifiedname>stream_worker_t::doneQueue</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -60,6 +64,7 @@
         <definition>epicsEvent* stream_worker_t::cbEvent</definition>
         <argsstring></argsstring>
         <name>cbEvent</name>
+        <qualifiedname>stream_worker_t::cbEvent</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -73,6 +78,7 @@
         <definition>epicsEvent * stream_worker_t::nextCbEvent</definition>
         <argsstring></argsstring>
         <name>nextCbEvent</name>
+        <qualifiedname>stream_worker_t::nextCbEvent</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -81,28 +87,17 @@
         </inbodydescription>
         <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.cpp" line="96" column="24" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.cpp" bodystart="96" bodyend="-1"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="1">
-        <label>stream_worker_t</label>
-        <link refid="structstream__worker__t"/>
-        <childnode refid="2" relation="usage">
-          <edgelabel>detector</edgelabel>
+      <node id="3">
+        <label>ADDriver</label>
+        <link refid="class_a_d_driver"/>
+        <childnode refid="4" relation="public-inheritance">
         </childnode>
-      </node>
-      <node id="9">
-        <label>NDDimension</label>
-        <link refid="struct_n_d_dimension"/>
-      </node>
-      <node id="5">
-        <label>asynPortDriver</label>
-      </node>
-      <node id="11">
-        <label>string</label>
       </node>
       <node id="10">
         <label>Codec_t</label>
@@ -111,28 +106,40 @@
           <edgelabel>name</edgelabel>
         </childnode>
       </node>
-      <node id="8">
+      <node id="12">
+        <label>EigerParam</label>
+        <link refid="class_eiger_param"/>
+      </node>
+      <node id="7">
         <label>NDArray</label>
         <link refid="class_n_d_array"/>
         <childnode refid="6" relation="usage">
           <edgelabel>pNDArrayPool</edgelabel>
         </childnode>
-        <childnode refid="9" relation="usage">
+        <childnode refid="4" relation="usage">
+          <edgelabel>pDriver</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
           <edgelabel>dims</edgelabel>
         </childnode>
-        <childnode refid="7" relation="usage">
+        <childnode refid="9" relation="usage">
           <edgelabel>pAttributeList</edgelabel>
         </childnode>
         <childnode refid="10" relation="usage">
           <edgelabel>codec</edgelabel>
         </childnode>
-        <childnode refid="4" relation="usage">
-          <edgelabel>pDriver</edgelabel>
-        </childnode>
       </node>
-      <node id="12">
-        <label>EigerParam</label>
-        <link refid="class_eiger_param"/>
+      <node id="6">
+        <label>NDArrayPool</label>
+        <link refid="class_n_d_array_pool"/>
+      </node>
+      <node id="9">
+        <label>NDAttributeList</label>
+        <link refid="class_n_d_attribute_list"/>
+      </node>
+      <node id="8">
+        <label>NDDimension</label>
+        <link refid="struct_n_d_dimension"/>
       </node>
       <node id="4">
         <label>asynNDArrayDriver</label>
@@ -143,15 +150,14 @@
           <edgelabel>pNDArrayPool</edgelabel>
         </childnode>
         <childnode refid="7" relation="usage">
-          <edgelabel>pAttributeList</edgelabel>
-        </childnode>
-        <childnode refid="8" relation="usage">
           <edgelabel>pArrays</edgelabel>
         </childnode>
+        <childnode refid="9" relation="usage">
+          <edgelabel>pAttributeList</edgelabel>
+        </childnode>
       </node>
-      <node id="6">
-        <label>NDArrayPool</label>
-        <link refid="class_n_d_array_pool"/>
+      <node id="5">
+        <label>asynPortDriver</label>
       </node>
       <node id="2">
         <label>eigerDetector</label>
@@ -172,15 +178,15 @@
           <edgelabel>...</edgelabel>
         </childnode>
       </node>
-      <node id="3">
-        <label>ADDriver</label>
-        <link refid="class_a_d_driver"/>
-        <childnode refid="4" relation="public-inheritance">
-        </childnode>
+      <node id="11">
+        <label>string</label>
       </node>
-      <node id="7">
-        <label>NDAttributeList</label>
-        <link refid="class_n_d_attribute_list"/>
+      <node id="1">
+        <label>stream_worker_t</label>
+        <link refid="structstream__worker__t"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>detector</edgelabel>
+        </childnode>
       </node>
     </collaborationgraph>
     <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.cpp" line="91" column="1" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.cpp" bodystart="92" bodyend="97"/>

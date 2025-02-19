@@ -1,13 +1,14 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="struct_q_image_1_1_q_n_d_frame" kind="struct" language="C++" prot="private">
     <compoundname>QImage::QNDFrame</compoundname>
-      <sectiondef kind="public-attrib">
+    <sectiondef kind="public-attrib">
       <memberdef kind="variable" id="struct_q_image_1_1_q_n_d_frame_1afabfa817354c790de0d430fe82542ab8" prot="public" static="no" mutable="no">
         <type>QCam_Frame *</type>
         <definition>QCam_Frame* QImage::QNDFrame::qFrame</definition>
         <argsstring></argsstring>
         <name>qFrame</name>
+        <qualifiedname>QImage::QNDFrame::qFrame</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -21,6 +22,7 @@
         <definition>NDArray* QImage::QNDFrame::ndArray</definition>
         <argsstring></argsstring>
         <name>ndArray</name>
+        <qualifiedname>QImage::QNDFrame::ndArray</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -34,6 +36,7 @@
         <definition>QCam_Err QImage::QNDFrame::errorcode</definition>
         <argsstring></argsstring>
         <name>errorcode</name>
+        <qualifiedname>QImage::QNDFrame::errorcode</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -47,6 +50,7 @@
         <definition>unsigned long QImage::QNDFrame::flags</definition>
         <argsstring></argsstring>
         <name>flags</name>
+        <qualifiedname>QImage::QNDFrame::flags</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -60,6 +64,7 @@
         <definition>unsigned long QImage::QNDFrame::frameId</definition>
         <argsstring></argsstring>
         <name>frameId</name>
+        <qualifiedname>QImage::QNDFrame::frameId</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -68,26 +73,16 @@
         </inbodydescription>
         <location file="/home/runner/work/areaDetector/areaDetector/ADQImaging/Support/QImaging.h" line="157" column="17" bodyfile="/home/runner/work/areaDetector/areaDetector/ADQImaging/Support/QImaging.h" bodystart="157" bodyend="-1"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="4">
-        <label>NDDimension</label>
-        <link refid="struct_n_d_dimension"/>
-      </node>
-      <node id="9">
-        <label>asynPortDriver</label>
-      </node>
-      <node id="7">
-        <label>string</label>
-      </node>
-      <node id="6">
+      <node id="8">
         <label>Codec_t</label>
         <link refid="struct_codec__t"/>
-        <childnode refid="7" relation="usage">
+        <childnode refid="9" relation="usage">
           <edgelabel>name</edgelabel>
         </childnode>
       </node>
@@ -98,32 +93,29 @@
           <edgelabel>pNDArrayPool</edgelabel>
         </childnode>
         <childnode refid="4" relation="usage">
-          <edgelabel>dims</edgelabel>
-        </childnode>
-        <childnode refid="5" relation="usage">
-          <edgelabel>pAttributeList</edgelabel>
-        </childnode>
-        <childnode refid="6" relation="usage">
-          <edgelabel>codec</edgelabel>
-        </childnode>
-        <childnode refid="8" relation="usage">
           <edgelabel>pDriver</edgelabel>
         </childnode>
-      </node>
-      <node id="8">
-        <label>asynNDArrayDriver</label>
-        <link refid="classasyn_n_d_array_driver"/>
-        <childnode refid="9" relation="public-inheritance">
+        <childnode refid="7" relation="usage">
+          <edgelabel>dims</edgelabel>
         </childnode>
-        <childnode refid="3" relation="usage">
-          <edgelabel>pNDArrayPool</edgelabel>
-        </childnode>
-        <childnode refid="5" relation="usage">
+        <childnode refid="6" relation="usage">
           <edgelabel>pAttributeList</edgelabel>
         </childnode>
-        <childnode refid="2" relation="usage">
-          <edgelabel>pArrays</edgelabel>
+        <childnode refid="8" relation="usage">
+          <edgelabel>codec</edgelabel>
         </childnode>
+      </node>
+      <node id="3">
+        <label>NDArrayPool</label>
+        <link refid="class_n_d_array_pool"/>
+      </node>
+      <node id="6">
+        <label>NDAttributeList</label>
+        <link refid="class_n_d_attribute_list"/>
+      </node>
+      <node id="7">
+        <label>NDDimension</label>
+        <link refid="struct_n_d_dimension"/>
       </node>
       <node id="1">
         <label>QImage::QNDFrame</label>
@@ -131,13 +123,26 @@
           <edgelabel>ndArray</edgelabel>
         </childnode>
       </node>
-      <node id="3">
-        <label>NDArrayPool</label>
-        <link refid="class_n_d_array_pool"/>
+      <node id="4">
+        <label>asynNDArrayDriver</label>
+        <link refid="classasyn_n_d_array_driver"/>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>pNDArrayPool</edgelabel>
+        </childnode>
+        <childnode refid="2" relation="usage">
+          <edgelabel>pArrays</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>pAttributeList</edgelabel>
+        </childnode>
       </node>
       <node id="5">
-        <label>NDAttributeList</label>
-        <link refid="class_n_d_attribute_list"/>
+        <label>asynPortDriver</label>
+      </node>
+      <node id="9">
+        <label>string</label>
       </node>
     </collaborationgraph>
     <location file="/home/runner/work/areaDetector/areaDetector/ADQImaging/Support/QImaging.h" line="151" column="1" bodyfile="/home/runner/work/areaDetector/areaDetector/ADQImaging/Support/QImaging.h" bodystart="152" bodyend="158"/>

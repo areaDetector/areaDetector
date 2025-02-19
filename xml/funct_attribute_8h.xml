@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="funct_attribute_8h" kind="file" language="C++">
     <compoundname>functAttribute.h</compoundname>
     <includes local="no">stdio.h</includes>
@@ -8,23 +8,11 @@
     <includedby refid="funct_attribute_8cpp" local="yes">/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/functAttribute.cpp</includedby>
     <includedby refid="my_attribute_functions_8cpp" local="yes">/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/myAttributeFunctions.cpp</includedby>
     <incdepgraph>
-      <node id="6">
-        <label>epicsTypes.h</label>
-      </node>
-      <node id="9">
-        <label>epicsVersion.h</label>
-      </node>
-      <node id="4">
-        <label>string</label>
-      </node>
       <node id="8">
         <label>ADCoreAPI.h</label>
         <link refid="_a_d_core_a_p_i_8h"/>
         <childnode refid="9" relation="include">
         </childnode>
-      </node>
-      <node id="5">
-        <label>ellLib.h</label>
       </node>
       <node id="3">
         <label>NDAttribute.h</label>
@@ -42,9 +30,6 @@
         <childnode refid="8" relation="include">
         </childnode>
       </node>
-      <node id="7">
-        <label>asynDriver.h</label>
-      </node>
       <node id="1">
         <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/functAttribute.h</label>
         <link refid="funct_attribute_8h"/>
@@ -53,18 +38,29 @@
         <childnode refid="3" relation="include">
         </childnode>
       </node>
+      <node id="7">
+        <label>asynDriver.h</label>
+      </node>
+      <node id="5">
+        <label>ellLib.h</label>
+      </node>
+      <node id="6">
+        <label>epicsTypes.h</label>
+      </node>
+      <node id="9">
+        <label>epicsVersion.h</label>
+      </node>
       <node id="2">
         <label>stdio.h</label>
+      </node>
+      <node id="4">
+        <label>string</label>
       </node>
     </incdepgraph>
     <invincdepgraph>
       <node id="2">
         <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/asynNDArrayDriver.cpp</label>
         <link refid="asyn_n_d_array_driver_8cpp"/>
-      </node>
-      <node id="4">
-        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/myAttributeFunctions.cpp</label>
-        <link refid="my_attribute_functions_8cpp"/>
       </node>
       <node id="3">
         <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/functAttribute.cpp</label>
@@ -80,9 +76,13 @@
         <childnode refid="4" relation="include">
         </childnode>
       </node>
+      <node id="4">
+        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/myAttributeFunctions.cpp</label>
+        <link refid="my_attribute_functions_8cpp"/>
+      </node>
     </invincdepgraph>
     <innerclass refid="classfunct_attribute" prot="public">functAttribute</innerclass>
-      <sectiondef kind="typedef">
+    <sectiondef kind="typedef">
       <memberdef kind="typedef" id="funct_attribute_8h_1a05103e0874ed0f5eba9b9d9f5813d692" prot="public" static="no">
         <type>int(*</type>
         <definition>typedef int(* NDAttributeFunction) (const char *functParam, void **functionPvt, class functAttribute *pAttribute)</definition>
@@ -96,7 +96,7 @@
         </inbodydescription>
         <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/functAttribute.h" line="18" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/functAttribute.h" bodystart="18" bodyend="-1"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
@@ -125,7 +125,7 @@
 <codeline lineno="24"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
 <codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classfunct_attribute" kindref="compound">functAttribute</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*pName,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*pDescription,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*pSource,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*pParam);</highlight></codeline>
 <codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classfunct_attribute" kindref="compound">functAttribute</ref>(<ref refid="classfunct_attribute" kindref="compound">functAttribute</ref>&amp;<sp/>attribute);</highlight></codeline>
-<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>~<ref refid="classfunct_attribute" kindref="compound">functAttribute</ref>();</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classfunct_attribute" kindref="compound">~functAttribute</ref>();</highlight></codeline>
 <codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classfunct_attribute" kindref="compound">functAttribute</ref>*<sp/><ref refid="class_n_d_attribute_1a17dfc6c9abb94701330d86429927c41b" kindref="member">copy</ref>(<ref refid="class_n_d_attribute" kindref="compound">NDAttribute</ref><sp/>*pAttribute);</highlight></codeline>
 <codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_n_d_attribute_1a003bf8127ab564a6c308231328da9a81" kindref="member">updateValue</ref>();</highlight></codeline>
 <codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_n_d_attribute_1a9cbb80eb0e20786c64dbb562c589f1aa" kindref="member">report</ref>(FILE<sp/>*fp,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>details);</highlight></codeline>

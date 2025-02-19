@@ -1,57 +1,9 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="nullhttpd__win32_8c" kind="file" language="C++">
     <compoundname>nullhttpd_win32.c</compoundname>
     <includes refid="nullhttpd_8h" local="yes">nullhttpd.h</includes>
     <incdepgraph>
-      <node id="10">
-        <label>sys/stat.h</label>
-      </node>
-      <node id="5">
-        <label>stdarg.h</label>
-      </node>
-      <node id="18">
-        <label>netinet/in.h</label>
-      </node>
-      <node id="17">
-        <label>arpa/inet.h</label>
-      </node>
-      <node id="7">
-        <label>stdlib.h</label>
-      </node>
-      <node id="13">
-        <label>paths.h</label>
-      </node>
-      <node id="4">
-        <label>fcntl.h</label>
-      </node>
-      <node id="12">
-        <label>netdb.h</label>
-      </node>
-      <node id="19">
-        <label>sys/resource.h</label>
-      </node>
-      <node id="14">
-        <label>pthread.h</label>
-      </node>
-      <node id="22">
-        <label>sys/types.h</label>
-      </node>
-      <node id="8">
-        <label>string.h</label>
-      </node>
-      <node id="16">
-        <label>unistd.h</label>
-      </node>
-      <node id="15">
-        <label>signal.h</label>
-      </node>
-      <node id="9">
-        <label>time.h</label>
-      </node>
-      <node id="23">
-        <label>sys/wait.h</label>
-      </node>
       <node id="2">
         <label>nullhttpd.h</label>
         <link refid="nullhttpd_8h"/>
@@ -98,26 +50,74 @@
         <childnode refid="23" relation="include">
         </childnode>
       </node>
-      <node id="21">
-        <label>sys/time.h</label>
-      </node>
-      <node id="3">
-        <label>ctype.h</label>
-      </node>
-      <node id="20">
-        <label>sys/socket.h</label>
-      </node>
-      <node id="6">
-        <label>stdio.h</label>
-      </node>
       <node id="1">
         <label>/home/runner/work/areaDetector/areaDetector/ffmpegServer/ffmpegServerApp/src/nullhttpd_win32.c</label>
         <link refid="nullhttpd__win32_8c"/>
         <childnode refid="2" relation="include">
         </childnode>
       </node>
+      <node id="17">
+        <label>arpa/inet.h</label>
+      </node>
+      <node id="3">
+        <label>ctype.h</label>
+      </node>
       <node id="11">
         <label>dirent.h</label>
+      </node>
+      <node id="4">
+        <label>fcntl.h</label>
+      </node>
+      <node id="12">
+        <label>netdb.h</label>
+      </node>
+      <node id="18">
+        <label>netinet/in.h</label>
+      </node>
+      <node id="13">
+        <label>paths.h</label>
+      </node>
+      <node id="14">
+        <label>pthread.h</label>
+      </node>
+      <node id="15">
+        <label>signal.h</label>
+      </node>
+      <node id="5">
+        <label>stdarg.h</label>
+      </node>
+      <node id="6">
+        <label>stdio.h</label>
+      </node>
+      <node id="7">
+        <label>stdlib.h</label>
+      </node>
+      <node id="8">
+        <label>string.h</label>
+      </node>
+      <node id="19">
+        <label>sys/resource.h</label>
+      </node>
+      <node id="20">
+        <label>sys/socket.h</label>
+      </node>
+      <node id="10">
+        <label>sys/stat.h</label>
+      </node>
+      <node id="21">
+        <label>sys/time.h</label>
+      </node>
+      <node id="22">
+        <label>sys/types.h</label>
+      </node>
+      <node id="23">
+        <label>sys/wait.h</label>
+      </node>
+      <node id="9">
+        <label>time.h</label>
+      </node>
+      <node id="16">
+        <label>unistd.h</label>
       </node>
     </incdepgraph>
     <briefdescription>
@@ -165,7 +165,7 @@
 <codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="39"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="40"><highlight class="normal"></highlight></codeline>
-<codeline lineno="41"><highlight class="normal">DIR*<sp/>opendir(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="namespacemake_db_and_edl_1a2832407c256551abb325d5ee9e587443" kindref="member">name</ref>)</highlight></codeline>
+<codeline lineno="41"><highlight class="normal">DIR*<sp/>opendir(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*name)</highlight></codeline>
 <codeline lineno="42"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">_finddata_t<sp/>find_buf;</highlight></codeline>
 <codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>DIR<sp/>*dirp;</highlight></codeline>
@@ -174,17 +174,17 @@
 <codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*slash<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>intptr_t<sp/>hFile;</highlight></codeline>
 <codeline lineno="49"><highlight class="normal"></highlight></codeline>
-<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="namespacemake_db_and_edl_1a2832407c256551abb325d5ee9e587443" kindref="member">name</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!name)<sp/>{</highlight></codeline>
 <codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacemake_db_and_edl_1a2832407c256551abb325d5ee9e587443" kindref="member">name</ref>=</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(*<ref refid="namespacemake_db_and_edl_1a2832407c256551abb325d5ee9e587443" kindref="member">name</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(*name)<sp/>{</highlight></codeline>
 <codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*s;</highlight></codeline>
-<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>l<sp/>=<sp/>strlen<sp/>(<ref refid="namespacemake_db_and_edl_1a2832407c256551abb325d5ee9e587443" kindref="member">name</ref>);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>l<sp/>=<sp/>strlen<sp/>(name);</highlight></codeline>
 <codeline lineno="55"><highlight class="normal"></highlight></codeline>
 <codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>s=<ref refid="namespacemake_db_and_edl_1a2832407c256551abb325d5ee9e587443" kindref="member">name</ref>+l-1;</highlight></codeline>
 <codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>!(l<sp/>==<sp/>2<sp/>&amp;&amp;<sp/>*s<sp/>==<sp/></highlight><highlight class="charliteral">&apos;:&apos;</highlight><highlight class="normal">)<sp/>&amp;&amp;<sp/>*s<sp/>!=<sp/></highlight><highlight class="charliteral">&apos;\\&apos;</highlight><highlight class="normal"><sp/>&amp;&amp;<sp/>*s<sp/>!=<sp/></highlight><highlight class="charliteral">&apos;/&apos;</highlight><highlight class="normal">)</highlight></codeline>
 <codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>slash<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;/&quot;</highlight><highlight class="normal">;<sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>save<sp/>to<sp/>insert<sp/>slash<sp/>between<sp/>path<sp/>and<sp/>&quot;*.*&quot;<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>strcat(strcat(strcpy(name_buf,<sp/><ref refid="namespacemake_db_and_edl_1a2832407c256551abb325d5ee9e587443" kindref="member">name</ref>),<sp/>slash),<sp/></highlight><highlight class="stringliteral">&quot;*.*&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>strcat(strcat(strcpy(name_buf,<sp/>name),<sp/>slash),<sp/></highlight><highlight class="stringliteral">&quot;*.*&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dirp=(DIR<sp/>*)malloc(</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(DIR));</highlight></codeline>
 <codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(dirp==(DIR<sp/>*)0)</highlight></codeline>
 <codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(DIR<sp/>*)0;</highlight></codeline>
@@ -341,7 +341,7 @@
 <codeline lineno="214"><highlight class="normal"></highlight></codeline>
 <codeline lineno="215"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/>hThread=(HANDLE)_beginthread(func,<sp/>attr-&gt;dwStackSize?attr-&gt;dwStackSize:65535,<sp/>param);</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="216"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/>hThread=(HANDLE)_beginthreadex(0,<sp/>65536L,<sp/>func,<sp/>param,<sp/>CREATE_SUSPENDED,<sp/>&amp;id);</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hThread=(HANDLE)_beginthreadex(NULL,<sp/>attr-&gt;dwStackSize?attr-&gt;dwStackSize:65535,<sp/>func,<sp/>param,<sp/>0,<sp/>&amp;</highlight><highlight class="keywordtype">id</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hThread=(HANDLE)_beginthreadex(NULL,<sp/>attr-&gt;dwStackSize?attr-&gt;dwStackSize:65535,<sp/>func,<sp/>param,<sp/>0,<sp/>&amp;id);</highlight></codeline>
 <codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(hThread<sp/>==<sp/>0)<sp/>{</highlight></codeline>
 <codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(errno?errno:-1);</highlight></codeline>
 <codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>

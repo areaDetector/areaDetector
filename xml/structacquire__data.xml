@@ -1,14 +1,15 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="structacquire__data" kind="struct" language="C++" prot="public">
     <compoundname>acquire_data</compoundname>
     <includes refid="_a_d_lambda_8h" local="no">ADLambda.h</includes>
-      <sectiondef kind="public-attrib">
+    <sectiondef kind="public-attrib">
       <memberdef kind="variable" id="structacquire__data_1a8363f3243d4661b590a8e4dd717e67bd" prot="public" static="no" mutable="no">
         <type><ref refid="class_a_d_lambda" kindref="compound">ADLambda</ref> *</type>
         <definition>ADLambda* acquire_data::driver</definition>
         <argsstring></argsstring>
         <name>driver</name>
+        <qualifiedname>acquire_data::driver</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -22,6 +23,7 @@
         <definition>int acquire_data::receiver</definition>
         <argsstring></argsstring>
         <name>receiver</name>
+        <qualifiedname>acquire_data::receiver</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -30,21 +32,23 @@
         </inbodydescription>
         <location file="/home/runner/work/areaDetector/areaDetector/ADLambda/LambdaApp/src/ADLambda.h" line="117" column="5" bodyfile="/home/runner/work/areaDetector/areaDetector/ADLambda/LambdaApp/src/ADLambda.h" bodystart="117" bodyend="-1"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="9">
-        <label>NDDimension</label>
-        <link refid="struct_n_d_dimension"/>
+      <node id="3">
+        <label>ADDriver</label>
+        <link refid="class_a_d_driver"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
       </node>
-      <node id="5">
-        <label>asynPortDriver</label>
-      </node>
-      <node id="11">
-        <label>string</label>
+      <node id="2">
+        <label>ADLambda</label>
+        <link refid="class_a_d_lambda"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
       </node>
       <node id="10">
         <label>Codec_t</label>
@@ -53,23 +57,42 @@
           <edgelabel>name</edgelabel>
         </childnode>
       </node>
-      <node id="8">
+      <node id="7">
         <label>NDArray</label>
         <link refid="class_n_d_array"/>
         <childnode refid="6" relation="usage">
           <edgelabel>pNDArrayPool</edgelabel>
         </childnode>
-        <childnode refid="9" relation="usage">
+        <childnode refid="4" relation="usage">
+          <edgelabel>pDriver</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
           <edgelabel>dims</edgelabel>
         </childnode>
-        <childnode refid="7" relation="usage">
+        <childnode refid="9" relation="usage">
           <edgelabel>pAttributeList</edgelabel>
         </childnode>
         <childnode refid="10" relation="usage">
           <edgelabel>codec</edgelabel>
         </childnode>
-        <childnode refid="4" relation="usage">
-          <edgelabel>pDriver</edgelabel>
+      </node>
+      <node id="6">
+        <label>NDArrayPool</label>
+        <link refid="class_n_d_array_pool"/>
+      </node>
+      <node id="9">
+        <label>NDAttributeList</label>
+        <link refid="class_n_d_attribute_list"/>
+      </node>
+      <node id="8">
+        <label>NDDimension</label>
+        <link refid="struct_n_d_dimension"/>
+      </node>
+      <node id="1">
+        <label>acquire_data</label>
+        <link refid="structacquire__data"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>driver</edgelabel>
         </childnode>
       </node>
       <node id="4">
@@ -81,38 +104,17 @@
           <edgelabel>pNDArrayPool</edgelabel>
         </childnode>
         <childnode refid="7" relation="usage">
-          <edgelabel>pAttributeList</edgelabel>
-        </childnode>
-        <childnode refid="8" relation="usage">
           <edgelabel>pArrays</edgelabel>
         </childnode>
-      </node>
-      <node id="6">
-        <label>NDArrayPool</label>
-        <link refid="class_n_d_array_pool"/>
-      </node>
-      <node id="2">
-        <label>ADLambda</label>
-        <link refid="class_a_d_lambda"/>
-        <childnode refid="3" relation="public-inheritance">
+        <childnode refid="9" relation="usage">
+          <edgelabel>pAttributeList</edgelabel>
         </childnode>
       </node>
-      <node id="1">
-        <label>acquire_data</label>
-        <link refid="structacquire__data"/>
-        <childnode refid="2" relation="usage">
-          <edgelabel>driver</edgelabel>
-        </childnode>
+      <node id="5">
+        <label>asynPortDriver</label>
       </node>
-      <node id="3">
-        <label>ADDriver</label>
-        <link refid="class_a_d_driver"/>
-        <childnode refid="4" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="7">
-        <label>NDAttributeList</label>
-        <link refid="class_n_d_attribute_list"/>
+      <node id="11">
+        <label>string</label>
       </node>
     </collaborationgraph>
     <location file="/home/runner/work/areaDetector/areaDetector/ADLambda/LambdaApp/src/ADLambda.h" line="114" column="1" bodyfile="/home/runner/work/areaDetector/areaDetector/ADLambda/LambdaApp/src/ADLambda.h" bodystart="115" bodyend="118"/>

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="pco_8cpp" kind="file" language="C++">
     <compoundname>pco.cpp</compoundname>
     <includes local="no">stddef.h</includes>
@@ -34,14 +34,31 @@
     <includes local="no">epicsExport.h</includes>
     <includes refid="pco_8h" local="yes">pco.h</includes>
     <incdepgraph>
-      <node id="10">
-        <label>sys/stat.h</label>
+      <node id="33">
+        <label>ADCoreAPI.h</label>
+        <link refid="_a_d_core_a_p_i_8h"/>
+        <childnode refid="34" relation="include">
+        </childnode>
       </node>
-      <node id="20">
-        <label>iocsh.h</label>
+      <node id="37">
+        <label>ADCoreVersion.h</label>
+        <link refid="_a_d_core_version_8h"/>
       </node>
-      <node id="23">
-        <label>epicsTypes.h</label>
+      <node id="22">
+        <label>ADDriver.h</label>
+        <link refid="_a_d_driver_8h"/>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+      </node>
+      <node id="36">
+        <label>Codec.h</label>
+        <link refid="_codec_8h"/>
       </node>
       <node id="27">
         <label>NDArray.h</label>
@@ -61,22 +78,21 @@
         <childnode refid="36" relation="include">
         </childnode>
       </node>
-      <node id="47">
-        <label>pco.h</label>
-        <link refid="pco_8h"/>
-        <childnode refid="13" relation="include">
+      <node id="30">
+        <label>NDAttribute.h</label>
+        <link refid="_n_d_attribute_8h"/>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
         </childnode>
         <childnode refid="23" relation="include">
         </childnode>
-        <childnode refid="45" relation="include">
+        <childnode refid="32" relation="include">
         </childnode>
-        <childnode refid="44" relation="include">
+        <childnode refid="33" relation="include">
         </childnode>
-        <childnode refid="43" relation="include">
-        </childnode>
-      </node>
-      <node id="19">
-        <label>cantProceed.h</label>
       </node>
       <node id="35">
         <label>NDAttributeList.h</label>
@@ -90,62 +106,18 @@
         <childnode refid="30" relation="include">
         </childnode>
       </node>
-      <node id="43">
-        <label>stopWatch.h</label>
-      </node>
-      <node id="45">
-        <label>ADCameralink.h</label>
-      </node>
-      <node id="3">
-        <label>stdlib.h</label>
-      </node>
-      <node id="15">
-        <label>epicsMutex.h</label>
-      </node>
-      <node id="6">
-        <label>errno.h</label>
-      </node>
-      <node id="9">
-        <label>fcntl.h</label>
-      </node>
-      <node id="34">
-        <label>epicsVersion.h</label>
-      </node>
-      <node id="31">
-        <label>string</label>
-      </node>
-      <node id="12">
-        <label>epicsThread.h</label>
-      </node>
-      <node id="2">
-        <label>stddef.h</label>
-      </node>
-      <node id="46">
-        <label>epicsExport.h</label>
-      </node>
-      <node id="16">
-        <label>epicsStdlib.h</label>
-      </node>
-      <node id="22">
-        <label>ADDriver.h</label>
-        <link refid="_a_d_driver_8h"/>
-        <childnode refid="23" relation="include">
+      <node id="25">
+        <label>asynNDArrayDriver.h</label>
+        <link refid="asyn_n_d_array_driver_8h"/>
+        <childnode refid="15" relation="include">
         </childnode>
-        <childnode refid="24" relation="include">
+        <childnode refid="13" relation="include">
         </childnode>
-        <childnode refid="11" relation="include">
+        <childnode refid="26" relation="include">
         </childnode>
-        <childnode refid="25" relation="include">
+        <childnode refid="27" relation="include">
         </childnode>
-      </node>
-      <node id="37">
-        <label>ADCoreVersion.h</label>
-        <link refid="_a_d_core_version_8h"/>
-      </node>
-      <node id="33">
-        <label>ADCoreAPI.h</label>
-        <link refid="_a_d_core_a_p_i_8h"/>
-        <childnode refid="34" relation="include">
+        <childnode refid="37" relation="include">
         </childnode>
       </node>
       <node id="1">
@@ -214,106 +186,134 @@
         <childnode refid="47" relation="include">
         </childnode>
       </node>
-      <node id="38">
-        <label>grabberInterface.h</label>
-      </node>
-      <node id="42">
-        <label>coreco.h</label>
-      </node>
-      <node id="25">
-        <label>asynNDArrayDriver.h</label>
-        <link refid="asyn_n_d_array_driver_8h"/>
-        <childnode refid="15" relation="include">
-        </childnode>
+      <node id="47">
+        <label>pco.h</label>
+        <link refid="pco_8h"/>
         <childnode refid="13" relation="include">
-        </childnode>
-        <childnode refid="26" relation="include">
-        </childnode>
-        <childnode refid="27" relation="include">
-        </childnode>
-        <childnode refid="37" relation="include">
-        </childnode>
-      </node>
-      <node id="17">
-        <label>epicsString.h</label>
-      </node>
-      <node id="7">
-        <label>string.h</label>
-      </node>
-      <node id="29">
-        <label>ellLib.h</label>
-      </node>
-      <node id="41">
-        <label>ccd_exception.h</label>
-      </node>
-      <node id="14">
-        <label>epicsTimer.h</label>
-      </node>
-      <node id="30">
-        <label>NDAttribute.h</label>
-        <link refid="_n_d_attribute_8h"/>
-        <childnode refid="31" relation="include">
-        </childnode>
-        <childnode refid="5" relation="include">
-        </childnode>
-        <childnode refid="29" relation="include">
         </childnode>
         <childnode refid="23" relation="include">
         </childnode>
-        <childnode refid="32" relation="include">
+        <childnode refid="45" relation="include">
         </childnode>
-        <childnode refid="33" relation="include">
+        <childnode refid="44" relation="include">
         </childnode>
-      </node>
-      <node id="32">
-        <label>asynDriver.h</label>
-      </node>
-      <node id="4">
-        <label>math.h</label>
-      </node>
-      <node id="8">
-        <label>ctype.h</label>
-      </node>
-      <node id="36">
-        <label>Codec.h</label>
-        <link refid="_codec_8h"/>
-      </node>
-      <node id="11">
-        <label>epicsTime.h</label>
-      </node>
-      <node id="26">
-        <label>asynPortDriver.h</label>
-      </node>
-      <node id="40">
-        <label>logfile.h</label>
-      </node>
-      <node id="18">
-        <label>epicsStdio.h</label>
-      </node>
-      <node id="28">
-        <label>set</label>
-      </node>
-      <node id="24">
-        <label>epicsMessageQueue.h</label>
-      </node>
-      <node id="5">
-        <label>stdio.h</label>
-      </node>
-      <node id="21">
-        <label>asynOctetSyncIO.h</label>
-      </node>
-      <node id="13">
-        <label>epicsEvent.h</label>
-      </node>
-      <node id="39">
-        <label>comportInterface.h</label>
+        <childnode refid="43" relation="include">
+        </childnode>
       </node>
       <node id="44">
         <label>pco_structures.h</label>
         <link refid="pco__structures_8h"/>
       </node>
+      <node id="45">
+        <label>ADCameralink.h</label>
+      </node>
+      <node id="32">
+        <label>asynDriver.h</label>
+      </node>
+      <node id="21">
+        <label>asynOctetSyncIO.h</label>
+      </node>
+      <node id="26">
+        <label>asynPortDriver.h</label>
+      </node>
+      <node id="19">
+        <label>cantProceed.h</label>
+      </node>
+      <node id="41">
+        <label>ccd_exception.h</label>
+      </node>
+      <node id="39">
+        <label>comportInterface.h</label>
+      </node>
+      <node id="42">
+        <label>coreco.h</label>
+      </node>
+      <node id="8">
+        <label>ctype.h</label>
+      </node>
+      <node id="29">
+        <label>ellLib.h</label>
+      </node>
+      <node id="13">
+        <label>epicsEvent.h</label>
+      </node>
+      <node id="46">
+        <label>epicsExport.h</label>
+      </node>
+      <node id="24">
+        <label>epicsMessageQueue.h</label>
+      </node>
+      <node id="15">
+        <label>epicsMutex.h</label>
+      </node>
+      <node id="18">
+        <label>epicsStdio.h</label>
+      </node>
+      <node id="16">
+        <label>epicsStdlib.h</label>
+      </node>
+      <node id="17">
+        <label>epicsString.h</label>
+      </node>
+      <node id="12">
+        <label>epicsThread.h</label>
+      </node>
+      <node id="11">
+        <label>epicsTime.h</label>
+      </node>
+      <node id="14">
+        <label>epicsTimer.h</label>
+      </node>
+      <node id="23">
+        <label>epicsTypes.h</label>
+      </node>
+      <node id="34">
+        <label>epicsVersion.h</label>
+      </node>
+      <node id="6">
+        <label>errno.h</label>
+      </node>
+      <node id="9">
+        <label>fcntl.h</label>
+      </node>
+      <node id="38">
+        <label>grabberInterface.h</label>
+      </node>
+      <node id="20">
+        <label>iocsh.h</label>
+      </node>
+      <node id="40">
+        <label>logfile.h</label>
+      </node>
+      <node id="4">
+        <label>math.h</label>
+      </node>
+      <node id="28">
+        <label>set</label>
+      </node>
+      <node id="2">
+        <label>stddef.h</label>
+      </node>
+      <node id="5">
+        <label>stdio.h</label>
+      </node>
+      <node id="3">
+        <label>stdlib.h</label>
+      </node>
+      <node id="43">
+        <label>stopWatch.h</label>
+      </node>
+      <node id="31">
+        <label>string</label>
+      </node>
+      <node id="7">
+        <label>string.h</label>
+      </node>
+      <node id="10">
+        <label>sys/stat.h</label>
+      </node>
     </incdepgraph>
-      <sectiondef kind="define">
+    <sectiondef kind="define">
       <memberdef kind="define" id="pco_8cpp_1acef427574920b7e14facf241e4a795e9" prot="public" static="no">
         <name>_ADIOC_</name>
         <briefdescription>
@@ -353,8 +353,8 @@
         </inbodydescription>
         <location file="/home/runner/work/areaDetector/areaDetector/ADPCO/pcoApp/src/pco.cpp" line="62" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADPCO/pcoApp/src/pco.cpp" bodystart="62" bodyend="-1"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="var">
+    </sectiondef>
+    <sectiondef kind="var">
       <memberdef kind="variable" id="pco_8cpp_1af0e94d13028051cd5339d204bfbb057d" prot="public" static="yes" mutable="no">
         <type>const char *</type>
         <definition>const char* driverName</definition>
@@ -412,8 +412,8 @@
         </inbodydescription>
         <location file="/home/runner/work/areaDetector/areaDetector/ADPCO/pcoApp/src/pco.cpp" line="75" column="16" bodyfile="/home/runner/work/areaDetector/areaDetector/ADPCO/pcoApp/src/pco.cpp" bodystart="75" bodyend="-1"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="func">
+    </sectiondef>
+    <sectiondef kind="func">
       <memberdef kind="function" id="pco_8cpp_1aa1c790438d1c5e9ec0ee006cadbf5d40" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>static void pcoTaskC</definition>
@@ -549,7 +549,7 @@
         </inbodydescription>
         <location file="/home/runner/work/areaDetector/areaDetector/ADPCO/pcoApp/src/pco.cpp" line="208" column="16" bodyfile="/home/runner/work/areaDetector/areaDetector/ADPCO/pcoApp/src/pco.cpp" bodystart="208" bodyend="217"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
@@ -613,7 +613,7 @@
 <codeline lineno="65"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;epicsExport.h&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="66"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="pco_8h" kindref="compound">pco.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="67"><highlight class="normal"></highlight></codeline>
-<codeline lineno="68"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="_a_d_time_pix_8cpp_1af0e94d13028051cd5339d204bfbb057d" kindref="member">driverName</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;pco&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*driverName<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;pco&quot;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="69"><highlight class="normal"></highlight></codeline>
 <codeline lineno="73"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="pco_8cpp_1a45cdc97ec9e45671271e987a12d29a97" kindref="member">pco_blocking</ref><sp/>=<sp/>0;</highlight></codeline>
 <codeline lineno="74"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="pco_8cpp_1a99f866fb00b80ecbfbb5119ea177aaa5" kindref="member">pco_pr_mutex</ref><sp/>=<sp/>0;</highlight></codeline>
@@ -635,32 +635,32 @@
 <codeline lineno="99"><highlight class="normal"></highlight></codeline>
 <codeline lineno="104"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classpco_1afd908e96f640d95eae082bea648718ae" kindref="member">pco::setDebuggingMessage</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>level)<sp/>{<sp/><ref refid="classpco_1aaf5bf587359c1251ceef520fa5f65909" kindref="member">dbg_msg_level</ref><sp/>=<sp/>level;<sp/>}</highlight></codeline>
 <codeline lineno="105"><highlight class="normal"></highlight></codeline>
-<codeline lineno="114"><highlight class="normal">asynStatus<sp/><ref refid="classpco_1a022b2a07d121c27d01260d4717cad3f2" kindref="member">pco::writeInt32</ref>(asynUser<sp/>*pasynUser,<sp/>epicsInt32<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>)<sp/>{</highlight></codeline>
-<codeline lineno="115"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>=<sp/>pasynUser-&gt;reason;</highlight></codeline>
+<codeline lineno="114"><highlight class="normal">asynStatus<sp/><ref refid="classpco_1a022b2a07d121c27d01260d4717cad3f2" kindref="member">pco::writeInt32</ref>(asynUser<sp/>*pasynUser,<sp/>epicsInt32<sp/>value)<sp/>{</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>function<sp/>=<sp/>pasynUser-&gt;reason;</highlight></codeline>
 <codeline lineno="116"><highlight class="normal"><sp/><sp/>asynStatus<sp/>status<sp/>=<sp/>asynSuccess;</highlight></codeline>
 <codeline lineno="117"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>mesx[256];</highlight></codeline>
 <codeline lineno="118"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*mesx2;</highlight></codeline>
 <codeline lineno="119"><highlight class="normal"></highlight></codeline>
-<codeline lineno="120"><highlight class="normal"><sp/><sp/>status<sp/>=<sp/>setIntegerParam(</highlight><highlight class="keyword">function</highlight><highlight class="normal">,<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>);</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/>status<sp/>=<sp/>setIntegerParam(function,<sp/>value);</highlight></codeline>
 <codeline lineno="121"><highlight class="normal"></highlight></codeline>
-<codeline lineno="122"><highlight class="normal"><sp/><sp/>getParamName(</highlight><highlight class="keyword">function</highlight><highlight class="normal">,<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**)&amp;mesx2);</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/>getParamName(function,<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**)&amp;mesx2);</highlight></codeline>
 <codeline lineno="123"><highlight class="normal"></highlight></codeline>
-<codeline lineno="124"><highlight class="normal"><sp/><sp/>sprintf(mesx,<sp/></highlight><highlight class="stringliteral">&quot;pco::writeInt32,<sp/>param=%s,<sp/>value=%d&quot;</highlight><highlight class="normal">,<sp/>mesx2,<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>);</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/>sprintf(mesx,<sp/></highlight><highlight class="stringliteral">&quot;pco::writeInt32,<sp/>param=%s,<sp/>value=%d&quot;</highlight><highlight class="normal">,<sp/>mesx2,<sp/>value);</highlight></codeline>
 <codeline lineno="125"><highlight class="normal"><sp/><sp/>lf.log(mesx);</highlight></codeline>
 <codeline lineno="126"><highlight class="normal"></highlight></codeline>
-<codeline lineno="127"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>==<sp/><ref refid="classpco_1ac3d04ef19535348aa36c40ced4b6dd2a" kindref="member">pco_kill_ioc</ref><sp/>&amp;&amp;<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref><sp/>==<sp/>1)<sp/>exit(0);</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(function<sp/>==<sp/><ref refid="classpco_1ac3d04ef19535348aa36c40ced4b6dd2a" kindref="member">pco_kill_ioc</ref><sp/>&amp;&amp;<sp/>value<sp/>==<sp/>1)<sp/>exit(0);</highlight></codeline>
 <codeline lineno="128"><highlight class="normal"></highlight></codeline>
 <codeline lineno="129"><highlight class="normal"><sp/><sp/><ref refid="classpco_1a8350497fdf28026cafba96645eddf5c3" kindref="member">is_cancel_dump</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="130"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>==<sp/><ref refid="classpco_1ae5b06344e305af1250442575a55126c7" kindref="member">pco_cancel_dump</ref>)<sp/><ref refid="classpco_1a8350497fdf28026cafba96645eddf5c3" kindref="member">is_cancel_dump</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(function<sp/>==<sp/><ref refid="classpco_1ae5b06344e305af1250442575a55126c7" kindref="member">pco_cancel_dump</ref>)<sp/><ref refid="classpco_1a8350497fdf28026cafba96645eddf5c3" kindref="member">is_cancel_dump</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="131"><highlight class="normal"></highlight></codeline>
 <codeline lineno="132"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>ret<sp/>if<sp/>we<sp/>actulayyl<sp/>updated<sp/>so<sp/>we<sp/>can<sp/>call<sp/>super<sp/>if<sp/>necessary</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="133"><highlight class="normal"><sp/><sp/><ref refid="classpco_1acdd383c75162aabb46229e1f67ff9331" kindref="member">updateParameters</ref>(pasynUser,<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>,<sp/>0,<sp/><ref refid="classpco_1aa9a85ae693a8c2cffd31c228f5e7b7daa2a6feef57062bcbc6794a0c9cef307e3" kindref="member">pco_paramint</ref>);</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><ref refid="classpco_1acdd383c75162aabb46229e1f67ff9331" kindref="member">updateParameters</ref>(pasynUser,<sp/>value,<sp/>0,<sp/><ref refid="classpco_1aa9a85ae693a8c2cffd31c228f5e7b7daa2a6feef57062bcbc6794a0c9cef307e3" kindref="member">pco_paramint</ref>);</highlight></codeline>
 <codeline lineno="134"><highlight class="normal"></highlight></codeline>
 <codeline lineno="135"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>call<sp/>super<sp/>class<sp/>to<sp/>update<sp/>pawram</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="136"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>sizex,<sp/>and<sp/>sizey<sp/>change<sp/>its<sp/>value<sp/>because<sp/>of<sp/>camera<sp/>constrinsts,<sp/>so<sp/>dont</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="137"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>call<sp/>super</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="138"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((</highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>!=<sp/>ADSizeX)<sp/>&amp;&amp;<sp/>(</highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>!=<sp/>ADSizeY))<sp/>{</highlight></codeline>
-<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/>ADCameralink::writeInt32(pasynUser,<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>);</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((function<sp/>!=<sp/>ADSizeX)<sp/>&amp;&amp;<sp/>(function<sp/>!=<sp/>ADSizeY))<sp/>{</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/>ADCameralink::writeInt32(pasynUser,<sp/>value);</highlight></codeline>
 <codeline lineno="140"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
 <codeline lineno="141"><highlight class="normal"></highlight></codeline>
 <codeline lineno="142"><highlight class="normal"><sp/><sp/>callParamCallbacks();</highlight></codeline>
@@ -669,25 +669,25 @@
 <codeline lineno="145"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(status);</highlight></codeline>
 <codeline lineno="146"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="147"><highlight class="normal"></highlight></codeline>
-<codeline lineno="155"><highlight class="normal">asynStatus<sp/><ref refid="classpco_1a0d198880fcb71d93025059677e77a603" kindref="member">pco::writeFloat64</ref>(asynUser<sp/>*pasynUser,<sp/>epicsFloat64<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>)<sp/>{</highlight></codeline>
-<codeline lineno="156"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>=<sp/>pasynUser-&gt;reason;</highlight></codeline>
+<codeline lineno="155"><highlight class="normal">asynStatus<sp/><ref refid="classpco_1a0d198880fcb71d93025059677e77a603" kindref="member">pco::writeFloat64</ref>(asynUser<sp/>*pasynUser,<sp/>epicsFloat64<sp/>value)<sp/>{</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>function<sp/>=<sp/>pasynUser-&gt;reason;</highlight></codeline>
 <codeline lineno="157"><highlight class="normal"><sp/><sp/>asynStatus<sp/>status<sp/>=<sp/>asynSuccess;</highlight></codeline>
 <codeline lineno="158"><highlight class="normal"></highlight></codeline>
-<codeline lineno="159"><highlight class="normal"><sp/><sp/>status<sp/>=<sp/>setDoubleParam(</highlight><highlight class="keyword">function</highlight><highlight class="normal">,<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>);</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/>status<sp/>=<sp/>setDoubleParam(function,<sp/>value);</highlight></codeline>
 <codeline lineno="160"><highlight class="normal"></highlight></codeline>
 <codeline lineno="161"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>mesx[256];</highlight></codeline>
 <codeline lineno="162"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*mesx2;</highlight></codeline>
 <codeline lineno="163"><highlight class="normal"></highlight></codeline>
-<codeline lineno="164"><highlight class="normal"><sp/><sp/>getParamName(</highlight><highlight class="keyword">function</highlight><highlight class="normal">,<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**)&amp;mesx2);</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/>getParamName(function,<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**)&amp;mesx2);</highlight></codeline>
 <codeline lineno="165"><highlight class="normal"></highlight></codeline>
-<codeline lineno="166"><highlight class="normal"><sp/><sp/>sprintf(mesx,<sp/></highlight><highlight class="stringliteral">&quot;pco::writeFloat64,<sp/>param=%s,<sp/>value=%f&quot;</highlight><highlight class="normal">,<sp/>mesx2,<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>);</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/>sprintf(mesx,<sp/></highlight><highlight class="stringliteral">&quot;pco::writeFloat64,<sp/>param=%s,<sp/>value=%f&quot;</highlight><highlight class="normal">,<sp/>mesx2,<sp/>value);</highlight></codeline>
 <codeline lineno="167"><highlight class="normal"><sp/><sp/>lf.log(mesx);</highlight></codeline>
 <codeline lineno="168"><highlight class="normal"></highlight></codeline>
 <codeline lineno="169"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>ret<sp/>if<sp/>we<sp/>actulayyl<sp/>updated<sp/>so<sp/>we<sp/>can<sp/>call<sp/>super<sp/>if<sp/>necessary</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="170"><highlight class="normal"><sp/><sp/><ref refid="classpco_1acdd383c75162aabb46229e1f67ff9331" kindref="member">updateParameters</ref>(pasynUser,<sp/>0,<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>,<sp/><ref refid="classpco_1aa9a85ae693a8c2cffd31c228f5e7b7daa56096e6d2114a548ba80379410be9ecb" kindref="member">pco_paramdoub</ref>);</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><ref refid="classpco_1acdd383c75162aabb46229e1f67ff9331" kindref="member">updateParameters</ref>(pasynUser,<sp/>0,<sp/>value,<sp/><ref refid="classpco_1aa9a85ae693a8c2cffd31c228f5e7b7daa56096e6d2114a548ba80379410be9ecb" kindref="member">pco_paramdoub</ref>);</highlight></codeline>
 <codeline lineno="171"><highlight class="normal"></highlight></codeline>
 <codeline lineno="172"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>call<sp/>super<sp/>class<sp/>to<sp/>update<sp/>pawram</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="173"><highlight class="normal"><sp/><sp/>ADCameralink::writeFloat64(pasynUser,<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>);</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/>ADCameralink::writeFloat64(pasynUser,<sp/>value);</highlight></codeline>
 <codeline lineno="174"><highlight class="normal"><sp/><sp/>callParamCallbacks();</highlight></codeline>
 <codeline lineno="175"><highlight class="normal"></highlight></codeline>
 <codeline lineno="176"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(status);</highlight></codeline>
@@ -697,9 +697,9 @@
 <codeline lineno="186"><highlight class="normal"><sp/><sp/>fprintf(fp,<sp/></highlight><highlight class="stringliteral">&quot;PCO<sp/>detector<sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/>this-&gt;portName);</highlight></codeline>
 <codeline lineno="187"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(details<sp/>&gt;<sp/>0)<sp/>{</highlight></codeline>
 <codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespacemake_adl_1a3c7364e67c0570681ac29158f738bff6" kindref="member">nx</ref>,<sp/>ny;</highlight></codeline>
-<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/>getIntegerParam(ADSizeX,<sp/>&amp;<ref refid="namespacemake_adl_1a3c7364e67c0570681ac29158f738bff6" kindref="member">nx</ref>);</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/>getIntegerParam(ADSizeX,<sp/>&amp;nx);</highlight></codeline>
 <codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/>getIntegerParam(ADSizeY,<sp/>&amp;ny);</highlight></codeline>
-<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/>fprintf(fp,<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/>NX,<sp/>NY:<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>%d<sp/><sp/>%d\n&quot;</highlight><highlight class="normal">,<sp/><ref refid="namespacemake_adl_1a3c7364e67c0570681ac29158f738bff6" kindref="member">nx</ref>,<sp/>ny);</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/>fprintf(fp,<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/>NX,<sp/>NY:<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>%d<sp/><sp/>%d\n&quot;</highlight><highlight class="normal">,<sp/>nx,<sp/>ny);</highlight></codeline>
 <codeline lineno="192"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
 <codeline lineno="193"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Invoke<sp/>the<sp/>base<sp/>class<sp/>method<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="194"><highlight class="normal"><sp/><sp/><ref refid="classasyn_n_d_array_driver_1ac3f2d73a05eb54357ec3f052e1b000f2" kindref="member">ADDriver::report</ref>(fp,<sp/>details);</highlight></codeline>
@@ -1215,7 +1215,7 @@
 <codeline lineno="754"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>shrt_img<sp/>=<sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/>*)nimg-&gt;<ref refid="class_n_d_array_1a9581f9d8f38225a2c2977bbed70fa2b8" kindref="member">pData</ref>;</highlight></codeline>
 <codeline lineno="755"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>rowbytes<sp/>=<sp/>xs<sp/>*<sp/>2;</highlight></codeline>
 <codeline lineno="756"><highlight class="normal"></highlight></codeline>
-<codeline lineno="757"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>if<sp/>(xs<sp/>&gt;<sp/>2560<sp/>||<sp/>xs<sp/>&lt;<sp/>0<sp/>||<sp/>ys<sp/>&gt;<sp/>2160<sp/>||<sp/>ys<sp/>&lt;<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="757"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(xs<sp/>&gt;<sp/>2560<sp/>||<sp/>xs<sp/>&lt;<sp/>0<sp/>||<sp/>ys<sp/>&gt;<sp/>2160<sp/>||<sp/>ys<sp/>&lt;<sp/>0)<sp/>{</highlight></codeline>
 <codeline lineno="758"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>asynPrint(this-&gt;pasynUserSelf,<sp/>ASYN_TRACEIO_DRIVER,</highlight></codeline>
 <codeline lineno="759"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;ERROR:<sp/>PCOImgCam::processNewImage()<sp/>ADSIZEX<sp/>or<sp/>ADSizeY<sp/>Illegal\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="760"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
@@ -1387,7 +1387,7 @@
 <codeline lineno="939"><highlight class="normal"><sp/><sp/>dftsum<sp/>=<sp/>0;</highlight></codeline>
 <codeline lineno="940"><highlight class="normal"><sp/><sp/>musum<sp/>=<sp/>0;</highlight></codeline>
 <codeline lineno="941"><highlight class="normal"></highlight></codeline>
-<codeline lineno="942"><highlight class="normal"><sp/><sp/>for<sp/>(kx<sp/>=<sp/>0;<sp/>kx<sp/>&lt;<sp/>16;<sp/>kx++)<sp/>{</highlight></codeline>
+<codeline lineno="942"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(kx<sp/>=<sp/>0;<sp/>kx<sp/>&lt;<sp/>16;<sp/>kx++)<sp/>{</highlight></codeline>
 <codeline lineno="943"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>take<sp/>a<sp/>vertiacl<sp/>line<sp/>down<sp/>image<sp/>of<sp/>len<sp/>16.</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="944"><highlight class="normal"><sp/><sp/><sp/><sp/>pixval<sp/>=<sp/>(int)shrt_img[kx<sp/>*<sp/>xs];</highlight></codeline>
 <codeline lineno="945"><highlight class="normal"></highlight></codeline>

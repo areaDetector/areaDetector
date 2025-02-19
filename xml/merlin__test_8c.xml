@@ -1,11 +1,17 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="merlin__test_8c" kind="file" language="C++">
     <compoundname>merlin_test.c</compoundname>
     <includes refid="merlin__low_8h" local="yes">merlin_low.h</includes>
     <includes local="no">stdio.h</includes>
     <includes local="no">stdlib.h</includes>
     <incdepgraph>
+      <node id="2">
+        <label>merlin_low.h</label>
+        <link refid="merlin__low_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
       <node id="1">
         <label>/home/runner/work/areaDetector/areaDetector/ADMerlin/merlinApp/src/merlin_test.c</label>
         <link refid="merlin__test_8c"/>
@@ -16,23 +22,17 @@
         <childnode refid="5" relation="include">
         </childnode>
       </node>
-      <node id="2">
-        <label>merlin_low.h</label>
-        <link refid="merlin__low_8h"/>
-        <childnode refid="3" relation="include">
-        </childnode>
-      </node>
-      <node id="5">
-        <label>stdlib.h</label>
+      <node id="3">
+        <label>asynOctetSyncIO.h</label>
       </node>
       <node id="4">
         <label>stdio.h</label>
       </node>
-      <node id="3">
-        <label>asynOctetSyncIO.h</label>
+      <node id="5">
+        <label>stdlib.h</label>
       </node>
     </incdepgraph>
-      <sectiondef kind="func">
+    <sectiondef kind="func">
       <memberdef kind="function" id="merlin__test_8c_1a0ddf1224851353fc92bfbff6f499fa97" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
         <definition>int main</definition>
@@ -57,7 +57,7 @@
         </inbodydescription>
         <location file="/home/runner/work/areaDetector/areaDetector/ADMerlin/merlinApp/src/merlin_test.c" line="13" column="5" bodyfile="/home/runner/work/areaDetector/areaDetector/ADMerlin/merlinApp/src/merlin_test.c" bodystart="13" bodyend="80"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
@@ -69,7 +69,7 @@
 <codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdlib.h&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="12"><highlight class="normal"></highlight></codeline>
-<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="merlin__test_8c_1a0ddf1224851353fc92bfbff6f499fa97" kindref="member">main</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>argc,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*argv[])<sp/></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="listdevices_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4" kindref="member">main</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>argc,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*argv[])<sp/></highlight></codeline>
 <codeline lineno="14"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="15"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>[<ref refid="merlin__low_8h_1a783ca881fc669116765f87e1bdfc6a8b" kindref="member">MPX_MAXLINE</ref>]<sp/>=<sp/>{</highlight><highlight class="charliteral">&apos;\0&apos;</highlight><highlight class="normal">};</highlight></codeline>
 <codeline lineno="16"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>errMsg[<ref refid="merlin__low_8h_1a783ca881fc669116765f87e1bdfc6a8b" kindref="member">MPX_MAXLINE</ref>]<sp/>=<sp/>{</highlight><highlight class="charliteral">&apos;\0&apos;</highlight><highlight class="normal">};</highlight></codeline>
@@ -82,12 +82,12 @@
 <codeline lineno="23"><highlight class="normal"><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;Test<sp/>program<sp/>for<sp/>merlin_low<sp/>interface<sp/>library.\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="24"><highlight class="normal"></highlight></codeline>
 <codeline lineno="25"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((status<sp/>=<sp/><ref refid="merlin__low_8c_1a5adcaa123a33267f1170fc868b0a119f" kindref="member">mpxConnect</ref>(</highlight><highlight class="stringliteral">&quot;127.0.0.1&quot;</highlight><highlight class="normal">,<sp/>14000,<sp/>14001))<sp/>!=<sp/><ref refid="merlin__low_8h_1aac7acba8230e53033ab1e836ccfbd2a5" kindref="member">MPX_OK</ref>)<sp/>{</highlight></codeline>
-<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;ERROR.<sp/>status:<sp/>%d,<sp/>message:<sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/>status,<sp/><ref refid="merlin__low_8c_1a1985f3fc4580f9d270a378671b93446b" kindref="member">mpxError</ref>(status,<sp/>errMsg));</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;ERROR.<sp/>status:<sp/>%d,<sp/>message:<sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/>status,<sp/><ref refid="merlin__low_8c_1a3ec7a7f57e0355bd31370bc01d7e9822" kindref="member">mpxError</ref>(status,<sp/>errMsg));</highlight></codeline>
 <codeline lineno="27"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
 <codeline lineno="28"><highlight class="normal"><sp/><sp/></highlight></codeline>
 <codeline lineno="29"><highlight class="normal"><sp/><sp/></highlight></codeline>
 <codeline lineno="30"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((status<sp/>=<sp/><ref refid="merlin__low_8c_1aebdecf606a206433343a2802cfeed68f" kindref="member">mpxIsConnected</ref>(&amp;conn_flag))<sp/>!=<sp/><ref refid="merlin__low_8h_1aac7acba8230e53033ab1e836ccfbd2a5" kindref="member">MPX_OK</ref>)<sp/>{</highlight></codeline>
-<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;ERROR.<sp/>status:<sp/>%d,<sp/>message:<sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/>status,<sp/><ref refid="merlin__low_8c_1a1985f3fc4580f9d270a378671b93446b" kindref="member">mpxError</ref>(status,<sp/>errMsg));</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;ERROR.<sp/>status:<sp/>%d,<sp/>message:<sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/>status,<sp/><ref refid="merlin__low_8c_1a3ec7a7f57e0355bd31370bc01d7e9822" kindref="member">mpxError</ref>(status,<sp/>errMsg));</highlight></codeline>
 <codeline lineno="32"><highlight class="normal"><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
 <codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(conn_flag<sp/>==<sp/>1)<sp/>{</highlight></codeline>
 <codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;We<sp/>are<sp/>connected.\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
@@ -96,42 +96,42 @@
 <codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="38"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
 <codeline lineno="39"><highlight class="normal"></highlight></codeline>
-<codeline lineno="40"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((status<sp/>=<sp/><ref refid="merlin__low_8c_1a704f442dd946f6337c8948b1cb9ea0f3" kindref="member">mpxGet</ref>(</highlight><highlight class="stringliteral">&quot;NUMFRAMESTOACQUIRE&quot;</highlight><highlight class="normal">,<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>))<sp/>!=<sp/><ref refid="merlin__low_8h_1aac7acba8230e53033ab1e836ccfbd2a5" kindref="member">MPX_OK</ref>)<sp/>{</highlight></codeline>
-<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;ERROR.<sp/>status:<sp/>%d,<sp/>message:<sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/>status,<sp/><ref refid="merlin__low_8c_1a1985f3fc4580f9d270a378671b93446b" kindref="member">mpxError</ref>(status,<sp/>errMsg));</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((status<sp/>=<sp/><ref refid="merlin__low_8c_1a704f442dd946f6337c8948b1cb9ea0f3" kindref="member">mpxGet</ref>(</highlight><highlight class="stringliteral">&quot;NUMFRAMESTOACQUIRE&quot;</highlight><highlight class="normal">,<sp/>value))<sp/>!=<sp/><ref refid="merlin__low_8h_1aac7acba8230e53033ab1e836ccfbd2a5" kindref="member">MPX_OK</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;ERROR.<sp/>status:<sp/>%d,<sp/>message:<sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/>status,<sp/><ref refid="merlin__low_8c_1a3ec7a7f57e0355bd31370bc01d7e9822" kindref="member">mpxError</ref>(status,<sp/>errMsg));</highlight></codeline>
 <codeline lineno="42"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline lineno="43"><highlight class="normal"><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;NUMFRAMESTOACQUIRE:<sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;NUMFRAMESTOACQUIRE:<sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/>value);</highlight></codeline>
 <codeline lineno="44"><highlight class="normal"></highlight></codeline>
 <codeline lineno="45"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((status<sp/>=<sp/><ref refid="merlin__low_8c_1a5361d183f08dc62a6246bbc37bc019d7" kindref="member">mpxSet</ref>(</highlight><highlight class="stringliteral">&quot;NUMFRAMESTOACQUIRE&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;2&quot;</highlight><highlight class="normal">))<sp/>!=<sp/><ref refid="merlin__low_8h_1aac7acba8230e53033ab1e836ccfbd2a5" kindref="member">MPX_OK</ref>)<sp/>{</highlight></codeline>
-<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;ERROR.<sp/>status:<sp/>%d,<sp/>message:<sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/>status,<sp/><ref refid="merlin__low_8c_1a1985f3fc4580f9d270a378671b93446b" kindref="member">mpxError</ref>(status,<sp/>errMsg));</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;ERROR.<sp/>status:<sp/>%d,<sp/>message:<sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/>status,<sp/><ref refid="merlin__low_8c_1a3ec7a7f57e0355bd31370bc01d7e9822" kindref="member">mpxError</ref>(status,<sp/>errMsg));</highlight></codeline>
 <codeline lineno="47"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
 <codeline lineno="48"><highlight class="normal"><sp/><sp/></highlight></codeline>
-<codeline lineno="49"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((status<sp/>=<sp/><ref refid="merlin__low_8c_1a704f442dd946f6337c8948b1cb9ea0f3" kindref="member">mpxGet</ref>(</highlight><highlight class="stringliteral">&quot;NUMFRAMESTOACQUIRE&quot;</highlight><highlight class="normal">,<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>))<sp/>!=<sp/><ref refid="merlin__low_8h_1aac7acba8230e53033ab1e836ccfbd2a5" kindref="member">MPX_OK</ref>)<sp/>{</highlight></codeline>
-<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;ERROR.<sp/>status:<sp/>%d,<sp/>message:<sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/>status,<sp/><ref refid="merlin__low_8c_1a1985f3fc4580f9d270a378671b93446b" kindref="member">mpxError</ref>(status,<sp/>errMsg));</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((status<sp/>=<sp/><ref refid="merlin__low_8c_1a704f442dd946f6337c8948b1cb9ea0f3" kindref="member">mpxGet</ref>(</highlight><highlight class="stringliteral">&quot;NUMFRAMESTOACQUIRE&quot;</highlight><highlight class="normal">,<sp/>value))<sp/>!=<sp/><ref refid="merlin__low_8h_1aac7acba8230e53033ab1e836ccfbd2a5" kindref="member">MPX_OK</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;ERROR.<sp/>status:<sp/>%d,<sp/>message:<sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/>status,<sp/><ref refid="merlin__low_8c_1a3ec7a7f57e0355bd31370bc01d7e9822" kindref="member">mpxError</ref>(status,<sp/>errMsg));</highlight></codeline>
 <codeline lineno="51"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline lineno="52"><highlight class="normal"><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;NUMFRAMESTOACQUIRE:<sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;NUMFRAMESTOACQUIRE:<sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/>value);</highlight></codeline>
 <codeline lineno="53"><highlight class="normal"></highlight></codeline>
 <codeline lineno="54"><highlight class="normal"><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;Sending<sp/>STARTACQUISITION...\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="55"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((status<sp/>=<sp/><ref refid="merlin__low_8c_1a1153a86aee7402f749ef86f4a59fc99a" kindref="member">mpxCmd</ref>(</highlight><highlight class="stringliteral">&quot;STARTACQUISITION&quot;</highlight><highlight class="normal">))<sp/>!=<sp/><ref refid="merlin__low_8h_1aac7acba8230e53033ab1e836ccfbd2a5" kindref="member">MPX_OK</ref>)<sp/>{</highlight></codeline>
-<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;ERROR.<sp/>status:<sp/>%d,<sp/>message:<sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/>status,<sp/><ref refid="merlin__low_8c_1a1985f3fc4580f9d270a378671b93446b" kindref="member">mpxError</ref>(status,<sp/>errMsg));</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;ERROR.<sp/>status:<sp/>%d,<sp/>message:<sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/>status,<sp/><ref refid="merlin__low_8c_1a3ec7a7f57e0355bd31370bc01d7e9822" kindref="member">mpxError</ref>(status,<sp/>errMsg));</highlight></codeline>
 <codeline lineno="57"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
 <codeline lineno="58"><highlight class="normal"></highlight></codeline>
 <codeline lineno="59"><highlight class="normal"><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;Getting<sp/>data...\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="60"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((status<sp/>=<sp/><ref refid="merlin__low_8c_1aa53661d7114a919a1e1afab295934a1e" kindref="member">mpxData</ref>(data))<sp/>!=<sp/><ref refid="merlin__low_8h_1aac7acba8230e53033ab1e836ccfbd2a5" kindref="member">MPX_OK</ref>)<sp/>{</highlight></codeline>
-<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;ERROR.<sp/>status:<sp/>%d,<sp/>message:<sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/>status,<sp/><ref refid="merlin__low_8c_1a1985f3fc4580f9d270a378671b93446b" kindref="member">mpxError</ref>(status,<sp/>errMsg));</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;ERROR.<sp/>status:<sp/>%d,<sp/>message:<sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/>status,<sp/><ref refid="merlin__low_8c_1a3ec7a7f57e0355bd31370bc01d7e9822" kindref="member">mpxError</ref>(status,<sp/>errMsg));</highlight></codeline>
 <codeline lineno="62"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
 <codeline lineno="63"><highlight class="normal"></highlight></codeline>
-<codeline lineno="64"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>=0;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>&lt;5;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>++)<sp/>{</highlight></codeline>
-<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;data[%d]=%x\n&quot;</highlight><highlight class="normal">,<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>,<sp/>data[<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>]);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(i=0;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>&lt;5;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>++)<sp/>{</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;data[%d]=%x\n&quot;</highlight><highlight class="normal">,<sp/>i,<sp/>data[i]);</highlight></codeline>
 <codeline lineno="66"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
 <codeline lineno="67"><highlight class="normal"></highlight></codeline>
 <codeline lineno="68"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((status<sp/>=<sp/><ref refid="merlin__low_8c_1a4e54b467e3964bb12a1c58daefe43696" kindref="member">mpxDisconnect</ref>())<sp/>!=<sp/><ref refid="merlin__low_8h_1aac7acba8230e53033ab1e836ccfbd2a5" kindref="member">MPX_OK</ref>)<sp/>{</highlight></codeline>
-<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;ERROR.<sp/>status:<sp/>%d,<sp/>message:<sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/>status,<sp/><ref refid="merlin__low_8c_1a1985f3fc4580f9d270a378671b93446b" kindref="member">mpxError</ref>(status,<sp/>errMsg));</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;ERROR.<sp/>status:<sp/>%d,<sp/>message:<sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/>status,<sp/><ref refid="merlin__low_8c_1a3ec7a7f57e0355bd31370bc01d7e9822" kindref="member">mpxError</ref>(status,<sp/>errMsg));</highlight></codeline>
 <codeline lineno="70"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
 <codeline lineno="71"><highlight class="normal"></highlight></codeline>
-<codeline lineno="72"><highlight class="normal"><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;Testing<sp/>error<sp/>status<sp/>0:<sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/><ref refid="merlin__low_8c_1a1985f3fc4580f9d270a378671b93446b" kindref="member">mpxError</ref>(0,<sp/>errMsg));</highlight></codeline>
-<codeline lineno="73"><highlight class="normal"><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;Testing<sp/>error<sp/>status<sp/>1:<sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/><ref refid="merlin__low_8c_1a1985f3fc4580f9d270a378671b93446b" kindref="member">mpxError</ref>(1,<sp/>errMsg));</highlight></codeline>
-<codeline lineno="74"><highlight class="normal"><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;Testing<sp/>error<sp/>status<sp/>2:<sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/><ref refid="merlin__low_8c_1a1985f3fc4580f9d270a378671b93446b" kindref="member">mpxError</ref>(2,<sp/>errMsg));</highlight></codeline>
-<codeline lineno="75"><highlight class="normal"><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;Testing<sp/>error<sp/>status<sp/>3:<sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/><ref refid="merlin__low_8c_1a1985f3fc4580f9d270a378671b93446b" kindref="member">mpxError</ref>(3,<sp/>errMsg));</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;Testing<sp/>error<sp/>status<sp/>0:<sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/><ref refid="merlin__low_8c_1a3ec7a7f57e0355bd31370bc01d7e9822" kindref="member">mpxError</ref>(0,<sp/>errMsg));</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;Testing<sp/>error<sp/>status<sp/>1:<sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/><ref refid="merlin__low_8c_1a3ec7a7f57e0355bd31370bc01d7e9822" kindref="member">mpxError</ref>(1,<sp/>errMsg));</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;Testing<sp/>error<sp/>status<sp/>2:<sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/><ref refid="merlin__low_8c_1a3ec7a7f57e0355bd31370bc01d7e9822" kindref="member">mpxError</ref>(2,<sp/>errMsg));</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;Testing<sp/>error<sp/>status<sp/>3:<sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/><ref refid="merlin__low_8c_1a3ec7a7f57e0355bd31370bc01d7e9822" kindref="member">mpxError</ref>(3,<sp/>errMsg));</highlight></codeline>
 <codeline lineno="76"><highlight class="normal"><sp/><sp/></highlight></codeline>
 <codeline lineno="77"><highlight class="normal"></highlight></codeline>
 <codeline lineno="78"><highlight class="normal"></highlight></codeline>

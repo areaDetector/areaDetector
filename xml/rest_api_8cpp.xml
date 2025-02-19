@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="rest_api_8cpp" kind="file" language="C++">
     <compoundname>restApi.cpp</compoundname>
     <includes refid="rest_api_8h" local="yes">restApi.h</includes>
@@ -13,40 +13,6 @@
     <includes local="no">epicsTime.h</includes>
     <includes local="no">fcntl.h</includes>
     <incdepgraph>
-      <node id="5">
-        <label>osiSock.h</label>
-      </node>
-      <node id="7">
-        <label>stdlib.h</label>
-      </node>
-      <node id="4">
-        <label>epicsMutex.h</label>
-      </node>
-      <node id="6">
-        <label>stdexcept</label>
-      </node>
-      <node id="14">
-        <label>fcntl.h</label>
-      </node>
-      <node id="3">
-        <label>string</label>
-      </node>
-      <node id="2">
-        <label>restApi.h</label>
-        <link refid="rest_api_8h"/>
-        <childnode refid="3" relation="include">
-        </childnode>
-        <childnode refid="4" relation="include">
-        </childnode>
-        <childnode refid="5" relation="include">
-        </childnode>
-      </node>
-      <node id="10">
-        <label>frozen.h</label>
-      </node>
-      <node id="12">
-        <label>epicsThread.h</label>
-      </node>
       <node id="1">
         <label>/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/restApi.cpp</label>
         <link refid="rest_api_8cpp"/>
@@ -71,23 +37,57 @@
         <childnode refid="14" relation="include">
         </childnode>
       </node>
-      <node id="9">
-        <label>string.h</label>
+      <node id="2">
+        <label>restApi.h</label>
+        <link refid="rest_api_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
       </node>
-      <node id="13">
-        <label>epicsTime.h</label>
+      <node id="4">
+        <label>epicsMutex.h</label>
       </node>
       <node id="11">
         <label>epicsStdio.h</label>
       </node>
+      <node id="12">
+        <label>epicsThread.h</label>
+      </node>
+      <node id="13">
+        <label>epicsTime.h</label>
+      </node>
+      <node id="14">
+        <label>fcntl.h</label>
+      </node>
+      <node id="10">
+        <label>frozen.h</label>
+      </node>
+      <node id="5">
+        <label>osiSock.h</label>
+      </node>
+      <node id="6">
+        <label>stdexcept</label>
+      </node>
       <node id="8">
         <label>stdio.h</label>
+      </node>
+      <node id="7">
+        <label>stdlib.h</label>
+      </node>
+      <node id="3">
+        <label>string</label>
+      </node>
+      <node id="9">
+        <label>string.h</label>
       </node>
     </incdepgraph>
     <innerclass refid="structsocket" prot="public">socket</innerclass>
     <innerclass refid="structrequest" prot="public">request</innerclass>
     <innerclass refid="structresponse" prot="public">response</innerclass>
-      <sectiondef kind="define">
+    <sectiondef kind="define">
       <memberdef kind="define" id="rest_api_8cpp_1a4e67e9429d48a2ba8f833ee3b1dceb5d" prot="public" static="no">
         <name>EOL</name>
         <initializer>&quot;\r\n&quot;</initializer>
@@ -289,7 +289,7 @@
       <memberdef kind="define" id="rest_api_8cpp_1a351b8552521f29df22aa336bb28e2180" prot="public" static="no">
         <name>ERR</name>
         <param><defname>msg</defname></param>
-        <initializer>fprintf(stderr, <ref refid="stream_api_8cpp_1ad8de19b57a26747fb7ef015e2a678b45" kindref="member">ERR_PREFIX</ref> &quot;::%s: %s\n&quot;, functionName, msg)</initializer>
+        <initializer>fprintf(stderr, <ref refid="rest_api_8cpp_1ad8de19b57a26747fb7ef015e2a678b45" kindref="member">ERR_PREFIX</ref> &quot;::%s: %s\n&quot;, functionName, msg)</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -302,7 +302,7 @@
         <name>ERR_ARGS</name>
         <param><defname>fmt</defname></param>
         <param><defname>...</defname></param>
-        <initializer>    fprintf(stderr, <ref refid="stream_api_8cpp_1ad8de19b57a26747fb7ef015e2a678b45" kindref="member">ERR_PREFIX</ref> &quot;::%s: &quot; fmt &quot;\n&quot;, \
+        <initializer>    fprintf(stderr, <ref refid="rest_api_8cpp_1ad8de19b57a26747fb7ef015e2a678b45" kindref="member">ERR_PREFIX</ref> &quot;::%s: &quot; fmt &quot;\n&quot;, \
     functionName, __VA_ARGS__)</initializer>
         <briefdescription>
         </briefdescription>
@@ -310,7 +310,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/restApi.cpp" line="41" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/restApi.cpp" bodystart="41" bodyend="-1"/>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/restApi.cpp" line="41" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/restApi.cpp" bodystart="41" bodyend="42"/>
       </memberdef>
       <memberdef kind="define" id="rest_api_8cpp_1adec0375050ef1be9673c119a6f83d1be" prot="public" static="no">
         <name>REQUEST_GET</name>
@@ -324,21 +324,21 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/restApi.cpp" line="46" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/restApi.cpp" bodystart="46" bodyend="-1"/>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/restApi.cpp" line="46" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/restApi.cpp" bodystart="46" bodyend="50"/>
       </memberdef>
       <memberdef kind="define" id="rest_api_8cpp_1a2b98bddd7898ae3d28b040713bc78aec" prot="public" static="no">
         <name>REQUEST_GET_FILE</name>
         <initializer>    &quot;GET %s%s HTTP/1.1&quot; EOL \
     &quot;Host: %s&quot; EOL\
     &quot;Content-Length: 0&quot; EOL \
-    &quot;Accept: %s&quot; EOH</initializer>
+    &quot;Accept: %s&quot; <ref refid="rest_api_8cpp_1a4fff801e2524b9df0b97b92544cfe3bb" kindref="member">EOH</ref></initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/restApi.cpp" line="52" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/restApi.cpp" bodystart="52" bodyend="-1"/>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/restApi.cpp" line="52" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/restApi.cpp" bodystart="52" bodyend="56"/>
       </memberdef>
       <memberdef kind="define" id="rest_api_8cpp_1aea20f935127ae58ea0d0ae85d2c14c46" prot="public" static="no">
         <name>REQUEST_PUT</name>
@@ -346,41 +346,41 @@
     &quot;Host: %s&quot; EOL\
     &quot;Accept-Encoding: identity&quot; EOL\
     &quot;Content-Type: &quot; DATA_NATIVE <ref refid="rest_api_8cpp_1a4e67e9429d48a2ba8f833ee3b1dceb5d" kindref="member">EOL</ref> \
-    &quot;Content-Length: %lu&quot; EOH</initializer>
+    &quot;Content-Length: %lu&quot; <ref refid="rest_api_8cpp_1a4fff801e2524b9df0b97b92544cfe3bb" kindref="member">EOH</ref></initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/restApi.cpp" line="58" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/restApi.cpp" bodystart="58" bodyend="-1"/>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/restApi.cpp" line="58" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/restApi.cpp" bodystart="58" bodyend="63"/>
       </memberdef>
       <memberdef kind="define" id="rest_api_8cpp_1a1a649288315320a375ae2c7a5ec93bce" prot="public" static="no">
         <name>REQUEST_HEAD</name>
         <initializer>    &quot;HEAD %s%s HTTP/1.1&quot; EOL\
-    &quot;Host: %s&quot; EOH</initializer>
+    &quot;Host: %s&quot; <ref refid="rest_api_8cpp_1a4fff801e2524b9df0b97b92544cfe3bb" kindref="member">EOH</ref></initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/restApi.cpp" line="65" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/restApi.cpp" bodystart="65" bodyend="-1"/>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/restApi.cpp" line="65" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/restApi.cpp" bodystart="65" bodyend="67"/>
       </memberdef>
       <memberdef kind="define" id="rest_api_8cpp_1a5514ba5f2e2da0ac62ea16ab1711bd4e" prot="public" static="no">
         <name>REQUEST_DELETE</name>
         <initializer>    &quot;DELETE %s%s HTTP/1.1&quot; EOL\
-    &quot;Host: %s&quot; EOH</initializer>
+    &quot;Host: %s&quot; <ref refid="rest_api_8cpp_1a4fff801e2524b9df0b97b92544cfe3bb" kindref="member">EOH</ref></initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/restApi.cpp" line="69" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/restApi.cpp" bodystart="69" bodyend="-1"/>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/restApi.cpp" line="69" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/restApi.cpp" bodystart="69" bodyend="71"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="typedef">
+    </sectiondef>
+    <sectiondef kind="typedef">
       <memberdef kind="typedef" id="rest_api_8cpp_1a6a9dbb91c569af562f6119bb7b960cbb" prot="public" static="no">
         <type>struct <ref refid="structsocket" kindref="compound">socket</ref></type>
         <definition>typedef struct socket socket_t</definition>
@@ -420,8 +420,8 @@
         </inbodydescription>
         <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/restApi.cpp" line="99" column="12"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="func">
+    </sectiondef>
+    <sectiondef kind="func">
       <memberdef kind="function" id="rest_api_8cpp_1a741b15220b0f8d6c7b35f430b9868731" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
         <definition>static int parseHeader</definition>
@@ -460,7 +460,7 @@
         </inbodydescription>
         <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/restApi.cpp" line="157" column="12" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/restApi.cpp" bodystart="157" bodyend="201"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
@@ -481,7 +481,7 @@
 <codeline lineno="13"><highlight class="normal"></highlight></codeline>
 <codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;fcntl.h&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="15"><highlight class="normal"></highlight></codeline>
-<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EOL<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;\r\n&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>End<sp/>of<sp/>Line</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EOL<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;\r\n&quot;<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>End<sp/>of<sp/>Line</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EOL_LEN<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>2<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>End<sp/>of<sp/>Line<sp/>Length</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EOH<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>EOL<sp/>EOL<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>End<sp/>of<sp/>Header</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EOH_LEN<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(EOL_LEN*2)<sp/></highlight><highlight class="comment">//<sp/>End<sp/>of<sp/>Header<sp/>Length</highlight><highlight class="normal"></highlight></codeline>
@@ -504,41 +504,41 @@
 <codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DEFAULT_TIMEOUT_CONNECT<sp/>1</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="37"><highlight class="normal"></highlight></codeline>
 <codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ERR_PREFIX<sp/><sp/>&quot;RestApi&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ERR(msg)<sp/>fprintf(stderr,<sp/>ERR_PREFIX<sp/>&quot;::%s:<sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/>functionName,<sp/>msg)</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ERR(msg)<sp/>fprintf(stderr,<sp/>ERR_PREFIX<sp/>&quot;::%s:<sp/>%s\n&quot;,<sp/>functionName,<sp/>msg)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="40"><highlight class="normal"></highlight></codeline>
-<codeline lineno="41"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ERR_ARGS(fmt,...)<sp/>fprintf(stderr,<sp/>ERR_PREFIX<sp/>&quot;::%s:<sp/>&quot;</highlight><highlight class="normal"><sp/>fmt<sp/>&quot;\n&quot;,<sp/>\</highlight></codeline>
-<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>functionName,<sp/>__VA_ARGS__)</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ERR_ARGS(fmt,...)<sp/>fprintf(stderr,<sp/>ERR_PREFIX<sp/>&quot;::%s:<sp/>&quot;<sp/>fmt<sp/>&quot;\n&quot;,<sp/>\</highlight></codeline>
+<codeline lineno="42"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>functionName,<sp/>__VA_ARGS__)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="43"><highlight class="normal"></highlight></codeline>
 <codeline lineno="44"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Requests</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="45"><highlight class="normal"></highlight></codeline>
 <codeline lineno="46"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>REQUEST_GET\</highlight></codeline>
-<codeline lineno="47"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>&quot;GET<sp/>%s%s<sp/>HTTP/1.1&quot;</highlight><highlight class="normal"><sp/>EOL<sp/>\</highlight></codeline>
-<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/>&quot;Host:<sp/>%s&quot;<sp/>EOL\</highlight></codeline>
-<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>&quot;Content-Length:<sp/>0&quot;<sp/>EOL<sp/>\</highlight></codeline>
-<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>&quot;Accept:<sp/>&quot;<sp/>DATA_NATIVE<sp/>EOH</highlight></codeline>
+<codeline lineno="47"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>&quot;GET<sp/>%s%s<sp/>HTTP/1.1&quot;<sp/>EOL<sp/>\</highlight></codeline>
+<codeline lineno="48"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>&quot;Host:<sp/>%s&quot;<sp/>EOL\</highlight></codeline>
+<codeline lineno="49"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>&quot;Content-Length:<sp/>0&quot;<sp/>EOL<sp/>\</highlight></codeline>
+<codeline lineno="50"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>&quot;Accept:<sp/>&quot;<sp/>DATA_NATIVE<sp/>EOH</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="51"><highlight class="normal"></highlight></codeline>
 <codeline lineno="52"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>REQUEST_GET_FILE\</highlight></codeline>
-<codeline lineno="53"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>&quot;GET<sp/>%s%s<sp/>HTTP/1.1&quot;</highlight><highlight class="normal"><sp/>EOL<sp/>\</highlight></codeline>
-<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>&quot;Host:<sp/>%s&quot;<sp/>EOL\</highlight></codeline>
-<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>&quot;Content-Length:<sp/>0&quot;<sp/>EOL<sp/>\</highlight></codeline>
-<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>&quot;Accept:<sp/>%s&quot;<sp/>EOH</highlight></codeline>
+<codeline lineno="53"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>&quot;GET<sp/>%s%s<sp/>HTTP/1.1&quot;<sp/>EOL<sp/>\</highlight></codeline>
+<codeline lineno="54"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>&quot;Host:<sp/>%s&quot;<sp/>EOL\</highlight></codeline>
+<codeline lineno="55"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>&quot;Content-Length:<sp/>0&quot;<sp/>EOL<sp/>\</highlight></codeline>
+<codeline lineno="56"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>&quot;Accept:<sp/>%s&quot;<sp/>EOH</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="57"><highlight class="normal"></highlight></codeline>
 <codeline lineno="58"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>REQUEST_PUT\</highlight></codeline>
-<codeline lineno="59"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>&quot;PUT<sp/>%s%s<sp/>HTTP/1.1&quot;</highlight><highlight class="normal"><sp/>EOL<sp/>\</highlight></codeline>
-<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>&quot;Host:<sp/>%s&quot;<sp/>EOL\</highlight></codeline>
-<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>&quot;Accept-Encoding:<sp/>identity&quot;<sp/>EOL\</highlight></codeline>
-<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>&quot;Content-Type:<sp/>&quot;<sp/>DATA_NATIVE<sp/>EOL<sp/>\</highlight></codeline>
-<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>&quot;Content-Length:<sp/>%lu&quot;<sp/>EOH</highlight></codeline>
+<codeline lineno="59"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>&quot;PUT<sp/>%s%s<sp/>HTTP/1.1&quot;<sp/>EOL<sp/>\</highlight></codeline>
+<codeline lineno="60"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>&quot;Host:<sp/>%s&quot;<sp/>EOL\</highlight></codeline>
+<codeline lineno="61"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>&quot;Accept-Encoding:<sp/>identity&quot;<sp/>EOL\</highlight></codeline>
+<codeline lineno="62"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>&quot;Content-Type:<sp/>&quot;<sp/>DATA_NATIVE<sp/>EOL<sp/>\</highlight></codeline>
+<codeline lineno="63"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>&quot;Content-Length:<sp/>%lu&quot;<sp/>EOH</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="64"><highlight class="normal"></highlight></codeline>
 <codeline lineno="65"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>REQUEST_HEAD\</highlight></codeline>
-<codeline lineno="66"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>&quot;HEAD<sp/>%s%s<sp/>HTTP/1.1&quot;</highlight><highlight class="normal"><sp/>EOL\</highlight></codeline>
-<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>&quot;Host:<sp/>%s&quot;<sp/>EOH</highlight></codeline>
+<codeline lineno="66"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>&quot;HEAD<sp/>%s%s<sp/>HTTP/1.1&quot;<sp/>EOL\</highlight></codeline>
+<codeline lineno="67"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>&quot;Host:<sp/>%s&quot;<sp/>EOH</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="68"><highlight class="normal"></highlight></codeline>
 <codeline lineno="69"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>REQUEST_DELETE\</highlight></codeline>
-<codeline lineno="70"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>&quot;DELETE<sp/>%s%s<sp/>HTTP/1.1&quot;</highlight><highlight class="normal"><sp/>EOL\</highlight></codeline>
-<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>&quot;Host:<sp/>%s&quot;<sp/>EOH</highlight></codeline>
+<codeline lineno="70"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>&quot;DELETE<sp/>%s%s<sp/>HTTP/1.1&quot;<sp/>EOL\</highlight></codeline>
+<codeline lineno="71"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>&quot;Host:<sp/>%s&quot;<sp/>EOH</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="72"><highlight class="normal"></highlight></codeline>
-<codeline lineno="73"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/><ref refid="namespacehdf5_1abeed318faeb13380e1b4221bd4198bf1aea271040d7a5b8d9af9cbf6564d262d5" kindref="member">std::string</ref>;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal">std::string;</highlight></codeline>
 <codeline lineno="74"><highlight class="normal"></highlight></codeline>
 <codeline lineno="75"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Structure<sp/>definitions</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="76"><highlight class="normal"></highlight></codeline>
@@ -604,9 +604,9 @@
 <codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sscanf(colon<sp/>+<sp/>1,<sp/></highlight><highlight class="stringliteral">&quot;%lu&quot;</highlight><highlight class="normal">,<sp/>&amp;<ref refid="structresponse" kindref="compound">response</ref>-&gt;<ref refid="structresponse_1a844a1f991527aa9fa80ce6ad414a911f" kindref="member">contentLength</ref>);</highlight></codeline>
 <codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!strcasecmp(key,<sp/></highlight><highlight class="stringliteral">&quot;connection&quot;</highlight><highlight class="normal">))</highlight></codeline>
 <codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>[<ref refid="rest_api_8cpp_1a7244ab798f58214294b580ca0bb48552" kindref="member">MAX_BUF_SIZE</ref>];</highlight></codeline>
-<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sscanf(colon<sp/>+<sp/>1,<sp/></highlight><highlight class="stringliteral">&quot;%s&quot;</highlight><highlight class="normal">,<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>);</highlight></codeline>
-<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structresponse" kindref="compound">response</ref>-&gt;<ref refid="structresponse_1a0977d175ed8d57639bc827204d3ab4f3" kindref="member">reconnect</ref><sp/>=<sp/>!strcasecmp(<ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>,<sp/></highlight><highlight class="stringliteral">&quot;close&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>value[<ref refid="rest_api_8cpp_1a7244ab798f58214294b580ca0bb48552" kindref="member">MAX_BUF_SIZE</ref>];</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sscanf(colon<sp/>+<sp/>1,<sp/></highlight><highlight class="stringliteral">&quot;%s&quot;</highlight><highlight class="normal">,<sp/>value);</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structresponse" kindref="compound">response</ref>-&gt;<ref refid="structresponse_1a0977d175ed8d57639bc827204d3ab4f3" kindref="member">reconnect</ref><sp/>=<sp/>!strcasecmp(value,<sp/></highlight><highlight class="stringliteral">&quot;close&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="143"><highlight class="normal"></highlight></codeline>
 <codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>data<sp/>=<sp/>eol<sp/>+<sp/><ref refid="rest_api_8cpp_1a546ba4d9fbd8e32aae1f09dd5bc5d4d7" kindref="member">EOL_LEN</ref>;</highlight></codeline>
@@ -702,7 +702,7 @@
 <codeline lineno="234"><highlight class="normal"></highlight></codeline>
 <codeline lineno="235"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Public<sp/>members</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="236"><highlight class="normal"></highlight></codeline>
-<codeline lineno="237"><highlight class="normal"><ref refid="class_rest_a_p_i_1a6e5355fe38f7a44019d965b3298af46d" kindref="member">RestAPI::RestAPI</ref><sp/>(<ref refid="namespacehdf5_1abeed318faeb13380e1b4221bd4198bf1aea271040d7a5b8d9af9cbf6564d262d5" kindref="member">std::string</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>&amp;<sp/>hostname,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>port,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>numSockets)<sp/>:</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><ref refid="class_rest_a_p_i_1a6e5355fe38f7a44019d965b3298af46d" kindref="member">RestAPI::RestAPI</ref><sp/>(std::string<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>&amp;<sp/>hostname,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>port,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>numSockets)<sp/>:</highlight></codeline>
 <codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/>mHostname(hostname),<sp/>mPort(port),<sp/>mNumSockets(numSockets),</highlight></codeline>
 <codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/>mSockets(new<sp/><ref refid="structsocket" kindref="compound">socket_t</ref>[numSockets])</highlight></codeline>
 <codeline lineno="240"><highlight class="normal">{</highlight></codeline>
@@ -714,7 +714,7 @@
 <codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/>mAddress.sin_family<sp/>=<sp/>AF_INET;</highlight></codeline>
 <codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/>mAddress.sin_port<sp/>=<sp/>htons(port);</highlight></codeline>
 <codeline lineno="248"><highlight class="normal"></highlight></codeline>
-<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref><sp/>=<sp/>0;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref><sp/>&lt;<sp/>mNumSockets;<sp/>++<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>)</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref><sp/>&lt;<sp/>mNumSockets;<sp/>++<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>)</highlight></codeline>
 <codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mSockets[<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>].closed<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mSockets[<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>].fd<sp/>=<sp/>-1;</highlight></codeline>
@@ -722,7 +722,7 @@
 <codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="255"><highlight class="normal"></highlight></codeline>
 <codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Define<sp/>REST<sp/>URIs<sp/>based<sp/>on<sp/>API<sp/>version</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacehdf5_1abeed318faeb13380e1b4221bd4198bf1aea271040d7a5b8d9af9cbf6564d262d5" kindref="member">std::string</ref><sp/>api;</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>api;</highlight></codeline>
 <codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/>mSysStr[<ref refid="rest_api_8h_1a14c3ad6f5fa82ee5ff47981398d0e13cabfae33a050b17dde57291c75361b1c84" kindref="member">SSAPIVersion</ref>]<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;/detector/api/version&quot;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="structresponse" kindref="compound">response</ref>;</highlight></codeline>
 <codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;get(<ref refid="rest_api_8h_1a14c3ad6f5fa82ee5ff47981398d0e13cabfae33a050b17dde57291c75361b1c84" kindref="member">SSAPIVersion</ref>,<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">,<sp/><ref refid="structresponse" kindref="compound">response</ref>,<sp/>10);</highlight></codeline>
@@ -767,26 +767,26 @@
 <codeline lineno="299"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*functionName<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;arm&quot;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="300"><highlight class="normal"></highlight></codeline>
 <codeline lineno="301"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structrequest" kindref="compound">request_t</ref><sp/><ref refid="structrequest" kindref="compound">request</ref><sp/>=<sp/>{};</highlight></codeline>
-<codeline lineno="302"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>requestBuf[<ref refid="rest_api_8cpp_1acb84a306ee37479f97cf0b476560f027" kindref="member">MAX_MESSAGE_SIZE</ref>];</highlight></codeline>
+<codeline lineno="302"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>requestBuf[<ref refid="_b_i_s_detector_8cpp_1acb84a306ee37479f97cf0b476560f027" kindref="member">MAX_MESSAGE_SIZE</ref>];</highlight></codeline>
 <codeline lineno="303"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structrequest" kindref="compound">request</ref>.<ref refid="structrequest_1a75261cd13d263ec8e0a3e6e80f4924e9" kindref="member">data</ref><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>requestBuf;</highlight></codeline>
 <codeline lineno="304"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structrequest" kindref="compound">request</ref>.<ref refid="structrequest_1acb1dbacb49991e37ed74e7657ad6edae" kindref="member">dataLen</ref><sp/><sp/><sp/>=<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(requestBuf);</highlight></codeline>
 <codeline lineno="305"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structrequest" kindref="compound">request</ref>.<ref refid="structrequest_1a9095aa378d8153895243ac8ffd46baf9" kindref="member">actualLen</ref><sp/>=<sp/>epicsSnprintf(<ref refid="structrequest" kindref="compound">request</ref>.<ref refid="structrequest_1a75261cd13d263ec8e0a3e6e80f4924e9" kindref="member">data</ref>,<sp/><ref refid="structrequest" kindref="compound">request</ref>.<ref refid="structrequest_1acb1dbacb49991e37ed74e7657ad6edae" kindref="member">dataLen</ref>,</highlight></codeline>
 <codeline lineno="306"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="rest_api_8cpp_1aea20f935127ae58ea0d0ae85d2c14c46" kindref="member">REQUEST_PUT</ref>,<sp/>mSysStr[<ref refid="rest_api_8h_1a14c3ad6f5fa82ee5ff47981398d0e13ca46baf3b9b51868c3ad3fa84646bd674d" kindref="member">SSCommand</ref>].c_str(),<sp/></highlight><highlight class="stringliteral">&quot;arm&quot;</highlight><highlight class="normal">,<sp/>mHostname.c_str(),<sp/>0lu);</highlight></codeline>
 <codeline lineno="307"><highlight class="normal"></highlight></codeline>
 <codeline lineno="308"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structresponse" kindref="compound">response_t</ref><sp/><ref refid="structresponse" kindref="compound">response</ref><sp/>=<sp/>{};</highlight></codeline>
-<codeline lineno="309"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>responseBuf[<ref refid="rest_api_8cpp_1acb84a306ee37479f97cf0b476560f027" kindref="member">MAX_MESSAGE_SIZE</ref>];</highlight></codeline>
+<codeline lineno="309"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>responseBuf[<ref refid="_b_i_s_detector_8cpp_1acb84a306ee37479f97cf0b476560f027" kindref="member">MAX_MESSAGE_SIZE</ref>];</highlight></codeline>
 <codeline lineno="310"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structresponse" kindref="compound">response</ref>.<ref refid="structresponse_1aa8d4c62e04a1ce7fab912b496ad6cf43" kindref="member">data</ref><sp/><sp/><sp/><sp/>=<sp/>responseBuf;</highlight></codeline>
 <codeline lineno="311"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structresponse" kindref="compound">response</ref>.<ref refid="structresponse_1a1a34157603e204ad13c9c10b9970b0c7" kindref="member">dataLen</ref><sp/>=<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(responseBuf);</highlight></codeline>
 <codeline lineno="312"><highlight class="normal"></highlight></codeline>
 <codeline lineno="313"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(doRequest(&amp;<ref refid="structrequest" kindref="compound">request</ref>,<sp/>&amp;<ref refid="structresponse" kindref="compound">response</ref>,<sp/><ref refid="rest_api_8cpp_1a3f997bdb7c364631cdd277d71fa75f2f" kindref="member">DEFAULT_TIMEOUT_ARM</ref>))</highlight></codeline>
 <codeline lineno="314"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="315"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="rest_api_8cpp_1a351b8552521f29df22aa336bb28e2180" kindref="member">ERR</ref>(</highlight><highlight class="stringliteral">&quot;[param=arm]<sp/>request<sp/>failed&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="315"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_n_d_file_net_c_d_f_8cpp_1a588357de2986fdf4c1380190f7ae9f37" kindref="member">ERR</ref>(</highlight><highlight class="stringliteral">&quot;[param=arm]<sp/>request<sp/>failed&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="316"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>EXIT_FAILURE;</highlight></codeline>
 <codeline lineno="317"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="318"><highlight class="normal"></highlight></codeline>
 <codeline lineno="319"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="structresponse" kindref="compound">response</ref>.<ref refid="structresponse_1a87a4392194e9eacc4100923e5b09f90b" kindref="member">code</ref><sp/>!=<sp/>200)</highlight></codeline>
 <codeline lineno="320"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="321"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="rest_api_8cpp_1a02586085698a967f28309aa3d54b43a3" kindref="member">ERR_ARGS</ref>(</highlight><highlight class="stringliteral">&quot;[param=arm]<sp/>server<sp/>returned<sp/>error<sp/>code<sp/>%d&quot;</highlight><highlight class="normal">,<sp/><ref refid="structresponse" kindref="compound">response</ref>.<ref refid="structresponse_1a87a4392194e9eacc4100923e5b09f90b" kindref="member">code</ref>);</highlight></codeline>
+<codeline lineno="321"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="eiger_detector_8cpp_1a02586085698a967f28309aa3d54b43a3" kindref="member">ERR_ARGS</ref>(</highlight><highlight class="stringliteral">&quot;[param=arm]<sp/>server<sp/>returned<sp/>error<sp/>code<sp/>%d&quot;</highlight><highlight class="normal">,<sp/><ref refid="structresponse" kindref="compound">response</ref>.<ref refid="structresponse_1a87a4392194e9eacc4100923e5b09f90b" kindref="member">code</ref>);</highlight></codeline>
 <codeline lineno="322"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>EXIT_FAILURE;</highlight></codeline>
 <codeline lineno="323"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="324"><highlight class="normal"></highlight></codeline>
@@ -802,7 +802,7 @@
 <codeline lineno="334"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Trigger<sp/>for<sp/>INTE<sp/>mode</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="335"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>putDouble<sp/>should<sp/>block<sp/>for<sp/>the<sp/>whole<sp/>exposure<sp/>duration,<sp/>but<sp/>it<sp/>doesn&apos;t</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="336"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>(Eiger&apos;s<sp/>fault)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="337"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>exposureStr[<ref refid="rest_api_8cpp_1a7244ab798f58214294b580ca0bb48552" kindref="member">MAX_BUF_SIZE</ref>];</highlight></codeline>
+<codeline lineno="337"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>exposureStr[<ref refid="eiger_detector_8cpp_1a7244ab798f58214294b580ca0bb48552" kindref="member">MAX_BUF_SIZE</ref>];</highlight></codeline>
 <codeline lineno="338"><highlight class="normal"><sp/><sp/><sp/><sp/>epicsSnprintf(exposureStr,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(exposureStr),<sp/></highlight><highlight class="stringliteral">&quot;%lf&quot;</highlight><highlight class="normal">,<sp/>exposure);</highlight></codeline>
 <codeline lineno="339"><highlight class="normal"></highlight></codeline>
 <codeline lineno="340"><highlight class="normal"><sp/><sp/><sp/><sp/>epicsTimeStamp<sp/>start,<sp/>end;</highlight></codeline>
@@ -840,7 +840,7 @@
 <codeline lineno="372"><highlight class="normal"></highlight></codeline>
 <codeline lineno="373"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_rest_a_p_i_1a48937b64fd8afe334cf720cf89e6b9cd" kindref="member">RestAPI::hvReset</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>resetTime)</highlight></codeline>
 <codeline lineno="374"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="375"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>resetTimeStr[<ref refid="rest_api_8cpp_1a7244ab798f58214294b580ca0bb48552" kindref="member">MAX_BUF_SIZE</ref>];</highlight></codeline>
+<codeline lineno="375"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>resetTimeStr[<ref refid="eiger_detector_8cpp_1a7244ab798f58214294b580ca0bb48552" kindref="member">MAX_BUF_SIZE</ref>];</highlight></codeline>
 <codeline lineno="376"><highlight class="normal"></highlight></codeline>
 <codeline lineno="377"><highlight class="normal"><sp/><sp/><sp/><sp/>epicsSnprintf(resetTimeStr,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(resetTimeStr),<sp/></highlight><highlight class="stringliteral">&quot;%d&quot;</highlight><highlight class="normal">,<sp/>resetTime);</highlight></codeline>
 <codeline lineno="378"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="class_rest_a_p_i_1a7bc501cee9faad708dd1bd16c874bf81" kindref="member">put</ref>(<ref refid="rest_api_8h_1a14c3ad6f5fa82ee5ff47981398d0e13ca46baf3b9b51868c3ad3fa84646bd674d" kindref="member">SSCommand</ref>,<sp/></highlight><highlight class="stringliteral">&quot;hv_reset&quot;</highlight><highlight class="normal">,<sp/>resetTimeStr,<sp/>NULL,<sp/>resetTime+1);</highlight></codeline>
@@ -861,26 +861,26 @@
 <codeline lineno="393"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*functionName<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;getFileSize&quot;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="394"><highlight class="normal"></highlight></codeline>
 <codeline lineno="395"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structrequest" kindref="compound">request_t</ref><sp/><ref refid="structrequest" kindref="compound">request</ref><sp/>=<sp/>{};</highlight></codeline>
-<codeline lineno="396"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>requestBuf[<ref refid="rest_api_8cpp_1acb84a306ee37479f97cf0b476560f027" kindref="member">MAX_MESSAGE_SIZE</ref>];</highlight></codeline>
+<codeline lineno="396"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>requestBuf[<ref refid="_b_i_s_detector_8cpp_1acb84a306ee37479f97cf0b476560f027" kindref="member">MAX_MESSAGE_SIZE</ref>];</highlight></codeline>
 <codeline lineno="397"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structrequest" kindref="compound">request</ref>.<ref refid="structrequest_1a75261cd13d263ec8e0a3e6e80f4924e9" kindref="member">data</ref><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>requestBuf;</highlight></codeline>
 <codeline lineno="398"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structrequest" kindref="compound">request</ref>.<ref refid="structrequest_1acb1dbacb49991e37ed74e7657ad6edae" kindref="member">dataLen</ref><sp/><sp/><sp/>=<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(requestBuf);</highlight></codeline>
 <codeline lineno="399"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structrequest" kindref="compound">request</ref>.<ref refid="structrequest_1a9095aa378d8153895243ac8ffd46baf9" kindref="member">actualLen</ref><sp/>=<sp/>epicsSnprintf(<ref refid="structrequest" kindref="compound">request</ref>.<ref refid="structrequest_1a75261cd13d263ec8e0a3e6e80f4924e9" kindref="member">data</ref>,<sp/><ref refid="structrequest" kindref="compound">request</ref>.<ref refid="structrequest_1acb1dbacb49991e37ed74e7657ad6edae" kindref="member">dataLen</ref>,</highlight></codeline>
 <codeline lineno="400"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="rest_api_8cpp_1a1a649288315320a375ae2c7a5ec93bce" kindref="member">REQUEST_HEAD</ref>,<sp/>mSysStr[<ref refid="rest_api_8h_1a14c3ad6f5fa82ee5ff47981398d0e13ca90c4192ef04861810b6545793bad5e1b" kindref="member">SSData</ref>].c_str(),<sp/>filename,<sp/>mHostname.c_str());</highlight></codeline>
 <codeline lineno="401"><highlight class="normal"></highlight></codeline>
 <codeline lineno="402"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structresponse" kindref="compound">response_t</ref><sp/><ref refid="structresponse" kindref="compound">response</ref><sp/>=<sp/>{};</highlight></codeline>
-<codeline lineno="403"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>responseBuf[<ref refid="rest_api_8cpp_1acb84a306ee37479f97cf0b476560f027" kindref="member">MAX_MESSAGE_SIZE</ref>];</highlight></codeline>
+<codeline lineno="403"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>responseBuf[<ref refid="_b_i_s_detector_8cpp_1acb84a306ee37479f97cf0b476560f027" kindref="member">MAX_MESSAGE_SIZE</ref>];</highlight></codeline>
 <codeline lineno="404"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structresponse" kindref="compound">response</ref>.<ref refid="structresponse_1aa8d4c62e04a1ce7fab912b496ad6cf43" kindref="member">data</ref><sp/><sp/><sp/><sp/>=<sp/>responseBuf;</highlight></codeline>
 <codeline lineno="405"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structresponse" kindref="compound">response</ref>.<ref refid="structresponse_1a1a34157603e204ad13c9c10b9970b0c7" kindref="member">dataLen</ref><sp/>=<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(responseBuf);</highlight></codeline>
 <codeline lineno="406"><highlight class="normal"></highlight></codeline>
 <codeline lineno="407"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(doRequest(&amp;<ref refid="structrequest" kindref="compound">request</ref>,<sp/>&amp;<ref refid="structresponse" kindref="compound">response</ref>))</highlight></codeline>
 <codeline lineno="408"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="409"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="rest_api_8cpp_1a02586085698a967f28309aa3d54b43a3" kindref="member">ERR_ARGS</ref>(</highlight><highlight class="stringliteral">&quot;[file=%s]<sp/>HEAD<sp/>request<sp/>failed&quot;</highlight><highlight class="normal">,<sp/>filename);</highlight></codeline>
+<codeline lineno="409"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="eiger_detector_8cpp_1a02586085698a967f28309aa3d54b43a3" kindref="member">ERR_ARGS</ref>(</highlight><highlight class="stringliteral">&quot;[file=%s]<sp/>HEAD<sp/>request<sp/>failed&quot;</highlight><highlight class="normal">,<sp/>filename);</highlight></codeline>
 <codeline lineno="410"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>EXIT_FAILURE;</highlight></codeline>
 <codeline lineno="411"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="412"><highlight class="normal"></highlight></codeline>
 <codeline lineno="413"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="structresponse" kindref="compound">response</ref>.<ref refid="structresponse_1a87a4392194e9eacc4100923e5b09f90b" kindref="member">code</ref><sp/>!=<sp/>200)</highlight></codeline>
 <codeline lineno="414"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="415"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="rest_api_8cpp_1a02586085698a967f28309aa3d54b43a3" kindref="member">ERR_ARGS</ref>(</highlight><highlight class="stringliteral">&quot;[file=%s]<sp/>server<sp/>returned<sp/>error<sp/>code<sp/>%d&quot;</highlight><highlight class="normal">,<sp/>filename,</highlight></codeline>
+<codeline lineno="415"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="eiger_detector_8cpp_1a02586085698a967f28309aa3d54b43a3" kindref="member">ERR_ARGS</ref>(</highlight><highlight class="stringliteral">&quot;[file=%s]<sp/>server<sp/>returned<sp/>error<sp/>code<sp/>%d&quot;</highlight><highlight class="normal">,<sp/>filename,</highlight></codeline>
 <codeline lineno="416"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structresponse" kindref="compound">response</ref>.<ref refid="structresponse_1a87a4392194e9eacc4100923e5b09f90b" kindref="member">code</ref>);</highlight></codeline>
 <codeline lineno="417"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>EXIT_FAILURE;</highlight></codeline>
 <codeline lineno="418"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
@@ -896,14 +896,14 @@
 <codeline lineno="428"><highlight class="normal"><sp/><sp/><sp/><sp/>epicsTimeStamp<sp/>start,<sp/>now;</highlight></codeline>
 <codeline lineno="429"><highlight class="normal"></highlight></codeline>
 <codeline lineno="430"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structrequest" kindref="compound">request_t</ref><sp/><ref refid="structrequest" kindref="compound">request</ref><sp/>=<sp/>{};</highlight></codeline>
-<codeline lineno="431"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>requestBuf[<ref refid="rest_api_8cpp_1acb84a306ee37479f97cf0b476560f027" kindref="member">MAX_MESSAGE_SIZE</ref>];</highlight></codeline>
+<codeline lineno="431"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>requestBuf[<ref refid="_b_i_s_detector_8cpp_1acb84a306ee37479f97cf0b476560f027" kindref="member">MAX_MESSAGE_SIZE</ref>];</highlight></codeline>
 <codeline lineno="432"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structrequest" kindref="compound">request</ref>.<ref refid="structrequest_1a75261cd13d263ec8e0a3e6e80f4924e9" kindref="member">data</ref><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>requestBuf;</highlight></codeline>
 <codeline lineno="433"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structrequest" kindref="compound">request</ref>.<ref refid="structrequest_1acb1dbacb49991e37ed74e7657ad6edae" kindref="member">dataLen</ref><sp/><sp/><sp/>=<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(requestBuf);</highlight></codeline>
 <codeline lineno="434"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structrequest" kindref="compound">request</ref>.<ref refid="structrequest_1a9095aa378d8153895243ac8ffd46baf9" kindref="member">actualLen</ref><sp/>=<sp/>epicsSnprintf(<ref refid="structrequest" kindref="compound">request</ref>.<ref refid="structrequest_1a75261cd13d263ec8e0a3e6e80f4924e9" kindref="member">data</ref>,<sp/><ref refid="structrequest" kindref="compound">request</ref>.<ref refid="structrequest_1acb1dbacb49991e37ed74e7657ad6edae" kindref="member">dataLen</ref>,</highlight></codeline>
 <codeline lineno="435"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="rest_api_8cpp_1a1a649288315320a375ae2c7a5ec93bce" kindref="member">REQUEST_HEAD</ref>,<sp/>mSysStr[<ref refid="rest_api_8h_1a14c3ad6f5fa82ee5ff47981398d0e13ca90c4192ef04861810b6545793bad5e1b" kindref="member">SSData</ref>].c_str(),<sp/>filename,<sp/>mHostname.c_str());</highlight></codeline>
 <codeline lineno="436"><highlight class="normal"></highlight></codeline>
 <codeline lineno="437"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structresponse" kindref="compound">response_t</ref><sp/><ref refid="structresponse" kindref="compound">response</ref><sp/>=<sp/>{};</highlight></codeline>
-<codeline lineno="438"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>responseBuf[<ref refid="rest_api_8cpp_1acb84a306ee37479f97cf0b476560f027" kindref="member">MAX_MESSAGE_SIZE</ref>];</highlight></codeline>
+<codeline lineno="438"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>responseBuf[<ref refid="_b_i_s_detector_8cpp_1acb84a306ee37479f97cf0b476560f027" kindref="member">MAX_MESSAGE_SIZE</ref>];</highlight></codeline>
 <codeline lineno="439"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structresponse" kindref="compound">response</ref>.<ref refid="structresponse_1aa8d4c62e04a1ce7fab912b496ad6cf43" kindref="member">data</ref><sp/><sp/><sp/><sp/>=<sp/>responseBuf;</highlight></codeline>
 <codeline lineno="440"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structresponse" kindref="compound">response</ref>.<ref refid="structresponse_1a1a34157603e204ad13c9c10b9970b0c7" kindref="member">dataLen</ref><sp/>=<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(responseBuf);</highlight></codeline>
 <codeline lineno="441"><highlight class="normal"></highlight></codeline>
@@ -913,7 +913,7 @@
 <codeline lineno="445"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="446"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(doRequest(&amp;<ref refid="structrequest" kindref="compound">request</ref>,<sp/>&amp;<ref refid="structresponse" kindref="compound">response</ref>))</highlight></codeline>
 <codeline lineno="447"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="448"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="rest_api_8cpp_1a02586085698a967f28309aa3d54b43a3" kindref="member">ERR_ARGS</ref>(</highlight><highlight class="stringliteral">&quot;[file=%s]<sp/>HEAD<sp/>request<sp/>failed&quot;</highlight><highlight class="normal">,<sp/>filename);</highlight></codeline>
+<codeline lineno="448"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="eiger_detector_8cpp_1a02586085698a967f28309aa3d54b43a3" kindref="member">ERR_ARGS</ref>(</highlight><highlight class="stringliteral">&quot;[file=%s]<sp/>HEAD<sp/>request<sp/>failed&quot;</highlight><highlight class="normal">,<sp/>filename);</highlight></codeline>
 <codeline lineno="449"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>EXIT_FAILURE;</highlight></codeline>
 <codeline lineno="450"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="451"><highlight class="normal"></highlight></codeline>
@@ -922,7 +922,7 @@
 <codeline lineno="454"><highlight class="normal"></highlight></codeline>
 <codeline lineno="455"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="structresponse" kindref="compound">response</ref>.<ref refid="structresponse_1a87a4392194e9eacc4100923e5b09f90b" kindref="member">code</ref><sp/>!=<sp/>404)</highlight></codeline>
 <codeline lineno="456"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="457"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="rest_api_8cpp_1a02586085698a967f28309aa3d54b43a3" kindref="member">ERR_ARGS</ref>(</highlight><highlight class="stringliteral">&quot;[file=%s]<sp/>server<sp/>returned<sp/>error<sp/>code<sp/>%d&quot;</highlight><highlight class="normal">,<sp/>filename,</highlight></codeline>
+<codeline lineno="457"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="eiger_detector_8cpp_1a02586085698a967f28309aa3d54b43a3" kindref="member">ERR_ARGS</ref>(</highlight><highlight class="stringliteral">&quot;[file=%s]<sp/>server<sp/>returned<sp/>error<sp/>code<sp/>%d&quot;</highlight><highlight class="normal">,<sp/>filename,</highlight></codeline>
 <codeline lineno="458"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structresponse" kindref="compound">response</ref>.<ref refid="structresponse_1a87a4392194e9eacc4100923e5b09f90b" kindref="member">code</ref>);</highlight></codeline>
 <codeline lineno="459"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>EXIT_FAILURE;</highlight></codeline>
 <codeline lineno="460"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
@@ -944,26 +944,26 @@
 <codeline lineno="476"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*functionName<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;deleteFile&quot;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="477"><highlight class="normal"></highlight></codeline>
 <codeline lineno="478"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structrequest" kindref="compound">request_t</ref><sp/><ref refid="structrequest" kindref="compound">request</ref><sp/>=<sp/>{};</highlight></codeline>
-<codeline lineno="479"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>requestBuf[<ref refid="rest_api_8cpp_1acb84a306ee37479f97cf0b476560f027" kindref="member">MAX_MESSAGE_SIZE</ref>];</highlight></codeline>
+<codeline lineno="479"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>requestBuf[<ref refid="_b_i_s_detector_8cpp_1acb84a306ee37479f97cf0b476560f027" kindref="member">MAX_MESSAGE_SIZE</ref>];</highlight></codeline>
 <codeline lineno="480"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structrequest" kindref="compound">request</ref>.<ref refid="structrequest_1a75261cd13d263ec8e0a3e6e80f4924e9" kindref="member">data</ref><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>requestBuf;</highlight></codeline>
 <codeline lineno="481"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structrequest" kindref="compound">request</ref>.<ref refid="structrequest_1acb1dbacb49991e37ed74e7657ad6edae" kindref="member">dataLen</ref><sp/><sp/><sp/>=<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(requestBuf);</highlight></codeline>
 <codeline lineno="482"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structrequest" kindref="compound">request</ref>.<ref refid="structrequest_1a9095aa378d8153895243ac8ffd46baf9" kindref="member">actualLen</ref><sp/>=<sp/>epicsSnprintf(<ref refid="structrequest" kindref="compound">request</ref>.<ref refid="structrequest_1a75261cd13d263ec8e0a3e6e80f4924e9" kindref="member">data</ref>,<sp/><ref refid="structrequest" kindref="compound">request</ref>.<ref refid="structrequest_1acb1dbacb49991e37ed74e7657ad6edae" kindref="member">dataLen</ref>,</highlight></codeline>
 <codeline lineno="483"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="rest_api_8cpp_1a5514ba5f2e2da0ac62ea16ab1711bd4e" kindref="member">REQUEST_DELETE</ref>,<sp/>mSysStr[<ref refid="rest_api_8h_1a14c3ad6f5fa82ee5ff47981398d0e13ca90c4192ef04861810b6545793bad5e1b" kindref="member">SSData</ref>].c_str(),<sp/>filename,<sp/>mHostname.c_str());</highlight></codeline>
 <codeline lineno="484"><highlight class="normal"></highlight></codeline>
 <codeline lineno="485"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structresponse" kindref="compound">response_t</ref><sp/><ref refid="structresponse" kindref="compound">response</ref><sp/>=<sp/>{};</highlight></codeline>
-<codeline lineno="486"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>responseBuf[<ref refid="rest_api_8cpp_1acb84a306ee37479f97cf0b476560f027" kindref="member">MAX_MESSAGE_SIZE</ref>];</highlight></codeline>
+<codeline lineno="486"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>responseBuf[<ref refid="_b_i_s_detector_8cpp_1acb84a306ee37479f97cf0b476560f027" kindref="member">MAX_MESSAGE_SIZE</ref>];</highlight></codeline>
 <codeline lineno="487"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structresponse" kindref="compound">response</ref>.<ref refid="structresponse_1aa8d4c62e04a1ce7fab912b496ad6cf43" kindref="member">data</ref><sp/><sp/><sp/><sp/>=<sp/>responseBuf;</highlight></codeline>
 <codeline lineno="488"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structresponse" kindref="compound">response</ref>.<ref refid="structresponse_1a1a34157603e204ad13c9c10b9970b0c7" kindref="member">dataLen</ref><sp/>=<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(responseBuf);</highlight></codeline>
 <codeline lineno="489"><highlight class="normal"></highlight></codeline>
 <codeline lineno="490"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(doRequest(&amp;<ref refid="structrequest" kindref="compound">request</ref>,<sp/>&amp;<ref refid="structresponse" kindref="compound">response</ref>))</highlight></codeline>
 <codeline lineno="491"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="492"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="rest_api_8cpp_1a02586085698a967f28309aa3d54b43a3" kindref="member">ERR_ARGS</ref>(</highlight><highlight class="stringliteral">&quot;[file=%s]<sp/>DELETE<sp/>request<sp/>failed&quot;</highlight><highlight class="normal">,<sp/>filename);</highlight></codeline>
+<codeline lineno="492"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="eiger_detector_8cpp_1a02586085698a967f28309aa3d54b43a3" kindref="member">ERR_ARGS</ref>(</highlight><highlight class="stringliteral">&quot;[file=%s]<sp/>DELETE<sp/>request<sp/>failed&quot;</highlight><highlight class="normal">,<sp/>filename);</highlight></codeline>
 <codeline lineno="493"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>EXIT_FAILURE;</highlight></codeline>
 <codeline lineno="494"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="495"><highlight class="normal"></highlight></codeline>
 <codeline lineno="496"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="structresponse" kindref="compound">response</ref>.<ref refid="structresponse_1a87a4392194e9eacc4100923e5b09f90b" kindref="member">code</ref><sp/>!=<sp/>204)</highlight></codeline>
 <codeline lineno="497"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="498"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="rest_api_8cpp_1a02586085698a967f28309aa3d54b43a3" kindref="member">ERR_ARGS</ref>(</highlight><highlight class="stringliteral">&quot;[file=%s]<sp/>DELETE<sp/>returned<sp/>code<sp/>%d&quot;</highlight><highlight class="normal">,<sp/>filename,<sp/><ref refid="structresponse" kindref="compound">response</ref>.<ref refid="structresponse_1a87a4392194e9eacc4100923e5b09f90b" kindref="member">code</ref>);</highlight></codeline>
+<codeline lineno="498"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="eiger_detector_8cpp_1a02586085698a967f28309aa3d54b43a3" kindref="member">ERR_ARGS</ref>(</highlight><highlight class="stringliteral">&quot;[file=%s]<sp/>DELETE<sp/>returned<sp/>code<sp/>%d&quot;</highlight><highlight class="normal">,<sp/>filename,<sp/><ref refid="structresponse" kindref="compound">response</ref>.<ref refid="structresponse_1a87a4392194e9eacc4100923e5b09f90b" kindref="member">code</ref>);</highlight></codeline>
 <codeline lineno="499"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>EXIT_FAILURE;</highlight></codeline>
 <codeline lineno="500"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="501"><highlight class="normal"></highlight></codeline>
@@ -972,7 +972,7 @@
 <codeline lineno="504"><highlight class="normal"></highlight></codeline>
 <codeline lineno="505"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_rest_a_p_i_1a9f68721bdcd7cd6c5819fef28bad60aa" kindref="member">RestAPI::getMonitorImage</ref><sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**<ref refid="udp__client__pixirad__single_8cpp_1ac8ed9b9edf72a0bbde1ba01f0c67ef73" kindref="member">buf</ref>,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>*bufSize,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>timeout)</highlight></codeline>
 <codeline lineno="506"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="507"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>param[<ref refid="rest_api_8cpp_1a7244ab798f58214294b580ca0bb48552" kindref="member">MAX_BUF_SIZE</ref>];</highlight></codeline>
+<codeline lineno="507"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>param[<ref refid="eiger_detector_8cpp_1a7244ab798f58214294b580ca0bb48552" kindref="member">MAX_BUF_SIZE</ref>];</highlight></codeline>
 <codeline lineno="508"><highlight class="normal"><sp/><sp/><sp/><sp/>epicsSnprintf(param,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(param),<sp/></highlight><highlight class="stringliteral">&quot;monitor?timeout=%lu&quot;</highlight><highlight class="normal">,<sp/>timeout);</highlight></codeline>
 <codeline lineno="509"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>getBlob(<ref refid="rest_api_8h_1a14c3ad6f5fa82ee5ff47981398d0e13cae43f78a073c568086edf2880ca13fcd6" kindref="member">SSMonImages</ref>,<sp/>param,<sp/><ref refid="udp__client__pixirad__single_8cpp_1ac8ed9b9edf72a0bbde1ba01f0c67ef73" kindref="member">buf</ref>,<sp/>bufSize,<sp/><ref refid="rest_api_8cpp_1a908f8d1bb18160a1243edee75aa2c151" kindref="member">DATA_TIFF</ref>);</highlight></codeline>
 <codeline lineno="510"><highlight class="normal">}</highlight></codeline>
@@ -990,7 +990,7 @@
 <codeline lineno="522"><highlight class="normal"></highlight></codeline>
 <codeline lineno="523"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(s-&gt;<ref refid="structsocket_1a4a96c8e9ead80f13092915a6ef4d4373" kindref="member">fd</ref><sp/>==<sp/>INVALID_SOCKET)</highlight></codeline>
 <codeline lineno="524"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="525"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="rest_api_8cpp_1a351b8552521f29df22aa336bb28e2180" kindref="member">ERR</ref>(</highlight><highlight class="stringliteral">&quot;couldn&apos;t<sp/>create<sp/>socket&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="525"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_n_d_file_net_c_d_f_8cpp_1a588357de2986fdf4c1380190f7ae9f37" kindref="member">ERR</ref>(</highlight><highlight class="stringliteral">&quot;couldn&apos;t<sp/>create<sp/>socket&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="526"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>EXIT_FAILURE;</highlight></codeline>
 <codeline lineno="527"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="528"><highlight class="normal"></highlight></codeline>
@@ -1001,9 +1001,9 @@
 <codeline lineno="533"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Connection<sp/>actually<sp/>failed</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="534"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(errno<sp/>!=<sp/>EINPROGRESS)</highlight></codeline>
 <codeline lineno="535"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="536"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>error[<ref refid="rest_api_8cpp_1a7244ab798f58214294b580ca0bb48552" kindref="member">MAX_BUF_SIZE</ref>];</highlight></codeline>
+<codeline lineno="536"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>error[<ref refid="eiger_detector_8cpp_1a7244ab798f58214294b580ca0bb48552" kindref="member">MAX_BUF_SIZE</ref>];</highlight></codeline>
 <codeline lineno="537"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>epicsSocketConvertErrnoToString(error,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(error));</highlight></codeline>
-<codeline lineno="538"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="rest_api_8cpp_1a02586085698a967f28309aa3d54b43a3" kindref="member">ERR_ARGS</ref>(</highlight><highlight class="stringliteral">&quot;failed<sp/>to<sp/>connect<sp/>to<sp/>%s:%d<sp/>[%s]&quot;</highlight><highlight class="normal">,<sp/>mHostname.c_str(),</highlight></codeline>
+<codeline lineno="538"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="eiger_detector_8cpp_1a02586085698a967f28309aa3d54b43a3" kindref="member">ERR_ARGS</ref>(</highlight><highlight class="stringliteral">&quot;failed<sp/>to<sp/>connect<sp/>to<sp/>%s:%d<sp/>[%s]&quot;</highlight><highlight class="normal">,<sp/>mHostname.c_str(),</highlight></codeline>
 <codeline lineno="539"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mPort,<sp/>error);</highlight></codeline>
 <codeline lineno="540"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>epicsSocketDestroy(s-&gt;<ref refid="structsocket_1a4a96c8e9ead80f13092915a6ef4d4373" kindref="member">fd</ref>);</highlight></codeline>
 <codeline lineno="541"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>EXIT_FAILURE;</highlight></codeline>
@@ -1024,7 +1024,7 @@
 <codeline lineno="556"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(ret<sp/>&lt;=<sp/>0)</highlight></codeline>
 <codeline lineno="557"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="558"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*error<sp/>=<sp/>ret<sp/>==<sp/>0<sp/>?<sp/></highlight><highlight class="stringliteral">&quot;TIMEOUT&quot;</highlight><highlight class="normal"><sp/>:<sp/></highlight><highlight class="stringliteral">&quot;select<sp/>failed&quot;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="559"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="rest_api_8cpp_1a02586085698a967f28309aa3d54b43a3" kindref="member">ERR_ARGS</ref>(</highlight><highlight class="stringliteral">&quot;failed<sp/>to<sp/>connect<sp/>to<sp/>%s:%d<sp/>[%s]&quot;</highlight><highlight class="normal">,<sp/>mHostname.c_str(),</highlight></codeline>
+<codeline lineno="559"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="eiger_detector_8cpp_1a02586085698a967f28309aa3d54b43a3" kindref="member">ERR_ARGS</ref>(</highlight><highlight class="stringliteral">&quot;failed<sp/>to<sp/>connect<sp/>to<sp/>%s:%d<sp/>[%s]&quot;</highlight><highlight class="normal">,<sp/>mHostname.c_str(),</highlight></codeline>
 <codeline lineno="560"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mPort,<sp/>error);</highlight></codeline>
 <codeline lineno="561"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>epicsSocketDestroy(s-&gt;<ref refid="structsocket_1a4a96c8e9ead80f13092915a6ef4d4373" kindref="member">fd</ref>);</highlight></codeline>
 <codeline lineno="562"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>EXIT_FAILURE;</highlight></codeline>
@@ -1059,7 +1059,7 @@
 <codeline lineno="591"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structsocket" kindref="compound">socket_t</ref><sp/>*s<sp/>=<sp/>NULL;</highlight></codeline>
 <codeline lineno="592"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>gotSocket<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="593"><highlight class="normal"></highlight></codeline>
-<codeline lineno="594"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref><sp/>=<sp/>0;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref><sp/>&lt;<sp/>mNumSockets<sp/>&amp;&amp;<sp/>!gotSocket;<sp/>++<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>)</highlight></codeline>
+<codeline lineno="594"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref><sp/>&lt;<sp/>mNumSockets<sp/>&amp;&amp;<sp/>!gotSocket;<sp/>++<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>)</highlight></codeline>
 <codeline lineno="595"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="596"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>s<sp/>=<sp/>&amp;mSockets[<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>];</highlight></codeline>
 <codeline lineno="597"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(s-&gt;<ref refid="structsocket_1a18c5465a8c6856c15b45d8e8e0d7e147" kindref="member">mutex</ref>.tryLock())</highlight></codeline>
@@ -1068,7 +1068,7 @@
 <codeline lineno="600"><highlight class="normal"></highlight></codeline>
 <codeline lineno="601"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!gotSocket)</highlight></codeline>
 <codeline lineno="602"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="603"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="rest_api_8cpp_1a351b8552521f29df22aa336bb28e2180" kindref="member">ERR</ref>(</highlight><highlight class="stringliteral">&quot;no<sp/>available<sp/>socket&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="603"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_n_d_file_net_c_d_f_8cpp_1a588357de2986fdf4c1380190f7ae9f37" kindref="member">ERR</ref>(</highlight><highlight class="stringliteral">&quot;no<sp/>available<sp/>socket&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="604"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>status<sp/>=<sp/>EXIT_FAILURE;</highlight></codeline>
 <codeline lineno="605"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">goto</highlight><highlight class="normal"><sp/>end;</highlight></codeline>
 <codeline lineno="606"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
@@ -1077,7 +1077,7 @@
 <codeline lineno="609"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="610"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(connect(s))</highlight></codeline>
 <codeline lineno="611"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="612"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="rest_api_8cpp_1a351b8552521f29df22aa336bb28e2180" kindref="member">ERR</ref>(</highlight><highlight class="stringliteral">&quot;failed<sp/>to<sp/>reconnect<sp/>socket&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="612"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_n_d_file_net_c_d_f_8cpp_1a588357de2986fdf4c1380190f7ae9f37" kindref="member">ERR</ref>(</highlight><highlight class="stringliteral">&quot;failed<sp/>to<sp/>reconnect<sp/>socket&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="613"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>status<sp/>=<sp/>EXIT_FAILURE;</highlight></codeline>
 <codeline lineno="614"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">goto</highlight><highlight class="normal"><sp/>end;</highlight></codeline>
 <codeline lineno="615"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
@@ -1089,7 +1089,7 @@
 <codeline lineno="621"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">goto</highlight><highlight class="normal"><sp/>retry;</highlight></codeline>
 <codeline lineno="622"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="623"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="624"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="rest_api_8cpp_1a351b8552521f29df22aa336bb28e2180" kindref="member">ERR</ref>(</highlight><highlight class="stringliteral">&quot;failed<sp/>to<sp/>send&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="624"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_n_d_file_net_c_d_f_8cpp_1a588357de2986fdf4c1380190f7ae9f37" kindref="member">ERR</ref>(</highlight><highlight class="stringliteral">&quot;failed<sp/>to<sp/>send&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="625"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>s-&gt;<ref refid="structsocket_1a48a0bdcea38bea40f5a2d9e3b113b139" kindref="member">closed</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="626"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>status<sp/>=<sp/>EXIT_FAILURE;</highlight></codeline>
 <codeline lineno="627"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">goto</highlight><highlight class="normal"><sp/>end;</highlight></codeline>
@@ -1108,7 +1108,7 @@
 <codeline lineno="640"><highlight class="normal"><sp/><sp/><sp/><sp/>ret<sp/>=<sp/>select(s-&gt;<ref refid="structsocket_1a4a96c8e9ead80f13092915a6ef4d4373" kindref="member">fd</ref>+1,<sp/>&amp;fds,<sp/>NULL,<sp/>NULL,<sp/>pRecvTimeout);</highlight></codeline>
 <codeline lineno="641"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(ret<sp/>&lt;=<sp/>0)</highlight></codeline>
 <codeline lineno="642"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="643"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="rest_api_8cpp_1a351b8552521f29df22aa336bb28e2180" kindref="member">ERR</ref>(ret<sp/>?<sp/></highlight><highlight class="stringliteral">&quot;select()<sp/>failed&quot;</highlight><highlight class="normal"><sp/>:<sp/></highlight><highlight class="stringliteral">&quot;timed<sp/>out&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="643"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_n_d_file_net_c_d_f_8cpp_1a588357de2986fdf4c1380190f7ae9f37" kindref="member">ERR</ref>(ret<sp/>?<sp/></highlight><highlight class="stringliteral">&quot;select()<sp/>failed&quot;</highlight><highlight class="normal"><sp/>:<sp/></highlight><highlight class="stringliteral">&quot;timed<sp/>out&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="644"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>status<sp/>=<sp/>EXIT_FAILURE;</highlight></codeline>
 <codeline lineno="645"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">goto</highlight><highlight class="normal"><sp/>end;</highlight></codeline>
 <codeline lineno="646"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
@@ -1119,7 +1119,7 @@
 <codeline lineno="651"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">goto</highlight><highlight class="normal"><sp/>retry;</highlight></codeline>
 <codeline lineno="652"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="653"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="654"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="rest_api_8cpp_1a351b8552521f29df22aa336bb28e2180" kindref="member">ERR</ref>(</highlight><highlight class="stringliteral">&quot;failed<sp/>to<sp/>recv&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="654"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_n_d_file_net_c_d_f_8cpp_1a588357de2986fdf4c1380190f7ae9f37" kindref="member">ERR</ref>(</highlight><highlight class="stringliteral">&quot;failed<sp/>to<sp/>recv&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="655"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>status<sp/>=<sp/>EXIT_FAILURE;</highlight></codeline>
 <codeline lineno="656"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">goto</highlight><highlight class="normal"><sp/>end;</highlight></codeline>
 <codeline lineno="657"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
@@ -1129,7 +1129,7 @@
 <codeline lineno="661"><highlight class="normal"></highlight></codeline>
 <codeline lineno="662"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">((status<sp/>=<sp/>parseHeader(<ref refid="structresponse" kindref="compound">response</ref>)))</highlight></codeline>
 <codeline lineno="663"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="664"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="rest_api_8cpp_1a351b8552521f29df22aa336bb28e2180" kindref="member">ERR</ref>(</highlight><highlight class="stringliteral">&quot;failed<sp/>to<sp/>parseHeader&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="664"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_n_d_file_net_c_d_f_8cpp_1a588357de2986fdf4c1380190f7ae9f37" kindref="member">ERR</ref>(</highlight><highlight class="stringliteral">&quot;failed<sp/>to<sp/>parseHeader&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="665"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">goto</highlight><highlight class="normal"><sp/>end;</highlight></codeline>
 <codeline lineno="666"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="667"><highlight class="normal"></highlight></codeline>
@@ -1151,19 +1151,19 @@
 <codeline lineno="683"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>doRequest(<ref refid="structrequest" kindref="compound">request</ref>,<sp/><ref refid="structresponse" kindref="compound">response</ref>,<sp/>timeout);</highlight></codeline>
 <codeline lineno="684"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="685"><highlight class="normal"></highlight></codeline>
-<codeline lineno="686"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_rest_a_p_i_1a7bc501cee9faad708dd1bd16c874bf81" kindref="member">RestAPI::put</ref><sp/>(<ref refid="rest_api_8h_1a14c3ad6f5fa82ee5ff47981398d0e13c" kindref="member">sys_t</ref><sp/>sys,<sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>&amp;<sp/>param,<sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>&amp;<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>,</highlight></codeline>
+<codeline lineno="686"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_rest_a_p_i_1a7bc501cee9faad708dd1bd16c874bf81" kindref="member">RestAPI::put</ref><sp/>(<ref refid="rest_api_8h_1a14c3ad6f5fa82ee5ff47981398d0e13c" kindref="member">sys_t</ref><sp/>sys,<sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>&amp;<sp/>param,<sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>&amp;<sp/>value,</highlight></codeline>
 <codeline lineno="687"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>*<sp/>reply,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>timeout)</highlight></codeline>
 <codeline lineno="688"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="689"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*functionName<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;put&quot;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="690"><highlight class="normal"></highlight></codeline>
 <codeline lineno="691"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>valueLen<sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="692"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>valueBuf[<ref refid="rest_api_8cpp_1a7244ab798f58214294b580ca0bb48552" kindref="member">MAX_BUF_SIZE</ref>]<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="692"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>valueBuf[<ref refid="eiger_detector_8cpp_1a7244ab798f58214294b580ca0bb48552" kindref="member">MAX_BUF_SIZE</ref>]<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="693"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!<ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>.empty())</highlight></codeline>
 <codeline lineno="694"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>valueLen<sp/>=<sp/>epicsSnprintf(valueBuf,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(valueBuf),<sp/></highlight><highlight class="stringliteral">&quot;{\&quot;value\&quot;:<sp/>%s}&quot;</highlight><highlight class="normal">,</highlight></codeline>
 <codeline lineno="695"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>.c_str());</highlight></codeline>
 <codeline lineno="696"><highlight class="normal"></highlight></codeline>
 <codeline lineno="697"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>headerLen;</highlight></codeline>
-<codeline lineno="698"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>header[<ref refid="rest_api_8cpp_1a7244ab798f58214294b580ca0bb48552" kindref="member">MAX_BUF_SIZE</ref>];</highlight></codeline>
+<codeline lineno="698"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>header[<ref refid="eiger_detector_8cpp_1a7244ab798f58214294b580ca0bb48552" kindref="member">MAX_BUF_SIZE</ref>];</highlight></codeline>
 <codeline lineno="699"><highlight class="normal"><sp/><sp/><sp/><sp/>headerLen<sp/>=<sp/>epicsSnprintf(header,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(header),<sp/><ref refid="rest_api_8cpp_1aea20f935127ae58ea0d0ae85d2c14c46" kindref="member">REQUEST_PUT</ref>,<sp/>mSysStr[sys].c_str(),</highlight></codeline>
 <codeline lineno="700"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>param.c_str(),<sp/>mHostname.c_str(),<sp/>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">)valueLen);</highlight></codeline>
 <codeline lineno="701"><highlight class="normal"></highlight></codeline>
@@ -1174,7 +1174,7 @@
 <codeline lineno="706"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structrequest" kindref="compound">request</ref>.<ref refid="structrequest_1a9095aa378d8153895243ac8ffd46baf9" kindref="member">actualLen</ref><sp/>=<sp/><ref refid="structrequest" kindref="compound">request</ref>.<ref refid="structrequest_1acb1dbacb49991e37ed74e7657ad6edae" kindref="member">dataLen</ref>;</highlight></codeline>
 <codeline lineno="707"><highlight class="normal"></highlight></codeline>
 <codeline lineno="708"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structresponse" kindref="compound">response_t</ref><sp/><ref refid="structresponse" kindref="compound">response</ref><sp/>=<sp/>{};</highlight></codeline>
-<codeline lineno="709"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>responseBuf[<ref refid="rest_api_8cpp_1acb84a306ee37479f97cf0b476560f027" kindref="member">MAX_MESSAGE_SIZE</ref>];</highlight></codeline>
+<codeline lineno="709"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>responseBuf[<ref refid="_b_i_s_detector_8cpp_1acb84a306ee37479f97cf0b476560f027" kindref="member">MAX_MESSAGE_SIZE</ref>];</highlight></codeline>
 <codeline lineno="710"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structresponse" kindref="compound">response</ref>.<ref refid="structresponse_1aa8d4c62e04a1ce7fab912b496ad6cf43" kindref="member">data</ref><sp/><sp/><sp/><sp/>=<sp/>responseBuf;</highlight></codeline>
 <codeline lineno="711"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structresponse" kindref="compound">response</ref>.<ref refid="structresponse_1a1a34157603e204ad13c9c10b9970b0c7" kindref="member">dataLen</ref><sp/>=<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(responseBuf);</highlight></codeline>
 <codeline lineno="712"><highlight class="normal"></highlight></codeline>
@@ -1183,13 +1183,13 @@
 <codeline lineno="715"><highlight class="normal"></highlight></codeline>
 <codeline lineno="716"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(doRequest(&amp;<ref refid="structrequest" kindref="compound">request</ref>,<sp/>&amp;<ref refid="structresponse" kindref="compound">response</ref>,<sp/>timeout))</highlight></codeline>
 <codeline lineno="717"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="718"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="rest_api_8cpp_1a02586085698a967f28309aa3d54b43a3" kindref="member">ERR_ARGS</ref>(</highlight><highlight class="stringliteral">&quot;[param=%s]<sp/>request<sp/>failed&quot;</highlight><highlight class="normal">,<sp/>param.c_str());</highlight></codeline>
+<codeline lineno="718"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="eiger_detector_8cpp_1a02586085698a967f28309aa3d54b43a3" kindref="member">ERR_ARGS</ref>(</highlight><highlight class="stringliteral">&quot;[param=%s]<sp/>request<sp/>failed&quot;</highlight><highlight class="normal">,<sp/>param.c_str());</highlight></codeline>
 <codeline lineno="719"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>EXIT_FAILURE;</highlight></codeline>
 <codeline lineno="720"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="721"><highlight class="normal"></highlight></codeline>
 <codeline lineno="722"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="structresponse" kindref="compound">response</ref>.<ref refid="structresponse_1a87a4392194e9eacc4100923e5b09f90b" kindref="member">code</ref><sp/>!=<sp/>200)</highlight></codeline>
 <codeline lineno="723"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="724"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="rest_api_8cpp_1a02586085698a967f28309aa3d54b43a3" kindref="member">ERR_ARGS</ref>(</highlight><highlight class="stringliteral">&quot;[param=%s]<sp/>server<sp/>returned<sp/>error<sp/>code<sp/>%d&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="724"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="eiger_detector_8cpp_1a02586085698a967f28309aa3d54b43a3" kindref="member">ERR_ARGS</ref>(</highlight><highlight class="stringliteral">&quot;[param=%s]<sp/>server<sp/>returned<sp/>error<sp/>code<sp/>%d&quot;</highlight><highlight class="normal">,</highlight></codeline>
 <codeline lineno="725"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>param.c_str(),<sp/><ref refid="structresponse" kindref="compound">response</ref>.<ref refid="structresponse_1a87a4392194e9eacc4100923e5b09f90b" kindref="member">code</ref>);</highlight></codeline>
 <codeline lineno="726"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>EXIT_FAILURE;</highlight></codeline>
 <codeline lineno="727"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
@@ -1199,31 +1199,31 @@
 <codeline lineno="731"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>EXIT_SUCCESS;</highlight></codeline>
 <codeline lineno="732"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="733"><highlight class="normal"></highlight></codeline>
-<codeline lineno="734"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_rest_a_p_i_1a3da99109327f64267436315484b69af5" kindref="member">RestAPI::get</ref><sp/>(<ref refid="rest_api_8h_1a14c3ad6f5fa82ee5ff47981398d0e13c" kindref="member">sys_t</ref><sp/>sys,<sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>&amp;<sp/>param,<sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>&amp;<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>timeout)</highlight></codeline>
+<codeline lineno="734"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_rest_a_p_i_1a3da99109327f64267436315484b69af5" kindref="member">RestAPI::get</ref><sp/>(<ref refid="rest_api_8h_1a14c3ad6f5fa82ee5ff47981398d0e13c" kindref="member">sys_t</ref><sp/>sys,<sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>&amp;<sp/>param,<sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>&amp;<sp/>value,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>timeout)</highlight></codeline>
 <codeline lineno="735"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="736"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*functionName<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;get&quot;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="737"><highlight class="normal"></highlight></codeline>
 <codeline lineno="738"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structrequest" kindref="compound">request_t</ref><sp/><ref refid="structrequest" kindref="compound">request</ref><sp/>=<sp/>{};</highlight></codeline>
-<codeline lineno="739"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>requestBuf[<ref refid="rest_api_8cpp_1acb84a306ee37479f97cf0b476560f027" kindref="member">MAX_MESSAGE_SIZE</ref>];</highlight></codeline>
+<codeline lineno="739"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>requestBuf[<ref refid="_b_i_s_detector_8cpp_1acb84a306ee37479f97cf0b476560f027" kindref="member">MAX_MESSAGE_SIZE</ref>];</highlight></codeline>
 <codeline lineno="740"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structrequest" kindref="compound">request</ref>.<ref refid="structrequest_1a75261cd13d263ec8e0a3e6e80f4924e9" kindref="member">data</ref><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>requestBuf;</highlight></codeline>
 <codeline lineno="741"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structrequest" kindref="compound">request</ref>.<ref refid="structrequest_1acb1dbacb49991e37ed74e7657ad6edae" kindref="member">dataLen</ref><sp/><sp/><sp/>=<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(requestBuf);</highlight></codeline>
 <codeline lineno="742"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structrequest" kindref="compound">request</ref>.<ref refid="structrequest_1a9095aa378d8153895243ac8ffd46baf9" kindref="member">actualLen</ref><sp/>=<sp/>epicsSnprintf(<ref refid="structrequest" kindref="compound">request</ref>.<ref refid="structrequest_1a75261cd13d263ec8e0a3e6e80f4924e9" kindref="member">data</ref>,<sp/><ref refid="structrequest" kindref="compound">request</ref>.<ref refid="structrequest_1acb1dbacb49991e37ed74e7657ad6edae" kindref="member">dataLen</ref>,</highlight></codeline>
 <codeline lineno="743"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="rest_api_8cpp_1adec0375050ef1be9673c119a6f83d1be" kindref="member">REQUEST_GET</ref>,<sp/>mSysStr[sys].c_str(),<sp/>param.c_str(),<sp/>mHostname.c_str());</highlight></codeline>
 <codeline lineno="744"><highlight class="normal"></highlight></codeline>
 <codeline lineno="745"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structresponse" kindref="compound">response_t</ref><sp/><ref refid="structresponse" kindref="compound">response</ref><sp/>=<sp/>{};</highlight></codeline>
-<codeline lineno="746"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>responseBuf[<ref refid="rest_api_8cpp_1acb84a306ee37479f97cf0b476560f027" kindref="member">MAX_MESSAGE_SIZE</ref>];</highlight></codeline>
+<codeline lineno="746"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>responseBuf[<ref refid="_b_i_s_detector_8cpp_1acb84a306ee37479f97cf0b476560f027" kindref="member">MAX_MESSAGE_SIZE</ref>];</highlight></codeline>
 <codeline lineno="747"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structresponse" kindref="compound">response</ref>.<ref refid="structresponse_1aa8d4c62e04a1ce7fab912b496ad6cf43" kindref="member">data</ref><sp/><sp/><sp/><sp/>=<sp/>responseBuf;</highlight></codeline>
 <codeline lineno="748"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structresponse" kindref="compound">response</ref>.<ref refid="structresponse_1a1a34157603e204ad13c9c10b9970b0c7" kindref="member">dataLen</ref><sp/>=<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(responseBuf);</highlight></codeline>
 <codeline lineno="749"><highlight class="normal"></highlight></codeline>
 <codeline lineno="750"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(doRequest(&amp;<ref refid="structrequest" kindref="compound">request</ref>,<sp/>&amp;<ref refid="structresponse" kindref="compound">response</ref>,<sp/>timeout))</highlight></codeline>
 <codeline lineno="751"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="752"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="rest_api_8cpp_1a02586085698a967f28309aa3d54b43a3" kindref="member">ERR_ARGS</ref>(</highlight><highlight class="stringliteral">&quot;[param=%s]<sp/>request<sp/>failed&quot;</highlight><highlight class="normal">,<sp/>param.c_str());</highlight></codeline>
+<codeline lineno="752"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="eiger_detector_8cpp_1a02586085698a967f28309aa3d54b43a3" kindref="member">ERR_ARGS</ref>(</highlight><highlight class="stringliteral">&quot;[param=%s]<sp/>request<sp/>failed&quot;</highlight><highlight class="normal">,<sp/>param.c_str());</highlight></codeline>
 <codeline lineno="753"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>EXIT_FAILURE;</highlight></codeline>
 <codeline lineno="754"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="755"><highlight class="normal"></highlight></codeline>
 <codeline lineno="756"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="structresponse" kindref="compound">response</ref>.<ref refid="structresponse_1a87a4392194e9eacc4100923e5b09f90b" kindref="member">code</ref><sp/>!=<sp/>200)</highlight></codeline>
 <codeline lineno="757"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="758"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="rest_api_8cpp_1a02586085698a967f28309aa3d54b43a3" kindref="member">ERR_ARGS</ref>(</highlight><highlight class="stringliteral">&quot;[param=%s]<sp/>server<sp/>returned<sp/>error<sp/>code<sp/>%d&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="758"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="eiger_detector_8cpp_1a02586085698a967f28309aa3d54b43a3" kindref="member">ERR_ARGS</ref>(</highlight><highlight class="stringliteral">&quot;[param=%s]<sp/>server<sp/>returned<sp/>error<sp/>code<sp/>%d&quot;</highlight><highlight class="normal">,</highlight></codeline>
 <codeline lineno="759"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>param.c_str(),<sp/><ref refid="structresponse" kindref="compound">response</ref>.<ref refid="structresponse_1a87a4392194e9eacc4100923e5b09f90b" kindref="member">code</ref>);</highlight></codeline>
 <codeline lineno="760"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>EXIT_FAILURE;</highlight></codeline>
 <codeline lineno="761"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
@@ -1232,7 +1232,7 @@
 <codeline lineno="764"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>EXIT_SUCCESS;</highlight></codeline>
 <codeline lineno="765"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="766"><highlight class="normal"></highlight></codeline>
-<codeline lineno="767"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>RestAPI::getBlob<sp/>(<ref refid="rest_api_8h_1a14c3ad6f5fa82ee5ff47981398d0e13c" kindref="member">sys_t</ref><sp/>sys,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="namespacemake_db_and_edl_1a2832407c256551abb325d5ee9e587443" kindref="member">name</ref>,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**<ref refid="udp__client__pixirad__single_8cpp_1ac8ed9b9edf72a0bbde1ba01f0c67ef73" kindref="member">buf</ref>,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>*bufSize,</highlight></codeline>
+<codeline lineno="767"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>RestAPI::getBlob<sp/>(<ref refid="rest_api_8h_1a14c3ad6f5fa82ee5ff47981398d0e13c" kindref="member">sys_t</ref><sp/>sys,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*name,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**<ref refid="udp__client__pixirad__single_8cpp_1ac8ed9b9edf72a0bbde1ba01f0c67ef73" kindref="member">buf</ref>,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>*bufSize,</highlight></codeline>
 <codeline lineno="768"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*accept)</highlight></codeline>
 <codeline lineno="769"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="770"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*functionName<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;getBlob&quot;</highlight><highlight class="normal">;</highlight></codeline>
@@ -1242,21 +1242,21 @@
 <codeline lineno="774"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*bufp;</highlight></codeline>
 <codeline lineno="775"><highlight class="normal"></highlight></codeline>
 <codeline lineno="776"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structrequest" kindref="compound">request_t</ref><sp/><ref refid="structrequest" kindref="compound">request</ref><sp/>=<sp/>{};</highlight></codeline>
-<codeline lineno="777"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>requestBuf[<ref refid="rest_api_8cpp_1acb84a306ee37479f97cf0b476560f027" kindref="member">MAX_MESSAGE_SIZE</ref>];</highlight></codeline>
+<codeline lineno="777"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>requestBuf[<ref refid="_b_i_s_detector_8cpp_1acb84a306ee37479f97cf0b476560f027" kindref="member">MAX_MESSAGE_SIZE</ref>];</highlight></codeline>
 <codeline lineno="778"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structrequest" kindref="compound">request</ref>.<ref refid="structrequest_1a75261cd13d263ec8e0a3e6e80f4924e9" kindref="member">data</ref><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>requestBuf;</highlight></codeline>
 <codeline lineno="779"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structrequest" kindref="compound">request</ref>.<ref refid="structrequest_1acb1dbacb49991e37ed74e7657ad6edae" kindref="member">dataLen</ref><sp/><sp/><sp/>=<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(requestBuf);</highlight></codeline>
 <codeline lineno="780"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structrequest" kindref="compound">request</ref>.<ref refid="structrequest_1a9095aa378d8153895243ac8ffd46baf9" kindref="member">actualLen</ref><sp/>=<sp/>epicsSnprintf(<ref refid="structrequest" kindref="compound">request</ref>.<ref refid="structrequest_1a75261cd13d263ec8e0a3e6e80f4924e9" kindref="member">data</ref>,<sp/><ref refid="structrequest" kindref="compound">request</ref>.<ref refid="structrequest_1acb1dbacb49991e37ed74e7657ad6edae" kindref="member">dataLen</ref>,</highlight></codeline>
-<codeline lineno="781"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="rest_api_8cpp_1a2b98bddd7898ae3d28b040713bc78aec" kindref="member">REQUEST_GET_FILE</ref>,<sp/>mSysStr[sys].c_str(),<sp/><ref refid="namespacemake_db_and_edl_1a2832407c256551abb325d5ee9e587443" kindref="member">name</ref>,<sp/>mHostname.c_str(),<sp/>accept);</highlight></codeline>
+<codeline lineno="781"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="rest_api_8cpp_1a2b98bddd7898ae3d28b040713bc78aec" kindref="member">REQUEST_GET_FILE</ref>,<sp/>mSysStr[sys].c_str(),<sp/>name,<sp/>mHostname.c_str(),<sp/>accept);</highlight></codeline>
 <codeline lineno="782"><highlight class="normal"></highlight></codeline>
 <codeline lineno="783"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structresponse" kindref="compound">response_t</ref><sp/><ref refid="structresponse" kindref="compound">response</ref><sp/>=<sp/>{};</highlight></codeline>
-<codeline lineno="784"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>responseBuf[<ref refid="rest_api_8cpp_1acb84a306ee37479f97cf0b476560f027" kindref="member">MAX_MESSAGE_SIZE</ref>];</highlight></codeline>
+<codeline lineno="784"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>responseBuf[<ref refid="_b_i_s_detector_8cpp_1acb84a306ee37479f97cf0b476560f027" kindref="member">MAX_MESSAGE_SIZE</ref>];</highlight></codeline>
 <codeline lineno="785"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structresponse" kindref="compound">response</ref>.<ref refid="structresponse_1aa8d4c62e04a1ce7fab912b496ad6cf43" kindref="member">data</ref><sp/><sp/><sp/><sp/>=<sp/>responseBuf;</highlight></codeline>
 <codeline lineno="786"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structresponse" kindref="compound">response</ref>.<ref refid="structresponse_1a1a34157603e204ad13c9c10b9970b0c7" kindref="member">dataLen</ref><sp/>=<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(responseBuf);</highlight></codeline>
 <codeline lineno="787"><highlight class="normal"></highlight></codeline>
 <codeline lineno="788"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structsocket" kindref="compound">socket_t</ref><sp/>*s<sp/>=<sp/>NULL;</highlight></codeline>
 <codeline lineno="789"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>gotSocket<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="790"><highlight class="normal"></highlight></codeline>
-<codeline lineno="791"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref><sp/>=<sp/>0;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref><sp/>&lt;<sp/>mNumSockets<sp/>&amp;&amp;<sp/>!gotSocket;<sp/>++<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>)</highlight></codeline>
+<codeline lineno="791"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref><sp/>&lt;<sp/>mNumSockets<sp/>&amp;&amp;<sp/>!gotSocket;<sp/>++<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>)</highlight></codeline>
 <codeline lineno="792"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="793"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>s<sp/>=<sp/>&amp;mSockets[<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>];</highlight></codeline>
 <codeline lineno="794"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(s-&gt;<ref refid="structsocket_1a18c5465a8c6856c15b45d8e8e0d7e147" kindref="member">mutex</ref>.tryLock())</highlight></codeline>
@@ -1265,7 +1265,7 @@
 <codeline lineno="797"><highlight class="normal"></highlight></codeline>
 <codeline lineno="798"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!gotSocket)</highlight></codeline>
 <codeline lineno="799"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="800"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="rest_api_8cpp_1a351b8552521f29df22aa336bb28e2180" kindref="member">ERR</ref>(</highlight><highlight class="stringliteral">&quot;no<sp/>available<sp/>socket&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="800"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_n_d_file_net_c_d_f_8cpp_1a588357de2986fdf4c1380190f7ae9f37" kindref="member">ERR</ref>(</highlight><highlight class="stringliteral">&quot;no<sp/>available<sp/>socket&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="801"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>status<sp/>=<sp/>EXIT_FAILURE;</highlight></codeline>
 <codeline lineno="802"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">goto</highlight><highlight class="normal"><sp/>end;</highlight></codeline>
 <codeline lineno="803"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
@@ -1274,7 +1274,7 @@
 <codeline lineno="806"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="807"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(connect(s))</highlight></codeline>
 <codeline lineno="808"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="809"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="rest_api_8cpp_1a351b8552521f29df22aa336bb28e2180" kindref="member">ERR</ref>(</highlight><highlight class="stringliteral">&quot;failed<sp/>to<sp/>reconnect<sp/>socket&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="809"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_n_d_file_net_c_d_f_8cpp_1a588357de2986fdf4c1380190f7ae9f37" kindref="member">ERR</ref>(</highlight><highlight class="stringliteral">&quot;failed<sp/>to<sp/>reconnect<sp/>socket&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="810"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>status<sp/>=<sp/>EXIT_FAILURE;</highlight></codeline>
 <codeline lineno="811"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">goto</highlight><highlight class="normal"><sp/>end;</highlight></codeline>
 <codeline lineno="812"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
@@ -1287,7 +1287,7 @@
 <codeline lineno="819"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">goto</highlight><highlight class="normal"><sp/>retry;</highlight></codeline>
 <codeline lineno="820"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="821"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="822"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="rest_api_8cpp_1a351b8552521f29df22aa336bb28e2180" kindref="member">ERR</ref>(</highlight><highlight class="stringliteral">&quot;failed<sp/>to<sp/>send&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="822"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_n_d_file_net_c_d_f_8cpp_1a588357de2986fdf4c1380190f7ae9f37" kindref="member">ERR</ref>(</highlight><highlight class="stringliteral">&quot;failed<sp/>to<sp/>send&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="823"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>status<sp/>=<sp/>EXIT_FAILURE;</highlight></codeline>
 <codeline lineno="824"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">goto</highlight><highlight class="normal"><sp/>end;</highlight></codeline>
 <codeline lineno="825"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
@@ -1300,7 +1300,7 @@
 <codeline lineno="832"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">goto</highlight><highlight class="normal"><sp/>retry;</highlight></codeline>
 <codeline lineno="833"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="834"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="835"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="rest_api_8cpp_1a02586085698a967f28309aa3d54b43a3" kindref="member">ERR_ARGS</ref>(</highlight><highlight class="stringliteral">&quot;[sys=%d<sp/>file=%s]<sp/>failed<sp/>to<sp/>receive<sp/>first<sp/>part&quot;</highlight><highlight class="normal">,<sp/>sys,<sp/><ref refid="namespacemake_db_and_edl_1a2832407c256551abb325d5ee9e587443" kindref="member">name</ref>);</highlight></codeline>
+<codeline lineno="835"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="eiger_detector_8cpp_1a02586085698a967f28309aa3d54b43a3" kindref="member">ERR_ARGS</ref>(</highlight><highlight class="stringliteral">&quot;[sys=%d<sp/>file=%s]<sp/>failed<sp/>to<sp/>receive<sp/>first<sp/>part&quot;</highlight><highlight class="normal">,<sp/>sys,<sp/>name);</highlight></codeline>
 <codeline lineno="836"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>status<sp/>=<sp/>EXIT_FAILURE;</highlight></codeline>
 <codeline lineno="837"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">goto</highlight><highlight class="normal"><sp/>end;</highlight></codeline>
 <codeline lineno="838"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
@@ -1308,14 +1308,14 @@
 <codeline lineno="840"><highlight class="normal"></highlight></codeline>
 <codeline lineno="841"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">((status<sp/>=<sp/>parseHeader(&amp;<ref refid="structresponse" kindref="compound">response</ref>)))</highlight></codeline>
 <codeline lineno="842"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="843"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="rest_api_8cpp_1a02586085698a967f28309aa3d54b43a3" kindref="member">ERR_ARGS</ref>(</highlight><highlight class="stringliteral">&quot;[sys=%d<sp/>file=%s]<sp/>underlying<sp/>parseResponse<sp/>failed&quot;</highlight><highlight class="normal">,<sp/>sys,<sp/><ref refid="namespacemake_db_and_edl_1a2832407c256551abb325d5ee9e587443" kindref="member">name</ref>);</highlight></codeline>
+<codeline lineno="843"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="eiger_detector_8cpp_1a02586085698a967f28309aa3d54b43a3" kindref="member">ERR_ARGS</ref>(</highlight><highlight class="stringliteral">&quot;[sys=%d<sp/>file=%s]<sp/>underlying<sp/>parseResponse<sp/>failed&quot;</highlight><highlight class="normal">,<sp/>sys,<sp/>name);</highlight></codeline>
 <codeline lineno="844"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">goto</highlight><highlight class="normal"><sp/>end;</highlight></codeline>
 <codeline lineno="845"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="846"><highlight class="normal"></highlight></codeline>
 <codeline lineno="847"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="structresponse" kindref="compound">response</ref>.<ref refid="structresponse_1a87a4392194e9eacc4100923e5b09f90b" kindref="member">code</ref><sp/>!=<sp/>200)</highlight></codeline>
 <codeline lineno="848"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="849"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(sys<sp/>!=<sp/><ref refid="rest_api_8h_1a14c3ad6f5fa82ee5ff47981398d0e13cae43f78a073c568086edf2880ca13fcd6" kindref="member">SSMonImages</ref>)</highlight></codeline>
-<codeline lineno="850"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="rest_api_8cpp_1a02586085698a967f28309aa3d54b43a3" kindref="member">ERR_ARGS</ref>(</highlight><highlight class="stringliteral">&quot;[sys=%d<sp/>file=%s]<sp/>file<sp/>not<sp/>found&quot;</highlight><highlight class="normal">,<sp/>sys,<sp/><ref refid="namespacemake_db_and_edl_1a2832407c256551abb325d5ee9e587443" kindref="member">name</ref>);</highlight></codeline>
+<codeline lineno="850"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="eiger_detector_8cpp_1a02586085698a967f28309aa3d54b43a3" kindref="member">ERR_ARGS</ref>(</highlight><highlight class="stringliteral">&quot;[sys=%d<sp/>file=%s]<sp/>file<sp/>not<sp/>found&quot;</highlight><highlight class="normal">,<sp/>sys,<sp/>name);</highlight></codeline>
 <codeline lineno="851"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>status<sp/>=<sp/>EXIT_FAILURE;</highlight></codeline>
 <codeline lineno="852"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">goto</highlight><highlight class="normal"><sp/>end;</highlight></codeline>
 <codeline lineno="853"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
@@ -1324,7 +1324,7 @@
 <codeline lineno="856"><highlight class="normal"><sp/><sp/><sp/><sp/>*<ref refid="udp__client__pixirad__single_8cpp_1ac8ed9b9edf72a0bbde1ba01f0c67ef73" kindref="member">buf</ref><sp/>=<sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*)malloc(<ref refid="structresponse" kindref="compound">response</ref>.<ref refid="structresponse_1a844a1f991527aa9fa80ce6ad414a911f" kindref="member">contentLength</ref>);</highlight></codeline>
 <codeline lineno="857"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!*<ref refid="udp__client__pixirad__single_8cpp_1ac8ed9b9edf72a0bbde1ba01f0c67ef73" kindref="member">buf</ref>)</highlight></codeline>
 <codeline lineno="858"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="859"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="rest_api_8cpp_1a02586085698a967f28309aa3d54b43a3" kindref="member">ERR_ARGS</ref>(</highlight><highlight class="stringliteral">&quot;[sys=%d<sp/>file=%s]<sp/>malloc(%lu)<sp/>failed&quot;</highlight><highlight class="normal">,<sp/>sys,<sp/><ref refid="namespacemake_db_and_edl_1a2832407c256551abb325d5ee9e587443" kindref="member">name</ref>,<sp/><ref refid="structresponse" kindref="compound">response</ref>.<ref refid="structresponse_1a844a1f991527aa9fa80ce6ad414a911f" kindref="member">contentLength</ref>);</highlight></codeline>
+<codeline lineno="859"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="eiger_detector_8cpp_1a02586085698a967f28309aa3d54b43a3" kindref="member">ERR_ARGS</ref>(</highlight><highlight class="stringliteral">&quot;[sys=%d<sp/>file=%s]<sp/>malloc(%lu)<sp/>failed&quot;</highlight><highlight class="normal">,<sp/>sys,<sp/>name,<sp/><ref refid="structresponse" kindref="compound">response</ref>.<ref refid="structresponse_1a844a1f991527aa9fa80ce6ad414a911f" kindref="member">contentLength</ref>);</highlight></codeline>
 <codeline lineno="860"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>status<sp/>=<sp/>EXIT_FAILURE;</highlight></codeline>
 <codeline lineno="861"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">goto</highlight><highlight class="normal"><sp/>end;</highlight></codeline>
 <codeline lineno="862"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
@@ -1351,7 +1351,7 @@
 <codeline lineno="883"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">goto</highlight><highlight class="normal"><sp/>retry;</highlight></codeline>
 <codeline lineno="884"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="885"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="886"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="rest_api_8cpp_1a02586085698a967f28309aa3d54b43a3" kindref="member">ERR_ARGS</ref>(</highlight><highlight class="stringliteral">&quot;[sys=%d<sp/>file=%s]<sp/>failed<sp/>to<sp/>receive<sp/>second<sp/>part&quot;</highlight><highlight class="normal">,<sp/>sys,<sp/><ref refid="namespacemake_db_and_edl_1a2832407c256551abb325d5ee9e587443" kindref="member">name</ref>);</highlight></codeline>
+<codeline lineno="886"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="eiger_detector_8cpp_1a02586085698a967f28309aa3d54b43a3" kindref="member">ERR_ARGS</ref>(</highlight><highlight class="stringliteral">&quot;[sys=%d<sp/>file=%s]<sp/>failed<sp/>to<sp/>receive<sp/>second<sp/>part&quot;</highlight><highlight class="normal">,<sp/>sys,<sp/>name);</highlight></codeline>
 <codeline lineno="887"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>status<sp/>=<sp/>EXIT_FAILURE;</highlight></codeline>
 <codeline lineno="888"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">goto</highlight><highlight class="normal"><sp/>end;</highlight></codeline>
 <codeline lineno="889"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
@@ -1378,7 +1378,7 @@
 <codeline lineno="910"><highlight class="normal"><sp/><sp/><sp/><sp/>close(s-&gt;<ref refid="structsocket_1a4a96c8e9ead80f13092915a6ef4d4373" kindref="member">fd</ref>);</highlight></codeline>
 <codeline lineno="911"><highlight class="normal"><sp/><sp/><sp/><sp/>s-&gt;<ref refid="structsocket_1a48a0bdcea38bea40f5a2d9e3b113b139" kindref="member">closed</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="912"><highlight class="normal"><sp/><sp/><sp/><sp/>s-&gt;<ref refid="structsocket_1a18c5465a8c6856c15b45d8e8e0d7e147" kindref="member">mutex</ref>.unlock();</highlight></codeline>
-<codeline lineno="913"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>getBlob(sys,<sp/><ref refid="namespacemake_db_and_edl_1a2832407c256551abb325d5ee9e587443" kindref="member">name</ref>,<sp/><ref refid="udp__client__pixirad__single_8cpp_1ac8ed9b9edf72a0bbde1ba01f0c67ef73" kindref="member">buf</ref>,<sp/>bufSize,<sp/>accept);</highlight></codeline>
+<codeline lineno="913"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>getBlob(sys,<sp/>name,<sp/><ref refid="udp__client__pixirad__single_8cpp_1ac8ed9b9edf72a0bbde1ba01f0c67ef73" kindref="member">buf</ref>,<sp/>bufSize,<sp/>accept);</highlight></codeline>
 <codeline lineno="914"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="915"><highlight class="normal"></highlight></codeline>
     </programlisting>

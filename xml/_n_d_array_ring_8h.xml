@@ -1,13 +1,20 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="_n_d_array_ring_8h" kind="file" language="C++">
     <compoundname>NDArrayRing.h</compoundname>
     <includes refid="_n_d_array_8h" local="yes">NDArray.h</includes>
     <includedby refid="_n_d_array_ring_8cpp" local="yes">/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDArrayRing.cpp</includedby>
     <includedby refid="_n_d_plugin_circular_buff_8h" local="yes">/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginCircularBuff.h</includedby>
     <incdepgraph>
-      <node id="10">
-        <label>epicsTypes.h</label>
+      <node id="12">
+        <label>ADCoreAPI.h</label>
+        <link refid="_a_d_core_a_p_i_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>Codec.h</label>
+        <link refid="_codec_8h"/>
       </node>
       <node id="2">
         <label>NDArray.h</label>
@@ -27,36 +34,6 @@
         <childnode refid="15" relation="include">
         </childnode>
       </node>
-      <node id="14">
-        <label>NDAttributeList.h</label>
-        <link refid="_n_d_attribute_list_8h"/>
-        <childnode refid="9" relation="include">
-        </childnode>
-        <childnode refid="6" relation="include">
-        </childnode>
-        <childnode refid="4" relation="include">
-        </childnode>
-        <childnode refid="7" relation="include">
-        </childnode>
-      </node>
-      <node id="4">
-        <label>epicsMutex.h</label>
-      </node>
-      <node id="13">
-        <label>epicsVersion.h</label>
-      </node>
-      <node id="8">
-        <label>string</label>
-      </node>
-      <node id="12">
-        <label>ADCoreAPI.h</label>
-        <link refid="_a_d_core_a_p_i_8h"/>
-        <childnode refid="13" relation="include">
-        </childnode>
-      </node>
-      <node id="6">
-        <label>ellLib.h</label>
-      </node>
       <node id="7">
         <label>NDAttribute.h</label>
         <link refid="_n_d_attribute_8h"/>
@@ -73,12 +50,17 @@
         <childnode refid="12" relation="include">
         </childnode>
       </node>
-      <node id="11">
-        <label>asynDriver.h</label>
-      </node>
-      <node id="15">
-        <label>Codec.h</label>
-        <link refid="_codec_8h"/>
+      <node id="14">
+        <label>NDAttributeList.h</label>
+        <link refid="_n_d_attribute_list_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
       </node>
       <node id="1">
         <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDArrayRing.h</label>
@@ -86,8 +68,23 @@
         <childnode refid="2" relation="include">
         </childnode>
       </node>
+      <node id="11">
+        <label>asynDriver.h</label>
+      </node>
+      <node id="6">
+        <label>ellLib.h</label>
+      </node>
+      <node id="4">
+        <label>epicsMutex.h</label>
+      </node>
       <node id="5">
         <label>epicsTime.h</label>
+      </node>
+      <node id="10">
+        <label>epicsTypes.h</label>
+      </node>
+      <node id="13">
+        <label>epicsVersion.h</label>
       </node>
       <node id="3">
         <label>set</label>
@@ -95,11 +92,22 @@
       <node id="9">
         <label>stdio.h</label>
       </node>
+      <node id="8">
+        <label>string</label>
+      </node>
     </incdepgraph>
     <invincdepgraph>
       <node id="2">
         <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDArrayRing.cpp</label>
         <link refid="_n_d_array_ring_8cpp"/>
+      </node>
+      <node id="1">
+        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDArrayRing.h</label>
+        <link refid="_n_d_array_ring_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
       </node>
       <node id="4">
         <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginCircularBuff.cpp</label>
@@ -109,14 +117,6 @@
         <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginCircularBuff.h</label>
         <link refid="_n_d_plugin_circular_buff_8h"/>
         <childnode refid="4" relation="include">
-        </childnode>
-      </node>
-      <node id="1">
-        <label>/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDArrayRing.h</label>
-        <link refid="_n_d_array_ring_8h"/>
-        <childnode refid="2" relation="include">
-        </childnode>
-        <childnode refid="3" relation="include">
         </childnode>
       </node>
     </invincdepgraph>
@@ -136,7 +136,7 @@
 <codeline lineno="8"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
 <codeline lineno="9"><highlight class="normal"></highlight></codeline>
 <codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Creates<sp/>a<sp/>ring<sp/>with<sp/>pointers<sp/>to<sp/>buffers.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_n_d_array_ring_1ab60ad9f61aad64266397eae494765638" kindref="member">NDArrayRing</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>noOfBuffers);</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_n_d_array_ring" kindref="compound">NDArrayRing</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>noOfBuffers);</highlight></codeline>
 <codeline lineno="12"><highlight class="normal"></highlight></codeline>
 <codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Destructor.</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_n_d_array_ring_1ac504e82698eaaf10dda2bec9a269503f" kindref="member">~NDArrayRing</ref>();</highlight></codeline>

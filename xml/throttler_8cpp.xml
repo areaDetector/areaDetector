@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="throttler_8cpp" kind="file" language="C++">
     <compoundname>throttler.cpp</compoundname>
     <includes refid="throttler_8h" local="yes">throttler.h</includes>
@@ -19,11 +19,11 @@
         <childnode refid="3" relation="include">
         </childnode>
       </node>
-      <node id="3">
-        <label>epicsTime.h</label>
-      </node>
       <node id="4">
         <label>algorithm</label>
+      </node>
+      <node id="3">
+        <label>epicsTime.h</label>
       </node>
     </incdepgraph>
     <briefdescription>
@@ -55,7 +55,7 @@
 <codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>refillCount<sp/>=<sp/>(int)epicsTimeDiffInSeconds(&amp;now,<sp/>&amp;lastRefill_)*1000;</highlight></codeline>
 <codeline lineno="23"><highlight class="normal"></highlight></codeline>
 <codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(refillCount)<sp/>{</highlight></codeline>
-<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>available_<sp/>=<sp/><ref refid="mar3xx__pck_8c_1abb702d8b501669a23aa0ab3b281b9384" kindref="member">std::min</ref>(limit_,<sp/>available_<sp/>+<sp/>refillCount*refillAmount_);</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>available_<sp/>=<sp/>std::min(limit_,<sp/>available_<sp/>+<sp/>refillCount*refillAmount_);</highlight></codeline>
 <codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>lastRefill_<sp/>=<sp/>now;</highlight></codeline>
 <codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="28"><highlight class="normal"></highlight></codeline>

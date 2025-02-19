@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="class_n_d_plugin_file" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>NDPluginFile</compoundname>
     <basecompoundref refid="class_n_d_plugin_driver" prot="public" virt="non-virtual">NDPluginDriver</basecompoundref>
@@ -13,12 +13,13 @@
     <derivedcompoundref refid="classffmpeg_file" prot="public" virt="non-virtual">ffmpegFile</derivedcompoundref>
     <derivedcompoundref refid="classpco_edge_plugin" prot="public" virt="non-virtual">pcoEdgePlugin</derivedcompoundref>
     <includes refid="_n_d_plugin_file_8h" local="no">NDPluginFile.h</includes>
-      <sectiondef kind="public-attrib">
+    <sectiondef kind="public-attrib">
       <memberdef kind="variable" id="class_n_d_plugin_file_1a6255a7fdddc16d94aab10c7a828cc0eb" prot="public" static="no" mutable="no">
         <type>int</type>
         <definition>int NDPluginFile::supportsMultipleArrays</definition>
         <argsstring></argsstring>
         <name>supportsMultipleArrays</name>
+        <qualifiedname>NDPluginFile::supportsMultipleArrays</qualifiedname>
         <briefdescription>
 <para>Derived classes must set this flag to 0/1 if they cannot/can write multiple NDArrays to a single file. </para>
         </briefdescription>
@@ -29,13 +30,14 @@
         </inbodydescription>
         <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginFile.h" line="66" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginFile.h" bodystart="66" bodyend="-1"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="private-attrib">
+    </sectiondef>
+    <sectiondef kind="private-attrib">
       <memberdef kind="variable" id="class_n_d_plugin_file_1a65427458fd4c888fbbab48d2422e3795" prot="private" static="no" mutable="no">
         <type>std::vector&lt; <ref refid="class_n_d_array" kindref="compound">NDArray</ref> * &gt;</type>
         <definition>std::vector&lt;NDArray*&gt; NDPluginFile::pCapture</definition>
         <argsstring></argsstring>
         <name>pCapture</name>
+        <qualifiedname>NDPluginFile::pCapture</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -49,6 +51,7 @@
         <definition>epicsMutexId NDPluginFile::fileMutexId</definition>
         <argsstring></argsstring>
         <name>fileMutexId</name>
+        <qualifiedname>NDPluginFile::fileMutexId</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -62,6 +65,7 @@
         <definition>bool NDPluginFile::useAttrFilePrefix</definition>
         <argsstring></argsstring>
         <name>useAttrFilePrefix</name>
+        <qualifiedname>NDPluginFile::useAttrFilePrefix</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -75,6 +79,7 @@
         <definition>bool NDPluginFile::lazyOpen</definition>
         <argsstring></argsstring>
         <name>lazyOpen</name>
+        <qualifiedname>NDPluginFile::lazyOpen</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -88,6 +93,7 @@
         <definition>NDArrayInfo_t* NDPluginFile::ndArrayInfoInit</definition>
         <argsstring></argsstring>
         <name>ndArrayInfoInit</name>
+        <qualifiedname>NDPluginFile::ndArrayInfoInit</qualifiedname>
         <briefdescription>
 <para>The <ref refid="class_n_d_array" kindref="compound">NDArray</ref> information at file open time. </para>
         </briefdescription>
@@ -98,13 +104,14 @@
         </inbodydescription>
         <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginFile.h" line="87" column="19" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginFile.h" bodystart="87" bodyend="-1"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="public-func">
+    </sectiondef>
+    <sectiondef kind="public-func">
       <memberdef kind="function" id="class_n_d_plugin_file_1a59d1b76dfbef43310a6a5628fdfcc655" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>NDPluginFile::NDPluginFile</definition>
         <argsstring>(const char *portName, int queueSize, int blockingCallbacks, const char *NDArrayPort, int NDArrayAddr, int maxAddr, int maxBuffers, size_t maxMemory, int interfaceMask, int interruptMask, int asynFlags, int autoConnect, int priority, int stackSize, int maxThreads, bool compressionAware=false)</argsstring>
         <name>NDPluginFile</name>
+        <qualifiedname>NDPluginFile::NDPluginFile</qualifiedname>
         <param>
           <type>const char *</type>
           <declname>portName</declname>
@@ -314,6 +321,7 @@
         <definition>void NDPluginFile::processCallbacks</definition>
         <argsstring>(NDArray *pArray)</argsstring>
         <name>processCallbacks</name>
+        <qualifiedname>NDPluginFile::processCallbacks</qualifiedname>
         <reimplements refid="class_n_d_plugin_driver_1a75ed5528f584d90e4f789aef058661cd">processCallbacks</reimplements>
         <reimplementedby refid="classpco_edge_plugin_1a216639465ebb2332343942e8de9fdd09">processCallbacks</reimplementedby>
         <param>
@@ -344,6 +352,7 @@
         <definition>asynStatus NDPluginFile::writeInt32</definition>
         <argsstring>(asynUser *pasynUser, epicsInt32 value)</argsstring>
         <name>writeInt32</name>
+        <qualifiedname>NDPluginFile::writeInt32</qualifiedname>
         <reimplements refid="class_n_d_plugin_driver_1a5f60198f46fd7cd89c101dce9533f3aa">writeInt32</reimplements>
         <reimplementedby refid="class_n_d_file_h_d_f5_1a93b912985918638c2043e9ffd10d5550">writeInt32</reimplementedby>
         <param>
@@ -386,6 +395,7 @@
         <definition>asynStatus NDPluginFile::writeNDArray</definition>
         <argsstring>(asynUser *pasynUser, void *genericPointer)</argsstring>
         <name>writeNDArray</name>
+        <qualifiedname>NDPluginFile::writeNDArray</qualifiedname>
         <param>
           <type>asynUser *</type>
           <declname>pasynUser</declname>
@@ -407,6 +417,7 @@
         <definition>virtual asynStatus NDPluginFile::openFile</definition>
         <argsstring>(const char *fileName, NDFileOpenMode_t openMode, NDArray *pArray)=0</argsstring>
         <name>openFile</name>
+        <qualifiedname>NDPluginFile::openFile</qualifiedname>
         <reimplementedby refid="class_n_d_file_h_d_f5_1af14d09cbad66e107e354fcbcb87cd141">openFile</reimplementedby>
         <reimplementedby refid="class_n_d_file_j_p_e_g_1a6004151e4870085cbc281215b3366d14">openFile</reimplementedby>
         <reimplementedby refid="class_n_d_file_magick_1a15942537c3a299ef246f621124e0988a">openFile</reimplementedby>
@@ -468,6 +479,7 @@
         <definition>virtual asynStatus NDPluginFile::readFile</definition>
         <argsstring>(NDArray **pArray)=0</argsstring>
         <name>readFile</name>
+        <qualifiedname>NDPluginFile::readFile</qualifiedname>
         <reimplementedby refid="class_n_d_file_h_d_f5_1a2680dc0b6dfee8bc3020001607926771">readFile</reimplementedby>
         <reimplementedby refid="class_n_d_file_j_p_e_g_1a99f50a455344fe551342e6b94c77df2e">readFile</reimplementedby>
         <reimplementedby refid="class_n_d_file_magick_1a40c0fdc7c3aaa26a652119ac18a04d72">readFile</reimplementedby>
@@ -506,6 +518,7 @@
         <definition>virtual asynStatus NDPluginFile::writeFile</definition>
         <argsstring>(NDArray *pArray)=0</argsstring>
         <name>writeFile</name>
+        <qualifiedname>NDPluginFile::writeFile</qualifiedname>
         <reimplementedby refid="class_n_d_file_h_d_f5_1a577c4b3ed97f95cdf74beb08886f4579">writeFile</reimplementedby>
         <reimplementedby refid="class_n_d_file_j_p_e_g_1abce283acdac1a7a22f4cf51c2ea4c4c2">writeFile</reimplementedby>
         <reimplementedby refid="class_n_d_file_magick_1a08d523c515bcf76e66339a5db36b28ae">writeFile</reimplementedby>
@@ -543,6 +556,7 @@
         <definition>virtual asynStatus NDPluginFile::closeFile</definition>
         <argsstring>()=0</argsstring>
         <name>closeFile</name>
+        <qualifiedname>NDPluginFile::closeFile</qualifiedname>
         <reimplementedby refid="class_n_d_file_h_d_f5_1abdf52d4a798618711cd9d73eab352456">closeFile</reimplementedby>
         <reimplementedby refid="class_n_d_file_j_p_e_g_1af906537abb3ea2133e3984e15ca0e112">closeFile</reimplementedby>
         <reimplementedby refid="class_n_d_file_magick_1a138b745a98a21593046ef6f2c02ed3b9">closeFile</reimplementedby>
@@ -561,13 +575,14 @@
         </inbodydescription>
         <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginFile.h" line="64" column="24"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="private-func">
+    </sectiondef>
+    <sectiondef kind="private-func">
       <memberdef kind="function" id="class_n_d_plugin_file_1aafa72df8a464500e39bf76d8329ea56f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>asynStatus</type>
         <definition>asynStatus NDPluginFile::openFileBase</definition>
         <argsstring>(NDFileOpenMode_t openMode, NDArray *pArray)</argsstring>
         <name>openFileBase</name>
+        <qualifiedname>NDPluginFile::openFileBase</qualifiedname>
         <param>
           <type><ref refid="_n_d_plugin_file_8h_1a0585278ac7a80661367c32f62ad6c653" kindref="member">NDFileOpenMode_t</ref></type>
           <declname>openMode</declname>
@@ -590,6 +605,7 @@
         <definition>asynStatus NDPluginFile::readFileBase</definition>
         <argsstring>()</argsstring>
         <name>readFileBase</name>
+        <qualifiedname>NDPluginFile::readFileBase</qualifiedname>
         <briefdescription>
 <para>Base method for reading a file Creates the file name with <ref refid="classasyn_n_d_array_driver_1a813f6c84e96329cd89653a3b0497f8a9" kindref="member">asynNDArrayDriver::createFileName</ref>, then calls the pure virtual functions openFile, readFile and closeFile in the derived class. </para>
         </briefdescription>
@@ -605,6 +621,7 @@
         <definition>asynStatus NDPluginFile::writeFileBase</definition>
         <argsstring>()</argsstring>
         <name>writeFileBase</name>
+        <qualifiedname>NDPluginFile::writeFileBase</qualifiedname>
         <briefdescription>
 <para>Base method for writing a file Handles logic for NDFileModeSingle, NDFileModeCapture and NDFileModeStream when the derived class does or does not support NDPulginFileMultiple. </para>
         </briefdescription>
@@ -620,6 +637,7 @@
         <definition>asynStatus NDPluginFile::closeFileBase</definition>
         <argsstring>()</argsstring>
         <name>closeFileBase</name>
+        <qualifiedname>NDPluginFile::closeFileBase</qualifiedname>
         <briefdescription>
 <para>Base method for closing a file Calls the pure virtual function closeFile in the derived class. </para>
         </briefdescription>
@@ -634,6 +652,7 @@
         <definition>asynStatus NDPluginFile::doCapture</definition>
         <argsstring>(int capture)</argsstring>
         <name>doCapture</name>
+        <qualifiedname>NDPluginFile::doCapture</qualifiedname>
         <param>
           <type>int</type>
           <declname>capture</declname>
@@ -662,6 +681,7 @@
         <definition>void NDPluginFile::freeCaptureBuffer</definition>
         <argsstring>()</argsstring>
         <name>freeCaptureBuffer</name>
+        <qualifiedname>NDPluginFile::freeCaptureBuffer</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -675,6 +695,7 @@
         <definition>asynStatus NDPluginFile::attrFileCloseCheck</definition>
         <argsstring>()</argsstring>
         <name>attrFileCloseCheck</name>
+        <qualifiedname>NDPluginFile::attrFileCloseCheck</qualifiedname>
         <briefdescription>
 <para>Check whether an attribute asking the file to be closed has been set. </para>
         </briefdescription>
@@ -690,6 +711,7 @@
         <definition>asynStatus NDPluginFile::attrFileNameCheck</definition>
         <argsstring>()</argsstring>
         <name>attrFileNameCheck</name>
+        <qualifiedname>NDPluginFile::attrFileNameCheck</qualifiedname>
         <briefdescription>
 <para>Check whether the attributes defining the filename has changed since last write. </para>
         </briefdescription>
@@ -705,6 +727,7 @@
         <definition>asynStatus NDPluginFile::attrFileNameSet</definition>
         <argsstring>()</argsstring>
         <name>attrFileNameSet</name>
+        <qualifiedname>NDPluginFile::attrFileNameSet</qualifiedname>
         <briefdescription>
 <para>Look up filename related attributes in the <ref refid="class_n_d_array" kindref="compound">NDArray</ref>. </para>
         </briefdescription>
@@ -720,6 +743,7 @@
         <definition>bool NDPluginFile::attrIsProcessingRequired</definition>
         <argsstring>(NDAttributeList *pAttrList)</argsstring>
         <name>attrIsProcessingRequired</name>
+        <qualifiedname>NDPluginFile::attrIsProcessingRequired</qualifiedname>
         <param>
           <type><ref refid="class_n_d_attribute_list" kindref="compound">NDAttributeList</ref> *</type>
           <declname>pAttrList</declname>
@@ -750,6 +774,7 @@
         <definition>void NDPluginFile::registerInitFrameInfo</definition>
         <argsstring>(NDArray *pArray)</argsstring>
         <name>registerInitFrameInfo</name>
+        <qualifiedname>NDPluginFile::registerInitFrameInfo</qualifiedname>
         <param>
           <type><ref refid="class_n_d_array" kindref="compound">NDArray</ref> *</type>
           <declname>pArray</declname>
@@ -768,6 +793,7 @@
         <definition>bool NDPluginFile::isFrameValid</definition>
         <argsstring>(NDArray *pArray)</argsstring>
         <name>isFrameValid</name>
+        <qualifiedname>NDPluginFile::isFrameValid</qualifiedname>
         <param>
           <type><ref refid="class_n_d_array" kindref="compound">NDArray</ref> *</type>
           <declname>pArray</declname>
@@ -781,7 +807,7 @@
         </inbodydescription>
         <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginFile.h" line="81" column="10" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginFile.cpp" bodystart="665" bodyend="705"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
 <para>Base class for <ref refid="class_n_d_array" kindref="compound">NDArray</ref> file writing plugins; actual file writing plugins inherit from this class. </para>
     </briefdescription>
@@ -789,59 +815,9 @@
 <para>This class handles the logic of single file per image, capture into buffer or streaming multiple images to a single file. Derived classes must implement the 4 pure virtual functions: openFile, readFile, writeFile and closeFile. </para>
     </detaileddescription>
     <inheritancegraph>
-      <node id="2">
-        <label>NDPluginDriver</label>
-        <link refid="class_n_d_plugin_driver"/>
-        <childnode refid="3" relation="public-inheritance">
-        </childnode>
-        <childnode refid="5" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="13">
-        <label>ffmpegFile</label>
-        <link refid="classffmpeg_file"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="5">
-        <label>epicsThreadRunable</label>
-      </node>
-      <node id="1">
-        <label>NDPluginFile</label>
-        <link refid="class_n_d_plugin_file"/>
-        <childnode refid="2" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="4">
-        <label>asynPortDriver</label>
-      </node>
-      <node id="3">
-        <label>asynNDArrayDriver</label>
-        <link refid="classasyn_n_d_array_driver"/>
-        <childnode refid="4" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="11">
-        <label>NDFileNull</label>
-        <link refid="class_n_d_file_null"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="14">
-        <label>pcoEdgePlugin</label>
-        <link refid="classpco_edge_plugin"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="10">
-        <label>NDFileNexus</label>
-        <link refid="class_n_d_file_nexus"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="12">
-        <label>NDFileTIFF</label>
-        <link refid="class_n_d_file_t_i_f_f"/>
+      <node id="6">
+        <label>NDFileHDF5</label>
+        <link refid="class_n_d_file_h_d_f5"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
@@ -851,43 +827,43 @@
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="9">
-        <label>NDFileNetCDF</label>
-        <link refid="class_n_d_file_net_c_d_f"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="6">
-        <label>NDFileHDF5</label>
-        <link refid="class_n_d_file_h_d_f5"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
       <node id="8">
         <label>NDFileMagick</label>
         <link refid="class_n_d_file_magick"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-    </inheritancegraph>
-    <collaborationgraph>
+      <node id="9">
+        <label>NDFileNetCDF</label>
+        <link refid="class_n_d_file_net_c_d_f"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>NDFileNexus</label>
+        <link refid="class_n_d_file_nexus"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>NDFileNull</label>
+        <link refid="class_n_d_file_null"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>NDFileTIFF</label>
+        <link refid="class_n_d_file_t_i_f_f"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
       <node id="2">
         <label>NDPluginDriver</label>
         <link refid="class_n_d_plugin_driver"/>
         <childnode refid="3" relation="public-inheritance">
         </childnode>
-        <childnode refid="11" relation="public-inheritance">
+        <childnode refid="5" relation="public-inheritance">
         </childnode>
-        <childnode refid="7" relation="usage">
-          <edgelabel>pPrevInputArray_</edgelabel>
-        </childnode>
-      </node>
-      <node id="11">
-        <label>epicsThreadRunable</label>
-      </node>
-      <node id="8">
-        <label>NDDimension</label>
-        <link refid="struct_n_d_dimension"/>
       </node>
       <node id="1">
         <label>NDPluginFile</label>
@@ -895,12 +871,32 @@
         <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
+      <node id="3">
+        <label>asynNDArrayDriver</label>
+        <link refid="classasyn_n_d_array_driver"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
       <node id="4">
         <label>asynPortDriver</label>
       </node>
-      <node id="10">
-        <label>string</label>
+      <node id="5">
+        <label>epicsThreadRunable</label>
       </node>
+      <node id="13">
+        <label>ffmpegFile</label>
+        <link refid="classffmpeg_file"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>pcoEdgePlugin</label>
+        <link refid="classpco_edge_plugin"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
       <node id="9">
         <label>Codec_t</label>
         <link refid="struct_codec__t"/>
@@ -908,23 +904,52 @@
           <edgelabel>name</edgelabel>
         </childnode>
       </node>
-      <node id="7">
+      <node id="6">
         <label>NDArray</label>
         <link refid="class_n_d_array"/>
         <childnode refid="5" relation="usage">
           <edgelabel>pNDArrayPool</edgelabel>
         </childnode>
-        <childnode refid="8" relation="usage">
+        <childnode refid="3" relation="usage">
+          <edgelabel>pDriver</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
           <edgelabel>dims</edgelabel>
         </childnode>
-        <childnode refid="6" relation="usage">
+        <childnode refid="8" relation="usage">
           <edgelabel>pAttributeList</edgelabel>
         </childnode>
         <childnode refid="9" relation="usage">
           <edgelabel>codec</edgelabel>
         </childnode>
-        <childnode refid="3" relation="usage">
-          <edgelabel>pDriver</edgelabel>
+      </node>
+      <node id="5">
+        <label>NDArrayPool</label>
+        <link refid="class_n_d_array_pool"/>
+      </node>
+      <node id="8">
+        <label>NDAttributeList</label>
+        <link refid="class_n_d_attribute_list"/>
+      </node>
+      <node id="7">
+        <label>NDDimension</label>
+        <link refid="struct_n_d_dimension"/>
+      </node>
+      <node id="2">
+        <label>NDPluginDriver</label>
+        <link refid="class_n_d_plugin_driver"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+        <childnode refid="11" relation="public-inheritance">
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>pPrevInputArray_</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>NDPluginFile</label>
+        <link refid="class_n_d_plugin_file"/>
+        <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
       <node id="3">
@@ -936,19 +961,20 @@
           <edgelabel>pNDArrayPool</edgelabel>
         </childnode>
         <childnode refid="6" relation="usage">
-          <edgelabel>pAttributeList</edgelabel>
-        </childnode>
-        <childnode refid="7" relation="usage">
           <edgelabel>pArrays</edgelabel>
         </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>pAttributeList</edgelabel>
+        </childnode>
       </node>
-      <node id="5">
-        <label>NDArrayPool</label>
-        <link refid="class_n_d_array_pool"/>
+      <node id="4">
+        <label>asynPortDriver</label>
       </node>
-      <node id="6">
-        <label>NDAttributeList</label>
-        <link refid="class_n_d_attribute_list"/>
+      <node id="11">
+        <label>epicsThreadRunable</label>
+      </node>
+      <node id="10">
+        <label>string</label>
       </node>
     </collaborationgraph>
     <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginFile.h" line="28" column="1" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginFile.h" bodystart="28" bodyend="89"/>

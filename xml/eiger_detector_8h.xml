@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="eiger_detector_8h" kind="file" language="C++">
     <compoundname>eigerDetector.h</compoundname>
     <includes local="no">map</includes>
@@ -9,14 +9,19 @@
     <includes refid="eiger_param_8h" local="yes">eigerParam.h</includes>
     <includedby refid="eiger_detector_8cpp" local="yes">/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.cpp</includedby>
     <incdepgraph>
-      <node id="7">
-        <label>osiSock.h</label>
-      </node>
-      <node id="9">
-        <label>stdlib.h</label>
-      </node>
-      <node id="6">
-        <label>epicsMutex.h</label>
+      <node id="1">
+        <label>/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h</label>
+        <link refid="eiger_detector_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
       </node>
       <node id="10">
         <label>eigerParam.h</label>
@@ -34,9 +39,6 @@
         <childnode refid="4" relation="include">
         </childnode>
       </node>
-      <node id="5">
-        <label>string</label>
-      </node>
       <node id="4">
         <label>restApi.h</label>
         <link refid="rest_api_8h"/>
@@ -47,37 +49,35 @@
         <childnode refid="7" relation="include">
         </childnode>
       </node>
-      <node id="2">
-        <label>map</label>
-      </node>
-      <node id="12">
-        <label>frozen.h</label>
-      </node>
-      <node id="1">
-        <label>/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h</label>
-        <link refid="eiger_detector_8h"/>
-        <childnode refid="2" relation="include">
-        </childnode>
-        <childnode refid="3" relation="include">
-        </childnode>
-        <childnode refid="4" relation="include">
-        </childnode>
-        <childnode refid="8" relation="include">
-        </childnode>
-        <childnode refid="10" relation="include">
-        </childnode>
-      </node>
-      <node id="3">
-        <label>vector</label>
-      </node>
-      <node id="11">
-        <label>asynPortDriver.h</label>
-      </node>
       <node id="8">
         <label>streamApi.h</label>
         <link refid="stream_api_8h"/>
         <childnode refid="9" relation="include">
         </childnode>
+      </node>
+      <node id="11">
+        <label>asynPortDriver.h</label>
+      </node>
+      <node id="6">
+        <label>epicsMutex.h</label>
+      </node>
+      <node id="12">
+        <label>frozen.h</label>
+      </node>
+      <node id="2">
+        <label>map</label>
+      </node>
+      <node id="7">
+        <label>osiSock.h</label>
+      </node>
+      <node id="9">
+        <label>stdlib.h</label>
+      </node>
+      <node id="5">
+        <label>string</label>
+      </node>
+      <node id="3">
+        <label>vector</label>
       </node>
     </incdepgraph>
     <invincdepgraph>
@@ -93,7 +93,7 @@
       </node>
     </invincdepgraph>
     <innerclass refid="classeiger_detector" prot="public">eigerDetector</innerclass>
-      <sectiondef kind="define">
+    <sectiondef kind="define">
       <memberdef kind="define" id="eiger_detector_8h_1a9ca6f461d28845f3a956f253ed60782f" prot="public" static="no">
         <name>EigDataSourceStr</name>
         <initializer>&quot;DATA_SOURCE&quot;</initializer>
@@ -732,8 +732,8 @@
         </inbodydescription>
         <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="97" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" bodystart="97" bodyend="-1"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="enum">
+    </sectiondef>
+    <sectiondef kind="enum">
       <memberdef kind="enum" id="eiger_detector_8h_1aadbf8bfa4d794a7c76d3f4f83600297a" prot="public" static="no" strong="no">
         <type></type>
         <name>eigerModel_t</name>
@@ -759,7 +759,7 @@
         </inbodydescription>
         <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="11" column="1" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/eigerDetector.h" bodystart="11" bodyend="14"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
@@ -867,13 +867,13 @@
 <codeline lineno="100" refid="classeiger_detector" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classeiger_detector" kindref="compound">eigerDetector</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_a_d_driver" kindref="compound">ADDriver</ref></highlight></codeline>
 <codeline lineno="101"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="102"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classeiger_detector_1a4d202cd99f7c1b829cb17389e55042e1" kindref="member">eigerDetector</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*portName,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*serverHostname,</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classeiger_detector" kindref="compound">eigerDetector</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*portName,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*serverHostname,</highlight></codeline>
 <codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>maxBuffers,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>maxMemory,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>priority,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>stackSize);</highlight></codeline>
 <codeline lineno="105"><highlight class="normal"></highlight></codeline>
 <codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>These<sp/>are<sp/>the<sp/>methods<sp/>that<sp/>we<sp/>override<sp/>from<sp/>ADDriver</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>asynStatus<sp/><ref refid="classeiger_detector_1a9c645558be3b3f650c0fb39aca42f8e8" kindref="member">writeInt32</ref><sp/><sp/>(asynUser<sp/>*pasynUser,<sp/>epicsInt32<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>);</highlight></codeline>
-<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>asynStatus<sp/><ref refid="classeiger_detector_1afaad6cc6843ecd25373f1445ade3cd1e" kindref="member">writeFloat64</ref>(asynUser<sp/>*pasynUser,<sp/>epicsFloat64<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>);</highlight></codeline>
-<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>asynStatus<sp/><ref refid="classeiger_detector_1ad00bcc67aeee39898210ad0b7507a7e8" kindref="member">writeOctet</ref><sp/><sp/>(asynUser<sp/>*pasynUser,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>,</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>asynStatus<sp/><ref refid="classeiger_detector_1a9c645558be3b3f650c0fb39aca42f8e8" kindref="member">writeInt32</ref><sp/><sp/>(asynUser<sp/>*pasynUser,<sp/>epicsInt32<sp/>value);</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>asynStatus<sp/><ref refid="classeiger_detector_1afaad6cc6843ecd25373f1445ade3cd1e" kindref="member">writeFloat64</ref>(asynUser<sp/>*pasynUser,<sp/>epicsFloat64<sp/>value);</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>asynStatus<sp/><ref refid="classeiger_detector_1ad00bcc67aeee39898210ad0b7507a7e8" kindref="member">writeOctet</ref><sp/><sp/>(asynUser<sp/>*pasynUser,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*value,</highlight></codeline>
 <codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>nChars,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>*nActual);</highlight></codeline>
 <codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classeiger_detector_1a6d6d68b3d7be3195745cc145864dba66" kindref="member">report</ref>(FILE<sp/>*fp,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>details);</highlight></codeline>
 <codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>asynStatus<sp/><ref refid="classeiger_detector_1a76eb932c9d4d4fdcf2fc5ba2662dd896" kindref="member">drvUserCreate</ref>(asynUser<sp/>*pasynUser,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*drvInfo,</highlight></codeline>

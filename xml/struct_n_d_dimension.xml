@@ -1,14 +1,15 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="struct_n_d_dimension" kind="struct" language="C++" prot="public">
     <compoundname>NDDimension</compoundname>
     <includes refid="_n_d_array_8h" local="no">NDArray.h</includes>
-      <sectiondef kind="public-attrib">
+    <sectiondef kind="public-attrib">
       <memberdef kind="variable" id="struct_n_d_dimension_1af32ef14ab526ed14d195875fc688f027" prot="public" static="no" mutable="no">
         <type>size_t</type>
         <definition>size_t NDDimension::size</definition>
         <argsstring></argsstring>
         <name>size</name>
+        <qualifiedname>NDDimension::size</qualifiedname>
         <briefdescription>
 <para>The number of elements in this dimension of the array. </para>
         </briefdescription>
@@ -23,6 +24,7 @@
         <definition>size_t NDDimension::offset</definition>
         <argsstring></argsstring>
         <name>offset</name>
+        <qualifiedname>NDDimension::offset</qualifiedname>
         <briefdescription>
 <para>The offset relative to the origin of the original data source (detector, for example). </para>
         </briefdescription>
@@ -38,6 +40,7 @@
         <definition>int NDDimension::binning</definition>
         <argsstring></argsstring>
         <name>binning</name>
+        <qualifiedname>NDDimension::binning</qualifiedname>
         <briefdescription>
 <para>The binning (pixel summation, 1=no binning) relative to original data source (detector, for example) The offset value is cumulative, so if a plugin such as <ref refid="class_n_d_plugin_r_o_i" kindref="compound">NDPluginROI</ref> performs binning, the binning is expressed relative to the pixels in the detector and not to the possibly binned pixels passed to <ref refid="class_n_d_plugin_r_o_i" kindref="compound">NDPluginROI</ref>. </para>
         </briefdescription>
@@ -52,6 +55,7 @@
         <definition>int NDDimension::reverse</definition>
         <argsstring></argsstring>
         <name>reverse</name>
+        <qualifiedname>NDDimension::reverse</qualifiedname>
         <briefdescription>
 <para>The orientation (0=normal, 1=reversed) relative to the original data source (detector, for example) This value is cumulative, so if a plugin such as <ref refid="class_n_d_plugin_r_o_i" kindref="compound">NDPluginROI</ref> reverses the data, the value must reflect the orientation relative to the original detector, and not to the possibly reversed data passed to <ref refid="class_n_d_plugin_r_o_i" kindref="compound">NDPluginROI</ref>. </para>
         </briefdescription>
@@ -61,7 +65,7 @@
         </inbodydescription>
         <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/NDArray.h" line="71" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ADSrc/NDArray.h" bodystart="71" bodyend="-1"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
 <para>Structure defining a dimension of an <ref refid="class_n_d_array" kindref="compound">NDArray</ref>. </para>
     </briefdescription>

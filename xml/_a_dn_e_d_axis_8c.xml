@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="_a_dn_e_d_axis_8c" kind="file" language="C++">
     <compoundname>ADnEDAxis.c</compoundname>
     <includes local="no">registryFunction.h</includes>
@@ -10,21 +10,6 @@
     <includes local="no">epicsExport.h</includes>
     <includes local="no">cantProceed.h</includes>
     <incdepgraph>
-      <node id="8">
-        <label>cantProceed.h</label>
-      </node>
-      <node id="6">
-        <label>aSubRecord.h</label>
-      </node>
-      <node id="2">
-        <label>registryFunction.h</label>
-      </node>
-      <node id="7">
-        <label>epicsExport.h</label>
-      </node>
-      <node id="3">
-        <label>string.h</label>
-      </node>
       <node id="1">
         <label>/home/runner/work/areaDetector/areaDetector/ADnED/ADnEDApp/src/ADnEDAxis.c</label>
         <link refid="_a_dn_e_d_axis_8c"/>
@@ -43,14 +28,29 @@
         <childnode refid="8" relation="include">
         </childnode>
       </node>
-      <node id="4">
-        <label>stdio.h</label>
+      <node id="6">
+        <label>aSubRecord.h</label>
+      </node>
+      <node id="8">
+        <label>cantProceed.h</label>
       </node>
       <node id="5">
         <label>dbCommon.h</label>
       </node>
+      <node id="7">
+        <label>epicsExport.h</label>
+      </node>
+      <node id="2">
+        <label>registryFunction.h</label>
+      </node>
+      <node id="4">
+        <label>stdio.h</label>
+      </node>
+      <node id="3">
+        <label>string.h</label>
+      </node>
     </incdepgraph>
-      <sectiondef kind="var">
+    <sectiondef kind="var">
       <memberdef kind="variable" id="_a_dn_e_d_axis_8c_1a7a556dadce9f085a068bb0cf3660f252" prot="public" static="yes" mutable="no">
         <type>registryFunctionRef</type>
         <definition>registryFunctionRef aSubRef[]</definition>
@@ -66,10 +66,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/areaDetector/areaDetector/ADnED/ADnEDApp/src/ADnEDAxis.c" line="80" column="28" bodyfile="/home/runner/work/areaDetector/areaDetector/ADnED/ADnEDApp/src/ADnEDAxis.c" bodystart="80" bodyend="-1"/>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADnED/ADnEDApp/src/ADnEDAxis.c" line="80" column="28" bodyfile="/home/runner/work/areaDetector/areaDetector/ADnED/ADnEDApp/src/ADnEDAxis.c" bodystart="80" bodyend="83"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="func">
+    </sectiondef>
+    <sectiondef kind="func">
       <memberdef kind="function" id="_a_dn_e_d_axis_8c_1a6a43c290aa6b8290e432d48820189629" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>long</type>
         <definition>long ADnEDAxisInit</definition>
@@ -152,7 +152,7 @@
         </inbodydescription>
         <location file="/home/runner/work/areaDetector/areaDetector/ADnED/ADnEDApp/src/ADnEDAxis.c" line="90" column="1" declfile="/home/runner/work/areaDetector/areaDetector/ADnED/ADnEDApp/src/ADnEDAxis.c" declline="90" declcolumn="1"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
@@ -190,11 +190,11 @@
 <codeline lineno="60"><highlight class="normal"><sp/><sp/></highlight></codeline>
 <codeline lineno="61"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>*pData<sp/>=<sp/>psub-&gt;dpvt;</highlight></codeline>
 <codeline lineno="62"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>point<sp/>=<sp/>size*bin;</highlight></codeline>
-<codeline lineno="63"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>=0;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>&lt;maxsize;<sp/>++<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(i=0;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>&lt;maxsize;<sp/>++<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>)<sp/>{</highlight></codeline>
 <codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>pData[<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>]<sp/>=<sp/>point;</highlight></codeline>
 <codeline lineno="65"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
 <codeline lineno="66"><highlight class="normal"><sp/><sp/>point<sp/>=<sp/>start;</highlight></codeline>
-<codeline lineno="67"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>=0;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>&lt;size;<sp/>++<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(i=0;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>&lt;size;<sp/>++<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>)<sp/>{</highlight></codeline>
 <codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>pData[<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>]<sp/>=<sp/>point;</highlight></codeline>
 <codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>point<sp/>+=<sp/>bin;</highlight></codeline>
 <codeline lineno="70"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
