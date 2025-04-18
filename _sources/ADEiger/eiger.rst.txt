@@ -169,7 +169,7 @@ the detector is successfully armed. A number of data files follow. The
 number of data files generated depends on the total number of images
 of the acquisition and the FWNFilesPerImage PV.
 
-For example, if TriggerMode is **External Enable**, NumImages is 60,
+For example, if TriggerMode is **External Series**, NumImages is 60,
 NumTriggers is 2, FWNImagesPerFile is 100, Sequence ID for the
 acquisition is 1 and FWNamePattern is "series_$id", a total of three
 files will be generated:
