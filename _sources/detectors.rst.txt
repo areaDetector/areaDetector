@@ -104,7 +104,7 @@ documentation, release notes, name of maintainer, and repository status.
     - `Release Notes <https://github.com/areaDetector/ADEiger/blob/master/RELEASE.md>`__
     - Mark Rivers
     - Active
-  * - `ADEursys <https://github.com/areaDetector/ADEuresys>`__
+  * - `ADEuresys <https://github.com/areaDetector/ADEuresys>`__
     - Driver CoaXPress cameras using Euresys frame grabbers
     - :doc:`ADEuresys/ADEuresys`
     - `Release Notes <https://github.com/areaDetector/ADEuresys/blob/master/RELEASE.md>`__
@@ -118,6 +118,7 @@ documentation, release notes, name of maintainer, and repository status.
     - Active?
   * - `ADFireWireWin <https://github.com/areaDetector/ADFireWireWin>`__
     - Driver for Firewire DCAM detectors on Windows using the Carnegie Mellon Firewire driver
+    - `FirewireWinDoc <https://htmlpreview.github.io/?https://github.com/areaDetector/ADFireWireWin/blob/master/documentation/FirewireWinDoc.html>`__
     - `FirewireWinDoc <FirewireWinDoc.html>`__
     - `Release Notes <https://github.com/areaDetector/ADFireWireWin/blob/master/RELEASE.md>`__
     - Mark Rivers
