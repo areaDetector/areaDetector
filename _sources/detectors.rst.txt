@@ -190,7 +190,7 @@ documentation, release notes, name of maintainer, and repository status.
     - Should be archived
   * - `ADPcoWin <https://github.com/areaDetector/ADPcoWin>`__
     - Driver for PCO cameras using their SDK
-    - `Doc <https://github.com/areaDetector/ADPcoWin/blob/master/documentation/index.html>`__
+    - `ADPcoWin <https://htmlpreview.github.io/?https://github.com/areaDetector/ADPcoWin/blob/master/documentation/index.html>`__
     - `Release Notes <https://github.com/areaDetector/ADPcoWin/blob/master/RELEASE.md>`__
     - Benjamin Bradnick?
     - Active
