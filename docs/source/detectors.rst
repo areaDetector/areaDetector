@@ -368,12 +368,12 @@ documentation, release notes, name of maintainer, and repository status.
     - Primary maintainer
     - Status
   * - `ADTucsen <https://github.com/djvine/ADTucsen>`__
-    - Driver for cameras from tucsen.com
+    - Driver for cameras from `Tucsen <http://tucsen.com>`__
     - None
     - None
     - David Vine
     - Active?
-  * - `ADXpad <https://github.com/ImXPAD/ADXpaf>`__
+  * - `ADXpad <https://github.com/ImXPAD/ADXpad>`__
     - Driver for cameras from `ImXPAD <http://imxpad.com>`__
     - None
     - None
