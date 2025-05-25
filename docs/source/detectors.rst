@@ -238,6 +238,7 @@ documentation, release notes, name of maintainer, and repository status.
     - Replaced by ADVimba, should be archived
   * - `ADPSL <https://github.com/areaDetector/ADPSL>`__
     - Driver for Photonic Science detectors
+    - `ADPSL <https://htmlpreview.github.io/?https://github.com/areaDetector/ADPSL/blob/master/documentation/PSLDoc.html>`__
     - `PSLDoc <PSLDoc.html>`__
     - `Release Notes <https://github.com/areaDetector/ADPSL/blob/master/RELEASE.md>`__
     - Mark Rivers
