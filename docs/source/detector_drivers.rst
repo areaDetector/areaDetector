@@ -35,6 +35,7 @@ Detector Drivers
     ADTimePix3/ADTimePix3
     ADVimba/ADVimba
     ADURL/ADURL
+    ADUVC/ADUVC
     NDDriverStdArrays/NDDriverStdArraysDoc
     pvaDriver/pvaDriver
     specsAnalyser/index
