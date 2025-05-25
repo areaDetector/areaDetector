@@ -292,12 +292,6 @@ documentation, release notes, name of maintainer, and repository status.
     - `Release Notes <https://github.com/areaDetector/ADTimePix3/blob/master/RELEASE.md>`__
     - Kaz Gofron
     - Active?
-  * - `ADTucsen <https://github.com/areaDetector/ADTucsen>`__
-    - Driver for cameras from tucsen.com
-    - None
-    - None
-    - David Vine
-    - Should be archived?
   * - `ADURL <https://github.com/areaDetector/ADURL>`__
     - Driver for reading images from any URL using the GraphicsMagick library
     - :doc:`ADURL/ADURL`
@@ -358,3 +352,32 @@ documentation, release notes, name of maintainer, and repository status.
     - `Release Notes <https://github.com/areaDetector/specsAnalyser/blob/master/RELEASE.md>`__
     - Stuart Wilkins
     - Active?
+
+
+Detectors located outside of Github areaDetector Project
+--------------------------------------------------------
+The following table provides links to the Github repository, the
+documentation, release notes, name of maintainer, and repository status.
+
+.. list-table::
+  :widths: 10 30 10 10 10 20
+  :header-rows: 1
+
+  * - Github repository
+    - Description
+    - Documentation
+    - Release Notes
+    - Primary maintainer
+    - Status
+  * - `ADTucsen <https://github.com/djvine/ADTucsen>`__
+    - Driver for cameras from tucsen.com
+    - None
+    - None
+    - David Vine
+    - Active?
+  * - `ADXpad <https://github.com/ImXPAD/ADXpaf>`__
+    - Driver for cameras from `ImXPAD <http://imxpad.com>`__
+    - None
+    - None
+    - ImXPAD
+    - Active?    
