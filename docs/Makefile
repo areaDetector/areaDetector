@@ -32,6 +32,7 @@ DOCS_PATHS += -i ../ADSimDetector/docs
 DOCS_PATHS += -i ../ADSpinnaker/docs
 DOCS_PATHS += -i ../ADTimePix3/docs
 DOCS_PATHS += -i ../ADURL/docs
+DOCS_PATHS += -i ../ADUVC/docs
 DOCS_PATHS += -i ../ADVimba/docs
 DOCS_PATHS += -i ../NDDriverStdArrays/docs
 DOCS_PATHS += -i ../pvaDriver/docs
