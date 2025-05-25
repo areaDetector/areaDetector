@@ -1,0 +1,502 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ADUVC &mdash; areaDetector Support</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme_overrides.css?v=254ed751" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="NDDriverStdArrays" href="../NDDriverStdArrays/NDDriverStdArraysDoc.html" />
+    <link rel="prev" title="Example st.cmd Startup File" href="../ADURL/st_cmd.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            areaDetector
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../readme.html">Readme</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../user_guide.html">User Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/overview.html">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/arch.html">Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/asynPortDriver.html">asynPortDriver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/NDArray.html">NDArray</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../detector_drivers.html">Detector Drivers</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../ADCore/guidelines.html">Guidelines and rules for drivers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADCore/ADDriver.html">ADDriver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADAndor/andorDoc.html">ADAndor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADAndor3/ADAndorDoc.html">ADAndor3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADAravis/ADAravis.html">ADAravis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADCSimDetector/ADCSimDetectorDoc.html">ADCSimDetector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADDexela/ADDexela.html">ADDexela</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADEiger/eiger.html">ADEiger</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADEuresys/ADEuresys.html">ADEuresys</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADFastCCD/index.html">ADFastCCD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADGenICam/ADGenICam.html">ADGenICam</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADHamamatsuDCAM/ADHamamatsuDCAM.html">ADHamamatsuDCAM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADLambda/ADLambda.html">ADLambda</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADLightField/ADLightField.html">ADLightField</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADmarCCD/marCCDDoc.html">ADmarCCD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADmar345/mar345Doc.html">ADmar345</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPerkinElmer/PerkinElmerDoc.html">ADPerkinElmer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPICam/PICamDoc.html">ADPICam</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPilatus/pilatusDoc.html">ADPilatus</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPixirad/ADPixirad.html">ADPixirad</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPointGrey/PointGreyDoc.html">ADPointGrey</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADProsilica/ADProsilica.html">ADProsilica</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPvCam/pvcamDoc.html">ADPvCam</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPylon/ADPylon.html">ADPylon</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADQImaging/QImagingDoc.html">ADQImaging</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADRIXSCam/ADRIXSCam.html">ADRIXSCam</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADSimDetector/simDetector.html">ADSimDetector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADSpinnaker/ADSpinnaker.html">ADSpinnaker</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADTimePix3/ADTimePix3.html">ADTimePix3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADVimba/ADVimba.html">ADVimba</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADURL/ADURL.html">ADURL</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">ADUVC</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#an-epics-driver-for-usb-video-class-uvc-devices">An EPICS driver for USB Video Class (UVC) devices</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../NDDriverStdArrays/NDDriverStdArraysDoc.html">NDDriverStdArrays</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../pvaDriver/pvaDriver.html">pvaDriver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../specsAnalyser/index.html">specsAnalyser</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/plugins.html">areaDetector Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../additional_plugins.html">Additional plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/medm.html">MEDM screens</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADViewers/ad_viewers.html">areaDetector Viewers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../acknowledgements.html">Acknowledgements and licenses</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../install_guide.html">Install Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release.html">Top-level Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ADCore_release.html">ADCore Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ADSupport_release.html">ADSupport Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../doxygen.html">Source Code Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../detectors.html">Supported Detectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../legacy_versions.html">Legacy Versions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">areaDetector</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../user_guide.html">areaDetector Users Guide</a></li>
+          <li class="breadcrumb-item"><a href="../detector_drivers.html">Detector Drivers</a></li>
+      <li class="breadcrumb-item active">ADUVC</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/ADUVC/ADUVC.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="aduvc">
+<h1><a class="reference external" href="https://github.com/epicsNSLS2-areaDetector/ADUVC">ADUVC</a><a class="headerlink" href="#aduvc" title="Link to this heading"></a></h1>
+<section id="an-epics-driver-for-usb-video-class-uvc-devices">
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">An EPICS driver for USB Video Class (UVC) devices</a><a class="headerlink" href="#an-epics-driver-for-usb-video-class-uvc-devices" title="Link to this heading"></a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">Author<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Jakub Wlodek, Brookhaven National Laboratory</p>
+</dd>
+<dt class="field-even">Corresponding author<span class="colon">:</span></dt>
+<dd class="field-even"><p>Kazimierz Gofron, Brookhaven National Laboratory</p>
+</dd>
+</dl>
+<hr class="docutils" />
+<nav class="contents" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#aduvc" id="id2">ADUVC</a></p>
+<ul>
+<li><p><a class="reference internal" href="#an-epics-driver-for-usb-video-class-uvc-devices" id="id3">An EPICS driver for USB Video Class (UVC) devices</a></p>
+<ul>
+<li><p><a class="reference internal" href="#overview" id="id4">Overview</a></p></li>
+<li><p><a class="reference internal" href="#installation" id="id5">Installation</a></p></li>
+<li><p><a class="reference internal" href="#issues-with-root-ownership-of-uvc-devices" id="id6">Issues with root ownership of UVC devices</a></p></li>
+<li><p><a class="reference internal" href="#driver-contents" id="id7">Driver Contents</a></p></li>
+<li><p><a class="reference internal" href="#usage" id="id8">Usage</a></p></li>
+<li><p><a class="reference internal" href="#release-notes" id="id9">Release Notes</a></p></li>
+<li><p><a class="reference internal" href="#medm-screens" id="id10">MEDM screens</a></p></li>
+<li><p><a class="reference internal" href="#known-issues-and-pull-requests" id="id11">Known Issues and pull requests</a></p></li>
+<li><p><a class="reference internal" href="#important-links" id="id12">Important links</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+<section id="overview">
+<h3><a class="toc-backref" href="#id4" role="doc-backlink">Overview</a><a class="headerlink" href="#overview" title="Link to this heading"></a></h3>
+<p>UVC, or USB Video Class is an open Video connection standard used for
+USB based cameras and webcams. Almost all consumer webcams support UVC,
+along with a large number of other consumer USB cameras of different
+form factors, ranging from pencil cameras to micro cameras. Some
+industrial cameras support the format as well. <a class="reference external" href="https://github.com/epicsNSLS2-areaDetector/ADUVC">ADUVC</a> is an area detector
+driver that adds support for UVC based cameras. It also includes some
+useful test programs to check if your UVC device is being recognized
+correctly.</p>
+</section>
+<hr class="docutils" />
+<section id="installation">
+<h3><a class="toc-backref" href="#id5" role="doc-backlink">Installation</a><a class="headerlink" href="#installation" title="Link to this heading"></a></h3>
+<p>Detailed installation instructions for the <a class="reference external" href="https://github.com/epicsNSLS2-areaDetector/ADUVC">ADUVC</a> driver can be seen in
+the
+<a class="reference external" href="https://github.com/epicsNSLS2-areaDetector/ADUVC/blob/master/README.md">README</a>
+file. To install <a class="reference external" href="https://github.com/epicsNSLS2-areaDetector/ADUVC">ADUVC</a>, you must first install <a class="reference external" href="https://github.com/ktossell/libuvc">libuvc</a> and its
+dependancies. The simplest way to do this is to run the provided bash
+script in the adUVCSupport directory of the repository. This installs
+libusub, libjpeg, and cmake, clones the <a class="reference external" href="https://github.com/ktossell/libuvc">libuvc</a> repository on
+github, and then builds it using
+cmake. The dynamic library files resulting from the build are placed in
+the /usr/local directory (on Linux), and include files must be placed in
+adUVCSupport/include. From here you may compile the support programs or
+the driver itself by entering the appropriate directory (the top <a class="reference external" href="https://github.com/epicsNSLS2-areaDetector/ADUVC">ADUVC</a>
+dir. for the driver), and compiling by switching to root and typing
+‘make’. The driver is now installed.</p>
+</section>
+<hr class="docutils" />
+<section id="issues-with-root-ownership-of-uvc-devices">
+<h3><a class="toc-backref" href="#id6" role="doc-backlink">Issues with root ownership of UVC devices</a><a class="headerlink" href="#issues-with-root-ownership-of-uvc-devices" title="Link to this heading"></a></h3>
+<p>The USB camera device is typically owned by root, which prevents EPICS IOC from running as softioc user, and automatic startup using procServer. To grant access to USB camera device by other users, such as softioc, we wrote udev rules:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>kgofron@xf17bm-ioc2:/etc/udev/rules.d$ more usb-cams.rules
+# cam1 f007
+SUBSYSTEM==&quot;usb&quot;, ATTRS{idVendor}==&quot;f007&quot;, OWNER=&quot;softioc&quot;, GROUP=&quot;softioc&quot;, MODE=&quot;0666&quot;, SYMLINK=&quot;cam1&quot;
+# cam2 0c45
+SUBSYSTEM==&quot;usb&quot;, ATTRS{idVendor}==&quot;0c45&quot;, OWNER=&quot;softioc&quot;, GROUP=&quot;softioc&quot;, MODE=&quot;0666&quot;, SYMLINK=&quot;cam2&quot;
+# cam3 2560
+SUBSYSTEM==&quot;usb&quot;, ATTRS{idVendor}==&quot;2560&quot;, OWNER=&quot;softioc&quot;, GROUP=&quot;softioc&quot;, MODE=&quot;0666&quot;, SYMLINK=&quot;cam3&quot;
+# cam4 eb1a (not attached)
+SUBSYSTEM==&quot;usb&quot;, ATTRS{idVendor}==&quot;eb1a&quot;, OWNER=&quot;softioc&quot;, GROUP=&quot;softioc&quot;, MODE=&quot;0666&quot;, SYMLINK=&quot;cam4&quot;
+# cam5 eb1a
+SUBSYSTEM==&quot;usb&quot;, ATTRS{idVendor}==&quot;eb1a&quot;, OWNER=&quot;softioc&quot;, GROUP=&quot;softioc&quot;, MODE=&quot;0660&quot;, SYMLINK=&quot;cam5&quot;
+</pre></div>
+</div>
+<p>To find vendorID and supported modes use lsusb (see lsbusb output file entitled lsusb.rst).</p>
+</section>
+<hr class="docutils" />
+<section id="driver-contents">
+<h3><a class="toc-backref" href="#id7" role="doc-backlink">Driver Contents</a><a class="headerlink" href="#driver-contents" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>install-libuvc.sh -&gt; Installation script for <a class="reference external" href="https://github.com/ktossell/libuvc">libuvc</a> and its
+dependancies.</p></li>
+<li><p>cameraDetector -&gt; C++ program that detects all connected UVC devices.
+Useful for finding serial/product number for IOC</p></li>
+<li><p>imageCaptureTest -&gt; C++ program that uses OpenCV to capture 200
+frames from the camera to test if <a class="reference external" href="https://github.com/ktossell/libuvc">libuvc</a> has been installed and the
+camera is connected.</p></li>
+<li><p><a class="reference external" href="https://github.com/epicsNSLS2-areaDetector/ADUVC">ADUVC</a> driver -&gt; The source code for the area detector driver itself
+in the uvcApp/src directory.</p></li>
+<li><p>iocUVC -&gt; Example ioc for use with the <a class="reference external" href="https://github.com/epicsNSLS2-areaDetector/ADUVC">ADUVC</a> driver. Shows how to
+connect to a camera in the EPICS IOC shell</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="usage">
+<h3><a class="toc-backref" href="#id8" role="doc-backlink">Usage</a><a class="headerlink" href="#usage" title="Link to this heading"></a></h3>
+<p>Once the driver is installed, you may start the ioc by entering the IOC
+folder and running ‘sudo ./startEPICS.sh’. Sudo access is important
+because access to UVC devices is limited to users with root permissions.
+You may then integrate ADUVC into your area detector screen setup. Below
+is an image of the ADUVC base control screen. It extends the standard
+ADBase screen with UVC controls for various camera functionality, such
+as brightness, exposure, backlight compenstation, saturation, etc. The
+driver supports a variety of UVC formats, though the two that are used
+the most often are MJPEG and Uncompressed. Because acquisition modes are
+locked down in most UVC cameras, as of R1-2 there has been added a
+section to the screen that allows for selecting from up to the 7 most
+useful acquisition modes supported by the camera. If the camera has
+fewer than 7 modes, the remaining ones will show as Unused.</p>
+</section>
+<hr class="docutils" />
+<section id="release-notes">
+<h3><a class="toc-backref" href="#id9" role="doc-backlink">Release Notes</a><a class="headerlink" href="#release-notes" title="Link to this heading"></a></h3>
+<div class="text-section-local"><p class="rubric" id="release-notes-1">Release Notes</p>
+<p class="rubric" id="r1-6-1-december-2020">R1-6 (1-December-2020)</p>
+<ul>
+<li><p>Features Added</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>libuvc now builds via the EPICS build system</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<p class="rubric" id="r1-5-29-october-2020">R1-5 (29-October-2020)</p>
+<ul>
+<li><p>Features Added</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Pan/Tilt/Zoom control (PTZ)</p></li>
+<li><p>Improved static build control</p></li>
+<li><p>Improved helper tools</p></li>
+<li><p>Improved script for building libuvc</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Fixes/Improvement</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Minor code changes to remove tabs and replace with spaces</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<p class="rubric" id="r1-4-18-august-2020">R1-4 (18-August-2020)</p>
+<ul>
+<li><p>Features Added</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Added ReST based documentation for new areaDetector doc format</p></li>
+<li><p>Static build support (for libuvc)</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Fixes/Improvement</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Fix segmentation fault caused by disconnect</p></li>
+<li><p>Libuvc install script fixed to support include files from build</p></li>
+<li><p>Minor fixes to build system to allow for static building</p></li>
+<li><p>Folder + file name changes to better follow AD naming standard</p></li>
+<li><p>Many code readability improvements</p></li>
+<li><p>Allow for helper utilities to compile with non-system installed libuvc</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Known Issues</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>libuvc relies on libusb-1.0, not libusb.</p></li>
+<li><p>When camera is not connected, driver segmentation faults; should be handled more gracefully.</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<p class="rubric" id="r1-3-06-september-2019">R1-3 (06-September-2019)</p>
+<ul class="simple">
+<li><p>Key detector features implemented:</p>
+<ul>
+<li><p>Added IOC feature to auto-adjust camera settings based on
+operating mode.</p></li>
+</ul>
+</li>
+<li><p>Key fixes and improvements</p>
+<ul>
+<li><p>Minor screen updates</p></li>
+<li><p>Repoint libuvc upstream repo. New repo has issues with CMake file</p></li>
+<li><p>Add documentation for fixing root ownership issues of UVC devices</p></li>
+</ul>
+</li>
+<li><p>Known Issues</p>
+<ul>
+<li><p>Auto adjust feature can break with certain odd configurations of
+the camera</p></li>
+<li><p>Uses array size to determine 8/16 bit and Mono/RGB, but certain
+compressed formats break the adjuster.</p></li>
+</ul>
+</li>
+</ul>
+<p class="rubric" id="r1-2-11-june-2019">R1-2 (11-June-2019)</p>
+<ul class="simple">
+<li><p>Key detector features implemented:</p>
+<ul>
+<li><p>Camera modes now read into structs at startup</p></li>
+<li><p>Valid camera mode structs selectable from dropdown in CSS -
+improves usability</p></li>
+<li><p>Autosave functionality tested and working.</p></li>
+<li><p>More extensive status messages/detector feedback</p></li>
+</ul>
+</li>
+<li><p>Key fixes and improvements</p>
+<ul>
+<li><p>Removed unused PVs (ADUVC_VendorID, ADUVC_ProductID)</p></li>
+<li><p>Fixed memory leak caused by early return from frame conversion
+function on error</p></li>
+<li><p>Added Makefiles to the support modules</p></li>
+<li><p>Documentation updates</p></li>
+<li><p>Added information on using camera with Virtual Box</p></li>
+<li><p>Removed newlines from status messages for better readability.</p></li>
+<li><p>CSS screen updated</p></li>
+</ul>
+</li>
+</ul>
+<p class="rubric" id="r1-1-28-january-2019">R1-1 (28-January-2019)</p>
+<ul class="simple">
+<li><p>Key detector features implemented:</p>
+<ul>
+<li><p>Support for Uncompressed and Grayscale images</p></li>
+<li><p>Support for 16-bit images</p></li>
+<li><p>Image timestamps</p></li>
+</ul>
+</li>
+<li><p>Key fixes and improvements</p>
+<ul>
+<li><p>Memory copying fixed to remove race condition that could cause
+plugins to crash</p></li>
+<li><p>Improved conversion between frame format and PV</p></li>
+<li><p>Updated documentation with params[in]/[out]</p></li>
+<li><p>Added LICENSE</p></li>
+<li><p>Code formatting cleaned up (removed all tab characters)</p></li>
+</ul>
+</li>
+</ul>
+<p class="rubric" id="r1-0-7-december-2018">R1-0 (7-December-2018)</p>
+<ul class="simple">
+<li><p>Key detector features implemented:</p>
+<ul>
+<li><p>UVC Camera features (Sharpness, Backlight, Brightness, Gain, etc.)</p></li>
+<li><p>More format support (MJPEG, RGB, YUYV)</p></li>
+<li><p>Frame size and framerate selection (Previously only 640x480 &#64; 30
+fps)</p></li>
+<li><p>Custom CSS Screen Added</p></li>
+</ul>
+</li>
+<li><p>Key fixes and improvements</p>
+<ul>
+<li><p>Fixed error where first frame in stream was corrupt</p></li>
+<li><p>Fixed IOC autosave feature</p></li>
+<li><p>Resolved frame drop due to motion (camera dependant)</p></li>
+</ul>
+</li>
+</ul>
+<p class="rubric" id="r0-1-beta-5-november-2018">R0-1 (Beta) (5-November-2018)</p>
+<ul class="simple">
+<li><p>Key detector features implemented:</p>
+<ul>
+<li><p>Image Acquisition supported and tested.</p></li>
+<li><p>Acquisition mode selection supported and tested</p></li>
+<li><p>Diagnostic information acquisition</p></li>
+<li><p>Plugin interoperability tested</p></li>
+<li><p>Detector IOC written and tested</p></li>
+<li><p>Driver report function implemented</p></li>
+</ul>
+</li>
+<li><p>Key Support Features Added</p>
+<ul>
+<li><p>Documentation for installation and usage</p></li>
+<li><p>Camera Detector program for detecting UVC cameras and diagnostics</p></li>
+<li><p>Image Acquisition program for testing camera image acquisition</p></li>
+<li><p>libuvc installation script included</p></li>
+</ul>
+</li>
+<li><p>Limitations</p>
+<ul>
+<li><p>Only tested on linux-x86_64 systems</p></li>
+<li><p>Framerate goes down during motion (likely due to mjpeg
+compression)</p></li>
+<li><p>IOC autosave feature not working correctly</p></li>
+<li><p>Many UVC camera functions not yet implemented</p></li>
+<li><p>Limited format support (only mjpeg)</p></li>
+<li><p>Frame size must be specified in the IOC</p></li>
+<li><p>No custom screens (uses ADBase screen)</p></li>
+</ul>
+</li>
+</ul>
+</div></section>
+<hr class="docutils" />
+<section id="medm-screens">
+<h3><a class="toc-backref" href="#id10" role="doc-backlink">MEDM screens</a><a class="headerlink" href="#medm-screens" title="Link to this heading"></a></h3>
+<p>The following is the OPI screen for ADUVC.opi when controlling a USB camera by Shenzhen Reyun Industrial Co., Ltd. This screen is basic and can be used for any USB camera.</p>
+<figure class="align-default">
+<img alt="../_images/ADUVCBase.png" src="../_images/ADUVCBase.png" />
+</figure>
+<p>The ADUVC Base screen. Based on the ADBase screen with added controls specific to <a class="reference external" href="https://github.com/epicsNSLS2-areaDetector/ADUVC">ADUVC</a>.</p>
+</section>
+<hr class="docutils" />
+<section id="known-issues-and-pull-requests">
+<h3><a class="toc-backref" href="#id11" role="doc-backlink">Known Issues and pull requests</a><a class="headerlink" href="#known-issues-and-pull-requests" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>To submit an issue or a pull request for ADUVC, please do so at the source fork on <a class="reference external" href="https://github.com/epicsNSLS2-areaDetector/ADUVC">Github</a>.</p></li>
+<li><p>Many low end vendors do not assign Serial Numbers (S/N), and such cameras must be started using Product Number instead.</p></li>
+<li><p>Some vendors assign same S/N for the same model, and such multiples of such cameras do not work well when connected to same computer USB hub.</p></li>
+<li><p>USB cameras have to be accessed by root, and access by other users is enabled by modifying /etc/udev/rules.</p></li>
+</ul>
+</section>
+<section id="important-links">
+<h3><a class="toc-backref" href="#id12" role="doc-backlink">Important links</a><a class="headerlink" href="#important-links" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/ktossell/libuvc">libuvc</a>, is a cross-platform library for USB video devices.</p></li>
+<li><p><a class="reference external" href="https://github.com/epicsNSLS2-areaDetector/ADUVC">ADUVC</a> driver on Github.</p></li>
+<li><p><a class="reference external" href="https://github.com/areaDetector">areaDetector</a> on Github.</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../ADURL/st_cmd.html" class="btn btn-neutral float-left" title="Example st.cmd Startup File" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../NDDriverStdArrays/NDDriverStdArraysDoc.html" class="btn btn-neutral float-right" title="NDDriverStdArrays" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Mark Rivers.
+      <span class="lastupdated">Last updated on 2025-May-25.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

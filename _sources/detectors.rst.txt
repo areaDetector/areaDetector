@@ -311,7 +311,7 @@ documentation, release notes, name of maintainer, and repository status.
   * - `aravisGigE <https://github.com/areaDetector/aravisGigE>`__
     - Driver using the GNOME Aravis library for Genicam GigE cameras
     - `README <https://github.com/areaDetector/aravisGigE/blob/master/README.md>`__
-    - `Release Notes <http://controls.diamond.ac.uk/downloads/support/aravisGigE/>`__
+    - `Release Notes <https://github.com/areaDetector/aravisGigE/blob/master/RELEASE.md>`__
     - Tom Cobb?
     - Archived
   * - `ffmpegViewer <https://github.com/areaDetector/ffmpegViewer>`__
@@ -322,8 +322,8 @@ documentation, release notes, name of maintainer, and repository status.
     - Active?
   * - `ffmpegServer <https://github.com/areaDetector/ffmpegServer>`__
     - Plugin that use the ffmpeg libraries to compress a stream of images to files or via an html service
-    - `ffmpegServer <http://controls.diamond.ac.uk/downloads/support/ffmpegServer/>`__
-    - `Release Notes <http://controls.diamond.ac.uk/downloads/support/ffmpegServer/>`__
+    - `ffmpegServer <https://htmlpreview.github.io/?https://github.com/areaDetector/ffmpegServer/blob/master/documentation/doxygen/index.html>`__
+    - `Release Notes <https://github.com/areaDetector/ffmpegServer/blob/master/RELEASE.md>`__
     - Tom Cobb?
     - Active?
   * - `firewireDCAM <https://github.com/areaDetector/firewireDCAM>`__
