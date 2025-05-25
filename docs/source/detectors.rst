@@ -184,7 +184,7 @@ documentation, release notes, name of maintainer, and repository status.
     - Active?
   * - `ADPCO <https://github.com/areaDetector/ADPCO>`__
     - Driver for PCO CameraLink cameras
-    - `PCODriver <PCODriver.html>`__
+    - `PCODriver <https://htmlpreview.github.io/?https://github.com/areaDetector/ADPCO/blob/master/documentation/PCODriver.html>`__
     - `Release Notes <https://github.com/areaDetector/ADPCO/blob/master/RELEASE.md>`__
     - Tim Madden
     - Should be archived
