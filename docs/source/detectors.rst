@@ -119,7 +119,6 @@ documentation, release notes, name of maintainer, and repository status.
   * - `ADFireWireWin <https://github.com/areaDetector/ADFireWireWin>`__
     - Driver for Firewire DCAM detectors on Windows using the Carnegie Mellon Firewire driver
     - `FirewireWinDoc <https://htmlpreview.github.io/?https://github.com/areaDetector/ADFireWireWin/blob/master/documentation/FirewireWinDoc.html>`__
-    - `FirewireWinDoc <FirewireWinDoc.html>`__
     - `Release Notes <https://github.com/areaDetector/ADFireWireWin/blob/master/RELEASE.md>`__
     - Mark Rivers
     - Should be archived
