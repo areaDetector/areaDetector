@@ -269,6 +269,7 @@ documentation, release notes, name of maintainer, and repository status.
     - Active
   * - `ADRoper <https://github.com/areaDetector/ADRoper>`__
     - Driver for Princeton Instruments and Photometics detectors using the WinView/WinSpec programs
+    - `RoperDoc <https://htmlpreview.github.io/?https://github.com/areaDetector/ADRoper/blob/master/documentation/RoperDoc.html>`__
     - `RoperDoc <RoperDoc.html>`__
     - `Release Notes <https://github.com/areaDetector/ADRoper/blob/master/RELEASE.md>`__
     - Mark Rivers
