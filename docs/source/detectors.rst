@@ -202,7 +202,7 @@ documentation, release notes, name of maintainer, and repository status.
     - Active
   * - `ADPhotonII <https://github.com/areaDetector/ADPhotonII>`__
     - Driver for Bruker PhotonII detectors
-    - `Doc <https://github.com/areaDetector/ADPhotonII/blob/master/documentation/PhotonIIDoc.html>`__
+    - `ADPhotonII <https://htmlpreview.github.io/?https://github.com/areaDetector/ADPhotonII/blob/master/documentation/PhotonIIDoc.html>`__
     - `Release Notes <https://github.com/areaDetector/ADPhotonII/blob/master/RELEASE.md>`__
     - Mark Rivers
     - Should be archived
