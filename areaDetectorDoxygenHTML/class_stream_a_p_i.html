@@ -42,7 +42,6 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="class_stream_a_p_i-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">StreamAPI Class Reference</div></div>
 </div><!--header-->
@@ -58,13 +57,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a221b41076c1d20623f26c30e5da8e3c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af1544d01763c4aab4763e05f705c297f" id="r_af1544d01763c4aab4763e05f705c297f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_stream_a_p_i.html#af1544d01763c4aab4763e05f705c297f">getHeader</a> (<a class="el" href="structstream__header__t.html">stream_header_t</a> *header, int timeout=0)</td></tr>
 <tr class="separator:af1544d01763c4aab4763e05f705c297f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a275da62cd5e7cd6a572966deb9d0b08d" id="r_a275da62cd5e7cd6a572966deb9d0b08d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_stream_a_p_i.html#a275da62cd5e7cd6a572966deb9d0b08d">getFrame</a> (<a class="el" href="stream_api_8h.html#ada67d1da8cd5167b36ef4e9e2298ef0d">stream_frame_t</a> *frame, int timeout=0)</td></tr>
-<tr class="separator:a275da62cd5e7cd6a572966deb9d0b08d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
-Static Public Member Functions</h2></td></tr>
-<tr class="memitem:af89f41843077a1208690b4ba7b833716" id="r_af89f41843077a1208690b4ba7b833716"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_stream_a_p_i.html#af89f41843077a1208690b4ba7b833716">uncompress</a> (<a class="el" href="stream_api_8h.html#ada67d1da8cd5167b36ef4e9e2298ef0d">stream_frame_t</a> *frame, char *data=NULL)</td></tr>
-<tr class="separator:af89f41843077a1208690b4ba7b833716"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af53552b13473dd835a4f201f1260539b" id="r_af53552b13473dd835a4f201f1260539b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_stream_a_p_i.html#af53552b13473dd835a4f201f1260539b">waitFrame</a> (int *end, int timeout=0)</td></tr>
+<tr class="separator:af53552b13473dd835a4f201f1260539b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f29f1c673c553c762f1953e46e7b9d5" id="r_a7f29f1c673c553c762f1953e46e7b9d5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_stream_a_p_i.html#a7f29f1c673c553c762f1953e46e7b9d5">getFrame</a> (<a class="el" href="class_n_d_array.html">NDArray</a> **pArray, <a class="el" href="class_n_d_array_pool.html">NDArrayPool</a> *pNDArrayPool, int decompress)</td></tr>
+<tr class="separator:a7f29f1c673c553c762f1953e46e7b9d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ae9a7ff7b17c1ae8114794f636e47ebe4" name="ae9a7ff7b17c1ae8114794f636e47ebe4"></a>
@@ -104,8 +100,8 @@ Static Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a275da62cd5e7cd6a572966deb9d0b08d" name="a275da62cd5e7cd6a572966deb9d0b08d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a275da62cd5e7cd6a572966deb9d0b08d">&#9670;&#160;</a></span>getFrame()</h2>
+<a id="a7f29f1c673c553c762f1953e46e7b9d5" name="a7f29f1c673c553c762f1953e46e7b9d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f29f1c673c553c762f1953e46e7b9d5">&#9670;&#160;</a></span>getFrame()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -113,14 +109,20 @@ Static Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">int StreamAPI::getFrame </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="stream_api_8h.html#ada67d1da8cd5167b36ef4e9e2298ef0d">stream_frame_t</a> *&#160;</td>
-          <td class="paramname"><em>frame</em>, </td>
+          <td class="paramtype"><a class="el" href="class_n_d_array.html">NDArray</a> **&#160;</td>
+          <td class="paramname"><em>pArray</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_n_d_array_pool.html">NDArrayPool</a> *&#160;</td>
+          <td class="paramname"><em>pNDArrayPool</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>timeout</em> = <code>0</code>&#160;</td>
+          <td class="paramname"><em>decompress</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -160,26 +162,23 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="af89f41843077a1208690b4ba7b833716" name="af89f41843077a1208690b4ba7b833716"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af89f41843077a1208690b4ba7b833716">&#9670;&#160;</a></span>uncompress()</h2>
+<a id="af53552b13473dd835a4f201f1260539b" name="af53552b13473dd835a4f201f1260539b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af53552b13473dd835a4f201f1260539b">&#9670;&#160;</a></span>waitFrame()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int StreamAPI::uncompress </td>
+          <td class="memname">int StreamAPI::waitFrame </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="stream_api_8h.html#ada67d1da8cd5167b36ef4e9e2298ef0d">stream_frame_t</a> *&#160;</td>
-          <td class="paramname"><em>frame</em>, </td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>end</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">char *&#160;</td>
-          <td class="paramname"><em>data</em> = <code>NULL</code>&#160;</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>timeout</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -187,11 +186,6 @@ Static Public Member Functions</h2></td></tr>
           <td></td><td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 </div>

@@ -202,16 +202,62 @@ series_1_data_000002.h5 with 20 images) then it will only appear on
 the detector disk after a disarm command (issued when the acquisition
 is stopped), which flushes the FileWriter buffer.
 
+There are currently two versions of the HDF5 file format written by the FileWriter.
+The "Legacy" format does not support saving multiple thresholds.
+The data in the file is 3-dimensional, [NumImages, NY, NX].
+The "v2024.2" format does support saving multiple thresholds.
+The data in the file is 4-dimensional, [NumImages, NumThresholds, NY, NX].
+The FWHDF5Format record is used to select which format to use.
+
 Using Stream
 ~~~~~~~~~~~~
 
-The Stream module is activated when StreamEnable is set to Yes. Data
-will then be available on the detector's tcp port 9999 as a ZMQ_PUSH
-socket. If DataSource is set to Stream, this driver opens a
+The Stream module is activated when StreamEnable is set to Yes.
+
+There are 2 versions of the Stream API
+  - V1 is the original version
+ 
+    - Data is available on the detector's tcp port 9999 as a ZMQ_PUSH socket.
+    - The data format is JSON + binary.
+    - Only a single threshold is supported.
+
+  - V2 is the new version available beginning with firmware 2022.1
+
+    - Data is available on the detector's tcp port 31001 as a ZMQ_PUSH socket.
+    - The data format is CBOR.
+    - Multiple thresholds are supported.
+
+The StreamVersion record is used to select the Stream1 or Stream2 API.
+
+If DataSource is set to Stream, the driver opens a
 corresponding ZMQ_PULL socket and parses the incoming data as
 NDArrays. Otherwise a third-party client can listen on that socket for
 data. The format of the packets is specified in the Eiger SIMPLON API
 documentation.
+
+The NDArrays received by the Stream1 API are 2-dimensional, [NX, NY].
+If only a single threshold is enabled then the NDArrays received by the
+Stream2 API are also 2-dimensional.
+If more than one threshold is enabled then the NDArrays are 3-dimensional,
+[NX, NY, NThreshholds].
+
+The data sent from the Eiger server is unsigned 32-bit, 16-bit, or 8-bit integers,
+depending on the exposure time.
+Bad pixels and pixel gaps are flagged with very large positive values, e.g. 2^32-1, 2^32-2, etc.
+This allows the use of nearly the full integer range for the data values.
+However, it is quite inconvenient for data viewing, since autoscaling will usually lead to actual data
+values being all black.
+
+The SignedData record can be used to set the NDArray data types to signed.
+This allows autoscaling to work well, since the flagged pixel values will now be -1 or -2.
+It does, however, reduce the available count range by a factor of 2.
+
+  - For 32-bit data this will be a problem when there are over 2.1e9 counts per pixel.
+    Since the maximum count rate is about 2e6 counts/s it is not an issue for count times less than 1000 seconds.
+  - When the exposure time is less than 0.01 seconds the Eiger switches to 16-bit mode.
+    For 16-bit data this would be a problem when there are over 32K counts per pixel.
+    Since the maximum count rate is about 2e6 counts/s there should never be more than 20K counts in 0.01 seconds,
+    and there should thus be no problem.
 
 Using Monitor
 ~~~~~~~~~~~~~
@@ -524,6 +570,10 @@ Readout Setup
     - Controls whether autosummation should be done.
     - AutoSummation, AutoSummation_RBV
     - bo, bi
+  * - N.A.
+    - Controls whether data are signed or unsigned.
+    - SignedData, SignedData_RBV
+    - bo, bi
   * - detector/config/compression
     - Compression algorithm to use when compression is enabled. Options are:
         * lz4
@@ -591,6 +641,10 @@ FileWriter Interface
     - State of the FileWriter module
     - FWState_RBV
     - stringin
+  * - filewriter/config/format
+    - Selects the HDF5 format. Choices are "Legacy" and "v2024.2"
+    - FWHDF5Format, FWHDF5Format_RBV
+    - mbbo, mbbi
   * - filewriter/config/compression_enabled
     - Enables or disables LZ4 or BSLZ4 compression for HDF5 files written by the DCU
     - FWCompression, FWCompression_RBV
@@ -668,6 +722,12 @@ Stream Interface
     - State of the Stream module
     - StreamState_RBV
     - stringin
+  * - stream/config/format
+    - Selects the Stream API version. Options are:
+        - Stream1
+        - Stream2
+    - StreamVersion, StreamVersion_RBV
+    - mbbo, mbbi
   * - N.A.
     - Controls whether the NDArrays from the Stream interface are decompressed (Yes) or
       compressed (No)

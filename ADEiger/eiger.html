@@ -372,16 +372,65 @@ the FWClear PV.  This is only available with the Eiger1 and Simplon API version
 series_1_data_000002.h5 with 20 images) then it will only appear on
 the detector disk after a disarm command (issued when the acquisition
 is stopped), which flushes the FileWriter buffer.</p>
+<p>There are currently two versions of the HDF5 file format written by the FileWriter.
+The “Legacy” format does not support saving multiple thresholds.
+The data in the file is 3-dimensional, [NumImages, NY, NX].
+The “v2024.2” format does support saving multiple thresholds.
+The data in the file is 4-dimensional, [NumImages, NumThresholds, NY, NX].
+The FWHDF5Format record is used to select which format to use.</p>
 </section>
 <section id="using-stream">
 <h3><a class="toc-backref" href="#id8" role="doc-backlink">Using Stream</a><a class="headerlink" href="#using-stream" title="Link to this heading"></a></h3>
-<p>The Stream module is activated when StreamEnable is set to Yes. Data
-will then be available on the detector’s tcp port 9999 as a ZMQ_PUSH
-socket. If DataSource is set to Stream, this driver opens a
+<p>The Stream module is activated when StreamEnable is set to Yes.</p>
+<dl class="simple">
+<dt>There are 2 versions of the Stream API</dt><dd><ul class="simple">
+<li><p>V1 is the original version</p>
+<ul>
+<li><p>Data is available on the detector’s tcp port 9999 as a ZMQ_PUSH socket.</p></li>
+<li><p>The data format is JSON + binary.</p></li>
+<li><p>Only a single threshold is supported.</p></li>
+</ul>
+</li>
+<li><p>V2 is the new version available beginning with firmware 2022.1</p>
+<ul>
+<li><p>Data is available on the detector’s tcp port 31001 as a ZMQ_PUSH socket.</p></li>
+<li><p>The data format is CBOR.</p></li>
+<li><p>Multiple thresholds are supported.</p></li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+<p>The StreamVersion record is used to select the Stream1 or Stream2 API.</p>
+<p>If DataSource is set to Stream, the driver opens a
 corresponding ZMQ_PULL socket and parses the incoming data as
 NDArrays. Otherwise a third-party client can listen on that socket for
 data. The format of the packets is specified in the Eiger SIMPLON API
 documentation.</p>
+<p>The NDArrays received by the Stream1 API are 2-dimensional, [NX, NY].
+If only a single threshold is enabled then the NDArrays received by the
+Stream2 API are also 2-dimensional.
+If more than one threshold is enabled then the NDArrays are 3-dimensional,
+[NX, NY, NThreshholds].</p>
+<p>The data sent from the Eiger server is unsigned 32-bit, 16-bit, or 8-bit integers,
+depending on the exposure time.
+Bad pixels and pixel gaps are flagged with very large positive values, e.g. 2^32-1, 2^32-2, etc.
+This allows the use of nearly the full integer range for the data values.
+However, it is quite inconvenient for data viewing, since autoscaling will usually lead to actual data
+values being all black.</p>
+<p>The SignedData record can be used to set the NDArray data types to signed.
+This allows autoscaling to work well, since the flagged pixel values will now be -1 or -2.
+It does, however, reduce the available count range by a factor of 2.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>For 32-bit data this will be a problem when there are over 2.1e9 counts per pixel.
+Since the maximum count rate is about 2e6 counts/s it is not an issue for count times less than 1000 seconds.</p></li>
+<li><p>When the exposure time is less than 0.01 seconds the Eiger switches to 16-bit mode.
+For 16-bit data this would be a problem when there are over 32K counts per pixel.
+Since the maximum count rate is about 2e6 counts/s there should never be more than 20K counts in 0.01 seconds,
+and there should thus be no problem.</p></li>
+</ul>
+</div></blockquote>
 </section>
 <section id="using-monitor">
 <h3><a class="toc-backref" href="#id9" role="doc-backlink">Using Monitor</a><a class="headerlink" href="#using-monitor" title="Link to this heading"></a></h3>
@@ -792,7 +841,12 @@ or only via the Trigger PV (1).</p></td>
 <td><p>AutoSummation, AutoSummation_RBV</p></td>
 <td><p>bo, bi</p></td>
 </tr>
-<tr class="row-odd"><td><p>detector/config/compression</p></td>
+<tr class="row-odd"><td><p>N.A.</p></td>
+<td><p>Controls whether data are signed or unsigned.</p></td>
+<td><p>SignedData, SignedData_RBV</p></td>
+<td><p>bo, bi</p></td>
+</tr>
+<tr class="row-even"><td><p>detector/config/compression</p></td>
 <td><dl class="simple">
 <dt>Compression algorithm to use when compression is enabled. Options are:</dt><dd><ul class="simple">
 <li><p>lz4</p></li>
@@ -807,7 +861,7 @@ also be used for HDF5 files written by the FileWriter interface if FWCompression
 <td><p>CompressionAlgo, CompressionAlgo_RBV</p></td>
 <td><p>mbbo, mbbi</p></td>
 </tr>
-<tr class="row-even"><td><p>N.A.</p></td>
+<tr class="row-odd"><td><p>N.A.</p></td>
 <td><dl class="simple">
 <dt>Which data source to use for areaDetector pipeline. Valid values:</dt><dd><ul class="simple">
 <li><p>None</p></li>
@@ -893,17 +947,22 @@ is 16, and at very high frame rates it is 8.  For example, on an Eiger2 500K:</p
 <td><p>FWState_RBV</p></td>
 <td><p>stringin</p></td>
 </tr>
-<tr class="row-even"><td><p>filewriter/config/compression_enabled</p></td>
+<tr class="row-even"><td><p>filewriter/config/format</p></td>
+<td><p>Selects the HDF5 format. Choices are “Legacy” and “v2024.2”</p></td>
+<td><p>FWHDF5Format, FWHDF5Format_RBV</p></td>
+<td><p>mbbo, mbbi</p></td>
+</tr>
+<tr class="row-odd"><td><p>filewriter/config/compression_enabled</p></td>
 <td><p>Enables or disables LZ4 or BSLZ4 compression for HDF5 files written by the DCU</p></td>
 <td><p>FWCompression, FWCompression_RBV</p></td>
 <td><p>bo, bi</p></td>
 </tr>
-<tr class="row-odd"><td><p>filewriter/config/nimages_per_file</p></td>
+<tr class="row-even"><td><p>filewriter/config/nimages_per_file</p></td>
 <td><p>Number of images per HDF5 data file</p></td>
 <td><p>FWNImgsPerFile, FWNImgsPerFile_RBV</p></td>
 <td><p>ao, ai</p></td>
 </tr>
-<tr class="row-even"><td><p>filewriter/config/name_patttern</p></td>
+<tr class="row-odd"><td><p>filewriter/config/name_patttern</p></td>
 <td><p>Name pattern for the generated HDF5 files. The pattern can be anything, but it must
 contain the string ‘$id’ in it. This string is replaced with the current sequence
 id of the acquisition. The default is: “series_$id”, which would generate the files:</p>
@@ -919,45 +978,45 @@ because then every acquisition would generate files with the same name</p>
 <td><p>FWNamePattern, FWNamePattern_RBV</p></td>
 <td><p>stringout, stringin</p></td>
 </tr>
-<tr class="row-odd"><td><p>N.A.</p></td>
+<tr class="row-even"><td><p>N.A.</p></td>
 <td><p>Sequence ID of the current acquisition</p></td>
 <td><p>SequenceId</p></td>
 <td><p>ai</p></td>
 </tr>
-<tr class="row-even"><td><p>N.A.</p></td>
+<tr class="row-odd"><td><p>N.A.</p></td>
 <td><p>Controls whether acquired files should be saved locally to disk</p></td>
 <td><p>SaveFiles, SaveFiles_RBV</p></td>
 <td><p>bo, bi</p></td>
 </tr>
-<tr class="row-odd"><td><p>N.A.</p></td>
+<tr class="row-even"><td><p>N.A.</p></td>
 <td><p>Controls the owner of the file saved to disk. Requires the IOC to have the CAP_SETUID
 capability.</p></td>
 <td><p>FileOwner, FileOwner_RBV</p></td>
 <td><p>stringout, stringin</p></td>
 </tr>
-<tr class="row-even"><td><p>N.A.</p></td>
+<tr class="row-odd"><td><p>N.A.</p></td>
 <td><p>Controls the owner group of the file saved to disk. Requires the IOC to have the
 CAP_SETGID capability.</p></td>
 <td><p>FileOwnerGrp, FileOwnerGrp_RBV</p></td>
 <td><p>stringout, stringin</p></td>
 </tr>
-<tr class="row-odd"><td><p>N.A.</p></td>
+<tr class="row-even"><td><p>N.A.</p></td>
 <td><p>Controls the permissions for the files saved to disk.
 Normal Linux octal bitmask format, for Owner/Group/World, e.g. 0666 is r+w owner, group, and world.</p></td>
 <td><p>FilePerms</p></td>
 <td><p>ao</p></td>
 </tr>
-<tr class="row-even"><td><p>filewriter/status/buffer_free</p></td>
+<tr class="row-odd"><td><p>filewriter/status/buffer_free</p></td>
 <td><p>Free space on detector disk.</p></td>
 <td><p>FWFree_RBV</p></td>
 <td><p>ai</p></td>
 </tr>
-<tr class="row-odd"><td><p>N.A.</p></td>
+<tr class="row-even"><td><p>N.A.</p></td>
 <td><p>Controls whether downloaded files should be removed from the detector disk</p></td>
 <td><p>FWAutoRemove, FWAutoRemove_RBV</p></td>
 <td><p>bo, bi</p></td>
 </tr>
-<tr class="row-even"><td><p>filewriter/config/clear</p></td>
+<tr class="row-odd"><td><p>filewriter/config/clear</p></td>
 <td><p>Writing to this PV clears <em>all</em> files on the detector server disk. Eiger1 only.</p></td>
 <td><p>FWClear</p></td>
 <td><p>ao</p></td>
@@ -992,13 +1051,25 @@ Normal Linux octal bitmask format, for Owner/Group/World, e.g. 0666 is r+w owner
 <td><p>StreamState_RBV</p></td>
 <td><p>stringin</p></td>
 </tr>
-<tr class="row-even"><td><p>N.A.</p></td>
+<tr class="row-even"><td><p>stream/config/format</p></td>
+<td><dl class="simple">
+<dt>Selects the Stream API version. Options are:</dt><dd><ul class="simple">
+<li><p>Stream1</p></li>
+<li><p>Stream2</p></li>
+</ul>
+</dd>
+</dl>
+</td>
+<td><p>StreamVersion, StreamVersion_RBV</p></td>
+<td><p>mbbo, mbbi</p></td>
+</tr>
+<tr class="row-odd"><td><p>N.A.</p></td>
 <td><p>Controls whether the NDArrays from the Stream interface are decompressed (Yes) or
 compressed (No)</p></td>
 <td><p>StreamDecompress, StreamDecompress_RBV</p></td>
 <td><p>bo, bi</p></td>
 </tr>
-<tr class="row-odd"><td><p>stream/config/header_detail</p></td>
+<tr class="row-even"><td><p>stream/config/header_detail</p></td>
 <td><dl class="simple">
 <dt>Selects the level of detail for Stream API Headers. Options are:</dt><dd><ul class="simple">
 <li><p>All</p></li>
@@ -1011,17 +1082,17 @@ compressed (No)</p></td>
 <td><p>StreamHdrDetail, StreamHdrDetail_RBV</p></td>
 <td><p>mbbo, mbbi</p></td>
 </tr>
-<tr class="row-even"><td><p>stream/config/header_appendix</p></td>
+<tr class="row-odd"><td><p>stream/config/header_appendix</p></td>
 <td><p>Sets the text to be appended to the Stream API headers</p></td>
 <td><p>StreamHdrAppendix</p></td>
 <td><p>waveform</p></td>
 </tr>
-<tr class="row-odd"><td><p>stream/config/image_appendix</p></td>
+<tr class="row-even"><td><p>stream/config/image_appendix</p></td>
 <td><p>Sets the text to be appended to the Stream API images</p></td>
 <td><p>StreamImgAppendix</p></td>
 <td><p>waveform</p></td>
 </tr>
-<tr class="row-even"><td><p>stream/status/dropped</p></td>
+<tr class="row-odd"><td><p>stream/status/dropped</p></td>
 <td><p>Indicates how many images were dropped in the last acquisition</p></td>
 <td><p>StreamDropped_RBV</p></td>
 <td><p>ai</p></td>
@@ -1309,7 +1380,7 @@ all the files it is supposed to.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, Mark Rivers.
-      <span class="lastupdated">Last updated on 2025-May-25.
+      <span class="lastupdated">Last updated on 2025-May-26.
       </span></p>
   </div>
 
