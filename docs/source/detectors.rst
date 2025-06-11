@@ -62,7 +62,7 @@ documentation, release notes, name of maintainer, and repository status.
     - `Release Notes <https://github.com/areaDetector/ADAndor3/blob/master/RELEASE.md>`__
     - Unknown
     - Active
-  * - `ADBitBlow <https://github.com/areaDetector/ADBitFlow>`__
+  * - `ADBitFlow <https://github.com/areaDetector/ADBitFlow>`__
     - Driver for BitFlow CoaXPress frame grabbers
     - None
     - `Release Notes <https://github.com/areaDetector/ADBitFlow/blob/master/RELEASE.md>`__
