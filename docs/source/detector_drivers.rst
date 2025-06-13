@@ -23,12 +23,8 @@ Detector Drivers
     ADPerkinElmer/PerkinElmerDoc
     ADPICam/PICamDoc
     ADPilatus/pilatusDoc
-    ADPixirad/ADPixirad
-    ADPointGrey/PointGreyDoc
-    ADProsilica/ADProsilica
     ADPvCam/pvcamDoc
     ADPylon/ADPylon
-    ADQImaging/QImagingDoc
     ADRIXSCam/ADRIXSCam
     ADSimDetector/simDetector
     ADSpinnaker/ADSpinnaker
