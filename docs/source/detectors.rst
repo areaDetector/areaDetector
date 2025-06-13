@@ -62,24 +62,24 @@ documentation, release notes, name of maintainer, and repository status.
     - `Release Notes <https://github.com/areaDetector/ADAndor3/blob/master/RELEASE.md>`__
     - Unknown
     - Active
-  * - `ADBitBlow <https://github.com/areaDetector/ADBitFlow>`__
+  * - `ADBitFlow <https://github.com/areaDetector/ADBitFlow>`__
     - Driver for BitFlow CoaXPress frame grabbers
     - None
     - `Release Notes <https://github.com/areaDetector/ADBitFlow/blob/master/RELEASE.md>`__
     - Mark Rivers
-    - Inactive, never completed, should be achived
+    - Archived, never completed
   * - `ADBruker <https://github.com/areaDetector/ADBruker>`__
     - Driver for Bruker detectors using the Bruker Instrument Server (BIS)
     - `BrukerDoc <https://htmlpreview.github.io/?https://github.com/areaDetector/ADBruker/blob/master/documentation/BrukerDoc.html>`__
     - `Release Notes <https://github.com/areaDetector/ADBruker/blob/master/RELEASE.md>`__
     - Mark Rivers
-    - Should be archived
+    - Archived
   * - `ADCameraLink <https://github.com/areaDetector/ADCameraLink>`__
     - Drivers for Silicon Software and Dalsa/Coreco frame grabbers
     - `ADCameraLinkDriver <https://htmlpreview.github.io/?https://github.com/areaDetector/ADCameralink/blob/master/documentation/ADCameralinkDriver.html>`__
     - `Release Notes <https://github.com/areaDetector/ADCameraLink/blob/master/RELEASE.md>`__
     - Tim Madden
-    - Should be archived
+    - Archived
   * - `ADCompVision <https://github.com/areaDetector/ADCompVision>`__
     - Plugin that provides access to OpenCV library functions
     - `ADCompVision <ADCompVision.html>`__
@@ -121,7 +121,7 @@ documentation, release notes, name of maintainer, and repository status.
     - `FirewireWinDoc <https://htmlpreview.github.io/?https://github.com/areaDetector/ADFireWireWin/blob/master/documentation/FirewireWinDoc.html>`__
     - `Release Notes <https://github.com/areaDetector/ADFireWireWin/blob/master/RELEASE.md>`__
     - Mark Rivers
-    - Should be archived
+    - Archived
   * - `ADGenICam <https://github.com/areaDetector/ADGenICam>`__
     - Base class driver for GenICam drivers
     - :doc:`ADGenICam/ADGenICam`
@@ -187,7 +187,7 @@ documentation, release notes, name of maintainer, and repository status.
     - `PCODriver <https://htmlpreview.github.io/?https://github.com/areaDetector/ADPCO/blob/master/documentation/PCODriver.html>`__
     - `Release Notes <https://github.com/areaDetector/ADPCO/blob/master/RELEASE.md>`__
     - Tim Madden
-    - Should be archived
+    - Archived
   * - `ADPcoWin <https://github.com/areaDetector/ADPcoWin>`__
     - Driver for PCO cameras using their SDK
     - `ADPcoWin <https://htmlpreview.github.io/?https://github.com/areaDetector/ADPcoWin/blob/master/documentation/index.html>`__
@@ -205,7 +205,7 @@ documentation, release notes, name of maintainer, and repository status.
     - `ADPhotonII <https://htmlpreview.github.io/?https://github.com/areaDetector/ADPhotonII/blob/master/documentation/PhotonIIDoc.html>`__
     - `Release Notes <https://github.com/areaDetector/ADPhotonII/blob/master/RELEASE.md>`__
     - Mark Rivers
-    - Should be archived
+    - Archived
   * - `ADPICam <https://github.com/areaDetector/ADPICam>`__
     - Driver for Princeton Instruments detectors using the PICam library
     - :doc:`ADPICam/PICamDoc`
@@ -223,25 +223,25 @@ documentation, release notes, name of maintainer, and repository status.
     - :doc:`ADPixirad/ADPixirad`
     - `Release Notes <https://github.com/areaDetector/ADPixirad/blob/master/RELEASE.md>`__
     - Mark Rivers
-    - Should be archived
+    - Archived
   * - `ADPointGrey <https://github.com/areaDetector/ADPointGrey>`__
     - Driver for FLIR (formerly Point Grey Research) cameras
     - :doc:`ADPointGrey/PointGreyDoc`
     - `Release Notes <https://github.com/areaDetector/ADPointGrey/blob/master/RELEASE.md>`__
     - Mark Rivers
-    - Replaced by ADSpinnaker, should be archived
+    - Archived, replaced by ADSpinnaker
   * - `ADProsilica <https://github.com/areaDetector/ADProsilica>`__
     - Driver for Allied Vision Technologies (formerly Prosilica) cameras
     - :doc:`ADProsilica/ADProsilica`
     - `Release Notes <https://github.com/areaDetector/ADProsilica/blob/master/RELEASE.md>`__
     - Mark Rivers
-    - Replaced by ADVimba, should be archived
+    - Archived, replaced by ADVimba
   * - `ADPSL <https://github.com/areaDetector/ADPSL>`__
     - Driver for Photonic Science detectors
     - `ADPSL <https://htmlpreview.github.io/?https://github.com/areaDetector/ADPSL/blob/master/documentation/PSLDoc.html>`__
     - `Release Notes <https://github.com/areaDetector/ADPSL/blob/master/RELEASE.md>`__
     - Mark Rivers
-    - Should be archived
+    - Archived
   * - `ADPvCam <https://github.com/areaDetector/ADPvCam>`__
     - Driver for Photometics and Princeton Instruments detectors using the PvCam library
     - :doc:`ADPvCam/pvcamDoc`
@@ -259,7 +259,7 @@ documentation, release notes, name of maintainer, and repository status.
     - :doc:`ADQImaging/QImagingDoc`
     - `Release Notes <https://github.com/areaDetector/ADQImaging/blob/master/RELEASE.md>`__
     - Arthur Glowacki?
-    - Should be archived
+    - Archived
   * - `ADRIXSCam <https://github.com/areaDetector/ADRIXSCam>`__
     - Driver for XCAM RIXSCam Detectors
     - :doc:`ADRIXSCam/ADRIXSCam`
@@ -271,7 +271,7 @@ documentation, release notes, name of maintainer, and repository status.
     - `RoperDoc <https://htmlpreview.github.io/?https://github.com/areaDetector/ADRoper/blob/master/documentation/RoperDoc.html>`__
     - `Release Notes <https://github.com/areaDetector/ADRoper/blob/master/RELEASE.md>`__
     - Mark Rivers
-    - Should be archived
+    - Archived
   * - `ADSimDetector <https://github.com/areaDetector/ADSimDetector>`__
     - Driver for simulation detector
     - :doc:`ADSimDetector/simDetector`
@@ -331,7 +331,7 @@ documentation, release notes, name of maintainer, and repository status.
     - `README <https://github.com/areaDetector/firewireDCAM/blob/master/README.md>`__
     - `Release Notes <https://github.com/areaDetector/firewireDCAM/blob/master/RELEASE_NOTES.md>`__
     - Ulrik Pedersen?
-    - Should be archived
+    - Archived
   * - `NDDriverStdArrays <https://github.com/areaDetector/NDDriverStdArrays>`__
     - Driver that allows EPICS Channel Access clients to create NDArrays in an IOC
     - :doc:`NDDriverStdArrays/NDDriverStdArraysDoc`
