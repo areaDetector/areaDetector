@@ -49,7 +49,7 @@ documentation, release notes, name of maintainer, and repository status.
     - `adscDoc <https://htmlpreview.github.io/?https://github.com/areaDetector/ADADSC/blob/master/documentation/adscDoc.html>`__
     - `Release Notes <https://github.com/areaDetector/ADADSC/blob/master/RELEASE.md>`__
     - Lewis Muir?
-    - Should be archived
+    - Archived
   * - `ADAndor <https://github.com/areaDetector/ADAndor>`__
     - Driver for Andor CCD detectors
     - :doc:`ADAndor/andorDoc`
@@ -181,7 +181,7 @@ documentation, release notes, name of maintainer, and repository status.
     - N.A.
     - `Release Notes <https://github.com/areaDetector/ADnED/blob/master/RELEASE.md>`__
     - Matthew Pearson
-    - Active?
+    - Archived
   * - `ADPCO <https://github.com/areaDetector/ADPCO>`__
     - Driver for PCO CameraLink cameras
     - `PCODriver <https://htmlpreview.github.io/?https://github.com/areaDetector/ADPCO/blob/master/documentation/PCODriver.html>`__
