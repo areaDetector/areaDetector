@@ -432,9 +432,9 @@
         </inbodydescription>
         <location file="/home/runner/work/areaDetector/areaDetector/ffmpegServer/ffmpegServerApp/src/nullhttpd.h" line="276" column="6" bodyfile="/home/runner/work/areaDetector/areaDetector/ffmpegServer/ffmpegServerApp/src/nullhttpd_format.c" bodystart="87" bodyend="93" declfile="/home/runner/work/areaDetector/areaDetector/ffmpegServer/ffmpegServerApp/src/nullhttpd.h" declline="276" declcolumn="6"/>
       </memberdef>
-      <memberdef kind="function" id="nullhttpd_8h_1ae24bdd77caa8ac21e9a147ed10f948d5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>char *</type>
-        <definition>char * nullhttpd_strcasestr</definition>
+      <memberdef kind="function" id="nullhttpd_8h_1aa610831991ea119b446ceb6fb4d83092" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const char *</type>
+        <definition>const char * nullhttpd_strcasestr</definition>
         <argsstring>(const char *src, const char *query)</argsstring>
         <name>nullhttpd_strcasestr</name>
         <param>
@@ -451,7 +451,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/areaDetector/areaDetector/ffmpegServer/ffmpegServerApp/src/nullhttpd.h" line="277" column="6" bodyfile="/home/runner/work/areaDetector/areaDetector/ffmpegServer/ffmpegServerApp/src/nullhttpd_format.c" bodystart="95" bodyend="121" declfile="/home/runner/work/areaDetector/areaDetector/ffmpegServer/ffmpegServerApp/src/nullhttpd.h" declline="277" declcolumn="6"/>
+        <location file="/home/runner/work/areaDetector/areaDetector/ffmpegServer/ffmpegServerApp/src/nullhttpd.h" line="277" column="12" bodyfile="/home/runner/work/areaDetector/areaDetector/ffmpegServer/ffmpegServerApp/src/nullhttpd_format.c" bodystart="95" bodyend="121" declfile="/home/runner/work/areaDetector/areaDetector/ffmpegServer/ffmpegServerApp/src/nullhttpd.h" declline="277" declcolumn="12"/>
       </memberdef>
       <memberdef kind="function" id="nullhttpd_8h_1a496e127e46703fd9d4663d3c8587914e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>char *</type>
@@ -517,10 +517,10 @@
         </inbodydescription>
         <location file="/home/runner/work/areaDetector/areaDetector/ffmpegServer/ffmpegServerApp/src/nullhttpd.h" line="280" column="5" bodyfile="/home/runner/work/areaDetector/areaDetector/ffmpegServer/ffmpegServerApp/src/nullhttpd_format.c" bodystart="157" bodyend="181" declfile="/home/runner/work/areaDetector/areaDetector/ffmpegServer/ffmpegServerApp/src/nullhttpd.h" declline="280" declcolumn="5"/>
       </memberdef>
-      <memberdef kind="function" id="nullhttpd_8h_1ad4a81cea18f472f3df2e85494113dcc5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="nullhttpd_8h_1a6a32535bad936c386383cd9411f6949e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void printerror</definition>
-        <argsstring>(int sid, int status, char *title, char *text)</argsstring>
+        <argsstring>(int sid, int status, const char *title, const char *text)</argsstring>
         <name>printerror</name>
         <param>
           <type>int</type>
@@ -531,11 +531,11 @@
           <declname>status</declname>
         </param>
         <param>
-          <type>char *</type>
+          <type>const char *</type>
           <declname>title</declname>
         </param>
         <param>
-          <type>char *</type>
+          <type>const char *</type>
           <declname>text</declname>
         </param>
         <briefdescription>
@@ -597,10 +597,10 @@
         </inbodydescription>
         <location file="/home/runner/work/areaDetector/areaDetector/ffmpegServer/ffmpegServerApp/src/nullhttpd.h" line="285" column="5" bodyfile="/home/runner/work/areaDetector/areaDetector/ffmpegServer/ffmpegServerApp/src/nullhttpd_http.c" bodystart="119" bodyend="198" declfile="/home/runner/work/areaDetector/areaDetector/ffmpegServer/ffmpegServerApp/src/nullhttpd.h" declline="285" declcolumn="5"/>
       </memberdef>
-      <memberdef kind="function" id="nullhttpd_8h_1aed2a33b5bb684d7b757196a9c32a9fee" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="nullhttpd_8h_1a32d936236a0a93008067d7e036511607" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void send_header</definition>
-        <argsstring>(int sid, int cacheable, int status, char *title, char *extra_header, char *mime_type, int length, time_t mod)</argsstring>
+        <argsstring>(int sid, int cacheable, int status, const char *title, const char *extra_header, const char *mime_type, int length, time_t mod)</argsstring>
         <name>send_header</name>
         <param>
           <type>int</type>
@@ -615,15 +615,15 @@
           <declname>status</declname>
         </param>
         <param>
-          <type>char *</type>
+          <type>const char *</type>
           <declname>title</declname>
         </param>
         <param>
-          <type>char *</type>
+          <type>const char *</type>
           <declname>extra_header</declname>
         </param>
         <param>
-          <type>char *</type>
+          <type>const char *</type>
           <declname>mime_type</declname>
         </param>
         <param>
@@ -642,10 +642,10 @@
         </inbodydescription>
         <location file="/home/runner/work/areaDetector/areaDetector/ffmpegServer/ffmpegServerApp/src/nullhttpd.h" line="286" column="6" bodyfile="/home/runner/work/areaDetector/areaDetector/ffmpegServer/ffmpegServerApp/src/nullhttpd_http.c" bodystart="200" bodyend="233" declfile="/home/runner/work/areaDetector/areaDetector/ffmpegServer/ffmpegServerApp/src/nullhttpd.h" declline="286" declcolumn="6"/>
       </memberdef>
-      <memberdef kind="function" id="nullhttpd_8h_1a02debcd1a761c6a92250717ab540b0c0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="nullhttpd_8h_1a9cc9f888521b4d03e4263f2df09463c6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void send_fileheader</definition>
-        <argsstring>(int sid, int cacheable, int status, char *title, char *extra_header, char *mime_type, int length, time_t mod)</argsstring>
+        <argsstring>(int sid, int cacheable, int status, const char *title, const char *extra_header, const char *mime_type, int length, time_t mod)</argsstring>
         <name>send_fileheader</name>
         <param>
           <type>int</type>
@@ -660,15 +660,15 @@
           <declname>status</declname>
         </param>
         <param>
-          <type>char *</type>
+          <type>const char *</type>
           <declname>title</declname>
         </param>
         <param>
-          <type>char *</type>
+          <type>const char *</type>
           <declname>extra_header</declname>
         </param>
         <param>
-          <type>char *</type>
+          <type>const char *</type>
           <declname>mime_type</declname>
         </param>
         <param>
@@ -1049,8 +1049,8 @@
 <codeline lineno="133"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>pthread_<sp/>typedefs<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="134"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>HANDLE<sp/>pthread_t;</highlight></codeline>
 <codeline lineno="135"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">thread_attr<sp/>{</highlight></codeline>
-<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="pco__structures_8h_1aa39b39d94407451a6ec0226479db68cf" kindref="member">DWORD</ref><sp/>dwStackSize;</highlight></codeline>
-<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="pco__structures_8h_1aa39b39d94407451a6ec0226479db68cf" kindref="member">DWORD</ref><sp/>dwCreatingFlag;</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>DWORD<sp/>dwStackSize;</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>DWORD<sp/>dwCreatingFlag;</highlight></codeline>
 <codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>priority;</highlight></codeline>
 <codeline lineno="139"><highlight class="normal">}<sp/>pthread_attr_t;</highlight></codeline>
 <codeline lineno="140"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
@@ -1174,7 +1174,7 @@
 <codeline lineno="258"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>pthread_self()<sp/>GetCurrentThreadId()</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="259"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>unsigned<sp/>(__cdecl<sp/>*pthread_handler)(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*);</highlight></codeline>
 <codeline lineno="260"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>pthread_attr_init(pthread_attr_t<sp/>*connect_att);</highlight></codeline>
-<codeline lineno="261"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>pthread_attr_setstacksize(pthread_attr_t<sp/>*connect_att,<sp/><ref refid="pco__structures_8h_1aa39b39d94407451a6ec0226479db68cf" kindref="member">DWORD</ref><sp/>stack);</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>pthread_attr_setstacksize(pthread_attr_t<sp/>*connect_att,<sp/>DWORD<sp/>stack);</highlight></codeline>
 <codeline lineno="262"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>pthread_attr_setprio(pthread_attr_t<sp/>*connect_att,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>priority);</highlight></codeline>
 <codeline lineno="263"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>pthread_attr_destroy(pthread_attr_t<sp/>*connect_att);</highlight></codeline>
 <codeline lineno="264"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>pthread_create(pthread_t<sp/>*thread_id,<sp/>pthread_attr_t<sp/>*attr,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>(__stdcall<sp/>*func)(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/>),<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*param);</highlight></codeline>
@@ -1190,17 +1190,17 @@
 <codeline lineno="274"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="nullhttpd_8h_1a5e06f8315928ce0500b9471bf5b7ee61" kindref="member">hex2int</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*pChars);</highlight></codeline>
 <codeline lineno="275"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="nullhttpd_8h_1a1773d4c515919ba03f301efe291097db" kindref="member">striprn</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keywordtype">string</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="276"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="nullhttpd_8h_1a5d4e286515357bbebc2f3e4886fd3264" kindref="member">swapchar</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keywordtype">string</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>oldchar,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>newchar);</highlight></codeline>
-<codeline lineno="277"><highlight class="normal"></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="nullhttpd_8h_1ae24bdd77caa8ac21e9a147ed10f948d5" kindref="member">nullhttpd_strcasestr</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*src,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*query);</highlight></codeline>
+<codeline lineno="277"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="nullhttpd_8h_1aa610831991ea119b446ceb6fb4d83092" kindref="member">nullhttpd_strcasestr</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*src,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*query);</highlight></codeline>
 <codeline lineno="278"><highlight class="normal"></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="nullhttpd_8h_1a496e127e46703fd9d4663d3c8587914e" kindref="member">strcatf</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*dest,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*format,<sp/>...);</highlight></codeline>
 <codeline lineno="279"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="nullhttpd_8h_1a1ebb1631162c6f50d13c99635c8d00dd" kindref="member">printhex</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*format,<sp/>...);</highlight></codeline>
 <codeline lineno="280"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="nullhttpd_8h_1af58f9ee0c7f8257b1c16f235a9039cf6" kindref="member">printht</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*format,<sp/>...);</highlight></codeline>
 <codeline lineno="281"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>http.c<sp/>functions<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="282"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="nullhttpd_8h_1ad4a81cea18f472f3df2e85494113dcc5" kindref="member">printerror</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>sid,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>status,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>title,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>text);</highlight></codeline>
+<codeline lineno="282"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="nullhttpd_8h_1a6a32535bad936c386383cd9411f6949e" kindref="member">printerror</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>sid,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>status,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>title,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>text);</highlight></codeline>
 <codeline lineno="283"><highlight class="normal"></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="nullhttpd_8h_1a298420292443a08a317fa0678ae1870b" kindref="member">get_mime_type</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*name);</highlight></codeline>
 <codeline lineno="284"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="nullhttpd_8h_1adb5da8c9918f106775943cf27a171a3b" kindref="member">ReadPOSTData</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>sid);</highlight></codeline>
 <codeline lineno="285"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="nullhttpd_8h_1a1a9bc17fc2e0a0bf0fd9be63bf1faffc" kindref="member">read_header</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>sid);</highlight></codeline>
-<codeline lineno="286"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="nullhttpd_8h_1aed2a33b5bb684d7b757196a9c32a9fee" kindref="member">send_header</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>sid,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>cacheable,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>status,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*title,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*extra_header,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*mime_type,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>length,<sp/>time_t<sp/>mod);</highlight></codeline>
-<codeline lineno="287"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="nullhttpd_8h_1a02debcd1a761c6a92250717ab540b0c0" kindref="member">send_fileheader</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>sid,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>cacheable,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>status,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*title,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*extra_header,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*mime_type,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>length,<sp/>time_t<sp/>mod);</highlight></codeline>
+<codeline lineno="286"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="nullhttpd_8h_1a32d936236a0a93008067d7e036511607" kindref="member">send_header</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>sid,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>cacheable,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>status,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*title,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*extra_header,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*mime_type,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>length,<sp/>time_t<sp/>mod);</highlight></codeline>
+<codeline lineno="287"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="nullhttpd_8h_1a9cc9f888521b4d03e4263f2df09463c6" kindref="member">send_fileheader</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>sid,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>cacheable,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>status,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*title,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*extra_header,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*mime_type,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>length,<sp/>time_t<sp/>mod);</highlight></codeline>
 <codeline lineno="288"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>server.c<sp/>functions<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="289"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="nullhttpd_8h_1aef6f1403637616a494bd7942f296d87a" kindref="member">logaccess</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>loglevel,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*format,<sp/>...);</highlight></codeline>
 <codeline lineno="290"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="nullhttpd_8h_1af1a3fad0fb9bfa5cd9083948f6c95de4" kindref="member">logerror</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*format,<sp/>...);</highlight></codeline>

@@ -935,9 +935,9 @@
 <codeline lineno="57"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
 <codeline lineno="58"><highlight class="normal"></highlight></codeline>
 <codeline lineno="59"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>timing_max<sp/>=<sp/>(CIN_CONFIG_MAX_TIMING_MODES<sp/>&gt;<sp/>10)<sp/><sp/>?<sp/>10<sp/>:<sp/>CIN_CONFIG_MAX_TIMING_MODES;<sp/></highlight></codeline>
-<codeline lineno="60"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i=0;<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>&lt;timing_max;<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>++)</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i=0;i&lt;timing_max;i++)</highlight></codeline>
 <codeline lineno="61"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
-<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="namespacemake_db_and_edl_1a2832407c256551abb325d5ee9e587443" kindref="member">name</ref>;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*name;</highlight></codeline>
 <codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(cin_config_get_timing_name(&amp;<ref refid="class_fast_c_c_d_1a924f5c00f1541292803feb6bcd643eb2" kindref="member">cin_ctl</ref>,<sp/>i,<sp/>&amp;name)<sp/>==<sp/>CIN_OK)</highlight></codeline>
 <codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>setStringParam(<ref refid="class_fast_c_c_d_1a303b153807d6c2142b259b0a4ca7e2d2" kindref="member">FastCCDTimingNameN</ref>[i],<sp/>name);</highlight></codeline>
@@ -998,19 +998,19 @@
 <codeline lineno="120"><highlight class="normal"><sp/><sp/></highlight></codeline>
 <codeline lineno="121"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Lets<sp/>allocate<sp/>a<sp/>size<sp/>from<sp/></highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="122"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>the<sp/>descramble<sp/>params</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="123"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>rows,<sp/>ovscan,<sp/><ref refid="namespacemake_adl_1a75ac3107bf0f8a876fe96f2eed30eb15" kindref="member">x</ref>,<sp/><ref refid="namespacemake_adl_1ac2a9315bdefaa07c3f8dc9416feae40f" kindref="member">y</ref>;</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>rows,<sp/>ovscan,<sp/>x,<sp/>y;</highlight></codeline>
 <codeline lineno="124"><highlight class="normal"><sp/><sp/>cin_data_get_descramble_params(&amp;<ref refid="class_fast_c_c_d_1ad1fea0b6308ff76ddf2a21f82fb05881" kindref="member">cin_data</ref>,<sp/>&amp;rows,<sp/>&amp;ovscan,<sp/>&amp;x,<sp/>&amp;y);</highlight></codeline>
 <codeline lineno="125"><highlight class="normal"><sp/><sp/></highlight></codeline>
 <codeline lineno="126"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(x<sp/>!=<sp/>0)</highlight></codeline>
 <codeline lineno="127"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
-<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/>dims[0]<sp/>=<sp/><ref refid="namespacemake_adl_1a75ac3107bf0f8a876fe96f2eed30eb15" kindref="member">x</ref>;</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/>dims[0]<sp/>=<sp/>x;</highlight></codeline>
 <codeline lineno="129"><highlight class="normal"><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
 <codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/>dims[0]<sp/>=<sp/>CIN_DATA_MAX_FRAME_X;</highlight></codeline>
 <codeline lineno="131"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
 <codeline lineno="132"><highlight class="normal"><sp/><sp/></highlight></codeline>
 <codeline lineno="133"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(y<sp/>!=<sp/>0)</highlight></codeline>
 <codeline lineno="134"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
-<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/>dims[1]<sp/>=<sp/><ref refid="namespacemake_adl_1ac2a9315bdefaa07c3f8dc9416feae40f" kindref="member">y</ref>;</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/>dims[1]<sp/>=<sp/>y;</highlight></codeline>
 <codeline lineno="136"><highlight class="normal"><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
 <codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/>dims[1]<sp/>=<sp/>CIN_DATA_MAX_FRAME_Y;</highlight></codeline>
 <codeline lineno="138"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
@@ -1494,7 +1494,7 @@
 <codeline lineno="632"><highlight class="normal"></highlight></codeline>
 <codeline lineno="633"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Now<sp/>set<sp/>timing<sp/>names</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="634"><highlight class="normal"><sp/><sp/></highlight></codeline>
-<codeline lineno="635"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i=0;<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>&lt;10;<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>++)</highlight></codeline>
+<codeline lineno="635"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i=0;i&lt;10;i++)</highlight></codeline>
 <codeline lineno="636"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
 <codeline lineno="637"><highlight class="normal"><sp/><sp/><sp/><sp/>status<sp/>|=<sp/>setStringParam(FastCCDTimingNameN[i],<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="638"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
@@ -1729,7 +1729,7 @@
 <codeline lineno="879"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(function<sp/>==<sp/><ref refid="class_fast_c_c_d_1a9d3f704443b23ef22f985e85f871c4b8" kindref="member">FastCCDPollingPeriod</ref>){</highlight></codeline>
 <codeline lineno="880"><highlight class="normal"></highlight></codeline>
 <codeline lineno="881"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Set<sp/>the<sp/>new<sp/>polling<sp/>period<sp/>and<sp/>poll</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="882"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>statusPollingPeriod<sp/>=<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>;</highlight></codeline>
+<codeline lineno="882"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>statusPollingPeriod<sp/>=<sp/>value;</highlight></codeline>
 <codeline lineno="883"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>epicsEventSignal(statusEvent);</highlight></codeline>
 <codeline lineno="884"><highlight class="normal"></highlight></codeline>
 <codeline lineno="885"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
@@ -2090,7 +2090,7 @@
 <codeline lineno="1245"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="1246"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Now<sp/>readback<sp/>the<sp/>name</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="1247"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>_name[CIN_CONFIG_MAX_TIMING_NAME];</highlight></codeline>
-<codeline lineno="1248"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="namespacemake_db_and_edl_1a2832407c256551abb325d5ee9e587443" kindref="member">name</ref><sp/>=<sp/>_name;</highlight></codeline>
+<codeline lineno="1248"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*name<sp/>=<sp/>_name;</highlight></codeline>
 <codeline lineno="1249"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_status<sp/>=<sp/>cin_config_get_current_timing_name(&amp;<ref refid="class_fast_c_c_d_1a924f5c00f1541292803feb6bcd643eb2" kindref="member">cin_ctl</ref>,<sp/>&amp;name);</highlight></codeline>
 <codeline lineno="1250"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>setStringParam(<ref refid="class_fast_c_c_d_1a23b97a0809d69b24d50c20c6a95736a1" kindref="member">FastCCDTimingName</ref>,<sp/>name);</highlight></codeline>
 <codeline lineno="1251"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
@@ -2098,7 +2098,7 @@
 <codeline lineno="1253"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="1254"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(function<sp/>==<sp/><ref refid="class_fast_c_c_d_1ae1d4dc4468289d5a976e9cbd8e0f9ad3" kindref="member">FastCCDTimingMode</ref>){</highlight></codeline>
 <codeline lineno="1255"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>_name[CIN_CONFIG_MAX_TIMING_NAME];</highlight></codeline>
-<codeline lineno="1256"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="namespacemake_db_and_edl_1a2832407c256551abb325d5ee9e587443" kindref="member">name</ref><sp/>=<sp/>_name;</highlight></codeline>
+<codeline lineno="1256"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*name<sp/>=<sp/>_name;</highlight></codeline>
 <codeline lineno="1257"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>_val;</highlight></codeline>
 <codeline lineno="1258"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>getIntegerParam(<ref refid="class_fast_c_c_d_1ae1d4dc4468289d5a976e9cbd8e0f9ad3" kindref="member">FastCCDTimingMode</ref>,<sp/>&amp;_val);</highlight></codeline>
 <codeline lineno="1259"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>_status<sp/>=<sp/>cin_config_get_timing_name(&amp;<ref refid="class_fast_c_c_d_1a924f5c00f1541292803feb6bcd643eb2" kindref="member">cin_ctl</ref>,<sp/>_val,<sp/>&amp;name);</highlight></codeline>
@@ -2147,7 +2147,7 @@
 <codeline lineno="1302"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(status<sp/>!=<sp/>asynSuccess){</highlight></codeline>
 <codeline lineno="1303"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">(status);</highlight></codeline>
 <codeline lineno="1304"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1305"><highlight class="normal"><sp/><sp/>status<sp/>=<sp/>(asynStatus)setStringParam(addr,<sp/>function,<sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*)<ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>);</highlight></codeline>
+<codeline lineno="1305"><highlight class="normal"><sp/><sp/>status<sp/>=<sp/>(asynStatus)setStringParam(addr,<sp/>function,<sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*)value);</highlight></codeline>
 <codeline lineno="1306"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(status<sp/>!=<sp/>asynSuccess){</highlight></codeline>
 <codeline lineno="1307"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">(status);</highlight></codeline>
 <codeline lineno="1308"><highlight class="normal"><sp/><sp/>}</highlight></codeline>

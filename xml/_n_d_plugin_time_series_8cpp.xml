@@ -638,15 +638,15 @@
 <codeline lineno="146"><highlight class="normal"></highlight></codeline>
 <codeline lineno="147"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>NDPluginTimeSeries::createAxisArray()</highlight></codeline>
 <codeline lineno="148"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="149"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>;</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i;</highlight></codeline>
 <codeline lineno="150"><highlight class="normal"></highlight></codeline>
 <codeline lineno="151"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(timeAxis_)<sp/>free(timeAxis_);</highlight></codeline>
 <codeline lineno="152"><highlight class="normal"><sp/><sp/>timeAxis_<sp/>=<sp/>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>*)calloc(numTimePoints_,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal">));</highlight></codeline>
-<codeline lineno="153"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(i=0;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>&lt;numTimePoints_;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>++)<sp/>{</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(i=0;<sp/>i&lt;numTimePoints_;<sp/>i++)<sp/>{</highlight></codeline>
 <codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(acquireMode_<sp/>==<sp/><ref refid="_n_d_plugin_time_series_8cpp_1a06fc87d81c62e9abb8790b6e5713c55baae134f53e3d76e5d7fbdc542ea786bda" kindref="member">TSAcquireModeFixed</ref>)<sp/>{</highlight></codeline>
-<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>timeAxis_[<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>]<sp/>=<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>*averagingTimeActual_;</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>timeAxis_[i]<sp/>=<sp/>i*averagingTimeActual_;</highlight></codeline>
 <codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>timeAxis_[<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>]<sp/>=<sp/>-(numTimePoints_-1-<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>)*averagingTimeActual_;</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>timeAxis_[i]<sp/>=<sp/>-(numTimePoints_-1-i)*averagingTimeActual_;</highlight></codeline>
 <codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="159"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
 <codeline lineno="160"><highlight class="normal"><sp/><sp/>doCallbacksFloat64Array(timeAxis_,<sp/>numTimePoints_,<sp/><ref refid="class_n_d_plugin_time_series_1a89f02a3228e444ff08b1a543ef0d2357" kindref="member">P_TSTimeAxis</ref>,<sp/>0);</highlight></codeline>
@@ -659,15 +659,15 @@
 <codeline lineno="172"><highlight class="normal"><sp/><sp/>epicsType<sp/>*pIn;</highlight></codeline>
 <codeline lineno="173"><highlight class="normal"><sp/><sp/>epicsType<sp/>*pTimeCircular<sp/>=<sp/>(epicsType<sp/>*)pTimeCircular_-&gt;<ref refid="class_n_d_array_1a9581f9d8f38225a2c2977bbed70fa2b8" kindref="member">pData</ref>;</highlight></codeline>
 <codeline lineno="174"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>signal;</highlight></codeline>
-<codeline lineno="175"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>;</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i;</highlight></codeline>
 <codeline lineno="176"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>numTimes<sp/>=<sp/>1;</highlight></codeline>
 <codeline lineno="177"><highlight class="normal"><sp/><sp/>epicsTimeStamp<sp/>timeNow;</highlight></codeline>
 <codeline lineno="178"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>elapsedTime;</highlight></codeline>
 <codeline lineno="179"><highlight class="normal"></highlight></codeline>
 <codeline lineno="180"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(pArray-&gt;ndims<sp/>==<sp/>2)<sp/>numTimes<sp/>=<sp/>(int)pArray-&gt;dims[1].size;</highlight></codeline>
 <codeline lineno="181"><highlight class="normal"></highlight></codeline>
-<codeline lineno="182"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(i=0;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>&lt;numTimes;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>++)<sp/>{</highlight></codeline>
-<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/>pIn<sp/>=<sp/>pData<sp/>+<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>*numSignalsIn_;</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(i=0;<sp/>i&lt;numTimes;<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/>pIn<sp/>=<sp/>pData<sp/>+<sp/>i*numSignalsIn_;</highlight></codeline>
 <codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(signal=0;<sp/>signal&lt;numSignals_;<sp/>signal++)<sp/>{</highlight></codeline>
 <codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>averageStore_[signal]<sp/>+=<sp/>(epicsFloat64)*pIn++;</highlight></codeline>
 <codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
@@ -923,7 +923,7 @@
 <codeline lineno="457"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(function<sp/>==<sp/><ref refid="class_n_d_plugin_time_series_1a6607752aefd84d149e25d2653a63043d" kindref="member">P_TSNumPoints</ref>)<sp/>{</highlight></codeline>
 <codeline lineno="458"><highlight class="normal"><sp/><sp/><sp/><sp/>allocateArrays();</highlight></codeline>
 <codeline lineno="459"><highlight class="normal"><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(function<sp/>==<sp/><ref refid="class_n_d_plugin_time_series_1a38f5fe349654974ab866c4d60489f822" kindref="member">P_TSAcquireMode</ref>)<sp/>{</highlight></codeline>
-<codeline lineno="460"><highlight class="normal"><sp/><sp/><sp/><sp/>acquireMode_<sp/>=<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>;</highlight></codeline>
+<codeline lineno="460"><highlight class="normal"><sp/><sp/><sp/><sp/>acquireMode_<sp/>=<sp/>value;</highlight></codeline>
 <codeline lineno="461"><highlight class="normal"><sp/><sp/><sp/><sp/>acquireReset();</highlight></codeline>
 <codeline lineno="462"><highlight class="normal"><sp/><sp/><sp/><sp/>createAxisArray();</highlight></codeline>
 <codeline lineno="463"><highlight class="normal"><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(function<sp/>==<sp/><ref refid="class_n_d_plugin_time_series_1aae4bd340eb15d11133d60b12bb269f01" kindref="member">P_TSAcquire</ref>)<sp/>{</highlight></codeline>
@@ -973,10 +973,10 @@
 <codeline lineno="507"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Set<sp/>the<sp/>parameter<sp/>in<sp/>the<sp/>parameter<sp/>library.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="508"><highlight class="normal"><sp/><sp/>stat<sp/>=<sp/>(setDoubleParam(signal,<sp/>function,<sp/>value)<sp/>==<sp/>asynSuccess)<sp/>&amp;&amp;<sp/>stat;</highlight></codeline>
 <codeline lineno="509"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(function<sp/>==<sp/><ref refid="class_n_d_plugin_time_series_1a97eee91335050a69667bc6f8408586ab" kindref="member">P_TSTimePerPoint</ref>)<sp/>{</highlight></codeline>
-<codeline lineno="510"><highlight class="normal"><sp/><sp/><sp/><sp/>timePerPoint_<sp/>=<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>;</highlight></codeline>
+<codeline lineno="510"><highlight class="normal"><sp/><sp/><sp/><sp/>timePerPoint_<sp/>=<sp/>value;</highlight></codeline>
 <codeline lineno="511"><highlight class="normal"><sp/><sp/><sp/><sp/>computeNumAverage();</highlight></codeline>
 <codeline lineno="512"><highlight class="normal"><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(function<sp/>==<sp/><ref refid="class_n_d_plugin_time_series_1aa3bd2bad326e2b166797154b41d5b6fa" kindref="member">P_TSAveragingTime</ref>)<sp/>{</highlight></codeline>
-<codeline lineno="513"><highlight class="normal"><sp/><sp/><sp/><sp/>averagingTimeRequested_<sp/>=<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>;</highlight></codeline>
+<codeline lineno="513"><highlight class="normal"><sp/><sp/><sp/><sp/>averagingTimeRequested_<sp/>=<sp/>value;</highlight></codeline>
 <codeline lineno="514"><highlight class="normal"><sp/><sp/><sp/><sp/>computeNumAverage();</highlight></codeline>
 <codeline lineno="515"><highlight class="normal"><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(function<sp/>&lt;<sp/><ref refid="_n_d_plugin_time_series_8h_1a9b9c01e9e53b1e86f99376351f0dfc1a" kindref="member">FIRST_NDPLUGIN_TIME_SERIES_PARAM</ref>)<sp/>{</highlight></codeline>
 <codeline lineno="516"><highlight class="normal"><sp/><sp/><sp/><sp/>stat<sp/>=<sp/>(<ref refid="class_n_d_plugin_driver_1a0d9d826a638226234e48f4d4f41fc4c0" kindref="member">NDPluginDriver::writeFloat64</ref>(pasynUser,<sp/>value)<sp/>==<sp/>asynSuccess)<sp/>&amp;&amp;<sp/>stat;</highlight></codeline>

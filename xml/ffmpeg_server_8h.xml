@@ -116,6 +116,8 @@
         </childnode>
         <childnode refid="49" relation="include">
         </childnode>
+        <childnode refid="50" relation="include">
+        </childnode>
         <childnode refid="15" relation="include">
         </childnode>
         <childnode refid="20" relation="include">
@@ -231,6 +233,9 @@
       </node>
       <node id="49">
         <label>libavformat/avformat.h</label>
+      </node>
+      <node id="50">
+        <label>libavutil/imgutils.h</label>
       </node>
       <node id="48">
         <label>libswscale/swscale.h</label>
@@ -576,7 +581,7 @@
 <codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_n_d_array" kindref="compound">NDArray</ref><sp/>*jpeg;</highlight></codeline>
 <codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nclients;</highlight></codeline>
 <codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>AVCodec<sp/>*codec;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>AVCodec<sp/>*codec;</highlight></codeline>
 <codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>AVCodecContext<sp/>*c;</highlight></codeline>
 <codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>AVFrame<sp/>*inPicture;</highlight></codeline>
 <codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>AVFrame<sp/>*scPicture;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
@@ -584,7 +589,7 @@
 <codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>signal<sp/>fresh<sp/>frames<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/>pthread_cond_t<sp/>*cond;</highlight></codeline>
-<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>pthread_mutex_t<sp/><ref refid="aravis_test_8c_1a0a3a44172cbb1c18e7f52a9437a1693d" kindref="member">mutex</ref>;<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>pthread_mutex_t<sp/>mutex;<sp/><sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="78"><highlight class="normal"></highlight></codeline>
 <codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_n_d_array" kindref="compound">NDArray</ref>*<sp/>get_jpeg();</highlight></codeline>
 <codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_n_d_array" kindref="compound">NDArray</ref>*<sp/>wait_for_jpeg(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>sid);<sp/><sp/><sp/><sp/></highlight></codeline>

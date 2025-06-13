@@ -323,13 +323,6 @@ loading ADBase.template.
     - SERIAL_NUMBER 
     - $(P)$(R)SerialNumber_RBV 
     - stringin 
-  * - ADFirmwareVersion 
-    - asynOctet 
-    - r/o 
-    - Detector firmware version 
-    - FIRMWARE_VERSION 
-    - $(P)$(R)FirmwareVersion_RBV 
-    - stringin 
   * - ADSDKVersion 
     - asynOctet 
     - r/o 

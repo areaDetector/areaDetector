@@ -4,7 +4,6 @@
     <compoundname>NDPluginDriver</compoundname>
     <basecompoundref refid="classasyn_n_d_array_driver" prot="public" virt="non-virtual">asynNDArrayDriver</basecompoundref>
     <basecompoundref prot="public" virt="non-virtual">epicsThreadRunable</basecompoundref>
-    <derivedcompoundref refid="class_a_dn_e_d_pixel_r_o_i" prot="public" virt="non-virtual">ADnEDPixelROI</derivedcompoundref>
     <derivedcompoundref refid="class_n_d_plugin_attr_plot" prot="public" virt="non-virtual">NDPluginAttrPlot</derivedcompoundref>
     <derivedcompoundref refid="class_n_d_plugin_attribute" prot="public" virt="non-virtual">NDPluginAttribute</derivedcompoundref>
     <derivedcompoundref refid="class_n_d_plugin_bad_pixel" prot="public" virt="non-virtual">NDPluginBadPixel</derivedcompoundref>
@@ -15,7 +14,6 @@
     <derivedcompoundref refid="class_n_d_plugin_f_f_t" prot="public" virt="non-virtual">NDPluginFFT</derivedcompoundref>
     <derivedcompoundref refid="class_n_d_plugin_file" prot="public" virt="non-virtual">NDPluginFile</derivedcompoundref>
     <derivedcompoundref refid="class_n_d_plugin_gather" prot="public" virt="non-virtual">NDPluginGather</derivedcompoundref>
-    <derivedcompoundref refid="class_n_d_plugin_mask" prot="public" virt="non-virtual">NDPluginMask</derivedcompoundref>
     <derivedcompoundref refid="class_n_d_plugin_overlay" prot="public" virt="non-virtual">NDPluginOverlay</derivedcompoundref>
     <derivedcompoundref refid="class_n_d_plugin_process" prot="public" virt="non-virtual">NDPluginProcess</derivedcompoundref>
     <derivedcompoundref refid="class_n_d_plugin_pva" prot="public" virt="non-virtual">NDPluginPva</derivedcompoundref>
@@ -1166,9 +1164,6 @@
         <reimplementedby refid="class_n_d_plugin_time_series_1afabb03a31e990bd4a58851e8d466e0b5">processCallbacks</reimplementedby>
         <reimplementedby refid="class_n_d_plugin_transform_1a0e05a1e62bce96f7c56a3595a8248128">processCallbacks</reimplementedby>
         <reimplementedby refid="class_n_d_pos_plugin_1abd4172873e8d8af95d83d916b369126b">processCallbacks</reimplementedby>
-        <reimplementedby refid="class_a_dn_e_d_pixel_r_o_i_1a5fc592eac5ecb7dc2dd131610ac9245b">processCallbacks</reimplementedby>
-        <reimplementedby refid="class_n_d_plugin_mask_1a2fac6f3d7e980a34157abef7a8fed837">processCallbacks</reimplementedby>
-        <reimplementedby refid="classpco_edge_plugin_1a216639465ebb2332343942e8de9fdd09">processCallbacks</reimplementedby>
         <reimplementedby refid="class_n_d_plugin_edge_1a1c2d16c28609a91b4ccd0f414244c17c">processCallbacks</reimplementedby>
         <reimplementedby refid="classffmpeg_stream_1a04f5f241f4da4407726e3426bb5e6365">processCallbacks</reimplementedby>
         <param>
@@ -1424,85 +1419,79 @@ This method does <ref refid="class_n_d_array" kindref="compound">NDArray</ref> c
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="5">
-        <label>ADnEDPixelROI</label>
-        <link refid="class_a_dn_e_d_pixel_r_o_i"/>
-        <childnode refid="1" relation="public-inheritance">
+      <node id="14">
+        <label>NDFileHDF5</label>
+        <link refid="class_n_d_file_h_d_f5"/>
+        <childnode refid="13" relation="public-inheritance">
         </childnode>
       </node>
       <node id="15">
-        <label>NDFileHDF5</label>
-        <link refid="class_n_d_file_h_d_f5"/>
-        <childnode refid="14" relation="public-inheritance">
+        <label>NDFileJPEG</label>
+        <link refid="class_n_d_file_j_p_e_g"/>
+        <childnode refid="13" relation="public-inheritance">
         </childnode>
       </node>
       <node id="16">
-        <label>NDFileJPEG</label>
-        <link refid="class_n_d_file_j_p_e_g"/>
-        <childnode refid="14" relation="public-inheritance">
+        <label>NDFileMagick</label>
+        <link refid="class_n_d_file_magick"/>
+        <childnode refid="13" relation="public-inheritance">
         </childnode>
       </node>
       <node id="17">
-        <label>NDFileMagick</label>
-        <link refid="class_n_d_file_magick"/>
-        <childnode refid="14" relation="public-inheritance">
+        <label>NDFileNetCDF</label>
+        <link refid="class_n_d_file_net_c_d_f"/>
+        <childnode refid="13" relation="public-inheritance">
         </childnode>
       </node>
       <node id="18">
-        <label>NDFileNetCDF</label>
-        <link refid="class_n_d_file_net_c_d_f"/>
-        <childnode refid="14" relation="public-inheritance">
+        <label>NDFileNexus</label>
+        <link refid="class_n_d_file_nexus"/>
+        <childnode refid="13" relation="public-inheritance">
         </childnode>
       </node>
       <node id="19">
-        <label>NDFileNexus</label>
-        <link refid="class_n_d_file_nexus"/>
-        <childnode refid="14" relation="public-inheritance">
+        <label>NDFileNull</label>
+        <link refid="class_n_d_file_null"/>
+        <childnode refid="13" relation="public-inheritance">
         </childnode>
       </node>
       <node id="20">
-        <label>NDFileNull</label>
-        <link refid="class_n_d_file_null"/>
-        <childnode refid="14" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="21">
         <label>NDFileTIFF</label>
         <link refid="class_n_d_file_t_i_f_f"/>
-        <childnode refid="14" relation="public-inheritance">
+        <childnode refid="13" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="6">
+      <node id="5">
         <label>NDPluginAttrPlot</label>
         <link refid="class_n_d_plugin_attr_plot"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="7">
+      <node id="6">
         <label>NDPluginAttribute</label>
         <link refid="class_n_d_plugin_attribute"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="8">
+      <node id="7">
         <label>NDPluginBadPixel</label>
         <link refid="class_n_d_plugin_bad_pixel"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="9">
+      <node id="8">
         <label>NDPluginCircularBuff</label>
         <link refid="class_n_d_plugin_circular_buff"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="10">
+      <node id="9">
         <label>NDPluginCodec</label>
         <link refid="class_n_d_plugin_codec"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="11">
+      <node id="10">
         <label>NDPluginColorConvert</label>
         <link refid="class_n_d_plugin_color_convert"/>
         <childnode refid="1" relation="public-inheritance">
@@ -1516,97 +1505,91 @@ This method does <ref refid="class_n_d_array" kindref="compound">NDArray</ref> c
         <childnode refid="4" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="12">
+      <node id="11">
         <label>NDPluginEdge</label>
         <link refid="class_n_d_plugin_edge"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="13">
+      <node id="12">
         <label>NDPluginFFT</label>
         <link refid="class_n_d_plugin_f_f_t"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="14">
+      <node id="13">
         <label>NDPluginFile</label>
         <link refid="class_n_d_plugin_file"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="24">
+      <node id="22">
         <label>NDPluginGather</label>
         <link refid="class_n_d_plugin_gather"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="25">
-        <label>NDPluginMask</label>
-        <link refid="class_n_d_plugin_mask"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="26">
+      <node id="23">
         <label>NDPluginOverlay</label>
         <link refid="class_n_d_plugin_overlay"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="27">
+      <node id="24">
         <label>NDPluginProcess</label>
         <link refid="class_n_d_plugin_process"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="28">
+      <node id="25">
         <label>NDPluginPva</label>
         <link refid="class_n_d_plugin_pva"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="29">
+      <node id="26">
         <label>NDPluginROI</label>
         <link refid="class_n_d_plugin_r_o_i"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="30">
+      <node id="27">
         <label>NDPluginROIStat</label>
         <link refid="class_n_d_plugin_r_o_i_stat"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="31">
+      <node id="28">
         <label>NDPluginScatter</label>
         <link refid="class_n_d_plugin_scatter"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="32">
+      <node id="29">
         <label>NDPluginStats</label>
         <link refid="class_n_d_plugin_stats"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="33">
+      <node id="30">
         <label>NDPluginStdArrays</label>
         <link refid="class_n_d_plugin_std_arrays"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="34">
+      <node id="31">
         <label>NDPluginTimeSeries</label>
         <link refid="class_n_d_plugin_time_series"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="35">
+      <node id="32">
         <label>NDPluginTransform</label>
         <link refid="class_n_d_plugin_transform"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="36">
+      <node id="33">
         <label>NDPosPlugin</label>
         <link refid="class_n_d_pos_plugin"/>
         <childnode refid="1" relation="public-inheritance">
@@ -1624,22 +1607,16 @@ This method does <ref refid="class_n_d_array" kindref="compound">NDArray</ref> c
       <node id="4">
         <label>epicsThreadRunable</label>
       </node>
-      <node id="22">
+      <node id="21">
         <label>ffmpegFile</label>
         <link refid="classffmpeg_file"/>
-        <childnode refid="14" relation="public-inheritance">
+        <childnode refid="13" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="37">
+      <node id="34">
         <label>ffmpegStream</label>
         <link refid="classffmpeg_stream"/>
         <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="23">
-        <label>pcoEdgePlugin</label>
-        <link refid="classpco_edge_plugin"/>
-        <childnode refid="14" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>

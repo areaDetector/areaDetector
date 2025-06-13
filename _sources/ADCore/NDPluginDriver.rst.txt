@@ -248,9 +248,9 @@ in the correct order. This sorting option is enabled by setting SortMode=Sorted,
 and works using the following algorithm:
 
 - An std::multiset object is created to store the NDArray output pointers as they
-  are received in NDArrayDriver::doNDArrayCallbacks. This is the method that all derived
+  are received in NDArrayDriver::endProcessCallbacks. This is the method that all derived
   classes must call to output NDArrays to downstream plugins. This std::multiset also
-  stores the time at which each NDArray was received by the NDArrayDriver::doNDArrayCallbacks
+  stores the time at which each NDArray was received by the NDArrayDriver::endProcessCallbacks
   method. This multiset is automatically sorted by the uniqueId of each NDArray.
 
 - A worker thread is created which processes at the time interval specified by SortTime.

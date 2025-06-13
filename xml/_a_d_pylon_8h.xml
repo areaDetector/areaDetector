@@ -272,7 +272,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/areaDetector/areaDetector/ADPylon/pylonApp/src/ADPylon.h" line="53" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADPylon/pylonApp/src/ADPylon.h" bodystart="53" bodyend="-1"/>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADPylon/pylonApp/src/ADPylon.h" line="56" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADPylon/pylonApp/src/ADPylon.h" bodystart="56" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -324,39 +324,44 @@
 <codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_a_d_pylon_1a1458eef3361d9723b28edb261947916f" kindref="member">cameraDisconnected</ref>();</highlight></codeline>
 <codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_a_d_pylon_1afecb4563237c0851cb2018599c989ae0" kindref="member">readEventData</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>index);</highlight></codeline>
 <codeline lineno="47"><highlight class="normal"></highlight></codeline>
-<codeline lineno="48"><highlight class="normal"></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>asynStatus<sp/><ref refid="class_a_d_pylon_1a558e31486455216d79d779fabfe8f387" kindref="member">extractChunkData</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>GenApi::INodeMap&amp;<sp/>nodeMap,<sp/><ref refid="class_n_d_attribute_list" kindref="compound">NDAttributeList</ref><sp/>*<ref refid="classasyn_n_d_array_driver_1a7bed3ca3a144124eb31053eeecc990e9" kindref="member">pAttributeList</ref>);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_a_d_pylon_1a2baa9862ce56392ea2fb4e494e86a7ba" kindref="member">cameraDisconnectTask</ref>();</highlight></codeline>
+<codeline lineno="49" refid="class_a_d_pylon_1acb868c4eb5fc791eb87237b63abfc339" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>epicsEventId<sp/><ref refid="class_a_d_pylon_1acb868c4eb5fc791eb87237b63abfc339" kindref="member">disconnectEventId_</ref>;</highlight></codeline>
 <codeline lineno="50"><highlight class="normal"></highlight></codeline>
-<codeline lineno="51"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>PYLONConvertPixelFormat;</highlight></codeline>
-<codeline lineno="53" refid="_a_d_pylon_8h_1a0f6503c945b0c9d01e9b4057366c370a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>FIRST_PYLON_PARAM<sp/>PYLONConvertPixelFormat;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>PYLONConvertBitAlignment;</highlight></codeline>
-<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>PYLONConvertShiftBits;</highlight></codeline>
-<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>PYLONTimeStampMode;</highlight></codeline>
-<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>PYLONUniqueIdMode;</highlight></codeline>
-<codeline lineno="58"><highlight class="normal"></highlight></codeline>
-<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Local<sp/>methods<sp/>to<sp/>this<sp/>class<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>asynStatus<sp/>connectCamera();</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>asynStatus<sp/><ref refid="class_a_d_pylon_1a558e31486455216d79d779fabfe8f387" kindref="member">extractChunkData</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>GenApi::INodeMap&amp;<sp/>nodeMap,<sp/><ref refid="class_n_d_attribute_list" kindref="compound">NDAttributeList</ref><sp/>*<ref refid="classasyn_n_d_array_driver_1a7bed3ca3a144124eb31053eeecc990e9" kindref="member">pAttributeList</ref>);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>PYLONConvertPixelFormat;</highlight></codeline>
+<codeline lineno="56" refid="_a_d_pylon_8h_1a0f6503c945b0c9d01e9b4057366c370a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>FIRST_PYLON_PARAM<sp/>PYLONConvertPixelFormat;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>PYLONConvertBitAlignment;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>PYLONConvertShiftBits;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>PYLONTimeStampMode;</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>PYLONUniqueIdMode;</highlight></codeline>
 <codeline lineno="61"><highlight class="normal"></highlight></codeline>
-<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>cameraId_;</highlight></codeline>
-<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>Pylon::CInstantCamera<sp/>camera_;</highlight></codeline>
-<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>Pylon::CImageDecompressor<sp/>decompressor_;</highlight></codeline>
-<codeline lineno="65"><highlight class="normal"></highlight></codeline>
-<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>exiting_;</highlight></codeline>
-<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>acquiring_;</highlight></codeline>
-<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>epicsEventId<sp/>startEventId_;</highlight></codeline>
-<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>epicsEventId<sp/>newFrameEventId_;</highlight></codeline>
-<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>uniqueId_;</highlight></codeline>
-<codeline lineno="71"><highlight class="normal"></highlight></codeline>
-<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::string&gt;<sp/>TLStatisticsFeatureNames_;</highlight></codeline>
-<codeline lineno="73"><highlight class="normal"></highlight></codeline>
-<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;class<sp/>PylonFeature*&gt;<sp/>featureList_;</highlight></codeline>
-<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::vector&lt;std::string&gt;&gt;<sp/>eventList_;</highlight></codeline>
-<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_a_d_pylon_camera_event_handler" kindref="compound">ADPylonCameraEventHandler</ref><sp/>*pCameraEventHandler_;</highlight></codeline>
-<codeline lineno="77"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Local<sp/>methods<sp/>to<sp/>this<sp/>class<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>asynStatus<sp/>connectCamera();</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>cameraId_;</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>Pylon::CInstantCamera<sp/>camera_;</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>Pylon::CImageDecompressor<sp/>decompressor_;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>Pylon::CImageFormatConverter<sp/>converter_;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ticksPerSecond_;</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>exiting_;</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>acquiring_;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>epicsEventId<sp/>startEventId_;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>epicsEventId<sp/>newFrameEventId_;</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>uniqueId_;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::string&gt;<sp/>TLStatisticsFeatureNames_;</highlight></codeline>
 <codeline lineno="78"><highlight class="normal"></highlight></codeline>
-<codeline lineno="79"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;class<sp/>PylonFeature*&gt;<sp/>featureList_;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::vector&lt;std::string&gt;&gt;<sp/>eventList_;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_a_d_pylon_camera_event_handler" kindref="compound">ADPylonCameraEventHandler</ref><sp/>*pCameraEventHandler_;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
     </programlisting>
     <location file="/home/runner/work/areaDetector/areaDetector/ADPylon/pylonApp/src/ADPylon.h"/>
   </compounddef>

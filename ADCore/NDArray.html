@@ -434,15 +434,7 @@ their behavior depending on the version of the plugin or driver.</p></td>
 <td><p>$(P)$(R)SerialNumber_RBV</p></td>
 <td><p>stringin</p></td>
 </tr>
-<tr class="row-even"><td><p>ADFirmwareVersion</p></td>
-<td><p>asynOctet</p></td>
-<td><p>r/o</p></td>
-<td><p>Detector firmware version</p></td>
-<td><p>FIRMWARE_VERSION</p></td>
-<td><p>$(P)$(R)FirmwareVersion_RBV</p></td>
-<td><p>stringin</p></td>
-</tr>
-<tr class="row-odd"><td><p>ADSDKVersion</p></td>
+<tr class="row-even"><td><p>ADSDKVersion</p></td>
 <td><p>asynOctet</p></td>
 <td><p>r/o</p></td>
 <td><p>Detector vendor’s Software Development Kit (SDK) version number.</p></td>
@@ -450,7 +442,7 @@ their behavior depending on the version of the plugin or driver.</p></td>
 <td><p>$(P)$(R)SDKVersion_RBV</p></td>
 <td><p>stringin</p></td>
 </tr>
-<tr class="row-even"><td><p>ADFirmwareVersion</p></td>
+<tr class="row-odd"><td><p>ADFirmwareVersion</p></td>
 <td><p>asynOctet</p></td>
 <td><p>r/o</p></td>
 <td><p>Detector firmware version number.</p></td>
@@ -458,12 +450,12 @@ their behavior depending on the version of the plugin or driver.</p></td>
 <td><p>$(P)$(R)FirmwareVersion_RBV</p></td>
 <td><p>stringin</p></td>
 </tr>
-<tr class="row-odd"><td></td>
+<tr class="row-even"><td></td>
 <td></td>
 <td></td>
 <td colspan="4"><p><strong>Acquisition control</strong></p></td>
 </tr>
-<tr class="row-even"><td><p>ADAcquire</p></td>
+<tr class="row-odd"><td><p>ADAcquire</p></td>
 <td><p>asynInt32</p></td>
 <td><p>r/w</p></td>
 <td><p>Start (1) or stop (0) image acquisition. This record forward links to $(P)$(R)AcquireBusy
@@ -475,7 +467,7 @@ be done automatically with ca_put_callback.</p></td>
 <td><p>$(P)$(R)Acquire, $(P)$(R)Acquire_RBV</p></td>
 <td><p>bo, bi</p></td>
 </tr>
-<tr class="row-odd"><td><p>N.A.</p></td>
+<tr class="row-even"><td><p>N.A.</p></td>
 <td><p>N.A.</p></td>
 <td><p>r/o</p></td>
 <td><p>This is an EPICS busy record that is set to 1 when Acquire is set to 1 and not process
@@ -484,7 +476,7 @@ its forward link until acquisition is complete.</p></td>
 <td><p>$(P)$(R)AcquireBusy</p></td>
 <td><p>busy</p></td>
 </tr>
-<tr class="row-even"><td><p>N.A.</p></td>
+<tr class="row-odd"><td><p>N.A.</p></td>
 <td><p>N.A.</p></td>
 <td><p>r/o</p></td>
 <td><p>This record controls whether AcquireBusy goes to 0 when the detector is done (Acquire=0),
@@ -494,12 +486,12 @@ plugins are also done. Choices are No (0) and Yes(1).</p></td>
 <td><p>$(P)$(R)WaitForPlugins</p></td>
 <td><p>bo</p></td>
 </tr>
-<tr class="row-odd"><td></td>
+<tr class="row-even"><td></td>
 <td></td>
 <td></td>
 <td colspan="4"><p><strong>Information about the asyn port</strong></p></td>
 </tr>
-<tr class="row-even"><td><p>NDPortNameSelf</p></td>
+<tr class="row-odd"><td><p>NDPortNameSelf</p></td>
 <td><p>asynOctet</p></td>
 <td><p>r/o</p></td>
 <td><p>asyn port name</p></td>
@@ -507,12 +499,12 @@ plugins are also done. Choices are No (0) and Yes(1).</p></td>
 <td><p>$(P)$(R)PortName_RBV</p></td>
 <td><p>stringin</p></td>
 </tr>
-<tr class="row-odd"><td></td>
+<tr class="row-even"><td></td>
 <td></td>
 <td></td>
 <td colspan="4"><p><strong>Data type</strong></p></td>
 </tr>
-<tr class="row-even"><td><p>NDDataType</p></td>
+<tr class="row-odd"><td><p>NDDataType</p></td>
 <td><p>asynInt32</p></td>
 <td><p>r/w</p></td>
 <td><p>Data type (NDDataType_t).</p></td>
@@ -520,12 +512,12 @@ plugins are also done. Choices are No (0) and Yes(1).</p></td>
 <td><p>$(P)$(R)DataType, $(P)$(R)DataType_RBV</p></td>
 <td><p>mbbo, mbbi</p></td>
 </tr>
-<tr class="row-odd"><td></td>
+<tr class="row-even"><td></td>
 <td></td>
 <td></td>
 <td colspan="4"><p><strong>Color mode</strong></p></td>
 </tr>
-<tr class="row-even"><td><p>NDColorMode</p></td>
+<tr class="row-odd"><td><p>NDColorMode</p></td>
 <td><p>asynInt32</p></td>
 <td><p>r/w</p></td>
 <td><p>Color mode (NDColorMode_t).</p></td>
@@ -533,7 +525,7 @@ plugins are also done. Choices are No (0) and Yes(1).</p></td>
 <td><p>$(P)$(R)ColorMode, $(P)$(R)ColorMode_RBV</p></td>
 <td><p>mbbo, mbbi</p></td>
 </tr>
-<tr class="row-odd"><td><p>NDBayerPattern</p></td>
+<tr class="row-even"><td><p>NDBayerPattern</p></td>
 <td><p>asynInt32</p></td>
 <td><p>r/o</p></td>
 <td><p>Bayer pattern (NDBayerPattern_t) of NDArray data.</p></td>
@@ -541,12 +533,12 @@ plugins are also done. Choices are No (0) and Yes(1).</p></td>
 <td><p>$(P)$(R)BayerPattern_RBV</p></td>
 <td><p>mbbi</p></td>
 </tr>
-<tr class="row-even"><td></td>
+<tr class="row-odd"><td></td>
 <td></td>
 <td></td>
 <td colspan="4"><p><strong>Actual dimensions of array data</strong></p></td>
 </tr>
-<tr class="row-odd"><td><p>NDNDimensions</p></td>
+<tr class="row-even"><td><p>NDNDimensions</p></td>
 <td><p>asynInt32</p></td>
 <td><p>r/w</p></td>
 <td><p>Number of dimensions in the array</p></td>
@@ -554,7 +546,7 @@ plugins are also done. Choices are No (0) and Yes(1).</p></td>
 <td><p>$(P)$(R)NDimensions, $(P)$(R)NDimensions_RBV</p></td>
 <td><p>longout, longin</p></td>
 </tr>
-<tr class="row-even"><td><p>NDDimensions</p></td>
+<tr class="row-odd"><td><p>NDDimensions</p></td>
 <td><p>asynInt32Array</p></td>
 <td><p>r/w</p></td>
 <td><p>Size of each dimension in the array</p></td>
@@ -562,7 +554,7 @@ plugins are also done. Choices are No (0) and Yes(1).</p></td>
 <td><p>$(P)$(R)Dimensions, $(P)$(R)Dimensions_RBV</p></td>
 <td><p>waveform (out), waveform (in)</p></td>
 </tr>
-<tr class="row-odd"><td><p>N.A.</p></td>
+<tr class="row-even"><td><p>N.A.</p></td>
 <td><p>N.A</p></td>
 <td><p>r/o</p></td>
 <td><p>Size of each array dimension, extracted from the $(P)$(R)Dimensions and $(P)$(R)Dimensions_RBV
@@ -574,7 +566,7 @@ values in $(P)$(R)Dimensions.</p></td>
 , (P)$(R)ArraySize[N]_RBV</p></td>
 <td><p>longin, longin</p></td>
 </tr>
-<tr class="row-even"><td><p>NDArraySizeX</p></td>
+<tr class="row-odd"><td><p>NDArraySizeX</p></td>
 <td><p>asynInt32</p></td>
 <td><p>r/o</p></td>
 <td><p>Size of the array data in the X direction</p></td>
@@ -582,7 +574,7 @@ values in $(P)$(R)Dimensions.</p></td>
 <td><p>$(P)$(R)ArraySizeX_RBV</p></td>
 <td><p>longin</p></td>
 </tr>
-<tr class="row-odd"><td><p>NDArraySizeY</p></td>
+<tr class="row-even"><td><p>NDArraySizeY</p></td>
 <td><p>asynInt32</p></td>
 <td><p>r/o</p></td>
 <td><p>Size of the array data in the Y direction</p></td>
@@ -590,7 +582,7 @@ values in $(P)$(R)Dimensions.</p></td>
 <td><p>$(P)$(R)ArraySizeY_RBV</p></td>
 <td><p>longin</p></td>
 </tr>
-<tr class="row-even"><td><p>NDArraySizeZ</p></td>
+<tr class="row-odd"><td><p>NDArraySizeZ</p></td>
 <td><p>asynInt32</p></td>
 <td><p>r/o</p></td>
 <td><p>Size of the array data in the Z direction</p></td>
@@ -598,7 +590,7 @@ values in $(P)$(R)Dimensions.</p></td>
 <td><p>$(P)$(R)ArraySizeZ_RBV</p></td>
 <td><p>longin</p></td>
 </tr>
-<tr class="row-odd"><td><p>NDArraySize</p></td>
+<tr class="row-even"><td><p>NDArraySize</p></td>
 <td><p>asynInt32</p></td>
 <td><p>r/o</p></td>
 <td><p>Total size of the array data in bytes</p></td>
@@ -606,7 +598,7 @@ values in $(P)$(R)Dimensions.</p></td>
 <td><p>$(P)$(R)ArraySize_RBV</p></td>
 <td><p>longin</p></td>
 </tr>
-<tr class="row-even"><td><p>NDCodec</p></td>
+<tr class="row-odd"><td><p>NDCodec</p></td>
 <td><p>asynOctet</p></td>
 <td><p>r/o</p></td>
 <td><p>The codec used to compress this array</p></td>
@@ -614,7 +606,7 @@ values in $(P)$(R)Dimensions.</p></td>
 <td><p>$(P)$(R)Codec_RBV</p></td>
 <td><p>stringin</p></td>
 </tr>
-<tr class="row-odd"><td><p>NDCompressedSize</p></td>
+<tr class="row-even"><td><p>NDCompressedSize</p></td>
 <td><p>asynInt32</p></td>
 <td><p>r/o</p></td>
 <td><p>Compressed size of the array data in bytes. Only meaningful if NDCodec is not empty
@@ -623,12 +615,12 @@ string.</p></td>
 <td><p>$(P)$(R)Compressed_RBV</p></td>
 <td><p>longin</p></td>
 </tr>
-<tr class="row-even"><td></td>
+<tr class="row-odd"><td></td>
 <td></td>
 <td></td>
 <td colspan="4"><p><strong>Array data</strong></p></td>
 </tr>
-<tr class="row-odd"><td><p>NDArrayCallbacks</p></td>
+<tr class="row-even"><td><p>NDArrayCallbacks</p></td>
 <td><p>asynInt32</p></td>
 <td><p>r/w</p></td>
 <td><p>Controls whether the driver or plugin does callbacks with the array data to registered
@@ -641,7 +633,7 @@ used as a source of NDArrays to other plugins.</p></td>
 <td><p>$(P)$(R)ArrayCallbacks, $(P)$(R)ArrayCallbacks_RBV</p></td>
 <td><p>bo, bi</p></td>
 </tr>
-<tr class="row-even"><td><p>NDArrayData</p></td>
+<tr class="row-odd"><td><p>NDArrayData</p></td>
 <td><p>asynGenericPointer</p></td>
 <td><p>r/w</p></td>
 <td><p>The array data as an NDArray object</p></td>
@@ -649,7 +641,7 @@ used as a source of NDArrays to other plugins.</p></td>
 <td><p>N/A. EPICS access to array data is through NDStdArrays plugin.</p></td>
 <td><p>N/A</p></td>
 </tr>
-<tr class="row-odd"><td><p>NDArrayCounter</p></td>
+<tr class="row-even"><td><p>NDArrayCounter</p></td>
 <td><p>asynInt32</p></td>
 <td><p>r/w</p></td>
 <td><p>Counter that increments by 1 each time an array is acquired. Can be reset by writing
@@ -658,7 +650,7 @@ a value to it.</p></td>
 <td><p>$(P)$(R)ArrayCounter, $(P)$(R)ArrayCounter_RBV</p></td>
 <td><p>longout, longin</p></td>
 </tr>
-<tr class="row-even"><td><p>N/A</p></td>
+<tr class="row-odd"><td><p>N/A</p></td>
 <td><p>N/A</p></td>
 <td><p>r/o</p></td>
 <td><p>Rate at which arrays are being acquired. Computed in the ADBase.template database.</p></td>
@@ -666,12 +658,12 @@ a value to it.</p></td>
 <td><p>$(P)$(R)ArrayRate_RBV</p></td>
 <td><p>calc</p></td>
 </tr>
-<tr class="row-odd"><td></td>
+<tr class="row-even"><td></td>
 <td></td>
 <td></td>
 <td colspan="4"><p><strong>Array attributes</strong></p></td>
 </tr>
-<tr class="row-even"><td><p>NDAttributesFile</p></td>
+<tr class="row-odd"><td><p>NDAttributesFile</p></td>
 <td><p>asynOctet</p></td>
 <td><p>r/w</p></td>
 <td><p>The name of an XML file defining the NDAttributes to be added to each NDArray by
@@ -684,7 +676,7 @@ The software interprets the content as XML rather than a file name if it contain
 <td><p>$(P)$(R)NDAttributesFile</p></td>
 <td><p>waveform</p></td>
 </tr>
-<tr class="row-odd"><td><p>NDAttributesMacros</p></td>
+<tr class="row-even"><td><p>NDAttributesMacros</p></td>
 <td><p>asynOctet</p></td>
 <td><p>r/w</p></td>
 <td><p>A macro definition string that can be used to do macro substitution in the XML file.
@@ -695,7 +687,7 @@ respectively.</p></td>
 <td><p>$(P)$(R)NDAttributesMacros</p></td>
 <td><p>waveform</p></td>
 </tr>
-<tr class="row-even"><td><p>NDAttributesStatus</p></td>
+<tr class="row-odd"><td><p>NDAttributesStatus</p></td>
 <td><p>asynInt32</p></td>
 <td><p>r/o</p></td>
 <td><p>The status of reading and parsing the XML attributes file. This is used to indicate
@@ -705,12 +697,12 @@ substitutions error.</p></td>
 <td><p>$(P)$(R)NDAttributesStatus</p></td>
 <td><p>mbbi</p></td>
 </tr>
-<tr class="row-odd"><td></td>
+<tr class="row-even"><td></td>
 <td></td>
 <td></td>
 <td colspan="4"><p><strong>Array pool control and status</strong></p></td>
 </tr>
-<tr class="row-even"><td><p>NDPoolMaxMemory</p></td>
+<tr class="row-odd"><td><p>NDPoolMaxMemory</p></td>
 <td><p>asynFloat64</p></td>
 <td><p>r/o</p></td>
 <td><p>The maximum number of NDArrayPool memory bytes that can be allocated. 0=unlimited.</p></td>
@@ -718,7 +710,7 @@ substitutions error.</p></td>
 <td><p>$(P)$(R)PoolMaxMem</p></td>
 <td><p>ai</p></td>
 </tr>
-<tr class="row-odd"><td><p>NDPoolUsedMemory</p></td>
+<tr class="row-even"><td><p>NDPoolUsedMemory</p></td>
 <td><p>asynFloat64</p></td>
 <td><p>r/o</p></td>
 <td><p>The number of NDArrayPool memory bytes currently allocated.</p></td>
@@ -726,7 +718,7 @@ substitutions error.</p></td>
 <td><p>$(P)$(R)PoolUsedMem</p></td>
 <td><p>ai</p></td>
 </tr>
-<tr class="row-even"><td><p>NDPoolAllocBuffers</p></td>
+<tr class="row-odd"><td><p>NDPoolAllocBuffers</p></td>
 <td><p>asynInt32</p></td>
 <td><p>r/o</p></td>
 <td><p>The number of NDArrayPool buffers currently allocated.</p></td>
@@ -734,7 +726,7 @@ substitutions error.</p></td>
 <td><p>$(P)$(R)PoolAllocBuffers</p></td>
 <td><p>longin</p></td>
 </tr>
-<tr class="row-odd"><td><p>NDPoolFreeBuffers</p></td>
+<tr class="row-even"><td><p>NDPoolFreeBuffers</p></td>
 <td><p>asynInt32</p></td>
 <td><p>r/o</p></td>
 <td><p>The number of NDArrayPool buffers currently allocated but free.</p></td>
@@ -742,7 +734,7 @@ substitutions error.</p></td>
 <td><p>$(P)$(R)PoolFreeBuffers</p></td>
 <td><p>longin</p></td>
 </tr>
-<tr class="row-even"><td><p>N.A.</p></td>
+<tr class="row-odd"><td><p>N.A.</p></td>
 <td><p>N.A.</p></td>
 <td><p>r/o</p></td>
 <td><p>The number of NDArrayPool buffers currently in use. This is calculated as NDPoolAllocBuffers
@@ -751,7 +743,7 @@ substitutions error.</p></td>
 <td><p>$(P)$(R)PoolUsedBuffers</p></td>
 <td><p>calc</p></td>
 </tr>
-<tr class="row-odd"><td><p>NDPoolPollStats</p></td>
+<tr class="row-even"><td><p>NDPoolPollStats</p></td>
 <td><p>asynInt32</p></td>
 <td><p>r/o</p></td>
 <td><p>Processing this record reads the NDArrayPool statistics records described above.
@@ -760,7 +752,7 @@ This record is typically periodically scanned to update the statistics on the OP
 <td><p>$(P)$(R)PoolPollStats</p></td>
 <td><p>bo</p></td>
 </tr>
-<tr class="row-even"><td><p>NDPoolNumPreAllocBuffers</p></td>
+<tr class="row-odd"><td><p>NDPoolNumPreAllocBuffers</p></td>
 <td><p>asynInt32</p></td>
 <td><p>r/w</p></td>
 <td><p>The number of buffers to pre-allocate in the NDArrayPool when the PreAllocBuffers
@@ -775,7 +767,7 @@ use all memory on the system, resulting serious performance degradation.</p></td
 <td><p>$(P)$(R)NumPreAllocBuffers</p></td>
 <td><p>longout</p></td>
 </tr>
-<tr class="row-odd"><td><p>NDPoolPreAllocBuffers</p></td>
+<tr class="row-even"><td><p>NDPoolPreAllocBuffers</p></td>
 <td><p>asynInt32</p></td>
 <td><p>r/w</p></td>
 <td><p>Processing this record pre-allocates NumPreAllocBuffers NDArrays in the NDArrayPool.
@@ -788,7 +780,7 @@ operation is complete.</p></td>
 <td><p>$(P)$(R)PreAllocBuffers</p></td>
 <td><p>busy</p></td>
 </tr>
-<tr class="row-even"><td><p>NDPoolEmptyFreeList</p></td>
+<tr class="row-odd"><td><p>NDPoolEmptyFreeList</p></td>
 <td><p>asynInt32</p></td>
 <td><p>r/w</p></td>
 <td><p>Processing this record deletes all of the NDArrays on the freelist and sets the
@@ -804,7 +796,7 @@ system.</p></td>
 <td><p>$(P)$(R)EmptyFreeList</p></td>
 <td><p>bo</p></td>
 </tr>
-<tr class="row-odd"><td><p>NDNumQueuedArrays</p></td>
+<tr class="row-even"><td><p>NDNumQueuedArrays</p></td>
 <td><p>asynInt32</p></td>
 <td><p>r/o</p></td>
 <td><p>The number of NDArrays from this driver’s NDArrayPool that are currently queued
@@ -814,12 +806,12 @@ processing.</p></td>
 <td><p>$(P)$(R)NumQueuedArrays</p></td>
 <td><p>longin</p></td>
 </tr>
-<tr class="row-even"><td></td>
+<tr class="row-odd"><td></td>
 <td></td>
 <td></td>
 <td colspan="4"><p><strong>Debugging control</strong></p></td>
 </tr>
-<tr class="row-odd"><td><p>N/A</p></td>
+<tr class="row-even"><td><p>N/A</p></td>
 <td><p>N/A</p></td>
 <td><p>N/A</p></td>
 <td><p>asyn record to control debugging (asynTrace)</p></td>
@@ -827,12 +819,12 @@ processing.</p></td>
 <td><p>$(P)$(R)AsynIO</p></td>
 <td><p>asyn</p></td>
 </tr>
-<tr class="row-even"><td></td>
+<tr class="row-odd"><td></td>
 <td></td>
 <td></td>
 <td colspan="4"><p><strong>File saving parameters (records are defined in NDFile.template)</strong></p></td>
 </tr>
-<tr class="row-odd"><td><p>NDFilePath</p></td>
+<tr class="row-even"><td><p>NDFilePath</p></td>
 <td><p>asynOctet</p></td>
 <td><p>r/w</p></td>
 <td><p>File path</p></td>
@@ -840,7 +832,7 @@ processing.</p></td>
 <td><p>$(P)$(R)FilePath, $(P)$(R)FilePath_RBV</p></td>
 <td><p>waveform, waveform</p></td>
 </tr>
-<tr class="row-even"><td><p>NDFilePathExists</p></td>
+<tr class="row-odd"><td><p>NDFilePathExists</p></td>
 <td><p>asynInt32</p></td>
 <td><p>r/o</p></td>
 <td><p>Flag indicating if file path exists</p></td>
@@ -848,7 +840,7 @@ processing.</p></td>
 <td><p>$(P)$(R)FilePathExists_RBV</p></td>
 <td><p>bi</p></td>
 </tr>
-<tr class="row-odd"><td><p>NDFileName</p></td>
+<tr class="row-even"><td><p>NDFileName</p></td>
 <td><p>asynOctet</p></td>
 <td><p>r/w</p></td>
 <td><p>File name</p></td>
@@ -856,7 +848,7 @@ processing.</p></td>
 <td><p>$(P)$(R)FileName, $(P)$(R)FileName_RBV</p></td>
 <td><p>waveform, waveform</p></td>
 </tr>
-<tr class="row-even"><td><p>NDFileNumber</p></td>
+<tr class="row-odd"><td><p>NDFileNumber</p></td>
 <td><p>asynInt32</p></td>
 <td><p>r/w</p></td>
 <td><p>File number</p></td>
@@ -864,7 +856,7 @@ processing.</p></td>
 <td><p>$(P)$(R)FileNumber, $(P)$(R)FileNumber_RBV</p></td>
 <td><p>longout, longin</p></td>
 </tr>
-<tr class="row-odd"><td><p>NDFileTemplate</p></td>
+<tr class="row-even"><td><p>NDFileTemplate</p></td>
 <td><p>asynOctet</p></td>
 <td><p>r/w</p></td>
 <td><p>Format string for constructing NDFullFileName from NDFilePath, NDFileName, and NDFileNumber.
@@ -886,7 +878,7 @@ NDFileName, and NDFileNumber will be ignored.</p></td>
 <td><p>$(P)$(R)FileTemplate, $(P)$(R)FileTemplate_RBV</p></td>
 <td><p>waveform, waveform</p></td>
 </tr>
-<tr class="row-even"><td><p>NDFullFileName</p></td>
+<tr class="row-odd"><td><p>NDFullFileName</p></td>
 <td><p>asynOctet</p></td>
 <td><p>r/o</p></td>
 <td><p>Full file name constructed using the algorithm described in NDFileTemplate</p></td>
@@ -894,7 +886,7 @@ NDFileName, and NDFileNumber will be ignored.</p></td>
 <td><p>$(P)$(R)FullFileName_RBV</p></td>
 <td><p>waveform, waveform</p></td>
 </tr>
-<tr class="row-odd"><td><p>NDAutoIncrement</p></td>
+<tr class="row-even"><td><p>NDAutoIncrement</p></td>
 <td><p>asynInt32</p></td>
 <td><p>r/w</p></td>
 <td><p>Auto-increment flag. Controls whether FileNumber is automatically incremented by
@@ -903,7 +895,7 @@ NDFileName, and NDFileNumber will be ignored.</p></td>
 <td><p>$(P)$(R)AutoIncrement, $(P)$(R)AutoIncrement_RBV</p></td>
 <td><p>bo, bi</p></td>
 </tr>
-<tr class="row-even"><td><p>NDAutoSave</p></td>
+<tr class="row-odd"><td><p>NDAutoSave</p></td>
 <td><p>asynInt32</p></td>
 <td><p>r/w</p></td>
 <td><p>Auto-save flag (0=No, 1=Yes) controlling whether a file is automatically saved each
@@ -912,7 +904,7 @@ time acquisition completes.</p></td>
 <td><p>$(P)$(R)AutoSave, $(P)$(R)AutoSave_RBV</p></td>
 <td><p>bo, bi</p></td>
 </tr>
-<tr class="row-odd"><td><p>NDFileFormat</p></td>
+<tr class="row-even"><td><p>NDFileFormat</p></td>
 <td><p>asynInt32</p></td>
 <td><p>r/w</p></td>
 <td><p>File format. The format to write/read data in (e.g. TIFF, netCDF, etc.)</p></td>
@@ -920,7 +912,7 @@ time acquisition completes.</p></td>
 <td><p>$(P)$(R)FileFormat, $(P)$(R)FileFormat_RBV</p></td>
 <td><p>mbbo, mbbi</p></td>
 </tr>
-<tr class="row-even"><td><p>NDWriteFile</p></td>
+<tr class="row-odd"><td><p>NDWriteFile</p></td>
 <td><p>asynInt32</p></td>
 <td><p>r/w</p></td>
 <td><p>Manually save the most recent array to a file when value=1</p></td>
@@ -928,7 +920,7 @@ time acquisition completes.</p></td>
 <td><p>$(P)$(R)WriteFile, $(P)$(R)WriteFile_RBV</p></td>
 <td><p>busy, bi</p></td>
 </tr>
-<tr class="row-odd"><td><p>NDReadFile</p></td>
+<tr class="row-even"><td><p>NDReadFile</p></td>
 <td><p>asynInt32</p></td>
 <td><p>r/w</p></td>
 <td><p>Manually read a file when value=1</p></td>
@@ -936,7 +928,7 @@ time acquisition completes.</p></td>
 <td><p>$(P)$(R)ReadFile, $(P)$(R)ReadFile_RBV</p></td>
 <td><p>busy, bi</p></td>
 </tr>
-<tr class="row-even"><td><p>NDFileWriteMode</p></td>
+<tr class="row-odd"><td><p>NDFileWriteMode</p></td>
 <td><p>asynInt32</p></td>
 <td><p>r/w</p></td>
 <td><p>File saving mode (Single, Capture, Stream)(NDFileMode_t)</p></td>
@@ -944,7 +936,7 @@ time acquisition completes.</p></td>
 <td><p>$(P)$(R)FileWriteMode, $(P)$(R)FileWriteMode_RBV</p></td>
 <td><p>mbbo, mbbi</p></td>
 </tr>
-<tr class="row-odd"><td><p>NDFileWriteStatus</p></td>
+<tr class="row-even"><td><p>NDFileWriteStatus</p></td>
 <td><p>asynInt32</p></td>
 <td><p>r/o</p></td>
 <td><p>File write status. Gives status information on last file open or file write operation.
@@ -953,7 +945,7 @@ Values are WriteOK (0) and WriteError (1).</p></td>
 <td><p>$(P)$(R)FileWriteStatus</p></td>
 <td><p>mbbi</p></td>
 </tr>
-<tr class="row-even"><td><p>NDFileWriteMessage</p></td>
+<tr class="row-odd"><td><p>NDFileWriteMessage</p></td>
 <td><p>asynOctet</p></td>
 <td><p>r/o</p></td>
 <td><p>File write error message. An error message string if the previous file open or file
@@ -962,7 +954,7 @@ write operation resulted in an error.</p></td>
 <td><p>$(P)$(R)FileWriteMessage</p></td>
 <td><p>waveform</p></td>
 </tr>
-<tr class="row-odd"><td><p>NDFileCapture</p></td>
+<tr class="row-even"><td><p>NDFileCapture</p></td>
 <td><p>asynInt32</p></td>
 <td><p>r/w</p></td>
 <td><p>Start (1) or stop (0) file capture or streaming</p></td>
@@ -970,7 +962,7 @@ write operation resulted in an error.</p></td>
 <td><p>$(P)$(R)Capture, $(P)$(R)Capture_RBV</p></td>
 <td><p>busy, bi</p></td>
 </tr>
-<tr class="row-even"><td><p>NDFileNumCapture</p></td>
+<tr class="row-odd"><td><p>NDFileNumCapture</p></td>
 <td><p>asynInt32</p></td>
 <td><p>r/w</p></td>
 <td><p>Number of frames to acquire in capture or streaming mode</p></td>
@@ -978,7 +970,7 @@ write operation resulted in an error.</p></td>
 <td><p>$(P)$(R)NumCapture, $(P)$(R)NumCapture_RBV</p></td>
 <td><p>longout, longin</p></td>
 </tr>
-<tr class="row-odd"><td><p>NDFileNumCaptured</p></td>
+<tr class="row-even"><td><p>NDFileNumCaptured</p></td>
 <td><p>asynInt32</p></td>
 <td><p>r/o</p></td>
 <td><p>Number of arrays currently acquired capture or streaming mode</p></td>
@@ -986,7 +978,7 @@ write operation resulted in an error.</p></td>
 <td><p>$(P)$(R)NumCaptured_RBV</p></td>
 <td><p>longin</p></td>
 </tr>
-<tr class="row-even"><td><p>NDFileFreeCapture</p></td>
+<tr class="row-odd"><td><p>NDFileFreeCapture</p></td>
 <td><p>asynInt32</p></td>
 <td><p>r/w</p></td>
 <td><p>Release all of the NDArrays in the capture buffer to the free pool.</p></td>
@@ -994,7 +986,7 @@ write operation resulted in an error.</p></td>
 <td><p>$(P)$(R)FreeCapture</p></td>
 <td><p>bo</p></td>
 </tr>
-<tr class="row-odd"><td><p>NDFileDeleteDriverFile</p></td>
+<tr class="row-even"><td><p>NDFileDeleteDriverFile</p></td>
 <td><p>asynInt32</p></td>
 <td><p>r/w</p></td>
 <td><p>Flag to enable deleting original driver file after a plugin has re-written the file
@@ -1006,7 +998,7 @@ the original file.</p></td>
 <td><p>$(P)$(R)DeleteDriverFile, $(P)$(R)DeleteDriverFile_RBV</p></td>
 <td><p>bo, bi</p></td>
 </tr>
-<tr class="row-even"><td><p>NDFileLazyOpen</p></td>
+<tr class="row-odd"><td><p>NDFileLazyOpen</p></td>
 <td><p>asynInt32</p></td>
 <td><p>r/w</p></td>
 <td><p>Flag to defer the creation of a new file until the first NDArray to write has been
@@ -1020,7 +1012,7 @@ and only in “Stream” mode.</p></td>
 <td><p>$(P)$(R)LazyOpen, $(P)$(R)LazyOpen_RBV</p></td>
 <td><p>bo, bi</p></td>
 </tr>
-<tr class="row-odd"><td><p>NDFileCreateDir</p></td>
+<tr class="row-even"><td><p>NDFileCreateDir</p></td>
 <td><p>asynInt32</p></td>
 <td><p>r/w</p></td>
 <td><p>This parameter is used to automatically create directories if they don’t exist.
@@ -1034,7 +1026,7 @@ and 2 will not create a directory in the root directory).</p></td>
 <td><p>$(P)$(R)CreateDirectory, $(P)$(R)CreateDirectory_RBV</p></td>
 <td><p>longout, longin</p></td>
 </tr>
-<tr class="row-even"><td><p>NDFileTempSuffix</p></td>
+<tr class="row-odd"><td><p>NDFileTempSuffix</p></td>
 <td><p>asynOctet</p></td>
 <td><p>r/w</p></td>
 <td><p>If this string is non-null, the file is opened with this suffix temporarily appended
@@ -1063,7 +1055,7 @@ be opened.</p></td>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, Mark Rivers.
-      <span class="lastupdated">Last updated on 2025-May-26.
+      <span class="lastupdated">Last updated on 2025-June-13.
       </span></p>
   </div>
 

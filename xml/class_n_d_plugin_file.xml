@@ -11,7 +11,6 @@
     <derivedcompoundref refid="class_n_d_file_null" prot="public" virt="non-virtual">NDFileNull</derivedcompoundref>
     <derivedcompoundref refid="class_n_d_file_t_i_f_f" prot="public" virt="non-virtual">NDFileTIFF</derivedcompoundref>
     <derivedcompoundref refid="classffmpeg_file" prot="public" virt="non-virtual">ffmpegFile</derivedcompoundref>
-    <derivedcompoundref refid="classpco_edge_plugin" prot="public" virt="non-virtual">pcoEdgePlugin</derivedcompoundref>
     <includes refid="_n_d_plugin_file_8h" local="no">NDPluginFile.h</includes>
     <sectiondef kind="public-attrib">
       <memberdef kind="variable" id="class_n_d_plugin_file_1a6255a7fdddc16d94aab10c7a828cc0eb" prot="public" static="no" mutable="no">
@@ -323,7 +322,6 @@
         <name>processCallbacks</name>
         <qualifiedname>NDPluginFile::processCallbacks</qualifiedname>
         <reimplements refid="class_n_d_plugin_driver_1a75ed5528f584d90e4f789aef058661cd">processCallbacks</reimplements>
-        <reimplementedby refid="classpco_edge_plugin_1a216639465ebb2332343942e8de9fdd09">processCallbacks</reimplementedby>
         <param>
           <type><ref refid="class_n_d_array" kindref="compound">NDArray</ref> *</type>
           <declname>pArray</declname>
@@ -425,7 +423,6 @@
         <reimplementedby refid="class_n_d_file_nexus_1a512c83e2f73921a28eb293ed46adb2ae">openFile</reimplementedby>
         <reimplementedby refid="class_n_d_file_null_1acc3865549b4d1d05bb98c6ee54d55ecf">openFile</reimplementedby>
         <reimplementedby refid="class_n_d_file_t_i_f_f_1a0f6e77ee9eee63c0c58e05c7f355a85b">openFile</reimplementedby>
-        <reimplementedby refid="classpco_edge_plugin_1a7bdd835f8f803bf19f766bb3dc24266e">openFile</reimplementedby>
         <reimplementedby refid="classffmpeg_file_1a9ed8ae7dbff372476b59cf7e310456ba">openFile</reimplementedby>
         <param>
           <type>const char *</type>
@@ -487,7 +484,6 @@
         <reimplementedby refid="class_n_d_file_nexus_1adf003e65e73f369aec5f17a6a159ab34">readFile</reimplementedby>
         <reimplementedby refid="class_n_d_file_null_1a285d2dc0a4db353626dbc29b5297163e">readFile</reimplementedby>
         <reimplementedby refid="class_n_d_file_t_i_f_f_1a61a76bcf316c3c9682c87d9231fdb3c9">readFile</reimplementedby>
-        <reimplementedby refid="classpco_edge_plugin_1a98c25b5f6ce28577a1aa86516a46f90d">readFile</reimplementedby>
         <reimplementedby refid="classffmpeg_file_1a6620811b6b142ef011e77a49f6321084">readFile</reimplementedby>
         <param>
           <type><ref refid="class_n_d_array" kindref="compound">NDArray</ref> **</type>
@@ -526,7 +522,6 @@
         <reimplementedby refid="class_n_d_file_nexus_1ad09e4ff9d4a87c60a840c32bb009748a">writeFile</reimplementedby>
         <reimplementedby refid="class_n_d_file_null_1a2b94c1c21f7bc4d6e945635f8f68865c">writeFile</reimplementedby>
         <reimplementedby refid="class_n_d_file_t_i_f_f_1ab9577db1c85a05a25f10bb63d00521f4">writeFile</reimplementedby>
-        <reimplementedby refid="classpco_edge_plugin_1a091e3fc2d840ffb48fee456bac649ed2">writeFile</reimplementedby>
         <reimplementedby refid="classffmpeg_file_1ad948c22ad53a0f30def7f9635db1e07d">writeFile</reimplementedby>
         <param>
           <type><ref refid="class_n_d_array" kindref="compound">NDArray</ref> *</type>
@@ -564,7 +559,6 @@
         <reimplementedby refid="class_n_d_file_nexus_1a89564ec15ec34df81af982aca7ade01a">closeFile</reimplementedby>
         <reimplementedby refid="class_n_d_file_null_1a971af95c99b7a01893b7bd4c62d23dd1">closeFile</reimplementedby>
         <reimplementedby refid="class_n_d_file_t_i_f_f_1ab697161ed5059acb5981f2dbeb462492">closeFile</reimplementedby>
-        <reimplementedby refid="classpco_edge_plugin_1a67816988308892c8a9e10b7c9e371e43">closeFile</reimplementedby>
         <reimplementedby refid="classffmpeg_file_1a7c0b7abd5c58060c64eb78d59114489e">closeFile</reimplementedby>
         <briefdescription>
 <para>Close the file opened with <ref refid="class_n_d_plugin_file_1a9758e4ab84ba1959fd942bd181f7577f" kindref="member">NDPluginFile::openFile</ref>; pure virtual function that must be implemented by derived classes. </para>
@@ -886,12 +880,6 @@
       <node id="13">
         <label>ffmpegFile</label>
         <link refid="classffmpeg_file"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="14">
-        <label>pcoEdgePlugin</label>
-        <link refid="classpco_edge_plugin"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>

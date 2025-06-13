@@ -357,14 +357,14 @@ are just a single name, for example ``NDPluginStatsComputeStatistics``.
     - bo, bi
   * - NDPluginStats |br| ProfileSizeX
     - asynInt32
-    - r/w
+    - r/o
     - Number of array elements in the X profiles.
     - PROFILE_SIZE_X
     - $(P)$(R)ProfileSizeX_RBV
     - longin
   * - NDPluginStats |br| ProfileSizeY
     - asynInt32
-    - r/w
+    - r/o
     - Number of array elements in the Y profiles.
     - PROFILE_SIZE_Y
     - $(P)$(R)ProfileSizeY_RBV

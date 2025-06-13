@@ -1278,7 +1278,7 @@
 <codeline lineno="331"><highlight class="normal">asynStatus<sp/>mar345::erase()</highlight></codeline>
 <codeline lineno="332"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="333"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>numErase;</highlight></codeline>
-<codeline lineno="334"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>;</highlight></codeline>
+<codeline lineno="334"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i;</highlight></codeline>
 <codeline lineno="335"><highlight class="normal"><sp/><sp/><sp/><sp/>asynStatus<sp/>status=asynSuccess;</highlight></codeline>
 <codeline lineno="336"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//const<sp/>char<sp/>*functionName<sp/>=<sp/>&quot;erase&quot;;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="337"><highlight class="normal"></highlight></codeline>
@@ -1287,7 +1287,7 @@
 <codeline lineno="340"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classasyn_n_d_array_driver_1abf87462bc5853f8e5a56db5e93acd956" kindref="member">setIntegerParam</ref>(<ref refid="class_a_d_driver_1a6a532aae0f51273450f4e897bf0aed1d" kindref="member">ADStatus</ref>,<sp/><ref refid="mar345_8cpp_1a4ffa7593f5ba87c50ebcd0db3d406e17a11938b7a226e24e30bd89c0b64480529" kindref="member">mar345StatusErase</ref>);</highlight></codeline>
 <codeline lineno="341"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classasyn_n_d_array_driver_1abf87462bc5853f8e5a56db5e93acd956" kindref="member">setIntegerParam</ref>(<ref refid="classmar345_1a8b9e80b324a5289faa4776607c65a35c" kindref="member">mar345NumErased</ref>,<sp/>0);</highlight></codeline>
 <codeline lineno="342"><highlight class="normal"><sp/><sp/><sp/><sp/>callParamCallbacks();</highlight></codeline>
-<codeline lineno="343"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(i=0;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>&lt;numErase;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>++)<sp/>{</highlight></codeline>
+<codeline lineno="343"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(i=0;<sp/>i&lt;numErase;<sp/>i++)<sp/>{</highlight></codeline>
 <codeline lineno="344"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(epicsEventTryWait(this-&gt;<ref refid="classmar345_1a9dcdee40c76d13eb25434644dcd34ad1" kindref="member">abortEventId</ref>)<sp/>==<sp/>epicsEventWaitOK)<sp/>{</highlight></codeline>
 <codeline lineno="345"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>status<sp/>=<sp/>asynError;</highlight></codeline>
 <codeline lineno="346"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>

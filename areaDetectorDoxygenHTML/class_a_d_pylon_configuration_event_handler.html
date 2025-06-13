@@ -119,6 +119,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Called when a camera device removal from the PC has been detected. </p>
+<p>Notify the PylonCameraTask thread, instead of calling cameraDisconnected directly. Because this method is invoked with camera object locked. calling cameraDisconnected will acquire asyn port lock. However a normal camera interaction acquires the locks in the reverse order. This could cause a deadlock.</p>
 
 </div>
 </div>

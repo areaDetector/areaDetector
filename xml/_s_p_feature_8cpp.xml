@@ -327,8 +327,8 @@
 <codeline lineno="114"><highlight class="normal">std::string<sp/><ref refid="class_s_p_feature_1a7b427c91197f548813d9e437dafee80e" kindref="member">SPFeature::readEnumString</ref>()<sp/>{<sp/></highlight></codeline>
 <codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/>CEnumerationPtr<sp/>pNode<sp/>=<sp/>(CEnumerationPtr)mPBase;</highlight></codeline>
 <codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/>CEnumEntryPtr<sp/>pEntry<sp/>=<sp/>pNode-&gt;GetCurrentEntry();</highlight></codeline>
-<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/>gcstring<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref><sp/>=<sp/>pEntry-&gt;GetSymbolic();</highlight></codeline>
-<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>.c_str();</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/>gcstring<sp/>value<sp/>=<sp/>pEntry-&gt;GetSymbolic();</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>value.c_str();</highlight></codeline>
 <codeline lineno="119"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="120"><highlight class="normal"></highlight></codeline>
 <codeline lineno="121"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_s_p_feature_1ae7c2da3d4e6db77f9bff77c55d42b41d" kindref="member">SPFeature::writeEnumString</ref>(std::string<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>&amp;value)<sp/>{<sp/></highlight></codeline>
@@ -344,7 +344,7 @@
 <codeline lineno="131"><highlight class="normal"></highlight></codeline>
 <codeline lineno="132"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_s_p_feature_1a7fc3b3ceb15cc3ad3aad66f9a546920f" kindref="member">SPFeature::writeString</ref>(std::string<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>&amp;<sp/>value)<sp/>{<sp/></highlight></codeline>
 <codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/>CStringPtr<sp/>pNode<sp/>=<sp/>(CStringPtr)mPBase;</highlight></codeline>
-<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/>gcstring<sp/>str(<ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>.c_str());</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/>gcstring<sp/>str(value.c_str());</highlight></codeline>
 <codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/>pNode-&gt;SetValue(str);</highlight></codeline>
 <codeline lineno="136"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="137"><highlight class="normal"></highlight></codeline>
@@ -358,8 +358,8 @@
 <codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/>NodeList_t<sp/>entries;</highlight></codeline>
 <codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/>pNode-&gt;GetEntries(entries);</highlight></codeline>
 <codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>numEnums<sp/>=<sp/>(int)entries.size();</highlight></codeline>
-<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i=0;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>&lt;numEnums;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>++)<sp/>{</highlight></codeline>
-<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IEnumEntry<sp/>*pEntry=<sp/></highlight><highlight class="keyword">dynamic_cast&lt;</highlight><highlight class="normal">IEnumEntry<sp/>*</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(entries[<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>]);</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i=0;<sp/>i&lt;numEnums;<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IEnumEntry<sp/>*pEntry=<sp/></highlight><highlight class="keyword">dynamic_cast&lt;</highlight><highlight class="normal">IEnumEntry<sp/>*</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(entries[i]);</highlight></codeline>
 <codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(IsAvailable(pEntry)<sp/>&amp;&amp;<sp/>IsReadable(pEntry))<sp/>{</highlight></codeline>
 <codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/>str<sp/>=<sp/>pEntry-&gt;GetSymbolic().c_str();</highlight></codeline>
 <codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>enumStrings.push_back(str);</highlight></codeline>

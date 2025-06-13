@@ -857,15 +857,15 @@
 <codeline lineno="246"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>PerkinElmer::initializeDetector(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
 <codeline lineno="247"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="248"><highlight class="normal"><sp/><sp/>ACQDESCPOS<sp/>Pos<sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="249"><highlight class="normal"><sp/><sp/><ref refid="pco__structures_8h_1a4cfc63e05db4883dc4b60a1245a9ffc5" kindref="member">WORD</ref><sp/>wBinning<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/>WORD<sp/>wBinning<sp/>=<sp/>1;</highlight></codeline>
 <codeline lineno="250"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>detectorIndex;</highlight></codeline>
-<codeline lineno="251"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>;</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i;</highlight></codeline>
 <codeline lineno="252"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>timings<sp/>=<sp/>8;</highlight></codeline>
 <codeline lineno="253"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>m_pTimingsListBinning[8];</highlight></codeline>
 <codeline lineno="254"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>status<sp/>=<sp/>asynSuccess;</highlight></codeline>
 <codeline lineno="255"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>iGain;</highlight></codeline>
 <codeline lineno="256"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>lPacketDelay;</highlight></codeline>
-<codeline lineno="257"><highlight class="normal"><sp/><sp/><ref refid="pco__structures_8h_1a4cfc63e05db4883dc4b60a1245a9ffc5" kindref="member">WORD</ref><sp/>wTiming;</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"><sp/><sp/>WORD<sp/>wTiming;</highlight></codeline>
 <codeline lineno="258"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>uiPEResult;</highlight></codeline>
 <codeline lineno="259"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>bInitAlways<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="260"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>detectorFound<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
@@ -914,7 +914,7 @@
 <codeline lineno="303"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="304"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>detectorIndex<sp/>=<sp/>atoi(IDValue_);</highlight></codeline>
 <codeline lineno="305"><highlight class="normal"></highlight></codeline>
-<codeline lineno="306"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(i=0;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>&lt;(int)uiNumSensors_;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>++)<sp/>{</highlight></codeline>
+<codeline lineno="306"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(i=0;<sp/>i&lt;(int)uiNumSensors_;<sp/>i++)<sp/>{</highlight></codeline>
 <codeline lineno="307"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uiPEResult<sp/>=<sp/>Acquisition_GetNextSensor(&amp;Pos,<sp/>&amp;hAcqDesc_);</highlight></codeline>
 <codeline lineno="308"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>reportXISStatus(uiPEResult,<sp/>functionName,<sp/></highlight><highlight class="stringliteral">&quot;Acquisition_GetNextSensor(&amp;Pos=%p,<sp/>hAcqDesc_=%p)\n&quot;</highlight><highlight class="normal">,</highlight></codeline>
 <codeline lineno="309"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;Pos,<sp/>&amp;hAcqDesc_);</highlight></codeline>
@@ -1057,7 +1057,7 @@
 <codeline lineno="446"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__X64</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="447"><highlight class="normal"><sp/><sp/>uiPEResult<sp/>=<sp/>Acquisition_SetAcqData(hAcqDesc_,<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*)<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="448"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="449"><highlight class="normal"><sp/><sp/>uiPEResult<sp/>=<sp/>Acquisition_SetAcqData(hAcqDesc_,<sp/>(<ref refid="pco__structures_8h_1aa39b39d94407451a6ec0226479db68cf" kindref="member">DWORD</ref>)<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="449"><highlight class="normal"><sp/><sp/>uiPEResult<sp/>=<sp/>Acquisition_SetAcqData(hAcqDesc_,<sp/>(DWORD)<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="450"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="451"><highlight class="normal"><sp/><sp/>reportXISStatus(uiPEResult,<sp/>functionName,<sp/></highlight><highlight class="stringliteral">&quot;Acquisition_SetAcqData(hAcqDesc_=%p,<sp/>acqData=%p)\n&quot;</highlight><highlight class="normal">,<sp/>hAcqDesc_,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="452"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(uiPEResult<sp/>!=<sp/>HIS_ALL_OK)<sp/>{</highlight></codeline>
@@ -1127,7 +1127,7 @@
 <codeline lineno="517"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>binX,<sp/>binY,<sp/>sizeX,<sp/>sizeY;</highlight></codeline>
 <codeline lineno="518"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>status;</highlight></codeline>
 <codeline lineno="519"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>validBinning<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="520"><highlight class="normal"><sp/><sp/><ref refid="pco__structures_8h_1a4cfc63e05db4883dc4b60a1245a9ffc5" kindref="member">WORD</ref><sp/>PEBinning;</highlight></codeline>
+<codeline lineno="520"><highlight class="normal"><sp/><sp/>WORD<sp/>PEBinning;</highlight></codeline>
 <codeline lineno="521"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>averageBinning<sp/>=<sp/>256;</highlight></codeline>
 <codeline lineno="522"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>accumulateBinning<sp/>=<sp/>512;</highlight></codeline>
 <codeline lineno="523"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*functionName<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;setBinning&quot;</highlight><highlight class="normal">;</highlight></codeline>
@@ -1199,7 +1199,7 @@
 <codeline lineno="595"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
 <codeline lineno="596"><highlight class="normal"><sp/><sp/>fprintf(fp,<sp/></highlight><highlight class="stringliteral">&quot;Perkin<sp/>Elmer<sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/>this-&gt;portName);</highlight></codeline>
 <codeline lineno="597"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(details<sp/>&gt;<sp/>0)<sp/>{</highlight></codeline>
-<codeline lineno="598"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespacemake_adl_1a3c7364e67c0570681ac29158f738bff6" kindref="member">nx</ref>,<sp/>ny,<sp/><ref refid="_a_d_pylon_8cpp_1a048925b4357a1b4d6015c2113e05ce9f" kindref="member">dataType</ref>;</highlight></codeline>
+<codeline lineno="598"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nx,<sp/>ny,<sp/><ref refid="_a_d_pylon_8cpp_1a048925b4357a1b4d6015c2113e05ce9f" kindref="member">dataType</ref>;</highlight></codeline>
 <codeline lineno="599"><highlight class="normal"><sp/><sp/><sp/><sp/>getIntegerParam(<ref refid="class_a_d_driver_1a918ef4b3d80695f6872fd169b09b639a" kindref="member">ADSizeX</ref>,<sp/>&amp;nx);</highlight></codeline>
 <codeline lineno="600"><highlight class="normal"><sp/><sp/><sp/><sp/>getIntegerParam(<ref refid="class_a_d_driver_1a59ba3ba61b2b6f51dc9d88d81680b632" kindref="member">ADSizeY</ref>,<sp/>&amp;ny);</highlight></codeline>
 <codeline lineno="601"><highlight class="normal"><sp/><sp/><sp/><sp/>getIntegerParam(<ref refid="classasyn_n_d_array_driver_1af71358738ff1dbe4c9185f105807f799" kindref="member">NDDataType</ref>,<sp/>&amp;<ref refid="_a_d_pylon_8cpp_1a048925b4357a1b4d6015c2113e05ce9f" kindref="member">dataType</ref>);</highlight></codeline>
@@ -1290,10 +1290,10 @@
 <codeline lineno="687"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>uiChannelType,<sp/>uiRows,<sp/>uiColumns,<sp/>uiDataType,<sp/>uiSortFlags;</highlight></codeline>
 <codeline lineno="688"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>iChannelNum,<sp/>iFrames;</highlight></codeline>
 <codeline lineno="689"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>numGbIFSensors=0;</highlight></codeline>
-<codeline lineno="690"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>;</highlight></codeline>
+<codeline lineno="690"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i;</highlight></codeline>
 <codeline lineno="691"><highlight class="normal"><sp/><sp/>GBIF_DEVICE_PARAM<sp/>*pGbIFDeviceParam;</highlight></codeline>
 <codeline lineno="692"><highlight class="normal"><sp/><sp/>BOOL<sp/>bEnableIRQ;</highlight></codeline>
-<codeline lineno="693"><highlight class="normal"><sp/><sp/><ref refid="pco__structures_8h_1aa39b39d94407451a6ec0226479db68cf" kindref="member">DWORD</ref><sp/>dwAcqType,<sp/>dwSystemID,<sp/>dwSyncMode,<sp/>dwHwAccess;</highlight></codeline>
+<codeline lineno="693"><highlight class="normal"><sp/><sp/>DWORD<sp/>dwAcqType,<sp/>dwSystemID,<sp/>dwSyncMode,<sp/>dwHwAccess;</highlight></codeline>
 <codeline lineno="694"><highlight class="normal"><sp/><sp/>HACQDESC<sp/><sp/>hAcqDesc;</highlight></codeline>
 <codeline lineno="695"><highlight class="normal"><sp/><sp/></highlight></codeline>
 <codeline lineno="696"><highlight class="normal"><sp/><sp/>fprintf(fp,<sp/></highlight><highlight class="stringliteral">&quot;Total<sp/>sensors<sp/>in<sp/>system:<sp/>%d\n&quot;</highlight><highlight class="normal">,<sp/>uiNumSensors_);</highlight></codeline>
@@ -1348,7 +1348,7 @@
 <codeline lineno="745"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
 <codeline lineno="746"><highlight class="normal"><sp/><sp/></highlight></codeline>
 <codeline lineno="747"><highlight class="normal"><sp/><sp/>fprintf(fp,<sp/></highlight><highlight class="stringliteral">&quot;Total<sp/>GbIF<sp/>sensors<sp/>in<sp/>system:<sp/>%d\n&quot;</highlight><highlight class="normal">,<sp/>numGbIFSensors);</highlight></codeline>
-<codeline lineno="748"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(i=0;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>&lt;numGbIFSensors;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>++)<sp/>{</highlight></codeline>
+<codeline lineno="748"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(i=0;<sp/>i&lt;numGbIFSensors;<sp/>i++)<sp/>{</highlight></codeline>
 <codeline lineno="749"><highlight class="normal"><sp/><sp/><sp/><sp/>fprintf(fp,<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/>GbIF<sp/>Sensor<sp/>%d\n&quot;</highlight><highlight class="normal">,<sp/>i+1);</highlight></codeline>
 <codeline lineno="750"><highlight class="normal"><sp/><sp/><sp/><sp/>fprintf(fp,<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/><sp/>MAC<sp/>address:<sp/><sp/><sp/><sp/><sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/>pGbIFDeviceParam[i].ucMacAddress);</highlight></codeline>
 <codeline lineno="751"><highlight class="normal"><sp/><sp/><sp/><sp/>fprintf(fp,<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/><sp/>IP<sp/>address:<sp/><sp/><sp/><sp/><sp/><sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/>pGbIFDeviceParam[i].ucIP);</highlight></codeline>
@@ -1370,14 +1370,14 @@
 <codeline lineno="768"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="769"><highlight class="normal"><sp/><sp/><ref refid="class_perkin_elmer" kindref="compound">PerkinElmer</ref><sp/><sp/><sp/>*pPerkinElmer;</highlight></codeline>
 <codeline lineno="770"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/>uiStatus;</highlight></codeline>
-<codeline lineno="771"><highlight class="normal"><sp/><sp/><ref refid="pco__structures_8h_1aa39b39d94407451a6ec0226479db68cf" kindref="member">DWORD</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>HISError;</highlight></codeline>
-<codeline lineno="772"><highlight class="normal"><sp/><sp/><ref refid="pco__structures_8h_1aa39b39d94407451a6ec0226479db68cf" kindref="member">DWORD</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FGError;</highlight></codeline>
+<codeline lineno="771"><highlight class="normal"><sp/><sp/>DWORD<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>HISError;</highlight></codeline>
+<codeline lineno="772"><highlight class="normal"><sp/><sp/>DWORD<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FGError;</highlight></codeline>
 <codeline lineno="773"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*functionName<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;endFrameCallbackC&quot;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="774"><highlight class="normal"></highlight></codeline>
 <codeline lineno="775"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__X64</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="776"><highlight class="normal"><sp/><sp/>uiStatus<sp/>=<sp/><sp/>Acquisition_GetAcqData(hAcqDesc,<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>**)<sp/>&amp;pPerkinElmer);</highlight></codeline>
 <codeline lineno="777"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="778"><highlight class="normal"><sp/><sp/>uiStatus<sp/>=<sp/><sp/>Acquisition_GetAcqData(hAcqDesc,<sp/>(<ref refid="pco__structures_8h_1aa39b39d94407451a6ec0226479db68cf" kindref="member">DWORD</ref><sp/>*)<sp/>&amp;pPerkinElmer);</highlight></codeline>
+<codeline lineno="778"><highlight class="normal"><sp/><sp/>uiStatus<sp/>=<sp/><sp/>Acquisition_GetAcqData(hAcqDesc,<sp/>(DWORD<sp/>*)<sp/>&amp;pPerkinElmer);</highlight></codeline>
 <codeline lineno="779"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="780"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(uiStatus<sp/>!=<sp/>0)<sp/>{</highlight></codeline>
 <codeline lineno="781"><highlight class="normal"><sp/><sp/><sp/><sp/>Acquisition_GetErrorCode(hAcqDesc,<sp/>&amp;HISError,<sp/>&amp;FGError);</highlight></codeline>
@@ -1392,8 +1392,8 @@
 <codeline lineno="791"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_perkin_elmer_1aee89547a758f03f5a02bc5100597b65d" kindref="member">PerkinElmer::endFrameCallback</ref>(HACQDESC<sp/>hAcqDesc)</highlight></codeline>
 <codeline lineno="792"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="793"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/>uiStatus;</highlight></codeline>
-<codeline lineno="794"><highlight class="normal"><sp/><sp/><ref refid="pco__structures_8h_1aa39b39d94407451a6ec0226479db68cf" kindref="member">DWORD</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ActAcqFrame;</highlight></codeline>
-<codeline lineno="795"><highlight class="normal"><sp/><sp/><ref refid="pco__structures_8h_1aa39b39d94407451a6ec0226479db68cf" kindref="member">DWORD</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ActBuffFrame;</highlight></codeline>
+<codeline lineno="794"><highlight class="normal"><sp/><sp/>DWORD<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ActAcqFrame;</highlight></codeline>
+<codeline lineno="795"><highlight class="normal"><sp/><sp/>DWORD<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ActBuffFrame;</highlight></codeline>
 <codeline lineno="796"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/>currBuff;</highlight></codeline>
 <codeline lineno="797"><highlight class="normal"><sp/><sp/>epicsUInt16<sp/><sp/><sp/>*pInput;</highlight></codeline>
 <codeline lineno="798"><highlight class="normal"><sp/><sp/><ref refid="struct_n_d_array_info" kindref="compound">NDArrayInfo</ref><sp/><sp/><sp/>arrayInfo;</highlight></codeline>
@@ -1570,14 +1570,14 @@
 <codeline lineno="973"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="974"><highlight class="normal"><sp/><sp/><ref refid="class_perkin_elmer" kindref="compound">PerkinElmer</ref><sp/><sp/><sp/>*pPerkinElmer;</highlight></codeline>
 <codeline lineno="975"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/>uiStatus;</highlight></codeline>
-<codeline lineno="976"><highlight class="normal"><sp/><sp/><ref refid="pco__structures_8h_1aa39b39d94407451a6ec0226479db68cf" kindref="member">DWORD</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>HISError;</highlight></codeline>
-<codeline lineno="977"><highlight class="normal"><sp/><sp/><ref refid="pco__structures_8h_1aa39b39d94407451a6ec0226479db68cf" kindref="member">DWORD</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FGError;</highlight></codeline>
+<codeline lineno="976"><highlight class="normal"><sp/><sp/>DWORD<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>HISError;</highlight></codeline>
+<codeline lineno="977"><highlight class="normal"><sp/><sp/>DWORD<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FGError;</highlight></codeline>
 <codeline lineno="978"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*functionName<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;endAcqCallbackC&quot;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="979"><highlight class="normal"></highlight></codeline>
 <codeline lineno="980"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__X64</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="981"><highlight class="normal"><sp/><sp/>uiStatus<sp/>=<sp/><sp/>Acquisition_GetAcqData(hAcqDesc,<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>**)<sp/>&amp;pPerkinElmer);</highlight></codeline>
 <codeline lineno="982"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="983"><highlight class="normal"><sp/><sp/>uiStatus<sp/>=<sp/><sp/>Acquisition_GetAcqData(hAcqDesc,<sp/>(<ref refid="pco__structures_8h_1aa39b39d94407451a6ec0226479db68cf" kindref="member">DWORD</ref><sp/>*)<sp/>&amp;pPerkinElmer);</highlight></codeline>
+<codeline lineno="983"><highlight class="normal"><sp/><sp/>uiStatus<sp/>=<sp/><sp/>Acquisition_GetAcqData(hAcqDesc,<sp/>(DWORD<sp/>*)<sp/>&amp;pPerkinElmer);</highlight></codeline>
 <codeline lineno="984"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="985"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(uiStatus<sp/>!=<sp/>0)<sp/>{</highlight></codeline>
 <codeline lineno="986"><highlight class="normal"><sp/><sp/><sp/><sp/>Acquisition_GetErrorCode(hAcqDesc,<sp/>&amp;HISError,<sp/>&amp;FGError);</highlight></codeline>
@@ -1612,11 +1612,11 @@
 <codeline lineno="1016"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>Doing<sp/>this<sp/>here<sp/>is<sp/>much<sp/>more<sp/>efficient<sp/>that<sp/>doing<sp/>it<sp/>when<sp/>correcting<sp/>the<sp/>offset</highlight></codeline>
 <codeline lineno="1017"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>on<sp/>every<sp/>frame<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="1018"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>offset;</highlight></codeline>
-<codeline lineno="1019"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>;</highlight></codeline>
+<codeline lineno="1019"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i;</highlight></codeline>
 <codeline lineno="1020"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>getIntegerParam(<ref refid="class_perkin_elmer_1a9b3620925ddfa6f71b9a3431a4df6c7d" kindref="member">PE_OffsetConstant</ref>,<sp/>&amp;offset);</highlight></codeline>
 <codeline lineno="1021"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(offset<sp/>!=<sp/>0)<sp/>{</highlight></codeline>
-<codeline lineno="1022"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(i=0;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>&lt;uiRows_*uiColumns_;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>++)<sp/>{</highlight></codeline>
-<codeline lineno="1023"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pOffsetBuffer_[<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>]<sp/>-=<sp/>offset;</highlight></codeline>
+<codeline lineno="1022"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(i=0;<sp/>i&lt;uiRows_*uiColumns_;<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="1023"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pOffsetBuffer_[i]<sp/>-=<sp/>offset;</highlight></codeline>
 <codeline lineno="1024"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="1025"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="1026"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
@@ -1803,9 +1803,9 @@
 <codeline lineno="1218"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>imageMode;</highlight></codeline>
 <codeline lineno="1219"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>triggerMode;</highlight></codeline>
 <codeline lineno="1220"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>syncMode;</highlight></codeline>
-<codeline lineno="1221"><highlight class="normal"><sp/><sp/><ref refid="pco__structures_8h_1aa39b39d94407451a6ec0226479db68cf" kindref="member">DWORD</ref><sp/><sp/><sp/>dwTriggerMode;</highlight></codeline>
+<codeline lineno="1221"><highlight class="normal"><sp/><sp/>DWORD<sp/><sp/><sp/>dwTriggerMode;</highlight></codeline>
 <codeline lineno="1222"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><sp/>acquireTime;</highlight></codeline>
-<codeline lineno="1223"><highlight class="normal"><sp/><sp/><ref refid="pco__structures_8h_1aa39b39d94407451a6ec0226479db68cf" kindref="member">DWORD</ref><sp/><sp/><sp/>dwDwellTime;</highlight></codeline>
+<codeline lineno="1223"><highlight class="normal"><sp/><sp/>DWORD<sp/><sp/><sp/>dwDwellTime;</highlight></codeline>
 <codeline lineno="1224"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>delayTime;</highlight></codeline>
 <codeline lineno="1225"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>uiPEResult;</highlight></codeline>
 <codeline lineno="1226"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*functionName<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;acquireStart&quot;</highlight><highlight class="normal">;</highlight></codeline>
@@ -1857,7 +1857,7 @@
 <codeline lineno="1272"><highlight class="normal"><sp/><sp/><sp/><sp/>reportXISStatus(uiPEResult,<sp/>functionName,<sp/></highlight><highlight class="stringliteral">&quot;Acquisition_SetFrameSyncTimeMode(hAcqDesc_=%p,<sp/>uiMode=%d,<sp/>delayTime=%d)\n&quot;</highlight><highlight class="normal">,<sp/></highlight></codeline>
 <codeline lineno="1273"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>hAcqDesc_,<sp/>0,<sp/>delayTime);</highlight></codeline>
 <codeline lineno="1274"><highlight class="normal"><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline lineno="1275"><highlight class="normal"><sp/><sp/><sp/><sp/>dwDwellTime<sp/>=<sp/>(<ref refid="pco__structures_8h_1aa39b39d94407451a6ec0226479db68cf" kindref="member">DWORD</ref>)<sp/>(acquireTime<sp/>*<sp/>1000000);</highlight></codeline>
+<codeline lineno="1275"><highlight class="normal"><sp/><sp/><sp/><sp/>dwDwellTime<sp/>=<sp/>(DWORD)<sp/>(acquireTime<sp/>*<sp/>1000000);</highlight></codeline>
 <codeline lineno="1276"><highlight class="normal"><sp/><sp/><sp/><sp/>uiPEResult<sp/>=<sp/>Acquisition_SetTimerSync(hAcqDesc_,<sp/>&amp;dwDwellTime);</highlight></codeline>
 <codeline lineno="1277"><highlight class="normal"><sp/><sp/><sp/><sp/>reportXISStatus(uiPEResult,<sp/>functionName,<sp/></highlight><highlight class="stringliteral">&quot;Acquisition_SetTimerSync(hAcqDesc_=%p,<sp/>dwDwellTime=%d)\n&quot;</highlight><highlight class="normal">,<sp/>hAcqDesc_,<sp/>dwDwellTime);</highlight></codeline>
 <codeline lineno="1278"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>The<sp/>actual<sp/>acquire<sp/>time<sp/>could<sp/>be<sp/>different<sp/>from<sp/>requested</highlight><highlight class="normal"></highlight></codeline>
@@ -2055,7 +2055,7 @@
 <codeline lineno="1473"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1474"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(pGainBuffer_<sp/>!=<sp/>NULL)</highlight></codeline>
 <codeline lineno="1475"><highlight class="normal"><sp/><sp/>free<sp/>(pGainBuffer_);</highlight></codeline>
-<codeline lineno="1476"><highlight class="normal"><sp/><sp/>pGainBuffer_<sp/>=<sp/>(<ref refid="pco__structures_8h_1aa39b39d94407451a6ec0226479db68cf" kindref="member">DWORD</ref><sp/>*)<sp/>malloc(uiRows_<sp/>*<sp/>uiColumns_<sp/>*<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="pco__structures_8h_1aa39b39d94407451a6ec0226479db68cf" kindref="member">DWORD</ref>));</highlight></codeline>
+<codeline lineno="1476"><highlight class="normal"><sp/><sp/>pGainBuffer_<sp/>=<sp/>(DWORD<sp/>*)<sp/>malloc(uiRows_<sp/>*<sp/>uiColumns_<sp/>*<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(DWORD));</highlight></codeline>
 <codeline lineno="1477"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(pGainBuffer_<sp/>==<sp/>NULL)</highlight></codeline>
 <codeline lineno="1478"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
 <codeline lineno="1479"><highlight class="normal"><sp/><sp/><sp/><sp/>asynPrint(pasynUserSelf,<sp/>ASYN_TRACE_ERROR,</highlight></codeline>
@@ -2154,7 +2154,7 @@
 <codeline lineno="1580"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>driverName,<sp/>functionName,<sp/>gainFile);</highlight></codeline>
 <codeline lineno="1581"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>asynError;</highlight></codeline>
 <codeline lineno="1582"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1583"><highlight class="normal"><sp/><sp/>iByteDepth<sp/>=<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal"><sp/>(<ref refid="pco__structures_8h_1aa39b39d94407451a6ec0226479db68cf" kindref="member">DWORD</ref>);</highlight></codeline>
+<codeline lineno="1583"><highlight class="normal"><sp/><sp/>iByteDepth<sp/>=<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal"><sp/>(DWORD);</highlight></codeline>
 <codeline lineno="1584"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1585"><highlight class="normal"><sp/><sp/>fwrite<sp/>((</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*)<sp/>&amp;iSizeX,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">),<sp/>1,<sp/>pOutputFile);</highlight></codeline>
 <codeline lineno="1586"><highlight class="normal"><sp/><sp/>fwrite<sp/>((</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*)<sp/>&amp;iSizeY,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">),<sp/>1,<sp/>pOutputFile);</highlight></codeline>
@@ -2233,7 +2233,7 @@
 <codeline lineno="1660"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>driverName,<sp/>functionName,<sp/>gainPath);</highlight></codeline>
 <codeline lineno="1661"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>asynError;</highlight></codeline>
 <codeline lineno="1662"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1663"><highlight class="normal"><sp/><sp/>pGainBuffer_<sp/>=<sp/>(<ref refid="pco__structures_8h_1aa39b39d94407451a6ec0226479db68cf" kindref="member">DWORD</ref><sp/>*)<sp/>malloc<sp/>(iSizeX<sp/>*<sp/>iSizeY<sp/>*<sp/>iByteDepth);</highlight></codeline>
+<codeline lineno="1663"><highlight class="normal"><sp/><sp/>pGainBuffer_<sp/>=<sp/>(DWORD<sp/>*)<sp/>malloc<sp/>(iSizeX<sp/>*<sp/>iSizeY<sp/>*<sp/>iByteDepth);</highlight></codeline>
 <codeline lineno="1664"><highlight class="normal"><sp/><sp/>fread<sp/>(pGainBuffer_,<sp/>iByteDepth,<sp/>iSizeX<sp/>*<sp/>iSizeY,<sp/>pInputFile);</highlight></codeline>
 <codeline lineno="1665"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ferror<sp/>(pInputFile))<sp/>{</highlight></codeline>
 <codeline lineno="1666"><highlight class="normal"><sp/><sp/><sp/><sp/>asynPrint(pasynUserSelf,<sp/>ASYN_TRACE_ERROR,</highlight></codeline>

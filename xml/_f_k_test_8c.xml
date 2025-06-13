@@ -103,7 +103,7 @@
 <codeline lineno="23"><highlight class="normal"><sp/><sp/>at_32<sp/>*pArray;</highlight></codeline>
 <codeline lineno="24"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>AAFastKinetics=4,<sp/>ATInternal=0;</highlight></codeline>
 <codeline lineno="25"><highlight class="normal"><sp/><sp/>time_t<sp/>startTime,<sp/>endTime;</highlight></codeline>
-<codeline lineno="26"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i;</highlight></codeline>
 <codeline lineno="27"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>firstImage,<sp/>lastImage;</highlight></codeline>
 <codeline lineno="28"><highlight class="normal"><sp/><sp/>at_32<sp/>validFirst,<sp/>validLast;</highlight></codeline>
 <codeline lineno="29"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>fileName[256];</highlight></codeline>
@@ -149,7 +149,7 @@
 <codeline lineno="69"><highlight class="normal"><sp/><sp/><ref refid="_f_k_test_8c_1aab495acadd31c5ed58cccfeeb40ed16d" kindref="member">checkStatus</ref>(GetNumberNewImages(&amp;firstImage,<sp/>&amp;lastImage));</highlight></codeline>
 <codeline lineno="70"><highlight class="normal"><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;First<sp/>image=%d,<sp/>last<sp/>image=%d\n&quot;</highlight><highlight class="normal">,<sp/>firstImage,<sp/>lastImage);</highlight></codeline>
 <codeline lineno="71"><highlight class="normal"><sp/><sp/></highlight></codeline>
-<codeline lineno="72"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(i=firstImage;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>&lt;=lastImage;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>++)<sp/>{</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(i=firstImage;<sp/>i&lt;=lastImage;<sp/>i++)<sp/>{</highlight></codeline>
 <codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;Processing<sp/>image<sp/>%d\n&quot;</highlight><highlight class="normal">,<sp/>i);</highlight></codeline>
 <codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>sprintf(fileName,<sp/></highlight><highlight class="stringliteral">&quot;tiff_test_%d.tif&quot;</highlight><highlight class="normal">,<sp/>i);</highlight></codeline>
 <codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;<sp/><sp/>SaveAsTiffEx(%s,<sp/>%s,<sp/>%d,<sp/>1,<sp/>1)\n&quot;</highlight><highlight class="normal">,<sp/>fileName,<sp/>palFilePath,<sp/>i);</highlight></codeline>

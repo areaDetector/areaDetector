@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/areaDetector/areaDetector/ADPylon/pylonApp/src/ADPylon.cpp" line="112" column="13" bodyfile="/home/runner/work/areaDetector/areaDetector/ADPylon/pylonApp/src/ADPylon.cpp" bodystart="112" bodyend="-1"/>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADPylon/pylonApp/src/ADPylon.cpp" line="120" column="13" bodyfile="/home/runner/work/areaDetector/areaDetector/ADPylon/pylonApp/src/ADPylon.cpp" bodystart="120" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -36,7 +36,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/areaDetector/areaDetector/ADPylon/pylonApp/src/ADPylon.cpp" line="99" column="5" bodyfile="/home/runner/work/areaDetector/areaDetector/ADPylon/pylonApp/src/ADPylon.cpp" bodystart="99" bodyend="103"/>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADPylon/pylonApp/src/ADPylon.cpp" line="103" column="5" bodyfile="/home/runner/work/areaDetector/areaDetector/ADPylon/pylonApp/src/ADPylon.cpp" bodystart="103" bodyend="107"/>
       </memberdef>
       <memberdef kind="function" id="class_a_d_pylon_configuration_event_handler_1a14b858e2f5e42543cd0d40a5df083add" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
         <type>void</type>
@@ -53,8 +53,9 @@
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
+<para>Notify the PylonCameraTask thread, instead of calling cameraDisconnected directly. Because this method is invoked with camera object locked. calling cameraDisconnected will acquire asyn port lock. However a normal camera interaction acquires the locks in the reverse order. This could cause a deadlock.</para>
         </inbodydescription>
-        <location file="/home/runner/work/areaDetector/areaDetector/ADPylon/pylonApp/src/ADPylon.cpp" line="105" column="18" bodyfile="/home/runner/work/areaDetector/areaDetector/ADPylon/pylonApp/src/ADPylon.cpp" bodystart="105" bodyend="110"/>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADPylon/pylonApp/src/ADPylon.cpp" line="109" column="18" bodyfile="/home/runner/work/areaDetector/areaDetector/ADPylon/pylonApp/src/ADPylon.cpp" bodystart="109" bodyend="118"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -84,7 +85,7 @@
         <label>Pylon::CConfigurationEventHandler</label>
       </node>
     </collaborationgraph>
-    <location file="/home/runner/work/areaDetector/areaDetector/ADPylon/pylonApp/src/ADPylon.cpp" line="96" column="1" bodyfile="/home/runner/work/areaDetector/areaDetector/ADPylon/pylonApp/src/ADPylon.cpp" bodystart="97" bodyend="113"/>
+    <location file="/home/runner/work/areaDetector/areaDetector/ADPylon/pylonApp/src/ADPylon.cpp" line="100" column="1" bodyfile="/home/runner/work/areaDetector/areaDetector/ADPylon/pylonApp/src/ADPylon.cpp" bodystart="101" bodyend="121"/>
     <listofallmembers>
       <member refid="class_a_d_pylon_configuration_event_handler_1a240fc70788a34c96731f63c9f2c2fcc8" prot="public" virt="non-virtual"><scope>ADPylonConfigurationEventHandler</scope><name>ADPylonConfigurationEventHandler</name></member>
       <member refid="class_a_d_pylon_configuration_event_handler_1acd906d2ad7f793934bb534167ae9c6bc" prot="private" virt="non-virtual"><scope>ADPylonConfigurationEventHandler</scope><name>driver_</name></member>

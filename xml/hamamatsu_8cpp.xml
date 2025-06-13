@@ -608,7 +608,7 @@
 <codeline lineno="67"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="68"><highlight class="normal"></highlight></codeline>
 <codeline lineno="69"><highlight class="normal"></highlight><highlight class="comment">//Hamamatsu<sp/>functions</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="70"><highlight class="normal">BOOL<sp/>hamamatsu::copy_targetarea(<sp/>HDCAM<sp/>hdcam,<sp/>int32<sp/>iFrame,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/><ref refid="udp__client__pixirad__single_8cpp_1ac8ed9b9edf72a0bbde1ba01f0c67ef73" kindref="member">buf</ref>,<sp/>int32<sp/>rowbytes,<sp/>int32<sp/>ox,<sp/>int32<sp/>oy,<sp/>int32<sp/>cx,<sp/>int32<sp/>cy<sp/>)</highlight></codeline>
+<codeline lineno="70"><highlight class="normal">BOOL<sp/>hamamatsu::copy_targetarea(<sp/>HDCAM<sp/>hdcam,<sp/>int32<sp/>iFrame,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>buf,<sp/>int32<sp/>rowbytes,<sp/>int32<sp/>ox,<sp/>int32<sp/>oy,<sp/>int32<sp/>cx,<sp/>int32<sp/>cy<sp/>)</highlight></codeline>
 <codeline lineno="71"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>DCAMERR<sp/>err;</highlight></codeline>
 <codeline lineno="73"><highlight class="normal"></highlight></codeline>
@@ -620,7 +620,7 @@
 <codeline lineno="79"><highlight class="normal"></highlight></codeline>
 <codeline lineno="80"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>USE_COPYFRAME</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>set<sp/>user<sp/>buffer<sp/>information<sp/>and<sp/>copied<sp/>ROI</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>bufframe.buf<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/><ref refid="udp__client__pixirad__single_8cpp_1ac8ed9b9edf72a0bbde1ba01f0c67ef73" kindref="member">buf</ref>;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>bufframe.buf<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>buf;</highlight></codeline>
 <codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>bufframe.rowbytes<sp/><sp/><sp/>=<sp/>rowbytes;</highlight></codeline>
 <codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>bufframe.left<sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>ox;</highlight></codeline>
 <codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>bufframe.top<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>oy;</highlight></codeline>
@@ -632,7 +632,7 @@
 <codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<sp/>failed(err)<sp/>)</highlight></codeline>
 <codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dcamcon_show_dcamerr(<sp/>hdcam,<sp/>err,<sp/></highlight><highlight class="stringliteral">&quot;dcambuf_copyframe()&quot;</highlight><highlight class="normal"><sp/>);</highlight></codeline>
-<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="pco_8cpp_1aa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref>;</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>FALSE;</highlight></codeline>
 <codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="96"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>access<sp/>image</highlight><highlight class="normal"></highlight></codeline>
@@ -640,22 +640,22 @@
 <codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<sp/>failed(err)<sp/>)</highlight></codeline>
 <codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dcamcon_show_dcamerr(<sp/>hdcam,<sp/>err,<sp/></highlight><highlight class="stringliteral">&quot;dcambuf_lockframe()&quot;</highlight><highlight class="normal"><sp/>);</highlight></codeline>
-<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="pco_8cpp_1aa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref>;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>FALSE;</highlight></codeline>
 <codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="104"><highlight class="normal"></highlight></codeline>
 <codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<sp/>bufframe.type<sp/>!=<sp/>DCAM_PIXELTYPE_MONO16<sp/>)</highlight></codeline>
 <codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(<sp/></highlight><highlight class="stringliteral">&quot;not<sp/>implement<sp/>pixel<sp/>type\n&quot;</highlight><highlight class="normal"><sp/>);</highlight></codeline>
-<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="pco_8cpp_1aa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref>;</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>FALSE;</highlight></codeline>
 <codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="110"><highlight class="normal"></highlight></codeline>
 <codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>copy<sp/>target<sp/>ROI</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacehdf5_1abeed318faeb13380e1b4221bd4198bf1af7b01b3012e6f0f2613f4b22e8c256f8" kindref="member">int32</ref><sp/>copyrowbytes<sp/>=<sp/>cx<sp/>*<sp/>2;</highlight></codeline>
 <codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>pSrc<sp/>=<sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*)bufframe.buf<sp/>+<sp/>oy<sp/>*<sp/>bufframe.rowbytes<sp/>+<sp/>ox<sp/>*<sp/>2;</highlight></codeline>
-<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>pDst<sp/>=<sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*)<ref refid="udp__client__pixirad__single_8cpp_1ac8ed9b9edf72a0bbde1ba01f0c67ef73" kindref="member">buf</ref>;</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>pDst<sp/>=<sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*)buf;</highlight></codeline>
 <codeline lineno="115"><highlight class="normal"></highlight></codeline>
-<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespacemake_adl_1ac2a9315bdefaa07c3f8dc9416feae40f" kindref="member">y</ref>;</highlight></codeline>
-<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(<sp/>y<sp/>=<sp/>0;<sp/><ref refid="namespacemake_adl_1ac2a9315bdefaa07c3f8dc9416feae40f" kindref="member">y</ref><sp/>&lt;<sp/>cy;<sp/><ref refid="namespacemake_adl_1ac2a9315bdefaa07c3f8dc9416feae40f" kindref="member">y</ref>++<sp/>)</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>y;</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(<sp/>y<sp/>=<sp/>0;<sp/>y<sp/>&lt;<sp/>cy;<sp/>y++<sp/>)</highlight></codeline>
 <codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>memcpy_s(<sp/>pDst,<sp/>rowbytes,<sp/>pSrc,<sp/>copyrowbytes<sp/>);</highlight></codeline>
 <codeline lineno="120"><highlight class="normal"></highlight></codeline>
@@ -664,7 +664,7 @@
 <codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="124"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="125"><highlight class="normal"></highlight></codeline>
-<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="pco_8cpp_1aa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref>;</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>TRUE;</highlight></codeline>
 <codeline lineno="127"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="128"><highlight class="normal"></highlight></codeline>
 <codeline lineno="137"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>hamamatsu::get_image_information(<sp/>HDCAM<sp/>hdcam,<sp/>int32&amp;<sp/>pixeltype,<sp/>int32&amp;<sp/>width,<sp/>int32&amp;<sp/>rowbytes,<sp/>int32&amp;<sp/>height<sp/>)</highlight></codeline>
@@ -1059,7 +1059,7 @@
 <codeline lineno="532"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(imageMode<sp/>==<sp/><ref refid="_a_d_driver_8h_1a4e304cb4683f0862cc3ca9b5fff213e2adead2fd35be4d7d411f48c04d00d576c" kindref="member">ADImageMultiple</ref>)<sp/>{</highlight></codeline>
 <codeline lineno="533"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>numImages;</highlight></codeline>
 <codeline lineno="534"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>getIntegerParam(<ref refid="class_a_d_driver_1a46e8f2fa100c21f2f0689c415b441fb0" kindref="member">ADNumImages</ref>,<sp/>&amp;numImages);</highlight></codeline>
-<codeline lineno="535"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i=0;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>&lt;numImages;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>++)<sp/>{</highlight></codeline>
+<codeline lineno="535"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i=0;<sp/>i&lt;numImages;<sp/>i++)<sp/>{</highlight></codeline>
 <codeline lineno="536"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>wait<sp/>image</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="537"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;unlock();</highlight></codeline>
 <codeline lineno="538"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>err<sp/>=<sp/>dcamwait_start(<sp/>hwait,<sp/>&amp;waitstart<sp/>);</highlight></codeline>
@@ -1554,14 +1554,14 @@
 <codeline lineno="1037"><highlight class="normal"><sp/><sp/><sp/><sp/>err<sp/>=<sp/>dcamprop_getvalue(<sp/>hdcam,<sp/>DCAM_IDPROP_SENSORCOOLERSTATUS,<sp/>&amp;tempCoolerStatus);</highlight></codeline>
 <codeline lineno="1038"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//setStringParam<sp/>(HamaSensorCoolerStatus,<sp/>std::to_string(tempCoolerStatus).c_str()<sp/>);</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="1039"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1040"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><ref refid="namespacemake_adl_1aa3555ee1b51957c744975e1b7fbae3ef" kindref="member">text</ref>[64];</highlight></codeline>
+<codeline lineno="1040"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>text[64];</highlight></codeline>
 <codeline lineno="1041"><highlight class="normal"><sp/><sp/><sp/><sp/>DCAMPROP_VALUETEXT<sp/>valueText;</highlight></codeline>
 <codeline lineno="1042"><highlight class="normal"><sp/><sp/><sp/><sp/>memset(<sp/>&amp;valueText,<sp/>0,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(valueText)<sp/>);</highlight></codeline>
 <codeline lineno="1043"><highlight class="normal"><sp/><sp/><sp/><sp/>valueText.cbSize<sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(valueText);</highlight></codeline>
 <codeline lineno="1044"><highlight class="normal"><sp/><sp/><sp/><sp/>valueText.iProp<sp/><sp/><sp/><sp/>=<sp/>DCAM_IDPROP_SENSORCOOLERSTATUS;</highlight></codeline>
 <codeline lineno="1045"><highlight class="normal"><sp/><sp/><sp/><sp/>valueText.value<sp/><sp/><sp/><sp/>=<sp/>tempCoolerStatus;</highlight></codeline>
-<codeline lineno="1046"><highlight class="normal"><sp/><sp/><sp/><sp/>valueText.text<sp/><sp/><sp/><sp/>=<sp/><ref refid="namespacemake_adl_1aa3555ee1b51957c744975e1b7fbae3ef" kindref="member">text</ref>;</highlight></codeline>
-<codeline lineno="1047"><highlight class="normal"><sp/><sp/><sp/><sp/>valueText.textbytes<sp/>=<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="namespacemake_adl_1aa3555ee1b51957c744975e1b7fbae3ef" kindref="member">text</ref>);</highlight></codeline>
+<codeline lineno="1046"><highlight class="normal"><sp/><sp/><sp/><sp/>valueText.text<sp/><sp/><sp/><sp/>=<sp/>text;</highlight></codeline>
+<codeline lineno="1047"><highlight class="normal"><sp/><sp/><sp/><sp/>valueText.textbytes<sp/>=<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(text);</highlight></codeline>
 <codeline lineno="1048"><highlight class="normal"><sp/><sp/><sp/><sp/>err<sp/>=<sp/>dcamprop_getvaluetext(<sp/>hdcam,<sp/>&amp;valueText<sp/>);</highlight></codeline>
 <codeline lineno="1049"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<sp/>failed(err)<sp/>)<sp/>{</highlight></codeline>
 <codeline lineno="1050"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dcamcon_show_dcamerr(<sp/>hdcam,<sp/>err,<sp/></highlight><highlight class="stringliteral">&quot;dcamprop_getvaluetext()&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;IDPROP:SENSORCOOLERSTATUS&quot;</highlight><highlight class="normal"><sp/>);</highlight></codeline>
@@ -1586,7 +1586,7 @@
 <codeline lineno="1075"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1076"><highlight class="normal"><sp/><sp/><sp/><sp/>fprintf(fp,<sp/></highlight><highlight class="stringliteral">&quot;Hamamatsu<sp/>detector<sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/>this-&gt;portName);</highlight></codeline>
 <codeline lineno="1077"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(details<sp/>&gt;<sp/>0)<sp/>{</highlight></codeline>
-<codeline lineno="1078"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespacemake_adl_1a3c7364e67c0570681ac29158f738bff6" kindref="member">nx</ref>,<sp/>ny,<sp/><ref refid="_a_d_pylon_8cpp_1a048925b4357a1b4d6015c2113e05ce9f" kindref="member">dataType</ref>;</highlight></codeline>
+<codeline lineno="1078"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nx,<sp/>ny,<sp/><ref refid="_a_d_pylon_8cpp_1a048925b4357a1b4d6015c2113e05ce9f" kindref="member">dataType</ref>;</highlight></codeline>
 <codeline lineno="1079"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>getIntegerParam(<ref refid="class_a_d_driver_1a918ef4b3d80695f6872fd169b09b639a" kindref="member">ADSizeX</ref>,<sp/>&amp;nx);</highlight></codeline>
 <codeline lineno="1080"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>getIntegerParam(<ref refid="class_a_d_driver_1a59ba3ba61b2b6f51dc9d88d81680b632" kindref="member">ADSizeY</ref>,<sp/>&amp;ny);</highlight></codeline>
 <codeline lineno="1081"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>getIntegerParam(<ref refid="classasyn_n_d_array_driver_1af71358738ff1dbe4c9185f105807f799" kindref="member">NDDataType</ref>,<sp/>&amp;<ref refid="_a_d_pylon_8cpp_1a048925b4357a1b4d6015c2113e05ce9f" kindref="member">dataType</ref>);</highlight></codeline>

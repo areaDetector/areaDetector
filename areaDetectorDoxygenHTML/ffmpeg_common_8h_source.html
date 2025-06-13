@@ -64,30 +64,31 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;libavcodec/avcodec.h&quot;</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;libswscale/swscale.h&quot;</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;libavformat/avformat.h&quot;</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>}</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment">/* areaDetector includes */</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &quot;<a class="code" href="_n_d_array_8h.html">NDArray.h</a>&quot;</span></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment">/* asyn includes */</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &quot;asynDriver.h&quot;</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment">/* This wraps the initialisation of the ffmpeg library */</span></div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keywordtype">void</span> <a class="code hl_function" href="ffmpeg_common_8h.html#adfbd5f55a740c1d8aa175847169acd67">ffmpegInitialise</a>();</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="comment">/* This is needed to give a neutral colour to Mono8 jpegs. Needs to be at</span></div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment">   least maxw * maxh / 2 in size */</span></div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="ffmpeg_common_8h.html#a15bc85ccf7e4058595071f484a8473fd">   26</a></span><span class="preprocessor">#define NEUTRAL_FRAME_SIZE 4000 * 3000 / 2</span></div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="comment">/* This formats an NDArray so that it matches the input for a particular</span></div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="comment">   codec context */</span></div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="keywordtype">int</span> <a class="code hl_function" href="ffmpeg_common_8h.html#ab6f0216aa17760826df4630964370220">formatArray</a>(<a class="code hl_class" href="class_n_d_array.html">NDArray</a> *pArray, asynUser *pasynUser, AVFrame *inPicture,</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>                <span class="keyword">struct</span> SwsContext **pCtx, AVCodecContext *c, AVFrame *scPicture);</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;libavutil/imgutils.h&quot;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>}</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment">/* areaDetector includes */</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &quot;<a class="code" href="_n_d_array_8h.html">NDArray.h</a>&quot;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment">/* asyn includes */</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &quot;asynDriver.h&quot;</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment">/* This wraps the initialisation of the ffmpeg library */</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keywordtype">void</span> <a class="code hl_function" href="ffmpeg_common_8h.html#adfbd5f55a740c1d8aa175847169acd67">ffmpegInitialise</a>();</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment">/* This is needed to give a neutral colour to Mono8 jpegs. Needs to be at</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment">   least maxw * maxh / 2 in size */</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="ffmpeg_common_8h.html#a15bc85ccf7e4058595071f484a8473fd">   27</a></span><span class="preprocessor">#define NEUTRAL_FRAME_SIZE 4000 * 3000 / 2</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="comment">/* This formats an NDArray so that it matches the input for a particular</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="comment">   codec context */</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="keywordtype">int</span> <a class="code hl_function" href="ffmpeg_common_8h.html#ab6f0216aa17760826df4630964370220">formatArray</a>(<a class="code hl_class" href="class_n_d_array.html">NDArray</a> *pArray, asynUser *pasynUser, AVFrame *inPicture,</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>                <span class="keyword">struct</span> SwsContext **pCtx, AVCodecContext *c, AVFrame *scPicture);</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="a_n_d_array_8h_html"><div class="ttname"><a href="_n_d_array_8h.html">NDArray.h</a></div></div>
 <div class="ttc" id="aclass_n_d_array_html"><div class="ttname"><a href="class_n_d_array.html">NDArray</a></div><div class="ttdoc">N-dimensional array class; each array has a set of dimensions, a data type, pointer to data,...</div><div class="ttdef"><b>Definition</b> NDArray.h:99</div></div>
-<div class="ttc" id="affmpeg_common_8h_html_ab6f0216aa17760826df4630964370220"><div class="ttname"><a href="ffmpeg_common_8h.html#ab6f0216aa17760826df4630964370220">formatArray</a></div><div class="ttdeci">int formatArray(NDArray *pArray, asynUser *pasynUser, AVFrame *inPicture, struct SwsContext **pCtx, AVCodecContext *c, AVFrame *scPicture)</div><div class="ttdoc">Format an NDArray as an AVFrame using the codec context c.</div><div class="ttdef"><b>Definition</b> ffmpegCommon.cpp:30</div></div>
+<div class="ttc" id="affmpeg_common_8h_html_ab6f0216aa17760826df4630964370220"><div class="ttname"><a href="ffmpeg_common_8h.html#ab6f0216aa17760826df4630964370220">formatArray</a></div><div class="ttdeci">int formatArray(NDArray *pArray, asynUser *pasynUser, AVFrame *inPicture, struct SwsContext **pCtx, AVCodecContext *c, AVFrame *scPicture)</div><div class="ttdoc">Format an NDArray as an AVFrame using the codec context c.</div><div class="ttdef"><b>Definition</b> ffmpegCommon.cpp:24</div></div>
 <div class="ttc" id="affmpeg_common_8h_html_adfbd5f55a740c1d8aa175847169acd67"><div class="ttname"><a href="ffmpeg_common_8h.html#adfbd5f55a740c1d8aa175847169acd67">ffmpegInitialise</a></div><div class="ttdeci">void ffmpegInitialise()</div><div class="ttdoc">Initialise the ffmpeg library.</div><div class="ttdef"><b>Definition</b> ffmpegCommon.cpp:7</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

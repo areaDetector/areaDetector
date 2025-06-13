@@ -1,8 +1,15 @@
 ADLambda
 ========
 
-:author:  John Hammonds (Argonne National Laboratory)
+:author: John Hammonds, Keenan Lang, Mark Rivers
 
+.. _ADLambda: https://areadetector.github.io/master/areaDetectorDoxygenHTML/ADLambda.html
+.. _ADLambda class: https://areadetector.github.io/master/areaDetectorDoxygenHTML/classADLambda.html
+.. _ADDriver: https://areadetector.github.io/master/ADCore/ADDriver.html
+.. _X-Spectrum: https://x-spectrum.de/
+.. _areaDetector: https://areadetector.github.io/master/index.html
+.. _EPICS: http://www.aps.anl.gov/epics
+.. _asynNDArrayDriver: https://areadetector.github.io/master/ADCore/NDArray.html#asynndarraydriver
 
 Table Of Contents
 -----------------
@@ -12,10 +19,22 @@ Table Of Contents
 Introduction
 ------------
 
-This is an `EPICS <https://www.aps.anl.gov/epics>`__
-`areaDetector <https://cars.uchicago.edu/software/epics/areaDetector.html>`__
-driver for the Lambda detector from
-`X-spectrum <http://www.x-spectrum.de>`__
+This is an `EPICS`_ `areaDetector`_ driver for the XSP Lambda detectors
+from `X-Spectrum`_. It has been tested on the Lambda 250K, 750K, and 2M.
+The driver communicates with the detector via the xsp library.
+
+
+This driver inherits from `ADDriver`_. It implements many of the
+parameters in `asynNDArrayDriver`_ and in `ADDriver`_. It
+also implements a number of parameters that are specific to the Lambda
+detector. The `ADLambda class`_ describes this class in detail.
+
+This driver was built upon a multithreaded architecture. Each detector
+is composed of any number of individual camera modules. An aquisition
+thread is generated for each of the detector's modules. Using offsets
+listed in the Lambda detector's configuration, the individual modules'
+images are stitched into a combined NDArray, which an additional thread
+is in charge of exporting to the areaDetector plugin pipeline.
 
 The interface to the detector is provided by a TCP/UDP/IP socket
 interface to the detector. X-Spectrum provides a library to handle
@@ -70,6 +89,18 @@ the standard driver parameters.
       button is pressed.  Acquisition on the Lambda is controlled
       by setting a defined number of images.  "Continuous" has been
       removed from the options.
+  * - DataType_RBV
+    - DataType is set based on the Lambda's operating mode parameter. When operating
+      with a 1- or 6- bit bit-depth, the DataType will be set to UInt8. For 12-bit,
+      the DataType is UInt16, and 24-bit is UInt32.
+  * - MaxSizeX_RBV
+    - The size of the final, stitched frame in the X direction
+  * - MaxSizeY_RBV
+    - The size of the final, stitched frame in the Y direction
+  * - ArraySizeX_RBV
+    - The size of the final, stitched frame in the X direction
+  * - ArraySizeY_RBV
+    - The size of the final, stitched frame in the Y direction
 
 Lambda specific parameters
 --------------------------

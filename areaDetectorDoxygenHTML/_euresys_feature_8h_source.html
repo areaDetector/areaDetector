@@ -57,80 +57,400 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;<a class="code" href="_gen_i_cam_feature_8h.html">GenICamFeature.h</a>&gt;</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;EGrabber.h&quot;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">using namespace </span>Euresys;</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
-<div class="foldopen" id="foldopen00009" data-start="{" data-end="};">
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="class_euresys_feature.html">    9</a></span><span class="keyword">class </span><a class="code hl_class" href="class_euresys_feature.html">EuresysFeature</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_gen_i_cam_feature.html">GenICamFeature</a></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>{</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <a class="code hl_class" href="class_euresys_feature.html">EuresysFeature</a>(<a class="code hl_class" href="class_gen_i_cam_feature_set.html">GenICamFeatureSet</a> *set, </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>              std::string <span class="keyword">const</span> &amp; asynName, asynParamType asynType, <span class="keywordtype">int</span> asynIndex,</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>              std::string <span class="keyword">const</span> &amp; featureName, <a class="code hl_enumeration" href="_gen_i_cam_feature_8h.html#a7e16ddb9db92703eb6dc8b3d6bfd5f05">GCFeatureType_t</a> featureType);</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="class_euresys_feature.html#a83fe970d67e4d426adf087d07a0780e2">isImplemented</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="class_euresys_feature.html#aa4ecf8e3a1baa820a94aa29d8e303bf4">isAvailable</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="class_euresys_feature.html#aa900459a47c16cb83fffe3ccaee9004c">isReadable</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="class_euresys_feature.html#aa64771271f57ff61f1015a5c80ea70c9">isWritable</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keyword">virtual</span> epicsInt64 <a class="code hl_function" href="class_euresys_feature.html#a3303c632cea6eabb27e67665769ec2f0">readInteger</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keyword">virtual</span> epicsInt64 <a class="code hl_function" href="class_euresys_feature.html#a4f92a8668dd2826ee4437c64814d8eab">readIntegerMin</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keyword">virtual</span> epicsInt64 <a class="code hl_function" href="class_euresys_feature.html#a24039dae61767419a641dfd8ad2167cd">readIntegerMax</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keyword">virtual</span> epicsInt64 <a class="code hl_function" href="class_euresys_feature.html#a823a73f5c5fe0236dda4ef96c6f2f974">readIncrement</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_euresys_feature.html#a1337a7abcdd680b9e1e88407fb740419">writeInteger</a>(epicsInt64 value);</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="class_euresys_feature.html#aba63e05f118463cfb3a510080b256b3c">readBoolean</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_euresys_feature.html#aadd71781e32c8c41004a8b37e0477d09">writeBoolean</a> (<span class="keywordtype">bool</span> value);</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keyword">virtual</span> <span class="keywordtype">double</span> <a class="code hl_function" href="class_euresys_feature.html#afd516039d764b061f509616505a3eb37">readDouble</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keyword">virtual</span> <span class="keywordtype">double</span> <a class="code hl_function" href="class_euresys_feature.html#ae810867a481954f98aee1c623b90a30d">readDoubleMin</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keyword">virtual</span> <span class="keywordtype">double</span> <a class="code hl_function" href="class_euresys_feature.html#a84c5777353c0759ed5e33e55c7d9030a">readDoubleMax</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_euresys_feature.html#a7a30b1e5fed35cd842cfd7f192bb949a">writeDouble</a>(<span class="keywordtype">double</span> value);</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code hl_function" href="class_euresys_feature.html#a71ecbee2d824925577cdc9eb0496ea7b">readEnumIndex</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_euresys_feature.html#a2d04eb3dfda77cab1d12a338ced40755">writeEnumIndex</a>(<span class="keywordtype">int</span> value);</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keyword">virtual</span> std::string <a class="code hl_function" href="class_euresys_feature.html#a26c263f15b0c3825a57a50b399af6970">readEnumString</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_euresys_feature.html#a6dd199ca44defbced68211e3a046630d">writeEnumString</a>(std::string <span class="keyword">const</span> &amp; value);</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_euresys_feature.html#a4a36abaa7f296874f851b6076397e573">readEnumChoices</a>(std::vector&lt;std::string&gt;&amp; enumStrings, std::vector&lt;int&gt;&amp; enumValues);</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keyword">virtual</span> std::string <a class="code hl_function" href="class_euresys_feature.html#a0ad1e6fdbdd77b12d4fa9915f353b167">readString</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_euresys_feature.html#aa42b7ae60eda6d4609e78f26edd8e491">writeString</a>(std::string <span class="keyword">const</span> &amp; value);</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_euresys_feature.html#ad794a2d19c87bd6e631d60dd0d3d2de9">writeCommand</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keywordtype">void</span> reportError(<span class="keyword">const</span> <span class="keywordtype">char</span> *functionName, <span class="keyword">const</span> <span class="keywordtype">char</span> *errorSource, <span class="keyword">const</span> <span class="keywordtype">char</span> *errorWhat);</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    asynUser *mAsynUser;</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <a class="code hl_typedef" href="_a_d_euresys_8h.html#a709a39b88cd8b9fe794a555aa93225e9">EGRABBER_CALLBACK</a> *mGrabber;</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    std::string mFeatureName;</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keywordtype">bool</span> mIsImplemented;</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>};</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;<a class="code" href="_a_d_euresys_8h.html">ADEuresys.h</a>&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;EGrabber.h&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">using namespace </span>Euresys;</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *className = <span class="stringliteral">&quot;EuresysFeature&quot;</span>;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="foldopen" id="foldopen00013" data-start="{" data-end="};">
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="class_euresys_feature.html">   13</a></span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> ModuleType&gt; <span class="keyword">class </span><a class="code hl_class" href="class_euresys_feature.html">EuresysFeature</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_gen_i_cam_feature.html">GenICamFeature</a></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>{</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="foldopen" id="foldopen00017" data-start="{" data-end="}">
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="class_euresys_feature.html#a1bb7d499ee32b76948c4968337b9ae4b">   17</a></span>    <a class="code hl_function" href="class_euresys_feature.html#a1bb7d499ee32b76948c4968337b9ae4b">EuresysFeature</a>(<a class="code hl_class" href="class_gen_i_cam_feature_set.html">GenICamFeatureSet</a> *set, </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>                         std::string <span class="keyword">const</span> &amp; asynName, asynParamType asynType, <span class="keywordtype">int</span> asynIndex,</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>                         std::string <span class="keyword">const</span> &amp; featureName, <a class="code hl_enumeration" href="_gen_i_cam_feature_8h.html#a7e16ddb9db92703eb6dc8b3d6bfd5f05">GCFeatureType_t</a> featureType)</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>                         </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>             : <a class="code hl_class" href="class_gen_i_cam_feature.html">GenICamFeature</a>(set, asynName, asynType, asynIndex, featureName, featureType),</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>             mAsynUser(set-&gt;getUser()),</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>             mFeatureName(featureName)</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    {</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *functionName = <span class="stringliteral">&quot;EuresysFeature&quot;</span>;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        <a class="code hl_class" href="class_a_d_euresys.html">ADEuresys</a> *pDrv = (<a class="code hl_class" href="class_a_d_euresys.html">ADEuresys</a> *) <a class="code hl_variable" href="class_gen_i_cam_feature.html#a5e5da91c112e6b5eb261869d751bf82e">mSet</a>-&gt;<a class="code hl_function" href="class_gen_i_cam_feature_set.html#a59ef8093dcdf7b4d9efdda42f3233bb8">getPortDriver</a>();</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        mGrabber = pDrv-&gt;<a class="code hl_function" href="class_a_d_euresys.html#a1be2db3e04405b15b0de6202e5aafbb1">getGrabber</a>();</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        <span class="keywordflow">try</span> {</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>            mIsImplemented = mGrabber-&gt;getInteger&lt;ModuleType&gt;(query::implemented(mFeatureName)) ? <span class="keyword">true</span> : <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        }</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        <span class="keywordflow">catch</span> (std::exception &amp;e) {</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>            asynPrint(mAsynUser, ASYN_TRACE_ERROR, <span class="stringliteral">&quot;%s::%s query error for implemented=%s\n&quot;</span>, </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>                      className, functionName, e.what());</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        }</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    }</div>
 </div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    </div>
+<div class="foldopen" id="foldopen00039" data-start="{" data-end="}">
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="class_euresys_feature.html#a5da29cb8709864573d25364ad38000a0">   39</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_euresys_feature.html#a5da29cb8709864573d25364ad38000a0">isImplemented</a>() { </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        <span class="keywordflow">return</span> mIsImplemented; </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    }</div>
+</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    </div>
+<div class="foldopen" id="foldopen00043" data-start="{" data-end="}">
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="class_euresys_feature.html#a9625409bce624fc843787ca49e8bf014">   43</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_euresys_feature.html#a9625409bce624fc843787ca49e8bf014">isAvailable</a>() {</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *functionName = <span class="stringliteral">&quot;isAvailable&quot;</span>;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        <span class="keywordtype">bool</span> value = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        <span class="keywordflow">if</span> (!mIsImplemented) <span class="keywordflow">return</span> value;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        <span class="keywordflow">try</span> {</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>            value = mGrabber-&gt;getInteger&lt;ModuleType&gt;(query::available(mFeatureName)) ? <span class="keyword">true</span> : <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        }</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        <span class="keywordflow">catch</span> (std::exception &amp;e) {</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>            reportError(functionName, <span class="stringliteral">&quot;query error for available&quot;</span>, e.what());</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        }</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        <span class="keywordflow">return</span> value;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>     }</div>
+</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    </div>
+<div class="foldopen" id="foldopen00056" data-start="{" data-end="}">
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="class_euresys_feature.html#a60931556fa07a9b245571894ea979c54">   56</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_euresys_feature.html#a60931556fa07a9b245571894ea979c54">isReadable</a>() {</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *functionName = <span class="stringliteral">&quot;isReadable&quot;</span>;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        <span class="keywordtype">bool</span> value = <span class="keyword">false</span>; </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        <span class="keywordflow">if</span> (!mIsImplemented) <span class="keywordflow">return</span> value;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        <span class="keywordflow">try</span> {</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>            value = mGrabber-&gt;getInteger&lt;ModuleType&gt;(query::readable(mFeatureName)) ? <span class="keyword">true</span> : <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        }</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        <span class="keywordflow">catch</span> (std::exception &amp;e) {</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>            reportError(functionName, <span class="stringliteral">&quot;query error for readable&quot;</span>, e.what());</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        }</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        <span class="keywordflow">return</span> value;</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    }</div>
+</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    </div>
+<div class="foldopen" id="foldopen00069" data-start="{" data-end="}">
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="class_euresys_feature.html#a6935ec50a9f0febd917d3f72cc2dc55f">   69</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_euresys_feature.html#a6935ec50a9f0febd917d3f72cc2dc55f">isWritable</a>() {</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *functionName = <span class="stringliteral">&quot;isWritable&quot;</span>;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        <span class="keywordtype">bool</span> value = <span class="keyword">false</span>; </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        <span class="keywordflow">if</span> (!mIsImplemented) <span class="keywordflow">return</span> value;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        <span class="keywordflow">try</span> {</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>            value = mGrabber-&gt;getInteger&lt;ModuleType&gt;(query::writeable(mFeatureName)) ? <span class="keyword">true</span> : <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        }</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        <span class="keywordflow">catch</span> (std::exception &amp;e) {</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>            reportError(functionName, <span class="stringliteral">&quot;query error for writeable&quot;</span>, e.what());</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        }</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        <span class="keywordflow">return</span> value;</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    }</div>
+</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    </div>
+<div class="foldopen" id="foldopen00082" data-start="{" data-end="}">
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="class_euresys_feature.html#aca1a0d890de58003a7b312e515feef59">   82</a></span>    epicsInt64 <a class="code hl_function" href="class_euresys_feature.html#aca1a0d890de58003a7b312e515feef59">readInteger</a>() {</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *functionName = <span class="stringliteral">&quot;readInteger&quot;</span>;</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        epicsInt64 value = 0;</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        <span class="keywordflow">try</span> {</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>            value = mGrabber-&gt;getInteger&lt;ModuleType&gt;(mFeatureName);</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        }</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        <span class="keywordflow">catch</span> (std::exception &amp;e) {</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>            reportError(functionName, <span class="stringliteral">&quot;error calling getInteger&quot;</span>, e.what());</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        }</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        <span class="keywordflow">return</span> value;</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    }</div>
+</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    </div>
+<div class="foldopen" id="foldopen00094" data-start="{" data-end="}">
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno"><a class="line" href="class_euresys_feature.html#a4078b1393ea6fc11c9c8b31873258162">   94</a></span>    epicsInt64 <a class="code hl_function" href="class_euresys_feature.html#a4078b1393ea6fc11c9c8b31873258162">readIntegerMin</a>() {</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *functionName = <span class="stringliteral">&quot;readIntegerMin&quot;</span>;</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        epicsInt64 value = 0;</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        <span class="keywordflow">try</span> {</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>            value = mGrabber-&gt;getInteger&lt;ModuleType&gt;(mFeatureName+<span class="stringliteral">&quot;.Min&quot;</span>);</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        }</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        <span class="keywordflow">catch</span> (std::exception &amp;e) {</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>            reportError(functionName, <span class="stringliteral">&quot;error calling getInteger&quot;</span>, e.what());</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>        }</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        <span class="keywordflow">return</span> value;</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    }</div>
+</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    </div>
+<div class="foldopen" id="foldopen00106" data-start="{" data-end="}">
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno"><a class="line" href="class_euresys_feature.html#a9150cce36c5aab541912df702eefec28">  106</a></span>    epicsInt64 <a class="code hl_function" href="class_euresys_feature.html#a9150cce36c5aab541912df702eefec28">readIntegerMax</a>() {</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *functionName = <span class="stringliteral">&quot;readIntegerMax&quot;</span>;</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>        epicsInt64 value = 0;</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        <span class="keywordflow">try</span> {</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>            value = mGrabber-&gt;getInteger&lt;ModuleType&gt;(mFeatureName+<span class="stringliteral">&quot;.Max&quot;</span>);</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>        }</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>        <span class="keywordflow">catch</span> (std::exception &amp;e) {</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>            reportError(functionName, <span class="stringliteral">&quot;error calling getInteger&quot;</span>, e.what());</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>        }</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>        <span class="keywordflow">return</span> value;</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    }</div>
+</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    </div>
+<div class="foldopen" id="foldopen00118" data-start="{" data-end="}">
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno"><a class="line" href="class_euresys_feature.html#a5ae9ffbaf8e50f97144a74df513bc664">  118</a></span>    epicsInt64 <a class="code hl_function" href="class_euresys_feature.html#a5ae9ffbaf8e50f97144a74df513bc664">readIncrement</a>() { </div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>        <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *functionName = <span class="stringliteral">&quot;readIncrement&quot;</span>;</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>        epicsInt64 value = 0;</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>        <span class="keywordflow">try</span> {</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>            value = mGrabber-&gt;getInteger&lt;ModuleType&gt;(mFeatureName+<span class="stringliteral">&quot;.Inc&quot;</span>);</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>        }</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>        <span class="keywordflow">catch</span> (std::exception &amp;e) {</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>            reportError(functionName, <span class="stringliteral">&quot;error calling getInteger&quot;</span>, e.what());</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>        }</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>        <span class="keywordflow">return</span> value;</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    }</div>
+</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    </div>
+<div class="foldopen" id="foldopen00130" data-start="{" data-end="}">
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno"><a class="line" href="class_euresys_feature.html#a7c65b05716f59f11a14bb59be478d91d">  130</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_euresys_feature.html#a7c65b05716f59f11a14bb59be478d91d">writeInteger</a>(epicsInt64 value) { </div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>        <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *functionName = <span class="stringliteral">&quot;writeInteger&quot;</span>;</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>        <span class="keywordflow">try</span> {</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>            mGrabber-&gt;setInteger&lt;ModuleType&gt;(mFeatureName, value);</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>        }</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>        <span class="keywordflow">catch</span> (std::exception &amp;e) {</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>            reportError(functionName, <span class="stringliteral">&quot;error calling setInteger&quot;</span>, e.what());</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>        }</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    }</div>
+</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    </div>
+<div class="foldopen" id="foldopen00140" data-start="{" data-end="}">
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno"><a class="line" href="class_euresys_feature.html#a00e3ab7c0f6214456a3b46de9f9d1123">  140</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_euresys_feature.html#a00e3ab7c0f6214456a3b46de9f9d1123">readBoolean</a>() { </div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>        <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *functionName = <span class="stringliteral">&quot;readBoolean&quot;</span>;</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>        epicsInt64 value = 0;</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>        <span class="keywordflow">try</span> {</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>            value = mGrabber-&gt;getInteger&lt;ModuleType&gt;(mFeatureName);</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>        }</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>        <span class="keywordflow">catch</span> (std::exception &amp;e) {</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>            reportError(functionName, <span class="stringliteral">&quot;error calling getInteger&quot;</span>, e.what());</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>        }</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>        <span class="keywordflow">return</span> value ? true : <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    }</div>
+</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    </div>
+<div class="foldopen" id="foldopen00152" data-start="{" data-end="}">
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno"><a class="line" href="class_euresys_feature.html#a4cc091856ca103ded702e8134c694914">  152</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_euresys_feature.html#a4cc091856ca103ded702e8134c694914">writeBoolean</a>(<span class="keywordtype">bool</span> bval) {</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>        <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *functionName = <span class="stringliteral">&quot;writeBoolean&quot;</span>;</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>        epicsInt64 value = bval ? 1 : 0;</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>        <span class="keywordflow">try</span> {</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>            mGrabber-&gt;setInteger&lt;ModuleType&gt;(mFeatureName, value);</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>        }</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>        <span class="keywordflow">catch</span> (std::exception &amp;e) {</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>            reportError(functionName, <span class="stringliteral">&quot;error calling setInteger&quot;</span>, e.what());</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>        }</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>    }</div>
+</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>    </div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>    <span class="comment">// The Mikrotron cameras use integer node types for ExposureTime and AcquisitionFrameRate but ADGenICam expects these to be float nodes.</span></div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>    <span class="comment">// These double methods need to handle integers</span></div>
+<div class="foldopen" id="foldopen00165" data-start="{" data-end="}">
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno"><a class="line" href="class_euresys_feature.html#ad980bb6d98c855de7d9f200496c3a013">  165</a></span>    <span class="keywordtype">double</span> <a class="code hl_function" href="class_euresys_feature.html#ad980bb6d98c855de7d9f200496c3a013">readDouble</a>() {</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>        <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *functionName = <span class="stringliteral">&quot;readDouble&quot;</span>;</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>        epicsFloat64 value = 0;</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>        <span class="keywordflow">try</span> {</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>            value = mGrabber-&gt;getFloat&lt;ModuleType&gt;(mFeatureName);</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>        }</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>        <span class="keywordflow">catch</span> (std::exception &amp;e) {</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>            reportError(functionName, <span class="stringliteral">&quot;error calling getFloat&quot;</span>, e.what());</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>        }</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>        <span class="keywordflow">return</span> value;</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>    }</div>
+</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>    </div>
+<div class="foldopen" id="foldopen00177" data-start="{" data-end="}">
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno"><a class="line" href="class_euresys_feature.html#a45dc39a1e438a08e86979e7c96c0ed2b">  177</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_euresys_feature.html#a45dc39a1e438a08e86979e7c96c0ed2b">writeDouble</a>(<span class="keywordtype">double</span> value) { </div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>        <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *functionName = <span class="stringliteral">&quot;writeDouble&quot;</span>;</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>        <span class="keywordflow">try</span> {</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>            mGrabber-&gt;setFloat&lt;ModuleType&gt;(mFeatureName, value);</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>        }</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>        <span class="keywordflow">catch</span> (std::exception &amp;e) {</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>            reportError(functionName, <span class="stringliteral">&quot;error calling setFloat&quot;</span>, e.what());</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>        }</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>    }</div>
+</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>    </div>
+<div class="foldopen" id="foldopen00187" data-start="{" data-end="}">
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno"><a class="line" href="class_euresys_feature.html#a3ce25f74a09be56e7865307a8a129568">  187</a></span>    <span class="keywordtype">double</span> <a class="code hl_function" href="class_euresys_feature.html#a3ce25f74a09be56e7865307a8a129568">readDoubleMin</a>() {</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>        <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *functionName = <span class="stringliteral">&quot;readDoubleMin&quot;</span>;</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>        epicsFloat64 value = 0;</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>        <span class="keywordflow">try</span> {</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>            value = mGrabber-&gt;getFloat&lt;ModuleType&gt;(mFeatureName+<span class="stringliteral">&quot;.Min&quot;</span>);</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>        }</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>        <span class="keywordflow">catch</span> (std::exception &amp;e) {</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>            reportError(functionName, <span class="stringliteral">&quot;error calling getFloat&quot;</span>, e.what());</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>        }</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>        <span class="keywordflow">return</span> value;</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>    }</div>
+</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>    </div>
+<div class="foldopen" id="foldopen00199" data-start="{" data-end="}">
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno"><a class="line" href="class_euresys_feature.html#aa7ff3a7e9c99c3f048a8e06234387612">  199</a></span>    <span class="keywordtype">double</span> <a class="code hl_function" href="class_euresys_feature.html#aa7ff3a7e9c99c3f048a8e06234387612">readDoubleMax</a>() {</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>        <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *functionName = <span class="stringliteral">&quot;readDoubleMax&quot;</span>;</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>        epicsFloat64 value = 0;</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>        <span class="keywordflow">try</span> {</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>            value = mGrabber-&gt;getFloat&lt;ModuleType&gt;(mFeatureName+<span class="stringliteral">&quot;.Max&quot;</span>);</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>        }</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>        <span class="keywordflow">catch</span> (std::exception &amp;e) {</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>            reportError(functionName, <span class="stringliteral">&quot;error calling getFloat&quot;</span>, e.what());</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>        }</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>        <span class="keywordflow">return</span> value;</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>    }</div>
+</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>    </div>
+<div class="foldopen" id="foldopen00211" data-start="{" data-end="}">
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno"><a class="line" href="class_euresys_feature.html#afd88c124ee64691b7ea79a11020085d5">  211</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_euresys_feature.html#afd88c124ee64691b7ea79a11020085d5">readEnumIndex</a>() { </div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>        <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *functionName = <span class="stringliteral">&quot;readEnumIndex&quot;</span>;</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>        epicsInt64 value=0;</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>        <span class="keywordflow">try</span> {</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>            value = mGrabber-&gt;getInteger&lt;ModuleType&gt;(mFeatureName);</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>        }</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>        <span class="keywordflow">catch</span> (std::exception &amp;e) {</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>            reportError(functionName, <span class="stringliteral">&quot;error calling getInteger&quot;</span>, e.what());</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>        }</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>        <span class="keywordflow">return</span> (<span class="keywordtype">int</span>) value;</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>    }</div>
+</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>    </div>
+<div class="foldopen" id="foldopen00223" data-start="{" data-end="}">
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno"><a class="line" href="class_euresys_feature.html#ae572b8372eb75a02876430063bcb520d">  223</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_euresys_feature.html#ae572b8372eb75a02876430063bcb520d">writeEnumIndex</a>(<span class="keywordtype">int</span> value) {</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>        <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *functionName = <span class="stringliteral">&quot;writeEnumIndex&quot;</span>;</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>        <span class="keywordflow">try</span> {</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>            mGrabber-&gt;setInteger&lt;ModuleType&gt;(mFeatureName, (epicsInt64)value);</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>        }</div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>        <span class="keywordflow">catch</span> (std::exception &amp;e) {</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>            reportError(functionName, <span class="stringliteral">&quot;error calling setInteger&quot;</span>, e.what());</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>        }</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>    }</div>
+</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>    </div>
+<div class="foldopen" id="foldopen00233" data-start="{" data-end="}">
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno"><a class="line" href="class_euresys_feature.html#a7d3e234cfa4bd24344db654d1050b75d">  233</a></span>    std::string <a class="code hl_function" href="class_euresys_feature.html#a7d3e234cfa4bd24344db654d1050b75d">readEnumString</a>() { </div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>        <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *functionName = <span class="stringliteral">&quot;readEnumString&quot;</span>;</div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>        std::string value;</div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>        <span class="keywordflow">try</span> {</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>            value = mGrabber-&gt;getString&lt;ModuleType&gt;(mFeatureName);</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>        }</div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>        <span class="keywordflow">catch</span> (std::exception &amp;e) {</div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>            reportError(functionName, <span class="stringliteral">&quot;error calling getString&quot;</span>, e.what());</div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>        }</div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>        <span class="keywordflow">return</span> value;</div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>    }</div>
+</div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>    </div>
+<div class="foldopen" id="foldopen00245" data-start="{" data-end="}">
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno"><a class="line" href="class_euresys_feature.html#ad4fb17be055e8b00eccd248d4ab14c25">  245</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_euresys_feature.html#ad4fb17be055e8b00eccd248d4ab14c25">writeEnumString</a>(std::string <span class="keyword">const</span> &amp;value) { </div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>    }</div>
+</div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>    </div>
+<div class="foldopen" id="foldopen00248" data-start="{" data-end="}">
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno"><a class="line" href="class_euresys_feature.html#a0317441a9b704ea596f95e02dec4532a">  248</a></span>    std::string <a class="code hl_function" href="class_euresys_feature.html#a0317441a9b704ea596f95e02dec4532a">readString</a>() { </div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>        <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *functionName = <span class="stringliteral">&quot;readString&quot;</span>;</div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>        std::string value;</div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>        <span class="keywordflow">try</span> {</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>            value = mGrabber-&gt;getString&lt;ModuleType&gt;(mFeatureName);</div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>        }</div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>        <span class="keywordflow">catch</span> (std::exception &amp;e) {</div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>            reportError(functionName, <span class="stringliteral">&quot;error calling getString&quot;</span>, e.what());</div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>        }</div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>        <span class="keywordflow">return</span> value;</div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>    }</div>
+</div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>    </div>
+<div class="foldopen" id="foldopen00260" data-start="{" data-end="}">
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno"><a class="line" href="class_euresys_feature.html#a424561cfa422b6577f2f0f2df259f080">  260</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_euresys_feature.html#a424561cfa422b6577f2f0f2df259f080">writeString</a>(std::string <span class="keyword">const</span> &amp; value) { </div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>        <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *functionName = <span class="stringliteral">&quot;writeString&quot;</span>;</div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>        <span class="keywordflow">try</span> {</div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>            mGrabber-&gt;setString&lt;ModuleType&gt;(mFeatureName, value);</div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>        }</div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>        <span class="keywordflow">catch</span> (std::exception &amp;e) {</div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>            reportError(functionName, <span class="stringliteral">&quot;error calling setString&quot;</span>, e.what());</div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>        }</div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>    }</div>
+</div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>    </div>
+<div class="foldopen" id="foldopen00270" data-start="{" data-end="}">
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno"><a class="line" href="class_euresys_feature.html#a42f3dec9ec4bd4acec100eaacc414682">  270</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_euresys_feature.html#a42f3dec9ec4bd4acec100eaacc414682">writeCommand</a>() {</div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>        <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *functionName = <span class="stringliteral">&quot;writeCommand&quot;</span>;</div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>        <span class="keywordflow">try</span> {</div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>            mGrabber-&gt;execute&lt;ModuleType&gt;(mFeatureName);</div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>        }</div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>        <span class="keywordflow">catch</span> (std::exception &amp;e) {</div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>            reportError(functionName, <span class="stringliteral">&quot;error calling execute&quot;</span>, e.what());</div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>        }</div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>    }</div>
+</div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>    </div>
+<div class="foldopen" id="foldopen00280" data-start="{" data-end="}">
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno"><a class="line" href="class_euresys_feature.html#a9a0be41b432ab0dc485105c786fda0b3">  280</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_euresys_feature.html#a9a0be41b432ab0dc485105c786fda0b3">readEnumChoices</a>(std::vector&lt;std::string&gt;&amp; enumStrings, std::vector&lt;int&gt;&amp; enumValues) {</div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>        <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *functionName = <span class="stringliteral">&quot;readEnumChoices&quot;</span>;</div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>        std::vector&lt;std::string&gt; strs;</div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>        <span class="keywordflow">try</span> {</div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>            strs = mGrabber-&gt;getStringList&lt;ModuleType&gt;(query::enumEntries(mFeatureName));</div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>        }</div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>        <span class="keywordflow">catch</span> (std::exception &amp;e) {</div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>            reportError(functionName, <span class="stringliteral">&quot;error calling getStrings&quot;</span>, e.what());</div>
+<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>        }</div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>        enumStrings = strs;</div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>        epicsInt64 ival=0;</div>
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i=0; i&lt;strs.size(); i++) {</div>
+<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>            <span class="keywordflow">try</span> {</div>
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>                ival = mGrabber-&gt;getInteger&lt;ModuleType&gt;(mFeatureName+<span class="stringliteral">&quot;.Entry.&quot;</span>+enumStrings[i]);</div>
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>            }</div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>            <span class="keywordflow">catch</span> (std::exception &amp;e) {</div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>                reportError(functionName, <span class="stringliteral">&quot;error calling getInteger&quot;</span>, e.what());</div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>            }</div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>            enumValues.push_back((<span class="keywordtype">int</span>)ival);</div>
+<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>        }</div>
+<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>    }</div>
+</div>
+<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span> </div>
+<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>    <span class="keywordtype">void</span> reportError(<span class="keyword">const</span> <span class="keywordtype">char</span> *functionName, <span class="keyword">const</span> <span class="keywordtype">char</span> *errorSource, <span class="keyword">const</span> <span class="keywordtype">char</span> *errorWhat) {</div>
+<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span>        asynPrint(mAsynUser, ASYN_TRACE_ERROR, <span class="stringliteral">&quot;%s::%s feature=%s %s=%s\n&quot;</span>,</div>
+<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>                  className, functionName, mFeatureName.c_str(), errorSource, errorWhat);</div>
+<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>    }</div>
+<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>    asynUser *mAsynUser;</div>
+<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span>    <a class="code hl_typedef" href="_a_d_euresys_8h.html#a709a39b88cd8b9fe794a555aa93225e9">EGRABBER_CALLBACK</a> *mGrabber;</div>
+<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span>    std::string mFeatureName;</div>
+<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span>    <span class="keywordtype">bool</span> mIsImplemented;</div>
+<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span> </div>
+<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span>};</div>
+</div>
+<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span> </div>
+<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="a_a_d_euresys_8h_html"><div class="ttname"><a href="_a_d_euresys_8h.html">ADEuresys.h</a></div></div>
 <div class="ttc" id="a_a_d_euresys_8h_html_a709a39b88cd8b9fe794a555aa93225e9"><div class="ttname"><a href="_a_d_euresys_8h.html#a709a39b88cd8b9fe794a555aa93225e9">EGRABBER_CALLBACK</a></div><div class="ttdeci">EGrabber&lt; CallbackSingleThread &gt; EGRABBER_CALLBACK</div><div class="ttdef"><b>Definition</b> ADEuresys.h:11</div></div>
 <div class="ttc" id="a_gen_i_cam_feature_8h_html"><div class="ttname"><a href="_gen_i_cam_feature_8h.html">GenICamFeature.h</a></div></div>
 <div class="ttc" id="a_gen_i_cam_feature_8h_html_a7e16ddb9db92703eb6dc8b3d6bfd5f05"><div class="ttname"><a href="_gen_i_cam_feature_8h.html#a7e16ddb9db92703eb6dc8b3d6bfd5f05">GCFeatureType_t</a></div><div class="ttdeci">GCFeatureType_t</div><div class="ttdef"><b>Definition</b> GenICamFeature.h:13</div></div>
-<div class="ttc" id="aclass_euresys_feature_html"><div class="ttname"><a href="class_euresys_feature.html">EuresysFeature</a></div><div class="ttdef"><b>Definition</b> EuresysFeature.h:10</div></div>
-<div class="ttc" id="aclass_euresys_feature_html_a0ad1e6fdbdd77b12d4fa9915f353b167"><div class="ttname"><a href="class_euresys_feature.html#a0ad1e6fdbdd77b12d4fa9915f353b167">EuresysFeature::readString</a></div><div class="ttdeci">virtual std::string readString(void)</div><div class="ttdef"><b>Definition</b> EuresysFeature.cpp:244</div></div>
-<div class="ttc" id="aclass_euresys_feature_html_a1337a7abcdd680b9e1e88407fb740419"><div class="ttname"><a href="class_euresys_feature.html#a1337a7abcdd680b9e1e88407fb740419">EuresysFeature::writeInteger</a></div><div class="ttdeci">virtual void writeInteger(epicsInt64 value)</div><div class="ttdef"><b>Definition</b> EuresysFeature.cpp:126</div></div>
-<div class="ttc" id="aclass_euresys_feature_html_a24039dae61767419a641dfd8ad2167cd"><div class="ttname"><a href="class_euresys_feature.html#a24039dae61767419a641dfd8ad2167cd">EuresysFeature::readIntegerMax</a></div><div class="ttdeci">virtual epicsInt64 readIntegerMax(void)</div><div class="ttdef"><b>Definition</b> EuresysFeature.cpp:102</div></div>
-<div class="ttc" id="aclass_euresys_feature_html_a26c263f15b0c3825a57a50b399af6970"><div class="ttname"><a href="class_euresys_feature.html#a26c263f15b0c3825a57a50b399af6970">EuresysFeature::readEnumString</a></div><div class="ttdeci">virtual std::string readEnumString(void)</div><div class="ttdef"><b>Definition</b> EuresysFeature.cpp:229</div></div>
-<div class="ttc" id="aclass_euresys_feature_html_a2d04eb3dfda77cab1d12a338ced40755"><div class="ttname"><a href="class_euresys_feature.html#a2d04eb3dfda77cab1d12a338ced40755">EuresysFeature::writeEnumIndex</a></div><div class="ttdeci">virtual void writeEnumIndex(int value)</div><div class="ttdef"><b>Definition</b> EuresysFeature.cpp:219</div></div>
-<div class="ttc" id="aclass_euresys_feature_html_a3303c632cea6eabb27e67665769ec2f0"><div class="ttname"><a href="class_euresys_feature.html#a3303c632cea6eabb27e67665769ec2f0">EuresysFeature::readInteger</a></div><div class="ttdeci">virtual epicsInt64 readInteger(void)</div><div class="ttdef"><b>Definition</b> EuresysFeature.cpp:78</div></div>
-<div class="ttc" id="aclass_euresys_feature_html_a4a36abaa7f296874f851b6076397e573"><div class="ttname"><a href="class_euresys_feature.html#a4a36abaa7f296874f851b6076397e573">EuresysFeature::readEnumChoices</a></div><div class="ttdeci">virtual void readEnumChoices(std::vector&lt; std::string &gt; &amp;enumStrings, std::vector&lt; int &gt; &amp;enumValues)</div><div class="ttdef"><b>Definition</b> EuresysFeature.cpp:276</div></div>
-<div class="ttc" id="aclass_euresys_feature_html_a4f92a8668dd2826ee4437c64814d8eab"><div class="ttname"><a href="class_euresys_feature.html#a4f92a8668dd2826ee4437c64814d8eab">EuresysFeature::readIntegerMin</a></div><div class="ttdeci">virtual epicsInt64 readIntegerMin(void)</div><div class="ttdef"><b>Definition</b> EuresysFeature.cpp:90</div></div>
-<div class="ttc" id="aclass_euresys_feature_html_a6dd199ca44defbced68211e3a046630d"><div class="ttname"><a href="class_euresys_feature.html#a6dd199ca44defbced68211e3a046630d">EuresysFeature::writeEnumString</a></div><div class="ttdeci">virtual void writeEnumString(std::string const &amp;value)</div><div class="ttdef"><b>Definition</b> EuresysFeature.cpp:241</div></div>
-<div class="ttc" id="aclass_euresys_feature_html_a71ecbee2d824925577cdc9eb0496ea7b"><div class="ttname"><a href="class_euresys_feature.html#a71ecbee2d824925577cdc9eb0496ea7b">EuresysFeature::readEnumIndex</a></div><div class="ttdeci">virtual int readEnumIndex(void)</div><div class="ttdef"><b>Definition</b> EuresysFeature.cpp:207</div></div>
-<div class="ttc" id="aclass_euresys_feature_html_a7a30b1e5fed35cd842cfd7f192bb949a"><div class="ttname"><a href="class_euresys_feature.html#a7a30b1e5fed35cd842cfd7f192bb949a">EuresysFeature::writeDouble</a></div><div class="ttdeci">virtual void writeDouble(double value)</div><div class="ttdef"><b>Definition</b> EuresysFeature.cpp:173</div></div>
-<div class="ttc" id="aclass_euresys_feature_html_a823a73f5c5fe0236dda4ef96c6f2f974"><div class="ttname"><a href="class_euresys_feature.html#a823a73f5c5fe0236dda4ef96c6f2f974">EuresysFeature::readIncrement</a></div><div class="ttdeci">virtual epicsInt64 readIncrement(void)</div><div class="ttdef"><b>Definition</b> EuresysFeature.cpp:114</div></div>
-<div class="ttc" id="aclass_euresys_feature_html_a83fe970d67e4d426adf087d07a0780e2"><div class="ttname"><a href="class_euresys_feature.html#a83fe970d67e4d426adf087d07a0780e2">EuresysFeature::isImplemented</a></div><div class="ttdeci">virtual bool isImplemented(void)</div><div class="ttdef"><b>Definition</b> EuresysFeature.cpp:35</div></div>
-<div class="ttc" id="aclass_euresys_feature_html_a84c5777353c0759ed5e33e55c7d9030a"><div class="ttname"><a href="class_euresys_feature.html#a84c5777353c0759ed5e33e55c7d9030a">EuresysFeature::readDoubleMax</a></div><div class="ttdeci">virtual double readDoubleMax(void)</div><div class="ttdef"><b>Definition</b> EuresysFeature.cpp:195</div></div>
-<div class="ttc" id="aclass_euresys_feature_html_aa42b7ae60eda6d4609e78f26edd8e491"><div class="ttname"><a href="class_euresys_feature.html#aa42b7ae60eda6d4609e78f26edd8e491">EuresysFeature::writeString</a></div><div class="ttdeci">virtual void writeString(std::string const &amp;value)</div><div class="ttdef"><b>Definition</b> EuresysFeature.cpp:256</div></div>
-<div class="ttc" id="aclass_euresys_feature_html_aa4ecf8e3a1baa820a94aa29d8e303bf4"><div class="ttname"><a href="class_euresys_feature.html#aa4ecf8e3a1baa820a94aa29d8e303bf4">EuresysFeature::isAvailable</a></div><div class="ttdeci">virtual bool isAvailable(void)</div><div class="ttdef"><b>Definition</b> EuresysFeature.cpp:39</div></div>
-<div class="ttc" id="aclass_euresys_feature_html_aa64771271f57ff61f1015a5c80ea70c9"><div class="ttname"><a href="class_euresys_feature.html#aa64771271f57ff61f1015a5c80ea70c9">EuresysFeature::isWritable</a></div><div class="ttdeci">virtual bool isWritable(void)</div><div class="ttdef"><b>Definition</b> EuresysFeature.cpp:65</div></div>
-<div class="ttc" id="aclass_euresys_feature_html_aa900459a47c16cb83fffe3ccaee9004c"><div class="ttname"><a href="class_euresys_feature.html#aa900459a47c16cb83fffe3ccaee9004c">EuresysFeature::isReadable</a></div><div class="ttdeci">virtual bool isReadable(void)</div><div class="ttdef"><b>Definition</b> EuresysFeature.cpp:52</div></div>
-<div class="ttc" id="aclass_euresys_feature_html_aadd71781e32c8c41004a8b37e0477d09"><div class="ttname"><a href="class_euresys_feature.html#aadd71781e32c8c41004a8b37e0477d09">EuresysFeature::writeBoolean</a></div><div class="ttdeci">virtual void writeBoolean(bool value)</div><div class="ttdef"><b>Definition</b> EuresysFeature.cpp:148</div></div>
-<div class="ttc" id="aclass_euresys_feature_html_aba63e05f118463cfb3a510080b256b3c"><div class="ttname"><a href="class_euresys_feature.html#aba63e05f118463cfb3a510080b256b3c">EuresysFeature::readBoolean</a></div><div class="ttdeci">virtual bool readBoolean(void)</div><div class="ttdef"><b>Definition</b> EuresysFeature.cpp:136</div></div>
-<div class="ttc" id="aclass_euresys_feature_html_ad794a2d19c87bd6e631d60dd0d3d2de9"><div class="ttname"><a href="class_euresys_feature.html#ad794a2d19c87bd6e631d60dd0d3d2de9">EuresysFeature::writeCommand</a></div><div class="ttdeci">virtual void writeCommand(void)</div><div class="ttdef"><b>Definition</b> EuresysFeature.cpp:266</div></div>
-<div class="ttc" id="aclass_euresys_feature_html_ae810867a481954f98aee1c623b90a30d"><div class="ttname"><a href="class_euresys_feature.html#ae810867a481954f98aee1c623b90a30d">EuresysFeature::readDoubleMin</a></div><div class="ttdeci">virtual double readDoubleMin(void)</div><div class="ttdef"><b>Definition</b> EuresysFeature.cpp:183</div></div>
-<div class="ttc" id="aclass_euresys_feature_html_afd516039d764b061f509616505a3eb37"><div class="ttname"><a href="class_euresys_feature.html#afd516039d764b061f509616505a3eb37">EuresysFeature::readDouble</a></div><div class="ttdeci">virtual double readDouble(void)</div><div class="ttdef"><b>Definition</b> EuresysFeature.cpp:161</div></div>
+<div class="ttc" id="aclass_a_d_euresys_html"><div class="ttname"><a href="class_a_d_euresys.html">ADEuresys</a></div><div class="ttdoc">Main driver class inherited from areaDetectors ADDriver class.</div><div class="ttdef"><b>Definition</b> ADEuresys.h:30</div></div>
+<div class="ttc" id="aclass_a_d_euresys_html_a1be2db3e04405b15b0de6202e5aafbb1"><div class="ttname"><a href="class_a_d_euresys.html#a1be2db3e04405b15b0de6202e5aafbb1">ADEuresys::getGrabber</a></div><div class="ttdeci">EGRABBER_CALLBACK * getGrabber()</div><div class="ttdef"><b>Definition</b> ADEuresys.cpp:148</div></div>
+<div class="ttc" id="aclass_euresys_feature_html"><div class="ttname"><a href="class_euresys_feature.html">EuresysFeature</a></div><div class="ttdef"><b>Definition</b> EuresysFeature.h:14</div></div>
+<div class="ttc" id="aclass_euresys_feature_html_a00e3ab7c0f6214456a3b46de9f9d1123"><div class="ttname"><a href="class_euresys_feature.html#a00e3ab7c0f6214456a3b46de9f9d1123">EuresysFeature::readBoolean</a></div><div class="ttdeci">bool readBoolean()</div><div class="ttdef"><b>Definition</b> EuresysFeature.h:140</div></div>
+<div class="ttc" id="aclass_euresys_feature_html_a0317441a9b704ea596f95e02dec4532a"><div class="ttname"><a href="class_euresys_feature.html#a0317441a9b704ea596f95e02dec4532a">EuresysFeature::readString</a></div><div class="ttdeci">std::string readString()</div><div class="ttdef"><b>Definition</b> EuresysFeature.h:248</div></div>
+<div class="ttc" id="aclass_euresys_feature_html_a1bb7d499ee32b76948c4968337b9ae4b"><div class="ttname"><a href="class_euresys_feature.html#a1bb7d499ee32b76948c4968337b9ae4b">EuresysFeature::EuresysFeature</a></div><div class="ttdeci">EuresysFeature(GenICamFeatureSet *set, std::string const &amp;asynName, asynParamType asynType, int asynIndex, std::string const &amp;featureName, GCFeatureType_t featureType)</div><div class="ttdef"><b>Definition</b> EuresysFeature.h:17</div></div>
+<div class="ttc" id="aclass_euresys_feature_html_a3ce25f74a09be56e7865307a8a129568"><div class="ttname"><a href="class_euresys_feature.html#a3ce25f74a09be56e7865307a8a129568">EuresysFeature::readDoubleMin</a></div><div class="ttdeci">double readDoubleMin()</div><div class="ttdef"><b>Definition</b> EuresysFeature.h:187</div></div>
+<div class="ttc" id="aclass_euresys_feature_html_a4078b1393ea6fc11c9c8b31873258162"><div class="ttname"><a href="class_euresys_feature.html#a4078b1393ea6fc11c9c8b31873258162">EuresysFeature::readIntegerMin</a></div><div class="ttdeci">epicsInt64 readIntegerMin()</div><div class="ttdef"><b>Definition</b> EuresysFeature.h:94</div></div>
+<div class="ttc" id="aclass_euresys_feature_html_a424561cfa422b6577f2f0f2df259f080"><div class="ttname"><a href="class_euresys_feature.html#a424561cfa422b6577f2f0f2df259f080">EuresysFeature::writeString</a></div><div class="ttdeci">void writeString(std::string const &amp;value)</div><div class="ttdef"><b>Definition</b> EuresysFeature.h:260</div></div>
+<div class="ttc" id="aclass_euresys_feature_html_a42f3dec9ec4bd4acec100eaacc414682"><div class="ttname"><a href="class_euresys_feature.html#a42f3dec9ec4bd4acec100eaacc414682">EuresysFeature::writeCommand</a></div><div class="ttdeci">void writeCommand()</div><div class="ttdef"><b>Definition</b> EuresysFeature.h:270</div></div>
+<div class="ttc" id="aclass_euresys_feature_html_a45dc39a1e438a08e86979e7c96c0ed2b"><div class="ttname"><a href="class_euresys_feature.html#a45dc39a1e438a08e86979e7c96c0ed2b">EuresysFeature::writeDouble</a></div><div class="ttdeci">void writeDouble(double value)</div><div class="ttdef"><b>Definition</b> EuresysFeature.h:177</div></div>
+<div class="ttc" id="aclass_euresys_feature_html_a4cc091856ca103ded702e8134c694914"><div class="ttname"><a href="class_euresys_feature.html#a4cc091856ca103ded702e8134c694914">EuresysFeature::writeBoolean</a></div><div class="ttdeci">void writeBoolean(bool bval)</div><div class="ttdef"><b>Definition</b> EuresysFeature.h:152</div></div>
+<div class="ttc" id="aclass_euresys_feature_html_a5ae9ffbaf8e50f97144a74df513bc664"><div class="ttname"><a href="class_euresys_feature.html#a5ae9ffbaf8e50f97144a74df513bc664">EuresysFeature::readIncrement</a></div><div class="ttdeci">epicsInt64 readIncrement()</div><div class="ttdef"><b>Definition</b> EuresysFeature.h:118</div></div>
+<div class="ttc" id="aclass_euresys_feature_html_a5da29cb8709864573d25364ad38000a0"><div class="ttname"><a href="class_euresys_feature.html#a5da29cb8709864573d25364ad38000a0">EuresysFeature::isImplemented</a></div><div class="ttdeci">bool isImplemented()</div><div class="ttdef"><b>Definition</b> EuresysFeature.h:39</div></div>
+<div class="ttc" id="aclass_euresys_feature_html_a60931556fa07a9b245571894ea979c54"><div class="ttname"><a href="class_euresys_feature.html#a60931556fa07a9b245571894ea979c54">EuresysFeature::isReadable</a></div><div class="ttdeci">bool isReadable()</div><div class="ttdef"><b>Definition</b> EuresysFeature.h:56</div></div>
+<div class="ttc" id="aclass_euresys_feature_html_a6935ec50a9f0febd917d3f72cc2dc55f"><div class="ttname"><a href="class_euresys_feature.html#a6935ec50a9f0febd917d3f72cc2dc55f">EuresysFeature::isWritable</a></div><div class="ttdeci">bool isWritable()</div><div class="ttdef"><b>Definition</b> EuresysFeature.h:69</div></div>
+<div class="ttc" id="aclass_euresys_feature_html_a7c65b05716f59f11a14bb59be478d91d"><div class="ttname"><a href="class_euresys_feature.html#a7c65b05716f59f11a14bb59be478d91d">EuresysFeature::writeInteger</a></div><div class="ttdeci">void writeInteger(epicsInt64 value)</div><div class="ttdef"><b>Definition</b> EuresysFeature.h:130</div></div>
+<div class="ttc" id="aclass_euresys_feature_html_a7d3e234cfa4bd24344db654d1050b75d"><div class="ttname"><a href="class_euresys_feature.html#a7d3e234cfa4bd24344db654d1050b75d">EuresysFeature::readEnumString</a></div><div class="ttdeci">std::string readEnumString()</div><div class="ttdef"><b>Definition</b> EuresysFeature.h:233</div></div>
+<div class="ttc" id="aclass_euresys_feature_html_a9150cce36c5aab541912df702eefec28"><div class="ttname"><a href="class_euresys_feature.html#a9150cce36c5aab541912df702eefec28">EuresysFeature::readIntegerMax</a></div><div class="ttdeci">epicsInt64 readIntegerMax()</div><div class="ttdef"><b>Definition</b> EuresysFeature.h:106</div></div>
+<div class="ttc" id="aclass_euresys_feature_html_a9625409bce624fc843787ca49e8bf014"><div class="ttname"><a href="class_euresys_feature.html#a9625409bce624fc843787ca49e8bf014">EuresysFeature::isAvailable</a></div><div class="ttdeci">bool isAvailable()</div><div class="ttdef"><b>Definition</b> EuresysFeature.h:43</div></div>
+<div class="ttc" id="aclass_euresys_feature_html_a9a0be41b432ab0dc485105c786fda0b3"><div class="ttname"><a href="class_euresys_feature.html#a9a0be41b432ab0dc485105c786fda0b3">EuresysFeature::readEnumChoices</a></div><div class="ttdeci">void readEnumChoices(std::vector&lt; std::string &gt; &amp;enumStrings, std::vector&lt; int &gt; &amp;enumValues)</div><div class="ttdef"><b>Definition</b> EuresysFeature.h:280</div></div>
+<div class="ttc" id="aclass_euresys_feature_html_aa7ff3a7e9c99c3f048a8e06234387612"><div class="ttname"><a href="class_euresys_feature.html#aa7ff3a7e9c99c3f048a8e06234387612">EuresysFeature::readDoubleMax</a></div><div class="ttdeci">double readDoubleMax()</div><div class="ttdef"><b>Definition</b> EuresysFeature.h:199</div></div>
+<div class="ttc" id="aclass_euresys_feature_html_aca1a0d890de58003a7b312e515feef59"><div class="ttname"><a href="class_euresys_feature.html#aca1a0d890de58003a7b312e515feef59">EuresysFeature::readInteger</a></div><div class="ttdeci">epicsInt64 readInteger()</div><div class="ttdef"><b>Definition</b> EuresysFeature.h:82</div></div>
+<div class="ttc" id="aclass_euresys_feature_html_ad4fb17be055e8b00eccd248d4ab14c25"><div class="ttname"><a href="class_euresys_feature.html#ad4fb17be055e8b00eccd248d4ab14c25">EuresysFeature::writeEnumString</a></div><div class="ttdeci">void writeEnumString(std::string const &amp;value)</div><div class="ttdef"><b>Definition</b> EuresysFeature.h:245</div></div>
+<div class="ttc" id="aclass_euresys_feature_html_ad980bb6d98c855de7d9f200496c3a013"><div class="ttname"><a href="class_euresys_feature.html#ad980bb6d98c855de7d9f200496c3a013">EuresysFeature::readDouble</a></div><div class="ttdeci">double readDouble()</div><div class="ttdef"><b>Definition</b> EuresysFeature.h:165</div></div>
+<div class="ttc" id="aclass_euresys_feature_html_ae572b8372eb75a02876430063bcb520d"><div class="ttname"><a href="class_euresys_feature.html#ae572b8372eb75a02876430063bcb520d">EuresysFeature::writeEnumIndex</a></div><div class="ttdeci">void writeEnumIndex(int value)</div><div class="ttdef"><b>Definition</b> EuresysFeature.h:223</div></div>
+<div class="ttc" id="aclass_euresys_feature_html_afd88c124ee64691b7ea79a11020085d5"><div class="ttname"><a href="class_euresys_feature.html#afd88c124ee64691b7ea79a11020085d5">EuresysFeature::readEnumIndex</a></div><div class="ttdeci">int readEnumIndex()</div><div class="ttdef"><b>Definition</b> EuresysFeature.h:211</div></div>
 <div class="ttc" id="aclass_gen_i_cam_feature_html"><div class="ttname"><a href="class_gen_i_cam_feature.html">GenICamFeature</a></div><div class="ttdef"><b>Definition</b> GenICamFeature.h:41</div></div>
+<div class="ttc" id="aclass_gen_i_cam_feature_html_a5e5da91c112e6b5eb261869d751bf82e"><div class="ttname"><a href="class_gen_i_cam_feature.html#a5e5da91c112e6b5eb261869d751bf82e">GenICamFeature::mSet</a></div><div class="ttdeci">GenICamFeatureSet * mSet</div><div class="ttdef"><b>Definition</b> GenICamFeature.h:65</div></div>
 <div class="ttc" id="aclass_gen_i_cam_feature_set_html"><div class="ttname"><a href="class_gen_i_cam_feature_set.html">GenICamFeatureSet</a></div><div class="ttdef"><b>Definition</b> GenICamFeature.h:123</div></div>
+<div class="ttc" id="aclass_gen_i_cam_feature_set_html_a59ef8093dcdf7b4d9efdda42f3233bb8"><div class="ttname"><a href="class_gen_i_cam_feature_set.html#a59ef8093dcdf7b4d9efdda42f3233bb8">GenICamFeatureSet::getPortDriver</a></div><div class="ttdeci">asynPortDriver * getPortDriver(void)</div><div class="ttdef"><b>Definition</b> GenICamFeature.cpp:587</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
