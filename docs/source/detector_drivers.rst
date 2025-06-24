@@ -29,6 +29,7 @@ Detector Drivers
     ADSimDetector/simDetector
     ADSpinnaker/ADSpinnaker
     ADTimePix3/ADTimePix3
+    ADTLBC2/ADTLBC2
     ADVimba/ADVimba
     ADURL/ADURL
     ADUVC/ADUVC
