@@ -290,6 +290,12 @@ documentation, release notes, name of maintainer, and repository status.
     - `Release Notes <https://github.com/areaDetector/ADTimePix3/blob/master/RELEASE.md>`__
     - Kaz Gofron
     - Active?
+  * - `ADTLBC2 <https://github.com/areaDetector/ADTLBC2>`__
+    - Driver for the ThorLabs BC207 and BC210 beam profilers
+    - :doc:`ADTLBC2/ADTLBC2`
+    - `Release Notes <https://github.com/areaDetector/ADTLBC2/blob/master/RELEASE.md>`__
+    - Henrique Simões
+    - Active
   * - `ADURL <https://github.com/areaDetector/ADURL>`__
     - Driver for reading images from any URL using the GraphicsMagick library
     - :doc:`ADURL/ADURL`
