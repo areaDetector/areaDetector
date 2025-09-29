@@ -385,3 +385,9 @@ documentation, release notes, name of maintainer, and repository status.
     - None
     - ImXPAD
     - Active?    
+  * - `ADPixci <https://github.com/CentralLaserFacility/ADPixci>`__
+    - Driver for frame grabbers from `EPIX, inc <https://www.epixinc.com>`__ with support for Raptor Eagle XV Cameras from `Raptor Photonics <https://www.raptorphotonics.com>`__
+    - `README <https://github.com/CentralLaserFacility/ADPixci/blob/main/README.md>`__
+    - None
+    - Irie Railton
+    - Active
