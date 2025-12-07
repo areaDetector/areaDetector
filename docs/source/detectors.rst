@@ -172,7 +172,7 @@ documentation, release notes, name of maintainer, and repository status.
     - Active?
   * - `ADMythen <https://github.com/areaDetector/ADMythen>`__
     - Driver for Mythen detectors from Dectris
-    - N.A.
+    - `Documentation <ADMythen/ADMythen.html>`__
     - `Release Notes <https://github.com/areaDetector/ADMythen/blob/master/RELEASE.md>`__
     - Joe Sullivan and Xiaoqiang Wang
     - Active?

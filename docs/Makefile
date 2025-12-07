@@ -17,6 +17,7 @@ DOCS_PATHS += -i ../ADLambda/docs
 DOCS_PATHS += -i ../ADLightField/docs
 DOCS_PATHS += -i ../ADmarCCD/docs
 DOCS_PATHS += -i ../ADmar345/docs
+DOCS_PATHS += -i ../ADMythen/docs
 DOCS_PATHS += -i ../ADPICam/docs
 DOCS_PATHS += -i ../ADPerkinElmer/docs
 DOCS_PATHS += -i ../ADPilatus/docs
