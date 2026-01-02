@@ -266,13 +266,15 @@ The direction to shift is controlled by the ARShiftDir record.</p></td>
 <section id="ioc-startup-script">
 <h2><a class="toc-backref" href="#id5" role="doc-backlink">IOC startup script</a><a class="headerlink" href="#ioc-startup-script" title="Link to this heading"></a></h2>
 <p>The command to configure an ADAravis camera in the startup script is:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">aravisConfig</span><span class="p">(</span><span class="n">const</span> <span class="n">char</span> <span class="o">*</span><span class="n">portName</span><span class="p">,</span> <span class="n">const</span> <span class="n">char</span> <span class="o">*</span><span class="n">cameraName</span><span class="p">,</span> <span class="n">size_t</span> <span class="n">maxMemory</span><span class="p">,</span> <span class="nb">int</span> <span class="n">priority</span><span class="p">,</span> <span class="nb">int</span> <span class="n">stackSize</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">aravisConfig</span><span class="p">(</span><span class="n">const</span> <span class="n">char</span> <span class="o">*</span><span class="n">portName</span><span class="p">,</span> <span class="n">const</span> <span class="n">char</span> <span class="o">*</span><span class="n">cameraName</span><span class="p">,</span> <span class="nb">int</span> <span class="n">enableCaching</span><span class="p">,</span> <span class="n">size_t</span> <span class="n">maxMemory</span><span class="p">,</span> <span class="nb">int</span> <span class="n">priority</span><span class="p">,</span> <span class="nb">int</span> <span class="n">stackSize</span><span class="p">)</span>
 </pre></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">portName</span></code> is the name for the ADAravis port driver</p>
 <p><code class="docutils literal notranslate"><span class="pre">cameraName</span></code> is the identifier for the camera.  It can be the complete camera name returned by arv-tool, for example
 <code class="docutils literal notranslate"><span class="pre">&quot;Point</span> <span class="pre">Grey</span> <span class="pre">Research-Blackfly</span> <span class="pre">S</span> <span class="pre">BFS-PGE-50S5C-18585624&quot;</span></code>, or it can be an IP address for GigE and 10 GigE cameras, for
 example <code class="docutils literal notranslate"><span class="pre">&quot;164.54.160.117&quot;</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">enableCaching</span></code> Flag to enable (1) or disable (0) register caching in aravis. Performance is much better when caching is
+enabled, but some cameras may not properly implement this.</p>
 <p><code class="docutils literal notranslate"><span class="pre">maxMemory</span></code> is the maximum amount of memory the NDArrayPool is allowed to allocate.  0 means unlimited.</p>
 <p><code class="docutils literal notranslate"><span class="pre">priority</span></code> is the priority of the port thread.  0 means medium priority.</p>
 <p><code class="docutils literal notranslate"><span class="pre">stackSize</span></code> is the stack size.  0 means medium size.</p>

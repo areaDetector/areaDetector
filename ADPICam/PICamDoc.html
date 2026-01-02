@@ -71,6 +71,7 @@
 <li class="toctree-l3 current"><a class="current reference internal" href="#">ADPICam</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#table-of-contents">Table of Contents</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#installation">Installation</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#implementation-of-standard-driver-parameters">Implementation of standard driver parameters</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#picam-specific-parameters">PICam specific parameters</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#configuration">Configuration</a></li>
@@ -152,17 +153,18 @@
 <ul>
 <li><p><a class="reference internal" href="#table-of-contents" id="id2">Table of Contents</a></p></li>
 <li><p><a class="reference internal" href="#introduction" id="id3">Introduction</a></p></li>
-<li><p><a class="reference internal" href="#implementation-of-standard-driver-parameters" id="id4">Implementation of standard driver parameters</a></p></li>
-<li><p><a class="reference internal" href="#picam-specific-parameters" id="id5">PICam specific parameters</a></p></li>
-<li><p><a class="reference internal" href="#configuration" id="id6">Configuration</a></p></li>
-<li><p><a class="reference internal" href="#screenshots" id="id7">Screenshots</a></p>
+<li><p><a class="reference internal" href="#installation" id="id4">Installation</a></p></li>
+<li><p><a class="reference internal" href="#implementation-of-standard-driver-parameters" id="id5">Implementation of standard driver parameters</a></p></li>
+<li><p><a class="reference internal" href="#picam-specific-parameters" id="id6">PICam specific parameters</a></p></li>
+<li><p><a class="reference internal" href="#configuration" id="id7">Configuration</a></p></li>
+<li><p><a class="reference internal" href="#screenshots" id="id8">Screenshots</a></p>
 <ul>
-<li><p><a class="reference internal" href="#picambase-adl" id="id8">PICAMBase.adl</a></p></li>
-<li><p><a class="reference internal" href="#picam-adl" id="id9">PICAM.adl</a></p></li>
-<li><p><a class="reference internal" href="#parameterrelevance-adl" id="id10">ParameterRelevance.adl</a></p></li>
-<li><p><a class="reference internal" href="#sensorcleaning-adl" id="id11">SensorCleaning.adl</a></p></li>
-<li><p><a class="reference internal" href="#sensorinformation-adl" id="id12">SensorInformation.adl</a></p></li>
-<li><p><a class="reference internal" href="#sensorlayout-adl" id="id13">SensorLayout.adl</a></p></li>
+<li><p><a class="reference internal" href="#picambase-adl" id="id9">PICAMBase.adl</a></p></li>
+<li><p><a class="reference internal" href="#picam-adl" id="id10">PICAM.adl</a></p></li>
+<li><p><a class="reference internal" href="#parameterrelevance-adl" id="id11">ParameterRelevance.adl</a></p></li>
+<li><p><a class="reference internal" href="#sensorcleaning-adl" id="id12">SensorCleaning.adl</a></p></li>
+<li><p><a class="reference internal" href="#sensorinformation-adl" id="id13">SensorInformation.adl</a></p></li>
+<li><p><a class="reference internal" href="#sensorlayout-adl" id="id14">SensorLayout.adl</a></p></li>
 </ul>
 </li>
 </ul>
@@ -194,8 +196,19 @@ Windows Vista, Windows 7 and Windows 8, as well as RedHat Enterprise
 Linux Version 6.4. The areaDetector Driver was tested only on Windows 7
 (64-bit).</p>
 </section>
+<section id="installation">
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">Installation</a><a class="headerlink" href="#installation" title="Link to this heading"></a></h2>
+<p>The PICam SDK may require that you manually initialize its lock directory at <code class="code docutils literal notranslate"><span class="pre">/var/run/pits</span></code>. In such cases, failing to do so results in an error on launching ADPICAM:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Failed</span> <span class="n">to</span> <span class="n">create</span> <span class="n">process</span> <span class="n">lock</span> <span class="p">(</span><span class="n">named</span><span class="p">:</span> <span class="n">PrincetonInstruments</span><span class="p">::</span><span class="n">Pidi</span><span class="p">::</span><span class="n">PvcamBase</span><span class="p">::</span><span class="n">CrossLock</span><span class="p">)</span> <span class="p">(</span><span class="nb">open</span><span class="o">-</span><span class="n">file</span><span class="p">):</span> <span class="n">errno</span> <span class="ow">is</span> <span class="mi">2</span>
+</pre></div>
+</div>
+<p>To correct this, create the lock directory:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>mkdir<span class="w"> </span>/var/run/pits
+</pre></div>
+</div>
+</section>
 <section id="implementation-of-standard-driver-parameters">
-<h2><a class="toc-backref" href="#id4" role="doc-backlink">Implementation of standard driver parameters</a><a class="headerlink" href="#implementation-of-standard-driver-parameters" title="Link to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id5" role="doc-backlink">Implementation of standard driver parameters</a><a class="headerlink" href="#implementation-of-standard-driver-parameters" title="Link to this heading"></a></h2>
 <table class="table-bordered table-striped table-hover docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head" colspan="3"><p><strong>Implementation of Parameters in asynNDArrayDriver.h and ADDriver.h, and EPICS Record
@@ -211,7 +224,7 @@ Definitions in ADBase.template and NDFile.template</strong></p></th>
 </table>
 </section>
 <section id="picam-specific-parameters">
-<h2><a class="toc-backref" href="#id5" role="doc-backlink">PICam specific parameters</a><a class="headerlink" href="#picam-specific-parameters" title="Link to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id6" role="doc-backlink">PICam specific parameters</a><a class="headerlink" href="#picam-specific-parameters" title="Link to this heading"></a></h2>
 <table class="table-bordered table-striped table-hover docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head" colspan="7"><p><strong>Parameter Definitions in ADPICam.cpp and EPICS Record Definitions in PICam.template</strong></p></th>
@@ -3420,7 +3433,7 @@ bi</p></td>
 </table>
 </section>
 <section id="configuration">
-<h2><a class="toc-backref" href="#id6" role="doc-backlink">Configuration</a><a class="headerlink" href="#configuration" title="Link to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id7" role="doc-backlink">Configuration</a><a class="headerlink" href="#configuration" title="Link to this heading"></a></h2>
 <p>This driver is configured via the <code class="docutils literal notranslate"><span class="pre">PICamConfig()</span></code> function. If this is
 to be used in an IOC, it must be called before <code class="docutils literal notranslate"><span class="pre">iocInit()</span></code>. It has the
 following signature:</p>
@@ -3470,29 +3483,29 @@ call is:</p>
 </ul>
 </section>
 <section id="screenshots">
-<h2><a class="toc-backref" href="#id7" role="doc-backlink">Screenshots</a><a class="headerlink" href="#screenshots" title="Link to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id8" role="doc-backlink">Screenshots</a><a class="headerlink" href="#screenshots" title="Link to this heading"></a></h2>
 <section id="picambase-adl">
-<h3><a class="toc-backref" href="#id8" role="doc-backlink">PICAMBase.adl</a><a class="headerlink" href="#picambase-adl" title="Link to this heading"></a></h3>
+<h3><a class="toc-backref" href="#id9" role="doc-backlink">PICAMBase.adl</a><a class="headerlink" href="#picambase-adl" title="Link to this heading"></a></h3>
 <a class="reference internal image-reference" href="../_images/PICAMBase.png"><img alt="../_images/PICAMBase.png" class="align-center" src="../_images/PICAMBase.png" style="width: 100%;" /></a>
 </section>
 <section id="picam-adl">
-<h3><a class="toc-backref" href="#id9" role="doc-backlink">PICAM.adl</a><a class="headerlink" href="#picam-adl" title="Link to this heading"></a></h3>
+<h3><a class="toc-backref" href="#id10" role="doc-backlink">PICAM.adl</a><a class="headerlink" href="#picam-adl" title="Link to this heading"></a></h3>
 <a class="reference internal image-reference" href="../_images/PICAM.png"><img alt="../_images/PICAM.png" class="align-center" src="../_images/PICAM.png" style="width: 75%;" /></a>
 </section>
 <section id="parameterrelevance-adl">
-<h3><a class="toc-backref" href="#id10" role="doc-backlink">ParameterRelevance.adl</a><a class="headerlink" href="#parameterrelevance-adl" title="Link to this heading"></a></h3>
+<h3><a class="toc-backref" href="#id11" role="doc-backlink">ParameterRelevance.adl</a><a class="headerlink" href="#parameterrelevance-adl" title="Link to this heading"></a></h3>
 <a class="reference internal image-reference" href="../_images/PICAM_ParameterRelevance.png"><img alt="../_images/PICAM_ParameterRelevance.png" class="align-center" src="../_images/PICAM_ParameterRelevance.png" style="width: 150%;" /></a>
 </section>
 <section id="sensorcleaning-adl">
-<h3><a class="toc-backref" href="#id11" role="doc-backlink">SensorCleaning.adl</a><a class="headerlink" href="#sensorcleaning-adl" title="Link to this heading"></a></h3>
+<h3><a class="toc-backref" href="#id12" role="doc-backlink">SensorCleaning.adl</a><a class="headerlink" href="#sensorcleaning-adl" title="Link to this heading"></a></h3>
 <a class="reference internal image-reference" href="../_images/PICAM_SensorCleaning.png"><img alt="../_images/PICAM_SensorCleaning.png" class="align-center" src="../_images/PICAM_SensorCleaning.png" style="width: 75%;" /></a>
 </section>
 <section id="sensorinformation-adl">
-<h3><a class="toc-backref" href="#id12" role="doc-backlink">SensorInformation.adl</a><a class="headerlink" href="#sensorinformation-adl" title="Link to this heading"></a></h3>
+<h3><a class="toc-backref" href="#id13" role="doc-backlink">SensorInformation.adl</a><a class="headerlink" href="#sensorinformation-adl" title="Link to this heading"></a></h3>
 <a class="reference internal image-reference" href="../_images/PICAM_SensorInformation.png"><img alt="../_images/PICAM_SensorInformation.png" class="align-center" src="../_images/PICAM_SensorInformation.png" style="width: 75%;" /></a>
 </section>
 <section id="sensorlayout-adl">
-<h3><a class="toc-backref" href="#id13" role="doc-backlink">SensorLayout.adl</a><a class="headerlink" href="#sensorlayout-adl" title="Link to this heading"></a></h3>
+<h3><a class="toc-backref" href="#id14" role="doc-backlink">SensorLayout.adl</a><a class="headerlink" href="#sensorlayout-adl" title="Link to this heading"></a></h3>
 <a class="reference internal image-reference" href="../_images/PICAM_SensorLayout.png"><img alt="../_images/PICAM_SensorLayout.png" class="align-center" src="../_images/PICAM_SensorLayout.png" style="width: 75%;" /></a>
 </section>
 </section>

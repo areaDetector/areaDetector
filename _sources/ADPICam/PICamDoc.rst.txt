@@ -34,6 +34,21 @@ Windows Vista, Windows 7 and Windows 8, as well as RedHat Enterprise
 Linux Version 6.4. The areaDetector Driver was tested only on Windows 7
 (64-bit).
 
+Installation
+------------
+
+The PICam SDK may require that you manually initialize its lock directory at :code:`/var/run/pits`. In such cases, failing to do so results in an error on launching ADPICAM:
+
+.. code-block::
+
+   Failed to create process lock (named: PrincetonInstruments::Pidi::PvcamBase::CrossLock) (open-file): errno is 2
+
+To correct this, create the lock directory:
+
+.. code-block:: console
+
+   # mkdir /var/run/pits
+
 Implementation of standard driver parameters
 --------------------------------------------
 .. cssclass:: table-bordered table-striped table-hover
