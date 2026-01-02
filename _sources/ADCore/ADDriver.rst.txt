@@ -57,7 +57,7 @@ possible.
     - r/o 
     - Actual detector temperature 
     - TEMPERATURE_ACTUAL 
-    - $(P)$(R)Temperature_Actual 
+    - $(P)$(R)TemperatureActual
     - ai 
   * -
     -

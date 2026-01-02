@@ -412,6 +412,41 @@ loading ADBase.template.
   * -
     -
     -
+    - **Unique ID and time stamps of the array**
+  * - NDUniqueId
+    - asynInt32
+    - r/o
+    - Unique ID number of array assigned by the EPICS driver.
+    - UNIQUE_ID
+    - $(P)$(R)UniqueId_RBV
+    - longin
+  * - NDTimeStamp
+    - asynFloat64
+    - r/o
+    - Time stamp of array.
+    - TIME_STAMP
+    - $(P)$(R)TimeStamp_RBV
+    - ai
+  * - NDEpicsTSSec
+    - asynInt32
+    - r/o
+    - Seconds past epoch time stamp of array assigned by the EPICS driver. It
+      is based on the EPICS epoch.
+    - EPICS_TS_SEC
+    - $(P)$(R)EpicsTSSec_RBV
+    - longin
+  * - NDEpicsTSNsec
+    - asynInt32
+    - r/o
+    - Nanoseconds time stamp fraction of the EPICS time stamp. It should be
+      composed with $(P)$(R)EpicsTSSec_RBV to get the final time stamp with
+      nanosecond resolution.
+    - EPICS_TS_NSEC
+    - $(P)$(R)EpicsTSNsec_RBV
+    - longin
+  * -
+    -
+    -
     - **Actual dimensions of array data**
   * - NDNDimensions
     - asynInt32
@@ -430,13 +465,14 @@ loading ADBase.template.
   * - N.A.
     - N.A
     - r/o
-    - Size of each array dimension, extracted from the $(P)$(R)Dimensions and $(P)$(R)Dimensions_RBV
+    - Size of each array dimension K in [0..9], extracted from the $(P)$(R)Dimensions and $(P)$(R)Dimensions_RBV
       waveform records. Note that these are both longin record, i.e. readonly values using
       subarray records. In the future longout records may be added to write to the individual
       values in $(P)$(R)Dimensions.
     - N.A.
-    - $(P)$(R)ArraySize[N] N=0-9
-      , (P)$(R)ArraySize[N]_RBV
+    - $(P)$(R)ArraySize<K>, $(P)$(R)ArraySize<K>_RBV
+
+      E.g. $(P)$(R)ArraySize0_RBV
     - longin, longin
   * - NDArraySizeX
     - asynInt32
@@ -479,7 +515,7 @@ loading ADBase.template.
     - Compressed size of the array data in bytes. Only meaningful if NDCodec is not empty
       string.
     - COMPRESSED_SIZE
-    - $(P)$(R)Compressed_RBV
+    - $(P)$(R)CompressedSize_RBV
     - longin
   * -
     -
@@ -614,8 +650,8 @@ loading ADBase.template.
       The value of this record must be set with caution, because too large a value could
       use all memory on the system, resulting serious performance degradation.
     - POOL_NUM_PRE_ALLOC_BUFFERS
-    - $(P)$(R)NumPreAllocBuffers
-    - longout
+    - $(P)$(R)NumPreAllocBuffers, $(P)$(R)NumPreAllocBuffers_RBV
+    - longout, longin
   * - NDPoolPreAllocBuffers
     - asynInt32
     - r/w
@@ -773,7 +809,7 @@ loading ADBase.template.
     - File write status. Gives status information on last file open or file write operation.
       Values are WriteOK (0) and WriteError (1).
     - WRITE_STATUS
-    - $(P)$(R)FileWriteStatus
+    - $(P)$(R)WriteStatus
     - mbbi
   * - NDFileWriteMessage
     - asynOctet
@@ -781,7 +817,7 @@ loading ADBase.template.
     - File write error message. An error message string if the previous file open or file
       write operation resulted in an error.
     - WRITE_MESSAGE
-    - $(P)$(R)FileWriteMessage
+    - $(P)$(R)WriteMessage
     - waveform
   * - NDFileCapture
     - asynInt32

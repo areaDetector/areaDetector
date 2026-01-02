@@ -436,7 +436,7 @@
 <codeline lineno="346"><highlight class="normal"><sp/><sp/><sp/><sp/>attr_src<sp/>=<sp/>xmlTextReaderGetAttribute(this-&gt;xmlreader,<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>xmlChar*)LayoutXML::ATTR_SOURCE.c_str());</highlight></codeline>
 <codeline lineno="347"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(attr_src<sp/>==<sp/>NULL)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ret;</highlight></codeline>
 <codeline lineno="348"><highlight class="normal"><sp/><sp/><sp/><sp/>str_attr_src<sp/>=<sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*)attr_src;</highlight></codeline>
-<codeline lineno="349"><highlight class="normal"><sp/><sp/><sp/><sp/>xmlGetGlobalState()-&gt;xmlFree(attr_src);</highlight></codeline>
+<codeline lineno="349"><highlight class="normal"><sp/><sp/><sp/><sp/>xmlFree(attr_src);</highlight></codeline>
 <codeline lineno="350"><highlight class="normal"></highlight></codeline>
 <codeline lineno="351"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(str_attr_src<sp/>==<sp/>LayoutXML::ATTR_SRC_DETECTOR){</highlight></codeline>
 <codeline lineno="352"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>out<sp/>=<sp/>DataSource(<sp/>detector<sp/>);</highlight></codeline>
@@ -464,7 +464,7 @@
 <codeline lineno="374"><highlight class="normal"><sp/><sp/><sp/><sp/>attr_src<sp/>=<sp/>xmlTextReaderGetAttribute(this-&gt;xmlreader,<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>xmlChar*)LayoutXML::ATTR_SOURCE.c_str());</highlight></codeline>
 <codeline lineno="375"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(attr_src<sp/>==<sp/>NULL)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ret;</highlight></codeline>
 <codeline lineno="376"><highlight class="normal"><sp/><sp/><sp/><sp/>str_attr_src<sp/>=<sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*)attr_src;</highlight></codeline>
-<codeline lineno="377"><highlight class="normal"><sp/><sp/><sp/><sp/>xmlGetGlobalState()-&gt;xmlFree(attr_src);</highlight></codeline>
+<codeline lineno="377"><highlight class="normal"><sp/><sp/><sp/><sp/>xmlFree(attr_src);</highlight></codeline>
 <codeline lineno="378"><highlight class="normal"></highlight></codeline>
 <codeline lineno="379"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>str_attr_val<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="380"><highlight class="normal"><sp/><sp/><sp/><sp/>xmlChar<sp/>*attr_val<sp/>=<sp/>NULL;</highlight></codeline>
@@ -479,14 +479,14 @@
 <codeline lineno="389"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>attr_val<sp/>=<sp/>xmlTextReaderGetAttribute(this-&gt;xmlreader,<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>xmlChar*)LayoutXML::ATTR_SRC_NDATTR.c_str());</highlight></codeline>
 <codeline lineno="390"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(attr_val<sp/>!=<sp/>NULL)<sp/>{</highlight></codeline>
 <codeline lineno="391"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>str_attr_val<sp/>=<sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*)attr_val;</highlight></codeline>
-<codeline lineno="392"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>xmlGetGlobalState()-&gt;xmlFree(attr_val);</highlight></codeline>
+<codeline lineno="392"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>xmlFree(attr_val);</highlight></codeline>
 <codeline lineno="393"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="394"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>out.source<sp/>=<sp/>DataSource(<sp/>ndattribute,<sp/>str_attr_val<sp/>);</highlight></codeline>
 <codeline lineno="395"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Check<sp/>for<sp/>a<sp/>when=&quot;OnFileClose&quot;<sp/>or<sp/>when=&quot;OnFileOpen&quot;<sp/>tag</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="396"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>attr_when<sp/>=<sp/>xmlTextReaderGetAttribute(this-&gt;xmlreader,<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>xmlChar*)LayoutXML::ATTR_SRC_WHEN.c_str());</highlight></codeline>
 <codeline lineno="397"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(attr_when<sp/>!=<sp/>NULL)<sp/>{</highlight></codeline>
 <codeline lineno="398"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>str_attr_when<sp/>=<sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*)attr_when;</highlight></codeline>
-<codeline lineno="399"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>xmlGetGlobalState()-&gt;xmlFree(attr_when);</highlight></codeline>
+<codeline lineno="399"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>xmlFree(attr_when);</highlight></codeline>
 <codeline lineno="400"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="401"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(str_attr_when<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;OnFileOpen&quot;</highlight><highlight class="normal">){</highlight></codeline>
 <codeline lineno="402"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>out.source.set_when_to_save(OnFileOpen);</highlight></codeline>
@@ -504,13 +504,13 @@
 <codeline lineno="414"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>attr_val<sp/>=<sp/>xmlTextReaderGetAttribute(this-&gt;xmlreader,<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>xmlChar*)LayoutXML::ATTR_SRC_CONST_VALUE.c_str());</highlight></codeline>
 <codeline lineno="415"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(attr_val<sp/>!=<sp/>NULL)<sp/>{</highlight></codeline>
 <codeline lineno="416"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>str_attr_val<sp/>=<sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*)attr_val;</highlight></codeline>
-<codeline lineno="417"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>xmlGetGlobalState()-&gt;xmlFree(attr_val);</highlight></codeline>
+<codeline lineno="417"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>xmlFree(attr_val);</highlight></codeline>
 <codeline lineno="418"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="419"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>out.source<sp/>=<sp/>DataSource(<sp/>constant,<sp/>str_attr_val<sp/>);</highlight></codeline>
 <codeline lineno="420"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>attr_type<sp/>=<sp/>xmlTextReaderGetAttribute(this-&gt;xmlreader,<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>xmlChar*)LayoutXML::ATTR_SRC_CONST_TYPE.c_str());</highlight></codeline>
 <codeline lineno="421"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(attr_type<sp/>!=<sp/>NULL)<sp/>{</highlight></codeline>
 <codeline lineno="422"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>str_attr_type<sp/>=<sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*)attr_type;</highlight></codeline>
-<codeline lineno="423"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>xmlGetGlobalState()-&gt;xmlFree(attr_type);</highlight></codeline>
+<codeline lineno="423"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>xmlFree(attr_type);</highlight></codeline>
 <codeline lineno="424"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacehdf5_1abeed318faeb13380e1b4221bd4198bf1" kindref="member">DataType_t</ref><sp/>dtype<sp/>=<sp/><ref refid="namespacehdf5_1abeed318faeb13380e1b4221bd4198bf1aea271040d7a5b8d9af9cbf6564d262d5" kindref="member">string</ref>;</highlight></codeline>
 <codeline lineno="425"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(str_attr_type<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;int&quot;</highlight><highlight class="normal">)<sp/>dtype<sp/>=<sp/><ref refid="namespacehdf5_1abeed318faeb13380e1b4221bd4198bf1af7b01b3012e6f0f2613f4b22e8c256f8" kindref="member">int32</ref>;</highlight></codeline>
 <codeline lineno="426"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(str_attr_type<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;float&quot;</highlight><highlight class="normal">)<sp/>dtype<sp/>=<sp/><ref refid="namespacehdf5_1abeed318faeb13380e1b4221bd4198bf1af1190e935887f522b0307cce2e801ada" kindref="member">float64</ref>;</highlight></codeline>
@@ -536,7 +536,7 @@
 <codeline lineno="446"><highlight class="normal"></highlight></codeline>
 <codeline lineno="447"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Get<sp/>the<sp/>standard<sp/>string<sp/>representation<sp/>of<sp/>the<sp/>tag</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="448"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>str_root_auto((</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*)root_auto);</highlight></codeline>
-<codeline lineno="449"><highlight class="normal"><sp/><sp/><sp/><sp/>xmlGetGlobalState()-&gt;xmlFree(root_auto);</highlight></codeline>
+<codeline lineno="449"><highlight class="normal"><sp/><sp/><sp/><sp/>xmlFree(root_auto);</highlight></codeline>
 <codeline lineno="450"><highlight class="normal"></highlight></codeline>
 <codeline lineno="451"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Now<sp/>check<sp/>if<sp/>we<sp/>have<sp/>the<sp/>correct<sp/>string</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="452"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(str_root_auto<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;false&quot;</highlight><highlight class="normal">){</highlight></codeline>
@@ -562,7 +562,7 @@
 <codeline lineno="472"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(group_name<sp/>==<sp/>NULL)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>-1;</highlight></codeline>
 <codeline lineno="473"><highlight class="normal"></highlight></codeline>
 <codeline lineno="474"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>str_group_name((</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*)group_name);</highlight></codeline>
-<codeline lineno="475"><highlight class="normal"><sp/><sp/><sp/><sp/>xmlGetGlobalState()-&gt;xmlFree(group_name);</highlight></codeline>
+<codeline lineno="475"><highlight class="normal"><sp/><sp/><sp/><sp/>xmlFree(group_name);</highlight></codeline>
 <codeline lineno="476"><highlight class="normal"></highlight></codeline>
 <codeline lineno="477"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Initialise<sp/>the<sp/>tree<sp/>if<sp/>it<sp/>has<sp/>not<sp/>already<sp/>been<sp/>done.</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="478"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(this-&gt;ptr_tree<sp/>==<sp/>NULL){</highlight></codeline>
@@ -585,7 +585,7 @@
 <codeline lineno="495"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>ndattr_default<sp/>=<sp/>xmlTextReaderGetAttribute(this-&gt;xmlreader,<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>xmlChar<sp/>*)LayoutXML::ATTR_GRP_NDATTR_DEFAULT.c_str());</highlight></codeline>
 <codeline lineno="496"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ndattr_default<sp/>!=<sp/>NULL){</highlight></codeline>
 <codeline lineno="497"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/>str_ndattr_default((</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*)ndattr_default);</highlight></codeline>
-<codeline lineno="498"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>xmlGetGlobalState()-&gt;xmlFree(ndattr_default);</highlight></codeline>
+<codeline lineno="498"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>xmlFree(ndattr_default);</highlight></codeline>
 <codeline lineno="499"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>if<sp/>the<sp/>group<sp/>has<sp/>tag:<sp/>ndattr_default=&quot;true&quot;<sp/>(true<sp/>in<sp/>lower<sp/>case)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="500"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>then<sp/>set<sp/>the<sp/>group<sp/>as<sp/>the<sp/>default<sp/>container<sp/>for<sp/>NDAttributes.</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="501"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(str_ndattr_default<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;true&quot;</highlight><highlight class="normal">){</highlight></codeline>
@@ -614,7 +614,7 @@
 <codeline lineno="524"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(dset_name<sp/>==<sp/>NULL)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>-1;</highlight></codeline>
 <codeline lineno="525"><highlight class="normal"></highlight></codeline>
 <codeline lineno="526"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>str_dset_name((</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*)dset_name);</highlight></codeline>
-<codeline lineno="527"><highlight class="normal"><sp/><sp/><sp/><sp/>xmlGetGlobalState()-&gt;xmlFree(dset_name);</highlight></codeline>
+<codeline lineno="527"><highlight class="normal"><sp/><sp/><sp/><sp/>xmlFree(dset_name);</highlight></codeline>
 <codeline lineno="528"><highlight class="normal"><sp/><sp/><sp/><sp/>Group<sp/>*parent<sp/>=<sp/>(Group<sp/>*)this-&gt;ptr_curr_element;</highlight></codeline>
 <codeline lineno="529"><highlight class="normal"><sp/><sp/><sp/><sp/>Dataset<sp/>*dset<sp/>=<sp/>NULL;</highlight></codeline>
 <codeline lineno="530"><highlight class="normal"><sp/><sp/><sp/><sp/>dset<sp/>=<sp/>parent-&gt;new_dset(str_dset_name);</highlight></codeline>
@@ -627,7 +627,7 @@
 <codeline lineno="537"><highlight class="normal"><sp/><sp/><sp/><sp/>attr_def<sp/>=<sp/>xmlTextReaderGetAttribute(this-&gt;xmlreader,<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>xmlChar*)LayoutXML::ATTR_SRC_DET_DEFAULT.c_str());</highlight></codeline>
 <codeline lineno="538"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(attr_def<sp/>!=<sp/>NULL){</highlight></codeline>
 <codeline lineno="539"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>str_attr_def<sp/>=<sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*)attr_def;</highlight></codeline>
-<codeline lineno="540"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>xmlGetGlobalState()-&gt;xmlFree(attr_def);</highlight></codeline>
+<codeline lineno="540"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>xmlFree(attr_def);</highlight></codeline>
 <codeline lineno="541"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(str_attr_def<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;true&quot;</highlight><highlight class="normal">){</highlight></codeline>
 <codeline lineno="542"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>detector_default<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="543"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
@@ -646,14 +646,14 @@
 <codeline lineno="556"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>attr_ndname<sp/>=<sp/>xmlTextReaderGetAttribute(this-&gt;xmlreader,<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>xmlChar*)LayoutXML::ATTR_SRC_NDATTR.c_str());</highlight></codeline>
 <codeline lineno="557"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(attr_ndname<sp/>!=<sp/>NULL){</highlight></codeline>
 <codeline lineno="558"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>str_attr_ndname<sp/>=<sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*)attr_ndname;</highlight></codeline>
-<codeline lineno="559"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>xmlGetGlobalState()-&gt;xmlFree(attr_ndname);</highlight></codeline>
+<codeline lineno="559"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>xmlFree(attr_ndname);</highlight></codeline>
 <codeline lineno="560"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dset-&gt;set_ndattr_name(str_attr_ndname);</highlight></codeline>
 <codeline lineno="561"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//if<sp/>ndattribute,<sp/>check<sp/>for<sp/>&apos;when&apos;<sp/>tag</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="562"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>xmlChar<sp/>*attr_when<sp/>=<sp/>NULL;</highlight></codeline>
 <codeline lineno="563"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>attr_when<sp/>=<sp/>xmlTextReaderGetAttribute(this-&gt;xmlreader,<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>xmlChar*)LayoutXML::ATTR_SRC_WHEN.c_str());</highlight></codeline>
 <codeline lineno="564"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(attr_when<sp/>!=<sp/>NULL){</highlight></codeline>
 <codeline lineno="565"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/>str_attr_when(<sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*)attr_when<sp/>);</highlight></codeline>
-<codeline lineno="566"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>xmlGetGlobalState()-&gt;xmlFree(attr_when);</highlight></codeline>
+<codeline lineno="566"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>xmlFree(attr_when);</highlight></codeline>
 <codeline lineno="567"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacehdf5_1ab51726310ac9f6d97ac953d29c93ade5" kindref="member">When_t</ref><sp/>when_to_save<sp/>=<sp/><ref refid="namespacehdf5_1ab51726310ac9f6d97ac953d29c93ade5abbcc7b3a4277b23e4a3571b995013f99" kindref="member">OnFrame</ref>;<sp/></highlight><highlight class="comment">//Default<sp/>is<sp/>to<sp/>save<sp/>every<sp/>frame</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="568"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(str_attr_when<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;OnFileOpen&quot;</highlight><highlight class="normal">){</highlight></codeline>
 <codeline lineno="569"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>when_to_save<sp/>=<sp/><ref refid="namespacehdf5_1ab51726310ac9f6d97ac953d29c93ade5afef06eecd68bd53ef5cc8e2b3652e692" kindref="member">OnFileOpen</ref>;</highlight></codeline>
@@ -668,12 +668,12 @@
 <codeline lineno="578"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>c_val<sp/>=<sp/>xmlTextReaderGetAttribute(this-&gt;xmlreader,<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>xmlChar*)LayoutXML::ATTR_SRC_CONST_VALUE.c_str());</highlight></codeline>
 <codeline lineno="579"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(c_val<sp/>!=<sp/>NULL)<sp/>{</highlight></codeline>
 <codeline lineno="580"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>str_val<sp/>=<sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*)c_val;</highlight></codeline>
-<codeline lineno="581"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>xmlGetGlobalState()-&gt;xmlFree(c_val);</highlight></codeline>
+<codeline lineno="581"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>xmlFree(c_val);</highlight></codeline>
 <codeline lineno="582"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="583"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>c_type<sp/>=<sp/>xmlTextReaderGetAttribute(this-&gt;xmlreader,<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>xmlChar*)LayoutXML::ATTR_SRC_CONST_TYPE.c_str());</highlight></codeline>
 <codeline lineno="584"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(c_type<sp/>!=<sp/>NULL){</highlight></codeline>
 <codeline lineno="585"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>str_type<sp/>=<sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*)c_type;</highlight></codeline>
-<codeline lineno="586"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>xmlGetGlobalState()-&gt;xmlFree(c_type);</highlight></codeline>
+<codeline lineno="586"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>xmlFree(c_type);</highlight></codeline>
 <codeline lineno="587"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacehdf5_1abeed318faeb13380e1b4221bd4198bf1" kindref="member">DataType_t</ref><sp/>dtype<sp/>=<sp/><ref refid="namespacehdf5_1abeed318faeb13380e1b4221bd4198bf1aea271040d7a5b8d9af9cbf6564d262d5" kindref="member">string</ref>;</highlight></codeline>
 <codeline lineno="588"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(str_type<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;int&quot;</highlight><highlight class="normal">)<sp/>dtype<sp/>=<sp/><ref refid="namespacehdf5_1abeed318faeb13380e1b4221bd4198bf1af7b01b3012e6f0f2613f4b22e8c256f8" kindref="member">int32</ref>;</highlight></codeline>
 <codeline lineno="589"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(str_type<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;float&quot;</highlight><highlight class="normal">)<sp/>dtype<sp/>=<sp/><ref refid="namespacehdf5_1abeed318faeb13380e1b4221bd4198bf1af1190e935887f522b0307cce2e801ada" kindref="member">float64</ref>;</highlight></codeline>
@@ -698,7 +698,7 @@
 <codeline lineno="608"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ndattr_name<sp/>==<sp/>NULL)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>-1;</highlight></codeline>
 <codeline lineno="609"><highlight class="normal"></highlight></codeline>
 <codeline lineno="610"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>str_ndattr_name((</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*)ndattr_name);</highlight></codeline>
-<codeline lineno="611"><highlight class="normal"><sp/><sp/><sp/><sp/>xmlGetGlobalState()-&gt;xmlFree(ndattr_name);</highlight></codeline>
+<codeline lineno="611"><highlight class="normal"><sp/><sp/><sp/><sp/>xmlFree(ndattr_name);</highlight></codeline>
 <codeline lineno="612"><highlight class="normal"><sp/><sp/><sp/><sp/>Attribute<sp/>ndattr(str_ndattr_name);</highlight></codeline>
 <codeline lineno="613"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;process_attribute_xml_attribute(ndattr);</highlight></codeline>
 <codeline lineno="614"><highlight class="normal"></highlight></codeline>
@@ -715,12 +715,12 @@
 <codeline lineno="625"><highlight class="normal"><sp/><sp/><sp/><sp/>global_name<sp/>=<sp/>xmlTextReaderGetAttribute(this-&gt;xmlreader,<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>xmlChar*)LayoutXML::ATTR_GLOBAL_NAME.c_str());</highlight></codeline>
 <codeline lineno="626"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(global_name<sp/>==<sp/>NULL)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>-1;</highlight></codeline>
 <codeline lineno="627"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>str_global_name((</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*)global_name);</highlight></codeline>
-<codeline lineno="628"><highlight class="normal"><sp/><sp/><sp/><sp/>xmlGetGlobalState()-&gt;xmlFree(global_name);</highlight></codeline>
+<codeline lineno="628"><highlight class="normal"><sp/><sp/><sp/><sp/>xmlFree(global_name);</highlight></codeline>
 <codeline lineno="629"><highlight class="normal"><sp/><sp/><sp/><sp/>xmlChar<sp/>*global_value<sp/>=<sp/>NULL;</highlight></codeline>
 <codeline lineno="630"><highlight class="normal"><sp/><sp/><sp/><sp/>global_value<sp/>=<sp/>xmlTextReaderGetAttribute(this-&gt;xmlreader,<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>xmlChar*)LayoutXML::ATTR_GLOBAL_VALUE.c_str());</highlight></codeline>
 <codeline lineno="631"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(global_value<sp/>==<sp/>NULL)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>-1;</highlight></codeline>
 <codeline lineno="632"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>str_global_value((</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*)global_value);</highlight></codeline>
-<codeline lineno="633"><highlight class="normal"><sp/><sp/><sp/><sp/>xmlGetGlobalState()-&gt;xmlFree(global_value);</highlight></codeline>
+<codeline lineno="633"><highlight class="normal"><sp/><sp/><sp/><sp/>xmlFree(global_value);</highlight></codeline>
 <codeline lineno="634"><highlight class="normal"></highlight></codeline>
 <codeline lineno="635"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;globals[str_global_name]<sp/>=<sp/>str_global_value;</highlight></codeline>
 <codeline lineno="636"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ret;</highlight></codeline>
@@ -734,12 +734,12 @@
 <codeline lineno="644"><highlight class="normal"><sp/><sp/><sp/><sp/>hardlink_name<sp/>=<sp/>xmlTextReaderGetAttribute(this-&gt;xmlreader,<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>xmlChar*)LayoutXML::ATTR_ELEMENT_NAME.c_str());</highlight></codeline>
 <codeline lineno="645"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(hardlink_name<sp/>==<sp/>NULL)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>-1;</highlight></codeline>
 <codeline lineno="646"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>str_hardlink_name((</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*)hardlink_name);</highlight></codeline>
-<codeline lineno="647"><highlight class="normal"><sp/><sp/><sp/><sp/>xmlGetGlobalState()-&gt;xmlFree(hardlink_name);</highlight></codeline>
+<codeline lineno="647"><highlight class="normal"><sp/><sp/><sp/><sp/>xmlFree(hardlink_name);</highlight></codeline>
 <codeline lineno="648"><highlight class="normal"><sp/><sp/><sp/><sp/>xmlChar<sp/>*hardlink_target<sp/>=<sp/>NULL;</highlight></codeline>
 <codeline lineno="649"><highlight class="normal"><sp/><sp/><sp/><sp/>hardlink_target<sp/>=<sp/>xmlTextReaderGetAttribute(this-&gt;xmlreader,<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>xmlChar*)LayoutXML::ATTR_HARDLINK_TARGET.c_str());</highlight></codeline>
 <codeline lineno="650"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(hardlink_target<sp/>==<sp/>NULL)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>-1;</highlight></codeline>
 <codeline lineno="651"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>str_hardlink_target((</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*)hardlink_target);</highlight></codeline>
-<codeline lineno="652"><highlight class="normal"><sp/><sp/><sp/><sp/>xmlGetGlobalState()-&gt;xmlFree(hardlink_target);</highlight></codeline>
+<codeline lineno="652"><highlight class="normal"><sp/><sp/><sp/><sp/>xmlFree(hardlink_target);</highlight></codeline>
 <codeline lineno="653"><highlight class="normal"><sp/><sp/><sp/><sp/>Group<sp/>*parent<sp/>=<sp/>(Group<sp/>*)this-&gt;ptr_curr_element;</highlight></codeline>
 <codeline lineno="654"><highlight class="normal"><sp/><sp/><sp/><sp/>HardLink<sp/>*hardlink<sp/>=<sp/>NULL;</highlight></codeline>
 <codeline lineno="655"><highlight class="normal"><sp/><sp/><sp/><sp/>hardlink<sp/>=<sp/>parent-&gt;new_hardlink(str_hardlink_name);</highlight></codeline>

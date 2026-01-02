@@ -2,7 +2,14 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="stream2_api_8cpp" kind="file" language="C++">
     <compoundname>stream2Api.cpp</compoundname>
+    <includes local="yes">asynDriver.h</includes>
+    <includes local="yes">epicsTime.h</includes>
+    <includes local="yes">epicsTypes.h</includes>
+    <includes refid="stream2_8h" local="yes">stream2.h</includes>
     <includes refid="stream_api_8h" local="yes">streamApi.h</includes>
+    <includes local="yes">rfc3339.h</includes>
+    <includes local="no">cstdlib</includes>
+    <includes local="no">ctime</includes>
     <includes local="no">stdexcept</includes>
     <includes local="no">stdlib.h</includes>
     <includes local="no">stdint.h</includes>
@@ -13,70 +20,70 @@
     <includes local="no">bitshuffle.h</includes>
     <includes local="no">compression.h</includes>
     <incdepgraph>
-      <node id="15">
+      <node id="18">
         <label>ADCoreAPI.h</label>
         <link refid="_a_d_core_a_p_i_8h"/>
-        <childnode refid="16" relation="include">
+        <childnode refid="19" relation="include">
         </childnode>
       </node>
-      <node id="18">
+      <node id="21">
         <label>Codec.h</label>
         <link refid="_codec_8h"/>
       </node>
-      <node id="5">
+      <node id="11">
         <label>NDArray.h</label>
         <link refid="_n_d_array_8h"/>
-        <childnode refid="6" relation="include">
-        </childnode>
-        <childnode refid="7" relation="include">
-        </childnode>
-        <childnode refid="8" relation="include">
-        </childnode>
-        <childnode refid="9" relation="include">
-        </childnode>
-        <childnode refid="10" relation="include">
-        </childnode>
-        <childnode refid="17" relation="include">
-        </childnode>
-        <childnode refid="18" relation="include">
-        </childnode>
-      </node>
-      <node id="10">
-        <label>NDAttribute.h</label>
-        <link refid="_n_d_attribute_8h"/>
-        <childnode refid="11" relation="include">
-        </childnode>
         <childnode refid="12" relation="include">
         </childnode>
-        <childnode refid="9" relation="include">
-        </childnode>
         <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
         </childnode>
         <childnode refid="14" relation="include">
         </childnode>
         <childnode refid="15" relation="include">
         </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
       </node>
-      <node id="17">
-        <label>NDAttributeList.h</label>
-        <link refid="_n_d_attribute_list_8h"/>
-        <childnode refid="12" relation="include">
+      <node id="15">
+        <label>NDAttribute.h</label>
+        <link refid="_n_d_attribute_8h"/>
+        <childnode refid="16" relation="include">
         </childnode>
-        <childnode refid="9" relation="include">
+        <childnode refid="17" relation="include">
         </childnode>
-        <childnode refid="7" relation="include">
+        <childnode refid="14" relation="include">
         </childnode>
-        <childnode refid="10" relation="include">
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
         </childnode>
       </node>
       <node id="20">
+        <label>NDAttributeList.h</label>
+        <link refid="_n_d_attribute_list_8h"/>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
         <label>stream2.h</label>
         <link refid="stream2_8h"/>
-        <childnode refid="21" relation="include">
+        <childnode refid="6" relation="include">
         </childnode>
-        <childnode refid="22" relation="include">
+        <childnode refid="7" relation="include">
         </childnode>
-        <childnode refid="4" relation="include">
+        <childnode refid="8" relation="include">
         </childnode>
       </node>
       <node id="1">
@@ -84,11 +91,15 @@
         <link refid="stream2_api_8cpp"/>
         <childnode refid="2" relation="include">
         </childnode>
-        <childnode refid="23" relation="include">
-        </childnode>
         <childnode refid="3" relation="include">
         </childnode>
         <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
         </childnode>
         <childnode refid="24" relation="include">
         </childnode>
@@ -96,88 +107,107 @@
         </childnode>
         <childnode refid="26" relation="include">
         </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
         <childnode refid="27" relation="include">
         </childnode>
         <childnode refid="28" relation="include">
         </childnode>
         <childnode refid="29" relation="include">
         </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
       </node>
-      <node id="2">
+      <node id="9">
         <label>streamApi.h</label>
         <link refid="stream_api_8h"/>
-        <childnode refid="3" relation="include">
+        <childnode refid="10" relation="include">
         </childnode>
-        <childnode refid="4" relation="include">
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
         </childnode>
         <childnode refid="5" relation="include">
         </childnode>
-        <childnode refid="19" relation="include">
-        </childnode>
-        <childnode refid="20" relation="include">
-        </childnode>
       </node>
-      <node id="14">
+      <node id="2">
         <label>asynDriver.h</label>
       </node>
-      <node id="28">
+      <node id="31">
         <label>bitshuffle.h</label>
       </node>
-      <node id="29">
+      <node id="32">
         <label>compression.h</label>
       </node>
-      <node id="9">
-        <label>ellLib.h</label>
-      </node>
-      <node id="7">
-        <label>epicsMutex.h</label>
-      </node>
       <node id="24">
-        <label>epicsStdio.h</label>
+        <label>cstdlib</label>
       </node>
       <node id="25">
-        <label>epicsString.h</label>
+        <label>ctime</label>
       </node>
-      <node id="8">
-        <label>epicsTime.h</label>
+      <node id="14">
+        <label>ellLib.h</label>
       </node>
       <node id="13">
-        <label>epicsTypes.h</label>
-      </node>
-      <node id="16">
-        <label>epicsVersion.h</label>
+        <label>epicsMutex.h</label>
       </node>
       <node id="27">
-        <label>lz4.h</label>
+        <label>epicsStdio.h</label>
       </node>
-      <node id="6">
-        <label>set</label>
-      </node>
-      <node id="21">
-        <label>stdbool.h</label>
-      </node>
-      <node id="22">
-        <label>stddef.h</label>
-      </node>
-      <node id="23">
-        <label>stdexcept</label>
-      </node>
-      <node id="4">
-        <label>stdint.h</label>
-      </node>
-      <node id="12">
-        <label>stdio.h</label>
+      <node id="28">
+        <label>epicsString.h</label>
       </node>
       <node id="3">
-        <label>stdlib.h</label>
+        <label>epicsTime.h</label>
       </node>
-      <node id="11">
-        <label>string</label>
-      </node>
-      <node id="26">
-        <label>string.h</label>
+      <node id="4">
+        <label>epicsTypes.h</label>
       </node>
       <node id="19">
+        <label>epicsVersion.h</label>
+      </node>
+      <node id="30">
+        <label>lz4.h</label>
+      </node>
+      <node id="23">
+        <label>rfc3339.h</label>
+      </node>
+      <node id="12">
+        <label>set</label>
+      </node>
+      <node id="6">
+        <label>stdbool.h</label>
+      </node>
+      <node id="7">
+        <label>stddef.h</label>
+      </node>
+      <node id="26">
+        <label>stdexcept</label>
+      </node>
+      <node id="8">
+        <label>stdint.h</label>
+      </node>
+      <node id="17">
+        <label>stdio.h</label>
+      </node>
+      <node id="10">
+        <label>stdlib.h</label>
+      </node>
+      <node id="16">
+        <label>string</label>
+      </node>
+      <node id="29">
+        <label>string.h</label>
+      </node>
+      <node id="22">
         <label>zmq.h</label>
       </node>
     </incdepgraph>
@@ -191,7 +221,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/stream2Api.cpp" line="13" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/stream2Api.cpp" bodystart="13" bodyend="-1"/>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/stream2Api.cpp" line="20" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/stream2Api.cpp" bodystart="20" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="stream2_api_8cpp_1ad8de19b57a26747fb7ef015e2a678b45" prot="public" static="no">
         <name>ERR_PREFIX</name>
@@ -202,7 +232,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/stream2Api.cpp" line="15" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/stream2Api.cpp" bodystart="15" bodyend="-1"/>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/stream2Api.cpp" line="22" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/stream2Api.cpp" bodystart="22" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="stream2_api_8cpp_1a351b8552521f29df22aa336bb28e2180" prot="public" static="no">
         <name>ERR</name>
@@ -214,7 +244,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/stream2Api.cpp" line="16" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/stream2Api.cpp" bodystart="16" bodyend="-1"/>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/stream2Api.cpp" line="23" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/stream2Api.cpp" bodystart="23" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="stream2_api_8cpp_1a02586085698a967f28309aa3d54b43a3" prot="public" static="no">
         <name>ERR_ARGS</name>
@@ -228,7 +258,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/stream2Api.cpp" line="18" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/stream2Api.cpp" bodystart="18" bodyend="19"/>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/stream2Api.cpp" line="25" column="9" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/stream2Api.cpp" bodystart="25" bodyend="26"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="func">
@@ -267,7 +297,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/stream2Api.cpp" line="23" column="12" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/stream2Api.cpp" bodystart="23" bodyend="72"/>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/stream2Api.cpp" line="30" column="12" bodyfile="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/stream2Api.cpp" bodystart="30" bodyend="79"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -275,281 +305,331 @@
     <detaileddescription>
     </detaileddescription>
     <programlisting>
-<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="stream_api_8h" kindref="compound">streamApi.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="2"><highlight class="normal"></highlight></codeline>
-<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdexcept&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdlib.h&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;epicsStdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;epicsString.h&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string.h&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;lz4.h&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;bitshuffle.h&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;compression.h&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="12"><highlight class="normal"></highlight></codeline>
-<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ZMQ_PORT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>31001</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="14"><highlight class="normal"></highlight></codeline>
-<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ERR_PREFIX<sp/><sp/>&quot;Stream2Api&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ERR(msg)<sp/>fprintf(stderr,<sp/>ERR_PREFIX<sp/>&quot;::%s:<sp/>%s\n&quot;,<sp/>functionName,<sp/>msg)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="17"><highlight class="normal"></highlight></codeline>
-<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ERR_ARGS(fmt,...)<sp/>fprintf(stderr,<sp/>ERR_PREFIX<sp/>&quot;::%s:<sp/>&quot;<sp/>fmt<sp/>&quot;\n&quot;,<sp/>\</highlight></codeline>
-<codeline lineno="19"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>functionName,<sp/>__VA_ARGS__)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="20"><highlight class="normal"></highlight></codeline>
-<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal">std::string;</highlight></codeline>
-<codeline lineno="22"><highlight class="normal"></highlight></codeline>
-<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>uncompress<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*pInput,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*dest,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*encoding,<sp/></highlight></codeline>
-<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>compressedSize,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>uncompressedSize,<sp/><ref refid="_n_d_attribute_8h_1a34b835bcabc3b7f546f4b25c5767cb16" kindref="member">NDDataType_t</ref><sp/><ref refid="_a_d_pylon_8cpp_1a048925b4357a1b4d6015c2113e05ce9f" kindref="member">dataType</ref>)</highlight></codeline>
-<codeline lineno="25"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*functionName<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;uncompress&quot;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>elemSize;</highlight></codeline>
-<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>uint64_t<sp/>orig_size<sp/>=<sp/>*(uint64_t<sp/>*)pInput;</highlight></codeline>
-<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>orig_size<sp/>=<sp/>be64toh(orig_size);</highlight></codeline>
-<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>block_size<sp/>=<sp/>*(uint32_t<sp/>*)(pInput<sp/>+<sp/>8);</highlight></codeline>
-<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>block_size<sp/>=<sp/>be32toh(block_size);</highlight></codeline>
-<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal"><sp/>(<ref refid="_a_d_pylon_8cpp_1a048925b4357a1b4d6015c2113e05ce9f" kindref="member">dataType</ref>)<sp/></highlight></codeline>
-<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="_n_d_attribute_8h_1a34b835bcabc3b7f546f4b25c5767cb16a0492c093c2dcd6eebcaf15f57a2f359a" kindref="member">NDUInt32</ref>:<sp/>elemSize=4;<sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="_n_d_attribute_8h_1a34b835bcabc3b7f546f4b25c5767cb16a174cfb9ba69c78761d4d9d25ec1bd8df" kindref="member">NDUInt16</ref>:<sp/>elemSize=2;<sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="_n_d_attribute_8h_1a34b835bcabc3b7f546f4b25c5767cb16aa5f7c86d8f7853be5eb27c00481f93de" kindref="member">NDUInt8</ref>:<sp/><sp/>elemSize=1;<sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="stream2_api_8cpp_1a02586085698a967f28309aa3d54b43a3" kindref="member">ERR_ARGS</ref>(</highlight><highlight class="stringliteral">&quot;unknown<sp/>dataType=%d&quot;</highlight><highlight class="normal">,<sp/><ref refid="_a_d_pylon_8cpp_1a048925b4357a1b4d6015c2113e05ce9f" kindref="member">dataType</ref>);</highlight></codeline>
-<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="stream_api_8h_1a2d05e4c8303106d1425a9efa4ff1fb69a939db9f16cb937a74d2173143d503d14" kindref="member">STREAM_ERROR</ref>;</highlight></codeline>
-<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(strcmp(encoding,<sp/></highlight><highlight class="stringliteral">&quot;lz4&quot;</highlight><highlight class="normal">)<sp/>==<sp/>0)<sp/>{</highlight></codeline>
-<codeline lineno="42"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ERR(&quot;calling<sp/>LZ4_decompress_fast&quot;);</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="43"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>size_t<sp/>result<sp/>=<sp/>LZ4_decompress_fast((const<sp/>char<sp/>*)pInput+16,<sp/>dest,<sp/>(int)uncompressedSize);</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>result<sp/>=<sp/>compression_decompress_buffer(COMPRESSION_LZ4,</highlight></codeline>
-<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dest,</highlight></codeline>
-<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uncompressedSize,</highlight></codeline>
-<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*)pInput,</highlight></codeline>
-<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>compressedSize,</highlight></codeline>
-<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>elemSize);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(result<sp/>&lt;<sp/>0)</highlight></codeline>
-<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="stream2_api_8cpp_1a02586085698a967f28309aa3d54b43a3" kindref="member">ERR_ARGS</ref>(</highlight><highlight class="stringliteral">&quot;LZ4_decompress<sp/>failed,<sp/>result=%lu\n&quot;</highlight><highlight class="normal">,<sp/>result);</highlight></codeline>
-<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="stream_api_8h_1a2d05e4c8303106d1425a9efa4ff1fb69a939db9f16cb937a74d2173143d503d14" kindref="member">STREAM_ERROR</ref>;<sp/></highlight></codeline>
-<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight></codeline>
-<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(strcmp(encoding,<sp/></highlight><highlight class="stringliteral">&quot;bslz4&quot;</highlight><highlight class="normal">)<sp/>==<sp/>0)<sp/><sp/>{</highlight></codeline>
-<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pInput<sp/>+=<sp/>12;<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>compressed<sp/>sdata<sp/>is<sp/>12<sp/>bytes<sp/>into<sp/>buffer</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="58"><highlight class="normal"></highlight></codeline>
-<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>numElements<sp/>=<sp/>uncompressedSize/elemSize;</highlight></codeline>
-<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>result<sp/>=<sp/>bshuf_decompress_lz4(pInput,<sp/>dest,<sp/>numElements,<sp/>elemSize,<sp/>0);</highlight></codeline>
-<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(result<sp/>&lt;<sp/>0)</highlight></codeline>
-<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="stream2_api_8cpp_1a02586085698a967f28309aa3d54b43a3" kindref="member">ERR_ARGS</ref>(</highlight><highlight class="stringliteral">&quot;bshuf_decompress_lz4<sp/>failed,<sp/>result=%d&quot;</highlight><highlight class="normal">,<sp/>result);</highlight></codeline>
-<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="stream_api_8h_1a2d05e4c8303106d1425a9efa4ff1fb69a939db9f16cb937a74d2173143d503d14" kindref="member">STREAM_ERROR</ref>;</highlight></codeline>
-<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="stream2_api_8cpp_1a02586085698a967f28309aa3d54b43a3" kindref="member">ERR_ARGS</ref>(</highlight><highlight class="stringliteral">&quot;Unknown<sp/>encoding=%s&quot;</highlight><highlight class="normal">,<sp/>encoding);</highlight></codeline>
-<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="stream_api_8h_1a2d05e4c8303106d1425a9efa4ff1fb69a939db9f16cb937a74d2173143d503d14" kindref="member">STREAM_ERROR</ref>;</highlight></codeline>
-<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="stream_api_8h_1a2d05e4c8303106d1425a9efa4ff1fb69a7286620d00da9549f767d5c060c47be0" kindref="member">STREAM_SUCCESS</ref>;</highlight></codeline>
-<codeline lineno="72"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="73"><highlight class="normal"></highlight></codeline>
-<codeline lineno="74"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>Stream2API::poll<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>timeout)</highlight></codeline>
-<codeline lineno="75"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*functionName<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;poll&quot;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>zmq_pollitem_t<sp/>item<sp/>=<sp/>{};</highlight></codeline>
-<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>item.socket<sp/>=<sp/>mSock;</highlight></codeline>
-<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/>item.events<sp/>=<sp/>ZMQ_POLLIN;</highlight></codeline>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;asynDriver.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;epicsTime.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;epicsTypes.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="stream2_8h" kindref="compound">stream2.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="stream_api_8h" kindref="compound">streamApi.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;rfc3339.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cstdlib&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;ctime&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdexcept&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdlib.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;epicsStdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;epicsString.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;lz4.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;bitshuffle.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;compression.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ZMQ_PORT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>31001</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ERR_PREFIX<sp/><sp/>&quot;Stream2Api&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ERR(msg)<sp/>fprintf(stderr,<sp/>ERR_PREFIX<sp/>&quot;::%s:<sp/>%s\n&quot;,<sp/>functionName,<sp/>msg)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ERR_ARGS(fmt,...)<sp/>fprintf(stderr,<sp/>ERR_PREFIX<sp/>&quot;::%s:<sp/>&quot;<sp/>fmt<sp/>&quot;\n&quot;,<sp/>\</highlight></codeline>
+<codeline lineno="26"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>functionName,<sp/>__VA_ARGS__)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal">std::string;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>uncompress<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*pInput,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*dest,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*encoding,<sp/></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>compressedSize,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>uncompressedSize,<sp/><ref refid="_n_d_attribute_8h_1a34b835bcabc3b7f546f4b25c5767cb16" kindref="member">NDDataType_t</ref><sp/><ref refid="_a_d_pylon_8cpp_1a048925b4357a1b4d6015c2113e05ce9f" kindref="member">dataType</ref>)</highlight></codeline>
+<codeline lineno="32"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*functionName<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;uncompress&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>elemSize;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>uint64_t<sp/>orig_size<sp/>=<sp/>*(uint64_t<sp/>*)pInput;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>orig_size<sp/>=<sp/>be64toh(orig_size);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>block_size<sp/>=<sp/>*(uint32_t<sp/>*)(pInput<sp/>+<sp/>8);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>block_size<sp/>=<sp/>be32toh(block_size);</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal"><sp/>(<ref refid="_a_d_pylon_8cpp_1a048925b4357a1b4d6015c2113e05ce9f" kindref="member">dataType</ref>)<sp/></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="_n_d_attribute_8h_1a34b835bcabc3b7f546f4b25c5767cb16a0492c093c2dcd6eebcaf15f57a2f359a" kindref="member">NDUInt32</ref>:<sp/>elemSize=4;<sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="_n_d_attribute_8h_1a34b835bcabc3b7f546f4b25c5767cb16a174cfb9ba69c78761d4d9d25ec1bd8df" kindref="member">NDUInt16</ref>:<sp/>elemSize=2;<sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="_n_d_attribute_8h_1a34b835bcabc3b7f546f4b25c5767cb16aa5f7c86d8f7853be5eb27c00481f93de" kindref="member">NDUInt8</ref>:<sp/><sp/>elemSize=1;<sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="stream2_api_8cpp_1a02586085698a967f28309aa3d54b43a3" kindref="member">ERR_ARGS</ref>(</highlight><highlight class="stringliteral">&quot;unknown<sp/>dataType=%d&quot;</highlight><highlight class="normal">,<sp/><ref refid="_a_d_pylon_8cpp_1a048925b4357a1b4d6015c2113e05ce9f" kindref="member">dataType</ref>);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="stream_api_8h_1a2d05e4c8303106d1425a9efa4ff1fb69a939db9f16cb937a74d2173143d503d14" kindref="member">STREAM_ERROR</ref>;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(strcmp(encoding,<sp/></highlight><highlight class="stringliteral">&quot;lz4&quot;</highlight><highlight class="normal">)<sp/>==<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ERR(&quot;calling<sp/>LZ4_decompress_fast&quot;);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>size_t<sp/>result<sp/>=<sp/>LZ4_decompress_fast((const<sp/>char<sp/>*)pInput+16,<sp/>dest,<sp/>(int)uncompressedSize);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>result<sp/>=<sp/>compression_decompress_buffer(COMPRESSION_LZ4,</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dest,</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uncompressedSize,</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*)pInput,</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>compressedSize,</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>elemSize);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(result<sp/>&lt;<sp/>0)</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="stream2_api_8cpp_1a02586085698a967f28309aa3d54b43a3" kindref="member">ERR_ARGS</ref>(</highlight><highlight class="stringliteral">&quot;LZ4_decompress<sp/>failed,<sp/>result=%lu\n&quot;</highlight><highlight class="normal">,<sp/>result);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="stream_api_8h_1a2d05e4c8303106d1425a9efa4ff1fb69a939db9f16cb937a74d2173143d503d14" kindref="member">STREAM_ERROR</ref>;<sp/></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(strcmp(encoding,<sp/></highlight><highlight class="stringliteral">&quot;bslz4&quot;</highlight><highlight class="normal">)<sp/>==<sp/>0)<sp/><sp/>{</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pInput<sp/>+=<sp/>12;<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>compressed<sp/>sdata<sp/>is<sp/>12<sp/>bytes<sp/>into<sp/>buffer</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>numElements<sp/>=<sp/>uncompressedSize/elemSize;</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>result<sp/>=<sp/>bshuf_decompress_lz4(pInput,<sp/>dest,<sp/>numElements,<sp/>elemSize,<sp/>0);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(result<sp/>&lt;<sp/>0)</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="stream2_api_8cpp_1a02586085698a967f28309aa3d54b43a3" kindref="member">ERR_ARGS</ref>(</highlight><highlight class="stringliteral">&quot;bshuf_decompress_lz4<sp/>failed,<sp/>result=%d&quot;</highlight><highlight class="normal">,<sp/>result);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="stream_api_8h_1a2d05e4c8303106d1425a9efa4ff1fb69a939db9f16cb937a74d2173143d503d14" kindref="member">STREAM_ERROR</ref>;</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="stream2_api_8cpp_1a02586085698a967f28309aa3d54b43a3" kindref="member">ERR_ARGS</ref>(</highlight><highlight class="stringliteral">&quot;Unknown<sp/>encoding=%s&quot;</highlight><highlight class="normal">,<sp/>encoding);</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="stream_api_8h_1a2d05e4c8303106d1425a9efa4ff1fb69a939db9f16cb937a74d2173143d503d14" kindref="member">STREAM_ERROR</ref>;</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="stream_api_8h_1a2d05e4c8303106d1425a9efa4ff1fb69a7286620d00da9549f767d5c060c47be0" kindref="member">STREAM_SUCCESS</ref>;</highlight></codeline>
+<codeline lineno="79"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="80"><highlight class="normal"></highlight></codeline>
-<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>rc<sp/>=<sp/>zmq_poll(&amp;item,<sp/>1,<sp/>timeout*1000);</highlight></codeline>
-<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(rc<sp/>&lt;<sp/>0)</highlight></codeline>
-<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_n_d_file_net_c_d_f_8cpp_1a588357de2986fdf4c1380190f7ae9f37" kindref="member">ERR</ref>(</highlight><highlight class="stringliteral">&quot;failed<sp/>to<sp/>poll<sp/>socket&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="stream_api_8h_1a2d05e4c8303106d1425a9efa4ff1fb69a939db9f16cb937a74d2173143d503d14" kindref="member">STREAM_ERROR</ref>;</highlight></codeline>
-<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>Stream2API::poll<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>timeout)</highlight></codeline>
+<codeline lineno="82"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*functionName<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;poll&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>zmq_pollitem_t<sp/>item<sp/>=<sp/>{};</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>item.socket<sp/>=<sp/>mSock;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/>item.events<sp/>=<sp/>ZMQ_POLLIN;</highlight></codeline>
 <codeline lineno="87"><highlight class="normal"></highlight></codeline>
-<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>rc<sp/>?<sp/><ref refid="stream_api_8h_1a2d05e4c8303106d1425a9efa4ff1fb69a7286620d00da9549f767d5c060c47be0" kindref="member">STREAM_SUCCESS</ref><sp/>:<sp/><ref refid="stream_api_8h_1a2d05e4c8303106d1425a9efa4ff1fb69ab2fcccf86b42738805e2ed631d7566d0" kindref="member">STREAM_TIMEOUT</ref>;</highlight></codeline>
-<codeline lineno="89"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="90"><highlight class="normal"></highlight></codeline>
-<codeline lineno="91"><highlight class="normal"><ref refid="class_stream2_a_p_i_1af741e582cab0a6d1eca6d57d88c1932a" kindref="member">Stream2API::Stream2API</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*hostname)<sp/>:<sp/>mHostname(epicsStrDup(hostname))</highlight></codeline>
-<codeline lineno="92"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!(mCtx<sp/>=<sp/>zmq_ctx_new()))</highlight></codeline>
-<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/>std::runtime_error(</highlight><highlight class="stringliteral">&quot;unable<sp/>to<sp/>create<sp/>zmq<sp/>context&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="95"><highlight class="normal"></highlight></codeline>
-<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!(mSock<sp/>=<sp/>zmq_socket(mCtx,<sp/>ZMQ_PULL)))</highlight></codeline>
-<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/>std::runtime_error(</highlight><highlight class="stringliteral">&quot;unable<sp/>to<sp/>create<sp/>zmq<sp/>socket&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="98"><highlight class="normal"></highlight></codeline>
-<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>addr[512];</highlight></codeline>
-<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>n;</highlight></codeline>
-<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>n<sp/>=<sp/>epicsSnprintf(addr,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(addr),<sp/></highlight><highlight class="stringliteral">&quot;tcp://%s:%d&quot;</highlight><highlight class="normal">,<sp/>mHostname,<sp/><ref refid="stream2_api_8cpp_1a2f1ae599e19d53b7acd88c73b9e86541" kindref="member">ZMQ_PORT</ref>);</highlight></codeline>
-<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(n<sp/>&gt;=<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(addr))</highlight></codeline>
-<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/>std::runtime_error(</highlight><highlight class="stringliteral">&quot;address<sp/>is<sp/>too<sp/>long&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="104"><highlight class="normal"></highlight></codeline>
-<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/>zmq_connect(mSock,<sp/>addr);</highlight></codeline>
-<codeline lineno="106"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="107"><highlight class="normal"></highlight></codeline>
-<codeline lineno="108"><highlight class="normal"><ref refid="class_stream2_a_p_i_1a3eec851ec7ae143c36ae23353ab1f457" kindref="member">Stream2API::~Stream2API</ref><sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
-<codeline lineno="109"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/>zmq_close(mSock);</highlight></codeline>
-<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/>zmq_ctx_destroy(mCtx);</highlight></codeline>
-<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/>free(mHostname);</highlight></codeline>
-<codeline lineno="113"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="114"><highlight class="normal"></highlight></codeline>
-<codeline lineno="115"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_stream2_a_p_i_1ad534360de5214f24a56e8c6953179959" kindref="member">Stream2API::getHeader</ref><sp/>(<ref refid="structstream__header__t" kindref="compound">stream_header_t</ref><sp/>*header,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>timeout)</highlight></codeline>
-<codeline lineno="116"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*functionName<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;getHeader&quot;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>err<sp/>=<sp/><ref refid="stream_api_8h_1a2d05e4c8303106d1425a9efa4ff1fb69a7286620d00da9549f767d5c060c47be0" kindref="member">STREAM_SUCCESS</ref>;</highlight></codeline>
-<codeline lineno="119"><highlight class="normal"></highlight></codeline>
-<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(timeout<sp/>&amp;&amp;<sp/>(err<sp/>=<sp/>poll(timeout)))</highlight></codeline>
-<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>err;</highlight></codeline>
-<codeline lineno="122"><highlight class="normal"></highlight></codeline>
-<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/>zmq_msg_t<sp/>msg;</highlight></codeline>
-<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Get<sp/>message</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/>zmq_msg_init(&amp;msg);</highlight></codeline>
-<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/>zmq_msg_recv(&amp;msg,<sp/>mSock,<sp/>0);</highlight></codeline>
-<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structstream2__msg" kindref="compound">stream2_msg</ref><sp/>*s2msg;</highlight></codeline>
-<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((err<sp/>=<sp/><ref refid="stream2_8c_1afeb13b20db8d1ca411a98c7d53d9e707" kindref="member">stream2_parse_msg</ref>((</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>*)zmq_msg_data(&amp;msg),<sp/>zmq_msg_size(&amp;msg),<sp/>&amp;s2msg)))<sp/>{</highlight></codeline>
-<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fprintf(stderr,<sp/></highlight><highlight class="stringliteral">&quot;error:<sp/>error<sp/>%i<sp/>parsing<sp/>message\n&quot;</highlight><highlight class="normal">,<sp/>err);</highlight></codeline>
-<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>err;</highlight></codeline>
-<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structstream2__start__msg" kindref="compound">stream2_start_msg</ref>*<sp/>sm<sp/>=<sp/>(<ref refid="structstream2__start__msg" kindref="compound">stream2_start_msg</ref><sp/>*)s2msg;</highlight></codeline>
-<codeline lineno="133"><highlight class="normal"></highlight></codeline>
-<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(sm-&gt;<ref refid="structstream2__start__msg_1a75fb1fd7c6cb5277c7ca04d821be1021" kindref="member">type</ref><sp/>!=<sp/><ref refid="stream2_8h_1a6f99eb032697393940e868b711c65c94a483af4edd4e06c40d2fb48174ba51a96" kindref="member">STREAM2_MSG_START</ref>)<sp/>{</highlight></codeline>
-<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="eiger_detector_8cpp_1a02586085698a967f28309aa3d54b43a3" kindref="member">ERR_ARGS</ref>(</highlight><highlight class="stringliteral">&quot;unexpected<sp/>message<sp/>type,<sp/>should<sp/>be<sp/>STREAM2_MSG_START<sp/>(%d),<sp/>actual=%d&quot;</highlight><highlight class="normal">,<sp/><ref refid="stream2_8h_1a6f99eb032697393940e868b711c65c94a483af4edd4e06c40d2fb48174ba51a96" kindref="member">STREAM2_MSG_START</ref>,<sp/>sm-&gt;<ref refid="structstream2__start__msg_1a75fb1fd7c6cb5277c7ca04d821be1021" kindref="member">type</ref>);</highlight></codeline>
-<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="stream_api_8h_1a2d05e4c8303106d1425a9efa4ff1fb69a939db9f16cb937a74d2173143d503d14" kindref="member">STREAM_ERROR</ref>;</highlight></codeline>
-<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/>mSeries_id<sp/>=<sp/>sm-&gt;<ref refid="structstream2__start__msg_1aebc95071e5ad4f552d427574ff96dd8f" kindref="member">series_id</ref>;</highlight></codeline>
-<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/>mImage_dtype<sp/>=<sp/>sm-&gt;<ref refid="structstream2__start__msg_1a5d2c775fcdfea14698460147afa948d2" kindref="member">image_dtype</ref>;</highlight></codeline>
-<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/>mImage_size_x<sp/>=<sp/>sm-&gt;<ref refid="structstream2__start__msg_1a6058d8662519e06adf9c2b2e388e24bd" kindref="member">image_size_x</ref>;</highlight></codeline>
-<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/>mImage_size_y<sp/>=<sp/>sm-&gt;<ref refid="structstream2__start__msg_1aae0df995a99f5457b08b2cca0ca32db1" kindref="member">image_size_y</ref>;</highlight></codeline>
-<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/>mNumber_of_images<sp/>=<sp/>sm-&gt;<ref refid="structstream2__start__msg_1a7fa643388227e58b481f709664308114" kindref="member">number_of_images</ref>;</highlight></codeline>
-<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="stream_api_8h_1a2d05e4c8303106d1425a9efa4ff1fb69a7286620d00da9549f767d5c060c47be0" kindref="member">STREAM_SUCCESS</ref>;</highlight></codeline>
-<codeline lineno="144"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="145"><highlight class="normal"></highlight></codeline>
-<codeline lineno="146"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_stream2_a_p_i_1ab0f6765a98af4c32a5cef0949fb35707" kindref="member">Stream2API::waitFrame</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>*end,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>timeout)</highlight></codeline>
-<codeline lineno="147"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//const<sp/>char<sp/>*functionName<sp/>=<sp/>&quot;waitFrame&quot;;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>err<sp/>=<sp/><ref refid="stream_api_8h_1a2d05e4c8303106d1425a9efa4ff1fb69a7286620d00da9549f767d5c060c47be0" kindref="member">STREAM_SUCCESS</ref>;</highlight></codeline>
-<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/>*end<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="151"><highlight class="normal"></highlight></codeline>
-<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(timeout<sp/>&amp;&amp;<sp/>(err<sp/>=<sp/>poll(timeout)))</highlight></codeline>
-<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>err;</highlight></codeline>
-<codeline lineno="154"><highlight class="normal"></highlight></codeline>
-<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Get<sp/>message</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/>zmq_msg_init(&amp;mMsg);</highlight></codeline>
-<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/>zmq_msg_recv(&amp;mMsg,<sp/>mSock,<sp/>0);</highlight></codeline>
-<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structstream2__msg" kindref="compound">stream2_msg</ref><sp/>*s2msg;</highlight></codeline>
-<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((err<sp/>=<sp/><ref refid="stream2_8c_1afeb13b20db8d1ca411a98c7d53d9e707" kindref="member">stream2_parse_msg</ref>((</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>*)zmq_msg_data(&amp;mMsg),<sp/>zmq_msg_size(&amp;mMsg),<sp/>&amp;s2msg)))<sp/>{</highlight></codeline>
-<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fprintf(stderr,<sp/></highlight><highlight class="stringliteral">&quot;error:<sp/>error<sp/>%i<sp/>parsing<sp/>message\n&quot;</highlight><highlight class="normal">,<sp/>err);</highlight></codeline>
-<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>err;</highlight></codeline>
-<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/>mImageMsg<sp/>=<sp/>(<ref refid="structstream2__image__msg" kindref="compound">stream2_image_msg</ref><sp/>*)s2msg;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>rc<sp/>=<sp/>zmq_poll(&amp;item,<sp/>1,<sp/>timeout*1000);</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(rc<sp/>&lt;<sp/>0)</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_n_d_file_net_c_d_f_8cpp_1a588357de2986fdf4c1380190f7ae9f37" kindref="member">ERR</ref>(</highlight><highlight class="stringliteral">&quot;failed<sp/>to<sp/>poll<sp/>socket&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="stream_api_8h_1a2d05e4c8303106d1425a9efa4ff1fb69a939db9f16cb937a74d2173143d503d14" kindref="member">STREAM_ERROR</ref>;</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>rc<sp/>?<sp/><ref refid="stream_api_8h_1a2d05e4c8303106d1425a9efa4ff1fb69a7286620d00da9549f767d5c060c47be0" kindref="member">STREAM_SUCCESS</ref><sp/>:<sp/><ref refid="stream_api_8h_1a2d05e4c8303106d1425a9efa4ff1fb69ab2fcccf86b42738805e2ed631d7566d0" kindref="member">STREAM_TIMEOUT</ref>;</highlight></codeline>
+<codeline lineno="96"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal">epicsTimeStamp<sp/>Stream2API::extractTimeStampFromMessage(<ref refid="structstream2__image__msg" kindref="compound">stream2_image_msg</ref><sp/>*msg)<sp/>{</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*functionName<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;extractTimeStampFromMessage&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Update<sp/>cache<sp/>if<sp/>needed<sp/>(series_date<sp/>does<sp/>not<sp/>change<sp/>for</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>the<sp/>entirety<sp/>of<sp/>one<sp/>acquisition)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(mCachedTs.tsStr<sp/>!=<sp/>mImageMsg-&gt;<ref refid="structstream2__image__msg_1a704a3f27f95fdf5a30076f92967e387d" kindref="member">series_date</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mCachedTs.tsStr<sp/>=<sp/>mImageMsg-&gt;<ref refid="structstream2__image__msg_1a704a3f27f95fdf5a30076f92967e387d" kindref="member">series_date</ref>;</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>gm_tm_nano_sec<sp/>parsedTs<sp/>=<sp/>rfc3339::parseRfc3339Timestamp(mImageMsg-&gt;<ref refid="structstream2__image__msg_1a704a3f27f95fdf5a30076f92967e387d" kindref="member">series_date</ref>);</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(rfc3339::equals(parsedTs,<sp/>rfc3339::ZERO))</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="eiger_detector_8cpp_1a02586085698a967f28309aa3d54b43a3" kindref="member">ERR_ARGS</ref>(</highlight><highlight class="stringliteral">&quot;Failed<sp/>to<sp/>parse<sp/>timestamp<sp/>&apos;%s&apos;<sp/>as<sp/>an<sp/>RFC3339-compliant<sp/>timestamp&quot;</highlight><highlight class="normal">,<sp/>mImageMsg-&gt;<ref refid="structstream2__image__msg_1a704a3f27f95fdf5a30076f92967e387d" kindref="member">series_date</ref>);</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>epicsTime<sp/><ref refid="class_stream2_a_p_i_1ad20b7cb59827cf21736894df9281eb8d" kindref="member">ts</ref><sp/>=<sp/>parsedTs;<sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Convert<sp/>gm_tm_nano_sec<sp/>to<sp/>epicsTime</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mCachedTs.ts<sp/>=<sp/><ref refid="class_stream2_a_p_i_1ad20b7cb59827cf21736894df9281eb8d" kindref="member">ts</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Convert<sp/>epicsTime<sp/>to<sp/>epicsTimeStamp</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>epicsUInt64<sp/>NSEC_PER_SEC<sp/>=<sp/>1000000000u;</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/>epicsTimeStamp<sp/>series_ts<sp/>=<sp/>mCachedTs.ts;</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Calculate<sp/>the<sp/>frame<sp/>start<sp/>time<sp/>relative<sp/>to<sp/>the<sp/>series<sp/>start<sp/>time,<sp/>in<sp/>ns</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/>epicsUInt64<sp/>ticks<sp/>=<sp/>mImageMsg-&gt;<ref refid="structstream2__image__msg_1a6f5b515569c97dec9e3d62bdeb2fe196" kindref="member">start_time</ref>[0];<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Ticks<sp/>of<sp/>the<sp/>clock</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/>epicsUInt64<sp/>time_base<sp/>=<sp/>mImageMsg-&gt;<ref refid="structstream2__image__msg_1a6f5b515569c97dec9e3d62bdeb2fe196" kindref="member">start_time</ref>[1];<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Clock<sp/>freq<sp/>(e.g<sp/>50000000<sp/>for<sp/>50<sp/>MHz)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/>epicsUInt64<sp/>elapsed_ns<sp/>=<sp/>NSEC_PER_SEC<sp/>*<sp/>ticks<sp/>/<sp/>time_base;</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/>epicsUInt64<sp/>frame_sec<sp/>=<sp/>series_ts.secPastEpoch;</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/>epicsUInt64<sp/>frame_nsec<sp/>=<sp/>series_ts.nsec;</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/>frame_nsec<sp/>+=<sp/>elapsed_ns;</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Normalize</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/>frame_sec<sp/>+=<sp/>frame_nsec<sp/>/<sp/>NSEC_PER_SEC;</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/>frame_nsec<sp/>=<sp/>frame_nsec<sp/>%<sp/>NSEC_PER_SEC;</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>epicsTimeStamp<sp/>{</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.secPastEpoch<sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">epicsUInt32</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(frame_sec),</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.nsec<sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">epicsUInt32</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(frame_nsec),</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="134"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><ref refid="class_stream2_a_p_i_1af741e582cab0a6d1eca6d57d88c1932a" kindref="member">Stream2API::Stream2API</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*hostname)<sp/>:<sp/>mHostname(epicsStrDup(hostname))</highlight></codeline>
+<codeline lineno="137"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!(mCtx<sp/>=<sp/>zmq_ctx_new()))</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/>std::runtime_error(</highlight><highlight class="stringliteral">&quot;unable<sp/>to<sp/>create<sp/>zmq<sp/>context&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!(mSock<sp/>=<sp/>zmq_socket(mCtx,<sp/>ZMQ_PULL)))</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/>std::runtime_error(</highlight><highlight class="stringliteral">&quot;unable<sp/>to<sp/>create<sp/>zmq<sp/>socket&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>addr[512];</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>n;</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/>n<sp/>=<sp/>epicsSnprintf(addr,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(addr),<sp/></highlight><highlight class="stringliteral">&quot;tcp://%s:%d&quot;</highlight><highlight class="normal">,<sp/>mHostname,<sp/><ref refid="stream2_api_8cpp_1a2f1ae599e19d53b7acd88c73b9e86541" kindref="member">ZMQ_PORT</ref>);</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(n<sp/>&gt;=<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(addr))</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/>std::runtime_error(</highlight><highlight class="stringliteral">&quot;address<sp/>is<sp/>too<sp/>long&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/>zmq_connect(mSock,<sp/>addr);</highlight></codeline>
+<codeline lineno="151"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><ref refid="class_stream2_a_p_i_1a3eec851ec7ae143c36ae23353ab1f457" kindref="member">Stream2API::~Stream2API</ref><sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="154"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/>zmq_close(mSock);</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/>zmq_ctx_destroy(mCtx);</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/>free(mHostname);</highlight></codeline>
+<codeline lineno="158"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_stream2_a_p_i_1ad534360de5214f24a56e8c6953179959" kindref="member">Stream2API::getHeader</ref><sp/>(<ref refid="structstream__header__t" kindref="compound">stream_header_t</ref><sp/>*header,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>timeout)</highlight></codeline>
+<codeline lineno="161"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*functionName<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;getHeader&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>err<sp/>=<sp/><ref refid="stream_api_8h_1a2d05e4c8303106d1425a9efa4ff1fb69a7286620d00da9549f767d5c060c47be0" kindref="member">STREAM_SUCCESS</ref>;</highlight></codeline>
 <codeline lineno="164"><highlight class="normal"></highlight></codeline>
-<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(mImageMsg-&gt;<ref refid="structstream2__image__msg_1a193f9551f1ccc40d3fc0022627cf3462" kindref="member">type</ref><sp/>==<sp/><ref refid="stream2_8h_1a6f99eb032697393940e868b711c65c94ade60faf15901c5389a827f7fb06e0c9c" kindref="member">STREAM2_MSG_END</ref>)</highlight></codeline>
-<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*end<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>err;</highlight></codeline>
-<codeline lineno="170"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="171"><highlight class="normal"></highlight></codeline>
-<codeline lineno="172"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_stream2_a_p_i_1afedd991e3038bb631f0a4859e146c2ad" kindref="member">Stream2API::getFrame</ref><sp/>(<ref refid="class_n_d_array" kindref="compound">NDArray</ref><sp/>**pArrayOut,<sp/><ref refid="class_n_d_array_pool" kindref="compound">NDArrayPool</ref><sp/>*pNDArrayPool,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>decompress)</highlight></codeline>
-<codeline lineno="173"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*functionName<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;getFrame&quot;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>err<sp/>=<sp/><ref refid="stream_api_8h_1a2d05e4c8303106d1425a9efa4ff1fb69a7286620d00da9549f767d5c060c47be0" kindref="member">STREAM_SUCCESS</ref>;</highlight></codeline>
-<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>compressedSize,<sp/>uncompressedSize;</highlight></codeline>
-<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>dims[3];</highlight></codeline>
-<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>numDims;</highlight></codeline>
-<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_n_d_array" kindref="compound">NDArray</ref><sp/>*pArray;</highlight></codeline>
-<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>encoding[32];</highlight></codeline>
-<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_n_d_attribute_8h_1a34b835bcabc3b7f546f4b25c5767cb16" kindref="member">NDDataType_t</ref><sp/><ref refid="_a_d_pylon_8cpp_1a048925b4357a1b4d6015c2113e05ce9f" kindref="member">dataType</ref>;</highlight></codeline>
-<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>numThresholds<sp/>=<sp/>mImageMsg-&gt;<ref refid="structstream2__image__msg_1acc130dfb06cd34e73c93f2c106dc0d1c" kindref="member">data</ref>.<ref refid="structstream2__image__data__map_1a603c8a5e0ad40d988436bc7b6fde934d" kindref="member">len</ref>;</highlight></codeline>
-<codeline lineno="183"><highlight class="normal"></highlight></codeline>
-<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal"><sp/>(mImageMsg-&gt;<ref refid="structstream2__image__msg_1a193f9551f1ccc40d3fc0022627cf3462" kindref="member">type</ref>)<sp/>{</highlight></codeline>
-<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="stream2_8h_1a6f99eb032697393940e868b711c65c94a40a47ef7085ec3e38a604c738e7d163e" kindref="member">STREAM2_MSG_IMAGE</ref>:</highlight></codeline>
-<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>numThresholds;<sp/>i++)<sp/>{</highlight></codeline>
-<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structstream2__image__data" kindref="compound">stream2_image_data</ref><sp/>*pSID<sp/>=<sp/>&amp;mImageMsg-&gt;<ref refid="structstream2__image__msg_1acc130dfb06cd34e73c93f2c106dc0d1c" kindref="member">data</ref>.<ref refid="structstream2__image__data__map_1a64d55bd704a3ebe3910f204e9484721c" kindref="member">ptr</ref>[i];</highlight></codeline>
-<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structstream2__multidim__array" kindref="compound">stream2_multidim_array</ref><sp/>mda<sp/>=<sp/>pSID-&gt;<ref refid="structstream2__image__data_1a5cceaa75c221714f5362bf99e2585185" kindref="member">data</ref>;</highlight></codeline>
-<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dims[0]<sp/>=<sp/>mda.<ref refid="structstream2__multidim__array_1a59fbca84d3634bc194c203ff9e6c761c" kindref="member">dim</ref>[1];</highlight></codeline>
-<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dims[1]<sp/>=<sp/>mda.<ref refid="structstream2__multidim__array_1a59fbca84d3634bc194c203ff9e6c761c" kindref="member">dim</ref>[0];</highlight></codeline>
-<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>numDims<sp/>=<sp/>2;</highlight></codeline>
-<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(numThresholds<sp/>&gt;<sp/>1)<sp/>{</highlight></codeline>
-<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dims[2]<sp/>=<sp/>numThresholds;</highlight></codeline>
-<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>numDims<sp/>=<sp/>3;</highlight></codeline>
-<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structstream2__typed__array" kindref="compound">stream2_typed_array</ref><sp/>*pS2Array<sp/>=<sp/>&amp;mda.<ref refid="structstream2__multidim__array_1a947ca8a4bbfeb90c89ba97e6e0e2c605" kindref="member">array</ref>;</highlight></codeline>
-<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="stream2_8h_1a46c314111edc6ee13138186ae5fc4b12" kindref="member">stream2_typed_array_tag</ref><sp/>s2DataType<sp/>=<sp/>(<ref refid="stream2_8h_1a46c314111edc6ee13138186ae5fc4b12" kindref="member">stream2_typed_array_tag</ref>)pS2Array-&gt;<ref refid="structstream2__typed__array_1a792d20ffa7c2ebfe53830104284de8a5" kindref="member">tag</ref>;</highlight></codeline>
-<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structstream2__bytes" kindref="compound">stream2_bytes</ref><sp/>*pSB<sp/>=<sp/>&amp;pS2Array-&gt;data;</highlight></codeline>
-<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>compressedSize<sp/>=<sp/>pSB-&gt;<ref refid="structstream2__bytes_1a205c2b0c9548859b200b8edb0063e746" kindref="member">len</ref>;</highlight></codeline>
-<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uncompressedSize<sp/>=<sp/>pSB-&gt;<ref refid="structstream2__bytes_1a205c2b0c9548859b200b8edb0063e746" kindref="member">len</ref>;</highlight></codeline>
-<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structstream2__compression" kindref="compound">stream2_compression</ref><sp/>*pCompression<sp/>=<sp/>&amp;pSB-&gt;<ref refid="structstream2__bytes_1ae9344d20ba0e6a9f65b2a3e6b502fde8" kindref="member">compression</ref>;</highlight></codeline>
-<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(pCompression-&gt;<ref refid="structstream2__compression_1a7e585160d2f8639ba5782ac4f1211e4d" kindref="member">algorithm</ref><sp/>!=<sp/>NULL)<sp/>{</highlight></codeline>
-<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uncompressedSize<sp/>=<sp/>pCompression-&gt;<ref refid="structstream2__compression_1ad62bbb38f375b3aba4a753a273ca32d6" kindref="member">orig_size</ref>;</highlight></codeline>
-<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>strcpy(encoding,<sp/>pCompression-&gt;<ref refid="structstream2__compression_1a7e585160d2f8639ba5782ac4f1211e4d" kindref="member">algorithm</ref>);</highlight></codeline>
-<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal"><sp/>(s2DataType)<sp/>{</highlight></codeline>
-<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="stream2_8h_1a46c314111edc6ee13138186ae5fc4b12ad46d8748acbda7da39beee47ae27a7b2" kindref="member">STREAM2_TYPED_ARRAY_UINT8</ref>:</highlight></codeline>
-<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_a_d_pylon_8cpp_1a048925b4357a1b4d6015c2113e05ce9f" kindref="member">dataType</ref><sp/>=<sp/><ref refid="_n_d_attribute_8h_1a34b835bcabc3b7f546f4b25c5767cb16aa5f7c86d8f7853be5eb27c00481f93de" kindref="member">NDUInt8</ref>;</highlight></codeline>
-<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="stream2_8h_1a46c314111edc6ee13138186ae5fc4b12a79f363109eca62369fd91eb96f5c9fc4" kindref="member">STREAM2_TYPED_ARRAY_UINT16_LITTLE_ENDIAN</ref>:</highlight></codeline>
-<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_a_d_pylon_8cpp_1a048925b4357a1b4d6015c2113e05ce9f" kindref="member">dataType</ref><sp/>=<sp/><ref refid="_n_d_attribute_8h_1a34b835bcabc3b7f546f4b25c5767cb16a174cfb9ba69c78761d4d9d25ec1bd8df" kindref="member">NDUInt16</ref>;</highlight></codeline>
-<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="stream2_8h_1a46c314111edc6ee13138186ae5fc4b12aafef8ebe241345a46f1dcf64b7c1c12d" kindref="member">STREAM2_TYPED_ARRAY_UINT32_LITTLE_ENDIAN</ref>:</highlight></codeline>
-<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_a_d_pylon_8cpp_1a048925b4357a1b4d6015c2113e05ce9f" kindref="member">dataType</ref><sp/>=<sp/><ref refid="_n_d_attribute_8h_1a34b835bcabc3b7f546f4b25c5767cb16a0492c093c2dcd6eebcaf15f57a2f359a" kindref="member">NDUInt32</ref>;</highlight></codeline>
-<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="eiger_detector_8cpp_1a02586085698a967f28309aa3d54b43a3" kindref="member">ERR_ARGS</ref>(</highlight><highlight class="stringliteral">&quot;unknown<sp/>dataType<sp/>%d&quot;</highlight><highlight class="normal">,<sp/>s2DataType);</highlight></codeline>
-<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>err<sp/>=<sp/><ref refid="stream_api_8h_1a2d05e4c8303106d1425a9efa4ff1fb69a939db9f16cb937a74d2173143d503d14" kindref="member">STREAM_ERROR</ref>;</highlight></codeline>
-<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">goto</highlight><highlight class="normal"><sp/>error;</highlight></codeline>
-<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>On<sp/>first<sp/>threshold<sp/>we<sp/>create<sp/>the<sp/>NDArray</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(i<sp/>==<sp/>0)<sp/>{</highlight></codeline>
-<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!(pArray<sp/>=<sp/>pNDArrayPool-&gt;<ref refid="class_n_d_array_pool_1a26b4360694655c4af6c853c2f3d2ce5e" kindref="member">alloc</ref>(numDims,<sp/>dims,<sp/><ref refid="_a_d_pylon_8cpp_1a048925b4357a1b4d6015c2113e05ce9f" kindref="member">dataType</ref>,<sp/>0,<sp/>NULL)))</highlight></codeline>
-<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_n_d_file_net_c_d_f_8cpp_1a588357de2986fdf4c1380190f7ae9f37" kindref="member">ERR</ref>(</highlight><highlight class="stringliteral">&quot;failed<sp/>to<sp/>allocate<sp/>NDArray<sp/>for<sp/>frame&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>err<sp/>=<sp/><ref refid="stream_api_8h_1a2d05e4c8303106d1425a9efa4ff1fb69a939db9f16cb937a74d2173143d503d14" kindref="member">STREAM_ERROR</ref>;</highlight></codeline>
-<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">goto</highlight><highlight class="normal"><sp/>error;</highlight></codeline>
-<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Get<sp/>frame<sp/>data</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>If<sp/>data<sp/>is<sp/>uncompressed<sp/>we<sp/>can<sp/>copy<sp/>directly<sp/>into<sp/>NDArray</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(pCompression-&gt;<ref refid="structstream2__compression_1a7e585160d2f8639ba5782ac4f1211e4d" kindref="member">algorithm</ref><sp/>==<sp/>NULL)</highlight></codeline>
-<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>memcpy((</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*)pArray-&gt;<ref refid="class_n_d_array_1a9581f9d8f38225a2c2977bbed70fa2b8" kindref="member">pData</ref><sp/>+<sp/>(i*uncompressedSize),<sp/>pSB-&gt;<ref refid="structstream2__bytes_1aa38e0756c17457529fe2f5eaf4d453f5" kindref="member">ptr</ref>,<sp/>uncompressedSize);</highlight></codeline>
-<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight></codeline>
-<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(decompress)<sp/></highlight></codeline>
-<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_stream2_a_p_i_1a756f2988c47b66b443db6cce64413aab" kindref="member">uncompress</ref>(pSB-&gt;<ref refid="structstream2__bytes_1aa38e0756c17457529fe2f5eaf4d453f5" kindref="member">ptr</ref>,<sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*)pArray-&gt;<ref refid="class_n_d_array_1a9581f9d8f38225a2c2977bbed70fa2b8" kindref="member">pData</ref><sp/>+<sp/>(i*uncompressedSize),<sp/>encoding,<sp/></highlight></codeline>
-<codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>compressedSize,<sp/>uncompressedSize,<sp/><ref refid="_a_d_pylon_8cpp_1a048925b4357a1b4d6015c2113e05ce9f" kindref="member">dataType</ref>);</highlight></codeline>
-<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*pInput<sp/>=<sp/>pSB-&gt;<ref refid="structstream2__bytes_1aa38e0756c17457529fe2f5eaf4d453f5" kindref="member">ptr</ref>;</highlight></codeline>
-<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(strcmp(encoding,<sp/></highlight><highlight class="stringliteral">&quot;lz4&quot;</highlight><highlight class="normal">)<sp/>==<sp/>0)<sp/></highlight></codeline>
-<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pArray-&gt;<ref refid="class_n_d_array_1aae4c398d50b57a42d076f1d0d4bfec33" kindref="member">codec</ref>.<ref refid="struct_codec__t_1aabba1f877495ef20dc66822e1947d9fc" kindref="member">name</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;lz4&quot;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(strcmp(encoding,<sp/></highlight><highlight class="stringliteral">&quot;bslz4&quot;</highlight><highlight class="normal">)<sp/>==<sp/>0)<sp/></highlight></codeline>
-<codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pArray-&gt;<ref refid="class_n_d_array_1aae4c398d50b57a42d076f1d0d4bfec33" kindref="member">codec</ref>.<ref refid="struct_codec__t_1aabba1f877495ef20dc66822e1947d9fc" kindref="member">name</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;bslz4&quot;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pInput<sp/>+=<sp/>12;</highlight></codeline>
-<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>compressedSize<sp/>-=<sp/>12;</highlight></codeline>
-<codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="eiger_detector_8cpp_1a02586085698a967f28309aa3d54b43a3" kindref="member">ERR_ARGS</ref>(</highlight><highlight class="stringliteral">&quot;unknown<sp/>encoding<sp/>%s&quot;</highlight><highlight class="normal">,<sp/>encoding);</highlight></codeline>
-<codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pArray-&gt;<ref refid="class_n_d_array_1af0339c583d419e92ab33f7e95d14c190" kindref="member">compressedSize</ref><sp/>=<sp/>compressedSize;</highlight></codeline>
-<codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>memcpy(pArray-&gt;<ref refid="class_n_d_array_1a9581f9d8f38225a2c2977bbed70fa2b8" kindref="member">pData</ref>,<sp/>pInput,<sp/>compressedSize);</highlight></codeline>
-<codeline lineno="262"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="264"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*pArrayOut<sp/>=<sp/>pArray;</highlight></codeline>
-<codeline lineno="265"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="267"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="268"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="eiger_detector_8cpp_1a02586085698a967f28309aa3d54b43a3" kindref="member">ERR_ARGS</ref>(</highlight><highlight class="stringliteral">&quot;unknown<sp/>unexpected<sp/>message<sp/>types<sp/>%d&quot;</highlight><highlight class="normal">,<sp/>mImageMsg-&gt;<ref refid="structstream2__image__msg_1a193f9551f1ccc40d3fc0022627cf3462" kindref="member">type</ref>);</highlight></codeline>
-<codeline lineno="269"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="270"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="271"><highlight class="normal"><sp/><sp/><sp/><sp/>error:</highlight></codeline>
-<codeline lineno="272"><highlight class="normal"><sp/><sp/><sp/><sp/>zmq_msg_close(&amp;mMsg);</highlight></codeline>
-<codeline lineno="273"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>err;</highlight></codeline>
-<codeline lineno="274"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="275"><highlight class="normal"></highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(timeout<sp/>&amp;&amp;<sp/>(err<sp/>=<sp/>poll(timeout)))</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>err;</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"></highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/>zmq_msg_t<sp/>msg;</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Get<sp/>message</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/>zmq_msg_init(&amp;msg);</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/>zmq_msg_recv(&amp;msg,<sp/>mSock,<sp/>0);</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structstream2__msg" kindref="compound">stream2_msg</ref><sp/>*s2msg;</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((err<sp/>=<sp/><ref refid="stream2_8c_1afeb13b20db8d1ca411a98c7d53d9e707" kindref="member">stream2_parse_msg</ref>((</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>*)zmq_msg_data(&amp;msg),<sp/>zmq_msg_size(&amp;msg),<sp/>&amp;s2msg)))<sp/>{</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fprintf(stderr,<sp/></highlight><highlight class="stringliteral">&quot;error:<sp/>error<sp/>%i<sp/>parsing<sp/>message\n&quot;</highlight><highlight class="normal">,<sp/>err);</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>err;</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structstream2__start__msg" kindref="compound">stream2_start_msg</ref>*<sp/>sm<sp/>=<sp/>(<ref refid="structstream2__start__msg" kindref="compound">stream2_start_msg</ref><sp/>*)s2msg;</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"></highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(sm-&gt;<ref refid="structstream2__start__msg_1a75fb1fd7c6cb5277c7ca04d821be1021" kindref="member">type</ref><sp/>!=<sp/><ref refid="stream2_8h_1a6f99eb032697393940e868b711c65c94a483af4edd4e06c40d2fb48174ba51a96" kindref="member">STREAM2_MSG_START</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="eiger_detector_8cpp_1a02586085698a967f28309aa3d54b43a3" kindref="member">ERR_ARGS</ref>(</highlight><highlight class="stringliteral">&quot;unexpected<sp/>message<sp/>type,<sp/>should<sp/>be<sp/>STREAM2_MSG_START<sp/>(%d),<sp/>actual=%d&quot;</highlight><highlight class="normal">,<sp/><ref refid="stream2_8h_1a6f99eb032697393940e868b711c65c94a483af4edd4e06c40d2fb48174ba51a96" kindref="member">STREAM2_MSG_START</ref>,<sp/>sm-&gt;<ref refid="structstream2__start__msg_1a75fb1fd7c6cb5277c7ca04d821be1021" kindref="member">type</ref>);</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="stream_api_8h_1a2d05e4c8303106d1425a9efa4ff1fb69a939db9f16cb937a74d2173143d503d14" kindref="member">STREAM_ERROR</ref>;</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/>mSeries_id<sp/>=<sp/>sm-&gt;<ref refid="structstream2__start__msg_1aebc95071e5ad4f552d427574ff96dd8f" kindref="member">series_id</ref>;</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/>mImage_dtype<sp/>=<sp/>sm-&gt;<ref refid="structstream2__start__msg_1a5d2c775fcdfea14698460147afa948d2" kindref="member">image_dtype</ref>;</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/>mImage_size_x<sp/>=<sp/>sm-&gt;<ref refid="structstream2__start__msg_1a6058d8662519e06adf9c2b2e388e24bd" kindref="member">image_size_x</ref>;</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/>mImage_size_y<sp/>=<sp/>sm-&gt;<ref refid="structstream2__start__msg_1aae0df995a99f5457b08b2cca0ca32db1" kindref="member">image_size_y</ref>;</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/>mNumber_of_images<sp/>=<sp/>sm-&gt;<ref refid="structstream2__start__msg_1a7fa643388227e58b481f709664308114" kindref="member">number_of_images</ref>;</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="stream_api_8h_1a2d05e4c8303106d1425a9efa4ff1fb69a7286620d00da9549f767d5c060c47be0" kindref="member">STREAM_SUCCESS</ref>;</highlight></codeline>
+<codeline lineno="189"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"></highlight></codeline>
+<codeline lineno="191"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_stream2_a_p_i_1ab0f6765a98af4c32a5cef0949fb35707" kindref="member">Stream2API::waitFrame</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>*end,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>timeout)</highlight></codeline>
+<codeline lineno="192"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//const<sp/>char<sp/>*functionName<sp/>=<sp/>&quot;waitFrame&quot;;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>err<sp/>=<sp/><ref refid="stream_api_8h_1a2d05e4c8303106d1425a9efa4ff1fb69a7286620d00da9549f767d5c060c47be0" kindref="member">STREAM_SUCCESS</ref>;</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/>*end<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"></highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(timeout<sp/>&amp;&amp;<sp/>(err<sp/>=<sp/>poll(timeout)))</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>err;</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"></highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Get<sp/>message</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/>zmq_msg_init(&amp;mMsg);</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/>zmq_msg_recv(&amp;mMsg,<sp/>mSock,<sp/>0);</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structstream2__msg" kindref="compound">stream2_msg</ref><sp/>*s2msg;</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((err<sp/>=<sp/><ref refid="stream2_8c_1afeb13b20db8d1ca411a98c7d53d9e707" kindref="member">stream2_parse_msg</ref>((</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>*)zmq_msg_data(&amp;mMsg),<sp/>zmq_msg_size(&amp;mMsg),<sp/>&amp;s2msg)))<sp/>{</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fprintf(stderr,<sp/></highlight><highlight class="stringliteral">&quot;error:<sp/>error<sp/>%i<sp/>parsing<sp/>message\n&quot;</highlight><highlight class="normal">,<sp/>err);</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>err;</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/>mImageMsg<sp/>=<sp/>(<ref refid="structstream2__image__msg" kindref="compound">stream2_image_msg</ref><sp/>*)s2msg;</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"></highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(mImageMsg-&gt;<ref refid="structstream2__image__msg_1a193f9551f1ccc40d3fc0022627cf3462" kindref="member">type</ref><sp/>==<sp/><ref refid="stream2_8h_1a6f99eb032697393940e868b711c65c94ade60faf15901c5389a827f7fb06e0c9c" kindref="member">STREAM2_MSG_END</ref>)</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*end<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>err;</highlight></codeline>
+<codeline lineno="215"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"></highlight></codeline>
+<codeline lineno="217"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_stream2_a_p_i_1a6c6f2c01ee9d52060635d9c0f8e29dcd" kindref="member">Stream2API::getFrame</ref><sp/>(<ref refid="class_n_d_array" kindref="compound">NDArray</ref><sp/>**pArrayOut,<sp/><ref refid="class_n_d_array_pool" kindref="compound">NDArrayPool</ref><sp/>*pNDArrayPool,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>decompress,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>extractTimeStamp)</highlight></codeline>
+<codeline lineno="218"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*functionName<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;getFrame&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>err<sp/>=<sp/><ref refid="stream_api_8h_1a2d05e4c8303106d1425a9efa4ff1fb69a7286620d00da9549f767d5c060c47be0" kindref="member">STREAM_SUCCESS</ref>;</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>compressedSize,<sp/>uncompressedSize;</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>dims[3];</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>numDims;</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_n_d_array" kindref="compound">NDArray</ref><sp/>*pArray;</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>encoding[32];</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_n_d_attribute_8h_1a34b835bcabc3b7f546f4b25c5767cb16" kindref="member">NDDataType_t</ref><sp/><ref refid="_a_d_pylon_8cpp_1a048925b4357a1b4d6015c2113e05ce9f" kindref="member">dataType</ref>;</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>numThresholds<sp/>=<sp/>mImageMsg-&gt;<ref refid="structstream2__image__msg_1acc130dfb06cd34e73c93f2c106dc0d1c" kindref="member">data</ref>.<ref refid="structstream2__image__data__map_1a603c8a5e0ad40d988436bc7b6fde934d" kindref="member">len</ref>;</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"></highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal"><sp/>(mImageMsg-&gt;<ref refid="structstream2__image__msg_1a193f9551f1ccc40d3fc0022627cf3462" kindref="member">type</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="stream2_8h_1a6f99eb032697393940e868b711c65c94a40a47ef7085ec3e38a604c738e7d163e" kindref="member">STREAM2_MSG_IMAGE</ref>:</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>numThresholds;<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structstream2__image__data" kindref="compound">stream2_image_data</ref><sp/>*pSID<sp/>=<sp/>&amp;mImageMsg-&gt;<ref refid="structstream2__image__msg_1acc130dfb06cd34e73c93f2c106dc0d1c" kindref="member">data</ref>.<ref refid="structstream2__image__data__map_1a64d55bd704a3ebe3910f204e9484721c" kindref="member">ptr</ref>[i];</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structstream2__multidim__array" kindref="compound">stream2_multidim_array</ref><sp/>mda<sp/>=<sp/>pSID-&gt;<ref refid="structstream2__image__data_1a5cceaa75c221714f5362bf99e2585185" kindref="member">data</ref>;</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dims[0]<sp/>=<sp/>mda.<ref refid="structstream2__multidim__array_1a59fbca84d3634bc194c203ff9e6c761c" kindref="member">dim</ref>[1];</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dims[1]<sp/>=<sp/>mda.<ref refid="structstream2__multidim__array_1a59fbca84d3634bc194c203ff9e6c761c" kindref="member">dim</ref>[0];</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>numDims<sp/>=<sp/>2;</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(numThresholds<sp/>&gt;<sp/>1)<sp/>{</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dims[2]<sp/>=<sp/>numThresholds;</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>numDims<sp/>=<sp/>3;</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structstream2__typed__array" kindref="compound">stream2_typed_array</ref><sp/>*pS2Array<sp/>=<sp/>&amp;mda.<ref refid="structstream2__multidim__array_1a947ca8a4bbfeb90c89ba97e6e0e2c605" kindref="member">array</ref>;</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="stream2_8h_1a46c314111edc6ee13138186ae5fc4b12" kindref="member">stream2_typed_array_tag</ref><sp/>s2DataType<sp/>=<sp/>(<ref refid="stream2_8h_1a46c314111edc6ee13138186ae5fc4b12" kindref="member">stream2_typed_array_tag</ref>)pS2Array-&gt;<ref refid="structstream2__typed__array_1a792d20ffa7c2ebfe53830104284de8a5" kindref="member">tag</ref>;</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structstream2__bytes" kindref="compound">stream2_bytes</ref><sp/>*pSB<sp/>=<sp/>&amp;pS2Array-&gt;data;</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>compressedSize<sp/>=<sp/>pSB-&gt;<ref refid="structstream2__bytes_1a205c2b0c9548859b200b8edb0063e746" kindref="member">len</ref>;</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uncompressedSize<sp/>=<sp/>pSB-&gt;<ref refid="structstream2__bytes_1a205c2b0c9548859b200b8edb0063e746" kindref="member">len</ref>;</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structstream2__compression" kindref="compound">stream2_compression</ref><sp/>*pCompression<sp/>=<sp/>&amp;pSB-&gt;<ref refid="structstream2__bytes_1ae9344d20ba0e6a9f65b2a3e6b502fde8" kindref="member">compression</ref>;</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(pCompression-&gt;<ref refid="structstream2__compression_1a7e585160d2f8639ba5782ac4f1211e4d" kindref="member">algorithm</ref><sp/>!=<sp/>NULL)<sp/>{</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uncompressedSize<sp/>=<sp/>pCompression-&gt;<ref refid="structstream2__compression_1ad62bbb38f375b3aba4a753a273ca32d6" kindref="member">orig_size</ref>;</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>strcpy(encoding,<sp/>pCompression-&gt;<ref refid="structstream2__compression_1a7e585160d2f8639ba5782ac4f1211e4d" kindref="member">algorithm</ref>);</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal"><sp/>(s2DataType)<sp/>{</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="stream2_8h_1a46c314111edc6ee13138186ae5fc4b12ad46d8748acbda7da39beee47ae27a7b2" kindref="member">STREAM2_TYPED_ARRAY_UINT8</ref>:</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_a_d_pylon_8cpp_1a048925b4357a1b4d6015c2113e05ce9f" kindref="member">dataType</ref><sp/>=<sp/><ref refid="_n_d_attribute_8h_1a34b835bcabc3b7f546f4b25c5767cb16aa5f7c86d8f7853be5eb27c00481f93de" kindref="member">NDUInt8</ref>;</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="stream2_8h_1a46c314111edc6ee13138186ae5fc4b12a79f363109eca62369fd91eb96f5c9fc4" kindref="member">STREAM2_TYPED_ARRAY_UINT16_LITTLE_ENDIAN</ref>:</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_a_d_pylon_8cpp_1a048925b4357a1b4d6015c2113e05ce9f" kindref="member">dataType</ref><sp/>=<sp/><ref refid="_n_d_attribute_8h_1a34b835bcabc3b7f546f4b25c5767cb16a174cfb9ba69c78761d4d9d25ec1bd8df" kindref="member">NDUInt16</ref>;</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="stream2_8h_1a46c314111edc6ee13138186ae5fc4b12aafef8ebe241345a46f1dcf64b7c1c12d" kindref="member">STREAM2_TYPED_ARRAY_UINT32_LITTLE_ENDIAN</ref>:</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_a_d_pylon_8cpp_1a048925b4357a1b4d6015c2113e05ce9f" kindref="member">dataType</ref><sp/>=<sp/><ref refid="_n_d_attribute_8h_1a34b835bcabc3b7f546f4b25c5767cb16a0492c093c2dcd6eebcaf15f57a2f359a" kindref="member">NDUInt32</ref>;</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="eiger_detector_8cpp_1a02586085698a967f28309aa3d54b43a3" kindref="member">ERR_ARGS</ref>(</highlight><highlight class="stringliteral">&quot;unknown<sp/>dataType<sp/>%d&quot;</highlight><highlight class="normal">,<sp/>s2DataType);</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>err<sp/>=<sp/><ref refid="stream_api_8h_1a2d05e4c8303106d1425a9efa4ff1fb69a939db9f16cb937a74d2173143d503d14" kindref="member">STREAM_ERROR</ref>;</highlight></codeline>
+<codeline lineno="264"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">goto</highlight><highlight class="normal"><sp/>error;</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="267"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>On<sp/>first<sp/>threshold<sp/>we<sp/>create<sp/>the<sp/>NDArray</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="268"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(i<sp/>==<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="269"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!(pArray<sp/>=<sp/>pNDArrayPool-&gt;<ref refid="class_n_d_array_pool_1a26b4360694655c4af6c853c2f3d2ce5e" kindref="member">alloc</ref>(numDims,<sp/>dims,<sp/><ref refid="_a_d_pylon_8cpp_1a048925b4357a1b4d6015c2113e05ce9f" kindref="member">dataType</ref>,<sp/>0,<sp/>NULL)))</highlight></codeline>
+<codeline lineno="270"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="271"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_n_d_file_net_c_d_f_8cpp_1a588357de2986fdf4c1380190f7ae9f37" kindref="member">ERR</ref>(</highlight><highlight class="stringliteral">&quot;failed<sp/>to<sp/>allocate<sp/>NDArray<sp/>for<sp/>frame&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="272"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>err<sp/>=<sp/><ref refid="stream_api_8h_1a2d05e4c8303106d1425a9efa4ff1fb69a939db9f16cb937a74d2173143d503d14" kindref="member">STREAM_ERROR</ref>;</highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">goto</highlight><highlight class="normal"><sp/>error;</highlight></codeline>
+<codeline lineno="274"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="275"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="276"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Get<sp/>frame<sp/>data</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="277"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>If<sp/>data<sp/>is<sp/>uncompressed<sp/>we<sp/>can<sp/>copy<sp/>directly<sp/>into<sp/>NDArray</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="278"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(pCompression-&gt;<ref refid="structstream2__compression_1a7e585160d2f8639ba5782ac4f1211e4d" kindref="member">algorithm</ref><sp/>==<sp/>NULL)</highlight></codeline>
+<codeline lineno="279"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="280"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>memcpy((</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*)pArray-&gt;<ref refid="class_n_d_array_1a9581f9d8f38225a2c2977bbed70fa2b8" kindref="member">pData</ref><sp/>+<sp/>(i*uncompressedSize),<sp/>pSB-&gt;<ref refid="structstream2__bytes_1aa38e0756c17457529fe2f5eaf4d453f5" kindref="member">ptr</ref>,<sp/>uncompressedSize);</highlight></codeline>
+<codeline lineno="281"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="282"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="283"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="284"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(decompress)<sp/></highlight></codeline>
+<codeline lineno="285"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="286"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uncompress(pSB-&gt;<ref refid="structstream2__bytes_1aa38e0756c17457529fe2f5eaf4d453f5" kindref="member">ptr</ref>,<sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*)pArray-&gt;<ref refid="class_n_d_array_1a9581f9d8f38225a2c2977bbed70fa2b8" kindref="member">pData</ref><sp/>+<sp/>(i*uncompressedSize),<sp/>encoding,<sp/></highlight></codeline>
+<codeline lineno="287"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>compressedSize,<sp/>uncompressedSize,<sp/><ref refid="_a_d_pylon_8cpp_1a048925b4357a1b4d6015c2113e05ce9f" kindref="member">dataType</ref>);</highlight></codeline>
+<codeline lineno="288"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="289"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="290"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="291"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*pInput<sp/>=<sp/>pSB-&gt;<ref refid="structstream2__bytes_1aa38e0756c17457529fe2f5eaf4d453f5" kindref="member">ptr</ref>;</highlight></codeline>
+<codeline lineno="292"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(strcmp(encoding,<sp/></highlight><highlight class="stringliteral">&quot;lz4&quot;</highlight><highlight class="normal">)<sp/>==<sp/>0)<sp/></highlight></codeline>
+<codeline lineno="293"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="294"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pArray-&gt;<ref refid="class_n_d_array_1aae4c398d50b57a42d076f1d0d4bfec33" kindref="member">codec</ref>.<ref refid="struct_codec__t_1aabba1f877495ef20dc66822e1947d9fc" kindref="member">name</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;lz4&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="295"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="296"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(strcmp(encoding,<sp/></highlight><highlight class="stringliteral">&quot;bslz4&quot;</highlight><highlight class="normal">)<sp/>==<sp/>0)<sp/></highlight></codeline>
+<codeline lineno="297"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="298"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pArray-&gt;<ref refid="class_n_d_array_1aae4c398d50b57a42d076f1d0d4bfec33" kindref="member">codec</ref>.<ref refid="struct_codec__t_1aabba1f877495ef20dc66822e1947d9fc" kindref="member">name</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;bslz4&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="299"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pInput<sp/>+=<sp/>12;</highlight></codeline>
+<codeline lineno="300"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>compressedSize<sp/>-=<sp/>12;</highlight></codeline>
+<codeline lineno="301"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="302"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="303"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="eiger_detector_8cpp_1a02586085698a967f28309aa3d54b43a3" kindref="member">ERR_ARGS</ref>(</highlight><highlight class="stringliteral">&quot;unknown<sp/>encoding<sp/>%s&quot;</highlight><highlight class="normal">,<sp/>encoding);</highlight></codeline>
+<codeline lineno="304"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="305"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pArray-&gt;<ref refid="class_n_d_array_1af0339c583d419e92ab33f7e95d14c190" kindref="member">compressedSize</ref><sp/>=<sp/>compressedSize;</highlight></codeline>
+<codeline lineno="306"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>memcpy(pArray-&gt;<ref refid="class_n_d_array_1a9581f9d8f38225a2c2977bbed70fa2b8" kindref="member">pData</ref>,<sp/>pInput,<sp/>compressedSize);</highlight></codeline>
+<codeline lineno="307"><highlight class="normal"></highlight></codeline>
+<codeline lineno="308"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(extractTimeStamp)<sp/>{</highlight></codeline>
+<codeline lineno="309"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>epicsTimeStamp<sp/><ref refid="class_stream2_a_p_i_1ad20b7cb59827cf21736894df9281eb8d" kindref="member">ts</ref><sp/>=<sp/>extractTimeStampFromMessage(mImageMsg);</highlight></codeline>
+<codeline lineno="310"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pArray-&gt;<ref refid="class_n_d_array_1a107537f0e084674fbec9225cf63c3979" kindref="member">epicsTS</ref><sp/>=<sp/><ref refid="class_stream2_a_p_i_1ad20b7cb59827cf21736894df9281eb8d" kindref="member">ts</ref>;</highlight></codeline>
+<codeline lineno="311"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pArray-&gt;<ref refid="class_n_d_array_1ac449943846ba4c5c18aa1ca5559470c2" kindref="member">timeStamp</ref><sp/>=<sp/><ref refid="class_stream2_a_p_i_1ad20b7cb59827cf21736894df9281eb8d" kindref="member">ts</ref>.secPastEpoch<sp/>+<sp/><ref refid="class_stream2_a_p_i_1ad20b7cb59827cf21736894df9281eb8d" kindref="member">ts</ref>.nsec/1.e9;</highlight></codeline>
+<codeline lineno="312"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="313"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="314"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="315"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*pArrayOut<sp/>=<sp/>pArray;</highlight></codeline>
+<codeline lineno="316"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="317"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="318"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="319"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="eiger_detector_8cpp_1a02586085698a967f28309aa3d54b43a3" kindref="member">ERR_ARGS</ref>(</highlight><highlight class="stringliteral">&quot;unknown<sp/>unexpected<sp/>message<sp/>types<sp/>%d&quot;</highlight><highlight class="normal">,<sp/>mImageMsg-&gt;<ref refid="structstream2__image__msg_1a193f9551f1ccc40d3fc0022627cf3462" kindref="member">type</ref>);</highlight></codeline>
+<codeline lineno="320"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="321"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="322"><highlight class="normal"><sp/><sp/><sp/><sp/>error:</highlight></codeline>
+<codeline lineno="323"><highlight class="normal"><sp/><sp/><sp/><sp/>zmq_msg_close(&amp;mMsg);</highlight></codeline>
+<codeline lineno="324"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>err;</highlight></codeline>
+<codeline lineno="325"><highlight class="normal">}</highlight></codeline>
     </programlisting>
     <location file="/home/runner/work/areaDetector/areaDetector/ADEiger/eigerApp/src/stream2Api.cpp"/>
   </compounddef>

@@ -845,11 +845,18 @@ NDAttribute datasets are forced to have the same dimensionality as the main data
 <td><p>$(P)$(R)DimAttDatasets, $(P)$(R)DimAttDatasets_RBV</p></td>
 <td><p>bo, bi</p></td>
 </tr>
-<tr class="row-even"><td></td>
+<tr class="row-even"><td><p>asynFloat64</p></td>
+<td><p>r/w</p></td>
+<td><p>Fill value for the dataset to be set in its creation property list.</p></td>
+<td><p>HDF5_fillValue</p></td>
+<td><p>$(P)$(R)FillValue, $(P)$(R)FillValue_RBV</p></td>
+<td><p>ao, ai</p></td>
+</tr>
+<tr class="row-odd"><td></td>
 <td></td>
 <td colspan="4"><p><strong>SWMR</strong></p></td>
 </tr>
-<tr class="row-odd"><td><p>asynInt32</p></td>
+<tr class="row-even"><td><p>asynInt32</p></td>
 <td><p>r/o</p></td>
 <td><p>Does the HDF5 library version support SWMR mode of operation (1 = Supported, 0 =
 Not Supported).</p></td>
@@ -857,15 +864,15 @@ Not Supported).</p></td>
 <td><p>$(P)$(R)SWMRSupported_RBV</p></td>
 <td><p>bi</p></td>
 </tr>
-<tr class="row-even"><td><p>asynInt32</p></td>
+<tr class="row-odd"><td><p>asynInt32</p></td>
 <td><p>r/w</p></td>
 <td><p>Turn on or off SWMR mode for the next acquisition (1 = On, 0 = Off). Turning on
 will only work if SWMR mode is supported.</p></td>
 <td><p>HDF5_SWMRMode</p></td>
-<td><p>$(P)$(R)SWMRMode, $(P)$(R)SMWRMode_RBV</p></td>
+<td><p>$(P)$(R)SWMRMode, $(P)$(R)SWMRMode_RBV</p></td>
 <td><p>bo, bi</p></td>
 </tr>
-<tr class="row-odd"><td><p>asynInt32</p></td>
+<tr class="row-even"><td><p>asynInt32</p></td>
 <td><p>r/o</p></td>
 <td><p>This value is set to 1 once a file has been opened and placed into SWMR mode. It
 returns to 0 once the acquisition has completed.</p></td>
@@ -873,14 +880,14 @@ returns to 0 once the acquisition has completed.</p></td>
 <td><p>$(P)$(R)SWMRActive_RBV</p></td>
 <td><p>bi</p></td>
 </tr>
-<tr class="row-even"><td><p>asynInt32</p></td>
+<tr class="row-odd"><td><p>asynInt32</p></td>
 <td><p>r/w</p></td>
 <td><p>Flush the image to disk every N’th frame.</p></td>
 <td><p>HDF5_flushNthFrame</p></td>
 <td><p>$(P)$(R)NumFramesFlush, $(P)$(R)NumFramesFlush_RBV</p></td>
 <td><p>longout, longin</p></td>
 </tr>
-<tr class="row-odd"><td><p>asynInt32</p></td>
+<tr class="row-even"><td><p>asynInt32</p></td>
 <td><p>r/w</p></td>
 <td><p>This value is used to determine when to flush NDAttribute datasets to disk, and
 the corresponding datasets chunk size. A value of zero will default where possible
@@ -889,7 +896,7 @@ to the size of the dataset for a one dimensional dataset.</p></td>
 <td><p>$(P)$(R)NDAttributeChunk, $(P)$(R)NDAttributeChunk_RBV</p></td>
 <td><p>longout, longin</p></td>
 </tr>
-<tr class="row-even"><td><p>asynInt32</p></td>
+<tr class="row-odd"><td><p>asynInt32</p></td>
 <td><p>r/o</p></td>
 <td><p>The number of flushes that have taken place for the current acquisition. In the
 case where flushing occurs for every frame and no flushing is set for NDAttribute
@@ -900,36 +907,57 @@ datasets, one flush for each dataset.</p></td>
 <td><p>$(P)$(R)SWMRCbCounter_RBV</p></td>
 <td><p>longin</p></td>
 </tr>
-<tr class="row-odd"><td><p>asynInt32</p></td>
+<tr class="row-even"><td><p>asynInt32</p></td>
 <td><p>r/w</p></td>
 <td><p>Forces an immediate HDF5 flush.</p></td>
 <td><p>HDF5_SWMRFlushNow</p></td>
 <td><p>$(P)$(R)FlushNow</p></td>
 <td><p>busy</p></td>
 </tr>
-<tr class="row-even"><td></td>
+<tr class="row-odd"><td></td>
 <td></td>
 <td colspan="4"><p><strong>Additional Virtual Dimensions</strong></p></td>
 </tr>
-<tr class="row-odd"><td><p>asynInt32</p></td>
+<tr class="row-even"><td><p>asynInt32</p></td>
 <td><p>r/w</p></td>
 <td><p>Number of extra dimensions [0..9]</p></td>
 <td><p>HDF5_nExtraDims</p></td>
-<td><p>$(P)$(R)NumExtraDims, $(P)$(R)NumExtraDims</p></td>
+<td><p>$(P)$(R)NumExtraDims, $(P)$(R)NumExtraDims_RBV</p></td>
 <td><p>mbbo, mbbi</p></td>
 </tr>
-<tr class="row-even"><td><p>asynInt32</p></td>
+<tr class="row-odd"><td><p>asynInt32</p></td>
 <td><p>r/w</p></td>
 <td><p>Size of extra dimension N (no. of frames per point)</p></td>
 <td><p>HDF5_extraDimSizeN</p></td>
 <td><p>$(P)$(R)ExtraDimSizeN, $(P)$(R)ExtraDimSizeN_RBV</p></td>
 <td></td>
 </tr>
+<tr class="row-even"><td><p>asynOctet</p></td>
+<td><p>r/o</p></td>
+<td><p>HDF5_extraDimNameN</p></td>
+<td><p>Name of extra dimension N</p></td>
+<td><p>$(P)$(R)ExtraDimNameN_RBV</p></td>
+<td><p>stringin</p></td>
+</tr>
 <tr class="row-odd"><td><p>asynInt32</p></td>
 <td><p>r/w</p></td>
 <td><p>Size of extra dimension X</p></td>
 <td><p>HDF5_extraDimSizeX</p></td>
 <td><p>$(P)$(R)ExtraDimSizeX, $(P)$(R)ExtraDimSizeX_RBV</p></td>
+<td><p>longout, longin</p></td>
+</tr>
+<tr class="row-even"><td><p>asynOctet</p></td>
+<td><p>r/o</p></td>
+<td><p>Name of extra dimension X</p></td>
+<td><p>HDF5_extraDimNameX</p></td>
+<td><p>$(P)$(R)ExtraDimNameX_RBV</p></td>
+<td><p>stringin</p></td>
+</tr>
+<tr class="row-odd"><td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>Chunk of extra dimension X</p></td>
+<td><p>HDF5_extraDimChunkX</p></td>
+<td><p>$(P)$(R)ExtraDimChunkX, $(P)$(R)ExtraDimChunkX_RBV</p></td>
 <td><p>longout, longin</p></td>
 </tr>
 <tr class="row-even"><td><p>asynInt32</p></td>
@@ -939,53 +967,45 @@ datasets, one flush for each dataset.</p></td>
 <td><p>$(P)$(R)ExtraDimSizeY, $(P)$(R)ExtraDimSizeY_RBV</p></td>
 <td><p>longout, longin</p></td>
 </tr>
-<tr class="row-odd"><td><p>asynInt32</p></td>
-<td><p>r/w</p></td>
-<td><p>Size of extra dimension 3</p></td>
-<td><p>HDF5_extraDimSize3</p></td>
-<td><p>$(P)$(R)ExtraDimSize3, $(P)$(R)ExtraDimSize3_RBV</p></td>
-<td><p>longout, longin</p></td>
+<tr class="row-odd"><td><p>asynOctet</p></td>
+<td><p>r/o</p></td>
+<td><p>Name of extra dimension Y</p></td>
+<td><p>HDF5_extraDimNameY</p></td>
+<td><p>$(P)$(R)ExtraDimNameY_RBV</p></td>
+<td><p>stringin</p></td>
 </tr>
 <tr class="row-even"><td><p>asynInt32</p></td>
 <td><p>r/w</p></td>
-<td><p>Size of extra dimension 4</p></td>
-<td><p>HDF5_extraDimSize4</p></td>
-<td><p>$(P)$(R)ExtraDimSize4, $(P)$(R)ExtraDimSize4_RBV</p></td>
+<td><p>Chunk of extra dimension Y</p></td>
+<td><p>HDF5_extraDimChunkY</p></td>
+<td><p>$(P)$(R)ExtraDimChunkY, $(P)$(R)ExtraDimChunkY_RBV</p></td>
 <td><p>longout, longin</p></td>
 </tr>
 <tr class="row-odd"><td><p>asynInt32</p></td>
 <td><p>r/w</p></td>
-<td><p>Size of extra dimension 5</p></td>
-<td><p>HDF5_extraDimSize5</p></td>
-<td><p>$(P)$(R)ExtraDimSize5, $(P)$(R)ExtraDimSize5_RBV</p></td>
+<td><p>Size of the K’th extra dimension, for K in [3..9]</p></td>
+<td><p>HDF5_extraDimSize&lt;K&gt;</p></td>
+<td><p>$(P)$(R)ExtraDimSize&lt;K&gt;, $(P)$(R)ExtraDimSize&lt;K&gt;_RBV</p>
+<p>E.g. $(P)$(R)ExtraDimSize3_RBV</p>
+</td>
 <td><p>longout, longin</p></td>
 </tr>
-<tr class="row-even"><td><p>asynInt32</p></td>
-<td><p>r/w</p></td>
-<td><p>Size of extra dimension 6</p></td>
-<td><p>HDF5_extraDimSize6</p></td>
-<td><p>$(P)$(R)ExtraDimSize6, $(P)$(R)ExtraDimSize6_RBV</p></td>
-<td><p>longout, longin</p></td>
-</tr>
-<tr class="row-odd"><td><p>asynInt32</p></td>
-<td><p>r/w</p></td>
-<td><p>Size of extra dimension 7</p></td>
-<td><p>HDF5_extraDimSize7</p></td>
-<td><p>$(P)$(R)ExtraDimSize7, $(P)$(R)ExtraDimSize7_RBV</p></td>
-<td><p>longout, longin</p></td>
-</tr>
-<tr class="row-even"><td><p>asynInt32</p></td>
-<td><p>r/w</p></td>
-<td><p>Size of extra dimension 8</p></td>
-<td><p>HDF5_extraDimSize8</p></td>
-<td><p>$(P)$(R)ExtraDimSize8, $(P)$(R)ExtraDimSize8_RBV</p></td>
-<td><p>longout, longin</p></td>
+<tr class="row-even"><td><p>asynOctet</p></td>
+<td><p>r/o</p></td>
+<td><p>Name of the K’th extra dimension, for K in [3..9]</p></td>
+<td><p>HDF5_extraDimName&lt;K&gt;</p></td>
+<td><p>$(P)$(R)ExtraDimName&lt;K&gt;_RBV</p>
+<p>E.g $(P)$(R)ExtraDimName8_RBV</p>
+</td>
+<td><p>stringin</p></td>
 </tr>
 <tr class="row-odd"><td><p>asynInt32</p></td>
 <td><p>r/w</p></td>
-<td><p>Size of extra dimension 9</p></td>
-<td><p>HDF5_extraDimSize9</p></td>
-<td><p>$(P)$(R)ExtraDimSize9, $(P)$(R)ExtraDimSize9_RBV</p></td>
+<td><p>Chunk of the K’th extra dimension, for K in [3..9]</p></td>
+<td><p>HDF5_extraDimChunk&lt;K&gt;</p></td>
+<td><p>$(P)$(R)ExtraDimChunk&lt;K&gt;, $(P)$(R)ExtraDimChunk&lt;K&gt;_RBV</p>
+<p>E.g. $(P)$(R)ExtraDimChunk9</p>
+</td>
 <td><p>longout, longin</p></td>
 </tr>
 <tr class="row-even"><td></td>
@@ -1022,51 +1042,11 @@ datasets, one flush for each dataset.</p></td>
 </tr>
 <tr class="row-odd"><td><p>asynOctet</p></td>
 <td><p>r/w</p></td>
-<td><p>Specify the NDAttribute name for the 3rd index</p></td>
-<td><p>HDF5_posNameDim3</p></td>
-<td><p>$(P)$(R)PosNameDim3, $(P)$(R)PosNameDim3_RBV</p></td>
-<td><p>stringout, stringin</p></td>
-</tr>
-<tr class="row-even"><td><p>asynOctet</p></td>
-<td><p>r/w</p></td>
-<td><p>Specify the NDAttribute name for the 4th index</p></td>
-<td><p>HDF5_posNameDim4</p></td>
-<td><p>$(P)$(R)PosNameDim4, $(P)$(R)PosNameDim4_RBV</p></td>
-<td><p>stringout, stringin</p></td>
-</tr>
-<tr class="row-odd"><td><p>asynOctet</p></td>
-<td><p>r/w</p></td>
-<td><p>Specify the NDAttribute name for the 5th index</p></td>
-<td><p>HDF5_posNameDim5</p></td>
-<td><p>$(P)$(R)PosNameDim5, $(P)$(R)PosNameDim5_RBV</p></td>
-<td><p>stringout, stringin</p></td>
-</tr>
-<tr class="row-even"><td><p>asynOctet</p></td>
-<td><p>r/w</p></td>
-<td><p>Specify the NDAttribute name for the 6th index</p></td>
-<td><p>HDF5_posNameDim6</p></td>
-<td><p>$(P)$(R)PosNameDim6, $(P)$(R)PosNameDim6_RBV</p></td>
-<td><p>stringout, stringin</p></td>
-</tr>
-<tr class="row-odd"><td><p>asynOctet</p></td>
-<td><p>r/w</p></td>
-<td><p>Specify the NDAttribute name for the 7th index</p></td>
-<td><p>HDF5_posNameDim7</p></td>
-<td><p>$(P)$(R)PosNameDim7, $(P)$(R)PosNameDim7_RBV</p></td>
-<td><p>stringout, stringin</p></td>
-</tr>
-<tr class="row-even"><td><p>asynOctet</p></td>
-<td><p>r/w</p></td>
-<td><p>Specify the NDAttribute name for the 8th index</p></td>
-<td><p>HDF5_posNameDim8</p></td>
-<td><p>$(P)$(R)PosNameDim8, $(P)$(R)PosNameDim8_RBV</p></td>
-<td><p>stringout, stringin</p></td>
-</tr>
-<tr class="row-odd"><td><p>asynOctet</p></td>
-<td><p>r/w</p></td>
-<td><p>Specify the NDAttribute name for the 9th index</p></td>
-<td><p>HDF5_posNameDim9</p></td>
-<td><p>$(P)$(R)PosNameDim9, $(P)$(R)PosNameDim9_RBV</p></td>
+<td><p>Specify the NDAttribute name for the K’th index, for K in [3..9]</p></td>
+<td><p>HDF5_posNameDim&lt;K&gt;</p></td>
+<td><p>$(P)$(R)PosNameDim&lt;K&gt;, $(P)$(R)PosNameDim&lt;K&gt;_RBV</p>
+<p>E.g. $(P)$(R)PosNameDim5</p>
+</td>
 <td><p>stringout, stringin</p></td>
 </tr>
 <tr class="row-even"><td></td>
@@ -1084,63 +1064,23 @@ datasets, one flush for each dataset.</p></td>
 <td><p>r/w</p></td>
 <td><p>Specify the NDAttribute index for the X dimension</p></td>
 <td><p>HDF5_posIndexDimX</p></td>
-<td><p>$(P)$(R)posIndexDimX, $(P)$(R)posIndexDimX_RBV</p></td>
+<td><p>$(P)$(R)PosIndexDimX, $(P)$(R)PosIndexDimX_RBV</p></td>
 <td><p>stringout, stringin</p></td>
 </tr>
 <tr class="row-odd"><td><p>asynOctet</p></td>
 <td><p>r/w</p></td>
 <td><p>Specify the NDAttribute index for the Y dimension</p></td>
 <td><p>HDF5_posIndexDimY</p></td>
-<td><p>$(P)$(R)posIndexDimY, $(P)$(R)posIndexDimY_RBV</p></td>
+<td><p>$(P)$(R)PosIndexDimY, $(P)$(R)PosIndexDimY_RBV</p></td>
 <td><p>stringout, stringin</p></td>
 </tr>
 <tr class="row-even"><td><p>asynOctet</p></td>
 <td><p>r/w</p></td>
-<td><p>Specify the NDAttribute index for the 3rd dimension</p></td>
-<td><p>HDF5_posIndexDim3</p></td>
-<td><p>$(P)$(R)posIndexDim3, $(P)$(R)posIndexDim3_RBV</p></td>
-<td><p>stringout, stringin</p></td>
-</tr>
-<tr class="row-odd"><td><p>asynOctet</p></td>
-<td><p>r/w</p></td>
-<td><p>Specify the NDAttribute index for the 4th dimension</p></td>
-<td><p>HDF5_posIndexDim4</p></td>
-<td><p>$(P)$(R)posIndexDim4, $(P)$(R)posIndexDim4_RBV</p></td>
-<td><p>stringout, stringin</p></td>
-</tr>
-<tr class="row-even"><td><p>asynOctet</p></td>
-<td><p>r/w</p></td>
-<td><p>Specify the NDAttribute index for the 5th dimension</p></td>
-<td><p>HDF5_posIndexDim5</p></td>
-<td><p>$(P)$(R)posIndexDim5, $(P)$(R)posIndexDim5_RBV</p></td>
-<td><p>stringout, stringin</p></td>
-</tr>
-<tr class="row-odd"><td><p>asynOctet</p></td>
-<td><p>r/w</p></td>
-<td><p>Specify the NDAttribute index for the 6th dimension</p></td>
-<td><p>HDF5_posIndexDim6</p></td>
-<td><p>$(P)$(R)posIndexDim6, $(P)$(R)posIndexDim6_RBV</p></td>
-<td><p>stringout, stringin</p></td>
-</tr>
-<tr class="row-even"><td><p>asynOctet</p></td>
-<td><p>r/w</p></td>
-<td><p>Specify the NDAttribute index for the 7th dimension</p></td>
-<td><p>HDF5_posIndexDim7</p></td>
-<td><p>$(P)$(R)posIndexDim7, $(P)$(R)posIndexDim7_RBV</p></td>
-<td><p>stringout, stringin</p></td>
-</tr>
-<tr class="row-odd"><td><p>asynOctet</p></td>
-<td><p>r/w</p></td>
-<td><p>Specify the NDAttribute index for the 8th dimension</p></td>
-<td><p>HDF5_posIndexDim8</p></td>
-<td><p>$(P)$(R)posIndexDim8, $(P)$(R)posIndexDim8_RBV</p></td>
-<td><p>stringout, stringin</p></td>
-</tr>
-<tr class="row-even"><td><p>asynOctet</p></td>
-<td><p>r/w</p></td>
-<td><p>Specify the NDAttribute index for the 9th dimension</p></td>
-<td><p>HDF5_posIndexDim9</p></td>
-<td><p>$(P)$(R)posIndexDim9, $(P)$(R)posIndexDim9_RBV</p></td>
+<td><p>Specify the NDAttribute index for the K’th dimension, for K in [3..9]</p></td>
+<td><p>HDF5_posIndexDim&lt;K&gt;</p></td>
+<td><p>$(P)$(R)PosIndexDim&lt;K&gt;, $(P)$(R)PosIndexDim&lt;K&gt;_RBV</p>
+<p>E.g. $(P)$(R)PosIndexDim9_RBV</p>
+</td>
 <td><p>stringout, stringin</p></td>
 </tr>
 <tr class="row-odd"><td></td>
@@ -1151,7 +1091,7 @@ datasets, one flush for each dataset.</p></td>
 <td><p>r/o</p></td>
 <td><p>Total runtime in seconds from first frame to file closed</p></td>
 <td><p>HDF5_totalRuntime</p></td>
-<td><p>$(P)$(R)Runtime</p></td>
+<td><p>$(P)$(R)RunTime</p></td>
 <td><p>ai</p></td>
 </tr>
 <tr class="row-odd"><td><p>asynFloat64</p></td>
@@ -1254,7 +1194,7 @@ datasets, one flush for each dataset.</p></td>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, Mark Rivers.
-      <span class="lastupdated">Last updated on 2025-December-06.
+      <span class="lastupdated">Last updated on 2026-January-02.
       </span></p>
   </div>
 

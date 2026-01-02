@@ -1,0 +1,200 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NDPluginPvxs &mdash; areaDetector Support</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme_overrides.css?v=254ed751" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            areaDetector
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../readme.html">Readme</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user_guide.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install_guide.html">Install Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release.html">Top-level Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ADCore_release.html">ADCore Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ADSupport_release.html">ADSupport Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../doxygen.html">Source Code Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../detectors.html">Supported Detectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../legacy_versions.html">Legacy Versions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">areaDetector</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">NDPluginPvxs</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/ADCore/NDPluginPvxs.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="ndpluginpvxs">
+<h1><a class="toc-backref" href="#id1" role="doc-backlink">NDPluginPvxs</a><a class="headerlink" href="#ndpluginpvxs" title="Link to this heading"></a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">author<span class="colon">:</span></dt>
+<dd class="field-odd"><p>James Souter, Diamond Light Source</p>
+</dd>
+</dl>
+<nav class="contents" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#ndpluginpvxs" id="id1">NDPluginPvxs</a></p>
+<ul>
+<li><p><a class="reference internal" href="#overview" id="id2">Overview</a></p></li>
+<li><p><a class="reference internal" href="#configuration" id="id3">Configuration</a></p></li>
+<li><p><a class="reference internal" href="#starting-the-pvxs-server" id="id4">Starting the pvxs server</a></p></li>
+</ul>
+</li>
+</ul>
+</nav>
+<section id="overview">
+<h2><a class="toc-backref" href="#id2" role="doc-backlink">Overview</a><a class="headerlink" href="#overview" title="Link to this heading"></a></h2>
+<p>This plugin reimplements the functionality of <span class="xref std std-ref">NDPluginPva</span>, but requires the linking
+of the pvxs support module, with no requirement for the pvAccessCPP, pvDatabaseCPP, pvDataCPP or
+normativeTypesCPP support modules. The plugin wraps a pvxs SharedPV, which is added to
+the singleton PVXS server that is started when the IOC starts.</p>
+<p>NDPluginPvxs defines the following parameters.</p>
+<table class="table-bordered table-striped table-hover docutils align-default">
+<colgroup>
+<col style="width: 5.0%" />
+<col style="width: 5.0%" />
+<col style="width: 5.0%" />
+<col style="width: 70.0%" />
+<col style="width: 5.0%" />
+<col style="width: 5.0%" />
+<col style="width: 5.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head"></th>
+<th class="head" colspan="5"><p><strong>Parameter Definitions in NDPluginPvxs.h and EPICS Record Definitions in NDPvxs.template</strong></p></th>
+</tr>
+<tr class="row-even"><th class="head"><p>Parameter index variable</p></th>
+<th class="head"><p>asyn interface</p></th>
+<th class="head"><p>Access</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>drvInfo string</p></th>
+<th class="head"><p>EPICS record name</p></th>
+<th class="head"><p>EPICS record type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-odd"><td><p>NDPluginPvxsPvName</p></td>
+<td><p>asynOctet</p></td>
+<td><p>r/o</p></td>
+<td><p>Name of the EPICSv4 PV being served</p></td>
+<td><p>PV_NAME</p></td>
+<td><p>$(P)$(R)PvName_RBV</p></td>
+<td><p>waveform</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="configuration">
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">Configuration</a><a class="headerlink" href="#configuration" title="Link to this heading"></a></h2>
+<p>The NDPluginPvxs plugin is created with the <code class="docutils literal notranslate"><span class="pre">NDPvxsConfigure</span></code> command,
+either from C/C++ or from the EPICS IOC shell.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">NDPvxsConfigure</span> <span class="p">(</span><span class="n">const</span> <span class="n">char</span> <span class="o">*</span><span class="n">portName</span><span class="p">,</span> <span class="nb">int</span> <span class="n">queueSize</span><span class="p">,</span> <span class="nb">int</span> <span class="n">blockingCallbacks</span><span class="p">,</span>
+                      <span class="n">const</span> <span class="n">char</span> <span class="o">*</span><span class="n">NDArrayPort</span><span class="p">,</span> <span class="nb">int</span> <span class="n">NDArrayAddr</span><span class="p">,</span> <span class="n">const</span> <span class="n">char</span> <span class="o">*</span><span class="n">pvName</span><span class="p">,</span>
+                      <span class="n">size_t</span> <span class="n">maxMemory</span><span class="p">,</span> <span class="nb">int</span> <span class="n">priority</span><span class="p">,</span> <span class="nb">int</span> <span class="n">stackSize</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>For details on the meaning of the parameters to this function refer to
+the detailed documentation on the NDPvxsConfigure function in the
+<a class="reference external" href="../areaDetectorDoxygenHTML/_n_d_plugin_pvxs_8cpp.html">NDPluginPvxs.cpp
+documentation</a> and
+in the documentation for the constructor for the <a class="reference external" href="../areaDetectorDoxygenHTML/class_n_d_plugin_pvxs.html">NDPluginPvxs
+class</a>.</p>
+<p>ADCore must be built with <cite>WITH_PVXS=YES</cite> in a CONFIG or CONFIG_SITE file to use <cite>NDPluginPva.</cite>
+While it is possible to load an <cite>NDPluginPva</cite> and <cite>NDPluginPvxs</cite> in the same IOC, users should be avoid
+building ADCore with <cite>WITH_QSRV=YES</cite> when using <cite>NDPluginPvxs</cite>, as an ioc with <cite>qsrv.dbd</cite> loaded
+<cite>may automatically disable QSRV2. &lt;https://epics-base.github.io/pvxs/ioc.html#qsrv-2&gt;</cite></p>
+</section>
+<section id="starting-the-pvxs-server">
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">Starting the pvxs server</a><a class="headerlink" href="#starting-the-pvxs-server" title="Link to this heading"></a></h2>
+<p>Unlike NDPluginPva, the EPICSv4 PV will be automatically served in an IOC if the plugin
+is configured, however the
+<cite>IOC must be built with pvxsIoc.dbd and the pvxs and pvxsIoc libraries. &lt;https://epics-base.github.io/pvxs/building.html#including-pvxs-in-your-application&gt;</cite></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Mark Rivers.
+      <span class="lastupdated">Last updated on 2026-January-02.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -4,66 +4,66 @@
     <compoundname>ntndArrayConverter.h</compoundname>
     <includes local="no">math.h</includes>
     <includes refid="ntnd_array_converter_a_p_i_8h" local="no">ntndArrayConverterAPI.h</includes>
-    <includes refid="_n_d_array_8h" local="no">NDArray.h</includes>
     <includes local="no">pv/ntndarray.h</includes>
+    <includes refid="ntnd_array_converter_common_8h" local="yes">ntndArrayConverterCommon.h</includes>
     <includedby refid="ntnd_array_converter_8cpp" local="yes">/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ntndArrayConverterSrc/ntndArrayConverter.cpp</includedby>
     <includedby refid="_n_d_plugin_pva_8cpp" local="no">/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/pluginSrc/NDPluginPva.cpp</includedby>
     <includedby refid="pva_driver_8cpp" local="no">/home/runner/work/areaDetector/areaDetector/pvaDriver/pvaDriverApp/src/pvaDriver.cpp</includedby>
     <incdepgraph>
-      <node id="14">
+      <node id="16">
         <label>ADCoreAPI.h</label>
         <link refid="_a_d_core_a_p_i_8h"/>
-        <childnode refid="15" relation="include">
+        <childnode refid="17" relation="include">
         </childnode>
       </node>
-      <node id="17">
+      <node id="19">
         <label>Codec.h</label>
         <link refid="_codec_8h"/>
       </node>
-      <node id="4">
+      <node id="6">
         <label>NDArray.h</label>
         <link refid="_n_d_array_8h"/>
-        <childnode refid="5" relation="include">
-        </childnode>
-        <childnode refid="6" relation="include">
-        </childnode>
         <childnode refid="7" relation="include">
         </childnode>
         <childnode refid="8" relation="include">
         </childnode>
         <childnode refid="9" relation="include">
         </childnode>
-        <childnode refid="16" relation="include">
-        </childnode>
-        <childnode refid="17" relation="include">
-        </childnode>
-      </node>
-      <node id="9">
-        <label>NDAttribute.h</label>
-        <link refid="_n_d_attribute_8h"/>
         <childnode refid="10" relation="include">
         </childnode>
         <childnode refid="11" relation="include">
         </childnode>
-        <childnode refid="8" relation="include">
+        <childnode refid="18" relation="include">
         </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>NDAttribute.h</label>
+        <link refid="_n_d_attribute_8h"/>
         <childnode refid="12" relation="include">
         </childnode>
         <childnode refid="13" relation="include">
         </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
         <childnode refid="14" relation="include">
         </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
       </node>
-      <node id="16">
+      <node id="18">
         <label>NDAttributeList.h</label>
         <link refid="_n_d_attribute_list_8h"/>
-        <childnode refid="11" relation="include">
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
         </childnode>
         <childnode refid="8" relation="include">
         </childnode>
-        <childnode refid="6" relation="include">
-        </childnode>
-        <childnode refid="9" relation="include">
+        <childnode refid="11" relation="include">
         </childnode>
       </node>
       <node id="1">
@@ -75,44 +75,50 @@
         </childnode>
         <childnode refid="4" relation="include">
         </childnode>
-        <childnode refid="18" relation="include">
+        <childnode refid="5" relation="include">
         </childnode>
       </node>
       <node id="3">
         <label>ntndArrayConverterAPI.h</label>
         <link refid="ntnd_array_converter_a_p_i_8h"/>
       </node>
-      <node id="13">
-        <label>asynDriver.h</label>
-      </node>
-      <node id="8">
-        <label>ellLib.h</label>
-      </node>
-      <node id="6">
-        <label>epicsMutex.h</label>
-      </node>
-      <node id="7">
-        <label>epicsTime.h</label>
-      </node>
-      <node id="12">
-        <label>epicsTypes.h</label>
+      <node id="5">
+        <label>ntndArrayConverterCommon.h</label>
+        <link refid="ntnd_array_converter_common_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
       </node>
       <node id="15">
+        <label>asynDriver.h</label>
+      </node>
+      <node id="10">
+        <label>ellLib.h</label>
+      </node>
+      <node id="8">
+        <label>epicsMutex.h</label>
+      </node>
+      <node id="9">
+        <label>epicsTime.h</label>
+      </node>
+      <node id="14">
+        <label>epicsTypes.h</label>
+      </node>
+      <node id="17">
         <label>epicsVersion.h</label>
       </node>
       <node id="2">
         <label>math.h</label>
       </node>
-      <node id="18">
+      <node id="4">
         <label>pv/ntndarray.h</label>
       </node>
-      <node id="5">
+      <node id="7">
         <label>set</label>
       </node>
-      <node id="11">
+      <node id="13">
         <label>stdio.h</label>
       </node>
-      <node id="10">
+      <node id="12">
         <label>string</label>
       </node>
     </incdepgraph>
@@ -140,22 +146,8 @@
         <link refid="pva_driver_8cpp"/>
       </node>
     </invincdepgraph>
-    <innerclass refid="struct_n_t_n_d_array_info" prot="public">NTNDArrayInfo</innerclass>
     <innerclass refid="class_n_t_n_d_array_converter" prot="public">NTNDArrayConverter</innerclass>
     <sectiondef kind="typedef">
-      <memberdef kind="typedef" id="ntnd_array_converter_8h_1afe30fed285eb84ca9863d81a4dd78bcf" prot="public" static="no">
-        <type>struct <ref refid="struct_n_t_n_d_array_info" kindref="compound">NTNDArrayInfo</ref></type>
-        <definition>typedef struct NTNDArrayInfo NTNDArrayInfo_t</definition>
-        <argsstring></argsstring>
-        <name>NTNDArrayInfo_t</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ntndArrayConverterSrc/ntndArrayConverter.h" line="22" column="16"/>
-      </memberdef>
       <memberdef kind="typedef" id="ntnd_array_converter_8h_1a72a31c7a33ef6e2074ee6276b1c19e9b" prot="public" static="no">
         <type>std::tr1::shared_ptr&lt; <ref refid="class_n_t_n_d_array_converter" kindref="compound">NTNDArrayConverter</ref> &gt;</type>
         <definition>typedef std::tr1::shared_ptr&lt;NTNDArrayConverter&gt; NTNDArrayConverterPtr</definition>
@@ -167,7 +159,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ntndArrayConverterSrc/ntndArrayConverter.h" line="68" column="30" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ntndArrayConverterSrc/ntndArrayConverter.h" bodystart="68" bodyend="-1"/>
+        <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ntndArrayConverterSrc/ntndArrayConverter.h" line="53" column="30" bodyfile="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ntndArrayConverterSrc/ntndArrayConverter.h" bodystart="53" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -175,74 +167,61 @@
     <detaileddescription>
     </detaileddescription>
     <programlisting>
-<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&lt;math.h&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="2"><highlight class="normal"></highlight></codeline>
-<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="ntnd_array_converter_a_p_i_8h" kindref="compound">ntndArrayConverterAPI.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_n_d_array_8h" kindref="compound">NDArray.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;pv/ntndarray.h&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="6"><highlight class="normal"></highlight></codeline>
-<codeline lineno="7" refid="struct_n_t_n_d_array_info" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_n_t_n_d_array_info" kindref="compound">NTNDArrayInfo</ref></highlight></codeline>
-<codeline lineno="8"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="9" refid="struct_n_t_n_d_array_info_1a4c2eb06b5e2481e214b63d199c1c696d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="struct_n_t_n_d_array_info_1a4c2eb06b5e2481e214b63d199c1c696d" kindref="member">ndims</ref>;</highlight></codeline>
-<codeline lineno="10" refid="struct_n_t_n_d_array_info_1a7ea4583e724befffbae36a91f361866e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="struct_n_t_n_d_array_info_1a7ea4583e724befffbae36a91f361866e" kindref="member">dims</ref>[<ref refid="_n_d_array_8h_1ac4d72230192b5a071cf82e445b44ad2e" kindref="member">ND_ARRAY_MAX_DIMS</ref>];</highlight></codeline>
-<codeline lineno="11" refid="struct_n_t_n_d_array_info_1a74f13c6f22a3ad8eed4b13ac4b00f24c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="struct_n_t_n_d_array_info_1a74f13c6f22a3ad8eed4b13ac4b00f24c" kindref="member">nElements</ref>,<sp/><ref refid="struct_n_t_n_d_array_info_1a38d2a05889ead189136d8933942a4767" kindref="member">totalBytes</ref>;</highlight></codeline>
-<codeline lineno="12" refid="struct_n_t_n_d_array_info_1ae1fabbf17d119b5ff7f68419a15317f9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="struct_n_t_n_d_array_info_1ae1fabbf17d119b5ff7f68419a15317f9" kindref="member">bytesPerElement</ref>;</highlight></codeline>
-<codeline lineno="13" refid="struct_n_t_n_d_array_info_1a54bf6d395c3619dadc6fc445d5b3a2a4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_n_d_array_8h_1a158fa3df51916c6942849dccdc7c5812" kindref="member">NDColorMode_t</ref><sp/><ref refid="struct_n_t_n_d_array_info_1a54bf6d395c3619dadc6fc445d5b3a2a4" kindref="member">colorMode</ref>;</highlight></codeline>
-<codeline lineno="14" refid="struct_n_t_n_d_array_info_1a640bdf564e585344b1908ddc3e145d68" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_n_d_attribute_8h_1a34b835bcabc3b7f546f4b25c5767cb16" kindref="member">NDDataType_t</ref><sp/><ref refid="struct_n_t_n_d_array_info_1a640bdf564e585344b1908ddc3e145d68" kindref="member">dataType</ref>;</highlight></codeline>
-<codeline lineno="15" refid="struct_n_t_n_d_array_info_1a93b43203cec89a0d75239d469fc4e9e6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="struct_n_t_n_d_array_info_1a93b43203cec89a0d75239d469fc4e9e6" kindref="member">codec</ref>;</highlight></codeline>
-<codeline lineno="16"><highlight class="normal"></highlight></codeline>
-<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="19" refid="struct_n_t_n_d_array_info_1a02fb8bdc6c5e01a45cbc7e35f31c3d4b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="struct_n_t_n_d_array_info_1a02fb8bdc6c5e01a45cbc7e35f31c3d4b" kindref="member">dim</ref>;</highlight></codeline>
-<codeline lineno="20" refid="struct_n_t_n_d_array_info_1a5095b25de6066b5ea6b90c4df54fb2cd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="struct_n_t_n_d_array_info_1a5095b25de6066b5ea6b90c4df54fb2cd" kindref="member">size</ref>,<sp/><ref refid="struct_n_t_n_d_array_info_1a417a3ea61e23ce109bcc8dfbaf8798f4" kindref="member">stride</ref>;</highlight></codeline>
-<codeline lineno="21" refid="struct_n_t_n_d_array_info_1a45873fd7951b0468ed7d26c979ceb8f8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>}<ref refid="struct_n_t_n_d_array_info_1aaeb5336186f64f4151b6880837278dc7" kindref="member">x</ref>,<sp/><ref refid="struct_n_t_n_d_array_info_1a055a038040b8a40e9239b9e53b36eb5e" kindref="member">y</ref>,<sp/><ref refid="struct_n_t_n_d_array_info_1a45873fd7951b0468ed7d26c979ceb8f8" kindref="member">color</ref>;</highlight></codeline>
-<codeline lineno="22" refid="ntnd_array_converter_8h_1afe30fed285eb84ca9863d81a4dd78bcf" refkind="member"><highlight class="normal">}<ref refid="ntnd_array_converter_8h_1afe30fed285eb84ca9863d81a4dd78bcf" kindref="member">NTNDArrayInfo_t</ref>;</highlight></codeline>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>INC_ntndArrayConverter_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>INC_ntndArrayConverter_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;math.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="ntnd_array_converter_a_p_i_8h" kindref="compound">ntndArrayConverterAPI.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;pv/ntndarray.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="ntnd_array_converter_common_8h" kindref="compound">ntndArrayConverterCommon.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9" refid="class_n_t_n_d_array_converter" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="ntnd_array_converter_a_p_i_8h_1af381ff3bbb37f4b42b03621b489e449b" kindref="member">NTNDARRAYCONVERTER_API</ref><sp/><ref refid="class_n_t_n_d_array_converter" kindref="compound">NTNDArrayConverter</ref></highlight></codeline>
+<codeline lineno="10"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_n_t_n_d_array_converter" kindref="compound">NTNDArrayConverter</ref>(epics::nt::NTNDArrayPtr<sp/>array);</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_n_t_n_d_array_info" kindref="compound">NTNDArrayInfo_t</ref><sp/>getInfo<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>toArray<sp/>(<ref refid="class_n_d_array" kindref="compound">NDArray</ref><sp/>*dest);</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>fromArray<sp/>(<ref refid="class_n_d_array" kindref="compound">NDArray</ref><sp/>*src);</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>epics::nt::NTNDArrayPtr<sp/>m_array;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>epics::pvData::ScalarType<sp/>getValueType<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_n_d_array_8h_1a158fa3df51916c6942849dccdc7c5812" kindref="member">NDColorMode_t</ref><sp/>getColorMode<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="23"><highlight class="normal"></highlight></codeline>
-<codeline lineno="24" refid="class_n_t_n_d_array_converter" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="ntnd_array_converter_a_p_i_8h_1af381ff3bbb37f4b42b03621b489e449b" kindref="member">NTNDARRAYCONVERTER_API</ref><sp/><ref refid="class_n_t_n_d_array_converter" kindref="compound">NTNDArrayConverter</ref></highlight></codeline>
-<codeline lineno="25"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_n_t_n_d_array_converter" kindref="compound">NTNDArrayConverter</ref>(epics::nt::NTNDArrayPtr<sp/>array);</highlight></codeline>
-<codeline lineno="28"><highlight class="normal"></highlight></codeline>
-<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_n_t_n_d_array_info" kindref="compound">NTNDArrayInfo_t</ref><sp/>getInfo<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>toArray<sp/>(<ref refid="class_n_d_array" kindref="compound">NDArray</ref><sp/>*dest);</highlight></codeline>
-<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>fromArray<sp/>(<ref refid="class_n_d_array" kindref="compound">NDArray</ref><sp/>*src);</highlight></codeline>
-<codeline lineno="32"><highlight class="normal"></highlight></codeline>
-<codeline lineno="33"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>epics::nt::NTNDArrayPtr<sp/>m_array;</highlight></codeline>
-<codeline lineno="35"><highlight class="normal"></highlight></codeline>
-<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>epics::pvData::ScalarType<sp/>getValueType<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_n_d_array_8h_1a158fa3df51916c6942849dccdc7c5812" kindref="member">NDColorMode_t</ref><sp/>getColorMode<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="38"><highlight class="normal"></highlight></codeline>
-<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>arrayType&gt;</highlight></codeline>
-<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>toValue<sp/>(<ref refid="class_n_d_array" kindref="compound">NDArray</ref><sp/>*dest);</highlight></codeline>
-<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>toValue<sp/>(<ref refid="class_n_d_array" kindref="compound">NDArray</ref><sp/>*dest);</highlight></codeline>
-<codeline lineno="42"><highlight class="normal"></highlight></codeline>
-<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>toDimensions<sp/>(<ref refid="class_n_d_array" kindref="compound">NDArray</ref><sp/>*dest);</highlight></codeline>
-<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>toTimeStamp<sp/>(<ref refid="class_n_d_array" kindref="compound">NDArray</ref><sp/>*dest);</highlight></codeline>
-<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>toDataTimeStamp<sp/>(<ref refid="class_n_d_array" kindref="compound">NDArray</ref><sp/>*dest);</highlight></codeline>
-<codeline lineno="46"><highlight class="normal"></highlight></codeline>
-<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>pvAttrType,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>valueType&gt;</highlight></codeline>
-<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>toAttribute<sp/>(<ref refid="class_n_d_array" kindref="compound">NDArray</ref><sp/>*dest,<sp/>epics::pvData::PVStructurePtr<sp/>src);</highlight></codeline>
-<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>toStringAttribute<sp/>(<ref refid="class_n_d_array" kindref="compound">NDArray</ref><sp/>*dest,<sp/>epics::pvData::PVStructurePtr<sp/>src);</highlight></codeline>
-<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>toUndefinedAttribute<sp/>(<ref refid="class_n_d_array" kindref="compound">NDArray</ref><sp/>*dest,<sp/>epics::pvData::PVStructurePtr<sp/>src);</highlight></codeline>
-<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>toAttributes<sp/>(<ref refid="class_n_d_array" kindref="compound">NDArray</ref><sp/>*dest);</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>arrayType&gt;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>toValue<sp/>(<ref refid="class_n_d_array" kindref="compound">NDArray</ref><sp/>*dest);</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>toValue<sp/>(<ref refid="class_n_d_array" kindref="compound">NDArray</ref><sp/>*dest);</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>toDimensions<sp/>(<ref refid="class_n_d_array" kindref="compound">NDArray</ref><sp/>*dest);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>toTimeStamp<sp/>(<ref refid="class_n_d_array" kindref="compound">NDArray</ref><sp/>*dest);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>toDataTimeStamp<sp/>(<ref refid="class_n_d_array" kindref="compound">NDArray</ref><sp/>*dest);</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>pvAttrType,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>valueType&gt;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>toAttribute<sp/>(<ref refid="class_n_d_array" kindref="compound">NDArray</ref><sp/>*dest,<sp/>epics::pvData::PVStructurePtr<sp/>src);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>toStringAttribute<sp/>(<ref refid="class_n_d_array" kindref="compound">NDArray</ref><sp/>*dest,<sp/>epics::pvData::PVStructurePtr<sp/>src);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>toUndefinedAttribute<sp/>(<ref refid="class_n_d_array" kindref="compound">NDArray</ref><sp/>*dest,<sp/>epics::pvData::PVStructurePtr<sp/>src);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>toAttributes<sp/>(<ref refid="class_n_d_array" kindref="compound">NDArray</ref><sp/>*dest);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>arrayType,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>srcDataType&gt;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>fromValue<sp/>(<ref refid="class_n_d_array" kindref="compound">NDArray</ref><sp/>*src);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>fromValue<sp/>(<ref refid="class_n_d_array" kindref="compound">NDArray</ref><sp/>*src);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>fromDimensions<sp/>(<ref refid="class_n_d_array" kindref="compound">NDArray</ref><sp/>*src);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>fromTimeStamp<sp/>(<ref refid="class_n_d_array" kindref="compound">NDArray</ref><sp/>*src);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>fromDataTimeStamp<sp/>(<ref refid="class_n_d_array" kindref="compound">NDArray</ref><sp/>*src);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>pvAttrType,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>valueType&gt;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>fromAttribute<sp/>(epics::pvData::PVStructurePtr<sp/>dest,<sp/><ref refid="class_n_d_attribute" kindref="compound">NDAttribute</ref><sp/>*src);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>fromStringAttribute<sp/>(epics::pvData::PVStructurePtr<sp/>dest,<sp/><ref refid="class_n_d_attribute" kindref="compound">NDAttribute</ref><sp/>*src);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>fromUndefinedAttribute<sp/>(epics::pvData::PVStructurePtr<sp/>dest);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>fromAttributes<sp/>(<ref refid="class_n_d_array" kindref="compound">NDArray</ref><sp/>*src);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal">};</highlight></codeline>
 <codeline lineno="52"><highlight class="normal"></highlight></codeline>
-<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>arrayType,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>srcDataType&gt;</highlight></codeline>
-<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>fromValue<sp/>(<ref refid="class_n_d_array" kindref="compound">NDArray</ref><sp/>*src);</highlight></codeline>
-<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>fromValue<sp/>(<ref refid="class_n_d_array" kindref="compound">NDArray</ref><sp/>*src);</highlight></codeline>
-<codeline lineno="56"><highlight class="normal"></highlight></codeline>
-<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>fromDimensions<sp/>(<ref refid="class_n_d_array" kindref="compound">NDArray</ref><sp/>*src);</highlight></codeline>
-<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>fromTimeStamp<sp/>(<ref refid="class_n_d_array" kindref="compound">NDArray</ref><sp/>*src);</highlight></codeline>
-<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>fromDataTimeStamp<sp/>(<ref refid="class_n_d_array" kindref="compound">NDArray</ref><sp/>*src);</highlight></codeline>
-<codeline lineno="60"><highlight class="normal"></highlight></codeline>
-<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>pvAttrType,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>valueType&gt;</highlight></codeline>
-<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>fromAttribute<sp/>(epics::pvData::PVStructurePtr<sp/>dest,<sp/><ref refid="class_n_d_attribute" kindref="compound">NDAttribute</ref><sp/>*src);</highlight></codeline>
-<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>fromStringAttribute<sp/>(epics::pvData::PVStructurePtr<sp/>dest,<sp/><ref refid="class_n_d_attribute" kindref="compound">NDAttribute</ref><sp/>*src);</highlight></codeline>
-<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>fromUndefinedAttribute<sp/>(epics::pvData::PVStructurePtr<sp/>dest);</highlight></codeline>
-<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>fromAttributes<sp/>(<ref refid="class_n_d_array" kindref="compound">NDArray</ref><sp/>*src);</highlight></codeline>
-<codeline lineno="66"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="67"><highlight class="normal"></highlight></codeline>
-<codeline lineno="68" refid="ntnd_array_converter_8h_1a72a31c7a33ef6e2074ee6276b1c19e9b" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>std::tr1::shared_ptr&lt;NTNDArrayConverter&gt;<sp/><ref refid="ntnd_array_converter_8h_1a72a31c7a33ef6e2074ee6276b1c19e9b" kindref="member">NTNDArrayConverterPtr</ref>;</highlight></codeline>
+<codeline lineno="53" refid="ntnd_array_converter_8h_1a72a31c7a33ef6e2074ee6276b1c19e9b" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>std::tr1::shared_ptr&lt;NTNDArrayConverter&gt;<sp/><ref refid="ntnd_array_converter_8h_1a72a31c7a33ef6e2074ee6276b1c19e9b" kindref="member">NTNDArrayConverterPtr</ref>;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>INC_ntndArrayConverter_H</highlight><highlight class="normal"></highlight></codeline>
     </programlisting>
     <location file="/home/runner/work/areaDetector/areaDetector/ADCore/ADApp/ntndArrayConverterSrc/ntndArrayConverter.h"/>
   </compounddef>

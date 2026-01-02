@@ -36,7 +36,6 @@ Three database template files are provided:
     - Description  
   * - ``NDROIStat.template``
     - This needs to be instantiated once for each instance of the plugin.
-      It provides records that
       It provides records that apply to the entire plugin or to all ROIs.
   * - ``NDROIStatN.template``
     - This needs to be instantiated once for each ROI in the plugin

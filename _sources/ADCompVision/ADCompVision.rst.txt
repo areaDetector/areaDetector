@@ -13,9 +13,9 @@ ADCompVision Documentation
 
 .. toctree::
    :hidden:
-   
+
    ADCompVisionManual.rst
-   
+
 Installing the plugin
 ~~~~~~~~~~~~~~~~~~~~~
 

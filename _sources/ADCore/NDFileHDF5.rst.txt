@@ -662,6 +662,12 @@ Parameters and Records
     - HDF5_dimAttDatasets
     - $(P)$(R)DimAttDatasets, $(P)$(R)DimAttDatasets_RBV
     - bo, bi
+  * - asynFloat64
+    - r/w
+    - Fill value for the dataset to be set in its creation property list.
+    - HDF5_fillValue
+    - $(P)$(R)FillValue, $(P)$(R)FillValue_RBV
+    - ao, ai
   * -
     -
     - **SWMR**
@@ -677,7 +683,7 @@ Parameters and Records
     - Turn on or off SWMR mode for the next acquisition (1 = On, 0 = Off). Turning on
       will only work if SWMR mode is supported.
     - HDF5_SWMRMode
-    - $(P)$(R)SWMRMode, $(P)$(R)SMWRMode_RBV
+    - $(P)$(R)SWMRMode, $(P)$(R)SWMRMode_RBV
     - bo, bi
   * - asynInt32
     - r/o
@@ -723,7 +729,7 @@ Parameters and Records
     - r/w
     - Number of extra dimensions [0..9]
     - HDF5_nExtraDims
-    - $(P)$(R)NumExtraDims, $(P)$(R)NumExtraDims
+    - $(P)$(R)NumExtraDims, $(P)$(R)NumExtraDims_RBV
     - mbbo, mbbi
   * - asynInt32
     - r/w
@@ -731,11 +737,29 @@ Parameters and Records
     - HDF5_extraDimSizeN
     - $(P)$(R)ExtraDimSizeN, $(P)$(R)ExtraDimSizeN_RBV
     -
+  * - asynOctet
+    - r/o
+    - HDF5_extraDimNameN
+    - Name of extra dimension N
+    - $(P)$(R)ExtraDimNameN_RBV
+    - stringin
   * - asynInt32
     - r/w
     - Size of extra dimension X
     - HDF5_extraDimSizeX
     - $(P)$(R)ExtraDimSizeX, $(P)$(R)ExtraDimSizeX_RBV
+    - longout, longin
+  * - asynOctet
+    - r/o
+    - Name of extra dimension X
+    - HDF5_extraDimNameX
+    - $(P)$(R)ExtraDimNameX_RBV
+    - stringin
+  * - asynInt32
+    - r/w
+    - Chunk of extra dimension X
+    - HDF5_extraDimChunkX
+    - $(P)$(R)ExtraDimChunkX, $(P)$(R)ExtraDimChunkX_RBV
     - longout, longin
   * - asynInt32
     - r/w
@@ -743,47 +767,41 @@ Parameters and Records
     - HDF5_extraDimSizeY
     - $(P)$(R)ExtraDimSizeY, $(P)$(R)ExtraDimSizeY_RBV
     - longout, longin
+  * - asynOctet
+    - r/o
+    - Name of extra dimension Y
+    - HDF5_extraDimNameY
+    - $(P)$(R)ExtraDimNameY_RBV
+    - stringin
   * - asynInt32
     - r/w
-    - Size of extra dimension 3
-    - HDF5_extraDimSize3
-    - $(P)$(R)ExtraDimSize3, $(P)$(R)ExtraDimSize3_RBV
+    - Chunk of extra dimension Y
+    - HDF5_extraDimChunkY
+    - $(P)$(R)ExtraDimChunkY, $(P)$(R)ExtraDimChunkY_RBV
     - longout, longin
   * - asynInt32
     - r/w
-    - Size of extra dimension 4
-    - HDF5_extraDimSize4
-    - $(P)$(R)ExtraDimSize4, $(P)$(R)ExtraDimSize4_RBV
+    - Size of the K'th extra dimension, for K in [3..9]
+    - HDF5_extraDimSize<K>
+    - $(P)$(R)ExtraDimSize<K>, $(P)$(R)ExtraDimSize<K>_RBV
+
+      E.g. $(P)$(R)ExtraDimSize3_RBV
     - longout, longin
+  * - asynOctet
+    - r/o
+    - Name of the K'th extra dimension, for K in [3..9]
+    - HDF5_extraDimName<K>
+    - $(P)$(R)ExtraDimName<K>_RBV
+
+      E.g $(P)$(R)ExtraDimName8_RBV
+    - stringin
   * - asynInt32
     - r/w
-    - Size of extra dimension 5
-    - HDF5_extraDimSize5
-    - $(P)$(R)ExtraDimSize5, $(P)$(R)ExtraDimSize5_RBV
-    - longout, longin
-  * - asynInt32
-    - r/w
-    - Size of extra dimension 6
-    - HDF5_extraDimSize6
-    - $(P)$(R)ExtraDimSize6, $(P)$(R)ExtraDimSize6_RBV
-    - longout, longin
-  * - asynInt32
-    - r/w
-    - Size of extra dimension 7
-    - HDF5_extraDimSize7
-    - $(P)$(R)ExtraDimSize7, $(P)$(R)ExtraDimSize7_RBV
-    - longout, longin
-  * - asynInt32
-    - r/w
-    - Size of extra dimension 8
-    - HDF5_extraDimSize8
-    - $(P)$(R)ExtraDimSize8, $(P)$(R)ExtraDimSize8_RBV
-    - longout, longin
-  * - asynInt32
-    - r/w
-    - Size of extra dimension 9
-    - HDF5_extraDimSize9
-    - $(P)$(R)ExtraDimSize9, $(P)$(R)ExtraDimSize9_RBV
+    - Chunk of the K'th extra dimension, for K in [3..9]
+    - HDF5_extraDimChunk<K>
+    - $(P)$(R)ExtraDimChunk<K>, $(P)$(R)ExtraDimChunk<K>_RBV
+
+      E.g. $(P)$(R)ExtraDimChunk9
     - longout, longin
   * -
     -
@@ -814,45 +832,11 @@ Parameters and Records
     - stringout, stringin
   * - asynOctet
     - r/w
-    - Specify the NDAttribute name for the 3rd index
-    - HDF5_posNameDim3
-    - $(P)$(R)PosNameDim3, $(P)$(R)PosNameDim3_RBV
-    - stringout, stringin
-  * - asynOctet
-    - r/w
-    - Specify the NDAttribute name for the 4th index
-    - HDF5_posNameDim4
-    - $(P)$(R)PosNameDim4, $(P)$(R)PosNameDim4_RBV
-    - stringout, stringin
-  * - asynOctet
-    - r/w
-    - Specify the NDAttribute name for the 5th index
-    - HDF5_posNameDim5
-    - $(P)$(R)PosNameDim5, $(P)$(R)PosNameDim5_RBV
-    - stringout, stringin
-  * - asynOctet
-    - r/w
-    - Specify the NDAttribute name for the 6th index
-    - HDF5_posNameDim6
-    - $(P)$(R)PosNameDim6, $(P)$(R)PosNameDim6_RBV
-    - stringout, stringin
-  * - asynOctet
-    - r/w
-    - Specify the NDAttribute name for the 7th index
-    - HDF5_posNameDim7
-    - $(P)$(R)PosNameDim7, $(P)$(R)PosNameDim7_RBV
-    - stringout, stringin
-  * - asynOctet
-    - r/w
-    - Specify the NDAttribute name for the 8th index
-    - HDF5_posNameDim8
-    - $(P)$(R)PosNameDim8, $(P)$(R)PosNameDim8_RBV
-    - stringout, stringin
-  * - asynOctet
-    - r/w
-    - Specify the NDAttribute name for the 9th index
-    - HDF5_posNameDim9
-    - $(P)$(R)PosNameDim9, $(P)$(R)PosNameDim9_RBV
+    - Specify the NDAttribute name for the K'th index, for K in [3..9]
+    - HDF5_posNameDim<K>
+    - $(P)$(R)PosNameDim<K>, $(P)$(R)PosNameDim<K>_RBV
+
+      E.g. $(P)$(R)PosNameDim5
     - stringout, stringin
   * -
     -
@@ -867,55 +851,21 @@ Parameters and Records
     - r/w
     - Specify the NDAttribute index for the X dimension
     - HDF5_posIndexDimX
-    - $(P)$(R)posIndexDimX, $(P)$(R)posIndexDimX_RBV
+    - $(P)$(R)PosIndexDimX, $(P)$(R)PosIndexDimX_RBV
     - stringout, stringin
   * - asynOctet
     - r/w
     - Specify the NDAttribute index for the Y dimension
     - HDF5_posIndexDimY
-    - $(P)$(R)posIndexDimY, $(P)$(R)posIndexDimY_RBV
+    - $(P)$(R)PosIndexDimY, $(P)$(R)PosIndexDimY_RBV
     - stringout, stringin
   * - asynOctet
     - r/w
-    - Specify the NDAttribute index for the 3rd dimension
-    - HDF5_posIndexDim3
-    - $(P)$(R)posIndexDim3, $(P)$(R)posIndexDim3_RBV
-    - stringout, stringin
-  * - asynOctet
-    - r/w
-    - Specify the NDAttribute index for the 4th dimension
-    - HDF5_posIndexDim4
-    - $(P)$(R)posIndexDim4, $(P)$(R)posIndexDim4_RBV
-    - stringout, stringin
-  * - asynOctet
-    - r/w
-    - Specify the NDAttribute index for the 5th dimension
-    - HDF5_posIndexDim5
-    - $(P)$(R)posIndexDim5, $(P)$(R)posIndexDim5_RBV
-    - stringout, stringin
-  * - asynOctet
-    - r/w
-    - Specify the NDAttribute index for the 6th dimension
-    - HDF5_posIndexDim6
-    - $(P)$(R)posIndexDim6, $(P)$(R)posIndexDim6_RBV
-    - stringout, stringin
-  * - asynOctet
-    - r/w
-    - Specify the NDAttribute index for the 7th dimension
-    - HDF5_posIndexDim7
-    - $(P)$(R)posIndexDim7, $(P)$(R)posIndexDim7_RBV
-    - stringout, stringin
-  * - asynOctet
-    - r/w
-    - Specify the NDAttribute index for the 8th dimension
-    - HDF5_posIndexDim8
-    - $(P)$(R)posIndexDim8, $(P)$(R)posIndexDim8_RBV
-    - stringout, stringin
-  * - asynOctet
-    - r/w
-    - Specify the NDAttribute index for the 9th dimension
-    - HDF5_posIndexDim9
-    - $(P)$(R)posIndexDim9, $(P)$(R)posIndexDim9_RBV
+    - Specify the NDAttribute index for the K'th dimension, for K in [3..9]
+    - HDF5_posIndexDim<K>
+    - $(P)$(R)PosIndexDim<K>, $(P)$(R)PosIndexDim<K>_RBV
+
+      E.g. $(P)$(R)PosIndexDim9_RBV
     - stringout, stringin
   * -
     -
@@ -924,7 +874,7 @@ Parameters and Records
     - r/o
     - Total runtime in seconds from first frame to file closed
     - HDF5_totalRuntime
-    - $(P)$(R)Runtime
+    - $(P)$(R)RunTime
     - ai
   * - asynFloat64
     - r/o

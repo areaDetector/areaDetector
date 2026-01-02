@@ -1,0 +1,2320 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ADMythen &mdash; areaDetector Support</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme_overrides.css?v=254ed751" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="ADPerkinElmer" href="../ADPerkinElmer/PerkinElmerDoc.html" />
+    <link rel="prev" title="Example st.cmd Startup File" href="../ADmar345/st_cmd.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            areaDetector
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../readme.html">Readme</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../user_guide.html">User Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/overview.html">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/arch.html">Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/asynPortDriver.html">asynPortDriver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/NDArray.html">NDArray</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../detector_drivers.html">Detector Drivers</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../ADCore/guidelines.html">Guidelines and rules for drivers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADCore/ADDriver.html">ADDriver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADAndor/andorDoc.html">ADAndor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADAndor3/ADAndorDoc.html">ADAndor3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADAravis/ADAravis.html">ADAravis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADCSimDetector/ADCSimDetectorDoc.html">ADCSimDetector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADDexela/ADDexela.html">ADDexela</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADEiger/eiger.html">ADEiger</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADEuresys/ADEuresys.html">ADEuresys</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADFastCCD/index.html">ADFastCCD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADGenICam/ADGenICam.html">ADGenICam</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADHamamatsuDCAM/ADHamamatsuDCAM.html">ADHamamatsuDCAM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADLambda/ADLambda.html">ADLambda</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADLightField/ADLightField.html">ADLightField</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADmarCCD/marCCDDoc.html">ADmarCCD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADmar345/mar345Doc.html">ADmar345</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">ADMythen</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#features">Features</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#history-and-credits">History and Credits</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#installation">Installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#configuration">Configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#driver-parameters">Driver Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#operation">Operation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#user-interface">User Interface</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#examples">Examples</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#troubleshooting">Troubleshooting</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#technical-reference">Technical Reference</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#appendices">Appendices</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPerkinElmer/PerkinElmerDoc.html">ADPerkinElmer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPICam/PICamDoc.html">ADPICam</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPilatus/pilatusDoc.html">ADPilatus</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPvCam/pvcamDoc.html">ADPvCam</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADPylon/ADPylon.html">ADPylon</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADRIXSCam/ADRIXSCam.html">ADRIXSCam</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADSimDetector/simDetector.html">ADSimDetector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADSpinnaker/ADSpinnaker.html">ADSpinnaker</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADTimePix3/ADTimePix3.html">ADTimePix3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADTLBC2/ADTLBC2.html">ADTLBC2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADVimba/ADVimba.html">ADVimba</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADURL/ADURL.html">ADURL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADUVC/ADUVC.html">ADUVC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../NDDriverStdArrays/NDDriverStdArraysDoc.html">NDDriverStdArrays</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../pvaDriver/pvaDriver.html">pvaDriver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../specsAnalyser/index.html">specsAnalyser</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/plugins.html">areaDetector Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../additional_plugins.html">Additional plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADCore/medm.html">MEDM screens</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ADViewers/ad_viewers.html">areaDetector Viewers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../acknowledgements.html">Acknowledgements and licenses</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../install_guide.html">Install Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release.html">Top-level Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ADCore_release.html">ADCore Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ADSupport_release.html">ADSupport Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../doxygen.html">Source Code Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../detectors.html">Supported Detectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../legacy_versions.html">Legacy Versions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">areaDetector</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../user_guide.html">areaDetector Users Guide</a></li>
+          <li class="breadcrumb-item"><a href="../detector_drivers.html">Detector Drivers</a></li>
+      <li class="breadcrumb-item active">ADMythen</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/ADMythen/ADMythen.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="admythen">
+<h1><a class="toc-backref" href="#id3" role="doc-backlink">ADMythen</a><a class="headerlink" href="#admythen" title="Link to this heading"></a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">author<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Joe Sullivan, M. Moore, Mark Rivers</p>
+</dd>
+</dl>
+<nav class="contents" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#admythen" id="id3">ADMythen</a></p>
+<ul>
+<li><p><a class="reference internal" href="#introduction" id="id4">Introduction</a></p></li>
+<li><p><a class="reference internal" href="#features" id="id5">Features</a></p></li>
+<li><p><a class="reference internal" href="#history-and-credits" id="id6">History and Credits</a></p></li>
+<li><p><a class="reference internal" href="#installation" id="id7">Installation</a></p>
+<ul>
+<li><p><a class="reference internal" href="#prerequisites" id="id8">Prerequisites</a></p>
+<ul>
+<li><p><a class="reference internal" href="#required-epics-modules" id="id9">Required EPICS Modules</a></p></li>
+<li><p><a class="reference internal" href="#system-requirements" id="id10">System Requirements</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#obtaining-the-source-code" id="id11">Obtaining the Source Code</a></p></li>
+<li><p><a class="reference internal" href="#building-from-source" id="id12">Building from Source</a></p>
+<ul>
+<li><p><a class="reference internal" href="#configure-release-files" id="id13">1. Configure RELEASE Files</a></p></li>
+<li><p><a class="reference internal" href="#build-the-driver" id="id14">2. Build the Driver</a></p></li>
+<li><p><a class="reference internal" href="#install" id="id15">3. Install</a></p></li>
+<li><p><a class="reference internal" href="#platform-specific-notes" id="id16">Platform-Specific Notes</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#verification" id="id17">Verification</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#configuration" id="id18">Configuration</a></p>
+<ul>
+<li><p><a class="reference internal" href="#ioc-setup" id="id19">IOC Setup</a></p>
+<ul>
+<li><p><a class="reference internal" href="#directory-structure" id="id20">Directory Structure</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#network-configuration" id="id21">Network Configuration</a></p></li>
+<li><p><a class="reference internal" href="#driver-configuration" id="id22">Driver Configuration</a></p></li>
+<li><p><a class="reference internal" href="#database-configuration" id="id23">Database Configuration</a></p></li>
+<li><p><a class="reference internal" href="#plugin-configuration" id="id24">Plugin Configuration</a></p>
+<ul>
+<li><p><a class="reference internal" href="#ndstdarrays-plugin" id="id25">NDStdArrays Plugin</a></p></li>
+<li><p><a class="reference internal" href="#other-plugins" id="id26">Other Plugins</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#autosave-configuration" id="id27">Autosave Configuration</a></p></li>
+<li><p><a class="reference internal" href="#complete-example-st-cmd" id="id28">Complete Example: st.cmd</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#driver-parameters" id="id29">Driver Parameters</a></p>
+<ul>
+<li><p><a class="reference internal" href="#standard-areadetector-parameters" id="id30">Standard areaDetector Parameters</a></p></li>
+<li><p><a class="reference internal" href="#mythen-specific-parameters" id="id31">Mythen-Specific Parameters</a></p>
+<ul>
+<li><p><a class="reference internal" href="#detector-settings" id="id32">Detector Settings</a></p></li>
+<li><p><a class="reference internal" href="#acquisition-parameters" id="id33">Acquisition Parameters</a></p></li>
+<li><p><a class="reference internal" href="#energy-and-threshold" id="id34">Energy and Threshold</a></p></li>
+<li><p><a class="reference internal" href="#correction-parameters" id="id35">Correction Parameters</a></p></li>
+<li><p><a class="reference internal" href="#data-format" id="id36">Data Format</a></p></li>
+<li><p><a class="reference internal" href="#gate-mode" id="id37">Gate Mode</a></p></li>
+<li><p><a class="reference internal" href="#system-parameters" id="id38">System Parameters</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#parameter-reference-table" id="id39">Parameter Reference Table</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#operation" id="id40">Operation</a></p>
+<ul>
+<li><p><a class="reference internal" href="#starting-the-ioc" id="id41">Starting the IOC</a></p></li>
+<li><p><a class="reference internal" href="#basic-acquisition" id="id42">Basic Acquisition</a></p>
+<ul>
+<li><p><a class="reference internal" href="#single-image-acquisition" id="id43">Single Image Acquisition</a></p></li>
+<li><p><a class="reference internal" href="#multiple-image-acquisition" id="id44">Multiple Image Acquisition</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#trigger-modes" id="id45">Trigger Modes</a></p>
+<ul>
+<li><p><a class="reference internal" href="#none-software-trigger" id="id46">None (Software Trigger)</a></p></li>
+<li><p><a class="reference internal" href="#single-external-trigger" id="id47">Single (External Trigger)</a></p></li>
+<li><p><a class="reference internal" href="#continuous-external-trigger" id="id48">Continuous (External Trigger)</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#data-corrections" id="id49">Data Corrections</a></p>
+<ul>
+<li><p><a class="reference internal" href="#flat-field-correction" id="id50">Flat Field Correction</a></p></li>
+<li><p><a class="reference internal" href="#count-rate-correction" id="id51">Count Rate Correction</a></p></li>
+<li><p><a class="reference internal" href="#bad-channel-interpolation" id="id52">Bad Channel Interpolation</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#read-modes" id="id53">Read Modes</a></p>
+<ul>
+<li><p><a class="reference internal" href="#raw-mode" id="id54">Raw Mode</a></p></li>
+<li><p><a class="reference internal" href="#corrected-mode" id="id55">Corrected Mode</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#energy-settings" id="id56">Energy Settings</a></p>
+<ul>
+<li><p><a class="reference internal" href="#predefined-settings" id="id57">Predefined Settings</a></p></li>
+<li><p><a class="reference internal" href="#custom-energy" id="id58">Custom Energy</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#gate-mode-operation" id="id59">Gate Mode Operation</a></p></li>
+<li><p><a class="reference internal" href="#bit-depth-selection" id="id60">Bit Depth Selection</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#user-interface" id="id61">User Interface</a></p>
+<ul>
+<li><p><a class="reference internal" href="#medm-screens" id="id62">MEDM Screens</a></p></li>
+<li><p><a class="reference internal" href="#other-ui-formats" id="id63">Other UI Formats</a></p></li>
+<li><p><a class="reference internal" href="#command-line-interface" id="id64">Command Line Interface</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#examples" id="id65">Examples</a></p>
+<ul>
+<li><p><a class="reference internal" href="#example-1-basic-single-image-acquisition" id="id66">Example 1: Basic Single Image Acquisition</a></p></li>
+<li><p><a class="reference internal" href="#example-2-multiple-frames-with-external-trigger" id="id67">Example 2: Multiple Frames with External Trigger</a></p></li>
+<li><p><a class="reference internal" href="#example-3-continuous-acquisition-with-corrections" id="id68">Example 3: Continuous Acquisition with Corrections</a></p></li>
+<li><p><a class="reference internal" href="#example-4-integration-with-file-plugin" id="id69">Example 4: Integration with File Plugin</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#troubleshooting" id="id70">Troubleshooting</a></p>
+<ul>
+<li><p><a class="reference internal" href="#common-issues" id="id71">Common Issues</a></p>
+<ul>
+<li><p><a class="reference internal" href="#connection-problems" id="id72">Connection Problems</a></p></li>
+<li><p><a class="reference internal" href="#acquisition-problems" id="id73">Acquisition Problems</a></p></li>
+<li><p><a class="reference internal" href="#configuration-errors" id="id74">Configuration Errors</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#diagnostic-tools" id="id75">Diagnostic Tools</a></p>
+<ul>
+<li><p><a class="reference internal" href="#asyn-tracing" id="id76">asyn Tracing</a></p></li>
+<li><p><a class="reference internal" href="#epics-channel-access-tools" id="id77">EPICS Channel Access Tools</a></p></li>
+<li><p><a class="reference internal" href="#network-debugging" id="id78">Network Debugging</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#error-messages" id="id79">Error Messages</a></p>
+<ul>
+<li><p><a class="reference internal" href="#common-status-codes" id="id80">Common Status Codes</a></p></li>
+<li><p><a class="reference internal" href="#firmware-compatibility" id="id81">Firmware Compatibility</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#performance-optimization" id="id82">Performance Optimization</a></p>
+<ul>
+<li><p><a class="reference internal" href="#memory-management" id="id83">Memory Management</a></p></li>
+<li><p><a class="reference internal" href="#network-optimization" id="id84">Network Optimization</a></p></li>
+<li><p><a class="reference internal" href="#thread-priority" id="id85">Thread Priority</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#technical-reference" id="id86">Technical Reference</a></p>
+<ul>
+<li><p><a class="reference internal" href="#communication-protocol" id="id87">Communication Protocol</a></p>
+<ul>
+<li><p><a class="reference internal" href="#command-format" id="id88">Command Format</a></p></li>
+<li><p><a class="reference internal" href="#response-format" id="id89">Response Format</a></p></li>
+<li><p><a class="reference internal" href="#supported-commands" id="id90">Supported Commands</a></p></li>
+<li><p><a class="reference internal" href="#endianness-handling" id="id91">Endianness Handling</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#id1" id="id92">Data Format</a></p>
+<ul>
+<li><p><a class="reference internal" href="#ndarray-structure" id="id93">NDArray Structure</a></p></li>
+<li><p><a class="reference internal" href="#data-encoding" id="id94">Data Encoding</a></p></li>
+<li><p><a class="reference internal" href="#array-attributes" id="id95">Array Attributes</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#id2" id="id96">Firmware Compatibility</a></p>
+<ul>
+<li><p><a class="reference internal" href="#supported-versions" id="id97">Supported Versions</a></p></li>
+<li><p><a class="reference internal" href="#version-detection" id="id98">Version Detection</a></p></li>
+<li><p><a class="reference internal" href="#version-specific-features" id="id99">Version-Specific Features</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#limitations" id="id100">Limitations</a></p>
+<ul>
+<li><p><a class="reference internal" href="#hardware-limits" id="id101">Hardware Limits</a></p></li>
+<li><p><a class="reference internal" href="#software-limits" id="id102">Software Limits</a></p></li>
+<li><p><a class="reference internal" href="#platform-limitations" id="id103">Platform Limitations</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#api-reference" id="id104">API Reference</a></p>
+<ul>
+<li><p><a class="reference internal" href="#mythenconfig" id="id105">mythenConfig()</a></p></li>
+<li><p><a class="reference internal" href="#class-methods-for-developers" id="id106">Class Methods (for developers)</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#appendices" id="id107">Appendices</a></p>
+<ul>
+<li><p><a class="reference internal" href="#appendix-a-file-structure" id="id108">Appendix A: File Structure</a></p></li>
+<li><p><a class="reference internal" href="#appendix-b-database-template-reference" id="id109">Appendix B: Database Template Reference</a></p></li>
+<li><p><a class="reference internal" href="#appendix-c-build-system" id="id110">Appendix C: Build System</a></p>
+<ul>
+<li><p><a class="reference internal" href="#makefile-structure" id="id111">Makefile Structure</a></p></li>
+<li><p><a class="reference internal" href="#build-targets" id="id112">Build Targets</a></p></li>
+<li><p><a class="reference internal" href="#configuration-files" id="id113">Configuration Files</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#appendix-d-glossary" id="id114">Appendix D: Glossary</a></p></li>
+<li><p><a class="reference internal" href="#appendix-e-references" id="id115">Appendix E: References</a></p>
+<ul>
+<li><p><a class="reference internal" href="#areadetector-documentation" id="id116">areaDetector Documentation</a></p></li>
+<li><p><a class="reference internal" href="#related-drivers" id="id117">Related Drivers</a></p></li>
+<li><p><a class="reference internal" href="#epics-documentation" id="id118">EPICS Documentation</a></p></li>
+<li><p><a class="reference internal" href="#detector-documentation" id="id119">Detector Documentation</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#appendix-f-release-notes" id="id120">Appendix F: Release Notes</a></p>
+<ul>
+<li><p><a class="reference internal" href="#version-r2-1-december-11-2019" id="id121">Version R2-1 (December 11, 2019)</a></p></li>
+<li><p><a class="reference internal" href="#version-r2-0-july-4-2017" id="id122">Version R2-0 (July 4, 2017)</a></p></li>
+<li><p><a class="reference internal" href="#version-1-0-august-10-2015" id="id123">Version 1-0 (August 10, 2015)</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+<section id="introduction">
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">Introduction</a><a class="headerlink" href="#introduction" title="Link to this heading"></a></h2>
+<p>This is an <a class="reference external" href="http://www.aps.anl.gov/epics">EPICS</a> <a class="reference external" href="https://areadetector.github.io/areaDetector/index.html">areaDetector</a> driver for the Mythen strip detector from <a class="reference external" href="http://www.dectris.com">Dectris</a>.
+The Mythen is a one-dimensional silicon strip detector designed for X-ray diffraction
+and spectroscopy applications.</p>
+<p>ADMythen inherits from the <a class="reference external" href="https://areadetector.github.io/areaDetector/ADCore/ADDriver.html">ADDriver</a> base class, which provides standard areaDetector
+functionality. The driver uses asynPort for TCP/IP communication with the detector,
+NDArray for the standard areaDetector data format, and EPICS Channel Access for control
+and monitoring.</p>
+<p>The driver supports all standard areaDetector plugins including NDStdArrays, NDPluginFile,
+NDPluginStats, etc.</p>
+</section>
+<section id="features">
+<h2><a class="toc-backref" href="#id5" role="doc-backlink">Features</a><a class="headerlink" href="#features" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><strong>TCP/IP Communication</strong>: Communicates with the detector over TCP/IP (UDP or TCP protocols)</p></li>
+<li><p><strong>Multiple Module Support</strong>: Supports up to 2 detector modules, each with 1280 channels</p></li>
+<li><p><strong>Flexible Acquisition Modes</strong>: Single image, multiple images, and continuous acquisition</p></li>
+<li><p><strong>Trigger Modes</strong>: None (software), Single (external), and Continuous (external)</p></li>
+<li><p><strong>Data Corrections</strong>:
+* Flat field correction
+* Count rate correction with configurable deadtime constant
+* Bad channel interpolation</p></li>
+<li><p><strong>Configurable Bit Depths</strong>: 4, 8, 16, or 24 bits per channel</p></li>
+<li><p><strong>Read Modes</strong>: Raw (uncorrected) or Corrected data</p></li>
+<li><p><strong>Energy Settings</strong>: Predefined settings for common X-ray sources (Cu, Mo, Ag, Cr) or custom energy values</p></li>
+<li><p><strong>Gate Mode</strong>: Support for gated acquisitions</p></li>
+<li><p><strong>Firmware Compatibility</strong>: Works with multiple firmware versions</p></li>
+</ul>
+</section>
+<section id="history-and-credits">
+<h2><a class="toc-backref" href="#id6" role="doc-backlink">History and Credits</a><a class="headerlink" href="#history-and-credits" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><strong>Original Development</strong>: Based on asyn driver from <a class="reference external" href="http://lnls.cnpem.br/">LNLS</a></p></li>
+<li><p><strong>areaDetector Integration</strong>: Modified by Joe Sullivan (ANL-APS/XSD/BCDA) to work with areaDetector</p></li>
+<li><p><strong>Enhancements</strong>:
+* M. Moore (ANL-APS/XSD/DET): Firmware compatibility updates, ReadMode support, trigger timeout handling, ImageMode improvements</p></li>
+<li><p><strong>Documentation</strong>: Comprehensive documentation created by K. Gofron (ORNL, Oak Ridge National Laboratory, December 6, 2025)</p></li>
+</ul>
+<p>For detailed release notes, see <a class="reference external" href="https://github.com/areaDetector/ADMythen/blob/master/RELEASE.md">RELEASE.md</a>.</p>
+</section>
+<section id="installation">
+<h2><a class="toc-backref" href="#id7" role="doc-backlink">Installation</a><a class="headerlink" href="#installation" title="Link to this heading"></a></h2>
+<section id="prerequisites">
+<h3><a class="toc-backref" href="#id8" role="doc-backlink">Prerequisites</a><a class="headerlink" href="#prerequisites" title="Link to this heading"></a></h3>
+<section id="required-epics-modules">
+<h4><a class="toc-backref" href="#id9" role="doc-backlink">Required EPICS Modules</a><a class="headerlink" href="#required-epics-modules" title="Link to this heading"></a></h4>
+<ul class="simple">
+<li><p><strong>EPICS Base</strong>: Version 3.14.12 or later (or EPICS 7.x)</p></li>
+<li><p><strong>areaDetector Modules</strong>:
+* <strong>ADCore</strong>: R3-3 or later
+* <strong>ADSupport</strong>: Compatible version
+* <strong>asyn</strong>: R4-26 or later</p></li>
+</ul>
+</section>
+<section id="system-requirements">
+<h4><a class="toc-backref" href="#id10" role="doc-backlink">System Requirements</a><a class="headerlink" href="#system-requirements" title="Link to this heading"></a></h4>
+<ul class="simple">
+<li><p><strong>Operating System</strong>: Linux or Windows</p></li>
+<li><p><strong>Network</strong>: TCP/IP connectivity to the Mythen detector</p></li>
+<li><p><strong>Compiler</strong>:
+* Linux: GCC 4.8 or later
+* Windows: Visual Studio 2015 or later</p></li>
+<li><p><strong>Build Tools</strong>: GNU Make</p></li>
+</ul>
+</section>
+</section>
+<section id="obtaining-the-source-code">
+<h3><a class="toc-backref" href="#id11" role="doc-backlink">Obtaining the Source Code</a><a class="headerlink" href="#obtaining-the-source-code" title="Link to this heading"></a></h3>
+<p>The ADMythen source code should be placed in the areaDetector support directory structure:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>/epics/support/areaDetector/
+  ├── ADCore/
+  ├── ADSupport/
+  ├── ADMythen/          &lt;-- Place ADMythen here
+  └── ...
+</pre></div>
+</div>
+<p>Clone or download the repository:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">/</span><span class="n">epics</span><span class="o">/</span><span class="n">support</span><span class="o">/</span><span class="n">areaDetector</span>
+<span class="n">git</span> <span class="n">clone</span> <span class="o">&lt;</span><span class="n">repository</span><span class="o">-</span><span class="n">url</span><span class="o">&gt;</span> <span class="n">ADMythen</span>
+</pre></div>
+</div>
+</section>
+<section id="building-from-source">
+<h3><a class="toc-backref" href="#id12" role="doc-backlink">Building from Source</a><a class="headerlink" href="#building-from-source" title="Link to this heading"></a></h3>
+<section id="configure-release-files">
+<h4><a class="toc-backref" href="#id13" role="doc-backlink">1. Configure RELEASE Files</a><a class="headerlink" href="#configure-release-files" title="Link to this heading"></a></h4>
+<p>Edit <code class="docutils literal notranslate"><span class="pre">configure/RELEASE</span></code> to point to your EPICS modules:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># Location of external products
+EPICS_BASE=/epics/base-3.15.5
+ADCORE=$(AREA_DETECTOR)/ADCore
+ADSUPPORT=$(AREA_DETECTOR)/ADSupport
+ASYN=$(AREA_DETECTOR)/asyn
+</pre></div>
+</div>
+</section>
+<section id="build-the-driver">
+<h4><a class="toc-backref" href="#id14" role="doc-backlink">2. Build the Driver</a><a class="headerlink" href="#build-the-driver" title="Link to this heading"></a></h4>
+<p>From the ADMythen top-level directory:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span>
+</pre></div>
+</div>
+<p>This will build:
+* The driver library (<code class="docutils literal notranslate"><span class="pre">mythenApp</span></code>)
+* The IOC application (<code class="docutils literal notranslate"><span class="pre">iocs/mythenIOC</span></code>)</p>
+</section>
+<section id="install">
+<h4><a class="toc-backref" href="#id15" role="doc-backlink">3. Install</a><a class="headerlink" href="#install" title="Link to this heading"></a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">install</span>
+</pre></div>
+</div>
+</section>
+<section id="platform-specific-notes">
+<h4><a class="toc-backref" href="#id16" role="doc-backlink">Platform-Specific Notes</a><a class="headerlink" href="#platform-specific-notes" title="Link to this heading"></a></h4>
+<p><strong>Linux:</strong>
+* Standard build process as described above
+* Supports both little-endian and big-endian architectures</p>
+<p><strong>Windows:</strong>
+* Use Visual Studio solution files if provided
+* Ensure proper path configuration for EPICS modules</p>
+<p><strong>Big-Endian Support:</strong>
+* The driver includes automatic byte-swapping for big-endian systems
+* No special configuration required</p>
+</section>
+</section>
+<section id="verification">
+<h3><a class="toc-backref" href="#id17" role="doc-backlink">Verification</a><a class="headerlink" href="#verification" title="Link to this heading"></a></h3>
+<p>To verify the installation:</p>
+<ol class="arabic">
+<li><p>Check that the libraries were built:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span> <span class="o">-</span><span class="n">la</span> <span class="n">lib</span><span class="o">/</span><span class="n">linux</span><span class="o">-</span><span class="n">x86_64</span><span class="o">/</span>
+</pre></div>
+</div>
+</li>
+<li><p>Check that the IOC was built:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span> <span class="o">-</span><span class="n">la</span> <span class="n">iocs</span><span class="o">/</span><span class="n">mythenIOC</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">linux</span><span class="o">-</span><span class="n">x86_64</span><span class="o">/</span>
+</pre></div>
+</div>
+</li>
+<li><p>Start a test IOC (see Configuration section for details)</p></li>
+</ol>
+</section>
+</section>
+<section id="configuration">
+<h2><a class="toc-backref" href="#id18" role="doc-backlink">Configuration</a><a class="headerlink" href="#configuration" title="Link to this heading"></a></h2>
+<section id="ioc-setup">
+<h3><a class="toc-backref" href="#id19" role="doc-backlink">IOC Setup</a><a class="headerlink" href="#ioc-setup" title="Link to this heading"></a></h3>
+<p>The IOC is located in <code class="docutils literal notranslate"><span class="pre">iocs/mythenIOC/</span></code>. The main startup script is <code class="docutils literal notranslate"><span class="pre">iocBoot/iocMythen/st.cmd</span></code>.</p>
+<section id="directory-structure">
+<h4><a class="toc-backref" href="#id20" role="doc-backlink">Directory Structure</a><a class="headerlink" href="#directory-structure" title="Link to this heading"></a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>iocs/mythenIOC/
+├── configure/
+│   ├── RELEASE          # EPICS module paths
+│   └── ...
+├── iocBoot/
+│   └── iocMythen/
+│       ├── st.cmd       # IOC startup script
+│       └── auto_settings.req
+└── mythenApp/
+    └── src/
+        └── mythenAppMain.cpp
+</pre></div>
+</div>
+</section>
+</section>
+<section id="network-configuration">
+<h3><a class="toc-backref" href="#id21" role="doc-backlink">Network Configuration</a><a class="headerlink" href="#network-configuration" title="Link to this heading"></a></h3>
+<p>The driver communicates with the Mythen detector over TCP/IP. Configure the network connection in <code class="docutils literal notranslate"><span class="pre">st.cmd</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Configure asyn IP port</span>
+<span class="c1"># Format: drvAsynIPPortConfigure(&quot;portName&quot;, &quot;IP:Port Protocol&quot;, priority, noAutoConnect, noProcessEos)</span>
+<span class="n">drvAsynIPPortConfigure</span><span class="p">(</span><span class="s2">&quot;IP_M1K&quot;</span><span class="p">,</span> <span class="s2">&quot;192.168.0.90:1030 UDP&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Parameters:</strong>
+* <strong>portName</strong>: Name for the asyn port (e.g., “IP_M1K”)
+* <strong>IP:Port</strong>: Detector IP address and port (default port is 1030)
+* <strong>Protocol</strong>: “UDP” or “TCP” (UDP is typical)
+* <strong>priority</strong>: Thread priority (0 = default)
+* <strong>noAutoConnect</strong>: 0 = auto-connect, 1 = manual connect
+* <strong>noProcessEos</strong>: 1 = don’t process end-of-string</p>
+<p><strong>End-of-String Configuration:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set output end-of-string (carriage return)</span>
+<span class="n">asynOctetSetOutputEos</span><span class="p">(</span><span class="s2">&quot;IP_M1K&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\r</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Tracing (for debugging):</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Enable I/O tracing (mask 6 = read/write)</span>
+<span class="n">asynSetTraceIOMask</span><span class="p">(</span><span class="s2">&quot;IP_M1K&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+<span class="c1"># Enable general tracing (mask 3 = traceIO, traceError, traceWarning)</span>
+<span class="n">asynSetTraceMask</span><span class="p">(</span><span class="s2">&quot;IP_M1K&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="driver-configuration">
+<h3><a class="toc-backref" href="#id22" role="doc-backlink">Driver Configuration</a><a class="headerlink" href="#driver-configuration" title="Link to this heading"></a></h3>
+<p>Configure the Mythen driver using the <code class="docutils literal notranslate"><span class="pre">mythenConfig</span></code> function:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># mythenConfig(portName, IPPortName, maxBuffers, maxMemory, priority, stackSize)</span>
+<span class="n">mythenConfig</span><span class="p">(</span><span class="s2">&quot;SD1&quot;</span><span class="p">,</span> <span class="s2">&quot;IP_M1K&quot;</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Parameters:</strong>
+* <strong>portName</strong>: Name for the driver port (e.g., “SD1”)
+* <strong>IPPortName</strong>: Name of the asyn IP port (e.g., “IP_M1K”)
+* <strong>maxBuffers</strong>: Maximum NDArray buffers (-1 = unlimited)
+* <strong>maxMemory</strong>: Maximum memory in bytes (-1 = unlimited)
+* <strong>priority</strong>: Thread priority (optional, default from ADDriver)
+* <strong>stackSize</strong>: Thread stack size (optional, default from ADDriver)</p>
+<p><strong>Example with limits:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mythenConfig</span><span class="p">(</span><span class="s2">&quot;SD1&quot;</span><span class="p">,</span> <span class="s2">&quot;IP_M1K&quot;</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">100000000</span><span class="p">)</span>  <span class="c1"># 100 buffers, 100MB memory</span>
+</pre></div>
+</div>
+</section>
+<section id="database-configuration">
+<h3><a class="toc-backref" href="#id23" role="doc-backlink">Database Configuration</a><a class="headerlink" href="#database-configuration" title="Link to this heading"></a></h3>
+<p>Load the database template with appropriate macros:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set environment variables</span>
+<span class="n">epicsEnvSet</span><span class="p">(</span><span class="s2">&quot;PREFIX&quot;</span><span class="p">,</span> <span class="s2">&quot;dp_mythen1K:&quot;</span><span class="p">)</span>
+<span class="n">epicsEnvSet</span><span class="p">(</span><span class="s2">&quot;PORT&quot;</span><span class="p">,</span> <span class="s2">&quot;SD1&quot;</span><span class="p">)</span>
+<span class="n">epicsEnvSet</span><span class="p">(</span><span class="s2">&quot;ADDR&quot;</span><span class="p">,</span> <span class="s2">&quot;0&quot;</span><span class="p">)</span>
+<span class="n">epicsEnvSet</span><span class="p">(</span><span class="s2">&quot;TIMEOUT&quot;</span><span class="p">,</span> <span class="s2">&quot;1&quot;</span><span class="p">)</span>
+
+<span class="c1"># Load database template</span>
+<span class="n">dbLoadRecords</span><span class="p">(</span><span class="s2">&quot;$(ADMYTHEN)/mythenApp/Db/mythen.template&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;P=$(PREFIX),R=cam1:,PORT=$(PORT),ADDR=0,TIMEOUT=1&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Macro Substitutions:</strong>
+* <strong>P</strong>: EPICS prefix (e.g., “dp_mythen1K:”)
+* <strong>R</strong>: Record name prefix (e.g., “cam1:”)
+* <strong>PORT</strong>: Driver port name (e.g., “SD1”)
+* <strong>ADDR</strong>: asyn address (typically 0)
+* <strong>TIMEOUT</strong>: Timeout in seconds</p>
+<p><strong>Array Size Configuration:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">epicsEnvSet</span><span class="p">(</span><span class="s2">&quot;EPICS_CA_MAX_ARRAY_BYTES&quot;</span><span class="p">,</span> <span class="s2">&quot;64008&quot;</span><span class="p">)</span>  <span class="c1"># For 1280 channels * 4 bytes</span>
+<span class="n">epicsEnvSet</span><span class="p">(</span><span class="s2">&quot;XSIZE&quot;</span><span class="p">,</span> <span class="s2">&quot;1280&quot;</span><span class="p">)</span>  <span class="c1"># Number of channels</span>
+<span class="n">epicsEnvSet</span><span class="p">(</span><span class="s2">&quot;YSIZE&quot;</span><span class="p">,</span> <span class="s2">&quot;1&quot;</span><span class="p">)</span>     <span class="c1"># Always 1 for strip detector</span>
+<span class="n">epicsEnvSet</span><span class="p">(</span><span class="s2">&quot;NCHANS&quot;</span><span class="p">,</span> <span class="s2">&quot;1280&quot;</span><span class="p">)</span> <span class="c1"># Total channels</span>
+</pre></div>
+</div>
+</section>
+<section id="plugin-configuration">
+<h3><a class="toc-backref" href="#id24" role="doc-backlink">Plugin Configuration</a><a class="headerlink" href="#plugin-configuration" title="Link to this heading"></a></h3>
+<section id="ndstdarrays-plugin">
+<h4><a class="toc-backref" href="#id25" role="doc-backlink">NDStdArrays Plugin</a><a class="headerlink" href="#ndstdarrays-plugin" title="Link to this heading"></a></h4>
+<p>Configure the standard arrays plugin to make data available via Channel Access:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">NDStdArraysConfigure</span><span class="p">(</span><span class="s2">&quot;Image1&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;$(PORT)&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">dbLoadRecords</span><span class="p">(</span><span class="s2">&quot;$(ADCORE)/db/NDStdArrays.template&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;P=$(PREFIX),R=image1:,PORT=Image1,ADDR=0,TIMEOUT=1,NDARRAY_PORT=$(PORT),NDARRAY_ADDR=0,TYPE=Float64,FTVL=DOUBLE,NELEMENTS=$(NCHANS)&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="other-plugins">
+<h4><a class="toc-backref" href="#id26" role="doc-backlink">Other Plugins</a><a class="headerlink" href="#other-plugins" title="Link to this heading"></a></h4>
+<p>Load additional plugins using the common plugins script:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&lt; $(ADCORE)/iocBoot/commonPlugins.cmd
+</pre></div>
+</div>
+<p>This loads standard plugins like:
+* NDPluginFile (file saving)
+* NDPluginStats (statistics)
+* NDPluginROI (regions of interest)
+* NDPluginColorConvert
+* NDPluginOverlay
+* NDPluginTransform
+* NDPluginCircularBuff
+* NDPluginAttribute
+* NDPluginFFT</p>
+</section>
+</section>
+<section id="autosave-configuration">
+<h3><a class="toc-backref" href="#id27" role="doc-backlink">Autosave Configuration</a><a class="headerlink" href="#autosave-configuration" title="Link to this heading"></a></h3>
+<p>Configure autosave to restore detector settings:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">set_requestfile_path</span><span class="p">(</span><span class="s2">&quot;$(TOP)/mythenApp/Db&quot;</span><span class="p">)</span>
+<span class="n">create_monitor_set</span><span class="p">(</span><span class="s2">&quot;auto_settings.req&quot;</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="s2">&quot;P=$(PREFIX),D=cam1:&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This saves detector settings every 30 seconds and restores them on IOC startup.</p>
+</section>
+<section id="complete-example-st-cmd">
+<h3><a class="toc-backref" href="#id28" role="doc-backlink">Complete Example: st.cmd</a><a class="headerlink" href="#complete-example-st-cmd" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&lt; envPaths
+
+# Set array size for Channel Access
+epicsEnvSet EPICS_CA_MAX_ARRAY_BYTES 64008
+
+# Load database definitions
+dbLoadDatabase(&quot;$(TOP)/dbd/mythenApp.dbd&quot;)
+mythenApp_registerRecordDeviceDriver(pdbbase)
+
+# Configure network connection
+drvAsynIPPortConfigure(&quot;IP_M1K&quot;, &quot;192.168.0.90:1030 UDP&quot;, 0, 0, 1)
+asynOctetSetOutputEos(&quot;IP_M1K&quot;, 0, &quot;\r&quot;)
+
+# Set environment variables
+epicsEnvSet(&quot;PREFIX&quot;, &quot;dp_mythen1K:&quot;)
+epicsEnvSet(&quot;PORT&quot;, &quot;SD1&quot;)
+epicsEnvSet(&quot;XSIZE&quot;, &quot;1280&quot;)
+epicsEnvSet(&quot;YSIZE&quot;, &quot;1&quot;)
+epicsEnvSet(&quot;NCHANS&quot;, &quot;1280&quot;)
+
+# Configure driver
+mythenConfig(&quot;SD1&quot;, &quot;IP_M1K&quot;, -1, -1)
+
+# Load database
+dbLoadRecords(&quot;$(ADMYTHEN)/mythenApp/Db/mythen.template&quot;,
+              &quot;P=$(PREFIX),R=cam1:,PORT=$(PORT),ADDR=0,TIMEOUT=1&quot;)
+
+# Configure plugins
+NDStdArraysConfigure(&quot;Image1&quot;, 3, 0, &quot;$(PORT)&quot;, 0, 0)
+dbLoadRecords(&quot;$(ADCORE)/db/NDStdArrays.template&quot;,
+              &quot;P=$(PREFIX),R=image1:,PORT=Image1,ADDR=0,TIMEOUT=1,NDARRAY_PORT=$(PORT),NDARRAY_ADDR=0,TYPE=Float64,FTVL=DOUBLE,NELEMENTS=$(NCHANS)&quot;)
+&lt; $(ADCORE)/iocBoot/commonPlugins.cmd
+
+# Configure autosave
+set_requestfile_path(&quot;$(TOP)/mythenApp/Db&quot;)
+create_monitor_set(&quot;auto_settings.req&quot;, 30, &quot;P=$(PREFIX),D=cam1:&quot;)
+
+# Initialize IOC
+iocInit()
+</pre></div>
+</div>
+</section>
+</section>
+<section id="driver-parameters">
+<h2><a class="toc-backref" href="#id29" role="doc-backlink">Driver Parameters</a><a class="headerlink" href="#driver-parameters" title="Link to this heading"></a></h2>
+<section id="standard-areadetector-parameters">
+<h3><a class="toc-backref" href="#id30" role="doc-backlink">Standard areaDetector Parameters</a><a class="headerlink" href="#standard-areadetector-parameters" title="Link to this heading"></a></h3>
+<p>ADMythen inherits all standard parameters from <a class="reference external" href="https://areadetector.github.io/areaDetector/ADCore/ADDriver.html">ADDriver</a>. Key parameters include:</p>
+<table class="table-bordered table-striped table-hover docutils align-default">
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 15.0%" />
+<col style="width: 65.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Acquire</span></code></p></td>
+<td><p>bo</p></td>
+<td><p>Start/stop acquisition (0=Stop, 1=Start)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">AcquireTime</span></code></p></td>
+<td><p>ao</p></td>
+<td><p>Exposure time per frame (seconds)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">AcquirePeriod</span></code></p></td>
+<td><p>ao</p></td>
+<td><p>Time between frames (seconds)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ImageMode</span></code></p></td>
+<td><p>mbbo</p></td>
+<td><p>Single, Multiple, Continuous, or Stream</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">NumImages</span></code></p></td>
+<td><p>longout</p></td>
+<td><p>Number of images to acquire</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">NumImagesCounter</span></code></p></td>
+<td><p>longin</p></td>
+<td><p>Current image number</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ArraySizeX</span></code></p></td>
+<td><p>longin</p></td>
+<td><p>Array size in X (channels)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ArraySizeY</span></code></p></td>
+<td><p>longin</p></td>
+<td><p>Array size in Y (always 1)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">DataType</span></code></p></td>
+<td><p>mbbo</p></td>
+<td><p>Data type (NDInt32)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Status</span></code></p></td>
+<td><p>mbbi</p></td>
+<td><p>Detector status</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">StatusMessage</span></code></p></td>
+<td><p>stringin</p></td>
+<td><p>Status message</p></td>
+</tr>
+</tbody>
+</table>
+<p>See <a class="reference external" href="https://areadetector.github.io/areaDetector/">areaDetector documentation</a> for complete list of standard parameters.</p>
+</section>
+<section id="mythen-specific-parameters">
+<h3><a class="toc-backref" href="#id31" role="doc-backlink">Mythen-Specific Parameters</a><a class="headerlink" href="#mythen-specific-parameters" title="Link to this heading"></a></h3>
+<section id="detector-settings">
+<h4><a class="toc-backref" href="#id32" role="doc-backlink">Detector Settings</a><a class="headerlink" href="#detector-settings" title="Link to this heading"></a></h4>
+<p><strong>SD_SETTING</strong> (mbbo/mbbi)
+* <strong>Description</strong>: Detector setting for predefined X-ray source configurations
+* <strong>Values</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>0 = Cu (Copper)</p></li>
+<li><p>1 = Mo (Molybdenum)</p></li>
+<li><p>2 = Ag (Silver)</p></li>
+<li><p>3 = Cr (Chromium)</p></li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li><p><strong>Access</strong>: Read/Write</p></li>
+<li><p><strong>EPICS Records</strong>: <code class="docutils literal notranslate"><span class="pre">$(P)$(R)Setting</span></code>, <code class="docutils literal notranslate"><span class="pre">$(P)$(R)Setting_RBV</span></code></p></li>
+</ul>
+<p><strong>SD_FIRMWARE_VERSION</strong> (stringin)
+* <strong>Description</strong>: Detector firmware version (read-only)
+* <strong>Access</strong>: Read-only
+* <strong>EPICS Record</strong>: <code class="docutils literal notranslate"><span class="pre">$(P)$(R)FirmwareVersion</span></code></p>
+</section>
+<section id="acquisition-parameters">
+<h4><a class="toc-backref" href="#id33" role="doc-backlink">Acquisition Parameters</a><a class="headerlink" href="#acquisition-parameters" title="Link to this heading"></a></h4>
+<p><strong>SD_DELAY_TIME</strong> (ao/ai)
+* <strong>Description</strong>: Delay after trigger before acquisition starts
+* <strong>Units</strong>: seconds
+* <strong>Range</strong>: 0.0 to 655.35 seconds (in 100ns steps)
+* <strong>Default</strong>: 0.1 seconds
+* <strong>Access</strong>: Read/Write
+* <strong>EPICS Records</strong>: <code class="docutils literal notranslate"><span class="pre">$(P)$(R)DelayTime</span></code>, <code class="docutils literal notranslate"><span class="pre">$(P)$(R)DelayTime_RBV</span></code></p>
+<p><strong>SD_NUM_FRAMES</strong> (longout/longin)
+* <strong>Description</strong>: Number of frames to acquire in one acquisition sequence
+* <strong>Range</strong>: 1 to 500
+* <strong>Default</strong>: 1
+* <strong>Access</strong>: Read/Write
+* <strong>EPICS Records</strong>: <code class="docutils literal notranslate"><span class="pre">$(P)$(R)NumFrames</span></code>, <code class="docutils literal notranslate"><span class="pre">$(P)$(R)NumFrames_RBV</span></code>
+* <strong>Note</strong>: In Single image mode, this is automatically set to 1</p>
+<p><strong>SD_TRIGGER</strong> (mbbo/mbbi)
+* <strong>Description</strong>: Trigger mode
+* <strong>Values</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>0 = None (software trigger only)</p></li>
+<li><p>1 = Single (external trigger for single frame)</p></li>
+<li><p>2 = Continuous (continuous acquisition on external triggers)</p></li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li><p><strong>Default</strong>: 0 (None)</p></li>
+<li><p><strong>Access</strong>: Read/Write</p></li>
+<li><p><strong>EPICS Records</strong>: <code class="docutils literal notranslate"><span class="pre">$(P)$(R)TriggerMode</span></code>, <code class="docutils literal notranslate"><span class="pre">$(P)$(R)TriggerMode_RBV</span></code></p></li>
+</ul>
+<p><strong>SD_READ_MODE</strong> (mbbo/mbbi)
+* <strong>Description</strong>: Data readout mode
+* <strong>Values</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>0 = Raw (uncorrected data from detector)</p></li>
+<li><p>1 = Corrected (data with corrections applied)</p></li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li><p><strong>Default</strong>: 0 (Raw)</p></li>
+<li><p><strong>Access</strong>: Read/Write</p></li>
+<li><p><strong>EPICS Records</strong>: <code class="docutils literal notranslate"><span class="pre">$(P)$(R)ReadMode</span></code>, <code class="docutils literal notranslate"><span class="pre">$(P)$(R)ReadMode_RBV</span></code></p></li>
+</ul>
+</section>
+<section id="energy-and-threshold">
+<h4><a class="toc-backref" href="#id34" role="doc-backlink">Energy and Threshold</a><a class="headerlink" href="#energy-and-threshold" title="Link to this heading"></a></h4>
+<p><strong>SD_THRESHOLD</strong> (ao/ai)
+* <strong>Description</strong>: Energy threshold for photon counting
+* <strong>Units</strong>: keV
+* <strong>Range</strong>: 0.0 to 50.0 keV (typical)
+* <strong>Default</strong>: 8.05 keV
+* <strong>Access</strong>: Read/Write
+* <strong>EPICS Records</strong>: <code class="docutils literal notranslate"><span class="pre">$(P)$(R)ThresholdEnergy</span></code>, <code class="docutils literal notranslate"><span class="pre">$(P)$(R)ThresholdEnergy_RBV</span></code></p>
+<p><strong>SD_ENERGY</strong> (ao/ai)
+* <strong>Description</strong>: Beam energy (used for corrections)
+* <strong>Units</strong>: keV
+* <strong>Range</strong>: 0.0 to 50.0 keV (typical)
+* <strong>Default</strong>: 8.1 keV
+* <strong>Access</strong>: Read/Write
+* <strong>EPICS Records</strong>: <code class="docutils literal notranslate"><span class="pre">$(P)$(R)BeamEnergy</span></code>, <code class="docutils literal notranslate"><span class="pre">$(P)$(R)BeamEnergy_RBV</span></code>
+* <strong>Note</strong>: Only available in firmware version 3.0 or later</p>
+</section>
+<section id="correction-parameters">
+<h4><a class="toc-backref" href="#id35" role="doc-backlink">Correction Parameters</a><a class="headerlink" href="#correction-parameters" title="Link to this heading"></a></h4>
+<p><strong>SD_USE_FLATFIELD</strong> (bo/bi)
+* <strong>Description</strong>: Enable/disable flat field correction
+* <strong>Values</strong>: 0 = Disable, 1 = Enable
+* <strong>Default</strong>: 1 (Enabled)
+* <strong>Access</strong>: Read/Write
+* <strong>EPICS Records</strong>: <code class="docutils literal notranslate"><span class="pre">$(P)$(R)UseFlatField</span></code>, <code class="docutils literal notranslate"><span class="pre">$(P)$(R)UseFlatField_RBV</span></code></p>
+<p><strong>SD_USE_COUNTRATE</strong> (bo/bi)
+* <strong>Description</strong>: Enable/disable count rate correction
+* <strong>Values</strong>: 0 = Disable, 1 = Enable
+* <strong>Default</strong>: 1 (Enabled)
+* <strong>Access</strong>: Read/Write
+* <strong>EPICS Records</strong>: <code class="docutils literal notranslate"><span class="pre">$(P)$(R)UseCountRate</span></code>, <code class="docutils literal notranslate"><span class="pre">$(P)$(R)UseCountRate_RBV</span></code></p>
+<p><strong>SD_TAU</strong> (ao/ai)
+* <strong>Description</strong>: Deadtime constant for count rate correction
+* <strong>Units</strong>: nanoseconds
+* <strong>Range</strong>: -1.0 (use detector default) or &gt; 0
+* <strong>Default</strong>: -1.0
+* <strong>Access</strong>: Read/Write
+* <strong>EPICS Records</strong>: <code class="docutils literal notranslate"><span class="pre">$(P)$(R)Tau</span></code>, <code class="docutils literal notranslate"><span class="pre">$(P)$(R)Tau_RBV</span></code>
+* <strong>Note</strong>: Set to -1 to use detector’s default value</p>
+<p><strong>SD_USE_BADCHANNEL_INTRPL</strong> (bo/bi)
+* <strong>Description</strong>: Enable/disable bad channel interpolation
+* <strong>Values</strong>: 0 = Disable, 1 = Enable
+* <strong>Default</strong>: 1 (Enabled)
+* <strong>Access</strong>: Read/Write
+* <strong>EPICS Records</strong>: <code class="docutils literal notranslate"><span class="pre">$(P)$(R)UseBadChanIntrpl</span></code>, <code class="docutils literal notranslate"><span class="pre">$(P)$(R)UseBadChanIntrpl_RBV</span></code></p>
+</section>
+<section id="data-format">
+<h4><a class="toc-backref" href="#id36" role="doc-backlink">Data Format</a><a class="headerlink" href="#data-format" title="Link to this heading"></a></h4>
+<p><strong>SD_BIT_DEPTH</strong> (mbbo/longin)
+* <strong>Description</strong>: Bit depth for data readout
+* <strong>Values</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>0 = 24 bits</p></li>
+<li><p>1 = 16 bits</p></li>
+<li><p>2 = 8 bits</p></li>
+<li><p>3 = 4 bits</p></li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li><p><strong>Default</strong>: 0 (24 bits)</p></li>
+<li><p><strong>Access</strong>: Read/Write</p></li>
+<li><p><strong>EPICS Records</strong>: <code class="docutils literal notranslate"><span class="pre">$(P)$(R)BitDepth</span></code>, <code class="docutils literal notranslate"><span class="pre">$(P)$(R)BitDepth_RBV</span></code></p></li>
+<li><p><strong>Note</strong>: Lower bit depths reduce data size but also reduce dynamic range</p></li>
+</ul>
+</section>
+<section id="gate-mode">
+<h4><a class="toc-backref" href="#id37" role="doc-backlink">Gate Mode</a><a class="headerlink" href="#gate-mode" title="Link to this heading"></a></h4>
+<p><strong>SD_USE_GATES</strong> (bo/bi)
+* <strong>Description</strong>: Enable/disable gate mode
+* <strong>Values</strong>: 0 = Disable, 1 = Enable
+* <strong>Default</strong>: 0 (Disabled)
+* <strong>Access</strong>: Read/Write
+* <strong>EPICS Records</strong>: <code class="docutils literal notranslate"><span class="pre">$(P)$(R)UseGates</span></code>, <code class="docutils literal notranslate"><span class="pre">$(P)$(R)UseGates_RBV</span></code></p>
+<p><strong>SD_NUM_GATES</strong> (longout/longin)
+* <strong>Description</strong>: Number of gates per frame
+* <strong>Range</strong>: 1 to maximum supported by detector
+* <strong>Default</strong>: 1
+* <strong>Access</strong>: Read/Write
+* <strong>EPICS Records</strong>: <code class="docutils literal notranslate"><span class="pre">$(P)$(R)NumGates</span></code>, <code class="docutils literal notranslate"><span class="pre">$(P)$(R)NumGates_RBV</span></code>
+* <strong>Note</strong>: Only used when gate mode is enabled</p>
+</section>
+<section id="system-parameters">
+<h4><a class="toc-backref" href="#id38" role="doc-backlink">System Parameters</a><a class="headerlink" href="#system-parameters" title="Link to this heading"></a></h4>
+<p><strong>SD_NMODULES</strong> (longin)
+* <strong>Description</strong>: Number of detector modules (read-only)
+* <strong>Range</strong>: 1 to 2
+* <strong>Access</strong>: Read-only
+* <strong>EPICS Record</strong>: <code class="docutils literal notranslate"><span class="pre">$(P)$(R)NumModules_RBV</span></code></p>
+<p><strong>SD_RESET</strong> (bo)
+* <strong>Description</strong>: Reset detector (write-only)
+* <strong>Access</strong>: Write-only
+* <strong>EPICS Record</strong>: <code class="docutils literal notranslate"><span class="pre">$(P)$(R)Reset</span></code>
+* <strong>Note</strong>: Writing 1 to this record resets the detector</p>
+</section>
+</section>
+<section id="parameter-reference-table">
+<h3><a class="toc-backref" href="#id39" role="doc-backlink">Parameter Reference Table</a><a class="headerlink" href="#parameter-reference-table" title="Link to this heading"></a></h3>
+<table class="table-bordered table-striped table-hover docutils align-default">
+<colgroup>
+<col style="width: 15.3%" />
+<col style="width: 12.2%" />
+<col style="width: 10.2%" />
+<col style="width: 8.2%" />
+<col style="width: 15.3%" />
+<col style="width: 8.2%" />
+<col style="width: 30.6%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter Name</p></th>
+<th class="head"><p>EPICS Type</p></th>
+<th class="head"><p>Data Type</p></th>
+<th class="head"><p>Units</p></th>
+<th class="head"><p>Range/Values</p></th>
+<th class="head"><p>Access</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>SD_SETTING</p></td>
+<td><p>mbbo/mbbi</p></td>
+<td><p>Int32</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p>0-3 (Cu/Mo/Ag/Cr)</p></td>
+<td><p>R/W</p></td>
+<td><p>Detector setting</p></td>
+</tr>
+<tr class="row-odd"><td><p>SD_DELAY_TIME</p></td>
+<td><p>ao/ai</p></td>
+<td><p>Float64</p></td>
+<td><p>s</p></td>
+<td><p>0.0-655.35</p></td>
+<td><p>R/W</p></td>
+<td><p>Delay after trigger</p></td>
+</tr>
+<tr class="row-even"><td><p>SD_THRESHOLD</p></td>
+<td><p>ao/ai</p></td>
+<td><p>Float64</p></td>
+<td><p>keV</p></td>
+<td><p>0.0-50.0</p></td>
+<td><p>R/W</p></td>
+<td><p>Energy threshold</p></td>
+</tr>
+<tr class="row-odd"><td><p>SD_ENERGY</p></td>
+<td><p>ao/ai</p></td>
+<td><p>Float64</p></td>
+<td><p>keV</p></td>
+<td><p>0.0-50.0</p></td>
+<td><p>R/W</p></td>
+<td><p>Beam energy</p></td>
+</tr>
+<tr class="row-even"><td><p>SD_USE_FLATFIELD</p></td>
+<td><p>bo/bi</p></td>
+<td><p>Int32</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p>0/1</p></td>
+<td><p>R/W</p></td>
+<td><p>Enable flat field</p></td>
+</tr>
+<tr class="row-odd"><td><p>SD_USE_COUNTRATE</p></td>
+<td><p>bo/bi</p></td>
+<td><p>Int32</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p>0/1</p></td>
+<td><p>R/W</p></td>
+<td><p>Enable count rate correction</p></td>
+</tr>
+<tr class="row-even"><td><p>SD_TAU</p></td>
+<td><p>ao/ai</p></td>
+<td><p>Float64</p></td>
+<td><p>ns</p></td>
+<td><p>-1.0 or &gt;0</p></td>
+<td><p>R/W</p></td>
+<td><p>Deadtime constant</p></td>
+</tr>
+<tr class="row-odd"><td><p>SD_USE_BADCHANNEL_INTRPL</p></td>
+<td><p>bo/bi</p></td>
+<td><p>Int32</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p>0/1</p></td>
+<td><p>R/W</p></td>
+<td><p>Enable bad channel interpolation</p></td>
+</tr>
+<tr class="row-even"><td><p>SD_BIT_DEPTH</p></td>
+<td><p>mbbo/longin</p></td>
+<td><p>Int32</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p>0-3 (24/16/8/4 bits)</p></td>
+<td><p>R/W</p></td>
+<td><p>Bit depth</p></td>
+</tr>
+<tr class="row-odd"><td><p>SD_USE_GATES</p></td>
+<td><p>bo/bi</p></td>
+<td><p>Int32</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p>0/1</p></td>
+<td><p>R/W</p></td>
+<td><p>Enable gates</p></td>
+</tr>
+<tr class="row-even"><td><p>SD_NUM_GATES</p></td>
+<td><p>longout/longin</p></td>
+<td><p>Int32</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p>1-max</p></td>
+<td><p>R/W</p></td>
+<td><p>Number of gates</p></td>
+</tr>
+<tr class="row-odd"><td><p>SD_NUM_FRAMES</p></td>
+<td><p>longout/longin</p></td>
+<td><p>Int32</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p>1-500</p></td>
+<td><p>R/W</p></td>
+<td><p>Number of frames</p></td>
+</tr>
+<tr class="row-even"><td><p>SD_TRIGGER</p></td>
+<td><p>mbbo/mbbi</p></td>
+<td><p>Int32</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p>0-2 (None/Single/Continuous)</p></td>
+<td><p>R/W</p></td>
+<td><p>Trigger mode</p></td>
+</tr>
+<tr class="row-odd"><td><p>SD_READ_MODE</p></td>
+<td><p>mbbo/mbbi</p></td>
+<td><p>Int32</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p>0-1 (Raw/Corrected)</p></td>
+<td><p>R/W</p></td>
+<td><p>Read mode</p></td>
+</tr>
+<tr class="row-even"><td><p>SD_NMODULES</p></td>
+<td><p>longin</p></td>
+<td><p>Int32</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p>1-2</p></td>
+<td><p>R</p></td>
+<td><p>Number of modules</p></td>
+</tr>
+<tr class="row-odd"><td><p>SD_FIRMWARE_VERSION</p></td>
+<td><p>stringin</p></td>
+<td><p>String</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p>R</p></td>
+<td><p>Firmware version</p></td>
+</tr>
+<tr class="row-even"><td><p>SD_RESET</p></td>
+<td><p>bo</p></td>
+<td><p>Int32</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p>0/1</p></td>
+<td><p>W</p></td>
+<td><p>Reset detector</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="operation">
+<h2><a class="toc-backref" href="#id40" role="doc-backlink">Operation</a><a class="headerlink" href="#operation" title="Link to this heading"></a></h2>
+<section id="starting-the-ioc">
+<h3><a class="toc-backref" href="#id41" role="doc-backlink">Starting the IOC</a><a class="headerlink" href="#starting-the-ioc" title="Link to this heading"></a></h3>
+<ol class="arabic">
+<li><p><strong>Navigate to IOC directory:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">/</span><span class="n">epics</span><span class="o">/</span><span class="n">support</span><span class="o">/</span><span class="n">areaDetector</span><span class="o">/</span><span class="n">ADMythen</span><span class="o">/</span><span class="n">iocs</span><span class="o">/</span><span class="n">mythenIOC</span><span class="o">/</span><span class="n">iocBoot</span><span class="o">/</span><span class="n">iocMythen</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Edit st.cmd</strong> to configure detector IP address and other settings</p></li>
+<li><p><strong>Start the IOC:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">st</span><span class="o">.</span><span class="n">cmd</span>
+</pre></div>
+</div>
+<p>Or use the run script:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">run</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Verify startup:</strong>
+* Check for error messages
+* Verify detector connection
+* Check that records are loaded</p></li>
+</ol>
+</section>
+<section id="basic-acquisition">
+<h3><a class="toc-backref" href="#id42" role="doc-backlink">Basic Acquisition</a><a class="headerlink" href="#basic-acquisition" title="Link to this heading"></a></h3>
+<section id="single-image-acquisition">
+<h4><a class="toc-backref" href="#id43" role="doc-backlink">Single Image Acquisition</a><a class="headerlink" href="#single-image-acquisition" title="Link to this heading"></a></h4>
+<ol class="arabic">
+<li><p><strong>Set exposure time:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">caput</span> <span class="n">dp_mythen1K</span><span class="p">:</span><span class="n">cam1</span><span class="p">:</span><span class="n">AcquireTime</span> <span class="mf">1.0</span>  <span class="c1"># 1 second exposure</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Set image mode to Single:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">caput</span> <span class="n">dp_mythen1K</span><span class="p">:</span><span class="n">cam1</span><span class="p">:</span><span class="n">ImageMode</span> <span class="mi">0</span>  <span class="c1"># Single</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Start acquisition:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">caput</span> <span class="n">dp_mythen1K</span><span class="p">:</span><span class="n">cam1</span><span class="p">:</span><span class="n">Acquire</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Monitor status:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">caget</span> <span class="n">dp_mythen1K</span><span class="p">:</span><span class="n">cam1</span><span class="p">:</span><span class="n">Acquire</span>
+<span class="n">caget</span> <span class="n">dp_mythen1K</span><span class="p">:</span><span class="n">cam1</span><span class="p">:</span><span class="n">Status</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Read data</strong> (via NDStdArrays plugin):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">caget</span> <span class="n">dp_mythen1K</span><span class="p">:</span><span class="n">image1</span><span class="p">:</span><span class="n">ArrayData</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+<section id="multiple-image-acquisition">
+<h4><a class="toc-backref" href="#id44" role="doc-backlink">Multiple Image Acquisition</a><a class="headerlink" href="#multiple-image-acquisition" title="Link to this heading"></a></h4>
+<ol class="arabic">
+<li><p><strong>Set number of frames:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">caput</span> <span class="n">dp_mythen1K</span><span class="p">:</span><span class="n">cam1</span><span class="p">:</span><span class="n">NumFrames</span> <span class="mi">10</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Set image mode to Multiple:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">caput</span> <span class="n">dp_mythen1K</span><span class="p">:</span><span class="n">cam1</span><span class="p">:</span><span class="n">ImageMode</span> <span class="mi">1</span>  <span class="c1"># Multiple</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Set acquire period</strong> (time between frames):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">caput</span> <span class="n">dp_mythen1K</span><span class="p">:</span><span class="n">cam1</span><span class="p">:</span><span class="n">AcquirePeriod</span> <span class="mf">2.0</span>  <span class="c1"># 2 seconds between frames</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Start acquisition:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">caput</span> <span class="n">dp_mythen1K</span><span class="p">:</span><span class="n">cam1</span><span class="p">:</span><span class="n">Acquire</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Monitor progress:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">caget</span> <span class="n">dp_mythen1K</span><span class="p">:</span><span class="n">cam1</span><span class="p">:</span><span class="n">NumImagesCounter</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+</section>
+<section id="trigger-modes">
+<h3><a class="toc-backref" href="#id45" role="doc-backlink">Trigger Modes</a><a class="headerlink" href="#trigger-modes" title="Link to this heading"></a></h3>
+<section id="none-software-trigger">
+<h4><a class="toc-backref" href="#id46" role="doc-backlink">None (Software Trigger)</a><a class="headerlink" href="#none-software-trigger" title="Link to this heading"></a></h4>
+<p>Default mode. Acquisition is started by software only:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">caput</span> <span class="n">dp_mythen1K</span><span class="p">:</span><span class="n">cam1</span><span class="p">:</span><span class="n">TriggerMode</span> <span class="mi">0</span>  <span class="c1"># None</span>
+<span class="n">caput</span> <span class="n">dp_mythen1K</span><span class="p">:</span><span class="n">cam1</span><span class="p">:</span><span class="n">Acquire</span> <span class="mi">1</span>       <span class="c1"># Start acquisition</span>
+</pre></div>
+</div>
+</section>
+<section id="single-external-trigger">
+<h4><a class="toc-backref" href="#id47" role="doc-backlink">Single (External Trigger)</a><a class="headerlink" href="#single-external-trigger" title="Link to this heading"></a></h4>
+<p>One frame per external trigger:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">caput</span> <span class="n">dp_mythen1K</span><span class="p">:</span><span class="n">cam1</span><span class="p">:</span><span class="n">TriggerMode</span> <span class="mi">1</span>  <span class="c1"># Single</span>
+<span class="n">caput</span> <span class="n">dp_mythen1K</span><span class="p">:</span><span class="n">cam1</span><span class="p">:</span><span class="n">Acquire</span> <span class="mi">1</span>      <span class="c1"># Arm detector</span>
+<span class="c1"># Detector waits for external trigger</span>
+</pre></div>
+</div>
+</section>
+<section id="continuous-external-trigger">
+<h4><a class="toc-backref" href="#id48" role="doc-backlink">Continuous (External Trigger)</a><a class="headerlink" href="#continuous-external-trigger" title="Link to this heading"></a></h4>
+<p>Continuous acquisition on external triggers:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">caput</span> <span class="n">dp_mythen1K</span><span class="p">:</span><span class="n">cam1</span><span class="p">:</span><span class="n">TriggerMode</span> <span class="mi">2</span>  <span class="c1"># Continuous</span>
+<span class="n">caput</span> <span class="n">dp_mythen1K</span><span class="p">:</span><span class="n">cam1</span><span class="p">:</span><span class="n">ImageMode</span> <span class="mi">2</span>    <span class="c1"># Continuous</span>
+<span class="n">caput</span> <span class="n">dp_mythen1K</span><span class="p">:</span><span class="n">cam1</span><span class="p">:</span><span class="n">Acquire</span> <span class="mi">1</span>      <span class="c1"># Start continuous mode</span>
+<span class="c1"># Each external trigger acquires one frame</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="data-corrections">
+<h3><a class="toc-backref" href="#id49" role="doc-backlink">Data Corrections</a><a class="headerlink" href="#data-corrections" title="Link to this heading"></a></h3>
+<section id="flat-field-correction">
+<h4><a class="toc-backref" href="#id50" role="doc-backlink">Flat Field Correction</a><a class="headerlink" href="#flat-field-correction" title="Link to this heading"></a></h4>
+<p>Flat field correction compensates for channel-to-channel variations:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Enable flat field correction</span>
+<span class="n">caput</span> <span class="n">dp_mythen1K</span><span class="p">:</span><span class="n">cam1</span><span class="p">:</span><span class="n">UseFlatField</span> <span class="mi">1</span>
+
+<span class="c1"># Disable flat field correction</span>
+<span class="n">caput</span> <span class="n">dp_mythen1K</span><span class="p">:</span><span class="n">cam1</span><span class="p">:</span><span class="n">UseFlatField</span> <span class="mi">0</span>
+</pre></div>
+</div>
+<p><strong>Note</strong>: Flat field calibration must be performed on the detector before use.</p>
+</section>
+<section id="count-rate-correction">
+<h4><a class="toc-backref" href="#id51" role="doc-backlink">Count Rate Correction</a><a class="headerlink" href="#count-rate-correction" title="Link to this heading"></a></h4>
+<p>Count rate correction compensates for deadtime effects at high count rates:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Enable count rate correction</span>
+<span class="n">caput</span> <span class="n">dp_mythen1K</span><span class="p">:</span><span class="n">cam1</span><span class="p">:</span><span class="n">UseCountRate</span> <span class="mi">1</span>
+
+<span class="c1"># Set deadtime constant (nanoseconds)</span>
+<span class="c1"># Use -1 for detector default, or set specific value</span>
+<span class="n">caput</span> <span class="n">dp_mythen1K</span><span class="p">:</span><span class="n">cam1</span><span class="p">:</span><span class="n">Tau</span> <span class="mf">1000.0</span>  <span class="c1"># 1000 ns deadtime</span>
+</pre></div>
+</div>
+<p><strong>When to use</strong>: At high count rates (&gt;100 kHz per channel typically)</p>
+</section>
+<section id="bad-channel-interpolation">
+<h4><a class="toc-backref" href="#id52" role="doc-backlink">Bad Channel Interpolation</a><a class="headerlink" href="#bad-channel-interpolation" title="Link to this heading"></a></h4>
+<p>Interpolates values for known bad channels:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Enable bad channel interpolation</span>
+<span class="n">caput</span> <span class="n">dp_mythen1K</span><span class="p">:</span><span class="n">cam1</span><span class="p">:</span><span class="n">UseBadChanIntrpl</span> <span class="mi">1</span>
+
+<span class="c1"># Disable (use raw values for bad channels)</span>
+<span class="n">caput</span> <span class="n">dp_mythen1K</span><span class="p">:</span><span class="n">cam1</span><span class="p">:</span><span class="n">UseBadChanIntrpl</span> <span class="mi">0</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="read-modes">
+<h3><a class="toc-backref" href="#id53" role="doc-backlink">Read Modes</a><a class="headerlink" href="#read-modes" title="Link to this heading"></a></h3>
+<section id="raw-mode">
+<h4><a class="toc-backref" href="#id54" role="doc-backlink">Raw Mode</a><a class="headerlink" href="#raw-mode" title="Link to this heading"></a></h4>
+<p>Uncorrected data directly from detector:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">caput</span> <span class="n">dp_mythen1K</span><span class="p">:</span><span class="n">cam1</span><span class="p">:</span><span class="n">ReadMode</span> <span class="mi">0</span>  <span class="c1"># Raw</span>
+</pre></div>
+</div>
+<p><strong>Use when</strong>:
+* You want to apply your own corrections
+* Debugging detector issues
+* Maximum data fidelity needed</p>
+</section>
+<section id="corrected-mode">
+<h4><a class="toc-backref" href="#id55" role="doc-backlink">Corrected Mode</a><a class="headerlink" href="#corrected-mode" title="Link to this heading"></a></h4>
+<p>Data with detector corrections applied:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">caput</span> <span class="n">dp_mythen1K</span><span class="p">:</span><span class="n">cam1</span><span class="p">:</span><span class="n">ReadMode</span> <span class="mi">1</span>  <span class="c1"># Corrected</span>
+</pre></div>
+</div>
+<p><strong>Use when</strong>:
+* Standard operation
+* Corrections are properly calibrated
+* Simplified data processing</p>
+</section>
+</section>
+<section id="energy-settings">
+<h3><a class="toc-backref" href="#id56" role="doc-backlink">Energy Settings</a><a class="headerlink" href="#energy-settings" title="Link to this heading"></a></h3>
+<section id="predefined-settings">
+<h4><a class="toc-backref" href="#id57" role="doc-backlink">Predefined Settings</a><a class="headerlink" href="#predefined-settings" title="Link to this heading"></a></h4>
+<p>Use predefined settings for common X-ray sources:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Copper K-alpha (8.05 keV)</span>
+<span class="n">caput</span> <span class="n">dp_mythen1K</span><span class="p">:</span><span class="n">cam1</span><span class="p">:</span><span class="n">Setting</span> <span class="mi">0</span>  <span class="c1"># Cu</span>
+
+<span class="c1"># Molybdenum K-alpha (17.48 keV)</span>
+<span class="n">caput</span> <span class="n">dp_mythen1K</span><span class="p">:</span><span class="n">cam1</span><span class="p">:</span><span class="n">Setting</span> <span class="mi">1</span>  <span class="c1"># Mo</span>
+
+<span class="c1"># Silver K-alpha (22.16 keV)</span>
+<span class="n">caput</span> <span class="n">dp_mythen1K</span><span class="p">:</span><span class="n">cam1</span><span class="p">:</span><span class="n">Setting</span> <span class="mi">2</span>  <span class="c1"># Ag</span>
+
+<span class="c1"># Chromium K-alpha (5.41 keV)</span>
+<span class="n">caput</span> <span class="n">dp_mythen1K</span><span class="p">:</span><span class="n">cam1</span><span class="p">:</span><span class="n">Setting</span> <span class="mi">3</span>  <span class="c1"># Cr</span>
+</pre></div>
+</div>
+</section>
+<section id="custom-energy">
+<h4><a class="toc-backref" href="#id58" role="doc-backlink">Custom Energy</a><a class="headerlink" href="#custom-energy" title="Link to this heading"></a></h4>
+<p>Set custom energy values:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set threshold energy</span>
+<span class="n">caput</span> <span class="n">dp_mythen1K</span><span class="p">:</span><span class="n">cam1</span><span class="p">:</span><span class="n">ThresholdEnergy</span> <span class="mf">10.0</span>  <span class="c1"># 10 keV</span>
+
+<span class="c1"># Set beam energy (firmware 3.0+)</span>
+<span class="n">caput</span> <span class="n">dp_mythen1K</span><span class="p">:</span><span class="n">cam1</span><span class="p">:</span><span class="n">BeamEnergy</span> <span class="mf">10.5</span>  <span class="c1"># 10.5 keV</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="gate-mode-operation">
+<h3><a class="toc-backref" href="#id59" role="doc-backlink">Gate Mode Operation</a><a class="headerlink" href="#gate-mode-operation" title="Link to this heading"></a></h3>
+<p>Gate mode allows time-resolved measurements:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Enable gate mode</span>
+<span class="n">caput</span> <span class="n">dp_mythen1K</span><span class="p">:</span><span class="n">cam1</span><span class="p">:</span><span class="n">UseGates</span> <span class="mi">1</span>
+
+<span class="c1"># Set number of gates per frame</span>
+<span class="n">caput</span> <span class="n">dp_mythen1K</span><span class="p">:</span><span class="n">cam1</span><span class="p">:</span><span class="n">NumGates</span> <span class="mi">4</span>  <span class="c1"># 4 gates per frame</span>
+
+<span class="c1"># Start acquisition</span>
+<span class="n">caput</span> <span class="n">dp_mythen1K</span><span class="p">:</span><span class="n">cam1</span><span class="p">:</span><span class="n">Acquire</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p><strong>Use cases</strong>:
+* Time-resolved experiments
+* Pump-probe measurements
+* Synchronized with external events</p>
+</section>
+<section id="bit-depth-selection">
+<h3><a class="toc-backref" href="#id60" role="doc-backlink">Bit Depth Selection</a><a class="headerlink" href="#bit-depth-selection" title="Link to this heading"></a></h3>
+<p>Choose bit depth based on dynamic range needs:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 24 bits (maximum dynamic range)</span>
+<span class="n">caput</span> <span class="n">dp_mythen1K</span><span class="p">:</span><span class="n">cam1</span><span class="p">:</span><span class="n">BitDepth</span> <span class="mi">0</span>
+
+<span class="c1"># 16 bits (reduced data size)</span>
+<span class="n">caput</span> <span class="n">dp_mythen1K</span><span class="p">:</span><span class="n">cam1</span><span class="p">:</span><span class="n">BitDepth</span> <span class="mi">1</span>
+
+<span class="c1"># 8 bits (minimal data size)</span>
+<span class="n">caput</span> <span class="n">dp_mythen1K</span><span class="p">:</span><span class="n">cam1</span><span class="p">:</span><span class="n">BitDepth</span> <span class="mi">2</span>
+
+<span class="c1"># 4 bits (very limited dynamic range)</span>
+<span class="n">caput</span> <span class="n">dp_mythen1K</span><span class="p">:</span><span class="n">cam1</span><span class="p">:</span><span class="n">BitDepth</span> <span class="mi">3</span>
+</pre></div>
+</div>
+<p><strong>Trade-offs</strong>:
+* Higher bit depth = larger data files, more dynamic range
+* Lower bit depth = smaller files, less dynamic range</p>
+</section>
+</section>
+<section id="user-interface">
+<h2><a class="toc-backref" href="#id61" role="doc-backlink">User Interface</a><a class="headerlink" href="#user-interface" title="Link to this heading"></a></h2>
+<section id="medm-screens">
+<h3><a class="toc-backref" href="#id62" role="doc-backlink">MEDM Screens</a><a class="headerlink" href="#medm-screens" title="Link to this heading"></a></h3>
+<p>The driver includes MEDM (Motif Editor and Display Manager) screens:</p>
+<p><strong>Main Control Screen</strong>: <code class="docutils literal notranslate"><span class="pre">mythenApp/op/adl/mythen.adl</span></code></p>
+<p>To launch:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">medm</span> <span class="o">-</span><span class="n">x</span> <span class="o">-</span><span class="n">macro</span> <span class="s2">&quot;P=dp_mythen1K:,R=cam1:&quot;</span> <span class="n">mythenApp</span><span class="o">/</span><span class="n">op</span><span class="o">/</span><span class="n">adl</span><span class="o">/</span><span class="n">mythen</span><span class="o">.</span><span class="n">adl</span>
+</pre></div>
+</div>
+<p>Or use the provided script:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">start_medm_mythen</span>
+</pre></div>
+</div>
+<p>The screen includes:
+* Acquisition controls
+* Detector settings
+* Energy and threshold controls
+* Correction enable/disable
+* Status display
+* Data display</p>
+</section>
+<section id="other-ui-formats">
+<h3><a class="toc-backref" href="#id63" role="doc-backlink">Other UI Formats</a><a class="headerlink" href="#other-ui-formats" title="Link to this heading"></a></h3>
+<p>The driver includes screens in multiple formats:</p>
+<ul class="simple">
+<li><p><strong>EDM</strong>: <code class="docutils literal notranslate"><span class="pre">mythenApp/op/edl/autoconvert/mythen.edl</span></code></p></li>
+<li><p><strong>CSS/Bob</strong>: <code class="docutils literal notranslate"><span class="pre">mythenApp/op/bob/autoconvert/mythen.bob</span></code></p></li>
+<li><p><strong>OPI</strong>: <code class="docutils literal notranslate"><span class="pre">mythenApp/op/opi/autoconvert/mythen.opi</span></code></p></li>
+<li><p><strong>UI</strong>: <code class="docutils literal notranslate"><span class="pre">mythenApp/op/ui/autoconvert/mythen.ui</span></code></p></li>
+</ul>
+</section>
+<section id="command-line-interface">
+<h3><a class="toc-backref" href="#id64" role="doc-backlink">Command Line Interface</a><a class="headerlink" href="#command-line-interface" title="Link to this heading"></a></h3>
+<p>Use EPICS Channel Access command-line tools:</p>
+<p><strong>Get parameter values:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">caget</span> <span class="n">dp_mythen1K</span><span class="p">:</span><span class="n">cam1</span><span class="p">:</span><span class="n">AcquireTime</span>
+<span class="n">caget</span> <span class="n">dp_mythen1K</span><span class="p">:</span><span class="n">cam1</span><span class="p">:</span><span class="n">Status</span>
+<span class="n">caget</span> <span class="n">dp_mythen1K</span><span class="p">:</span><span class="n">cam1</span><span class="p">:</span><span class="n">FirmwareVersion</span>
+</pre></div>
+</div>
+<p><strong>Set parameter values:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">caput</span> <span class="n">dp_mythen1K</span><span class="p">:</span><span class="n">cam1</span><span class="p">:</span><span class="n">AcquireTime</span> <span class="mf">2.0</span>
+<span class="n">caput</span> <span class="n">dp_mythen1K</span><span class="p">:</span><span class="n">cam1</span><span class="p">:</span><span class="n">TriggerMode</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p><strong>Monitor parameters:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">camonitor</span> <span class="n">dp_mythen1K</span><span class="p">:</span><span class="n">cam1</span><span class="p">:</span><span class="n">Status</span>
+<span class="n">camonitor</span> <span class="n">dp_mythen1K</span><span class="p">:</span><span class="n">cam1</span><span class="p">:</span><span class="n">NumImagesCounter</span>
+</pre></div>
+</div>
+<p><strong>Get array data:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">caget</span> <span class="n">dp_mythen1K</span><span class="p">:</span><span class="n">image1</span><span class="p">:</span><span class="n">ArrayData</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="examples">
+<h2><a class="toc-backref" href="#id65" role="doc-backlink">Examples</a><a class="headerlink" href="#examples" title="Link to this heading"></a></h2>
+<section id="example-1-basic-single-image-acquisition">
+<h3><a class="toc-backref" href="#id66" role="doc-backlink">Example 1: Basic Single Image Acquisition</a><a class="headerlink" href="#example-1-basic-single-image-acquisition" title="Link to this heading"></a></h3>
+<p>Complete IOC configuration for basic operation:</p>
+<p><strong>st.cmd:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="n">envPaths</span>
+<span class="n">epicsEnvSet</span> <span class="n">EPICS_CA_MAX_ARRAY_BYTES</span> <span class="mi">64008</span>
+
+<span class="n">dbLoadDatabase</span><span class="p">(</span><span class="s2">&quot;$(TOP)/dbd/mythenApp.dbd&quot;</span><span class="p">)</span>
+<span class="n">mythenApp_registerRecordDeviceDriver</span><span class="p">(</span><span class="n">pdbbase</span><span class="p">)</span>
+
+<span class="n">drvAsynIPPortConfigure</span><span class="p">(</span><span class="s2">&quot;IP_M1K&quot;</span><span class="p">,</span> <span class="s2">&quot;192.168.0.90:1030 UDP&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">asynOctetSetOutputEos</span><span class="p">(</span><span class="s2">&quot;IP_M1K&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\r</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">epicsEnvSet</span><span class="p">(</span><span class="s2">&quot;PREFIX&quot;</span><span class="p">,</span> <span class="s2">&quot;mythen:&quot;</span><span class="p">)</span>
+<span class="n">epicsEnvSet</span><span class="p">(</span><span class="s2">&quot;PORT&quot;</span><span class="p">,</span> <span class="s2">&quot;SD1&quot;</span><span class="p">)</span>
+<span class="n">epicsEnvSet</span><span class="p">(</span><span class="s2">&quot;NCHANS&quot;</span><span class="p">,</span> <span class="s2">&quot;1280&quot;</span><span class="p">)</span>
+
+<span class="n">mythenConfig</span><span class="p">(</span><span class="s2">&quot;SD1&quot;</span><span class="p">,</span> <span class="s2">&quot;IP_M1K&quot;</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">dbLoadRecords</span><span class="p">(</span><span class="s2">&quot;$(ADMYTHEN)/mythenApp/Db/mythen.template&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;P=$(PREFIX),R=cam1:,PORT=$(PORT),ADDR=0,TIMEOUT=1&quot;</span><span class="p">)</span>
+
+<span class="n">NDStdArraysConfigure</span><span class="p">(</span><span class="s2">&quot;Image1&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;$(PORT)&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">dbLoadRecords</span><span class="p">(</span><span class="s2">&quot;$(ADCORE)/db/NDStdArrays.template&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;P=$(PREFIX),R=image1:,PORT=Image1,ADDR=0,TIMEOUT=1,NDARRAY_PORT=$(PORT),NDARRAY_ADDR=0,TYPE=Float64,FTVL=DOUBLE,NELEMENTS=$(NCHANS)&quot;</span><span class="p">)</span>
+
+<span class="n">iocInit</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><strong>Acquisition sequence:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set 1 second exposure</span>
+<span class="n">caput</span> <span class="n">mythen</span><span class="p">:</span><span class="n">cam1</span><span class="p">:</span><span class="n">AcquireTime</span> <span class="mf">1.0</span>
+
+<span class="c1"># Single image mode</span>
+<span class="n">caput</span> <span class="n">mythen</span><span class="p">:</span><span class="n">cam1</span><span class="p">:</span><span class="n">ImageMode</span> <span class="mi">0</span>
+
+<span class="c1"># Start acquisition</span>
+<span class="n">caput</span> <span class="n">mythen</span><span class="p">:</span><span class="n">cam1</span><span class="p">:</span><span class="n">Acquire</span> <span class="mi">1</span>
+
+<span class="c1"># Wait for completion, then read data</span>
+<span class="n">caget</span> <span class="n">mythen</span><span class="p">:</span><span class="n">image1</span><span class="p">:</span><span class="n">ArrayData</span>
+</pre></div>
+</div>
+</section>
+<section id="example-2-multiple-frames-with-external-trigger">
+<h3><a class="toc-backref" href="#id67" role="doc-backlink">Example 2: Multiple Frames with External Trigger</a><a class="headerlink" href="#example-2-multiple-frames-with-external-trigger" title="Link to this heading"></a></h3>
+<p>Configuration for triggered multi-frame acquisition:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set trigger mode to Single</span>
+<span class="n">caput</span> <span class="n">mythen</span><span class="p">:</span><span class="n">cam1</span><span class="p">:</span><span class="n">TriggerMode</span> <span class="mi">1</span>
+
+<span class="c1"># Set number of frames</span>
+<span class="n">caput</span> <span class="n">mythen</span><span class="p">:</span><span class="n">cam1</span><span class="p">:</span><span class="n">NumFrames</span> <span class="mi">10</span>
+
+<span class="c1"># Set image mode to Multiple</span>
+<span class="n">caput</span> <span class="n">mythen</span><span class="p">:</span><span class="n">cam1</span><span class="p">:</span><span class="n">ImageMode</span> <span class="mi">1</span>
+
+<span class="c1"># Set exposure time</span>
+<span class="n">caput</span> <span class="n">mythen</span><span class="p">:</span><span class="n">cam1</span><span class="p">:</span><span class="n">AcquireTime</span> <span class="mf">0.5</span>
+
+<span class="c1"># Set delay after trigger</span>
+<span class="n">caput</span> <span class="n">mythen</span><span class="p">:</span><span class="n">cam1</span><span class="p">:</span><span class="n">DelayTime</span> <span class="mf">0.1</span>
+
+<span class="c1"># Arm detector (waits for triggers)</span>
+<span class="n">caput</span> <span class="n">mythen</span><span class="p">:</span><span class="n">cam1</span><span class="p">:</span><span class="n">Acquire</span> <span class="mi">1</span>
+
+<span class="c1"># Monitor progress</span>
+<span class="n">camonitor</span> <span class="n">mythen</span><span class="p">:</span><span class="n">cam1</span><span class="p">:</span><span class="n">NumImagesCounter</span>
+</pre></div>
+</div>
+</section>
+<section id="example-3-continuous-acquisition-with-corrections">
+<h3><a class="toc-backref" href="#id68" role="doc-backlink">Example 3: Continuous Acquisition with Corrections</a><a class="headerlink" href="#example-3-continuous-acquisition-with-corrections" title="Link to this heading"></a></h3>
+<p>Configuration for continuous acquisition with all corrections enabled:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Enable all corrections</span>
+<span class="n">caput</span> <span class="n">mythen</span><span class="p">:</span><span class="n">cam1</span><span class="p">:</span><span class="n">UseFlatField</span> <span class="mi">1</span>
+<span class="n">caput</span> <span class="n">mythen</span><span class="p">:</span><span class="n">cam1</span><span class="p">:</span><span class="n">UseCountRate</span> <span class="mi">1</span>
+<span class="n">caput</span> <span class="n">mythen</span><span class="p">:</span><span class="n">cam1</span><span class="p">:</span><span class="n">UseBadChanIntrpl</span> <span class="mi">1</span>
+
+<span class="c1"># Set count rate correction parameters</span>
+<span class="n">caput</span> <span class="n">mythen</span><span class="p">:</span><span class="n">cam1</span><span class="p">:</span><span class="n">Tau</span> <span class="mf">1000.0</span>
+
+<span class="c1"># Use corrected read mode</span>
+<span class="n">caput</span> <span class="n">mythen</span><span class="p">:</span><span class="n">cam1</span><span class="p">:</span><span class="n">ReadMode</span> <span class="mi">1</span>
+
+<span class="c1"># Set energy for Cu K-alpha</span>
+<span class="n">caput</span> <span class="n">mythen</span><span class="p">:</span><span class="n">cam1</span><span class="p">:</span><span class="n">Setting</span> <span class="mi">0</span>  <span class="c1"># Cu</span>
+
+<span class="c1"># Continuous mode</span>
+<span class="n">caput</span> <span class="n">mythen</span><span class="p">:</span><span class="n">cam1</span><span class="p">:</span><span class="n">ImageMode</span> <span class="mi">2</span>
+<span class="n">caput</span> <span class="n">mythen</span><span class="p">:</span><span class="n">cam1</span><span class="p">:</span><span class="n">TriggerMode</span> <span class="mi">2</span>  <span class="c1"># Continuous trigger</span>
+
+<span class="c1"># Start continuous acquisition</span>
+<span class="n">caput</span> <span class="n">mythen</span><span class="p">:</span><span class="n">cam1</span><span class="p">:</span><span class="n">Acquire</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</section>
+<section id="example-4-integration-with-file-plugin">
+<h3><a class="toc-backref" href="#id69" role="doc-backlink">Example 4: Integration with File Plugin</a><a class="headerlink" href="#example-4-integration-with-file-plugin" title="Link to this heading"></a></h3>
+<p>Save data automatically using NDPluginFile:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># In st.cmd, load file plugin:</span>
+<span class="n">NDFileHDF5Configure</span><span class="p">(</span><span class="s2">&quot;HDF1&quot;</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;$(PORT)&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">dbLoadRecords</span><span class="p">(</span><span class="s2">&quot;$(ADCORE)/db/NDFileHDF5.template&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;P=$(PREFIX),R=HDF1:,PORT=HDF1,ADDR=0,TIMEOUT=1,NDARRAY_PORT=$(PORT),NDARRAY_ADDR=0&quot;</span><span class="p">)</span>
+
+<span class="c1"># Enable file saving</span>
+<span class="n">caput</span> <span class="n">mythen</span><span class="p">:</span><span class="n">HDF1</span><span class="p">:</span><span class="n">EnableCallbacks</span> <span class="mi">1</span>
+<span class="n">caput</span> <span class="n">mythen</span><span class="p">:</span><span class="n">HDF1</span><span class="p">:</span><span class="n">FileWriteMode</span> <span class="mi">2</span>  <span class="c1"># Stream mode</span>
+
+<span class="c1"># Set file path and name</span>
+<span class="n">caput</span> <span class="n">mythen</span><span class="p">:</span><span class="n">HDF1</span><span class="p">:</span><span class="n">FilePath</span> <span class="s2">&quot;/data/mythen&quot;</span>
+<span class="n">caput</span> <span class="n">mythen</span><span class="p">:</span><span class="n">HDF1</span><span class="p">:</span><span class="n">FileName</span> <span class="s2">&quot;scan_001&quot;</span>
+<span class="n">caput</span> <span class="n">mythen</span><span class="p">:</span><span class="n">HDF1</span><span class="p">:</span><span class="n">AutoIncrement</span> <span class="mi">1</span>
+<span class="n">caput</span> <span class="n">mythen</span><span class="p">:</span><span class="n">HDF1</span><span class="p">:</span><span class="n">AutoSave</span> <span class="mi">1</span>
+
+<span class="c1"># Start acquisition (files saved automatically)</span>
+<span class="n">caput</span> <span class="n">mythen</span><span class="p">:</span><span class="n">cam1</span><span class="p">:</span><span class="n">Acquire</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="troubleshooting">
+<h2><a class="toc-backref" href="#id70" role="doc-backlink">Troubleshooting</a><a class="headerlink" href="#troubleshooting" title="Link to this heading"></a></h2>
+<section id="common-issues">
+<h3><a class="toc-backref" href="#id71" role="doc-backlink">Common Issues</a><a class="headerlink" href="#common-issues" title="Link to this heading"></a></h3>
+<section id="connection-problems">
+<h4><a class="toc-backref" href="#id72" role="doc-backlink">Connection Problems</a><a class="headerlink" href="#connection-problems" title="Link to this heading"></a></h4>
+<p><strong>Problem</strong>: Cannot connect to detector</p>
+<p><strong>Solutions</strong>:</p>
+<ol class="arabic">
+<li><p><strong>Verify network connectivity:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ping</span> <span class="mf">192.168.0.90</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Check IP address and port in st.cmd:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">drvAsynIPPortConfigure</span><span class="p">(</span><span class="s2">&quot;IP_M1K&quot;</span><span class="p">,</span> <span class="s2">&quot;192.168.0.90:1030 UDP&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Verify detector is powered on and network configured</strong></p></li>
+<li><p><strong>Check firewall settings</strong> (port 1030 UDP should be open)</p></li>
+<li><p><strong>Enable asyn tracing:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">asynSetTraceIOMask</span><span class="p">(</span><span class="s2">&quot;IP_M1K&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>  <span class="c1"># Trace I/O</span>
+<span class="n">asynSetTraceMask</span><span class="p">(</span><span class="s2">&quot;IP_M1K&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>     <span class="c1"># Trace errors</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<p><strong>Problem</strong>: Connection timeout</p>
+<p><strong>Solutions</strong>:</p>
+<ol class="arabic simple">
+<li><p>Increase timeout in database template</p></li>
+<li><p>Check network latency</p></li>
+<li><p>Verify detector firmware is compatible</p></li>
+</ol>
+</section>
+<section id="acquisition-problems">
+<h4><a class="toc-backref" href="#id73" role="doc-backlink">Acquisition Problems</a><a class="headerlink" href="#acquisition-problems" title="Link to this heading"></a></h4>
+<p><strong>Problem</strong>: Acquisition times out</p>
+<p><strong>Solutions</strong>:</p>
+<ol class="arabic">
+<li><p><strong>Check exposure time:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">caget</span> <span class="n">mythen</span><span class="p">:</span><span class="n">cam1</span><span class="p">:</span><span class="n">AcquireTime</span>
+</pre></div>
+</div>
+<p>Timeout is automatically set to <code class="docutils literal notranslate"><span class="pre">M1K_TIMEOUT</span> <span class="pre">+</span> <span class="pre">AcquireTime</span></code></p>
+</li>
+<li><p><strong>Verify trigger mode</strong> (if using external trigger):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">caget</span> <span class="n">mythen</span><span class="p">:</span><span class="n">cam1</span><span class="p">:</span><span class="n">TriggerMode</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Check detector status:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">caget</span> <span class="n">mythen</span><span class="p">:</span><span class="n">cam1</span><span class="p">:</span><span class="n">Status</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Increase timeout</strong> if needed (modify <code class="docutils literal notranslate"><span class="pre">M1K_TIMEOUT</span></code> in source code)</p></li>
+</ol>
+<p><strong>Problem</strong>: No data received</p>
+<p><strong>Solutions</strong>:</p>
+<ol class="arabic">
+<li><p><strong>Check read mode:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">caget</span> <span class="n">mythen</span><span class="p">:</span><span class="n">cam1</span><span class="p">:</span><span class="n">ReadMode</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Verify number of modules:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">caget</span> <span class="n">mythen</span><span class="p">:</span><span class="n">cam1</span><span class="p">:</span><span class="n">NumModules_RBV</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Check array size configuration:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">caget</span> <span class="n">mythen</span><span class="p">:</span><span class="n">cam1</span><span class="p">:</span><span class="n">ArraySizeX</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Enable I/O tracing</strong> to see communication</p></li>
+</ol>
+<p><strong>Problem</strong>: Wrong data values</p>
+<p><strong>Solutions</strong>:</p>
+<ol class="arabic">
+<li><p><strong>Check bit depth setting:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">caget</span> <span class="n">mythen</span><span class="p">:</span><span class="n">cam1</span><span class="p">:</span><span class="n">BitDepth</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Verify corrections are appropriate:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">caget</span> <span class="n">mythen</span><span class="p">:</span><span class="n">cam1</span><span class="p">:</span><span class="n">UseFlatField</span>
+<span class="n">caget</span> <span class="n">mythen</span><span class="p">:</span><span class="n">cam1</span><span class="p">:</span><span class="n">UseCountRate</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Check energy/threshold settings</strong></p></li>
+</ol>
+</section>
+<section id="configuration-errors">
+<h4><a class="toc-backref" href="#id74" role="doc-backlink">Configuration Errors</a><a class="headerlink" href="#configuration-errors" title="Link to this heading"></a></h4>
+<p><strong>Problem</strong>: Records not loading</p>
+<p><strong>Solutions</strong>:</p>
+<ol class="arabic">
+<li><p><strong>Verify database path:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dbLoadRecords</span><span class="p">(</span><span class="s2">&quot;$(ADMYTHEN)/mythenApp/Db/mythen.template&quot;</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Check macro substitutions:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">epicsEnvSet</span><span class="p">(</span><span class="s2">&quot;PREFIX&quot;</span><span class="p">,</span> <span class="s2">&quot;mythen:&quot;</span><span class="p">)</span>
+<span class="n">epicsEnvSet</span><span class="p">(</span><span class="s2">&quot;PORT&quot;</span><span class="p">,</span> <span class="s2">&quot;SD1&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Verify ADCore path</strong> in RELEASE file</p></li>
+</ol>
+<p><strong>Problem</strong>: Plugin not working</p>
+<p><strong>Solutions</strong>:</p>
+<ol class="arabic">
+<li><p><strong>Check plugin configuration:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">NDStdArraysConfigure</span><span class="p">(</span><span class="s2">&quot;Image1&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;$(PORT)&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Verify NDARRAY_PORT</strong> in plugin database:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>NDARRAY_PORT=$(PORT)
+</pre></div>
+</div>
+</li>
+<li><p><strong>Check EPICS_CA_MAX_ARRAY_BYTES:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">epicsEnvSet</span> <span class="n">EPICS_CA_MAX_ARRAY_BYTES</span> <span class="mi">64008</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+</section>
+<section id="diagnostic-tools">
+<h3><a class="toc-backref" href="#id75" role="doc-backlink">Diagnostic Tools</a><a class="headerlink" href="#diagnostic-tools" title="Link to this heading"></a></h3>
+<section id="asyn-tracing">
+<h4><a class="toc-backref" href="#id76" role="doc-backlink">asyn Tracing</a><a class="headerlink" href="#asyn-tracing" title="Link to this heading"></a></h4>
+<p>Enable detailed I/O tracing:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># In st.cmd or iocsh:</span>
+<span class="n">asynSetTraceIOMask</span><span class="p">(</span><span class="s2">&quot;IP_M1K&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mh">0xFFFF</span><span class="p">)</span>  <span class="c1"># Trace all I/O</span>
+<span class="n">asynSetTraceMask</span><span class="p">(</span><span class="s2">&quot;IP_M1K&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mh">0xFFFF</span><span class="p">)</span>     <span class="c1"># Trace all messages</span>
+</pre></div>
+</div>
+<p>Trace masks:
+* <strong>I/O Mask</strong>: 1=read, 2=write, 4=flush, 8=connect/disconnect
+* <strong>General Mask</strong>: 1=traceIO, 2=traceError, 4=traceWarning, 8=traceInfo, 16=traceFlow</p>
+</section>
+<section id="epics-channel-access-tools">
+<h4><a class="toc-backref" href="#id77" role="doc-backlink">EPICS Channel Access Tools</a><a class="headerlink" href="#epics-channel-access-tools" title="Link to this heading"></a></h4>
+<p><strong>Monitor status:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">camonitor</span> <span class="n">mythen</span><span class="p">:</span><span class="n">cam1</span><span class="p">:</span><span class="n">Status</span>
+<span class="n">camonitor</span> <span class="n">mythen</span><span class="p">:</span><span class="n">cam1</span><span class="p">:</span><span class="n">Acquire</span>
+</pre></div>
+</div>
+<p><strong>Get all parameters:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">caget</span> <span class="n">mythen</span><span class="p">:</span><span class="n">cam1</span><span class="p">:</span><span class="o">*</span>
+</pre></div>
+</div>
+<p><strong>Check detector settings:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">caget</span> <span class="n">mythen</span><span class="p">:</span><span class="n">cam1</span><span class="p">:</span><span class="n">FirmwareVersion</span>
+<span class="n">caget</span> <span class="n">mythen</span><span class="p">:</span><span class="n">cam1</span><span class="p">:</span><span class="n">NumModules_RBV</span>
+<span class="n">caget</span> <span class="n">mythen</span><span class="p">:</span><span class="n">cam1</span><span class="p">:</span><span class="n">Setting_RBV</span>
+</pre></div>
+</div>
+</section>
+<section id="network-debugging">
+<h4><a class="toc-backref" href="#id78" role="doc-backlink">Network Debugging</a><a class="headerlink" href="#network-debugging" title="Link to this heading"></a></h4>
+<p><strong>Test network connection:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Test UDP connection</span>
+<span class="n">nc</span> <span class="o">-</span><span class="n">u</span> <span class="mf">192.168.0.90</span> <span class="mi">1030</span>
+
+<span class="c1"># Check if port is open</span>
+<span class="n">nmap</span> <span class="o">-</span><span class="n">sU</span> <span class="o">-</span><span class="n">p</span> <span class="mi">1030</span> <span class="mf">192.168.0.90</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="error-messages">
+<h3><a class="toc-backref" href="#id79" role="doc-backlink">Error Messages</a><a class="headerlink" href="#error-messages" title="Link to this heading"></a></h3>
+<section id="common-status-codes">
+<h4><a class="toc-backref" href="#id80" role="doc-backlink">Common Status Codes</a><a class="headerlink" href="#common-status-codes" title="Link to this heading"></a></h4>
+<ul class="simple">
+<li><p><strong>ADStatusIdle (0)</strong>: Detector idle, ready for acquisition</p></li>
+<li><p><strong>ADStatusAcquire (1)</strong>: Acquiring data</p></li>
+<li><p><strong>ADStatusReadout (2)</strong>: Reading out data</p></li>
+<li><p><strong>ADStatusError (3)</strong>: Error occurred</p></li>
+</ul>
+</section>
+<section id="firmware-compatibility">
+<h4><a class="toc-backref" href="#id81" role="doc-backlink">Firmware Compatibility</a><a class="headerlink" href="#firmware-compatibility" title="Link to this heading"></a></h4>
+<p>The driver checks firmware version on startup. Some features (like <code class="docutils literal notranslate"><span class="pre">SD_ENERGY</span></code>) require firmware 3.0 or later.</p>
+<p><strong>Check firmware:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">caget</span> <span class="n">mythen</span><span class="p">:</span><span class="n">cam1</span><span class="p">:</span><span class="n">FirmwareVersion</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="performance-optimization">
+<h3><a class="toc-backref" href="#id82" role="doc-backlink">Performance Optimization</a><a class="headerlink" href="#performance-optimization" title="Link to this heading"></a></h3>
+<section id="memory-management">
+<h4><a class="toc-backref" href="#id83" role="doc-backlink">Memory Management</a><a class="headerlink" href="#memory-management" title="Link to this heading"></a></h4>
+<p>Configure buffer limits based on available memory:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Limit to 100 buffers, 100MB</span>
+<span class="n">mythenConfig</span><span class="p">(</span><span class="s2">&quot;SD1&quot;</span><span class="p">,</span> <span class="s2">&quot;IP_M1K&quot;</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">100000000</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="network-optimization">
+<h4><a class="toc-backref" href="#id84" role="doc-backlink">Network Optimization</a><a class="headerlink" href="#network-optimization" title="Link to this heading"></a></h4>
+<ul class="simple">
+<li><p>Use UDP for lower latency (default)</p></li>
+<li><p>Ensure low network latency (&lt; 1 ms typical)</p></li>
+<li><p>Avoid network congestion</p></li>
+</ul>
+</section>
+<section id="thread-priority">
+<h4><a class="toc-backref" href="#id85" role="doc-backlink">Thread Priority</a><a class="headerlink" href="#thread-priority" title="Link to this heading"></a></h4>
+<p>Adjust thread priorities if needed (advanced):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mythenConfig</span><span class="p">(</span><span class="s2">&quot;SD1&quot;</span><span class="p">,</span> <span class="s2">&quot;IP_M1K&quot;</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">200000</span><span class="p">)</span>
+<span class="c1"># priority=50, stackSize=200000</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+<section id="technical-reference">
+<h2><a class="toc-backref" href="#id86" role="doc-backlink">Technical Reference</a><a class="headerlink" href="#technical-reference" title="Link to this heading"></a></h2>
+<section id="communication-protocol">
+<h3><a class="toc-backref" href="#id87" role="doc-backlink">Communication Protocol</a><a class="headerlink" href="#communication-protocol" title="Link to this heading"></a></h3>
+<p>The driver communicates with the Mythen detector using a text-based command protocol over TCP/IP.</p>
+<section id="command-format">
+<h4><a class="toc-backref" href="#id88" role="doc-backlink">Command Format</a><a class="headerlink" href="#command-format" title="Link to this heading"></a></h4>
+<p>Commands are sent as ASCII strings terminated with carriage return (<code class="docutils literal notranslate"><span class="pre">\r</span></code>):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="n">command</span> <span class="p">[</span><span class="n">arguments</span><span class="p">]</span>\<span class="n">r</span>
+</pre></div>
+</div>
+</section>
+<section id="response-format">
+<h4><a class="toc-backref" href="#id89" role="doc-backlink">Response Format</a><a class="headerlink" href="#response-format" title="Link to this heading"></a></h4>
+<p>Responses are binary data:
+* Integer responses: 4-byte signed integer (big-endian or little-endian)
+* Float responses: 4-byte float (for tau command)
+* String responses: ASCII string (for version command)
+* Data readout: Binary array of integers</p>
+</section>
+<section id="supported-commands">
+<h4><a class="toc-backref" href="#id90" role="doc-backlink">Supported Commands</a><a class="headerlink" href="#supported-commands" title="Link to this heading"></a></h4>
+<table class="table-bordered table-striped table-hover docutils align-default">
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 50.0%" />
+<col style="width: 25.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Command</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Response</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">-start</span></code></p></td>
+<td><p>Start acquisition</p></td>
+<td><p>Int32 (0=success)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">-stop</span></code></p></td>
+<td><p>Stop acquisition</p></td>
+<td><p>Int32 (0=success)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">-time</span> <span class="pre">&lt;hns&gt;</span></code></p></td>
+<td><p>Set exposure time (100ns units)</p></td>
+<td><p>Int32</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">-delafter</span> <span class="pre">&lt;hns&gt;</span></code></p></td>
+<td><p>Set delay after trigger (100ns units)</p></td>
+<td><p>Int32</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">-frames</span> <span class="pre">&lt;n&gt;</span></code></p></td>
+<td><p>Set number of frames</p></td>
+<td><p>Int32</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">-trigen</span> <span class="pre">&lt;0|1&gt;</span></code></p></td>
+<td><p>Enable/disable single trigger</p></td>
+<td><p>Int32</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">-conttrigen</span> <span class="pre">&lt;0|1&gt;</span></code></p></td>
+<td><p>Enable/disable continuous trigger</p></td>
+<td><p>Int32</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">-readout</span></code></p></td>
+<td><p>Read corrected data</p></td>
+<td><p>Binary array</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">-readoutraw</span></code></p></td>
+<td><p>Read raw data</p></td>
+<td><p>Binary array</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">-kthresh</span> <span class="pre">&lt;keV&gt;</span></code></p></td>
+<td><p>Set threshold energy</p></td>
+<td><p>Int32</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">-energy</span> <span class="pre">&lt;keV&gt;</span></code></p></td>
+<td><p>Set beam energy (firmware 3.0+)</p></td>
+<td><p>Int32</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">-tau</span> <span class="pre">&lt;ns&gt;</span></code></p></td>
+<td><p>Set deadtime constant</p></td>
+<td><p>Float32</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">-flatfieldcorrection</span> <span class="pre">&lt;0|1&gt;</span></code></p></td>
+<td><p>Enable/disable flat field</p></td>
+<td><p>Int32</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">-ratecorrection</span> <span class="pre">&lt;0|1&gt;</span></code></p></td>
+<td><p>Enable/disable rate correction</p></td>
+<td><p>Int32</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">-badchannelinterpolation</span> <span class="pre">&lt;0|1&gt;</span></code></p></td>
+<td><p>Enable/disable bad channel interpolation</p></td>
+<td><p>Int32</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">-gateen</span> <span class="pre">&lt;0|1&gt;</span></code></p></td>
+<td><p>Enable/disable gates</p></td>
+<td><p>Int32</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">-gates</span> <span class="pre">&lt;n&gt;</span></code></p></td>
+<td><p>Set number of gates</p></td>
+<td><p>Int32</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">-module</span> <span class="pre">&lt;n&gt;</span></code></p></td>
+<td><p>Select module (0 or 1)</p></td>
+<td><p>Int32</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">-get</span> <span class="pre">nmodules</span></code></p></td>
+<td><p>Get number of modules</p></td>
+<td><p>Int32</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">-get</span> <span class="pre">version</span></code></p></td>
+<td><p>Get firmware version</p></td>
+<td><p>String</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">-get</span> <span class="pre">tau</span></code></p></td>
+<td><p>Get tau value</p></td>
+<td><p>Float32</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">-setting</span> <span class="pre">&lt;0|1|2|3&gt;</span></code></p></td>
+<td><p>Set predefined setting (Cu/Mo/Ag/Cr)</p></td>
+<td><p>Int32</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">-bitdepth</span> <span class="pre">&lt;0|1|2|3&gt;</span></code></p></td>
+<td><p>Set bit depth (24/16/8/4 bits)</p></td>
+<td><p>Int32</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="endianness-handling">
+<h4><a class="toc-backref" href="#id91" role="doc-backlink">Endianness Handling</a><a class="headerlink" href="#endianness-handling" title="Link to this heading"></a></h4>
+<p>The driver automatically handles byte order:
+* Detector uses big-endian format
+* Driver swaps bytes on little-endian systems
+* Handled transparently by <code class="docutils literal notranslate"><span class="pre">swap4()</span></code> and <code class="docutils literal notranslate"><span class="pre">swap8()</span></code> functions</p>
+</section>
+</section>
+<section id="id1">
+<h3><a class="toc-backref" href="#id92" role="doc-backlink">Data Format</a><a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
+<section id="ndarray-structure">
+<h4><a class="toc-backref" href="#id93" role="doc-backlink">NDArray Structure</a><a class="headerlink" href="#ndarray-structure" title="Link to this heading"></a></h4>
+<ul class="simple">
+<li><p><strong>Data Type</strong>: <code class="docutils literal notranslate"><span class="pre">NDInt32</span></code> (32-bit signed integers)</p></li>
+<li><p><strong>Dimensions</strong>: 1D array (1280 channels × number of modules)</p></li>
+<li><p><strong>Color Mode</strong>: Monochrome (<code class="docutils literal notranslate"><span class="pre">NDColorModeMono</span></code>)</p></li>
+<li><p><strong>Array Size</strong>:
+* Single module: 1280 channels
+* Two modules: 2560 channels</p></li>
+</ul>
+</section>
+<section id="data-encoding">
+<h4><a class="toc-backref" href="#id94" role="doc-backlink">Data Encoding</a><a class="headerlink" href="#data-encoding" title="Link to this heading"></a></h4>
+<ul class="simple">
+<li><p><strong>Raw Mode</strong>: Data encoded according to bit depth setting</p></li>
+<li><p><strong>Corrected Mode</strong>: 24-bit data with corrections applied</p></li>
+<li><p><strong>Byte Order</strong>: Native endianness (swapped if needed)</p></li>
+</ul>
+</section>
+<section id="array-attributes">
+<h4><a class="toc-backref" href="#id95" role="doc-backlink">Array Attributes</a><a class="headerlink" href="#array-attributes" title="Link to this heading"></a></h4>
+<p>Each NDArray includes standard attributes:
+* <code class="docutils literal notranslate"><span class="pre">ColorMode</span></code>: Color mode (monochrome)
+* <code class="docutils literal notranslate"><span class="pre">UniqueId</span></code>: Unique frame identifier
+* <code class="docutils literal notranslate"><span class="pre">TimeStamp</span></code>: Acquisition timestamp
+* Standard areaDetector attributes</p>
+</section>
+</section>
+<section id="id2">
+<h3><a class="toc-backref" href="#id96" role="doc-backlink">Firmware Compatibility</a><a class="headerlink" href="#id2" title="Link to this heading"></a></h3>
+<section id="supported-versions">
+<h4><a class="toc-backref" href="#id97" role="doc-backlink">Supported Versions</a><a class="headerlink" href="#supported-versions" title="Link to this heading"></a></h4>
+<ul class="simple">
+<li><p>Firmware 2.x: Basic functionality</p></li>
+<li><p>Firmware 3.0+: Full functionality including energy command</p></li>
+</ul>
+</section>
+<section id="version-detection">
+<h4><a class="toc-backref" href="#id98" role="doc-backlink">Version Detection</a><a class="headerlink" href="#version-detection" title="Link to this heading"></a></h4>
+<p>Firmware version is read on driver initialization:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="n">get</span> <span class="n">version</span>
+</pre></div>
+</div>
+<p>Stored in <code class="docutils literal notranslate"><span class="pre">SD_FIRMWARE_VERSION</span></code> parameter.</p>
+</section>
+<section id="version-specific-features">
+<h4><a class="toc-backref" href="#id99" role="doc-backlink">Version-Specific Features</a><a class="headerlink" href="#version-specific-features" title="Link to this heading"></a></h4>
+<ul class="simple">
+<li><p><strong>Energy command</strong>: Requires firmware 3.0 or later</p></li>
+<li><p><strong>Read mode</strong>: Available in all versions</p></li>
+<li><p><strong>Corrections</strong>: Available in all versions</p></li>
+</ul>
+</section>
+</section>
+<section id="limitations">
+<h3><a class="toc-backref" href="#id100" role="doc-backlink">Limitations</a><a class="headerlink" href="#limitations" title="Link to this heading"></a></h3>
+<section id="hardware-limits">
+<h4><a class="toc-backref" href="#id101" role="doc-backlink">Hardware Limits</a><a class="headerlink" href="#hardware-limits" title="Link to this heading"></a></h4>
+<ul class="simple">
+<li><p><strong>Maximum modules</strong>: 2 modules</p></li>
+<li><p><strong>Channels per module</strong>: 1280 channels</p></li>
+<li><p><strong>Maximum frames</strong>: 500 frames per acquisition</p></li>
+<li><p><strong>Bit depth</strong>: 4, 8, 16, or 24 bits</p></li>
+</ul>
+</section>
+<section id="software-limits">
+<h4><a class="toc-backref" href="#id102" role="doc-backlink">Software Limits</a><a class="headerlink" href="#software-limits" title="Link to this heading"></a></h4>
+<ul class="simple">
+<li><p><strong>Timeout</strong>: 5.0 seconds base timeout (<code class="docutils literal notranslate"><span class="pre">M1K_TIMEOUT</span></code>)</p></li>
+<li><p><strong>Maximum trigger timeout count</strong>: 50 retries</p></li>
+<li><p><strong>Array size</strong>: Fixed at 1280 × number of modules</p></li>
+</ul>
+</section>
+<section id="platform-limitations">
+<h4><a class="toc-backref" href="#id103" role="doc-backlink">Platform Limitations</a><a class="headerlink" href="#platform-limitations" title="Link to this heading"></a></h4>
+<ul class="simple">
+<li><p><strong>Windows</strong>: Full support</p></li>
+<li><p><strong>Linux</strong>: Full support (little-endian and big-endian)</p></li>
+<li><p><strong>Other platforms</strong>: May require porting</p></li>
+</ul>
+</section>
+</section>
+<section id="api-reference">
+<h3><a class="toc-backref" href="#id104" role="doc-backlink">API Reference</a><a class="headerlink" href="#api-reference" title="Link to this heading"></a></h3>
+<section id="mythenconfig">
+<h4><a class="toc-backref" href="#id105" role="doc-backlink">mythenConfig()</a><a class="headerlink" href="#mythenconfig" title="Link to this heading"></a></h4>
+<p>Configure the Mythen driver:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span> <span class="n">mythenConfig</span><span class="p">(</span><span class="n">const</span> <span class="n">char</span> <span class="o">*</span><span class="n">portName</span><span class="p">,</span>
+                 <span class="n">const</span> <span class="n">char</span> <span class="o">*</span><span class="n">IPPortName</span><span class="p">,</span>
+                 <span class="nb">int</span> <span class="n">maxBuffers</span><span class="p">,</span>
+                 <span class="nb">int</span> <span class="n">maxMemory</span><span class="p">,</span>
+                 <span class="nb">int</span> <span class="n">priority</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+                 <span class="nb">int</span> <span class="n">stackSize</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Parameters:</strong>
+* <code class="docutils literal notranslate"><span class="pre">portName</span></code>: Driver port name
+* <code class="docutils literal notranslate"><span class="pre">IPPortName</span></code>: asyn IP port name
+* <code class="docutils literal notranslate"><span class="pre">maxBuffers</span></code>: Maximum NDArray buffers (-1 = unlimited)
+* <code class="docutils literal notranslate"><span class="pre">maxMemory</span></code>: Maximum memory in bytes (-1 = unlimited)
+* <code class="docutils literal notranslate"><span class="pre">priority</span></code>: Thread priority (optional)
+* <code class="docutils literal notranslate"><span class="pre">stackSize</span></code>: Thread stack size (optional)</p>
+<p><strong>Returns:</strong> 0 on success</p>
+</section>
+<section id="class-methods-for-developers">
+<h4><a class="toc-backref" href="#id106" role="doc-backlink">Class Methods (for developers)</a><a class="headerlink" href="#class-methods-for-developers" title="Link to this heading"></a></h4>
+<p>Key methods in the <code class="docutils literal notranslate"><span class="pre">mythen</span></code> class:
+* <code class="docutils literal notranslate"><span class="pre">setAcquire()</span></code>: Start/stop acquisition
+* <code class="docutils literal notranslate"><span class="pre">setExposureTime()</span></code>: Set exposure time
+* <code class="docutils literal notranslate"><span class="pre">setTrigger()</span></code>: Set trigger mode
+* <code class="docutils literal notranslate"><span class="pre">setFrames()</span></code>: Set number of frames
+* <code class="docutils literal notranslate"><span class="pre">dataCallback()</span></code>: Process acquired data
+* <code class="docutils literal notranslate"><span class="pre">acquisitionTask()</span></code>: Acquisition thread
+* <code class="docutils literal notranslate"><span class="pre">pollTask()</span></code>: Status polling thread</p>
+</section>
+</section>
+</section>
+<section id="appendices">
+<h2><a class="toc-backref" href="#id107" role="doc-backlink">Appendices</a><a class="headerlink" href="#appendices" title="Link to this heading"></a></h2>
+<section id="appendix-a-file-structure">
+<h3><a class="toc-backref" href="#id108" role="doc-backlink">Appendix A: File Structure</a><a class="headerlink" href="#appendix-a-file-structure" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ADMythen/
+├── configure/              # Build configuration
+│   ├── RELEASE            # EPICS module paths
+│   ├── CONFIG            # Build configuration
+│   └── ...
+├── iocs/                  # IOC applications
+│   └── mythenIOC/
+│       ├── configure/     # IOC configuration
+│       ├── iocBoot/       # IOC startup scripts
+│       │   └── iocMythen/
+│       │       ├── st.cmd              # Main startup script
+│       │       └── auto_settings.req    # Autosave request file
+│       └── mythenApp/
+│           └── src/
+│               └── mythenAppMain.cpp    # IOC main
+├── mythenApp/             # Driver application
+│   ├── Db/                # Database templates
+│   │   ├── mythen.template             # Main database template
+│   │   └── mythen_settings.req          # Autosave settings
+│   ├── op/                # Operator interface files
+│   │   ├── adl/           # MEDM screens
+│   │   │   └── mythen.adl
+│   │   ├── edl/           # EDM screens
+│   │   ├── bob/           # CSS/Bob screens
+│   │   ├── opi/           # OPI screens
+│   │   └── ui/            # UI screens
+│   └── src/               # Source code
+│       ├── mythen.cpp                    # Main driver implementation
+│       └── mythenSupport.dbd             # Database definitions
+├── LICENSE                # License file
+├── README.md              # This file
+└── RELEASE.md             # Release notes
+</pre></div>
+</div>
+</section>
+<section id="appendix-b-database-template-reference">
+<h3><a class="toc-backref" href="#id109" role="doc-backlink">Appendix B: Database Template Reference</a><a class="headerlink" href="#appendix-b-database-template-reference" title="Link to this heading"></a></h3>
+<p>The main database template is <code class="docutils literal notranslate"><span class="pre">mythenApp/Db/mythen.template</span></code>. It includes:</p>
+<ul class="simple">
+<li><p>Standard ADBase records (from <code class="docutils literal notranslate"><span class="pre">ADBase.template</span></code>)</p></li>
+<li><p>Mythen-specific records for all driver parameters</p></li>
+<li><p>Readback records (RBV) for all writable parameters</p></li>
+</ul>
+<p><strong>Key Records:</strong></p>
+<table class="table-bordered table-striped table-hover docutils align-default">
+<colgroup>
+<col style="width: 30.0%" />
+<col style="width: 15.0%" />
+<col style="width: 55.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Record Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">$(P)$(R)Setting</span></code></p></td>
+<td><p>mbbo</p></td>
+<td><p>Detector setting</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">$(P)$(R)DelayTime</span></code></p></td>
+<td><p>ao</p></td>
+<td><p>Delay after trigger</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">$(P)$(R)ThresholdEnergy</span></code></p></td>
+<td><p>ao</p></td>
+<td><p>Energy threshold</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">$(P)$(R)BeamEnergy</span></code></p></td>
+<td><p>ao</p></td>
+<td><p>Beam energy</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">$(P)$(R)UseFlatField</span></code></p></td>
+<td><p>bo</p></td>
+<td><p>Enable flat field</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">$(P)$(R)UseCountRate</span></code></p></td>
+<td><p>bo</p></td>
+<td><p>Enable count rate correction</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">$(P)$(R)Tau</span></code></p></td>
+<td><p>ao</p></td>
+<td><p>Deadtime constant</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">$(P)$(R)UseBadChanIntrpl</span></code></p></td>
+<td><p>bo</p></td>
+<td><p>Enable bad channel interpolation</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">$(P)$(R)BitDepth</span></code></p></td>
+<td><p>mbbo</p></td>
+<td><p>Bit depth</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">$(P)$(R)UseGates</span></code></p></td>
+<td><p>bo</p></td>
+<td><p>Enable gates</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">$(P)$(R)NumGates</span></code></p></td>
+<td><p>longout</p></td>
+<td><p>Number of gates</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">$(P)$(R)NumFrames</span></code></p></td>
+<td><p>longout</p></td>
+<td><p>Number of frames</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">$(P)$(R)TriggerMode</span></code></p></td>
+<td><p>mbbo</p></td>
+<td><p>Trigger mode</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">$(P)$(R)ReadMode</span></code></p></td>
+<td><p>mbbo</p></td>
+<td><p>Read mode</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">$(P)$(R)NumModules_RBV</span></code></p></td>
+<td><p>longin</p></td>
+<td><p>Number of modules (read-only)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">$(P)$(R)FirmwareVersion</span></code></p></td>
+<td><p>stringin</p></td>
+<td><p>Firmware version (read-only)</p></td>
+</tr>
+</tbody>
+</table>
+<p>All writable records have corresponding <code class="docutils literal notranslate"><span class="pre">_RBV</span></code> readback records.</p>
+</section>
+<section id="appendix-c-build-system">
+<h3><a class="toc-backref" href="#id110" role="doc-backlink">Appendix C: Build System</a><a class="headerlink" href="#appendix-c-build-system" title="Link to this heading"></a></h3>
+<section id="makefile-structure">
+<h4><a class="toc-backref" href="#id111" role="doc-backlink">Makefile Structure</a><a class="headerlink" href="#makefile-structure" title="Link to this heading"></a></h4>
+<p>The build system uses EPICS standard Makefiles:</p>
+<ul class="simple">
+<li><p><strong>Top-level Makefile</strong>: Builds driver and IOC</p></li>
+<li><p><strong>mythenApp/Makefile</strong>: Builds driver library</p></li>
+<li><p><strong>iocs/mythenIOC/Makefile</strong>: Builds IOC application</p></li>
+</ul>
+</section>
+<section id="build-targets">
+<h4><a class="toc-backref" href="#id112" role="doc-backlink">Build Targets</a><a class="headerlink" href="#build-targets" title="Link to this heading"></a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span>                    <span class="c1"># Build everything</span>
+<span class="n">make</span> <span class="n">install</span>           <span class="c1"># Install libraries and binaries</span>
+<span class="n">make</span> <span class="n">clean</span>             <span class="c1"># Clean build files</span>
+<span class="n">make</span> <span class="n">uninstall</span>         <span class="c1"># Remove installed files</span>
+</pre></div>
+</div>
+</section>
+<section id="configuration-files">
+<h4><a class="toc-backref" href="#id113" role="doc-backlink">Configuration Files</a><a class="headerlink" href="#configuration-files" title="Link to this heading"></a></h4>
+<ul class="simple">
+<li><p><strong>configure/RELEASE</strong>: EPICS module paths</p></li>
+<li><p><strong>configure/CONFIG</strong>: Build configuration</p></li>
+<li><p><strong>configure/CONFIG_SITE</strong>: Site-specific configuration</p></li>
+</ul>
+</section>
+</section>
+<section id="appendix-d-glossary">
+<h3><a class="toc-backref" href="#id114" role="doc-backlink">Appendix D: Glossary</a><a class="headerlink" href="#appendix-d-glossary" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>ADDriver</strong>: areaDetector base driver class</p></li>
+<li><p><strong>asyn</strong>: EPICS asynchronous I/O library</p></li>
+<li><p><strong>EPICS</strong>: Experimental Physics and Industrial Control System</p></li>
+<li><p><strong>IOC</strong>: Input/Output Controller (EPICS server)</p></li>
+<li><p><strong>NDArray</strong>: areaDetector data array format</p></li>
+<li><p><strong>NDPlugin</strong>: areaDetector plugin for data processing</p></li>
+<li><p><strong>PV</strong>: Process Variable (EPICS record)</p></li>
+<li><p><strong>RBV</strong>: Readback Value (read-only copy of parameter)</p></li>
+<li><p><strong>Strip Detector</strong>: One-dimensional detector with linear array of pixels</p></li>
+</ul>
+</section>
+<section id="appendix-e-references">
+<h3><a class="toc-backref" href="#id115" role="doc-backlink">Appendix E: References</a><a class="headerlink" href="#appendix-e-references" title="Link to this heading"></a></h3>
+<section id="areadetector-documentation">
+<h4><a class="toc-backref" href="#id116" role="doc-backlink">areaDetector Documentation</a><a class="headerlink" href="#areadetector-documentation" title="Link to this heading"></a></h4>
+<ul class="simple">
+<li><p><a class="reference external" href="https://areadetector.github.io/areaDetector/">areaDetector Homepage</a></p></li>
+<li><p><a class="reference external" href="https://areadetector.github.io/areaDetector/ADCore/ADCore.html">ADCore Documentation</a></p></li>
+<li><p><a class="reference external" href="https://areadetector.github.io/areaDetector/install_guide.html">Installation Guide</a></p></li>
+</ul>
+</section>
+<section id="related-drivers">
+<h4><a class="toc-backref" href="#id117" role="doc-backlink">Related Drivers</a><a class="headerlink" href="#related-drivers" title="Link to this heading"></a></h4>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/areaDetector/ADPilatus">ADPilatus</a>: Dectris Pilatus detector driver</p></li>
+<li><p><a class="reference external" href="https://github.com/areaDetector/ADLambda">ADLambda</a>: X-Spectrum Lambda detector driver</p></li>
+</ul>
+</section>
+<section id="epics-documentation">
+<h4><a class="toc-backref" href="#id118" role="doc-backlink">EPICS Documentation</a><a class="headerlink" href="#epics-documentation" title="Link to this heading"></a></h4>
+<ul class="simple">
+<li><p><a class="reference external" href="https://epics.anl.gov/">EPICS Homepage</a></p></li>
+<li><p><a class="reference external" href="https://epics.anl.gov/base/R3-16/0-docs/AppDevGuide/index.html">EPICS Application Developer’s Guide</a></p></li>
+<li><p><a class="reference external" href="https://epics-modules.github.io/asyn/">asyn Driver Support</a></p></li>
+</ul>
+</section>
+<section id="detector-documentation">
+<h4><a class="toc-backref" href="#id119" role="doc-backlink">Detector Documentation</a><a class="headerlink" href="#detector-documentation" title="Link to this heading"></a></h4>
+<ul class="simple">
+<li><p><a class="reference external" href="http://www.dectris.com">Dectris Website</a></p></li>
+<li><p>Mythen detector user manual (contact Dectris)</p></li>
+</ul>
+</section>
+</section>
+<section id="appendix-f-release-notes">
+<h3><a class="toc-backref" href="#id120" role="doc-backlink">Appendix F: Release Notes</a><a class="headerlink" href="#appendix-f-release-notes" title="Link to this heading"></a></h3>
+<p>See <a class="reference external" href="https://github.com/areaDetector/ADMythen/blob/master/RELEASE.md">RELEASE.md</a> for detailed release notes and version history.</p>
+<section id="version-r2-1-december-11-2019">
+<h4><a class="toc-backref" href="#id121" role="doc-backlink">Version R2-1 (December 11, 2019)</a><a class="headerlink" href="#version-r2-1-december-11-2019" title="Link to this heading"></a></h4>
+<ul class="simple">
+<li><p>Updated for areaDetector R3-3 compatibility</p></li>
+<li><p>Minor debugging improvements</p></li>
+</ul>
+</section>
+<section id="version-r2-0-july-4-2017">
+<h4><a class="toc-backref" href="#id122" role="doc-backlink">Version R2-0 (July 4, 2017)</a><a class="headerlink" href="#version-r2-0-july-4-2017" title="Link to this heading"></a></h4>
+<ul class="simple">
+<li><p>Windows compilation support</p></li>
+<li><p>Big-endian machine support</p></li>
+<li><p>Fixed error in writeFloat64</p></li>
+<li><p>Updated medm screen for ADCore R3-0</p></li>
+</ul>
+</section>
+<section id="version-1-0-august-10-2015">
+<h4><a class="toc-backref" href="#id123" role="doc-backlink">Version 1-0 (August 10, 2015)</a><a class="headerlink" href="#version-1-0-august-10-2015" title="Link to this heading"></a></h4>
+<ul class="simple">
+<li><p>Initial release</p></li>
+<li><p>Based on LNLS asyn driver</p></li>
+<li><p>areaDetector integration by Joe Sullivan (ANL-APS)</p></li>
+</ul>
+</section>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../ADmar345/st_cmd.html" class="btn btn-neutral float-left" title="Example st.cmd Startup File" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../ADPerkinElmer/PerkinElmerDoc.html" class="btn btn-neutral float-right" title="ADPerkinElmer" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Mark Rivers.
+      <span class="lastupdated">Last updated on 2026-January-02.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

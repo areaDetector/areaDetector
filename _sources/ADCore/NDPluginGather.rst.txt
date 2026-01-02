@@ -73,7 +73,7 @@ split into 2 lines, but these are just a single name, for example
       There can be more than one such input port. The maximum is number is specified in
       the NDGatherConfigure command in the startup script.
     - NDARRAY_PORT
-    - $(P)$(R)NDArrayPort_[N], (P)$(R)NDArrayPort_[N]_RBV
+    - $(P)$(R)NDArrayPort_$(N), (P)$(R)NDArrayPort_$(N)_RBV
     - stringout, stringin
   * - NDPluginDriver |br|
       ArrayAddr
@@ -84,7 +84,7 @@ split into 2 lines, but these are just a single name, for example
       in the NDArray driver. There can be more than one such input port. The maximum is
       number is specified in the NDGatherConfigure command in the startup script.
     - NDARRAY_ADDR
-    - $(P)$(R)NDArrayAddress_[N], $(P)$(R)NDArrayAddress_[N]_RBV
+    - $(P)$(R)NDArrayAddress_$(N), $(P)$(R)NDArrayAddress_$(N)_RBV
     - longout, longin
 
 Configuration

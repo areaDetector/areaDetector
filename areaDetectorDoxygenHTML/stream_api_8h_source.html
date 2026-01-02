@@ -71,10 +71,12 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>};</div>
 </div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">typedef</span> <span class="keyword">struct</span></div>
+<div class="foldopen" id="foldopen00018" data-start="{" data-end="};">
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="structstream__header__t.html">   18</a></span><span class="keyword">typedef</span> <span class="keyword">struct</span></div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>{</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keywordtype">size_t</span> series;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="structstream__header__t.html#a1bf201340efe35dfa07333da61e30cf9">   20</a></span>    <span class="keywordtype">size_t</span> <a class="code hl_variable" href="structstream__header__t.html#a1bf201340efe35dfa07333da61e30cf9">series</a>;</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>}<a class="code hl_struct" href="structstream__header__t.html">stream_header_t</a>;</div>
+</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
 <div class="foldopen" id="foldopen00023" data-start="{" data-end="};">
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="class_stream_a_p_i.html">   23</a></span><span class="keyword">class </span><a class="code hl_class" href="class_stream_a_p_i.html">StreamAPI</a></div>
@@ -96,7 +98,8 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>};</div>
 </div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="keyword">class </span><a class="code hl_class" href="class_stream2_a_p_i.html">Stream2API</a></div>
+<div class="foldopen" id="foldopen00041" data-start="{" data-end="};">
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="class_stream2_a_p_i.html">   41</a></span><span class="keyword">class </span><a class="code hl_class" href="class_stream2_a_p_i.html">Stream2API</a></div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>{</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="keyword">private</span>:</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keywordtype">char</span> *mHostname;</div>
@@ -108,28 +111,35 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    uint64_t mImage_size_x;</div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    uint64_t mImage_size_y;</div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    uint64_t mNumber_of_images;</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keywordtype">int</span> poll       (<span class="keywordtype">int</span> timeout);   <span class="comment">// timeout in seconds</span></div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="class_stream2_a_p_i.html#af741e582cab0a6d1eca6d57d88c1932a">   57</a></span>    <a class="code hl_function" href="class_stream2_a_p_i.html#af741e582cab0a6d1eca6d57d88c1932a">Stream2API</a>     (<span class="keyword">const</span> <span class="keywordtype">char</span> *hostname);</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="class_stream2_a_p_i.html#a3eec851ec7ae143c36ae23353ab1f457">   58</a></span>    <a class="code hl_function" href="class_stream2_a_p_i.html#a3eec851ec7ae143c36ae23353ab1f457">~Stream2API</a>    (<span class="keywordtype">void</span>);</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="class_stream2_a_p_i.html#ad534360de5214f24a56e8c6953179959">   59</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_stream2_a_p_i.html#ad534360de5214f24a56e8c6953179959">getHeader</a>  (<a class="code hl_struct" href="structstream__header__t.html">stream_header_t</a> *header, <span class="keywordtype">int</span> timeout = 0);</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="class_stream2_a_p_i.html#ab0f6765a98af4c32a5cef0949fb35707">   60</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_stream2_a_p_i.html#ab0f6765a98af4c32a5cef0949fb35707">waitFrame</a>  (<span class="keywordtype">int</span> *end, <span class="keywordtype">int</span> timeout = 0);</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="class_stream2_a_p_i.html#afedd991e3038bb631f0a4859e146c2ad">   61</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_stream2_a_p_i.html#afedd991e3038bb631f0a4859e146c2ad">getFrame</a>   (<a class="code hl_class" href="class_n_d_array.html">NDArray</a> **pArray, <a class="code hl_class" href="class_n_d_array_pool.html">NDArrayPool</a> *pNDArrayPool, <span class="keywordtype">int</span> decompress);</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>};</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="keyword">struct </span>{</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="class_stream2_a_p_i.html#a10f8830e8012e183cc36cefd323106ae">   54</a></span>        std::string <a class="code hl_variable" href="class_stream2_a_p_i.html#a10f8830e8012e183cc36cefd323106ae">tsStr</a>;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="class_stream2_a_p_i.html#ad20b7cb59827cf21736894df9281eb8d">   55</a></span>        epicsTimeStamp <a class="code hl_variable" href="class_stream2_a_p_i.html#ad20b7cb59827cf21736894df9281eb8d">ts</a>;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    } mCachedTs;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    epicsTimeStamp extractTimeStampFromMessage(<a class="code hl_struct" href="structstream2__image__msg.html">stream2_image_msg</a> *message);</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keywordtype">int</span> poll (<span class="keywordtype">int</span> timeout);   <span class="comment">// timeout in seconds</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <a class="code hl_class" href="class_stream2_a_p_i.html">Stream2API</a>     (<span class="keyword">const</span> <span class="keywordtype">char</span> *hostname);</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <a class="code hl_function" href="class_stream2_a_p_i.html#a3eec851ec7ae143c36ae23353ab1f457">~Stream2API</a>    (<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_stream2_a_p_i.html#ad534360de5214f24a56e8c6953179959">getHeader</a>  (<a class="code hl_struct" href="structstream__header__t.html">stream_header_t</a> *header, <span class="keywordtype">int</span> timeout = 0);</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_stream2_a_p_i.html#ab0f6765a98af4c32a5cef0949fb35707">waitFrame</a>  (<span class="keywordtype">int</span> *end, <span class="keywordtype">int</span> timeout = 0);</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_stream2_a_p_i.html#a6c6f2c01ee9d52060635d9c0f8e29dcd">getFrame</a>   (<a class="code hl_class" href="class_n_d_array.html">NDArray</a> **pArray, <a class="code hl_class" href="class_n_d_array_pool.html">NDArrayPool</a> *pNDArrayPool, <span class="keywordtype">int</span> decompress, <span class="keywordtype">bool</span> extractTimeStamp);</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>};</div>
+</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="a_n_d_array_8h_html"><div class="ttname"><a href="_n_d_array_8h.html">NDArray.h</a></div></div>
 <div class="ttc" id="aclass_n_d_array_html"><div class="ttname"><a href="class_n_d_array.html">NDArray</a></div><div class="ttdoc">N-dimensional array class; each array has a set of dimensions, a data type, pointer to data,...</div><div class="ttdef"><b>Definition</b> NDArray.h:99</div></div>
 <div class="ttc" id="aclass_n_d_array_pool_html"><div class="ttname"><a href="class_n_d_array_pool.html">NDArrayPool</a></div><div class="ttdoc">The NDArrayPool class manages a free list (pool) of NDArray objects.</div><div class="ttdef"><b>Definition</b> NDArray.h:168</div></div>
-<div class="ttc" id="aclass_stream2_a_p_i_html"><div class="ttname"><a href="class_stream2_a_p_i.html">Stream2API</a></div><div class="ttdef"><b>Definition</b> stream2Api.h:13</div></div>
-<div class="ttc" id="aclass_stream2_a_p_i_html_a3eec851ec7ae143c36ae23353ab1f457"><div class="ttname"><a href="class_stream2_a_p_i.html#a3eec851ec7ae143c36ae23353ab1f457">Stream2API::~Stream2API</a></div><div class="ttdeci">~Stream2API(void)</div></div>
-<div class="ttc" id="aclass_stream2_a_p_i_html_ab0f6765a98af4c32a5cef0949fb35707"><div class="ttname"><a href="class_stream2_a_p_i.html#ab0f6765a98af4c32a5cef0949fb35707">Stream2API::waitFrame</a></div><div class="ttdeci">int waitFrame(int *end, int timeout=0)</div></div>
-<div class="ttc" id="aclass_stream2_a_p_i_html_ad534360de5214f24a56e8c6953179959"><div class="ttname"><a href="class_stream2_a_p_i.html#ad534360de5214f24a56e8c6953179959">Stream2API::getHeader</a></div><div class="ttdeci">int getHeader(stream_header_t *header, int timeout=0)</div></div>
-<div class="ttc" id="aclass_stream2_a_p_i_html_af741e582cab0a6d1eca6d57d88c1932a"><div class="ttname"><a href="class_stream2_a_p_i.html#af741e582cab0a6d1eca6d57d88c1932a">Stream2API::Stream2API</a></div><div class="ttdeci">Stream2API(const char *hostname)</div></div>
-<div class="ttc" id="aclass_stream2_a_p_i_html_afedd991e3038bb631f0a4859e146c2ad"><div class="ttname"><a href="class_stream2_a_p_i.html#afedd991e3038bb631f0a4859e146c2ad">Stream2API::getFrame</a></div><div class="ttdeci">int getFrame(NDArray **pArray, NDArrayPool *pNDArrayPool, int decompress)</div></div>
+<div class="ttc" id="aclass_stream2_a_p_i_html"><div class="ttname"><a href="class_stream2_a_p_i.html">Stream2API</a></div><div class="ttdef"><b>Definition</b> streamApi.h:42</div></div>
+<div class="ttc" id="aclass_stream2_a_p_i_html_a10f8830e8012e183cc36cefd323106ae"><div class="ttname"><a href="class_stream2_a_p_i.html#a10f8830e8012e183cc36cefd323106ae">Stream2API::tsStr</a></div><div class="ttdeci">std::string tsStr</div><div class="ttdef"><b>Definition</b> streamApi.h:54</div></div>
+<div class="ttc" id="aclass_stream2_a_p_i_html_a3eec851ec7ae143c36ae23353ab1f457"><div class="ttname"><a href="class_stream2_a_p_i.html#a3eec851ec7ae143c36ae23353ab1f457">Stream2API::~Stream2API</a></div><div class="ttdeci">~Stream2API(void)</div><div class="ttdef"><b>Definition</b> stream2Api.cpp:153</div></div>
+<div class="ttc" id="aclass_stream2_a_p_i_html_a6c6f2c01ee9d52060635d9c0f8e29dcd"><div class="ttname"><a href="class_stream2_a_p_i.html#a6c6f2c01ee9d52060635d9c0f8e29dcd">Stream2API::getFrame</a></div><div class="ttdeci">int getFrame(NDArray **pArray, NDArrayPool *pNDArrayPool, int decompress, bool extractTimeStamp)</div><div class="ttdef"><b>Definition</b> stream2Api.cpp:217</div></div>
+<div class="ttc" id="aclass_stream2_a_p_i_html_ab0f6765a98af4c32a5cef0949fb35707"><div class="ttname"><a href="class_stream2_a_p_i.html#ab0f6765a98af4c32a5cef0949fb35707">Stream2API::waitFrame</a></div><div class="ttdeci">int waitFrame(int *end, int timeout=0)</div><div class="ttdef"><b>Definition</b> stream2Api.cpp:191</div></div>
+<div class="ttc" id="aclass_stream2_a_p_i_html_ad20b7cb59827cf21736894df9281eb8d"><div class="ttname"><a href="class_stream2_a_p_i.html#ad20b7cb59827cf21736894df9281eb8d">Stream2API::ts</a></div><div class="ttdeci">epicsTimeStamp ts</div><div class="ttdef"><b>Definition</b> streamApi.h:55</div></div>
+<div class="ttc" id="aclass_stream2_a_p_i_html_ad534360de5214f24a56e8c6953179959"><div class="ttname"><a href="class_stream2_a_p_i.html#ad534360de5214f24a56e8c6953179959">Stream2API::getHeader</a></div><div class="ttdeci">int getHeader(stream_header_t *header, int timeout=0)</div><div class="ttdef"><b>Definition</b> stream2Api.cpp:160</div></div>
 <div class="ttc" id="aclass_stream_a_p_i_html"><div class="ttname"><a href="class_stream_a_p_i.html">StreamAPI</a></div><div class="ttdef"><b>Definition</b> streamApi.h:24</div></div>
 <div class="ttc" id="aclass_stream_a_p_i_html_a221b41076c1d20623f26c30e5da8e3c4"><div class="ttname"><a href="class_stream_a_p_i.html#a221b41076c1d20623f26c30e5da8e3c4">StreamAPI::~StreamAPI</a></div><div class="ttdeci">~StreamAPI(void)</div><div class="ttdef"><b>Definition</b> streamApi.cpp:186</div></div>
 <div class="ttc" id="aclass_stream_a_p_i_html_a7f29f1c673c553c762f1953e46e7b9d5"><div class="ttname"><a href="class_stream_a_p_i.html#a7f29f1c673c553c762f1953e46e7b9d5">StreamAPI::getFrame</a></div><div class="ttdeci">int getFrame(NDArray **pArray, NDArrayPool *pNDArrayPool, int decompress)</div><div class="ttdef"><b>Definition</b> streamApi.cpp:300</div></div>
@@ -142,7 +152,8 @@ $(document).ready(function() { init_codefold(0); });
 <div class="ttc" id="astream_api_8h_html_a2d05e4c8303106d1425a9efa4ff1fb69ab2fcccf86b42738805e2ed631d7566d0"><div class="ttname"><a href="stream_api_8h.html#a2d05e4c8303106d1425a9efa4ff1fb69ab2fcccf86b42738805e2ed631d7566d0">STREAM_TIMEOUT</a></div><div class="ttdeci">@ STREAM_TIMEOUT</div><div class="ttdef"><b>Definition</b> streamApi.h:13</div></div>
 <div class="ttc" id="astream_api_8h_html_a2d05e4c8303106d1425a9efa4ff1fb69ab762f1f6f06eb71dfe066e0621eb8f36"><div class="ttname"><a href="stream_api_8h.html#a2d05e4c8303106d1425a9efa4ff1fb69ab762f1f6f06eb71dfe066e0621eb8f36">STREAM_WRONG_HTYPE</a></div><div class="ttdeci">@ STREAM_WRONG_HTYPE</div><div class="ttdef"><b>Definition</b> streamApi.h:14</div></div>
 <div class="ttc" id="astructstream2__image__msg_html"><div class="ttname"><a href="structstream2__image__msg.html">stream2_image_msg</a></div><div class="ttdef"><b>Definition</b> stream2.h:181</div></div>
-<div class="ttc" id="astructstream__header__t_html"><div class="ttname"><a href="structstream__header__t.html">stream_header_t</a></div><div class="ttdef"><b>Definition</b> stream2Api.h:8</div></div>
+<div class="ttc" id="astructstream__header__t_html"><div class="ttname"><a href="structstream__header__t.html">stream_header_t</a></div><div class="ttdef"><b>Definition</b> streamApi.h:19</div></div>
+<div class="ttc" id="astructstream__header__t_html_a1bf201340efe35dfa07333da61e30cf9"><div class="ttname"><a href="structstream__header__t.html#a1bf201340efe35dfa07333da61e30cf9">stream_header_t::series</a></div><div class="ttdeci">size_t series</div><div class="ttdef"><b>Definition</b> streamApi.h:20</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

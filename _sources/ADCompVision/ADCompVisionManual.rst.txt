@@ -211,7 +211,7 @@ function, along with descriptions for each function
   <th>N/A
   </th>
   </tr>
-  
+
   </tbody>
   </table>
 
@@ -327,6 +327,6 @@ alarm if they are within a distance threshold.
 ConvertImageFormat
 ~~~~~~~~~~~~~~~~~~
 
-Converts the format of the image to a different one for use with other AD Plugins. This is useful for 
-cameras that only support one format but a different one is required, ex. ADPluginDmtx needs 8bit rgb image, so 
+Converts the format of the image to a different one for use with other AD Plugins. This is useful for
+cameras that only support one format but a different one is required, ex. ADPluginDmtx needs 8bit rgb image, so
 grayscale camera needs to be converted.

@@ -1829,6 +1829,7 @@
     <member refid="classeiger_detector_1aef08ff1f41daa2e19c832a602f425fa4" kind="variable"><name>mStreamDropped</name></member>
     <member refid="classeiger_detector_1af918e0d438ab2aeabba4c5c6ed28f331" kind="variable"><name>mStreamState</name></member>
     <member refid="classeiger_detector_1a5e5f04c76a4d4c11992616f55d4df3a6" kind="variable"><name>mStreamVersion</name></member>
+    <member refid="classeiger_detector_1acaec907632e6ff6907a41710a60af68c" kind="variable"><name>mStreamAsTsSource</name></member>
     <member refid="classeiger_detector_1a96daacf3e1a4f58a67e70ceecd46569c" kind="variable"><name>mAcquireTime</name></member>
     <member refid="classeiger_detector_1a9efd6e5485ef4c74dd9e71bdad82a6de" kind="variable"><name>mAcquirePeriod</name></member>
     <member refid="classeiger_detector_1add8db02a00087ab8ae5c7376a3aec0e6" kind="variable"><name>mNumImages</name></member>
@@ -2287,7 +2288,9 @@
     <member refid="classfree_list_element_1ad36730bdb548012687d36f5389706d34" kind="function"><name>freeListElement</name></member>
   </compound>
   <compound refid="structfree_n_d_array" kind="struct"><name>freeNDArray</name>
-    <member refid="structfree_n_d_array_1a2d06b337b84c5b8edb3bc1b251678d62" kind="variable"><name>array</name></member>
+    <member refid="structfree_n_d_array_1a8299e71d11df8343dec700f3881cd01f" kind="variable"><name>array</name></member>
+    <member refid="structfree_n_d_array_1a19ce4e42c05cb013a39dd15bd5bfbf1d" kind="function"><name>freeNDArray</name></member>
+    <member refid="structfree_n_d_array_1a14b7cc16b56086bb2e7b1c105bd910ad" kind="function"><name>operator()</name></member>
     <member refid="structfree_n_d_array_1a19ce4e42c05cb013a39dd15bd5bfbf1d" kind="function"><name>freeNDArray</name></member>
     <member refid="structfree_n_d_array_1a14b7cc16b56086bb2e7b1c105bd910ad" kind="function"><name>operator()</name></member>
   </compound>
@@ -3808,6 +3811,12 @@
     <member refid="class_n_d_plugin_pva_1a3765bc67b53597eec0ae148c6fd68cd0" kind="function"><name>NDPluginPva</name></member>
     <member refid="class_n_d_plugin_pva_1a0c40574801b927714c8ac6277488055d" kind="function"><name>processCallbacks</name></member>
   </compound>
+  <compound refid="class_n_d_plugin_pvxs" kind="class"><name>NDPluginPvxs</name>
+    <member refid="class_n_d_plugin_pvxs_1a5eae52d287b9fac43a27be63f000c3c2" kind="variable"><name>NDPluginPvxsPvName</name></member>
+    <member refid="class_n_d_plugin_pvxs_1a57dfb06d633fcf4fc4970e2ed929ba1e" kind="variable"><name>m_record</name></member>
+    <member refid="class_n_d_plugin_pvxs_1a86ca8838d045d7cd0fc813dfd844fa2a" kind="function"><name>NDPluginPvxs</name></member>
+    <member refid="class_n_d_plugin_pvxs_1ae0b95ad38c6bedc60f0f53eb08ca7ba7" kind="function"><name>processCallbacks</name></member>
+  </compound>
   <compound refid="class_n_d_plugin_r_o_i" kind="class"><name>NDPluginROI</name>
     <member refid="class_n_d_plugin_r_o_i_1aba596547b874cd513dcf8bf2f124f392" kind="variable"><name>NDPluginROIName</name></member>
     <member refid="class_n_d_plugin_r_o_i_1adb0068de79c3424ad79eb5d10057708d" kind="variable"><name>NDPluginROIDim0Min</name></member>
@@ -4156,6 +4165,33 @@
     <member refid="class_n_t_n_d_array_converter_1a74bfa02120573a31ada87734d7c8a14c" kind="function"><name>fromUndefinedAttribute</name></member>
     <member refid="class_n_t_n_d_array_converter_1a93ca57dd970b56aa670fedcbee38e9b3" kind="function"><name>fromAttributes</name></member>
   </compound>
+  <compound refid="class_n_t_n_d_array_converter_pvxs" kind="class"><name>NTNDArrayConverterPvxs</name>
+    <member refid="class_n_t_n_d_array_converter_pvxs_1afc2ff65a716f91f3f3914f904e9f0e35" kind="variable"><name>m_value</name></member>
+    <member refid="class_n_t_n_d_array_converter_pvxs_1a652239d80aac25b461687d39c13a78eb" kind="variable"><name>m_typeMap</name></member>
+    <member refid="class_n_t_n_d_array_converter_pvxs_1a9d9b74637f50b9de67e5c1b938c5713c" kind="variable"><name>m_fieldNameMap</name></member>
+    <member refid="class_n_t_n_d_array_converter_pvxs_1a5a005bf8297a63eafed0ff0e5fa20f31" kind="function"><name>NTNDArrayConverterPvxs</name></member>
+    <member refid="class_n_t_n_d_array_converter_pvxs_1ae0b33103977902854c8c25cb1958d799" kind="function"><name>getInfo</name></member>
+    <member refid="class_n_t_n_d_array_converter_pvxs_1a3f5400f36199b34ab4578ff640aab61a" kind="function"><name>toArray</name></member>
+    <member refid="class_n_t_n_d_array_converter_pvxs_1a159ebdb9d2c0f3ea3947b74500409a91" kind="function"><name>fromArray</name></member>
+    <member refid="class_n_t_n_d_array_converter_pvxs_1afcfdf62dda491dfa26fb3d7a56ada923" kind="function"><name>getColorMode</name></member>
+    <member refid="class_n_t_n_d_array_converter_pvxs_1ae775efcf33d386f2caed4ed8abec5252" kind="function"><name>toValue</name></member>
+    <member refid="class_n_t_n_d_array_converter_pvxs_1a87ca557f52163f9adcf7125226ef9abd" kind="function"><name>toValue</name></member>
+    <member refid="class_n_t_n_d_array_converter_pvxs_1a87d4d7c1801a200f6ba9b17f038acd15" kind="function"><name>toDimensions</name></member>
+    <member refid="class_n_t_n_d_array_converter_pvxs_1adc4c206d9742f3628dccecf5ebcf73ed" kind="function"><name>toTimeStamp</name></member>
+    <member refid="class_n_t_n_d_array_converter_pvxs_1a549cd6be4f6c0e70fafcd843006b0e66" kind="function"><name>toDataTimeStamp</name></member>
+    <member refid="class_n_t_n_d_array_converter_pvxs_1a424c0d7c2ebe39df470efb41fb1640de" kind="function"><name>toAttribute</name></member>
+    <member refid="class_n_t_n_d_array_converter_pvxs_1a221963bffc2fb5e2ea1bef7d31129f58" kind="function"><name>toStringAttribute</name></member>
+    <member refid="class_n_t_n_d_array_converter_pvxs_1af563b379bda76829c2959cb34c993c26" kind="function"><name>toUndefinedAttribute</name></member>
+    <member refid="class_n_t_n_d_array_converter_pvxs_1a65c524a8ab658cdb62562ab860372651" kind="function"><name>toAttributes</name></member>
+    <member refid="class_n_t_n_d_array_converter_pvxs_1ab4ca0dbd910a0ea228c9d77ac8656d65" kind="function"><name>fromValue</name></member>
+    <member refid="class_n_t_n_d_array_converter_pvxs_1ab474250f0f3c607cc1da9a9f8707b41d" kind="function"><name>fromValue</name></member>
+    <member refid="class_n_t_n_d_array_converter_pvxs_1a4762a8af06ed4ee0761ecbaf760f4c23" kind="function"><name>fromDimensions</name></member>
+    <member refid="class_n_t_n_d_array_converter_pvxs_1a253134ab5d05354bf37ae5434a108543" kind="function"><name>fromTimeStamp</name></member>
+    <member refid="class_n_t_n_d_array_converter_pvxs_1a1f40e46cc9298e8984243a17220dc928" kind="function"><name>fromDataTimeStamp</name></member>
+    <member refid="class_n_t_n_d_array_converter_pvxs_1a158dec22b643f820d5dc45f62bc3b487" kind="function"><name>fromAttribute</name></member>
+    <member refid="class_n_t_n_d_array_converter_pvxs_1ac4a09223282472d498791023a54d85ea" kind="function"><name>fromStringAttribute</name></member>
+    <member refid="class_n_t_n_d_array_converter_pvxs_1a7baebb3c9d5abfd9c2e394e22b02f708" kind="function"><name>fromAttributes</name></member>
+  </compound>
   <compound refid="struct_n_t_n_d_array_info" kind="struct"><name>NTNDArrayInfo</name>
     <member refid="struct_n_t_n_d_array_info_1a4c2eb06b5e2481e214b63d199c1c696d" kind="variable"><name>ndims</name></member>
     <member refid="struct_n_t_n_d_array_info_1a7ea4583e724befffbae36a91f361866e" kind="variable"><name>dims</name></member>
@@ -4182,6 +4218,18 @@
     <member refid="class_n_t_n_d_array_record_1a3348a35fbef8371347e3ebd38db31747" kind="function"><name>process</name></member>
     <member refid="class_n_t_n_d_array_record_1ab1b6defc72af9dbe70ec1eb5c58f00bf" kind="function"><name>update</name></member>
     <member refid="class_n_t_n_d_array_record_1a9219e20725dc309c15b412164f14ef0f" kind="function"><name>create</name></member>
+  </compound>
+  <compound refid="class_n_t_n_d_array_record_pvxs" kind="class"><name>NTNDArrayRecordPvxs</name>
+    <member refid="class_n_t_n_d_array_record_pvxs_1a9207bfa7e006c5c5d69c34b829b5e3af" kind="variable"><name>m_converter</name></member>
+    <member refid="class_n_t_n_d_array_record_pvxs_1a0c6d70fee051018da7fa54243e5d0a75" kind="variable"><name>m_name</name></member>
+    <member refid="class_n_t_n_d_array_record_pvxs_1a5451ebf33248c381e0f50b8ca629a105" kind="variable"><name>m_value</name></member>
+    <member refid="class_n_t_n_d_array_record_pvxs_1a550edb0e801249b2f40503946eb04a24" kind="variable"><name>m_pv</name></member>
+    <member refid="class_n_t_n_d_array_record_pvxs_1a5dd090060eadf79efc6106c18e3c3f83" kind="function"><name>NTNDArrayRecordPvxs</name></member>
+    <member refid="class_n_t_n_d_array_record_pvxs_1a6171c51784cb8ec623d4bc84f4f70bf4" kind="function"><name>~NTNDArrayRecordPvxs</name></member>
+    <member refid="class_n_t_n_d_array_record_pvxs_1ab236c51fd0f4ab9e934c14ba1672d6ae" kind="function"><name>init</name></member>
+    <member refid="class_n_t_n_d_array_record_pvxs_1a6e14ec42d9ff2e21f1571b8515f3c030" kind="function"><name>process</name></member>
+    <member refid="class_n_t_n_d_array_record_pvxs_1ab245569a6dc014fc1623a5f6bd8cc35f" kind="function"><name>update</name></member>
+    <member refid="class_n_t_n_d_array_record_pvxs_1accc256b1b88f883606c3441399db1f5d" kind="function"><name>create</name></member>
   </compound>
   <compound refid="classparam_attribute" kind="class"><name>paramAttribute</name>
     <member refid="classparam_attribute_1aa658b4b87f7daaec42298c078b552ef8" kind="variable"><name>paramId</name></member>
@@ -4909,29 +4957,26 @@
     <member refid="structstream2__user__data_1a6d2c91c182a37323b568fd140fc69ad1" kind="variable"><name>len</name></member>
   </compound>
   <compound refid="class_stream2_a_p_i" kind="class"><name>Stream2API</name>
-    <member refid="class_stream2_a_p_i_1ad36eba6c9aab143710f812f4fe139244" kind="variable"><name>mHostname</name></member>
-    <member refid="class_stream2_a_p_i_1ade87b3ae77264667ec0acd03cb2a374e" kind="variable"><name>mCtx</name></member>
+    <member refid="class_stream2_a_p_i_1af36c5d24008ceb22cb14cd0e679d0d27" kind="variable"><name>mHostname</name></member>
+    <member refid="class_stream2_a_p_i_1a19981e788c35e0bf558dca6e3b52cef1" kind="variable"><name>mCtx</name></member>
     <member refid="class_stream2_a_p_i_1ab1ad4926459c5bbef3b1f06ab3d2ed26" kind="variable"><name>mSock</name></member>
-    <member refid="class_stream2_a_p_i_1ac59d77c58e15ecc72f70a29708664c18" kind="variable"><name>mImageMsg</name></member>
     <member refid="class_stream2_a_p_i_1a06942a4739b55ffae0a06f48582a83fd" kind="variable"><name>mSeries_id</name></member>
     <member refid="class_stream2_a_p_i_1a62d05d0032782b139b7e0b00f53a975a" kind="variable"><name>mImage_dtype</name></member>
     <member refid="class_stream2_a_p_i_1a0088cbf1f78080a4fd8355d1ef0aa08e" kind="variable"><name>mMsg</name></member>
+    <member refid="class_stream2_a_p_i_1af8c8b2498781732f47ea2b2d9aaf9c2d" kind="variable"><name>mImageMsg</name></member>
     <member refid="class_stream2_a_p_i_1ae97aac3678b22f1a006401b44833a821" kind="variable"><name>mImage_size_x</name></member>
     <member refid="class_stream2_a_p_i_1a105ed391ef70202df4da8c090397b4c5" kind="variable"><name>mImage_size_y</name></member>
     <member refid="class_stream2_a_p_i_1aba294bcc845a8263c9fdca0e02a584de" kind="variable"><name>mNumber_of_images</name></member>
-    <member refid="class_stream2_a_p_i_1a5906291a27291fba8098d24a3d77596e" kind="function"><name>poll</name></member>
+    <member refid="class_stream2_a_p_i_1a87ab7613c4d4b1f235be0916d5bb6368" kind="variable"><name>mCachedTs</name></member>
+    <member refid="class_stream2_a_p_i_1a10f8830e8012e183cc36cefd323106ae" kind="variable"><name>tsStr</name></member>
+    <member refid="class_stream2_a_p_i_1ad20b7cb59827cf21736894df9281eb8d" kind="variable"><name>ts</name></member>
+    <member refid="class_stream2_a_p_i_1abb77c87adf01704a8c008d7d14154b56" kind="function"><name>extractTimeStampFromMessage</name></member>
     <member refid="class_stream2_a_p_i_1a5906291a27291fba8098d24a3d77596e" kind="function"><name>poll</name></member>
     <member refid="class_stream2_a_p_i_1af741e582cab0a6d1eca6d57d88c1932a" kind="function"><name>Stream2API</name></member>
     <member refid="class_stream2_a_p_i_1a3eec851ec7ae143c36ae23353ab1f457" kind="function"><name>~Stream2API</name></member>
     <member refid="class_stream2_a_p_i_1ad534360de5214f24a56e8c6953179959" kind="function"><name>getHeader</name></member>
     <member refid="class_stream2_a_p_i_1ab0f6765a98af4c32a5cef0949fb35707" kind="function"><name>waitFrame</name></member>
-    <member refid="class_stream2_a_p_i_1afedd991e3038bb631f0a4859e146c2ad" kind="function"><name>getFrame</name></member>
-    <member refid="class_stream2_a_p_i_1af741e582cab0a6d1eca6d57d88c1932a" kind="function"><name>Stream2API</name></member>
-    <member refid="class_stream2_a_p_i_1a3eec851ec7ae143c36ae23353ab1f457" kind="function"><name>~Stream2API</name></member>
-    <member refid="class_stream2_a_p_i_1ad534360de5214f24a56e8c6953179959" kind="function"><name>getHeader</name></member>
-    <member refid="class_stream2_a_p_i_1ab0f6765a98af4c32a5cef0949fb35707" kind="function"><name>waitFrame</name></member>
-    <member refid="class_stream2_a_p_i_1afedd991e3038bb631f0a4859e146c2ad" kind="function"><name>getFrame</name></member>
-    <member refid="class_stream2_a_p_i_1a756f2988c47b66b443db6cce64413aab" kind="function"><name>uncompress</name></member>
+    <member refid="class_stream2_a_p_i_1a6c6f2c01ee9d52060635d9c0f8e29dcd" kind="function"><name>getFrame</name></member>
   </compound>
   <compound refid="structstream__header__t" kind="struct"><name>stream_header_t</name>
     <member refid="structstream__header__t_1a1bf201340efe35dfa07333da61e30cf9" kind="variable"><name>series</name></member>
@@ -6009,12 +6054,20 @@
     <member refid="ntnd_array_converter_8cpp_1ae170fd3526f9e1347bd8bfe747c38626" kind="variable"><name>PVDC</name></member>
   </compound>
   <compound refid="ntnd_array_converter_8h" kind="file"><name>ntndArrayConverter.h</name>
-    <member refid="ntnd_array_converter_8h_1afe30fed285eb84ca9863d81a4dd78bcf" kind="typedef"><name>NTNDArrayInfo_t</name></member>
     <member refid="ntnd_array_converter_8h_1a72a31c7a33ef6e2074ee6276b1c19e9b" kind="typedef"><name>NTNDArrayConverterPtr</name></member>
   </compound>
   <compound refid="ntnd_array_converter_a_p_i_8h" kind="file"><name>ntndArrayConverterAPI.h</name>
     <member refid="ntnd_array_converter_a_p_i_8h_1af381ff3bbb37f4b42b03621b489e449b" kind="define"><name>NTNDARRAYCONVERTER_API</name></member>
     <member refid="ntnd_array_converter_a_p_i_8h_1a2c31bdda0d669eca0885ec124642cab9" kind="define"><name>epicsStdCall</name></member>
+  </compound>
+  <compound refid="ntnd_array_converter_common_8h" kind="file"><name>ntndArrayConverterCommon.h</name>
+    <member refid="ntnd_array_converter_common_8h_1afe30fed285eb84ca9863d81a4dd78bcf" kind="typedef"><name>NTNDArrayInfo_t</name></member>
+  </compound>
+  <compound refid="ntnd_array_converter_pvxs_8cpp" kind="file"><name>ntndArrayConverterPvxs.cpp</name>
+    <member refid="ntnd_array_converter_pvxs_8cpp_1a91d0d848a8f3ce7cd9edf1bddfdd96ae" kind="variable"><name>NDDataTypeToScalar</name></member>
+  </compound>
+  <compound refid="ntnd_array_converter_pvxs_8h" kind="file"><name>ntndArrayConverterPvxs.h</name>
+    <member refid="ntnd_array_converter_pvxs_8h_1a650a592dc1a04427814d8de4817f615b" kind="typedef"><name>NTNDArrayConverterPvxsPtr</name></member>
   </compound>
   <compound refid="_circular_buffer_8h" kind="file"><name>CircularBuffer.h</name>
   </compound>
@@ -7033,6 +7086,29 @@
     <member refid="_n_d_plugin_pva_8h_1aa5b291cd772015d013ca688117ad8d6d" kind="define"><name>NDPluginPvaPvNameString</name></member>
     <member refid="_n_d_plugin_pva_8h_1acd87133ff0e032f572de7ac8b8ab7834" kind="typedef"><name>NTNDArrayRecordPtr</name></member>
   </compound>
+  <compound refid="_n_d_plugin_pvxs_8cpp" kind="file"><name>NDPluginPvxs.cpp</name>
+    <member refid="_n_d_plugin_pvxs_8cpp_1af0e94d13028051cd5339d204bfbb057d" kind="variable"><name>driverName</name></member>
+    <member refid="_n_d_plugin_pvxs_8cpp_1a13021e744179110a6114bf84e9d47f32" kind="variable"><name>initArg0</name></member>
+    <member refid="_n_d_plugin_pvxs_8cpp_1a85f312f39f3c368a5fa10d1039dc40b2" kind="variable"><name>initArg1</name></member>
+    <member refid="_n_d_plugin_pvxs_8cpp_1a645a7d7d0d71a7522373e2af4008b520" kind="variable"><name>initArg2</name></member>
+    <member refid="_n_d_plugin_pvxs_8cpp_1aaa425474fd6655fa6347e1933b29038a" kind="variable"><name>initArg3</name></member>
+    <member refid="_n_d_plugin_pvxs_8cpp_1a945c4d0bc0e2bc869aeaf5c6a815368a" kind="variable"><name>initArg4</name></member>
+    <member refid="_n_d_plugin_pvxs_8cpp_1ac7e214be38a3b3bface5e0370ae97db0" kind="variable"><name>initArg5</name></member>
+    <member refid="_n_d_plugin_pvxs_8cpp_1a43397205694aec859f3b5cb14a85edc3" kind="variable"><name>initArg6</name></member>
+    <member refid="_n_d_plugin_pvxs_8cpp_1a36049b095d9ed1f56a41821a2c8fc661" kind="variable"><name>initArg7</name></member>
+    <member refid="_n_d_plugin_pvxs_8cpp_1a62a0c5258a2c1049720be5c31729f76d" kind="variable"><name>initArg8</name></member>
+    <member refid="_n_d_plugin_pvxs_8cpp_1a310f7847b682c968669300db5550d9fa" kind="variable"><name>initArg9</name></member>
+    <member refid="_n_d_plugin_pvxs_8cpp_1ac0d7f455ac7138e5bcb473b630294718" kind="variable"><name>initArgs</name></member>
+    <member refid="_n_d_plugin_pvxs_8cpp_1a469a3ecf9fff33f8f388acddffc8db6a" kind="variable"><name>initFuncDef</name></member>
+    <member refid="_n_d_plugin_pvxs_8cpp_1a8f85bb5108f1d3789e116fca9765f2a7" kind="function"><name>NDPvxsConfigure</name></member>
+    <member refid="_n_d_plugin_pvxs_8cpp_1aeeec53c20b81d2e7f49be49509087df5" kind="function"><name>initCallFunc</name></member>
+    <member refid="_n_d_plugin_pvxs_8cpp_1a5ebc20c2b48d712acf96dce47c2b3393" kind="function"><name>NDPvxsRegister</name></member>
+    <member refid="_n_d_plugin_pvxs_8cpp_1afd4307c51ef0cc56ec3f0307e2d4344d" kind="function"><name>epicsExportRegistrar</name></member>
+  </compound>
+  <compound refid="_n_d_plugin_pvxs_8h" kind="file"><name>NDPluginPvxs.h</name>
+    <member refid="_n_d_plugin_pvxs_8h_1a2c5292faccaba7ad110a4f519cafc338" kind="define"><name>NDPluginPvxsPvNameString</name></member>
+    <member refid="_n_d_plugin_pvxs_8h_1a7a27068cafe24ed58e2423f95c91af72" kind="typedef"><name>NTNDArrayRecordPvxsPtr</name></member>
+  </compound>
   <compound refid="_n_d_plugin_r_o_i_8cpp" kind="file"><name>NDPluginROI.cpp</name>
     <member refid="_n_d_plugin_r_o_i_8cpp_1ad935f1ff1a50822e317bdb321ce991ad" kind="define"><name>MAX</name></member>
     <member refid="_n_d_plugin_r_o_i_8cpp_1adcd021ac91d43a62b2cdecf9a5b971a7" kind="define"><name>MIN</name></member>
@@ -7639,6 +7715,7 @@
     <member refid="eiger_detector_8h_1a15d32bec464b9127962d24d4ff234225" kind="define"><name>EigStreamStateStr</name></member>
     <member refid="eiger_detector_8h_1a0c87a06b8a6e21c9c168dc588577bdca" kind="define"><name>EigStreamDecompressStr</name></member>
     <member refid="eiger_detector_8h_1a22c7ca724d930d74b6c07f98aab4a4c5" kind="define"><name>EigStreamVersionStr</name></member>
+    <member refid="eiger_detector_8h_1a0c9b51a5385aef10bf856ef6f3802c12" kind="define"><name>EigStreamAsTsSourceStr</name></member>
     <member refid="eiger_detector_8h_1abca82ab81a7f5aecdb688a4d43388131" kind="define"><name>EigWavelengthEpsilonStr</name></member>
     <member refid="eiger_detector_8h_1af52300ed21aca75f16beebcfd794f863" kind="define"><name>EigEnergyEpsilonStr</name></member>
     <member refid="eiger_detector_8h_1aadbf8bfa4d794a7c76d3f4f83600297a" kind="enum"><name>eigerModel_t</name></member>
@@ -7793,8 +7870,6 @@
     <member refid="stream2_api_8cpp_1a351b8552521f29df22aa336bb28e2180" kind="define"><name>ERR</name></member>
     <member refid="stream2_api_8cpp_1a02586085698a967f28309aa3d54b43a3" kind="define"><name>ERR_ARGS</name></member>
     <member refid="stream2_api_8cpp_1afd91096b08e7374e12a4b3ebaa6fc7a2" kind="function"><name>uncompress</name></member>
-  </compound>
-  <compound refid="stream2_api_8h" kind="file"><name>stream2Api.h</name>
   </compound>
   <compound refid="stream_api_8cpp" kind="file"><name>streamApi.cpp</name>
     <member refid="stream_api_8cpp_1a2f1ae599e19d53b7acd88c73b9e86541" kind="define"><name>ZMQ_PORT</name></member>
@@ -9237,7 +9312,7 @@
     <member refid="_a_d_pylon_8cpp_1a3c447dc29e8a7c4be4fda5f438b28904" kind="variable"><name>colorMode</name></member>
     <member refid="_a_d_pylon_8cpp_1a048925b4357a1b4d6015c2113e05ce9f" kind="variable"><name>dataType</name></member>
     <member refid="_a_d_pylon_8cpp_1ad9d146b03dbf0bed289f260de75ee03a" kind="variable"><name>bayerFormat</name></member>
-    <member refid="_a_d_pylon_8cpp_1a7f0f84a77aa254eabb151a83574b1e12" kind="variable"><name>pix_lookup</name></member>
+    <member refid="_a_d_pylon_8cpp_1aded9f4ed84cfd61c30f0874e6e81ef94" kind="variable"><name>pix_lookup</name></member>
     <member refid="_a_d_pylon_8cpp_1a5b3cb40f99ecdaa383a0189445b38fbf" kind="variable"><name>configArg0</name></member>
     <member refid="_a_d_pylon_8cpp_1a12e03f733e7768280d0205a2d8adeaab" kind="variable"><name>configArg1</name></member>
     <member refid="_a_d_pylon_8cpp_1ac0dc159931b84391cb7c0fed1fa7986f" kind="variable"><name>configArg2</name></member>

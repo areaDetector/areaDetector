@@ -81,6 +81,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../ADLightField/ADLightField.html">ADLightField</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../ADmarCCD/marCCDDoc.html">ADmarCCD</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../ADmar345/mar345Doc.html">ADmar345</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ADMythen/ADMythen.html">ADMythen</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../ADPerkinElmer/PerkinElmerDoc.html">ADPerkinElmer</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../ADPICam/PICamDoc.html">ADPICam</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../ADPilatus/pilatusDoc.html">ADPilatus</a></li>
@@ -200,7 +201,7 @@
 </nav>
 <section id="introduction">
 <h2><a class="toc-backref" href="#id2" role="doc-backlink">Introduction</a><a class="headerlink" href="#introduction" title="Link to this heading"></a></h2>
-<p>This is an <a class="reference external" href="http://www.aps.anl.gov/epics">EPICS</a> <a class="reference external" href="https://areadetector.github.io/areaDetector/index.html">areaDetector</a> driver for the Eiger and Eiger2 detectors
+<p>This is an <a class="reference external" href="http://www.aps.anl.gov/epics">EPICS</a> <a class="reference external" href="https://areadetector.github.io/areaDetector/index.html">areaDetector</a> driver for the Eiger, Eiger2, and Pilatus4 detectors
 from <a class="reference external" href="http://www.dectris.com">Dectris</a>. It has been tested on the Eiger 500K, 1M, 4M and 16M
 with the firmware version 1.6.4+, and Eiger2 with firmware 2020.2.
 The driver communicates with the detector via its SIMPLON REST interface,
@@ -231,7 +232,6 @@ used to receive images in a ZeroMQ stream.</p>
 <p>A few Eiger parameters are set at IOC initialization time and are
 expected to not change. Namely:</p>
 <ul class="simple">
-<li><p>detector/config/auto_summation = true</p></li>
 <li><p>filewriter/config/image_nr_start = 1</p></li>
 <li><p>monitor/config/buffer_size = 1</p></li>
 </ul>
@@ -284,7 +284,7 @@ this example, this PV will be accessing the parameter:</p>
 <li><p><strong>External Enable</strong>: one external trigger pulse generates one image</p></li>
 <li><p><strong>Continuous</strong>: same as internal series, but automatically restarts after series</p></li>
 <li><dl class="simple">
-<dt><strong>External Gate</strong>: This mode is used only with new firmware on the Eiger2</dt><dd><p>which has 2 counters per pixel.  The behavior depend on the setting
+<dt><strong>External Gate</strong>: This mode is used only with the Eiger2X</dt><dd><p>which has 2 counters per pixel.  The behavior depend on the setting
 the ExtGateMode PV.</p>
 </dd>
 </dl>
@@ -300,7 +300,7 @@ NumImages is set to 1 temporarily during the acquisition.</p>
 Trigger PV. The exposure for each individual image is given by the
 TriggerExposure PV and can change between triggers in the same
 acquisition. This mode is experimental as of firmware 1.5.0. See Known
-Issues.</p>
+Issues.  CHECK THIS.</p>
 </section>
 <section id="manual-trigger">
 <h2><a class="toc-backref" href="#id5" role="doc-backlink">Manual Trigger</a><a class="headerlink" href="#manual-trigger" title="Link to this heading"></a></h2>
@@ -310,7 +310,7 @@ the driver. Instead, they are sent by processing the Trigger PV. On
 <strong>Internal Enable</strong> mode the trigger carries an exposure value that
 can change for each trigger, which is set by the TriggerExposure PV.
 Note that the <strong>Internal Enable</strong> mode is experimental as of firmware
-1.5.0, see Known Issues.</p>
+1.5.0, see Known Issues.  CHECK THIS.</p>
 </section>
 <section id="data-acquisition">
 <h2><a class="toc-backref" href="#id6" role="doc-backlink">Data Acquisition</a><a class="headerlink" href="#data-acquisition" title="Link to this heading"></a></h2>
@@ -428,6 +428,11 @@ Since the maximum count rate is about 2e6 counts/s there should never be more th
 and there should thus be no problem.</p></li>
 </ul>
 </div></blockquote>
+<p><strong>Timestamps</strong>: normally, NDArrays produced by ADEiger will be timestamped with the IOC’s
+local current time. This is evidently not very precise, since there can be a large jitter between
+each frame. If precise timestamps are desired, the StreamAsTSSource record can be set to “Yes”,
+in which case the NDArrays will be timestamped using the timestamps coming from the ZMQ stream frames.
+This is only available when using Stream V2. StreamAsTSSource’s value will be ignored if using Stream V1.</p>
 </section>
 <section id="using-monitor">
 <h3><a class="toc-backref" href="#id9" role="doc-backlink">Using Monitor</a><a class="headerlink" href="#using-monitor" title="Link to this heading"></a></h3>
@@ -472,7 +477,7 @@ ADBase.template and NDFile.template</p>
 <li><p>Internal Enable</p></li>
 <li><p>External Series</p></li>
 <li><p>External Enable</p></li>
-<li><p>External Gate (Eiger2 with 2021 firmware only)</p></li>
+<li><p>External Gate (Eiger2X only)</p></li>
 </ul>
 </td>
 </tr>
@@ -756,7 +761,7 @@ State of the high voltage. Eiger2 only.</p></td>
 <tbody>
 <tr class="row-even"><td><p>detector/config/extg_mode</p></td>
 <td><p>Mode to be used when TriggerMode=External Gate.
-Choices are “Pump &amp; Probe” and “HDR”.  Eiger2 with 2021 firmware only.</p></td>
+Choices are “Pump &amp; Probe” and “HDR”.  Eiger2X or Eiger2 with certain firmware only.</p></td>
 <td><p>ExtGateMode, ExtGateMode_RBV</p></td>
 <td><p>mbbo, mbbi</p></td>
 </tr>
@@ -839,7 +844,7 @@ or only via the Trigger PV (1).</p></td>
 <td><p>bo, bi</p></td>
 </tr>
 <tr class="row-odd"><td><p>N.A.</p></td>
-<td><p>Controls whether data are signed or unsigned.</p></td>
+<td><p>Controls whether NDArrays are signed or unsigned.</p></td>
 <td><p>SignedData, SignedData_RBV</p></td>
 <td><p>bo, bi</p></td>
 </tr>
@@ -1093,6 +1098,11 @@ compressed (No)</p></td>
 <td><p>Indicates how many images were dropped in the last acquisition</p></td>
 <td><p>StreamDropped_RBV</p></td>
 <td><p>ai</p></td>
+</tr>
+<tr class="row-even"><td><p>N.A.</p></td>
+<td><p>Controls whether to set the frame’s timestamp from the stream timestamps (Stream2 only)</p></td>
+<td><p>StreamAsTSSource, StreamAsTSSource_RBV</p></td>
+<td><p>bo, bi</p></td>
 </tr>
 </tbody>
 </table>
@@ -1377,7 +1387,7 @@ all the files it is supposed to.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, Mark Rivers.
-      <span class="lastupdated">Last updated on 2025-December-06.
+      <span class="lastupdated">Last updated on 2026-January-02.
       </span></p>
   </div>
 
