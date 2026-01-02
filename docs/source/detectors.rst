@@ -172,7 +172,7 @@ documentation, release notes, name of maintainer, and repository status.
     - Active?
   * - `ADMythen <https://github.com/areaDetector/ADMythen>`__
     - Driver for Mythen detectors from Dectris
-    - N.A.
+    - `Documentation <ADMythen/ADMythen.html>`__
     - `Release Notes <https://github.com/areaDetector/ADMythen/blob/master/RELEASE.md>`__
     - Joe Sullivan and Xiaoqiang Wang
     - Active?
@@ -290,6 +290,12 @@ documentation, release notes, name of maintainer, and repository status.
     - `Release Notes <https://github.com/areaDetector/ADTimePix3/blob/master/RELEASE.md>`__
     - Kaz Gofron
     - Active?
+  * - `ADTLBC2 <https://github.com/areaDetector/ADTLBC2>`__
+    - Driver for the ThorLabs BC207 and BC210 beam profilers
+    - :doc:`ADTLBC2/ADTLBC2`
+    - `Release Notes <https://github.com/areaDetector/ADTLBC2/blob/master/RELEASE.md>`__
+    - Henrique Simões
+    - Active
   * - `ADURL <https://github.com/areaDetector/ADURL>`__
     - Driver for reading images from any URL using the GraphicsMagick library
     - :doc:`ADURL/ADURL`
@@ -379,3 +385,9 @@ documentation, release notes, name of maintainer, and repository status.
     - None
     - ImXPAD
     - Active?    
+  * - `ADPixci <https://github.com/CentralLaserFacility/ADPixci>`__
+    - Driver for frame grabbers from `EPIX, inc <https://www.epixinc.com>`__ with support for Raptor Eagle XV Cameras from `Raptor Photonics <https://www.raptorphotonics.com>`__
+    - `README <https://github.com/CentralLaserFacility/ADPixci/blob/main/README.md>`__
+    - None
+    - Irie Railton
+    - Active

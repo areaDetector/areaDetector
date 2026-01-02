@@ -20,6 +20,7 @@ Detector Drivers
     ADLightField/ADLightField
     ADmarCCD/marCCDDoc
     ADmar345/mar345Doc
+    ADMythen/ADMythen
     ADPerkinElmer/PerkinElmerDoc
     ADPICam/PICamDoc
     ADPilatus/pilatusDoc
@@ -29,6 +30,7 @@ Detector Drivers
     ADSimDetector/simDetector
     ADSpinnaker/ADSpinnaker
     ADTimePix3/ADTimePix3
+    ADTLBC2/ADTLBC2
     ADVimba/ADVimba
     ADURL/ADURL
     ADUVC/ADUVC

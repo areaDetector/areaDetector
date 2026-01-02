@@ -60,11 +60,6 @@ ifeq ($(WITH_PVA), YES)
 endif
 
 # Finally build hardware drivers
-ifdef ADADSC
-DIRS := $(DIRS) $(ADADSC)
-$(ADADSC)_DEPEND_DIRS += $(ADCORE)
-endif
-
 ifdef ADANDOR
 DIRS := $(DIRS) $(ADANDOR)
 $(ADANDOR)_DEPEND_DIRS += $(ADCORE)
@@ -170,11 +165,6 @@ endif
 ifdef ADMARCCD
 DIRS := $(DIRS) $(ADMARCCD)
 $(ADMARCCD)_DEPEND_DIRS += $(ADCORE)
-endif
-
-ifdef ADNED
-DIRS := $(DIRS) $(ADNED)
-$(ADNED)_DEPEND_DIRS += $(ADCORE)
 endif
 
 ifdef ADVIMBA
