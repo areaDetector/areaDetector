@@ -174,7 +174,7 @@ documentation, release notes, name of maintainer, and repository status.
     - Driver for Mythen detectors from Dectris
     - `Documentation <ADMythen/ADMythen.html>`__
     - `Release Notes <https://github.com/areaDetector/ADMythen/blob/master/RELEASE.md>`__
-    - Joe Sullivan and Xiaoqiang Wang
+    - Joe Sullivan
     - Active?
   * - `ADnED <https://github.com/areaDetector/ADnED>`__
     - Driver for neutron event data
