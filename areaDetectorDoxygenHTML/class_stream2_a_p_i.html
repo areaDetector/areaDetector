@@ -57,10 +57,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a3eec851ec7ae143c36ae23353ab1f457"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad534360de5214f24a56e8c6953179959" id="r_ad534360de5214f24a56e8c6953179959"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_stream2_a_p_i.html#ad534360de5214f24a56e8c6953179959">getHeader</a> (<a class="el" href="structstream__header__t.html">stream_header_t</a> *header, int timeout=0)</td></tr>
 <tr class="separator:ad534360de5214f24a56e8c6953179959"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab0f6765a98af4c32a5cef0949fb35707" id="r_ab0f6765a98af4c32a5cef0949fb35707"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_stream2_a_p_i.html#ab0f6765a98af4c32a5cef0949fb35707">waitFrame</a> (int *end, int timeout=0)</td></tr>
-<tr class="separator:ab0f6765a98af4c32a5cef0949fb35707"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6c6f2c01ee9d52060635d9c0f8e29dcd" id="r_a6c6f2c01ee9d52060635d9c0f8e29dcd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_stream2_a_p_i.html#a6c6f2c01ee9d52060635d9c0f8e29dcd">getFrame</a> (<a class="el" href="class_n_d_array.html">NDArray</a> **pArray, <a class="el" href="class_n_d_array_pool.html">NDArrayPool</a> *pNDArrayPool, int decompress, bool extractTimeStamp)</td></tr>
-<tr class="separator:a6c6f2c01ee9d52060635d9c0f8e29dcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af895f2ae84f027ff3a9ac4f426946b89" id="r_af895f2ae84f027ff3a9ac4f426946b89"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_stream2_a_p_i.html#af895f2ae84f027ff3a9ac4f426946b89">waitFrame</a> (int *end, int *numThresholds, int timeout=0)</td></tr>
+<tr class="separator:af895f2ae84f027ff3a9ac4f426946b89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a667ece70d1cdb2ade8058908ccd3058a" id="r_a667ece70d1cdb2ade8058908ccd3058a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_stream2_a_p_i.html#a667ece70d1cdb2ade8058908ccd3058a">getFrame</a> (<a class="el" href="class_n_d_array.html">NDArray</a> **pArray, <a class="el" href="class_n_d_array_pool.html">NDArrayPool</a> *pNDArrayPool, int thresh, int decompress, bool extractTimeStamp)</td></tr>
+<tr class="separator:a667ece70d1cdb2ade8058908ccd3058a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="af741e582cab0a6d1eca6d57d88c1932a" name="af741e582cab0a6d1eca6d57d88c1932a"></a>
@@ -100,8 +100,8 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a6c6f2c01ee9d52060635d9c0f8e29dcd" name="a6c6f2c01ee9d52060635d9c0f8e29dcd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6c6f2c01ee9d52060635d9c0f8e29dcd">&#9670;&#160;</a></span>getFrame()</h2>
+<a id="a667ece70d1cdb2ade8058908ccd3058a" name="a667ece70d1cdb2ade8058908ccd3058a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a667ece70d1cdb2ade8058908ccd3058a">&#9670;&#160;</a></span>getFrame()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -117,6 +117,12 @@ Public Member Functions</h2></td></tr>
           <td></td>
           <td class="paramtype"><a class="el" href="class_n_d_array_pool.html">NDArrayPool</a> *&#160;</td>
           <td class="paramname"><em>pNDArrayPool</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>thresh</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -168,8 +174,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ab0f6765a98af4c32a5cef0949fb35707" name="ab0f6765a98af4c32a5cef0949fb35707"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab0f6765a98af4c32a5cef0949fb35707">&#9670;&#160;</a></span>waitFrame()</h2>
+<a id="af895f2ae84f027ff3a9ac4f426946b89" name="af895f2ae84f027ff3a9ac4f426946b89"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af895f2ae84f027ff3a9ac4f426946b89">&#9670;&#160;</a></span>waitFrame()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -179,6 +185,12 @@ Public Member Functions</h2></td></tr>
           <td>(</td>
           <td class="paramtype">int *&#160;</td>
           <td class="paramname"><em>end</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>numThresholds</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>

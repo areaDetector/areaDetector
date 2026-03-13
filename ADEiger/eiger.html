@@ -163,36 +163,38 @@
 <ul>
 <li><p><a class="reference internal" href="#using-filewriter" id="id7">Using FileWriter</a></p></li>
 <li><p><a class="reference internal" href="#using-stream" id="id8">Using Stream</a></p></li>
-<li><p><a class="reference internal" href="#using-monitor" id="id9">Using Monitor</a></p></li>
+<li><p><a class="reference internal" href="#multiple-thresholds" id="id9">Multiple Thresholds</a></p></li>
+<li><p><a class="reference internal" href="#signed-and-unsigned-data" id="id10">Signed and unsigned data</a></p></li>
+<li><p><a class="reference internal" href="#timestamps" id="id11">Timestamps</a></p></li>
+<li><p><a class="reference internal" href="#using-monitor" id="id12">Using Monitor</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#crystallography-parameters" id="id10">Crystallography Parameters</a></p></li>
-<li><p><a class="reference internal" href="#implementation-of-standard-driver-parameters" id="id11">Implementation of standard driver parameters</a></p></li>
-<li><p><a class="reference internal" href="#eiger-specific-parameters" id="id12">Eiger specific parameters</a></p>
+<li><p><a class="reference internal" href="#crystallography-parameters" id="id13">Crystallography Parameters</a></p></li>
+<li><p><a class="reference internal" href="#implementation-of-standard-driver-parameters" id="id14">Implementation of standard driver parameters</a></p></li>
+<li><p><a class="reference internal" href="#eiger-specific-parameters" id="id15">Eiger specific parameters</a></p>
 <ul>
-<li><p><a class="reference internal" href="#detector-information" id="id13">Detector Information</a></p></li>
-<li><p><a class="reference internal" href="#detector-status" id="id14">Detector Status</a></p></li>
-<li><p><a class="reference internal" href="#acquisition-setup" id="id15">Acquisition Setup</a></p></li>
-<li><p><a class="reference internal" href="#trigger-setup" id="id16">Trigger Setup</a></p></li>
-<li><p><a class="reference internal" href="#readout-setup" id="id17">Readout Setup</a></p></li>
-<li><p><a class="reference internal" href="#acquisition-status" id="id18">Acquisition Status</a></p></li>
-<li><p><a class="reference internal" href="#filewriter-interface" id="id19">FileWriter Interface</a></p></li>
-<li><p><a class="reference internal" href="#stream-interface" id="id20">Stream Interface</a></p></li>
-<li><p><a class="reference internal" href="#monitor-interface" id="id21">Monitor Interface</a></p></li>
-<li><p><a class="reference internal" href="#acquisition-metadata" id="id22">Acquisition Metadata</a></p></li>
-<li><p><a class="reference internal" href="#detector-metadata" id="id23">Detector Metadata</a></p></li>
-<li><p><a class="reference internal" href="#minimum-change-allowed" id="id24">Minimum change allowed</a></p></li>
+<li><p><a class="reference internal" href="#detector-information" id="id16">Detector Information</a></p></li>
+<li><p><a class="reference internal" href="#detector-status" id="id17">Detector Status</a></p></li>
+<li><p><a class="reference internal" href="#acquisition-setup" id="id18">Acquisition Setup</a></p></li>
+<li><p><a class="reference internal" href="#trigger-setup" id="id19">Trigger Setup</a></p></li>
+<li><p><a class="reference internal" href="#readout-setup" id="id20">Readout Setup</a></p></li>
+<li><p><a class="reference internal" href="#acquisition-status" id="id21">Acquisition Status</a></p></li>
+<li><p><a class="reference internal" href="#filewriter-interface" id="id22">FileWriter Interface</a></p></li>
+<li><p><a class="reference internal" href="#stream-interface" id="id23">Stream Interface</a></p></li>
+<li><p><a class="reference internal" href="#monitor-interface" id="id24">Monitor Interface</a></p></li>
+<li><p><a class="reference internal" href="#acquisition-metadata" id="id25">Acquisition Metadata</a></p></li>
+<li><p><a class="reference internal" href="#detector-metadata" id="id26">Detector Metadata</a></p></li>
+<li><p><a class="reference internal" href="#minimum-change-allowed" id="id27">Minimum change allowed</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#unsupported-standard-driver-parameters" id="id25">Unsupported standard driver parameters</a></p></li>
-<li><p><a class="reference internal" href="#configuration" id="id26">Configuration</a></p></li>
-<li><p><a class="reference internal" href="#medm-screens" id="id27">medm screens</a></p></li>
-<li><p><a class="reference internal" href="#using-2-energy-thresholds" id="id28">Using 2 energy thresholds</a></p></li>
-<li><p><a class="reference internal" href="#known-issues" id="id29">Known Issues</a></p>
+<li><p><a class="reference internal" href="#unsupported-standard-driver-parameters" id="id28">Unsupported standard driver parameters</a></p></li>
+<li><p><a class="reference internal" href="#configuration" id="id29">Configuration</a></p></li>
+<li><p><a class="reference internal" href="#medm-screens" id="id30">medm screens</a></p></li>
+<li><p><a class="reference internal" href="#using-2-energy-thresholds" id="id31">Using 2 energy thresholds</a></p></li>
+<li><p><a class="reference internal" href="#known-issues" id="id32">Known Issues</a></p>
 <ul>
-<li><p><a class="reference internal" href="#changing-the-photon-energy" id="id30">Changing the Photon Energy</a></p></li>
-<li><p><a class="reference internal" href="#status-parameters-polling" id="id31">Status Parameters Polling</a></p></li>
-<li><p><a class="reference internal" href="#internal-enable-mode" id="id32">Internal Enable Mode</a></p></li>
+<li><p><a class="reference internal" href="#changing-the-photon-energy" id="id33">Changing the Photon Energy</a></p></li>
+<li><p><a class="reference internal" href="#status-parameters-polling" id="id34">Status Parameters Polling</a></p></li>
 </ul>
 </li>
 </ul>
@@ -208,8 +210,6 @@ The driver communicates with the detector via its SIMPLON REST interface,
 so no library from Dectris is required. The images can pulled from the detector
 as HDF5 files, as a ZeroMQ stream or both.
 The files can be both saved to disk and passed to the areaDetector pipeline at the same time.</p>
-<p>All trigger modes are supported, although Internal Enable mode seems
-to not be working properly. See Known Issues.</p>
 <p>This driver inherits from <a class="reference external" href="https://areadetector.github.io/areaDetector/ADCore/ADDriver.html">ADDriver</a>. It implements many of the
 parameters in <a class="reference external" href="https://areadetector.github.io/areaDetector/ADCore/NDArray.html#asynndarraydriver">asynNDArrayDriver</a> and in <a class="reference external" href="https://areadetector.github.io/areaDetector/ADCore/ADDriver.html">ADDriver</a>. It
 also implements a number of parameters that are specific to the Eiger
@@ -298,9 +298,8 @@ images generated is given solely by the NumTriggers PV (ntriggers).
 NumImages is set to 1 temporarily during the acquisition.</p>
 <p>Triggers for <strong>Internal Enable</strong> mode are sent by processing the
 Trigger PV. The exposure for each individual image is given by the
-TriggerExposure PV and can change between triggers in the same
-acquisition. This mode is experimental as of firmware 1.5.0. See Known
-Issues.  CHECK THIS.</p>
+AcquireTime PV and can change between triggers in the same
+acquisition.</p>
 </section>
 <section id="manual-trigger">
 <h2><a class="toc-backref" href="#id5" role="doc-backlink">Manual Trigger</a><a class="headerlink" href="#manual-trigger" title="Link to this heading"></a></h2>
@@ -308,9 +307,7 @@ Issues.  CHECK THIS.</p>
 ManualTrigger PV is set to <strong>Yes</strong>, the triggers are not auto generated by
 the driver. Instead, they are sent by processing the Trigger PV. On
 <strong>Internal Enable</strong> mode the trigger carries an exposure value that
-can change for each trigger, which is set by the TriggerExposure PV.
-Note that the <strong>Internal Enable</strong> mode is experimental as of firmware
-1.5.0, see Known Issues.  CHECK THIS.</p>
+can change for each trigger, which is set by the AcquireTime PV.</p>
 </section>
 <section id="data-acquisition">
 <h2><a class="toc-backref" href="#id6" role="doc-backlink">Data Acquisition</a><a class="headerlink" href="#data-acquisition" title="Link to this heading"></a></h2>
@@ -398,20 +395,42 @@ The FWHDF5Format record is used to select which format to use.</p>
 </ul>
 </dd>
 </dl>
+<p>The Eiger2 and Pilatus4 models support both V1 and V2.
+Older Eiger and Pilatus models only support V1.</p>
 <p>The StreamVersion record is used to select the Stream1 or Stream2 API.</p>
 <p>If DataSource is set to Stream, the driver opens a
 corresponding ZMQ_PULL socket and parses the incoming data as
 NDArrays. Otherwise a third-party client can listen on that socket for
 data. The format of the packets is specified in the Eiger SIMPLON API
 documentation.</p>
-<p>The NDArrays received by the Stream1 API are 2-dimensional, [NX, NY].
-If only a single threshold is enabled then the NDArrays received by the
-Stream2 API are also 2-dimensional.
-If more than one threshold is enabled then the NDArrays are 3-dimensional,
-[NX, NY, NThreshholds].</p>
+</section>
+<section id="multiple-thresholds">
+<h3><a class="toc-backref" href="#id9" role="doc-backlink">Multiple Thresholds</a><a class="headerlink" href="#multiple-thresholds" title="Link to this heading"></a></h3>
+<p>The driver will read data for multiple thresholds if the following are true:</p>
+<ul class="simple">
+<li><p>More than one threshold is enabled</p></li>
+<li><p>DataSource=Stream and StreamVersion=Stream2 OR DataSource=FileWriter and FWHDF5Format=v2024.2</p></li>
+</ul>
+<p>If the above are true then:</p>
+<ul class="simple">
+<li><p>The driver generates one NDArray for each threshold in successive order for the enabled thresholds.</p></li>
+<li><p>It sends the NDArrays for all thresholds on asyn address 0.</p></li>
+<li><p>It sends only the NDArrays for threshold N on address N (N=1 to number of enabled thresholds).</p></li>
+<li><p>Plugins can thus use asyn address 0 to receive NDArrays for all thresholds, address 1</p></li>
+</ul>
+<p>to receive only the first enabled threshold, etc.</p>
+<p>When multiple thresholds are being read the driver adds 2 new NDAttributes for each NDArray.
+These attributes identify which threshold that NDArray contains.</p>
+<ul class="simple">
+<li><p>ThresholdNumber is an NDAttrAint32 attribute containing the threshold number (1, 2, …)</p></li>
+<li><p>ThresholdEnergy is an NDAttrFloat64 attribute containing the energy of that threshold in units of eV.</p></li>
+</ul>
+</section>
+<section id="signed-and-unsigned-data">
+<h3><a class="toc-backref" href="#id10" role="doc-backlink">Signed and unsigned data</a><a class="headerlink" href="#signed-and-unsigned-data" title="Link to this heading"></a></h3>
 <p>The data sent from the Eiger server is unsigned 32-bit, 16-bit, or 8-bit integers,
 depending on the exposure time.
-Bad pixels and pixel gaps are flagged with very large positive values, e.g. 2^32-1, 2^32-2, etc.
+Bad pixels and pixel gaps are flagged with very large positive values, se.g. 2^32-1, 2^32-2, etc.
 This allows the use of nearly the full integer range for the data values.
 However, it is quite inconvenient for data viewing, since autoscaling will usually lead to actual data
 values being all black.</p>
@@ -428,31 +447,36 @@ Since the maximum count rate is about 2e6 counts/s there should never be more th
 and there should thus be no problem.</p></li>
 </ul>
 </div></blockquote>
-<p><strong>Timestamps</strong>: normally, NDArrays produced by ADEiger will be timestamped with the IOC’s
-local current time. This is evidently not very precise, since there can be a large jitter between
-each frame. If precise timestamps are desired, the StreamAsTSSource record can be set to “Yes”,
-in which case the NDArrays will be timestamped using the timestamps coming from the ZMQ stream frames.
-This is only available when using Stream V2. StreamAsTSSource’s value will be ignored if using Stream V1.</p>
+</section>
+<section id="timestamps">
+<h3><a class="toc-backref" href="#id11" role="doc-backlink">Timestamps</a><a class="headerlink" href="#timestamps" title="Link to this heading"></a></h3>
+<p>Normally, NDArrays produced by ADEiger will be timestamped with the IOC’s
+local current time. This is not very accurate because it depends on the delays
+in delivering the frames to the ADEiger driver. If precise timestamps are desired,
+the StreamAsTSSource record can be set to “Yes”, in which case the NDArrays will be timestamped
+using the timestamps coming from the ZMQ stream frames.
+This is only available when DataSource=Stream and StreamVersion=Stream2.
+StreamAsTSSource’s value will be ignored for DataSource=FileWriter or StreamVersion=Stream.</p>
 </section>
 <section id="using-monitor">
-<h3><a class="toc-backref" href="#id9" role="doc-backlink">Using Monitor</a><a class="headerlink" href="#using-monitor" title="Link to this heading"></a></h3>
+<h3><a class="toc-backref" href="#id12" role="doc-backlink">Using Monitor</a><a class="headerlink" href="#using-monitor" title="Link to this heading"></a></h3>
 <p>The Monitor module is activated when MonitorEnable is set to Yes. Data
 will be available whenever the monitor module buffer is full (has one
 image available). This driver waits MonitorTimeout ms for data to be
 available. There is a rate-limit of 10Hz. Once downloaded, the TIFF
-image is parsed into areaDetector’s NDArray on NDArrayAddr 1
+image is parsed into areaDetector’s NDArray on NDArrayAddr 10
 (therefore, an independent NDArray stream).</p>
 </section>
 </section>
 <section id="crystallography-parameters">
-<h2><a class="toc-backref" href="#id10" role="doc-backlink">Crystallography Parameters</a><a class="headerlink" href="#crystallography-parameters" title="Link to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id13" role="doc-backlink">Crystallography Parameters</a><a class="headerlink" href="#crystallography-parameters" title="Link to this heading"></a></h2>
 <p>A few parameters are available as metadata for the acquisition. These
 values are stored on the master file and sent as metadata in ZeroMQ
 stream, but otherwise don’t affect the acquisition, with the exception
 of the Wavelength parameter, which sets Photon Energy accordingly.</p>
 </section>
 <section id="implementation-of-standard-driver-parameters">
-<h2><a class="toc-backref" href="#id11" role="doc-backlink">Implementation of standard driver parameters</a><a class="headerlink" href="#implementation-of-standard-driver-parameters" title="Link to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id14" role="doc-backlink">Implementation of standard driver parameters</a><a class="headerlink" href="#implementation-of-standard-driver-parameters" title="Link to this heading"></a></h2>
 <p>The following table describes how the Eiger driver implements some of
 the standard driver parameters defined in asynNDArrayDriver.h and ADDriver.h,
 ADBase.template and NDFile.template</p>
@@ -558,13 +582,13 @@ ROI Mode selected.</p></td>
 </table>
 </section>
 <section id="eiger-specific-parameters">
-<h2><a class="toc-backref" href="#id12" role="doc-backlink">Eiger specific parameters</a><a class="headerlink" href="#eiger-specific-parameters" title="Link to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id15" role="doc-backlink">Eiger specific parameters</a><a class="headerlink" href="#eiger-specific-parameters" title="Link to this heading"></a></h2>
 <p>The Eiger driver implements the following parameters in addition to those in asynNDArrayDriver.h and ADDriver.h.
 Most records are in eigerBase.template, and are common to both the Eiger1 and Eiger2.
 The records specific to the Eiger1 are in eiger1.template, and those specific to the Eiger2 are in eiger2.template.
 exist on the Eiger1, and some only on the Eiger2.  This is noted in the tables.</p>
 <section id="detector-information">
-<h3><a class="toc-backref" href="#id13" role="doc-backlink">Detector Information</a><a class="headerlink" href="#detector-information" title="Link to this heading"></a></h3>
+<h3><a class="toc-backref" href="#id16" role="doc-backlink">Detector Information</a><a class="headerlink" href="#detector-information" title="Link to this heading"></a></h3>
 <table class="table-bordered table-striped table-hover docutils align-default">
 <colgroup>
 <col style="width: 10.0%" />
@@ -615,7 +639,7 @@ Energies.</p></td>
 </table>
 </section>
 <section id="detector-status">
-<h3><a class="toc-backref" href="#id14" role="doc-backlink">Detector Status</a><a class="headerlink" href="#detector-status" title="Link to this heading"></a></h3>
+<h3><a class="toc-backref" href="#id17" role="doc-backlink">Detector Status</a><a class="headerlink" href="#detector-status" title="Link to this heading"></a></h3>
 <table class="table-bordered table-striped table-hover docutils align-default">
 <colgroup>
 <col style="width: 10.0%" />
@@ -632,53 +656,58 @@ Energies.</p></td>
 </thead>
 <tbody>
 <tr class="row-even"><td><p>N.A.</p></td>
+<td><p>Restarts the detector DAQ.  The Initialize record must be processed after doing this.</p></td>
+<td><p>Restart</p></td>
+<td><p>busy</p></td>
+</tr>
+<tr class="row-odd"><td><p>N.A.</p></td>
 <td><p>Initializes the detector DCU.  This command takes many seconds.</p></td>
 <td><p>Initialize</p></td>
 <td><p>busy</p></td>
 </tr>
-<tr class="row-odd"><td><p>detector/status/state</p></td>
+<tr class="row-even"><td><p>detector/status/state</p></td>
 <td><p>State of the detector</p></td>
 <td><p>State_RBV</p></td>
 <td><p>stringin</p></td>
 </tr>
-<tr class="row-even"><td><p>detector/status/error</p></td>
+<tr class="row-odd"><td><p>detector/status/error</p></td>
 <td><p>List of parameters causing an error state</p></td>
 <td><p>Error_RBV</p></td>
 <td><p>stringin</p></td>
 </tr>
-<tr class="row-odd"><td><p>detector/status/board_000/th0_temp</p></td>
+<tr class="row-even"><td><p>detector/status/board_000/th0_temp</p></td>
 <td><p>Temperature of the first module</p></td>
 <td><p>Temp0_RBV</p></td>
 <td><p>ai</p></td>
 </tr>
-<tr class="row-even"><td><p>detector/status/board_000/th0_humidity</p></td>
+<tr class="row-odd"><td><p>detector/status/board_000/th0_humidity</p></td>
 <td><p>Humidity of the first module</p></td>
 <td><p>Humid0_RBV</p></td>
 <td><p>ai</p></td>
 </tr>
-<tr class="row-odd"><td><p>detector/status/link_0, detector/status/link_1, detector/status/link_2, detector/status/link_3</p></td>
+<tr class="row-even"><td><p>detector/status/link_0, detector/status/link_1, detector/status/link_2, detector/status/link_3</p></td>
 <td><p>Status of the four links between the detector server and the head. Eiger1 only.</p></td>
 <td><p>Link0_RBV, Link1_RBV, Link2_RBV, Link3_RBV</p></td>
 <td><p>bi</p></td>
 </tr>
-<tr class="row-even"><td><p>detector/status/builder/dcu_buffer_free</p></td>
+<tr class="row-odd"><td><p>detector/status/builder/dcu_buffer_free</p></td>
 <td><p>Percentage of the detector’s internal buffer that is free. Low values may indicate
 a problem. Eiger1 only.</p></td>
 <td><p>DCUBufferFree_RBV</p></td>
 <td><p>ai</p></td>
 </tr>
-<tr class="row-odd"><td><p>N.A.</p></td>
+<tr class="row-even"><td><p>N.A.</p></td>
 <td><p>High voltage reset time. Eiger2 only.</p></td>
 <td><p>HVResetTime, HVResetTime_RBV</p></td>
 <td><p>ao, ai</p></td>
 </tr>
-<tr class="row-even"><td><p>N.A.</p></td>
+<tr class="row-odd"><td><p>N.A.</p></td>
 <td><p>High voltage reset command.
 Turns off high voltage for HVResetTime and then turns it back on. Eiger2 only.</p></td>
 <td><p>HVReset</p></td>
 <td><p>bo</p></td>
 </tr>
-<tr class="row-odd"><td><p>detector/status/high_voltage/state</p></td>
+<tr class="row-even"><td><p>detector/status/high_voltage/state</p></td>
 <td><p>High voltage state.
 State of the high voltage. Eiger2 only.</p></td>
 <td><p>HVState_RBV</p></td>
@@ -688,7 +717,7 @@ State of the high voltage. Eiger2 only.</p></td>
 </table>
 </section>
 <section id="acquisition-setup">
-<h3><a class="toc-backref" href="#id15" role="doc-backlink">Acquisition Setup</a><a class="headerlink" href="#acquisition-setup" title="Link to this heading"></a></h3>
+<h3><a class="toc-backref" href="#id18" role="doc-backlink">Acquisition Setup</a><a class="headerlink" href="#acquisition-setup" title="Link to this heading"></a></h3>
 <table class="table-bordered table-striped table-hover docutils align-default">
 <colgroup>
 <col style="width: 10.0%" />
@@ -743,7 +772,7 @@ State of the high voltage. Eiger2 only.</p></td>
 </table>
 </section>
 <section id="trigger-setup">
-<h3><a class="toc-backref" href="#id16" role="doc-backlink">Trigger Setup</a><a class="headerlink" href="#trigger-setup" title="Link to this heading"></a></h3>
+<h3><a class="toc-backref" href="#id19" role="doc-backlink">Trigger Setup</a><a class="headerlink" href="#trigger-setup" title="Link to this heading"></a></h3>
 <table class="table-bordered table-striped table-hover docutils align-default">
 <colgroup>
 <col style="width: 10.0%" />
@@ -770,23 +799,18 @@ Choices are “Pump &amp; Probe” and “HDR”.  Eiger2X or Eiger2 with certai
 <td><p>Trigger</p></td>
 <td><p>ao</p></td>
 </tr>
-<tr class="row-even"><td><p>N.A.</p></td>
-<td><p>Exposure to be used with the triggers on the Internal Enable trigger mode</p></td>
-<td><p>TriggerExposure, TriggerExposure_RBV</p></td>
-<td><p>ao, ai</p></td>
-</tr>
-<tr class="row-odd"><td><p>detector/config/ntrigger</p></td>
+<tr class="row-even"><td><p>detector/config/ntrigger</p></td>
 <td><p>Number of triggers for the acquisition</p></td>
 <td><p>NumTriggers, NumTriggers_RBV</p></td>
 <td><p>ao, ai</p></td>
 </tr>
-<tr class="row-even"><td><p>N.A.</p></td>
+<tr class="row-odd"><td><p>N.A.</p></td>
 <td><p>On Internal Series and Internal Enable modes, controls whether triggers will be issued automatically (0)
 or only via the Trigger PV (1).</p></td>
 <td><p>ManualTrigger, ManualTrigger_RBV</p></td>
 <td><p>bo, bi</p></td>
 </tr>
-<tr class="row-odd"><td><p>detector/config/trigger_start_delay</p></td>
+<tr class="row-even"><td><p>detector/config/trigger_start_delay</p></td>
 <td><p>Delay time in second after receipt of trigger signal before taking action. Eiger2 only.</p></td>
 <td><p>TriggerStartDelay, TriggerStartDelay_RBV</p></td>
 <td><p>ao, ai</p></td>
@@ -795,7 +819,7 @@ or only via the Trigger PV (1).</p></td>
 </table>
 </section>
 <section id="readout-setup">
-<h3><a class="toc-backref" href="#id17" role="doc-backlink">Readout Setup</a><a class="headerlink" href="#readout-setup" title="Link to this heading"></a></h3>
+<h3><a class="toc-backref" href="#id20" role="doc-backlink">Readout Setup</a><a class="headerlink" href="#readout-setup" title="Link to this heading"></a></h3>
 <table class="table-bordered table-striped table-hover docutils align-default">
 <colgroup>
 <col style="width: 10.0%" />
@@ -880,7 +904,7 @@ also be used for HDF5 files written by the FileWriter interface if FWCompression
 </table>
 </section>
 <section id="acquisition-status">
-<h3><a class="toc-backref" href="#id18" role="doc-backlink">Acquisition Status</a><a class="headerlink" href="#acquisition-status" title="Link to this heading"></a></h3>
+<h3><a class="toc-backref" href="#id21" role="doc-backlink">Acquisition Status</a><a class="headerlink" href="#acquisition-status" title="Link to this heading"></a></h3>
 <table class="table-bordered table-striped table-hover docutils align-default">
 <colgroup>
 <col style="width: 10.0%" />
@@ -923,7 +947,7 @@ is 16, and at very high frame rates it is 8.  For example, on an Eiger2 500K:</p
 </table>
 </section>
 <section id="filewriter-interface">
-<h3><a class="toc-backref" href="#id19" role="doc-backlink">FileWriter Interface</a><a class="headerlink" href="#filewriter-interface" title="Link to this heading"></a></h3>
+<h3><a class="toc-backref" href="#id22" role="doc-backlink">FileWriter Interface</a><a class="headerlink" href="#filewriter-interface" title="Link to this heading"></a></h3>
 <table class="table-bordered table-striped table-hover docutils align-default">
 <colgroup>
 <col style="width: 10.0%" />
@@ -1027,7 +1051,7 @@ Normal Linux octal bitmask format, for Owner/Group/World, e.g. 0666 is r+w owner
 </table>
 </section>
 <section id="stream-interface">
-<h3><a class="toc-backref" href="#id20" role="doc-backlink">Stream Interface</a><a class="headerlink" href="#stream-interface" title="Link to this heading"></a></h3>
+<h3><a class="toc-backref" href="#id23" role="doc-backlink">Stream Interface</a><a class="headerlink" href="#stream-interface" title="Link to this heading"></a></h3>
 <table class="table-bordered table-striped table-hover docutils align-default">
 <colgroup>
 <col style="width: 10.0%" />
@@ -1108,7 +1132,7 @@ compressed (No)</p></td>
 </table>
 </section>
 <section id="monitor-interface">
-<h3><a class="toc-backref" href="#id21" role="doc-backlink">Monitor Interface</a><a class="headerlink" href="#monitor-interface" title="Link to this heading"></a></h3>
+<h3><a class="toc-backref" href="#id24" role="doc-backlink">Monitor Interface</a><a class="headerlink" href="#monitor-interface" title="Link to this heading"></a></h3>
 <table class="table-bordered table-striped table-hover docutils align-default">
 <colgroup>
 <col style="width: 10.0%" />
@@ -1143,7 +1167,7 @@ compressed (No)</p></td>
 </table>
 </section>
 <section id="acquisition-metadata">
-<h3><a class="toc-backref" href="#id22" role="doc-backlink">Acquisition Metadata</a><a class="headerlink" href="#acquisition-metadata" title="Link to this heading"></a></h3>
+<h3><a class="toc-backref" href="#id25" role="doc-backlink">Acquisition Metadata</a><a class="headerlink" href="#acquisition-metadata" title="Link to this heading"></a></h3>
 <table class="table-bordered table-striped table-hover docutils align-default">
 <colgroup>
 <col style="width: 10.0%" />
@@ -1184,7 +1208,7 @@ changes</p></td>
 </table>
 </section>
 <section id="detector-metadata">
-<h3><a class="toc-backref" href="#id23" role="doc-backlink">Detector Metadata</a><a class="headerlink" href="#detector-metadata" title="Link to this heading"></a></h3>
+<h3><a class="toc-backref" href="#id26" role="doc-backlink">Detector Metadata</a><a class="headerlink" href="#detector-metadata" title="Link to this heading"></a></h3>
 <table class="table-bordered table-striped table-hover docutils align-default">
 <colgroup>
 <col style="width: 10.0%" />
@@ -1254,7 +1278,7 @@ changes</p></td>
 </table>
 </section>
 <section id="minimum-change-allowed">
-<h3><a class="toc-backref" href="#id24" role="doc-backlink">Minimum change allowed</a><a class="headerlink" href="#minimum-change-allowed" title="Link to this heading"></a></h3>
+<h3><a class="toc-backref" href="#id27" role="doc-backlink">Minimum change allowed</a><a class="headerlink" href="#minimum-change-allowed" title="Link to this heading"></a></h3>
 <table class="table-bordered table-striped table-hover docutils align-default">
 <colgroup>
 <col style="width: 10.0%" />
@@ -1285,11 +1309,11 @@ changes</p></td>
 </section>
 </section>
 <section id="unsupported-standard-driver-parameters">
-<h2><a class="toc-backref" href="#id25" role="doc-backlink">Unsupported standard driver parameters</a><a class="headerlink" href="#unsupported-standard-driver-parameters" title="Link to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id28" role="doc-backlink">Unsupported standard driver parameters</a><a class="headerlink" href="#unsupported-standard-driver-parameters" title="Link to this heading"></a></h2>
 <p>All standard parameters not mentioned in this document are not supported.</p>
 </section>
 <section id="configuration">
-<h2><a class="toc-backref" href="#id26" role="doc-backlink">Configuration</a><a class="headerlink" href="#configuration" title="Link to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id29" role="doc-backlink">Configuration</a><a class="headerlink" href="#configuration" title="Link to this heading"></a></h2>
 <p>The Eiger driver is created with the eigerDetectorConfig command,
 either from C/C++ or from the EPICS IOC shell.:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span> <span class="n">eigerDetectorConfig</span><span class="p">(</span><span class="n">const</span> <span class="n">char</span> <span class="o">*</span><span class="n">portName</span><span class="p">,</span> <span class="n">const</span> <span class="n">char</span> <span class="o">*</span><span class="n">hostname</span><span class="p">,</span>
@@ -1304,7 +1328,7 @@ constructor for the <a class="reference external" href="https://areadetector.git
 areaDetector.</p>
 </section>
 <section id="medm-screens">
-<h2><a class="toc-backref" href="#id27" role="doc-backlink">medm screens</a><a class="headerlink" href="#medm-screens" title="Link to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id30" role="doc-backlink">medm screens</a><a class="headerlink" href="#medm-screens" title="Link to this heading"></a></h2>
 <p>The following shows the medm screens that are used to control the Eiger
 and Eiger2 detectors. Note that the general purpose screen ADBase.adl can be used,
 but it exposes a few PVs that are not applicable to the Eiger,
@@ -1318,7 +1342,7 @@ and lacks many PVs that are important for the Eiger.</p>
 <a class="reference internal image-reference" href="../_images/eiger2.png"><img alt="../_images/eiger2.png" class="align-center" src="../_images/eiger2.png" style="width: 100%;" /></a>
 </section>
 <section id="using-2-energy-thresholds">
-<h2><a class="toc-backref" href="#id28" role="doc-backlink">Using 2 energy thresholds</a><a class="headerlink" href="#using-2-energy-thresholds" title="Link to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id31" role="doc-backlink">Using 2 energy thresholds</a><a class="headerlink" href="#using-2-energy-thresholds" title="Link to this heading"></a></h2>
 <p>The Eiger2 detector supports 2 energy thresholds.  Threshold1 must always be lower in energy
 than threshold2.  These can be independently enabled, but at least one of the thresholds
 must be enabled. If both are enabled then enabling ThresholdDiffEnable will result in the image being
@@ -1344,9 +1368,9 @@ Note that only the Fe55 source is detected because any events that were above bo
 <a class="reference internal image-reference" href="../_images/eigerThresholdDiff.png"><img alt="../_images/eigerThresholdDiff.png" class="align-center" src="../_images/eigerThresholdDiff.png" style="width: 100%;" /></a>
 </section>
 <section id="known-issues">
-<h2><a class="toc-backref" href="#id29" role="doc-backlink">Known Issues</a><a class="headerlink" href="#known-issues" title="Link to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id32" role="doc-backlink">Known Issues</a><a class="headerlink" href="#known-issues" title="Link to this heading"></a></h2>
 <section id="changing-the-photon-energy">
-<h3><a class="toc-backref" href="#id30" role="doc-backlink">Changing the Photon Energy</a><a class="headerlink" href="#changing-the-photon-energy" title="Link to this heading"></a></h3>
+<h3><a class="toc-backref" href="#id33" role="doc-backlink">Changing the Photon Energy</a><a class="headerlink" href="#changing-the-photon-energy" title="Link to this heading"></a></h3>
 <p>Changing the Photon Energy is a potentially slow operation, depending
 on the detector size. On the 16M it takes around ten seconds. Other
 parameters also take this long because they also affect the Photon
@@ -1360,17 +1384,11 @@ WavelengthEps (default: 0.0005 Angstroms). Similarly, changes to PhotonEnergy, T
 and Threshold2 only take effect if they are greater than EnergyEps (default: 0.05 eV).</p>
 </section>
 <section id="status-parameters-polling">
-<h3><a class="toc-backref" href="#id31" role="doc-backlink">Status Parameters Polling</a><a class="headerlink" href="#status-parameters-polling" title="Link to this heading"></a></h3>
+<h3><a class="toc-backref" href="#id34" role="doc-backlink">Status Parameters Polling</a><a class="headerlink" href="#status-parameters-polling" title="Link to this heading"></a></h3>
 <p>A few status parameters are read every time the ReadStatus PV is
 processed. A high rate polling causes issues, sometimes causing the
 detector to hang when, in conjunction, a parameter is set to an
 invalid value.</p>
-</section>
-<section id="internal-enable-mode">
-<h3><a class="toc-backref" href="#id32" role="doc-backlink">Internal Enable Mode</a><a class="headerlink" href="#internal-enable-mode" title="Link to this heading"></a></h3>
-<p>The Internal Enable mode is marked as experimental by Dectris. At the
-moment it is very flaky (firmware 1.5.0) and often doesn’t generate
-all the files it is supposed to.</p>
 </section>
 </section>
 </section>
@@ -1387,7 +1405,7 @@ all the files it is supposed to.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, Mark Rivers.
-      <span class="lastupdated">Last updated on 2026-January-08.
+      <span class="lastupdated">Last updated on 2026-March-13.
       </span></p>
   </div>
 
