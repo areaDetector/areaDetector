@@ -20,7 +20,7 @@ ADFireWireWin | Raw .html needs conversion to .rst | Low (no longer in use?)
 ADLambda | Raw .html needs conversion to .rst | Complete
 ADMMPAD | No documentation | Low (not in active use?)
 ADMerlin | No documentation | Medium
-ADMythen | No documentation | High
+ADMythen | No documentation | Complete
 ADPCO | Raw .html needs conversion to .rst | Low (no longer in use?)
 ADPICam | Raw .html needs conversion to .rst | Complete
 ADPSL | Raw .html needs conversion to .rst | Low (is it in use?)
