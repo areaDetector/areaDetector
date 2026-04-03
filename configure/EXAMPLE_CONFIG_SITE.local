@@ -132,10 +132,13 @@ ARAVIS_INCLUDE  = /usr/local/include/aravis-0.8
 GLIB_INCLUDE = /usr/include/glib-2.0 /usr/lib64/glib-2.0/include
 glib-2.0_DIR = /usr/lib64
 
+# ffmpeg is used by the ffmpegServer plugin. Set FFMPEG_EXTERNAL to YES to
+# link against system versions of the library. (Only available on Linux)
+FFMPEG_EXTERNAL = NO
+FFMPEG_INCLUDE  = /usr/include/ffmpeg
+
 # The definitions above can be overridden in the following files.
 # The files are searched in this order, with the last definition being used.
 #    CONFIG_SITE.local.$(OS_CLASS)
 #    CONFIG_SITE.local.$(EPICS_HOST_ARCH) 
 #    CONFIG_SITE.local.$(EPICS_HOST_ARCH).$(T_A)
-
-
