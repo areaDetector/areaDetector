@@ -164,7 +164,7 @@ describes this class in detail.</p>
 <p><code class="docutils literal notranslate"><span class="pre">NDPluginTransform.h</span></code> defines the following parameters. It also implements
 all of the standard plugin parameters from
 <a class="reference internal" href="NDPluginDriver.html"><span class="doc">NDPluginDriver</span></a>. The EPICS database
-<code class="docutils literal notranslate"><span class="pre">NDransform.template</span></code> provide access to these parameters, listed in the
+<code class="docutils literal notranslate"><span class="pre">NDTransform.template</span></code> provides access to these parameters, listed in the
 following table.</p>
 <table class="table-bordered table-striped table-hover docutils align-default">
 <colgroup>
@@ -194,7 +194,7 @@ following table.</p>
 <tr class="row-odd"><td><p>NDPluginTransformType</p></td>
 <td><p>asynInt32</p></td>
 <td><p>r/w</p></td>
-<td><p>Type of transform. Choices are:<br>
+<td><p>Type of transform.  Choices are:<br>
 <strong>None</strong>: No transform, the output image is the same as the input image. <br>
 <strong>Rot90</strong>: Rotate clockwise 90 degrees. <br>
 <strong>Rot180</strong>: Rotate clockwise 180 degrees. <br>
@@ -205,7 +205,8 @@ rows and columns. <br>
 <strong>Rot180Mirror</strong>: Rot180 followed by Mirror. Equivalent to a mirror reflection about
 the central row in the image. <br>
 <strong>Rot270Mirror</strong>: Rot270 followed by Mirror. Equivalent to image transpose followed
-by mirror reflection about the central column in the image. <br></p></td>
+by mirror reflection about the central column in the image. <br>
+In the template there is an optional macro DFLTTRANSTYPE defaulting to 0 for None for backward compatibility.  <br></p></td>
 <td><p>TRANSFORM_TYPE</p></td>
 <td><p>$(P)$(R)Type</p></td>
 <td><p>mbbo</p></td>

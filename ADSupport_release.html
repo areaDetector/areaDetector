@@ -50,6 +50,7 @@
 <li class="toctree-l1"><a class="reference internal" href="ADCore_release.html">ADCore Release Notes</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">ADSupport Release Notes</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#r1-11-april-xxx-2026"><strong>R1-11 (April XXX, 2026)</strong></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#r1-10-may-26-2021"><strong>R1-10 (May 26, 2021)</strong></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#r1-9-1-march-26-2021"><strong>R1-9-1 (March 26, 2021)</strong></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#r1-9-august-8-2019"><strong>R1-9 (August 8, 2019)</strong></a></li>
@@ -104,6 +105,18 @@
 the EXAMPLE_RELEASE_PATHS.local, EXAMPLE_RELEASE_LIBS.local, and EXAMPLE_RELEASE_PRODS.local
 files respectively, in the configure/ directory of the appropriate release of the
 <a class="reference external" href="https://github.com/areaDetector/areaDetector">top-level areaDetector</a> repository.</p>
+</section>
+<section id="r1-11-april-xxx-2026">
+<h2><strong>R1-11 (April XXX, 2026)</strong><a class="headerlink" href="#r1-11-april-xxx-2026" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Added support for the HDF5 version of the LZ4 codec which compress in blocks.
+The code is modified from the HFZlz4.c file in the HDF external filter plugins package.
+This is the codec used by Dectris for LZ4 compression on the Stream2 interface.</p></li>
+<li><p>Minor changes to support building with mingw32.</p></li>
+<li><p>Made X11 support in GraphicsMagick optional to support cross-compiling.</p></li>
+<li><p>Fixed incompatible pointer type in GraphicsMagick libjasper that caused error on RHEL 10.</p></li>
+<li><p>Fixed memory leak in decompressJPEG.c, used by ImageJ and other clients.</p></li>
+</ul>
 </section>
 <section id="r1-10-may-26-2021">
 <h2><strong>R1-10 (May 26, 2021)</strong><a class="headerlink" href="#r1-10-may-26-2021" title="Link to this heading"></a></h2>

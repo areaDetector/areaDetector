@@ -21,7 +21,7 @@ describes this class in detail.
 ``NDPluginTransform.h`` defines the following parameters. It also implements
 all of the standard plugin parameters from
 :doc:`NDPluginDriver`. The EPICS database
-``NDransform.template`` provide access to these parameters, listed in the
+``NDTransform.template`` provides access to these parameters, listed in the
 following table.
 
 .. |br| raw:: html
@@ -46,7 +46,7 @@ following table.
   * - NDPluginTransformType
     - asynInt32
     - r/w
-    - Type of transform. Choices are:|br|
+    - Type of transform.  Choices are:|br|
       **None**: No transform, the output image is the same as the input image. |br|
       **Rot90**: Rotate clockwise 90 degrees. |br|
       **Rot180**: Rotate clockwise 180 degrees. |br|
@@ -58,6 +58,7 @@ following table.
       the central row in the image. |br|
       **Rot270Mirror**: Rot270 followed by Mirror. Equivalent to image transpose followed
       by mirror reflection about the central column in the image. |br|
+      In the template there is an optional macro DFLTTRANSTYPE defaulting to 0 for None for backward compatibility.  |br|
     - TRANSFORM_TYPE
     - $(P)$(R)Type
     - mbbo

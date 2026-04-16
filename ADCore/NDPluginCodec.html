@@ -183,7 +183,7 @@ compressed or uncompressed data.</p>
 <h3><a class="toc-backref" href="#id8" role="doc-backlink">Compressed NDArrays</a><a class="headerlink" href="#compressed-ndarrays" title="Link to this heading"></a></h3>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">codec.name</span></code> holds the name of the codec that was used to compress the
-data. This plugin currently supports four codecs: “jpeg”, “blosc”, “lz4”, and “bzlz4”.</p></li>
+data. This plugin currently supports four codecs: “jpeg”, “blosc”, “lz4”, “lz4hdf5”, and “bzlz4”.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">compressedSize</span></code> holds the length of the compressed data in
 <code class="docutils literal notranslate"><span class="pre">pData</span></code>.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">dataSize</span></code> holds the length of the allocated <code class="docutils literal notranslate"><span class="pre">pData</span></code> buffer, as
@@ -233,15 +233,21 @@ Blosc compressor to improve performance.</p></li>
 <li><p>LZ4: The compression will be performed according to the LZ4
 format. This is similar to the Blosc compressor with BloscShuffle=None
 but uses the native LZ4 library, rather than Blosc.
-It is one of the compressors used on the ZeroMQ socket interface on
-the Eiger detector from Dectris. NDPluginCodec can thus be used to decompress
-this data.</p></li>
+It is one of the compressors used on the Stream interface on
+the Eiger and Pilatus4 detectors from Dectris.
+NDPluginCodec can thus be used to decompress this data.</p></li>
+<li><p>LZ4HDF5: The compression will be performed according to the LZ4
+format in block. It supports a BlockSize parameter that controls the number
+of uncompressed bytes compressed in each block.
+It is one of the compressors used on the Stream2 interface on
+the Eiger and Pilatus4 detectors from Dectris.
+NDPluginCodec can thus be used to decompress this data.</p></li>
 <li><p>BSLZ4: The compression will be performed according to the Bitshuffle/LZ4
 format. This is similar to the Blosc compressor with BloscShuffle=Bit
 but uses the native LZ4 library, rather than Blosc.
-It is one of the compressors used on the ZeroMQ socket interface on
-the Eiger detector from Dectris. NDPluginCodec can thus be used to decompress
-this data.</p></li>
+It is one of the compressors used on the Stream and Stream2 interfaces on
+the Eiger and Pilatus4 detectors from Dectris.
+NDPluginCodec can thus be used to decompress this data.</p></li>
 </ul>
 <p>Note that BloscNumThreads controls the number of threads created from a
 single NDPluginCodec thread. The performance of all the
@@ -252,7 +258,7 @@ NumThreads record, as for most other plugins.</p>
 receiving compressed NDArrays <strong>must</strong> have been constructed with
 NDPluginDriver’s <code class="docutils literal notranslate"><span class="pre">compressionAware=true</span></code>, otherwise compressed arrays
 <strong>will be dropped</strong> by them at runtime. Currently only NDPluginCodec,
-NDPluginPva, and NDFileHDF5 are able to handle compressed NDArrays.</p>
+NDPluginPva, NDPluginPvxs, and NDFileHDF5 are able to handle compressed NDArrays.</p>
 </section>
 <section id="decompression">
 <h2><a class="toc-backref" href="#id10" role="doc-backlink">Decompression</a><a class="headerlink" href="#decompression" title="Link to this heading"></a></h2>
@@ -379,6 +385,18 @@ Byte Shuffle <br></p></td>
 <td><p>Blosc number of threads for compression/decompression.</p></td>
 <td><p>BLOSC_NUMTHREADS</p></td>
 <td><p>$(P)$(R)BloscNumThreads, $(P)$(R)BloscNumThreads_RBV</p></td>
+<td><p>longout, longin</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td colspan="5"><p><strong>Parameters for the LZ4HDF5 Compressor</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>NDCodecLZ4HDF5BlockSize</p></td>
+<td><p>asynInt32</p></td>
+<td><p>r/w</p></td>
+<td><p>Block size in bytes for compression. Reads back the actual block size on decompression.</p></td>
+<td><p>LZ4HDF5_BLOCKSIZE</p></td>
+<td><p>$(P)$(R)LZ4HDF5BlockSize, $(P)$(R)LZ4HDF5BlockSize_RBV</p></td>
 <td><p>longout, longin</p></td>
 </tr>
 <tr class="row-odd"><td></td>

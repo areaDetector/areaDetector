@@ -28,7 +28,7 @@ Compressed NDArrays
 ~~~~~~~~~~~~~~~~~~~
 
 -  ``codec.name`` holds the name of the codec that was used to compress the
-   data. This plugin currently supports four codecs: "jpeg", "blosc", "lz4", and "bzlz4".
+   data. This plugin currently supports four codecs: "jpeg", "blosc", "lz4", "lz4hdf5", and "bzlz4".
 -  ``compressedSize`` holds the length of the compressed data in
    ``pData``.
 -  ``dataSize`` holds the length of the allocated ``pData`` buffer, as
@@ -76,15 +76,21 @@ Currently, five choices are available for the Compressor parameter:
 -  LZ4: The compression will be performed according to the LZ4
    format. This is similar to the Blosc compressor with BloscShuffle=None
    but uses the native LZ4 library, rather than Blosc.
-   It is one of the compressors used on the ZeroMQ socket interface on 
-   the Eiger detector from Dectris. NDPluginCodec can thus be used to decompress
-   this data.
+   It is one of the compressors used on the Stream interface on 
+   the Eiger and Pilatus4 detectors from Dectris. 
+   NDPluginCodec can thus be used to decompress this data.
+-  LZ4HDF5: The compression will be performed according to the LZ4
+   format in block. It supports a BlockSize parameter that controls the number
+   of uncompressed bytes compressed in each block.
+   It is one of the compressors used on the Stream2 interface on 
+   the Eiger and Pilatus4 detectors from Dectris. 
+   NDPluginCodec can thus be used to decompress this data.
 -  BSLZ4: The compression will be performed according to the Bitshuffle/LZ4
    format. This is similar to the Blosc compressor with BloscShuffle=Bit
    but uses the native LZ4 library, rather than Blosc.
-   It is one of the compressors used on the ZeroMQ socket interface on 
-   the Eiger detector from Dectris. NDPluginCodec can thus be used to decompress
-   this data.
+   It is one of the compressors used on the Stream and Stream2 interfaces on 
+   the Eiger and Pilatus4 detectors from Dectris. 
+   NDPluginCodec can thus be used to decompress this data.
 
 Note that BloscNumThreads controls the number of threads created from a
 single NDPluginCodec thread. The performance of all the
@@ -96,7 +102,7 @@ It is important to note that plugins downstream of NDCodec that are
 receiving compressed NDArrays **must** have been constructed with
 NDPluginDriver's ``compressionAware=true``, otherwise compressed arrays
 **will be dropped** by them at runtime. Currently only NDPluginCodec,
-NDPluginPva, and NDFileHDF5 are able to handle compressed NDArrays.
+NDPluginPva, NDPluginPvxs, and NDFileHDF5 are able to handle compressed NDArrays.
 
 Decompression
 -------------
@@ -212,6 +218,16 @@ following table.
     - Blosc number of threads for compression/decompression.
     - BLOSC_NUMTHREADS
     - $(P)$(R)BloscNumThreads, $(P)$(R)BloscNumThreads_RBV
+    - longout, longin
+  * -
+    -
+    - **Parameters for the LZ4HDF5 Compressor**
+  * - NDCodecLZ4HDF5BlockSize
+    - asynInt32
+    - r/w
+    - Block size in bytes for compression. Reads back the actual block size on decompression.
+    - LZ4HDF5_BLOCKSIZE
+    - $(P)$(R)LZ4HDF5BlockSize, $(P)$(R)LZ4HDF5BlockSize_RBV
     - longout, longin
   * -
     -
