@@ -13,6 +13,7 @@ extensions = ['sphinx.ext.autodoc',
               'sphinx.ext.mathjax',
               'sphinx.ext.extlinks',
               'sphinx.ext.napoleon',
+              'sphinx.ext.todo',
               'm2r2',
               'linuxdoc.rstFlatTable'
 ]

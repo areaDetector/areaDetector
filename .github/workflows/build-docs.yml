@@ -1,0 +1,43 @@
+name: Build Sphinx Docs
+
+on:
+  workflow_call:
+
+jobs:
+  build:
+    name: Build Sphinx Docs
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+        submodules: "true"
+
+    - name: Setup Python
+      uses: actions/setup-python@v6
+      with:
+        python-version: "3.13"
+
+    - name: Build Sphinx Docs
+      run: |
+        pip install -r requirements.txt
+        cd docs
+        make sphinx
+        cd -
+
+    - name: Install Doxygen
+      run: sudo apt-get install doxygen graphviz -y
+
+    - name: Generate Doxygen Documentation
+      run: |
+        cd docs
+        make doxygen
+        cd -
+
+    - name: Upload Docs Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: docs-html
+        path: docs/_build/html

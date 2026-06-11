@@ -1,0 +1,14 @@
+name: Check
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  test-build:
+    name: Test Build
+    uses: ./.github/workflows/build-docs.yml
