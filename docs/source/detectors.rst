@@ -320,12 +320,6 @@ documentation, release notes, name of maintainer, and repository status.
     - `Release Notes <https://github.com/areaDetector/aravisGigE/blob/master/RELEASE.md>`__
     - Tom Cobb?
     - Archived
-  * - `ffmpegViewer <https://github.com/areaDetector/ffmpegViewer>`__
-    - A stand-alone Qt4 application to display a stream of ffmpeg compressed images
-    - `README <https://github.com/areaDetector/ffmpegViewer/blob/master/README.md>`__
-    - None
-    - Tom Cobb?
-    - Active?
   * - `ffmpegServer <https://github.com/areaDetector/ffmpegServer>`__
     - Plugin that use the ffmpeg libraries to compress a stream of images to files or via an html service
     - `ffmpegServer <https://htmlpreview.github.io/?https://github.com/areaDetector/ffmpegServer/blob/master/documentation/doxygen/index.html>`__
