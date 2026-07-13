@@ -1,0 +1,9 @@
+## SITE_MODULES
+
+# Include files that define which submodules to build
+
+# Required
+include $(TOP)/configure/SITE_MODULES.local
+
+# Optional, overrides the above
+-include $(TOP)/configure/SITE_MODULES.$(EPICS_HOST_ARCH).local
