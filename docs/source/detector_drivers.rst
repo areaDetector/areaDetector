@@ -17,6 +17,7 @@ Detector Drivers
     ADGenICam/ADGenICam
     ADHamamatsuDCAM/ADHamamatsuDCAM
     ADLambda/ADLambda
+    ADXSPD/ADXSPD
     ADLightField/ADLightField
     ADmarCCD/marCCDDoc
     ADmar345/mar345Doc
